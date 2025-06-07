@@ -128,90 +128,55 @@ import "../styles/legacy.css";
 
     <a href="/contact" class="cta-button">TALK TO US</a>
 
-    <div class="mobile-menu-toggle">
+    <button type="button" class="mobile-menu-btn" aria-label="Toggle mobile menu">
       <i class="fas fa-bars"></i>
-    </div>
+    </button>
   </div>
 </nav>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
-    const navItems = document.querySelectorAll('.nav-item');
+    const dropdownBtns = document.querySelectorAll('.nav-link[data-dropdown]');
+    let activeDropdown = null;
 
     function closeAllDropdowns() {
-      document.querySelectorAll('.dropdown.active, .mega-dropdown.active').forEach(dropdown => {
-        dropdown.classList.remove('active');
+      dropdownBtns.forEach(btn => {
+        const dropdown = btn.nextElementSibling;
+        if (dropdown?.classList.contains('active')) {
+          dropdown.classList.remove('active');
+          btn.classList.remove('active');
+        }
       });
-      document.querySelectorAll('.nav-link.active').forEach(link => {
-        link.classList.remove('active');
-      });
+      activeDropdown = null;
     }
 
-    // Mobile menu toggle
-    if (mobileToggle && navMenu) {
-      mobileToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
+    // Toggle mobile menu
+    if (mobileMenuBtn && navMenu) {
+      mobileMenuBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        mobileToggle.classList.toggle('active');
+        e.stopPropagation();
+        mobileMenuBtn.classList.toggle('active');
         navMenu.classList.toggle('active');
         document.body.classList.toggle('menu-open');
-
-        // Close all dropdowns when closing the menu
-        if (!navMenu.classList.contains('active')) {
-          closeAllDropdowns();
-        }
+        closeAllDropdowns();
       });
     }
 
-    // Handle dropdown toggles on mobile
-    navItems.forEach(item => {
-      const link = item.querySelector('.nav-link');
-      const dropdown = item.querySelector('.dropdown, .mega-dropdown');
-
-      if (link && dropdown) {
-        link.addEventListener('click', (e) => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const wasActive = dropdown.classList.contains('active');
-            
-            // Close all dropdowns first
-            closeAllDropdowns();
-            
-            // Then open the clicked one if it wasn't active
-            if (!wasActive) {
-              dropdown.classList.add('active');
-              link.classList.add('active');
-            }
-          }
-        });
-      }
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        const isClickInsideNav = navMenu.contains(e.target);
-        const isClickOnToggle = mobileToggle.contains(e.target);
+    // Handle dropdowns
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         
-        if (!isClickInsideNav && !isClickOnToggle) {
-          navMenu.classList.remove('active');
-          mobileToggle.classList.remove('active');
-          document.body.classList.remove('menu-open');
-          closeAllDropdowns();
-        }
-      }
-    });
+        const dropdown = btn.nextElementSibling;
+        const isActive = dropdown?.classList.contains('active');
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        const isClickInside = navMenu.contains(e.target) || mobileToggle.contains(e.target);
-        if (!isClickInside && navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
+        // Close previously active dropdown if it's different
+        if (activeDropdown && activeDropdown !== dropdown) {
+          activeDropdown.classList.remove('active');
+          activeDropdown.previousElementSibling?.classList.remove('active');
           mobileToggle.classList.remove('active');
           document.body.classList.remove('menu-open');
           // Close all dropdowns
@@ -233,7 +198,7 @@ import "../styles/legacy.css";
     .nav-menu {
       display: none;
       position: fixed;
-      top: 80px; /* Adjust based on your header height */
+      top: 80px;
       left: 0;
       right: 0;
       bottom: 0;
@@ -255,36 +220,54 @@ import "../styles/legacy.css";
     }
 
     .nav-link {
-      display: block;
-      padding: 15px 0;
-      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      color: #333;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.3s ease;
     }
 
+    .nav-link:hover,
     .nav-link.active {
+      background: rgba(255, 68, 56, 0.1);
       color: #FF4438;
     }
 
     .dropdown,
     .mega-dropdown {
-      position: static;
-      box-shadow: none;
-      padding: 0 0 10px 20px;
-      height: 0;
-      overflow: hidden;
+      position: relative;
+      background: white;
+      padding: 15px;
+      margin-top: 5px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: none;
       opacity: 0;
+      transform: translateY(-10px);
       transition: all 0.3s ease;
     }
 
     .dropdown.active,
     .mega-dropdown.active {
-      height: auto;
+      display: block;
       opacity: 1;
-      overflow: visible;
+      transform: translateY(0);
     }
 
     .dropdown-column {
-      width: 100%;
-      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+
+    .dropdown-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(255, 68, 56, 0.1);
     }
 
     .dropdown-item {
@@ -292,13 +275,47 @@ import "../styles/legacy.css";
     }
 
     .dropdown-link {
-      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      background: rgba(66, 133, 244, 0.05);
     }
 
-    .dropdown-title {
-      font-size: 16px;
-      margin: 15px 0 10px;
+    .dropdown-link:hover {
+      background: rgba(66, 133, 244, 0.1);
+      transform: translateX(5px);
+    }
+
+    .dropdown-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 50%;
+      margin-right: 12px;
+      color: #4285F4;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(66, 133, 244, 0.15);
+    }
+
+    .dropdown-content {
+      flex: 1;
+    }
+
+    .dropdown-link-title {
+      font-weight: 500;
+      margin-bottom: 4px;
       color: #333;
+    }
+
+    .dropdown-link-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.4;
     }
 
     .dropdown-column {
@@ -308,6 +325,37 @@ import "../styles/legacy.css";
 
     .dropdown-image {
       display: none;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .mobile-menu-btn i {
+      font-size: 24px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn.active i {
+      color: #FF4438;
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     .mobile-menu-toggle {

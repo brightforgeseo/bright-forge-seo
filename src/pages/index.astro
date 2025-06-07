@@ -1675,6 +1675,86 @@ import Footer from '../components/Footer.astro';
     font-weight: 500;
   }
   
+  .hero-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 68, 56, 0.15);
+    border: 2px solid rgba(255, 68, 56, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(255, 68, 56, 0.2);
+  }
+
+  .play-button::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 68, 56, 0.2), rgba(66, 133, 244, 0.2));
+    z-index: -1;
+    animation: pulse 2s infinite;
+  }
+
+  .play-button i {
+    color: #FF4438;
+    font-size: 32px;
+    margin-left: 5px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+  }
+
+  .play-button:hover {
+    background: rgba(255, 68, 56, 0.25);
+    transform: translate(-50%, -50%) scale(1.05);
+    border-color: rgba(66, 133, 244, 0.6);
+  }
+
+  .play-button:hover i {
+    color: #4285F4;
+    transform: scale(1.1);
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  }
+
   /* Carousel Navigation */
   .carousel-btn {
     position: absolute;
