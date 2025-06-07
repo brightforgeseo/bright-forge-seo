@@ -22,7 +22,7 @@ import "../styles/legacy.css";
 
     <ul class="nav-menu">
       <li class="nav-item">
-        <a href="#" class="nav-link">SEO Services <i class="fas fa-chevron-down"></i></a>
+        <a href="#" class="nav-link" data-dropdown="services">SEO Services <i class="fas fa-chevron-down"></i></a>
         <div class="dropdown mega-dropdown">
           <div class="dropdown-column">
             <h3 class="dropdown-title">Core SEO Services</h3>
@@ -93,7 +93,7 @@ import "../styles/legacy.css";
       </li>
 
       <li class="nav-item">
-        <a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
+        <a href="#" class="nav-link" data-dropdown="pages">Pages <i class="fas fa-chevron-down"></i></a>
         <div class="dropdown">
           <div class="dropdown-item">
             <a href="/" class="dropdown-link">
@@ -302,13 +302,25 @@ import "../styles/legacy.css";
 
     .dropdown.active,
     .mega-dropdown.active {
-      display: block;
+      display: block !important;
       opacity: 1;
       transform: translateY(0);
     }
 
+    .mega-dropdown {
+      display: none;
+    }
+
+    .dropdown-image {
+      display: none;
+    }
+
     .dropdown-column {
       margin-bottom: 20px;
+    }
+
+    .dropdown-column:last-child {
+      margin-bottom: 0;
     }
 
     .dropdown-title {
@@ -371,10 +383,6 @@ import "../styles/legacy.css";
     .dropdown-column {
       padding: 10px 0;
       border: none;
-    }
-
-    .dropdown-image {
-      display: none;
     }
 
     .mobile-menu-btn {
