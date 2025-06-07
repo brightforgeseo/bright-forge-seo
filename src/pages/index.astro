@@ -12,10 +12,10 @@ import Footer from '../components/Footer.astro';
     <div class="container">
       <div class="hero-container">
         <div class="hero-content">
-          <h1 class="hero-title">
+          <h1 class="hero-title" style="font-display: swap;">
             <span class="hero-tagline">SEO Experts Committed to Your Success</span>
-            Leading SEO Agency<br>
-            in the Philippines
+            <span style="display: block; font-size: inherit;">Leading SEO Agency</span>
+            <span style="display: block; font-size: inherit;">in the Philippines</span>
           </h1>
           <p class="hero-subtitle">
             Bright Forge SEO helps businesses thrive online with focused strategies.
@@ -46,7 +46,7 @@ import Footer from '../components/Footer.astro';
         </div>
         
         <div class="hero-image">
-          <img src="https://via.placeholder.com/600x400?text=Professional+Woman+SEO+Expert" alt="Bright Forge SEO Agency Philippines Expert">
+          <img src="https://via.placeholder.com/600x400?text=Professional+Woman+SEO+Expert" alt="Bright Forge SEO Agency Philippines Expert" loading="eager" decoding="async" fetchpriority="high">
           <div class="play-button">
             <i class="fas fa-play"></i>
           </div>
@@ -936,6 +936,9 @@ import Footer from '../components/Footer.astro';
   .hero-section {
     background: linear-gradient(135deg, var(--brand-bg) 0%, #ffffff 100%);
     padding: 80px 0;
+    contain: layout style paint;
+    content-visibility: auto;
+    contain-intrinsic-size: 600px;
     position: relative;
     overflow: hidden;
   }
