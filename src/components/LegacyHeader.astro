@@ -177,23 +177,65 @@ import "../styles/legacy.css";
         if (activeDropdown && activeDropdown !== dropdown) {
           activeDropdown.classList.remove('active');
           activeDropdown.previousElementSibling?.classList.remove('active');
-          mobileToggle.classList.remove('active');
-          document.body.classList.remove('menu-open');
-          // Close all dropdowns
-          document.querySelectorAll('.dropdown, .mega-dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
-          });
-          document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-          });
         }
+
+        // Toggle current dropdown
+        if (dropdown) {
+          dropdown.classList.toggle('active');
+          btn.classList.toggle('active');
+          activeDropdown = isActive ? null : dropdown;
+        }
+      });
+    });
+
+    // Close menu and dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      const clickedElement = e.target;
+      const isMenuClick = clickedElement.closest('.nav-menu');
+      const isMenuBtnClick = clickedElement.closest('.mobile-menu-btn');
+      const isDropdownClick = clickedElement.closest('.dropdown, .mega-dropdown');
+
+      if (!isMenuClick && !isMenuBtnClick && !isDropdownClick) {
+        navMenu?.classList.remove('active');
+        mobileMenuBtn?.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        closeAllDropdowns();
       }
     });
+
+    // Handle touch events for better mobile experience
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    navMenu?.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    navMenu?.addEventListener('touchmove', (e) => {
+      touchEndY = e.touches[0].clientY;
+      const scrollTop = navMenu.scrollTop;
+      const scrollHeight = navMenu.scrollHeight;
+      const clientHeight = navMenu.clientHeight;
+
+      // Prevent overscroll only at boundaries
+      if (scrollTop <= 0 && touchEndY > touchStartY) {
+        e.preventDefault();
+      }
+      if (scrollTop + clientHeight >= scrollHeight && touchEndY < touchStartY) {
+        e.preventDefault();
+      }
+    }, { passive: false });
   });
 </script>
 
 <style>
   /* Mobile Menu Styles */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
   @media (max-width: 768px) {
     .nav-menu {
       display: none;
@@ -230,6 +272,14 @@ import "../styles/legacy.css";
       transition: all 0.3s ease;
     }
 
+    .nav-link i {
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link.active i {
+      transform: rotate(180deg);
+    }
+
     .nav-link:hover,
     .nav-link.active {
       background: rgba(255, 68, 56, 0.1);
@@ -239,7 +289,7 @@ import "../styles/legacy.css";
     .dropdown,
     .mega-dropdown {
       position: relative;
-      background: white;
+      background: #f8f9fa;
       padding: 15px;
       margin-top: 5px;
       border-radius: 8px;
@@ -374,10 +424,6 @@ import "../styles/legacy.css";
 
     .mobile-menu-toggle i {
       transition: transform 0.3s ease;
-    }
-
-    body.menu-open {
-      overflow: hidden;
     }
 
     .cta-button {
