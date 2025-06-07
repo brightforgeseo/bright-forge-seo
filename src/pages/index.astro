@@ -2190,6 +2190,8 @@ import Footer from '../components/Footer.astro';
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 50px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   @media (max-width: 1024px) {
@@ -2198,9 +2200,25 @@ import Footer from '../components/Footer.astro';
     }
   }
   
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .services-grid {
       grid-template-columns: 1fr;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto 30px;
+      gap: 20px;
+    }
+    
+    .service-card {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    
+    .services-section {
+      padding: 40px 0;
+      overflow-x: hidden;
     }
   }
   
@@ -2337,6 +2355,9 @@ import Footer from '../components/Footer.astro';
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
   
   @media (max-width: 1024px) {
@@ -2345,9 +2366,25 @@ import Footer from '../components/Footer.astro';
     }
   }
   
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .case-studies-container {
       grid-template-columns: 1fr;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto 30px;
+      gap: 20px;
+    }
+    
+    .case-study-card {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    
+    .case-studies-section {
+      padding: 40px 0;
+      overflow-x: hidden;
     }
   }
   
