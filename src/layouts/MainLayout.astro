@@ -16,6 +16,24 @@ const { title, description = "Bright Forge SEO Philippines - Your partner for SE
     <title>{title}</title>
     <meta name="description" content={description} />
     
+    <!-- Critical CSS for hero section -->
+    <style>
+      .hero-section {
+        background: linear-gradient(135deg, var(--brand-bg) 0%, #ffffff 100%);
+        padding: 80px 0;
+      }
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+      .hero-tagline {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+    
     <!-- Preconnect to critical third-party domains -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -26,6 +44,9 @@ const { title, description = "Bright Forge SEO Philippines - Your partner for SE
     
     <!-- Load FontAwesome with display swap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="https://via.placeholder.com/600x400?text=Professional+Woman+SEO+Expert">
     
     <!-- Google Fonts - DM Sans -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
