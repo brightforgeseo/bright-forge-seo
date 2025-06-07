@@ -571,11 +571,11 @@ import Footer from '../components/Footer.astro';
       <div class="section-header">
         <h2 class="section-title">Our Step-by-Step Process</h2>
         <div class="process-image">
-          <img src="https://via.placeholder.com/400x300?text=Bright+Forge+Step+By+Step+Process" alt="Bright Forge Step By Step Process">
+          <img src="https://via.placeholder.com/400x300?text=Bright+Forge+Step+By+Step+Process" alt="Bright Forge Step By Step Process" class="responsive-img">
         </div>
       </div>
       
-      <div class="process-steps">
+      <div class="process-steps mobile-friendly">
         <div class="process-step">
           <div class="step-number">01</div>
           <div class="step-icon">
@@ -1531,6 +1531,19 @@ import Footer from '../components/Footer.astro';
     }
   }
 
+  /* Process Section */
+  .process-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+    overflow-x: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .process-section {
+      padding: 40px 0;
+    }
+  }
+  
   /* Partners Section */
   .partners-section {
     padding: 60px 0;
@@ -1901,6 +1914,13 @@ import Footer from '../components/Footer.astro';
   .process-section {
     padding: 80px 0;
     background: white;
+    overflow-x: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .process-section {
+      padding: 40px 0;
+    }
   }
   
   .process-steps {
@@ -1915,9 +1935,33 @@ import Footer from '../components/Footer.astro';
     }
   }
   
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .process-steps {
       grid-template-columns: 1fr;
+      gap: 40px;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .process-image img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .process-step {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    
+    .step-icon {
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      margin-bottom: 30px;
     }
   }
   
