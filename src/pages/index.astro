@@ -570,12 +570,10 @@ import Footer from '../components/Footer.astro';
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Our Step-by-Step Process</h2>
-        <div class="process-image">
-          <img src="https://via.placeholder.com/400x300?text=Bright+Forge+Step+By+Step+Process" alt="Bright Forge Step By Step Process" class="responsive-img">
-        </div>
       </div>
       
-      <div class="process-steps mobile-friendly">
+      <div class="process-steps-wrapper">
+        <div class="process-steps mobile-friendly">
         <div class="process-step">
           <div class="step-number">01</div>
           <div class="step-icon">
@@ -1946,6 +1944,13 @@ import Footer from '../components/Footer.astro';
     .process-steps {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+  
+  .process-steps-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
   
   @media (max-width: 768px) {
