@@ -1,0 +1,119 @@
+---
+// Header component that includes the top bar and navigation menu
+---
+
+<!-- Top Contact Bar -->
+<div class="bg-brand-accent text-white py-2 text-sm">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+    <div class="contact-info">
+      <a href="mailto:hello@brightforgeseo.com" class="text-white mr-6 hover:text-white/80">
+        <i class="fas fa-envelope mr-2"></i>hello@brightforgeseo.com
+      </a>
+      <a href="tel:+639123456789" class="text-white hover:text-white/80">
+        <i class="fas fa-phone-alt mr-2"></i>+63 912 345 6789
+      </a>
+    </div>
+    <div class="social-links flex space-x-3">
+      <a href="#" class="text-white hover:text-white/80"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-white hover:text-white/80"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white hover:text-white/80"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 md:flex md:justify-between md:items-center py-4">
+    <div class="flex justify-between items-center">
+      <a href="/" class="block">
+        <img src="https://via.placeholder.com/180x40?text=Bright+Forge" alt="Bright Forge SEO" class="h-10">
+      </a>
+      
+      <div class="md:hidden">
+        <button type="button" class="mobile-menu-toggle p-2 focus:outline-none">
+          <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
+          <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
+          <span class="block w-6 h-0.5 bg-gray-800"></span>
+        </button>
+      </div>
+    </div>
+    
+    <ul class="nav-menu md:flex md:items-center md:space-x-8 hidden">
+      <!-- SEO Services Dropdown -->
+      <li class="relative group py-2">
+        <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+          SEO Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </a>
+        <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+          <div class="mb-4">
+            <h3 class="font-bold text-gray-800 mb-2">Core SEO Services</h3>
+            <a href="/philippines-seo-services" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+              <div class="font-medium">Philippines SEO Services</div>
+              <div class="text-sm text-gray-500">Comprehensive SEO solutions</div>
+            </a>
+            <a href="/content-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+              <div class="font-medium">Content SEO Services</div>
+              <div class="text-sm text-gray-500">Quality content that ranks</div>
+            </a>
+            <a href="/backlink-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+              <div class="font-medium">Backlink SEO Services</div>
+              <div class="text-sm text-gray-500">Build high-quality links</div>
+            </a>
+          </div>
+          <div class="mb-4">
+            <h3 class="font-bold text-gray-800 mb-2">Specialized SEO</h3>
+            <a href="/white-label-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+              <div class="font-medium">White Label SEO</div>
+              <div class="text-sm text-gray-500">Partner with our SEO experts</div>
+            </a>
+          </div>
+        </div>
+      </li>
+      
+      <!-- About Dropdown -->
+      <li class="relative group py-2">
+        <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+          About <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </a>
+        <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+          <a href="/about-us" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">About Us</a>
+          <a href="/case-studies" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Case Studies</a>
+        </div>
+      </li>
+      
+      <!-- Blog Link -->
+      <li class="py-2">
+        <a href="/blog" class="text-brand-dark font-medium hover:text-brand-accent">Blog</a>
+      </li>
+      
+      <!-- Pages Dropdown -->
+      <li class="relative group py-2">
+        <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+          Pages <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </a>
+        <div class="absolute left-0 mt-2 w-48 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+          <a href="/" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
+          <a href="/contact" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Contact</a>
+          <a href="/privacy-policy" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Privacy Policy</a>
+          <a href="/terms" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Terms of Service</a>
+        </div>
+      </li>
+    </ul>
+    
+    <button class="hidden md:block bg-brand-accent text-white px-5 py-2 rounded-md font-bold hover:bg-opacity-90 transition-all">TALK TO US</button>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuToggle && navMenu) {
+      mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+        navMenu.classList.toggle('md:flex');
+      });
+    }
+  });
+</script>

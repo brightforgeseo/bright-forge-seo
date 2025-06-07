@@ -1,0 +1,149 @@
+---
+// LegacyHeader.astro – exact markup from original HTML (top bar + mega-menu)
+import "../styles/legacy.css";
+---
+
+<!-- Top Contact Bar -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <div class="contact-info">
+      <a href="mailto:hello@brightforge.com"><i class="far fa-envelope"></i> hello@brightforge.com</a>
+      <a href="tel:+447123456789"><i class="fas fa-phone-alt"></i> +44 7123 456 789</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navigation with Mega Menu -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">
+      <img src="https://via.placeholder.com/180x40?text=Bright+Forge" alt="Bright Forge SEO" />
+    </a>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#" class="nav-link">SEO Services <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown mega-dropdown">
+          <div class="dropdown-column">
+            <h3 class="dropdown-title">Core SEO Services</h3>
+            <div class="dropdown-item">
+              <a href="/philippines-seo-services" class="dropdown-link">
+                <span class="dropdown-icon"><i class="fas fa-search"></i></span>
+                <div class="dropdown-content">
+                  <div class="dropdown-link-title">Philippines SEO Services</div>
+                  <div class="dropdown-link-desc">Comprehensive analysis of your website's SEO performance</div>
+                </div>
+              </a>
+            </div>
+            <div class="dropdown-item">
+              <a href="/white-label-seo-services-philippines" class="dropdown-link">
+                <span class="dropdown-icon"><i class="fas fa-tag"></i></span>
+                <div class="dropdown-content">
+                  <div class="dropdown-link-title">White Label SEO Services</div>
+                  <div class="dropdown-link-desc">Partner with us to offer top-tier SEO services</div>
+                </div>
+              </a>
+            </div>
+            <div class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <span class="dropdown-icon"><i class="fas fa-file-alt"></i></span>
+                <div class="dropdown-content">
+                  <div class="dropdown-link-title">On-Page SEO</div>
+                  <div class="dropdown-link-desc">Optimization of individual page elements</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown-column">
+            <h3 class="dropdown-title">Advanced Services</h3>
+            <div class="dropdown-item">
+              <a href="/backlink-seo-services-philippines" class="dropdown-link">
+                <span class="dropdown-icon"><i class="fas fa-link"></i></span>
+                <div class="dropdown-content">
+                  <div class="dropdown-link-title">Backlink SEO Services</div>
+                  <div class="dropdown-link-desc">Quality backlink acquisition strategies</div>
+                </div>
+              </a>
+            </div>
+            <div class="dropdown-item">
+              <a href="#" class="dropdown-link">
+                <span class="dropdown-icon"><i class="fas fa-code"></i></span>
+                <div class="dropdown-content">
+                  <div class="dropdown-link-title">Technical SEO</div>
+                  <div class="dropdown-link-desc">Website architecture and crawlability optimization</div>
+                </div>
+              </a>
+            </div>
+            <div class="dropdown-item">
+              <a href="/content-seo-services-philippines" class="dropdown-link">
+                <span class="dropdown-icon"><i class="fas fa-pen"></i></span>
+                <div class="dropdown-content">
+                  <div class="dropdown-link-title">Content SEO</div>
+                  <div class="dropdown-link-desc">Content strategy and optimization for search</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown-image">
+            <img src="https://via.placeholder.com/560x120?text=SEO+Services" alt="SEO Services" />
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <div class="dropdown-item">
+            <a href="/" class="dropdown-link">
+              <span class="dropdown-icon"><i class="fas fa-home"></i></span>
+              <div class="dropdown-content">
+                <div class="dropdown-link-title">Home</div>
+              </div>
+            </a>
+          </div>
+          <div class="dropdown-item">
+            <a href="/about-us" class="dropdown-link">
+              <span class="dropdown-icon"><i class="fas fa-info-circle"></i></span>
+              <div class="dropdown-content">
+                <div class="dropdown-link-title">About Us</div>
+              </div>
+            </a>
+          </div>
+          <div class="dropdown-item">
+            <a href="#contact" class="dropdown-link">
+              <span class="dropdown-icon"><i class="fas fa-phone"></i></span>
+              <div class="dropdown-content">
+                <div class="dropdown-link-title">Contact</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item"><a href="/case-studies" class="nav-link">Case Studies</a></li>
+      <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+    </ul>
+
+    <button class="cta-button">TALK TO US</button>
+
+    <div class="mobile-menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  // Mobile Menu Toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  });
+</script>

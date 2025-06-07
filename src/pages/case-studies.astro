@@ -1,0 +1,121 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<MainLayout title="Case Studies - Bright Forge SEO Philippines" description="Real-world examples of how Bright Forge SEO Philippines has delivered outstanding SEO results for businesses.">
+  <LegacyHeader slot="header" />
+
+  <!-- Hero Section -->
+  <section class="hero-case-studies" style="padding: 120px 0 80px; text-align: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x500') center/cover;">
+    <div class="container">
+      <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 20px; color: #fff;">Our Success Stories</h1>
+      <p style="font-size: 18px; color: #eee; margin-bottom: 30px;">Discover how we've helped businesses across the Philippines achieve remarkable growth through our proven SEO strategies.</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div style="background-color: #f5f5f5; padding: 15px 0; border-bottom: 1px solid #eee;">
+    <div class="container">
+      <div style="display: flex; align-items: center;">
+        <a href="/" style="color: var(--gray); text-decoration: none; font-size: 14px;">Home</a>
+        <span style="margin: 0 10px; color: var(--gray);"><i class="fas fa-chevron-right" style="font-size: 12px;"></i></span>
+        <span style="color: var(--primary); font-size: 14px;">Case Studies</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Studies Filter & Grid -->
+  <section style="padding: 60px 0 30px;">
+    <div class="container">
+      <!-- Filter Buttons -->
+      <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+        <ul id="case-study-filter" style="display: flex; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; justify-content: center;">
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('all')" class="filter-btn active" style="background-color: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">All Industries</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('ecommerce')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">E-commerce</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('local')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Local Business</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('saas')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">SaaS</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('finance')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Finance</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('healthcare')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Healthcare</button></li>
+        </ul>
+      </div>
+
+      <!-- Case Studies Grid -->
+      <div id="case-studies-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
+        <!-- Card 1 - E-commerce -->
+        <div class="case-study-card ecommerce" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-study-1.jpg" alt="Manila Gadgets E-commerce Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">E-commerce</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Manila Gadgets: 187% Organic Traffic Growth</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a Philippine electronics e-commerce store increase their organic traffic and boost conversion rates through targeted SEO strategies.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+187%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+143%</span><span style="font-size: 14px; color: var(--gray);">Conversion Rate</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="#" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+
+        <!-- Card 2 - Local Business -->
+        <div class="case-study-card local" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-study-2.jpg" alt="Cebu Dental Clinic Local SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Local Business</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Cebu Dental Clinic: Dominating Local Search</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a dental clinic in Cebu achieve top rankings for local search terms and increase their monthly patient appointments.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+210%</span><span style="font-size: 14px; color: var(--gray);">Local Visibility</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+94%</span><span style="font-size: 14px; color: var(--gray);">Appointments</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">4 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="#" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+
+        <!-- Additional cards (SaaS, Finance, Healthcare, and another E-commerce) would be added similarly -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <ContactSection />
+
+  <Footer slot="footer" />
+</MainLayout>
+
+<script is:inline>
+  // Case Study Filter Function
+  function filterCaseStudies(category) {
+    const cards = document.querySelectorAll('.case-study-card');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    // Reset button styles
+    filterButtons.forEach(btn => {
+      btn.classList.remove('active');
+      btn.style.backgroundColor = '#f5f5f5';
+      btn.style.color = 'var(--dark)';
+    });
+
+    // Highlight active button
+    event.currentTarget.classList.add('active');
+    event.currentTarget.style.backgroundColor = 'var(--primary)';
+    event.currentTarget.style.color = 'white';
+
+    // Filter cards
+    if (category === 'all') {
+      cards.forEach(card => card.style.display = 'block');
+    } else {
+      cards.forEach(card => {
+        card.style.display = card.classList.contains(category) ? 'block' : 'none';
+      });
+    }
+  }
+</script>

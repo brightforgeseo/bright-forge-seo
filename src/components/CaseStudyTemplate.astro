@@ -1,0 +1,789 @@
+---
+export interface Props {
+  title: string;
+  client: string;
+  industry: string;
+  duration: string;
+  heroImage?: string;
+  challenge: string;
+  solution: string;
+  keyMetrics: Array<{
+    label: string;
+    value: string;
+    description: string;
+  }>;
+  strategySteps: Array<{
+    title: string;
+    description: string;
+    icon: string;
+  }>;
+  results: Array<{
+    metric: string;
+    before: string;
+    after: string;
+    improvement: string;
+  }>;
+  testimonial?: {
+    quote: string;
+    author: string;
+    position: string;
+    company: string;
+    avatar?: string;
+  };
+  keyTakeaways: string[];
+  nextSteps?: string;
+}
+
+const {
+  title,
+  client,
+  industry,
+  duration,
+  heroImage,
+  challenge,
+  solution,
+  keyMetrics,
+  strategySteps,
+  results,
+  testimonial,
+  keyTakeaways,
+  nextSteps
+} = Astro.props;
+---
+
+<article class="case-study">
+  <!-- Hero Section -->
+  <section class="case-study-hero">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <a href="/case-studies">Case Studies</a>
+        <span class="separator">›</span>
+        <span class="current">{client}</span>
+      </nav>
+      
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="client-badge">{industry} • {duration}</div>
+          <h1>{title}</h1>
+          <p class="hero-subtitle">A comprehensive SEO transformation case study showcasing measurable results and strategic implementation.</p>
+        </div>
+        {heroImage && (
+          <div class="hero-image">
+            <img src={heroImage} alt={`${client} case study`} />
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics Overview -->
+  <section class="metrics-overview">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="metrics-grid">
+        {keyMetrics.map((metric) => (
+          <div class="metric-card">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <div class="metric-description">{metric.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Section -->
+  <section class="challenge-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="section-header">
+        <h2>The <span>Challenge</span></h2>
+      </div>
+      <div class="challenge-content">
+        <div class="challenge-icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="challenge-text">
+          <p>{challenge}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Strategy -->
+  <section class="solution-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Our <span>Solution Strategy</span></h2>
+        <p>{solution}</p>
+      </div>
+      
+      <div class="strategy-grid">
+        {strategySteps.map((step, index) => (
+          <div class="strategy-card">
+            <div class="strategy-number">{index + 1}</div>
+            <div class="strategy-icon">
+              <i class={step.icon}></i>
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Measurable <span>Results</span></h2>
+      </div>
+      
+      <div class="results-table">
+        <div class="results-header">
+          <div>Metric</div>
+          <div>Before</div>
+          <div>After</div>
+          <div>Improvement</div>
+        </div>
+        {results.map((result) => (
+          <div class="results-row">
+            <div class="metric-name">{result.metric}</div>
+            <div class="before-value">{result.before}</div>
+            <div class="after-value">{result.after}</div>
+            <div class="improvement-value">{result.improvement}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonial -->
+  {testimonial && (
+    <section class="testimonial-section">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <i class="fas fa-quote-left"></i>
+            <p>"{testimonial.quote}"</p>
+          </div>
+          <div class="testimonial-author">
+            {testimonial.avatar && (
+              <img src={testimonial.avatar} alt={testimonial.author} />
+            )}
+            <div class="author-info">
+              <div class="author-name">{testimonial.author}</div>
+              <div class="author-position">{testimonial.position}</div>
+              <div class="author-company">{testimonial.company}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Key Takeaways -->
+  <section class="takeaways-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Key <span>Takeaways</span></h2>
+      </div>
+      
+      <div class="takeaways-list">
+        {keyTakeaways.map((takeaway) => (
+          <div class="takeaway-item">
+            <div class="takeaway-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <p>{takeaway}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps CTA -->
+  {nextSteps && (
+    <section class="next-steps-section">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="next-steps-card">
+          <h3>Ready for Similar Results?</h3>
+          <p>{nextSteps}</p>
+          <a href="#contact" class="cta-button">Start Your SEO Journey</a>
+        </div>
+      </div>
+    </section>
+  )}
+</article>
+
+<style>
+/* Case Study Hero */
+.case-study-hero {
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B5B 50%, #4285F4 100%);
+  padding: 120px 0 80px;
+  position: relative;
+  color: white;
+}
+
+.case-study-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.case-study-hero > div {
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumbs {
+  margin-bottom: 40px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.breadcrumbs a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: white;
+}
+
+.separator {
+  margin: 0 10px;
+  opacity: 0.7;
+}
+
+.current {
+  color: white;
+  font-weight: 500;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+
+.client-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+}
+
+.hero-image img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Metrics Overview */
+.metrics-overview {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.metric-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(66, 133, 244, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #FF4438, #4285F4);
+}
+
+.metric-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #FF4438, #4285F4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.metric-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.metric-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-header h2 span {
+  background: linear-gradient(135deg, #FF4438, #4285F4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Challenge Section */
+.challenge-section {
+  padding: 100px 0;
+}
+
+.challenge-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 68, 56, 0.1);
+}
+
+.challenge-icon {
+  background: linear-gradient(135deg, #FF4438, #FF6B5B);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
+}
+
+.challenge-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Solution Section */
+.solution-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.strategy-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(66, 133, 244, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.strategy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.strategy-number {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  background: linear-gradient(135deg, #FF4438, #FF6B5B);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.strategy-icon {
+  background: linear-gradient(135deg, #4285F4, #6AB7FF);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 25px;
+  box-shadow: 0 8px 25px rgba(66, 133, 244, 0.3);
+}
+
+.strategy-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.strategy-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Results Section */
+.results-section {
+  padding: 100px 0;
+}
+
+.results-table {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(66, 133, 244, 0.1);
+}
+
+.results-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 20px;
+  background: linear-gradient(135deg, #4285F4, #6AB7FF);
+  color: white;
+  padding: 25px 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.results-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 25px 30px;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+}
+
+.results-row:last-child {
+  border-bottom: none;
+}
+
+.metric-name {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.before-value {
+  color: #666;
+}
+
+.after-value {
+  font-weight: 600;
+  color: #4285F4;
+}
+
+.improvement-value {
+  font-weight: 700;
+  background: linear-gradient(135deg, #FF4438, #4285F4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.testimonial-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid rgba(66, 133, 244, 0.1);
+}
+
+.testimonial-quote {
+  margin-bottom: 30px;
+}
+
+.testimonial-quote i {
+  font-size: 3rem;
+  color: #4285F4;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+
+.testimonial-quote p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #444;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-name {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+}
+
+.author-position {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.author-company {
+  color: #4285F4;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Takeaways Section */
+.takeaways-section {
+  padding: 100px 0;
+}
+
+.takeaways-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.takeaway-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 68, 56, 0.1);
+}
+
+.takeaway-icon {
+  background: linear-gradient(135deg, #FF4438, #FF6B5B);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.takeaway-item p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Next Steps Section */
+.next-steps-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.next-steps-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(66, 133, 244, 0.1);
+}
+
+.next-steps-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.next-steps-card p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #FF4438, #FF6B5B);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 68, 56, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .challenge-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .strategy-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .results-header,
+  .results-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .results-header {
+    font-size: 1rem;
+  }
+
+  .testimonial-author {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .takeaway-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-study-hero {
+    padding: 80px 0 60px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .challenge-content,
+  .next-steps-card,
+  .testimonial-card {
+    padding: 30px 25px;
+  }
+
+  .strategy-card,
+  .metric-card {
+    padding: 30px 20px;
+  }
+}
+</style>

@@ -1,0 +1,450 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<MainLayout 
+  title="Bright Forge SEO Philippines - Professional SEO Services"
+  description="Bright Forge SEO Philippines offers expert SEO services tailored for businesses in the Philippines. Increase online visibility and drive sales with our strategic approach."
+>
+  <LegacyHeader slot="header" />
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-brand-accent/10 to-blue-100 py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-5xl font-bold text-brand-dark leading-tight mb-4">
+            SEO Experts Committed to Your Success
+          </h1>
+          <h2 class="text-4xl font-extrabold text-brand-accent mb-6">
+            Leading SEO Agency in the Philippines
+          </h2>
+          <p class="text-lg text-brand-soft mb-8">
+            Bright Forge SEO helps businesses thrive online with focused strategies.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="bg-brand-accent text-white px-8 py-3 rounded-md font-bold hover:bg-opacity-90 transition-all text-center">
+              Get Your Free SEO Audit
+            </a>
+            <a href="/case-studies" class="bg-white text-brand-dark border border-gray-300 px-8 py-3 rounded-md font-bold hover:bg-gray-50 transition-all text-center">
+              View Case Studies
+            </a>
+          </div>
+          <div class="mt-8 flex items-center gap-4">
+            <div class="flex -space-x-2">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-10 h-10 rounded-full border-2 border-white">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-10 h-10 rounded-full border-2 border-white">
+              <img src="https://randomuser.me/api/portraits/men/59.jpg" alt="Client" class="w-10 h-10 rounded-full border-2 border-white">
+            </div>
+            <p class="text-sm text-brand-soft"><span class="font-bold">100+ clients</span> achieved first-page rankings</p>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <img src="https://via.placeholder.com/600x500?text=SEO+Illustration" alt="SEO Illustration" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-brand-dark mb-4">Our SEO Services</h2>
+        <p class="text-lg text-brand-soft max-w-3xl mx-auto">
+          We provide comprehensive SEO solutions tailored to help your business thrive in the competitive Philippine market.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Service 1 -->
+        <a href="/philippines-seo-services" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all group">
+          <div class="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-accent/20 transition-all">
+            <i class="fas fa-search text-2xl text-brand-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-brand-dark">Philippines SEO</h3>
+          <p class="text-brand-soft mb-4">
+            Comprehensive SEO strategies tailored specifically for the Philippine market and search landscape.
+          </p>
+          <span class="text-brand-accent font-medium flex items-center">
+            Learn more <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+          </span>
+        </a>
+        
+        <!-- Service 2 -->
+        <a href="/content-seo-services-philippines" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all group">
+          <div class="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-accent/20 transition-all">
+            <i class="fas fa-file-alt text-2xl text-brand-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-brand-dark">Content SEO</h3>
+          <p class="text-brand-soft mb-4">
+            Data-driven content strategy and creation focused on driving organic traffic and engagement.
+          </p>
+          <span class="text-brand-accent font-medium flex items-center">
+            Learn more <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+          </span>
+        </a>
+        
+        <!-- Service 3 -->
+        <a href="/backlink-seo-services-philippines" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all group">
+          <div class="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-accent/20 transition-all">
+            <i class="fas fa-link text-2xl text-brand-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-brand-dark">Backlink Building</h3>
+          <p class="text-brand-soft mb-4">
+            Quality link building strategies to boost your website's authority and search rankings.
+          </p>
+          <span class="text-brand-accent font-medium flex items-center">
+            Learn more <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+          </span>
+        </a>
+        
+        <!-- Service 4 -->
+        <a href="/white-label-seo-services-philippines" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all group">
+          <div class="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-accent/20 transition-all">
+            <i class="fas fa-tags text-2xl text-brand-accent"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-brand-dark">White Label SEO</h3>
+          <p class="text-brand-soft mb-4">
+            Partner with our SEO experts to deliver results under your brand for your clients.
+          </p>
+          <span class="text-brand-accent font-medium flex items-center">
+            Learn more <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-brand-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-brand-accent mb-2">1,000+</div>
+          <p class="text-brand-soft">Sites Ranked</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-brand-accent mb-2">15+</div>
+          <p class="text-brand-soft">Years of Experience</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-brand-accent mb-2">5M+</div>
+          <p class="text-brand-soft">Organic Traffic Generated</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-brand-accent mb-2">85%</div>
+          <p class="text-brand-soft">Conversion Rate Increase</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured On Section -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold mb-8">Proudly Featured On</h3>
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <img src="/images/retail-seo-badge.png" alt="Retail SEO Badge" class="h-12">
+        <img src="/images/digital-marketing-badge.png" alt="Digital Marketing Badge" class="h-12">
+        <img src="/images/ecommerce-seo-badge.png" alt="Ecommerce SEO Badge" class="h-12">
+        <img src="/images/conversion-optimization-badge.png" alt="Conversion Optimization Badge" class="h-12">
+        <img src="/images/legal-seo-badge1.png" alt="Legal SEO Badge 1" class="h-12">
+        <img src="/images/legal-seo-badge2.png" alt="Legal SEO Badge 2" class="h-12">
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-brand-accent font-bold tracking-wide uppercase">Our Process</span>
+        <h2 class="text-4xl font-bold text-brand-dark mb-6">Our Step-by-Step Process</h2>
+        <img src="/images/bright-forge-step-by-step-process.jpg" alt="Bright Forge Step By Step Process" class="max-w-full mx-auto my-8">
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
+        <div class="relative pl-16">
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center text-white font-bold text-xl">01</div>
+          <h3 class="text-2xl font-bold mb-4">In-Depth Website Audit</h3>
+          <p class="text-brand-soft">
+            We assess your website's structure, technical health, and content quality to uncover areas of improvement.
+          </p>
+        </div>
+        <div class="relative pl-16">
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center text-white font-bold text-xl">02</div>
+          <h3 class="text-2xl font-bold mb-4">Custom Strategy Development</h3>
+          <p class="text-brand-soft">
+            Our team builds a detailed roadmap aligned with your business goals, from improving local visibility to capturing a global audience.
+          </p>
+        </div>
+        <div class="relative pl-16">
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center text-white font-bold text-xl">03</div>
+          <h3 class="text-2xl font-bold mb-4">Execution and Optimization</h3>
+          <p class="text-brand-soft">
+            We implement SEO enhancements, create targeted content, and build high-quality backlinks to strengthen your online presence.
+          </p>
+        </div>
+        <div class="relative pl-16">
+          <div class="absolute left-0 top-0 w-12 h-12 rounded-full bg-brand-accent flex items-center justify-center text-white font-bold text-xl">04</div>
+          <h3 class="text-2xl font-bold mb-4">Continuous Performance Monitoring</h3>
+          <p class="text-brand-soft">
+            SEO is dynamic, and so are we. We analyze results, refine strategies, and ensure consistent progress over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-20 bg-brand-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-brand-accent font-bold tracking-wide uppercase">Why Choose Us</span>
+        <h2 class="text-4xl font-bold text-brand-dark mb-6">Why Choose Bright Forge SEO Agency?</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-3">Globally Inspired Strategies</h3>
+          <p class="text-brand-soft">We use proven methods and tools to deliver customized solutions that work effectively across industries and markets.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Tailored Solutions</h3>
+          <p class="text-brand-soft">No cookie-cutter approaches here. We analyze your unique goals, industry, and audience to create SEO campaigns that resonate with your business needs.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Ethical & Transparent</h3>
+          <p class="text-brand-soft">Integrity is at the core of what we do. We focus on white-hat SEO techniques that yield sustainable, long-lasting results without cutting corners.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Data-Driven Insights</h3>
+          <p class="text-brand-soft">From tracking competitor performance to analyzing search trends, every decision we make is guided by real-time data to maximize your results.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Clear Communication</h3>
+          <p class="text-brand-soft">We prioritize keeping you informed at every stage. Expect regular updates and straightforward reports that keep you in control of your campaigns.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Proven Results</h3>
+          <p class="text-brand-soft">Our track record speaks for itself—hundreds of businesses ranked and measurable ROI delivered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Pillars Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-brand-dark mb-4">How We Tackle the Core SEO Pillars</h2>
+        <p class="text-lg text-brand-soft max-w-3xl mx-auto">
+          Our team combines advanced strategy, proven frameworks and hands-on execution to drive real SEO growth.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-6 gap-6 mb-12">
+        <button id="seo-audit-tab" class="seo-pillar-tab active p-4 border-b-2 border-brand-accent" onclick="showSEOPillar('seo-audit')">
+          ↗ SEO Audit
+        </button>
+        <button id="keyword-strategy-tab" class="seo-pillar-tab p-4 border-b-2 border-transparent" onclick="showSEOPillar('keyword-strategy')">
+          ↗ Keyword Strategy
+        </button>
+        <button id="onpage-seo-tab" class="seo-pillar-tab p-4 border-b-2 border-transparent" onclick="showSEOPillar('onpage-seo')">
+          ↗ On-Page SEO
+        </button>
+        <button id="link-building-tab" class="seo-pillar-tab p-4 border-b-2 border-transparent" onclick="showSEOPillar('link-building')">
+          ↗ Link Building
+        </button>
+        <button id="technical-seo-tab" class="seo-pillar-tab p-4 border-b-2 border-transparent" onclick="showSEOPillar('technical-seo')">
+          ↗ Technical SEO
+        </button>
+        <button id="content-seo-tab" class="seo-pillar-tab p-4 border-b-2 border-transparent" onclick="showSEOPillar('content-seo')">
+          ↗ Content SEO
+        </button>
+      </div>
+      <div id="seo-audit-content" class="seo-pillar-content block">
+        <h3 class="text-2xl font-bold mb-4">SEO Audits That Uncover Real Issues</h3>
+        <p class="mb-4">
+          We start every project by understanding how your site is performing at a technical level. That includes crawling for broken links, identifying thin or duplicated content, checking for indexing problems, and auditing your site structure, speed, and mobile performance.
+        </p>
+        <p>
+          Once we gather the data, we prioritise fixes by impact. You'll get a clear and focused plan that highlights what's slowing you down, what needs fixing first, and where quick wins are hiding.
+        </p>
+      </div>
+      <div id="keyword-strategy-content" class="seo-pillar-content hidden">
+        <h3 class="text-2xl font-bold mb-4">Keyword Strategy That Converts</h3>
+        <p class="mb-4">
+          Our keyword research goes beyond finding high-volume terms. We identify what your target audience is actually searching for and analyze their search intent to ensure we're attracting visitors who are ready to engage with your business.
+        </p>
+        <p>
+          We assess competition levels, conversion potential, and prioritize keywords that will deliver the best ROI for your business goals.
+        </p>
+      </div>
+      <div id="onpage-seo-content" class="seo-pillar-content hidden">
+        <h3 class="text-2xl font-bold mb-4">On-Page SEO Optimization</h3>
+        <p class="mb-4">
+          Our on-page SEO strategy ensures that every page on your site is optimized for both search engines and users. We carefully structure content with proper heading hierarchies, optimize meta tags, and enhance user experience signals.
+        </p>
+        <p>
+          We implement schema markup to help search engines understand your content better and create opportunities for rich snippets in search results.
+        </p>
+      </div>
+      <div id="link-building-content" class="seo-pillar-content hidden">
+        <h3 class="text-2xl font-bold mb-4">Strategic Link Building</h3>
+        <p class="mb-4">
+          Our link building approach focuses on quality over quantity. We identify authoritative sites in your industry and create opportunities for meaningful backlinks through content partnerships, guest posting, and digital PR.
+        </p>
+        <p>
+          Every backlink we acquire is vetted for relevance, authority, and long-term value to ensure sustainable growth in your site's authority.
+        </p>
+      </div>
+      <div id="technical-seo-content" class="seo-pillar-content hidden">
+        <h3 class="text-2xl font-bold mb-4">Technical SEO Excellence</h3>
+        <p class="mb-4">
+          We ensure your website's technical foundation is solid by addressing crawlability issues, optimizing site architecture, improving page speed, and implementing mobile optimizations.
+        </p>
+        <p>
+          Our technical audits identify and fix hidden issues that could be holding back your rankings, from duplicate content problems to crawl budget optimization.
+        </p>
+      </div>
+      <div id="content-seo-content" class="seo-pillar-content hidden">
+        <h3 class="text-2xl font-bold mb-4">Content SEO Strategy</h3>
+        <p class="mb-4">
+          We develop content that satisfies both search intent and user engagement metrics. Our content strategies address gaps in your current content, create topic clusters around key themes, and ensure consistent publication of valuable material.
+        </p>
+        <p>
+          Every piece of content is created with clear SEO goals while maintaining readability and conversion optimization.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-brand-dark mb-4">What Our Clients Say</h2>
+        <p class="text-lg text-brand-soft max-w-3xl mx-auto">
+          Don't just take our word for it. Here's what businesses have achieved with our SEO services.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Santos" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">John Santos</h4>
+              <p class="text-brand-soft">Marketing Director, TechPH</p>
+            </div>
+          </div>
+          <div class="text-yellow-400 flex mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-brand-soft">
+            "Bright Forge SEO completely transformed our online presence. Our organic traffic increased by 230% in just six months, and we're now ranking for keywords we never thought possible."
+          </p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Reyes" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Maria Reyes</h4>
+              <p class="text-brand-soft">Owner, Manila Boutique</p>
+            </div>
+          </div>
+          <div class="text-yellow-400 flex mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-brand-soft">
+            "Their team's expertise in local SEO was exactly what our small business needed. We've seen a 180% increase in store visits directly from organic search in the past year."
+          </p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="https://randomuser.me/api/portraits/men/59.jpg" alt="David Lim" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">David Lim</h4>
+              <p class="text-brand-soft">CEO, BuildRight Construction</p>
+            </div>
+          </div>
+          <div class="text-yellow-400 flex mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-brand-soft">
+            "Bright Forge SEO delivered more than just traffic—they delivered actual leads. Our construction business has grown by 45% since implementing their SEO recommendations."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-brand-accent to-pink-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Grow Your Business with Effective SEO?</h2>
+      <p class="text-lg md:text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+        Let's discuss how our tailored SEO strategies can help your business achieve its growth objectives.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-white text-brand-accent px-8 py-3 rounded-md font-bold hover:bg-gray-100 transition-all inline-block">
+          Get Started Today
+        </a>
+        <a href="/case-studies" class="bg-transparent text-white border border-white px-8 py-3 rounded-md font-bold hover:bg-white/10 transition-all inline-block">
+          View Our Results
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <ContactSection />
+  
+  <Footer slot="footer" />
+</MainLayout>
+
+<script is:inline>
+  function showSEOPillar(pillarId) {
+    // Hide all pillar content
+    const pillarContents = document.querySelectorAll('.seo-pillar-content');
+    pillarContents.forEach(content => {
+      content.classList.add('hidden');
+      content.classList.remove('block');
+    });
+
+    // Remove active class from all tabs
+    const pillarTabs = document.querySelectorAll('.seo-pillar-tab');
+    pillarTabs.forEach(tab => {
+      tab.classList.remove('active');
+      tab.classList.remove('border-brand-accent');
+      tab.classList.add('border-transparent');
+    });
+
+    // Show selected pillar content
+    document.getElementById(pillarId + '-content').classList.remove('hidden');
+    document.getElementById(pillarId + '-content').classList.add('block');
+
+    // Set active class to selected tab
+    document.getElementById(pillarId + '-tab').classList.add('active');
+    document.getElementById(pillarId + '-tab').classList.remove('border-transparent');
+    document.getElementById(pillarId + '-tab').classList.add('border-brand-accent');
+  }
+</script>
