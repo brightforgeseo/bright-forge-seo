@@ -414,7 +414,7 @@ import "../styles/legacy.css";
     }
 
     .mobile-menu-btn {
-      display: none;
+      display: none !important;
       background: none;
       border: none;
       cursor: pointer;
@@ -428,9 +428,15 @@ import "../styles/legacy.css";
 
     @media (max-width: 768px) {
       .mobile-menu-btn {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-menu-btn {
+        display: none !important;
       }
     }
 
