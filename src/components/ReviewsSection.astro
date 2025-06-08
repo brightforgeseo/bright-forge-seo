@@ -1,0 +1,255 @@
+---
+---
+
+<section class="reviews-section">
+  <div class="container max-w-7xl mx-auto">
+    <div class="reviews-header text-center">
+      <span class="reviews-label">REAL STORIES</span>
+      <h2 class="reviews-title">What Our Clients Say</h2>
+      <p class="reviews-subtitle">Genuine feedback from Google &amp; Facebook</p>
+    </div>
+
+    <div class="reviews-carousel">
+      <button class="reviews-nav prev" id="reviews-prev" aria-label="Previous review">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="reviews-track" id="reviews-track">
+        <!-- Slides -->
+        <article class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Working with Bright Forge has been a fantastic experience. Traffic & rankings improved quickly and the team genuinely cares about our growth."</p>
+            <div class="review-author">
+              <img src="https://via.placeholder.com/60x60?text=VD" alt="Ve Di Khe">
+              <div>
+                <h4>Ve Di Khe</h4>
+                <span>Facebook Review</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Their proactive approach & deep SEO knowledge delivered dramatic improvements in rankings, traffic & overall online presence."</p>
+            <div class="review-author">
+              <img src="https://via.placeholder.com/60x60?text=CG" alt="Carhein Grace Saquilabon">
+              <div>
+                <h4>Carhein Grace Saquilabon</h4>
+                <span>Google Review</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Bright Forge exceeded expectations. Clear strategy, great communication & measurable results in just a few months."</p>
+            <div class="review-author">
+              <img src="https://via.placeholder.com/60x60?text=AD" alt="Aly Dons">
+              <div>
+                <h4>Aly Dons</h4>
+                <span>Google Review</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Knowledgeable, professional & results-driven. Our online visibility skyrocketed thanks to their tailored SEO strategy."</p>
+            <div class="review-author">
+              <img src="https://via.placeholder.com/60x60?text=JS" alt="John Smith">
+              <div>
+                <h4>John Smith</h4>
+                <span>Google Review</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Outstanding service! Website traffic jumped 150% in 6 months. Transparent, data-driven & great communicators."</p>
+            <div class="review-author">
+              <img src="https://via.placeholder.com/60x60?text=SM" alt="Sarah Martinez">
+              <div>
+                <h4>Sarah Martinez</h4>
+                <span>Google Review</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="review-slide">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"From invisible to first-page rankings & quality leads. Professional, responsive & delivers exactly what they promise."</p>
+            <div class="review-author">
+              <img src="https://via.placeholder.com/60x60?text=MJ" alt="Maria Johnson">
+              <div>
+                <h4>Maria Johnson</h4>
+                <span>Facebook Review</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="reviews-nav next" id="reviews-next" aria-label="Next review">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="reviews-dots" id="reviews-dots"></div>
+  </div>
+</section>
+
+<style is:global>
+  /* Hide old testimonials section */
+  .testimonials-section { display:none !important; }
+</style>
+
+<style>
+  .reviews-section {
+    padding: 80px 0;
+    background: var(--brand-bg);
+  }
+  .reviews-label {
+    display:inline-block;
+    font-size:14px;
+    font-weight:600;
+    color:var(--brand-accent);
+    letter-spacing:1px;
+    margin-bottom:10px;
+    text-transform:uppercase;
+  }
+  .reviews-title {
+    font-size:32px;
+    font-weight:700;
+    color:var(--brand-dark);
+    margin-bottom:8px;
+  }
+  .reviews-subtitle {
+    color:var(--text-secondary);
+    font-size:18px;
+    margin-bottom:40px;
+  }
+  /* Carousel */
+  .reviews-carousel {
+    position:relative;
+    overflow:hidden;
+  }
+  .reviews-track {
+    display:flex;
+    transition:transform 0.6s ease;
+  }
+  .review-slide {
+    flex:0 0 100%;
+    padding:0 15px;
+    box-sizing:border-box;
+  }
+  @media(min-width:768px){
+    .review-slide{flex:0 0 50%;}
+  }
+  @media(min-width:1024px){
+    .review-slide{flex:0 0 33.3333%;}
+  }
+  .review-card {
+    background:#fff;
+    border-radius:16px;
+    padding:32px 28px;
+    box-shadow:var(--shadow-md);
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .review-stars { color:#ffb400; margin-bottom:16px; }
+  .review-text {
+    font-size:16px;
+    line-height:1.6;
+    color:var(--text-primary);
+    margin-bottom:24px;
+  }
+  .review-author { display:flex;align-items:center;gap:15px; }
+  .review-author img { width:48px;height:48px;border-radius:50%;object-fit:cover; }
+  .review-author h4{font-size:16px;font-weight:600;margin:0;color:var(--brand-dark);}
+  .review-author span{font-size:14px;color:var(--brand-accent);}
+
+  /* Navigation */
+  .reviews-nav {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:48px;height:48px;
+    border:none;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    z-index:10;
+    transition:all 0.3s;
+  }
+  .reviews-nav:hover{background:var(--brand-accent);color:#fff;}
+  .reviews-nav.prev{left:0;}
+  .reviews-nav.next{right:0;}
+
+  /* Dots */
+  .reviews-dots{display:flex;justify-content:center;gap:10px;margin-top:30px;}
+  .reviews-dots button{
+    width:12px;height:12px;border:none;border-radius:50%;background:#d1d5db;cursor:pointer;transition:all 0.3s;
+  }
+  .reviews-dots button.active{background:var(--brand-accent);transform:scale(1.2);}  
+</style>
+
+<script>
+  let reviewsCurrent = 0;
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('reviews-track');
+    const slides = track.children;
+    const total = slides.length;
+    const prevBtn = document.getElementById('reviews-prev');
+    const nextBtn = document.getElementById('reviews-next');
+    const dotsContainer = document.getElementById('reviews-dots');
+
+    // Create dots
+    for(let i=0;i<total;i++){
+      const dot=document.createElement('button');
+      dot.className=i===0?'active':'';
+      dot.addEventListener('click',()=>{reviewsCurrent=i;update();resetAuto();});
+      dotsContainer.appendChild(dot);
+    }
+    const dots=[...dotsContainer.children];
+
+    function update(){
+      const slideWidth=slides[0].getBoundingClientRect().width;
+      track.style.transform=`translateX(-${reviewsCurrent*slideWidth}px)`;
+      dots.forEach((d,idx)=>d.classList.toggle('active',idx===reviewsCurrent));
+    }
+
+    function next(){reviewsCurrent=(reviewsCurrent+1)%total;update();}
+    function prev(){reviewsCurrent=(reviewsCurrent-1+total)%total;update();}
+
+    if(prevBtn) prevBtn.addEventListener('click',()=>{prev();resetAuto();});
+    if(nextBtn) nextBtn.addEventListener('click',()=>{next();resetAuto();});
+
+    // Auto switch
+    let auto=setInterval(next,5000);
+    function resetAuto(){clearInterval(auto);auto=setInterval(next,5000);}    
+
+    // Update on resize to keep alignment
+    window.addEventListener('resize',update);
+  });
+</script>
