@@ -568,10 +568,10 @@ import ProcessSection from '../components/ProcessSection.astro';
         <p class="section-subtitle">Stay updated with our latest SEO insights and strategies</p>
       </div>
       
-      <div class="blog-grid grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+      <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         <!-- First Blog Post -->
         <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div class="blog-image h-40">
+          <div class="blog-image h-48">
             <img src="/images/blog/local-seo-small-businesses.jpg" alt="The Importance of Local SEO for Small Businesses" class="w-full h-full object-cover">
           </div>
           <div class="blog-content p-5 flex-grow">
@@ -592,7 +592,7 @@ import ProcessSection from '../components/ProcessSection.astro';
 
         <!-- Second Blog Post -->
         <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div class="blog-image h-40">
+          <div class="blog-image h-48">
             <img src="/images/blog/seo-trends-philippines-2024.jpg" alt="SEO Trends Philippines 2024" class="w-full h-full object-cover">
           </div>
           <div class="blog-content p-5 flex-grow">
@@ -603,6 +603,27 @@ import ProcessSection from '../components/ProcessSection.astro';
             <h3 class="text-lg font-bold mb-2"><a href="/blog/seo-trends-philippines-2024" class="hover:text-brand-accent transition-colors">Top 10 SEO Trends Shaping the Philippines Market</a></h3>
             <p class="text-gray-600 mb-3 text-sm line-clamp-2">Discover the latest SEO trends impacting Philippine businesses, from local search optimization to AI-powered content.</p>
             <a href="/blog/seo-trends-philippines-2024" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
+              Read Article
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Third Blog Post -->
+        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+          <div class="blog-image h-48">
+            <img src="/images/case-studies/phoenix-spa-beauty-hero.jpg" alt="Technical SEO for Service Businesses" class="w-full h-full object-cover">
+          </div>
+          <div class="blog-content p-5 flex-grow">
+            <div class="blog-meta flex items-center text-sm mb-2">
+              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">Technical SEO</span>
+              <span class="blog-date text-gray-500 ml-3">May 22, 2025</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2"><a href="/blog" class="hover:text-brand-accent transition-colors">Technical SEO Essentials for Service Businesses</a></h3>
+            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Learn how service-based businesses can leverage technical SEO to improve site performance and attract more qualified leads.</p>
+            <a href="/blog" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
               Read Article
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -655,31 +676,7 @@ import ProcessSection from '../components/ProcessSection.astro';
           </div>
         </div>
         
-        <div class="case-study-card">
-          <div class="case-study-image">
-            <img src="/images/case-study-1.jpg" alt="E-commerce SEO Case Study">
-            <div class="case-study-category">E-commerce</div>
-          </div>
-          <div class="case-study-content">
-            <h3>187% Organic Traffic Increase for Fashion Retailer</h3>
-            <div class="case-study-results">
-              <div class="result-item">
-                <span class="result-value">+187%</span>
-                <span class="result-label">Organic Traffic</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">+143%</span>
-                <span class="result-label">Conversions</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">+92</span>
-                <span class="result-label">Keywords in Top 10</span>
-              </div>
-            </div>
-            <a href="/case-studies/example-ecommerce-seo" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        
+
         <div class="case-study-card">
           <div class="case-study-image">
             <img src="/images/case-studies/speediance-uk-hero.jpg" alt="Speediance UK Fitness SEO Case Study">
