@@ -28,7 +28,7 @@
       <!-- Logo -->
       <a href="/" class="block">
         <img 
-          src="/images/Logo-Bright-Forge-SEO-Agency-In-The-Philippines.webp" 
+          src="/images/logo-bright-forge.png" 
           alt="Bright Forge SEO - Professional SEO Services in the Philippines" 
           class="h-10 w-auto"
           width="180"
@@ -114,26 +114,14 @@
     </div>
     
     <!-- Mobile Menu -->
-    <div class="mobile-menu hidden md:hidden pb-4 bg-red-500 shadow-lg">
+    <div class="mobile-menu hidden pb-4">
       <!-- Mobile Logo -->
-      <div class="py-4 border-b border-gray-200 mb-4 text-center bg-yellow-300">
-        <!-- Text Logo -->
-        <div class="flex items-center justify-center space-x-2 mb-4">
-          <div class="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-xl">BF</span>
-          </div>
-          <span class="text-brand-dark font-bold text-xl">Bright Forge SEO</span>
-        </div>
-        <!-- Image Logo Test -->
-        <div class="bg-blue-300 p-2">
-          <img 
-            src="/images/logo-bright-forge.png" 
-            alt="Bright Forge SEO Logo" 
-            class="h-12 w-auto mx-auto block"
-            onerror="this.style.display='none'"
-          />
-          <p class="text-sm mt-2">Image logo test area</p>
-        </div>
+      <div class="py-4 border-b border-gray-200 mb-4">
+        <img 
+          src="/images/logo-bright-forge.png" 
+          alt="Bright Forge SEO" 
+          class="h-12 w-auto mx-auto"
+        />
       </div>
       
       <!-- Mobile Menu Items -->
@@ -230,6 +218,12 @@
 </script>
 
 <style>
+  @media (max-width: 767px) {
+    .mobile-menu:not(.hidden) {
+      display: block;
+    }
+  }
+  
   .mobile-menu {
     animation: slideDown 0.3s ease-out;
   }
