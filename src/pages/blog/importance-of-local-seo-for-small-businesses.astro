@@ -5,21 +5,17 @@ import Footer from '../../components/Footer.astro';
 import ContactSection from '../../components/ContactSection.astro';
 import ArticleTemplate from '../../components/ArticleTemplate.astro';
 
-const articleData = {
-  title: "The Importance of Local SEO for Small Businesses",
-  excerpt: "Discover why local SEO is crucial for small businesses looking to expand their visibility and connect with local customers in today's competitive digital landscape.",
-  author: {
-    name: "Bright Forge SEO Team",
-    bio: "The Bright Forge SEO team specializes in helping small businesses achieve greater visibility through strategic SEO and digital marketing solutions tailored for the Philippine market.",
-    avatar: "/images/team/bright-forge-team.jpg",
-    linkedin: "https://linkedin.com/company/bright-forge-seo"
-  },
-  publishDate: "2024-06-08",
-  readTime: "7 min",
-  category: "Local SEO",
-  tags: ["Local SEO", "Small Business", "Google My Business", "Local Marketing", "Customer Reviews", "Mobile Search"],
-  featuredImage: "/images/blog/local-seo-small-businesses.jpg",
-  content: `
+const title = "The Importance of Local SEO for Small Businesses";
+const excerpt = "Discover why local SEO is crucial for small businesses looking to expand their visibility and connect with local customers in today's competitive digital landscape.";
+const author = {
+  name: "Bright Forge SEO Team",
+  bio: "The Bright Forge SEO team specializes in helping small businesses achieve greater visibility through strategic SEO and digital marketing solutions tailored for the Philippine market."
+};
+const publishDate = "2024-06-08";
+const readTime = "7 min";
+const category = "Local SEO";
+const tags = ["Local SEO", "Small Business", "Google My Business", "Local Marketing", "Customer Reviews", "Mobile Search"];
+const content = `
     <p>Local SEO is increasingly becoming a cornerstone for small businesses looking to expand their visibility and connect with local customers. In today's competitive digital landscape, optimising your online presence for local searches isn't just a luxury—it's a necessity. Whether you operate a local café, a boutique shop, or a professional service firm, local SEO can provide the boost you need to thrive. In this article, we will explore why local SEO matters, delve into practical strategies, and offer insights tailored specifically for small business owners.</p>
     
     <p>For more insights and to explore a range of digital marketing solutions, feel free to visit our <a href="https://brightforgeseo.com/">homepage</a> or get in touch through our <a href="https://brightforgeseo.com/contact-us/">contact page</a>.</p>
@@ -121,10 +117,19 @@ const articleData = {
 };
 ---
 
-<MainLayout title={`${articleData.title} | Bright Forge SEO Articles`} description={articleData.excerpt}>
+<MainLayout title={`${title} | Bright Forge SEO Articles`} description={excerpt}>
   <LegacyHeader slot="header" />
 
-  <ArticleTemplate articleData={articleData} />
+  <ArticleTemplate
+    title={title}
+    excerpt={excerpt}
+    author={author}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    tags={tags}
+    content={content}
+  />
 
   <ContactSection />
   
