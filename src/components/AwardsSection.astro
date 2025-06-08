@@ -52,5 +52,14 @@ const awards = [
   @media (prefers-color-scheme: dark) {
     .awards-new-section { background: #101010; }
     .award-card { background:#181818; box-shadow:none; }
+    /* Ensure text is readable in dark mode */
+    .awards-new-section,
+    .awards-new-section h2,
+    .awards-new-section span,
+    .awards-new-section p,
+    .award-card h3,
+    .award-card p {
+      color:#e5e7eb;
+    }
   }
 </style>
