@@ -23,8 +23,9 @@
 
 <!-- Navigation Bar -->
 <nav class="bg-white shadow-md sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 md:flex md:justify-between md:items-center py-4">
-    <div class="flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
       <a href="/" class="block">
         <img 
           src="/images/Logo-Bright-Forge-SEO-Agency-In-The-Philippines.webp" 
@@ -36,128 +37,221 @@
         />
       </a>
       
-      <div class="md:hidden">
-        <button type="button" class="mobile-menu-toggle p-2 focus:outline-none">
-          <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
-          <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
-          <span class="block w-6 h-0.5 bg-gray-800"></span>
-        </button>
-      </div>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-8">
+        <!-- SEO Services Dropdown -->
+        <li class="relative group py-2">
+          <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+            SEO Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </a>
+          <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+            <div class="mb-4">
+              <h3 class="font-bold text-gray-800 mb-2">Core SEO Services</h3>
+              <a href="/philippines-seo-services" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">Philippines SEO Services</div>
+                <div class="text-sm text-gray-500">Comprehensive SEO solutions</div>
+              </a>
+              <a href="/content-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">Content SEO Services</div>
+                <div class="text-sm text-gray-500">Quality content that ranks</div>
+              </a>
+              <a href="/backlink-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">Backlink SEO Services</div>
+                <div class="text-sm text-gray-500">Build high-quality links</div>
+              </a>
+            </div>
+            <div class="mb-4">
+              <h3 class="font-bold text-gray-800 mb-2">Specialized SEO</h3>
+              <a href="/white-label-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">White Label SEO</div>
+                <div class="text-sm text-gray-500">Partner with our SEO experts</div>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+        <!-- About Dropdown -->
+        <li class="relative group py-2">
+          <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+            About <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </a>
+          <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+            <a href="/about-us" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">About Us</a>
+            <a href="/case-studies" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Case Studies</a>
+          </div>
+        </li>
+        
+        <!-- Blog Link -->
+        <li class="py-2">
+          <a href="/blog" class="text-brand-dark font-medium hover:text-brand-accent">Blog</a>
+        </li>
+        
+        <!-- Pages Dropdown -->
+        <li class="relative group py-2">
+          <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+            Pages <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </a>
+          <div class="absolute left-0 mt-2 w-48 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+            <a href="/" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
+            <a href="/contact" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Contact</a>
+            <a href="/privacy-policy" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Privacy Policy</a>
+            <a href="/terms" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Terms of Service</a>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- Desktop CTA Button -->
+      <button class="hidden md:block bg-brand-accent text-white px-5 py-2 rounded-md font-bold hover:bg-opacity-90 transition-all">
+        TALK TO US
+      </button>
+      
+      <!-- Mobile Menu Toggle -->
+      <button type="button" class="md:hidden mobile-menu-toggle p-2 focus:outline-none" aria-label="Toggle menu">
+        <span class="hamburger-line block w-6 h-0.5 bg-gray-800 mb-1 transition-all"></span>
+        <span class="hamburger-line block w-6 h-0.5 bg-gray-800 mb-1 transition-all"></span>
+        <span class="hamburger-line block w-6 h-0.5 bg-gray-800 transition-all"></span>
+      </button>
     </div>
     
-    <ul class="nav-menu md:flex md:items-center md:space-x-8 hidden mobile-nav-container">
-      <!-- Mobile Logo (only visible on mobile) -->
-      <li class="md:hidden py-4 border-b border-gray-200 flex justify-center">
-        <div class="text-center">
-          <img 
-            src="/images/Logo-Bright-Forge-SEO-Agency-In-The-Philippines.webp" 
-            alt="Bright Forge SEO" 
-            class="h-10 w-auto mx-auto"
-            width="180"
-            height="40"
-            loading="eager"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-          />
-          <div class="text-brand-dark font-bold text-xl" style="display: none;">
-            Bright Forge SEO
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden md:hidden pb-4">
+      <!-- Mobile Logo -->
+      <div class="py-4 border-b border-gray-200 mb-4">
+        <img 
+          src="/images/Logo-Bright-Forge-SEO-Agency-In-The-Philippines.webp" 
+          alt="Bright Forge SEO" 
+          class="h-12 w-auto mx-auto"
+          width="216"
+          height="48"
+        />
+      </div>
+      
+      <!-- Mobile Menu Items -->
+      <ul class="space-y-2">
+        <!-- SEO Services Dropdown -->
+        <li class="relative group py-2">
+          <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+            SEO Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </a>
+          <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+            <div class="mb-4">
+              <h3 class="font-bold text-gray-800 mb-2">Core SEO Services</h3>
+              <a href="/philippines-seo-services" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">Philippines SEO Services</div>
+                <div class="text-sm text-gray-500">Comprehensive SEO solutions</div>
+              </a>
+              <a href="/content-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">Content SEO Services</div>
+                <div class="text-sm text-gray-500">Quality content that ranks</div>
+              </a>
+              <a href="/backlink-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">Backlink SEO Services</div>
+                <div class="text-sm text-gray-500">Build high-quality links</div>
+              </a>
+            </div>
+            <div class="mb-4">
+              <h3 class="font-bold text-gray-800 mb-2">Specialized SEO</h3>
+              <a href="/white-label-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
+                <div class="font-medium">White Label SEO</div>
+                <div class="text-sm text-gray-500">Partner with our SEO experts</div>
+              </a>
+            </div>
           </div>
-        </div>
-      </li>
-      
-      <!-- SEO Services Dropdown -->
-      <li class="relative group py-2">
-        <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
-          SEO Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
-        </a>
-        <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
-          <div class="mb-4">
-            <h3 class="font-bold text-gray-800 mb-2">Core SEO Services</h3>
-            <a href="/philippines-seo-services" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
-              <div class="font-medium">Philippines SEO Services</div>
-              <div class="text-sm text-gray-500">Comprehensive SEO solutions</div>
-            </a>
-            <a href="/content-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
-              <div class="font-medium">Content SEO Services</div>
-              <div class="text-sm text-gray-500">Quality content that ranks</div>
-            </a>
-            <a href="/backlink-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
-              <div class="font-medium">Backlink SEO Services</div>
-              <div class="text-sm text-gray-500">Build high-quality links</div>
-            </a>
+        </li>
+        
+        <!-- About Dropdown -->
+        <li class="relative group py-2">
+          <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+            About <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </a>
+          <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+            <a href="/about-us" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">About Us</a>
+            <a href="/case-studies" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Case Studies</a>
           </div>
-          <div class="mb-4">
-            <h3 class="font-bold text-gray-800 mb-2">Specialized SEO</h3>
-            <a href="/white-label-seo-services-philippines" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">
-              <div class="font-medium">White Label SEO</div>
-              <div class="text-sm text-gray-500">Partner with our SEO experts</div>
-            </a>
+        </li>
+        
+        <!-- Blog Link -->
+        <li class="py-2">
+          <a href="/blog" class="text-brand-dark font-medium hover:text-brand-accent">Blog</a>
+        </li>
+        
+        <!-- Pages Dropdown -->
+        <li class="relative group py-2">
+          <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
+            Pages <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </a>
+          <div class="absolute left-0 mt-2 w-48 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
+            <a href="/" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
+            <a href="/contact" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Contact</a>
+            <a href="/privacy-policy" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Privacy Policy</a>
+            <a href="/terms" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Terms of Service</a>
           </div>
-        </div>
-      </li>
+        </li>
+      </ul>
       
-      <!-- About Dropdown -->
-      <li class="relative group py-2">
-        <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
-          About <i class="fas fa-chevron-down ml-1 text-xs"></i>
-        </a>
-        <div class="absolute left-0 mt-2 w-60 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
-          <a href="/about-us" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">About Us</a>
-          <a href="/case-studies" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Case Studies</a>
-        </div>
-      </li>
-      
-      <!-- Blog Link -->
-      <li class="py-2">
-        <a href="/blog" class="text-brand-dark font-medium hover:text-brand-accent">Blog</a>
-      </li>
-      
-      <!-- Pages Dropdown -->
-      <li class="relative group py-2">
-        <a href="#" class="text-brand-dark font-medium hover:text-brand-accent flex items-center">
-          Pages <i class="fas fa-chevron-down ml-1 text-xs"></i>
-        </a>
-        <div class="absolute left-0 mt-2 w-48 shadow-lg bg-white rounded-md p-4 hidden group-hover:block">
-          <a href="/" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Home</a>
-          <a href="/contact" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Contact</a>
-          <a href="/privacy-policy" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Privacy Policy</a>
-          <a href="/terms" class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Terms of Service</a>
-        </div>
-      </li>
-    </ul>
-    
-    <button class="hidden md:block bg-brand-accent text-white px-5 py-2 rounded-md font-bold hover:bg-opacity-90 transition-all">TALK TO US</button>
+      <!-- Mobile CTA Button -->
+      <button class="w-full mt-4 bg-brand-accent text-white px-5 py-3 rounded-md font-bold hover:bg-opacity-90 transition-all">
+        TALK TO US
+      </button>
+    </div>
   </div>
 </nav>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburgerLines = document.querySelectorAll('.hamburger-line');
     
-    if (mobileMenuToggle && navMenu) {
+    if (mobileMenuToggle && mobileMenu) {
       mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('hidden');
-        navMenu.classList.toggle('block');
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        
+        // Animate hamburger icon
+        hamburgerLines[0].classList.toggle('rotate-45');
+        hamburgerLines[0].classList.toggle('translate-y-1.5');
+        hamburgerLines[1].classList.toggle('opacity-0');
+        hamburgerLines[2].classList.toggle('-rotate-45');
+        hamburgerLines[2].classList.toggle('-translate-y-1.5');
       });
     }
   });
 </script>
 
 <style>
-  @media (max-width: 768px) {
-    .nav-menu.block {
-      display: block;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: red;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      z-index: 50;
-      padding: 1rem;
-      overflow-y: auto;
-      max-height: calc(100vh - 60px);
-      border: 2px solid blue;
+  .mobile-menu {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hamburger-line {
+    transform-origin: center;
+  }
+  
+  .rotate-45 {
+    transform: rotate(45deg);
+  }
+  
+  .-rotate-45 {
+    transform: rotate(-45deg);
+  }
+  
+  .translate-y-1\.5 {
+    transform: translateY(6px) rotate(45deg);
+  }
+  
+  .-translate-y-1\.5 {
+    transform: translateY(-6px) rotate(-45deg);
   }
 </style>
