@@ -1,0 +1,77 @@
+---
+export interface Props {
+  title: string;
+  questions: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const { title, questions } = Astro.props;
+---
+
+<section class="knowledge-base-section py-16 bg-gray-50">
+  <div class="container max-w-7xl mx-auto px-4">
+    <div class="section-header text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+      <div class="w-24 h-1 bg-brand-accent mx-auto mb-6"></div>
+    </div>
+
+    <div class="knowledge-base-container max-w-4xl mx-auto">
+      {questions.map((item, index) => (
+        <div class="knowledge-base-item bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+          <div class="knowledge-base-question p-6 cursor-pointer flex justify-between items-center" data-index={index}>
+            <h3 class="text-lg font-semibold pr-8">{item.question}</h3>
+            <span class="knowledge-base-toggle text-brand-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </div>
+          <div class="knowledge-base-answer px-6 pb-6 hidden">
+            <div class="pt-2 border-t border-gray-200">
+              <p class="text-gray-700">{item.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Add event listeners to knowledge base questions
+  document.addEventListener('DOMContentLoaded', () => {
+    const questions = document.querySelectorAll('.knowledge-base-question');
+    
+    questions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const toggle = question.querySelector('.knowledge-base-toggle svg');
+        
+        // Toggle the answer visibility
+        if (answer.classList.contains('hidden')) {
+          answer.classList.remove('hidden');
+          toggle.classList.add('rotate-180');
+        } else {
+          answer.classList.add('hidden');
+          toggle.classList.remove('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .knowledge-base-question {
+    transition: background-color 0.3s ease;
+  }
+  
+  .knowledge-base-question:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .knowledge-base-toggle svg {
+    transition: transform 0.3s ease;
+  }
+</style>

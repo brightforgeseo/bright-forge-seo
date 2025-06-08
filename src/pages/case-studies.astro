@@ -34,6 +34,10 @@ import ContactSection from '../components/ContactSection.astro';
       <div style="display: flex; justify-content: center; margin-bottom: 40px;">
         <ul id="case-study-filter" style="display: flex; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; justify-content: center;">
           <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('all')" class="filter-btn active" style="background-color: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">All Industries</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('automotive')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Automotive</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('beauty')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Beauty & Wellness</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('consulting')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Consulting</button></li>
+          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('fitness')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Fitness</button></li>
           <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('ecommerce')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">E-commerce</button></li>
           <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('local')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Local Business</button></li>
           <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('saas')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">SaaS</button></li>
@@ -44,43 +48,185 @@ import ContactSection from '../components/ContactSection.astro';
 
       <!-- Case Studies Grid -->
       <div id="case-studies-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;">
-        <!-- Card 1 - E-commerce -->
+        <!-- Card - Phoenix Spa and Beauty -->
+        <div class="case-study-card beauty" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/consulting-firm-hero.jpg" alt="Phoenix Spa and Beauty SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Beauty & Wellness</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Phoenix Spa and Beauty: 70% Boost in Organic Traffic</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a premier beauty salon and spa increase their organic search visibility and attract more local clients.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+70%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+188%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/phoenix-spa-beauty-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+        
+        <!-- Card 1 - Car Recycling -->
+        <div class="case-study-card automotive" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/consulting-firm-hero.jpg" alt="Car Recycling SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Automotive</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Car Recycling: 29% Boost in Organic Traffic</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a car recycling business increase their organic search visibility and attract more qualified leads.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+29%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+78%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">3 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/car-recycling-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+        
+        <!-- Card 2 - Consulting Firm -->
+        <div class="case-study-card consulting" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/consulting-firm-hero.jpg" alt="Consulting Firm SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Consulting</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Consulting Firm: 19% Boost in Organic Traffic</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a professional consulting firm increase their organic search presence to attract more qualified leads.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+19%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+86%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/consulting-firm-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+        
+        <!-- Card 2 - Fitness (Speediance AU) -->
+        <div class="case-study-card fitness" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/speediance-au-hero.jpg" alt="Speediance AU Fitness SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Fitness</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Speediance AU: 66% Increase in Organic Traffic</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped an Australian fitness equipment supplier boost organic visibility and engagement in a competitive market.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+66%</span><span style="font-size: 14px; color: var(--gray);">Total Clicks</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+22%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/speediance-au-fitness-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+        
+        <!-- Card 2 - Fitness (Speediance UK) -->
+        <div class="case-study-card fitness" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/speediance-uk-hero.jpg" alt="Speediance UK Fitness SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Fitness</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Speediance UK: 119% Increase in Organic Traffic</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a fitness equipment brand boost its organic visibility, drive higher-quality traffic, and improve overall SEO performance.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+119%</span><span style="font-size: 14px; color: var(--gray);">Total Clicks</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+135%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">3 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/speediance-uk-fitness-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+
+        <!-- Card 2 - E-commerce -->
         <div class="case-study-card ecommerce" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
           <div style="position: relative; overflow: hidden;">
-            <img src="/images/case-study-1.jpg" alt="Manila Gadgets E-commerce Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <img src="/images/case-studies/manila-fashion-hero.jpg" alt="Manila Fashion Hub E-commerce SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
             <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">E-commerce</div>
           </div>
           <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Manila Gadgets: 187% Organic Traffic Growth</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a Philippine electronics e-commerce store increase their organic traffic and boost conversion rates through targeted SEO strategies.</p>
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Manila Fashion Hub: 340% Organic Revenue Growth</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a Philippine fashion retailer restructure content and optimise technical SEO to achieve explosive revenue growth.</p>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+187%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+143%</span><span style="font-size: 14px; color: var(--gray);">Conversion Rate</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+340%</span><span style="font-size: 14px; color: var(--gray);">Revenue</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+285%</span><span style="font-size: 14px; color: var(--gray);">Traffic</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">8 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
             </div>
-            <a href="#" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+            <a href="/case-studies/example-ecommerce-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
           </div>
         </div>
 
-        <!-- Card 2 - Local Business -->
-        <div class="case-study-card local" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+        <!-- Card - Speediance NZ Fitness -->
+        <div class="case-study-card fitness" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
           <div style="position: relative; overflow: hidden;">
-            <img src="/images/case-study-2.jpg" alt="Cebu Dental Clinic Local SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Local Business</div>
+            <img src="/images/case-studies/speediance-nz-hero.jpg" alt="Speediance NZ Fitness SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Fitness</div>
           </div>
           <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Cebu Dental Clinic: Dominating Local Search</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a dental clinic in Cebu achieve top rankings for local search terms and increase their monthly patient appointments.</p>
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Speediance NZ: 177% Boost in Organic Traffic</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a New Zealand gym equipment supplier significantly increase organic search visibility and engagement.</p>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+210%</span><span style="font-size: 14px; color: var(--gray);">Local Visibility</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+94%</span><span style="font-size: 14px; color: var(--gray);">Appointments</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">4 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+177%</span><span style="font-size: 14px; color: var(--gray);">Total Clicks</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+84%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
             </div>
-            <a href="#" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+            <a href="/case-studies/speediance-nz-fitness-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+        
+        <!-- Card - Car Auction Platform -->
+        <div class="case-study-card automotive" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/car-auction-hero.jpg" alt="Car Auction Platform SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Automotive</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Car Auction Platform: 32% Growth in Impressions</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Expanding organic reach for a rapidly scaling online car auction marketplace.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+32%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+5%</span><span style="font-size: 14px; color: var(--gray);">Clicks</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/car-auction-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
           </div>
         </div>
 
-        <!-- Additional cards (SaaS, Finance, Healthcare, and another E-commerce) would be added similarly -->
+        <!-- Card - Boiler & Heating Spares Supplier -->
+        <div class="case-study-card ecommerce" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/boiler-heating-hero.jpg" alt="Boiler & Heating Spares SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Home & DIY</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Boiler & Heating Spares: 18% Lift in Organic Clicks</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Driving sustained e-commerce growth for a specialist heating parts supplier.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+18%</span><span style="font-size: 14px; color: var(--gray);">Clicks</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+10%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/boiler-heating-spares-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
+
+        <!-- Card - Pest Control Firm -->
+        <div class="case-study-card local" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+          <div style="position: relative; overflow: hidden;">
+            <img src="/images/case-studies/pest-control-hero.jpg" alt="Pest Control SEO Case Study" style="width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease;" />
+            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Home Services</div>
+          </div>
+          <div style="padding: 25px;">
+            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Pest Control Firm: 128% Recovery in Clicks</h3>
+            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Recovering organic traffic after a Google core update for a regional pest control company.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+128%</span><span style="font-size: 14px; color: var(--gray);">Clicks</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+147%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
+              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+            </div>
+            <a href="/case-studies/pest-control-core-update-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

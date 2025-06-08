@@ -1,0 +1,292 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import ContactSection from "../../components/ContactSection.astro";
+import CaseStudyTemplate from "../../components/CaseStudyTemplate.astro";
+
+const caseStudyData = {
+  title: "SEO Case Study: 29% Organic Traffic Growth for Car Recycling Company",
+  client: "Confidential Car Recycler",
+  industry: "Car Recycling",
+  duration: "3 Months",
+  heroImage: "/images/case-studies/car-recycling-hero.jpg",
+  challenge: "Competing in a crowded car recycling market with limited brand recognition and inconsistent prior SEO efforts.",
+  solution: "Comprehensive keyword research, on-page improvements, technical fixes and quality backlink acquisition delivered quick traffic gains.",
+  keyMetrics: [
+    { label: "Total Clicks", value: "+29%", description: "4,960 ➜ 6,380" },
+    { label: "Total Impressions", value: "+78%", description: "120k ➜ 213k" },
+    { label: "Average Position", value: "29.1 ➜ 24.9", description: "Improved" },
+    { label: "CTR", value: "4.1% ➜ 3%", description: "Broader visibility" }
+  ],
+  strategySteps: [
+    { title: "Keyword Research", description: "Identified high-intent car recycling terms.", icon: "fas fa-search" },
+    { title: "On-Page Optimisation", description: "Enhanced meta titles, descriptions & content relevance.", icon: "fas fa-file-alt" },
+    { title: "Technical SEO", description: "Fixed site speed, crawlability & mobile usability issues.", icon: "fas fa-cogs" },
+    { title: "Backlink Outreach", description: "Secured links from automotive & environmental sites.", icon: "fas fa-link" },
+    { title: "Performance Monitoring", description: "Iterated tactics using analytics & GSC data.", icon: "fas fa-chart-line" }
+  ],
+  results: [
+    { metric: "Total Clicks", before: "4,960", after: "6,380", improvement: "+29%" },
+    { metric: "Total Impressions", before: "120,000", after: "213,000", improvement: "+78%" },
+    { metric: "Average Position", before: "29.1", after: "24.9", improvement: "Improved" },
+    { metric: "Click-Through Rate", before: "4.1%", after: "3%", improvement: "Slight decrease" }
+  ],
+  keyTakeaways: [
+    "Targeted SEO can drive quick wins in competitive niches.",
+    "Technical health underpins sustainable performance.",
+    "Quality niche backlinks build authority & trust."
+  ]
+};
+---
+
+<MainLayout title={caseStudyData.title + " | BrightForge"}>
+  <LegacyHeader />
+  <CaseStudyTemplate {...caseStudyData} />
+  <ContactSection />
+  <Footer />
+</MainLayout>
+
+<style>
+  .case-study-container {
+    background-color: #fff;
+  }
+  
+  .case-study-hero {
+    background-color: var(--brand-primary);
+    color: white;
+    padding: 100px 0 60px;
+    position: relative;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .case-study-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .meta-label {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  
+  .meta-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .content-section {
+    margin-bottom: 3rem;
+  }
+  
+  .content-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--brand-primary);
+  }
+  
+  .content-section p {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #333;
+  }
+  
+  .challenge-list, .objectives-list, .strategy-list, .takeaways-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .challenge-list li, .objectives-list li, .strategy-list li, .takeaways-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  .results-period {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .result-card {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result-header {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .result-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .result-detail {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  .perfect-result-quote {
+    background-color: #f5f5f5;
+    border-left: 4px solid var(--brand-primary);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #444;
+  }
+  
+  .perfect-result-quote p {
+    margin-bottom: 0;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+  
+  .knowledge-base-preview {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .knowledge-base-preview h2 {
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .knowledge-base-preview > p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .kb-questions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .kb-question {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .kb-question:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .kb-question h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+  
+  .kb-question p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .kb-link {
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .kb-link:hover {
+    text-decoration: underline;
+  }
+  
+  .kb-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  .kb-view-all {
+    display: inline-block;
+    background-color: var(--brand-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .kb-view-all:hover {
+    background-color: var(--brand-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .case-study-hero {
+      padding: 80px 0 40px;
+    }
+    
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

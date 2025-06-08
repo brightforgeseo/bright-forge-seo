@@ -1,0 +1,117 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import KnowledgeBase from '../../components/KnowledgeBase.astro';
+
+const knowledgeBaseData = {
+  title: "Why Should You Choose Bright Forge SEO For Your Fitness Site?",
+  questions: [
+    {
+      question: "How can Bright Forge SEO help my fitness business stand out from competitors?",
+      answer: "By conducting thorough market and competitor analyses, Bright Forge SEO identifies unique opportunities to position your fitness brand. We create specialized strategies—including content optimization and technical improvements—tailored to highlight what sets your business apart, helping you rise above crowded online spaces."
+    },
+    {
+      question: "What results has Bright Forge SEO delivered for other fitness companies?",
+      answer: "A recent campaign for Speediance UK achieved a 119% increase in clicks and a 135% jump in impressions, among other gains. This success demonstrates Bright Forge SEO's ability to improve organic visibility, boost targeted traffic, and ultimately drive conversions in the competitive fitness industry."
+    },
+    {
+      question: "Does Bright Forge SEO handle local SEO for gyms, studios, and fitness centers?",
+      answer: "Absolutely. Local SEO is critical for fitness businesses that serve customers within a specific geographic area. We optimize Google Business Profiles, build consistent local citations, and employ geo-targeted keyword strategies to ensure potential clients can easily find you when they search in your region."
+    },
+    {
+      question: "How does Bright Forge SEO approach content for fitness brands?",
+      answer: "We begin with keyword research specific to the fitness market, ensuring your web content aligns with what potential customers are actively searching for. We then create high-quality, engaging content—from informative blog posts to optimized service pages—that answers user questions and builds your brand's authority."
+    },
+    {
+      question: "Will my website's user experience improve with Bright Forge SEO?",
+      answer: "Yes. In addition to optimizing for search engines, we perform user-centric improvements. This may include reorganizing navigation menus, enhancing page speed, and introducing conversion-boosting elements, ensuring visitors have a smooth journey from landing on your site to signing up or purchasing."
+    },
+    {
+      question: "How does Bright Forge SEO measure success?",
+      answer: "We focus on metrics that matter to fitness businesses: increased lead generation, more membership sign-ups, and a steady rise in organic traffic. We provide transparent monthly reports so you can track improvements in visibility, user engagement, and conversions—ensuring our efforts align with your business goals."
+    }
+  ]
+};
+---
+
+<MainLayout title="Fitness SEO Knowledge Base | Bright Forge SEO">
+  <LegacyHeader slot="header" />
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Fitness SEO Knowledge Base</h1>
+        <p class="text-xl max-w-3xl mx-auto">Expert answers to your questions about SEO for fitness businesses, gyms, and wellness centers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="flex items-center text-sm">
+        <a href="/" class="text-gray-600 hover:text-brand-accent">Home</a>
+        <span class="mx-2 text-gray-400">/</span>
+        <a href="/case-studies/speediance-uk-fitness-seo" class="text-gray-600 hover:text-brand-accent">Speediance UK Case Study</a>
+        <span class="mx-2 text-gray-400">/</span>
+        <span class="text-brand-accent">Knowledge Base</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Knowledge Base Section -->
+  <KnowledgeBase {...knowledgeBaseData} />
+
+  <!-- Related Case Study -->
+  <section class="related-case-study py-16 bg-white">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="section-header text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Related Case Study</h2>
+        <div class="w-24 h-1 bg-brand-accent mx-auto mb-6"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-1/3">
+              <img src="/images/case-studies/speediance-uk-hero.jpg" alt="Speediance UK Fitness SEO Case Study" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 md:w-2/3">
+              <div class="inline-block px-3 py-1 text-xs font-semibold bg-brand-accent-light text-brand-accent rounded-full mb-3">Fitness</div>
+              <h3 class="text-xl font-bold mb-3">Speediance UK: 119% Increase in Organic Traffic</h3>
+              <p class="text-gray-700 mb-4">How we helped a fitness equipment brand boost its organic visibility, drive higher-quality traffic, and improve overall SEO performance.</p>
+              <div class="flex flex-wrap gap-6 mb-4">
+                <div>
+                  <span class="block font-bold text-brand-accent text-xl">+119%</span>
+                  <span class="text-sm text-gray-600">Total Clicks</span>
+                </div>
+                <div>
+                  <span class="block font-bold text-brand-accent text-xl">+135%</span>
+                  <span class="text-sm text-gray-600">Impressions</span>
+                </div>
+                <div>
+                  <span class="block font-bold text-brand-accent text-xl">3 mo.</span>
+                  <span class="text-sm text-gray-600">Timeline</span>
+                </div>
+              </div>
+              <a href="/case-studies/speediance-uk-fitness-seo" class="inline-flex items-center text-brand-accent font-medium hover:underline">
+                View Full Case Study
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <ContactSection />
+
+  <Footer slot="footer" />
+</MainLayout>

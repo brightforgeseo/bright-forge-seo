@@ -4,61 +4,27 @@ import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
 
-// In a real implementation, this data would likely come from a CMS or markdown files
+// Blog posts - currently just our published articles
 const blogPosts = [
   {
-    title: "How Core Web Vitals Impact Your SEO in the Philippines",
-    excerpt: "Learn how Google's Core Web Vitals affect your website's search rankings and what you can do to improve your scores.",
-    image: "https://via.placeholder.com/600x400",
-    date: "May 15, 2025",
-    author: "John Smith",
+    title: "The Importance of Local SEO for Small Businesses",
+    excerpt: "Discover why local SEO is crucial for small businesses looking to expand their visibility and connect with local customers in today's competitive digital landscape.",
+    image: "/images/blog/local-seo-small-businesses.jpg",
+    date: "June 8, 2025",
+    author: "Bright Forge SEO Team",
+    readTime: "7 min read",
+    categories: ["local", "seo", "small business"],
+    slug: "/blog/importance-of-local-seo-for-small-businesses"
+  },
+  {
+    title: "Top 10 SEO Trends Shaping the Philippines Market in 2024",
+    excerpt: "Discover the latest SEO trends specifically impacting Philippine businesses, from local search optimization to AI-powered content strategies that are driving results.",
+    image: "/images/blog/seo-trends-philippines-2024.jpg",
+    date: "March 15, 2024",
+    author: "Miguel Rodriguez",
     readTime: "8 min read",
-    categories: ["seo", "technical"]
-  },
-  {
-    title: "10 Proven SEO Strategies for Philippine E-commerce Sites",
-    excerpt: "Discover effective SEO tactics specifically designed to help online stores in the Philippines increase visibility and sales.",
-    image: "https://via.placeholder.com/600x400",
-    date: "April 28, 2025",
-    author: "Maria Santos",
-    readTime: "12 min read",
-    categories: ["ecommerce"]
-  },
-  {
-    title: "Local SEO: How to Dominate Search Results in Your City",
-    excerpt: "A comprehensive guide to optimizing your business for local search and attracting more customers in your area.",
-    image: "https://via.placeholder.com/600x400",
-    date: "April 10, 2025",
-    author: "David Lee",
-    readTime: "6 min read",
-    categories: ["local", "seo"]
-  },
-  {
-    title: "Content Marketing Trends in the Philippines for 2025",
-    excerpt: "Stay ahead of the competition with these emerging content marketing strategies tailored for the Philippine market.",
-    image: "https://via.placeholder.com/600x400",
-    date: "March 22, 2025",
-    author: "Sofia Cruz",
-    readTime: "9 min read",
-    categories: ["content"]
-  },
-  {
-    title: "How to Build High-Quality Backlinks in 2025",
-    excerpt: "Learn effective and ethical strategies to build valuable backlinks that boost your website's authority and rankings.",
-    image: "https://via.placeholder.com/600x400",
-    date: "March 5, 2025",
-    author: "Michael Garcia",
-    readTime: "11 min read",
-    categories: ["backlinks"]
-  },
-  {
-    title: "The Ultimate Guide to Technical SEO Audits",
-    excerpt: "A step-by-step process for conducting a comprehensive technical SEO audit to identify and fix issues affecting your rankings.",
-    image: "https://via.placeholder.com/600x400",
-    date: "February 18, 2025",
-    author: "Anna Reyes",
-    readTime: "14 min read",
-    categories: ["technical", "seo"]
+    categories: ["seo", "trends", "philippines"],
+    slug: "/blog/seo-trends-philippines-2024"
   }
 ];
 

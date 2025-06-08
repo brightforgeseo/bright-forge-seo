@@ -1,0 +1,50 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import ContactSection from "../../components/ContactSection.astro";
+import CaseStudyTemplate from "../../components/CaseStudyTemplate.astro";
+
+const caseStudyData = {
+  title: "SEO Case Study: Expanding Organic Reach for a Car Auction Platform",
+  client: "Car Auction Platform",
+  industry: "Automotive",
+  duration: "6 Months",
+  heroImage: "/images/case-studies/car-auction-hero.jpg",
+  challenge: "Highly competitive automotive auction market with diverse keyword requirements and the need to maintain visibility while scaling inventory.",
+  solution: "Implemented a holistic SEO strategy encompassing keyword research, on-page optimisation, technical fixes and authoritative backlink acquisition to boost impressions and clicks.",
+  keyMetrics: [
+    { label: "Total Impressions", value: "+32%", description: "7.96 M 10.5 M" },
+    { label: "Organic Clicks", value: "+5%", description: "398 k 419 k" },
+    { label: "Avg. Position", value: "-20%", description: "31.7 39.7" },
+    { label: "CTR", value: "-20%", description: "5% 4%" }
+  ],
+  strategySteps: [
+    { title: "Keyword Research", description: "Identified high-intent auction and vehicle terms.", icon: "fas fa-search" },
+    { title: "On-Page Optimisation", description: "Optimised titles, meta and listing content.", icon: "fas fa-edit" },
+    { title: "Technical SEO", description: "Improved speed, mobile UX & crawlability.", icon: "fas fa-cogs" },
+    { title: "Backlink Building", description: "Secured links from automotive blogs and forums.", icon: "fas fa-link" },
+    { title: "Performance Monitoring", description: "Iterative improvements via GSC insights.", icon: "fas fa-chart-line" }
+  ],
+  results: [
+    { metric: "Total Clicks", before: "398,000", after: "419,000", improvement: "+5%" },
+    { metric: "Total Impressions", before: "7.96 M", after: "10.5 M", improvement: "+32%" },
+    { metric: "Average Position", before: "31.7", after: "39.7", improvement: "-20%" },
+    { metric: "Click-Through Rate", before: "5%", after: "4%", improvement: "-20%" }
+  ],
+  keyTakeaways: [
+    "Comprehensive keyword targeting drives wider auction visibility.",
+    "Technical enhancements sustain performance as inventory scales.",
+    "Continuous data-driven iteration supports steady growth."
+  ]
+};
+---
+
+<MainLayout title={caseStudyData.title + " | BrightForge"}>
+  <LegacyHeader />
+
+  <CaseStudyTemplate {...caseStudyData} />
+
+  <ContactSection />
+  <Footer />
+</MainLayout>
