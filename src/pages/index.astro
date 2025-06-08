@@ -938,6 +938,36 @@ import Footer from '../components/Footer.astro';
 </MainLayout>
 
 <style>
+  /* Global Styles and CSS Variables */
+  :root {
+    --brand-primary: #ff4438;
+    --brand-secondary: #1a1a1a;
+    --brand-accent: #ff6b6b;
+    --brand-bg: #fff5f5;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #e0e0e0;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
+    --transition-base: all 0.3s ease;
+  }
+  
+  /* Prevent unwanted scrolling */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* Remove any height restrictions that might cause scrolling */
+  body {
+    min-height: 100vh;
+    height: auto !important;
+    position: relative;
+  }
+  
   /* Hero Section Styles */
   .hero-section {
     background: linear-gradient(135deg, var(--brand-bg) 0%, #ffffff 100%);
@@ -946,9 +976,18 @@ import Footer from '../components/Footer.astro';
     content-visibility: auto;
     contain-intrinsic-size: 600px;
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
     width: 100%;
     max-width: 100vw;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+  
+  /* Ensure no vertical scrolling on hero */
+  .hero-section * {
+    overflow-y: visible !important;
+    max-height: none !important;
   }
   
   .hero-section::before {
