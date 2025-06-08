@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ReviewsSection from '../components/ReviewsSection.astro';
+import AwardsSection from '../components/AwardsSection.astro';
 ---
 
 <MainLayout title="Bright Forge SEO - Digital Marketing & SEO Agency">
@@ -623,6 +624,8 @@ import ReviewsSection from '../components/ReviewsSection.astro';
       </div>
     </div>
   </section>
+
+  <AwardsSection />
 
   <!-- Awards & Recognition Section -->
   <section class="awards-section">
@@ -3431,4 +3434,11 @@ import ReviewsSection from '../components/ReviewsSection.astro';
   
   // Auto-play carousel
   setInterval(nextSlide, 5000); // Change slide every 5 seconds
+</script>
+
+<script>
+  // If old testimonials section no longer exists, skip legacy carousel logic
+  if (!track) {
+    return;
+  }
 </script>
