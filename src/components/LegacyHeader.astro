@@ -236,6 +236,43 @@ import "../styles/legacy.css";
     width: 100%;
   }
 
+  /* Hide mobile menu button on desktop - highest priority */
+  .navbar .mobile-menu-btn {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Only show on mobile */
+  @media only screen and (max-width: 768px) {
+    .navbar .mobile-menu-btn {
+      display: flex !important;
+      visibility: visible !important;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      width: 44px;
+      height: 44px;
+      position: relative;
+      z-index: 1001;
+      transition: all 0.3s ease;
+    }
+  }
+
+  /* Ensure it's hidden on desktop */
+  @media only screen and (min-width: 769px) {
+    .navbar .mobile-menu-btn {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      left: -9999px !important;
+    }
+  }
+
   @media (max-width: 768px) {
     .nav-menu {
       display: none;
@@ -411,51 +448,6 @@ import "../styles/legacy.css";
       word-wrap: break-word;
       overflow-wrap: break-word;
       hyphens: auto;
-    }
-
-    .mobile-menu-btn {
-      display: none !important;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      width: 44px;
-      height: 44px;
-      position: relative;
-      z-index: 1001;
-      transition: all 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-      .mobile-menu-btn {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .mobile-menu-btn {
-        display: none !important;
-      }
-    }
-
-    .mobile-menu-toggle {
-      display: block;
-      font-size: 24px;
-      padding: 10px;
-      background: none;
-      border: none;
-      color: #333;
-      cursor: pointer;
-    }
-
-    .mobile-menu-toggle.active i {
-      transform: rotate(90deg);
-    }
-
-    .mobile-menu-toggle i {
-      transition: transform 0.3s ease;
     }
 
     .cta-button {
