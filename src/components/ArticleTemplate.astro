@@ -90,7 +90,8 @@ const formatDate = (dateString: string) => {
   <!-- Article Content -->
   <section class="article-content">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="content-layout">
+      <div class="content-layout-wrapper py-10">
+        <div class="content-main-area max-w-3xl mx-auto">
         <!-- Table of Contents (if provided) -->
         {tableOfContents && tableOfContents.length > 0 && (
           <aside class="table-of-contents">
@@ -229,6 +230,54 @@ const formatDate = (dateString: string) => {
 </article>
 
 <style>
+/* Article Layout */
+.content-layout-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.content-main-area {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-content .content-body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.main-content .content-body h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #222;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.main-content .content-body h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main-content .content-body p {
+  margin-bottom: 1.5rem;
+}
+
+.main-content .content-body ul,
+.main-content .content-body ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+.main-content .content-body li {
+  margin-bottom: 0.75rem;
+}
+
 /* Article Hero */
 .article-hero {
   background: linear-gradient(135deg, #FF4438 0%, #FF6B5B 50%, #4285F4 100%);

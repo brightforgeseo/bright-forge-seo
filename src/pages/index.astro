@@ -559,6 +559,67 @@ import ProcessSection from '../components/ProcessSection.astro';
     </div>
   </section>
 
+  <!-- Latest Blog Section -->
+  <section class="latest-blog-section py-16 bg-gray-100">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <span class="section-label">LATEST INSIGHTS</span>
+        <h2 class="section-title">Our Latest <span>Blog Posts</span></h2>
+        <p class="section-subtitle">Stay updated with our latest SEO insights and strategies</p>
+      </div>
+      
+      <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+        <!-- Featured Blog Post -->
+        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden col-span-full md:col-span-2 lg:col-span-2 flex flex-col lg:flex-row">
+          <div class="blog-image lg:w-1/2 h-60 lg:h-auto">
+            <img src="/images/blog/local-seo-small-businesses.jpg" alt="The Importance of Local SEO for Small Businesses" class="w-full h-full object-cover">
+          </div>
+          <div class="blog-content p-6 lg:w-1/2">
+            <div class="blog-meta flex items-center text-sm mb-2">
+              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">Local SEO</span>
+              <span class="blog-date text-gray-500 ml-3">June 8, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3"><a href="/blog/importance-of-local-seo-for-small-businesses" class="hover:text-brand-accent transition-colors">The Importance of Local SEO for Small Businesses</a></h3>
+            <p class="text-gray-600 mb-4">Discover why local SEO is crucial for small businesses looking to expand their visibility and connect with local customers in today's competitive digital landscape.</p>
+            <a href="/blog/importance-of-local-seo-for-small-businesses" class="text-brand-accent font-medium hover:underline inline-flex items-center">
+              Read Article 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Second Blog Post -->
+        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="blog-image h-48">
+            <img src="/images/blog/seo-trends-philippines-2024.jpg" alt="SEO Trends Philippines 2024" class="w-full h-full object-cover">
+          </div>
+          <div class="blog-content p-5">
+            <div class="blog-meta flex items-center text-sm mb-2">
+              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">SEO Trends</span>
+              <span class="blog-date text-gray-500 ml-3">March 15, 2024</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2"><a href="/blog/seo-trends-philippines-2024" class="hover:text-brand-accent transition-colors">Top 10 SEO Trends Shaping the Philippines Market</a></h3>
+            <p class="text-gray-600 mb-3 text-sm">Discover the latest SEO trends impacting Philippine businesses, from local search optimization to AI-powered content.</p>
+            <a href="/blog/seo-trends-philippines-2024" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
+              Read Article
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/blog" class="inline-block bg-white border border-brand-accent text-brand-accent font-medium rounded-md px-6 py-3 hover:bg-brand-accent hover:text-white transition-colors">
+          View All Blog Posts
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Case Studies Section -->
   <section class="case-studies-section">
     <div class="container max-w-7xl mx-auto">
