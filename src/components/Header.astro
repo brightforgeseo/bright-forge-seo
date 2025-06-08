@@ -45,19 +45,17 @@
       </div>
     </div>
     
-    <ul class="nav-menu md:flex md:items-center md:space-x-8 hidden">
-      <!-- Logo in Mega Menu -->
-      <li class="md:hidden py-2 border-b border-gray-100">
-        <a href="/" class="block py-2">
-          <img 
-            src="/images/Logo-Bright-Forge-SEO-Agency-In-The-Philippines.webp" 
-            alt="Bright Forge SEO" 
-            class="h-8 w-auto"
-            width="144"
-            height="32"
-            loading="eager"
-          />
-        </a>
+    <ul class="nav-menu md:flex md:items-center md:space-x-8 hidden mobile-nav-container">
+      <!-- Mobile Logo (only visible on mobile) -->
+      <li class="md:hidden py-4 border-b border-gray-200 flex justify-center">
+        <img 
+          src="/images/Logo-Bright-Forge-SEO-Agency-In-The-Philippines.webp" 
+          alt="Bright Forge SEO" 
+          class="h-10 w-auto"
+          width="180"
+          height="40"
+          loading="eager"
+        />
       </li>
       
       <!-- SEO Services Dropdown -->
@@ -133,8 +131,24 @@
     if (mobileMenuToggle && navMenu) {
       mobileMenuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('hidden');
-        navMenu.classList.toggle('md:flex');
+        navMenu.classList.toggle('block');
       });
     }
   });
 </script>
+
+<style>
+  @media (max-width: 768px) {
+    .nav-menu.block {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      z-index: 50;
+      padding: 1rem;
+    }
+  }
+</style>
