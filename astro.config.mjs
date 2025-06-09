@@ -7,12 +7,6 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'static',
   build: {
-    inlineStylesheets: 'auto'
-  },
-  markdown: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-    gfm: true,
-    smartypants: true
+    inlineStylesheets: 'never'
   }
 });
