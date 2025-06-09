@@ -4,11 +4,10 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://brightforgeseo.com',
+  base: '/',
+  trailingSlash: 'always',
   integrations: [tailwind()],
   output: 'static',
-  build: {
-    format: 'directory'
-  },
   markdown: {
     remarkPlugins: [],
     rehypePlugins: [],
