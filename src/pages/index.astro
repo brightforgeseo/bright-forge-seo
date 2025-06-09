@@ -25,8 +25,8 @@ import ProcessSection from '../components/ProcessSection.astro';
           </p>
           
           <div class="hero-audit-form">
-            <form id="audit-form" class="audit-form" name="audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
-              <input type="hidden" name="form-name" value="audit" />
+            <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="audit-form">
+              <input type="hidden" name="form-name" value="homepage-audit" />
               <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div class="form-group">
                 <input type="url" id="website-url" name="website" placeholder="Enter website URL (e.g. https://example.com)" required>
@@ -3763,18 +3763,6 @@ import ProcessSection from '../components/ProcessSection.astro';
     });
   });
   
-  // Audit form functionality - now handled by Netlify Forms
-  document.addEventListener('DOMContentLoaded', function() {
-    const auditForm = document.getElementById('audit-form');
-    if (auditForm) {
-      // Add loading animation on submit without preventing default behavior
-      auditForm.addEventListener('submit', function(e) {
-        // Don't prevent default - allow the form to submit normally
-        const submitBtn = this.querySelector('.audit-btn');
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        // Form will naturally redirect to the action URL (/thanks)
-      });
-    }
-  });
+  // Remove all JavaScript form handling since Netlify will handle it
+  // The form will naturally redirect to the /thanks page
 </script>
