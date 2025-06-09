@@ -12,57 +12,52 @@ import ProcessSection from '../components/ProcessSection.astro';
   
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="container max-w-7xl mx-auto">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="hero-tagline">SEO Experts Committed to Your Success</span>
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="hero-container grid md:grid-cols-3 gap-8 items-center">
+        <div class="hero-content md:col-span-2">
+          <h1 class="hero-title text-4xl md:text-5xl font-bold mb-4">
+            <span class="hero-tagline block text-[#4285F4] mb-2">SEO Experts Committed to Your Success</span>
             Leading SEO Agency<br>
             in the Philippines
           </h1>
-          <p class="hero-subtitle">
+          <p class="hero-subtitle text-lg mb-6">
             Bright Forge SEO helps businesses thrive online with focused strategies.
           </p>
           
-          <div class="hero-audit-form">
-            <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="audit-form">
+          <div class="hero-audit-form mb-8">
+            <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="audit-form bg-white p-4 rounded-lg shadow-md">
               <input type="hidden" name="form-name" value="homepage-audit" />
               <input type="hidden" name="subject" value="New SEO Audit Request from Website" />
               <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
-              <div class="form-group">
-                <input type="url" id="website-url" name="website" placeholder="Enter website URL (e.g. https://example.com)" required>
+              <div class="form-group mb-4">
+                <input type="url" id="website-url" name="website" placeholder="Enter website URL (e.g. https://example.com)" required class="w-full p-3 border border-gray-300 rounded-md">
               </div>
-              <button type="submit" class="audit-btn">
+              <button type="submit" class="audit-btn bg-[#FF4438] hover:bg-[#e53e30] text-white font-bold py-3 px-6 rounded-md w-full transition duration-300">
                 Get Your Free SEO Audit
               </button>
             </form>
           </div>
           
           <!-- Stats -->
-          <div class="hero-stats">
+          <div class="hero-stats flex gap-8">
             <div class="stat-item">
-              <span class="stat-number">1,000+</span>
-              <span class="stat-label">Thousands Of Sites Ranked</span>
+              <span class="stat-number block text-2xl font-bold">1,000+</span>
+              <span class="stat-label text-sm text-gray-600">Thousands Of Sites Ranked</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">15+</span>
-              <span class="stat-label">Years of experience</span>
+              <span class="stat-number block text-2xl font-bold">15+</span>
+              <span class="stat-label text-sm text-gray-600">Years of experience</span>
             </div>
           </div>
         </div>
         
-        <div class="play-button">
-          <i class="fas fa-play"></i>
-        </div>
-        
-        <div class="hero-image">
+        <div class="hero-image md:col-span-1 relative">
           <picture>
             <!-- Mobile version -->
             <source media="(max-width: 768px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
-            <!-- Desktop version -->
             <source media="(min-width: 769px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
             <!-- Fallback -->
-            <img src="/images/Hero-SEO-Agency-In-The-Philippines.webp" alt="Bright Forge SEO Agency Philippines Expert" loading="eager" decoding="async" fetchpriority="high" width="600" height="400">
+            <img src="/images/Hero-SEO-Agency-In-The-Philippines.webp" alt="Bright Forge SEO Agency Philippines Expert" loading="eager" decoding="async" fetchpriority="high" width="600" height="400" class="rounded-lg shadow-lg w-full h-auto object-cover">
           </picture>
         </div>
       </div>
@@ -70,30 +65,24 @@ import ProcessSection from '../components/ProcessSection.astro';
   </section>
 
   <!-- Partners Carousel -->
-  <section class="partners-section">
-    <div class="container max-w-7xl mx-auto">
-      <h3 class="partners-title">Proudly Featured On</h3>
-      <div class="logo-grid">
-        <div class="logo-item">
+  <section class="partners-section py-10">
+    <div class="container max-w-7xl mx-auto px-4">
+      <h3 class="partners-title text-center text-2xl font-bold mb-8">Proudly Featured On</h3>
+      <div class="flex justify-center items-center gap-8 flex-wrap">
+        <div class="logo-item flex justify-center">
           <a href="https://www.designrush.com/agency/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer">
-            <img src="/images/proud/design-rush-.png" alt="Design Rush" width="150" height="80">
+            <img src="/images/proud/design-rush-.png" alt="Design Rush" width="150" height="80" class="object-contain h-20">
           </a>
         </div>
-        <div class="logo-item">
+        <div class="logo-item flex justify-center">
           <a href="https://www.upwork.com/freelancers/~015e24fd8608be3b83" target="_blank" rel="noopener noreferrer">
-            <img src="/images/proud/hd-upwork-logo-transparent-background-701751694712899z3s733b04e.png" alt="Upwork" width="150" height="80">
+            <img src="/images/proud/hd-upwork-logo-transparent-background-701751694712899z3s733b04e.png" alt="Upwork" width="150" height="80" class="object-contain h-20">
           </a>
         </div>
-        <div class="logo-item">
+        <div class="logo-item flex justify-center">
           <a href="https://clutch.co/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer">
-            <img src="/images/proud/png-transparent-company-web-development-marketing-business-clutch-marketing-web-design-company-text.png" alt="Clutch" width="150" height="80">
+            <img src="/images/proud/png-transparent-company-web-development-marketing-business-clutch-marketing-web-design-company-text.png" alt="Clutch" width="150" height="80" class="object-contain h-20">
           </a>
-        </div>
-        <div class="logo-item">
-          <img src="/images/proud/Ai-1.webp" alt="AI Company" width="150" height="80">
-        </div>
-        <div class="logo-item">
-          <img src="/images/proud/cropped-apple-touch-icon (1).webp" alt="Apple Touch Icon" width="150" height="80">
         </div>
       </div>
     </div>
