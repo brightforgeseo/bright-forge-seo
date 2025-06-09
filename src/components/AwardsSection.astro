@@ -1,24 +1,19 @@
 ---
 const awards = [
   {
-    img: 'https://via.placeholder.com/100x100?text=SEO+Award',
+    img: 'https://via.placeholder.com/200x200?text=Award+1',
     title: 'Best SEO Agency 2023',
     by: 'Digital Excellence Awards'
   },
   {
-    img: 'https://via.placeholder.com/100x100?text=Digital',
-    title: 'Top 10 UK Digital Agencies',
+    img: 'https://via.placeholder.com/200x200?text=Award+2',
+    title: 'Top 10 Digital Agencies',
     by: 'Marketing Week'
   },
   {
-    img: 'https://via.placeholder.com/100x100?text=Innovation',
+    img: 'https://via.placeholder.com/200x200?text=Award+3',
     title: 'SEO Innovation Award',
     by: 'Search Engine Journal'
-  },
-  {
-    img: 'https://via.placeholder.com/100x100?text=Growth',
-    title: 'Best Client Results 2022',
-    by: 'UK Digital Growth Awards'
   }
 ];
 ---
@@ -31,11 +26,11 @@ const awards = [
       <p class="text-lg text-text-secondary max-w-2xl mx-auto">Industry bodies and leading publications that have acknowledged our commitment to performance, innovation and client success.</p>
     </div>
 
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="flex justify-center items-center gap-8 flex-wrap">
       {awards.map((a) => (
-        <div class="award-card group bg-brand-bg rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+        <div class="award-card group bg-brand-bg rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-64">
           <div class="flex items-center justify-center mb-4">
-            <img src={a.img} alt={a.title} class="w-16 h-16 object-contain transition-transform duration-300 group-hover:scale-105" />
+            <img src={a.img} alt={a.title} class="w-24 h-24 object-contain transition-transform duration-300 group-hover:scale-105" />
           </div>
           <h3 class="text-lg font-semibold text-brand-dark text-center mb-1 leading-snug">{a.title}</h3>
           <p class="text-sm text-brand-accent text-center font-medium">{a.by}</p>
