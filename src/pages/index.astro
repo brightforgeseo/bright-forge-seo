@@ -3767,11 +3767,13 @@ import ProcessSection from '../components/ProcessSection.astro';
   document.addEventListener('DOMContentLoaded', function() {
     const auditForm = document.getElementById('audit-form');
     if (auditForm) {
-      // Add loading animation on submit
-      auditForm.addEventListener('submit', function() {
+      // Add loading animation on submit without preventing default behavior
+      auditForm.addEventListener('submit', function(e) {
+        // Don't prevent default - allow the form to submit normally
         const submitBtn = this.querySelector('.audit-btn');
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
+        // Form will naturally redirect to the action URL (/thanks)
       });
     }
   });
