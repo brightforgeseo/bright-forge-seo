@@ -75,15 +75,33 @@ import ProcessSection from '../components/ProcessSection.astro';
   <section class="partners-section py-12" style="background-color: white;">
     <div class="container max-w-7xl mx-auto px-4">
       <h3 class="partners-title text-center text-2xl font-bold mb-10">Proudly Featured On</h3>
-      <div class="flex justify-center items-center gap-20 flex-wrap">
-        <a href="https://www.designrush.com/agency/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-105">
-          <img src="/images/proud/design-rush-logo.png" alt="Design Rush" class="h-28 w-auto">
+      <div class="flex justify-center items-center gap-10 md:gap-20 flex-wrap">
+        <a href="https://www.designrush.com/agency/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer" class="partner-logo transition-transform hover:scale-105">
+          <img 
+            src="/images/proud/design-rush-logo.png" 
+            alt="Design Rush" 
+            width="180" 
+            height="70"
+            loading="eager"
+          />
         </a>
-        <a href="https://www.upwork.com/freelancers/~015e24fd8608be3b83" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-105">
-          <img src="/images/proud/2021-upwork-new-logo-design.png" alt="Upwork" class="h-28 w-auto" width="200" height="80">
+        <a href="https://www.upwork.com/freelancers/~015e24fd8608be3b83" target="_blank" rel="noopener noreferrer" class="partner-logo transition-transform hover:scale-105">
+          <img 
+            src="/images/proud/2021-upwork-new-logo-design.png" 
+            alt="Upwork" 
+            width="180" 
+            height="70"
+            loading="eager"
+          />
         </a>
-        <a href="https://clutch.co/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-105">
-          <img src="/images/proud/66ede09890c1d16a8ccb2d2c_1.png" alt="Clutch" class="h-28 w-auto" width="200" height="80">
+        <a href="https://clutch.co/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer" class="partner-logo transition-transform hover:scale-105">
+          <img 
+            src="/images/proud/66ede09890c1d16a8ccb2d2c_1.png" 
+            alt="Clutch" 
+            width="180" 
+            height="70"
+            loading="eager"
+          />
         </a>
       </div>
     </div>
@@ -3686,6 +3704,21 @@ import ProcessSection from '../components/ProcessSection.astro';
       background: var(--brand-accent) !important;
       transform: scale(1.2) !important;
     }
+  }
+  
+  /* Partner logos styling */
+  .partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 180px;
+  }
+  
+  .partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
 </style>
 
