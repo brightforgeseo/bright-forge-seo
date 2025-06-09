@@ -3867,12 +3867,91 @@ import PartnersSection from '../components/PartnersSection.astro';
       const scoreSection = document.createElement('div');
       scoreSection.className = 'mb-4 p-3 bg-white rounded shadow-sm';
       
-      // Calculate overall score if available
+      // Calculate a simple SEO score based on available metrics
       let overallScore = 'N/A';
-      if (data.scores && typeof data.scores === 'object') {
-        const scores = Object.values(data.scores).filter(score => typeof score === 'number');
-        if (scores.length > 0) {
-          overallScore = Math.round(scores.reduce((sum, score) => sum + score, 0) / scores.length);
+      let issues = [];
+      
+      // Check if we have analysis data
+      if (data.analysis) {
+        const analysis = data.analysis;
+        let totalPoints = 0;
+        let maxPoints = 0;
+        
+        // Title check
+        if (analysis.title) {
+          maxPoints += 10;
+          const titleLength = analysis.title.length;
+          if (titleLength >= 30 && titleLength <= 60) {
+            totalPoints += 10;
+          } else {
+            totalPoints += 5;
+            issues.push('Title length is not optimal (30-60 characters recommended)');
+          }
+        }
+        
+        // Meta description check
+        if (analysis.metaDescription !== undefined) {
+          maxPoints += 10;
+          if (analysis.metaDescription) {
+            const descLength = analysis.metaDescription.length;
+            if (descLength >= 120 && descLength <= 160) {
+              totalPoints += 10;
+            } else {
+              totalPoints += 5;
+              issues.push('Meta description length is not optimal (120-160 characters recommended)');
+            }
+          } else {
+            issues.push('Missing meta description');
+          }
+        }
+        
+        // H1 check
+        if (analysis.h1Count !== undefined) {
+          maxPoints += 10;
+          if (analysis.h1Count === 1) {
+            totalPoints += 10;
+          } else if (analysis.h1Count > 1) {
+            totalPoints += 5;
+            issues.push('Multiple H1 tags found (only one recommended)');
+          } else {
+            issues.push('Missing H1 tag');
+          }
+        }
+        
+        // Image alt text check
+        if (analysis.imgCount > 0 && analysis.imgWithAltCount !== undefined) {
+          maxPoints += 10;
+          const altTextPercentage = (analysis.imgWithAltCount / analysis.imgCount) * 100;
+          totalPoints += Math.round(altTextPercentage / 10);
+          
+          if (altTextPercentage < 100) {
+            issues.push(`${Math.round(100 - altTextPercentage)}% of images missing alt text`);
+          }
+        }
+        
+        // SSL check
+        if (analysis.hasSSL !== undefined) {
+          maxPoints += 10;
+          if (analysis.hasSSL) {
+            totalPoints += 10;
+          } else {
+            issues.push('Site is not using HTTPS/SSL');
+          }
+        }
+        
+        // Mobile viewport check
+        if (analysis.hasMobileViewport !== undefined) {
+          maxPoints += 10;
+          if (analysis.hasMobileViewport) {
+            totalPoints += 10;
+          } else {
+            issues.push('Missing mobile viewport meta tag');
+          }
+        }
+        
+        // Calculate final score if we have points
+        if (maxPoints > 0) {
+          overallScore = Math.round((totalPoints / maxPoints) * 100);
         }
       }
       
@@ -3885,7 +3964,7 @@ import PartnersSection from '../components/PartnersSection.astro';
       container.appendChild(scoreSection);
       
       // Create issues section if available
-      if (data.issues && data.issues.length > 0) {
+      if (issues.length > 0) {
         const issuesSection = document.createElement('div');
         issuesSection.className = 'mb-4';
         issuesSection.innerHTML = `<h4 class="font-bold mb-2">Key Issues Found:</h4>`;
@@ -3893,7 +3972,7 @@ import PartnersSection from '../components/PartnersSection.astro';
         const issuesList = document.createElement('ul');
         issuesList.className = 'list-disc pl-5';
         
-        data.issues.slice(0, 5).forEach(issue => {
+        issues.slice(0, 5).forEach(issue => {
           const item = document.createElement('li');
           item.className = 'mb-1';
           item.textContent = issue;
