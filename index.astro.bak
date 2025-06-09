@@ -1,0 +1,327 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
+import AwardsSection from '../components/AwardsSection.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+---
+
+<MainLayout title="Bright Forge SEO - Digital Marketing & SEO Agency">
+  <LegacyHeader slot="header" />
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container max-w-7xl mx-auto">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-tagline">SEO Experts Committed to Your Success</span>
+            Leading SEO Agency<br>
+            in the Philippines
+          </h1>
+          <p class="hero-subtitle">
+            Bright Forge SEO helps businesses thrive online with focused strategies.
+          </p>
+          
+          <div class="hero-audit-form">
+            <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="audit-form">
+              <input type="hidden" name="form-name" value="homepage-audit" />
+              <input type="hidden" name="subject" value="New SEO Audit Request from Website" />
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+              <div class="form-group">
+                <input type="url" id="website-url" name="website" placeholder="Enter website URL (e.g. https://example.com)" required>
+              </div>
+              <button type="submit" class="audit-btn">
+                Get Your Free SEO Audit
+              </button>
+            </form>
+          </div>
+          
+          <!-- Stats -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">1,000+</span>
+              <span class="stat-label">Thousands Of Sites Ranked</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Years of experience</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="play-button">
+          <i class="fas fa-play"></i>
+        </div>
+        
+        <div class="hero-image">
+          <picture>
+            <!-- Mobile version -->
+            <source media="(max-width: 768px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
+            <!-- Desktop version -->
+            <source media="(min-width: 769px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
+            <!-- Fallback -->
+            <img src="/images/Hero-SEO-Agency-In-The-Philippines.webp" alt="Bright Forge SEO Agency Philippines Expert" loading="eager" decoding="async" fetchpriority="high" width="600" height="400">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Carousel -->
+  <section class="partners-section">
+    <div class="container max-w-7xl mx-auto">
+      <h3 class="partners-title">Proudly Featured On</h3>
+      <div class="logo-grid">
+        <div class="logo-item">
+          <img src="/images/clients/Ai-1.webp" alt="AI Company" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/EcoSpa1080x700px6-640w.webp" alt="EcoSpa" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/Logo-Matthew-Jeffery-1.svg" alt="Matthew Jeffery" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/WF_Logo-color .webp" alt="WF Logo" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/cropped-apple-touch-icon (1).webp" alt="Apple Touch Icon" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/white_logo.avif" alt="White Logo Client" width="150" height="80" class="bg-gray-800 p-2 rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-section">
+    <div class="container max-w-7xl mx-auto">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose <span>Bright Forge SEO Agency?</span></h2>
+      </div>
+      
+      <div class="why-choose-grid">
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Globally Inspired Strategies</h3>
+          <p>We use proven methods and tools to deliver customized solutions that work effectively across industries and markets.</p>
+        </div>
+        
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Tailored Solutions</h3>
+          <p>No cookie-cutter approaches here. We analyze your unique goals, industry, and audience to create SEO campaigns that resonate with your business needs.</p>
+        </div>
+        
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Ethical and Transparent Practices</h3>
+          <p>Integrity is at the core of what we do. We focus on white-hat SEO techniques that yield sustainable, long-lasting results without cutting corners.</p>
+        </div>
+        
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Data-Driven Insights</h3>
+          <p>From tracking competitor performance to analyzing search trends, every decision we make is guided by real-time data to maximize your results.</p>
+        </div>
+        
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Clear Communication</h3>
+          <p>We prioritize keeping you informed at every stage. Expect regular updates and straightforward reports that keep you in control of your campaigns.</p>
+        </div>
+        
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Proven Results</h3>
+          <p>Expertise and Experience, Transparent Reporting. We deliver measurable outcomes that directly impact your business growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Pillars Tabbed Section -->
+  <section class="bf-services-section">
+    <div class="container max-w-7xl mx-auto">
+      <div class="section-header">
+        <h2 class="section-title">How We Tackle the Core SEO Pillars</h2>
+        <p class="section-subtitle">Our team combines advanced strategy, proven frameworks and hands-on execution to drive real SEO growth.</p>
+      </div>
+      
+      <div class="tabs-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="seo-audit">
+            <i class="fas fa-search"></i>
+            <span>SEO Audit</span>
+          </button>
+          <button class="tab-btn" data-tab="keyword-strategy">
+            <i class="fas fa-bullseye"></i>
+            <span>Keyword Strategy</span>
+          </button>
+          <button class="tab-btn" data-tab="on-page-seo">
+            <i class="fas fa-file-alt"></i>
+            <span>On-Page SEO</span>
+          </button>
+          <button class="tab-btn" data-tab="link-building">
+            <i class="fas fa-link"></i>
+            <span>Link Building</span>
+          </button>
+          <button class="tab-btn" data-tab="technical-seo">
+            <i class="fas fa-cogs"></i>
+            <span>Technical SEO</span>
+          </button>
+          <button class="tab-btn" data-tab="content-seo">
+            <i class="fas fa-pen"></i>
+            <span>Content SEO</span>
+          </button>
+        </div>
+        
+        <div class="bf-services-content">
+          <div id="seo-audit" class="bf-service-box active">
+            <div class="service-box-inner">
+              <div class="service-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3>SEO Audits That Uncover Real Issues</h3>
+              <p>We start every project by understanding how your site is performing at a technical level. That includes crawling for broken links, identifying thin or duplicated content, checking for indexing problems, and auditing your site structure, speed, and mobile performance.</p>
+              <p>Once we gather the data, we prioritise fixes by impact. You'll get a clear and focused plan that highlights what's slowing you down, what needs fixing first, and where quick wins are hiding.</p>
+              <ul class="service-features">
+                <li>Technical SEO analysis</li>
+                <li>Content quality evaluation</li>
+                <li>Site structure audit</li>
+                <li>Speed and mobile performance</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div id="keyword-strategy" class="bf-service-box">
+            <div class="service-box-inner">
+              <div class="service-icon">
+                <i class="fas fa-keyboard"></i>
+              </div>
+              <h3>Keyword Strategy That Matches Intent</h3>
+              <p>We build keyword strategies around intent, not just search volume. That means finding out what your target audience is actually searching at different stages of their decision-making process.</p>
+              <p>We identify gaps your competitors are missing, organise topics into clusters, and map each opportunity to a real business goal. You don't just show up more, you show up where it matters most.</p>
+              <ul class="service-features">
+                <li>Competitor keyword analysis</li>
+                <li>Long-tail opportunity identification</li>
+                <li>Search intent mapping</li>
+                <li>Strategic content planning</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div id="on-page-seo" class="bf-service-box">
+            <div class="service-box-inner">
+              <div class="service-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h3>Clear On-Page SEO That Speaks to Google</h3>
+              <p>We make sure every page on your site is sending the right signals. That includes optimising title tags, meta descriptions, header hierarchy, internal linking, schema markup, and content structure.</p>
+              <p>We also look at how users interact with your content because a page that keeps people engaged is more likely to rank. It's part science, part storytelling, and fully aligned with what Google rewards.</p>
+              <ul class="service-features">
+                <li>Title & meta optimization</li>
+                <li>Content enhancement</li>
+                <li>Internal linking strategy</li>
+                <li>Schema markup implementation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div id="link-building" class="bf-service-box">
+            <div class="service-box-inner">
+              <div class="service-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <h3>Link Building That Adds Real Authority</h3>
+              <p>We focus on quality over quantity. Our team secures links from relevant sites in your industry that already have authority in Google's eyes. No spammy directories. No private blog networks.</p>
+              <p>Each link is placed with purpose, supporting your site structure, passing value to key pages, and signalling trust to search engines. It's strategic, long-term link building that stands the test of time.</p>
+              <ul class="service-features">
+                <li>Quality over quantity approach</li>
+                <li>Industry-relevant links</li>
+                <li>Strategic link placement</li>
+                <li>Long-term authority building</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div id="technical-seo" class="bf-service-box">
+            <div class="service-box-inner">
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Technical SEO That Makes You Easy to Crawl</h3>
+              <p>We go deep on everything under the hood. That means optimising your XML sitemap, robots.txt, crawl budget, Core Web Vitals, canonical tags, redirect logic, and more. We also work closely with developers to make sure nothing gets in Google's way.</p>
+              <p>When your technical foundation is solid, everything else performs better. Rankings improve. Indexation improves. And your SEO becomes future-proof.</p>
+              <ul class="service-features">
+                <li>XML sitemap optimization</li>
+                <li>Core Web Vitals</li>
+                <li>Crawl budget optimization</li>
+                <li>Developer collaboration</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div id="content-seo" class="bf-service-box">
+            <div class="service-box-inner">
+              <div class="service-icon">
+                <i class="fas fa-pen"></i>
+              </div>
+              <h3>Content SEO That Builds Authority and Trust</h3>
+              <p>We create content that earns rankings and builds credibility. From high-converting service pages to supporting blogs, we focus on clarity, structure, and matching search intent.</p>
+              <p>Everything is mapped to a topic cluster and supported by internal links, schema, and performance tracking. This is how we help your content stand out in crowded spaces and drive traffic that actually sticks.</p>
+              <ul class="service-features">
+                <li>High-converting content</li>
+                <li>Topic cluster mapping</li>
+                <li>Internal link support</li>
+                <li>Performance tracking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client/Partner Logo Carousel Section -->
+  <section class="partners-section">
+    <div class="container max-w-7xl mx-auto">
+      <div class="section-header">
+        <span class="section-label">TRUSTED BY</span>
+        <h2 class="section-title">Companies We've <span>Worked With</span></h2>
+      </div>
+      
+      <div class="logo-grid">
+        <div class="logo-item">
+          <img src="/images/clients/Ai-1.webp" alt="AI Company" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/EcoSpa1080x700px6-640w.webp" alt="EcoSpa" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/Logo-Matthew-Jeffery-1.svg" alt="Matthew Jeffery" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/WF_Logo-color .webp" alt="WF Logo" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/cropped-apple-touch-icon (1).webp" alt="Apple Touch Icon" width="150" height="80">
+        </div>
+        <div class="logo-item">
+          <img src="/images/clients/white_logo.avif" alt="White Logo Client" width="150" height="80" class="bg-gray-800 p-2 rounded">
+        </div>
