@@ -17,6 +17,13 @@
   force = true
 
 [[redirects]]
-  from = "/404/"
+  from = "/*"
   to = "/404.html"
   status = 404
+  force = false
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
