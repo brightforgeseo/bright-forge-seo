@@ -94,10 +94,10 @@ const formatDate = (dateString: string) => {
         <div class="content-main-area max-w-3xl mx-auto">
         <!-- Table of Contents (if provided) -->
         {tableOfContents && tableOfContents.length > 0 && (
-          <aside class="table-of-contents">
-            <h3>Table of Contents</h3>
+          <aside class="table-of-contents bg-gray-50 p-6 rounded-lg mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-brand-dark">Quick Navigation</h3>
             <nav>
-              <ul>
+              <ul class="space-y-2">
                 {tableOfContents.map((item) => (
                   <li class={`toc-level-${item.level}`}>
                     <a href={`#${item.id}`}>{item.title}</a>
@@ -858,8 +858,7 @@ const formatDate = (dateString: string) => {
   }
 
   .table-of-contents {
-    position: static;
-    order: -1;
+    margin-bottom: 2rem;
   }
 
   .article-meta {

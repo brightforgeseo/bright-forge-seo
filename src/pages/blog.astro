@@ -7,6 +7,16 @@ import ContactSection from '../components/ContactSection.astro';
 // Blog posts - currently just our published articles
 const blogPosts = [
   {
+    title: "The AI Reckoning: Transformation, Not Termination, for Search Engine Optimisation",
+    excerpt: "Rapid AI advancements integrated into the digital landscape ignite debate about the future of Search Engine Optimisation (SEO). This report examines whether AI will make traditional SEO obsolete, concluding that AI is not killing SEO but fundamentally transforming it, demanding significant adaptation.",
+    image: "/images/blog/ai-seo-transformation.jpg",
+    date: "April 23, 2025",
+    author: "Bright Forge SEO Team",
+    readTime: "25 min read",
+    categories: ["ai", "seo", "future"],
+    slug: "ai-seo-transformation"
+  },
+  {
     title: "The Importance of Local SEO for Small Businesses",
     excerpt: "Discover why local SEO is crucial for small businesses looking to expand their visibility and connect with local customers in today's competitive digital landscape.",
     image: "/images/blog/local-seo-small-businesses.jpg",
@@ -14,7 +24,7 @@ const blogPosts = [
     author: "Bright Forge SEO Team",
     readTime: "7 min read",
     categories: ["local", "seo", "small business"],
-    slug: "/blog/importance-of-local-seo-for-small-businesses"
+    slug: "importance-of-local-seo-for-small-businesses"
   },
   {
     title: "Top 10 SEO Trends Shaping the Philippines Market in 2024",
@@ -24,7 +34,7 @@ const blogPosts = [
     author: "Miguel Rodriguez",
     readTime: "8 min read",
     categories: ["seo", "trends", "philippines"],
-    slug: "/blog/seo-trends-philippines-2024"
+    slug: "seo-trends-philippines-2024"
   }
 ];
 
@@ -100,7 +110,7 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
                     ))}
                   </div>
                   <h3 class="text-xl font-bold mb-3 text-brand-dark hover:text-brand-accent">
-                    <a href={`/blog/${post.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '')}`}>
+                    <a href={`/blog/${post.slug}`}>
                       {post.title}
                     </a>
                   </h3>
@@ -175,7 +185,7 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
                   </div>
                   <div>
                     <h4 class="font-medium text-brand-dark hover:text-brand-accent line-clamp-2">
-                      <a href={`/blog/${post.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '')}`}>
+                      <a href={`/blog/${post.slug}`}>
                         {post.title}
                       </a>
                     </h4>
