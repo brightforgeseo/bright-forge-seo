@@ -74,26 +74,21 @@ import ProcessSection from '../components/ProcessSection.astro';
     <div class="container max-w-7xl mx-auto">
       <h3 class="partners-title">Proudly Featured On</h3>
       <div class="logo-grid">
-        <!-- Six static logos -->
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Retail+SEO+Badge" alt="Retail SEO Badge">
+          <img src="/images/clients/Ai-1.webp" alt="AI Company" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Digital+Marketing+Badge" alt="Digital Marketing Badge">
+          <img src="/images/clients/EcoSpa1080x700px6-640w.webp" alt="EcoSpa" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Ecommerce+SEO+Badge" alt="Ecommerce SEO Badge">
+          <img src="/images/clients/Logo-Matthew-Jeffery-1.svg" alt="Matthew Jeffery" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Conversion+Badge" alt="Conversion Optimization Badge">
+          <img src="/images/clients/WF_Logo-color .webp" alt="WF Logo" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+1" alt="Legal SEO Badge 1">
+          <img src="/images/clients/cropped-apple-touch-icon (1).webp" alt="Apple Touch Icon" width="150" height="80">
         </div>
-        <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+2" alt="Legal SEO Badge 2">
-        </div>
-      </div>
       </div>
     </div>
   </section>
@@ -302,7 +297,7 @@ import ProcessSection from '../components/ProcessSection.astro';
 
   <!-- Client/Partner Logo Carousel Section -->
   <section class="partners-section">
-    <div class="container">
+    <div class="container max-w-7xl mx-auto">
       <div class="section-header">
         <span class="section-label">TRUSTED BY</span>
         <h2 class="section-title">Companies We've <span>Worked With</span></h2>
@@ -310,22 +305,19 @@ import ProcessSection from '../components/ProcessSection.astro';
       
       <div class="logo-grid">
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Client+1" alt="Client 1">
+          <img src="/images/clients/Ai-1.webp" alt="AI Company" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Client+2" alt="Client 2">
+          <img src="/images/clients/EcoSpa1080x700px6-640w.webp" alt="EcoSpa" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Client+3" alt="Client 3">
+          <img src="/images/clients/Logo-Matthew-Jeffery-1.svg" alt="Matthew Jeffery" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Client+4" alt="Client 4">
+          <img src="/images/clients/WF_Logo-color .webp" alt="WF Logo" width="150" height="80">
         </div>
         <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Client+5" alt="Client 5">
-        </div>
-        <div class="logo-item">
-          <img src="https://via.placeholder.com/150x80?text=Client+6" alt="Client 6">
+          <img src="/images/clients/cropped-apple-touch-icon (1).webp" alt="Apple Touch Icon" width="150" height="80">
         </div>
       </div>
     </div>
@@ -726,7 +718,11 @@ import ProcessSection from '../components/ProcessSection.astro';
       <div class="contact-form-wrapper">
         <div class="contact-form-container">
           <p class="form-intro">Please fill out the form below, and a member of our team will get back to you as soon as possible.</p>
-          <form class="contact-form">
+          <form class="contact-form" name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
+            <input type="hidden" name="form-name" value="homepage-contact" />
+            <input type="hidden" name="subject" value="New Contact Form Submission from Website" />
+            <input type="hidden" name="notification-email" value="seo@brightforgeseo.com" />
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name</label>
@@ -1138,7 +1134,7 @@ import ProcessSection from '../components/ProcessSection.astro';
   .score-value {
     font-size: 32px;
     font-weight: 700;
-    color: var(--brand-dark);
+    color: var(--brand-accent);
   }
   
   .score-circle {
@@ -1185,7 +1181,6 @@ import ProcessSection from '../components/ProcessSection.astro';
     color: var(--brand-accent);
     position: absolute;
     left: 0;
-    font-size: 20px;
   }
   
   .view-details-btn {
@@ -1446,7 +1441,7 @@ import ProcessSection from '../components/ProcessSection.astro';
   /* Process Section */
   .process-section {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: white;
     overflow-x: hidden;
   }
   
@@ -1545,10 +1540,8 @@ import ProcessSection from '../components/ProcessSection.astro';
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 8px 32px rgba(255, 68, 56, 0.2);
-    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .play-button::before {
@@ -3757,10 +3750,8 @@ import ProcessSection from '../components/ProcessSection.astro';
         showBFService(tabName);
       });
     });
-  });
-  
-  // Add minimal JavaScript to ensure form submission works correctly
-  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Add minimal JavaScript to ensure audit form submission works correctly
     const auditForm = document.querySelector('.audit-form');
     if (auditForm) {
       auditForm.addEventListener('submit', function(e) {
@@ -3773,6 +3764,26 @@ import ProcessSection from '../components/ProcessSection.astro';
         
         // Log form submission for debugging
         console.log('Form submitted to Netlify');
+      });
+    }
+    
+    // Add JavaScript for the contact form submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        // Don't prevent default, just add loading state
+        const submitBtn = this.querySelector('.form-submit-btn');
+        if (submitBtn) {
+          const btnText = submitBtn.querySelector('span');
+          if (btnText) {
+            btnText.textContent = 'Sending...';
+          }
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitBtn.disabled = true;
+        }
+        
+        // Log form submission for debugging
+        console.log('Contact form submitted to Netlify');
       });
     }
   });
