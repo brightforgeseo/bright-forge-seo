@@ -1,17 +1,17 @@
 ---
 const awards = [
   {
-    img: '/images/awards/Top Clutch Seo Company Philippines 2025.png',
+    img: '/images/awards/Top%20Clutch%20Seo%20Company%20Philippines%202025.png',
     title: 'Top SEO Company',
     by: 'Clutch Philippines 2025'
   },
   {
-    img: '/images/awards/Top Clutch Seo Company Manila 2025.png',
+    img: '/images/awards/Top%20Clutch%20Seo%20Company%20Manila%202025.png',
     title: 'Top SEO Company Manila',
     by: 'Clutch 2025'
   },
   {
-    img: '/images/awards/Top Clutch Seo Company Ecommerce Philippines.png',
+    img: '/images/awards/Top%20Clutch%20Seo%20Company%20Ecommerce%20Philippines.png',
     title: 'Top E-commerce SEO Company',
     by: 'Clutch Philippines'
   }
@@ -28,9 +28,9 @@ const awards = [
 
     <div class="flex justify-center items-center gap-8 flex-wrap">
       {awards.map((a) => (
-        <div class="award-card group bg-brand-bg rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-64">
+        <div class="award-card group bg-brand-bg rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-80">
           <div class="flex items-center justify-center mb-4">
-            <img src={a.img} alt={a.title} class="w-24 h-24 object-contain transition-transform duration-300 group-hover:scale-105" />
+            <img src={a.img} alt={a.title} class="w-36 h-36 object-contain transition-transform duration-300 group-hover:scale-105" />
           </div>
           <h3 class="text-lg font-semibold text-brand-dark text-center mb-1 leading-snug">{a.title}</h3>
           <p class="text-sm text-brand-accent text-center font-medium">{a.by}</p>
