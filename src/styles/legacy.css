@@ -107,9 +107,9 @@ body {
   z-index: 100;
 }
 .mega-dropdown {
-  width: 600px;
+  width: 900px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 .nav-item:hover .dropdown {
@@ -138,6 +138,7 @@ body {
   font-size: 14px;
   padding-top: 5px;
 }
+.dropdown-image { display: flex; align-items: center; justify-content: center; }
 .dropdown-image img { width: 100%; height: auto; border-radius: 5px; }
 
 /* Mobile */

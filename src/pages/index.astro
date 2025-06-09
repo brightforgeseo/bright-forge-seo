@@ -70,48 +70,27 @@ import ProcessSection from '../components/ProcessSection.astro';
   <section class="partners-section">
     <div class="container max-w-7xl mx-auto">
       <h3 class="partners-title">Proudly Featured On</h3>
-      <div class="logo-carousel-container">
-        <div class="logo-carousel">
-          <!-- First set of logos -->
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Retail+SEO+Badge" alt="Retail SEO Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Digital+Marketing+Badge" alt="Digital Marketing Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Ecommerce+SEO+Badge" alt="Ecommerce SEO Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Conversion+Badge" alt="Conversion Optimization Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+1" alt="Legal SEO Badge 1">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+2" alt="Legal SEO Badge 2">
-          </div>
-          
-          <!-- Duplicate set for seamless loop -->
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Retail+SEO+Badge" alt="Retail SEO Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Digital+Marketing+Badge" alt="Digital Marketing Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Ecommerce+SEO+Badge" alt="Ecommerce SEO Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Conversion+Badge" alt="Conversion Optimization Badge">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+1" alt="Legal SEO Badge 1">
-          </div>
-          <div class="logo-slide">
-            <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+2" alt="Legal SEO Badge 2">
-          </div>
+      <div class="logo-grid">
+        <!-- Six static logos -->
+        <div class="logo-item">
+          <img src="https://via.placeholder.com/150x80?text=Retail+SEO+Badge" alt="Retail SEO Badge">
         </div>
+        <div class="logo-item">
+          <img src="https://via.placeholder.com/150x80?text=Digital+Marketing+Badge" alt="Digital Marketing Badge">
+        </div>
+        <div class="logo-item">
+          <img src="https://via.placeholder.com/150x80?text=Ecommerce+SEO+Badge" alt="Ecommerce SEO Badge">
+        </div>
+        <div class="logo-item">
+          <img src="https://via.placeholder.com/150x80?text=Conversion+Badge" alt="Conversion Optimization Badge">
+        </div>
+        <div class="logo-item">
+          <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+1" alt="Legal SEO Badge 1">
+        </div>
+        <div class="logo-item">
+          <img src="https://via.placeholder.com/150x80?text=Legal+SEO+Badge+2" alt="Legal SEO Badge 2">
+        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -1490,27 +1469,37 @@ import ProcessSection from '../components/ProcessSection.astro';
     margin-bottom: 40px;
   }
   
-  .logo-carousel-container {
-    overflow: hidden;
-    position: relative;
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
     width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
   }
   
-  .logo-carousel {
-    display: flex;
-    animation: scroll 20s linear infinite;
-    width: 200%; /* Double width for seamless loop */
+  @media (max-width: 992px) {
+    .logo-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
   }
   
-  .logo-slide {
-    flex: 0 0 auto;
-    margin: 0 30px;
+  @media (max-width: 576px) {
+    .logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+  
+  .logo-item {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 15px;
   }
   
-  .logo-slide img {
+  .logo-item img {
     height: 60px;
     max-width: 150px;
     object-fit: contain;
@@ -1518,23 +1507,9 @@ import ProcessSection from '../components/ProcessSection.astro';
     transition: all 0.3s;
   }
   
-  .logo-slide:hover img {
+  .logo-item:hover img {
     filter: grayscale(0%) opacity(1);
     transform: scale(1.05);
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%); /* Move by 50% to show second set */
-    }
-  }
-  
-  /* Pause animation on hover */
-  .logo-carousel-container:hover .logo-carousel {
-    animation-play-state: paused;
   }
 
   /* Testimonials Section */
