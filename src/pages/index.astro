@@ -3807,6 +3807,13 @@ import PartnersSection from '../components/PartnersSection.astro';
     const input = document.getElementById('website-url');
     const message = document.getElementById('audit-message');
     if (!form || !input) return;
+
+    // Create results container
+    const resultsContainer = document.createElement('div');
+    resultsContainer.id = 'audit-results';
+    resultsContainer.className = 'mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200 hidden';
+    form.parentNode.insertBefore(resultsContainer, form.nextSibling);
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const url = input.value.trim();
@@ -3818,7 +3825,10 @@ import PartnersSection from '../components/PartnersSection.astro';
       const originalText = submitBtn.textContent;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Analyzing...';
-      message.textContent = '';
+      message.textContent = 'Running SEO audit...';
+      resultsContainer.classList.add('hidden');
+      resultsContainer.innerHTML = '';
+      
       try {
         const res = await fetch(API_URL, {
           method: 'POST',
@@ -3831,7 +3841,11 @@ import PartnersSection from '../components/PartnersSection.astro';
         }
         const data = await res.json();
         console.log('SEO Audit Result:', data);
-        message.textContent = 'Audit complete! Check the console for details.';
+        message.textContent = 'Audit complete!';
+        
+        // Display results visually
+        displayAuditResults(data, resultsContainer);
+        resultsContainer.classList.remove('hidden');
       } catch (err) {
         console.error(err);
         message.textContent = 'Oops! Something went wrong. Please try again later.';
@@ -3840,5 +3854,71 @@ import PartnersSection from '../components/PartnersSection.astro';
         submitBtn.textContent = originalText;
       }
     });
+    
+    // Function to display audit results
+    function displayAuditResults(data, container) {
+      // Create header
+      const header = document.createElement('div');
+      header.className = 'mb-4';
+      header.innerHTML = `<h3 class="text-xl font-bold">SEO Audit Results for ${data.url || 'Website'}</h3>`;
+      container.appendChild(header);
+      
+      // Create score section
+      const scoreSection = document.createElement('div');
+      scoreSection.className = 'mb-4 p-3 bg-white rounded shadow-sm';
+      
+      // Calculate overall score if available
+      let overallScore = 'N/A';
+      if (data.scores && typeof data.scores === 'object') {
+        const scores = Object.values(data.scores).filter(score => typeof score === 'number');
+        if (scores.length > 0) {
+          overallScore = Math.round(scores.reduce((sum, score) => sum + score, 0) / scores.length);
+        }
+      }
+      
+      scoreSection.innerHTML = `
+        <div class="flex justify-between items-center">
+          <span class="font-bold">Overall Score:</span>
+          <span class="text-lg font-bold ${getScoreColorClass(overallScore)}">${overallScore}/100</span>
+        </div>
+      `;
+      container.appendChild(scoreSection);
+      
+      // Create issues section if available
+      if (data.issues && data.issues.length > 0) {
+        const issuesSection = document.createElement('div');
+        issuesSection.className = 'mb-4';
+        issuesSection.innerHTML = `<h4 class="font-bold mb-2">Key Issues Found:</h4>`;
+        
+        const issuesList = document.createElement('ul');
+        issuesList.className = 'list-disc pl-5';
+        
+        data.issues.slice(0, 5).forEach(issue => {
+          const item = document.createElement('li');
+          item.className = 'mb-1';
+          item.textContent = issue;
+          issuesList.appendChild(item);
+        });
+        
+        issuesSection.appendChild(issuesList);
+        container.appendChild(issuesSection);
+      }
+      
+      // Create recommendations section
+      const recommendationsSection = document.createElement('div');
+      recommendationsSection.className = 'mt-4';
+      recommendationsSection.innerHTML = `
+        <p class="text-sm">For a detailed analysis and recommendations, please <a href="/contact" class="text-blue-600 hover:underline">contact us</a>.</p>
+      `;
+      container.appendChild(recommendationsSection);
+    }
+    
+    // Helper function for score colors
+    function getScoreColorClass(score) {
+      if (score === 'N/A') return 'text-gray-500';
+      if (score >= 80) return 'text-green-600';
+      if (score >= 50) return 'text-yellow-600';
+      return 'text-red-600';
+    }
   });
 </script>
