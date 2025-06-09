@@ -1,4 +1,6 @@
 ---
+import { getImage } from 'astro:assets';
+
 export interface Props {
   title: string;
   client: string;
@@ -32,6 +34,8 @@ export interface Props {
   };
   keyTakeaways: string[];
   nextSteps?: string;
+  publishDate?: string;
+  modifiedDate?: string;
 }
 
 const {
@@ -47,9 +51,119 @@ const {
   results,
   testimonial,
   keyTakeaways,
-  nextSteps
+  nextSteps,
+  publishDate = new Date().toISOString().split('T')[0],
+  modifiedDate
 } = Astro.props;
+
+// Generate schema for the case study
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": challenge,
+  "image": heroImage ? (heroImage.startsWith('http') ? heroImage : `https://brightforgeseo.com${heroImage}`) : undefined,
+  "author": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "url": "https://brightforgeseo.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://brightforgeseo.com/images/logo.png"
+    }
+  },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate || publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": Astro.url.href
+  },
+  "articleSection": "Case Study",
+  "keywords": [industry, "SEO", "Case Study", client, "Digital Marketing"].join(", ")
+};
+
+// Generate schema for the service provided
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "SEO Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "url": "https://brightforgeseo.com"
+  },
+  "description": solution,
+  "name": `SEO Services for ${industry}`,
+  "review": testimonial ? {
+    "@type": "Review",
+    "reviewBody": testimonial.quote,
+    "author": {
+      "@type": "Person",
+      "name": testimonial.author
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    }
+  } : undefined
+};
+
+// Generate breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://brightforgeseo.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Studies",
+      "item": "https://brightforgeseo.com/case-studies"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title,
+      "item": Astro.url.href
+    }
+  ]
+};
+
+// Generate FAQPage schema from key takeaways
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": keyTakeaways.map((takeaway, index) => ({
+    "@type": "Question",
+    "name": `What is key takeaway #${index + 1} from this ${industry} SEO case study?`,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": takeaway
+    }
+  }))
+};
+
+// Current URL for canonical
+const canonicalUrl = Astro.url.href;
 ---
+
+<!-- SEO Schema Markup -->
+<link rel="canonical" href={canonicalUrl} />
+<meta name="robots" content="index, follow" />
+<script type="application/ld+json" set:html={JSON.stringify(caseStudySchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <article class="case-study">
   <!-- Hero Section -->

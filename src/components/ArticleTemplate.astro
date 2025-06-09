@@ -9,6 +9,7 @@ export interface Props {
     linkedin?: string;
   };
   publishDate: string;
+  modifiedDate?: string;
   readTime: string;
   category: string;
   tags: string[];
@@ -33,6 +34,7 @@ const {
   excerpt,
   author,
   publishDate,
+  modifiedDate,
   readTime,
   category,
   tags,
@@ -41,6 +43,65 @@ const {
   relatedArticles,
   tableOfContents
 } = Astro.props;
+
+// Generate article schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": excerpt,
+  "image": featuredImage ? (featuredImage.startsWith('http') ? featuredImage : `https://brightforgeseo.com${featuredImage}`) : undefined,
+  "author": {
+    "@type": "Person",
+    "name": author.name,
+    "url": author.linkedin
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://brightforgeseo.com/images/logo.png"
+    }
+  },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate || publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": Astro.url.href
+  },
+  "articleSection": category,
+  "keywords": tags.join(", ")
+};
+
+// Generate breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://brightforgeseo.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://brightforgeseo.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title,
+      "item": Astro.url.href
+    }
+  ]
+};
+
+// Current URL for canonical
+const canonicalUrl = Astro.url.href;
 
 // Format date
 const formatDate = (dateString: string) => {
@@ -51,6 +112,12 @@ const formatDate = (dateString: string) => {
   });
 };
 ---
+
+<!-- SEO Schema Markup -->
+<link rel="canonical" href={canonicalUrl} />
+<meta name="robots" content="index, follow" />
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
 <article class="blog-article">
   <!-- Hero Section -->

@@ -1,0 +1,255 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'blog' | 'product' | 'service' | 'profile' | 'company';
+  publishDate?: string;
+  modifiedDate?: string;
+  author?: {
+    name: string;
+    url?: string;
+  };
+  organization?: {
+    name: string;
+    url: string;
+    logo: string;
+    sameAs?: string[];
+  };
+  article?: {
+    tags?: string[];
+    section?: string;
+  };
+  breadcrumbs?: Array<{
+    name: string;
+    url: string;
+  }>;
+  noindex?: boolean;
+  nofollow?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  image = '/images/og-image.jpg', // Default OG image
+  type = 'website',
+  publishDate,
+  modifiedDate,
+  author,
+  organization = {
+    name: 'Bright Forge SEO',
+    url: 'https://brightforgeseo.com',
+    logo: 'https://brightforgeseo.com/images/logo.png',
+    sameAs: [
+      'https://www.facebook.com/brightforgeseo',
+      'https://twitter.com/brightforgeseo',
+      'https://www.linkedin.com/company/brightforge-seo',
+      'https://www.instagram.com/brightforgeseo'
+    ]
+  },
+  article,
+  breadcrumbs,
+  noindex = false,
+  nofollow = false
+} = Astro.props;
+
+// Generate JSON-LD schema based on page type
+let schema;
+
+// Base WebSite schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bright Forge SEO",
+  "url": "https://brightforgeseo.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://brightforgeseo.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// Organization schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": organization.name,
+  "url": organization.url,
+  "logo": organization.logo,
+  "sameAs": organization.sameAs
+};
+
+// Determine which schema to use based on page type
+if (type === 'article' || type === 'blog') {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": image.startsWith('http') ? image : `https://brightforgeseo.com${image}`,
+    "author": author ? {
+      "@type": "Person",
+      "name": author.name,
+      "url": author.url
+    } : undefined,
+    "publisher": {
+      "@type": "Organization",
+      "name": organization.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": organization.logo
+      }
+    },
+    "datePublished": publishDate,
+    "dateModified": modifiedDate || publishDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonical
+    }
+  };
+  
+  // Add article tags if available
+  if (article?.tags && article.tags.length > 0) {
+    schema.keywords = article.tags.join(', ');
+  }
+  
+  // Add article section if available
+  if (article?.section) {
+    schema.articleSection = article.section;
+  }
+} else if (type === 'service') {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": title,
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": organization.name,
+      "url": organization.url
+    },
+    "serviceType": title,
+    "url": canonical
+  };
+} else if (type === 'company' || type === 'profile') {
+  schema = organizationSchema;
+} else {
+  // Default to WebPage schema
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": canonical,
+    "datePublished": publishDate,
+    "dateModified": modifiedDate || publishDate,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Bright Forge SEO",
+      "url": "https://brightforgeseo.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": organization.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": organization.logo
+      }
+    }
+  };
+}
+
+// Add breadcrumb schema if breadcrumbs are provided
+let breadcrumbSchema;
+if (breadcrumbs && breadcrumbs.length > 0) {
+  breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url.startsWith('http') ? item.url : `https://brightforgeseo.com${item.url}`
+    }))
+  };
+}
+
+// Local Business schema for Philippines location
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bright Forge SEO",
+  "image": "https://brightforgeseo.com/images/logo.png",
+  "url": "https://brightforgeseo.com",
+  "telephone": "+63-XXX-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kathleen Place 4, Block 16, Lot 37, Armani Street, 75 S Francisco, Novachlies",
+    "addressLocality": "Quezon City",
+    "postalCode": "1116",
+    "addressRegion": "Metro Manila",
+    "addressCountry": "PH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 14.6760,
+    "longitude": 121.0437
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "₱₱₱"
+};
+---
+
+<!-- SEO Meta Tags -->
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<!-- Robots Meta -->
+<meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type === 'article' || type === 'blog' ? 'article' : 'website'} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image.startsWith('http') ? image : `https://brightforgeseo.com${image}`} />
+<meta property="og:site_name" content="Bright Forge SEO" />
+{publishDate && <meta property="article:published_time" content={publishDate} />}
+{modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
+{article?.section && <meta property="article:section" content={article.section} />}
+{article?.tags && article.tags.map(tag => (
+  <meta property="article:tag" content={tag} />
+))}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image.startsWith('http') ? image : `https://brightforgeseo.com${image}`} />
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<!-- Website Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+<!-- Organization Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+<!-- Local Business Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+<!-- Breadcrumb Schema (if available) -->
+{breadcrumbs && breadcrumbs.length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}

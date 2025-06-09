@@ -2,13 +2,46 @@
 // MainLayout.astro
 import '../styles/global.css';
 import '../styles/case-study-fix.css';
+import SEO from '../components/SEO.astro';
 
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'blog' | 'product' | 'service' | 'profile' | 'company';
+  publishDate?: string;
+  modifiedDate?: string;
+  author?: {
+    name: string;
+    url?: string;
+  };
+  article?: {
+    tags?: string[];
+    section?: string;
+  };
+  breadcrumbs?: Array<{
+    name: string;
+    url: string;
+  }>;
+  noindex?: boolean;
+  nofollow?: boolean;
 }
 
-const { title, description = "Bright Forge SEO Philippines - Your partner for SEO and digital marketing" } = Astro.props;
+const { 
+  title, 
+  description = "Bright Forge SEO Philippines - Your partner for SEO and digital marketing",
+  canonical = Astro.url.href,
+  image,
+  type = 'website',
+  publishDate,
+  modifiedDate,
+  author,
+  article,
+  breadcrumbs,
+  noindex = false,
+  nofollow = false
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,7 +50,22 @@ const { title, description = "Bright Forge SEO Philippines - Your partner for SE
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <meta name="description" content={description} />
+    
+    <!-- SEO Component with Schema, Canonical URLs, and Meta Tags -->
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+      type={type}
+      publishDate={publishDate}
+      modifiedDate={modifiedDate}
+      author={author}
+      article={article}
+      breadcrumbs={breadcrumbs}
+      noindex={noindex}
+      nofollow={nofollow}
+    />
     
     <!-- Critical CSS for hero section -->
     <style>
