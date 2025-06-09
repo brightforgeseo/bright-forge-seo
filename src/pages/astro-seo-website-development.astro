@@ -1,0 +1,383 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<MainLayout title="Astro Framework SEO-Friendly Website Design & Development | Bright Forge SEO" description="We build blazing-fast, SEO-ready websites with Astro. Discover our Philippines-based web design & development service that boosts rankings and delights users.">
+  <LegacyHeader slot="header" />
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <span class="current">Astro Framework SEO Website Development</span>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Astro Framework SEO-Friendly Website Design & Development</h1>
+          <p class="hero-subtitle">Lightning-fast pages, clean code, and search-first architecture—everything you need to dominate Google and wow your visitors.</p>
+          <p class="hero-description">Building a website shouldn’t feel like a guessing game. At Bright Forge SEO, we craft Astro-powered sites that load instantly, rank higher, and convert better. From architecture to analytics, our Philippines-based team handles every detail so you can focus on growing your business.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="cta-button primary">Start Your Astro Project</a>
+            <a href="#process" class="cta-button secondary">See Our Process</a>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <span>Core Web Vitals<br/>Optimized</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Astro Section -->
+  <section class="why-astro-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Why Choose <span>Astro</span> For SEO?</h2>
+        <p>Astro’s island architecture and zero-JavaScript-by-default approach make it a powerhouse for search performance.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Lightning-Fast Performance</h3>
+          <p>Astro ships only the essentials, meaning smaller bundle sizes and near-instant page loads—exactly what Google loves.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-code"></i></div>
+          <h3>Clean, Semantic HTML</h3>
+          <p>Server-side rendering ensures search bots get full content immediately, while semantic markup improves crawlability.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Built-In SEO Best Practices</h3>
+          <p>From automatic image optimization to effortless AMP and structured data, Astro sets your site up for ranking success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="process-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Our SEO-First <span>Web Design Process</span></h2>
+        <p>Every build follows a proven, data-driven workflow that keeps search visibility front and center.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Discovery & Strategy</h3>
+          <p>We dig into your goals, competitors, and keywords to architect a site that drives qualified traffic.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Information Architecture</h3>
+          <p>Keyword mapping guides page hierarchy, ensuring search engines—and users—find exactly what they need.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Astro Development</h3>
+          <p>Our developers craft pixel-perfect pages with modular components, zero unnecessary JavaScript, and perfect Core Web Vitals.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Technical SEO Integration</h3>
+          <p>Schema markup, meta tags, XML sitemaps, and accessibility standards—baked in from day one.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h3>Launch & Continuous Optimization</h3>
+          <p>Post-launch audits, performance monitoring, and conversion testing keep your site ahead of algorithm updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="features-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>SEO-Focused <span>Features</span> You’ll Love</h2>
+      </div>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <i class="fas fa-rocket"></i>
+          <h3>Island Architecture</h3>
+          <p>Interactive components hydrate only when needed, slashing time to interactive.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-image"></i>
+          <h3>Automatic Image Optimization</h3>
+          <p>Next-gen formats, lazy loading, and responsive sizing served out of the box.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-sitemap"></i>
+          <h3>Structured Data Ready</h3>
+          <p>Rich snippets and schema markup boost click-through rates and visibility.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Security & Accessibility</h3>
+          <p>Best-practice hardening plus WCAG-compliant design keep users and search engines happy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="section-header text-center">
+        <h2>Frequently Asked <span>Questions</span></h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What makes Astro better for SEO than other frameworks?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            Astro ships zero JavaScript by default, delivers static HTML to crawlers, and prioritizes performance—all key factors Google uses to rank pages.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How long does an Astro site take to build?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            Typical projects run 4–8 weeks, depending on scope, integrations, and content volume. We’ll give you a detailed timeline after discovery.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can you migrate my existing site to Astro?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            Absolutely. We handle full migrations—including URLs, redirects, and analytics—ensuring you retain (and often improve) existing rankings.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What does your pricing look like?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            Projects start at ₱120,000 (~$2,000) and scale based on design complexity, integrations, and content needs. Contact us for a tailored quote.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <ContactSection id="contact" />
+</MainLayout>
+
+<style>
+/********************
+  General Styling
+*********************/
+.section-header {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+}
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.section-header span {
+  background: linear-gradient(135deg, #FF4438, #4285F4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/********************
+  Hero Section
+*********************/
+.hero-section {
+  background: linear-gradient(135deg, #FF4438, #FF6B35);
+  color: #fff;
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media(min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.hero-description {
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+.cta-button.primary {
+  background: #fff;
+  color: #FF4438;
+  margin-right: 1rem;
+}
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  color: #fff;
+}
+.cta-button:hover {
+  transform: translateY(-3px);
+}
+.hero-badge {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/********************
+  Breadcrumbs
+*********************/
+.breadcrumbs {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.9);
+}
+.breadcrumbs a { color: #fff; text-decoration: underline; }
+.separator { margin: 0 0.5rem; }
+.current { opacity: 0.8; }
+
+/********************
+  Feature Cards & Grid
+*********************/
+.features-grid, .steps-grid, .feature-list {
+  display: grid;
+  gap: 2rem;
+}
+.features-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.feature-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+.feature-icon {
+  font-size: 2rem;
+  color: #FF4438;
+  margin-bottom: 1rem;
+}
+
+/********************
+  Steps Grid
+*********************/
+.steps-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  counter-reset: step;
+}
+.step-card {
+  position: relative;
+  background: #fff;
+  padding: 2rem 1.5rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+.step-card:hover { transform: translateY(-6px); }
+.step-number {
+  background: linear-gradient(135deg, #FF4438, #4285F4);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/********************
+  Features List
+*********************/
+.feature-list {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.feature-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+.feature-item i {
+  font-size: 2rem;
+  color: #4285F4;
+}
+
+/********************
+  FAQ Section
+*********************/
+.faq-section { padding: 4rem 0; }
+.faq-item { border-bottom: 1px solid #e5e7eb; }
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.25rem 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+.faq-question i { transition: transform 0.3s; }
+.faq-answer { display: none; padding-bottom: 1.25rem; color: #4b5563; }
+.faq-item.active .faq-answer { display: block; }
+.faq-item.active .faq-question i { transform: rotate(45deg); }
+</style>
+
+<script>
+// FAQ toggle
+function toggleFAQ(button) {
+  const item = button.parentElement;
+  item.classList.toggle('active');
+}
+</script>
