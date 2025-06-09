@@ -5,18 +5,9 @@ import Footer from '../components/Footer.astro';
 import ReviewsSection from '../components/ReviewsSection.astro';
 import AwardsSection from '../components/AwardsSection.astro';
 import ProcessSection from '../components/ProcessSection.astro';
-import PartnersSection from '../components/PartnersSection.astro';
 ---
 
-<MainLayout 
-  title="Bright Forge SEO - Top Rated SEO Agency Philippines"
-  description="Bright Forge SEO is a leading SEO agency in the Philippines, helping businesses achieve sustainable growth through data-driven strategies."
-  type="company"
-  image="/images/og-image.jpg"
-  breadcrumbs={[
-    { name: 'Home', url: '/' }
-  ]}
->
+<MainLayout title="Bright Forge SEO - Digital Marketing & SEO Agency">
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
@@ -73,91 +64,84 @@ import PartnersSection from '../components/PartnersSection.astro';
     </div>
   </section>
 
-  <section class="py-12 bg-white">
+  <!-- Partners Carousel -->
+  <section class="partners-section py-10">
     <div class="container max-w-7xl mx-auto px-4">
-      <h3 class="text-center text-2xl font-bold mb-10">Proudly Featured On</h3>
-      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-        <!-- Design Rush Logo -->
-        <div class="w-[180px] h-[80px] flex items-center justify-center bg-white p-2 rounded">
-          <img 
-            src="/images/design-rush-logo.png" 
-            alt="Design Rush" 
-            style="max-width: 100%; max-height: 100%; object-fit: contain;"
-          />
+      <h3 class="partners-title text-center text-2xl font-bold mb-8">Proudly Featured On</h3>
+      <div class="flex justify-center items-center gap-8 flex-wrap">
+        <div class="logo-item flex justify-center">
+          <a href="https://www.designrush.com/agency/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer">
+            <img src="/images/proud/design-rush-.png" alt="Design Rush" width="150" height="80" class="object-contain h-20">
+          </a>
         </div>
-        
-        <!-- Upwork Logo -->
-        <div class="w-[180px] h-[80px] flex items-center justify-center bg-white p-2 rounded">
-          <img 
-            src="/images/upwork-logo.png" 
-            alt="Upwork" 
-            style="max-width: 100%; max-height: 100%; object-fit: contain;"
-          />
+        <div class="logo-item flex justify-center">
+          <a href="https://www.upwork.com/freelancers/~015e24fd8608be3b83" target="_blank" rel="noopener noreferrer">
+            <img src="/images/proud/hd-upwork-logo-transparent-background-701751694712899z3s733b04e.png" alt="Upwork" width="150" height="80" class="object-contain h-20">
+          </a>
         </div>
-        
-        <!-- Clutch Logo -->
-        <div class="w-[180px] h-[80px] flex items-center justify-center bg-white p-2 rounded">
-          <img 
-            src="/images/clutch-logo.png" 
-            alt="Clutch" 
-            style="max-width: 100%; max-height: 100%; object-fit: contain;"
-          />
+        <div class="logo-item flex justify-center">
+          <a href="https://clutch.co/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer">
+            <img src="/images/proud/png-transparent-company-web-development-marketing-business-clutch-marketing-web-design-company-text.png" alt="Clutch" width="150" height="80" class="object-contain h-20">
+          </a>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Why Choose Us Section -->
-  <section class="why-choose-section py-16 bg-white">
-    <div class="container max-w-7xl mx-auto px-4">
-      <h2 class="section-title text-center text-3xl font-bold mb-12">Why Choose <span class="text-[#FF4438]">Bright Forge SEO Agency?</span></h2>
-      <div class="why-choose-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-globe text-[#FF4438]"></i>
+  <section class="why-choose-section">
+    <div class="container max-w-7xl mx-auto">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose <span>Bright Forge SEO Agency?</span></h2>
+      </div>
+      
+      <div class="why-choose-grid">
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-globe"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Globally Inspired Strategies</h3>
-          <p class="text-gray-600">We use proven methods and tools to deliver customized solutions that work effectively across industries and markets.</p>
+          <h3>Globally Inspired Strategies</h3>
+          <p>We use proven methods and tools to deliver customized solutions that work effectively across industries and markets.</p>
         </div>
         
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-cogs text-[#FF4438]"></i>
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-cogs"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Tailored Solutions</h3>
-          <p class="text-gray-600">No cookie-cutter approaches here. We analyze your unique goals, industry, and audience to create SEO campaigns that resonate with your business needs.</p>
+          <h3>Tailored Solutions</h3>
+          <p>No cookie-cutter approaches here. We analyze your unique goals, industry, and audience to create SEO campaigns that resonate with your business needs.</p>
         </div>
         
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-shield-alt text-[#FF4438]"></i>
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-shield-alt"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Ethical and Transparent Practices</h3>
-          <p class="text-gray-600">Integrity is at the core of what we do. We focus on white-hat SEO techniques that yield sustainable, long-lasting results without cutting corners.</p>
+          <h3>Ethical and Transparent Practices</h3>
+          <p>Integrity is at the core of what we do. We focus on white-hat SEO techniques that yield sustainable, long-lasting results without cutting corners.</p>
         </div>
         
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-chart-line text-[#FF4438]"></i>
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-chart-line"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Data-Driven Insights</h3>
-          <p class="text-gray-600">From tracking competitor performance to analyzing search trends, every decision we make is guided by real-time data to maximize your results.</p>
+          <h3>Data-Driven Insights</h3>
+          <p>From tracking competitor performance to analyzing search trends, every decision we make is guided by real-time data to maximize your results.</p>
         </div>
         
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-comments text-[#FF4438]"></i>
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-comments"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Clear Communication</h3>
-          <p class="text-gray-600">We prioritize keeping you informed at every stage. Expect regular updates and straightforward reports that keep you in control of your campaigns.</p>
+          <h3>Clear Communication</h3>
+          <p>We prioritize keeping you informed at every stage. Expect regular updates and straightforward reports that keep you in control of your campaigns.</p>
         </div>
         
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-trophy text-[#FF4438]"></i>
+        <div class="why-choose-item">
+          <div class="choose-icon">
+            <i class="fas fa-trophy"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Proven Results</h3>
-          <p class="text-gray-600">Expertise and Experience, Transparent Reporting. We deliver measurable outcomes that directly impact your business growth.</p>
+          <h3>Proven Results</h3>
+          <p>Expertise and Experience, Transparent Reporting. We deliver measurable outcomes that directly impact your business growth.</p>
         </div>
       </div>
     </div>
@@ -576,16 +560,16 @@ import PartnersSection from '../components/PartnersSection.astro';
         <!-- Second Blog Post -->
         <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
           <div class="blog-image h-48">
-            <img src="/images/blog/ai-seo-transformation.jpg" alt="AI SEO Transformation" class="w-full h-full object-cover">
+            <img src="/images/blog/seo-trends-philippines-2024.jpg" alt="SEO Trends Philippines 2024" class="w-full h-full object-cover">
           </div>
           <div class="blog-content p-5 flex-grow">
             <div class="blog-meta flex items-center text-sm mb-2">
-              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">SEO</span>
-              <span class="blog-date text-gray-500 ml-3">April 23, 2025</span>
+              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">SEO Trends</span>
+              <span class="blog-date text-gray-500 ml-3">March 15, 2024</span>
             </div>
-            <h3 class="text-lg font-bold mb-2"><a href="/blog/ai-seo-transformation" class="hover:text-brand-accent transition-colors">The AI Reckoning: Transformation, Not Termination, for Search Engine Optimisation</a></h3>
-            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Explore how AI is transforming SEO rather than making it obsolete. Learn about AI integration in search engines and strategies to adapt in the AI era.</p>
-            <a href="/blog/ai-seo-transformation" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
+            <h3 class="text-lg font-bold mb-2"><a href="/blog/seo-trends-philippines-2024" class="hover:text-brand-accent transition-colors">Top 10 SEO Trends Shaping the Philippines Market</a></h3>
+            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Discover the latest SEO trends impacting Philippine businesses, from local search optimization to AI-powered content.</p>
+            <a href="/blog/seo-trends-philippines-2024" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
               Read Article
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -594,7 +578,26 @@ import PartnersSection from '../components/PartnersSection.astro';
           </div>
         </div>
         
-        <!-- We only have two actual blog posts, so the third one is removed -->
+        <!-- Third Blog Post -->
+        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+          <div class="blog-image h-48">
+            <img src="/images/case-studies/phoenix-spa-beauty-hero.jpg" alt="Technical SEO for Service Businesses" class="w-full h-full object-cover">
+          </div>
+          <div class="blog-content p-5 flex-grow">
+            <div class="blog-meta flex items-center text-sm mb-2">
+              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">Technical SEO</span>
+              <span class="blog-date text-gray-500 ml-3">May 22, 2025</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2"><a href="/blog" class="hover:text-brand-accent transition-colors">Technical SEO Essentials for Service Businesses</a></h3>
+            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Learn how service-based businesses can leverage technical SEO to improve site performance and attract more qualified leads.</p>
+            <a href="/blog" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
+              Read Article
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
       
       <div class="text-center mt-10">
@@ -617,7 +620,7 @@ import PartnersSection from '../components/PartnersSection.astro';
       <div class="case-studies-container">
         <div class="case-study-card">
           <div class="case-study-image">
-            <img src="/images/case-studies/renamed/consulting-firm-seo.webp" alt="Consulting Firm SEO Case Study" width="400" height="300" loading="eager">
+            <img src="/images/case-studies/consulting-firm-hero.jpg" alt="Consulting Firm SEO Case Study">
             <div class="case-study-category">Consulting</div>
           </div>
           <div class="case-study-content">
@@ -643,7 +646,7 @@ import PartnersSection from '../components/PartnersSection.astro';
 
         <div class="case-study-card">
           <div class="case-study-image">
-            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance UK Fitness SEO Case Study" width="400" height="300" loading="eager">
+            <img src="/images/case-studies/speediance-uk-hero.jpg" alt="Speediance UK Fitness SEO Case Study">
             <div class="case-study-category">Fitness</div>
           </div>
           <div class="case-study-content">
@@ -668,7 +671,7 @@ import PartnersSection from '../components/PartnersSection.astro';
         
         <div class="case-study-card">
           <div class="case-study-image">
-            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance AU Fitness SEO Case Study" width="400" height="300" loading="eager">
+            <img src="/images/case-studies/speediance-au-hero.jpg" alt="Speediance AU Fitness SEO Case Study">
             <div class="case-study-category">Fitness</div>
           </div>
           <div class="case-study-content">
@@ -3704,24 +3707,6 @@ import PartnersSection from '../components/PartnersSection.astro';
       background: var(--brand-accent) !important;
       transform: scale(1.2) !important;
     }
-  }
-  
-  /* Partner logos styling */
-  .partner-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 80px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 8px;
-  }
-  
-  .partner-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
   }
 </style>
 
