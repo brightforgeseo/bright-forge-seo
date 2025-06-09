@@ -1,0 +1,7 @@
+# Block indexing on Netlify subdomain
+https://adorable-praline-5dc6c9.netlify.app/*
+  X-Robots-Tag: noindex, nofollow
+
+# Allow indexing on main domain
+https://brightforgeseo.com/*
+  X-Robots-Tag: all

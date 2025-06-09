@@ -1,0 +1,9 @@
+User-agent: *
+# Block crawling on Netlify subdomain
+Host: https://brightforgeseo.com
+# Allow crawling on main domain
+Sitemap: https://brightforgeseo.com/sitemap.xml
+
+# Block specific paths
+Disallow: /thanks
+Disallow: /index-backup
