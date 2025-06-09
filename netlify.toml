@@ -67,6 +67,12 @@
 
 # Ensure all paths resolve properly for single page app behavior
 [[redirects]]
+  from = "/force-facebook-refresh.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
