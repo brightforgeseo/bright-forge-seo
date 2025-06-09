@@ -27,12 +27,10 @@ import ProcessSection from '../components/ProcessSection.astro';
           <div class="hero-audit-form">
             <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="audit-form">
               <input type="hidden" name="form-name" value="homepage-audit" />
+              <input type="hidden" name="subject" value="New SEO Audit Request from Website" />
               <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div class="form-group">
                 <input type="url" id="website-url" name="website" placeholder="Enter website URL (e.g. https://example.com)" required>
-              </div>
-              <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Your email address" required>
               </div>
               <button type="submit" class="audit-btn">
                 Get Your Free SEO Audit
@@ -3763,6 +3761,21 @@ import ProcessSection from '../components/ProcessSection.astro';
     });
   });
   
-  // Remove all JavaScript form handling since Netlify will handle it
-  // The form will naturally redirect to the /thanks page
+  // Add minimal JavaScript to ensure form submission works correctly
+  document.addEventListener('DOMContentLoaded', function() {
+    const auditForm = document.querySelector('.audit-form');
+    if (auditForm) {
+      auditForm.addEventListener('submit', function(e) {
+        // Don't prevent default, just add loading state
+        const submitBtn = this.querySelector('.audit-btn');
+        if (submitBtn) {
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitBtn.disabled = true;
+        }
+        
+        // Log form submission for debugging
+        console.log('Form submitted to Netlify');
+      });
+    }
+  });
 </script>
