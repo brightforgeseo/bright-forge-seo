@@ -1,3 +1,16 @@
+# Allow Google bots specifically
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: APIs-Google
+Allow: /
+
 User-agent: *
 # Block crawling on Netlify subdomain
 Host: https://brightforgeseo.com

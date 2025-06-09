@@ -14,7 +14,7 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "upgrade-insecure-requests"
+    # Removed Content-Security-Policy as it might be blocking PageSpeed Insights
 
 [[headers]]
   for = "/*.js"
@@ -63,3 +63,11 @@
   to = "/"
   status = 301
   force = true
+
+# Special rule to ensure PageSpeed Insights can access the site
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = {Referrer = ["google.com", "developers.google.com", "pagespeed.web.dev"]}
