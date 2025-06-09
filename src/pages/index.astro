@@ -25,9 +25,14 @@ import ProcessSection from '../components/ProcessSection.astro';
           </p>
           
           <div class="hero-audit-form">
-            <form id="audit-form" class="audit-form">
+            <form id="audit-form" class="audit-form" name="audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
+              <input type="hidden" name="form-name" value="audit" />
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div class="form-group">
                 <input type="url" id="website-url" name="website" placeholder="Enter website URL (e.g. https://example.com)" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
               </div>
               <button type="submit" class="audit-btn">
                 Get Your Free SEO Audit
@@ -3758,37 +3763,15 @@ import ProcessSection from '../components/ProcessSection.astro';
     });
   });
   
-  // Audit form functionality
+  // Audit form functionality - now handled by Netlify Forms
   document.addEventListener('DOMContentLoaded', function() {
     const auditForm = document.getElementById('audit-form');
     if (auditForm) {
-      auditForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        const website = formData.get('website');
-        const email = formData.get('email');
-        
-        // Simple validation
-        if (!website || !email) {
-          alert('Please fill in all required fields');
-          return;
-        }
-        
-        // Simulate form submission
+      // Add loading animation on submit
+      auditForm.addEventListener('submit', function() {
         const submitBtn = this.querySelector('.audit-btn');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
-        
-        setTimeout(() => {
-          submitBtn.innerHTML = '<i class="fas fa-check"></i> Analysis Complete!';
-          setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            this.reset();
-          }, 2000);
-        }, 3000);
       });
     }
   });
