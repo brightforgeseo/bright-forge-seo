@@ -3808,7 +3808,24 @@ import PartnersSection from '../components/PartnersSection.astro';
     const message = document.getElementById('audit-message');
     if (!form || !input) return;
 
-    // Create results container
+    // Create modal container for detailed results
+    const modalOverlay = document.createElement('div');
+    modalOverlay.id = 'audit-modal-overlay';
+    modalOverlay.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden';
+    document.body.appendChild(modalOverlay);
+    
+    const modalContent = document.createElement('div');
+    modalContent.id = 'audit-modal-content';
+    modalContent.className = 'bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative';
+    modalOverlay.appendChild(modalContent);
+    
+    const closeButton = document.createElement('button');
+    closeButton.className = 'absolute top-4 right-4 text-gray-500 hover:text-gray-700';
+    closeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+    closeButton.onclick = () => modalOverlay.classList.add('hidden');
+    modalContent.appendChild(closeButton);
+    
+    // Create results container (simplified version for the homepage)
     const resultsContainer = document.createElement('div');
     resultsContainer.id = 'audit-results';
     resultsContainer.className = 'mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200 hidden';
@@ -3843,9 +3860,19 @@ import PartnersSection from '../components/PartnersSection.astro';
         console.log('SEO Audit Result:', data);
         message.textContent = 'Audit complete!';
         
-        // Display results visually
-        displayAuditResults(data, resultsContainer);
+        // Display summary results on page
+        displaySummaryResults(data, resultsContainer);
         resultsContainer.classList.remove('hidden');
+        
+        // Display detailed results in modal
+        displayDetailedResults(data, modalContent);
+        
+        // Add "View Details" button to summary
+        const detailsButton = document.createElement('button');
+        detailsButton.className = 'mt-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded';
+        detailsButton.textContent = 'View Detailed Report';
+        detailsButton.onclick = () => modalOverlay.classList.remove('hidden');
+        resultsContainer.appendChild(detailsButton);
       } catch (err) {
         console.error(err);
         message.textContent = 'Oops! Something went wrong. Please try again later.';
@@ -3855,25 +3882,167 @@ import PartnersSection from '../components/PartnersSection.astro';
       }
     });
     
-    // Function to display audit results
-    function displayAuditResults(data, container) {
+    // Function to display summary results
+    function displaySummaryResults(data, container) {
+      container.innerHTML = '';
+      
       // Create header
       const header = document.createElement('div');
       header.className = 'mb-4';
       header.innerHTML = `<h3 class="text-xl font-bold">SEO Audit Results for ${data.url || 'Website'}</h3>`;
       container.appendChild(header);
       
+      // Calculate score and issues
+      const { overallScore, issues } = calculateScoreAndIssues(data);
+      
       // Create score section
       const scoreSection = document.createElement('div');
       scoreSection.className = 'mb-4 p-3 bg-white rounded shadow-sm';
+      scoreSection.innerHTML = `
+        <div class="flex justify-between items-center">
+          <span class="font-bold">Overall Score:</span>
+          <span class="text-lg font-bold ${getScoreColorClass(overallScore)}">${overallScore}/100</span>
+        </div>
+      `;
+      container.appendChild(scoreSection);
       
-      // Calculate a simple SEO score based on available metrics
+      // Create recommendations section
+      const recommendationsSection = document.createElement('div');
+      recommendationsSection.className = 'mt-4';
+      recommendationsSection.innerHTML = `
+        <p class="text-sm">For a detailed analysis and recommendations, please <a href="/contact" class="text-blue-600 hover:underline">contact us</a>.</p>
+      `;
+      container.appendChild(recommendationsSection);
+    }
+    
+    // Function to display detailed results in modal
+    function displayDetailedResults(data, container) {
+      container.innerHTML = '';
+      
+      // Create header
+      const header = document.createElement('div');
+      header.className = 'mb-6 border-b pb-4';
+      header.innerHTML = `<h2 class="text-2xl font-bold">Detailed SEO Audit for ${data.url || 'Website'}</h2>`;
+      container.appendChild(header);
+      
+      // Calculate score and issues
+      const { overallScore, issues, analysis } = calculateScoreAndIssues(data);
+      
+      // Create score section
+      const scoreSection = document.createElement('div');
+      scoreSection.className = 'mb-6 p-4 bg-gray-50 rounded-lg';
+      scoreSection.innerHTML = `
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-xl font-bold">Overall SEO Score:</span>
+          <span class="text-2xl font-bold ${getScoreColorClass(overallScore)}">${overallScore}/100</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="${getScoreColorClass(overallScore).replace('text-', 'bg-')} h-2.5 rounded-full" style="width: ${overallScore}%"></div>
+        </div>
+      `;
+      container.appendChild(scoreSection);
+      
+      // Create issues section
+      if (issues.length > 0) {
+        const issuesSection = document.createElement('div');
+        issuesSection.className = 'mb-6';
+        issuesSection.innerHTML = `<h3 class="text-xl font-bold mb-3">Issues Found</h3>`;
+        
+        const issuesList = document.createElement('ul');
+        issuesList.className = 'space-y-2';
+        
+        issues.forEach(issue => {
+          const item = document.createElement('li');
+          item.className = 'p-3 bg-red-50 border border-red-100 rounded-md flex items-start';
+          item.innerHTML = `
+            <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>${issue}</span>
+          `;
+          issuesList.appendChild(item);
+        });
+        
+        issuesSection.appendChild(issuesList);
+        container.appendChild(issuesSection);
+      }
+      
+      // Display detailed metrics if available
+      if (data.analysis) {
+        const metricsSection = document.createElement('div');
+        metricsSection.className = 'mb-6';
+        metricsSection.innerHTML = `<h3 class="text-xl font-bold mb-3">Detailed Metrics</h3>`;
+        
+        const metricsTable = document.createElement('div');
+        metricsTable.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
+        
+        // Basic SEO Elements
+        addMetricItem(metricsTable, 'Title', data.analysis.title || 'Not found', Boolean(data.analysis.title));
+        addMetricItem(metricsTable, 'Meta Description', data.analysis.metaDescription || 'Not found', Boolean(data.analysis.metaDescription));
+        addMetricItem(metricsTable, 'H1 Tags', data.analysis.h1Count || '0', data.analysis.h1Count === 1);
+        
+        // Images
+        if (data.analysis.imgCount !== undefined) {
+          const altTextPercentage = data.analysis.imgCount > 0 ? 
+            Math.round((data.analysis.imgWithAltCount / data.analysis.imgCount) * 100) : 0;
+          addMetricItem(metricsTable, 'Images with Alt Text', 
+            `${data.analysis.imgWithAltCount || 0}/${data.analysis.imgCount} (${altTextPercentage}%)`, 
+            altTextPercentage === 100);
+        }
+        
+        // Technical SEO
+        addMetricItem(metricsTable, 'HTTPS/SSL', data.analysis.hasSSL ? 'Yes' : 'No', data.analysis.hasSSL);
+        addMetricItem(metricsTable, 'Mobile Viewport', data.analysis.hasMobileViewport ? 'Yes' : 'No', data.analysis.hasMobileViewport);
+        addMetricItem(metricsTable, 'Canonical URL', data.analysis.canonicalUrl || 'Not found', Boolean(data.analysis.canonicalUrl));
+        
+        // Links
+        if (data.analysis.internalLinks !== undefined) {
+          addMetricItem(metricsTable, 'Internal Links', data.analysis.internalLinks, true);
+        }
+        if (data.analysis.externalLinks !== undefined) {
+          addMetricItem(metricsTable, 'External Links', data.analysis.externalLinks, true);
+        }
+        
+        metricsSection.appendChild(metricsTable);
+        container.appendChild(metricsSection);
+      }
+      
+      // Create CTA section
+      const ctaSection = document.createElement('div');
+      ctaSection.className = 'mt-8 p-4 bg-blue-50 border border-blue-100 rounded-lg text-center';
+      ctaSection.innerHTML = `
+        <h3 class="text-lg font-bold mb-2">Want a more comprehensive analysis?</h3>
+        <p class="mb-4">Our SEO experts can provide a detailed audit with actionable recommendations.</p>
+        <a href="/contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md">Contact Us for Full Analysis</a>
+      `;
+      container.appendChild(ctaSection);
+    }
+    
+    // Helper function to add metric items to the table
+    function addMetricItem(container, label, value, isGood) {
+      const item = document.createElement('div');
+      item.className = 'flex justify-between p-3 border rounded-md';
+      item.innerHTML = `
+        <span class="font-medium">${label}:</span>
+        <span class="flex items-center">
+          ${value}
+          ${isGood ? 
+            '<svg class="w-5 h-5 text-green-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>' : 
+            '<svg class="w-5 h-5 text-yellow-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>'}
+        </span>
+      `;
+      container.appendChild(item);
+    }
+    
+    // Helper function to calculate score and issues
+    function calculateScoreAndIssues(data) {
       let overallScore = 'N/A';
       let issues = [];
+      let analysis = null;
       
       // Check if we have analysis data
       if (data.analysis) {
-        const analysis = data.analysis;
+        analysis = data.analysis;
         let totalPoints = 0;
         let maxPoints = 0;
         
@@ -3955,41 +4124,7 @@ import PartnersSection from '../components/PartnersSection.astro';
         }
       }
       
-      scoreSection.innerHTML = `
-        <div class="flex justify-between items-center">
-          <span class="font-bold">Overall Score:</span>
-          <span class="text-lg font-bold ${getScoreColorClass(overallScore)}">${overallScore}/100</span>
-        </div>
-      `;
-      container.appendChild(scoreSection);
-      
-      // Create issues section if available
-      if (issues.length > 0) {
-        const issuesSection = document.createElement('div');
-        issuesSection.className = 'mb-4';
-        issuesSection.innerHTML = `<h4 class="font-bold mb-2">Key Issues Found:</h4>`;
-        
-        const issuesList = document.createElement('ul');
-        issuesList.className = 'list-disc pl-5';
-        
-        issues.slice(0, 5).forEach(issue => {
-          const item = document.createElement('li');
-          item.className = 'mb-1';
-          item.textContent = issue;
-          issuesList.appendChild(item);
-        });
-        
-        issuesSection.appendChild(issuesList);
-        container.appendChild(issuesSection);
-      }
-      
-      // Create recommendations section
-      const recommendationsSection = document.createElement('div');
-      recommendationsSection.className = 'mt-4';
-      recommendationsSection.innerHTML = `
-        <p class="text-sm">For a detailed analysis and recommendations, please <a href="/contact" class="text-blue-600 hover:underline">contact us</a>.</p>
-      `;
-      container.appendChild(recommendationsSection);
+      return { overallScore, issues, analysis };
     }
     
     // Helper function for score colors
