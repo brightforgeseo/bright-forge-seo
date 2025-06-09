@@ -64,10 +64,8 @@
   status = 301
   force = true
 
-# Special rule to ensure PageSpeed Insights can access the site
+# Ensure all paths resolve properly for single page app behavior
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false
-  conditions = {Referrer = ["google.com", "developers.google.com", "pagespeed.web.dev"]}
