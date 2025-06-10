@@ -1,215 +1,139 @@
 ---
-// LegacyHeader.astro – Modern mega-menu masterpiece
+// LegacyHeader.astro – Professional mega-menu for SEO agency
 import "../styles/legacy.css";
 ---
 
 <!-- Top Contact Bar -->
-<div class="top-bar-modern">
+<div class="top-bar-professional">
   <div class="top-bar-container">
-    <div class="contact-info-modern">
+    <div class="contact-info-professional">
       <a href="mailto:seo@brightforgeseo.com" class="contact-link">
-        <span class="contact-icon">✉️</span>
+        <i class="fas fa-envelope"></i>
         <span>seo@brightforgeseo.com</span>
       </a>
       <a href="tel:+639696206182" class="contact-link">
-        <span class="contact-icon">📞</span>
+        <i class="fas fa-phone"></i>
         <span>(+63) 969 620 6182</span>
       </a>
     </div>
-    <div class="social-links-modern">
-      <a href="#" class="social-link"><span>💼</span></a>
-      <a href="#" class="social-link"><span>🐦</span></a>
-      <a href="#" class="social-link"><span>💼</span></a>
+    <div class="social-links-professional">
+      <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
     </div>
   </div>
 </div>
 
-<!-- Main Navigation with Mega Menu -->
-<nav class="navbar-masterpiece">
-  <div class="nav-container-modern">
-    <a href="/" class="logo-modern">
-      <img src="/images/logo-bright-forge.png" alt="Bright Forge SEO" width="180" height="60" style="object-fit: contain; max-height: 60px; width: auto;" loading="eager" decoding="sync" />
-      <div class="logo-glow"></div>
-    </a>
+<!-- Main Navigation with Professional Mega Menu -->
+<nav class="navbar-professional">
+  <div class="nav-container">
+    <!-- Logo -->
+    <div class="nav-logo">
+      <a href="/">
+        <img src="/images/logo-bright-forge.png" alt="Bright Forge SEO" width="180" height="50">
+      </a>
+    </div>
 
-    <ul class="nav-menu-modern">
-      <li class="nav-item-modern">
-        <a href="#" class="nav-link-modern" data-dropdown="services">
-          <span class="nav-text">SEO Services</span>
-          <span class="nav-icon">⚡</span>
-          <div class="nav-underline"></div>
+    <!-- Desktop Navigation -->
+    <ul class="nav-menu-professional">
+      <li class="nav-item-professional">
+        <a href="/" class="nav-link-professional">
+          <span>Home</span>
         </a>
-        
-        <!-- Mega Menu Masterpiece -->
-        <div class="mega-dropdown-masterpiece">
-          <div class="mega-bg-overlay"></div>
-          <div class="mega-content">
-            <div class="mega-header">
-              <h3 class="mega-title">Complete SEO Solutions</h3>
-              <p class="mega-subtitle">Everything you need to dominate search results</p>
-            </div>
-            
-            <div class="mega-grid">
+      </li>
+      
+      <li class="nav-item-professional has-dropdown">
+        <a href="#" class="nav-link-professional">
+          <span>SEO Services</span>
+          <i class="fas fa-chevron-down nav-arrow"></i>
+        </a>
+        <div class="mega-menu-professional">
+          <div class="mega-menu-container">
+            <div class="mega-menu-content">
               <!-- Core Services Column -->
               <div class="mega-column">
-                <div class="column-header">
-                  <span class="column-icon">🎯</span>
-                  <h4 class="column-title">Core SEO Services</h4>
-                </div>
-                
+                <h3 class="column-title">Core SEO Services</h3>
                 <div class="service-links">
                   <a href="/philippines-seo-services" class="service-link">
-                    <div class="service-icon">🇵🇭</div>
-                    <div class="service-content">
-                      <div class="service-title">Philippines SEO Services</div>
-                      <div class="service-desc">Comprehensive SEO solutions</div>
+                    <div class="service-info">
+                      <strong>Philippines SEO Services</strong>
+                      <span>Complete SEO solutions for Philippine businesses</span>
                     </div>
-                    <div class="service-arrow">→</div>
                   </a>
-                  
                   <a href="/technical-seo-services-philippines" class="service-link">
-                    <div class="service-icon">⚙️</div>
-                    <div class="service-content">
-                      <div class="service-title">Technical SEO Services</div>
-                      <div class="service-desc">Technical foundation optimization</div>
+                    <div class="service-info">
+                      <strong>Technical SEO</strong>
+                      <span>Fix technical issues and improve site performance</span>
                     </div>
-                    <div class="service-arrow">→</div>
                   </a>
-                  
                   <a href="/on-page-seo-services-philippines" class="service-link">
-                    <div class="service-icon">📄</div>
-                    <div class="service-content">
-                      <div class="service-title">On-Page SEO Services</div>
-                      <div class="service-desc">Content optimization excellence</div>
+                    <div class="service-info">
+                      <strong>On-Page SEO</strong>
+                      <span>Optimize content and page elements</span>
                     </div>
-                    <div class="service-arrow">→</div>
                   </a>
-                  
                   <a href="/content-seo-services-philippines" class="service-link">
-                    <div class="service-icon">✍️</div>
-                    <div class="service-content">
-                      <div class="service-title">Content SEO Services</div>
-                      <div class="service-desc">Content that ranks and converts</div>
+                    <div class="service-info">
+                      <strong>Content SEO</strong>
+                      <span>Strategic content creation and optimization</span>
                     </div>
-                    <div class="service-arrow">→</div>
-                  </a>
-                  
-                  <a href="/backlink-seo-services-philippines" class="service-link">
-                    <div class="service-icon">🔗</div>
-                    <div class="service-content">
-                      <div class="service-title">Backlink SEO Services</div>
-                      <div class="service-desc">Authority building strategies</div>
-                    </div>
-                    <div class="service-arrow">→</div>
                   </a>
                 </div>
               </div>
 
               <!-- Specialized Services Column -->
               <div class="mega-column">
-                <div class="column-header">
-                  <span class="column-icon">🚀</span>
-                  <h4 class="column-title">Specialized SEO</h4>
-                </div>
-                
+                <h3 class="column-title">Specialized Services</h3>
                 <div class="service-links">
-                  <a href="/white-label-seo-services-philippines" class="service-link featured">
-                    <div class="service-icon">🏷️</div>
-                    <div class="service-content">
-                      <div class="service-title">White Label SEO</div>
-                      <div class="service-desc">Partner with SEO experts</div>
+                  <a href="/backlink-seo-services-philippines" class="service-link">
+                    <div class="service-info">
+                      <strong>Link Building</strong>
+                      <span>High-quality backlink acquisition</span>
                     </div>
-                    <div class="service-badge">Popular</div>
                   </a>
-                  
-                  <a href="/astro-seo-website-development" class="service-link">
-                    <div class="service-icon">🌟</div>
-                    <div class="service-content">
-                      <div class="service-title">Astro SEO Development</div>
-                      <div class="service-desc">Ultra-fast SEO websites</div>
+                  <a href="/white-label-seo-services-philippines" class="service-link">
+                    <div class="service-info">
+                      <strong>White Label SEO</strong>
+                      <span>Partner with us for your client projects</span>
                     </div>
-                    <div class="service-arrow">→</div>
                   </a>
-                  
                   <a href="/seo-audit-services" class="service-link">
-                    <div class="service-icon">🔍</div>
-                    <div class="service-content">
-                      <div class="service-title">SEO Audit Services</div>
-                      <div class="service-desc">Deep analysis and insights</div>
+                    <div class="service-info">
+                      <strong>SEO Audits</strong>
+                      <span>Comprehensive website analysis</span>
                     </div>
-                    <div class="service-arrow">→</div>
                   </a>
-                  
                   <a href="/keyword-research-services" class="service-link">
-                    <div class="service-icon">🗝️</div>
-                    <div class="service-content">
-                      <div class="service-title">Keyword Research</div>
-                      <div class="service-desc">Data-driven keyword strategies</div>
+                    <div class="service-info">
+                      <strong>Keyword Research</strong>
+                      <span>Strategic keyword planning and analysis</span>
                     </div>
-                    <div class="service-arrow">→</div>
                   </a>
-                  
-                  <a href="/website-migration-services" class="service-link">
-                    <div class="service-icon">🔄</div>
-                    <div class="service-content">
-                      <div class="service-title">Website Migration</div>
-                      <div class="service-desc">Safe ranking preservation</div>
-                    </div>
-                    <div class="service-arrow">→</div>
-                  </a>
-                  
-                  <a href="/generative-engine-optimization" class="service-link">
-                    <div class="service-icon">🤖</div>
-                    <div class="service-content">
-                      <div class="service-title">AI & GEO Services</div>
-                      <div class="service-desc">Future-proof AI optimization</div>
-                    </div>
-                    <div class="service-arrow">→</div>
-                  </a>
-                </div>
-                
-                <!-- CTA in column -->
-                <div class="mega-cta">
-                  <div class="cta-content">
-                    <h4>Ready to Get Started?</h4>
-                    <p>Get a free SEO audit and consultation</p>
-                    <a href="/contact" class="cta-button">
-                      <span>Contact Us Today</span>
-                      <span class="cta-icon">🚀</span>
-                    </a>
-                  </div>
                 </div>
               </div>
 
-              <!-- Visual Column -->
-              <div class="mega-visual">
-                <div class="visual-content">
-                  <div class="stats-grid">
-                    <div class="stat-item">
-                      <div class="stat-number">500+</div>
-                      <div class="stat-label">Clients Served</div>
+              <!-- Development Services Column -->
+              <div class="mega-column">
+                <h3 class="column-title">Development & Migration</h3>
+                <div class="service-links">
+                  <a href="/astro-seo-website-development" class="service-link">
+                    <div class="service-info">
+                      <strong>Astro Website Development</strong>
+                      <span>Fast, SEO-optimized websites</span>
                     </div>
-                    <div class="stat-item">
-                      <div class="stat-number">98%</div>
-                      <div class="stat-label">Success Rate</div>
+                  </a>
+                  <a href="/website-migration-services" class="service-link">
+                    <div class="service-info">
+                      <strong>Website Migration</strong>
+                      <span>Safe and SEO-friendly site moves</span>
                     </div>
-                    <div class="stat-item">
-                      <div class="stat-number">24h</div>
-                      <div class="stat-label">Response Time</div>
-                    </div>
-                  </div>
-                  
-                  <div class="testimonial-preview">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <blockquote>"Incredible results! Our organic traffic increased by 300% in just 3 months."</blockquote>
-                    <div class="testimonial-author">
-                      <div class="author-avatar">👨‍💼</div>
-                      <div class="author-info">
-                        <div class="author-name">Marcus Chen</div>
-                        <div class="author-company">TechCorp CEO</div>
-                      </div>
-                    </div>
-                  </div>
+                  </a>
+                </div>
+                
+                <div class="mega-highlight">
+                  <h4>Ready to Get Started?</h4>
+                  <p>Get a free SEO consultation and discover how we can help your business grow.</p>
+                  <a href="/contact" class="cta-button-mega">Free Consultation</a>
                 </div>
               </div>
             </div>
@@ -217,51 +141,40 @@ import "../styles/legacy.css";
         </div>
       </li>
 
-      <li class="nav-item-modern">
-        <a href="#" class="nav-link-modern" data-dropdown="pages">
-          <span class="nav-text">Pages</span>
-          <span class="nav-icon">📄</span>
-          <div class="nav-underline"></div>
+      <li class="nav-item-professional">
+        <a href="/case-studies" class="nav-link-professional">
+          <span>Case Studies</span>
         </a>
-        <div class="dropdown-modern">
+      </li>
+      
+      <li class="nav-item-professional">
+        <a href="/blog" class="nav-link-professional">
+          <span>Blog</span>
+        </a>
+      </li>
+
+      <li class="nav-item-professional has-dropdown">
+        <a href="#" class="nav-link-professional">
+          <span>Company</span>
+          <i class="fas fa-chevron-down nav-arrow"></i>
+        </a>
+        <div class="dropdown-professional">
           <div class="dropdown-content">
-            <a href="/" class="dropdown-link">
-              <span class="dropdown-icon">🏠</span>
-              <span class="dropdown-text">Home</span>
-            </a>
             <a href="/about-us" class="dropdown-link">
-              <span class="dropdown-icon">👥</span>
-              <span class="dropdown-text">About Us</span>
+              <strong>About Us</strong>
+              <span>Learn about our team and mission</span>
             </a>
             <a href="/contact" class="dropdown-link">
-              <span class="dropdown-icon">📞</span>
-              <span class="dropdown-text">Contact</span>
+              <strong>Contact</strong>
+              <span>Get in touch with our team</span>
             </a>
           </div>
         </div>
       </li>
-
-      <li class="nav-item-modern">
-        <a href="/case-studies" class="nav-link-modern">
-          <span class="nav-text">Case Studies</span>
-          <span class="nav-icon">📈</span>
-          <div class="nav-underline"></div>
-        </a>
-      </li>
-      
-      <li class="nav-item-modern">
-        <a href="/blog" class="nav-link-modern">
-          <span class="nav-text">Blog</span>
-          <span class="nav-icon">📝</span>
-          <div class="nav-underline"></div>
-        </a>
-      </li>
     </ul>
 
-    <a href="/contact" class="cta-button-modern">
-      <span class="cta-text">TALK TO US</span>
-      <span class="cta-icon">💬</span>
-      <div class="cta-glow"></div>
+    <a href="/contact" class="cta-button-professional">
+      <span>Get Started</span>
     </a>
 
     <button type="button" class="mobile-menu-btn" aria-label="Toggle mobile menu">
