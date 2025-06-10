@@ -535,6 +535,40 @@ body {
   overflow-x: hidden;
 }
 
+/* Page centering fix */
+.container,
+.max-w-7xl,
+.max-w-4xl {
+  max-width: 80rem;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+@media (min-width: 640px) {
+  .container,
+  .max-w-7xl,
+  .max-w-4xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container,
+  .max-w-7xl,
+  .max-w-4xl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 /********************
   Section Styling
 *********************/

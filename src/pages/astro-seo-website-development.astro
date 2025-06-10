@@ -9,49 +9,85 @@ import ContactSection from '../components/ContactSection.astro';
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
-  <section class="py-12 bg-white">
-    <div class="container max-w-7xl mx-auto px-4">
+  <section class="hero-section">
+    <div class="hero-particles"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
       <!-- Breadcrumbs -->
-      <div class="mb-6">
-        <a href="/" class="text-blue-600 hover:text-blue-800">Home</a>
-        <span class="mx-2 text-gray-500">›</span>
-        <span class="text-gray-700">Astro Framework SEO Website Development</span>
-      </div>
+      <nav class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <span class="current">Astro Framework SEO Website Development</span>
+      </nav>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h1 class="text-3xl md:text-4xl font-bold mb-4">Astro Framework SEO-Friendly Website Design & Development</h1>
-          <p class="text-lg mb-4">Lightning-fast pages, clean code, and search-first architecture—everything you need to dominate Google and wow your visitors.</p>
-          <p class="mb-6">Building a website shouldn't feel like a guessing game. At Bright Forge SEO, we craft Astro-powered sites that load instantly, rank higher, and convert better.</p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge-top">
+            <span class="badge-icon">⚡</span>
+            <span>Lightning Fast</span>
+          </div>
+          <h1>Astro Framework SEO-Friendly Website Design & Development</h1>
+          <p class="hero-subtitle">Lightning-fast pages, clean code, and search-first architecture—everything you need to dominate Google and wow your visitors.</p>
+          <p class="hero-description">Building a website shouldn't feel like a guessing game. At Bright Forge SEO, we craft Astro-powered sites that load instantly, rank higher, and convert better.</p>
           
           <!-- Key Stats -->
-          <div class="flex flex-wrap justify-between mb-6">
-            <div class="bg-blue-50 p-4 rounded text-center w-[30%]">
-              <span class="block text-2xl font-bold text-blue-600">99</span>
-              <span class="text-sm text-gray-600">PageSpeed Score</span>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">99</span>
+              <span class="stat-label">PageSpeed Score</span>
             </div>
-            <div class="bg-blue-50 p-4 rounded text-center w-[30%]">
-              <span class="block text-2xl font-bold text-blue-600">0.8s</span>
-              <span class="text-sm text-gray-600">Load Time</span>
+            <div class="stat-item">
+              <span class="stat-number">0.8s</span>
+              <span class="stat-label">Load Time</span>
             </div>
-            <div class="bg-blue-50 p-4 rounded text-center w-[30%]">
-              <span class="block text-2xl font-bold text-blue-600">100%</span>
-              <span class="text-sm text-gray-600">SEO Ready</span>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">SEO Ready</span>
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-4">
-            <a href="/contact" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700">
-              Start Your Astro Project
+          <div class="hero-cta">
+            <a href="/contact" class="cta-button primary">
+              <span>Start Your Astro Project</span>
+              <i class="fas fa-rocket"></i>
             </a>
-            <a href="#process" class="inline-block px-6 py-3 bg-gray-100 text-gray-800 font-medium rounded hover:bg-gray-200">
-              See Our Process
+            <a href="#process" class="cta-button secondary">
+              <span>See Our Process</span>
+              <i class="fas fa-arrow-down"></i>
             </a>
           </div>
         </div>
         
-        <div class="flex justify-center">
-          <img src="/images/astro-logo.svg" alt="Astro Framework" class="max-w-xs w-full" />
+        <div class="hero-visual">
+          <div class="astro-showcase">
+            <div class="showcase-header">
+              <div class="browser-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="url-bar">astro-powered-site.com</div>
+            </div>
+            <div class="showcase-content">
+              <div class="code-preview">
+                <pre><code>&lt;!-- Zero JS by default --&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;⚡ Fast&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;SEO Ready&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="performance-badge">
+            <div class="perf-icon">🚀</div>
+            <div class="perf-text">
+              <span>Core Web Vitals</span>
+              <strong>All Green</strong>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -557,6 +593,40 @@ body {
   overflow-x: hidden;
 }
 
+/* Page centering fix */
+.container,
+.max-w-7xl,
+.max-w-4xl {
+  max-width: 80rem;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+@media (min-width: 640px) {
+  .container,
+  .max-w-7xl,
+  .max-w-4xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container,
+  .max-w-7xl,
+  .max-w-4xl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 /********************
   Section Styling
 *********************/
@@ -606,7 +676,252 @@ section {
   margin: 0 auto;
 }
 
-/* Hero section styling removed - now using Tailwind classes */
+/********************
+  Hero Section
+*********************/
+.hero-section {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.breadcrumbs a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.separator {
+  margin: 0 0.5rem;
+  opacity: 0.6;
+}
+
+.current {
+  opacity: 0.8;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.hero-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge-icon {
+  font-size: 16px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.primary {
+  background: white;
+  color: var(--brand-accent);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Hero Visual */
+.hero-visual {
+  position: relative;
+}
+
+.astro-showcase {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.showcase-header {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.browser-dots span:nth-child(1) { background: #ff5f57; }
+.browser-dots span:nth-child(2) { background: #ffbd2e; }
+.browser-dots span:nth-child(3) { background: #28ca42; }
+
+.url-bar {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.showcase-content {
+  padding: 2rem;
+}
+
+.code-preview {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.code-preview pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.code-preview code {
+  display: block;
+}
 
 .performance-badge {
   position: absolute;

@@ -227,6 +227,35 @@ const breadcrumbSchema = breadcrumbs ? {
         box-sizing: border-box;
       }
       
+      /* Main content centering fix */
+      main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      /* Ensure all sections are full width */
+      main > section {
+        width: 100%;
+      }
+      
+      /* Container centering for all pages */
+      .max-w-7xl {
+        max-width: 80rem;
+        width: 100%;
+      }
+      
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
       img {
         max-width: 100%;
         height: auto;
