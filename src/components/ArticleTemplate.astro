@@ -29,6 +29,8 @@ export interface Props {
   }>;
 }
 
+import MainLayout from '../layouts/MainLayout.astro';
+
 const {
   title,
   excerpt,
@@ -113,13 +115,24 @@ const formatDate = (dateString: string) => {
 };
 ---
 
-<!-- SEO Schema Markup -->
-<link rel="canonical" href={canonicalUrl} />
-<meta name="robots" content="index, follow" />
-<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<MainLayout 
+  title={title}
+  description={excerpt}
+  canonical={canonicalUrl}
+  image={featuredImage}
+  type="article"
+  publishDate={publishDate}
+  modifiedDate={modifiedDate}
+  author={{name: author.name, url: author.linkedin}}
+  article={{tags: tags, section: category}}
+  noindex={false}
+  nofollow={false}
+>
+  <!-- SEO Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
 
-<article class="blog-article">
+  <article class="blog-article">
   <!-- Hero Section -->
   <section class="article-hero">
     <div class="max-w-4xl mx-auto px-4">
@@ -1123,13 +1136,7 @@ function copyToClipboard() {
       button.innerHTML = originalText;
     }, 2000);
   }).catch(() => {
-    // Fallback for older browsers
-    const textArea = document.createElement('textarea');
-    textArea.value = url;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
+    alert('Failed to copy URL');
     
     const button = document.querySelector('.copy-link');
     const originalText = button.innerHTML;
@@ -1140,3 +1147,4 @@ function copyToClipboard() {
   });
 }
 </script>
+</MainLayout>
