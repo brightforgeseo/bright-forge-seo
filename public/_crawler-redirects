@@ -1,10 +1,7 @@
-# Special crawler-friendly redirects
+# Special crawler-friendly redirects - static resources only
 /crawler-test.html /crawler-test.html 200
 /sitemap.xml /sitemap.xml 200
 /robots.txt /robots.txt 200
 
-# Force direct access for crawlers
-/crawler-entry/* /index.html 200
-
-# Ensure all paths return 200 for crawlers
-/* /index.html 200
+# Special entry point for crawlers
+/crawler-entry /crawler-test.html 200
