@@ -9,7 +9,8 @@ import ContactSection from '../components/ContactSection.astro';
 
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="hero-particles"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
       <!-- Breadcrumbs -->
       <nav class="breadcrumbs">
         <a href="/">Home</a>
@@ -19,16 +20,82 @@ import ContactSection from '../components/ContactSection.astro';
 
       <div class="hero-content">
         <div class="hero-text">
+          <div class="hero-badge-top">
+            <span class="badge-icon">🔄</span>
+            <span>Safe Migration</span>
+          </div>
           <h1>SEO-Focused Website Migration Services</h1>
-          <p class="hero-subtitle">Launch your new site—without tanking your rankings.</p>
-          <p class="hero-description">A fresh design or new CMS should move your business forward, not wipe out years of organic growth. Our Philippines-based SEO engineers manage every technical step of your migration so Google, Bing, and—most importantly—your customers keep finding you.</p>
-          <p class="hero-description">We’ve rescued brands from traffic nosedives; let’s make sure yours never happens.</p>
+          <p class="hero-subtitle">Launch your new site - without tanking your rankings.</p>
+          <p class="hero-description">A fresh design or new CMS should move your business forward, not wipe out years of organic growth. Our Philippines-based SEO engineers manage every technical step of your migration so Google, Bing, and - most importantly - your customers keep finding you.</p>
+          <p class="hero-description">We've rescued brands from traffic nosedives; let's make sure yours never happens.</p>
+          
+          <!-- Key Stats -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">0%</span>
+              <span class="stat-label">Critical Traffic Loss</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Successful Migrations</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Launch Monitoring</span>
+            </div>
+          </div>
+
           <div class="hero-cta">
-            <a href="/contact" class="cta-button primary">Plan My Migration</a>
-            <a href="#process" class="cta-button secondary">See Our Process</a>
+            <a href="/contact" class="cta-button primary">
+              <span>Plan My Migration</span>
+              <i class="fas fa-rocket"></i>
+            </a>
+            <a href="#process" class="cta-button secondary">
+              <span>See Our Process</span>
+              <i class="fas fa-arrow-down"></i>
+            </a>
           </div>
         </div>
-        <div class="hero-badge"><span>0% Critical<br/>Traffic Loss</span></div>
+        
+        <div class="hero-visual">
+          <div class="migration-flow">
+            <div class="flow-step">
+              <div class="step-icon old">🌐</div>
+              <div class="step-label">Old Site</div>
+            </div>
+            <div class="flow-arrow">
+              <div class="arrow-line"></div>
+              <div class="arrow-text">Safe Transfer</div>
+            </div>
+            <div class="flow-step">
+              <div class="step-icon new">✨</div>
+              <div class="step-label">New Site</div>
+            </div>
+          </div>
+          <div class="migration-badge">
+            <div class="migration-icon">🛡️</div>
+            <div class="migration-text">
+              <span>SEO Protected</span>
+              <strong>Zero Losses</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Banner -->
+  <section class="social-proof-banner">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="proof-content">
+        <span class="proof-text">Trusted by 50+ businesses for risk-free website migrations</span>
+        <div class="proof-logos">
+          <div class="logo-item">🏢</div>
+          <div class="logo-item">🚀</div>
+          <div class="logo-item">💼</div>
+          <div class="logo-item">⚡</div>
+          <div class="logo-item">🎯</div>
+        </div>
       </div>
     </div>
   </section>
@@ -37,23 +104,119 @@ import ContactSection from '../components/ContactSection.astro';
   <section class="why-seo-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">Why SEO First?</div>
         <h2>Why You Need <span>SEO Experts</span> for Migrations</h2>
+        <p>Website migrations are notorious for destroying search rankings. Here's why our SEO-first approach is essential.</p>
       </div>
+      
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-link"></i></div>
+          <div class="feature-icon redirects">
+            <i class="fas fa-link"></i>
+          </div>
           <h3>Redirects Made Right</h3>
-          <p>Lose a single 301 and you could kiss link equity goodbye. We build bullet-proof redirect maps that preserve every backlink you’ve earned.</p>
+          <p>Lose a single 301 and you could kiss link equity goodbye. We build bullet-proof redirect maps that preserve every backlink you've earned.</p>
+          <div class="feature-metric">
+            <span class="metric-value">100%</span>
+            <span class="metric-label">Link Equity Preserved</span>
+          </div>
         </div>
+        
         <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-code"></i></div>
+          <div class="feature-icon technical">
+            <i class="fas fa-code"></i>
+          </div>
           <h3>Technical QA</h3>
-          <p>Crawl budgets, canonicals, sitemaps, Core Web Vitals—our SEO engineers vet all the behind-the-scenes code before launch day.</p>
+          <p>Crawl budgets, canonicals, sitemaps, Core Web Vitals - our SEO engineers vet all the behind-the-scenes code before launch day.</p>
+          <div class="feature-metric">
+            <span class="metric-value">200+</span>
+            <span class="metric-label">Technical Checkpoints</span>
+          </div>
         </div>
+        
         <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="feature-icon monitoring">
+            <i class="fas fa-chart-line"></i>
+          </div>
           <h3>Data-Driven Monitoring</h3>
           <p>We monitor rankings, logs, and analytics in real-time, jumping in if the slightest dip appears.</p>
+          <div class="feature-metric">
+            <span class="metric-value">24/7</span>
+            <span class="metric-label">Live Monitoring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Migration Types Section -->
+  <section class="migration-types-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <div class="section-badge">Migration Types</div>
+        <h2>Common <span>Migration Scenarios</span></h2>
+        <p>Every migration is unique, but we've successfully handled every type of website transition.</p>
+      </div>
+
+      <div class="types-grid">
+        <div class="type-card">
+          <div class="type-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="type-content">
+            <h3>E-commerce Platform Changes</h3>
+            <p>Moving from Shopify to WooCommerce, Magento to BigCommerce, or any platform switch while preserving product rankings and shopping experiences.</p>
+            <div class="type-examples">
+              <span class="example">Shopify → WooCommerce</span>
+              <span class="example">Magento → Shopify Plus</span>
+              <span class="example">BigCommerce → Custom</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-icon">
+            <i class="fas fa-wordpress"></i>
+          </div>
+          <div class="type-content">
+            <h3>CMS Platform Migrations</h3>
+            <p>Transitioning from WordPress to headless CMS, Drupal to modern frameworks, or legacy systems to contemporary platforms.</p>
+            <div class="type-examples">
+              <span class="example">WordPress → Astro</span>
+              <span class="example">Drupal → Next.js</span>
+              <span class="example">Legacy → Modern CMS</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="type-content">
+            <h3>Domain & Hosting Changes</h3>
+            <p>Moving to new domains, changing hosting providers, or consolidating multiple sites while maintaining search visibility.</p>
+            <div class="type-examples">
+              <span class="example">Domain Rebranding</span>
+              <span class="example">Host Migration</span>
+              <span class="example">Site Consolidation</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="type-content">
+            <h3>Design & Structure Overhauls</h3>
+            <p>Complete redesigns, URL structure changes, or navigation overhauls that require careful SEO planning and execution.</p>
+            <div class="type-examples">
+              <span class="example">Full Redesign</span>
+              <span class="example">URL Restructure</span>
+              <span class="example">Navigation Changes</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,15 +226,158 @@ import ContactSection from '../components/ContactSection.astro';
   <section id="process" class="process-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">Our Process</div>
         <h2>Our 6-Step <span>Migration Process</span></h2>
+        <p>A battle-tested methodology that has successfully migrated millions of pages without losing rankings.</p>
       </div>
-      <div class="steps-grid">
-        <div class="step-card"><div class="step-number">1</div><h3>Pre-Migration Audit</h3><p>Benchmark current traffic, rankings, and site health to set success metrics.</p></div>
-        <div class="step-card"><div class="step-number">2</div><h3>URL & Redirect Mapping</h3><p>Create one-to-one (or many) 301 maps ensuring every legacy URL points correctly.</p></div>
-        <div class="step-card"><div class="step-number">3</div><h3>Staging Build QA</h3><p>We crawl the staging site, flagging missing tags, internal link issues, and performance hits.</p></div>
-        <div class="step-card"><div class="step-number">4</div><h3>SEO Sign-Off & Launch</h3><p>Go-live happens only after our SEO checklist is green across the board.</p></div>
-        <div class="step-card"><div class="step-number">5</div><h3>Post-Launch Monitoring</h3><p>24/7 rank and crawl tracking in the first critical weeks. Instant fixes if anomalies appear.</p></div>
-        <div class="step-card"><div class="step-number">6</div><h3>Performance Optimization</h3><p>Fine-tune Core Web Vitals, structured data, and internal links for new growth.</p></div>
+
+      <div class="process-timeline">
+        <div class="timeline-line"></div>
+        
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Pre-Migration Audit</h3>
+            <p>Benchmark current traffic, rankings, and site health to set success metrics.</p>
+            <div class="step-details">
+              <div class="detail-item">📊 Traffic Baseline</div>
+              <div class="detail-item">🏆 Ranking Snapshot</div>
+              <div class="detail-item">🔍 Technical Audit</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">📋</div>
+          </div>
+        </div>
+
+        <div class="step-card reverse">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>URL & Redirect Mapping</h3>
+            <p>Create one-to-one (or many) 301 maps ensuring every legacy URL points correctly.</p>
+            <div class="step-details">
+              <div class="detail-item">🗺️ URL Mapping</div>
+              <div class="detail-item">↩️ 301 Redirect Rules</div>
+              <div class="detail-item">🔗 Link Equity Preservation</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">🗺️</div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Staging Build QA</h3>
+            <p>We crawl the staging site, flagging missing tags, internal link issues, and performance hits.</p>
+            <div class="step-details">
+              <div class="detail-item">🕷️ Staging Crawl</div>
+              <div class="detail-item">🏷️ Meta Tag Check</div>
+              <div class="detail-item">⚡ Performance Test</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">🔧</div>
+          </div>
+        </div>
+
+        <div class="step-card reverse">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>SEO Sign-Off & Launch</h3>
+            <p>Go-live happens only after our SEO checklist is green across the board.</p>
+            <div class="step-details">
+              <div class="detail-item">✅ SEO Checklist</div>
+              <div class="detail-item">🚀 Coordinated Launch</div>
+              <div class="detail-item">📡 DNS Management</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">🚀</div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Post-Launch Monitoring</h3>
+            <p>24/7 rank and crawl tracking in the first critical weeks. Instant fixes if anomalies appear.</p>
+            <div class="step-details">
+              <div class="detail-item">📈 Ranking Monitoring</div>
+              <div class="detail-item">🚨 Alert System</div>
+              <div class="detail-item">🔧 Instant Fixes</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">📊</div>
+          </div>
+        </div>
+
+        <div class="step-card reverse">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Performance Optimization</h3>
+            <p>Fine-tune Core Web Vitals, structured data, and internal links for new growth.</p>
+            <div class="step-details">
+              <div class="detail-item">⚡ Speed Optimization</div>
+              <div class="detail-item">📊 Schema Enhancement</div>
+              <div class="detail-item">🔗 Link Optimization</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">⚡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Risk Mitigation Section -->
+  <section class="risk-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <div class="section-badge">Risk Management</div>
+        <h2>How We <span>Minimize Risks</span></h2>
+        <p>Website migrations carry inherent risks. Here's how we protect your investment.</p>
+      </div>
+
+      <div class="risk-grid">
+        <div class="risk-card">
+          <div class="risk-icon high">⚠️</div>
+          <h3>Traffic Drops</h3>
+          <p>Comprehensive redirect mapping and real-time monitoring prevent sudden traffic losses.</p>
+          <div class="mitigation">
+            <strong>Our Solution:</strong> 301 redirect audits + 24/7 monitoring
+          </div>
+        </div>
+        
+        <div class="risk-card">
+          <div class="risk-icon medium">🔍</div>
+          <h3>Ranking Losses</h3>
+          <p>Preserve keyword rankings through proper URL structure and content optimization.</p>
+          <div class="mitigation">
+            <strong>Our Solution:</strong> Keyword mapping + content preservation
+          </div>
+        </div>
+        
+        <div class="risk-card">
+          <div class="risk-icon low">🔗</div>
+          <h3>Broken Links</h3>
+          <p>Systematic link auditing ensures all internal and external links function properly.</p>
+          <div class="mitigation">
+            <strong>Our Solution:</strong> Automated link checking + manual QA
+          </div>
+        </div>
+        
+        <div class="risk-card">
+          <div class="risk-icon high">📱</div>
+          <h3>Mobile Issues</h3>
+          <p>Cross-device testing ensures optimal performance on all screen sizes and devices.</p>
+          <div class="mitigation">
+            <strong>Our Solution:</strong> Mobile-first testing + responsive QA
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -79,12 +385,97 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- Deliverables Section -->
   <section class="deliverables-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header"><h2>What We <span>Deliver</span></h2></div>
+      <div class="section-header">
+        <div class="section-badge">What You Get</div>
+        <h2>What We <span>Deliver</span></h2>
+        <p>A complete migration package designed to ensure success and provide ongoing peace of mind.</p>
+      </div>
+
       <div class="feature-list">
-        <div class="feature-item"><i class="fas fa-file-alt"></i><h3>Comprehensive Audit Report</h3><p>Baseline metrics, risks, and opportunities.</p></div>
-        <div class="feature-item"><i class="fas fa-random"></i><h3>Redirect Spreadsheet</h3><p>Ready-to-import .htaccess, NGiNX, or CMS rules.</p></div>
-        <div class="feature-item"><i class="fas fa-clipboard-check"></i><h3>SEO Launch Checklist</h3><p>Technical and content checkpoints signed off before go-live.</p></div>
-        <div class="feature-item"><i class="fas fa-chart-bar"></i><h3>Post-Launch Performance Dashboard</h3><p>Live Looker/GA4 dashboards tracking the migration impact.</p></div>
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Pre-Migration Analysis Report</h3>
+            <p>Comprehensive baseline metrics, risk assessment, and migration strategy tailored to your specific situation.</p>
+            <div class="feature-benefit">📊 Complete risk analysis</div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-random"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Complete Redirect Package</h3>
+            <p>Ready-to-import .htaccess, Nginx, or CMS rules with detailed documentation and implementation guides.</p>
+            <div class="feature-benefit">↩️ All redirect rules included</div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <div class="feature-content">
+            <h3>SEO Launch Checklist</h3>
+            <p>Technical and content checkpoints signed off before go-live, ensuring nothing is missed during launch.</p>
+            <div class="feature-benefit">✅ 100+ checkpoint audit</div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Post-Launch Monitoring Dashboard</h3>
+            <p>Live analytics dashboard tracking migration impact with automated alerts for any ranking or traffic anomalies.</p>
+            <div class="feature-benefit">📈 30-day monitoring included</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Highlight -->
+  <section class="case-study-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="case-study-card">
+        <div class="case-study-content">
+          <div class="case-badge">Success Story</div>
+          <h3>E-commerce Migration with Zero Traffic Loss</h3>
+          <p>See how we successfully migrated a 10,000-page e-commerce site from Magento to Shopify Plus while actually increasing organic traffic by 15% within 30 days of launch.</p>
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-number">0%</span>
+              <span class="metric-label">Traffic Loss</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">10k+</span>
+              <span class="metric-label">Pages Migrated</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">15%</span>
+              <span class="metric-label">Traffic Increase</span>
+            </div>
+          </div>
+          <a href="/case-studies" class="case-cta">View Full Case Study</a>
+        </div>
+        <div class="case-visual">
+          <div class="case-image">
+            <div class="migration-timeline">
+              <div class="timeline-title">Migration Success Timeline</div>
+              <div class="timeline-progress">
+                <div class="progress-step completed">Pre-Audit</div>
+                <div class="progress-step completed">Staging</div>
+                <div class="progress-step completed">Launch</div>
+                <div class="progress-step completed">Growth</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -92,12 +483,86 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- FAQ Section -->
   <section class="faq-section">
     <div class="max-w-4xl mx-auto px-4">
-      <div class="section-header text-center"><h2>Migration <span>FAQs</span></h2></div>
+      <div class="section-header text-center">
+        <div class="section-badge">FAQ</div>
+        <h2>Migration <span>Questions Answered</span></h2>
+        <p>Everything you need to know about our website migration process and what to expect.</p>
+      </div>
+      
       <div class="faq-list">
-        <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"><span>How long does a migration take?</span><i class="fas fa-plus"></i></button><div class="faq-answer">Simple site migrations finish in 4–6 weeks; complex e-commerce or international sites may take 3 months. We’ll provide a timeline after the initial audit.</div></div>
-        <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"><span>Do you work with any CMS?</span><i class="fas fa-plus"></i></button><div class="faq-answer">Yes. We’ve migrated sites to and from WordPress, Shopify, Webflow, Magento, and custom stacks.</div></div>
-        <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"><span>Will my rankings drop?</span><i class="fas fa-plus"></i></button><div class="faq-answer">Minor fluctuations are normal, but our process is designed to prevent significant losses—and often results in net gains.</div></div>
-        <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)"><span>Can you coordinate with my dev team?</span><i class="fas fa-plus"></i></button><div class="faq-answer">Absolutely. We can lead the project end-to-end or collaborate with in-house developers and designers.</div></div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How long does a migration take?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">Simple site migrations finish in 4-6 weeks; complex e-commerce or international sites may take 3 months. We'll provide a detailed timeline after the initial audit. Timelines depend on site size, platform complexity, and custom requirements.</div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Do you work with any CMS or platform?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">Yes. We've successfully migrated sites to and from WordPress, Shopify, Webflow, Magento, Drupal, custom frameworks, and headless CMS solutions. Our team adapts to any platform combination and has experience with both legacy and modern systems.</div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Will my rankings drop during migration?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">Minor fluctuations are normal for any major site change, but our proven process is designed to prevent significant losses. Many clients actually see ranking improvements post-migration due to better site architecture and performance optimizations.</div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can you coordinate with my development team?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">Absolutely. We can lead the project end-to-end or collaborate with in-house developers and designers. We provide detailed technical documentation and work closely with your team to ensure SEO requirements are met throughout the development process.</div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What happens if something goes wrong after launch?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">Our 24/7 monitoring system catches issues immediately. We provide 30 days of post-launch support and can quickly implement fixes. We also maintain rollback procedures and emergency response protocols for any critical issues.</div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How much does a website migration cost?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">Migration costs vary based on site complexity, platform, and requirements. Simple business sites start at ₱150,000 (~$2,700), while complex e-commerce migrations begin at ₱500,000 (~$9,000). Contact us for a detailed quote based on your specific needs.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>
+            "Bright Forge handled our complex Magento to Shopify Plus migration flawlessly. Not only did we not lose any traffic, but we actually saw a 20% increase in organic visibility within 6 weeks. Their attention to detail and proactive communication made this the smoothest project we've ever undertaken."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <cite>Maria Santos</cite>
+              <span>E-commerce Director, Fashion Forward Philippines</span>
+            </div>
+            <div class="author-metrics">
+              <div class="metric">
+                <span class="metric-value">+20%</span>
+                <span class="metric-label">Traffic Growth</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -107,15 +572,1262 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-.section-header{text-align:center;margin:0 auto 2.5rem}.section-header h2{font-size:2rem;font-weight:700}.section-header span{background:linear-gradient(135deg,#FF4438,#4285F4);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-section{background:linear-gradient(135deg,#4285F4,#FF4438);color:#fff;padding:6rem 0 4rem;overflow:hidden}.hero-content{display:flex;flex-direction:column;gap:2rem}@media(min-width:768px){.hero-content{flex-direction:row;align-items:center;justify-content:space-between}}.hero-text h1{font-size:2.5rem;font-weight:800;line-height:1.2}.hero-subtitle{font-size:1.25rem;margin:1rem 0}.hero-description{margin-bottom:1.5rem;max-width:600px}.cta-button{display:inline-block;padding:0.75rem 1.5rem;border-radius:9999px;font-weight:600;transition:background .3s,transform .3s}.cta-button.primary{background:#fff;color:#FF4438;margin-right:1rem}.cta-button.secondary{background:rgba(255,255,255,.2);border:1px solid #fff;color:#fff}.cta-button:hover{transform:translateY(-3px)}.hero-badge{background:rgba(255,255,255,.1);backdrop-filter:blur(6px);border-radius:12px;padding:1.5rem 2rem;font-weight:700;text-align:center}
-.breadcrumbs{font-size:.9rem;margin-bottom:2rem;color:rgba(255,255,255,.9)}.breadcrumbs a{color:#fff;text-decoration:underline}.separator{margin:0 .5rem}.current{opacity:.8}
-.features-grid,.steps-grid,.feature-list{display:grid;gap:2rem}.features-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.feature-card{background:#fff;border-radius:12px;padding:2rem;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .3s}.feature-card:hover{transform:translateY(-6px)}.feature-icon{font-size:2rem;color:#FF4438;margin-bottom:1rem}
-.steps-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.step-card{background:#fff;padding:2rem 1.5rem 1.5rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.05);position:relative;transition:transform .3s}.step-card:hover{transform:translateY(-6px)}.step-number{background:linear-gradient(135deg,#FF4438,#4285F4);color:#fff;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;margin-bottom:1rem}
-.feature-list{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.feature-item{text-align:center;padding:1.5rem}.feature-item i{font-size:2rem;color:#4285F4;margin-bottom:1rem}
-.faq-section{padding:4rem 0}.faq-item{border-bottom:1px solid #e5e7eb}.faq-question{width:100%;background:none;border:none;text-align:left;padding:1.25rem 0;font-weight:600;display:flex;align-items:center;justify-content:space-between;font-size:1rem}.faq-question i{transition:transform .3s}.faq-answer{display:none;padding-bottom:1.25rem;color:#4b5563}.faq-item.active .faq-answer{display:block}.faq-item.active .faq-question i{transform:rotate(45deg)}
+/********************
+  CSS Variables & Reset
+*********************/
+:root {
+  --brand-accent: #FF4438;
+  --brand-blue: #4285F4;
+  --brand-dark: #1E2022;
+  --brand-soft: #52575D;
+  --brand-light: #F8F9FA;
+  --gradient-primary: linear-gradient(135deg, #4285F4 0%, #FF4438 100%);
+  --gradient-secondary: linear-gradient(135deg, #00d084 0%, #00a86b 100%);
+  --gradient-accent: linear-gradient(135deg, #FF4438 0%, #4285F4 100%);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--brand-dark);
+  overflow-x: hidden;
+}
+
+/********************
+  Section Styling
+*********************/
+section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-badge {
+  display: inline-block;
+  background: var(--gradient-accent);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-header span {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--brand-soft);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/********************
+  Hero Section
+*********************/
+.hero-section {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.breadcrumbs a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.separator {
+  margin: 0 0.5rem;
+  opacity: 0.6;
+}
+
+.current {
+  opacity: 0.8;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.hero-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge-icon {
+  font-size: 16px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.primary {
+  background: white;
+  color: var(--brand-accent);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Hero Visual */
+.hero-visual {
+  position: relative;
+}
+
+.migration-flow {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+}
+
+.flow-step {
+  text-align: center;
+  flex: 1;
+}
+
+.step-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+}
+
+.step-icon.old {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.step-icon.new {
+  background: linear-gradient(135deg, #00d084, #00a86b);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.step-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.flow-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.5), #00d084);
+  border-radius: 2px;
+  position: relative;
+}
+
+.arrow-line::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid #00d084;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.arrow-text {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+.migration-badge {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-medium);
+  transform: rotate(8deg);
+}
+
+.migration-icon {
+  font-size: 24px;
+}
+
+.migration-text span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.migration-text strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/********************
+  Social Proof Banner
+*********************/
+.social-proof-banner {
+  background: var(--brand-light);
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.proof-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.proof-text {
+  color: var(--brand-soft);
+  font-weight: 600;
+  text-align: center;
+}
+
+.proof-logos {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo-item {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+/********************
+  Why SEO Section
+*********************/
+.why-seo-section {
+  background: white;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+}
+
+.feature-icon.redirects {
+  background: linear-gradient(135deg, #4285F4, #667eea);
+}
+
+.feature-icon.technical {
+  background: linear-gradient(135deg, #FF4438, #FF6B35);
+}
+
+.feature-icon.monitoring {
+  background: linear-gradient(135deg, #00d084, #00a86b);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.feature-card p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.feature-metric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--brand-light);
+  padding: 12px 20px;
+  border-radius: 50px;
+  margin-top: 1rem;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-accent);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--brand-soft);
+}
+
+/********************
+  Migration Types Section
+*********************/
+.migration-types-section {
+  background: #f8fafc;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.type-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.type-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
+  margin: 0 auto 1.5rem;
+}
+
+.type-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.type-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.type-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.example {
+  background: var(--brand-light);
+  color: var(--brand-accent);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/********************
+  Process Section
+*********************/
+.process-section {
+  background: white;
+}
+
+.process-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--brand-blue), var(--brand-accent));
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 30px;
+  }
+}
+
+.step-card {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step-card.reverse {
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.step-card.reverse .step-content {
+  grid-column: 3;
+  text-align: left;
+}
+
+.step-card.reverse .step-visual {
+  grid-column: 1;
+}
+
+@media (max-width: 768px) {
+  .step-card,
+  .step-card.reverse {
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+  }
+  
+  .step-card .step-content,
+  .step-card.reverse .step-content {
+    grid-column: 2;
+    text-align: left;
+  }
+  
+  .step-card .step-visual,
+  .step-card.reverse .step-visual {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  z-index: 3;
+}
+
+.step-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f0f0f0;
+}
+
+.step-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.step-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.step-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-item {
+  background: var(--brand-light);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--brand-soft);
+}
+
+.step-visual {
+  width: 100px;
+  height: 100px;
+  background: var(--gradient-secondary);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.visual-icon {
+  font-size: 2.5rem;
+}
+
+/********************
+  Risk Section
+*********************/
+.risk-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.risk-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.risk-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.risk-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.risk-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.risk-card p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.mitigation {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.mitigation strong {
+  color: #ffd700;
+}
+
+/********************
+  Deliverables Section
+*********************/
+.deliverables-section {
+  background: var(--brand-light);
+}
+
+.feature-list {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.feature-icon-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.feature-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--brand-dark);
+}
+
+.feature-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.feature-benefit {
+  display: inline-block;
+  background: var(--brand-light);
+  color: var(--brand-accent);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/********************
+  Case Study Section
+*********************/
+.case-study-section {
+  background: white;
+}
+
+.case-study-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .case-study-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.case-badge {
+  background: var(--gradient-accent);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.case-study-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.case-study-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.case-metrics {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand-accent);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--brand-soft);
+}
+
+.case-cta {
+  background: var(--gradient-accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.case-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.case-visual {
+  text-align: center;
+}
+
+.migration-timeline {
+  background: var(--brand-light);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.timeline-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--brand-dark);
+}
+
+.timeline-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.timeline-progress::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-secondary);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.progress-step {
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-soft);
+}
+
+/********************
+  FAQ Section
+*********************/
+.faq-section {
+  background: var(--brand-light);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.5rem 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--brand-dark);
+}
+
+.faq-question:hover {
+  background: var(--brand-light);
+}
+
+.faq-question i {
+  color: var(--brand-accent);
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 2rem 1.5rem;
+  color: var(--brand-soft);
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(45deg);
+}
+
+/********************
+  Testimonial Section
+*********************/
+.testimonial-section {
+  background: white;
+}
+
+.testimonial-card {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stars {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card blockquote {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.author-info cite {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.author-info span {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.author-metrics .metric {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.author-metrics .metric-value {
+  color: white;
+}
+
+.author-metrics .metric-label {
+  color: rgba(255,255,255,0.9);
+}
+
+/********************
+  Responsive Design
+*********************/
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+  
+  .hero-section {
+    padding: 6rem 0 4rem;
+    min-height: auto;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .types-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .risk-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .case-metrics {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .testimonial-author {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .migration-flow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .timeline-progress {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .timeline-progress::before {
+    width: 3px;
+    height: 100%;
+    left: auto;
+    right: auto;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+/********************
+  Animations
+*********************/
+@media (prefers-reduced-motion: no-preference) {
+  .feature-card,
+  .type-card,
+  .risk-card,
+  .feature-item {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .feature-card:nth-child(2) { animation-delay: 0.1s; }
+  .feature-card:nth-child(3) { animation-delay: 0.2s; }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 </style>
 
 <script>
-function toggleFAQ(btn){btn.parentElement.classList.toggle('active');}
+// FAQ toggle functionality
+function toggleFAQ(button) {
+  const item = button.parentElement;
+  const isActive = item.classList.contains('active');
+  
+  // Close all other FAQ items
+  document.querySelectorAll('.faq-item').forEach(faq => {
+    faq.classList.remove('active');
+  });
+  
+  // Toggle current item
+  if (!isActive) {
+    item.classList.add('active');
+  }
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Intersection Observer for animation triggers
+if ('IntersectionObserver' in window) {
+  const animateOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Observe all animatable elements
+  document.querySelectorAll('.feature-card, .type-card, .risk-card, .feature-item').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    animateOnScroll.observe(el);
+  });
+}
 </script>
