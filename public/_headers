@@ -1,7 +1,7 @@
 /*
   X-Robots-Tag: all
   Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS, POST
   Access-Control-Max-Age: 86400
   X-Ahrefs-Crawler-Status: allowed
   X-Content-Type-Options: nosniff
@@ -10,3 +10,5 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Crawler-Status: ok
   X-Sitebulb-Status: allowed
+  X-Sitebulb-Allow: true
+  X-Crawler-Allow: true
