@@ -553,32 +553,6 @@ import ContactSection from '../components/ContactSection.astro';
     </div>
   </section>
 
-  <!-- Testimonial Section -->
-  <section class="testimonial-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <blockquote>
-            "The Astro site Bright Forge built for us is incredibly fast and our Google rankings improved dramatically. We went from page 3 to page 1 for our main keywords in just 2 months. The team is professional and really knows SEO."
-          </blockquote>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <cite>Maria Santos</cite>
-              <span>CEO, TechStart Philippines</span>
-            </div>
-            <div class="author-metrics">
-              <div class="metric">
-                <span class="metric-value">350%</span>
-                <span class="metric-label">Traffic Increase</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact CTA Section -->
   <ContactSection id="contact" />
 </MainLayout>
@@ -1553,70 +1527,6 @@ section {
 
 .faq-item.active .faq-question i {
   transform: rotate(45deg);
-}
-
-/********************
-  Testimonial Section
-*********************/
-.testimonial-section {
-  background: white;
-}
-
-.testimonial-card {
-  background: var(--gradient-primary);
-  color: white;
-  padding: 3rem;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.stars {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.testimonial-card blockquote {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.author-info cite {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.author-info span {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-.author-metrics .metric {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 1rem;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-}
-
-.author-metrics .metric-value {
-  color: white;
-}
-
-.author-metrics .metric-label {
-  color: rgba(255,255,255,0.9);
 }
 
 /********************

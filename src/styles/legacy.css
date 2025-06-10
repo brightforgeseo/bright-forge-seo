@@ -456,25 +456,30 @@ body {
 .mobile-dropdown-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease-out;
   background: #f8f9fa;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-radius: 0 0 8px 8px;
 }
 
 .mobile-dropdown.active .mobile-dropdown-content {
-  max-height: 500px;
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in;
 }
 
 .mobile-dropdown-content .mobile-nav-link {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e9ecef;
-  font-size: 1rem;
-  margin: 0;
+  padding: 12px 20px;
+  display: block;
+  color: var(--brand-dark);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
 }
 
-.mobile-dropdown-content .mobile-nav-link:last-child {
-  border-bottom: none;
+.mobile-dropdown-content .mobile-nav-link:hover {
+  background: #fff;
+  color: var(--brand-accent);
+  padding-left: 25px;
 }
 
 .mobile-cta {
