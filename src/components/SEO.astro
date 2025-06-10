@@ -128,10 +128,73 @@ if (type === 'article' || type === 'blog') {
     "provider": {
       "@type": "Organization",
       "name": organization.name,
-      "url": organization.url
+      "url": organization.url,
+      "logo": {
+        "@type": "ImageObject",
+        "url": organization.logo
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+63-969-620-6182",
+        "contactType": "customer service",
+        "email": "seo@brightforgeseo.com"
+      }
     },
     "serviceType": title,
-    "url": canonical
+    "url": canonical,
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Philippines"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    ],
+    "category": "SEO Services",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "SEO Service Packages",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Basic SEO Package"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Advanced SEO Package"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Enterprise SEO Package"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   };
 } else if (type === 'company' || type === 'profile') {
   schema = organizationSchema;
@@ -176,20 +239,22 @@ if (breadcrumbs && breadcrumbs.length > 0) {
   };
 }
 
-// Local Business schema for Philippines location
+// Enhanced Local Business schema for Philippines location
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "SEOAgency", "DigitalMarketingAgency"],
   "name": "Bright Forge SEO",
-  "image": "https://brightforgeseo.com/images/logo.png",
+  "alternateName": "Bright Forge SEO Philippines",
+  "image": "https://brightforgeseo.com/images/logo-bright-forge.png",
   "url": "https://brightforgeseo.com",
-  "telephone": "+63-XXX-XXX-XXXX",
+  "telephone": "+63-969-620-6182",
+  "email": "seo@brightforgeseo.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Kathleen Place 4, Block 16, Lot 37, Armani Street, 75 S Francisco, Novachlies",
-    "addressLocality": "Quezon City",
-    "postalCode": "1116",
-    "addressRegion": "Metro Manila",
+    "streetAddress": "Kathleen Place 4, Block 16, Lot 37, Armani Street",
+    "addressLocality": "Novaliches",
+    "addressRegion": "Quezon City",
+    "postalCode": "1123",
     "addressCountry": "PH"
   },
   "geo": {
@@ -202,10 +267,90 @@ const localBusinessSchema = {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "09:00",
-      "closes": "17:00"
+      "closes": "18:00"
     }
   ],
-  "priceRange": "₱₱₱"
+  "priceRange": "₱₱₱",
+  "currenciesAccepted": "PHP, USD",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 14.6760,
+      "longitude": 121.0437
+    },
+    "geoRadius": "50000"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Philippines"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "Australia"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Search Engine Optimization",
+    "Technical SEO",
+    "Content Marketing",
+    "Link Building",
+    "Local SEO",
+    "E-commerce SEO",
+    "SEO Audits",
+    "White Label SEO",
+    "Digital Marketing",
+    "Website Development"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+// FAQ Schema for better SERP features
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What SEO services does Bright Forge SEO offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer comprehensive SEO services including technical SEO, on-page optimization, content SEO, backlink building, local SEO, e-commerce SEO, SEO audits, and white-label SEO solutions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see SEO results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO results typically take 3-6 months to become visible, depending on competition, website condition, and the scope of optimization work required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide SEO services for international clients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we serve clients globally including the Philippines, United States, Australia, and United Kingdom with tailored SEO strategies for each market."
+      }
+    }
+  ]
 };
 ---
 
@@ -252,6 +397,11 @@ const localBusinessSchema = {
 
 <!-- Local Business Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+<!-- FAQ Schema for enhanced SERP features -->
+{type === 'website' && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}
 
 <!-- Breadcrumb Schema (if available) -->
 {breadcrumbs && breadcrumbs.length > 0 && (

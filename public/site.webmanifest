@@ -1,0 +1,22 @@
+{
+  "name": "Bright Forge SEO",
+  "short_name": "Bright Forge",
+  "description": "Leading SEO agency in the Philippines providing comprehensive digital marketing services",
+  "icons": [
+    {
+      "src": "/images/favcon/bright-forge-favcon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favcon/bright-forge-favcon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FF4438",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary"
+} 

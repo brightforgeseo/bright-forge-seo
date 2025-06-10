@@ -42,6 +42,140 @@ const {
   noindex = false,
   nofollow = false
 } = Astro.props;
+
+// Enhanced schema data
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SEOAgency",
+  "name": "Bright Forge SEO",
+  "alternateName": "Bright Forge SEO Philippines",
+  "url": "https://brightforgeseo.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://brightforgeseo.com/images/logo-bright-forge.png",
+    "width": 180,
+    "height": 60
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://brightforgeseo.com/images/Hero-SEO-Agency-In-The-Philippines.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "description": "Leading SEO agency in the Philippines providing comprehensive digital marketing services, technical SEO, content optimization, and white-label SEO solutions.",
+  "founder": {
+    "@type": "Person",
+    "name": "Bright Forge SEO Team"
+  },
+  "foundingDate": "2020",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kathleen Place 4, Block 16, Lot 37, Armani Street",
+    "addressLocality": "Novaliches",
+    "addressRegion": "Quezon City",
+    "postalCode": "1123",
+    "addressCountry": "PH"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+63-969-620-6182",
+    "contactType": "customer service",
+    "email": "seo@brightforgeseo.com",
+    "availableLanguage": ["English", "Filipino"]
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Philippines"
+    },
+    {
+      "@type": "Country", 
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "Australia"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "serviceType": [
+    "Search Engine Optimization",
+    "Technical SEO",
+    "Content SEO", 
+    "On-Page SEO",
+    "Off-Page SEO",
+    "Local SEO",
+    "E-commerce SEO",
+    "SEO Audits",
+    "White Label SEO",
+    "SEO Consulting",
+    "Digital Marketing",
+    "Website Development"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/bright-forge-seo",
+    "https://twitter.com/brightforgeseo",
+    "https://www.facebook.com/brightforgeseo"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "numberOfEmployees": "10-50",
+  "knowsAbout": [
+    "Search Engine Optimization",
+    "Google Algorithm Updates",
+    "Technical SEO",
+    "Content Marketing",
+    "Link Building",
+    "Local SEO",
+    "E-commerce SEO",
+    "SEO Tools",
+    "Web Analytics",
+    "Conversion Rate Optimization"
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bright Forge SEO",
+  "url": "https://brightforgeseo.com",
+  "description": "Professional SEO services in the Philippines. Technical SEO, content optimization, and comprehensive digital marketing solutions.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://brightforgeseo.com/images/logo-bright-forge.png"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://brightforgeseo.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const breadcrumbSchema = breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": `https://brightforgeseo.com${crumb.url}`
+  }))
+} : null;
 ---
 
 <!DOCTYPE html>
@@ -50,6 +184,13 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    
+    <!-- Enhanced Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+    )}
     
     <!-- SEO Component with Schema, Canonical URLs, and Meta Tags -->
     <SEO
@@ -158,11 +299,14 @@ const {
     <!-- Preload hero image -->
     <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp">
     
-    <!-- Favicons -->
-    <link rel="icon" href="/images/logo-bright-forge.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/logo-bright-forge.png">
+    <!-- Updated Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favcon/bright-forge-favcon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favcon/bright-forge-favcon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favcon/bright-forge-favcon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#FF4438">
     <meta name="msapplication-TileColor" content="#FF4438">
+    <meta name="msapplication-TileImage" content="/images/favcon/bright-forge-favcon.png">
     
     <!-- Additional SEO Meta Tags -->
     <meta name="format-detection" content="telephone=no">
@@ -173,6 +317,15 @@ const {
     <meta name="language" content="en-PH">
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
+    
+    <!-- Business Information -->
+    <meta name="business:contact_data:street_address" content="Kathleen Place 4, Block 16, Lot 37, Armani Street">
+    <meta name="business:contact_data:locality" content="Novaliches">
+    <meta name="business:contact_data:region" content="Quezon City">
+    <meta name="business:contact_data:postal_code" content="1123">
+    <meta name="business:contact_data:country_name" content="Philippines">
+    <meta name="business:contact_data:email" content="seo@brightforgeseo.com">
+    <meta name="business:contact_data:phone_number" content="+63-969-620-6182">
   </head>
   <body class="font-dm-sans text-brand-dark">
     <slot name="header" />
