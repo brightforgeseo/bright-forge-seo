@@ -236,26 +236,26 @@ const content = `
   </div>
 </div>
 `;
----
 
-<MainLayout title={`${title} | Bright Forge SEO Articles`} description={excerpt}>
+<ArticleTemplate
+  title={title}
+  excerpt={excerpt}
+  author={author}
+  publishDate={publishDate}
+  readTime={readTime}
+  category={category}
+  tags={tags}
+  content={content}
+  featuredImage={featuredImage}
+  tableOfContents={tableOfContents}
+  relatedArticles={relatedArticles}
+>
+  <!-- Header Slot -->
   <LegacyHeader slot="header" />
-
-  <ArticleTemplate
-    title={title}
-    excerpt={excerpt}
-    author={author}
-    publishDate={publishDate}
-    readTime={readTime}
-    category={category}
-    tags={tags}
-    content={content}
-    featuredImage={featuredImage}
-    tableOfContents={tableOfContents}
-    relatedArticles={relatedArticles}
-  />
-
+  
+  <!-- Additional content between article and footer -->
   <ContactSection />
   
-  <Footer />
-</MainLayout>
+  <!-- Footer Slot -->
+  <Footer slot="footer" />
+</ArticleTemplate>
