@@ -10,20 +10,13 @@
   [headers.values]
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Content-Type-Options = "nosniff"
-    # Allowing all crawlers to access the site
-    # X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    # Removed Content-Security-Policy as it might be blocking crawlers
-    # Adding headers to help with crawler performance
+    # Standard headers for crawlers
     Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, HEAD, OPTIONS, POST"
     X-Robots-Tag = "all"
-    X-Crawler-Status = "allowed"
-    X-Sitebulb-Status = "allowed"
-    X-Ahrefs-Crawler-Status = "allowed"
-    Cache-Control = "no-store, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.js"

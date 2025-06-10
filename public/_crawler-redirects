@@ -1,7 +1,0 @@
-# Special crawler-friendly redirects - static resources only
-/crawler-test.html /crawler-test.html 200
-/sitemap.xml /sitemap.xml 200
-/robots.txt /robots.txt 200
-
-# Special entry point for crawlers
-/crawler-entry /crawler-test.html 200

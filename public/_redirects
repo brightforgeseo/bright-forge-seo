@@ -2,11 +2,5 @@
 /bright-forge-seo/* / 301
 /bright-forge-seo / 301
 
-# Ensure all crawlers get proper responses
+# Ensure all pages return 200 for SPA routing
 /* /index.html 200
-
-# Add special handling for specific bots to prevent timeouts
-/sitemap.xml /sitemap.xml 200! Role=bot,AhrefsBot
-
-# Special rule for Sitebulb crawler
-/* /index.html 200! Role=bot,SitebulbBot
