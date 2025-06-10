@@ -3988,7 +3988,8 @@ import PartnersSection from '../components/PartnersSection.astro';
     // Create modal container for detailed results
     const modalOverlay = document.createElement('div');
     modalOverlay.id = 'audit-modal-overlay';
-    modalOverlay.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden';
+    modalOverlay.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+    modalOverlay.style.display = 'none';
     document.body.appendChild(modalOverlay);
     
     const modalContent = document.createElement('div');
@@ -3999,7 +4000,7 @@ import PartnersSection from '../components/PartnersSection.astro';
     const closeButton = document.createElement('button');
     closeButton.className = 'absolute top-4 right-4 text-gray-500 hover:text-gray-700';
     closeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-    closeButton.onclick = () => modalOverlay.classList.add('hidden');
+    closeButton.onclick = () => modalOverlay.style.display = 'none';
     modalContent.appendChild(closeButton);
     
     // Create results container (simplified version for the homepage)
@@ -4048,7 +4049,7 @@ import PartnersSection from '../components/PartnersSection.astro';
         const detailsButton = document.createElement('button');
         detailsButton.className = 'mt-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded';
         detailsButton.textContent = 'View Detailed Report';
-        detailsButton.onclick = () => modalOverlay.classList.remove('hidden');
+        detailsButton.onclick = () => modalOverlay.style.display = 'flex';
         resultsContainer.appendChild(detailsButton);
       } catch (err) {
         console.error(err);
@@ -4062,14 +4063,14 @@ import PartnersSection from '../components/PartnersSection.astro';
     // Close modal when clicking outside content
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) {
-        modalOverlay.classList.add('hidden');
+        modalOverlay.style.display = 'none';
       }
     });
 
     // Close modal on ESC key press
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        modalOverlay.classList.add('hidden');
+        modalOverlay.style.display = 'none';
       }
     });
     
