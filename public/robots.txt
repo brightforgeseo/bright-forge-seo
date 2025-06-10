@@ -11,6 +11,11 @@ Allow: /
 User-agent: APIs-Google
 Allow: /
 
+# Explicitly allow Ahrefs bot with crawl rate limit
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 5
+
 User-agent: *
 # Block crawling on Netlify subdomain
 Host: https://brightforgeseo.com
