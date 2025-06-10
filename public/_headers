@@ -3,7 +3,3 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
   Cache-Control: public, max-age=0, must-revalidate
-
-# Googlebot specific headers
-/*
-  X-Robots-Tag: all
