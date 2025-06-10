@@ -2,8 +2,5 @@
 /bright-forge-seo/* / 301
 /bright-forge-seo / 301
 
-# Special rule for Googlebot (and tools using Googlebot user agent)
-/* /index.html 200! Role=bot,Googlebot
-
 # Ensure all pages return 200 for SPA routing
 /* /index.html 200
