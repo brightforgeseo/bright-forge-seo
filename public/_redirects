@@ -1,4 +1,9 @@
 /force-facebook-refresh.html / 301
-/* /index.html 200
 /bright-forge-seo/* / 301
 /bright-forge-seo / 301
+
+# Ensure Ahrefs crawler gets proper responses
+/* /index.html 200
+
+# Add special handling for Ahrefs bot to prevent timeouts
+/sitemap.xml /sitemap.xml 200! Role=bot,AhrefsBot

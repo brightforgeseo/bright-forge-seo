@@ -16,6 +16,9 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     # Removed Content-Security-Policy as it might be blocking PageSpeed Insights
+    # Adding headers to help with crawler performance
+    Access-Control-Allow-Origin = "*"
+    X-Robots-Tag = "all"
 
 [[headers]]
   for = "/*.js"

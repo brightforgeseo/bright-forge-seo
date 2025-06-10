@@ -5,3 +5,7 @@ https://adorable-praline-5dc6c9.netlify.app/*
 # Allow indexing on main domain
 https://brightforgeseo.com/*
   X-Robots-Tag: all
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Max-Age: 86400
+  X-Ahrefs-Crawler-Status: allowed
