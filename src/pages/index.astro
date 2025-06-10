@@ -1459,25 +1459,37 @@ import PartnersSection from '../components/PartnersSection.astro';
   }
   
   .logo-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 30px;
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 30px 0;
   }
   
   @media (max-width: 992px) {
     .logo-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 30px;
+      width: 95%;
+    }
+    
+    .logo-item {
+      width: 160px;
+      height: 90px;
     }
   }
   
   @media (max-width: 576px) {
     .logo-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      gap: 20px;
+      width: 100%;
+    }
+    
+    .logo-item {
+      width: 140px;
+      height: 80px;
     }
   }
   
@@ -1486,10 +1498,16 @@ import PartnersSection from '../components/PartnersSection.astro';
     align-items: center;
     justify-content: center;
     padding: 15px;
+    width: 180px;
+    height: 100px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
   }
   
   .logo-item img {
-    height: 60px;
+    height: auto;
+    width: auto;
+    max-height: 70px;
     max-width: 150px;
     object-fit: contain;
     filter: grayscale(100%) opacity(0.7);
