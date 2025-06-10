@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crawler Test Page | Bright Forge SEO</title>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://brightforgeseo.com/crawler-test.html">
+    <meta name="description" content="This is a test page for SEO crawlers to verify site accessibility.">
+</head>
+<body>
+    <h1>Crawler Test Page</h1>
+    <p>This page is designed to test crawler accessibility for SEO tools.</p>
+    <p>If you can see this page, your crawler is working correctly.</p>
+    <p>Current timestamp: <span id="timestamp"></span></p>
+    <p><a href="/">Return to homepage</a></p>
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+    </script>
+</body>
+</html>
