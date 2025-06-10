@@ -184,7 +184,7 @@ const canonicalUrl = Astro.url.href;
         </div>
         {heroImage && (
           <div class="hero-image">
-            <img src={heroImage} alt={`${client} case study`} />
+            <img src={heroImage} alt={`${client} case study`} width="300" height="200" loading="eager" decoding="sync" />
           </div>
         )}
       </div>
@@ -283,7 +283,7 @@ const canonicalUrl = Astro.url.href;
           </div>
           <div class="testimonial-author">
             {testimonial.avatar && (
-              <img src={testimonial.avatar} alt={testimonial.author} />
+              <img src={testimonial.avatar} alt={testimonial.author} width="80" height="80" loading="lazy" decoding="async" />
             )}
             <div class="author-info">
               <div class="author-name">{testimonial.author}</div>

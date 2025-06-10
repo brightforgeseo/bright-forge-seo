@@ -23,9 +23,11 @@ export default defineConfig({
     })
   ],
   output: 'static',
+  trailingSlash: 'ignore',
   build: {
     inlineStylesheets: 'auto',
-    format: 'file'
+    format: 'file',
+    assets: '_astro'
   },
   markdown: {
     remarkPlugins: [],
@@ -34,6 +36,10 @@ export default defineConfig({
     smartypants: true
   },
   compressHTML: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport'
+  },
   server: {
     port: 4321,
     open: true
@@ -45,6 +51,14 @@ export default defineConfig({
           assetFileNames: 'assets/[name].[hash][extname]'
         }
       }
+    },
+    ssr: {
+      noExternal: []
+    }
+  },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
     }
   }
 });
