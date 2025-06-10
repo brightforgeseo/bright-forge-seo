@@ -4,3 +4,9 @@
   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
   Access-Control-Max-Age: 86400
   X-Ahrefs-Crawler-Status: allowed
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Cache-Control: public, max-age=0, must-revalidate
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Crawler-Status: ok
+  X-Sitebulb-Status: allowed
