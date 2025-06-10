@@ -4,12 +4,13 @@ import LegacyHeader from '../components/LegacyHeader.astro';
 import ContactSection from '../components/ContactSection.astro';
 ---
 
-<MainLayout title="Keyword Research Services Philippines | Bright Forge SEO" description="Stop guessing and start ranking. Our data-driven keyword research services uncover the exact phrases your customers use—fueling better content, ads, and growth.">
+<MainLayout title="Keyword Research Services Philippines | Bright Forge SEO" description="Stop guessing and start ranking. Our data-driven keyword research services uncover the exact phrases your customers use - fueling better content, ads, and growth.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="hero-particles"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
       <!-- Breadcrumbs -->
       <nav class="breadcrumbs">
         <a href="/">Home</a>
@@ -19,17 +20,76 @@ import ContactSection from '../components/ContactSection.astro';
 
       <div class="hero-content">
         <div class="hero-text">
+          <div class="hero-badge-top">
+            <span class="badge-icon">🔍</span>
+            <span>Data-Driven Research</span>
+          </div>
           <h1>Data-Driven Keyword Research Services</h1>
-          <p class="hero-subtitle">Discover what your customers actually type into Google—then use it to outrank the competition.</p>
+          <p class="hero-subtitle">Discover what your customers actually type into Google - then use it to outrank the competition.</p>
           <p class="hero-description">Tired of creating content that never seems to get traction? Our Philippines-based SEO strategists dig deep into search data, intent, and trends to build a keyword roadmap that guides every blog post, landing page, and ad campaign you launch.</p>
-          <p class="hero-description">Think of us as the translators between your offers and your audience’s real-world questions.</p>
+          <p class="hero-description">Think of us as the translators between your offers and your audience's real-world questions.</p>
+          
+          <!-- Key Stats -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">10k+</span>
+              <span class="stat-label">Keywords Uncovered</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5-7</span>
+              <span class="stat-label">Days Delivery</span>
+            </div>
+          </div>
+
           <div class="hero-cta">
-            <a href="/contact" class="cta-button primary">Request Your Keyword Map</a>
-            <a href="#process" class="cta-button secondary">See Our Process</a>
+            <a href="/contact" class="cta-button primary">
+              <span>Request Your Keyword Map</span>
+              <i class="fas fa-search"></i>
+            </a>
+            <a href="#process" class="cta-button secondary">
+              <span>See Our Process</span>
+              <i class="fas fa-arrow-down"></i>
+            </a>
           </div>
         </div>
-        <div class="hero-badge">
-          <span>10k+ Keywords<br/>Uncovered</span>
+        
+        <div class="hero-visual">
+          <div class="keyword-cloud">
+            <div class="keyword-item priority-high">"SEO services Philippines"</div>
+            <div class="keyword-item priority-medium">"digital marketing agency"</div>
+            <div class="keyword-item priority-low">"website optimization"</div>
+            <div class="keyword-item priority-high">"local SEO expert"</div>
+            <div class="keyword-item priority-medium">"content marketing strategy"</div>
+            <div class="keyword-item priority-low">"search engine ranking"</div>
+            <div class="keyword-item priority-high">"technical SEO audit"</div>
+          </div>
+          <div class="research-badge">
+            <div class="research-icon">🎯</div>
+            <div class="research-text">
+              <span>Intent Analysis</span>
+              <strong>100% Accurate</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Banner -->
+  <section class="social-proof-banner">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="proof-content">
+        <span class="proof-text">Trusted by 150+ businesses to uncover high-converting keywords</span>
+        <div class="proof-logos">
+          <div class="logo-item">🏢</div>
+          <div class="logo-item">🚀</div>
+          <div class="logo-item">💼</div>
+          <div class="logo-item">⚡</div>
+          <div class="logo-item">🎯</div>
         </div>
       </div>
     </div>
@@ -39,23 +99,104 @@ import ContactSection from '../components/ContactSection.astro';
   <section class="why-keywords-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">Why Keywords Matter</div>
         <h2>Why Smart <span>Keyword Research</span> Matters</h2>
+        <p>The foundation of every successful SEO campaign starts with understanding your audience's search behavior.</p>
       </div>
+      
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-comments"></i></div>
-          <h3>Speak Your Customer’s Language</h3>
-          <p>No more jargon. We surface the phrases real people use, so your website feels like a helpful conversation—not a pitch.</p>
+          <div class="feature-icon conversations">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Speak Your Customer's Language</h3>
+          <p>No more jargon. We surface the phrases real people use, so your website feels like a helpful conversation - not a pitch.</p>
+          <div class="feature-metric">
+            <span class="metric-value">85%</span>
+            <span class="metric-label">Better Engagement</span>
+          </div>
         </div>
+        
         <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+          <div class="feature-icon trophy">
+            <i class="fas fa-trophy"></i>
+          </div>
           <h3>Outrank Tough Competitors</h3>
-          <p>We uncover untapped niches and long-tail gems that bigger brands overlook—giving you a fast track to page one.</p>
+          <p>We uncover untapped niches and long-tail gems that bigger brands overlook - giving you a fast track to page one.</p>
+          <div class="feature-metric">
+            <span class="metric-value">300%</span>
+            <span class="metric-label">More Opportunities</span>
+          </div>
         </div>
+        
         <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-coins"></i></div>
+          <div class="feature-icon coins">
+            <i class="fas fa-coins"></i>
+          </div>
           <h3>Maximize Marketing ROI</h3>
           <p>Knowing keyword value up-front lets you prioritize content and ads that actually move revenue, not vanity metrics.</p>
+          <div class="feature-metric">
+            <span class="metric-value">250%</span>
+            <span class="metric-label">ROI Improvement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Types Section -->
+  <section class="research-types-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <div class="section-badge">Research Types</div>
+        <h2>Comprehensive <span>Research Approach</span></h2>
+        <p>We don't just find keywords - we discover opportunities across every stage of your customer journey.</p>
+      </div>
+
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon-large">
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="research-content">
+            <h3>Awareness Stage Keywords</h3>
+            <p>Capture users in the discovery phase with informational and educational keywords that build trust and authority.</p>
+            <div class="research-examples">
+              <span class="example">"how to improve SEO"</span>
+              <span class="example">"SEO best practices"</span>
+              <span class="example">"what is technical SEO"</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="research-card">
+          <div class="research-icon-large">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="research-content">
+            <h3>Consideration Stage Keywords</h3>
+            <p>Target users comparing solutions with keywords that showcase your expertise and differentiate your services.</p>
+            <div class="research-examples">
+              <span class="example">"best SEO agency Philippines"</span>
+              <span class="example">"SEO services comparison"</span>
+              <span class="example">"local vs national SEO"</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="research-card">
+          <div class="research-icon-large">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="research-content">
+            <h3>Decision Stage Keywords</h3>
+            <p>Convert ready-to-buy prospects with high-intent commercial keywords that drive qualified leads and sales.</p>
+            <div class="research-examples">
+              <span class="example">"hire SEO consultant"</span>
+              <span class="example">"SEO services pricing"</span>
+              <span class="example">"professional SEO audit"</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -65,34 +206,130 @@ import ContactSection from '../components/ContactSection.astro';
   <section id="process" class="process-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">Our Process</div>
         <h2>Our 5-Step <span>Research Process</span></h2>
         <p>A proven framework that turns raw data into a clear, actionable strategy.</p>
       </div>
-      <div class="steps-grid">
+
+      <div class="process-timeline">
+        <div class="timeline-line"></div>
+        
         <div class="step-card">
           <div class="step-number">1</div>
-          <h3>Discovery & Goal Setting</h3>
-          <p>We align on your target audiences, products, and KPIs—so we only chase keywords that matter.</p>
+          <div class="step-content">
+            <h3>Discovery & Goal Setting</h3>
+            <p>We align on your target audiences, products, and KPIs - so we only chase keywords that matter.</p>
+            <div class="step-details">
+              <div class="detail-item">🎯 Business Goals Analysis</div>
+              <div class="detail-item">👥 Audience Persona Mapping</div>
+              <div class="detail-item">📊 Competitor Landscape Review</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">🧭</div>
+          </div>
         </div>
-        <div class="step-card">
+
+        <div class="step-card reverse">
           <div class="step-number">2</div>
-          <h3>Topic & Seed Expansion</h3>
-          <p>Using advanced tools and brainstorming sessions, we generate thousands of potential keywords around your core themes.</p>
+          <div class="step-content">
+            <h3>Topic & Seed Expansion</h3>
+            <p>Using advanced tools and brainstorming sessions, we generate thousands of potential keywords around your core themes.</p>
+            <div class="step-details">
+              <div class="detail-item">🔧 Multi-Tool Analysis</div>
+              <div class="detail-item">🌱 Seed Keyword Expansion</div>
+              <div class="detail-item">💡 Creative Brainstorming</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">🌱</div>
+          </div>
         </div>
+
         <div class="step-card">
           <div class="step-number">3</div>
-          <h3>SERP & Intent Analysis</h3>
-          <p>We study search results to decode what users expect—blog post, product page, video—and tag each keyword accordingly.</p>
+          <div class="step-content">
+            <h3>SERP & Intent Analysis</h3>
+            <p>We study search results to decode what users expect - blog post, product page, video - and tag each keyword accordingly.</p>
+            <div class="step-details">
+              <div class="detail-item">🔍 SERP Feature Analysis</div>
+              <div class="detail-item">🎯 Search Intent Classification</div>
+              <div class="detail-item">📱 Device-Specific Research</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">🔍</div>
+          </div>
         </div>
-        <div class="step-card">
+
+        <div class="step-card reverse">
           <div class="step-number">4</div>
-          <h3>Difficulty & Opportunity Scoring</h3>
-          <p>By combing volume, competitiveness, and business fit, we surface quick wins and long-term plays.</p>
+          <div class="step-content">
+            <h3>Difficulty & Opportunity Scoring</h3>
+            <p>By combining volume, competitiveness, and business fit, we surface quick wins and long-term plays.</p>
+            <div class="step-details">
+              <div class="detail-item">📈 Volume Analysis</div>
+              <div class="detail-item">⚔️ Competition Assessment</div>
+              <div class="detail-item">💎 Opportunity Scoring</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">⚖️</div>
+          </div>
         </div>
+
         <div class="step-card">
           <div class="step-number">5</div>
-          <h3>Keyword Map & Content Plan</h3>
-          <p>You receive a prioritized spreadsheet and calendar showing exactly which pages to create or optimize next.</p>
+          <div class="step-content">
+            <h3>Keyword Map & Content Plan</h3>
+            <p>You receive a prioritized spreadsheet and calendar showing exactly which pages to create or optimize next.</p>
+            <div class="step-details">
+              <div class="detail-item">📋 Priority Matrix</div>
+              <div class="detail-item">📅 Content Calendar</div>
+              <div class="detail-item">🎯 Implementation Roadmap</div>
+            </div>
+          </div>
+          <div class="step-visual">
+            <div class="visual-icon">🗺️</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Technology Section -->
+  <section class="tools-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <div class="section-badge">Professional Tools</div>
+        <h2>Premium <span>Research Tools</span></h2>
+        <p>We invest in the best keyword research technology to deliver accurate, actionable insights.</p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-logo">Ahrefs</div>
+          <p>Comprehensive backlink and keyword database with accurate difficulty scores</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-logo">SEMrush</div>
+          <p>Advanced competitor analysis and keyword gap identification</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-logo">Google Keyword Planner</div>
+          <p>Direct search volume data from Google's advertising platform</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-logo">Answer The Public</div>
+          <p>Question-based keyword discovery for content optimization</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-logo">Keywords Everywhere</div>
+          <p>Real-time keyword metrics and trend analysis</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-logo">Google Trends</div>
+          <p>Seasonal patterns and trending topic identification</p>
         </div>
       </div>
     </div>
@@ -102,13 +339,95 @@ import ContactSection from '../components/ContactSection.astro';
   <section class="deliverables-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>What’s Inside Your <span>Keyword Package</span></h2>
+        <div class="section-badge">What You Get</div>
+        <h2>What's Inside Your <span>Keyword Package</span></h2>
+        <p>Every keyword research project includes comprehensive deliverables to fuel your content and marketing strategy.</p>
       </div>
+
       <div class="feature-list">
-        <div class="feature-item"><i class="fas fa-file-excel"></i><h3>Master Spreadsheet</h3><p>All keywords with volume, difficulty, intent, and priority flags.</p></div>
-        <div class="feature-item"><i class="fas fa-calendar-alt"></i><h3>90-Day Content Calendar</h3><p>Blog topics, landing pages, and FAQs mapped to business goals.</p></div>
-        <div class="feature-item"><i class="fas fa-bullseye"></i><h3>Quick-Win Targets</h3><p>A shortlist of low-competition phrases you can rank for in weeks, not months.</p></div>
-        <div class="feature-item"><i class="fas fa-ban"></i><h3>PPC Negatives List</h3><p>Save ad spend by excluding irrelevant queries from your campaigns.</p></div>
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-file-excel"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Master Spreadsheet</h3>
+            <p>All keywords with volume, difficulty, intent, and priority flags organized for easy implementation.</p>
+            <div class="feature-benefit">📊 2000+ keywords analyzed</div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="feature-content">
+            <h3>90-Day Content Calendar</h3>
+            <p>Blog topics, landing pages, and FAQs mapped to business goals with publishing schedule recommendations.</p>
+            <div class="feature-benefit">📅 12 weeks of content</div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Quick-Win Targets</h3>
+            <p>A shortlist of low-competition phrases you can rank for in weeks, not months, with implementation guidance.</p>
+            <div class="feature-benefit">⚡ 30-day ranking potential</div>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon-large">
+            <i class="fas fa-ban"></i>
+          </div>
+          <div class="feature-content">
+            <h3>PPC Negatives List</h3>
+            <p>Save ad spend by excluding irrelevant queries from your campaigns with our curated negative keyword list.</p>
+            <div class="feature-benefit">💰 20% cost savings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Highlight -->
+  <section class="case-study-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="case-study-card">
+        <div class="case-study-content">
+          <div class="case-badge">Case Study</div>
+          <h3>E-commerce Brand Achieves 400% Traffic Growth</h3>
+          <p>See how our keyword research helped an online retailer identify untapped search opportunities and dominate their niche market in the Philippines.</p>
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-number">400%</span>
+              <span class="metric-label">Traffic Growth</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">1,200</span>
+              <span class="metric-label">New Keywords</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">250%</span>
+              <span class="metric-label">Revenue Increase</span>
+            </div>
+          </div>
+          <a href="/case-studies" class="case-cta">View Full Case Study</a>
+        </div>
+        <div class="case-visual">
+          <div class="case-image">
+            <div class="growth-chart">
+              <div class="chart-bar" style="height: 20%"></div>
+              <div class="chart-bar" style="height: 40%"></div>
+              <div class="chart-bar" style="height: 60%"></div>
+              <div class="chart-bar" style="height: 80%"></div>
+              <div class="chart-bar" style="height: 100%"></div>
+            </div>
+            <div class="chart-label">Monthly Organic Traffic Growth</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -117,36 +436,84 @@ import ContactSection from '../components/ContactSection.astro';
   <section class="faq-section">
     <div class="max-w-4xl mx-auto px-4">
       <div class="section-header text-center">
+        <div class="section-badge">FAQ</div>
         <h2>Your Questions, <span>Answered</span></h2>
+        <p>Everything you need to know about our keyword research process and deliverables.</p>
       </div>
+      
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Which tools do you use for keyword research?</span>
             <i class="fas fa-plus"></i>
           </button>
-          <div class="faq-answer">We combine data from Ahrefs, Semrush, Google Keyword Planner, and firsthand SERP analysis to cross-validate every recommendation.</div>
+          <div class="faq-answer">We combine data from Ahrefs, SEMrush, Google Keyword Planner, Answer The Public, and firsthand SERP analysis to cross-validate every recommendation. This multi-tool approach ensures accuracy and uncovers opportunities single-tool research might miss.</div>
         </div>
+        
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>How long does the research take?</span>
             <i class="fas fa-plus"></i>
           </button>
-          <div class="faq-answer">Most projects take 5–7 business days, but timelines vary based on site size and target markets.</div>
+          <div class="faq-answer">Most projects take 5-7 business days, but timelines vary based on site size, target markets, and research depth. E-commerce sites with large product catalogs may take up to 10 days, while service-based businesses typically complete faster.</div>
         </div>
+        
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>Do you cover multiple languages?</span>
+            <span>Do you cover multiple languages and regions?</span>
             <i class="fas fa-plus"></i>
           </button>
-          <div class="faq-answer">Yes. Our team has experience researching English, Tagalog, and Spanish keywords. We can adapt to other languages upon request.</div>
+          <div class="faq-answer">Yes. Our team has experience researching English, Tagalog, and Spanish keywords for Philippine, US, and APAC markets. We can adapt to other languages and regions upon request, with native speaker consultation when needed.</div>
         </div>
+        
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Will you help implement the findings?</span>
             <i class="fas fa-plus"></i>
           </button>
-          <div class="faq-answer">Absolutely. We offer add-on content creation and on-page optimization services, or we can coach your in-house team.</div>
+          <div class="faq-answer">Absolutely. We offer add-on content creation, on-page optimization, and SEO implementation services. We can also provide training sessions for your in-house team to ensure proper execution of the keyword strategy.</div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How do you determine keyword difficulty and opportunity?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">We analyze multiple factors including search volume, competition strength, SERP features, and your website's current authority. Our proprietary scoring system weighs these factors against your business goals to identify the best opportunities for quick wins and long-term growth.</div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What's included in the content calendar?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">The 90-day calendar includes blog post topics, landing page recommendations, FAQ suggestions, and social media content ideas. Each item includes target keywords, search intent, estimated traffic potential, and publishing priority recommendations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>
+            "The keyword research from Bright Forge completely transformed our content strategy. We went from ranking for 200 keywords to over 1,500 in just 6 months. Their insights into search intent were game-changing for our conversion rates."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <cite>Sarah Chen</cite>
+              <span>Marketing Director, TechSolutions Inc.</span>
+            </div>
+            <div class="author-metrics">
+              <div class="metric">
+                <span class="metric-value">650%</span>
+                <span class="metric-label">Keyword Growth</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -158,63 +525,1185 @@ import ContactSection from '../components/ContactSection.astro';
 
 <style>
 /********************
-  General Styling
+  CSS Variables & Reset
 *********************/
-.section-header { text-align: center; margin: 0 auto 2.5rem; }
-.section-header h2 { font-size: 2rem; font-weight: 700; }
-.section-header span { background: linear-gradient(135deg, #FF4438, #4285F4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+:root {
+  --brand-accent: #FF4438;
+  --brand-blue: #4285F4;
+  --brand-dark: #1E2022;
+  --brand-soft: #52575D;
+  --brand-light: #F8F9FA;
+  --gradient-primary: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
+  --gradient-secondary: linear-gradient(135deg, #4285F4 0%, #667eea 100%);
+  --gradient-accent: linear-gradient(135deg, #FF4438 0%, #4285F4 100%);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--brand-dark);
+  overflow-x: hidden;
+}
+
+/********************
+  Section Styling
+*********************/
+section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-badge {
+  display: inline-block;
+  background: var(--gradient-accent);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-header span {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--brand-soft);
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 /********************
   Hero Section
 *********************/
-.hero-section { background: linear-gradient(135deg, #FF4438, #4285F4); color: #fff; padding: 6rem 0 4rem; position: relative; overflow: hidden; }
-.hero-content { display: flex; flex-direction: column; gap: 2rem; }
-@media(min-width:768px){ .hero-content { flex-direction: row; align-items: center; justify-content: space-between; } }
-.hero-text h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; }
-.hero-subtitle { font-size: 1.25rem; margin: 1rem 0; }
-.hero-description { margin-bottom: 1.5rem; max-width: 600px; }
-.cta-button { display:inline-block; padding:0.75rem 1.5rem; border-radius:9999px; font-weight:600; transition:background 0.3s, transform 0.3s; }
-.cta-button.primary { background:#fff; color:#FF4438; margin-right:1rem; }
-.cta-button.secondary { background:rgba(255,255,255,0.2); border:1px solid #fff; color:#fff; }
-.cta-button:hover { transform:translateY(-3px); }
-.hero-badge { background:rgba(255,255,255,0.1); backdrop-filter:blur(6px); border-radius:12px; padding:1.5rem 2rem; font-weight:700; text-align:center; }
+.hero-section {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.breadcrumbs a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.separator {
+  margin: 0 0.5rem;
+  opacity: 0.6;
+}
+
+.current {
+  opacity: 0.8;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.hero-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge-icon {
+  font-size: 16px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.primary {
+  background: white;
+  color: var(--brand-accent);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Hero Visual */
+.hero-visual {
+  position: relative;
+}
+
+.keyword-cloud {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.keyword-item {
+  position: absolute;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  animation: keywordFloat 6s ease-in-out infinite;
+}
+
+.keyword-item.priority-high {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand-accent);
+  font-weight: 600;
+  animation-delay: 0s;
+}
+
+.keyword-item.priority-medium {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--brand-blue);
+  animation-delay: 2s;
+}
+
+.keyword-item.priority-low {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--brand-dark);
+  animation-delay: 4s;
+}
+
+.keyword-item:nth-child(1) { top: 20px; left: 20px; }
+.keyword-item:nth-child(2) { top: 60px; right: 30px; }
+.keyword-item:nth-child(3) { top: 100px; left: 60px; }
+.keyword-item:nth-child(4) { top: 140px; right: 60px; }
+.keyword-item:nth-child(5) { top: 180px; left: 40px; }
+.keyword-item:nth-child(6) { top: 220px; right: 40px; }
+.keyword-item:nth-child(7) { top: 260px; left: 80px; }
+
+@keyframes keywordFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.research-badge {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: linear-gradient(135deg, #00d084, #00a86b);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-medium);
+  transform: rotate(5deg);
+}
+
+.research-icon {
+  font-size: 24px;
+}
+
+.research-text span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.research-text strong {
+  font-size: 18px;
+  font-weight: 700;
+}
 
 /********************
-  Breadcrumbs
+  Social Proof Banner
 *********************/
-.breadcrumbs { font-size:0.9rem; margin-bottom:2rem; color:rgba(255,255,255,0.9); }
-.breadcrumbs a{color:#fff;text-decoration:underline;}.separator{margin:0 0.5rem;}.current{opacity:0.8;}
+.social-proof-banner {
+  background: var(--brand-light);
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.proof-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.proof-text {
+  color: var(--brand-soft);
+  font-weight: 600;
+  text-align: center;
+}
+
+.proof-logos {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo-item {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: var(--shadow-soft);
+}
 
 /********************
-  Grids & Cards
+  Why Keywords Section
 *********************/
-.features-grid, .steps-grid, .feature-list { display:grid; gap:2rem; }
-.features-grid { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
-.feature-card { background:#fff; border-radius:12px; padding:2rem; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.05); transition:transform 0.3s; }
-.feature-card:hover { transform:translateY(-6px); }
-.feature-icon { font-size:2rem; color:#FF4438; margin-bottom:1rem; }
+.why-keywords-section {
+  background: white;
+}
 
-.steps-grid { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
-.step-card { background:#fff; padding:2rem 1.5rem 1.5rem; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.05); transition:transform 0.3s; position:relative; }
-.step-card:hover { transform:translateY(-6px); }
-.step-number { background:linear-gradient(135deg,#FF4438,#4285F4); color:#fff; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.2rem; margin-bottom:1rem; }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
 
-.feature-list { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
-.feature-item { text-align:center; padding:1.5rem; }
-.feature-item i { font-size:2rem; color:#4285F4; margin-bottom:1rem; }
+.feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+}
+
+.feature-icon.conversations {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.feature-icon.trophy {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+}
+
+.feature-icon.coins {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.feature-card p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.feature-metric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--brand-light);
+  padding: 12px 20px;
+  border-radius: 50px;
+  margin-top: 1rem;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-accent);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--brand-soft);
+}
+
+/********************
+  Research Types Section
+*********************/
+.research-types-section {
+  background: #f8fafc;
+}
+
+.research-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.research-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.research-icon-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.research-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--brand-dark);
+}
+
+.research-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.research-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.example {
+  background: var(--brand-light);
+  color: var(--brand-accent);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/********************
+  Process Section
+*********************/
+.process-section {
+  background: white;
+}
+
+.process-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--brand-accent), var(--brand-blue));
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 30px;
+  }
+}
+
+.step-card {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step-card.reverse {
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.step-card.reverse .step-content {
+  grid-column: 3;
+  text-align: left;
+}
+
+.step-card.reverse .step-visual {
+  grid-column: 1;
+}
+
+@media (max-width: 768px) {
+  .step-card,
+  .step-card.reverse {
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+  }
+  
+  .step-card .step-content,
+  .step-card.reverse .step-content {
+    grid-column: 2;
+    text-align: left;
+  }
+  
+  .step-card .step-visual,
+  .step-card.reverse .step-visual {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  z-index: 3;
+}
+
+.step-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f0f0f0;
+}
+
+.step-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.step-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.step-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-item {
+  background: var(--brand-light);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--brand-soft);
+}
+
+.step-visual {
+  width: 100px;
+  height: 100px;
+  background: var(--gradient-secondary);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.visual-icon {
+  font-size: 2.5rem;
+}
+
+/********************
+  Tools Section
+*********************/
+.tools-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tool-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tool-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.tool-card p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+}
+
+/********************
+  Deliverables Section
+*********************/
+.deliverables-section {
+  background: var(--brand-light);
+}
+
+.feature-list {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.feature-icon-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.feature-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--brand-dark);
+}
+
+.feature-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.feature-benefit {
+  display: inline-block;
+  background: var(--brand-light);
+  color: var(--brand-accent);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/********************
+  Case Study Section
+*********************/
+.case-study-section {
+  background: white;
+}
+
+.case-study-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .case-study-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.case-badge {
+  background: var(--gradient-accent);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.case-study-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.case-study-content p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.case-metrics {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand-accent);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--brand-soft);
+}
+
+.case-cta {
+  background: var(--gradient-accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.case-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.case-visual {
+  text-align: center;
+}
+
+.growth-chart {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.chart-bar {
+  flex: 1;
+  background: var(--gradient-accent);
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+  animation: chartGrow 1.5s ease-out;
+}
+
+@keyframes chartGrow {
+  from { height: 0; }
+  to { height: var(--chart-height, 100%); }
+}
+
+.chart-label {
+  font-size: 0.9rem;
+  color: var(--brand-soft);
+  font-weight: 500;
+}
 
 /********************
   FAQ Section
 *********************/
-.faq-section { padding:4rem 0; }
-.faq-item { border-bottom:1px solid #e5e7eb; }
-.faq-question { width:100%; background:none; border:none; text-align:left; padding:1.25rem 0; font-weight:600; display:flex; align-items:center; justify-content:space-between; font-size:1rem; }
-.faq-question i { transition:transform 0.3s; }
-.faq-answer { display:none; padding-bottom:1.25rem; color:#4b5563; }
-.faq-item.active .faq-answer { display:block; }
-.faq-item.active .faq-question i { transform:rotate(45deg); }
+.faq-section {
+  background: var(--brand-light);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.5rem 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--brand-dark);
+}
+
+.faq-question:hover {
+  background: var(--brand-light);
+}
+
+.faq-question i {
+  color: var(--brand-accent);
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 2rem 1.5rem;
+  color: var(--brand-soft);
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(45deg);
+}
+
+/********************
+  Testimonial Section
+*********************/
+.testimonial-section {
+  background: white;
+}
+
+.testimonial-card {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stars {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card blockquote {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.author-info cite {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.author-info span {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.author-metrics .metric {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.author-metrics .metric-value {
+  color: white;
+}
+
+.author-metrics .metric-label {
+  color: rgba(255,255,255,0.9);
+}
+
+/********************
+  Responsive Design
+*********************/
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+  
+  .hero-section {
+    padding: 6rem 0 4rem;
+    min-height: auto;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .research-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .case-metrics {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .testimonial-author {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .keyword-cloud {
+    height: 300px;
+    position: relative;
+  }
+  
+  .keyword-item {
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem;
+  }
+}
+
+/********************
+  Animations
+*********************/
+@media (prefers-reduced-motion: no-preference) {
+  .feature-card,
+  .research-card,
+  .tool-card,
+  .feature-item {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .feature-card:nth-child(2) { animation-delay: 0.1s; }
+  .feature-card:nth-child(3) { animation-delay: 0.2s; }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 </style>
 
 <script>
-function toggleFAQ(btn){ btn.parentElement.classList.toggle('active'); }
+// FAQ toggle functionality
+function toggleFAQ(button) {
+  const item = button.parentElement;
+  const isActive = item.classList.contains('active');
+  
+  // Close all other FAQ items
+  document.querySelectorAll('.faq-item').forEach(faq => {
+    faq.classList.remove('active');
+  });
+  
+  // Toggle current item
+  if (!isActive) {
+    item.classList.add('active');
+  }
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Intersection Observer for animation triggers
+if ('IntersectionObserver' in window) {
+  const animateOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Observe all animatable elements
+  document.querySelectorAll('.feature-card, .research-card, .tool-card, .feature-item').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    animateOnScroll.observe(el);
+  });
+}
 </script>

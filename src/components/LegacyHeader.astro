@@ -177,106 +177,108 @@ import "../styles/legacy.css";
       <span>Get Started</span>
     </a>
 
-    <button type="button" class="mobile-menu-btn" aria-label="Toggle mobile menu">
+    <button type="button" class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
   </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-content">
+      <a href="/" class="mobile-nav-link">Home</a>
+      
+      <div class="mobile-dropdown">
+        <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+          <span>SEO Services</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="mobile-dropdown-content">
+          <a href="/philippines-seo-services" class="mobile-nav-link">Philippines SEO Services</a>
+          <a href="/technical-seo-services-philippines" class="mobile-nav-link">Technical SEO</a>
+          <a href="/on-page-seo-services-philippines" class="mobile-nav-link">On-Page SEO</a>
+          <a href="/content-seo-services-philippines" class="mobile-nav-link">Content SEO</a>
+          <a href="/backlink-seo-services-philippines" class="mobile-nav-link">Link Building</a>
+          <a href="/white-label-seo-services-philippines" class="mobile-nav-link">White Label SEO</a>
+          <a href="/seo-audit-services" class="mobile-nav-link">SEO Audits</a>
+          <a href="/keyword-research-services" class="mobile-nav-link">Keyword Research</a>
+          <a href="/astro-seo-website-development" class="mobile-nav-link">Astro Development</a>
+          <a href="/website-migration-services" class="mobile-nav-link">Website Migration</a>
+        </div>
+      </div>
+      
+      <a href="/case-studies" class="mobile-nav-link">Case Studies</a>
+      <a href="/blog" class="mobile-nav-link">Blog</a>
+      
+      <div class="mobile-dropdown">
+        <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+          <span>Company</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="mobile-dropdown-content">
+          <a href="/about-us" class="mobile-nav-link">About Us</a>
+          <a href="/contact" class="mobile-nav-link">Contact</a>
+        </div>
+      </div>
+      
+      <a href="/contact" class="mobile-cta">Get Started</a>
+    </div>
+  </div>
 </nav>
 
-<script is:inline slot="head">
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    const dropdownBtns = document.querySelectorAll('.nav-link[data-dropdown]');
-    let activeDropdown = null;
+<script>
+// Mobile menu functionality
+function toggleMobileMenu() {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  
+  mobileMenu.classList.toggle('active');
+  menuBtn.classList.toggle('active');
+  
+  // Toggle body scroll
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+}
 
-    function closeAllDropdowns() {
-      dropdownBtns.forEach(btn => {
-        const dropdown = btn.nextElementSibling;
-        if (dropdown?.classList.contains('active')) {
-          dropdown.classList.remove('active');
-          btn.classList.remove('active');
-        }
-      });
-      activeDropdown = null;
-    }
-
-    // Toggle mobile menu
-    if (mobileMenuBtn && navMenu) {
-      mobileMenuBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        mobileMenuBtn.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-        closeAllDropdowns();
-      });
-    }
-
-    // Handle dropdowns
-    dropdownBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const dropdown = btn.nextElementSibling;
-        const isActive = dropdown?.classList.contains('active');
-
-        // Close previously active dropdown if it's different
-        if (activeDropdown && activeDropdown !== dropdown) {
-          activeDropdown.classList.remove('active');
-          activeDropdown.previousElementSibling?.classList.remove('active');
-        }
-
-        // Toggle current dropdown
-        if (dropdown) {
-          dropdown.classList.toggle('active');
-          btn.classList.toggle('active');
-          activeDropdown = isActive ? null : dropdown;
-        }
-      });
-    });
-
-    // Close menu and dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
-      const clickedElement = e.target;
-      const isMenuClick = clickedElement.closest('.nav-menu');
-      const isMenuBtnClick = clickedElement.closest('.mobile-menu-btn');
-      const isDropdownClick = clickedElement.closest('.dropdown, .mega-dropdown');
-
-      if (!isMenuClick && !isMenuBtnClick && !isDropdownClick) {
-        navMenu?.classList.remove('active');
-        mobileMenuBtn?.classList.remove('active');
-        document.body.classList.remove('menu-open');
-        closeAllDropdowns();
-      }
-    });
-
-    // Handle touch events for better mobile experience
-    let touchStartY = 0;
-    let touchEndY = 0;
-
-    navMenu?.addEventListener('touchstart', (e) => {
-      touchStartY = e.touches[0].clientY;
-    }, { passive: true });
-
-    navMenu?.addEventListener('touchmove', (e) => {
-      touchEndY = e.touches[0].clientY;
-      const scrollTop = navMenu.scrollTop;
-      const scrollHeight = navMenu.scrollHeight;
-      const clientHeight = navMenu.clientHeight;
-
-      // Prevent overscroll only at boundaries
-      if (scrollTop <= 0 && touchEndY > touchStartY) {
-        e.preventDefault();
-      }
-      if (scrollTop + clientHeight >= scrollHeight && touchEndY < touchStartY) {
-        e.preventDefault();
-      }
-    }, { passive: false });
+function toggleMobileDropdown(button) {
+  const dropdown = button.parentElement;
+  const isActive = dropdown.classList.contains('active');
+  
+  // Close all other dropdowns
+  document.querySelectorAll('.mobile-dropdown').forEach(d => {
+    d.classList.remove('active');
   });
+  
+  // Toggle current dropdown
+  if (!isActive) {
+    dropdown.classList.add('active');
+  }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navbar = document.querySelector('.navbar-professional');
+  
+  if (!navbar.contains(e.target) && mobileMenu.classList.contains('active')) {
+    mobileMenu.classList.remove('active');
+    menuBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    mobileMenu.classList.remove('active');
+    menuBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
 </script>
 
 <style>
