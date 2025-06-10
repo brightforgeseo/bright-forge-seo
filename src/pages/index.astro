@@ -3882,6 +3882,20 @@ import PartnersSection from '../components/PartnersSection.astro';
       }
     });
     
+    // Close modal when clicking outside content
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.add('hidden');
+      }
+    });
+
+    // Close modal on ESC key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modalOverlay.classList.add('hidden');
+      }
+    });
+    
     // Function to display summary results
     function displaySummaryResults(data, container) {
       container.innerHTML = '';
@@ -4021,7 +4035,7 @@ import PartnersSection from '../components/PartnersSection.astro';
     // Helper function to add metric items to the table
     function addMetricItem(container, label, value, isGood) {
       const item = document.createElement('div');
-      item.className = 'flex justify-between p-3 border rounded-md';
+      item.className = 'flex justify-between items-center';
       item.innerHTML = `
         <span class="font-medium">${label}:</span>
         <span class="flex items-center">
