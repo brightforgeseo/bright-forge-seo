@@ -161,7 +161,14 @@ const formatDate = (dateString: string) => {
       <!-- Featured Image -->
       {featuredImage && (
         <div class="featured-image">
-          <img src={featuredImage} alt={title} />
+          <img 
+            src={featuredImage} 
+            alt={title} 
+            width="800"
+            height="450"
+            loading="eager"
+            decoding="sync"
+          />
         </div>
       )}
     </div>
@@ -217,12 +224,15 @@ const formatDate = (dateString: string) => {
     <div class="max-w-4xl mx-auto px-4">
       <div class="author-card">
         <div class="author-avatar">
-          {author.avatar ? (
-            <img src={author.avatar} alt={author.name} />
-          ) : (
-            <div class="avatar-placeholder">
-              <i class="fas fa-user"></i>
-            </div>
+          {author.avatar && (
+            <img 
+              src={author.avatar} 
+              alt={author.name} 
+              width="60"
+              height="60"
+              loading="lazy"
+              decoding="async"
+            />
           )}
         </div>
         <div class="author-info">
@@ -282,7 +292,14 @@ const formatDate = (dateString: string) => {
             <article class="related-card">
               {article.image && (
                 <div class="related-image">
-                  <img src={article.image} alt={article.title} />
+                  <img 
+                    src={article.image} 
+                    alt={article.title} 
+                    width="300"
+                    height="200"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               )}
               <div class="related-content">

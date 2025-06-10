@@ -30,7 +30,15 @@ const awards = [
       {awards.map((a) => (
         <div class="award-card group bg-brand-bg rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-80">
           <div class="flex items-center justify-center mb-4">
-            <img src={a.img} alt={a.title} class="w-36 h-36 object-contain transition-transform duration-300 group-hover:scale-105" />
+            <img 
+              src={a.img} 
+              alt={a.title} 
+              class="w-36 h-36 object-contain transition-transform duration-300 group-hover:scale-105" 
+              width="144"
+              height="144"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <h3 class="text-lg font-semibold text-brand-dark text-center mb-1 leading-snug">{a.title}</h3>
           <p class="text-sm text-brand-accent text-center font-medium">{a.by}</p>
