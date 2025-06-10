@@ -66,14 +66,14 @@ import ContactSection from '../components/ContactSection.astro';
               <span>astro.config.mjs</span>
             </div>
             <div class="code-content">
-              <div class="code-line"><span class="code-keyword">export</span> <span class="code-keyword">default</span> <span class="code-function">defineConfig</span>(&#123;</div>
+              <div class="code-line"><span class="code-keyword">export</span> <span class="code-keyword">default</span> <span class="code-function">defineConfig</span>({</div>
               <div class="code-line">  <span class="code-property">output:</span> <span class="code-string">'static'</span>,</div>
               <div class="code-line">  <span class="code-property">integrations:</span> [</div>
               <div class="code-line">    <span class="code-function">sitemap</span>(),</div>
               <div class="code-line">    <span class="code-function">compress</span>(),</div>
               <div class="code-line">    <span class="code-function">partytown</span>()</div>
               <div class="code-line">  ]</div>
-              <div class="code-line">&#125;)</div>
+              <div class="code-line">})</div>
             </div>
           </div>
           <div class="performance-badge">
