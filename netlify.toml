@@ -84,6 +84,11 @@
     Cache-Control = "public, max-age=600, must-revalidate"
 
 [[redirects]]
+  from = "/blog//blog/importance-of-local-seo-for-small-businesses"
+  to = "/blog/importance-of-local-seo-for-small-businesses"
+  status = 301
+
+[[redirects]]
   from = "/blog//blog/*"
   to = "/blog/:splat"
   status = 301
