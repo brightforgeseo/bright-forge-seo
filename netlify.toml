@@ -86,6 +86,11 @@
     Cache-Control = "public, max-age=600, must-revalidate"
 
 [[redirects]]
+  from = "/blog//*"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/404"
   status = 404
