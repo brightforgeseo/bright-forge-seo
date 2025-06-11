@@ -1,4 +1,7 @@
-# Blog double slash redirects (HIGHEST PRIORITY)
+# Force blog page to correct content (HIGHEST PRIORITY)
+/blog /blog.html 200!
+
+# Blog double slash redirects
 /blog//blog/importance-of-local-seo-for-small-businesses /blog/importance-of-local-seo-for-small-businesses 301!
 /blog//blog/* /blog/:splat 301!
 /blog//* /blog/:splat 301!
