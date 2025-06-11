@@ -109,6 +109,11 @@
   status = 301
 
 [[redirects]]
+  from = "/blog//blog/*"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
   from = "/blog//*"
   to = "/blog/:splat"
   status = 301
