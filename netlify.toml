@@ -107,3 +107,13 @@
   from = "/services"
   to = "/philippines-seo-services"
   status = 301
+
+[[redirects]]
+  from = "/blog//*"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
