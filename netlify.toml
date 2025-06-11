@@ -84,6 +84,16 @@
     Cache-Control = "public, max-age=600, must-revalidate"
 
 [[redirects]]
+  from = "/blog//blog/*"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/blog//*"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
   from = "/*//"
   to = "/:splat"
   status = 301
@@ -106,16 +116,6 @@
 [[redirects]]
   from = "/services"
   to = "/philippines-seo-services"
-  status = 301
-
-[[redirects]]
-  from = "/blog//blog/*"
-  to = "/blog/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/blog//*"
-  to = "/blog/:splat"
   status = 301
 
 [[redirects]]

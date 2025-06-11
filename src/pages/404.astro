@@ -1,0 +1,692 @@
+---
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="404 - Page Not Found | Bright Forge SEO"
+  description="The page you're looking for could not be found. Explore our SEO services and resources to find what you need."
+  noindex={true}
+>
+  <LegacyHeader />
+  
+  <main class="error-page">
+    <!-- Hero Section -->
+    <section class="error-hero">
+      <div class="container">
+        <div class="error-content">
+          <!-- Animated 404 -->
+          <div class="error-number">
+            <span class="digit digit-4">4</span>
+            <div class="digit digit-0">
+              <div class="seo-orbit">
+                <div class="planet planet-1"></div>
+                <div class="planet planet-2"></div>
+                <div class="planet planet-3"></div>
+              </div>
+              <span class="zero">0</span>
+            </div>
+            <span class="digit digit-4-2">4</span>
+          </div>
+          
+          <!-- Error Message -->
+          <div class="error-message">
+            <h1>Oops! This Page Got Lost in the Digital Space</h1>
+            <p>Don't worry, even the best SEO strategies sometimes encounter broken links. Let's get you back on track to ranking success!</p>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="error-actions">
+            <a href="/" class="cta-primary">
+              <i class="fas fa-home"></i>
+              Return Home
+            </a>
+            <a href="/contact" class="cta-secondary">
+              <i class="fas fa-headset"></i>
+              Contact Support
+            </a>
+          </div>
+          
+          <!-- Search Box -->
+          <div class="search-container">
+            <form class="search-form" action="/search" method="get">
+              <input type="text" name="q" placeholder="Search our resources..." class="search-input">
+              <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Helpful Links Section -->
+    <section class="helpful-links">
+      <div class="container">
+        <div class="links-grid">
+          <!-- Popular Services -->
+          <div class="link-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Popular Services</h3>
+            </div>
+            <ul class="link-list">
+              <li><a href="/philippines-seo-services">Philippines SEO Services</a></li>
+              <li><a href="/technical-seo-services-philippines">Technical SEO</a></li>
+              <li><a href="/content-seo-services-philippines">Content SEO</a></li>
+              <li><a href="/white-label-seo-services-philippines">White Label SEO</a></li>
+              <li><a href="/astro-seo-website-development">Astro Development</a></li>
+            </ul>
+          </div>
+          
+          <!-- Quick Links -->
+          <div class="link-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-compass"></i>
+              </div>
+              <h3>Quick Links</h3>
+            </div>
+            <ul class="link-list">
+              <li><a href="/case-studies">Case Studies</a></li>
+              <li><a href="/blog">SEO Blog</a></li>
+              <li><a href="/about-us">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/seo-audit-services">Free SEO Audit</a></li>
+            </ul>
+          </div>
+          
+          <!-- Recent Articles -->
+          <div class="link-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-newspaper"></i>
+              </div>
+              <h3>Latest Insights</h3>
+            </div>
+            <ul class="link-list">
+              <li><a href="/blog/importance-of-local-seo-for-small-businesses">Local SEO for Small Business</a></li>
+              <li><a href="/blog/ai-seo-transformation">AI & SEO Transformation</a></li>
+              <li><a href="/case-studies/speediance-uk-fitness-seo">Speediance UK Case Study</a></li>
+              <li><a href="/case-studies/consulting-firm-seo">Consulting Firm Growth</a></li>
+              <li><a href="/blog">View All Articles</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="error-cta">
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-text">
+            <h2>Still Can't Find What You're Looking For?</h2>
+            <p>Our SEO experts are here to help! Get in touch and we'll assist you in finding the perfect solution for your business.</p>
+          </div>
+          <div class="cta-action">
+            <a href="/contact" class="cta-button">
+              <span>Get Expert Help</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</MainLayout>
+
+<style>
+/* CSS Variables */
+:root {
+  --brand-primary: #FF4438;
+  --brand-secondary: #4285F4;
+  --brand-dark: #1a1a1a;
+  --brand-soft: #666666;
+  --brand-light: #f8f9fa;
+  --gradient-primary: linear-gradient(135deg, #FF4438 0%, #4285F4 100%);
+  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Global Styles */
+.error-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.error-hero {
+  background: var(--gradient-hero);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 68, 56, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(66, 133, 244, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.error-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* Animated 404 Number */
+.error-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.digit {
+  font-size: clamp(80px, 15vw, 200px);
+  font-weight: 900;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.digit-4 {
+  color: #FF4438;
+  animation-delay: 0s;
+}
+
+.digit-0 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.digit-4-2 {
+  color: #4285F4;
+  animation-delay: 0.4s;
+}
+
+.zero {
+  font-size: clamp(80px, 15vw, 200px);
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* SEO Orbit Animation */
+.seo-orbit {
+  position: absolute;
+  width: clamp(100px, 20vw, 250px);
+  height: clamp(100px, 20vw, 250px);
+  animation: rotate 10s linear infinite;
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.planet-1 {
+  width: 12px;
+  height: 12px;
+  background: #FF4438;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: planetPulse 3s ease-in-out infinite;
+}
+
+.planet-2 {
+  width: 8px;
+  height: 8px;
+  background: #4285F4;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  animation: planetPulse 2s ease-in-out infinite 0.5s;
+}
+
+.planet-3 {
+  width: 10px;
+  height: 10px;
+  background: #00d084;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: planetPulse 2.5s ease-in-out infinite 1s;
+}
+
+/* Error Message */
+.error-message {
+  margin-bottom: 50px;
+}
+
+.error-message h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.error-message p {
+  font-size: clamp(16px, 3vw, 20px);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Action Buttons */
+.error-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.cta-primary, .cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.cta-primary {
+  background: #FF4438;
+  color: white;
+}
+
+.cta-primary:hover {
+  background: #e63b2e;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
+}
+
+.cta-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Search Container */
+.search-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 15px 25px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-btn {
+  background: #FF4438;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn:hover {
+  background: #e63b2e;
+  transform: scale(1.05);
+}
+
+/* Helpful Links Section */
+.helpful-links {
+  padding: 100px 0;
+  background: white;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.link-category {
+  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(66, 133, 244, 0.1);
+}
+
+.link-category:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-strong);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.category-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.category-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 0;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-list li {
+  margin-bottom: 12px;
+}
+
+.link-list a {
+  color: var(--brand-soft);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  position: relative;
+}
+
+.link-list a::before {
+  content: '→';
+  margin-right: 10px;
+  color: var(--brand-primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.link-list a:hover {
+  color: var(--brand-primary);
+  padding-left: 15px;
+}
+
+.link-list a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Error CTA Section */
+.error-cta {
+  padding: 80px 0;
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-text h2 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.cta-text p {
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: white;
+  color: var(--brand-primary);
+  padding: 18px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
+}
+
+.cta-button i {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover i {
+  transform: translateX(5px);
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes planetPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-hero {
+    min-height: 80vh;
+    padding: 40px 0;
+  }
+  
+  .error-number {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-primary, .cta-secondary {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  .helpful-links {
+    padding: 60px 0;
+  }
+  
+  .links-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .link-category {
+    padding: 30px 25px;
+  }
+  
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .error-cta {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .error-number {
+    gap: 5px;
+  }
+  
+  .search-form {
+    padding: 3px;
+  }
+  
+  .search-input {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .search-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+</style>
+
+<script>
+// Add some interactive animations
+document.addEventListener('DOMContentLoaded', function() {
+  // Parallax effect for floating elements
+  window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    
+    const orbitElements = document.querySelectorAll('.seo-orbit');
+    orbitElements.forEach(orbit => {
+      orbit.style.transform = `translateY(${rate}px) rotate(${scrolled * 0.1}deg)`;
+    });
+  });
+
+  // Enhanced search functionality
+  const searchForm = document.querySelector('.search-form');
+  const searchInput = document.querySelector('.search-input');
+  
+  if (searchForm) {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) {
+        // Simple redirect to blog for now - can be enhanced later
+        window.location.href = `/blog?search=${encodeURIComponent(query)}`;
+      }
+    });
+  }
+
+  // Add loading states to buttons
+  const buttons = document.querySelectorAll('.cta-primary, .cta-secondary, .cta-button');
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Add a subtle loading effect
+      this.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+    });
+  });
+});
+</script> 
