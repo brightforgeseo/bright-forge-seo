@@ -9,7 +9,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   description="The page you're looking for could not be found. Explore our SEO services and resources to find what you need."
   noindex={true}
 >
-  <LegacyHeader />
+  <LegacyHeader slot="header" />
   
   <main class="error-page">
     <!-- Hero Section -->
@@ -138,7 +138,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     </section>
   </main>
   
-  <Footer />
+  <Footer slot="footer" />
 </MainLayout>
 
 <style>
