@@ -24,9 +24,10 @@ export default defineConfig({
   ],
   output: 'static',
   trailingSlash: 'ignore',
+  // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
     inlineStylesheets: 'auto',
-    format: 'file',
+    format: 'directory', // switch from "file" to "directory" to drop .html in canonical URLs
     assets: '_astro'
   },
   markdown: {
