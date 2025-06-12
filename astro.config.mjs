@@ -23,7 +23,8 @@ export default defineConfig({
     })
   ],
   output: 'static',
-  trailingSlash: 'ignore',
+  // Ensure no automatic trailing-slash redirects (avoids /page → /page/ loops)
+  trailingSlash: 'never',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
     inlineStylesheets: 'auto',
