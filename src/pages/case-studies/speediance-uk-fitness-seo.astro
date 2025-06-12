@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
+import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ContactSection from '../../components/ContactSection.astro';
 import CaseStudyTemplate from '../../components/CaseStudyTemplate.astro';
@@ -113,7 +113,7 @@ const caseStudyData = {
 ---
 
 <MainLayout title="Case Study: Speediance UK Fitness SEO Success | Bright Forge SEO">
-  <LegacyHeader />
+  <Header slot="header" />
   
   <CaseStudyTemplate {...caseStudyData} />
   
@@ -182,5 +182,5 @@ const caseStudyData = {
   </section>
   
   <ContactSection />
-  <Footer />
+  <Footer slot="footer" />
 </MainLayout>
