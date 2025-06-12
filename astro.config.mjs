@@ -8,18 +8,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      customPages: [
-        'https://brightforgeseo.com',
-        'https://brightforgeseo.com/about',
-        'https://brightforgeseo.com/services',
-        'https://brightforgeseo.com/case-studies',
-        'https://brightforgeseo.com/blog',
-        'https://brightforgeseo.com/contact'
-      ],
-      entryLimit: 45000,
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date()
+      sitemapIndex: false
     })
   ],
   output: 'static',
