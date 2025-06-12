@@ -34,5 +34,8 @@
 /blog//blog/*  /blog/:splat  301
 /blog//*  /blog/:splat  301
 
+# Serve generated sitemap
+/sitemap.xml  /sitemap-0.xml  200
+
 # Fallback to 404 page for unmatched routes
 /* /404.html 404

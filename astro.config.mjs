@@ -7,9 +7,7 @@ export default defineConfig({
   site: 'https://brightforgeseo.com',
   integrations: [
     tailwind(),
-    sitemap({
-      sitemapIndex: false
-    })
+    sitemap()
   ],
   output: 'static',
   // Use trailing slashes consistently so canonical URLs point directly to final URL
