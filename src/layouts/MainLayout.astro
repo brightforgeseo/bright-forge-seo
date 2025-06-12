@@ -31,7 +31,7 @@ interface Props {
 const { 
   title, 
   description = "Bright Forge SEO Philippines - Your partner for SEO and digital marketing",
-  canonical = Astro.url.href,
+  canonical,
   image,
   type = 'website',
   publishDate,
@@ -176,6 +176,24 @@ const breadcrumbSchema = breadcrumbs ? {
     "item": `https://brightforgeseo.com${crumb.url}`
   }))
 } : null;
+
+// Normalize canonical: remove trailing slash for non-root paths
+function normalize(url) {
+  if (!url) return undefined;
+  try {
+    const u = new URL(url, 'https://brightforgeseo.com');
+    if (u.pathname !== '/' && u.pathname.endsWith('/')) {
+      u.pathname = u.pathname.slice(0, -1);
+    }
+    return u.href;
+  } catch {
+    return url;
+  }
+}
+
+const defaultCanonical = normalize(Astro.url.href);
+const finalCanonical = normalize(canonical) || defaultCanonical;
+
 ---
 
 <!DOCTYPE html>
@@ -196,7 +214,7 @@ const breadcrumbSchema = breadcrumbs ? {
     <SEO
       title={title}
       description={description}
-      canonical={canonical}
+      canonical={finalCanonical}
       image={image}
       type={type}
       publishDate={publishDate}
