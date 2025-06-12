@@ -2,7 +2,7 @@
 import CaseStudyTemplate from '../../components/CaseStudyTemplate.astro';
 import KnowledgeBase from '../../components/KnowledgeBase.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
-import Header from '../../components/Header.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
 import ContactSection from '../../components/ContactSection.astro';
 
@@ -121,7 +121,7 @@ const caseStudyData = {
 ---
 
 <MainLayout title={caseStudyData.title + ' | BrightForge'}>
-  <Header slot="header" />
+  <LegacyHeader slot="header" />
   <CaseStudyTemplate {...caseStudyData}>
     <!-- Knowledge Base Preview Section -->
     <section class="knowledge-base-preview py-16 bg-gray-50">
