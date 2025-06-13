@@ -390,26 +390,34 @@ const formatDate = (dateString: string) => {
 
 .main-content .content-body h2,
 .article-content h2 {
-  font-size: 1.75rem !important;
-  font-weight: 700 !important;
-  margin: 30px 0 15px !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  margin: 40px 0 20px !important;
   color: #1a1a1a !important;
   line-height: 1.3 !important;
   display: block !important;
+  border-bottom: 2px solid #f0f0f0 !important;
+  padding-bottom: 10px !important;
 }
 
 .main-content .content-body h3,
 .article-content h3 {
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-  margin: 25px 0 15px !important;
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  margin: 30px 0 16px !important;
   color: #333 !important;
   line-height: 1.4 !important;
   display: block !important;
 }
 
-.main-content .content-body h4 {
-  font-size: 1.25rem !important;
+.main-content .content-body h4,
+.article-content h4 {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin: 25px 0 15px !important;
+  color: #444 !important;
+  line-height: 1.5 !important;
+  display: block !important;
 }
 
 .main-content .content-body p {
@@ -418,14 +426,8 @@ const formatDate = (dateString: string) => {
 }
 
 .main-content .content-body ul,
-.main-content .content-body ol {
-  margin: 20px 0 !important;
-  padding-left: 30px !important;
-}
-
-.main-content .content-body ul,
-.blog-article .article-content ul,
-article ul {
+.article-content ul,
+.content-body ul {
   list-style-type: disc !important;
   list-style: disc !important;
 }
@@ -486,7 +488,8 @@ article li {
 .article-content a,
 .content-body a {
   color: #4285F4 !important;
-  text-decoration: none !important;
+  text-decoration: underline !important;
+  font-weight: 600 !important;
   transition: color 0.3s ease !important;
   display: inline !important;
 }
@@ -494,7 +497,7 @@ article li {
 .main-content .content-body a:hover,
 .article-content a:hover,
 .content-body a:hover {
-  color: #0d5bdd !important;
+  color: #FF4438 !important;
   text-decoration: underline !important;
 }
 
