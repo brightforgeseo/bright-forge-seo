@@ -129,7 +129,7 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
             <!-- Articles Grid -->
             <div class="articles-grid">
               {blogPosts.slice(1).map((post) => (
-                <div class="article-card" data-categories={post.categories.join(" ")}>
+                <div class="article-card" data-categories={post.categories.map(cat => cat.toLowerCase().replace(' & ', '-').replace(' ', '-')).join(' ')}>
                   <div class="article-image">
                     <a href={`/blog/${post.slug}`} class="image-link">
                       <img src={post.image} alt={post.title} width="400" height="225" loading="lazy">
@@ -164,9 +164,12 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
           <div class="sidebar-widget">
             <h3>Topics</h3>
             <ul class="categories-list">
+              <li>
+                <a href="#" class="category-link topic-item active" data-category="all">All Topics</a>
+              </li>
               {categories.map((category) => (
                 <li>
-                  <a href="#" class="category-link" data-filter={category.toLowerCase().replace(' & ', '-').replace(' ', '-')}>
+                  <a href="#" class="category-link topic-item" data-category={category.toLowerCase().replace(' & ', '-').replace(' ', '-')}>
                     {category}
                   </a>
                 </li>
@@ -455,7 +458,6 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
   overflow: hidden;
   border-radius: 0;
   aspect-ratio: 16/9;
-  background-color: #f0f2f5;
 }
 
 .featured-image img {
@@ -609,7 +611,6 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
   justify-content: center;
   border-radius: 0;
   margin-bottom: 20px;
-  background-color: #f0f2f5;
 }
 
 .article-image img {
@@ -969,79 +970,121 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Search functionality
+  // Get elements
   const searchInput = document.getElementById('blogSearch');
+  const searchButton = document.querySelector('.search-button');
   const articleCards = document.querySelectorAll('.article-card');
+  const topicLinks = document.querySelectorAll('.topic-item');
+  const featuredArticle = document.querySelector('.featured-article');
+  const newsletterForm = document.querySelector('.newsletter-form');
   
-  searchInput?.addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase();
+  // Function to filter articles by search term
+  function filterBySearch() {
+    const searchTerm = searchInput.value.toLowerCase();
     
+    // Only filter if search term is not empty
+    if (!searchTerm) {
+      // Reset display
+      articleCards.forEach(card => card.style.display = '');
+      featuredArticle.style.display = '';
+      return;
+    }
+    
+    // Match featured article
+    const featuredTitle = featuredArticle?.querySelector('h2')?.textContent.toLowerCase();
+    const featuredExcerpt = featuredArticle?.querySelector('p')?.textContent.toLowerCase();
+    
+    if (featuredTitle?.includes(searchTerm) || featuredExcerpt?.includes(searchTerm)) {
+      featuredArticle.style.display = '';
+    } else {
+      featuredArticle.style.display = 'none';
+    }
+    
+    // Match regular articles
     articleCards.forEach(card => {
-      const title = card.querySelector('h3 a').textContent.toLowerCase();
-      const excerpt = card.querySelector('p').textContent.toLowerCase();
+      const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+      const excerpt = card.querySelector('p')?.textContent.toLowerCase() || '';
       
       if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
-        card.style.display = 'block';
+        card.style.display = '';
       } else {
         card.style.display = 'none';
       }
     });
-  });
+  }
   
-  // Filter functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Update active state
-      filterBtns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      
-      const category = this.getAttribute('data-category');
-      
-      // Filter articles
-      articleCards.forEach(card => {
-        if (category === 'all') {
-          card.style.display = 'block';
-        } else {
-          const categories = card.getAttribute('data-categories');
-          if (categories && categories.includes(category)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        }
-      });
+  // Function to filter articles by topic category
+  function filterByTopic(category) {
+    // Remove active class from all topic links
+    topicLinks.forEach(link => link.classList.remove('active'));
+    
+    // Add active class to clicked link
+    const activeLink = document.querySelector(`.topic-item[data-category="${category}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+    
+    // Reset articles display if 'all' is selected
+    if (category === 'all') {
+      articleCards.forEach(card => card.style.display = '');
+      featuredArticle.style.display = '';
+      return;
+    }
+    
+    // Check featured article
+    const featuredCategories = featuredArticle?.getAttribute('data-categories')?.split(' ') || [];
+    if (featuredCategories.includes(category)) {
+      featuredArticle.style.display = '';
+    } else {
+      featuredArticle.style.display = 'none';
+    }
+    
+    // Filter regular articles
+    articleCards.forEach(card => {
+      const categories = card.getAttribute('data-categories')?.split(' ') || [];
+      if (categories.includes(category)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
     });
-  });
+  }
   
-  // Category sidebar filtering
-  const categoryLinks = document.querySelectorAll('.category-link');
+  // Add event listeners for search
+  if (searchInput && searchButton) {
+    // Search on button click
+    searchButton.addEventListener('click', function() {
+      filterBySearch();
+    });
+    
+    // Search on Enter key
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        filterBySearch();
+      }
+    });
+  }
   
-  categoryLinks.forEach(link => {
+  // Add event listeners for topic filtering
+  topicLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
-      const filter = this.getAttribute('data-filter');
-      
-      // Trigger the corresponding filter button
-      const correspondingBtn = document.querySelector(`[data-category="${filter}"]`);
-      if (correspondingBtn) {
-        correspondingBtn.click();
-      }
+      const category = this.getAttribute('data-category');
+      filterByTopic(category);
     });
   });
   
   // Newsletter form
-  const newsletterForm = document.querySelector('.newsletter-form');
-  
-  newsletterForm?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    
-    if (email) {
-      alert('Thank you for subscribing! We\'ll keep you updated with the latest SEO insights.');
-      this.querySelector('input[type="email"]').value = '';
-    }
-  });
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      
+      if (email) {
+        alert('Thank you for subscribing! We\'ll keep you updated with the latest SEO insights.');
+        this.querySelector('input[type="email"]').value = '';
+      }
+    });
+  }
 });
 </script>
