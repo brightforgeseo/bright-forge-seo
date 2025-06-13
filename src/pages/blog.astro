@@ -87,7 +87,7 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
         <!-- Main Content Area -->
         <div class="blog-main">
           <!-- Featured Article -->
-          <div class="featured-article">
+          <div class="featured-article" data-categories={blogPosts[0].categories.map(cat => cat.toLowerCase().replace(' & ', '-').replace(' ', '-')).join(' ')}>
             <div class="featured-content">
               <div class="featured-image">
                 <img src={blogPosts[0].image} alt={blogPosts[0].title} width="600" height="350" loading="eager">
@@ -1051,13 +1051,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add event listeners for search
   if (searchInput && searchButton) {
     // Search on button click
-    searchButton.addEventListener('click', function() {
+    searchButton.addEventListener('click', function(e) {
+      e.preventDefault();
       filterBySearch();
     });
     
     // Search on Enter key
     searchInput.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
+        e.preventDefault();
+        filterBySearch();
+      }
+    });
+    
+    // Also add input event for realtime search
+    searchInput.addEventListener('input', function() {
+      if (this.value.length >= 3 || this.value.length === 0) {
         filterBySearch();
       }
     });
