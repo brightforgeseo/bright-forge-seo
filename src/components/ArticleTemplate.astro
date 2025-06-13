@@ -118,7 +118,7 @@ const formatDate = (dateString: string) => {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-padding-top: 120px;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -361,6 +361,12 @@ const formatDate = (dateString: string) => {
   margin: 0 auto;
 }
 
+.main-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
 .main-content .content-body {
   font-size: 1.125rem;
   line-height: 1.8;
@@ -378,6 +384,7 @@ const formatDate = (dateString: string) => {
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #1a1a1a;
+  scroll-margin-top: 120px;
 }
 
 .main-content .content-body h1 {
@@ -665,14 +672,13 @@ article li {
 
 /* Table of Contents */
 .table-of-contents {
-  background: white;
+  background: #f8fafc;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(66, 133, 244, 0.1);
   margin-bottom: 40px;
-  position: sticky;
-  top: 30px;
+  position: relative;
 }
 
 .table-of-contents .toc-link {
