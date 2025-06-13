@@ -424,11 +424,8 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
 
 .featured-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 30px 20px 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  top: 15px;
+  left: 15px;
   z-index: 2;
 }
 
@@ -442,6 +439,7 @@ const recentPosts = [...blogPosts].sort(() => 0.5 - Math.random()).slice(0, 4);
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .featured-content {
