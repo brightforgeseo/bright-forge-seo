@@ -203,7 +203,7 @@ const formatDate = (dateString: string) => {
               <ul class="space-y-2">
                 {tableOfContents.map((item) => (
                   <li class={`toc-level-${item.level}`}>
-                    <a href={`#${item.id}`}>{item.title}</a>
+                    <a href={`#${item.id}`} class="toc-link">{item.title}</a>
                   </li>
                 ))}
               </ul>
@@ -671,6 +671,34 @@ article li {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(66, 133, 244, 0.1);
   margin-bottom: 40px;
+  position: sticky;
+  top: 30px;
+}
+
+.table-of-contents .toc-link {
+  display: block;
+  color: #4a5568;
+  text-decoration: none;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  margin-left: -12px;
+}
+
+.table-of-contents .toc-link:hover {
+  color: #4285F4;
+  border-left-color: #4285F4;
+}
+
+.toc-level-2 {
+  font-weight: 600;
+}
+
+.toc-level-3 {
+  padding-left: 1rem;
+  font-size: 0.9rem;
 }
 
 .table-of-contents h3 {
@@ -1215,5 +1243,36 @@ function copyToClipboard() {
   
   <!-- Footer Slot -->
   <slot name="footer" />
+  <script>
+    // Add smooth scrolling to TOC links
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocLinks = document.querySelectorAll('.toc-link');
+      
+      tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            // Calculate position with offset for fixed headers
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            // Scroll to the target with smooth behavior
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Update URL hash without triggering another scroll
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
