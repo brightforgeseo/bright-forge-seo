@@ -415,21 +415,30 @@ const formatDate = (dateString: string) => {
 
 .main-content .content-body ul,
 .main-content .content-body ol {
-  margin: 20px 0;
-  padding-left: 30px;
+  margin: 20px 0 !important;
+  padding-left: 30px !important;
 }
 
-.main-content .content-body ul {
-  list-style-type: disc;
+.main-content .content-body ul,
+.blog-article .article-content ul,
+article ul {
+  list-style-type: disc !important;
+  list-style: disc !important;
 }
 
-.main-content .content-body ol {
-  list-style-type: decimal;
+.main-content .content-body ol,
+.blog-article .article-content ol,
+article ol {
+  list-style-type: decimal !important;
+  list-style: decimal !important;
 }
 
-.main-content .content-body li {
-  margin-bottom: 8px;
-  line-height: 1.8;
+.main-content .content-body li,
+.blog-article .article-content li,
+article li {
+  margin-bottom: 8px !important;
+  line-height: 1.8 !important;
+  display: list-item !important;
 }
 
 .main-content .content-body table,
