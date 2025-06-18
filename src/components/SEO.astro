@@ -399,7 +399,7 @@ const faqSchema = {
 <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
 <!-- FAQ Schema for enhanced SERP features -->
-{type === 'website' && (
+{type === 'website' && !Astro.url.pathname.includes('/case-studies/') && (
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 )}
 
