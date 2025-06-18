@@ -13,22 +13,43 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
   
-  # Default caching for HTML
+  # Compression support
+  Vary: Accept-Encoding
+  
+  # Default caching for HTML with Expires header
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Expires: Thu, 31 Dec 2025 23:59:59 GMT
 
-# CSS and JavaScript files - Long cache with immutable
+# CSS and JavaScript files - Long cache with immutable and Expires
 /_astro/*.css
   Cache-Control: public, max-age=31536000, immutable
+  Expires: Thu, 31 Dec 2025 23:59:59 GMT
+  Vary: Accept-Encoding
 
 /_astro/*.js
   Cache-Control: public, max-age=31536000, immutable
+  Expires: Thu, 31 Dec 2025 23:59:59 GMT
+  Vary: Accept-Encoding
 
-# Images - Long cache with immutable
+# Images - Long cache with immutable and Expires
 /_astro/images/*
   Cache-Control: public, max-age=31536000, immutable
+  Expires: Thu, 31 Dec 2025 23:59:59 GMT
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+  Expires: Thu, 31 Dec 2025 23:59:59 GMT
+
+# Fonts - Long cache with CORS and Expires
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+  Expires: Thu, 31 Dec 2025 23:59:59 GMT
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+  Expires: Thu, 31 Dec 2025 23:59:59 GMT
 
 # Service Worker
 /sw.js

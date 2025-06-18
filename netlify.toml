@@ -43,20 +43,42 @@
     Access-Control-Allow-Origin = "*"
     X-Robots-Tag = "all"
     
-    # Default caching for HTML
+    # Enable compression detection
+    Vary = "Accept-Encoding"
+    
+    # Default caching for HTML with proper Expires header
     Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+    Expires = "Thu, 31 Dec 2025 23:59:59 GMT"
+
+# CSS and JS assets - Long-term caching
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Expires = "Thu, 31 Dec 2025 23:59:59 GMT"
+    Vary = "Accept-Encoding"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Expires = "Thu, 31 Dec 2025 23:59:59 GMT"
+    Vary = "Accept-Encoding"
 
 # Long-term caching for hashed assets
 [[headers]]
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    Expires = "Thu, 31 Dec 2025 23:59:59 GMT"
+    Vary = "Accept-Encoding"
 
 # Images
 [[headers]]
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    Expires = "Thu, 31 Dec 2025 23:59:59 GMT"
 
 # Fonts with CORS
 [[headers]]
@@ -64,6 +86,7 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
+    Expires = "Thu, 31 Dec 2025 23:59:59 GMT"
 
 # Service Worker
 [[headers]]
