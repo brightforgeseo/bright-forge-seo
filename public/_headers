@@ -13,17 +13,20 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
   
+  # Enable compression support
+  Vary: Accept-Encoding
+  
   # Default caching for HTML
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 # CSS and JavaScript files - Long cache with immutable
 /_astro/*.css
   Cache-Control: public, max-age=31536000, immutable
-  Content-Encoding: gzip
+  Vary: Accept-Encoding
 
 /_astro/*.js
   Cache-Control: public, max-age=31536000, immutable
-  Content-Encoding: gzip
+  Vary: Accept-Encoding
 
 # Images - Long cache with immutable
 /_astro/images/*
@@ -40,16 +43,13 @@
 # WebP and AVIF images
 *.webp
   Cache-Control: public, max-age=31536000, immutable
-  Content-Type: image/webp
 
 *.avif
   Cache-Control: public, max-age=31536000, immutable
-  Content-Type: image/avif
 
 # JSON and API responses
 *.json
   Cache-Control: public, max-age=300
-  Content-Type: application/json
 
 # Sitemap and robots
 /sitemap*.xml

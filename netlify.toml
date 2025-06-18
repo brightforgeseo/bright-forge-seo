@@ -25,6 +25,11 @@
 [build.processing.images]
   compress = true
 
+# Enable compression at build level
+[[build.processing.files]]
+  for = "**/*.{js,css,html,json,xml,txt,svg,ico,woff,woff2,ttf,otf}"
+  compress = true
+
 # Asset optimization
 [[plugins]]
   package = "@netlify/plugin-sitemap"
@@ -33,6 +38,9 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    # Vary header helps with compression
+    Vary = "Accept-Encoding"
+    
     # Security headers
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Content-Type-Options = "nosniff"
