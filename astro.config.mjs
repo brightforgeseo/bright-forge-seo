@@ -14,11 +14,10 @@ export default defineConfig({
   trailingSlash: 'ignore',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'never', // Force external CSS files instead of inlining
     format: 'directory', // switch from "file" to "directory" to drop .html in canonical URLs
     assets: '_astro',
     // Enable asset bundling and optimization
-    assetsPrefix: '/_astro/',
     // Split chunks for better caching
     split: true
   },

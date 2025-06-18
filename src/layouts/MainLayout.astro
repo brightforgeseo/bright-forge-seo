@@ -1,12 +1,12 @@
 ---
 // MainLayout.astro
+import SEO from '../components/SEO.astro';
+
+// Standard Astro CSS imports - these should automatically generate link tags
 import '../styles/global.css';
 import '../styles/case-study-fix.css';
 import '../styles/bundled.css';
-import SEO from '../components/SEO.astro';
-
-// Import critical CSS content for inline injection
-import criticalCSS from '../styles/critical.css?raw';
+import '../styles/critical.css';
 
 interface Props {
   title: string;
@@ -186,9 +186,6 @@ const finalCanonical = canonical;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    
-    <!-- Inline Critical CSS for performance -->
-    <style set:html={criticalCSS}></style>
     
     <!-- Enhanced Schema Markup with defer for performance -->
     <script type="application/ld+json" defer set:html={JSON.stringify(organizationSchema)}></script>
