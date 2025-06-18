@@ -188,17 +188,7 @@ if (type === 'article' || type === 'blog') {
         }
       ]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1",
-      "itemReviewed": {
-        "@type": "Service",
-        "name": title
-      }
-    }
+
   };
 } else if (type === 'company' || type === 'profile') {
   schema = organizationSchema;
@@ -316,17 +306,7 @@ const localBusinessSchema = {
     "Digital Marketing",
     "Website Development"
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5",
-    "worstRating": "1",
-    "itemReviewed": {
-      "@type": "LocalBusiness",
-      "name": "Bright Forge SEO"
-    }
-  }
+
 };
 
 // FAQ Schema for better SERP features
