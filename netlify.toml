@@ -4,8 +4,6 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  # Enable build optimizations
-  NPM_FLAGS = "--production"
 
 # Build processing and optimization
 [build.processing]
@@ -33,9 +31,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    # Vary header helps with compression
-    Vary = "Accept-Encoding"
-    
     # Security headers
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Content-Type-Options = "nosniff"
@@ -48,7 +43,7 @@
     Access-Control-Allow-Origin = "*"
     X-Robots-Tag = "all"
     
-    # Default HTML caching with stale-while-revalidate
+    # Default caching for HTML
     Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
 # Long-term caching for hashed assets
@@ -57,94 +52,24 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# CSS files
+# Images
 [[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# JavaScript files
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Images - all formats
-[[headers]]
-  for = "/*.jpg"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.jpeg"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.webp"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.avif"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.svg"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.gif"
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 # Fonts with CORS
-[[headers]]
-  for = "/*.woff"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Access-Control-Allow-Origin = "*"
-
 [[headers]]
   for = "/*.woff2"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
 
+# Service Worker
 [[headers]]
-  for = "/*.ttf"
+  for = "/sw.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Access-Control-Allow-Origin = "*"
-
-[[headers]]
-  for = "/*.otf"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Access-Control-Allow-Origin = "*"
-
-# API and dynamic content
-[[headers]]
-  for = "/*.json"
-  [headers.values]
-    Cache-Control = "public, max-age=300"
-
-[[headers]]
-  for = "/sitemap*.xml"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/robots.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Redirects for SEO
 [[redirects]]
@@ -156,48 +81,3 @@
   from = "/index.html"
   to = "/"
   status = 301
-
-[[redirects]]
-  from = "/blog//blog/importance-of-local-seo-for-small-businesses"
-  to = "/blog/importance-of-local-seo-for-small-businesses"
-  status = 301
-
-[[redirects]]
-  from = "/blog//blog/*"
-  to = "/blog/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/blog//*"
-  to = "/blog/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/*//"
-  to = "/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/index"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/seo-services"
-  to = "/philippines-seo-services"
-  status = 301
-
-[[redirects]]
-  from = "/services"
-  to = "/philippines-seo-services"
-  status = 301
-
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-
-[[redirects]]
-  from = "/*"
-  to = "/404/"
-  status = 404
