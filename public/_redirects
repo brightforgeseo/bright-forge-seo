@@ -14,8 +14,11 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 /bright-forge-seo/* / 301
 /bright-forge-seo / 301
 
-# Remove trailing slashes and fix double slashes (general)
-/*//  /:splat  301
+# Fix double slashes (but keep trailing slashes)
+/*//  /:splat/  301
+
+# Enforce trailing slashes on all URLs
+/*  /:splat/  301!
 
 # Prerender redirects for common pages
 /home  /  301

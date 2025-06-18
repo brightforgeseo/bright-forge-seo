@@ -167,12 +167,16 @@ const websiteSchema = {
 const breadcrumbSchema = breadcrumbs ? {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((crumb, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": crumb.name,
-    "item": `https://brightforgeseo.com${crumb.url}`
-  }))
+  "itemListElement": breadcrumbs.map((crumb, index) => {
+    // Ensure URL has trailing slash except for root URL
+    const url = crumb.url === '/' ? '/' : crumb.url.endsWith('/') ? crumb.url : `${crumb.url}/`;
+    return {
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": `https://brightforgeseo.com${url}`
+    };
+  })
 } : null;
 
 // With trailingSlash set to 'always', canonical can simply use current URL

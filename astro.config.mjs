@@ -10,8 +10,8 @@ export default defineConfig({
     sitemap()
   ],
   output: 'static',
-  // Use ignore for trailing slashes to avoid 404s in development
-  trailingSlash: 'ignore',
+  // Enforce trailing slashes on all URLs to avoid 301 redirects
+  trailingSlash: 'always',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
     inlineStylesheets: 'never', // Force external CSS files instead of inlining
