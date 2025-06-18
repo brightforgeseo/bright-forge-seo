@@ -5,6 +5,33 @@ import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
 ---
 
+<script>
+  function toggleFAQ(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('.fa-chevron-down');
+    
+    // Toggle content visibility
+    content.classList.toggle('hidden');
+    
+    // Toggle icon rotation
+    if (content.classList.contains('hidden')) {
+      icon.classList.remove('rotate-180');
+    } else {
+      icon.classList.add('rotate-180');
+    }
+  }
+  
+  // Add event listeners after DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        toggleFAQ(this);
+      });
+    });
+  });
+</script>
+
 <MainLayout title="White Label SEO Services Philippines | Bright Forge SEO" description="Professional white label SEO services in the Philippines. Outsource SEO to our expert team and deliver results under your brand. Trusted by agencies worldwide.">
   <LegacyHeader slot="header" />
   
@@ -47,7 +74,7 @@ import ContactSection from '../components/ContactSection.astro';
               <div class="text-gray-600 space-y-4">
                 <p>White label SEO allows you to outsource your clients' SEO work to our expert team while maintaining your brand identity. We work behind the scenes, providing you with branded reports, strategies, and results that you can present to your clients as your own work.</p>
                 
-                <p>This partnership model enables agencies to scale their SEO offerings without the significant investment in hiring, training, and retaining specialized SEO talent. You focus on what you do best—client relationships and business growth—while we handle the technical complexities of modern search engine optimization.</p>
+                <p>This partnership model enables agencies to scale their SEO offerings without significant investment in hiring, training, and retaining specialized SEO talent. You focus on client relationships and business growth, while we handle the technical complexities of modern search engine optimization.</p>
               </div>
             </div>
           </div>
@@ -141,6 +168,90 @@ import ContactSection from '../components/ContactSection.astro';
           </div>
           <h3 class="text-xl font-semibold text-gray-900 mb-3">Proven Results</h3>
           <p class="text-gray-600">We've helped agencies deliver exceptional results for their clients, with an average of 150% increase in organic traffic within 6 months.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked <span class="text-red-500">Questions</span></h2>
+        <p class="text-lg text-gray-600">Common questions about our white label SEO partnership program.</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">How does white label SEO work exactly?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">You provide us with your client's requirements and brand guidelines. We perform all SEO work behind the scenes and deliver branded reports, strategies, and results that you present to your clients as your own. Your clients never know we exist, and we never contact them directly.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">What's included in your white label SEO packages?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">Our packages include comprehensive SEO audits, technical optimization, keyword research, content creation, link building, monthly branded reports, and ongoing strategy adjustments. We customize each package based on your client's specific needs and your agency's requirements.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">How long does it take to see SEO results?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">SEO is a long-term strategy, but most clients start seeing improvements within 3-4 months. Significant results typically appear within 6-12 months. We provide monthly reports showing progress in rankings, traffic, and other key metrics so you can keep your clients informed throughout the process.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">Can you handle clients in different industries?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">Yes, our team has experience across various industries including e-commerce, healthcare, legal, real estate, hospitality, and B2B services. We adapt our strategies to match industry-specific requirements and compliance needs, especially for businesses targeting the Philippine market.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">What are your pricing and contract terms?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">We offer flexible pricing based on the scope of work and number of clients. Contracts are typically month-to-month with no long-term commitments required. We provide transparent pricing with no hidden fees, and you can scale up or down as your agency grows.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">How do you ensure quality and communication?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">You'll have a dedicated account manager who understands your agency's needs and maintains regular communication. We provide detailed monthly reports, strategy updates, and are available for consultations. All work is reviewed by senior SEO specialists before delivery to ensure consistent quality.</p>
+          </div>
         </div>
       </div>
     </div>
