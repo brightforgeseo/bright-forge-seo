@@ -1,3 +1,9 @@
+# Canonical domain redirects - MUST be first to eliminate redirect chains
+# Force HTTPS and non-www as canonical domain for all pages
+http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
+http://www.brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
+https://www.brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
+
 # Other specific redirects
 /force-facebook-refresh.html / 301
 /bright-forge-seo/* / 301
