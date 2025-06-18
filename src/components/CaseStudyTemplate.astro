@@ -101,6 +101,14 @@ const serviceSchema = {
   "review": testimonial ? {
     "@type": "Review",
     "reviewBody": testimonial.quote,
+    "itemReviewed": {
+      "@type": "Service",
+      "name": `SEO Services for ${industry}`,
+      "provider": {
+        "@type": "Organization",
+        "name": "Bright Forge SEO"
+      }
+    },
     "author": {
       "@type": "Person",
       "name": testimonial.author
