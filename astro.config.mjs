@@ -10,13 +10,17 @@ export default defineConfig({
     sitemap()
   ],
   output: 'static',
-  // Use trailing slashes consistently so canonical URLs point directly to final URL
-  trailingSlash: 'always',
+  // Use ignore for trailing slashes to avoid 404s in development
+  trailingSlash: 'ignore',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
     inlineStylesheets: 'auto',
     format: 'directory', // switch from "file" to "directory" to drop .html in canonical URLs
-    assets: '_astro'
+    assets: '_astro',
+    // Enable asset bundling and optimization
+    assetsPrefix: '/_astro/',
+    // Split chunks for better caching
+    split: true
   },
   markdown: {
     remarkPlugins: [],
@@ -35,19 +39,58 @@ export default defineConfig({
   },
   vite: {
     build: {
+      // Enable minification and optimization
+      minify: 'terser',
+      cssMinify: true,
       rollupOptions: {
         output: {
-          assetFileNames: 'assets/[name].[hash][extname]'
+          // Better asset naming for caching
+          assetFileNames: (assetInfo) => {
+            const info = assetInfo.name.split('.');
+            const ext = info[info.length - 1];
+            if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+              return `assets/images/[name].[hash][extname]`;
+            }
+            if (/css/i.test(ext)) {
+              return `assets/css/[name].[hash][extname]`;
+            }
+            if (/js/i.test(ext)) {
+              return `assets/js/[name].[hash][extname]`;
+            }
+            return `assets/[name].[hash][extname]`;
+          },
+          chunkFileNames: 'assets/js/[name].[hash].js',
+          entryFileNames: 'assets/js/[name].[hash].js',
+          // Bundle vendor libraries separately for better caching
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          }
+        }
+      },
+      // Enable terser for better compression
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
         }
       }
     },
     ssr: {
       noExternal: []
+    },
+    // Enable CSS code splitting
+    css: {
+      devSourcemap: false
     }
   },
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
-    }
+    },
+    // Optimize images
+    domains: ['brightforgeseo.com'],
+    formats: ['webp', 'avif']
   }
 });

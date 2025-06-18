@@ -1,0 +1,117 @@
+---
+// OptimizedImage.astro - Performance-optimized image component
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+  priority?: boolean;
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  class: className = '', 
+  loading = 'lazy',
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  priority = false
+} = Astro.props;
+
+// Generate WebP and AVIF versions for modern browsers
+const getOptimizedSrc = (originalSrc: string, format: string) => {
+  if (originalSrc.startsWith('http')) return originalSrc;
+  const ext = originalSrc.split('.').pop();
+  return originalSrc.replace(`.${ext}`, `.${format}`);
+};
+
+const webpSrc = getOptimizedSrc(src, 'webp');
+const avifSrc = getOptimizedSrc(src, 'avif');
+
+// Generate responsive sizes
+const generateSrcSet = (baseSrc: string) => {
+  if (baseSrc.startsWith('http')) return '';
+  const ext = baseSrc.split('.').pop();
+  const baseName = baseSrc.replace(`.${ext}`, '');
+  
+  return [
+    `${baseName}-400w.${ext} 400w`,
+    `${baseName}-800w.${ext} 800w`,
+    `${baseName}-1200w.${ext} 1200w`,
+    `${baseName}-1600w.${ext} 1600w`
+  ].join(', ');
+};
+
+const srcSet = generateSrcSet(src);
+const webpSrcSet = generateSrcSet(webpSrc);
+const avifSrcSet = generateSrcSet(avifSrc);
+---
+
+<picture class={`optimized-image ${className}`}>
+  <!-- AVIF format for modern browsers -->
+  {avifSrcSet && (
+    <source 
+      srcset={avifSrcSet}
+      sizes={sizes}
+      type="image/avif"
+    />
+  )}
+  
+  <!-- WebP format for modern browsers -->
+  {webpSrcSet && (
+    <source 
+      srcset={webpSrcSet}
+      sizes={sizes}
+      type="image/webp"
+    />
+  )}
+  
+  <!-- Fallback to original format -->
+  {srcSet && (
+    <source 
+      srcset={srcSet}
+      sizes={sizes}
+    />
+  )}
+  
+  <!-- Final fallback image -->
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={priority ? 'eager' : loading}
+    decoding={priority ? 'sync' : 'async'}
+    class={`w-full h-auto ${priority ? '' : 'lazy'}`}
+    style={priority ? '' : 'content-visibility: auto; contain-intrinsic-size: 300px 200px;'}
+  />
+</picture>
+
+<style>
+  .optimized-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .optimized-image img {
+    transition: opacity 0.3s ease;
+  }
+  
+  .optimized-image img.lazy {
+    opacity: 0;
+  }
+  
+  .optimized-image img.loaded {
+    opacity: 1;
+  }
+  
+  /* Optimize for Core Web Vitals */
+  .optimized-image img[loading="eager"] {
+    content-visibility: visible;
+  }
+</style>

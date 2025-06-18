@@ -1,5 +1,70 @@
 /*
+  # Security Headers
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  
+  # SEO and Robots
   X-Robots-Tag: all
+  
+  # CORS for fonts and assets
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  
+  # Default caching for HTML
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# CSS and JavaScript files - Long cache with immutable
+/_astro/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Encoding: gzip
+
+/_astro/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Encoding: gzip
+
+# Images - Long cache with immutable
+/_astro/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts - Long cache with CORS
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# WebP and AVIF images
+*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/webp
+
+*.avif
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/avif
+
+# JSON and API responses
+*.json
+  Cache-Control: public, max-age=300
+  Content-Type: application/json
+
+# Sitemap and robots
+/sitemap*.xml
+  Cache-Control: public, max-age=86400
+  Content-Type: application/xml
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain
+
+# Service Worker
+/sw.js
   Cache-Control: public, max-age=0, must-revalidate
+
+# Manifest
+/manifest.json
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json
