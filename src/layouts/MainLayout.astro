@@ -2,7 +2,11 @@
 // MainLayout.astro
 import '../styles/global.css';
 import '../styles/case-study-fix.css';
+import '../styles/bundled.css';
 import SEO from '../components/SEO.astro';
+
+// Import critical CSS content for inline injection
+import criticalCSS from '../styles/critical.css?raw';
 
 interface Props {
   title: string;
@@ -174,11 +178,6 @@ const breadcrumbSchema = breadcrumbs ? {
 // With trailingSlash set to 'always', canonical can simply use current URL
 const finalCanonical = canonical;
 
-// Read critical CSS content
-const criticalCSS = await Astro.glob('../styles/critical.css').then(files => 
-  files[0]?.default || ''
-);
-
 ---
 
 <!DOCTYPE html>
@@ -267,12 +266,7 @@ const criticalCSS = await Astro.glob('../styles/critical.css').then(files =>
     <meta name="business:contact_data:email" content="seo@brightforgeseo.com">
     <meta name="business:contact_data:phone_number" content="+63-969-620-6182">
     
-    <!-- Load non-critical CSS asynchronously -->
-    <link rel="preload" href="/src/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/styles/global.css"></noscript>
-    
-    <link rel="preload" href="/src/styles/case-study-fix.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/styles/case-study-fix.css"></noscript>
+    <!-- CSS is already imported above and will be processed by Astro -->
   </head>
   <body class="font-dm-sans text-brand-dark">
     <slot name="header" />
