@@ -5,76 +5,291 @@ import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
 ---
 
-<script>
-  function toggleFAQ(element) {
-    const content = element.nextElementSibling;
-    const icon = element.querySelector('.fa-chevron-down');
-    
-    // Toggle content visibility
-    content.classList.toggle('hidden');
-    
-    // Toggle icon rotation
-    if (content.classList.contains('hidden')) {
-      icon.classList.remove('rotate-180');
-    } else {
-      icon.classList.add('rotate-180');
-    }
-  }
-  
-  // Add event listeners after DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqToggles = document.querySelectorAll('.faq-toggle');
-    faqToggles.forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        toggleFAQ(this);
-      });
-    });
-  });
-</script>
-
-<MainLayout title="White Label SEO Services Philippines | Bright Forge SEO" description="Professional white label SEO services in the Philippines. Outsource SEO to our expert team and deliver results under your brand. Trusted by agencies worldwide.">
+<MainLayout title="White Label SEO Services Philippines That Deliver | Bright Forge SEO" description="Partner with Bright Forge SEO for white label SEO services in the Philippines. Scale your agency without hiring in-house SEO experts. Deliver results under your brand.">
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
-  <section class="hero-content">
-    <div class="max-w-7xl mx-auto px-4 py-20">
+  <section class="relative bg-gradient-to-br from-red-500 via-red-600 to-blue-600 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-20">
       <!-- Breadcrumbs -->
       <nav class="breadcrumbs mb-8">
-        <a href="/" class="text-gray-600 hover:text-red-500">Home</a>
-        <span class="mx-2 text-gray-400">›</span>
-        <span class="text-red-500 font-medium">White Label SEO Services Philippines</span>
+        <a href="/" class="text-white/80 hover:text-white">Home</a>
+        <span class="mx-2 text-white/60">›</span>
+        <span class="text-white font-medium">White Label SEO Services Philippines</span>
       </nav>
       
       <div class="max-w-4xl">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">White Label SEO Services Philippines</h1>
-        <div class="text-lg text-gray-600 space-y-4 mb-8">
-          <p>Running a digital marketing agency is challenging enough without having to become an SEO expert yourself. Many agencies struggle to deliver consistent, high-quality SEO results while managing client relationships, business development, and operational tasks. This is where white label SEO services become invaluable.</p>
-          
-          <p>At Bright Forge SEO, we partner with agencies, consultants, and marketing professionals throughout the Philippines and globally to deliver exceptional SEO results under your brand. Our white label SEO services allow you to offer comprehensive search engine optimization without the overhead of hiring, training, or managing an in-house SEO team.</p>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">White Label SEO Services in the Philippines That Deliver</h1>
+        <div class="text-xl text-white/90 space-y-4 mb-8">
+          <p>Running a digital marketing agency is challenging enough without becoming an SEO expert yourself. Many agencies struggle to deliver consistent, high-quality SEO results while managing client relationships, business development, and operational tasks. This is where white-label SEO services become invaluable.</p>
+          <p>Bright Forge SEO helps agencies, freelancers, and marketing teams scale their services by delivering done-for-you SEO under your brand. From strategy to execution, we handle everything behind the scenes so you can grow faster and smarter.</p>
         </div>
-        <a href="/contact/" class="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-red-600 hover:to-red-700 transition-colors">Start Your Partnership Today</a>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+            Get Started Today
+          </a>
+          <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors text-center">
+            View Our Services
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- What is White Label SEO Section -->
-  <section class="py-20 bg-gray-50">
+  <!-- What Is White Label SEO Section -->
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Is White Label SEO and <span class="text-red-500">Why Does It Matter?</span></h2>
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">What Is White Label SEO and Why Does It Matter?</h2>
       </div>
       
-      <div class="flex justify-center">
-        <div class="max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden">
-          <div class="md:flex">
-            <div class="md:w-1/4 bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center p-8">
-              <i class="fas fa-handshake text-white text-4xl"></i>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-r from-red-50 to-blue-50 rounded-2xl p-8 mb-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-blue-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-lightbulb text-white text-xl"></i>
+              </div>
             </div>
-            <div class="md:w-3/4 p-8">
-              <div class="text-gray-600 space-y-4">
-                <p>White label SEO allows you to outsource your clients' SEO work to our expert team while maintaining your brand identity. We work behind the scenes, providing you with branded reports, strategies, and results that you can present to your clients as your own work.</p>
-                
-                <p>This partnership model enables agencies to scale their SEO offerings without significant investment in hiring, training, and retaining specialized SEO talent. You focus on client relationships and business growth, while we handle the technical complexities of modern search engine optimization.</p>
+            <div>
+              <p class="text-lg text-gray-700 mb-4">White-label SEO allows you to outsource your clients' SEO work to our expert team while maintaining your brand identity. We work behind the scenes, providing branded reports, strategies, and results that you can present to your clients as your work.</p>
+              <p class="text-lg text-gray-700">This partnership model enables agencies to scale their SEO offerings without significant investment in hiring, training, and retaining specialized SEO talent. You focus on client relationships and business growth while we handle the technical complexities of modern search engine optimization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our White Label SEO Services Section -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our White Label SEO <span class="text-red-500">Services</span></h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive SEO solutions that you can offer under your brand with complete confidence.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- SEO Audits & Analysis -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
+            <i class="fas fa-search text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">SEO Audits & Analysis</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Complete technical SEO audits
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Competitive analysis
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Keyword research and mapping
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Site architecture review
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Performance benchmarking
+            </li>
+          </ul>
+        </div>
+
+        <!-- Technical SEO -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+            <i class="fas fa-cogs text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Technical SEO</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Site speed optimization
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Mobile optimization
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Schema markup implementation
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              XML sitemap creation
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Crawl error fixes
+            </li>
+          </ul>
+        </div>
+
+        <!-- Content & Link Building -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+            <i class="fas fa-link text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Content & Link Building</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              SEO-optimized content creation
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              High-quality backlink acquisition
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              On-page optimization
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Digital PR and outreach
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Branded monthly reports
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Do You Need to Hire White Label SEO Experts Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Do You Need to Hire White Label SEO Experts?</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Scaling your digital agency or marketing service is exciting but can quickly become overwhelming, especially regarding SEO. It's technical, time-consuming, and constantly evolving. That's where white-label SEO experts come in.</p>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Hiring a white-label SEO partner isn't just about outsourcing work — it's about unlocking growth, saving time, and delivering expert-level results without the overhead.</p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Scale Without Hiring -->
+        <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-chart-line text-white text-xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Scale Without Hiring an In-House Team</h3>
+              <p class="text-gray-700 mb-4">Building an in-house SEO team means recruiting, training, managing, and paying salaries, benefits, and tools. It's a significant investment in both time and money.</p>
+              <p class="text-gray-700 mb-4">White label SEO experts give you instant access to a team of strategists, writers, link builders, and analysts without adding a single person to your payroll.</p>
+              <div class="flex items-center text-green-600 font-semibold">
+                <i class="fas fa-check-circle mr-2"></i>
+                Result: Scale fast without increasing your fixed costs.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leverage Deep Knowledge -->
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-brain text-white text-xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Leverage Deep, Specialized SEO Knowledge</h3>
+              <p class="text-gray-700 mb-4">SEO isn't guesswork — it combines technical optimization, content strategy, keyword research, algorithm tracking, and link building. One mistake can tank rankings.</p>
+              <p class="text-gray-700 mb-4">White-label experts bring years of experience across industries, tools, and platforms. They stay on top of Google updates, so you don't have to.</p>
+              <div class="flex items-center text-green-600 font-semibold">
+                <i class="fas fa-check-circle mr-2"></i>
+                Result: Fewer mistakes, better rankings, and more confident client delivery.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Save Time -->
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-clock text-white text-xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Save Time and Focus on What You Do Best</h3>
+              <p class="text-gray-700 mb-4">As an agency owner or marketing pro, your time is better spent closing deals, nurturing clients, and growing your business — not writing meta tags or running backlink audits.</p>
+              <p class="text-gray-700 mb-4">When you hire white-label SEO experts, you get to focus on high-impact work while they handle the technical and execution side behind the scenes.</p>
+              <div class="flex items-center text-green-600 font-semibold">
+                <i class="fas fa-check-circle mr-2"></i>
+                Result: More time for sales, strategy, and client relationships.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-Service Package -->
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-box text-white text-xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Offer a Full-Service Package to Your Clients</h3>
+              <p class="text-gray-700 mb-4">Clients love one-stop shops. If you only offer PPC, social media, or web design, you're leaving money on the table. Adding SEO to your services makes your agency more valuable and challenging to replace.</p>
+              <p class="text-gray-700 mb-4">White-label SEO experts let you instantly add SEO to your service menu without building it from scratch.</p>
+              <div class="flex items-center text-green-600 font-semibold">
+                <i class="fas fa-check-circle mr-2"></i>
+                Result: Increase revenue per client and reduce churn.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consistent Results -->
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-trophy text-white text-xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Deliver Consistent, High-Quality Results</h3>
+              <p class="text-gray-700 mb-4">Clients expect evident progress: higher rankings, more traffic, better leads. But SEO requires consistency — monthly audits, content, outreach, reporting.</p>
+              <p class="text-gray-700 mb-4">White-label SEO teams have the systems, workflows, and tools to deliver quality work on time, every time.</p>
+              <div class="flex items-center text-green-600 font-semibold">
+                <i class="fas fa-check-circle mr-2"></i>
+                Result: Happier clients, better retention, stronger reputation.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Integrity -->
+        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-8">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Maintain Your Brand Integrity</h3>
+              <p class="text-gray-700 mb-4">The best part? With white-label SEO, your clients never know we exist.</p>
+              <p class="text-gray-700 mb-4">Everything, including audits, reports, and communications, is delivered under your brand. You stay in control of the relationship while we execute in the background.</p>
+              <div class="flex items-center text-green-600 font-semibold">
+                <i class="fas fa-check-circle mr-2"></i>
+                Result: You look like a full-service powerhouse without the extra workload.
               </div>
             </div>
           </div>
@@ -83,189 +298,75 @@ import ContactSection from '../components/ContactSection.astro';
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our White Label SEO <span class="text-red-500">Services</span></h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive SEO solutions that you can offer under your brand with complete confidence.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-search text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">SEO Audits & Analysis</h3>
-          <ul class="text-gray-600 space-y-2">
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Complete technical SEO audits</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Competitive analysis</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Keyword research and mapping</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Site architecture review</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Performance benchmarking</li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-cogs text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Technical SEO</h3>
-          <ul class="text-gray-600 space-y-2">
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Site speed optimization</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Mobile optimization</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Schema markup implementation</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>XML sitemap creation</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Crawl error fixes</li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-file-alt text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Content & Link Building</h3>
-          <ul class="text-gray-600 space-y-2">
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>SEO-optimized content creation</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>High-quality backlink acquisition</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>On-page optimization</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Digital PR and outreach</li>
-            <li class="flex items-start"><span class="text-red-500 mr-2">✓</span>Branded monthly reports</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
+  <!-- Why Choose Bright Forge Section -->
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Bright Forge for <span class="text-red-500">White Label SEO?</span></h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">We understand the unique challenges agencies face and have built our services specifically to address them.</p>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">We understand agencies' unique challenges and have built our services specifically to address them.</p>
       </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4 mx-auto">
-            <i class="fas fa-shield-alt text-white text-xl"></i>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Complete Confidentiality -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+          <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-user-secret text-white text-2xl"></i>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Complete Confidentiality</h3>
-          <p class="text-gray-600">We operate completely behind the scenes. Your clients will never know we exist, and we never compete for your business.</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Complete Confidentiality</h3>
+          <p class="text-gray-600">We operate entirely behind the scenes. Your clients will never know we exist and will never compete for your business.</p>
         </div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4 mx-auto">
-            <i class="fas fa-users text-white text-xl"></i>
+        <!-- Expert Team -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-users text-white text-2xl"></i>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Expert Team</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Expert Team</h3>
           <p class="text-gray-600">Our team includes certified SEO professionals, content creators, and technical specialists with years of experience in the Philippine and international markets.</p>
         </div>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-4 mx-auto">
-            <i class="fas fa-chart-line text-white text-xl"></i>
+        <!-- Proven Results -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+          <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-chart-bar text-white text-2xl"></i>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Proven Results</h3>
-          <p class="text-gray-600">We've helped agencies deliver exceptional results for their clients, with an average of 150% increase in organic traffic within 6 months.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked <span class="text-red-500">Questions</span></h2>
-        <p class="text-lg text-gray-600">Common questions about our white label SEO partnership program.</p>
-      </div>
-
-      <div class="space-y-6">
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">How does white label SEO work exactly?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">You provide us with your client's requirements and brand guidelines. We perform all SEO work behind the scenes and deliver branded reports, strategies, and results that you present to your clients as your own. Your clients never know we exist, and we never contact them directly.</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">What's included in your white label SEO packages?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">Our packages include comprehensive SEO audits, technical optimization, keyword research, content creation, link building, monthly branded reports, and ongoing strategy adjustments. We customize each package based on your client's specific needs and your agency's requirements.</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">How long does it take to see SEO results?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">SEO is a long-term strategy, but most clients start seeing improvements within 3-4 months. Significant results typically appear within 6-12 months. We provide monthly reports showing progress in rankings, traffic, and other key metrics so you can keep your clients informed throughout the process.</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">Can you handle clients in different industries?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">Yes, our team has experience across various industries including e-commerce, healthcare, legal, real estate, hospitality, and B2B services. We adapt our strategies to match industry-specific requirements and compliance needs, especially for businesses targeting the Philippine market.</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">What are your pricing and contract terms?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">We offer flexible pricing based on the scope of work and number of clients. Contracts are typically month-to-month with no long-term commitments required. We provide transparent pricing with no hidden fees, and you can scale up or down as your agency grows.</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">How do you ensure quality and communication?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">You'll have a dedicated account manager who understands your agency's needs and maintains regular communication. We provide detailed monthly reports, strategy updates, and are available for consultations. All work is reviewed by senior SEO specialists before delivery to ensure consistent quality.</p>
-          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Proven Results</h3>
+          <p class="text-gray-600">We've helped agencies deliver exceptional results for their clients, with an average 150% increase in organic traffic within 6 months.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-red-500 to-red-600 text-white">
+  <section class="py-20 bg-gradient-to-r from-red-500 to-blue-600 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Scale Your SEO Offerings?</h2>
-      <p class="text-xl mb-8 opacity-90">Partner with us and offer world-class SEO services under your brand without the overhead.</p>
-      <a href="/contact/" class="inline-block bg-white text-red-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors">Get Custom Quote</a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Scale Your Agency with White Label SEO?</h2>
+      <p class="text-xl mb-8 opacity-90">Partner with Bright Forge SEO and start delivering exceptional SEO results under your brand today.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          Start Your Partnership
+        </a>
+        <a href="tel:+639123456789" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors">
+          Call Us Today
+        </a>
+      </div>
     </div>
   </section>
 
-  <ContactSection />
+  <ContactSection slot="contact" />
   <Footer slot="footer" />
 </MainLayout>
+
+<style>
+  .hero-content {
+    background: linear-gradient(135deg, #ff4438 0%, #ff6b35 50%, #4285f4 100%);
+  }
+  
+  .breadcrumbs a {
+    transition: color 0.2s ease;
+  }
+  
+  .breadcrumbs a:hover {
+    color: #ffffff;
+  }
+</style>
