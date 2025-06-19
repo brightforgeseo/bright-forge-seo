@@ -558,9 +558,6 @@ import PartnersSection from '../components/PartnersSection.astro';
       <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         <!-- First Blog Post -->
         <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div class="blog-image h-48">
-            <img src="/images/blog/answer-engine-revolution.png" alt="The Answer Engine Revolution" class="w-full h-full object-cover" width="400" height="250" loading="lazy" decoding="async">
-          </div>
           <div class="blog-content p-5 flex-grow">
             <div class="blog-meta flex items-center text-sm mb-2">
               <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">AI Strategy</span>
@@ -598,8 +595,27 @@ import PartnersSection from '../components/PartnersSection.astro';
           </div>
         </div>
         
-        <!-- We only have two actual blog posts, so the third one is removed -->
-      </div>
+        
+        <!-- Third Blog Post -->
+        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+          <div class="blog-image h-48">
+            <img src="/images/blog/local-seo-small-business.png" alt="Local SEO for Small Businesses" class="w-full h-full object-cover" width="400" height="250" loading="lazy" decoding="async">
+          </div>
+          <div class="blog-content p-5 flex-grow">
+            <div class="blog-meta flex items-center text-sm mb-2">
+              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">Local SEO</span>
+              <span class="blog-date text-gray-500 ml-3">March 15, 2025</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2"><a href="/blog/importance-of-local-seo-for-small-businesses" class="hover:text-brand-accent transition-colors">The Importance of Local SEO for Small Businesses</a></h3>
+            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Discover why local SEO is crucial for small businesses and learn proven strategies to dominate local search results and attract more customers.</p>
+            <a href="/blog/importance-of-local-seo-for-small-businesses" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
+              Read Article
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>      </div>
       
       <div class="text-center mt-10">
         <a href="/blog" class="inline-block bg-white border border-brand-accent text-brand-accent font-medium rounded-md px-6 py-3 hover:bg-brand-accent hover:text-white transition-colors">
