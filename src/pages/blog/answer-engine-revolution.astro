@@ -1,61 +1,67 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
+import ArticleTemplate from '../../components/ArticleTemplate.astro';
 
-const title = 'The Answer Engine Revolution: A Strategic Guide';
-const description = 'Discover how to optimize for AI search results in the era of AI Overviews, AI Mode, and LLM Search.';
-const pubDate = new Date('2025-06-19');
-const author = 'Ben Lowe';
-const tags = ['AI Search', 'SEO', 'Answer Engines', 'AI Overviews'];
-const draft = false;
+const title = 'The Answer Engine Revolution: A Strategic Guide to Dominance in the Era of AI Overviews, AI Mode, and LLM Search';
+const excerpt = 'Discover how to optimize for AI search results in the era of AI Overviews, AI Mode, and LLM Search. Learn strategic approaches for maintaining visibility and relevance in the answer engine revolution.';
+const author = {
+  name: 'Ben Lowe',
+  bio: 'SEO and Digital Marketing Expert',
+  linkedin: 'https://www.linkedin.com/in/ben-lowe/'
+};
+const publishDate = '2025-06-19';
+const readTime = '15 min';
+const category = 'SEO';
+const tags = ['SEO', 'AI Search', 'Answer Engines', 'AI Overviews', 'Digital Marketing'];
+const featuredImage = '';
+const content = `
+<div style="line-height: 1.8; color: #2d3748;">
+  <h2 id="introduction" style="font-size: 2.5rem; font-weight: 700; color: #2d3748; margin: 2.5rem 0 1.5rem 0; line-height: 1.2; scroll-margin-top: 120px;">Introduction</h2>
+  
+  <p style="font-size: 1.1rem; text-align: justify; margin-bottom: 1.5rem; color: #4a5568;">
+    The search landscape is undergoing a revolutionary transformation with the rise of AI-powered answer engines. 
+    This article explores how these changes impact SEO strategies and what professionals need to know to adapt.
+  </p>
+  
+  <h2 id="what-are-answer-engines" style="font-size: 2.5rem; font-weight: 700; color: #2d3748; margin: 2.5rem 0 1.5rem 0; line-height: 1.2; scroll-margin-top: 120px;">What Are Answer Engines?</h2>
+  
+  <p style="font-size: 1.1rem; text-align: justify; margin-bottom: 1.5rem; color: #4a5568;">
+    Answer engines are AI-powered search systems that directly provide answers to user queries rather than just links to websites.
+    Examples include Google's AI Overviews, Bing's AI-powered results, and standalone LLM-based search tools.
+  </p>
+  
+  <h2 id="strategic-adaptation" style="font-size: 2.5rem; font-weight: 700; color: #2d3748; margin: 2.5rem 0 1.5rem 0; line-height: 1.2; scroll-margin-top: 120px;">Strategic Adaptation</h2>
+  
+  <p style="font-size: 1.1rem; text-align: justify; margin-bottom: 1.5rem; color: #4a5568;">
+    As search evolves, SEO professionals must adapt their strategies to ensure visibility in this new paradigm.
+    This includes optimizing for semantic understanding, entity recognition, and providing clear, authoritative content.
+  </p>
+  
+  <h2 id="conclusion" style="font-size: 2.5rem; font-weight: 700; color: #2d3748; margin: 2.5rem 0 1.5rem 0; line-height: 1.2; scroll-margin-top: 120px;">Conclusion</h2>
+  
+  <p style="font-size: 1.1rem; text-align: justify; margin-bottom: 1.5rem; color: #4a5568;">
+    The answer engine revolution presents both challenges and opportunities for digital marketers.
+    By understanding these changes and adapting strategies accordingly, businesses can maintain and even improve their visibility online.
+  </p>
+</div>
+`;
+
+const tableOfContents = [
+  { id: "introduction", title: "Introduction", level: 2 },
+  { id: "what-are-answer-engines", title: "What Are Answer Engines?", level: 2 },
+  { id: "strategic-adaptation", title: "Strategic Adaptation", level: 2 },
+  { id: "conclusion", title: "Conclusion", level: 2 }
+];
 ---
 
-<MainLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-8">
-    <div class="mb-6">
-      <a href="/blog" class="text-blue-600 hover:text-blue-800">← Back to Blog</a>
-    </div>
-    
-    <h1 class="text-4xl font-bold mb-4">{title}</h1>
-    
-    <div class="flex items-center text-gray-600 mb-8">
-      <span>By {author}</span>
-      <span class="mx-2">•</span>
-      <span>{pubDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</span>
-    </div>
-
-    <div class="prose max-w-none">
-      <h2 id="introduction">Introduction</h2>
-      <p>
-        The search landscape is undergoing a revolutionary transformation with the rise of AI-powered answer engines. 
-        This article explores how these changes impact SEO strategies and what professionals need to know to adapt.
-      </p>
-      
-      <h2 id="what-are-answer-engines">What Are Answer Engines?</h2>
-      <p>
-        Answer engines are AI-powered search systems that directly provide answers to user queries rather than just links to websites.
-        Examples include Google's AI Overviews, Bing's AI-powered results, and standalone LLM-based search tools.
-      </p>
-      
-      <h2 id="strategic-adaptation">Strategic Adaptation</h2>
-      <p>
-        As search evolves, SEO professionals must adapt their strategies to ensure visibility in this new paradigm.
-        This includes optimizing for semantic understanding, entity recognition, and providing clear, authoritative content.
-      </p>
-      
-      <h2 id="conclusion">Conclusion</h2>
-      <p>
-        The answer engine revolution presents both challenges and opportunities for digital marketers.
-        By understanding these changes and adapting strategies accordingly, businesses can maintain and even improve their visibility online.
-      </p>
-    </div>
-    
-    <div class="mt-8 pt-6 border-t">
-      <h3 class="text-xl font-semibold mb-4">Tags</h3>
-      <div class="flex flex-wrap gap-2">
-        {tags.map(tag => (
-          <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">{tag}</span>
-        ))}
-      </div>
-    </div>
-  </div>
-</MainLayout>
+<ArticleTemplate 
+  title={title}
+  excerpt={excerpt}
+  author={author}
+  publishDate={publishDate}
+  readTime={readTime}
+  category={category}
+  tags={tags}
+  featuredImage={featuredImage}
+  content={content}
+  tableOfContents={tableOfContents}
+/>
