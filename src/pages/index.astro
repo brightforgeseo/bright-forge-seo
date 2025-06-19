@@ -34,6 +34,7 @@ import PartnersSection from '../components/PartnersSection.astro';
           </p>
           
           <div class="hero-audit-form mb-8">
+<!--
             <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="audit-form bg-white p-4 rounded-lg shadow-md">
               <input type="hidden" name="form-name" value="homepage-audit" />
               <input type="hidden" name="subject" value="New SEO Audit Request from Website" />
@@ -46,9 +47,11 @@ import PartnersSection from '../components/PartnersSection.astro';
               </button>
               <p id="audit-message" class="text-center mt-2 text-sm text-gray-700"></p>
             </form>
+-->
           </div>
           
           <!-- Stats -->
+<!--
           <div class="hero-stats flex gap-8">
             <div class="stat-item">
               <span class="stat-number block text-2xl font-bold">1,000+</span>
@@ -59,6 +62,7 @@ import PartnersSection from '../components/PartnersSection.astro';
               <span class="stat-label text-sm text-gray-600">Years of experience</span>
             </div>
           </div>
+-->
         </div>
         
         <div class="hero-image md:col-span-1 relative">
@@ -67,9 +71,8 @@ import PartnersSection from '../components/PartnersSection.astro';
             <source media="(max-width: 768px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
             <source media="(min-width: 769px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
             <!-- Fallback -->
-            <img src="/images/Hero-SEO-Agency-In-The-Philippines.webp" alt="Bright Forge SEO Agency Philippines Expert" loading="eager" decoding="async" fetchpriority="high" width="600" height="400" class="rounded-lg shadow-lg w-full h-auto object-cover">
-          </picture>
-        </div>
+          <img src="/images/Hero-SEO-Agency-In-The-Philippines.webp" alt="Bright Forge SEO Agency Philippines Expert" loading="eager" decoding="async" fetchpriority="high" width="600" height="400" class="rounded-lg shadow-lg w-full h-auto object-cover">
+          </picture>        </div>
       </div>
     </div>
   </section>
@@ -1495,8 +1498,8 @@ import PartnersSection from '../components/PartnersSection.astro';
   }
   
   .service-icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background: var(--brand-accent-light);
     border-radius: 50%;
     display: flex;
@@ -3223,6 +3226,7 @@ import PartnersSection from '../components/PartnersSection.astro';
   }
 
   /* Contact Section */
+</style>
   <section class="contact-section">
     <div class="container max-w-7xl mx-auto">
       <div class="section-header">
@@ -4089,7 +4093,7 @@ import PartnersSection from '../components/PartnersSection.astro';
   .form-group select {
     cursor: pointer;
     appearance: none;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>');
+    background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2"%3E%3Cpolyline points="6,9 12,15 18,9"%3E%3C/polyline%3E%3C/svg%3E');
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 16px;
@@ -4787,6 +4791,7 @@ import PartnersSection from '../components/PartnersSection.astro';
   });
 </script>
 
+{/*
 <script>
   const API_URL = 'https://seo-audit-tool-backend.onrender.com/api/analyze';
   document.addEventListener('DOMContentLoaded', () => {
@@ -4957,9 +4962,7 @@ import PartnersSection from '../components/PartnersSection.astro';
           const item = document.createElement('li');
           item.className = 'p-3 bg-red-50 border border-red-100 rounded-md flex items-start';
           item.innerHTML = `
-            <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+            <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <span>${issue}</span>
           `;
           issuesList.appendChild(item);
@@ -5106,7 +5109,7 @@ import PartnersSection from '../components/PartnersSection.astro';
           if (analysis.hasSSL) {
             totalPoints += 10;
           } else {
-            issues.push('Site is not using HTTPS/SSL');
+            issues.push('HTTPS/SSL not implemented');
           }
         }
         
@@ -5116,28 +5119,47 @@ import PartnersSection from '../components/PartnersSection.astro';
           if (analysis.hasMobileViewport) {
             totalPoints += 10;
           } else {
-            issues.push('Missing mobile viewport meta tag');
+            issues.push('Mobile viewport not configured');
           }
         }
         
-        // Calculate final score if we have points
-        if (maxPoints > 0) {
-          overallScore = Math.round((totalPoints / maxPoints) * 100);
+        // Canonical URL check
+        if (analysis.canonicalUrl !== undefined) {
+          maxPoints += 10;
+          if (analysis.canonicalUrl) {
+            totalPoints += 10;
+          } else {
+            issues.push('Canonical URL not found');
+          }
         }
+        
+        // Basic performance (placeholder - actual performance metrics are complex)
+        maxPoints += 10;
+        totalPoints += 7; // Assume decent performance for now
+        
+        // Robots.txt check (placeholder)
+        maxPoints += 10;
+        totalPoints += 8; // Assume robots.txt is okay
+        
+        // Sitemap check (placeholder)
+        maxPoints += 10;
+        totalPoints += 8; // Assume sitemap is okay
+        
+        overallScore = maxPoints > 0 ? Math.round((totalPoints / maxPoints) * 100) : 0;
       }
       
       return { overallScore, issues, analysis };
     }
     
-    // Helper function for score colors
+    // Helper function to get score color class
     function getScoreColorClass(score) {
-      if (score === 'N/A') return 'text-gray-500';
       if (score >= 80) return 'text-green-600';
       if (score >= 50) return 'text-yellow-600';
       return 'text-red-600';
     }
   });
 </script>
+*/}
 
 <script>
   // FAQ Accordion functionality
