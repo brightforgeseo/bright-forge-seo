@@ -3,22 +3,24 @@ import ArticleTemplate from '../../components/ArticleTemplate.astro';
 import { marked } from 'marked';
 import raw from '../../articles/The Answer Engine Revolution/The Answer Engine Revolution_ A Strategic Guide to Dominance in the Era of AI Overviews, AI Mode, and LLM Search.md?raw';
 
-// Use Slugger via marked namespace for compatibility with older marked versions
-const slugger = new marked.Slugger();
+// Simple slugify helper (lowercase, dash-separated)
+const slugify = (str) => str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-// Create a table of contents from H2 and H3 headings in markdown
+// Remove top-level H1 to avoid duplicate title (already in hero)
+const cleanedRaw = raw.replace(/^#\s+.*\n/, '');
+
+// Build table of contents from H2 & H3 headings
 const tableOfContents = [];
 cleanedRaw.split('\n').forEach((line) => {
   if (/^#{2,3}\s+/.test(line)) {
     const level = line.startsWith('###') ? 3 : 2;
     const title = line.replace(/^#+\s+/, '').trim();
-    const id = slugger.slug(title);
+    const id = slugify(title);
     tableOfContents.push({ id, title, level });
   }
 });
 
-// Remove top-level H1 to avoid duplicate title (already in hero)
-const cleanedRaw = raw.replace(/^#\s+.*\n/, '');
+
 const content = marked.parse(cleanedRaw);
 
 const title = 'The Answer Engine Revolution: A Strategic Guide to Dominance in the Era of AI Overviews, AI Mode, and LLM Search';
