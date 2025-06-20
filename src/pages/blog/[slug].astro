@@ -1,6 +1,14 @@
 ---
 import Layout from '../../layouts/MainLayout.astro';
-import { getBlogPostBySlug } from '../../lib/contentful';
+import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
+
+export async function getStaticPaths() {
+  const posts = await getAllBlogPosts();
+  return posts.map(post => ({
+    params: { slug: post.fields.slug },
+    props: { post },
+  }));
+}
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { JSDOM } from 'jsdom';
 
