@@ -3,9 +3,8 @@ import ArticleTemplate from '../../components/ArticleTemplate.astro';
 import { marked } from 'marked';
 import raw from '../../articles/The Answer Engine Revolution/The Answer Engine Revolution_ A Strategic Guide to Dominance in the Era of AI Overviews, AI Mode, and LLM Search.md?raw';
 
-import { Slugger } from 'marked';
-
-const slugger = new Slugger();
+// Use Slugger via marked namespace for compatibility with older marked versions
+const slugger = new marked.Slugger();
 
 // Create a table of contents from H2 and H3 headings in markdown
 const tableOfContents = [];
