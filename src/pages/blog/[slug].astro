@@ -5,7 +5,7 @@ import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
 export async function getStaticPaths() {
   const posts = await getAllBlogPosts();
   return posts.map(post => ({
-    params: { slug: post.fields.slug },
+    params: { slug: post.slug },
     props: { post },
   }));
 }
