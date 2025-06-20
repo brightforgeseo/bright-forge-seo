@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/MainLayout.astro';
+import ArticleTemplate from '../../components/ArticleTemplate.astro';
 import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
 
 export async function getStaticPaths() {
@@ -37,18 +37,18 @@ if (post.content) {
   
   tableOfContents = headings.map(heading => {
     const text = heading.textContent;
-    const slug = text
+    const id = text
       .toLowerCase()
       .replace(/[^\w\s]/g, '')
       .replace(/\s+/g, '-');
     
     // Add ID to the heading in the HTML
-    heading.id = slug;
+    heading.id = id;
     
     return {
-      text,
-      slug,
-      depth: parseInt(heading.tagName.substring(1), 10)
+      id,
+      title: text,
+      level: parseInt(heading.tagName.substring(1), 10)
     };
   });
   
@@ -60,55 +60,25 @@ if (post.content) {
 const formattedDate = post.publishDate ? 
   new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(post.publishDate) : 
   '';
+
+// Prepare ArticleTemplate props
+const templateProps = {
+  title: post.title,
+  excerpt: post.excerpt || '',
+  author: {
+    name: post.author || 'BrightForge Team',
+    bio: 'Digital marketing experts specializing in SEO and content strategy.',
+    avatar: '',
+    linkedin: ''
+  },
+  publishDate: formattedDate,
+  readTime: '5 min read', // You could calculate this based on content length
+  category: 'SEO & Marketing',
+  tags: post.tags || [],
+  featuredImage: post.featuredImage,
+  content: htmlContent,
+  tableOfContents: tableOfContents
+};
 ---
 
-<Layout title={post.title}>
-  <main class="container mx-auto px-4 py-8">
-    <article class="max-w-4xl mx-auto">
-      {post.featuredImage && (
-        <img 
-          src={post.featuredImage} 
-          alt={post.title}
-          class="w-full h-auto rounded-lg mb-6"
-        />
-      )}
-      
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
-      
-      <div class="flex items-center text-gray-600 mb-6">
-        {post.author && <span class="mr-4">By {post.author}</span>}
-        {formattedDate && <span class="mr-4">• {formattedDate}</span>}
-        {post.tags && post.tags.length > 0 && (
-          <div class="flex flex-wrap">
-            {post.tags.map(tag => (
-              <span class="bg-gray-100 text-gray-800 mr-2 mb-2 px-2 py-1 rounded text-sm">{tag}</span>
-            ))}
-          </div>
-        )}
-      </div>
-      
-      {tableOfContents.length > 0 && (
-        <div class="bg-gray-50 p-4 rounded-lg mb-6">
-          <h2 class="text-lg font-semibold mb-2">Table of Contents</h2>
-          <ul class="list-none">
-            {tableOfContents.map(item => (
-              <li class={`${item.depth === 3 ? 'ml-4' : ''} mb-1`}>
-                <a href={`#${item.slug}`} class="text-blue-600 hover:underline">
-                  {item.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-      
-      {post.excerpt && (
-        <div class="text-lg font-medium text-gray-700 mb-6 italic">
-          {post.excerpt}
-        </div>
-      )}
-      
-      <div class="prose max-w-none" set:html={htmlContent}></div>
-    </article>
-  </main>
-</Layout>
+<ArticleTemplate {...templateProps} />
