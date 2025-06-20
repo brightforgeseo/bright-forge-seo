@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getBlogPostBySlug } from '../../lib/contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { JSDOM } from 'jsdom';
+
+// Get the slug from the URL
+const { slug } = Astro.params;
+
+// Fetch the blog post data
+const post = await getBlogPostBySlug(slug);
+
+// Handle 404 if the post is not found
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+// Process the content if it exists
+let htmlContent = '';
+let tableOfContents = [];
+
+if (post.content) {
+  // Convert rich text to HTML
+  htmlContent = documentToHtmlString(post.content);
+  
+  // Generate table of contents from HTML headings
+  const dom = new JSDOM(htmlContent);
+  const headings = [...dom.window.document.querySelectorAll('h2, h3')];
+  
+  tableOfContents = headings.map(heading => {
+    const text = heading.textContent;
+    const slug = text
+      .toLowerCase()
+      .replace(/[^\w\s]/g, '')
+      .replace(/\s+/g, '-');
+    
+    // Add ID to the heading in the HTML
+    heading.id = slug;
+    
+    return {
+      text,
+      slug,
+      depth: parseInt(heading.tagName.substring(1), 10)
+    };
+  });
+  
+  // Update the HTML content with IDs
+  htmlContent = dom.window.document.body.innerHTML;
+}
+
+// Format the publish date
+const formattedDate = post.publishDate ? 
+  new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(post.publishDate) : 
+  '';
+---
+
+<Layout title={post.title}>
+  <main class="container mx-auto px-4 py-8">
+    <article class="max-w-4xl mx-auto">
+      {post.featuredImage && (
+        <img 
+          src={post.featuredImage} 
+          alt={post.title}
+          class="w-full h-auto rounded-lg mb-6"
+        />
+      )}
+      
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
+      
+      <div class="flex items-center text-gray-600 mb-6">
+        {post.author && <span class="mr-4">By {post.author}</span>}
+        {formattedDate && <span class="mr-4">• {formattedDate}</span>}
+        {post.tags && post.tags.length > 0 && (
+          <div class="flex flex-wrap">
+            {post.tags.map(tag => (
+              <span class="bg-gray-100 text-gray-800 mr-2 mb-2 px-2 py-1 rounded text-sm">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+      
+      {tableOfContents.length > 0 && (
+        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+          <h2 class="text-lg font-semibold mb-2">Table of Contents</h2>
+          <ul class="list-none">
+            {tableOfContents.map(item => (
+              <li class={`${item.depth === 3 ? 'ml-4' : ''} mb-1`}>
+                <a href={`#${item.slug}`} class="text-blue-600 hover:underline">
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      
+      {post.excerpt && (
+        <div class="text-lg font-medium text-gray-700 mb-6 italic">
+          {post.excerpt}
+        </div>
+      )}
+      
+      <div class="prose max-w-none" set:html={htmlContent}></div>
+    </article>
+  </main>
+</Layout>
