@@ -6,6 +6,20 @@ import ReviewsSection from '../components/ReviewsSection.astro';
 import AwardsSection from '../components/AwardsSection.astro';
 import ProcessSection from '../components/ProcessSection.astro';
 import PartnersSection from '../components/PartnersSection.astro';
+import { getAllBlogPosts } from '../lib/contentful.js';
+
+// Fetch latest blog posts from Contentful
+const allPosts = await getAllBlogPosts();
+const latestPosts = allPosts.slice(0, 3); // Get latest 3 posts for homepage
+
+const title = "Bright Forge SEO - Top Rated SEO Agency Philippines";
+const description = "Bright Forge SEO is a leading SEO agency in the Philippines, helping businesses achieve sustainable growth through data-driven strategies.";
+const type = "company";
+const image = "/images/og-image.jpg";
+const breadcrumbs = [
+  { name: 'Home', url: '/' }
+];
+
 ---
 
 <MainLayout 
@@ -313,6 +327,7 @@ import PartnersSection from '../components/PartnersSection.astro';
       <div class="section-header text-center mb-10">
         <span class="section-label">TRUSTED BY</span>
         <h2 class="section-title">Companies We've <span>Worked With</span></h2>
+        <p class="section-subtitle">See how we've helped businesses achieve remarkable growth through tailored SEO strategies</p>
       </div>
       
       <div class="client-logos-container">
@@ -553,68 +568,49 @@ import PartnersSection from '../components/PartnersSection.astro';
       </div>
       
       <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        <!-- First Blog Post -->
-        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div class="blog-image h-48">
-            <img src="/images/blog/answer-engine-revolution.png" alt="The Answer Engine Revolution" class="w-full h-full object-cover" width="400" height="250" loading="lazy" decoding="async">
-          </div>
-          <div class="blog-content p-5 flex-grow">
-            <div class="blog-meta flex items-center text-sm mb-2">
-              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">AI Strategy</span>
-              <span class="blog-date text-gray-500 ml-3">June 19, 2025</span>
+        {latestPosts.map((post) => (
+          <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="blog-image h-48">
+              <img 
+                src={post.featuredImage || '/images/blog/default-blog.png'} 
+                alt={post.title} 
+                class="w-full h-full object-cover" 
+                width="400" 
+                height="250" 
+                loading="lazy" 
+                decoding="async"
+              />
             </div>
-            <h3 class="text-lg font-bold mb-2"><a href="/blog/answer-engine-revolution" class="hover:text-brand-accent transition-colors">The Answer Engine Revolution: Strategic Guide to AI Search Dominance</a></h3>
-            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Explore the fundamental shift from search engines to answer engines powered by AI. Learn how to optimize for Google's AI Overviews and develop a comprehensive GEO strategy.</p>
-            <a href="/blog/answer-engine-revolution" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
-              Read Article 
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Second Blog Post -->
-        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div class="blog-image h-48">
-            <img src="/images/blog/ai-seo-transformation.png" alt="AI SEO Transformation" class="w-full h-full object-cover" width="400" height="250" loading="lazy" decoding="async">
-          </div>
-          <div class="blog-content p-5 flex-grow">
-            <div class="blog-meta flex items-center text-sm mb-2">
-              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">SEO</span>
-              <span class="blog-date text-gray-500 ml-3">April 23, 2025</span>
+            <div class="blog-content p-5 flex-grow">
+              <div class="blog-meta flex items-center text-sm mb-2">
+                <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">
+                  {post.tags && post.tags.length > 0 ? post.tags[0] : 'SEO'}
+                </span>
+                <span class="blog-date text-gray-500 ml-3">
+                  {new Date(post.dateTime).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold mb-2">
+                <a href={`/blog/${post.slug}`} class="hover:text-brand-accent transition-colors">
+                  {post.title}
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-3 text-sm line-clamp-2">
+                {post.excerpt}
+              </p>
+              <a href={`/blog/${post.slug}`} class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
+                Read Article 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
-            <h3 class="text-lg font-bold mb-2"><a href="/blog/ai-seo-transformation" class="hover:text-brand-accent transition-colors">The AI Reckoning: Transformation, Not Termination, for Search Engine Optimisation</a></h3>
-            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Explore how AI is transforming SEO rather than making it obsolete. Learn about AI integration in search engines and strategies to adapt in the AI era.</p>
-            <a href="/blog/ai-seo-transformation" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
-              Read Article
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
           </div>
-        </div>
-        
-        <!-- Third Blog Post -->
-        <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div class="blog-image h-48">
-            <img src="/images/blog/local-seo-small-business.png" alt="Local SEO for Small Businesses" class="w-full h-full object-cover" width="400" height="250" loading="lazy" decoding="async">
-          </div>
-          <div class="blog-content p-5 flex-grow">
-            <div class="blog-meta flex items-center text-sm mb-2">
-              <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">Local SEO</span>
-              <span class="blog-date text-gray-500 ml-3">March 15, 2025</span>
-            </div>
-            <h3 class="text-lg font-bold mb-2"><a href="/blog/local-seo-small-business" class="hover:text-brand-accent transition-colors">The Importance of Local SEO for Small Businesses</a></h3>
-            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Discover how local SEO can help small businesses in the Philippines connect with nearby customers and compete effectively in their local markets.</p>
-            <a href="/blog/local-seo-small-business" class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
-              Read Article
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
       
       <div class="text-center mt-10">
@@ -778,6 +774,7 @@ import PartnersSection from '../components/PartnersSection.astro';
     </div>
   </section>
 
+  <!-- Case Studies Section -->
   <section class="case-studies-section">
     <div class="container max-w-7xl mx-auto">
       <div class="section-header">
@@ -1514,8 +1511,8 @@ import PartnersSection from '../components/PartnersSection.astro';
   }
   
   .service-icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background: var(--brand-accent-light);
     border-radius: 50%;
     display: flex;
@@ -1765,7 +1762,6 @@ import PartnersSection from '../components/PartnersSection.astro';
     height: 600px;
     background: radial-gradient(circle, rgba(255, 68, 56, 0.1) 0%, transparent 70%);
     border-radius: 50%;
-    pointer-events: none;
   }
 
   @media (max-width: 1024px) and (min-width: 769px) {
@@ -5179,5 +5175,3 @@ import PartnersSection from '../components/PartnersSection.astro';
     });
   });
 </script>
-
-```
