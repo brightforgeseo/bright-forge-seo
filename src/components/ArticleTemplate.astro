@@ -371,6 +371,7 @@ const formatDate = (dateString: string) => {
   font-size: 1.125rem;
   line-height: 1.8;
   color: #333;
+  max-width: none;
 }
 
 .main-content .content-body h1,
@@ -379,26 +380,26 @@ const formatDate = (dateString: string) => {
 .main-content .content-body h4,
 .main-content .content-body h5,
 .main-content .content-body h6 {
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.3;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
   color: #1a1a1a;
   scroll-margin-top: 120px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .main-content .content-body h1 {
-  font-size: 3rem !important;
-  font-weight: 700 !important;
-  margin-top: 2rem !important;
-  margin-bottom: 1.5rem !important;
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  margin: 2rem 0 1.5rem !important;
   color: #1a1a1a !important;
+  border-top: 3px solid #4285F4 !important;
+  padding-top: 25px !important;
 }
 
 .main-content .content-body h2,
 .article-content h2 {
-  font-size: 2.2rem !important;
-  font-weight: 800 !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
   margin: 40px 0 20px !important;
   color: #1a1a1a !important;
   line-height: 1.3 !important;
@@ -409,7 +410,7 @@ const formatDate = (dateString: string) => {
 
 .main-content .content-body h3,
 .article-content h3 {
-  font-size: 1.8rem !important;
+  font-size: 1.6rem !important;
   font-weight: 700 !important;
   margin: 30px 0 16px !important;
   color: #333 !important;
@@ -419,7 +420,7 @@ const formatDate = (dateString: string) => {
 
 .main-content .content-body h4,
 .article-content h4 {
-  font-size: 1.4rem !important;
+  font-size: 1.3rem !important;
   font-weight: 700 !important;
   margin: 25px 0 15px !important;
   color: #444 !important;
@@ -427,134 +428,30 @@ const formatDate = (dateString: string) => {
   display: block !important;
 }
 
-.main-content .content-body p {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
-
-.main-content .content-body ul,
-.article-content ul,
-.content-body ul {
-  list-style-type: disc !important;
-  list-style: disc !important;
-}
-
-.main-content .content-body ol,
-.blog-article .article-content ol,
-article ol {
-  list-style-type: decimal !important;
-  list-style: decimal !important;
-}
-
-.main-content .content-body li,
-.blog-article .article-content li,
-article li {
-  margin-bottom: 8px !important;
-  line-height: 1.8 !important;
-  display: list-item !important;
-}
-
-.main-content .content-body table,
-.main-content .content-body .markdown-table {
-  width: 100% !important;
-  border-collapse: collapse !important;
-  font-size: 1rem !important;
-  background: white !important;
-  border: 2px solid #dee2e6 !important;
-  margin: 2rem 0 !important;
-}
-
-.main-content .content-body th {
-  background-color: #f8f9fa !important;
-  border: 2px solid #dee2e6 !important;
-  padding: 16px 20px !important;
-  text-align: left !important;
+.main-content .content-body h5,
+.main-content .content-body h6 {
+  font-size: 1.1rem !important;
   font-weight: 600 !important;
-  color: #333 !important;
-}
-
-.main-content .content-body td {
-  border: 2px solid #dee2e6 !important;
-  padding: 16px 20px !important;
+  margin: 20px 0 12px !important;
   color: #555 !important;
 }
 
-.main-content .content-body tr:nth-child(even) {
-  background-color: #f8f9fa !important;
+.main-content .content-body p {
+  margin-bottom: 24px !important;
+  line-height: 1.8 !important;
+  color: #333 !important;
+  text-align: justify;
+  hyphens: auto;
 }
 
-.main-content .content-body .table-wrapper {
-  overflow-x: auto !important;
-  margin: 2rem 0 !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-  border: 2px solid #dee2e6 !important;
-}
-
-.main-content .content-body a,
-.article-content a,
-.content-body a {
-  color: #4285F4 !important;
-  text-decoration: underline !important;
-  font-weight: 600 !important;
-  transition: color 0.3s ease !important;
-  display: inline !important;
-}
-
-.main-content .content-body a:hover,
-.article-content a:hover,
-.content-body a:hover {
-  color: #FF4438 !important;
-  text-decoration: underline !important;
-}
-
-.main-content .content-body a[href^="#"] {
-  color: #4285F4 !important;
-  font-weight: 500 !important;
-}
-
-.main-content .content-body blockquote {
-  border-left: 4px solid #4285F4 !important;
-  padding-left: 1.5rem !important;
-  margin: 1.5rem 0 !important;
-  font-style: italic !important;
-  color: #666 !important;
-}
-
-.main-content .content-body code {
-  background-color: #f5f5f5 !important;
-  padding: 2px 6px !important;
-  border-radius: 3px !important;
-  font-family: 'Courier New', monospace !important;
-  font-size: 0.9em !important;
-}
-
-.main-content .content-body pre {
-  background-color: #f5f5f5 !important;
-  padding: 1rem !important;
-  border-radius: 5px !important;
-  overflow-x: auto !important;
-  margin: 1.5rem 0 !important;
-}
-
-.main-content .content-body pre code {
-  background-color: transparent !important;
-  padding: 0 !important;
-}
-
-.main-content .content-body strong {
-  font-weight: 600 !important;
-  color: #222 !important;
-}
-
-.main-content .content-body em {
-  font-style: italic !important;
-}
-
-.main-content .content-body hr {
-  border: none !important;
-  border-top: 1px solid #dee2e6 !important;
-  margin: 2rem 0 !important;
+/* First paragraph after headings gets reduced top margin */
+.main-content .content-body h1 + p,
+.main-content .content-body h2 + p,
+.main-content .content-body h3 + p,
+.main-content .content-body h4 + p,
+.main-content .content-body h5 + p,
+.main-content .content-body h6 + p {
+  margin-top: 0 !important;
 }
 
 /* Article Hero */
@@ -759,81 +656,52 @@ article li {
   max-width: none;
 }
 
-.content-body {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
+/* Enhanced styling for Contentful rich text content */
+.content-body h1,
+.content-body h2,
+.content-body h3,
+.content-body h4,
+.content-body h5,
+.content-body h6 {
+  /* Removed duplicate rules - using .main-content .content-body instead */
+}
+
+.content-body h1 {
+  /* Removed duplicate rules - using .main-content .content-body instead */
 }
 
 .content-body h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 40px 0 20px;
-  padding-top: 20px;
-  border-top: 2px solid #f0f0f0;
+  /* Removed duplicate rules - using .main-content .content-body instead */
 }
 
 .content-body h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 30px 0 15px;
+  /* Removed duplicate rules - using .main-content .content-body instead */
 }
 
 .content-body h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 25px 0 12px;
+  /* Removed duplicate rules - using .main-content .content-body instead */
+}
+
+.content-body h5 {
+  /* Removed duplicate rules - using .main-content .content-body instead */
+}
+
+.content-body h6 {
+  /* Removed duplicate rules - using .main-content .content-body instead */
 }
 
 .content-body p {
-  margin-bottom: 20px;
+  /* Removed duplicate rules - using .main-content .content-body instead */
 }
 
-.content-body ul,
-.content-body ol {
-  margin: 20px 0;
-  padding-left: 30px;
-}
-
-.content-body li {
-  margin-bottom: 8px;
-}
-
-.content-body blockquote {
-  background: #f8f9ff;
-  border-left: 4px solid #4285F4;
-  padding: 20px 30px;
-  margin: 30px 0;
-  font-style: italic;
-  border-radius: 0 10px 10px 0;
-}
-
-.content-body code {
-  background: #f0f0f0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9em;
-}
-
-.content-body pre {
-  background: #1a1a1a;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  overflow-x: auto;
-  margin: 20px 0;
-}
-
-.content-body img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 20px 0;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+/* First paragraph after headings gets reduced top margin */
+.content-body h1 + p,
+.content-body h2 + p,
+.content-body h3 + p,
+.content-body h4 + p,
+.content-body h5 + p,
+.content-body h6 + p {
+  /* Removed duplicate rules - using .main-content .content-body instead */
 }
 
 /* Article Tags */
