@@ -1,27 +1,6 @@
 ---
 import ArticleTemplate from '../../components/ArticleTemplate.astro';
-import { marked } from 'marked';
-import raw from '../../articles/The Answer Engine Revolution/The Answer Engine Revolution_ A Strategic Guide to Dominance in the Era of AI Overviews, AI Mode, and LLM Search.md?raw';
-
-// Simple slugify helper (lowercase, dash-separated)
-const slugify = (str) => str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
-// Remove top-level H1 to avoid duplicate title (already in hero)
-const cleanedRaw = raw.replace(/^#\s+.*\n/, '');
-
-// Build table of contents from H2 & H3 headings
-const tableOfContents = [];
-cleanedRaw.split('\n').forEach((line) => {
-  if (/^#{2,3}\s+/.test(line)) {
-    const level = line.startsWith('###') ? 3 : 2;
-    const title = line.replace(/^#+\s+/, '').trim();
-    const id = slugify(title);
-    tableOfContents.push({ id, title, level });
-  }
-});
-
-
-const content = marked.parse(cleanedRaw);
+import htmlContent from '../../content/answer-engine-revolution-content.html?raw';
 
 const title = 'The Answer Engine Revolution: A Strategic Guide to Dominance in the Era of AI Overviews, AI Mode, and LLM Search';
 const excerpt = 'Comprehensive guide to thriving in the new AI-driven search ecosystem—learn strategies for entity authority, brand building, and generative engine optimisation.';
@@ -34,12 +13,41 @@ const publishDate = '2025-06-19';
 const readTime = '20 min';
 const category = 'SEO';
 const tags = ['SEO', 'AI Search', 'Answer Engines', 'AI Overviews', 'Digital Marketing'];
----
 
-<!--
-  Using ArticleTemplate with Markdown slot to avoid giant template literal escaping issues.
-  Full Markdown source is rendered via <Markdown> component, ensuring the entire article appears error-free.
--->
+// Static table of contents
+const tableOfContents = [
+  { id: 'introduction', title: 'Introduction', level: 2 },
+  { id: 'the-rise-of-answer-engines', title: 'The Rise of Answer Engines', level: 2 },
+  { id: 'understanding-ai-overviews', title: 'Understanding AI Overviews', level: 3 },
+  { id: 'ai-mode-and-conversational-search', title: 'AI Mode and Conversational Search', level: 3 },
+  { id: 'llm-powered-search-platforms', title: 'LLM-Powered Search Platforms', level: 3 },
+  { id: 'the-strategic-imperative', title: 'The Strategic Imperative', level: 2 },
+  { id: 'entity-authority-the-new-foundation', title: 'Entity Authority: The New Foundation', level: 2 },
+  { id: 'building-topical-expertise', title: 'Building Topical Expertise', level: 3 },
+  { id: 'structured-data-optimization', title: 'Structured Data Optimization', level: 3 },
+  { id: 'knowledge-graph-positioning', title: 'Knowledge Graph Positioning', level: 3 },
+  { id: 'brand-building-in-the-ai-era', title: 'Brand Building in the AI Era', level: 2 },
+  { id: 'thought-leadership-content', title: 'Thought Leadership Content', level: 3 },
+  { id: 'multi-platform-presence', title: 'Multi-Platform Presence', level: 3 },
+  { id: 'community-engagement', title: 'Community Engagement', level: 3 },
+  { id: 'generative-engine-optimization-geo', title: 'Generative Engine Optimization (GEO)', level: 2 },
+  { id: 'content-optimization-for-ai', title: 'Content Optimization for AI', level: 3 },
+  { id: 'citation-worthy-content-creation', title: 'Citation-Worthy Content Creation', level: 3 },
+  { id: 'answer-engine-friendly-formatting', title: 'Answer Engine Friendly Formatting', level: 3 },
+  { id: 'technical-considerations', title: 'Technical Considerations', level: 2 },
+  { id: 'site-performance-optimization', title: 'Site Performance Optimization', level: 3 },
+  { id: 'mobile-first-indexing', title: 'Mobile-First Indexing', level: 3 },
+  { id: 'core-web-vitals', title: 'Core Web Vitals', level: 3 },
+  { id: 'measuring-success-in-the-ai-era', title: 'Measuring Success in the AI Era', level: 2 },
+  { id: 'new-metrics-and-kpis', title: 'New Metrics and KPIs', level: 3 },
+  { id: 'attribution-challenges', title: 'Attribution Challenges', level: 3 },
+  { id: 'future-proofing-strategies', title: 'Future-Proofing Strategies', level: 2 },
+  { id: 'conclusion', title: 'Conclusion', level: 2 }
+];
+
+// Use the pre-rendered HTML content
+const content = htmlContent;
+---
 
 <ArticleTemplate
   title={title}
