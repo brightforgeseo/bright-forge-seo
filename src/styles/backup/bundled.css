@@ -88,8 +88,15 @@ img {
 }
 
 /* Optimize scrolling performance */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
 
 /* Reduce layout thrashing */
+.dynamic-content {
+  contain: layout style paint;
+}
 
 /* Optimize table rendering */
 table {
@@ -98,6 +105,12 @@ table {
 }
 
 /* Performance-optimized gradients */
+.gradient-bg {
+  background-image: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 
 /* Optimize form elements */
 input, textarea, select {
@@ -121,5 +134,13 @@ input:focus, textarea:focus, select:focus {
     color: black !important;
     box-shadow: none !important;
     text-shadow: none !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
   }
 }

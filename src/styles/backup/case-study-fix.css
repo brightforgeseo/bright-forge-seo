@@ -1,0 +1,8 @@
+/* Fix for all case study images to prevent them from being cut off */
+.case-study-image img,
+img[src*="/images/case-studies/"],
+[style*="object-fit: cover"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  background-color: #f5f5f5 !important;
+}

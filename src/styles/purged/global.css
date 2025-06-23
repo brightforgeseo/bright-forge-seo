@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles that might be needed beyond Tailwind */
+body {
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  color: theme('colors.brand-dark');
+}
+
+/* Global page centering fix */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure proper container centering - IMPORTANT FIX */
+.container,
+[class*="max-w-"] {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Specific max-width values */
+.max-w-7xl {
+  max-width: 80rem !important;
+}
+
+.max-w-6xl {
+  max-width: 72rem !important;
+}
+
+.max-w-5xl {
+  max-width: 64rem !important;
+}
+
+.max-w-4xl {
+  max-width: 56rem !important;
+}
+
+.max-w-3xl {
+  max-width: 48rem !important;
+}
+
+.max-w-2xl {
+  max-width: 42rem !important;
+}
+
+.max-w-xl {
+  max-width: 36rem !important;
+}
+
+.max-w-lg {
+  max-width: 32rem !important;
+}
+
+/* Ensure mx-auto works properly */
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 640px) {
+  .container,
+  [class*="max-w-"] {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container,
+  [class*="max-w-"] {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Fix for sections to ensure full width */
+section {
+  width: 100%;
+}
+
+/* Ensure main content area is properly structured */
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Additional centering helpers */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}

@@ -1,0 +1,37 @@
+/* Contact Page Styles */
+.hero-section {
+  background: linear-gradient(135deg, rgba(255, 68, 56, 0.05), rgba(66, 133, 244, 0.05));
+}
+
+.contact-form-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.contact-form-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4285F4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.contact-info-wrapper .flex-shrink-0 {
+  transition: transform 0.3s ease;
+}
+
+.contact-info-wrapper .flex:hover .flex-shrink-0 {
+  transform: scale(1.1);
+}
+
+.map-wrapper iframe {
+  filter: grayscale(0.5);
+  transition: filter 0.3s ease;
+}
+
+.map-wrapper:hover iframe {
+  filter: grayscale(0);
+}
