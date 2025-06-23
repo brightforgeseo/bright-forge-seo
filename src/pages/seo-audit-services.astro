@@ -99,123 +99,53 @@ import ContactSection from '../components/ContactSection.astro';
   </section>
 
   <!-- Free SEO Audit Tool -->
-  <section class="py-20 bg-gradient-to-br from-slate-50 to-white">
-    <div class="max-w-4xl mx-auto px-4">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          Free Instant Analysis
-        </div>
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Get Your <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Free SEO Audit</span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Enter your website URL below and get an instant SEO analysis with actionable recommendations to improve your rankings.
+  <section class="py-40 bg-white">
+    <div class="max-w-6xl mx-auto px-8 text-center">
+      
+      <!-- Main Heading -->
+      <div class="mb-32">
+        <h1 class="text-7xl font-black text-gray-900 mb-8 leading-tight">
+          Free SEO Audit Tool
+        </h1>
+        <div class="w-40 h-1.5 bg-[#FF4438] mx-auto mb-12"></div>
+        <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          Get a comprehensive analysis of your website's SEO performance and discover what's holding you back from ranking higher in search results
         </p>
       </div>
 
-      <!-- Audit Tool Form -->
-      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 mb-12">
-        <form name="seo-audit-tool" class="space-y-6">
-          <div class="relative">
-            <label for="audit-website-url" class="block text-sm font-medium text-gray-700 mb-2">
-              Website URL
-            </label>
-            <div class="relative">
-              <input 
-                type="url" 
-                id="audit-website-url" 
-                name="website-url" 
-                placeholder="https://yourwebsite.com" 
-                required 
-                class="w-full px-4 py-4 pr-12 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg"
-              />
-              <div class="absolute inset-y-0 right-0 flex items-center pr-4">
-                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
+      <!-- Main Form -->
+      <div class="max-w-3xl mx-auto mb-48">
+        <form name="seo-audit-tool" class="flex border-2 border-gray-900 rounded-none overflow-hidden">
+          <input 
+            type="url" 
+            id="audit-website-url" 
+            name="website-url" 
+            placeholder="Example.com" 
+            required 
+            class="flex-1 px-8 py-6 text-xl border-none focus:outline-none bg-white"
+          />
           <button 
             type="submit" 
-            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+            class="bg-[#FF4438] hover:bg-[#FF9500] text-white font-bold px-12 py-6 text-xl transition-colors"
           >
-            <span class="flex items-center justify-center gap-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              Analyze My Website
-            </span>
+            Audit
           </button>
         </form>
+        
+        <p class="text-gray-600 mt-8 text-xl">
+          Enter your website URL and get a free comprehensive SEO analysis in seconds
+        </p>
 
         <!-- Loading State -->
-        <div id="loading-state" class="hidden text-center py-8">
-          <div class="inline-flex items-center gap-3 text-blue-600">
-            <svg class="animate-spin w-6 h-6" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <span class="text-lg font-medium">Analyzing your website...</span>
+        <div id="loading-state" class="hidden text-center py-12">
+          <div class="inline-flex items-center gap-4">
+            <div class="w-8 h-8 border-2 border-[#FF4438] border-t-transparent rounded-full animate-spin"></div>
+            <span class="text-gray-600 text-lg">Analyzing your website...</span>
           </div>
         </div>
 
         <!-- Results Container -->
-        <div id="audit-results" class="hidden mt-8"></div>
-      </div>
-
-      <!-- Features Grid -->
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Instant Results</h3>
-          <p class="text-gray-600">Get your SEO analysis in seconds, not days</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Comprehensive Scan</h3>
-          <p class="text-gray-600">200+ SEO factors analyzed automatically</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Actionable Insights</h3>
-          <p class="text-gray-600">Clear recommendations you can implement today</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Proof Banner -->
-  <section class="social-proof-banner">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="proof-content">
-        <span class="proof-text">Trusted by 100+ businesses to diagnose and fix critical SEO issues</span>
-        <div class="proof-logos">
-          <div class="logo-item">🏢</div>
-          <div class="logo-item">🚀</div>
-          <div class="logo-item">💼</div>
-          <div class="logo-item">⚡</div>
-          <div class="logo-item">🎯</div>
-        </div>
+        <div id="audit-results" class="hidden mt-12"></div>
       </div>
     </div>
   </section>
@@ -263,115 +193,6 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="feature-metric">
             <span class="metric-value">30+</span>
             <span class="metric-label">Actionable Recommendations</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What We Cover Section -->
-  <section class="coverage-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Audit Coverage</div>
-        <h2>What Our <span>SEO Audit</span> Covers</h2>
-        <p>We examine every aspect of your website that impacts search performance and user experience.</p>
-      </div>
-
-      <div class="coverage-grid">
-        <div class="coverage-card">
-          <div class="coverage-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <div class="coverage-content">
-            <h3>Technical Health</h3>
-            <p>We pop the hood to see how search-engine bots crawl, index, and render your pages - then show you exactly how to make them purr.</p>
-            <div class="coverage-checklist">
-              <div class="check-item">✓ Site Speed Analysis</div>
-              <div class="check-item">✓ Mobile Responsiveness</div>
-              <div class="check-item">✓ Core Web Vitals</div>
-              <div class="check-item">✓ Crawl Error Detection</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="coverage-card">
-          <div class="coverage-icon">
-            <i class="fas fa-heading"></i>
-          </div>
-          <div class="coverage-content">
-            <h3>On-Page Optimization</h3>
-            <p>From messy meta titles to orphan pages, we untangle on-page clutter so every URL speaks the language of your audience (and Google).</p>
-            <div class="coverage-checklist">
-              <div class="check-item">✓ Title Tag Optimization</div>
-              <div class="check-item">✓ Meta Description Review</div>
-              <div class="check-item">✓ Header Structure Analysis</div>
-              <div class="check-item">✓ Internal Linking Audit</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="coverage-card">
-          <div class="coverage-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <div class="coverage-content">
-            <h3>Content Relevance</h3>
-            <p>We audit freshness, depth, and intent match - turning thin paragraphs into content that actually answers searcher questions.</p>
-            <div class="coverage-checklist">
-              <div class="check-item">✓ Content Quality Assessment</div>
-              <div class="check-item">✓ Keyword Optimization</div>
-              <div class="check-item">✓ Content Gap Analysis</div>
-              <div class="check-item">✓ User Intent Mapping</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="coverage-card">
-          <div class="coverage-icon">
-            <i class="fas fa-link"></i>
-          </div>
-          <div class="coverage-content">
-            <h3>Backlink Profile</h3>
-            <p>We separate golden endorsements from spammy deadweight and map out a smarter link-building path forward.</p>
-            <div class="coverage-checklist">
-              <div class="check-item">✓ Link Quality Analysis</div>
-              <div class="check-item">✓ Toxic Link Detection</div>
-              <div class="check-item">✓ Competitor Link Research</div>
-              <div class="check-item">✓ Link Building Opportunities</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="coverage-card">
-          <div class="coverage-icon">
-            <i class="fas fa-user-check"></i>
-          </div>
-          <div class="coverage-content">
-            <h3>User Experience</h3>
-            <p>Smooth navigation, inclusive design, and snappy interactions keep visitors - and algorithms - happy.</p>
-            <div class="coverage-checklist">
-              <div class="check-item">✓ Navigation Structure</div>
-              <div class="check-item">✓ Accessibility Compliance</div>
-              <div class="check-item">✓ User Flow Analysis</div>
-              <div class="check-item">✓ Conversion Optimization</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="coverage-card">
-          <div class="coverage-icon">
-            <i class="fas fa-chart-pie"></i>
-          </div>
-          <div class="coverage-content">
-            <h3>Analytics & Tracking</h3>
-            <p>If data isn't measuring what matters, we fix your GA4, GSC, and conversion events so you can finally trust the numbers.</p>
-            <div class="coverage-checklist">
-              <div class="check-item">✓ Google Analytics Setup</div>
-              <div class="check-item">✓ Search Console Integration</div>
-              <div class="check-item">✓ Goal & Event Tracking</div>
-              <div class="check-item">✓ Performance Monitoring</div>
-            </div>
           </div>
         </div>
       </div>
@@ -888,9 +709,11 @@ section {
 }
 
 .stat-label {
-  font-size: 0.9rem;
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.8);
-  margin-top: 0.5rem;
+  z-index: 1;
 }
 
 .hero-cta {
@@ -1069,42 +892,7 @@ section {
 /********************
   Social Proof Banner
 *********************/
-.social-proof-banner {
-  background: var(--brand-light);
-  padding: 2rem 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.proof-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.proof-text {
-  color: var(--brand-soft);
-  font-weight: 600;
-  text-align: center;
-}
-
-.proof-logos {
-  display: flex;
-  gap: 1rem;
-}
-
-.logo-item {
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  box-shadow: var(--shadow-soft);
-}
+/* Removed */
 
 /********************
   Why Audit Section
@@ -1209,66 +997,7 @@ section {
 /********************
   Coverage Section
 *********************/
-.coverage-section {
-  background: #f8fafc;
-}
-
-.coverage-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.coverage-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
-}
-
-.coverage-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
-}
-
-.coverage-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 15px;
-  background: var(--gradient-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: white;
-  margin-bottom: 1.5rem;
-}
-
-.coverage-content h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--brand-dark);
-}
-
-.coverage-content p {
-  color: var(--brand-soft);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.coverage-checklist {
-  display: grid;
-  gap: 0.5rem;
-}
-
-.check-item {
-  font-size: 0.9rem;
-  color: var(--brand-soft);
-  padding: 4px 0;
-}
+/* Removed */
 
 /********************
   Signs Section
@@ -1747,9 +1476,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
         <!-- Header -->
         <div class="text-center mb-8">
-          <div class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          <div class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
             </svg>
             Analysis Complete
           </div>
@@ -1795,7 +1524,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Issues -->
           <div class="bg-white rounded-xl p-6 border border-gray-200">
             <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-              <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               Issues Found
@@ -1819,16 +1548,16 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Recommendations -->
           <div class="bg-white rounded-xl p-6 border border-gray-200">
             <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
               Recommendations
             </h4>
             <div class="space-y-3">
               ${analysis.recommendations.map(rec => `
                 <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                  <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
                   <span class="text-sm text-gray-900">${rec}</span>
                 </div>
@@ -1840,7 +1569,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- CTA -->
         <div class="text-center mt-8 pt-6 border-t border-gray-200">
           <p class="text-gray-600 mb-4">Want a detailed analysis and implementation plan?</p>
-          <a href="/contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+          <a href="/contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-medium mb-4 shadow-2xl">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
             </svg>
