@@ -34,313 +34,95 @@ const breadcrumbs = [
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="hero-container grid md:grid-cols-3 gap-8 items-center">
-        <div class="hero-content md:col-span-2">
-          <h1 class="hero-title text-4xl md:text-5xl font-bold mb-4">
-            <span class="hero-tagline block text-[#4285F4] mb-2">Forging SEO Success in the Philippines</span>
-            Trusted SEO Agency<br>
-            for Sustainable Digital Growth
-          </h1>
-          <p class="hero-subtitle text-lg mb-6">
-            Bright Forge SEO helps businesses thrive online with focused strategies.
-          </p>
-          
-          <div class="hero-audit-form mb-8 max-w-2xl">
-            <div class="audit-form-container bg-gradient-to-r from-[#FF6B35] to-[#FF4438] p-0.5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
-              <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="bg-white p-6 rounded-xl">
-                <input type="hidden" name="form-name" value="homepage-audit" />
-                <input type="hidden" name="subject" value="New SEO Audit Request from Website" />
-                <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
-                
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Get Your Free SEO Audit</h3>
-                <p class="text-gray-600 mb-6">Enter your website URL to receive a comprehensive SEO analysis</p>
-                
-                <div class="form-group mb-5 relative">
-                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <i class="fas fa-globe text-gray-400"></i>
-                  </div>
-                  <input 
-                    type="url" 
-                    id="website-url" 
-                    name="website" 
-                    required 
-                    class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4285F4] focus:border-transparent transition-all duration-200"
-                    placeholder="https://yourwebsite.com"
-                  >
-                </div>
-                
-                <button 
-                  type="submit" 
-                  class="audit-btn w-full bg-gradient-to-r from-[#FF6B35] to-[#FF4438] hover:from-[#FF5A2F] hover:to-[#E53E30] text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-                >
-                  <i class="fas fa-chart-line"></i>
-                  Analyze My Site
-                </button>
-                
-                <p id="audit-message" class="text-center mt-4 text-sm text-gray-600">No credit card required · 100% confidential</p>
-                
-                <div class="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500">
-                  <i class="fas fa-lock"></i>
-                  <span>Your data is secure and private</span>
-                </div>
-              </form>
-            </div>
-          </div>
-          
-          <!-- Stats -->
-          <div class="hero-stats flex gap-8">
-            <div class="stat-item">
-              <span class="stat-number block text-2xl font-bold">1,000+</span>
-              <span class="stat-label text-sm text-gray-600">Thousands Of Sites Ranked</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number block text-2xl font-bold">15+</span>
-              <span class="stat-label text-sm text-gray-600">Years of experience</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="hero-image md:col-span-1 relative">
-          <picture>
-            <!-- Mobile version -->
-            <source media="(max-width: 768px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
-            <source media="(min-width: 769px)" srcset="/images/Hero-SEO-Agency-In-The-Philippines.webp">
-            <!-- Fallback -->
-            <img src="/images/Hero-SEO-Agency-In-The-Philippines.webp" alt="Bright Forge SEO Agency Philippines Expert" loading="eager" decoding="async" fetchpriority="high" width="600" height="400" class="rounded-lg shadow-lg w-full h-auto object-cover">
-          </picture>
-        </div>
-      </div>
+  <section class="relative min-h-screen bg-gradient-to-br from-[#FF4438] via-[#FF6B35] to-[#4285F4] overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/3 rounded-full blur-3xl"></div>
     </div>
-  </section>
 
-  <section class="py-12 bg-white">
-    <div class="container max-w-7xl mx-auto px-4">
-      <h3 class="text-center text-2xl font-bold mb-10">Proudly Featured On</h3>
-      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20">
-        <!-- Design Rush Logo -->
-        <a href="https://www.designrush.com/agency/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer" class="w-[320px] h-[180px] flex items-center justify-center bg-blue-50 p-4 rounded shadow-sm hover:shadow-md transition-all border border-blue-100">
-          <img 
-            src="/images/design-rush-logo.png" 
-            alt="Design Rush" 
-            style="max-width: 100%; max-height: 100%; object-fit: contain; transform: scale(1.5);"
-          />
-        </a>
-        
-        <!-- Upwork Logo -->
-        <a href="https://www.upwork.com/freelancers/~015e24fd8608be3b83" target="_blank" rel="noopener noreferrer" class="w-[320px] h-[180px] flex items-center justify-center bg-blue-50 p-4 rounded shadow-sm hover:shadow-md transition-all border border-blue-100">
-          <img 
-            src="/images/proud/2021-upwork-new-logo-design-removebg-preview.png" 
-            alt="Upwork" 
-            style="max-width: 85%; max-height: 85%; object-fit: contain;"
-          />
-        </a>
-        
-        <!-- Clutch Logo -->
-        <a href="https://clutch.co/profile/bright-forge-seo-agency" target="_blank" rel="noopener noreferrer" class="w-[320px] h-[180px] flex items-center justify-center bg-blue-50 p-4 rounded shadow-sm hover:shadow-md transition-all border border-blue-100">
-          <img 
-            src="/images/proud/66ede09890c1d16a8ccb2d2c_1-removebg-preview.png" 
-            alt="Clutch" 
-            style="max-width: 85%; max-height: 85%; object-fit: contain;"
-          />
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Why Choose Us Section -->
-  <section class="why-choose-section py-16 bg-white">
-    <div class="container max-w-7xl mx-auto px-4">
-      <h2 class="section-title text-center text-3xl font-bold mb-12">Why Choose <span class="text-[#FF4438]">Bright Forge?</span></h2>
-      <div class="why-choose-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-globe text-[#FF4438]"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Globally Inspired Strategies</h3>
-          <p class="text-gray-600">We use proven methods and tools to deliver customized solutions that work effectively across industries and markets. Our <a href="/philippines-seo-services" class="text-brand-primary hover:underline">SEO services in the Philippines</a> are tailored to local market needs.</p>
-        </div>
-        
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-cogs text-[#FF4438]"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Tailored Solutions</h3>
-          <p class="text-gray-600">No cookie-cutter approaches here. We analyze your unique goals, industry, and audience to create SEO campaigns that resonate with your business needs.</p>
-        </div>
-        
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-shield-alt text-[#FF4438]"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Ethical and Transparent Practices</h3>
-          <p class="text-gray-600">Integrity is at the core of what we do. We focus on white-hat SEO techniques that yield sustainable, long-lasting results without cutting corners.</p>
-        </div>
-        
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-chart-line text-[#FF4438]"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Data-Driven Insights</h3>
-          <p class="text-gray-600">From tracking competitor performance to analyzing search trends, every decision we make is guided by real-time data to maximize your results. Learn more about our <a href="/keyword-research-services" class="text-brand-primary hover:underline">keyword research methodology</a> and <a href="/seo-audit-services" class="text-brand-primary hover:underline">comprehensive SEO audits</a>.</p>
-        </div>
-        
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-comments text-[#FF4438]"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Clear Communication</h3>
-          <p class="text-gray-600">We prioritize keeping you informed at every stage. Expect regular updates and straightforward reports that keep you in control of your campaigns.</p>
-        </div>
-        
-        <div class="why-choose-item text-center">
-          <div class="choose-icon bg-[#FFF1F0] inline-flex items-center justify-center rounded-full w-16 h-16 mb-4">
-            <i class="fas fa-trophy text-[#FF4438]"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Proven Results</h3>
-          <p class="text-gray-600">Expertise and Experience, Transparent Reporting. We deliver measurable outcomes that directly impact your business growth.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20">
+      <div class="min-h-[90vh] flex items-center">
+        <div class="w-full grid lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Content -->
+          <div class="lg:col-span-7 space-y-10 text-center lg:text-left">
+            <!-- Badge with Animation -->
+            <div class="flex justify-center lg:justify-start">
+              <div class="inline-flex items-center px-6 py-3 bg-white/15 backdrop-blur-md border border-white/30 rounded-full text-white text-sm font-semibold shadow-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                <svg class="w-5 h-5 mr-3 text-yellow-300 animate-spin-slow" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                #1 SEO Agency in the Philippines
+              </div>
+            </div>
 
-  <!-- SEO Pillars Tabbed Section -->
-  <section class="bf-services-section">
-    <div class="container max-w-7xl mx-auto">
-      <div class="section-header">
-        <h2 class="section-title">How We Tackle the Core SEO Pillars</h2>
-        <p class="section-subtitle">Our team combines advanced strategy, proven frameworks and hands-on execution to drive real SEO growth.</p>
-      </div>
-      
-      <div class="tabs-container">
-        <div class="tab-buttons">
-          <button class="tab-btn active" data-tab="seo-audit">
-            <i class="fas fa-search"></i>
-            <span>SEO Audit</span>
-          </button>
-          <button class="tab-btn" data-tab="keyword-strategy">
-            <i class="fas fa-bullseye"></i>
-            <span>Keyword Strategy</span>
-          </button>
-          <button class="tab-btn" data-tab="on-page-seo">
-            <i class="fas fa-file-alt"></i>
-            <span>On-Page SEO</span>
-          </button>
-          <button class="tab-btn" data-tab="link-building">
-            <i class="fas fa-link"></i>
-            <span>Link Building</span>
-          </button>
-          <button class="tab-btn" data-tab="technical-seo">
-            <i class="fas fa-cogs"></i>
-            <span>Technical SEO</span>
-          </button>
-          <button class="tab-btn" data-tab="content-seo">
-            <i class="fas fa-pen"></i>
-            <span>Content SEO</span>
-          </button>
-        </div>
-        
-        <div class="bf-services-content">
-          <div id="seo-audit" class="bf-service-box active">
-            <div class="service-box-inner">
-              <div class="service-icon">
-                <i class="fas fa-search"></i>
+            <!-- Main Headline with Enhanced Typography -->
+            <div class="space-y-6">
+              <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+                <span class="block text-white drop-shadow-lg">Forge Your Path to</span>
+                <span class="block text-white drop-shadow-lg mt-2">
+                  <span class="relative">
+                    SEO Success
+                    <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-yellow-300 to-white rounded-full"></div>
+                  </span>
+                </span>
+              </h1>
+              <p class="text-xl lg:text-2xl text-white/95 max-w-3xl leading-relaxed font-light">
+                Partner with the Philippines' most trusted SEO experts. We help businesses achieve sustainable growth through data-driven strategies and proven results.
+              </p>
+            </div>
+
+            <!-- Enhanced Stats Grid -->
+            <div class="grid grid-cols-3 gap-4 lg:gap-8 py-8">
+              <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-4xl lg:text-5xl font-black text-white mb-2">1,000+</div>
+                <div class="text-sm lg:text-base text-white/90 font-medium">Sites Ranked</div>
               </div>
-              <h3>SEO Audits That Uncover Real Issues</h3>
-              <p>We start every project by understanding how your site is performing at a technical level. That includes crawling for broken links, identifying thin or duplicated content, checking for indexing problems, and auditing your site structure, speed, and mobile performance.</p>
-              <p>Once we gather the data, we prioritise fixes by impact. You'll get a clear and focused plan that highlights what's slowing you down, what needs fixing first, and where quick wins are hiding.</p>
-              <ul class="service-features">
-                <li>Technical SEO analysis</li>
-                <li>Content quality evaluation</li>
-                <li>Site structure audit</li>
-                <li>Speed and mobile performance</li>
-              </ul>
+              <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-4xl lg:text-5xl font-black text-white mb-2">15+</div>
+                <div class="text-sm lg:text-base text-white/90 font-medium">Years Experience</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-4xl lg:text-5xl font-black text-white mb-2">100%</div>
+                <div class="text-sm lg:text-base text-white/90 font-medium">White-Hat SEO</div>
+              </div>
+            </div>
+
+            <!-- Enhanced CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-6">
+              <a href="/seo-audit-services" class="group relative inline-flex items-center justify-center px-10 py-5 bg-white text-[#FF4438] font-bold text-lg rounded-2xl shadow-2xl hover:shadow-white/25 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 border-2 border-white/20">
+                <span class="relative z-10 flex items-center">
+                  <svg class="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                  Get Free SEO Audit
+                </span>
+                <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              
+              <a href="/contact" class="inline-flex items-center justify-center px-10 py-5 bg-white/15 backdrop-blur-md border-2 border-white/30 text-white font-bold text-lg rounded-2xl hover:bg-white/25 hover:border-white/50 transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+                Schedule Consultation
+              </a>
             </div>
           </div>
-          
-          <div id="keyword-strategy" class="bf-service-box">
-            <div class="service-box-inner">
-              <div class="service-icon">
-                <i class="fas fa-keyboard"></i>
+
+          <!-- Right Content - Enhanced Hero Image -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto w-full max-w-lg">
+              <!-- Main Image Container with Enhanced Glassmorphism -->
+              <div class="relative overflow-hidden rounded-3xl bg-white/15 backdrop-blur-xl border border-white/30 p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
+                <img 
+                  src="/images/Hero-SEO-Agency-In-The-Philippines.webp" 
+                  alt="Sassin Lowe - Bright Forge SEO Expert Philippines" 
+                  class="w-full h-auto rounded-2xl shadow-2xl"
+                  loading="eager"
+                />
               </div>
-              <h3>Keyword Strategy That Matches Intent</h3>
-              <p>We build keyword strategies around intent, not just search volume. That means finding out what your target audience is actually searching at different stages of their decision-making process.</p>
-              <p>We identify gaps your competitors are missing, organise topics into clusters, and map each opportunity to a real business goal. You don't just show up more, you show up where it matters most.</p>
-              <ul class="service-features">
-                <li>Competitor keyword analysis</li>
-                <li>Long-tail opportunity identification</li>
-                <li>Search intent mapping</li>
-                <li>Strategic content planning</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div id="on-page-seo" class="bf-service-box">
-            <div class="service-box-inner">
-              <div class="service-icon">
-                <i class="fas fa-file-alt"></i>
-              </div>
-              <h3>Clear On-Page SEO That Speaks to Google</h3>
-              <p>We make sure every page on your site is sending the right signals. That includes optimising title tags, meta descriptions, header hierarchy, internal linking, schema markup, and content structure.</p>
-              <p>We also look at how users interact with your content because a page that keeps people engaged is more likely to rank. It's part science, part storytelling, and fully aligned with what Google rewards.</p>
-              <ul class="service-features">
-                <li>Title & meta optimization</li>
-                <li>Content enhancement</li>
-                <li>Internal linking strategy</li>
-                <li>Schema markup implementation</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div id="link-building" class="bf-service-box">
-            <div class="service-box-inner">
-              <div class="service-icon">
-                <i class="fas fa-link"></i>
-              </div>
-              <h3>Link Building That Adds Real Authority</h3>
-              <p>We focus on quality over quantity. Our team secures links from relevant sites in your industry that already have authority in Google's eyes. No spammy directories. No private blog networks.</p>
-              <p>Each link is placed with purpose, supporting your site structure, passing value to key pages, and signalling trust to search engines. It's strategic, long-term link building that stands the test of time.</p>
-              <ul class="service-features">
-                <li>Quality over quantity approach</li>
-                <li>Industry-relevant links</li>
-                <li>Strategic link placement</li>
-                <li>Long-term authority building</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div id="technical-seo" class="bf-service-box">
-            <div class="service-box-inner">
-              <div class="service-icon">
-                <i class="fas fa-code"></i>
-              </div>
-              <h3>Technical SEO That Makes You Easy to Crawl</h3>
-              <p>We go deep on everything under the hood. That means optimising your XML sitemap, robots.txt, crawl budget, Core Web Vitals, canonical tags, redirect logic, and more. We also work closely with developers to make sure nothing gets in Google's way.</p>
-              <p>When your technical foundation is solid, everything else performs better. Rankings improve. Indexation improves. And your SEO becomes future-proof.</p>
-              <ul class="service-features">
-                <li>XML sitemap optimization</li>
-                <li>Core Web Vitals</li>
-                <li>Crawl budget optimization</li>
-                <li>Developer collaboration</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div id="content-seo" class="bf-service-box">
-            <div class="service-box-inner">
-              <div class="service-icon">
-                <i class="fas fa-pen"></i>
-              </div>
-              <h3>Content SEO That Builds Authority and Trust</h3>
-              <p>We create content that earns rankings and builds credibility. From high-converting service pages to supporting blogs, we focus on clarity, structure, and matching search intent.</p>
-              <p>Everything is mapped to a topic cluster and supported by internal links, schema, and performance tracking. This is how we help your content stand out in crowded spaces and drive traffic that actually sticks.</p>
-              <ul class="service-features">
-                <li>High-converting content</li>
-                <li>Topic cluster mapping</li>
-                <li>Internal link support</li>
-                <li>Performance tracking</li>
-              </ul>
             </div>
           </div>
         </div>
@@ -1020,6 +802,96 @@ const breadcrumbs = [
     max-width: 100vw;
   }
   
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 68, 56, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-badge {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .hero-title {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+  
+  .hero-subtitle {
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
+  
+  .hero-cta {
+    animation: fadeInUp 1.2s ease-out 0.6s both;
+  }
+  
+  .hero-trust {
+    animation: fadeInUp 1.4s ease-out 0.8s both;
+  }
+  
+  .hero-image {
+    animation: fadeInRight 1s ease-out 0.4s both;
+  }
+  
+  .image-container {
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+  }
+  
+  /* Floating stats animation */
+  .hero-image .absolute {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .hero-image .absolute:nth-child(2) {
+    animation-delay: -1.5s;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
   /* Container styles */
   .container {
     overflow: visible !important;
@@ -1047,18 +919,6 @@ const breadcrumbs = [
     z-index: 1;
   }
   
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 68, 56, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
   @media (max-width: 1024px) and (min-width: 769px) {
     .hero-container {
       grid-template-columns: 1fr auto 1fr;
@@ -3265,809 +3125,6 @@ const breadcrumbs = [
   }
 
   /* Contact Section */
-  <section class="contact-section">
-    <div class="container max-w-7xl mx-auto">
-      <div class="section-header">
-        <span class="section-label">Contact Bright Forge SEO Agency</span>
-        <h2 class="section-title">Get in <span>touch today</span></h2>
-        <p class="section-subtitle">Success isn't just about being seen; it's about making an impact. At Bright Forge SEO, we combine strategy, innovation, and a results-oriented approach to ensure your business leads in the digital arena. Whether you're just starting or scaling up, we're here to help you achieve digital excellence.</p>
-      </div>
-      
-      <div class="contact-form-wrapper">
-        <div class="contact-form-container">
-          <p class="form-intro">Please fill out the form below, and a member of our team will get back to you as soon as possible.</p>
-          <form class="contact-form" name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
-            <input type="hidden" name="form-name" value="homepage-contact" />
-            <input type="hidden" name="subject" value="New Contact Form Submission from Website" />
-            <input type="hidden" name="notification-email" value="seo@brightforgeseo.com" />
-            <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(+63) 912 345 6789">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="website">Website URL</label>
-              <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
-            </div>
-            
-            <div class="form-group">
-              <label for="services">Services Interested In</label>
-              <select id="services" name="services" required>
-                <option value="">Select a service...</option>
-                <option value="seo-services">SEO Services Philippines</option>
-                <option value="content-seo">Content SEO Services Philippines</option>
-                <option value="white-label">White Label SEO Services Philippines</option>
-                <option value="backlink-seo">Backlink SEO Services In The Philippines</option>
-                <option value="comprehensive">Comprehensive SEO Package</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Tell us about your project</label>
-              <textarea id="message" name="message" rows="4" placeholder="Describe your SEO goals, current challenges, and what you hope to achieve..."></textarea>
-            </div>
-            
-            <button type="submit" class="form-submit-btn">
-              <span>Get Your Free Consultation</span>
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    .hero-section {
-      padding: 80px 0 60px;
-    }
-
-    .hero-container {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      text-align: center;
-    }
-
-    .hero-content {
-      order: 1;
-    }
-
-    .play-button {
-      display: none;
-    }
-
-    .hero-image {
-      order: 2;
-    }
-  }
-  
-  /* Carousel Navigation */
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 10;
-  }
-  
-  .carousel-btn:hover {
-    background: var(--brand-accent);
-    color: white;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 5px 20px rgba(255, 68, 56, 0.3);
-  }
-  
-  .carousel-prev {
-    left: -25px;
-  }
-  
-  .carousel-next {
-    right: -25px;
-  }
-  
-  .carousel-btn i {
-    font-size: 18px;
-  }
-  
-  /* Carousel Dots */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    border: none;
-    border-radius: 50%;
-    background: #ddd;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .dot.active,
-  .dot:hover {
-    background: var(--brand-accent);
-  }
-  
-  /* Review Summary */
-  .review-summary {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 50px;
-    flex-wrap: wrap;
-  }
-  
-  @media (max-width: 640px) {
-    .review-summary {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-  }
-  
-  .review-platform {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .platform-logo {
-    height: 30px;
-  }
-  
-  .platform-rating .stars {
-    margin-bottom: 5px;
-  }
-  
-  .platform-rating p {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin: 0;
-  }
-
-  /* Process Section */
-  .process-section {
-    padding: 80px 0;
-    background: white;
-    overflow-x: hidden;
-  }
-  
-  @media (max-width: 768px) {
-    .process-section {
-      padding: 40px 0;
-    }
-  }
-  
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  @media (max-width: 1024px) {
-    .process-steps {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  .process-steps-wrapper {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  
-  @media (max-width: 768px) {
-    .process-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      grid-template-columns: unset;
-    }
-    
-    .process-image {
-      width: 100%;
-      max-width: 100%;
-      overflow: hidden;
-    }
-    
-    .process-image img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-    
-    .process-step {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      box-sizing: border-box;
-      display: block;
-    }
-    
-    .section-header {
-      margin-bottom: 30px;
-    }
-  }
-  
-  .process-step {
-    position: relative;
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-  }
-  
-  .process-step:hover {
-    transform: translateY(-5px);
-  }
-  
-  .step-number {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--brand-accent);
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-    z-index: 2;
-  }
-  
-  .step-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--brand-accent-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto 20px;
-  }
-  
-  .step-icon i {
-    font-size: 24px;
-    color: var(--brand-accent);
-  }
-  
-  .step-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 15px;
-  }
-  
-  .step-description {
-    font-size: 14px;
-    color: var(--brand-soft);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .step-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .step-list li {
-    font-size: 14px;
-    color: var(--brand-dark);
-    padding: 5px 0;
-    padding-left: 20px;
-    position: relative;
-  }
-  
-  .step-list li::before {
-    content: "\2022";
-    color: var(--brand-accent);
-    position: absolute;
-    left: 0;
-  }
-
-  .process-steps-wrapper {
-    padding-top: 20px;
-    margin-top: 10px;
-  }
-  
-  .process-step {
-    position: relative;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    padding: 35px 20px 25px;
-    margin: 0 auto 20px;
-    width: 100%;
-    max-width: 350px;
-    box-sizing: border-box;
-    text-align: center;
-    overflow: visible;
-  }
-
-  /* Awards Section */
-  .awards-section {
-    padding: 80px 0;
-    background: #f8f9fa;
-  }
-  
-  .awards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-  }
-  
-  .award-item {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-  }
-  
-  .award-item:hover {
-    transform: translateY(-5px);
-  }
-  
-  .award-icon {
-    margin-bottom: 20px;
-  }
-  
-  .award-icon img {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .award-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 10px;
-  }
-  
-  .award-by {
-    font-size: 14px;
-    color: var(--brand-soft);
-  }
-
-  /* Why Choose Us Section */
-  .why-choose-section {
-    padding: 80px 0;
-    background: white;
-  }
-  
-  .why-choose-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-  
-  @media (max-width: 1024px) {
-    .why-choose-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .why-choose-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  .why-choose-item {
-    text-align: center;
-    padding: 30px;
-  }
-  
-  .choose-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--brand-accent-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto 20px;
-  }
-  
-  .choose-icon i {
-    font-size: 30px;
-    color: var(--brand-accent);
-  }
-  
-  .why-choose-item h3 {
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 15px;
-  }
-  
-  .why-choose-item p {
-    font-size: 16px;
-    color: var(--brand-soft);
-    line-height: 1.6;
-  }
-  
-  /* Services Section */
-  .services-section {
-    padding: 80px 0;
-    background: #f8f9fa;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  @media (max-width: 1024px) {
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: 1fr;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto 30px;
-      gap: 20px;
-    }
-    
-    .service-card {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-    
-    .services-section {
-      padding: 40px 0;
-      overflow-x: hidden;
-    }
-  }
-  
-  .service-card {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-    position: relative;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .service-card .service-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--brand-accent-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .service-card .service-icon i {
-    font-size: 24px;
-    color: var(--brand-accent);
-  }
-  
-  .service-card h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 15px;
-  }
-  
-  .service-card p {
-    font-size: 14px;
-    color: var(--brand-soft);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .service-card .service-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px;
-  }
-  
-  .service-card .service-features li {
-    font-size: 14px;
-    color: var(--brand-dark);
-    padding: 8px 0;
-    padding-left: 20px;
-    position: relative;
-  }
-  
-  .service-card .service-features li::before {
-    content: "\2713";
-    color: var(--brand-accent);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-  }
-  
-  .service-button {
-    display: inline-block;
-    background: var(--brand-accent);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s;
-  }
-  
-  .service-button:hover {
-    background: #e63b2e;
-  }
-  
-
-  
-  .services-cta {
-    text-align: center;
-    background: white;
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  }
-  
-  .services-cta h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 15px;
-  }
-  
-  .services-cta p {
-    font-size: 16px;
-    color: var(--brand-soft);
-    margin-bottom: 25px;
-  }
-  
-  .cta-button {
-    display: inline-block;
-    background: var(--brand-accent);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s;
-  }
-  
-  .cta-button:hover {
-    background: #e63b2e;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(255, 68, 56, 0.3);
-  }
-
-  /* Case Studies Section */
-  .case-studies-section {
-    padding: 80px 0;
-    background: white;
-  }
-  
-  .case-studies-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-  
-  @media (max-width: 1024px) {
-    .case-studies-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .case-studies-container {
-      grid-template-columns: 1fr;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto 30px;
-      gap: 20px;
-    }
-    
-    .case-study-card {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-    
-    .case-studies-section {
-      padding: 40px 0;
-      overflow-x: hidden;
-    }
-  }
-  
-  .case-study-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-  }
-  
-  .case-study-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .case-study-image {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .case-study-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s;
-  }
-  
-  .case-study-card:hover .case-study-image img {
-    transform: scale(1.05);
-  }
-  
-  .case-study-category {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: var(--brand-accent);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  
-  .case-study-content {
-    padding: 25px;
-  }
-  
-  .case-study-content h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-  
-  .case-study-results {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .result-item {
-    text-align: center;
-  }
-  
-  .result-value {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--brand-accent);
-    margin-bottom: 5px;
-  }
-  
-  .result-label {
-    font-size: 12px;
-    color: var(--brand-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  .case-study-link {
-    color: var(--brand-accent);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s;
-  }
-  
-  .case-study-link:hover {
-    color: #e63b2e;
-  }
-  
-  .case-study-link i {
-    transition: transform 0.3s;
-  }
-  
-  .case-study-link:hover i {
-    transform: translateX(5px);
-  }
-  
-  .case-studies-footer {
-    text-align: center;
-  }
-  
-  .view-all-button {
-    display: inline-block;
-    background: var(--brand-accent);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s;
-  }
-  
-  .view-all-button:hover {
-    background: #e63b2e;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(255, 68, 56, 0.3);
-  }
-
-  /* Contact Section */
   .contact-section {
     padding: 80px 0;
     background: white;
@@ -4365,11 +3422,6 @@ const breadcrumbs = [
     .contact-section {
       padding: 40px 0 !important;
       overflow-x: hidden !important;
-    }
-    
-    .contact-container {
-      flex-direction: column !important;
-      gap: 30px !important;
     }
     
     .contact-info {
@@ -4852,7 +3904,7 @@ const breadcrumbs = [
     
     const closeButton = document.createElement('button');
     closeButton.className = 'absolute top-4 right-4 text-gray-500 hover:text-gray-700';
-    closeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+    closeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
     closeButton.onclick = () => modalOverlay.style.display = 'none';
     modalContent.appendChild(closeButton);
     
@@ -5000,9 +4052,7 @@ const breadcrumbs = [
           const item = document.createElement('li');
           item.className = 'p-3 bg-red-50 border border-red-100 rounded-md flex items-start';
           item.innerHTML = `
-            <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+            <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <span>${issue}</span>
           `;
           issuesList.appendChild(item);
@@ -5068,7 +4118,7 @@ const breadcrumbs = [
       const item = document.createElement('div');
       item.className = 'flex justify-between items-center';
       item.innerHTML = `
-        <span class="font-medium">${label}:</span>
+        <span>${label}:</span>
         <span class="flex items-center">
           ${value}
           ${isGood ? 
