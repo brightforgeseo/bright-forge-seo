@@ -47,19 +47,46 @@ const breadcrumbs = [
             Bright Forge SEO helps businesses thrive online with focused strategies.
           </p>
           
-          <div class="hero-audit-form mb-8">
-            <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="audit-form bg-white p-4 rounded-lg shadow-md">
-              <input type="hidden" name="form-name" value="homepage-audit" />
-              <input type="hidden" name="subject" value="New SEO Audit Request from Website" />
-              <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
-              <div class="form-group mb-4">
-                <input type="url" id="website-url" name="website" placeholder="Enter website URL (e.g. https://example.com)" required class="w-full p-3 border border-gray-300 rounded-md">
-              </div>
-              <button type="submit" class="audit-btn bg-[#FF4438] hover:bg-[#e53e30] text-white font-bold py-3 px-6 rounded-md w-full transition duration-300">
-                Get Your Free SEO Audit
-              </button>
-              <p id="audit-message" class="text-center mt-2 text-sm text-gray-700"></p>
-            </form>
+          <div class="hero-audit-form mb-8 max-w-2xl">
+            <div class="audit-form-container bg-gradient-to-r from-[#FF6B35] to-[#FF4438] p-0.5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <form name="homepage-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="bg-white p-6 rounded-xl">
+                <input type="hidden" name="form-name" value="homepage-audit" />
+                <input type="hidden" name="subject" value="New SEO Audit Request from Website" />
+                <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Get Your Free SEO Audit</h3>
+                <p class="text-gray-600 mb-6">Enter your website URL to receive a comprehensive SEO analysis</p>
+                
+                <div class="form-group mb-5 relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fas fa-globe text-gray-400"></i>
+                  </div>
+                  <input 
+                    type="url" 
+                    id="website-url" 
+                    name="website" 
+                    required 
+                    class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4285F4] focus:border-transparent transition-all duration-200"
+                    placeholder="https://yourwebsite.com"
+                  >
+                </div>
+                
+                <button 
+                  type="submit" 
+                  class="audit-btn w-full bg-gradient-to-r from-[#FF6B35] to-[#FF4438] hover:from-[#FF5A2F] hover:to-[#E53E30] text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                >
+                  <i class="fas fa-chart-line"></i>
+                  Analyze My Site
+                </button>
+                
+                <p id="audit-message" class="text-center mt-4 text-sm text-gray-600">No credit card required · 100% confidential</p>
+                
+                <div class="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500">
+                  <i class="fas fa-lock"></i>
+                  <span>Your data is secure and private</span>
+                </div>
+              </form>
+            </div>
           </div>
           
           <!-- Stats -->
