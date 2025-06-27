@@ -139,7 +139,7 @@ import ContactSection from '../components/ContactSection.astro';
           </div>
           <div class="step-content-modern">
             <div class="step-icon">🔍</div>
-            <h3>Technical Audit</h3>
+            <h3><a href="/seo-audit-services">Technical Audit</a></h3>
             <p>We perform a comprehensive technical analysis of your website using advanced tools to identify all issues affecting your search performance.</p>
             <div class="step-details">
               <div class="detail-item">✓ Crawl Analysis</div>
@@ -766,6 +766,42 @@ import ContactSection from '../components/ContactSection.astro';
   margin-bottom: 30px;
   color: #1a1a1a;
   line-height: 1.2;
+}
+
+.step-content-modern h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-heading);
+}
+
+.step-content-modern h3 a {
+  color: var(--text-heading);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.step-content-modern h3 a:hover {
+  color: var(--brand-accent);
+}
+
+.step-content-modern h3 a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--brand-accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+
+.step-content-modern h3 a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .hero-story {

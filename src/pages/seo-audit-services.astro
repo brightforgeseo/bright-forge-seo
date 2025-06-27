@@ -279,7 +279,7 @@ import ContactSection from '../components/ContactSection.astro';
         <div class="step-card reverse">
           <div class="step-number">2</div>
           <div class="step-content">
-          <h3>Technical Diagnostics</h3>
+          <h3><a href="/technical-seo-services-philippines">Technical Diagnostics</a></h3>
           <p>Identify speed bottlenecks, security issues, and mobile UX flaws.</p>
             <div class="step-details">
               <div class="detail-item">⚡ Speed Testing</div>
@@ -295,7 +295,7 @@ import ContactSection from '../components/ContactSection.astro';
         <div class="step-card">
           <div class="step-number">3</div>
           <div class="step-content">
-          <h3>On-Page & Content Review</h3>
+          <h3><a href="/on-page-seo-services-philippines">On-Page & Content Review</a></h3>
           <p>Assess keyword usage, structure, and content depth for every key page.</p>
             <div class="step-details">
               <div class="detail-item">📝 Content Audit</div>
@@ -311,7 +311,7 @@ import ContactSection from '../components/ContactSection.astro';
         <div class="step-card reverse">
           <div class="step-number">4</div>
           <div class="step-content">
-          <h3>Backlink & Competitor Benchmark</h3>
+          <h3><a href="/backlink-seo-services-philippines">Backlink & Competitor Benchmark</a></h3>
           <p>Compare your link profile and authority against top competitors.</p>
             <div class="step-details">
               <div class="detail-item">🔗 Link Profile Analysis</div>
@@ -1156,10 +1156,39 @@ section {
 }
 
 .step-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--brand-dark);
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.step-content h3 a {
+  color: var(--color-heading);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.step-content h3 a:hover {
+  color: var(--brand-accent);
+}
+
+.step-content h3 a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--brand-accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+
+.step-content h3 a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .step-content p {

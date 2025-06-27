@@ -123,7 +123,7 @@ import ContactSection from '../components/ContactSection.astro';
         <div class="step-card">
           <div class="step-number">2</div>
           <div class="step-content">
-            <h3>Keyword Research & Gap Analysis</h3>
+            <h3><a href="/keyword-research-services">Keyword Research & Gap Analysis</a></h3>
             <p>Using our expertise in Content SEO Services Philippines, we map out the specific search terms that can connect you to your audience. We also check out what your competitors are doing and spot opportunities you may have missed.</p>
             <div class="key-activities">
               <h4>Key Activities</h4>
@@ -144,7 +144,7 @@ import ContactSection from '../components/ContactSection.astro';
             <div class="key-activities">
               <h4>Key Activities</h4>
               <ul>
-                <li>On-page SEO (titles, meta descriptions, headers)</li>
+                <li><a href="/on-page-seo-services-philippines">On-page SEO</a> (titles, meta descriptions, headers)</li>
                 <li>Improving user experience and readability</li>
                 <li>Aligning content layout with search intent</li>
               </ul>
@@ -629,6 +629,32 @@ import ContactSection from '../components/ContactSection.astro';
   color: #555;
   line-height: 1.6;
   margin-bottom: 8px;
+}
+
+.key-activities ul li a {
+  color: #FF4438;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.key-activities ul li a:hover {
+  color: #4285F4;
+}
+
+.key-activities ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #FF4438, #4285F4);
+  transition: width 0.3s ease;
+}
+
+.key-activities ul li a:hover::after {
+  width: 100%;
 }
 
 /* Toolkit Section */

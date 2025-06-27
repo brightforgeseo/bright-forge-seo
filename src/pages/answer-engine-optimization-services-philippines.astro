@@ -141,7 +141,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="step-card">
             <div class="step-number">3</div>
             <div class="step-content">
-              <h3>Content Optimization for Answers</h3>
+              <h3><a href="/content-seo-services-philippines">Content Optimization for Answers</a></h3>
               <p>We re-engineer your existing content and create new, targeted pieces designed to be easily digestible by both users and answer engines. This includes creating robust FAQ sections, utilizing a clear question-and-answer format, and adopting a concise, conversational tone.</p>
             </div>
           </div>
@@ -149,7 +149,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="step-card">
             <div class="step-number">4</div>
             <div class="step-content">
-              <h3>Technical SEO & Schema Markup</h3>
+              <h3><a href="/technical-seo-services-philippines">Technical SEO & Schema Markup</a></h3>
               <p>This is the technical backbone of AEO. We implement advanced structured data (Schema.org markup), including FAQPage, HowTo, and Speakable schema. This code translates your content into a language that search engines can easily understand and feature.</p>
             </div>
           </div>
@@ -612,6 +612,32 @@ import ContactSection from '../components/ContactSection.astro';
 .step-content p {
   color: #666;
   line-height: 1.6;
+}
+
+.step-content h3 a {
+  color: #FF4438;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.step-content h3 a:hover {
+  color: #4285F4;
+}
+
+.step-content h3 a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #FF4438, #4285F4);
+  transition: width 0.3s ease;
+}
+
+.step-content h3 a:hover::after {
+  width: 100%;
 }
 
 /* Benefits Section Styles */

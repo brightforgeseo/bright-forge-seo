@@ -62,7 +62,7 @@ import ContactSection from '../components/ContactSection.astro';
             <i class="fas fa-award"></i>
           </div>
           <h3>Experience You Can Trust</h3>
-          <p>With years of experience in the SEO industry, we have a proven track record of improving search engine rankings for businesses across various sectors. We're a trusted SEO agency in the Philippines that takes a hands-on approach to building your online authority.</p>
+          <p>With years of experience in the SEO industry, we have a proven track record of improving search engine rankings for businesses across various sectors. We're a trusted <a href="/">SEO agency</a> in the Philippines that takes a hands-on approach to building your online authority.</p>
         </div>
         
         <div class="feature-card">
@@ -130,7 +130,7 @@ import ContactSection from '../components/ContactSection.astro';
         
         <div class="process-step">
           <div class="step-number">4</div>
-          <h3>Content Creation for Link Earning</h3>
+          <h3><a href="/content-seo-services-philippines">Content Creation for Link Earning</a></h3>
           <p>Quality content is the foundation of any successful link-building strategy. We create shareable, engaging content that naturally attracts backlinks. Whether it's a blog post, an infographic, or a resource guide, we ensure your content is link-worthy.</p>
         </div>
         
@@ -456,6 +456,33 @@ import ContactSection from '../components/ContactSection.astro';
     line-height: 1.6;
   }
   
+  /* Internal Link Styling */
+  .feature-card a {
+    color: #FF4438;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .feature-card a:hover {
+    color: #4285F4;
+  }
+
+  .feature-card a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #FF4438, #4285F4);
+    transition: width 0.3s ease;
+  }
+
+  .feature-card a:hover::after {
+    width: 100%;
+  }
+  
   /* Process Section */
   .backlink-process {
     padding: 100px 0;
@@ -505,6 +532,35 @@ import ContactSection from '../components/ContactSection.astro';
     font-weight: 600;
     color: var(--brand-dark);
     margin: 20px 0 15px;
+  }
+  
+  .process-step h3 a {
+    color: var(--brand-dark);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  
+  .process-step h3 a:hover {
+    color: var(--brand-accent);
+  }
+  
+  .process-step h3 a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--brand-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+  
+  .process-step h3 a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
   
   .process-step p {

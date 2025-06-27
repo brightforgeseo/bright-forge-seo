@@ -82,7 +82,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
             <i class="fas fa-search text-white text-2xl"></i>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">SEO Audits & Analysis</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4"><a href="/seo-audit-services">SEO Audits & Analysis</a></h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-center">
               <i class="fas fa-check text-green-500 mr-3"></i>
@@ -150,7 +150,7 @@ import ContactSection from '../components/ContactSection.astro';
             </li>
             <li class="flex items-center">
               <i class="fas fa-check text-green-500 mr-3"></i>
-              High-quality backlink acquisition
+              <a href="/backlink-seo-services-philippines">High-quality backlink acquisition</a>
             </li>
             <li class="flex items-center">
               <i class="fas fa-check text-green-500 mr-3"></i>
@@ -457,6 +457,33 @@ import ContactSection from '../components/ContactSection.astro';
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+
+  /* Internal Link Styling */
+  .bg-white ul li a {
+    color: #FF4438;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .bg-white ul li a:hover {
+    color: #4285F4;
+  }
+
+  .bg-white ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #FF4438, #4285F4);
+    transition: width 0.3s ease;
+  }
+
+  .bg-white ul li a:hover::after {
+    width: 100%;
   }
 </style>
 

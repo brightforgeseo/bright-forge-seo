@@ -19,8 +19,8 @@ import ContactSection from '../components/ContactSection.astro';
       </nav>
       
       <div class="hero-content">
-        <h1>Bright Forge SEO Agency: Propel Your Philippine Business To The Top Of Google</h1>
-        <p>Struggling to get seen online? At Bright Forge SEO Agency, we focus on what really matters, helping businesses in the Philippines and around the world stand out, gain real sales, and build lasting brand trust. Forget empty metrics; we'll create a solid online presence that keeps you ahead of the crowd. Let's put your brand in the spotlight where it belongs.</p>
+        <h1>Bright Forge <a href="/">SEO Agency</a>: Propel Your Philippine Business To The Top Of Google</h1>
+        <p>Struggling to get seen online? At Bright Forge <a href="/">SEO Agency</a>, we focus on what really matters, helping businesses in the Philippines and around the world stand out, gain real sales, and build lasting brand trust. Forget empty metrics; we'll create a solid online presence that keeps you ahead of the crowd. Let's put your brand in the spotlight where it belongs.</p>
         <a href="/contact" class="cta-button">Get Started Today</a>
       </div>
     </div>
@@ -155,7 +155,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="service-icon">
             <i class="fas fa-search"></i>
           </div>
-          <h3>Comprehensive SEO Audit</h3>
+          <h3><a href="/seo-audit-services">Comprehensive SEO Audit</a></h3>
           <p>Before we can craft a winning roadmap, we need to understand where you stand. Our in-depth SEO audit covers:</p>
           <ul>
             <li><strong>Technical Health Check:</strong> We identify crawl errors, site speed issues, broken links, and anything else that may hinder your website's performance.</li>
@@ -171,7 +171,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="service-icon">
             <i class="fas fa-key"></i>
           </div>
-          <h3>Targeted Keyword Research & Strategy</h3>
+          <h3><a href="/keyword-research-services">Targeted Keyword Research & Strategy</a></h3>
           <p>Proper keyword selection is essential to attracting the right visitors. We use advanced tools and local insights to find key terms that:</p>
           <ul>
             <li>Have strong search intent relevant to your brand.</li>
@@ -187,7 +187,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="service-icon">
             <i class="fas fa-edit"></i>
           </div>
-          <h3>On-Page & Content Optimization</h3>
+          <h3><a href="/on-page-seo-services-philippines">On-Page & Content Optimization</a></h3>
           <p>We refine every element on your site—headings, meta tags, URLs, and content—to resonate with both search engines and users. Our process includes:</p>
           <ul>
             <li><strong>SEO Copywriting:</strong> Crafting compelling copy that resonates with Philippine audiences while meeting Google's E-E-A-T guidelines.</li>
@@ -203,7 +203,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="service-icon">
             <i class="fas fa-link"></i>
           </div>
-          <h3>High-Authority Link Building</h3>
+          <h3><a href="/backlink-seo-services-philippines">High-Authority Link Building</a></h3>
           <p>Building a credible link profile is still a cornerstone of SEO success. We focus on quality rather than quantity:</p>
           <ul>
             <li><strong>Editorial Outreach:</strong> Partnering with reputable industry websites and news portals for guest posts and editorial mentions.</li>
@@ -219,7 +219,7 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="service-icon">
             <i class="fas fa-cogs"></i>
           </div>
-          <h3>Technical SEO & Site Architecture</h3>
+          <h3><a href="/technical-seo-services-philippines">Technical SEO & Site Architecture</a></h3>
           <p>Slow load times and structural issues can silently kill your rankings. We diagnose and fix critical technical factors:</p>
           <ul>
             <li><strong>Site Speed Optimization:</strong> Improving server response times and optimizing images, CSS, and JS for faster loading.</li>
@@ -422,6 +422,37 @@ import ContactSection from '../components/ContactSection.astro';
   .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 35px rgba(255, 68, 56, 0.4);
+  }
+
+  /* Internal Link Styling for Hero */
+  .hero-content h1 a,
+  .hero-content p a {
+    color: #FFFFFF;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .hero-content h1 a:hover,
+  .hero-content p a:hover {
+    color: #FFE4E1;
+  }
+
+  .hero-content h1 a::after,
+  .hero-content p a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #FFFFFF, #FFE4E1);
+    transition: width 0.3s ease;
+  }
+
+  .hero-content h1 a:hover::after,
+  .hero-content p a:hover::after {
+    width: 100%;
   }
 
   /* Section Headers */
@@ -668,10 +699,39 @@ import ContactSection from '../components/ContactSection.astro';
   }
 
   .service-card h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--brand-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
+    color: var(--brand-primary);
+  }
+  
+  .service-card h3 a {
+    color: var(--brand-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  
+  .service-card h3 a:hover {
+    color: var(--brand-accent);
+  }
+  
+  .service-card h3 a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--brand-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+  
+  .service-card h3 a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
   .service-card p {
