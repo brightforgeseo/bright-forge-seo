@@ -10,21 +10,21 @@ import ContactSection from '../components/ContactSection.astro';
   
   <!-- Hero Section -->
   <section class="hero-backlink">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h1>Boost Your Online Presence with Expert <span>Backlink SEO Services</span> in the Philippines</h1>
-      <p>When it comes to SEO, backlinks are more than just a nice-to-have—they're a cornerstone of successful search engine optimisation. At Bright Forge SEO, we understand how powerful backlinks can be in propelling your website to the top of Google's search results.</p>
-      <a href="/contact/" class="cta-button">Get Your Free Backlink Audit</a>
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <span class="current">Backlink SEO Services Philippines</span>
+      </nav>
+      
+      <div class="hero-content">
+        <h1>Boost Your Online Presence with Expert <span>Backlink SEO Services</span> in the Philippines</h1>
+        <p>When it comes to SEO, backlinks are more than just a nice-to-have—they're a cornerstone of successful search engine optimisation. At Bright Forge SEO, we understand how powerful backlinks can be in propelling your website to the top of Google's search results.</p>
+        <a href="/contact/" class="cta-button">Get Your Free Backlink Audit</a>
+      </div>
     </div>
   </section>
-
-  <!-- Breadcrumbs -->
-  <div class="breadcrumbs">
-    <div class="max-w-7xl mx-auto px-4">
-      <a href="/">Home</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Backlink SEO Services In The Philippines</span>
-    </div>
-  </div>
 
   <!-- Why Backlinks Matter Section -->
   <section class="backlink-importance">
@@ -207,17 +207,66 @@ import ContactSection from '../components/ContactSection.astro';
   /* Hero Section */
   .hero-backlink {
     background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
-    padding: 120px 0 80px;
-    text-align: center;
-    color: white;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
     position: relative;
+    overflow: hidden;
+  }
+
+  .hero-backlink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .hero-backlink .max-w-7xl {
+    position: relative;
+    z-index: 2;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 14px;
+  }
+
+  .breadcrumbs a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .breadcrumbs a:hover {
+    color: white;
+  }
+
+  .breadcrumbs .separator {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 10px;
+  }
+
+  .breadcrumbs .current {
+    color: white;
+    font-weight: 500;
+  }
+
+  .hero-content {
+    text-align: center;
   }
   
   .hero-backlink h1 {
-    font-size: 48px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    margin-bottom: 30px;
-    line-height: 1.2;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -228,16 +277,16 @@ import ContactSection from '../components/ContactSection.astro';
   }
   
   .hero-backlink p {
-    font-size: 20px;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
     max-width: 800px;
-    margin: 0 auto 40px;
-    opacity: 0.95;
+    margin: 0 auto 2.5rem;
     line-height: 1.6;
   }
-  
+
   .cta-button {
     background: white;
-    color: var(--brand-accent);
+    color: #FF4438;
     padding: 15px 35px;
     border-radius: 30px;
     text-decoration: none;
@@ -247,41 +296,13 @@ import ContactSection from '../components/ContactSection.astro';
     display: inline-block;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   }
-  
+
   .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    color: var(--brand-accent);
+    background: #f8f9fa;
   }
-  
-  /* Breadcrumbs */
-  .breadcrumbs {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 15px 0;
-    font-size: 14px;
-  }
-  
-  .breadcrumbs a {
-    color: var(--brand-soft);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .breadcrumbs a:hover {
-    color: var(--brand-accent);
-  }
-  
-  .breadcrumbs i {
-    margin: 0 10px;
-    color: var(--brand-soft);
-    font-size: 12px;
-  }
-  
-  .breadcrumbs span {
-    color: var(--brand-accent);
-    font-weight: 500;
-  }
-  
+
   /* Section Headers */
   .section-header {
     text-align: center;
