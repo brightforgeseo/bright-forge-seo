@@ -6,6 +6,7 @@
   NODE_VERSION = "18"
 
 # Build processing and optimization
+# Content-Security-Policy header added for security
 [build.processing]
   skip_processing = false
 
