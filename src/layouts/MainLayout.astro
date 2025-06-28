@@ -240,6 +240,37 @@ const finalCanonical = canonical;
     <!-- Load FontAwesome with multiple fallbacks -->
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
     
+    <!-- FontAwesome CSS fix to override global font-family rules -->
+    <style>
+      /* Ensure FontAwesome icons use the correct font-family */
+      .fas, .far, .fab, .fal, .fad, .fa {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 6 Brands" !important;
+        font-weight: 900 !important;
+        font-style: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        line-height: 1 !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      .fab {
+        font-family: "Font Awesome 6 Brands" !important;
+        font-weight: 400 !important;
+      }
+      
+      .far {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 400 !important;
+      }
+      
+      /* Ensure pseudo-elements maintain FontAwesome font */
+      .fas::before, .far::before, .fab::before, .fal::before, .fad::before, .fa::before {
+        font-family: inherit !important;
+        font-weight: inherit !important;
+      }
+    </style>
+    
     <!-- FontAwesome fallback script -->
     <script>
       // Check if FontAwesome loaded, if not try fallback
