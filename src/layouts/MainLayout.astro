@@ -233,9 +233,8 @@ const finalCanonical = canonical;
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Load FontAwesome asynchronously -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"></noscript>
+    <!-- Load FontAwesome directly to ensure icons work properly -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     
     <!-- Preload hero image -->
     <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp">
@@ -281,8 +280,22 @@ const finalCanonical = canonical;
     <script defer>
       // Performance optimization: Load analytics and other non-critical scripts
       window.addEventListener('load', function() {
-        // Add any analytics or tracking code here
-        console.log('Page fully loaded - ready for analytics');
+        // SimpleAnalytics script
+        let sa = document.createElement('script');
+        sa.async = true;
+        sa.src = 'https://scripts.simpleanalyticscdn.com/latest.js';
+        document.head.appendChild(sa);
+        
+        // No-JS fallback for SimpleAnalytics
+        let noscript = document.createElement('noscript');
+        let img = document.createElement('img');
+        img.src = 'https://queue.simpleanalyticscdn.com/noscript.gif';
+        img.alt = '';
+        img.referrerPolicy = 'no-referrer-when-downgrade';
+        noscript.appendChild(img);
+        document.body.appendChild(noscript);
+        
+        console.log('Page fully loaded - analytics loaded');
       });
       
       // Optimize images with lazy loading
