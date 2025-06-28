@@ -3155,12 +3155,19 @@ const breadcrumbs = [
   .form-row {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 640px) {
+    .form-row {
+      flex-direction: column;
+    }
   }
   
   .form-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex: 1;
   }
   
   .form-group label {
@@ -3184,8 +3191,8 @@ const breadcrumbs = [
   
   .form-group input::placeholder,
   .form-group textarea::placeholder {
-    color: #a0a6b1;
-    font-style: italic;
+    color: #9ca3af;
+    font-style: normal;
   }
   
   .form-group select {
