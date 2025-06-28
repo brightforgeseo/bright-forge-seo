@@ -8,21 +8,22 @@
 # Build processing and optimization
 # Content-Security-Policy header added for security
 [build.processing]
-  skip_processing = false
+  skip_processing = true
 
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = true
-  minify = true
-
-[build.processing.html]
-  pretty_urls = true
-
-[build.processing.images]
-  compress = true
+# Disabled individual asset processing overrides since skip_processing=true disables them
+# [build.processing.css]
+#   bundle = true
+#   minify = true
+# 
+# [build.processing.js]
+#   bundle = true
+#   minify = true
+# 
+# [build.processing.html]
+#   pretty_urls = true
+# 
+# [build.processing.images]
+#   compress = true
 
 # Asset optimization
 [[plugins]]
@@ -39,6 +40,8 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Allow FontAwesome CDN for styles and fonts
+    Content-Security-Policy = "default-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src * data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;"
     
     # SEO and crawling
     Access-Control-Allow-Origin = "*"
