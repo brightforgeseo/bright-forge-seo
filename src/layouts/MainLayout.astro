@@ -233,8 +233,41 @@ const finalCanonical = canonical;
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Load FontAwesome directly to ensure icons work properly -->
-    <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Preconnect to FontAwesome CDNs for faster loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Load FontAwesome with multiple fallbacks -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- FontAwesome fallback script -->
+    <script>
+      // Check if FontAwesome loaded, if not try fallback
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var testIcon = document.createElement('i');
+          testIcon.className = 'fas fa-home';
+          testIcon.style.position = 'absolute';
+          testIcon.style.left = '-9999px';
+          document.body.appendChild(testIcon);
+          
+          var computedStyle = window.getComputedStyle(testIcon, ':before');
+          var content = computedStyle.getPropertyValue('content');
+          
+          // If FontAwesome didn't load (content will be 'none' or empty)
+          if (!content || content === 'none' || content === '""') {
+            console.log('FontAwesome failed to load, trying fallback...');
+            var fallbackLink = document.createElement('link');
+            fallbackLink.rel = 'stylesheet';
+            fallbackLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css';
+            fallbackLink.crossOrigin = 'anonymous';
+            document.head.appendChild(fallbackLink);
+          }
+          
+          document.body.removeChild(testIcon);
+        }, 1000);
+      });
+    </script>
     
     <!-- Preload hero image -->
     <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp">
