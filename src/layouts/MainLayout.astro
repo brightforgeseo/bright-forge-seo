@@ -233,72 +233,28 @@ const finalCanonical = canonical;
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Preconnect to FontAwesome CDNs for faster loading -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <!-- FontAwesome - Simple and reliable loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Load FontAwesome with multiple fallbacks -->
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
-    
-    <!-- FontAwesome CSS fix to override global font-family rules -->
+    <!-- FontAwesome CSS fix -->
     <style>
-      /* Ensure FontAwesome icons use the correct font-family */
-      .fas, .far, .fab, .fal, .fad, .fa {
-        font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 6 Brands" !important;
-        font-weight: 900 !important;
+      /* Force FontAwesome to work properly */
+      [class^="fa-"], [class*=" fa-"], .fas, .far, .fab, .fal, .fad {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 6 Brands", "FontAwesome" !important;
         font-style: normal !important;
         font-variant: normal !important;
-        text-transform: none !important;
-        line-height: 1 !important;
+        text-rendering: auto !important;
         -webkit-font-smoothing: antialiased !important;
         -moz-osx-font-smoothing: grayscale !important;
       }
       
-      .fab {
-        font-family: "Font Awesome 6 Brands" !important;
+      .fas { font-weight: 900 !important; }
+      .far { font-weight: 400 !important; }
+      .fab { 
+        font-family: "Font Awesome 6 Brands", "FontAwesome" !important;
         font-weight: 400 !important;
-      }
-      
-      .far {
-        font-family: "Font Awesome 6 Free" !important;
-        font-weight: 400 !important;
-      }
-      
-      /* Ensure pseudo-elements maintain FontAwesome font */
-      .fas::before, .far::before, .fab::before, .fal::before, .fad::before, .fa::before {
-        font-family: inherit !important;
-        font-weight: inherit !important;
       }
     </style>
-    
-    <!-- FontAwesome fallback script -->
-    <script>
-      // Check if FontAwesome loaded, if not try fallback
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          var testIcon = document.createElement('i');
-          testIcon.className = 'fas fa-home';
-          testIcon.style.position = 'absolute';
-          testIcon.style.left = '-9999px';
-          document.body.appendChild(testIcon);
-          
-          var computedStyle = window.getComputedStyle(testIcon, ':before');
-          var content = computedStyle.getPropertyValue('content');
-          
-          // If FontAwesome didn't load (content will be 'none' or empty)
-          if (!content || content === 'none' || content === '""') {
-            console.log('FontAwesome failed to load, trying fallback...');
-            var fallbackLink = document.createElement('link');
-            fallbackLink.rel = 'stylesheet';
-            fallbackLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css';
-            fallbackLink.crossOrigin = 'anonymous';
-            document.head.appendChild(fallbackLink);
-          }
-          
-          document.body.removeChild(testIcon);
-        }, 1000);
-      });
-    </script>
     
     <!-- Preload hero image -->
     <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp">
