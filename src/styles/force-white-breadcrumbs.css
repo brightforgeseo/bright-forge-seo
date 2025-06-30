@@ -1,0 +1,35 @@
+/* FORCE WHITE BREADCRUMBS - HIGH PRIORITY OVERRIDE */
+
+/* Target all breadcrumb containers */
+[data-breadcrumb-container],
+div[style*="breadcrumb"],
+.breadcrumbs,
+.breadcrumb-container,
+section.hero-content div:first-child > div:first-child,
+section.hero-seo div:first-child > div:first-child,
+section.hero-backlink div:first-child > div:first-child,
+section > div > div[style*="display: flex"][style*="align-items: center"] {
+  color: white !important;
+}
+
+/* Target all breadcrumb links and elements */
+[data-breadcrumb-link],
+[data-breadcrumb-separator],
+[data-breadcrumb-current],
+div[style*="breadcrumb"] a,
+div[style*="breadcrumb"] span,
+.breadcrumbs a,
+.breadcrumbs span,
+.breadcrumb-container a,
+.breadcrumb-container span,
+section.hero-content div:first-child > div:first-child a,
+section.hero-content div:first-child > div:first-child span,
+section.hero-seo div:first-child > div:first-child a,
+section.hero-seo div:first-child > div:first-child span,
+section.hero-backlink div:first-child > div:first-child a,
+section.hero-backlink div:first-child > div:first-child span {
+  color: white !important;
+  color: #ffffff !important;
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none !important;
+}
