@@ -58,36 +58,13 @@ import ContactSection from '../components/ContactSection.astro';
 
       <!-- Modern Filter Buttons -->
       <div class="filter-container">
-        <div class="filter-wrapper">
-          <button onclick="filterCaseStudies('all')" class="filter-btn active" data-category="all">
-            <span class="filter-icon">🎯</span>
-            <span>All Industries</span>
-          </button>
-          <button onclick="filterCaseStudies('automotive')" class="filter-btn" data-category="automotive">
-            <span class="filter-icon">🚗</span>
-            <span>Automotive</span>
-          </button>
-          <button onclick="filterCaseStudies('beauty')" class="filter-btn" data-category="beauty">
-            <span class="filter-icon">💄</span>
-            <span>Beauty & Wellness</span>
-          </button>
-          <button onclick="filterCaseStudies('consulting')" class="filter-btn" data-category="consulting">
-            <span class="filter-icon">💼</span>
-            <span>Consulting</span>
-          </button>
-          <button onclick="filterCaseStudies('fitness')" class="filter-btn" data-category="fitness">
-            <span class="filter-icon">💪</span>
-            <span>Fitness</span>
-          </button>
-          <button onclick="filterCaseStudies('ecommerce')" class="filter-btn" data-category="ecommerce">
-            <span class="filter-icon">🛒</span>
-            <span>E-commerce</span>
-          </button>
-          <button onclick="filterCaseStudies('local')" class="filter-btn" data-category="local">
-            <span class="filter-icon">📍</span>
-            <span>Local Business</span>
-          </button>
-        </div>
+        <button class="modern-filter-btn" data-filter="all">All Industries</button>
+        <button class="modern-filter-btn" data-filter="beauty">Beauty & Wellness</button>
+        <button class="modern-filter-btn" data-filter="consulting">Business Consulting</button>
+        <button class="modern-filter-btn" data-filter="fitness">Fitness</button>
+        <button class="modern-filter-btn" data-filter="automotive">Automotive</button>
+        <button class="modern-filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="modern-filter-btn" data-filter="local">Local Services</button>
       </div>
 
       <!-- Modern Case Studies Grid -->
@@ -100,7 +77,6 @@ import ContactSection from '../components/ContactSection.astro';
               <span class="view-case-btn">View Full Case Study →</span>
             </div>
             <div class="industry-badge beauty-badge">
-              <span class="badge-icon">💄</span>
               <span>Beauty & Wellness</span>
             </div>
           </div>
@@ -182,8 +158,7 @@ import ContactSection from '../components/ContactSection.astro';
               <span class="view-case-btn">View Full Case Study →</span>
             </div>
             <div class="industry-badge consulting-badge">
-              <span class="badge-icon">💼</span>
-              <span>Consulting</span>
+              <span>Business Consulting</span>
             </div>
           </div>
           <div class="card-content">
@@ -223,7 +198,6 @@ import ContactSection from '../components/ContactSection.astro';
               <span class="view-case-btn">View Full Case Study →</span>
             </div>
             <div class="industry-badge fitness-badge">
-              <span class="badge-icon">💪</span>
               <span>Fitness</span>
             </div>
           </div>
@@ -264,7 +238,6 @@ import ContactSection from '../components/ContactSection.astro';
               <span class="view-case-btn">View Full Case Study →</span>
             </div>
             <div class="industry-badge fitness-badge">
-              <span class="badge-icon">💪</span>
               <span>Fitness</span>
             </div>
           </div>
@@ -305,7 +278,6 @@ import ContactSection from '../components/ContactSection.astro';
               <span class="view-case-btn">View Full Case Study →</span>
             </div>
             <div class="industry-badge fitness-badge">
-              <span class="badge-icon">💪</span>
               <span>Fitness</span>
             </div>
           </div>
@@ -387,7 +359,6 @@ import ContactSection from '../components/ContactSection.astro';
               <span class="view-case-btn">View Full Case Study →</span>
             </div>
             <div class="industry-badge ecommerce-badge">
-              <span class="badge-icon">🛒</span>
               <span>E-commerce</span>
             </div>
           </div>
@@ -428,7 +399,6 @@ import ContactSection from '../components/ContactSection.astro';
               <span class="view-case-btn">View Full Case Study →</span>
             </div>
             <div class="industry-badge local-badge">
-              <span class="badge-icon">🏠</span>
               <span>Local Services</span>
             </div>
           </div>
@@ -502,7 +472,7 @@ import ContactSection from '../components/ContactSection.astro';
 <style>
   /* Modern Hero Section */
   .modern-hero {
-    background: linear-gradient(135deg, #FF4438 0%, #1E2022 100%);
+    background: linear-gradient(135deg, #FF4D4D 0%, #6B46C1 100%);
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -655,11 +625,11 @@ import ContactSection from '../components/ContactSection.astro';
 
   .modern-filter-btn:hover,
   .modern-filter-btn.active {
-    background: #FF4438;
+    background: linear-gradient(135deg, #FF4D4D, #6B46C1);
     color: white;
-    border-color: #FF4438;
+    border-color: #FF4D4D;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 68, 56, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
   }
 
   /* Case Studies Grid */
@@ -707,7 +677,7 @@ import ContactSection from '../components/ContactSection.astro';
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 68, 56, 0.9), rgba(30, 32, 34, 0.9));
+    background: linear-gradient(135deg, rgba(255, 77, 77, 0.9), rgba(107, 70, 193, 0.9));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -743,33 +713,33 @@ import ContactSection from '../components/ContactSection.astro';
   }
 
   .beauty-badge {
-    background: linear-gradient(135deg, #FF4438, #FFE9E8);
+    background: linear-gradient(135deg, #FF4D4D, #6B46C1);
     color: white;
   }
 
   .fitness-badge {
-    background: linear-gradient(135deg, #52575D, #1E2022);
+    background: linear-gradient(135deg, #6B46C1, #4C1D95);
     color: white;
   }
 
   .automotive-badge {
-    background: linear-gradient(135deg, #FF4438, #52575D);
+    background: linear-gradient(135deg, #FF4D4D, #DC2626);
     color: white;
   }
 
   .ecommerce-badge {
-    background: linear-gradient(135deg, #FFE9E8, #FFF6F5);
-    color: #1E2022;
+    background: linear-gradient(135deg, #FCA5A5, #FECACA);
+    color: #1F2937;
   }
 
   .consulting-badge {
-    background: linear-gradient(135deg, #1E2022, #52575D);
+    background: linear-gradient(135deg, #4C1D95, #6B46C1);
     color: white;
   }
 
   .local-badge {
-    background: linear-gradient(135deg, #FFF6F5, #FFE9E8);
-    color: #1E2022;
+    background: linear-gradient(135deg, #FECACA, #FEE2E2);
+    color: #1F2937;
   }
 
   /* Card Content */
@@ -793,7 +763,7 @@ import ContactSection from '../components/ContactSection.astro';
   }
 
   .growth-indicator {
-    background: linear-gradient(135deg, #FF4438, #1E2022);
+    background: linear-gradient(135deg, #FF4D4D, #6B46C1);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -827,7 +797,7 @@ import ContactSection from '../components/ContactSection.astro';
     display: block;
     font-size: 1.3rem;
     font-weight: 700;
-    color: #FF4438;
+    color: #FF4D4D;
     margin-bottom: 0.25rem;
   }
 
@@ -845,7 +815,7 @@ import ContactSection from '../components/ContactSection.astro';
     gap: 0.5rem;
     width: 100%;
     padding: 0.875rem 1.5rem;
-    background: linear-gradient(135deg, #FF4438, #1E2022);
+    background: linear-gradient(135deg, #FF4D4D, #6B46C1);
     color: white;
     text-decoration: none;
     border-radius: 12px;
@@ -857,7 +827,7 @@ import ContactSection from '../components/ContactSection.astro';
 
   .modern-cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 68, 56, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 77, 77, 0.4);
   }
 
   .cta-arrow {
