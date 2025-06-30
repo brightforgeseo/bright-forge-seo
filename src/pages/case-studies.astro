@@ -8,188 +8,376 @@ import ContactSection from '../components/ContactSection.astro';
 <MainLayout title="Case Studies - Bright Forge SEO Philippines" description="Real-world examples of how Bright Forge SEO Philippines has delivered outstanding SEO results for businesses.">
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
-  <section class="hero-case-studies" style="padding: 120px 0 80px; text-align: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x500') center/cover;">
-    <div class="container">
-      <h1 style="font-size: 42px; font-weight: 800; margin-bottom: 20px; color: #fff;">Our Success Stories</h1>
-      <p style="font-size: 18px; color: #eee; margin-bottom: 30px;">Discover how we've helped businesses across the Philippines achieve remarkable growth through our proven SEO strategies.</p>
+  <!-- Modern Hero Section -->
+  <section class="modern-hero">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-text">
+          <span class="hero-badge">Success Stories</span>
+          <h1 class="hero-title">Proven Results That Speak for Themselves</h1>
+          <p class="hero-description">Discover how we've transformed businesses across industries with data-driven SEO strategies that deliver measurable growth and lasting success.</p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">177%</span>
+              <span class="stat-label">Max Traffic Increase</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Successful Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">9</span>
+              <span class="stat-label">Industries Served</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Breadcrumbs -->
-  <div style="background-color: #f5f5f5; padding: 15px 0; border-bottom: 1px solid #eee;">
+  <!-- Modern Breadcrumbs -->
+  <nav class="modern-breadcrumbs">
     <div class="container">
-      <div style="display: flex; align-items: center;">
-        <a href="/" style="color: var(--gray); text-decoration: none; font-size: 14px;">Home</a>
-        <span style="margin: 0 10px; color: var(--gray);"><i class="fas fa-chevron-right" style="font-size: 12px;"></i></span>
-        <span style="color: var(--primary); font-size: 14px;">Case Studies</span>
-      </div>
+      <ol class="breadcrumb-list">
+        <li><a href="/" class="breadcrumb-link">Home</a></li>
+        <li class="breadcrumb-separator">→</li>
+        <li class="breadcrumb-current">Case Studies</li>
+      </ol>
     </div>
-  </div>
+  </nav>
 
-  <!-- Case Studies Filter & Grid -->
-  <section style="padding: 60px 0 30px;">
-    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
-      <!-- Filter Buttons -->
-      <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-        <ul id="case-study-filter" style="display: flex; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; justify-content: center;">
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('all')" class="filter-btn active" style="background-color: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">All Industries</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('automotive')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Automotive</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('beauty')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Beauty & Wellness</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('consulting')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Consulting</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('fitness')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Fitness</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('ecommerce')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">E-commerce</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('local')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Local Business</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('saas')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">SaaS</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('finance')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Finance</button></li>
-          <li style="margin: 0 5px 10px;"><button onclick="filterCaseStudies('healthcare')" class="filter-btn" style="background-color: #f5f5f5; color: var(--dark); border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Healthcare</button></li>
-        </ul>
+  <!-- Modern Filter & Grid Section -->
+  <section class="case-studies-section">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title">Explore Our Success Stories</h2>
+        <p class="section-subtitle">Filter by industry to see how we've helped businesses like yours achieve exceptional growth</p>
       </div>
 
-      <!-- Case Studies Grid -->
-      <div id="case-studies-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; justify-content: center; margin: 0 auto; max-width: 1200px;">
-        <!-- Card - Phoenix Spa and Beauty -->
-        <div class="case-study-card beauty" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-          <div style="position: relative; overflow: hidden;">
-            <img src="/images/case-studies/SEO Case Study- Growing Organic Traffic for Phoenix Spa and Beauty – Beauty Salon and Spa .webp" alt="Phoenix Spa and Beauty SEO Case Study" width="350" height="220" style="width: 100%; height: 220px; object-fit: contain; object-position: center; background-color: #f5f5f5; transition: transform 0.5s ease;" loading="lazy" decoding="async" />
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Beauty & Wellness</div>
-          </div>
-          <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Phoenix Spa and Beauty: 70% Boost in Organic Traffic</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a premier beauty salon and spa increase their organic search visibility and attract more local clients.</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+70%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+188%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
-            </div>
-            <a href="/case-studies/phoenix-spa-beauty-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
-          </div>
+      <!-- Modern Filter Buttons -->
+      <div class="filter-container">
+        <div class="filter-wrapper">
+          <button onclick="filterCaseStudies('all')" class="filter-btn active" data-category="all">
+            <span class="filter-icon">🎯</span>
+            <span>All Industries</span>
+          </button>
+          <button onclick="filterCaseStudies('automotive')" class="filter-btn" data-category="automotive">
+            <span class="filter-icon">🚗</span>
+            <span>Automotive</span>
+          </button>
+          <button onclick="filterCaseStudies('beauty')" class="filter-btn" data-category="beauty">
+            <span class="filter-icon">💄</span>
+            <span>Beauty & Wellness</span>
+          </button>
+          <button onclick="filterCaseStudies('consulting')" class="filter-btn" data-category="consulting">
+            <span class="filter-icon">💼</span>
+            <span>Consulting</span>
+          </button>
+          <button onclick="filterCaseStudies('fitness')" class="filter-btn" data-category="fitness">
+            <span class="filter-icon">💪</span>
+            <span>Fitness</span>
+          </button>
+          <button onclick="filterCaseStudies('ecommerce')" class="filter-btn" data-category="ecommerce">
+            <span class="filter-icon">🛒</span>
+            <span>E-commerce</span>
+          </button>
+          <button onclick="filterCaseStudies('local')" class="filter-btn" data-category="local">
+            <span class="filter-icon">📍</span>
+            <span>Local Business</span>
+          </button>
         </div>
-        
-        <!-- Card 1 - Car Recycling -->
-        <div class="case-study-card automotive" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-          <div style="position: relative; overflow: hidden;">
-            <img src="/images/case-studies/SEO Case Study- Boosting Organic Traffic for a Car Recycling Client.webp" alt="Car Recycling SEO Case Study" width="350" height="220" style="width: 100%; height: 220px; object-fit: contain; object-position: center; background-color: #f5f5f5; transition: transform 0.5s ease;" loading="lazy" decoding="async" />
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Automotive</div>
-          </div>
-          <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Car Recycling: 29% Boost in Organic Traffic</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a car recycling business increase their organic search visibility and attract more qualified leads.</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+29%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+78%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">3 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
-            </div>
-            <a href="/case-studies/car-recycling-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
-          </div>
-        </div>
-        
-        <!-- Card 2 - Consulting Firm -->
-        <div class="case-study-card consulting" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-          <div style="position: relative; overflow: hidden;">
-            <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for a Consulting Firm .webp" alt="Consulting Firm SEO Case Study" width="350" height="220" style="width: 100%; height: 220px; object-fit: contain; object-position: center; background-color: #f5f5f5; transition: transform 0.5s ease;" loading="lazy" decoding="async" />
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Consulting</div>
-          </div>
-          <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Consulting Firm: 19% Boost in Organic Traffic</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a professional consulting firm increase their organic search presence to attract more qualified leads.</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+19%</span><span style="font-size: 14px; color: var(--gray);">Organic Traffic</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+86%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
-            </div>
-            <a href="/case-studies/consulting-firm-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
-          </div>
-        </div>
-        
-        <!-- Card 2 - Fitness (Speediance AU) -->
-        <div class="case-study-card fitness" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-          <div style="position: relative; overflow: hidden;">
-            <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp" alt="Speediance AU Fitness SEO Case Study" width="350" height="220" style="width: 100%; height: 220px; object-fit: contain; object-position: center; background-color: #f5f5f5; transition: transform 0.5s ease;" loading="lazy" decoding="async" />
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Fitness</div>
-          </div>
-          <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Speediance AU: 66% Increase in Organic Traffic</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped an Australian fitness equipment supplier boost organic visibility and engagement in a competitive market.</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+66%</span><span style="font-size: 14px; color: var(--gray);">Total Clicks</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+22%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
-            </div>
-            <a href="/case-studies/speediance-au-fitness-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
-          </div>
-        </div>
-        
-        <!-- Card 2 - Fitness (Speediance UK) -->
-        <div class="case-study-card fitness" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-          <div style="position: relative; overflow: hidden;">
-            <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp" alt="Speediance UK Fitness SEO Case Study" width="350" height="220" style="width: 100%; height: 220px; object-fit: contain; object-position: center; background-color: #f5f5f5; transition: transform 0.5s ease;" loading="lazy" decoding="async" />
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Fitness</div>
-          </div>
-          <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Speediance UK: 119% Increase in Organic Traffic</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a fitness equipment brand boost its organic visibility, drive higher-quality traffic, and improve overall SEO performance.</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+119%</span><span style="font-size: 14px; color: var(--gray);">Total Clicks</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+135%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">3 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
-            </div>
-            <a href="/case-studies/speediance-uk-fitness-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
-          </div>
-        </div>
+      </div>
 
-
-        <!-- Card - Speediance NZ Fitness -->
-        <div class="case-study-card fitness" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-          <div style="position: relative; overflow: hidden;">
-            <img 
-              src="/images/case-studies/SEO Case Study- Boosting Organic Traffic for Speediance NZ – Gym Equipment Supplier .webp" 
-              alt="Speediance NZ Fitness SEO Case Study" 
-              style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px 8px 0 0;"
-              width="350"
-              height="220"
-              loading="lazy"
-              decoding="async"
-            >
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Fitness</div>
-          </div>
-          <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Speediance NZ: 177% Boost in Organic Traffic</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">How we helped a New Zealand gym equipment supplier significantly increase organic search visibility and engagement.</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+177%</span><span style="font-size: 14px; color: var(--gray);">Total Clicks</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+84%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+      <!-- Modern Case Studies Grid -->
+      <div id="case-studies-grid" class="case-studies-grid">
+        <!-- Modern Card - Phoenix Spa and Beauty -->
+        <article class="modern-case-card beauty" data-category="beauty">
+          <div class="card-image-container">
+            <img src="/images/case-studies/SEO Case Study- Growing Organic Traffic for Phoenix Spa and Beauty – Beauty Salon and Spa .webp" alt="Phoenix Spa and Beauty SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
             </div>
-            <a href="/case-studies/speediance-nz-fitness-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+            <div class="industry-badge beauty-badge">
+              <span class="badge-icon">💄</span>
+              <span>Beauty & Wellness</span>
+            </div>
           </div>
-        </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Phoenix Spa and Beauty</h3>
+              <div class="growth-indicator positive">+70%</div>
+            </div>
+            <p class="card-description">Transformed a premier beauty salon's online presence, driving significant local client growth through strategic SEO optimization.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+70%</span>
+                <span class="metric-label">Organic Traffic</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+188%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">6 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/phoenix-spa-beauty-seo" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
         
-        <!-- Card - Car Auction Platform -->
-        <div class="case-study-card automotive" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-          <div style="position: relative; overflow: hidden;">
-            <img 
-              src="/images/case-studies/SEO Case Study- Expanding Organic Reach for a Car Auction Platform .webp" 
-              alt="Car Auction Platform SEO Case Study" 
-              style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px 8px 0 0;"
-              width="350"
-              height="220"
-              loading="lazy"
-              decoding="async"
-            >
-            <div style="position: absolute; top: 15px; right: 15px; background-color: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">Automotive</div>
-          </div>
-          <div style="padding: 25px;">
-            <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 700;">Car Auction Platform: 32% Growth in Impressions</h3>
-            <p style="color: var(--gray); margin-bottom: 20px; line-height: 1.7;">Expanding organic reach for a rapidly scaling online car auction marketplace.</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+32%</span><span style="font-size: 14px; color: var(--gray);">Impressions</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">+5%</span><span style="font-size: 14px; color: var(--gray);">Clicks</span></div>
-              <div><span style="display: block; font-weight: 700; color: var(--primary); font-size: 24px;">6 mo.</span><span style="font-size: 14px; color: var(--gray);">Timeline</span></div>
+        <!-- Modern Card - Car Recycling -->
+        <article class="modern-case-card automotive" data-category="automotive">
+          <div class="card-image-container">
+            <img src="/images/case-studies/SEO Case Study- Boosting Organic Traffic for a Car Recycling Client.webp" alt="Car Recycling SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
             </div>
-            <a href="/case-studies/car-auction-seo" class="cta-button" style="display: inline-block; width: 100%; text-align: center; margin-top: 20px; font-size: 16px;">View Case Study</a>
+            <div class="industry-badge automotive-badge">
+              <span class="badge-icon">🚗</span>
+              <span>Automotive</span>
+            </div>
           </div>
-        </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Car Recycling Business</h3>
+              <div class="growth-indicator positive">+29%</div>
+            </div>
+            <p class="card-description">Boosted organic visibility for a car recycling business, generating more qualified leads through targeted SEO strategies.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+29%</span>
+                <span class="metric-label">Organic Traffic</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+78%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">3 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/car-recycling-seo" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Modern Card - Consulting Firm -->
+        <article class="modern-case-card consulting" data-category="consulting">
+          <div class="card-image-container">
+            <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for a Consulting Firm .webp" alt="Consulting Firm SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge consulting-badge">
+              <span class="badge-icon">💼</span>
+              <span>Consulting</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Professional Consulting Firm</h3>
+              <div class="growth-indicator positive">+19%</div>
+            </div>
+            <p class="card-description">Enhanced organic search presence for a consulting firm, attracting more qualified leads through strategic content optimization.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+19%</span>
+                <span class="metric-label">Organic Traffic</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+86%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">6 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/consulting-firm-seo" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Modern Card - Speediance AU -->
+        <article class="modern-case-card fitness" data-category="fitness">
+          <div class="card-image-container">
+            <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp" alt="Speediance AU Fitness SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge fitness-badge">
+              <span class="badge-icon">💪</span>
+              <span>Fitness</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Speediance AU</h3>
+              <div class="growth-indicator positive">+66%</div>
+            </div>
+            <p class="card-description">Boosted organic visibility for an Australian fitness equipment supplier in a highly competitive market.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+66%</span>
+                <span class="metric-label">Total Clicks</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+22%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">6 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/speediance-au-fitness-seo" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Modern Card - Speediance UK -->
+        <article class="modern-case-card fitness" data-category="fitness">
+          <div class="card-image-container">
+            <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp" alt="Speediance UK Fitness SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge fitness-badge">
+              <span class="badge-icon">💪</span>
+              <span>Fitness</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Speediance UK</h3>
+              <div class="growth-indicator positive">+119%</div>
+            </div>
+            <p class="card-description">Dramatically improved organic visibility for a UK fitness equipment brand, driving higher-quality traffic and engagement.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+119%</span>
+                <span class="metric-label">Total Clicks</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+135%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">3 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/speediance-uk-fitness-seo" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Modern Card - Speediance NZ -->
+        <article class="modern-case-card fitness" data-category="fitness">
+          <div class="card-image-container">
+            <img src="/images/case-studies/SEO Case Study- Boosting Organic Traffic for Speediance NZ – Gym Equipment Supplier .webp" alt="Speediance NZ Fitness SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge fitness-badge">
+              <span class="badge-icon">💪</span>
+              <span>Fitness</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Speediance NZ</h3>
+              <div class="growth-indicator positive">+177%</div>
+            </div>
+            <p class="card-description">Achieved remarkable growth for a New Zealand gym equipment supplier through strategic SEO optimization.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+177%</span>
+                <span class="metric-label">Total Clicks</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+84%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">6 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/speediance-nz-fitness-seo" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Modern Card - Car Auction Platform -->
+        <article class="modern-case-card automotive" data-category="automotive">
+          <div class="card-image-container">
+            <img src="/images/case-studies/SEO Case Study- Expanding Organic Reach for a Car Auction Platform .webp" alt="Car Auction Platform SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge automotive-badge">
+              <span class="badge-icon">🚗</span>
+              <span>Automotive</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Car Auction Platform</h3>
+              <div class="growth-indicator positive">+32%</div>
+            </div>
+            <p class="card-description">Expanded organic reach for a rapidly scaling online car auction marketplace through targeted SEO strategies.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+32%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+5%</span>
+                <span class="metric-label">Clicks</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">6 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/car-auction-seo" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
 
         <!-- Card - Boiler & Heating Spares Supplier -->
         <div class="case-study-card ecommerce" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;">
@@ -280,3 +468,446 @@ import ContactSection from '../components/ContactSection.astro';
     }
   }
 </script>
+
+<style>
+  /* Modern Hero Section */
+  .modern-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .modern-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  /* Modern Breadcrumbs */
+  .modern-breadcrumbs {
+    background: #f8f9fa;
+    padding: 1rem 0;
+  }
+
+  .breadcrumb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb-item a:hover {
+    color: #0056b3;
+  }
+
+  .breadcrumb-separator {
+    color: #adb5bd;
+  }
+
+  /* Case Studies Section */
+  .case-studies-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Filter Buttons */
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .modern-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #e9ecef;
+    background: white;
+    color: #495057;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .modern-filter-btn:hover,
+  .modern-filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  }
+
+  /* Case Studies Grid */
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  /* Modern Case Cards */
+  .modern-case-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+  }
+
+  .modern-case-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-image-container {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .modern-case-card:hover .card-image {
+    transform: scale(1.05);
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .modern-case-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .view-case-btn {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* Industry Badges */
+  .industry-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    z-index: 2;
+  }
+
+  .beauty-badge {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+  }
+
+  .fitness-badge {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+  }
+
+  .automotive-badge {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+  }
+
+  .ecommerce-badge {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    color: #2c3e50;
+  }
+
+  .consulting-badge {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+
+  .local-badge {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    color: #2c3e50;
+  }
+
+  /* Card Content */
+  .card-content {
+    padding: 2rem;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .growth-indicator {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .card-description {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+
+  .metric-item {
+    text-align: center;
+  }
+
+  .metric-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .modern-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .modern-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  }
+
+  .cta-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .modern-cta-btn:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Legacy card styles for remaining old cards */
+  .case-study-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .case-study-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .filter-buttons {
+      justify-content: center;
+    }
+
+    .case-studies-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .card-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .growth-indicator {
+      align-self: flex-start;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .modern-filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+    }
+  }
+</style>
