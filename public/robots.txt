@@ -11,35 +11,10 @@ Allow: /
 User-agent: APIs-Google
 Allow: /
 
-# Explicitly allow Ahrefs bot with crawl rate limit
-User-agent: AhrefsBot
-Allow: /
-Crawl-delay: 5
-
+# Allow all bots
 User-agent: *
 Allow: /
 
 # Sitemap location
 Sitemap: https://brightforgeseo.com/sitemap-index.xml
 Sitemap: https://brightforgeseo.com/sitemap-0.xml
-
-# Block access to admin areas (if any)
-Disallow: /admin/
-Disallow: /_astro/
-Disallow: /dist/
-
-# Allow search engines to crawl all important pages
-Allow: /
-Allow: /about
-Allow: /services
-Allow: /case-studies
-Allow: /blog
-Allow: /contact
-
-# Crawl delay (optional - be conservative)
-Crawl-delay: 1
-
-# Block common non-essential files
-Disallow: /*.json$
-Disallow: /*.xml$ 
-Disallow: /*.txt$
