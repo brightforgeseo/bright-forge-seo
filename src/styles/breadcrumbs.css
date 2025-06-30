@@ -1,0 +1,57 @@
+/* Standardized Breadcrumb Styles - White Color with Proper Alignment */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.breadcrumbs a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+}
+
+.breadcrumbs .separator,
+.breadcrumbs > span:not(.current):not([class]) {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 8px;
+  user-select: none;
+}
+
+.breadcrumbs .current,
+.breadcrumbs > span:last-child {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .breadcrumbs {
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .breadcrumbs .separator,
+  .breadcrumbs > span:not(.current):not([class]) {
+    margin: 0 6px;
+  }
+}
+
+/* Ensure consistent spacing when using Tailwind classes */
+.breadcrumbs .mx-2 {
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+}
+
+.breadcrumbs .mb-8 {
+  margin-bottom: 2rem !important;
+}
