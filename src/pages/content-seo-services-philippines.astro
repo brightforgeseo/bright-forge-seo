@@ -9,23 +9,76 @@ import ContactSection from '../components/ContactSection.astro';
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
-  <section class="hero-content">
+  <section class="hero-content-seo">
+    <!-- Animated Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+    
     <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs - EXTREME WHITE OVERRIDE -->
-      <div data-breadcrumb-container style="color: white !important; display: flex; align-items: center; margin-bottom: 3.5rem !important; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="/" data-breadcrumb-link style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; text-decoration: none !important; font-weight: 400 !important;">Home</a>
-        <span data-breadcrumb-separator style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; margin: 0 12px !important; font-weight: 400 !important;">›</span>
-        <span data-breadcrumb-current style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; font-weight: 400 !important;">Content SEO Services Philippines</span>
-      </div>
+      <!-- Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Content SEO Services Philippines</span>
+      </nav>
       
-      <div class="hero-content-text">
-        <h1>Content SEO Services In The Philippines</h1>
-        <div class="hero-story">
-          <p>Ever felt like you've done everything right—built a great website, designed eye-catching product pages, and shared posts on social media—yet still struggled to get noticed online? I've been there, too. A close friend once confided that her new e-commerce store had fantastic products but hardly any visitors. She thought she was missing some "secret sauce." Turns out, the key ingredient was well-structured, SEO-focused content.</p>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-pen-nib"></i>
+            <span>Content SEO Experts</span>
+          </div>
           
-          <p>That's exactly what we offer here at Bright Forge SEO: carefully planned and brilliantly executed content that boosts visibility and sparks meaningful engagement. Our approach combines technical best practices with genuine storytelling, so you don't just rank—you connect with real people who are ready to become loyal customers.</p>
+          <h1>Content SEO Services In The Philippines</h1>
+          
+          <div class="hero-story">
+            <p>Ever felt like you've done everything right—built a great website, designed eye-catching product pages, and shared posts on social media—yet still struggled to get noticed online? I've been there, too. A close friend once confided that her new e-commerce store had fantastic products but hardly any visitors. She thought she was missing some "secret sauce." Turns out, the key ingredient was well-structured, SEO-focused content.</p>
+            
+            <p>That's exactly what we offer here at Bright Forge SEO: carefully planned and brilliantly executed content that boosts visibility and sparks meaningful engagement. Our approach combines technical best practices with genuine storytelling, so you don't just rank—you connect with real people who are ready to become loyal customers.</p>
+          </div>
+          
+          <div class="hero-actions">
+            <a href="/contact/" class="cta-button primary">
+              <span>Start Your Content Journey</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#approach" class="cta-button secondary">
+              <i class="fas fa-play"></i>
+              <span>See Our Process</span>
+            </a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Content Pieces Created</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Engagement Increase</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
         </div>
-        <a href="/contact/" class="cta-button">Start Your Content Journey</a>
+        
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <div class="content-icon-grid">
+              <div class="content-icon"><i class="fas fa-pen-nib"></i></div>
+              <div class="content-icon"><i class="fas fa-bullseye"></i></div>
+              <div class="content-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="content-icon"><i class="fas fa-users"></i></div>
+              <div class="content-icon"><i class="fas fa-search"></i></div>
+              <div class="content-icon"><i class="fas fa-heart"></i></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -311,76 +364,359 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-/* Hero Section */
-.hero-content {
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
-  padding: 120px 0 80px;
+/* Enhanced Hero Section Styles */
+.hero-content-seo {
   position: relative;
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+  padding: 2rem 0;
 }
 
-.hero-content::before {
-  content: '';
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Elements */
+.hero-bg-elements {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   z-index: 1;
 }
 
-.hero-content > div {
-  position: relative;
-  z-index: 2;
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  animation: float 6s ease-in-out infinite;
 }
 
+.circle-1 {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
 
+.circle-2 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
 
-.hero-content-text h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+.circle-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Breadcrumbs */
+.hero-breadcrumbs {
+  display: inline-block !important;
+  margin-bottom: 3rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-breadcrumbs * {
+  display: inline !important;
+  vertical-align: baseline !important;
+}
+
+.breadcrumb-link {
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.breadcrumb-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: white !important;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.breadcrumb-current {
+  color: white !important;
+  font-weight: 600;
+}
+
+/* Hero Container */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
   font-weight: 800;
   color: white;
-  margin-bottom: 40px;
-  line-height: 1.2;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.hero-badge i {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Hero Story */
 .hero-story {
-  max-width: 800px;
-  margin: 0 auto 40px;
+  margin-bottom: 3rem;
 }
 
 .hero-story p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 24px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.95);
-  color: #FF4438;
-  padding: 16px 32px;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  border: 2px solid transparent;
 }
 
-.cta-button:hover {
+.cta-button.primary {
   background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  color: #FF4438;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  background: #f8f9fa;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.hero-stats .stat-number,
+.hero-content-seo .stat-number {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: white !important;
+  color: #ffffff !important;
+  margin-bottom: 4px;
+}
+
+.hero-stats .stat-label,
+.hero-content-seo .stat-label {
+  font-size: 0.9rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+}
+
+/* Hero Visual */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.content-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.content-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+.content-icon:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.content-icon:nth-child(even) {
+  animation-delay: 2s;
+}
+
+.content-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .content-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content-seo {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .content-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .content-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .floating-circle {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-story p {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Legacy hero styles removed to prevent conflicts with enhanced hero design */
 
 /* Section Headers */
 .section-header {
