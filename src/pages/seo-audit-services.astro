@@ -9,89 +9,84 @@ import ContactSection from '../components/ContactSection.astro';
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-particles"></div>
-    <div class="max-w-7xl mx-auto px-4 relative z-10">
-      <!-- Breadcrumbs -->
-      <div style="display: flex; align-items: center; margin-bottom: 3.5rem !important; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="/" style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; text-decoration: none !important; font-weight: 400 !important;">Home</a>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; margin: 0 12px !important; font-weight: 400 !important;">›</span>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; font-weight: 400 !important;">SEO Audit Services</span>
-      </div>
+  <section class="hero-seo-audit">
+    <!-- Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+      <div class="floating-circle circle-4"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Enhanced Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">SEO Audit Services</span>
+      </nav>
 
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-badge-top">
-            <span class="badge-icon">🔍</span>
-            <span>Comprehensive Analysis</span>
+      <div class="hero-container">
+        <div class="hero-content">
+          <!-- Hero Badge -->
+          <div class="hero-badge">
+            <i class="fas fa-search-plus"></i>
+            <span>SEO Audit Specialists</span>
           </div>
+          
           <h1>Comprehensive SEO Audit Services</h1>
           <p class="hero-subtitle">Wondering why your traffic plateaued - or worse, dropped overnight? Let's shine a light on the hidden roadblocks.</p>
-          <p class="hero-description">Our Philippines-based SEO detectives crawl every nook and cranny of your website - technical code, content, links, you name it. Then we translate all the jargon into a plain-English game plan you can actually act on.</p>
-          <p class="hero-description">Think of it as a full-body check-up for your site - complete with X-rays, lab work, and a friendly doctor who explains the results in words you understand.</p>
+          <p>Our Philippines-based SEO detectives crawl every nook and cranny of your website - technical code, content, links, you name it. Then we translate all the jargon into a plain-English game plan you can actually act on.</p>
+          <p>Think of it as a full-body check-up for your site - complete with X-rays, lab work, and a friendly doctor who explains the results in words you understand.</p>
           
-          <!-- Key Stats -->
+          <!-- Hero Stats -->
           <div class="hero-stats">
             <div class="stat-item">
               <span class="stat-number">100+</span>
               <span class="stat-label">Sites Audited</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">7-10</span>
-              <span class="stat-label">Day Turnaround</span>
+              <span class="stat-number">95%</span>
+              <span class="stat-label">Issue Detection Rate</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">95%</span>
-              <span class="stat-label">Issues Found</span>
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
           </div>
-
-          <div class="hero-cta">
-            <a href="/contact" class="cta-button primary">
-              <span>Get Your Audit</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#process" class="cta-button secondary">
-              <span>See Our Process</span>
-              <i class="fas fa-play"></i>
-            </a>
+          
+          <!-- Dual CTA Buttons -->
+          <div class="hero-ctas">
+            <a href="#process" class="cta-primary">Get Your Free SEO Audit</a>
+            <a href="#deliverables" class="cta-secondary">See Sample Report</a>
           </div>
         </div>
         
-        <div class="hero-visual">
-          <div class="audit-dashboard">
-            <div class="dashboard-header">
-              <div class="dashboard-title">SEO Health Score</div>
-              <div class="score-ring">
-                <div class="score-number">87</div>
-                <div class="score-label">Score</div>
-              </div>
-            </div>
-            <div class="dashboard-metrics">
-              <div class="metric-item good">
-                <span class="metric-label">Technical SEO</span>
-                <span class="metric-value">92%</span>
-              </div>
-              <div class="metric-item warning">
-                <span class="metric-label">Content Quality</span>
-                <span class="metric-value">78%</span>
-              </div>
-              <div class="metric-item error">
-                <span class="metric-label">Page Speed</span>
-                <span class="metric-value">65%</span>
-              </div>
-              <div class="metric-item good">
-                <span class="metric-label">Mobile UX</span>
-                <span class="metric-value">94%</span>
-              </div>
-            </div>
+        <!-- SEO Audit Icon Grid -->
+        <div class="audit-icon-grid">
+          <div class="icon-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Performance Analysis</span>
           </div>
-          <div class="audit-badge">
-            <div class="audit-icon">📊</div>
-            <div class="audit-text">
-              <span>200+ Checkpoints</span>
-              <strong>Analyzed</strong>
-            </div>
+          <div class="icon-item">
+            <i class="fas fa-cogs"></i>
+            <span>Technical SEO</span>
+          </div>
+          <div class="icon-item">
+            <i class="fas fa-link"></i>
+            <span>Backlink Profile</span>
+          </div>
+          <div class="icon-item">
+            <i class="fas fa-edit"></i>
+            <span>Content Review</span>
+          </div>
+          <div class="icon-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Mobile Optimization</span>
+          </div>
+          <div class="icon-item">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Speed Testing</span>
           </div>
         </div>
       </div>
@@ -466,6 +461,347 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
+/* Enhanced SEO Audit Hero Section Styles */
+.hero-seo-audit {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Elements */
+.hero-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.circle-4 {
+  width: 60px;
+  height: 60px;
+  top: 10%;
+  right: 30%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(120deg); }
+  66% { transform: translateY(10px) rotate(240deg); }
+}
+
+/* Breadcrumbs */
+.hero-breadcrumbs {
+  display: inline-block !important;
+  margin-bottom: 3rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-breadcrumbs * {
+  display: inline !important;
+  vertical-align: baseline !important;
+}
+
+.breadcrumb-link {
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.breadcrumb-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: white !important;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.breadcrumb-current {
+  color: white !important;
+  font-weight: 600;
+}
+
+/* Hero Container */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hero Content */
+.hero-content {
+  color: white;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-badge i {
+  font-size: 1rem;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+/* CTA Buttons */
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  animation: fadeInUp 0.8s ease-out 1.2s both;
+}
+
+.cta-primary, .cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.cta-primary {
+  background: white;
+  color: #FF4438;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-primary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cta-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* SEO Audit Icon Grid */
+.audit-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 1.4s both;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  color: white;
+  transition: all 0.3s ease;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+.icon-item:nth-child(even) {
+  animation-delay: 1s;
+}
+
+.icon-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.icon-item i {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.icon-item span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .audit-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .icon-item {
+    padding: 1rem;
+  }
+  
+  .icon-item i {
+    font-size: 1.5rem;
+  }
+  
+  .cta-primary, .cta-secondary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
 /********************
   CSS Variables & Reset
 *********************/
@@ -580,297 +916,12 @@ section {
 }
 
 /********************
-  Hero Section
+  Legacy Hero Styles Removed - Using Enhanced Hero Design
 *********************/
-.hero-section {
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
-  color: white;
-  padding: 8rem 0 6rem;
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
 
-.hero-particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
-  animation: float 20s ease-in-out infinite;
-}
+/* Legacy styles removed - using enhanced hero design */
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-.breadcrumbs {
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-  color: rgba(255,255,255,0.8);
-}
-
-
-
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .hero-content {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-}
-
-.hero-badge-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.badge-icon {
-  font-size: 16px;
-}
-
-.hero-text h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  margin-bottom: 1rem;
-  color: rgba(255,255,255,0.95);
-  font-weight: 500;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.7;
-  max-width: 600px;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 2rem 0;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1;
-}
-
-.stat-label {
-  position: absolute;
-  bottom: -20px;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.8);
-  z-index: 1;
-}
-
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button.primary {
-  background: white;
-  color: var(--brand-accent);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-}
-
-.cta-button.secondary {
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  backdrop-filter: blur(10px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-/* Hero Visual */
-.hero-visual {
-  position: relative;
-}
-
-.audit-dashboard {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: var(--shadow-medium);
-}
-
-.dashboard-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-.dashboard-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: white;
-}
-
-.score-ring {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: conic-gradient(#00d084 0deg 313deg, rgba(255,255,255,0.2) 313deg 360deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.score-ring::before {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-}
-
-.score-number {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: white;
-  z-index: 1;
-}
-
-.score-label {
-  position: absolute;
-  bottom: -20px;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.8);
-  z-index: 1;
-}
-
-.dashboard-metrics {
-  display: grid;
-  gap: 1rem;
-}
-
-.metric-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.metric-item.good {
-  border-left: 4px solid #00d084;
-}
-
-.metric-item.warning {
-  border-left: 4px solid #ffd700;
-}
-
-.metric-item.error {
-  border-left: 4px solid #ff4757;
-}
-
-.metric-label {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.9);
-}
-
-.metric-value {
-  font-weight: 700;
-  color: white;
-}
-
-.audit-badge {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  padding: 16px 20px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: var(--shadow-medium);
-  transform: rotate(-5deg);
-}
-
-.audit-icon {
-  font-size: 24px;
-}
-
-.audit-text span {
-  display: block;
-  font-size: 12px;
-  opacity: 0.9;
-}
-
-.audit-text strong {
-  font-size: 18px;
-  font-weight: 700;
-}
+/* Legacy dashboard styles removed - using enhanced icon grid design */
 
 /********************
   Social Proof Banner
@@ -1248,32 +1299,14 @@ section {
   line-height: 1.6;
 }
 
-/* Responsive Design */
+/* Legacy responsive styles removed - using enhanced hero design */
+
+/********************
+  Mobile Responsive Styles
+*********************/
 @media (max-width: 768px) {
-  .hero-section {
-    padding: 60px 0;
-  }
-  
-  .hero-content {
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-stats {
-    justify-content: center;
-  }
-  
-  .hero-cta {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .cta-button {
-    width: 100%;
-    justify-content: center;
+  section {
+    padding: 3rem 0;
   }
   
   .section-grid {
@@ -1291,25 +1324,6 @@ section {
   
   .deliverables-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/********************
-  Responsive Design
-*********************/
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 0;
-  }
-  
-  .hero-section {
-    padding: 6rem 0 4rem;
-    min-height: auto;
-  }
-  
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
   
   .features-grid {

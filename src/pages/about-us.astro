@@ -9,23 +9,23 @@ import ContactSection from '../components/ContactSection.astro';
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="max-w-7xl mx-auto px-4">
+  <section class="hero-about">
+    <div class="container mx-auto px-4 relative z-10">
       <!-- Breadcrumbs -->
-      <nav class="breadcrumbs">
-        <a href="/">Home</a>
-        <span class="separator">›</span>
-        <span class="current">About Us</span>
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">About Us</span>
       </nav>
-      
+
       <div class="hero-content">
-        <div class="hero-text">
-          <div class="experience-badge">
-            <span class="experience-number">15+</span>
-            <span class="experience-text">Years Of Experience</span>
-          </div>
-          <h1>About Bright Forge SEO Agency</h1>
-          <p class="hero-subtitle">Welcome to Bright Forge SEO Agency, your trusted partner in mastering the art of digital visibility and performance.</p>
+        <h1>About Bright Forge SEO Agency</h1>
+        <p class="hero-subtitle">Welcome to Bright Forge SEO Agency, your trusted partner in mastering the art of digital visibility and performance.</p>
+        <p>Founded by seasoned SEO professional Ben Lowe, our agency is built on over 15 years of proven expertise in delivering tailored SEO strategies that elevate businesses across diverse industries.</p>
+        
+        <div class="hero-cta-container">
+          <a href="#our-story" class="hero-cta-btn primary">Our Story</a>
+          <a href="/contact" class="hero-cta-btn secondary">Get Started Today</a>
         </div>
       </div>
     </div>
@@ -288,72 +288,144 @@ import ContactSection from '../components/ContactSection.astro';
 
 <style>
   /* Hero Section */
-  .hero-section {
-    background: linear-gradient(135deg, #FF4438 0%, #4285F4 100%);
-    padding: 120px 0 80px;
+  .hero-about {
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
     color: white;
+    padding: 80px 0;
+    text-align: center;
     position: relative;
   }
 
-  .breadcrumbs {
-    margin-bottom: 40px;
+  /* Hero Breadcrumbs */
+  .hero-breadcrumbs {
+    display: inline-block !important;
+    margin-bottom: 2rem;
     font-size: 14px;
-    color: white !important;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
   }
 
-  .breadcrumbs a {
+  .hero-breadcrumbs * {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+
+  .breadcrumb-link {
     color: white !important;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    opacity: 0.9;
   }
 
-  .breadcrumbs a:hover {
-    color: white;
+  .breadcrumb-link:hover {
+    opacity: 1;
+    text-decoration: underline;
   }
 
-  .separator {
+  .breadcrumb-separator {
+    color: white !important;
     margin: 0 8px;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
-  .current {
-    color: white;
-    font-weight: 500;
+  .breadcrumb-current {
+    color: white !important;
+    font-weight: 600;
   }
 
+  /* Hero Content */
   .hero-content {
     max-width: 800px;
-  }
-
-  .experience-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 15px 25px;
-    border-radius: 50px;
-    margin-bottom: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .experience-number {
-    font-size: 32px;
-    font-weight: 700;
-    color: white;
-  }
-
-  .experience-text {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .hero-content h1 {
-    font-size: 48px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    margin-bottom: 20px;
     line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    font-weight: 300;
+    color: white;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Hero CTA Buttons */
+  .hero-cta-container {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    border: 2px solid white;
+  }
+
+  .hero-cta-btn.primary {
+    background: white;
+    color: #FF4438;
+  }
+
+  .hero-cta-btn.primary:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .hero-cta-btn.secondary {
+    background: transparent;
+    color: white;
+  }
+
+  .hero-cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hero-cta-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hero-cta-btn {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+    
+    .hero-content {
+      padding: 0 15px;
+    }
   }
 
   .hero-subtitle {

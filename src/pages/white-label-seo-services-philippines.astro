@@ -13,33 +13,95 @@ import ContactSection from '../components/ContactSection.astro';
 >
   <LegacyHeader slot="header" />
   
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-[#FF4438] via-[#FF6B35] to-[#4285F4] text-white overflow-hidden">
-    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-    <div class="relative max-w-7xl mx-auto px-4 py-20">
-      <!-- Breadcrumbs -->
-      <div style="display: flex; align-items: center; margin-bottom: 3.5rem !important; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="/" style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; text-decoration: none !important; font-weight: 400 !important;">Home</a>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; margin: 0 12px !important; font-weight: 400 !important;">›</span>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; font-weight: 400 !important;">White Label SEO Services Philippines</span>
-      </div>
+  <!-- Enhanced Hero Section -->
+  <section class="hero-white-label-seo">
+    <!-- Animated Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <!-- Enhanced Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">White Label SEO Services Philippines</span>
+      </nav>
       
-      <div class="max-w-4xl">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">White Label SEO Services from the Philippines, Built for Real Partnerships</h1>
-        <div class="text-xl text-white/90 space-y-4 mb-8">
+      <div class="hero-container">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <!-- Hero Badge -->
+          <div class="hero-badge">
+            <i class="fas fa-handshake"></i>
+            <span>White Label SEO Partners</span>
+          </div>
+          
+          <h1>White Label SEO Services from the <span>Philippines</span>, Built for Real Partnerships</h1>
+          
           <p>Growing a digital agency is challenging, especially when you're expected to be an expert in everything, including SEO. That's where we come in.</p>
+          
           <p>As a white label SEO partner in the Philippines, we support your agency quietly and reliably, working behind the scenes to help you deliver consistent, high-quality results to your clients.</p>
+          
           <p>Whether you're a freelancer, part of a small team, or running a full-service agency, our SEO reseller program is designed to grow with you. We focus on clear communication, dependable service, and a collaborative approach, so you can concentrate on what you do best.</p>
+          
           <p>Our <strong>Philippines SEO reseller program</strong> helps agencies, freelancers, and marketing teams scale their services with <strong>affordable white label SEO Philippines</strong> solutions. From strategy to execution, we handle everything behind the scenes as your trusted <strong>Philippines SEO vendor</strong>, so you can grow faster and smarter.</p>
+          
+          <!-- Hero Actions -->
+          <div class="hero-actions">
+            <a href="/contact/" class="cta-button primary">
+              <i class="fas fa-rocket"></i>
+              <span>Start Your Partnership Today</span>
+            </a>
+            <a href="/contact/" class="cta-button secondary">
+              <i class="fas fa-info-circle"></i>
+              <span>Learn More About Our Program</span>
+            </a>
+          </div>
+          
+          <!-- Hero Stats -->
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Agency Partners</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Client Retention</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
         </div>
         
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center" onclick="window.location.href='/contact/'; return false;">
-            Start Your Partnership Today
-          </a>
-          <a href="/contact/" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors text-center" onclick="window.location.href='/contact/'; return false;">
-            Schedule Discovery Call
-          </a>
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <div class="white-label-icon-grid">
+              <div class="white-label-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="white-label-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="white-label-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <div class="white-label-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <div class="white-label-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="white-label-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -810,16 +872,378 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-  .hero-content {
-    background: linear-gradient(135deg, #ff4438 0%, #ff6b35 50%, #4285f4 100%);
-    background-size: 200% 200%;
-    animation: gradientFlow 15s ease infinite;
+  /* Enhanced Hero Section Styles */
+  .hero-white-label-seo {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+    padding: 2rem 0;
   }
-
-  @keyframes gradientFlow {
+  
+  @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+  
+  /* Background Elements */
+  .hero-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .circle-2 {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+  }
+  
+  .circle-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 4s;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+  
+  /* Breadcrumbs */
+  .hero-breadcrumbs {
+    display: inline-block !important;
+    margin-bottom: 3rem;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .hero-breadcrumbs * {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+  
+  .breadcrumb-link {
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+  }
+  
+  .breadcrumb-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+  
+  .breadcrumb-separator {
+    color: white !important;
+    margin: 0 8px;
+    opacity: 0.7;
+  }
+  
+  .breadcrumb-current {
+    color: white !important;
+    font-weight: 600;
+  }
+  
+  /* Hero Container */
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-content h1 span {
+    color: #FFE4E1;
+  }
+  
+  /* Hero Badge */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .hero-badge i {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  /* Hero Content */
+  .hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hero Actions */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+  }
+  
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: 2px solid transparent;
+  }
+  
+  .cta-button.primary {
+    background: white;
+    color: #FF4438;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+  }
+  
+  .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+  }
+  
+  .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+  }
+  
+  /* Hero Stats */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .hero-stats .stat-number,
+  .hero-white-label-seo .stat-number {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    color: #ffffff !important;
+    margin-bottom: 4px;
+  }
+  
+  .hero-stats .stat-label,
+  .hero-white-label-seo .stat-label {
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+  }
+  
+  /* Hero Visual */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .white-label-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .white-label-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .white-label-icon:nth-child(odd) {
+    animation-delay: 1s;
+  }
+  
+  .white-label-icon:nth-child(even) {
+    animation-delay: 2s;
+  }
+  
+  .white-label-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+    
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+    
+    .white-label-icon-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-white-label-seo {
+      min-height: auto;
+      padding: 4rem 0;
+    }
+    
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .white-label-icon-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    
+    .white-label-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+    
+    .floating-circle {
+      opacity: 0.5;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    
+    .hero-content p {
+      font-size: 1rem;
+    }
+    
+    .cta-button {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Container and Layout Fixes */
+  .hero-white-label-seo .container {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .hero-white-label-seo .hero-container {
+    max-width: none;
+    width: 100%;
+  }
+  
+  /* Typography Fixes */
+  .hero-white-label-seo .hero-content {
+    max-width: none;
+  }
+  
+  .hero-white-label-seo .hero-content p:last-of-type {
+    margin-bottom: 2rem;
   }
 
   /* Internal Link Styling */

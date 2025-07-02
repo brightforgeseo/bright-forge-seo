@@ -8,31 +8,102 @@ import ContactSection from '../components/ContactSection.astro';
 <MainLayout title="Answer Engine Optimization (AEO) Services | Bright Forge SEO Philippines" description="Transform your online presence with Answer Engine Optimization. Be the definitive answer in search results, AI summaries & voice search. Philippines' leading AEO experts.">
   <LegacyHeader slot="header" />
   
-  <!-- Hero Section -->
-  <section class="hero-content">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs - EXTREME WHITE OVERRIDE -->
-      <div data-breadcrumb-container style="color: white !important; display: flex; align-items: center; margin-bottom: 3.5rem !important; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="/" data-breadcrumb-link style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; text-decoration: none !important; font-weight: 400 !important;">Home</a>
-        <span data-breadcrumb-separator style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; margin: 0 12px !important; font-weight: 400 !important;">›</span>
-        <span data-breadcrumb-current style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; font-weight: 400 !important;">Answer Engine Optimization Services Philippines</span>
-      </div>
+  <!-- Enhanced Hero Section -->
+  <section class="hero-aeo-services">
+    <!-- Animated Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <!-- Enhanced Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Answer Engine Optimization Services Philippines</span>
+      </nav>
       
-      <div class="hero-content-text">
-        <h1>Answer Engine Optimization (AEO) Services</h1>
-        <div class="hero-tagline">The Future of Search is Answers. Are You Providing Them?</div>
-        <div class="hero-story">
+      <div class="hero-container">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <!-- Hero Badge -->
+          <div class="hero-badge">
+            <i class="fas fa-robot"></i>
+            <span>AEO Specialists</span>
+          </div>
+          
+          <h1>Answer Engine Optimization <span>(AEO) Services</span></h1>
+          
+          <p>The Future of Search is Answers. Are You Providing Them?</p>
+          
           <p>Traditional SEO is no longer enough. To win in today's search landscape, you need to be the definitive answer. Bright Forge SEO's Answer Engine Optimization (AEO) services position your brand as the go-to authority in the Philippines and beyond.</p>
           
           <p>In a world of voice assistants, AI-powered summaries, and instant-answer boxes, your customers are no longer just searching—they're asking questions. AEO is the science and art of ensuring your business is the one that provides the answer, directly and authoritatively.</p>
+          
+          <p>Our <strong>Answer Engine Optimization Philippines</strong> services help businesses dominate featured snippets and voice search results with <strong>professional AEO strategies</strong>. From voice search optimization to AI-powered content, we position your brand as the definitive answer source as your trusted <strong>AEO partner</strong>, so you can capture more visibility and traffic.</p>
+          
+          <!-- Hero Actions -->
+          <div class="hero-actions">
+            <a href="/contact/" class="cta-button primary">
+              <i class="fas fa-robot"></i>
+              <span>Get Your Free AEO Analysis</span>
+            </a>
+            <a href="#why-aeo" class="cta-button secondary">
+              <i class="fas fa-info-circle"></i>
+              <span>Learn About AEO</span>
+            </a>
+          </div>
+          
+          <!-- Hero Stats -->
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">80%</div>
+              <div class="stat-label">Voice Search Growth</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">50%</div>
+              <div class="stat-label">Zero-Click Searches</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">3x</div>
+              <div class="stat-label">Higher CTR</div>
+            </div>
+          </div>
         </div>
-        <a href="/contact/" class="cta-button">Get Your Free AEO Analysis</a>
+        
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <div class="aeo-icon-grid">
+              <div class="aeo-icon">
+                <i class="fas fa-microphone"></i>
+              </div>
+              <div class="aeo-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="aeo-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="aeo-icon">
+                <i class="fas fa-magic"></i>
+              </div>
+              <div class="aeo-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="aeo-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Why Old SEO Strategy is Falling Behind Section -->
-  <section class="challenges-section">
+  <section class="challenges-section" id="why-aeo">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
         <h2>Why Your Old SEO <span>Strategy is Falling Behind</span></h2>
@@ -327,77 +398,366 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-/* Hero Section Styles */
+/* Enhanced Hero Section - AEO Services */
+.hero-aeo-services {
+  position: relative;
+  padding: 120px 0 100px;
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 30%, #FF6B35 70%, #4285F4 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease-in-out infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Floating Background Elements */
+.hero-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  right: 15%;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 25%;
+  animation-delay: 2s;
+}
+
+.circle-3 {
+  width: 60px;
+  height: 60px;
+  top: 40%;
+  right: 8%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(240deg);
+  }
+}
+
+/* Hero Container */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Breadcrumbs */
+.hero-breadcrumbs {
+  display: inline-block !important;
+  margin-bottom: 3rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-breadcrumbs * {
+  display: inline !important;
+  vertical-align: baseline !important;
+}
+
+.breadcrumb-link {
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.breadcrumb-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: white !important;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.breadcrumb-current {
+  color: white !important;
+  font-weight: 600;
+}
+
+/* Hero Content */
 .hero-content {
-  padding: 120px 0 80px;
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+}
+
+.hero-badge i {
+  font-size: 14px;
+}
+
+/* Hero Title */
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-content h1 span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Text */
+.hero-content p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.hero-content p:first-of-type {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.hero-content::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 40%;
-  height: 80%;
-  background: url('/images/abstract-shapes.svg') no-repeat right bottom;
-  opacity: 0.2;
-  z-index: 0;
+.cta-button.primary {
+  background: white;
+  color: #FF4438;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
 
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
 
-.hero-content-text h1 {
-  font-size: 3rem;
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* FontAwesome Icon Fixes */
+.aeo-icon i {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  display: inline-block !important;
+  color: white !important;
+  font-size: 1.5rem !important;
+}
+
+.hero-badge i {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  display: inline-block !important;
+  color: white !important;
+}
+
+.cta-button i {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  display: inline-block !important;
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Hero Visual */
+.hero-visual {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-.hero-tagline {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #FF4438;
-  margin-bottom: 20px;
+.hero-image-container {
   position: relative;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-story {
-  max-width: 800px;
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 1;
+/* AEO Icon Grid */
+.aeo-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-.hero-story p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 15px;
-  line-height: 1.6;
+.aeo-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.cta-button {
-  display: inline-block;
-  background: linear-gradient(135deg, #FF4438, #FF6B5B);
-  color: white;
-  padding: 15px 30px;
-  border-radius: 4px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1;
+.aeo-icon:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 68, 56, 0.2);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero-visual {
+    order: -1;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+  
+  .aeo-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .aeo-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .floating-circle {
+    display: none;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
 }
 
 /* Challenges Section Styles */

@@ -8,84 +8,91 @@ import ContactSection from '../components/ContactSection.astro';
 <MainLayout title="Astro Framework SEO-Friendly Website Design & Development | Bright Forge SEO" description="We build blazing-fast, SEO-ready websites with Astro. Discover our Philippines-based web design & development service that boosts rankings and delights users.">
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-particles"></div>
-    <div class="max-w-7xl mx-auto px-4 relative z-10">
-      <!-- Breadcrumbs -->
-      <div style="display: flex; align-items: center; margin-bottom: 3.5rem !important; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="/" style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; text-decoration: none !important; font-weight: 400 !important;">Home</a>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; margin: 0 12px !important; font-weight: 400 !important;">›</span>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; font-weight: 400 !important;">Astro SEO Website Development</span>
-      </div>
-
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-badge-top">
-            <span class="badge-icon">⚡</span>
-            <span>Lightning Fast</span>
+  <!-- Enhanced Hero Section -->
+  <section class="hero-astro-development">
+    <!-- Animated Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <!-- Enhanced Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Astro SEO Website Development</span>
+      </nav>
+      
+      <div class="hero-container">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <!-- Hero Badge -->
+          <div class="hero-badge">
+            <i class="fas fa-rocket"></i>
+            <span>Lightning Fast Development</span>
           </div>
-          <h1>Astro Framework SEO-Friendly Website Design & Development</h1>
-          <p class="hero-subtitle">Lightning-fast pages, clean code, and search-first architecture—everything you need to dominate Google and wow your visitors.</p>
-          <p class="hero-description">Building a website shouldn't feel like a guessing game. At Bright Forge SEO, we craft Astro-powered sites that load instantly, rank higher, and convert better.</p>
           
-          <!-- Key Stats -->
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">99</span>
-              <span class="stat-label">PageSpeed Score</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">0.8s</span>
-              <span class="stat-label">Load Time</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">SEO Ready</span>
-            </div>
-          </div>
-
-          <div class="hero-cta">
+          <h1>Astro Framework <span>SEO-Friendly Website Design & Development</span></h1>
+          
+          <p>Lightning-fast pages, clean code, and search-first architecture—everything you need to dominate Google and wow your visitors.</p>
+          
+          <p>Building a website shouldn't feel like a guessing game. At Bright Forge SEO, we craft Astro-powered sites that load instantly, rank higher, and convert better.</p>
+          
+          <p>Our <strong>Astro SEO website development Philippines</strong> services combine cutting-edge technology with proven SEO strategies. From <strong>blazing-fast performance</strong> to search engine optimization, we build websites that deliver results as your trusted <strong>Astro development partner</strong>, helping you achieve superior page speeds and search rankings.</p>
+          
+          <!-- Hero Actions -->
+          <div class="hero-actions">
             <a href="/contact/" class="cta-button primary">
-              <span>Start Your Astro Project</span>
               <i class="fas fa-rocket"></i>
+              <span>Start Your Astro Project</span>
             </a>
             <a href="#process" class="cta-button secondary">
-              <span>See Our Process</span>
-              <i class="fas fa-arrow-down"></i>
+              <i class="fas fa-info-circle"></i>
+              <span>Learn Our Process</span>
             </a>
+          </div>
+          
+          <!-- Hero Stats -->
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">99</div>
+              <div class="stat-label">PageSpeed Score</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">0.8s</div>
+              <div class="stat-label">Load Time</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">SEO Ready</div>
+            </div>
           </div>
         </div>
         
+        <!-- Hero Visual -->
         <div class="hero-visual">
-          <div class="astro-showcase">
-            <div class="showcase-header">
-              <div class="browser-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+          <div class="hero-image-container">
+            <div class="astro-icon-grid">
+              <div class="astro-icon">
+                <i class="fas fa-code"></i>
               </div>
-              <div class="url-bar">astro-powered-site.com</div>
-            </div>
-            <div class="showcase-content">
-              <div class="code-preview">
-                <pre><code>&lt;!-- Zero JS by default --&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;⚡ Fast&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;SEO Ready&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+              <div class="astro-icon">
+                <i class="fas fa-rocket"></i>
               </div>
-            </div>
-          </div>
-          <div class="performance-badge">
-            <div class="perf-icon">🚀</div>
-            <div class="perf-text">
-              <span>Core Web Vitals</span>
-              <strong>All Green</strong>
+              <div class="astro-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -677,131 +684,195 @@ section {
 }
 
 /********************
-  Hero Section
+  Enhanced Hero Section
 *********************/
-.hero-section {
-  background: var(--gradient-primary);
-  color: white;
-  padding: 8rem 0 6rem;
+.hero-astro-development {
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 30%, #4285F4 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
   display: flex;
   align-items: center;
+  color: white;
+  animation: gradientShift 8s ease-in-out infinite;
 }
 
-.hero-particles {
+@keyframes gradientShift {
+  0%, 100% {
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 30%, #4285F4 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #4285F4 0%, #FF6B35 30%, #FF4438 100%);
+  }
+}
+
+.hero-bg-elements {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
-  animation: float 20s ease-in-out infinite;
+  z-index: 1;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation-delay: -1s;
+}
+
+.circle-2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 15%;
+  animation-delay: -3s;
+}
+
+.circle-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 30%;
+  left: 70%;
+  animation-delay: -5s;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
 }
 
+.hero-breadcrumbs {
+  display: inline-block !important;
+  margin-bottom: 3rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  position: relative;
+  z-index: 10;
+}
 
+.hero-breadcrumbs * {
+  display: inline !important;
+  vertical-align: baseline !important;
+}
 
+.breadcrumb-link {
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
 
+.breadcrumb-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
 
-.hero-content {
+.breadcrumb-separator {
+  color: white !important;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.breadcrumb-current {
+  color: white !important;
+  font-weight: 600;
+}
+
+.hero-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 @media (min-width: 1024px) {
-  .hero-content {
+  .hero-container {
     grid-template-columns: 1.2fr 0.8fr;
   }
 }
 
-.hero-badge-top {
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.badge-icon {
-  font-size: 16px;
+.hero-badge i {
+  font-size: 1rem;
+  color: white;
 }
 
-.hero-text h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  margin-bottom: 1rem;
-  color: rgba(255,255,255,0.95);
-  font-weight: 500;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.7;
-  max-width: 600px;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 2rem 0;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 800;
   color: white;
-  line-height: 1;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.8);
-  margin-top: 0.5rem;
+.hero-content h1 span {
+  display: block;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.hero-cta {
+.hero-content p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-content p strong {
+  color: white;
+  font-weight: 700;
+}
+
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
@@ -813,13 +884,13 @@ section {
 
 .cta-button.primary {
   background: white;
-  color: var(--brand-accent);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  color: #FF4438;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button.secondary {
@@ -834,102 +905,132 @@ section {
   transform: translateY(-2px);
 }
 
-/* Hero Visual */
-.hero-visual {
-  position: relative;
+.cta-button i {
+  font-size: 1rem;
 }
 
-.astro-showcase {
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 12px;
-  overflow: hidden;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.showcase-header {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
 }
 
-.browser-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.browser-dots span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.browser-dots span:nth-child(1) { background: #ff5f57; }
-.browser-dots span:nth-child(2) { background: #ffbd2e; }
-.browser-dots span:nth-child(3) { background: #28ca42; }
-
-.url-bar {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+.stat-label {
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
 }
 
-.showcase-content {
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.astro-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   padding: 2rem;
 }
 
-.code-preview {
-  font-family: 'Monaco', 'Consolas', monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.code-preview pre {
-  margin: 0;
-  white-space: pre-wrap;
-}
-
-.code-preview code {
-  display: block;
-}
-
-.performance-badge {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  background: linear-gradient(135deg, #00d084, #00a86b);
-  color: white;
-  padding: 16px 20px;
-  border-radius: 12px;
+.astro-icon {
   display: flex;
   align-items: center;
-  gap: 12px;
-  box-shadow: var(--shadow-medium);
-  transform: rotate(5deg);
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: iconFloat 4s ease-in-out infinite;
 }
 
-.perf-icon {
-  font-size: 24px;
+.astro-icon:nth-child(even) {
+  animation-delay: -2s;
 }
 
-.perf-text span {
-  display: block;
-  font-size: 12px;
-  opacity: 0.9;
+.astro-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
 }
 
-.perf-text strong {
-  font-size: 18px;
-  font-weight: 700;
+.astro-icon i {
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Font Awesome 5 Free', sans-serif !important;
+  font-weight: 900;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-astro-development {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    gap: 2rem;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .astro-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .astro-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .astro-icon i {
+    font-size: 1.25rem;
+  }
 }
 
 /********************

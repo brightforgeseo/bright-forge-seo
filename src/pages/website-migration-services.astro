@@ -7,77 +7,96 @@ import ContactSection from '../components/ContactSection.astro';
 <MainLayout title="Website Migration SEO Services Philippines | Bright Forge SEO" description="Seamlessly rebuild or replatform your website without sacrificing search traffic. Our SEO-led migration services safeguard rankings, traffic, and revenue.">
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-particles"></div>
-    <div class="max-w-7xl mx-auto px-4 relative z-10">
-      <!-- Breadcrumbs -->
-      <div style="display: flex; align-items: center; margin-bottom: 3.5rem !important; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="/" style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; text-decoration: none !important; font-weight: 400 !important;">Home</a>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; margin: 0 12px !important; font-weight: 400 !important;">›</span>
-        <span style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; font-weight: 400 !important;">Website Migration Services</span>
-      </div>
-
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-badge-top">
-            <span class="badge-icon">🔄</span>
+  <!-- Enhanced Hero Section -->
+  <section class="hero-migration">
+    <!-- Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle" style="top: 10%; left: 10%; width: 100px; height: 100px; animation-delay: 0s;"></div>
+      <div class="floating-circle" style="top: 60%; right: 15%; width: 150px; height: 150px; animation-delay: 2s;"></div>
+      <div class="floating-circle" style="bottom: 20%; left: 20%; width: 80px; height: 80px; animation-delay: 4s;"></div>
+    </div>
+    
+    <div class="container mx-auto px-4">
+      <!-- Enhanced Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Website Migration Services</span>
+      </nav>
+      
+      <div class="hero-container">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <!-- Hero Badge -->
+          <div class="hero-badge">
+            <i class="fas fa-exchange-alt"></i>
             <span>Safe Migration</span>
           </div>
-          <h1>SEO-Focused Website Migration Services</h1>
-          <p class="hero-subtitle">Launch your new site - without tanking your rankings.</p>
-          <p class="hero-description">A fresh design or new CMS should move your business forward, not wipe out years of organic growth. Our Philippines-based SEO engineers manage every technical step of your migration so Google, Bing, and - most importantly - your customers keep finding you.</p>
-          <p class="hero-description">We've rescued brands from traffic nosedives; let's make sure yours never happens.</p>
           
-          <!-- Key Stats -->
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">0%</span>
-              <span class="stat-label">Critical Traffic Loss</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Successful Migrations</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label">Launch Monitoring</span>
-            </div>
+          <h1 class="hero-title">
+            SEO-Focused <span>Website Migration</span> Services
+          </h1>
+          
+          <div class="hero-story">
+            <p>Launch your new site - without tanking your rankings. A fresh design or new CMS should move your business forward, not wipe out years of organic growth.</p>
+            <p>Our Philippines-based SEO engineers manage every technical step of your migration so Google, Bing, and - most importantly - your customers keep finding you.</p>
+            <p>We've rescued brands from traffic nosedives; let's make sure yours never happens.</p>
           </div>
-
-          <div class="hero-cta">
-            <a href="/contact" class="cta-button primary">
-              <span>Plan My Migration</span>
+          
+          <!-- Hero Actions -->
+          <div class="hero-actions">
+            <a href="/contact" class="hero-cta primary">
               <i class="fas fa-rocket"></i>
+              <span>Plan My Migration</span>
             </a>
-            <a href="#process" class="cta-button secondary">
+            <a href="#process" class="hero-cta secondary">
+              <i class="fas fa-list-ol"></i>
               <span>See Our Process</span>
-              <i class="fas fa-arrow-down"></i>
             </a>
           </div>
         </div>
         
+        <!-- Hero Visual -->
         <div class="hero-visual">
-          <div class="migration-flow">
-            <div class="flow-step">
-              <div class="step-icon old">🌐</div>
-              <div class="step-label">Old Site</div>
+          <!-- Hero Stats -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">0%</div>
+              <div class="stat-label">Traffic Loss</div>
             </div>
-            <div class="flow-arrow">
-              <div class="arrow-line"></div>
-              <div class="arrow-text">Safe Transfer</div>
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Migrations</div>
             </div>
-            <div class="flow-step">
-              <div class="step-icon new">✨</div>
-              <div class="step-label">New Site</div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Monitoring</div>
             </div>
           </div>
-          <div class="migration-badge">
-            <div class="migration-icon">🛡️</div>
-            <div class="migration-text">
-              <span>SEO Protected</span>
-              <strong>Zero Losses</strong>
+          
+          <!-- Migration Icon Grid -->
+          <div class="migration-icon-grid">
+            <div class="migration-icon">
+              <i class="fas fa-database"></i>
             </div>
+            <div class="migration-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <div class="migration-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="migration-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="migration-icon">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <div class="migration-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+          </div>
+        </div>
+      </div>
           </div>
         </div>
       </div>
@@ -621,23 +640,40 @@ section {
 /********************
   Hero Section
 *********************/
-.hero-section {
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
-  color: white;
-  padding: 8rem 0 6rem;
+.hero-migration {
   position: relative;
-  overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+  padding: 2rem 0;
 }
 
-.hero-particles {
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Elements */
+.hero-bg-elements {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
-  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-circle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -645,22 +681,68 @@ section {
   50% { transform: translateY(-20px); }
 }
 
+/* Breadcrumbs */
+.hero-breadcrumbs {
+  display: inline-block !important;
+  margin-bottom: 3rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  position: relative;
+  z-index: 10;
+}
 
+.hero-breadcrumbs * {
+  display: inline !important;
+  vertical-align: baseline !important;
+}
 
-.hero-content {
+.breadcrumb-link {
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.breadcrumb-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: white !important;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.breadcrumb-current {
+  color: white !important;
+  font-weight: 600;
+}
+
+/* Hero Container */
+.hero-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 1024px) {
-  .hero-content {
+  .hero-container {
     grid-template-columns: 1.2fr 0.8fr;
   }
 }
 
-.hero-badge-top {
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -672,40 +754,83 @@ section {
   font-weight: 600;
   margin-bottom: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
-.badge-icon {
-  font-size: 16px;
-}
-
-.hero-text h1 {
+.hero-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  color: white;
 }
 
-.hero-subtitle {
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  margin-bottom: 1rem;
-  color: rgba(255,255,255,0.95);
-  font-weight: 500;
+.hero-title span {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.hero-description {
+.hero-story {
+  margin-bottom: 2rem;
+}
+
+.hero-story p {
   font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: rgba(255,255,255,0.9);
   line-height: 1.7;
   max-width: 600px;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.hero-cta.primary {
+  background: white;
+  color: #FF4438;
+}
+
+.hero-cta.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.hero-cta.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-cta.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hero Stats */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 2rem 0;
-  padding: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -718,23 +843,85 @@ section {
 
 .stat-number {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   color: white;
   line-height: 1;
 }
 
 .stat-label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.8);
   margin-top: 0.5rem;
 }
 
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
+/* Migration Icon Grid */
+.migration-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 2rem;
+}
+
+.migration-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.migration-icon:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.migration-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero-visual {
+    order: -1;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .migration-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .migration-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .floating-circle {
+    display: none;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
 }
 
 .cta-button {

@@ -8,44 +8,28 @@ import ContactSection from '../components/ContactSection.astro';
 <MainLayout title="Case Studies - Bright Forge SEO Philippines" description="Real-world examples of how Bright Forge SEO Philippines has delivered outstanding SEO results for businesses.">
   <LegacyHeader slot="header" />
 
-  <!-- Modern Hero Section -->
-  <section class="modern-hero">
-    <div class="hero-background"></div>
-    <div class="hero-content">
-      <div class="container">
-        <div class="hero-text">
-          <span class="hero-badge">Success Stories</span>
-          <h1 class="hero-title">Proven Results That Speak for Themselves</h1>
-          <p class="hero-description">Discover how we've transformed businesses across industries with data-driven SEO strategies that deliver measurable growth and lasting success.</p>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">177%</span>
-              <span class="stat-label">Max Traffic Increase</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Successful Projects</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">9</span>
-              <span class="stat-label">Industries Served</span>
-            </div>
-          </div>
+  <!-- Hero Section -->
+  <section class="hero-case-studies">
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Case Studies</span>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Case Studies</h1>
+        <p class="hero-subtitle">Real results from real businesses - see how our SEO strategies drive measurable growth.</p>
+        <p>Discover how we've transformed businesses across industries with data-driven SEO strategies that deliver lasting success. From local businesses to enterprise-level projects, these case studies showcase our comprehensive approach to search engine optimization.</p>
+        
+        <div class="hero-cta-container">
+          <a href="#case-studies-grid" class="hero-cta-btn primary">Browse Case Studies</a>
+          <a href="/contact" class="hero-cta-btn secondary">Get Your Free Audit</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Modern Breadcrumbs -->
-  <nav class="modern-breadcrumbs">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li><a href="/" class="breadcrumb-link">Home</a></li>
-        <li class="breadcrumb-separator">→</li>
-        <li class="breadcrumb-current">Case Studies</li>
-      </ol>
-    </div>
-  </nav>
 
   <!-- Modern Filter & Grid Section -->
   <section class="case-studies-section">
@@ -491,64 +475,208 @@ import ContactSection from '../components/ContactSection.astro';
 </script>
 
 <style>
-  /* Modern Hero Section */
-  .modern-hero {
+  /* Hero Section */
+  .hero-case-studies {
     background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
     color: white;
     padding: 80px 0;
     text-align: center;
     position: relative;
-    overflow: hidden;
   }
 
-  .modern-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-  }
-
-  .hero-content {
+  /* Hero Breadcrumbs */
+  .hero-breadcrumbs {
+    display: inline-block !important;
+    margin-bottom: 2rem;
+    font-size: 14px;
+    font-weight: 500;
     position: relative;
-    z-index: 2;
+    z-index: 10;
+  }
+
+  .hero-breadcrumbs * {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+
+  .breadcrumb-link {
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+  }
+
+  .breadcrumb-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .breadcrumb-separator {
+    color: white !important;
+    margin: 0 8px;
+    opacity: 0.7;
+  }
+
+  .breadcrumb-current {
+    color: white !important;
+    font-weight: 600;
+  }
+
+  /* Hero Content */
+  .hero-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
-  .hero-title {
-    font-size: 4rem;
-    font-weight: 900;
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: white;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
   }
 
   .hero-subtitle {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
     font-weight: 300;
     color: white;
   }
 
-  .hero-description {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
+  .hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: white;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.95;
+  }
+
+  .hero-story {
+    margin-bottom: 3rem;
+  }
+
+  .hero-story p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+  }
+
+  .hero-story p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Hero Actions */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-container {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    border: 2px solid white;
+  }
+
+  .hero-cta-btn.primary {
+    background: white;
+    color: #FF4438;
+  }
+
+  .hero-cta-btn.primary:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .hero-cta-btn.secondary {
+    background: transparent;
+    color: white;
+  }
+
+  .hero-cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Hero Stats */
+  .hero-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .hero-stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.9rem;
+    color: white;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+
+  /* Hero Icon Grid */
+  .hero-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-icon {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .hero-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .hero-icon i {
+    font-size: 24px;
+    color: white;
   }
 
   .hero-stats {
