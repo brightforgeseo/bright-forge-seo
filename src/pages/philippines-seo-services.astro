@@ -10,18 +10,71 @@ import ContactSection from '../components/ContactSection.astro';
 
   <!-- Hero Section -->
   <section class="hero-seo">
+    <!-- Animated Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+    
     <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs - EXTREME WHITE OVERRIDE -->
-      <div data-breadcrumb-container style="color: white !important; display: flex; align-items: center; margin-bottom: 3.5rem !important; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-        <a href="/" data-breadcrumb-link style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; text-decoration: none !important; font-weight: 400 !important;">Home</a>
-        <span data-breadcrumb-separator style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; margin: 0 12px !important; font-weight: 400 !important;">›</span>
-        <span data-breadcrumb-current style="color: white !important; color: #ffffff !important; color: rgb(255,255,255) !important; font-weight: 400 !important;">Philippines SEO Services</span>
-      </div>
+      <!-- Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Philippines SEO Services</span>
+      </nav>
       
-      <div class="hero-content">
-        <h1>Bright Forge <a href="/">SEO Agency</a>: Propel Your Philippine Business To The Top Of Google</h1>
-        <p>Struggling to get seen online? At Bright Forge <a href="/">SEO Agency</a>, we focus on what really matters, helping businesses in the Philippines and around the world stand out, gain real sales, and build lasting brand trust. Forget empty metrics; we'll create a solid online presence that keeps you ahead of the crowd. Let's put your brand in the spotlight where it belongs.</p>
-        <a href="/contact" class="cta-button">Get Started Today</a>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-trophy"></i>
+            <span>Top-Rated SEO Agency</span>
+          </div>
+          
+          <h1>Bright Forge <a href="/">SEO Agency</a>: Propel Your Philippine Business To The Top Of Google</h1>
+          
+          <p class="hero-description">Struggling to get seen online? At Bright Forge <a href="/">SEO Agency</a>, we focus on what really matters, helping businesses in the Philippines and around the world stand out, gain real sales, and build lasting brand trust. Forget empty metrics; we'll create a solid online presence that keeps you ahead of the crowd. Let's put your brand in the spotlight where it belongs.</p>
+          
+          <div class="hero-actions">
+            <a href="/contact" class="cta-button primary">
+              <span>Get Started Today</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#services" class="cta-button secondary">
+              <i class="fas fa-play"></i>
+              <span>View Our Services</span>
+            </a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Websites Ranked</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">150%</div>
+              <div class="stat-label">Avg. Traffic Increase</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <div class="seo-icon-grid">
+              <div class="seo-icon"><i class="fas fa-search"></i></div>
+              <div class="seo-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="seo-icon"><i class="fas fa-bullseye"></i></div>
+              <div class="seo-icon"><i class="fas fa-rocket"></i></div>
+              <div class="seo-icon"><i class="fas fa-trophy"></i></div>
+              <div class="seo-icon"><i class="fas fa-star"></i></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -340,11 +393,12 @@ import ContactSection from '../components/ContactSection.astro';
   /* Hero Section */
   .hero-seo {
     background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
-    min-height: 70vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding: 120px 0 80px;
   }
 
   .hero-seo::before {
@@ -354,7 +408,7 @@ import ContactSection from '../components/ContactSection.astro';
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     z-index: 1;
   }
 
@@ -363,40 +417,254 @@ import ContactSection from '../components/ContactSection.astro';
     z-index: 2;
   }
 
+  /* Floating Background Elements */
+  .hero-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
 
+  .floating-circle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    right: 15%;
+    animation-delay: 0s;
+  }
+
+  .circle-2 {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    right: 25%;
+    animation-delay: 2s;
+  }
+
+  .circle-3 {
+    width: 60px;
+    height: 60px;
+    top: 40%;
+    left: 10%;
+    animation-delay: 4s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  /* Breadcrumbs */
+  .hero-breadcrumbs {
+    display: inline-block !important;
+    margin-bottom: 3rem;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .hero-breadcrumbs * {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
+
+  .breadcrumb-link {
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+  }
+
+  .breadcrumb-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .breadcrumb-separator {
+    color: white !important;
+    margin: 0 8px;
+    opacity: 0.7;
+  }
+
+  .breadcrumb-current {
+    color: white !important;
+    font-weight: 600;
+  }
+
+  /* Hero Container */
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* Hero Content */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-badge i {
+    color: #FFD700;
+  }
 
   .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 700;
     color: white;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.2;
   }
 
-  .hero-content p {
+  .hero-description {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
-    max-width: 800px;
-    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  /* Hero Actions */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
   }
 
   .cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #FF4438 0%, #ff6b5a 100%);
-    color: white;
-    padding: 16px 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 28px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
+    border: 2px solid transparent;
   }
 
-  .cta-button:hover {
+  .cta-button.primary {
+    background: white;
+    color: #FF4438;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+    background: #f8f9fa;
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(255, 68, 56, 0.4);
+  }
+
+  /* Hero Stats */
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .hero-stats .stat-number,
+  .hero-seo .stat-number {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    color: #ffffff !important;
+    margin-bottom: 4px;
+  }
+
+  .hero-stats .stat-label,
+  .hero-seo .stat-label {
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+  }
+
+  /* Hero Visual */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .seo-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .seo-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    animation: iconFloat 4s ease-in-out infinite;
+  }
+
+  .seo-icon:nth-child(even) {
+    animation-delay: 2s;
+  }
+
+  .seo-icon i {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .seo-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  @keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
   }
 
   /* Internal Link Styling for Hero */
