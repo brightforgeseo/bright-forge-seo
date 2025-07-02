@@ -441,32 +441,53 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <script is:inline>
-  // Case Study Filter Function
-  function filterCaseStudies(category) {
-    const cards = document.querySelectorAll('.case-study-card');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-
-    // Reset button styles
-    filterButtons.forEach(btn => {
-      btn.classList.remove('active');
-      btn.style.backgroundColor = '#f5f5f5';
-      btn.style.color = 'var(--dark)';
-    });
-
-    // Highlight active button
-    event.currentTarget.classList.add('active');
-    event.currentTarget.style.backgroundColor = 'var(--primary)';
-    event.currentTarget.style.color = 'white';
-
-    // Filter cards
-    if (category === 'all') {
-      cards.forEach(card => card.style.display = 'block');
-    } else {
-      cards.forEach(card => {
-        card.style.display = card.classList.contains(category) ? 'block' : 'none';
+  // Modern Case Study Filter Function with animation
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set "All Industries" as active by default
+    const allButton = document.querySelector('.modern-filter-btn[data-filter="all"]');
+    if (allButton) allButton.classList.add('active');
+    
+    // Add click event listeners to all filter buttons
+    const filterButtons = document.querySelectorAll('.modern-filter-btn');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-filter');
+        
+        // Update active button state
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Get all case study cards
+        const cards = document.querySelectorAll('.modern-case-card');
+        
+        // Apply filter with animation
+        cards.forEach(card => {
+          // First apply the fade-out class
+          card.classList.add('card-fade-out');
+          
+          // After the fade out animation completes
+          setTimeout(() => {
+            // Apply filter logic
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'block';
+              // Remove the fade-out and add fade-in
+              setTimeout(() => {
+                card.classList.remove('card-fade-out');
+                card.classList.add('card-fade-in');
+              }, 10);
+            } else {
+              card.style.display = 'none';
+            }
+          }, 300); // Match this to the CSS transition time
+          
+          // Remove the fade-in class after animation completes
+          setTimeout(() => {
+            card.classList.remove('card-fade-in');
+          }, 600); // Enough time for both transitions
+        });
       });
-    }
-  }
+    });
+  });
 </script>
 
 <style>
@@ -600,32 +621,36 @@ import ContactSection from '../components/ContactSection.astro';
     margin: 0 auto;
   }
 
-  /* Filter Buttons */
-  .filter-buttons {
+  /* Modern Filter Buttons */
+  .filter-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    gap: 12px;
+    margin-bottom: 40px;
+    justify-content: center;
+    padding: 0 20px;
   }
 
   .modern-filter-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #e9ecef;
-    background: white;
-    color: #495057;
+    padding: 10px 20px;
     border-radius: 50px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    color: #333;
+    font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none;
-    font-size: 0.9rem;
+    white-space: nowrap;
   }
 
-  .modern-filter-btn:hover,
+  .modern-filter-btn:hover {
+    background: rgba(255, 68, 56, 0.1);
+    color: #FF4438;
+    border-color: #FF4438;
+    transform: translateY(-2px);
+  }
+
   .modern-filter-btn.active {
     background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
     color: white;
@@ -637,8 +662,22 @@ import ContactSection from '../components/ContactSection.astro';
   /* Case Studies Grid */
   .case-studies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  /* Card Animation Classes */
+  .card-fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   /* Modern Case Cards */
