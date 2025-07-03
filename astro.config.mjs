@@ -1,66 +1,11 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
-import { getAllBlogPosts } from './src/lib/contentful.js';
-
-// Get dynamic blog post URLs for sitemap
-async function getBlogSitemapUrls() {
-  try {
-    const posts = await getAllBlogPosts();
-    return posts.map(post => `https://brightforgeseo.com/blog/${post.slug}/`);
-  } catch (error) {
-    console.warn('Could not fetch blog posts for sitemap:', error);
-    return [];
-  }
-}
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://brightforgeseo.com',
   integrations: [
-    tailwind(),
-    sitemap({
-      filename: 'sitemap.xml',
-      filter: (page) => {
-        // Exclude certain pages from sitemap
-        return !page.includes('/facebook-og-generator/') && 
-               !page.includes('/bright-forge-seo/') &&
-               !page.includes('/generative-engine-optimization/') &&
-               !page.includes('/thanks/');
-      },
-      customPages: await getBlogSitemapUrls(),
-      serialize: (item) => {
-        // Ensure all URLs have trailing slashes and proper priority/changefreq
-        if (item.url.endsWith('/')) {
-          item.url = item.url;
-        } else {
-          item.url = item.url + '/';
-        }
-        
-        // Set priorities and change frequencies
-        if (item.url === 'https://brightforgeseo.com/') {
-          item.priority = 1.0;
-          item.changefreq = 'weekly';
-        } else if (item.url.includes('/blog/')) {
-          item.priority = 0.8;
-          item.changefreq = 'monthly';
-        } else if (item.url.includes('/case-studies/')) {
-          item.priority = 0.7;
-          item.changefreq = 'yearly';
-        } else if (item.url.includes('/knowledge-base/')) {
-          item.priority = 0.7;
-          item.changefreq = 'yearly';
-        } else if (item.url.includes('-seo-services') || item.url.includes('philippines-seo-services')) {
-          item.priority = 0.9;
-          item.changefreq = 'monthly';
-        } else {
-          item.priority = 0.6;
-          item.changefreq = 'monthly';
-        }
-        
-        return item;
-      }
-    })
+    tailwind()
   ],
   output: 'static',
   // Enforce trailing slashes on all URLs to avoid 301 redirects
