@@ -20,6 +20,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
+      filename: 'sitemap.xml',
       filter: (page) => {
         // Exclude certain pages from sitemap
         return !page.includes('/facebook-og-generator/') && 
