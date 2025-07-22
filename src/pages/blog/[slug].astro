@@ -1,5 +1,7 @@
 ---
 import ArticleTemplate from '../../components/ArticleTemplate.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
 import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
 
 export async function getStaticPaths() {
@@ -82,4 +84,7 @@ const templateProps = {
 };
 ---
 
-<ArticleTemplate {...templateProps} />
+<ArticleTemplate {...templateProps}>
+  <LegacyHeader slot="header" />
+  <Footer slot="footer" />
+</ArticleTemplate>
