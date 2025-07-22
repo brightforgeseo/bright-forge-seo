@@ -165,7 +165,7 @@ const canonicalUrl = Astro.url.href;
 
 <article class="case-study">
   <!-- Hero Section -->
-  <section class="case-study-hero">
+  <section class="hero-seo">
     <!-- Animated Background Elements -->
     <div class="hero-bg-elements">
       <div class="floating-circle circle-1"></div>
@@ -203,15 +203,6 @@ const canonicalUrl = Astro.url.href;
               <i class="fas fa-chart-bar"></i>
               <span>View Results</span>
             </a>
-          </div>
-          
-          <div class="hero-stats">
-            {keyMetrics.slice(0, 3).map((metric) => (
-              <div class="stat">
-                <div class="stat-number">{metric.value}</div>
-                <div class="stat-label">{metric.label}</div>
-              </div>
-            ))}
           </div>
         </div>
         
@@ -366,8 +357,8 @@ const canonicalUrl = Astro.url.href;
 </article>
 
 <style>
-/* Case Study Hero */
-.case-study-hero {
+/* Hero Section - Matching Service Pages */
+.hero-seo {
   background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
   min-height: 100vh;
   display: flex;
@@ -377,7 +368,7 @@ const canonicalUrl = Astro.url.href;
   overflow: hidden;
 }
 
-.case-study-hero::before {
+.hero-seo::before {
   content: '';
   position: absolute;
   top: 0;
@@ -388,98 +379,105 @@ const canonicalUrl = Astro.url.href;
   z-index: 1;
 }
 
-.case-study-hero > div {
+.hero-seo .max-w-7xl {
   position: relative;
   z-index: 2;
-  width: 100%;
 }
 
-/* Animated Background Elements */
+/* Floating Background Elements */
 .hero-bg-elements {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 .floating-circle {
   position: absolute;
-  border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
   animation: float 6s ease-in-out infinite;
 }
 
 .circle-1 {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   top: 20%;
-  left: 10%;
+  right: 15%;
   animation-delay: 0s;
 }
 
 .circle-2 {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   top: 60%;
-  right: 15%;
+  right: 25%;
   animation-delay: 2s;
 }
 
 .circle-3 {
   width: 60px;
   height: 60px;
-  bottom: 20%;
-  left: 70%;
+  top: 40%;
+  left: 10%;
   animation-delay: 4s;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
 }
 
+/* Breadcrumbs */
 .hero-breadcrumbs {
-  margin-bottom: 40px;
+  display: inline-block !important;
+  margin-bottom: 3rem;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.hero-breadcrumbs * {
+  display: inline !important;
+  vertical-align: baseline !important;
 }
 
 .breadcrumb-link {
-  color: rgba(255, 255, 255, 0.9);
+  color: white !important;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0.9;
 }
 
 .breadcrumb-link:hover {
-  color: white;
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .breadcrumb-separator {
-  margin: 0 10px;
+  color: white !important;
+  margin: 0 8px;
   opacity: 0.7;
 }
 
 .breadcrumb-current {
-  color: white;
-  font-weight: 500;
+  color: white !important;
+  font-weight: 600;
 }
 
+/* Hero Container */
 .hero-container {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: center;
 }
 
+/* Hero Content */
 .hero-content {
-  max-width: 600px;
+  max-width: none;
 }
 
 .hero-badge {
@@ -487,16 +485,18 @@ const canonicalUrl = Astro.url.href;
   align-items: center;
   gap: 8px;
   background: rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 25px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
   font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero-badge i {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .hero-content h1 {
