@@ -1,5 +1,8 @@
 ---
-import { getImage } from 'astro:assets';
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
 
 export interface Props {
   title: string;
@@ -34,8 +37,6 @@ export interface Props {
   };
   keyTakeaways: string[];
   nextSteps?: string;
-  publishDate?: string;
-  modifiedDate?: string;
 }
 
 const {
@@ -51,119 +52,13 @@ const {
   results,
   testimonial,
   keyTakeaways,
-  nextSteps,
-  publishDate = new Date().toISOString().split('T')[0],
-  modifiedDate
+  nextSteps
 } = Astro.props;
-
-// Generate schema for the case study
-const caseStudySchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": title,
-  "description": challenge,
-  "image": heroImage ? (heroImage.startsWith('http') ? heroImage : `https://brightforgeseo.com${heroImage}`) : undefined,
-  "author": {
-    "@type": "Organization",
-    "name": "Bright Forge SEO",
-    "url": "https://brightforgeseo.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bright Forge SEO",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://brightforgeseo.com/images/logo.png"
-    }
-  },
-  "datePublished": publishDate,
-  "dateModified": modifiedDate || publishDate,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": Astro.url.href
-  },
-  "articleSection": "Case Study",
-  "keywords": [industry, "SEO", "Case Study", client, "Digital Marketing"].join(", ")
-};
-
-// Generate schema for the service provided
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "SEO Services",
-  "provider": {
-    "@type": "Organization",
-    "name": "Bright Forge SEO",
-    "url": "https://brightforgeseo.com"
-  },
-  "description": solution,
-  "name": `SEO Services for ${industry}`,
-  "review": testimonial ? {
-    "@type": "Review",
-    "reviewBody": testimonial.quote,
-    "author": {
-      "@type": "Person",
-      "name": testimonial.author
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    }
-  } : undefined
-};
-
-// Generate breadcrumb schema
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://brightforgeseo.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Case Studies",
-      "item": "https://brightforgeseo.com/case-studies"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": title,
-      "item": Astro.url.href
-    }
-  ]
-};
-
-// Generate FAQPage schema from key takeaways
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": keyTakeaways.map((takeaway, index) => ({
-    "@type": "Question",
-    "name": `What is key takeaway #${index + 1} from this ${industry} SEO case study?`,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": takeaway
-    }
-  }))
-};
-
-// Current URL for canonical
-const canonicalUrl = Astro.url.href;
 ---
 
-<!-- SEO Schema Markup -->
-<script type="application/ld+json" set:html={JSON.stringify(caseStudySchema)} slot="head" />
-<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} slot="head" />
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
-<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+<MainLayout title={title} description="Propel your Philippine business to the top of Google with our expert SEO services. Customized strategies, transparent reporting, and proven results.">
+  <LegacyHeader slot="header" />
 
-<article class="case-study">
   <!-- Hero Section -->
   <section class="hero-seo">
     <!-- Animated Background Elements -->
@@ -178,9 +73,7 @@ const canonicalUrl = Astro.url.href;
       <nav class="hero-breadcrumbs">
         <a href="/" class="breadcrumb-link">Home</a>
         <span class="breadcrumb-separator">›</span>
-        <a href="/case-studies/" class="breadcrumb-link">Case Studies</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">{client}</span>
+        <span class="breadcrumb-current">Philippines SEO Services</span>
       </nav>
       
       <div class="hero-container">
@@ -196,1027 +89,1063 @@ const canonicalUrl = Astro.url.href;
           
           <div class="hero-actions">
             <a href="/contact" class="cta-button primary">
-              <span>Get Similar Results</span>
+              <span>Get Started Today</span>
               <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="#metrics" class="cta-button secondary">
-              <i class="fas fa-chart-bar"></i>
-              <span>View Results</span>
+            <a href="#services" class="cta-button secondary">
+              <i class="fas fa-play"></i>
+              <span>View Our Services</span>
             </a>
           </div>
         </div>
         
-        {heroImage && (
-          <div class="hero-visual">
-            <div class="hero-image-container">
-              <div class="image-decoration"></div>
-              <img src={heroImage} alt={`${client} SEO results and analytics`} width="500" height="350" loading="eager" decoding="sync" />
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Metrics Overview -->
-  <section class="metrics-overview">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="metrics-grid">
-        {keyMetrics.map((metric) => (
-          <div class="metric-card">
-            <div class="metric-value">{metric.value}</div>
-            <div class="metric-label">{metric.label}</div>
-            <div class="metric-description">{metric.description}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Challenge Section -->
-  <section class="challenge-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>The <span>Challenge</span></h2>
-      </div>
-      <div class="challenge-content">
-        <div class="challenge-icon">
-          <i class="fas fa-exclamation-triangle"></i>
-        </div>
-        <div class="challenge-text">
-          <p>{challenge}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solution Strategy -->
-  <section class="solution-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Our <span>Solution Strategy</span></h2>
-        <p>{solution}</p>
-      </div>
-      
-      <div class="strategy-grid">
-        {strategySteps.map((step, index) => (
-          <div class="strategy-card">
-            <div class="strategy-number">{index + 1}</div>
-            <div class="strategy-icon">
-              <i class={step.icon}></i>
-            </div>
-            <h3>{step.title}</h3>
-            <p>{step.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Results Section -->
-  <section class="results-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Measurable <span>Results</span></h2>
-      </div>
-      
-      <div class="results-table">
-        <div class="results-header">
-          <div>Metric</div>
-          <div>Before</div>
-          <div>After</div>
-          <div>Improvement</div>
-        </div>
-        {results.map((result) => (
-          <div class="results-row">
-            <div class="metric-name">{result.metric}</div>
-            <div class="before-value">{result.before}</div>
-            <div class="after-value">{result.after}</div>
-            <div class="improvement-value">{result.improvement}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Client Testimonial -->
-  {testimonial && (
-    <section class="testimonial-section">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">
-            <i class="fas fa-quote-left"></i>
-            <p>"{testimonial.quote}"</p>
-          </div>
-          <div class="testimonial-author">
-            {testimonial.avatar && (
-              <img src={testimonial.avatar} alt={testimonial.author} width="80" height="80" loading="lazy" decoding="async" />
-            )}
-            <div class="author-info">
-              <div class="author-name">{testimonial.author}</div>
-              <div class="author-position">{testimonial.position}</div>
-              <div class="author-company">{testimonial.company}</div>
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <div class="seo-icon-grid">
+              <div class="seo-icon"><i class="fas fa-search"></i></div>
+              <div class="seo-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="seo-icon"><i class="fas fa-bullseye"></i></div>
+              <div class="seo-icon"><i class="fas fa-rocket"></i></div>
+              <div class="seo-icon"><i class="fas fa-trophy"></i></div>
+              <div class="seo-icon"><i class="fas fa-star"></i></div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  )}
+    </div>
+  </section>
 
-  <!-- Key Takeaways -->
-  <section class="takeaways-section">
+  <!-- Key Features Section -->
+  <section class="features-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Key <span>Takeaways</span></h2>
+        <h2>What Sets <span>Bright Forge SEO</span> Apart</h2>
+        <p>We deliver what matters most - real business results that grow your bottom line</p>
       </div>
-      
-      <div class="takeaways-list">
-        {keyTakeaways.map((takeaway) => (
-          <div class="takeaway-item">
-            <div class="takeaway-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <p>{takeaway}</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
           </div>
-        ))}
+          <h3>Results That Move the Needle</h3>
+          <p>We understand that search engine optimization isn't just about organic visibility; it's about turning traffic into customers. Our strategies deliver real business outcomes: more leads, higher conversion rates, and improved revenue.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3>Customized Strategies for Philippine Businesses</h3>
+          <p>The Philippines is unique—our language, culture, and buying behavior differ from other markets. Every SEO plan we create is meticulously designed to engage Filipino consumers while also reaching global audiences if you're looking to scale.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Transparency & Collaboration</h3>
+          <p>Trust is the foundation of every successful partnership. We maintain open lines of communication, provide easy-to-understand reports, and collaborate closely with your in-house teams or other marketing partners.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Cutting-Edge SEO Tactics</h3>
+          <p>SEO is an ever-evolving field, and outdated methods will only hold your business back. We stay ahead of industry shifts, ensuring your strategies are always aligned with Google's latest algorithms and best practices.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Dedicated Account Manager & SEO Specialists</h3>
+          <p>You get a single point of contact plus a team of senior SEO strategists, writers, and technical experts, all focused on your unique goals and bottom line.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Next Steps CTA -->
-  {nextSteps && (
-    <section class="next-steps-section">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="next-steps-card">
-          <h3>Ready for Similar Results?</h3>
-          <p>{nextSteps}</p>
-          <a href="/contact/" class="cta-button">Start Your SEO Journey</a>
+
+
+  <!-- Approach Section -->
+  <section class="approach-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Our Proven Approach to <span>SEO Success</span></h2>
+        <p>A strategic, data-driven process that delivers measurable results for your business</p>
+      </div>
+
+      <div class="approach-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Discovery & Goal-Setting</h3>
+          <p>We collaborate with you to define KPIs and outline success metrics. Every campaign is custom-built based on your objectives—whether it's boosting e-commerce sales, generating B2B leads, or improving brand authority.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Detailed Action Plan</h3>
+          <p>After a thorough audit, we present an actionable roadmap covering on-page, off-page, technical, and content strategies. You'll know exactly what to expect and when.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Implementation & Optimization</h3>
+          <p>Our SEO experts roll out the plan step by step, fine-tuning strategies as data and trends evolve. We prioritize the changes that deliver the biggest impact first, ensuring you see quick wins and long-term gains.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Performance Tracking & Reporting</h3>
+          <p>We go beyond standard ranking updates. Expect transparent monthly reports that track user engagement, leads, and ROI-focused metrics. We'll also provide clear recommendations to help you stay ahead of the competition.</p>
         </div>
       </div>
-    </section>
-  )}
-</article>
+    </div>
+  </section>
+
+  <!-- SEO Services Section -->
+  <section class="services-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Our Holistic <span>SEO Services</span></h2>
+        <p>Comprehensive solutions designed to maximize your online visibility and drive measurable results</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3><a href="/seo-audit-services">Comprehensive SEO Audit</a></h3>
+          <p>Before we can craft a winning roadmap, we need to understand where you stand. Our in-depth SEO audit covers:</p>
+          <ul>
+            <li><strong>Technical Health Check:</strong> We identify crawl errors, site speed issues, broken links, and anything else that may hinder your website's performance.</li>
+            <li><strong>Keyword & Content Gap Analysis:</strong> We uncover new keyword opportunities, relevant topics, and content enhancements to broaden your reach.</li>
+            <li><strong>Competitor Benchmarking:</strong> We dissect your competitors' strategies, giving you insights into what works in your industry.</li>
+          </ul>
+          <div class="outcome">
+            <strong>Outcome:</strong> A clear, data-driven blueprint for boosting your site's visibility, usability, and conversion potential.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-key"></i>
+          </div>
+          <h3><a href="/keyword-research-services">Targeted Keyword Research & Strategy</a></h3>
+          <p>Proper keyword selection is essential to attracting the right visitors. We use advanced tools and local insights to find key terms that:</p>
+          <ul>
+            <li>Have strong search intent relevant to your brand.</li>
+            <li>Strike the perfect balance between search volume and competition.</li>
+            <li>Tap into local and long-tail keywords that drive high-quality leads.</li>
+          </ul>
+          <div class="outcome">
+            <strong>Outcome:</strong> An optimized content plan that ensures maximum ROI for every keyword we target.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-edit"></i>
+          </div>
+          <h3><a href="/on-page-seo-services-philippines">On-Page & Content Optimization</a></h3>
+          <p>We refine every element on your site—headings, meta tags, URLs, and content—to resonate with both search engines and users. Our process includes:</p>
+          <ul>
+            <li><strong>SEO Copywriting:</strong> Crafting compelling copy that resonates with Philippine audiences while meeting Google's E-E-A-T guidelines.</li>
+            <li><strong>Internal Linking:</strong> Building logical paths for users and search engines alike, boosting your site's authority.</li>
+            <li><strong>Metadata & Schema Markup:</strong> Enhancing search engine understanding, improving your click-through rates and overall relevance.</li>
+          </ul>
+          <div class="outcome">
+            <strong>Outcome:</strong> Engaging, search-friendly webpages that rank well and convert better.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-link"></i>
+          </div>
+          <h3><a href="/backlink-seo-services-philippines">High-Authority Link Building</a></h3>
+          <p>Building a credible link profile is still a cornerstone of SEO success. We focus on quality rather than quantity:</p>
+          <ul>
+            <li><strong>Editorial Outreach:</strong> Partnering with reputable industry websites and news portals for guest posts and editorial mentions.</li>
+            <li><strong>Local Citations:</strong> Enhancing your brand's footprint across Philippine directories, forums, and social communities.</li>
+            <li><strong>Digital PR:</strong> Creating share-worthy content that naturally attracts links from authoritative platforms.</li>
+          </ul>
+          <div class="outcome">
+            <strong>Outcome:</strong> A stronger domain authority, improved brand reputation, and more stable rankings.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3><a href="/technical-seo-services-philippines">Technical SEO & Site Architecture</a></h3>
+          <p>Slow load times and structural issues can silently kill your rankings. We diagnose and fix critical technical factors:</p>
+          <ul>
+            <li><strong>Site Speed Optimization:</strong> Improving server response times and optimizing images, CSS, and JS for faster loading.</li>
+            <li><strong>Mobile Responsiveness:</strong> Ensuring your site delivers a seamless experience on smartphones and tablets.</li>
+            <li><strong>Structured Data Implementation:</strong> Helping search engines better understand your content, improving visibility in SERPs.</li>
+          </ul>
+          <div class="outcome">
+            <strong>Outcome:</strong> A technically sound website that can scale as your business grows and thrives online.
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Local SEO for Philippine Markets</h3>
+          <p>Local SEO is essential for businesses targeting customers within specific regions of the Philippines—whether you're a Quezon City-based startup or an enterprise in Cebu. We:</p>
+          <ul>
+            <li>Optimize Your Google Business Profile for local queries and "near me" searches.</li>
+            <li>Manage Listings & Citations in local directories, ensuring consistent NAP details.</li>
+            <li>Collect & Amplify Customer Reviews to build trust and brand loyalty.</li>
+          </ul>
+          <div class="outcome">
+            <strong>Outcome:</strong> A commanding presence in local searches, capturing leads who are ready to buy in your area.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Frequently Asked <span>Questions</span></h2>
+        <p>Get answers to common questions about our SEO services</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>What is SEO and why is it crucial in the Philippines?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Search Engine Optimization (SEO) involves optimizing your website to appear prominently in search engine results. In the Philippine market—where mobile usage and online search behavior are rapidly growing—having top visibility can significantly impact your brand's exposure and revenue.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>How does Bright Forge SEO differ from other agencies?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We combine local expertise, cutting-edge tactics, and transparency. Our strategies are not boxed into templates; they're tailor-made for Philippine audiences. Plus, we emphasize close collaboration, ensuring our work aligns perfectly with your business goals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>When can I expect to see results?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>SEO is a long-term game. You might see noticeable improvements in 3-6 months, but sustainable, high-impact results typically take around 6-12 months. We'll provide regular updates to keep you informed every step of the way.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>Do you offer monthly reports and consultations?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we deliver comprehensive monthly reports highlighting keyword movements, traffic metrics, and conversions. Our account manager will also schedule regular consultations to review progress and discuss any next steps.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>What industries do you specialize in?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We've served a wide range of sectors—from e-commerce and finance to real estate and healthcare. Our approach remains consistent: data-driven strategies tailored to meet the unique demands of each industry.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h3>How do I get started?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Simply reach out to us via our website or phone. We'll discuss your objectives and craft a custom proposal that aligns with your brand's aspirations. No matter the size of your business, we have an SEO solution for you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
 
 <style>
-/* Hero Section - Exact Service Page Match */
-.hero-seo {
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: white;
-  overflow: hidden;
-  padding: 2rem 0;
-}
+  :root {
+    --brand-primary: #1a1a1a;
+    --brand-accent: #FF4438;
+    --brand-secondary: #2563eb;
+    --brand-dark: #1f2937;
+    --brand-soft: #6b7280;
+    --brand-light: #f8fafc;
+    --brand-white: #ffffff;
+  }
 
-.hero-seo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
+  /* Hero Section */
+  .hero-seo {
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
 
-.hero-seo .max-w-7xl {
-  position: relative;
-  z-index: 2;
-}
+  .hero-seo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 1;
+  }
 
-/* Floating Background Elements */
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
+  .hero-seo .max-w-7xl {
+    position: relative;
+    z-index: 2;
+  }
 
-.floating-circle {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
+  /* Floating Background Elements */
+  .hero-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
 
-.circle-1 {
-  width: 150px;
-  height: 150px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
+  .floating-circle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
 
-.circle-2 {
-  width: 100px;
-  height: 100px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
+  .circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    right: 15%;
+    animation-delay: 0s;
+  }
 
-.circle-1 {
-  width: 150px;
-  height: 150px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
+  .circle-2 {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    right: 25%;
+    animation-delay: 2s;
+  }
 
-.circle-2 {
-  width: 100px;
-  height: 100px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
+  .circle-3 {
+    width: 60px;
+    height: 60px;
+    top: 40%;
+    left: 10%;
+    animation-delay: 4s;
+  }
 
-.circle-3 {
-  width: 200px;
-  height: 200px;
-  bottom: 10%;
-  left: 60%;
-  animation-delay: 4s;
-}
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
+  /* Breadcrumbs */
+  .hero-breadcrumbs {
+    display: inline-block !important;
+    margin-bottom: 3rem;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+  }
 
+  .hero-breadcrumbs * {
+    display: inline !important;
+    vertical-align: baseline !important;
+  }
 
+  .breadcrumb-link {
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+  }
 
-/* Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-}
+  .breadcrumb-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
 
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
+  .breadcrumb-separator {
+    color: white !important;
+    margin: 0 8px;
+    opacity: 0.7;
+  }
 
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
+  .breadcrumb-current {
+    color: white !important;
+    font-weight: 600;
+  }
 
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Hero Container */
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* Hero Content */
-.hero-content {
-  max-width: none;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.hero-badge i {
-  font-size: 14px;
-}
-
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.hero-description {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 600px;
-  margin-bottom: 30px;
-}
-
-/* Hero Actions */
-.hero-actions {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #FF4438;
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
-  background: #f8f9fa;
-}
-
-.cta-button.secondary {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
-}
-
-/* Hero Stats */
-.hero-stats {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1;
-  margin-bottom: 5px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-}
-
-.hero-image-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+  /* Hero Container */
   .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.25rem;
-  }
-  
-  .hero-description {
-    font-size: 1rem;
-  }
-  
-  .hero-actions {
-    justify-content: center;
-  }
-  
-  .cta-button {
-    padding: 0.875rem 1.75rem;
-    font-size: 0.95rem;
-  }
-  
-  .hero-visual {
-    order: -1;
-    min-height: 300px;
-  }
-  
-  .hero-image-container img {
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.875rem;
-  }
-  
-  .hero-actions {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
     align-items: center;
   }
-  
-  .cta-button {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-  
-  .hero-image-container img {
-    max-width: 300px;
-  }
-}
 
-/* Mobile Responsiveness */
-@media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+  /* Hero Content */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
   }
-  
-  .hero-image-container img {
-    width: 400px;
-    height: 280px;
-  }
-}
 
-@media (max-width: 768px) {
-  .case-study-hero {
-    min-height: auto;
-    padding: 100px 0 60px;
+  .hero-badge i {
+    color: #FFD700;
   }
-  
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  /* Hero Actions */
   .hero-actions {
-    justify-content: center;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
   }
-  
-  .hero-stats {
-    justify-content: center;
-  }
-  
-  .hero-image-container img {
-    width: 100%;
-    max-width: 350px;
-    height: 250px;
-  }
-  
+
   .cta-button {
-    padding: 14px 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
     font-size: 1rem;
-  }
-  
-  .stat-number {
-    font-size: 2rem;
-  }
-}
-
-/* Metrics Overview */
-.metrics-overview {
-  padding: 80px 0;
-  background: #f8fafc;
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.metric-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(66, 133, 244, 0.1);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.metric-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-}
-
-.metric-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #FF4438, #FF6B35, #4285F4);
-}
-
-.metric-value {
-  font-size: 3rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #FF4438, #4285F4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 10px;
-}
-
-.metric-label {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 8px;
-}
-
-.metric-description {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/* Section Headers */
-.section-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.section-header h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.section-header h2 span {
-  background: linear-gradient(135deg, #FF4438, #4285F4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-header p {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Challenge Section */
-.challenge-section {
-  padding: 80px 0;
-  background: white;
-}
-
-.challenge-content {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 30px;
-  align-items: center;
-  background: #f8fafc;
-  padding: 40px;
-  border-radius: 15px;
-  border-left: 5px solid #FF4438;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.challenge-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #FF4438, #FF6B35);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
-  box-shadow: 0 10px 30px rgba(255, 68, 56, 0.3);
-}
-
-.challenge-text p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #374151;
-  margin: 0;
-}
-
-/* Solution Section */
-.solution-section {
-  padding: 80px 0;
-  background: #f8fafc;
-}
-
-.strategy-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
-}
-
-.strategy-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(66, 133, 244, 0.1);
-}
-
-.strategy-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-}
-
-.strategy-number {
-  position: absolute;
-  top: -15px;
-  left: 30px;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #FF4438, #FF6B35, #4285F4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  font-size: 1.2rem;
-  box-shadow: 0 5px 15px rgba(255, 68, 56, 0.3);
-}
-
-.strategy-icon {
-  background: linear-gradient(135deg, #4285F4, #6AB7FF);
-  color: white;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto 25px;
-  font-size: 2rem;
-  box-shadow: 0 5px 20px rgba(66, 133, 244, 0.3);
-}
-
-.strategy-card h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 15px;
-}
-
-.strategy-card p {
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Results Section */
-.results-section {
-  padding: 80px 0;
-  background: white;
-}
-
-.results-table {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(66, 133, 244, 0.1);
-}
-
-.results-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 20px;
-  background: linear-gradient(135deg, #FF4438, #FF6B35, #4285F4);
-  color: white;
-  padding: 25px 30px;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.results-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 20px;
-  padding: 25px 30px;
-  border-bottom: 1px solid #f0f0f0;
-  align-items: center;
-}
-
-.results-row:last-child {
-  border-bottom: none;
-}
-
-.metric-name {
-  font-weight: 600;
-  color: #1a1a1a;
-}
-
-.before-value {
-  color: #666;
-}
-
-.after-value {
-  font-weight: 600;
-  color: #4285F4;
-}
-
-.improvement-value {
-  font-weight: 700;
-  background: linear-gradient(135deg, #FF4438, #4285F4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Testimonial Section */
-.testimonial-section {
-  padding: 80px 0;
-  background: #f8fafc;
-}
-
-.testimonial-card {
-  background: white;
-  padding: 50px 40px;
-  border-radius: 15px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border: 1px solid rgba(66, 133, 244, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
-}
-
-.testimonial-quote {
-  margin-bottom: 30px;
-}
-
-.testimonial-quote i {
-  font-size: 3rem;
-  color: #4285F4;
-  margin-bottom: 20px;
-  opacity: 0.3;
-}
-
-.testimonial-quote p {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  color: #444;
-  font-style: italic;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.testimonial-author img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.author-name {
-  font-weight: 700;
-  color: #1a1a1a;
-  font-size: 1.1rem;
-}
-
-.author-position {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.author-company {
-  color: #4285F4;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-/* Takeaways Section */
-.takeaways-section {
-  padding: 80px 0;
-  background: #f8fafc;
-}
-
-.takeaways-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.takeaway-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 68, 56, 0.1);
-}
-
-.takeaway-icon {
-  background: linear-gradient(135deg, #FF4438, #FF6B35);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-  box-shadow: 0 5px 15px rgba(255, 68, 56, 0.3);
-}
-
-.takeaway-item p {
-  color: #444;
-  line-height: 1.7;
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-/* Next Steps Section */
-.next-steps-section {
-  padding: 80px 0;
-  background: white;
-}
-
-.next-steps-card {
-  background: white;
-  padding: 50px 40px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(66, 133, 244, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.next-steps-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
-}
-
-.next-steps-card h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-}
-
-.next-steps-card p {
-  font-size: 1.2rem;
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #FF4438, #FF6B35);
-  color: white;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(255, 68, 56, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
   }
 
-  .challenge-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
+  .cta-button.primary {
+    background: white;
+    color: #FF4438;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
   }
 
-  .strategy-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .cta-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+    background: #f8f9fa;
   }
 
-  .metrics-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
   }
 
-  .results-header,
-  .results-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Hero Stats */
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .stat {
     text-align: center;
   }
 
-  .results-header {
-    font-size: 1rem;
+  .hero-stats .stat-number,
+  .hero-seo .stat-number {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    color: #ffffff !important;
+    margin-bottom: 4px;
   }
 
-  .testimonial-author {
-    flex-direction: column;
-    gap: 15px;
+  .hero-stats .stat-label,
+  .hero-seo .stat-label {
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
   }
 
-  .takeaway-item {
-    flex-direction: column;
+  /* Hero Visual */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .seo-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .seo-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    animation: iconFloat 4s ease-in-out infinite;
+  }
+
+  .seo-icon:nth-child(even) {
+    animation-delay: 2s;
+  }
+
+  .seo-icon i {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .seo-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  @keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Internal Link Styling for Hero */
+  .hero-content h1 a,
+  .hero-content p a {
+    color: #FFFFFF;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .hero-content h1 a:hover,
+  .hero-content p a:hover {
+    color: #FFE4E1;
+  }
+
+  .hero-content h1 a::after,
+  .hero-content p a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #FFFFFF, #FFE4E1);
+    transition: width 0.3s ease;
+  }
+
+  .hero-content h1 a:hover::after,
+  .hero-content p a:hover::after {
+    width: 100%;
+  }
+
+  /* Section Headers */
+  .section-header {
     text-align: center;
-    gap: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .case-study-hero {
-    padding: 80px 0 60px;
+    margin-bottom: 4rem;
   }
 
   .section-header h2 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin-bottom: 1rem;
   }
 
-  .challenge-content,
-  .next-steps-card,
-  .testimonial-card {
-    padding: 30px 25px;
+  .section-header h2 span {
+    background: linear-gradient(135deg, #FF4438 0%, #ff6b5a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .strategy-card,
-  .metric-card {
-    padding: 30px 20px;
+  .section-header p {
+    font-size: 1.1rem;
+    color: var(--brand-soft);
+    max-width: 600px;
+    margin: 0 auto;
   }
-}
+
+  /* Features Section */
+  .features-section {
+    padding: 100px 0;
+    background: var(--brand-light);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #FF4438 0%, #ff6b5a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-icon i {
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  .feature-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+    margin-bottom: 1rem;
+  }
+
+  .feature-card p {
+    color: var(--brand-soft);
+    line-height: 1.6;
+  }
+
+  /* Stats Section */
+  .stats-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+  }
+
+  .stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 68, 56, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%);
+  }
+
+  .stats-section .max-w-7xl {
+    position: relative;
+    z-index: 2;
+  }
+
+  .stats-section .section-header h2 {
+    color: white;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+  }
+
+  .stat-icon {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  /* Approach Section */
+  .approach-section {
+    padding: 100px 0;
+    background: white;
+  }
+
+  .approach-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .step-card {
+    background: linear-gradient(145deg, #f8f9ff 0%, #ffffff 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(255, 68, 56, 0.1);
+  }
+
+  .step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .step-number {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #FF4438 0%, #ff6b5a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 68, 56, 0.3);
+  }
+
+  .step-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+    margin: 1rem 0;
+  }
+
+  .step-card p {
+    color: var(--brand-soft);
+    line-height: 1.6;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 100px 0;
+    background: var(--brand-light);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #FF4438 0%, #ff6b5a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon i {
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--brand-primary);
+  }
+  
+  .service-card h3 a {
+    color: var(--brand-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  
+  .service-card h3 a:hover {
+    color: var(--brand-accent);
+  }
+  
+  .service-card h3 a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--brand-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+  
+  .service-card h3 a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .service-card p {
+    color: var(--brand-soft);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card ul {
+    margin: 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .service-card ul li {
+    position: relative;
+    padding: 0.5rem 0 0.5rem 2rem;
+    color: var(--brand-soft);
+    line-height: 1.5;
+  }
+
+  .service-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    color: var(--brand-accent);
+    font-weight: bold;
+  }
+
+  .outcome {
+    background: linear-gradient(135deg, rgba(255, 68, 56, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--brand-accent);
+    margin-top: 1.5rem;
+  }
+
+  .outcome strong {
+    color: var(--brand-accent);
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: 100px 0;
+    background: white;
+  }
+
+  .faq-container {
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .faq-question {
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(145deg, #f8f9ff 0%, #ffffff 100%);
+    transition: all 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background: linear-gradient(145deg, #eef2ff 0%, #f8f9ff 100%);
+  }
+
+  .faq-question h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+    margin: 0;
+  }
+
+  .faq-question i {
+    color: var(--brand-accent);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-answer {
+    padding: 0 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .faq-answer.active {
+    padding: 1.5rem 2rem;
+    max-height: 200px;
+  }
+
+  .faq-answer p {
+    color: var(--brand-soft);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .features-grid,
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .approach-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+    }
+
+    .feature-card,
+    .service-card,
+    .step-card {
+      padding: 2rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+  }
 </style>
 
-<!-- End Case Study Content -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    window.toggleFAQ = function(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('i');
+      
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+        if (otherAnswer !== answer) {
+          otherAnswer.classList.remove('active');
+          otherAnswer.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+        }
+      });
+      
+      // Toggle current FAQ item
+      answer.classList.toggle('active');
+      if (answer.classList.contains('active')) {
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  });
+</script>
