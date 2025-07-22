@@ -56,7 +56,7 @@ const {
 } = Astro.props;
 ---
 
-<MainLayout title={title} description="Propel your Philippine business to the top of Google with our expert SEO services. Customized strategies, transparent reporting, and proven results.">
+<MainLayout title={`${title} - ${client} Case Study | Bright Forge SEO`} description={`See how Bright Forge SEO helped ${client} achieve ${keyMetrics[0]?.value} through strategic SEO implementation. ${challenge.substring(0, 120)}...`}>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -73,7 +73,9 @@ const {
       <nav class="hero-breadcrumbs">
         <a href="/" class="breadcrumb-link">Home</a>
         <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Philippines SEO Services</span>
+        <a href="/case-studies/" class="breadcrumb-link">Case Studies</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">{client}</span>
       </nav>
       
       <div class="hero-container">
@@ -115,211 +117,258 @@ const {
     </div>
   </section>
 
-  <!-- Key Features Section -->
+  <!-- Key Metrics Section -->
   <section class="features-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>What Sets <span>Bright Forge SEO</span> Apart</h2>
-        <p>We deliver what matters most - real business results that grow your bottom line</p>
+        <h2>Key <span>Results</span></h2>
+        <p>The measurable impact we delivered for {client}</p>
       </div>
 
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-chart-line"></i>
+        {keyMetrics.map((metric) => (
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>{metric.label}</h3>
+            <div class="metric-value">{metric.value}</div>
+            <p>{metric.description}</p>
           </div>
-          <h3>Results That Move the Needle</h3>
-          <p>We understand that search engine optimization isn't just about organic visibility; it's about turning traffic into customers. Our strategies deliver real business outcomes: more leads, higher conversion rates, and improved revenue.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-map-marked-alt"></i>
-          </div>
-          <h3>Customized Strategies for Philippine Businesses</h3>
-          <p>The Philippines is unique—our language, culture, and buying behavior differ from other markets. Every SEO plan we create is meticulously designed to engage Filipino consumers while also reaching global audiences if you're looking to scale.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <h3>Transparency & Collaboration</h3>
-          <p>Trust is the foundation of every successful partnership. We maintain open lines of communication, provide easy-to-understand reports, and collaborate closely with your in-house teams or other marketing partners.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3>Cutting-Edge SEO Tactics</h3>
-          <p>SEO is an ever-evolving field, and outdated methods will only hold your business back. We stay ahead of industry shifts, ensuring your strategies are always aligned with Google's latest algorithms and best practices.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3>Dedicated Account Manager & SEO Specialists</h3>
-          <p>You get a single point of contact plus a team of senior SEO strategists, writers, and technical experts, all focused on your unique goals and bottom line.</p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
 
 
-  <!-- Approach Section -->
+  <!-- Challenge Section -->
   <section class="approach-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Our Proven Approach to <span>SEO Success</span></h2>
-        <p>A strategic, data-driven process that delivers measurable results for your business</p>
+        <h2>The <span>Challenge</span></h2>
+        <p>Understanding the obstacles {client} faced before our partnership</p>
       </div>
 
-      <div class="approach-steps">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3>Discovery & Goal-Setting</h3>
-          <p>We collaborate with you to define KPIs and outline success metrics. Every campaign is custom-built based on your objectives—whether it's boosting e-commerce sales, generating B2B leads, or improving brand authority.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3>Detailed Action Plan</h3>
-          <p>After a thorough audit, we present an actionable roadmap covering on-page, off-page, technical, and content strategies. You'll know exactly what to expect and when.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3>Implementation & Optimization</h3>
-          <p>Our SEO experts roll out the plan step by step, fine-tuning strategies as data and trends evolve. We prioritize the changes that deliver the biggest impact first, ensuring you see quick wins and long-term gains.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <h3>Performance Tracking & Reporting</h3>
-          <p>We go beyond standard ranking updates. Expect transparent monthly reports that track user engagement, leads, and ROI-focused metrics. We'll also provide clear recommendations to help you stay ahead of the competition.</p>
+      <div class="challenge-content">
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="challenge-text">
+            <h3>Business Challenge</h3>
+            <p>{challenge}</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEO Services Section -->
+  <!-- Strategy Section -->
   <section class="services-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Our Holistic <span>SEO Services</span></h2>
-        <p>Comprehensive solutions designed to maximize your online visibility and drive measurable results</p>
+        <h2>Our Strategic <span>Approach</span></h2>
+        <p>The step-by-step methodology that delivered results for {client}</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-search"></i>
+        {strategySteps.map((step, index) => (
+          <div class="service-card">
+            <div class="step-number">{index + 1}</div>
+            <div class="service-icon">
+              <i class={`fas fa-${step.icon}`}></i>
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
           </div>
-          <h3><a href="/seo-audit-services">Comprehensive SEO Audit</a></h3>
-          <p>Before we can craft a winning roadmap, we need to understand where you stand. Our in-depth SEO audit covers:</p>
-          <ul>
-            <li><strong>Technical Health Check:</strong> We identify crawl errors, site speed issues, broken links, and anything else that may hinder your website's performance.</li>
-            <li><strong>Keyword & Content Gap Analysis:</strong> We uncover new keyword opportunities, relevant topics, and content enhancements to broaden your reach.</li>
-            <li><strong>Competitor Benchmarking:</strong> We dissect your competitors' strategies, giving you insights into what works in your industry.</li>
-          </ul>
-          <div class="outcome">
-            <strong>Outcome:</strong> A clear, data-driven blueprint for boosting your site's visibility, usability, and conversion potential.
-          </div>
-        </div>
+        ))}
 
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-key"></i>
-          </div>
-          <h3><a href="/keyword-research-services">Targeted Keyword Research & Strategy</a></h3>
-          <p>Proper keyword selection is essential to attracting the right visitors. We use advanced tools and local insights to find key terms that:</p>
-          <ul>
-            <li>Have strong search intent relevant to your brand.</li>
-            <li>Strike the perfect balance between search volume and competition.</li>
-            <li>Tap into local and long-tail keywords that drive high-quality leads.</li>
-          </ul>
-          <div class="outcome">
-            <strong>Outcome:</strong> An optimized content plan that ensures maximum ROI for every keyword we target.
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-edit"></i>
-          </div>
-          <h3><a href="/on-page-seo-services-philippines">On-Page & Content Optimization</a></h3>
-          <p>We refine every element on your site—headings, meta tags, URLs, and content—to resonate with both search engines and users. Our process includes:</p>
-          <ul>
-            <li><strong>SEO Copywriting:</strong> Crafting compelling copy that resonates with Philippine audiences while meeting Google's E-E-A-T guidelines.</li>
-            <li><strong>Internal Linking:</strong> Building logical paths for users and search engines alike, boosting your site's authority.</li>
-            <li><strong>Metadata & Schema Markup:</strong> Enhancing search engine understanding, improving your click-through rates and overall relevance.</li>
-          </ul>
-          <div class="outcome">
-            <strong>Outcome:</strong> Engaging, search-friendly webpages that rank well and convert better.
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-link"></i>
-          </div>
-          <h3><a href="/backlink-seo-services-philippines">High-Authority Link Building</a></h3>
-          <p>Building a credible link profile is still a cornerstone of SEO success. We focus on quality rather than quantity:</p>
-          <ul>
-            <li><strong>Editorial Outreach:</strong> Partnering with reputable industry websites and news portals for guest posts and editorial mentions.</li>
-            <li><strong>Local Citations:</strong> Enhancing your brand's footprint across Philippine directories, forums, and social communities.</li>
-            <li><strong>Digital PR:</strong> Creating share-worthy content that naturally attracts links from authoritative platforms.</li>
-          </ul>
-          <div class="outcome">
-            <strong>Outcome:</strong> A stronger domain authority, improved brand reputation, and more stable rankings.
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <h3><a href="/technical-seo-services-philippines">Technical SEO & Site Architecture</a></h3>
-          <p>Slow load times and structural issues can silently kill your rankings. We diagnose and fix critical technical factors:</p>
-          <ul>
-            <li><strong>Site Speed Optimization:</strong> Improving server response times and optimizing images, CSS, and JS for faster loading.</li>
-            <li><strong>Mobile Responsiveness:</strong> Ensuring your site delivers a seamless experience on smartphones and tablets.</li>
-            <li><strong>Structured Data Implementation:</strong> Helping search engines better understand your content, improving visibility in SERPs.</li>
-          </ul>
-          <div class="outcome">
-            <strong>Outcome:</strong> A technically sound website that can scale as your business grows and thrives online.
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <h3>Local SEO for Philippine Markets</h3>
-          <p>Local SEO is essential for businesses targeting customers within specific regions of the Philippines—whether you're a Quezon City-based startup or an enterprise in Cebu. We:</p>
-          <ul>
-            <li>Optimize Your Google Business Profile for local queries and "near me" searches.</li>
-            <li>Manage Listings & Citations in local directories, ensuring consistent NAP details.</li>
-            <li>Collect & Amplify Customer Reviews to build trust and brand loyalty.</li>
-          </ul>
-          <div class="outcome">
-            <strong>Outcome:</strong> A commanding presence in local searches, capturing leads who are ready to buy in your area.
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="max-w-4xl mx-auto px-4">
+  <!-- Results Section -->
+  <section class="features-section">
+    <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Frequently Asked <span>Questions</span></h2>
-        <p>Get answers to common questions about our SEO services</p>
+        <h2>Measurable <span>Results</span></h2>
+        <p>Before vs. After performance metrics</p>
       </div>
+
+      <div class="results-table-container">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {results.map((result) => (
+              <tr>
+                <td class="metric-name">{result.metric}</td>
+                <td class="before-value">{result.before}</td>
+                <td class="after-value">{result.after}</td>
+                <td class="improvement-value">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonial -->
+  {testimonial && (
+    <section class="stats-section">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <i class="fas fa-quote-left"></i>
+            <p>"{testimonial.quote}"</p>
+          </div>
+          <div class="testimonial-author">
+            {testimonial.avatar && (
+              <img src={testimonial.avatar} alt={testimonial.author} width="60" height="60" />
+            )}
+            <div class="author-info">
+              <div class="author-name">{testimonial.author}</div>
+              <div class="author-position">{testimonial.position}</div>
+              <div class="author-company">{testimonial.company}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Key Takeaways -->
+  <section class="approach-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Key <span>Takeaways</span></h2>
+        <p>Strategic insights from this successful campaign</p>
+      </div>
+
+      <div class="takeaways-grid">
+        {keyTakeaways.map((takeaway, index) => (
+          <div class="challenge-card">
+            <div class="challenge-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="challenge-text">
+              <h3>Insight #{index + 1}</h3>
+              <p>{takeaway}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps CTA -->
+  {nextSteps && (
+    <section class="features-section">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="cta-container" style="text-align: center; padding: 3rem 2rem; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1);">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #1a1a1a;">Ready for Similar Results?</h3>
+          <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">{nextSteps}</p>
+          <div class="hero-actions" style="justify-content: center;">
+            <a href="/contact" class="cta-button primary">
+              <span>Get Started Today</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="/philippines-seo-services" class="cta-button secondary">
+              <i class="fas fa-info-circle"></i>
+              <span>Learn More</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <ContactSection />
+  
+  <Footer slot="footer" />
+</MainLayout>
+
+<!-- Add metric value styling -->
+<style>
+  .metric-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF4438, #4285F4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+  
+  .results-table-container {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(66, 133, 244, 0.1);
+  }
+  
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .results-table thead {
+    background: linear-gradient(135deg, #FF4438 0%, #4285F4 100%);
+    color: white;
+  }
+  
+  .results-table th,
+  .results-table td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .results-table th {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .results-table tbody tr:hover {
+    background: #f8fafc;
+  }
+  
+  .metric-name {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .before-value {
+    color: #666;
+  }
+  
+  .after-value {
+    font-weight: 600;
+    color: #4285F4;
+  }
+  
+  .improvement-value {
+    font-weight: 700;
+    background: linear-gradient(135deg, #FF4438, #4285F4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .takeaways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
 
       <div class="faq-container">
         <div class="faq-item">
