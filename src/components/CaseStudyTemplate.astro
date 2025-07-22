@@ -173,7 +173,7 @@ const canonicalUrl = Astro.url.href;
       <div class="floating-circle circle-3"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="case-study-hero-wrapper">
       <div class="hero-container">
         <!-- Breadcrumbs -->
         <nav class="hero-breadcrumbs">
@@ -358,12 +358,12 @@ const canonicalUrl = Astro.url.href;
 </article>
 
 <style>
-/* Fix for global CSS constraints causing white gaps */
-.hero-seo .max-w-7xl {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  max-width: none !important;
+/* Case Study Hero Wrapper - True Full Width */
+.case-study-hero-wrapper {
   width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .hero-seo .hero-container {
