@@ -333,10 +333,11 @@ const canonicalUrl = Astro.url.href;
 <style>
 /* Case Study Hero */
 .case-study-hero {
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B5B 50%, #4285F4 100%);
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
   padding: 120px 0 80px;
   position: relative;
   color: white;
+  overflow: hidden;
 }
 
 .case-study-hero::before {
@@ -346,7 +347,7 @@ const canonicalUrl = Astro.url.href;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -425,7 +426,7 @@ const canonicalUrl = Astro.url.href;
 /* Metrics Overview */
 .metrics-overview {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  background: #f8fafc;
 }
 
 .metrics-grid {
@@ -437,12 +438,18 @@ const canonicalUrl = Astro.url.href;
 .metric-card {
   background: white;
   padding: 40px 30px;
-  border-radius: 20px;
+  border-radius: 15px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(66, 133, 244, 0.1);
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 .metric-card::before {
@@ -452,7 +459,7 @@ const canonicalUrl = Astro.url.href;
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #FF4438, #4285F4);
+  background: linear-gradient(135deg, #FF4438, #FF6B35, #4285F4);
 }
 
 .metric-value {
@@ -508,82 +515,86 @@ const canonicalUrl = Astro.url.href;
 
 /* Challenge Section */
 .challenge-section {
-  padding: 100px 0;
+  padding: 80px 0;
+  background: white;
 }
 
 .challenge-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 30px;
-  align-items: flex-start;
-  background: white;
+  align-items: center;
+  background: #f8fafc;
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 68, 56, 0.1);
+  border-radius: 15px;
+  border-left: 5px solid #FF4438;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .challenge-icon {
-  background: linear-gradient(135deg, #FF4438, #FF6B5B);
-  color: white;
   width: 80px;
   height: 80px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, #FF4438, #FF6B35);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   font-size: 2rem;
-  flex-shrink: 0;
-  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 68, 56, 0.3);
 }
 
 .challenge-text p {
   font-size: 1.2rem;
-  line-height: 1.8;
-  color: #444;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0;
 }
 
 /* Solution Section */
 .solution-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  padding: 80px 0;
+  background: #f8fafc;
 }
 
 .strategy-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  margin-top: 60px;
 }
 
 .strategy-card {
   background: white;
   padding: 40px 30px;
-  border-radius: 20px;
+  border-radius: 15px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(66, 133, 244, 0.1);
-  transition: all 0.3s ease;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(66, 133, 244, 0.1);
 }
 
 .strategy-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 .strategy-number {
   position: absolute;
   top: -15px;
   left: 30px;
-  background: linear-gradient(135deg, #FF4438, #FF6B5B);
-  color: white;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FF4438, #FF6B35, #4285F4);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(255, 68, 56, 0.3);
 }
 
 .strategy-icon {
@@ -591,13 +602,13 @@ const canonicalUrl = Astro.url.href;
   color: white;
   width: 80px;
   height: 80px;
-  border-radius: 20px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px auto 25px;
   font-size: 2rem;
-  margin: 0 auto 25px;
-  box-shadow: 0 8px 25px rgba(66, 133, 244, 0.3);
+  box-shadow: 0 5px 20px rgba(66, 133, 244, 0.3);
 }
 
 .strategy-card h3 {
@@ -609,17 +620,19 @@ const canonicalUrl = Astro.url.href;
 
 .strategy-card p {
   color: #666;
-  line-height: 1.7;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Results Section */
 .results-section {
-  padding: 100px 0;
+  padding: 80px 0;
+  background: white;
 }
 
 .results-table {
   background: white;
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(66, 133, 244, 0.1);
@@ -629,7 +642,7 @@ const canonicalUrl = Astro.url.href;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 20px;
-  background: linear-gradient(135deg, #4285F4, #6AB7FF);
+  background: linear-gradient(135deg, #FF4438, #FF6B35, #4285F4);
   color: white;
   padding: 25px 30px;
   font-weight: 700;
@@ -673,17 +686,23 @@ const canonicalUrl = Astro.url.href;
 
 /* Testimonial Section */
 .testimonial-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  padding: 80px 0;
+  background: #f8fafc;
 }
 
 .testimonial-card {
   background: white;
   padding: 50px 40px;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   text-align: center;
   border: 1px solid rgba(66, 133, 244, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-quote {
@@ -739,7 +758,8 @@ const canonicalUrl = Astro.url.href;
 
 /* Takeaways Section */
 .takeaways-section {
-  padding: 100px 0;
+  padding: 80px 0;
+  background: #f8fafc;
 }
 
 .takeaways-list {
@@ -760,7 +780,7 @@ const canonicalUrl = Astro.url.href;
 }
 
 .takeaway-icon {
-  background: linear-gradient(135deg, #FF4438, #FF6B5B);
+  background: linear-gradient(135deg, #FF4438, #FF6B35);
   color: white;
   width: 50px;
   height: 50px;
@@ -770,6 +790,7 @@ const canonicalUrl = Astro.url.href;
   justify-content: center;
   font-size: 1.2rem;
   flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(255, 68, 56, 0.3);
 }
 
 .takeaway-item p {
@@ -781,17 +802,23 @@ const canonicalUrl = Astro.url.href;
 
 /* Next Steps Section */
 .next-steps-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  padding: 80px 0;
+  background: white;
 }
 
 .next-steps-card {
   background: white;
   padding: 50px 40px;
-  border-radius: 20px;
+  border-radius: 15px;
   text-align: center;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(66, 133, 244, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-steps-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
 }
 
 .next-steps-card h3 {
@@ -815,7 +842,7 @@ const canonicalUrl = Astro.url.href;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #FF4438, #FF6B5B);
+  background: linear-gradient(135deg, #FF4438, #FF6B35);
   color: white;
   padding: 16px 32px;
   border-radius: 50px;
