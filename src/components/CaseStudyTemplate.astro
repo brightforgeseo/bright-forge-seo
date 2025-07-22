@@ -173,26 +173,26 @@ const canonicalUrl = Astro.url.href;
       <div class="floating-circle circle-3"></div>
     </div>
     
-    <div class="case-study-hero-wrapper">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/case-studies/" class="breadcrumb-link">Case Studies</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">{client}</span>
+      </nav>
+      
       <div class="hero-container">
-        <!-- Breadcrumbs -->
-        <nav class="hero-breadcrumbs">
-          <a href="/" class="breadcrumb-link">Home</a>
-          <span class="breadcrumb-separator">›</span>
-          <a href="/case-studies/" class="breadcrumb-link">Case Studies</a>
-          <span class="breadcrumb-separator">›</span>
-          <span class="breadcrumb-current">{client}</span>
-        </nav>
-        
         <div class="hero-content">
           <div class="hero-badge">
             <i class="fas fa-chart-line"></i>
             <span>{industry} • {duration}</span>
           </div>
           
-          <h1>{title}</h1>
+          <h1>SEO Case Study: <span class="text-gradient">{title}</span></h1>
           
-          <p class="hero-description">A comprehensive SEO transformation case study showcasing measurable results and strategic implementation.</p>
+          <p class="hero-description">Discover how Bright Forge SEO helped {client} achieve remarkable growth through strategic SEO implementation. See the exact tactics, results, and insights that transformed their online presence.</p>
           
           <div class="hero-actions">
             <a href="/contact" class="cta-button primary">
@@ -209,12 +209,12 @@ const canonicalUrl = Astro.url.href;
         {heroImage && (
           <div class="hero-visual">
             <div class="hero-image-container">
-              <img src={heroImage} alt={`${client} case study results`} width="500" height="350" loading="eager" decoding="sync" />
+              <div class="image-decoration"></div>
+              <img src={heroImage} alt={`${client} SEO results and analytics`} width="500" height="350" loading="eager" decoding="sync" />
             </div>
           </div>
         )}
       </div>
-    </div>
     </div>
   </section>
 
@@ -358,28 +358,7 @@ const canonicalUrl = Astro.url.href;
 </article>
 
 <style>
-/* Case Study Hero Wrapper - True Full Width */
-.case-study-hero-wrapper {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.hero-seo .hero-container {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .hero-seo .hero-container {
-    padding: 0 2rem;
-  }
-}
-
-/* Hero Section - Matching Service Pages */
+/* Hero Section - Exact Service Page Match */
 .hero-seo {
   background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
   min-height: 100vh;
@@ -388,6 +367,7 @@ const canonicalUrl = Astro.url.href;
   position: relative;
   color: white;
   overflow: hidden;
+  padding: 2rem 0;
 }
 
 .hero-seo::before {
@@ -424,6 +404,28 @@ const canonicalUrl = Astro.url.href;
 }
 
 .circle-1 {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 100px;
+  height: 100px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.circle-3 {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  left: 60%;
+  animation-delay: 4s;
+}
   width: 120px;
   height: 120px;
   top: 20%;
