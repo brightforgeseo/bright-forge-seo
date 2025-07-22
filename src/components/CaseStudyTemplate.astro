@@ -1,7 +1,5 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import LegacyHeader from '../components/LegacyHeader.astro';
-import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
 
 export interface Props {
@@ -57,7 +55,6 @@ const {
 ---
 
 <MainLayout title={`${title} - ${client} Case Study | Bright Forge SEO`} description={`See how Bright Forge SEO helped ${client} achieve ${keyMetrics[0]?.value} through strategic SEO implementation. ${challenge.substring(0, 120)}...`}>
-  <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
   <section class="hero-seo">
@@ -292,8 +289,6 @@ const {
   )}
 
   <ContactSection />
-  
-  <Footer slot="footer" />
 </MainLayout>
 
 <!-- Add metric value styling -->
