@@ -173,7 +173,7 @@ const canonicalUrl = Astro.url.href;
       <div class="floating-circle circle-3"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="hero-wrapper">
       <!-- Breadcrumbs -->
       <nav class="hero-breadcrumbs">
         <a href="/" class="breadcrumb-link">Home</a>
@@ -379,7 +379,7 @@ const canonicalUrl = Astro.url.href;
   z-index: 1;
 }
 
-.hero-seo .max-w-7xl {
+.hero-seo .hero-wrapper {
   position: relative;
   z-index: 2;
 }
@@ -428,6 +428,20 @@ const canonicalUrl = Astro.url.href;
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Hero Wrapper */
+.hero-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    padding: 0 1rem;
+  }
 }
 
 /* Breadcrumbs */
