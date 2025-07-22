@@ -56,347 +56,175 @@ const {
 
 <MainLayout title={`${title} - ${client} Case Study | Bright Forge SEO`} description={`See how Bright Forge SEO helped ${client} achieve ${keyMetrics[0]?.value} through strategic SEO implementation. ${challenge.substring(0, 120)}...`}>
 
-  <!-- Case Study Hero Section -->
-  <section class="case-study-hero">
-    <div class="hero-background">
-      <div class="success-badge">
-        <i class="fas fa-trophy"></i>
-        <span>Success Story</span>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero-seo">
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <!-- Case Study Breadcrumbs -->
-      <nav class="case-breadcrumbs">
-        <a href="/">Home</a>
-        <i class="fas fa-chevron-right"></i>
-        <a href="/case-studies/">Case Studies</a>
-        <i class="fas fa-chevron-right"></i>
-        <span>{client}</span>
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/case-studies/" class="breadcrumb-link">Case Studies</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">{client}</span>
       </nav>
       
-      <div class="hero-grid">
+      <div class="hero-container">
         <div class="hero-content">
-          <div class="client-info">
-            <h1 class="case-title">{title}</h1>
-            <div class="case-meta">
-              <span class="industry-tag">
-                <i class="fas fa-building"></i>
-                {industry}
-              </span>
-              <span class="duration-tag">
-                <i class="fas fa-calendar-alt"></i>
-                {duration}
-              </span>
-            </div>
+          <div class="hero-badge">
+            <i class="fas fa-chart-line"></i>
+            <span>{industry} • {duration}</span>
           </div>
-          
-          <p class="case-summary">
-            See how {client} transformed their online presence and achieved measurable growth through our strategic SEO implementation.
+          <h1><span class="text-gradient">{title}</span></h1>
+          <p class="hero-description">
+            See how Bright Forge SEO helped {client} achieve remarkable growth through strategic SEO implementation.
           </p>
           
-          <!-- Key Achievement Highlight -->
-          <div class="achievement-highlight">
-            <div class="achievement-number">{keyMetrics[0]?.value}</div>
-            <div class="achievement-label">{keyMetrics[0]?.label}</div>
-          </div>
-          
-          <div class="hero-cta">
-            <a href="#challenge" class="btn-explore">
-              <span>Explore This Success</span>
-              <i class="fas fa-arrow-down"></i>
+          <div class="hero-actions">
+            <a href="#results" class="cta-button primary">
+              <i class="fas fa-chart-bar"></i>
+              <span>View Results</span>
+            </a>
+            <a href="/contact/" class="cta-button secondary">
+              <i class="fas fa-rocket"></i>
+              <span>Get Similar Results</span>
             </a>
           </div>
         </div>
         
         {heroImage && (
-          <div class="hero-showcase">
-            <div class="results-preview">
-              <img src={heroImage} alt={`${client} SEO Performance Dashboard`} />
-              <div class="results-overlay">
-                <div class="growth-indicator">
-                  <i class="fas fa-trending-up"></i>
-                  <span>Growth Achieved</span>
-                </div>
-              </div>
-            </div>
+          <div class="hero-visual">
+            <img src={heroImage} alt={`${client} SEO Results`} width="500" height="350" loading="eager" />
           </div>
         )}
       </div>
     </div>
   </section>
 
-  <!-- Impact & Results Section -->
-  <section class="impact-section" id="results">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="impact-header">
-        <h2>The Results We Delivered</h2>
-        <p>Measurable improvements that transformed {client}'s digital presence</p>
+  <!-- Key Results Section -->
+  <section class="features-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Key <span>Results</span></h2>
+        <p>The measurable impact we delivered for {client}</p>
       </div>
 
-      <div class="results-showcase">
-        {keyMetrics.map((metric, index) => (
-          <div class="achievement-card">
-            <div class="achievement-icon">
+      <div class="features-grid">
+        {keyMetrics.map((metric) => (
+          <div class="feature-card">
+            <div class="feature-icon">
               <i class="fas fa-trophy"></i>
             </div>
-            <div class="achievement-content">
-              <div class="result-number">{metric.value}</div>
-              <h3 class="result-title">{metric.label}</h3>
-              <p class="result-description">{metric.description}</p>
-            </div>
-            <div class="achievement-rank">#{index + 1}</div>
+            <h3>{metric.label}</h3>
+            <div class="metric-value">{metric.value}</div>
+            <p>{metric.description}</p>
           </div>
         ))}
       </div>
-      
-      <!-- Success Quote -->
-      <div class="success-quote">
-        <div class="quote-content">
-          <i class="fas fa-quote-left"></i>
-          <p>"These results exceeded our expectations and transformed our business."</p>
-          <div class="quote-attribution">
-            <strong>{client}</strong> • Client Success Story
+    </div>
+  </section>
+
+
+
+  <!-- Challenge Section -->
+  <section class="approach-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>The <span>Challenge</span></h2>
+        <p>Understanding the obstacles {client} faced before our partnership</p>
+      </div>
+
+      <div class="challenge-content">
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="challenge-text">
+            <h3>Business Challenge</h3>
+            <p>{challenge}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-
-  <!-- The Challenge Section -->
-  <section class="challenge-section" id="challenge">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="challenge-intro">
-        <h2>The Challenge</h2>
-        <p>Every great success story starts with overcoming significant obstacles</p>
+  <!-- Strategy Section -->
+  <section class="services-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Our Strategic <span>Approach</span></h2>
+        <p>The step-by-step methodology that delivered results for {client}</p>
       </div>
 
-      <div class="challenge-story">
-        <div class="story-timeline">
-          <div class="timeline-marker">
-            <i class="fas fa-flag"></i>
-          </div>
-          <div class="timeline-content">
-            <h3>The Situation</h3>
-            <div class="challenge-narrative">
-              <p>{challenge}</p>
-            </div>
-            
-            <div class="challenge-impact">
-              <div class="impact-item">
-                <i class="fas fa-trending-down"></i>
-                <span>Declining Performance</span>
-              </div>
-              <div class="impact-item">
-                <i class="fas fa-search-minus"></i>
-                <span>Low Visibility</span>
-              </div>
-              <div class="impact-item">
-                <i class="fas fa-users-slash"></i>
-                <span>Limited Reach</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="challenge-visual">
-          <div class="problem-illustration">
-            <div class="problem-chart">
-              <div class="chart-bar before">
-                <span class="bar-label">Before</span>
-                <div class="bar-fill" style="height: 25%"></div>
-              </div>
-              <i class="fas fa-arrow-right transform-arrow"></i>
-              <div class="chart-bar after">
-                <span class="bar-label">Target</span>
-                <div class="bar-fill" style="height: 90%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Strategic Approach -->
-  <section class="strategy-section">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="strategy-header">
-        <h2>Our Strategic Approach</h2>
-        <p>The proven methodology that transformed {client}'s digital presence</p>
-      </div>
-
-      <div class="strategy-timeline">
+      <div class="services-grid">
         {strategySteps.map((step, index) => (
-          <div class="strategy-step">
-            <div class="step-connector"></div>
-            <div class="step-card">
-              <div class="step-header">
-                <div class="step-number">
-                  <span>{index + 1}</span>
-                </div>
-                <div class="step-icon">
-                  <i class={`fas fa-${step.icon}`}></i>
-                </div>
-              </div>
-              <div class="step-content">
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-                <div class="step-outcome">
-                  <i class="fas fa-check-circle"></i>
-                  <span>Completed Successfully</span>
-                </div>
-              </div>
+          <div class="service-card">
+            <div class="step-number">{index + 1}</div>
+            <div class="service-icon">
+              <i class={`fas fa-${step.icon}`}></i>
             </div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
           </div>
         ))}
-      </div>
-      
-      <!-- Strategy Summary -->
-      <div class="strategy-summary">
-        <div class="summary-card">
-          <h3>Why This Approach Worked</h3>
-          <p>Our systematic methodology ensured every aspect of {client}'s SEO was optimized for maximum impact and sustainable growth.</p>
-          <div class="summary-stats">
-            <div class="stat">
-              <strong>{strategySteps.length}</strong>
-              <span>Strategic Steps</span>
-            </div>
-            <div class="stat">
-              <strong>{duration}</strong>
-              <span>Implementation Time</span>
-            </div>
-            <div class="stat">
-              <strong>100%</strong>
-              <span>Success Rate</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- The Transformation Section -->
-  <section class="transformation-section">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="transformation-header">
-        <h2>The Transformation</h2>
-        <p>See the dramatic improvements we achieved for {client}</p>
+  <!-- Results Section -->
+  <section class="features-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Measurable <span>Results</span></h2>
+        <p>Before vs. After performance metrics</p>
       </div>
 
-      <div class="comparison-grid">
-        {results.map((result) => (
-          <div class="comparison-card">
-            <div class="metric-title">
-              <h3>{result.metric}</h3>
-            </div>
-            
-            <div class="comparison-content">
-              <div class="before-state">
-                <div class="state-label">
-                  <i class="fas fa-arrow-down"></i>
-                  <span>Before</span>
-                </div>
-                <div class="state-value before">{result.before}</div>
-              </div>
-              
-              <div class="transformation-arrow">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-              
-              <div class="after-state">
-                <div class="state-label">
-                  <i class="fas fa-arrow-up"></i>
-                  <span>After</span>
-                </div>
-                <div class="state-value after">{result.after}</div>
-              </div>
-            </div>
-            
-            <div class="improvement-badge">
-              <span class="improvement-text">{result.improvement}</span>
-              <i class="fas fa-trophy"></i>
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      <!-- Transformation Summary -->
-      <div class="transformation-summary">
-        <div class="summary-content">
-          <h3>Overall Impact</h3>
-          <p>These improvements represent a complete transformation of {client}'s digital presence, delivering sustainable growth and competitive advantage.</p>
-          
-          <div class="impact-highlights">
-            <div class="highlight">
-              <i class="fas fa-chart-line"></i>
-              <span>Sustained Growth</span>
-            </div>
-            <div class="highlight">
-              <i class="fas fa-target"></i>
-              <span>Goals Exceeded</span>
-            </div>
-            <div class="highlight">
-              <i class="fas fa-rocket"></i>
-              <span>Market Leadership</span>
-            </div>
-          </div>
-        </div>
+      <div class="results-table-container">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {results.map((result) => (
+              <tr>
+                <td class="metric-name">{result.metric}</td>
+                <td class="before-value">{result.before}</td>
+                <td class="after-value">{result.after}</td>
+                <td class="improvement-value">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <!-- Client Testimonial -->
   {testimonial && (
-    <section class="client-story-section">
-      <div class="max-w-7xl mx-auto px-4 py-20">
-        <div class="story-header">
-          <h2>Client Success Story</h2>
-          <p>Hear directly from {client} about their transformation</p>
-        </div>
-        
-        <div class="client-testimonial">
-          <div class="testimonial-content">
-            <div class="quote-wrapper">
-              <div class="quote-mark">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <blockquote class="client-quote">
-                "{testimonial.quote}"
-              </blockquote>
-            </div>
-            
-            <div class="client-profile">
-              {testimonial.avatar && (
-                <div class="client-avatar">
-                  <img src={testimonial.avatar} alt={testimonial.author} />
-                </div>
-              )}
-              <div class="client-details">
-                <h4 class="client-name">{testimonial.author}</h4>
-                <p class="client-title">{testimonial.position}</p>
-                <p class="client-company">{testimonial.company}</p>
-                
-                <div class="success-metrics">
-                  <div class="metric">
-                    <i class="fas fa-star"></i>
-                    <span>5-Star Experience</span>
-                  </div>
-                  <div class="metric">
-                    <i class="fas fa-handshake"></i>
-                    <span>Ongoing Partnership</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section class="stats-section">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <i class="fas fa-quote-left"></i>
+            <p>"{testimonial.quote}"</p>
           </div>
-          
-          <div class="testimonial-background">
-            <div class="success-badge-large">
-              <i class="fas fa-trophy"></i>
-              <span>Success Story</span>
+          <div class="testimonial-author">
+            {testimonial.avatar && (
+              <img src={testimonial.avatar} alt={testimonial.author} width="60" height="60" />
+            )}
+            <div class="author-info">
+              <div class="author-name">{testimonial.author}</div>
+              <div class="author-position">{testimonial.position}</div>
+              <div class="author-company">{testimonial.company}</div>
             </div>
           </div>
         </div>
@@ -404,54 +232,26 @@ const {
     </section>
   )}
 
-  <!-- Strategic Insights Section -->
-  <section class="insights-section">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="insights-header">
-        <h2>Strategic Insights</h2>
-        <p>Key lessons learned from {client}'s transformation journey</p>
+  <!-- Key Takeaways -->
+  <section class="approach-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Key <span>Takeaways</span></h2>
+        <p>Strategic insights from this successful campaign</p>
       </div>
 
-      <div class="insights-container">
-        <div class="insights-intro">
-          <div class="intro-card">
-            <h3>What We Learned</h3>
-            <p>Every successful SEO campaign teaches us valuable lessons. Here are the key insights from {client}'s transformation that can benefit other businesses.</p>
-          </div>
-        </div>
-        
-        <div class="insights-grid">
-          {keyTakeaways.map((takeaway, index) => (
-            <div class="insight-card">
-              <div class="insight-number">
-                {index + 1}
-              </div>
-              <div class="insight-icon">
-                <i class="fas fa-lightbulb"></i>
-              </div>
-              <div class="insight-content">
-                <h4>Key Insight</h4>
-                <p>{takeaway}</p>
-                <div class="insight-category">
-                  <i class="fas fa-tag"></i>
-                  <span>Lesson Learned</span>
-                </div>
-              </div>
+      <div class="takeaways-grid">
+        {keyTakeaways.map((takeaway, index) => (
+          <div class="challenge-card">
+            <div class="challenge-icon">
+              <i class="fas fa-lightbulb"></i>
             </div>
-          ))}
-        </div>
-        
-        <!-- Insights Summary -->
-        <div class="insights-summary">
-          <div class="summary-box">
-            <h3>The Bottom Line</h3>
-            <p>These insights demonstrate that successful SEO requires a strategic, data-driven approach tailored to each client's unique challenges and goals.</p>
-            <div class="summary-action">
-              <i class="fas fa-arrow-right"></i>
-              <span>Apply these learnings to your business</span>
+            <div class="challenge-text">
+              <h3>Insight #{index + 1}</h3>
+              <p>{takeaway}</p>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
