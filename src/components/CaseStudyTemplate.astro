@@ -174,16 +174,16 @@ const canonicalUrl = Astro.url.href;
     </div>
     
     <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <a href="/case-studies/" class="breadcrumb-link">Case Studies</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">{client}</span>
-      </nav>
-      
       <div class="hero-container">
+        <!-- Breadcrumbs -->
+        <nav class="hero-breadcrumbs">
+          <a href="/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <a href="/case-studies/" class="breadcrumb-link">Case Studies</a>
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-current">{client}</span>
+        </nav>
+        
         <div class="hero-content">
           <div class="hero-badge">
             <i class="fas fa-chart-line"></i>
@@ -214,6 +214,7 @@ const canonicalUrl = Astro.url.href;
           </div>
         )}
       </div>
+    </div>
     </div>
   </section>
 
@@ -357,6 +358,27 @@ const canonicalUrl = Astro.url.href;
 </article>
 
 <style>
+/* Fix for global CSS constraints causing white gaps */
+.hero-seo .max-w-7xl {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.hero-seo .hero-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .hero-seo .hero-container {
+    padding: 0 2rem;
+  }
+}
+
 /* Hero Section - Matching Service Pages */
 .hero-seo {
   background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
