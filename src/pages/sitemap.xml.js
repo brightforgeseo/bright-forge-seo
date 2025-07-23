@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  <!-- Homepage -->
+export async function GET() {
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brightforgeseo.com/</loc>
     <lastmod>2025-01-15</lastmod>
@@ -8,7 +8,7 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- Core SEO Service Pages (High Priority) -->
+  <!-- Core SEO Service Pages -->
   <url>
     <loc>https://brightforgeseo.com/philippines-seo-services/</loc>
     <lastmod>2025-01-15</lastmod>
@@ -45,46 +45,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- Additional SEO Services -->
   <url>
     <loc>https://brightforgeseo.com/seo-audit-services/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://brightforgeseo.com/keyword-research-services/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://brightforgeseo.com/website-migration-services/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://brightforgeseo.com/answer-engine-optimization-services-philippines/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://brightforgeseo.com/generative-engine-optimization/</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://brightforgeseo.com/astro-seo-website-development/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
-  
-  <!-- Industry-Specific SEO Services -->
+
+  <!-- Industry Services -->
   <url>
     <loc>https://brightforgeseo.com/gaming-seo-services/</loc>
     <lastmod>2025-01-15</lastmod>
@@ -110,19 +104,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://brightforgeseo.com/home-services-seo/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://brightforgeseo.com/real-estate-seo-services/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Blog Section -->
+
+  <!-- Blog -->
   <url>
     <loc>https://brightforgeseo.com/blog/</loc>
     <lastmod>2025-01-15</lastmod>
@@ -147,7 +135,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Case Studies -->
   <url>
     <loc>https://brightforgeseo.com/case-studies/</loc>
@@ -209,7 +197,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- Knowledge Base -->
   <url>
     <loc>https://brightforgeseo.com/knowledge-base/australian-fitness-seo/</loc>
@@ -241,39 +229,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Other Service Pages -->
-  <url>
-    <loc>https://brightforgeseo.com/seo-audit-services/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://brightforgeseo.com/keyword-research-services/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://brightforgeseo.com/website-migration-services/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://brightforgeseo.com/answer-engine-optimization-services-philippines/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://brightforgeseo.com/astro-seo-website-development/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
+
   <!-- Static Pages -->
   <url>
     <loc>https://brightforgeseo.com/about-us/</loc>
@@ -311,10 +267,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-  <url>
-    <loc>https://brightforgeseo.com/bright-forge-seo/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset>
+</urlset>`;
+
+  return new Response(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml; charset=utf-8',
+      'Cache-Control': 'public, max-age=3600'
+    }
+  });
+}
