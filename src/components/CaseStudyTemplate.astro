@@ -477,6 +477,277 @@ const {
 
 <!-- Comprehensive Case Study CSS -->
 <style>
+  /* Case Study Hero Section */
+  .case-hero {
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+  }
+
+  .case-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .success-indicator {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .case-hero .max-w-7xl {
+    position: relative;
+    z-index: 2;
+  }
+
+  .case-breadcrumbs {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .case-breadcrumbs a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+  }
+
+  .case-breadcrumbs a:hover {
+    color: white;
+  }
+
+  .case-breadcrumbs i {
+    font-size: 12px;
+  }
+
+  .case-breadcrumbs > i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+  }
+
+  .case-breadcrumbs span {
+    color: white;
+    font-weight: 600;
+  }
+
+  .case-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-left {
+    color: white;
+  }
+
+  .client-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .client-badge .divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .case-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: white;
+  }
+
+  .case-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .primary-metric {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .metric-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .metric-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .metric-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .case-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .case-actions .btn-primary {
+    background: white;
+    color: #FF4438;
+    border: 2px solid white;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .case-actions .btn-primary:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+    transform: translateY(-2px);
+  }
+
+  .case-actions .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .case-actions .btn-secondary:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .hero-right {
+    position: relative;
+  }
+
+  .results-showcase {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+  }
+
+  .results-showcase img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .showcase-overlay {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+
+  .growth-badge {
+    background: rgba(52, 168, 83, 0.9);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Responsive Design for Hero */
+  @media (max-width: 768px) {
+    .case-hero-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .case-hero {
+      min-height: auto;
+      padding: 60px 0;
+    }
+
+    .success-indicator {
+      position: relative;
+      top: 0;
+      right: 0;
+      margin-bottom: 30px;
+      display: inline-flex;
+    }
+
+    .case-actions {
+      justify-content: center;
+    }
+
+    .case-actions .btn-primary,
+    .case-actions .btn-secondary {
+      flex: 1;
+      justify-content: center;
+      min-width: 200px;
+    }
+  }
+
   /* Impact Results Section */
   .impact-results {
     background: #f8fafc;
