@@ -26,8 +26,9 @@
 #   compress = true
 
 # Asset optimization
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
+# Disabled Netlify sitemap plugin to use manual sitemap.xml from public folder
+# [[plugins]]
+#   package = "@netlify/plugin-sitemap"
 
 # Headers for performance optimization
 [[headers]]
