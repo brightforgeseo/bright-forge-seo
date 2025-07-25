@@ -40,7 +40,8 @@ const caseStudyData = {
 };
 ---
 
-<MainLayout title="Organic Gains for Phoenix Eco Spa | Bright Forge SEO">
+<MainLayout title={caseStudyData.title + " | BrightForge"}>
+  <meta name="title" content="Organic Gains for Phoenix Eco Spa | Bright Forge SEO" slot="head" />
   <LegacyHeader slot="header" />
   <CaseStudyTemplate {...caseStudyData} />
   <ContactSection />
