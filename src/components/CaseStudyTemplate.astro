@@ -54,7 +54,7 @@ const {
 } = Astro.props;
 ---
 
-<MainLayout title={`${title} - ${client} Case Study | Bright Forge SEO`} description={`See how Bright Forge SEO helped ${client} achieve ${keyMetrics[0]?.value} through strategic SEO implementation. ${challenge.substring(0, 120)}...`}>
+<!-- CaseStudyTemplate - Content component without MainLayout wrapper -->
 
   <!-- Case Study Hero -->
   <section class="case-hero">
@@ -456,7 +456,7 @@ const {
     </section>
   )}
 
-</MainLayout>
+<!-- MainLayout closing tag removed - handled by parent page -->
 
 <!-- Comprehensive Case Study CSS -->
 <style>
@@ -1843,7 +1843,7 @@ const {
     </div>
   </section>
 
-</MainLayout>
+<!-- Second MainLayout closing tag removed - handled by parent page -->
 
 <style>
   :root {
