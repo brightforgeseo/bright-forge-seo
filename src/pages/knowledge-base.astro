@@ -50,20 +50,18 @@ const knowledgeBaseCategories = [
 <MainLayout title="SEO Knowledge Base | Expert Guidance by Industry | Bright Forge SEO" description="Access our comprehensive SEO knowledge base with expert guidance for every industry. Get answers to your SEO questions from our team of specialists.">
   <LegacyHeader slot="header" />
 
-  <!-- Breadcrumb Navigation -->
-  <nav class="breadcrumbs bg-gray-50 py-4">
-    <div class="container max-w-7xl mx-auto px-4">
-      <ol class="flex items-center space-x-2 text-sm">
-        <li><a href="/" class="text-brand-primary hover:text-brand-accent transition-colors">Home</a></li>
-        <li class="text-gray-400">/</li>
-        <li class="text-gray-600">Knowledge Base</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
+  <!-- Hero Section with Integrated Breadcrumbs -->
   <section class="hero-section bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
     <div class="container max-w-7xl mx-auto px-4">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumbs mb-8">
+        <ol class="flex items-center justify-center space-x-2 text-sm text-white/80">
+          <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+          <li class="text-white/60">/</li>
+          <li class="text-white">Knowledge Base</li>
+        </ol>
+      </nav>
+      
       <div class="text-center">
         <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
           <i class="fas fa-book-open mr-2"></i>
@@ -90,117 +88,54 @@ const knowledgeBaseCategories = [
     </div>
   </section>
 
-  <!-- Knowledge Base Categories -->
-  <section class="categories-section py-20 bg-white">
-    <div class="container max-w-7xl mx-auto px-4">
+  <!-- Knowledge Base Grid -->
+  <section class="knowledge-grid py-20 bg-white">
+    <div class="container max-w-6xl mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Browse by Industry</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose your industry to get specific SEO guidance and best practices tailored to your business type</p>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-12">
-        {knowledgeBaseCategories.map((category) => (
-          <div class="category-group bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-            <h3 class="text-2xl font-bold mb-3 text-gray-800">{category.title}</h3>
-            <p class="text-gray-600 mb-6">{category.description}</p>
-            
-            <div class="space-y-4">
-              {category.articles.map((article) => (
-                <a 
-                  href={`/knowledge-base/${article.slug}`}
-                  class="flex items-center p-4 bg-white rounded-lg hover:bg-brand-primary hover:text-white transition-all group"
-                >
-                  <div class="w-10 h-10 bg-brand-primary group-hover:bg-white rounded-lg flex items-center justify-center mr-4">
-                    <i class={`fas fa-${article.icon} text-white group-hover:text-brand-primary`}></i>
-                  </div>
-                  <div class="flex-1">
-                    <h4 class="font-semibold">{article.title}</h4>
-                  </div>
-                  <i class="fas fa-arrow-right opacity-50 group-hover:opacity-100"></i>
-                </a>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Popular Topics -->
-  <section class="popular-topics bg-gray-50 py-20">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Most Popular SEO Questions</h2>
-        <p class="text-xl text-gray-600">Quick answers to the questions we get asked most often</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">SEO Knowledge by Industry</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Expert guidance tailored to your specific business needs</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-clock text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">How long does SEO take?</h3>
-          <p class="text-gray-600 mb-4">Most businesses see initial improvements in 3-6 months, with significant results in 6-12 months depending on competition and strategy.</p>
-          <a href="/knowledge-base/fitness-seo#how-long" class="text-brand-primary hover:text-brand-accent font-semibold">Read More →</a>
-        </div>
-
-        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-dollar-sign text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">What does SEO cost?</h3>
-          <p class="text-gray-600 mb-4">SEO investment varies by business size and goals. We offer customized packages starting from affordable monthly retainers.</p>
-          <a href="/contact" class="text-brand-primary hover:text-brand-accent font-semibold">Get Quote →</a>
-        </div>
-
-        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-chart-line text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">How do you measure SEO success?</h3>
-          <p class="text-gray-600 mb-4">We track rankings, organic traffic, leads, conversions, and revenue attribution to show clear ROI from SEO efforts.</p>
-          <a href="/knowledge-base/ecommerce-seo#results" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
-        </div>
+        {knowledgeBaseCategories.flatMap(category => 
+          category.articles.map((article) => (
+            <a 
+              href={`/knowledge-base/${article.slug}`}
+              class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-brand-primary/20"
+            >
+              <div class="p-6">
+                <div class="w-14 h-14 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <i class={`fas fa-${article.icon} text-white text-xl`}></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-brand-primary transition-colors">{article.title}</h3>
+                <p class="text-gray-600 text-sm mb-4">Expert answers and strategies for {article.title.toLowerCase()} success</p>
+                <div class="flex items-center text-brand-primary font-semibold text-sm">
+                  <span>Learn More</span>
+                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+              </div>
+            </a>
+          ))
+        )}
       </div>
     </div>
   </section>
 
-  <!-- Free Resources -->
-  <section class="resources-section bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Free SEO Resources</h2>
-        <p class="text-xl">Download our expert guides and checklists to improve your SEO</p>
+  <!-- CTA Section -->
+  <section class="cta-section bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Dominate Your Industry?</h2>
+      <p class="text-xl mb-8 opacity-90">Get expert SEO guidance tailored to your specific business needs</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-white text-brand-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          Get Free SEO Consultation
+        </a>
+        <a href="/philippines-seo-services" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-primary transition-colors">
+          View Our Services
+        </a>
       </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-          <i class="fas fa-download text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-3">SEO Audit Checklist</h3>
-          <p class="mb-6">25-point comprehensive SEO audit checklist to evaluate your website's performance</p>
-          <a href="/contact" class="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Download Free
-          </a>
-        </div>
-
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-          <i class="fas fa-book text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-3">Local SEO Guide</h3>
-          <p class="mb-6">Complete guide to dominating local search results and attracting nearby customers</p>
-          <a href="/contact" class="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Get Guide
-          </a>
-        </div>
-
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-          <i class="fas fa-chart-bar text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-3">SEO ROI Calculator</h3>
-          <p class="mb-6">Calculate potential return on investment from SEO for your specific business</p>
-          <a href="/contact" class="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Access Tool
-          </a>
-        </div>
-      </div>
+    </div>
+  </section>
     </div>
   </section>
 
