@@ -1,0 +1,188 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import KnowledgeBase from '../../components/KnowledgeBase.astro';
+
+const knowledgeBaseData = {
+  title: "E-commerce SEO Knowledge Base: Drive More Sales Through Search",
+  questions: [
+    {
+      question: "How can SEO help my e-commerce store increase sales?",
+      answer: "SEO drives high-intent shoppers to your products when they're ready to buy. By optimizing product pages, category pages, and implementing proper technical SEO, we help your store rank for purchase-intent keywords. This results in more qualified traffic, higher conversion rates, and increased revenue from organic search."
+    },
+    {
+      question: "What makes e-commerce SEO different from regular website SEO?",
+      answer: "E-commerce SEO requires specialized strategies like product schema markup, managing duplicate content across similar products, optimizing for product-specific keywords, handling out-of-stock items, and creating category page hierarchies. We also focus on user experience factors like site speed, mobile optimization, and checkout process optimization that directly impact conversions."
+    },
+    {
+      question: "How do you handle product page optimization for better rankings?",
+      answer: "We optimize each product page with unique, keyword-rich titles and descriptions, high-quality images with descriptive alt text, customer reviews integration, related products sections, and detailed product specifications. We also implement structured data markup to help search engines understand your products and display rich snippets in search results."
+    },
+    {
+      question: "Can you help with technical SEO issues specific to e-commerce platforms?",
+      answer: "Yes, we specialize in e-commerce technical SEO including site speed optimization, mobile responsiveness, crawl budget optimization, handling pagination and filtering, managing URL structures, implementing proper redirects for discontinued products, and ensuring your shopping cart and checkout process is search engine friendly."
+    },
+    {
+      question: "How important is local SEO for e-commerce businesses?",
+      answer: "Local SEO is crucial for e-commerce stores with physical locations or those targeting specific geographic markets. We optimize your Google Business Profile, create location-specific landing pages, build local citations, and implement geo-targeted keyword strategies to capture local shoppers and 'near me' searches."
+    },
+    {
+      question: "What results can I expect from e-commerce SEO services?",
+      answer: "Typical results include 40-80% increases in organic traffic, 25-50% improvements in conversion rates, higher average order values, and significant revenue growth from organic search. We track metrics like product page rankings, category page visibility, branded vs non-branded traffic, and most importantly, revenue attribution from SEO efforts."
+    },
+    {
+      question: "How do you approach content marketing for e-commerce SEO?",
+      answer: "We create comprehensive content strategies including buying guides, product comparison articles, how-to content, industry trends, and customer success stories. This content targets informational keywords that guide customers through the buying journey, building trust and authority while capturing traffic at different stages of the purchase funnel."
+    },
+    {
+      question: "Do you help with international e-commerce SEO?",
+      answer: "Absolutely. We implement hreflang tags for multi-language sites, optimize for country-specific search engines, handle currency and shipping information optimization, create region-specific content strategies, and ensure proper technical implementation for international SEO success."
+    }
+  ]
+};
+---
+
+<MainLayout title="E-commerce SEO Knowledge Base | Bright Forge SEO" description="Get expert answers about e-commerce SEO strategies that drive sales. Learn how to optimize your online store for search engines and increase revenue.">
+  <LegacyHeader slot="header" />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumbs bg-gray-50 py-4">
+    <div class="container max-w-7xl mx-auto px-4">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="/" class="text-brand-primary hover:text-brand-accent transition-colors">Home</a></li>
+        <li class="text-gray-400">/</li>
+        <li><a href="/knowledge-base" class="text-brand-primary hover:text-brand-accent transition-colors">Knowledge Base</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">E-commerce SEO</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="text-center">
+        <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+          <i class="fas fa-shopping-cart mr-2"></i>
+          <span class="font-semibold">E-commerce SEO Expert Guidance</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">E-commerce SEO Knowledge Base</h1>
+        <p class="text-xl max-w-3xl mx-auto">Expert answers to help your online store rank higher, attract more qualified traffic, and increase sales through search engine optimization</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Product Page Optimization</span>
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Technical E-commerce SEO</span>
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Conversion Rate Optimization</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Table of Contents -->
+  <section class="toc-section bg-white py-12 border-b">
+    <div class="container max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6">Quick Navigation</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <a href="#sales-increase" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-chart-line mr-2"></i>How SEO Increases E-commerce Sales
+          </a>
+          <a href="#ecommerce-differences" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-shopping-bag mr-2"></i>E-commerce vs Regular SEO
+          </a>
+          <a href="#product-optimization" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-tags mr-2"></i>Product Page Optimization
+          </a>
+          <a href="#technical-seo" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-cogs mr-2"></i>Technical E-commerce SEO
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#local-seo" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-map-marker-alt mr-2"></i>Local E-commerce SEO
+          </a>
+          <a href="#results-expectations" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-trophy mr-2"></i>Expected Results & ROI
+          </a>
+          <a href="#content-marketing" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-edit mr-2"></i>E-commerce Content Strategy
+          </a>
+          <a href="#international-seo" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-globe mr-2"></i>International E-commerce SEO
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Base Content -->
+  <KnowledgeBase title={knowledgeBaseData.title} questions={knowledgeBaseData.questions} />
+
+  <!-- Related Articles -->
+  <section class="related-content bg-gray-50 py-16">
+    <div class="container max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Related SEO Resources</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-search text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">SEO Audit Services</h3>
+          <p class="text-gray-600 mb-4">Get a comprehensive analysis of your e-commerce site's SEO performance and technical issues.</p>
+          <a href="/seo-audit-services" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-cog text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Technical SEO Services</h3>
+          <p class="text-gray-600 mb-4">Optimize your e-commerce platform's technical foundation for better search engine crawling.</p>
+          <a href="/technical-seo-services-philippines" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-edit text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Content SEO Services</h3>
+          <p class="text-gray-600 mb-4">Create compelling product descriptions and content that converts visitors into customers.</p>
+          <a href="/content-seo-services-philippines" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <ContactSection />
+  
+  <Footer slot="footer" />
+</MainLayout>
+
+<!-- FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can SEO help my e-commerce store increase sales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO drives high-intent shoppers to your products when they're ready to buy. By optimizing product pages, category pages, and implementing proper technical SEO, we help your store rank for purchase-intent keywords. This results in more qualified traffic, higher conversion rates, and increased revenue from organic search."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "What makes e-commerce SEO different from regular website SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "E-commerce SEO requires specialized strategies like product schema markup, managing duplicate content across similar products, optimizing for product-specific keywords, handling out-of-stock items, and creating category page hierarchies. We also focus on user experience factors like site speed, mobile optimization, and checkout process optimization that directly impact conversions."
+      }
+    }
+  ]
+}
+</script>

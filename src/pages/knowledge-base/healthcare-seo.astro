@@ -1,0 +1,151 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import KnowledgeBase from '../../components/KnowledgeBase.astro';
+
+const knowledgeBaseData = {
+  title: "Healthcare SEO Knowledge Base: Attract More Patients Through Search",
+  questions: [
+    {
+      question: "How can SEO help my medical practice attract more patients?",
+      answer: "Healthcare SEO helps patients find your practice when they search for medical services in your area. By optimizing for local searches like 'dentist near me' or 'cardiologist in [city]', we increase your visibility to potential patients actively seeking medical care. This results in more appointment bookings, reduced marketing costs, and steady patient acquisition."
+    },
+    {
+      question: "What are the unique challenges of healthcare SEO?",
+      answer: "Healthcare SEO must comply with HIPAA regulations, Google's E-A-T guidelines for medical content, and Your Money or Your Life (YMYL) standards. We navigate medical advertising restrictions, ensure content accuracy with proper medical citations, manage online reputation carefully, and create content that builds trust while remaining compliant with healthcare regulations."
+    },
+    {
+      question: "How important is local SEO for medical practices?",
+      answer: "Local SEO is critical for healthcare providers since most patients search for medical services near their location. We optimize your Google Business Profile, manage patient reviews, create location-specific content, build local citations, and ensure your practice appears in local map results and 'near me' searches for relevant medical services."
+    },
+    {
+      question: "Can you help with patient review management and online reputation?",
+      answer: "Yes, online reputation is crucial for healthcare providers. We help implement review generation strategies, respond to patient feedback professionally, monitor your online presence across multiple platforms, and create positive content that showcases patient testimonials and success stories while maintaining HIPAA compliance."
+    },
+    {
+      question: "How do you approach content creation for medical websites?",
+      answer: "We create medically accurate, patient-focused content including condition explanations, treatment options, procedure guides, and preventive care information. All content is reviewed for medical accuracy, written in patient-friendly language, properly cited with authoritative medical sources, and optimized for search terms patients actually use."
+    },
+    {
+      question: "What results can medical practices expect from SEO?",
+      answer: "Healthcare practices typically see 30-60% increases in organic website traffic, 40-80% more appointment bookings from online sources, improved local search rankings, and better patient acquisition costs compared to paid advertising. We track metrics like appointment form submissions, phone calls, and patient attribution from organic search."
+    },
+    {
+      question: "Do you handle SEO for different medical specialties?",
+      answer: "Absolutely. We work with various specialties including dental practices, cardiology, dermatology, orthopedics, pediatrics, mental health providers, and more. Each specialty requires unique keyword strategies, specialized content, and understanding of patient search behavior specific to those medical conditions and treatments."
+    },
+    {
+      question: "How do you ensure medical content meets Google's quality guidelines?",
+      answer: "We follow Google's E-A-T (Expertise, Authoritativeness, Trustworthiness) guidelines by featuring doctor credentials prominently, citing authoritative medical sources, including author bios with medical qualifications, maintaining updated and accurate information, and ensuring all content serves patient needs and search intent effectively."
+    }
+  ]
+};
+---
+
+<MainLayout title="Healthcare SEO Knowledge Base | Bright Forge SEO" description="Expert healthcare SEO guidance for medical practices. Learn how to attract more patients through search engine optimization while maintaining compliance.">
+  <LegacyHeader slot="header" />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumbs bg-gray-50 py-4">
+    <div class="container max-w-7xl mx-auto px-4">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="/" class="text-brand-primary hover:text-brand-accent transition-colors">Home</a></li>
+        <li class="text-gray-400">/</li>
+        <li><a href="/knowledge-base" class="text-brand-primary hover:text-brand-accent transition-colors">Knowledge Base</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">Healthcare SEO</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="text-center">
+        <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+          <i class="fas fa-stethoscope mr-2"></i>
+          <span class="font-semibold">HIPAA-Compliant Healthcare SEO</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Healthcare SEO Knowledge Base</h1>
+        <p class="text-xl max-w-3xl mx-auto">Expert guidance for medical practices to attract more patients through search engine optimization while maintaining compliance and trust</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Local Medical SEO</span>
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Patient Acquisition</span>
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">HIPAA Compliance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Base Content -->
+  <KnowledgeBase title={knowledgeBaseData.title} questions={knowledgeBaseData.questions} />
+
+  <!-- Related Articles -->
+  <section class="related-content bg-gray-50 py-16">
+    <div class="container max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Related Healthcare SEO Resources</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-map-marker-alt text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Local SEO Services</h3>
+          <p class="text-gray-600 mb-4">Optimize your medical practice for local search to attract patients in your area.</p>
+          <a href="/philippines-seo-services" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-edit text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Medical Content SEO</h3>
+          <p class="text-gray-600 mb-4">Create patient-focused content that builds trust and attracts organic traffic.</p>
+          <a href="/content-seo-services-philippines" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-search text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Healthcare SEO Audit</h3>
+          <p class="text-gray-600 mb-4">Get a comprehensive analysis of your medical website's SEO performance.</p>
+          <a href="/seo-audit-services" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <ContactSection />
+  
+  <Footer slot="footer" />
+</MainLayout>
+
+<!-- FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can SEO help my medical practice attract more patients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Healthcare SEO helps patients find your practice when they search for medical services in your area. By optimizing for local searches like 'dentist near me' or 'cardiologist in [city]', we increase your visibility to potential patients actively seeking medical care. This results in more appointment bookings, reduced marketing costs, and steady patient acquisition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the unique challenges of healthcare SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Healthcare SEO must comply with HIPAA regulations, Google's E-A-T guidelines for medical content, and Your Money or Your Life (YMYL) standards. We navigate medical advertising restrictions, ensure content accuracy with proper medical citations, manage online reputation carefully, and create content that builds trust while remaining compliant with healthcare regulations."
+      }
+    }
+  ]
+}
+</script>

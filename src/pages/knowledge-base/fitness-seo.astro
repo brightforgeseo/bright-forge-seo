@@ -39,12 +39,66 @@ const knowledgeBaseData = {
 <MainLayout title="Fitness SEO Knowledge Base | Bright Forge SEO" description="Ranking in fitness search is tough but not impossible. Learn how to build SEO strategies that connect your brand with high-intent fitness audiences.">
   <LegacyHeader slot="header" />
 
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumbs bg-gray-50 py-4">
+    <div class="container max-w-7xl mx-auto px-4">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="/" class="text-brand-primary hover:text-brand-accent transition-colors">Home</a></li>
+        <li class="text-gray-400">/</li>
+        <li><a href="/knowledge-base" class="text-brand-primary hover:text-brand-accent transition-colors">Knowledge Base</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">Fitness SEO</li>
+      </ol>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
   <section class="hero-section bg-gradient-to-r from-brand-primary to-brand-accent text-white py-20">
     <div class="container max-w-7xl mx-auto px-4">
       <div class="text-center">
+        <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+          <i class="fas fa-dumbbell mr-2"></i>
+          <span class="font-semibold">Fitness Industry SEO Expert</span>
+        </div>
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Fitness SEO Knowledge Base</h1>
         <p class="text-xl max-w-3xl mx-auto">Expert answers to your questions about SEO for fitness businesses, gyms, and wellness centers</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Gym SEO</span>
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Personal Trainer Marketing</span>
+          <span class="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">Fitness Center Growth</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="toc-section bg-white py-12 border-b">
+    <div class="container max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6">Quick Navigation</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <a href="#stand-out" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-trophy mr-2"></i>Stand Out From Competitors
+          </a>
+          <a href="#results" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-chart-line mr-2"></i>Proven Results & Case Studies
+          </a>
+          <a href="#local-seo" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-map-marker-alt mr-2"></i>Local SEO for Fitness
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#content-strategy" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-edit mr-2"></i>Content Marketing Strategy
+          </a>
+          <a href="#user-experience" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-user mr-2"></i>Website User Experience
+          </a>
+          <a href="#success-metrics" class="block p-3 bg-gray-50 rounded-lg hover:bg-brand-primary hover:text-white transition-colors">
+            <i class="fas fa-bullseye mr-2"></i>Measuring Success
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -63,16 +117,81 @@ const knowledgeBaseData = {
   </div>
 
   <!-- Knowledge Base Section -->
-  <KnowledgeBase {...knowledgeBaseData} />
+  <KnowledgeBase title={knowledgeBaseData.title} questions={knowledgeBaseData.questions} />
 
-  <!-- Related Case Study -->
-  <section class="related-case-study py-16 bg-white">
+  <!-- Case Study Highlight -->
+  <section class="case-study-highlight bg-gradient-to-r from-brand-primary to-brand-accent text-white py-16">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Real Fitness SEO Success Story</h2>
+      <p class="text-xl mb-6">See how we helped Speediance achieve incredible results</p>
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 mb-8">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-3xl font-bold mb-2">119%</div>
+            <div>Increase in Clicks</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold mb-2">135%</div>
+            <div>Jump in Impressions</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold mb-2">3-6 months</div>
+            <div>Time to Results</div>
+          </div>
+        </div>
+      </div>
+      <a href="/case-studies/speediance-uk-fitness-seo" class="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        View Full Case Study
+      </a>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="related-content bg-gray-50 py-16">
     <div class="container max-w-7xl mx-auto px-4">
-      <div class="section-header text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Related Case Study</h2>
-        <div class="w-24 h-1 bg-brand-accent mx-auto mb-6"></div>
+      <h2 class="text-3xl font-bold text-center mb-12">Related Fitness SEO Resources</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-map-marker-alt text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Local SEO Services</h3>
+          <p class="text-gray-600 mb-4">Optimize your gym or fitness center for local search to attract nearby members.</p>
+          <a href="/philippines-seo-services" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-edit text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Fitness Content SEO</h3>
+          <p class="text-gray-600 mb-4">Create engaging fitness content that attracts and converts potential members.</p>
+          <a href="/content-seo-services-philippines" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-accent rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-search text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Fitness SEO Audit</h3>
+          <p class="text-gray-600 mb-4">Get a comprehensive analysis of your fitness website's SEO performance.</p>
+          <a href="/seo-audit-services" class="text-brand-primary hover:text-brand-accent font-semibold">Learn More →</a>
+        </div>
       </div>
       
+      <!-- Cross-linking to Other Industries -->
+      <div class="mt-12 text-center">
+        <h3 class="text-xl font-semibold mb-6">Explore SEO for Other Industries</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/knowledge-base/healthcare-seo" class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-md transition-shadow text-brand-primary hover:text-brand-accent">
+            Healthcare SEO
+          </a>
+          <a href="/knowledge-base/beauty-salon-spa-seo" class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-md transition-shadow text-brand-primary hover:text-brand-accent">
+            Beauty & Spa SEO
+          </a>
+          <a href="/knowledge-base/restaurant-seo" class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-md transition-shadow text-brand-primary hover:text-brand-accent">
+            Restaurant SEO
+          </a>
       <div class="max-w-4xl mx-auto">
         <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
           <div class="md:flex">
@@ -123,3 +242,37 @@ const knowledgeBaseData = {
 
   <Footer slot="footer" />
 </MainLayout>
+
+<!-- Enhanced FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can Bright Forge SEO help my fitness business stand out from competitors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By conducting thorough market and competitor analyses, Bright Forge SEO identifies unique opportunities to position your fitness brand. We create specialized strategies—including content optimization and technical improvements—tailored to highlight what sets your business apart, helping you rise above crowded online spaces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What results has Bright Forge SEO delivered for other fitness companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A recent campaign for Speediance UK achieved a 119% increase in clicks and a 135% jump in impressions, among other gains. This success demonstrates Bright Forge SEO's ability to improve organic visibility, boost targeted traffic, and ultimately drive conversions in the competitive fitness industry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Bright Forge SEO handle local SEO for gyms, studios, and fitness centers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Local SEO is critical for fitness businesses that serve customers within a specific geographic area. We optimize Google Business Profiles, build consistent local citations, and employ geo-targeted keyword strategies to ensure potential clients can easily find you when they search in your region."
+      }
+    }
+  ]
+}
+</script>
