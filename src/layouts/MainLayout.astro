@@ -32,6 +32,10 @@ interface Props {
   }>;
   noindex?: boolean;
   nofollow?: boolean;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
 const { 
@@ -46,143 +50,13 @@ const {
   article,
   breadcrumbs,
   noindex = false,
-  nofollow = false
+  nofollow = false,
+  faqs
 } = Astro.props;
-
-// Enhanced schema data
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SEOAgency",
-  "name": "Bright Forge SEO",
-  "alternateName": "Bright Forge SEO Philippines",
-  "url": "https://brightforgeseo.com",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://brightforgeseo.com/images/logo-bright-forge.png",
-    "width": 180,
-    "height": 60
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://brightforgeseo.com/images/Hero-SEO-Agency-In-The-Philippines.webp",
-    "width": 1200,
-    "height": 630
-  },
-  "description": "Leading SEO agency in the Philippines providing comprehensive digital marketing services, technical SEO, content optimization, and white-label SEO solutions.",
-  "founder": {
-    "@type": "Person",
-    "name": "Bright Forge SEO Team"
-  },
-  "foundingDate": "2020",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Kathleen Place 4, Block 16, Lot 37, Armani Street",
-    "addressLocality": "Novaliches",
-    "addressRegion": "Quezon City",
-    "postalCode": "1123",
-    "addressCountry": "PH"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+63-969-620-6182",
-    "contactType": "customer service",
-    "email": "seo@brightforgeseo.com",
-    "availableLanguage": ["English", "Filipino"]
-  },
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "Philippines"
-    },
-    {
-      "@type": "Country", 
-      "name": "United States"
-    },
-    {
-      "@type": "Country",
-      "name": "Australia"
-    },
-    {
-      "@type": "Country",
-      "name": "United Kingdom"
-    }
-  ],
-  "serviceType": [
-    "Search Engine Optimization",
-    "Technical SEO",
-    "Content SEO", 
-    "On-Page SEO",
-    "Off-Page SEO",
-    "Local SEO",
-    "E-commerce SEO",
-    "SEO Audits",
-    "White Label SEO",
-    "SEO Consulting",
-    "Digital Marketing",
-    "Website Development"
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/company/bright-forge-seo",
-    "https://twitter.com/brightforgeseo",
-    "https://www.facebook.com/brightforgeseo"
-  ],
-
-  "numberOfEmployees": "10-50",
-  "knowsAbout": [
-    "Search Engine Optimization",
-    "Google Algorithm Updates",
-    "Technical SEO",
-    "Content Marketing",
-    "Link Building",
-    "Local SEO",
-    "E-commerce SEO",
-    "SEO Tools",
-    "Web Analytics",
-    "Conversion Rate Optimization"
-  ]
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Bright Forge SEO",
-  "url": "https://brightforgeseo.com",
-  "description": "Professional SEO services in the Philippines. Technical SEO, content optimization, and comprehensive digital marketing solutions.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bright Forge SEO",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://brightforgeseo.com/images/logo-bright-forge.png"
-    }
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://brightforgeseo.com/search?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
-};
-
-const breadcrumbSchema = breadcrumbs ? {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((crumb, index) => {
-    // Ensure URL has trailing slash except for root URL
-    const url = crumb.url === '/' ? '/' : crumb.url.endsWith('/') ? crumb.url : `${crumb.url}/`;
-    return {
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": crumb.name,
-      "item": `https://brightforgeseo.com${url}`
-    };
-  })
-} : null;
 
 // With trailingSlash set to 'always', canonical can simply use current URL
 const finalCanonical = canonical;
+const isHome = Astro.url.pathname === '/';
 
 ---
 
@@ -193,13 +67,6 @@ const finalCanonical = canonical;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="ChxTytE2xXPqUiIN7QDHvdQD0Z3JKf6vpa1DcVKTRR4" />
     <!-- Title tag handled by SEO component to prevent duplicates -->
-    
-    <!-- Enhanced Schema Markup with defer for performance -->
-    <script type="application/ld+json" defer set:html={JSON.stringify(organizationSchema)}></script>
-    <script type="application/ld+json" defer set:html={JSON.stringify(websiteSchema)}></script>
-    {breadcrumbSchema && (
-      <script type="application/ld+json" defer set:html={JSON.stringify(breadcrumbSchema)}></script>
-    )}
     
     <!-- SEO Component with Schema, Canonical URLs, and Meta Tags -->
     <SEO
@@ -215,6 +82,11 @@ const finalCanonical = canonical;
       breadcrumbs={breadcrumbs}
       noindex={noindex}
       nofollow={nofollow}
+      includeWebsite={isHome}
+      includeOrganization={isHome}
+      includeLocalBusiness={false}
+      includeGenericFAQ={false}
+      faqs={faqs}
     />
     
     <slot name="head" />

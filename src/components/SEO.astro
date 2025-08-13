@@ -27,6 +27,16 @@ export interface Props {
   }>;
   noindex?: boolean;
   nofollow?: boolean;
+  // Control which global schemas to include; default off to avoid duplication across pages
+  includeOrganization?: boolean;
+  includeWebsite?: boolean;
+  includeLocalBusiness?: boolean;
+  includeGenericFAQ?: boolean;
+  // Optional per-page FAQs to build a page-specific FAQPage schema
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
 const {
@@ -52,10 +62,26 @@ const {
   article,
   breadcrumbs,
   noindex = false,
-  nofollow = false
+  nofollow = false,
+  includeOrganization = false,
+  includeWebsite = false,
+  includeLocalBusiness = false,
+  includeGenericFAQ = false,
+  faqs
 } = Astro.props;
 
-// Generate JSON-LD schema based on page type
+// Determine final page type (allow inference from URL when not explicitly set)
+const pathname = Astro.url.pathname || '';
+let resolvedType = type;
+if ((Astro.props.type === undefined || Astro.props.type === 'website')) {
+  // Infer service pages by common route patterns
+  const serviceLike = /seo-services|services|\-seo\-services/i.test(pathname);
+  if (serviceLike) {
+    resolvedType = 'service';
+  }
+}
+
+// Generate JSON-LD schema based on resolved page type
 let schema;
 
 // Base WebSite schema
@@ -82,7 +108,7 @@ const organizationSchema = {
 };
 
 // Determine which schema to use based on page type
-if (type === 'article' || type === 'blog') {
+if (resolvedType === 'article' || resolvedType === 'blog') {
   schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -119,7 +145,7 @@ if (type === 'article' || type === 'blog') {
   if (article?.section) {
     schema.articleSection = article.section;
   }
-} else if (type === 'service') {
+} else if (resolvedType === 'service') {
   schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -190,7 +216,7 @@ if (type === 'article' || type === 'blog') {
     },
 
   };
-} else if (type === 'company' || type === 'profile') {
+} else if (resolvedType === 'company' || resolvedType === 'profile') {
   schema = organizationSchema;
 } else {
   // Default to WebPage schema
@@ -351,7 +377,7 @@ const faqSchema = {
 <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content={type === 'article' || type === 'blog' ? 'article' : 'website'} />
+<meta property="og:type" content={resolvedType === 'article' || resolvedType === 'blog' ? 'article' : 'website'} />
 <meta property="og:url" content={canonical} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -378,17 +404,32 @@ const faqSchema = {
 <!-- JSON-LD Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-<!-- Website Schema -->
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<!-- Optional global schemas, controlled via props to prevent duplication sitewide -->
+{includeWebsite && (
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+)}
+{includeOrganization && (
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+)}
+{includeLocalBusiness && (
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+)}
 
-<!-- Organization Schema -->
-<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<!-- Per-page FAQ schema (preferred when provided) -->
+{faqs && faqs.length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })} />
+)}
 
-<!-- Local Business Schema -->
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
-
-<!-- FAQ Schema for enhanced SERP features -->
-{type === 'website' && !Astro.url.pathname.includes('/case-studies/') && (
+<!-- Optional generic FAQ (off by default and only when no per-page FAQs); avoid on case studies -->
+{(!faqs || faqs.length === 0) && includeGenericFAQ && !Astro.url.pathname.includes('/case-studies/') && (
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 )}
 
