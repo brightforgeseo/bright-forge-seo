@@ -113,14 +113,19 @@ const organizationSchema = {
 // Review schema with actual Google review data
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "SEO Services",
+  "@type": "LocalBusiness",
+  "@id": "https://brightforgeseo.com/#localbusiness",
+  "name": "Bright Forge SEO",
   "description": "Professional SEO services to boost your online visibility and organic traffic",
-  "provider": {
-    "@type": "Organization",
-    "name": organization.name,
-    "url": organization.url,
-    "logo": organization.logo
+  "url": organization.url,
+  "telephone": "+63-917-123-4567",
+  "priceRange": "$$$",
+  "image": organization.logo,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "PH",
+    "addressRegion": "NCR",
+    "addressLocality": "Quezon City"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -135,43 +140,136 @@ const reviewSchema = {
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "Carhein Grace Saquilabon",
-        "url": "https://www.google.com/maps/contrib/103554497002686626547/reviews/@10.7058577,122.5640642,17z/data=!4m3!8m2!3m1!1e1"
+        "name": "Carhein Grace Saquilabon"
       },
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "5",
-        "bestRating": "5"
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      "reviewBody": "I can't say enough good things about Bright Forge SEO! Their SEO services have been an absolute game-changer for my small business. From the moment I reached out, their team was incredibly responsive and took the time to truly understand my needs and goals."
+      "reviewBody": "I can't say enough good things about Bright Forge SEO! Their SEO services have been an absolute game-changer for my small business. From the moment I reached out, their team was incredibly responsive and took the time to truly understand my needs and goals.",
+      "datePublished": "2024-10-20"
     },
     {
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "Marie Angela Benida",
-        "url": "https://www.google.com/maps/contrib/110908488329537041642/reviews/@14.8147778,120.9415556,17z/data=!4m3!8m2!3m1!1e1"
+        "name": "Marie Angela Benida"
       },
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "5",
-        "bestRating": "5"
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      "reviewBody": "Bright Forge SEO is an absolute gem! I've been working with them for the past few months, and my website's visibility has improved drastically. The team is knowledgeable, patient, and always ready to answer my questions (even the silly ones!)."
+      "reviewBody": "Bright Forge SEO is an absolute gem! I've been working with them for the past few months, and my website's visibility has improved drastically. The team is knowledgeable, patient, and always ready to answer my questions (even the silly ones!).",
+      "datePublished": "2024-07-15"
     },
     {
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "Aly Dons",
-        "url": "https://www.google.com/maps/contrib/104647936741673251103/reviews/@14.4772,121.0225,17z/data=!4m3!8m2!3m1!1e1"
+        "name": "Aly Dons"
       },
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "5",
-        "bestRating": "5"
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      "reviewBody": "Bright Forge SEO has been an invaluable partner for our business. Their expertise in SEO helped us climb to the top of search rankings, driving significant traffic to our website. The team is professional, responsive, and always goes above and beyond to deliver results."
+      "reviewBody": "Bright Forge SEO has been an invaluable partner for our business. Their expertise in SEO helped us climb to the top of search rankings, driving significant traffic to our website. The team is professional, responsive, and always goes above and beyond to deliver results.",
+      "datePublished": "2024-06-10"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Rich Devman"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "These guys are trustworthy and good!",
+      "datePublished": "2024-03-20"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Erwin Valles"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "I highly recommend Ninja SEO Marketing for their exceptional SEO services. As a business owner, I was struggling to increase my online visibility and attract more customers. Ninja SEO Marketing came to the rescue and provided me with a tailored SEO strategy that exceeded my expectations.",
+      "datePublished": "2023-04-12"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Jacob Smailes"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "As a business with a global target audience, we needed an SEO agency that could help us navigate the intricacies of international search optimization. The team delivered exceptional results and helped us expand our reach significantly.",
+      "datePublished": "2023-03-17"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Amr Hanafy"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Ninja SEO Marketing is a professional and reliable digital marketing agency that specializes in search engine optimization. Their expertise and dedication have helped numerous businesses improve their online visibility and drive organic traffic.",
+      "datePublished": "2023-03-10"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Ben Wall"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Was a pleasure working with Ben. SEO expert and clearly knows his stuff. Thank you :)",
+      "datePublished": "2022-06-23"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "RJ GO"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Solid experience. My organic traffic went from 1,000 to 64,000 and been growing more. Definitely a must service for all business owners who wants to rock the organic search!",
+      "datePublished": "2022-06-20"
     }
   ]
 };
