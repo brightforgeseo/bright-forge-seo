@@ -37,6 +37,8 @@ export interface Props {
     question: string;
     answer: string;
   }>;
+  // Review and AggregateRating schema support
+  includeReviews?: boolean;
 }
 
 const {
@@ -67,7 +69,8 @@ const {
   includeWebsite = false,
   includeLocalBusiness = false,
   includeGenericFAQ = false,
-  faqs
+  faqs,
+  includeReviews = false
 } = Astro.props;
 
 // Determine final page type (allow inference from URL when not explicitly set)
@@ -105,6 +108,72 @@ const organizationSchema = {
   "url": organization.url,
   "logo": organization.logo,
   "sameAs": organization.sameAs
+};
+
+// Review schema with actual Google review data
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "SEO Services",
+  "description": "Professional SEO services to boost your online visibility and organic traffic",
+  "provider": {
+    "@type": "Organization",
+    "name": organization.name,
+    "url": organization.url,
+    "logo": organization.logo
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "9",
+    "reviewCount": "9"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Carhein Grace Saquilabon",
+        "url": "https://www.google.com/maps/contrib/103554497002686626547/reviews/@10.7058577,122.5640642,17z/data=!4m3!8m2!3m1!1e1"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "I can't say enough good things about Bright Forge SEO! Their SEO services have been an absolute game-changer for my small business. From the moment I reached out, their team was incredibly responsive and took the time to truly understand my needs and goals."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Marie Angela Benida",
+        "url": "https://www.google.com/maps/contrib/110908488329537041642/reviews/@14.8147778,120.9415556,17z/data=!4m3!8m2!3m1!1e1"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Bright Forge SEO is an absolute gem! I've been working with them for the past few months, and my website's visibility has improved drastically. The team is knowledgeable, patient, and always ready to answer my questions (even the silly ones!)."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Aly Dons",
+        "url": "https://www.google.com/maps/contrib/104647936741673251103/reviews/@14.4772,121.0225,17z/data=!4m3!8m2!3m1!1e1"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Bright Forge SEO has been an invaluable partner for our business. Their expertise in SEO helped us climb to the top of search rankings, driving significant traffic to our website. The team is professional, responsive, and always goes above and beyond to deliver results."
+    }
+  ]
 };
 
 // Determine which schema to use based on page type
@@ -401,14 +470,14 @@ const faqSchema = {
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content="https://brightforgeseo.com/images/og-hero-wife-letterbox-v1.jpg?v=4" />
 
-<!-- JSON-LD Schema -->
+<!-- Main Page Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
 <!-- Optional global schemas, controlled via props to prevent duplication sitewide -->
 {includeWebsite && (
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 )}
-{includeOrganization && (
+{includeOrganization && !schema?.provider && (
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 )}
 {includeLocalBusiness && (
@@ -436,4 +505,9 @@ const faqSchema = {
 <!-- Breadcrumb Schema (if available) -->
 {breadcrumbs && breadcrumbs.length > 0 && (
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}
+
+<!-- Review and AggregateRating Schema (sitewide when enabled) -->
+{includeReviews && (
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
 )}
