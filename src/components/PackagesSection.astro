@@ -1,5 +1,17 @@
 ---
 // PackagesSection.astro - Forged SEO Packages pricing section
+// Prepare env-backed config values server-side and inline them into the client script.
+const FALLBACK_PLAN_STARTER = 'P-3P2511639M442461SNCPPDNQ';
+const FALLBACK_PLAN_GROWTH = 'P-0XV95953GX3131429NCPPFJA';
+const FALLBACK_PLAN_FAST = 'P-95B79324H9815422TNCPPF4Y';
+
+const ENV_PAYPAL_CLIENT_ID = import.meta.env.PUBLIC_PAYPAL_CLIENT_ID;
+const ENV_PLAN_STARTER = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_STARTER || FALLBACK_PLAN_STARTER;
+const ENV_PLAN_GROWTH = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_GROWTH || FALLBACK_PLAN_GROWTH;
+const ENV_PLAN_FAST = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_FAST || FALLBACK_PLAN_FAST;
+const ENV_SUCCESS_URL = import.meta.env.PUBLIC_PAYPAL_SUCCESS_URL || '/thanks';
+const ENV_CANCEL_URL = import.meta.env.PUBLIC_PAYPAL_CANCEL_URL || '/?payment=cancel';
+const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
 ---
 
 <section id="packages" class="py-20 bg-gray-50">
@@ -96,15 +108,14 @@
   </div>
 </section>
 
-<script>
-  const PAYPAL_CLIENT_ID = import.meta.env.PUBLIC_PAYPAL_CLIENT_ID;
-  // Fallback to provided LIVE plan IDs if env vars are not set
-  const PLAN_STARTER = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_STARTER || 'P-3P2511639M442461SNCPPDNQ';
-  const PLAN_GROWTH = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_GROWTH || 'P-0XV95953GX3131429NCPPFJA';
-  const PLAN_FAST = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_FAST || 'P-95B79324H9815422TNCPPF4Y';
-  const SUCCESS_URL = import.meta.env.PUBLIC_PAYPAL_SUCCESS_URL || '/thanks';
-  const CANCEL_URL = import.meta.env.PUBLIC_PAYPAL_CANCEL_URL || '/?payment=cancel';
-  const CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
+<script is:inline>
+  const PAYPAL_CLIENT_ID = {JSON.stringify(ENV_PAYPAL_CLIENT_ID ?? null)};
+  const PLAN_STARTER = {JSON.stringify(ENV_PLAN_STARTER ?? null)};
+  const PLAN_GROWTH = {JSON.stringify(ENV_PLAN_GROWTH ?? null)};
+  const PLAN_FAST = {JSON.stringify(ENV_PLAN_FAST ?? null)};
+  const SUCCESS_URL = {JSON.stringify(ENV_SUCCESS_URL ?? null)};
+  const CANCEL_URL = {JSON.stringify(ENV_CANCEL_URL ?? null)};
+  const CURRENCY = {JSON.stringify(ENV_CURRENCY ?? null)};
 
   function loadPayPalSdk() {
     return new Promise((resolve, reject) => {
