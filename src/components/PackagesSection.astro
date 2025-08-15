@@ -108,14 +108,15 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
   </div>
 </section>
 
-<script is:inline>
-  const PAYPAL_CLIENT_ID = `${ENV_PAYPAL_CLIENT_ID || ''}`;
-  const PLAN_STARTER = `${ENV_PLAN_STARTER || ''}`;
-  const PLAN_GROWTH = `${ENV_PLAN_GROWTH || ''}`;
-  const PLAN_FAST = `${ENV_PLAN_FAST || ''}`;
-  const SUCCESS_URL = `${ENV_SUCCESS_URL || ''}`;
-  const CANCEL_URL = `${ENV_CANCEL_URL || ''}`;
-  const CURRENCY = `${ENV_CURRENCY || ''}`;
+<script is:inline define:vars={{
+  PAYPAL_CLIENT_ID: ENV_PAYPAL_CLIENT_ID,
+  PLAN_STARTER: ENV_PLAN_STARTER,
+  PLAN_GROWTH: ENV_PLAN_GROWTH,
+  PLAN_FAST: ENV_PLAN_FAST,
+  SUCCESS_URL: ENV_SUCCESS_URL,
+  CANCEL_URL: ENV_CANCEL_URL,
+  CURRENCY: ENV_CURRENCY
+}}>
 
   function loadPayPalSdk() {
     return new Promise((resolve, reject) => {
