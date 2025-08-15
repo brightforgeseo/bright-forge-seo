@@ -167,10 +167,30 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
     }).render(selector);
   }
 
+  // Debug info
+  console.log('PayPal Debug Info:', {
+    clientId: PAYPAL_CLIENT_ID,
+    planStarter: PLAN_STARTER,
+    planGrowth: PLAN_GROWTH,
+    planFast: PLAN_FAST,
+    currency: CURRENCY,
+    successUrl: SUCCESS_URL,
+    cancelUrl: CANCEL_URL
+  });
+
+  // Show loading message first
+  const loadingMsg = '<span class="text-sm text-blue-600">Loading PayPal buttons...</span>';
+  ['#paypal-starter', '#paypal-growth', '#paypal-fast'].forEach((sel) => {
+    const el = document.querySelector(sel);
+    if (el) el.innerHTML = loadingMsg;
+  });
+
   (async () => {
     try {
+      console.log('Starting PayPal SDK load...');
       const paypal = await loadPayPalSdk();
       if (!paypal) {
+        console.warn('PayPal SDK failed to load or client ID missing');
         const msg = '<span class="text-sm text-gray-600">Subscribe with PayPal is unavailable right now. Please refresh, disable ad blockers, or contact us.</span>';
         const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
         ids.forEach((sel) => {
@@ -179,13 +199,13 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
         });
         return;
       }
-      console.info('PayPal SDK loaded, rendering subscription buttons.');
+      console.info('PayPal SDK loaded successfully, rendering subscription buttons.');
       renderSubscriptionButton('#paypal-starter', PLAN_STARTER);
       renderSubscriptionButton('#paypal-growth', PLAN_GROWTH);
       renderSubscriptionButton('#paypal-fast', PLAN_FAST);
     } catch (e) {
       console.error('Failed to load PayPal SDK', e);
-      const msg = '<span class="text-sm text-gray-600">Subscribe with PayPal is unavailable right now. Please refresh or contact us.</span>';
+      const msg = '<span class="text-sm text-red-600">PayPal error: ' + e.message + '</span>';
       const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
       ids.forEach((sel) => {
         const el = document.querySelector(sel);
