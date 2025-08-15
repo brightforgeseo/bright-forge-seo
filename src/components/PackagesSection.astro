@@ -48,9 +48,12 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Google Business Profile optimisation</span></li>
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Progress moves at a steady pace, focusing on the highest-priority actions each month</span></li>
           </ul>
-          <div class="mt-6">
+          <div class="mt-8">
             <div id="paypal-starter" class="paypal-button-container"></div>
-            <p class="mt-2 text-xs text-gray-500">Secure payments powered by PayPal</p>
+            <p class="text-xs text-gray-400 text-center mt-2 flex items-center justify-center gap-1">
+              <i class="fab fa-paypal text-blue-600"></i>
+              Secure payments powered by PayPal
+            </p>
           </div>
         </div>
       </div>
@@ -69,9 +72,12 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Competitor analysis integrated into strategy earlier</span></li>
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Quicker turnaround on optimisation tasks and new initiatives</span></li>
           </ul>
-          <div class="mt-6">
+          <div class="mt-8">
             <div id="paypal-growth" class="paypal-button-container"></div>
-            <p class="mt-2 text-xs text-gray-500">Secure payments powered by PayPal</p>
+            <p class="text-xs text-gray-400 text-center mt-2 flex items-center justify-center gap-1">
+              <i class="fab fa-paypal text-blue-600"></i>
+              Secure payments powered by PayPal
+            </p>
           </div>
         </div>
       </div>
@@ -90,9 +96,12 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Rapid testing, adjustments, and scaling strategies</span></li>
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Ideal for businesses wanting aggressive ranking gains and faster ROI</span></li>
           </ul>
-          <div class="mt-6">
+          <div class="mt-8">
             <div id="paypal-fast" class="paypal-button-container"></div>
-            <p class="mt-2 text-xs text-gray-500">Secure payments powered by PayPal</p>
+            <p class="text-xs text-gray-400 text-center mt-2 flex items-center justify-center gap-1">
+              <i class="fab fa-paypal text-blue-600"></i>
+              Secure payments powered by PayPal
+            </p>
           </div>
         </div>
       </div>
@@ -144,19 +153,25 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
 
   function renderSubscriptionButton(selector, planId) {
     const target = document.querySelector(selector);
-    if (!target) return;
-    if (!planId) {
-      target.innerHTML = '<span class="text-sm text-gray-500">PayPal plan not configured.</span>';
-      return;
-    }
-    window.paypal.Buttons({
-      style: { layout: 'vertical', color: 'gold', shape: 'pill', label: 'subscribe' },
+    if (!target || !planId) return;
+    
+    paypal.Buttons({
+      style: {
+        shape: 'rect',
+        color: 'white',
+        layout: 'vertical',
+        label: 'subscribe',
+        height: 48,
+        tagline: false
+      },
       createSubscription: (data, actions) => {
-        return actions.subscription.create({ plan_id: planId });
+        return actions.subscription.create({
+          plan_id: planId
+        });
       },
       onApprove: (data, actions) => {
-        const subId = data.subscriptionID || '';
-        window.location.href = `${SUCCESS_URL}?subscriptionID=${encodeURIComponent(subId)}`;
+        const subscriptionId = data.subscriptionID;
+        window.location.href = `${SUCCESS_URL}?subscriptionID=${subscriptionId}`;
       },
       onCancel: () => {
         window.location.href = CANCEL_URL;
