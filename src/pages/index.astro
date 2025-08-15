@@ -159,10 +159,10 @@ const breadcrumbs = [
 
   <ReviewsSection />
 
+  <AwardsSection />
+
   <!-- Our Process Steps Section -->
   <ProcessSection />
-
-  <AwardsSection />
 
   <!-- Awards & Recognition Section -->
   <!--
@@ -361,69 +361,6 @@ const breadcrumbs = [
           <h3 class="text-xl font-bold mb-4">Ongoing Refinement</h3>
           <p class="text-gray-700">Your market, audience, and industry evolve over time. We stay proactive by regularly revisiting and refining your SEO strategies so that your revenue growth never stalls.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Latest Blog Section -->
-  <section class="latest-blog-section py-16 bg-gray-100">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <span class="section-label">LATEST INSIGHTS</span>
-        <h2 class="section-title">Our Latest <span>Blog Posts</span></h2>
-        <p class="section-subtitle">Stay updated with our latest SEO insights and strategies</p>
-      </div>
-      
-      <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        {latestPosts.map((post) => (
-          <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-            <div class="blog-image h-48">
-              <img 
-                src={post.featuredImage || '/images/blog/default-blog.png'} 
-                alt={post.title} 
-                class="w-full h-full object-cover" 
-                width="400" 
-                height="250" 
-                loading="lazy" 
-                decoding="async"
-              />
-            </div>
-            <div class="blog-content p-5 flex-grow">
-              <div class="blog-meta flex items-center text-sm mb-2">
-                <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">
-                  {post.tags && post.tags.length > 0 ? post.tags[0] : 'SEO'}
-                </span>
-                <span class="blog-date text-gray-500 ml-3">
-                  {new Date(post.dateTime).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}
-                </span>
-              </div>
-              <h3 class="text-lg font-bold mb-2">
-                <a href={`/blog/${post.slug}`} class="hover:text-brand-accent transition-colors">
-                  {post.title}
-                </a>
-              </h3>
-              <p class="text-gray-600 mb-3 text-sm line-clamp-2">
-                {post.excerpt}
-              </p>
-              <a href={`/blog/${post.slug}`} class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
-                Read Article 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      <div class="text-center mt-10">
-        <a href="/blog" class="inline-block bg-white border border-brand-accent text-brand-accent font-medium rounded-md px-6 py-3 hover:bg-brand-accent hover:text-white transition-colors">
-          View All Blog Posts
-        </a>
       </div>
     </div>
   </section>
@@ -746,6 +683,226 @@ const breadcrumbs = [
             </button>
           </form>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section py-16 bg-gray-50">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="section-header text-center mb-10">
+        <span class="section-label">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="section-title">Your SEO <span>Questions Answered</span></h2>
+        <p class="section-subtitle">Get answers to the most common questions about our <a href="https://brightforgeseo.com/philippines-seo-services/">SEO services</a> and approach</p>
+      </div>
+      
+      <div class="faq-container max-w-4xl mx-auto">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+          <details class="faq-details">
+            <summary class="faq-summary bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+              <span class="font-bold text-lg">What makes Bright Forge different from other SEO agencies?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down text-[#FF4438]"></i></span>
+            </summary>
+            <div class="faq-content p-4 bg-white border-t border-gray-200">
+              <p class="mb-3">Bright Forge stands out through our combination of globally inspired strategies with local Philippines expertise. We focus on ethical, transparent practices and data-driven insights that deliver measurable results. Our approach is tailored to your specific business goals, with clear communication throughout the process.</p>
+              <p>Unlike agencies that promise quick fixes, we build sustainable SEO strategies that continue delivering results long-term, focusing on quality over quantity in everything we do.</p>
+            </div>
+          </details>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+          <details class="faq-details">
+            <summary class="faq-summary bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+              <span class="font-bold text-lg">What SEO services do you offer?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down text-[#FF4438]"></i></span>
+            </summary>
+            <div class="faq-content p-4 bg-white border-t border-gray-200">
+              <p class="mb-3">We offer comprehensive <a href="https://brightforgeseo.com/philippines-seo-services/">SEO services</a> including:</p>
+              <ul class="list-disc pl-5 mb-3">
+                <li>Full SEO audits to identify opportunities and issues</li>
+                <li>On-page optimization for better relevance and user experience</li>
+                <li>Technical SEO to ensure search engines can crawl and index your site</li>
+                <li>Content strategy and creation aligned with search intent</li>
+                <li>Link building through ethical, white-hat methods</li>
+                <li>Local SEO for businesses targeting specific geographic areas</li>
+                <li>E-commerce SEO for online stores</li>
+                <li>Ongoing monitoring and optimization</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+          <details class="faq-details">
+            <summary class="faq-summary bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+              <span class="font-bold text-lg">How long does it take to see SEO results?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down text-[#FF4438]"></i></span>
+            </summary>
+            <div class="faq-content p-4 bg-white border-t border-gray-200">
+              <p class="mb-3">SEO is a long-term strategy that typically shows meaningful results within 3-6 months. Technical improvements may show impact within weeks, while content and link building efforts often take longer to fully mature.</p>
+              <p>Factors affecting timeline include:</p>
+              <ul class="list-disc pl-5 mb-3">
+                <li>Your website's current state and authority</li>
+                <li>Competition level in your industry</li>
+                <li>Resources allocated to SEO efforts</li>
+                <li>Quality and consistency of implementation</li>
+              </ul>
+              <p>We provide monthly reports so you can track progress throughout the journey.</p>
+            </div>
+          </details>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+          <details class="faq-details">
+            <summary class="faq-summary bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+              <span class="font-bold text-lg">How do you approach keyword research?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down text-[#FF4438]"></i></span>
+            </summary>
+            <div class="faq-content p-4 bg-white border-t border-gray-200">
+              <p class="mb-3">We build keyword strategies around search intent, not just volume. Our approach includes:</p>
+              <ul class="list-disc pl-5 mb-3">
+                <li>Analyzing what your target audience searches at different stages of their journey</li>
+                <li>Identifying gaps where you can outrank competitors</li>
+                <li>Balancing high-volume terms with achievable long-tail keywords</li>
+                <li>Mapping keywords to specific pages and content types</li>
+                <li>Continuously refining based on performance data</li>
+              </ul>
+              <p>This ensures we target terms that drive qualified traffic, not just numbers.</p>
+            </div>
+          </details>
+        </div>
+        
+        <!-- FAQ Item 5 -->
+        <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+          <details class="faq-details">
+            <summary class="faq-summary bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+              <span class="font-bold text-lg">Do you guarantee first-page rankings?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down text-[#FF4438]"></i></span>
+            </summary>
+            <div class="faq-content p-4 bg-white border-t border-gray-200">
+              <p class="mb-3">No ethical SEO agency can guarantee specific rankings, as search algorithms consider hundreds of factors outside any agency's control. What we do guarantee is:</p>
+              <ul class="list-disc pl-5 mb-3">
+                <li>Transparent, ethical SEO practices that follow Google's guidelines</li>
+                <li>Data-driven strategies based on proven methodologies</li>
+                <li>Regular reporting on progress and performance</li>
+                <li>Continuous optimization based on results</li>
+                <li>Our full commitment to improving your organic visibility</li>
+              </ul>
+              <p>Our track record shows consistent improvements in rankings, traffic, and conversions for clients who follow our recommendations.</p>
+            </div>
+          </details>
+        </div>
+        
+        <!-- FAQ Item 6 -->
+        <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+          <details class="faq-details">
+            <summary class="faq-summary bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+              <span class="font-bold text-lg">How do you handle reporting and communication?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down text-[#FF4438]"></i></span>
+            </summary>
+            <div class="faq-content p-4 bg-white border-t border-gray-200">
+              <p class="mb-3">We prioritize clear communication at every stage. Our reporting and communication includes:</p>
+              <ul class="list-disc pl-5 mb-3">
+                <li>Monthly performance reports with key metrics and insights</li>
+                <li>Regular strategy calls to discuss progress and next steps</li>
+                <li>Access to real-time dashboards for tracking rankings and traffic</li>
+                <li>Transparent task management showing what we're working on</li>
+                <li>Quick response times for questions and concerns</li>
+                <li>Educational resources to help you understand SEO better</li>
+              </ul>
+              <p>You'll always know what we're doing, why we're doing it, and how it's performing.</p>
+            </div>
+          </details>
+        </div>
+        
+        <!-- FAQ Item 7 -->
+        <div class="faq-item mb-4 border border-gray-200 rounded-lg overflow-hidden">
+          <details class="faq-details">
+            <summary class="faq-summary bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50">
+              <span class="font-bold text-lg">How do I get started with Bright Forge SEO?</span>
+              <span class="faq-icon"><i class="fas fa-chevron-down text-[#FF4438]"></i></span>
+            </summary>
+            <div class="faq-content p-4 bg-white border-t border-gray-200">
+              <p class="mb-3">Getting started is simple:</p>
+              <ol class="list-decimal pl-5 mb-3">
+                <li>Request a free SEO audit using the form at the top of this page</li>
+                <li>We'll analyze your website and competitive landscape</li>
+                <li>Receive a detailed report with opportunities and recommendations</li>
+                <li>Schedule a consultation to discuss your goals and our approach</li>
+                <li>Choose a service package that fits your needs and budget</li>
+                <li>We begin implementing your custom SEO strategy</li>
+              </ol>
+              <p>There's no obligation with the audit, and we'll provide valuable insights regardless of whether you choose to work with us.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Blog Section -->
+  <section class="latest-blog-section py-16 bg-gray-100">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <span class="section-label">LATEST INSIGHTS</span>
+        <h2 class="section-title">Our Latest <span>Blog Posts</span></h2>
+        <p class="section-subtitle">Stay updated with our latest SEO insights and strategies</p>
+      </div>
+      
+      <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+        {latestPosts.map((post) => (
+          <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="blog-image h-48">
+              <img 
+                src={post.featuredImage || '/images/blog/default-blog.png'} 
+                alt={post.title} 
+                class="w-full h-full object-cover" 
+                width="400" 
+                height="250" 
+                loading="lazy" 
+                decoding="async"
+              />
+            </div>
+            <div class="blog-content p-5 flex-grow">
+              <div class="blog-meta flex items-center text-sm mb-2">
+                <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">
+                  {post.tags && post.tags.length > 0 ? post.tags[0] : 'SEO'}
+                </span>
+                <span class="blog-date text-gray-500 ml-3">
+                  {new Date(post.dateTime).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold mb-2">
+                <a href={`/blog/${post.slug}`} class="hover:text-brand-accent transition-colors">
+                  {post.title}
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-3 text-sm line-clamp-2">
+                {post.excerpt}
+              </p>
+              <a href={`/blog/${post.slug}`} class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
+                Read Article 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/blog" class="inline-block bg-white border border-brand-accent text-brand-accent font-medium rounded-md px-6 py-3 hover:bg-brand-accent hover:text-white transition-colors">
+          View All Blog Posts
+        </a>
       </div>
     </div>
   </section>
