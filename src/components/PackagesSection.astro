@@ -36,6 +36,10 @@
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Google Business Profile optimisation</span></li>
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Progress moves at a steady pace, focusing on the highest-priority actions each month</span></li>
           </ul>
+          <div class="mt-6">
+            <div id="paypal-starter" class="paypal-button-container"></div>
+            <p class="mt-2 text-xs text-gray-500">Secure payments powered by PayPal</p>
+          </div>
         </div>
       </div>
 
@@ -53,6 +57,10 @@
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Competitor analysis integrated into strategy earlier</span></li>
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Quicker turnaround on optimisation tasks and new initiatives</span></li>
           </ul>
+          <div class="mt-6">
+            <div id="paypal-growth" class="paypal-button-container"></div>
+            <p class="mt-2 text-xs text-gray-500">Secure payments powered by PayPal</p>
+          </div>
         </div>
       </div>
 
@@ -70,6 +78,10 @@
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Rapid testing, adjustments, and scaling strategies</span></li>
             <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Ideal for businesses wanting aggressive ranking gains and faster ROI</span></li>
           </ul>
+          <div class="mt-6">
+            <div id="paypal-fast" class="paypal-button-container"></div>
+            <p class="mt-2 text-xs text-gray-500">Secure payments powered by PayPal</p>
+          </div>
         </div>
       </div>
     </div>
@@ -83,3 +95,75 @@
     </div>
   </div>
 </section>
+
+<script>
+  const PAYPAL_CLIENT_ID = import.meta.env.PUBLIC_PAYPAL_CLIENT_ID;
+  const PLAN_STARTER = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_STARTER;
+  const PLAN_GROWTH = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_GROWTH;
+  const PLAN_FAST = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_FAST;
+  const SUCCESS_URL = import.meta.env.PUBLIC_PAYPAL_SUCCESS_URL || '/thanks';
+  const CANCEL_URL = import.meta.env.PUBLIC_PAYPAL_CANCEL_URL || '/?payment=cancel';
+  const CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
+
+  function loadPayPalSdk() {
+    return new Promise((resolve, reject) => {
+      if (typeof window === 'undefined') return resolve(null);
+      if (window.paypal) return resolve(window.paypal);
+      const existing = document.getElementById('paypal-sdk');
+      if (existing) {
+        existing.addEventListener('load', () => resolve(window.paypal));
+        existing.addEventListener('error', reject);
+        return;
+      }
+      if (!PAYPAL_CLIENT_ID) {
+        console.warn('PayPal client ID not configured');
+        return resolve(null);
+      }
+      const script = document.createElement('script');
+      script.id = 'paypal-sdk';
+      script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(PAYPAL_CLIENT_ID)}&vault=true&intent=subscription&currency=${encodeURIComponent(CURRENCY)}`;
+      script.async = true;
+      script.onload = () => resolve(window.paypal);
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  function renderSubscriptionButton(selector, planId) {
+    const target = document.querySelector(selector);
+    if (!target) return;
+    if (!planId) {
+      target.innerHTML = '<span class="text-sm text-gray-500">PayPal plan not configured.</span>';
+      return;
+    }
+    window.paypal.Buttons({
+      style: { layout: 'vertical', color: 'gold', shape: 'pill', label: 'subscribe' },
+      createSubscription: (data, actions) => {
+        return actions.subscription.create({ plan_id: planId });
+      },
+      onApprove: (data, actions) => {
+        const subId = data.subscriptionID || '';
+        window.location.href = `${SUCCESS_URL}?subscriptionID=${encodeURIComponent(subId)}`;
+      },
+      onCancel: () => {
+        window.location.href = CANCEL_URL;
+      },
+      onError: (err) => {
+        console.error('PayPal error', err);
+        target.innerHTML = '<span class="text-sm text-red-600">Payment initialisation failed. Please try again or contact support.</span>';
+      }
+    }).render(selector);
+  }
+
+  (async () => {
+    try {
+      const paypal = await loadPayPalSdk();
+      if (!paypal) return;
+      renderSubscriptionButton('#paypal-starter', PLAN_STARTER);
+      renderSubscriptionButton('#paypal-growth', PLAN_GROWTH);
+      renderSubscriptionButton('#paypal-fast', PLAN_FAST);
+    } catch (e) {
+      console.error('Failed to load PayPal SDK', e);
+    }
+  })();
+</script>
