@@ -133,7 +133,7 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
       }
       const script = document.createElement('script');
       script.id = 'paypal-sdk';
-      script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(PAYPAL_CLIENT_ID)}&vault=true&intent=subscription&currency=${encodeURIComponent(CURRENCY)}`;
+      script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(PAYPAL_CLIENT_ID)}&components=buttons&vault=true&intent=subscription&currency=${encodeURIComponent(CURRENCY)}`;
       script.async = true;
       script.onload = () => resolve(window.paypal);
       script.onerror = reject;
@@ -170,12 +170,27 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
   (async () => {
     try {
       const paypal = await loadPayPalSdk();
-      if (!paypal) return;
+      if (!paypal) {
+        const msg = '<span class="text-sm text-gray-600">Subscribe with PayPal is unavailable right now. Please refresh, disable ad blockers, or contact us.</span>';
+        const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
+        ids.forEach((sel) => {
+          const el = document.querySelector(sel);
+          if (el) el.innerHTML = msg;
+        });
+        return;
+      }
+      console.info('PayPal SDK loaded, rendering subscription buttons.');
       renderSubscriptionButton('#paypal-starter', PLAN_STARTER);
       renderSubscriptionButton('#paypal-growth', PLAN_GROWTH);
       renderSubscriptionButton('#paypal-fast', PLAN_FAST);
     } catch (e) {
       console.error('Failed to load PayPal SDK', e);
+      const msg = '<span class="text-sm text-gray-600">Subscribe with PayPal is unavailable right now. Please refresh or contact us.</span>';
+      const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
+      ids.forEach((sel) => {
+        const el = document.querySelector(sel);
+        if (el) el.innerHTML = msg;
+      });
     }
   })();
 </script>
