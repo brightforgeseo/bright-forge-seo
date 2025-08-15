@@ -14,105 +14,286 @@ const ENV_CANCEL_URL = import.meta.env.PUBLIC_PAYPAL_CANCEL_URL || '/?payment=ca
 const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
 ---
 
-<section id="packages" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="packages" class="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#FF4438] to-[#FF6B35] rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#4285F4] to-[#34A853] rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto">
-      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-white shadow-sm ring-1 ring-gray-200 text-[#FF4438]">Pricing</span>
-      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">Forged SEO Packages</h2>
-      <p class="mt-6 text-base sm:text-lg text-gray-600">
-        Every package delivers the same battle-tested, full-service SEO, forged to match your business goals.
-      </p>
-      <p class="mt-2 text-base sm:text-lg text-gray-600">
-        The difference lies in the pace: more hours mean faster execution of optimisations, content creation, technical enhancements, and overall ranking gains.
-      </p>
-      <p class="mt-2 text-base sm:text-lg text-gray-600">
-        Each plan comes with a detailed management sheet, giving you full visibility and control over every step of the campaign.
+    <div class="text-center max-w-4xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF4438]/10 to-[#4285F4]/10 border border-[#FF4438]/20 mb-6">
+        <i class="fas fa-crown text-[#FF4438]"></i>
+        <span class="text-sm font-bold text-gray-800 uppercase tracking-wider">Premium SEO Packages</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6">
+        Choose Your <span class="bg-gradient-to-r from-[#FF4438] to-[#FF6B35] bg-clip-text text-transparent">Growth Velocity</span>
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Battle-tested SEO strategies tailored to your business goals. Every package includes full-service optimization—the only difference is speed of execution.
       </p>
     </div>
 
     <!-- Cards -->
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
       <!-- Starter Pace -->
-      <div class="relative bg-white rounded-2xl shadow-lg ring-1 ring-gray-200 overflow-hidden">
-        <div class="h-1 w-full bg-gradient-to-r from-[#FF4438] via-[#FF6B35] to-[#4285F4]"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900">Forged SEO – Starter Pace</h3>
-          <p class="mt-2 text-[#FF4438] font-semibold">₱26,400/month – 16 hrs/month (4 hrs/week)</p>
-          <ul class="mt-4 space-y-2 text-gray-700">
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Full-service SEO tailored to the client’s goals</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Management sheet for transparency and tracking</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span><a href="/on-page-seo-services-philippines" class="text-[#FF4438] hover:underline">On-page optimisation</a></span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span><a href="/technical-seo-services-philippines" class="text-[#FF4438] hover:underline">Technical SEO</a> fixes & improvements</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Content optimisation & <a href="/keyword-research-services" class="text-[#FF4438] hover:underline">keyword targeting</a></span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Google Business Profile optimisation</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Progress moves at a steady pace, focusing on the highest-priority actions each month</span></li>
-          </ul>
-          <div class="mt-8">
+      <div class="relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+        <!-- Top accent -->
+        <div class="h-2 w-full bg-gradient-to-r from-gray-400 to-gray-600"></div>
+        
+        <div class="p-8">
+          <!-- Plan badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-bold uppercase tracking-wide mb-4">
+            <i class="fas fa-rocket text-gray-600"></i>
+            Starter
+          </div>
+          
+          <h3 class="text-2xl font-black text-gray-900 mb-2">Forged SEO Starter</h3>
+          
+          <!-- Pricing -->
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="text-4xl font-black text-gray-900">₱26,400</span>
+            <span class="text-gray-600">/month</span>
+          </div>
+          
+          <!-- Hours badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 mb-6">
+            <i class="fas fa-clock text-gray-600"></i>
+            <span class="text-sm font-semibold text-gray-700">16 hours/month • 4 hrs/week</span>
+          </div>
+          
+          <!-- Features -->
+          <div class="space-y-4 mb-8">
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Full-service SEO tailored to your goals</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Transparent tracking & management sheet</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed"><a href="/on-page-seo-services-philippines" class="text-[#FF4438] font-semibold hover:underline">On-page</a> & <a href="/technical-seo-services-philippines" class="text-[#FF4438] font-semibold hover:underline">Technical SEO</a></span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Content & <a href="/keyword-research-services" class="text-[#FF4438] font-semibold hover:underline">keyword optimization</a></span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Google Business Profile optimization</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Steady progress on high-priority tasks</span>
+            </div>
+          </div>
+          
+          <!-- PayPal Button -->
+          <div class="mt-auto">
             <div id="paypal-starter" class="paypal-button-container"></div>
-            <p class="text-xs text-gray-400 text-center mt-2 flex items-center justify-center gap-1">
-              <i class="fab fa-paypal text-blue-600"></i>
-              Secure payments powered by PayPal
+            <p class="text-xs text-gray-500 text-center mt-3 flex items-center justify-center gap-1">
+              <i class="fas fa-lock text-gray-400"></i>
+              Secure checkout via PayPal
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Growth Pace -->
-      <div class="relative bg-white rounded-2xl shadow-lg ring-1 ring-gray-200 overflow-hidden">
-        <div class="h-1 w-full bg-gradient-to-r from-[#FF4438] via-[#FF6B35] to-[#4285F4]"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900">Forged SEO – Growth Pace</h3>
-          <p class="mt-2 text-[#FF4438] font-semibold">₱49,500/month – 30 hrs/month (7.5 hrs/week)</p>
-          <ul class="mt-4 space-y-2 text-gray-700">
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Same full-service SEO as Starter</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>More hours = faster completion of optimisations, audits, and content updates</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Larger keyword sets and content expansion</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Advanced <a href="/technical-seo-services-philippines" class="text-[#FF4438] hover:underline">technical SEO</a>, structured data, and CRO recommendations implemented sooner</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Competitor analysis integrated into strategy earlier</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Quicker turnaround on optimisation tasks and new initiatives</span></li>
-          </ul>
-          <div class="mt-8">
+      <!-- Growth Pace - Most Popular -->
+      <div class="relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group transform lg:scale-105">
+        <!-- Popular badge -->
+        <div class="absolute -top-1 -right-1 z-20">
+          <div class="bg-gradient-to-r from-[#FF4438] to-[#FF6B35] text-white text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-2xl shadow-lg">
+            MOST POPULAR
+          </div>
+        </div>
+        
+        <!-- Top accent -->
+        <div class="h-2 w-full bg-gradient-to-r from-[#FF4438] to-[#FF6B35]"></div>
+        
+        <div class="p-8">
+          <!-- Plan badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#FF4438]/10 to-[#FF6B35]/10 text-[#FF4438] text-xs font-bold uppercase tracking-wide mb-4">
+            <i class="fas fa-fire"></i>
+            Growth
+          </div>
+          
+          <h3 class="text-2xl font-black text-gray-900 mb-2">Forged SEO Growth</h3>
+          
+          <!-- Pricing -->
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="text-4xl font-black text-[#FF4438]">₱49,500</span>
+            <span class="text-gray-600">/month</span>
+          </div>
+          
+          <!-- Hours badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#FF4438]/5 to-[#FF6B35]/5 border border-[#FF4438]/20 mb-6">
+            <i class="fas fa-clock text-[#FF4438]"></i>
+            <span class="text-sm font-semibold text-gray-700">30 hours/month • 7.5 hrs/week</span>
+          </div>
+          
+          <!-- Features -->
+          <div class="space-y-4 mb-8">
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed font-semibold">Everything in Starter, plus:</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">2x faster optimization & content delivery</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Expanded keyword targeting & content</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Advanced <a href="/technical-seo-services-philippines" class="text-[#FF4438] font-semibold hover:underline">technical SEO</a> & CRO</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Priority competitor analysis</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Faster turnaround on all tasks</span>
+            </div>
+          </div>
+          
+          <!-- PayPal Button -->
+          <div class="mt-auto">
             <div id="paypal-growth" class="paypal-button-container"></div>
-            <p class="text-xs text-gray-400 text-center mt-2 flex items-center justify-center gap-1">
-              <i class="fab fa-paypal text-blue-600"></i>
-              Secure payments powered by PayPal
+            <p class="text-xs text-gray-500 text-center mt-3 flex items-center justify-center gap-1">
+              <i class="fas fa-lock text-gray-400"></i>
+              Secure checkout via PayPal
             </p>
           </div>
         </div>
       </div>
 
       <!-- Fast Track -->
-      <div class="relative bg-white rounded-2xl shadow-lg ring-1 ring-gray-200 overflow-hidden">
-        <div class="h-1 w-full bg-gradient-to-r from-[#FF4438] via-[#FF6B35] to-[#4285F4]"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900">Forged SEO – Fast Track</h3>
-          <p class="mt-2 text-[#FF4438] font-semibold">₱82,500+/month – 50 hrs/month (12.5 hrs/week)</p>
-          <ul class="mt-4 space-y-2 text-gray-700">
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Same full-service SEO scope as Growth</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Highest priority on speed and volume of delivery</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Full <a href="/seo-audit-services" class="text-[#FF4438] hover:underline">site audit</a> & fixes executed in weeks rather than months</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Larger content rollouts and <a href="/backlink-seo-services-philippines" class="text-[#FF4438] hover:underline">backlink campaigns</a> in parallel</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Rapid testing, adjustments, and scaling strategies</span></li>
-            <li class="flex gap-2"><i class="fas fa-check text-green-600 mt-1"></i><span>Ideal for businesses wanting aggressive ranking gains and faster ROI</span></li>
-          </ul>
-          <div class="mt-8">
+      <div class="relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+        <!-- Top accent -->
+        <div class="h-2 w-full bg-gradient-to-r from-[#4285F4] to-[#34A853]"></div>
+        
+        <div class="p-8">
+          <!-- Plan badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#4285F4]/10 to-[#34A853]/10 text-[#4285F4] text-xs font-bold uppercase tracking-wide mb-4">
+            <i class="fas fa-bolt text-[#4285F4]"></i>
+            Fast Track
+          </div>
+          
+          <h3 class="text-2xl font-black text-gray-900 mb-2">Forged SEO Fast Track</h3>
+          
+          <!-- Pricing -->
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="text-4xl font-black text-[#4285F4]">₱82,500+</span>
+            <span class="text-gray-600">/month</span>
+          </div>
+          
+          <!-- Hours badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#4285F4]/5 to-[#34A853]/5 border border-[#4285F4]/20 mb-6">
+            <i class="fas fa-clock text-[#4285F4]"></i>
+            <span class="text-sm font-semibold text-gray-700">50+ hours/month • 12.5+ hrs/week</span>
+          </div>
+          
+          <!-- Features -->
+          <div class="space-y-4 mb-8">
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed font-semibold">Everything in Growth, plus:</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Maximum speed & volume delivery</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Full <a href="/seo-audit-services" class="text-[#4285F4] font-semibold hover:underline">site audit</a> in weeks</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Massive content & <a href="/backlink-seo-services-philippines" class="text-[#4285F4] font-semibold hover:underline">backlink campaigns</a></span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Rapid testing & scaling strategies</span>
+            </div>
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                <i class="fas fa-check text-green-600 text-xs"></i>
+              </div>
+              <span class="text-gray-700 text-sm leading-relaxed">Ideal for aggressive growth & fast ROI</span>
+            </div>
+          </div>
+          
+          <!-- PayPal Button -->
+          <div class="mt-auto">
             <div id="paypal-fast" class="paypal-button-container"></div>
-            <p class="text-xs text-gray-400 text-center mt-2 flex items-center justify-center gap-1">
-              <i class="fab fa-paypal text-blue-600"></i>
-              Secure payments powered by PayPal
+            <p class="text-xs text-gray-500 text-center mt-3 flex items-center justify-center gap-1">
+              <i class="fas fa-lock text-gray-400"></i>
+              Secure checkout via PayPal
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="mt-10 text-center">
-      <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#FF4438] font-semibold shadow-md ring-1 ring-gray-200 hover:bg-gray-50 transition">
-        Get Your Free Consultation
-        <i class="fas fa-arrow-right"></i>
-      </a>
+    <!-- Bottom CTA Section -->
+    <div class="mt-16 text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="text-gray-600 mb-6">
+          Not sure which package is right for you? Let's discuss your goals and create a custom strategy.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF4438] to-[#FF6B35] text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+            <i class="fas fa-comments"></i>
+            Get Free Consultation
+          </a>
+          <a href="/case-studies" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-gray-800 font-bold shadow-lg ring-1 ring-gray-200 hover:bg-gray-50 transition">
+            <i class="fas fa-chart-line"></i>
+            View Success Stories
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
