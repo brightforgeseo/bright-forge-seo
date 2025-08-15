@@ -98,9 +98,10 @@
 
 <script>
   const PAYPAL_CLIENT_ID = import.meta.env.PUBLIC_PAYPAL_CLIENT_ID;
-  const PLAN_STARTER = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_STARTER;
-  const PLAN_GROWTH = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_GROWTH;
-  const PLAN_FAST = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_FAST;
+  // Fallback to provided LIVE plan IDs if env vars are not set
+  const PLAN_STARTER = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_STARTER || 'P-3P2511639M442461SNCPPDNQ';
+  const PLAN_GROWTH = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_GROWTH || 'P-0XV95953GX3131429NCPPFJA';
+  const PLAN_FAST = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_FAST || 'P-95B79324H9815422TNCPPF4Y';
   const SUCCESS_URL = import.meta.env.PUBLIC_PAYPAL_SUCCESS_URL || '/thanks';
   const CANCEL_URL = import.meta.env.PUBLIC_PAYPAL_CANCEL_URL || '/?payment=cancel';
   const CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
