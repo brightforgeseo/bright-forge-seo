@@ -1,13 +1,12 @@
 // Service Worker for Bright Forge SEO - Performance Optimization
-const CACHE_NAME = 'brightforge-seo-v1';
-const STATIC_CACHE = 'brightforge-static-v1';
-const DYNAMIC_CACHE = 'brightforge-dynamic-v1';
+const CACHE_NAME = 'brightforge-seo-v2';
+const STATIC_CACHE = 'brightforge-static-v2';
+const DYNAMIC_CACHE = 'brightforge-dynamic-v2';
 
 // Assets to cache immediately
 const STATIC_ASSETS = [
   '/',
   '/about-us/',
-  '/philippines-seo-services/',
   '/white-label-seo-services-philippines/',
   '/content-seo-services-philippines/',
   '/backlink-seo-services-philippines/',

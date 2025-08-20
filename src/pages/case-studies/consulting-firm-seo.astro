@@ -126,14 +126,8 @@ const caseStudyData = {
     <!-- Knowledge Base Preview Section -->
     <section class="knowledge-base-preview py-16 bg-[#f8fafc]">
       <div class="container max-w-7xl mx-auto px-4">
-        <div class="section-header text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Consulting Industry SEO Knowledge Base</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our expert answers to common questions about SEO for consulting firms</p>
-          <div class="w-24 h-1 bg-brand-accent mx-auto mt-6"></div>
-        </div>
-        
         <div class="max-w-4xl mx-auto">
-          <KnowledgeBase questions={knowledgeBaseData.questions.slice(0, 3)} />
+          <KnowledgeBase title={knowledgeBaseData.title} questions={knowledgeBaseData.questions.slice(0, 3)} />
           
           <div class="text-center mt-8">
             <a href="/knowledge-base/consulting-seo" class="inline-flex items-center px-6 py-3 bg-brand-accent text-white font-medium rounded-md hover:bg-brand-accent-dark transition-colors">

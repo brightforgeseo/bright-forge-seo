@@ -14,19 +14,23 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 /bright-forge-seo/* / 301
 /bright-forge-seo / 301
 
+# SEO Services redirects - place above trailing slash to avoid chains
+/philippines-seo-services  /  301
+/philippines-seo-services/  /  301
+/seo-services  /  301
+/seo-services/  /  301
+/services  /  301
+/services/  /  301
+
 # Fix double slashes (but keep trailing slashes)
 /*//  /:splat/  301
 
 # Enforce trailing slashes on all URLs
-/*  /:splat/  301!
+/*  /:splat/  301!  conditions={path:!~/\.[a-z]+$/}
 
 # Prerender redirects for common pages
 /home  /  301
 /index  /  301
-
-# Canonical redirects
-/seo-services  /philippines-seo-services  301
-/services  /philippines-seo-services  301
 
 # Cache headers for static assets
 /images/*  /images/:splat  200!  Cache-Control=public,max-age=31536000,immutable
@@ -42,8 +46,6 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 /blog//blog/importance-of-local-seo-for-small-businesses  /blog/importance-of-local-seo-for-small-businesses  301
 /blog//blog/*  /blog/:splat  301
 /blog//*  /blog/:splat  301
-
-
 
 # Fallback to 404 page for unmatched routes
 /* /404.html 404

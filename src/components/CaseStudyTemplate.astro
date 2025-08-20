@@ -433,6 +433,9 @@ const {
       </div>
     </div>
   </section>
+ 
+  <!-- Custom Content Slot -->
+  <slot />
 
   <!-- Next Steps CTA -->
   {nextSteps && (
@@ -446,7 +449,7 @@ const {
               <span>Get Started Today</span>
               <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="/philippines-seo-services" class="cta-button secondary">
+            <a href="/" class="cta-button secondary">
               <i class="fas fa-info-circle"></i>
               <span>Learn More</span>
             </a>
@@ -777,7 +780,7 @@ const {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: linear-gradient(135deg, #FF4438, #FF6B35);
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
     color: white;
     width: 40px;
     height: 40px;
@@ -808,7 +811,7 @@ const {
   .achievement-value {
     font-size: 3rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #FF4438, #4285F4);
+    background: linear-gradient(135deg, #FF4438 0%, #4285F4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1935,7 +1938,6 @@ const {
     margin-bottom: 3rem;
     font-size: 14px;
     font-weight: 500;
-    line-height: 1;
   }
 
   .hero-breadcrumbs * {
