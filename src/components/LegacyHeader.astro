@@ -53,12 +53,6 @@ import "../styles/legacy.css";
               <div class="mega-column">
                 <h3 class="column-title">Core SEO Services</h3>
                 <div class="service-links">
-                  <a href="/" class="service-link">
-                    <div class="service-info">
-                      <strong>Philippines SEO Services</strong>
-                      <span>Complete SEO solutions for Philippine businesses</span>
-                    </div>
-                  </a>
                   <a href="/technical-seo-services-philippines/" class="service-link">
                     <div class="service-info">
                       <strong>Technical SEO</strong>
@@ -151,32 +145,61 @@ import "../styles/legacy.css";
           <span>Industries</span>
           <i class="fas fa-chevron-down nav-arrow"></i>
         </a>
-        <div class="dropdown-professional">
-          <div class="dropdown-content">
-            <a href="/gaming-seo-services/" class="dropdown-link">
-              <strong>Gaming SEO Services</strong>
-              <span>Specialized SEO for gaming businesses and developers</span>
-            </a>
-            <a href="/pet-seo-services/" class="dropdown-link">
-              <strong>Pet SEO Services</strong>
-              <span>SEO for veterinarians, pet stores, and animal services</span>
-            </a>
-            <a href="/finance-crypto-seo-services/" class="dropdown-link">
-              <strong>Finance & Crypto SEO</strong>
-              <span>SEO for financial advisors, fintech, and crypto businesses</span>
-            </a>
-            <a href="/real-estate-seo-services/" class="dropdown-link">
-              <strong>Real Estate SEO</strong>
-              <span>SEO for real estate agents, brokers, and property companies</span>
-            </a>
-            <a href="/home-services-seo/" class="dropdown-link">
-              <strong>Home Services SEO</strong>
-              <span>SEO for plumbing, HVAC, landscaping, and roofing contractors</span>
-            </a>
-            <a href="/football-soccer-seo-services/" class="dropdown-link">
-              <strong>Football (Soccer) SEO</strong>
-              <span>SEO for football clubs, academies, and soccer businesses</span>
-            </a>
+        <div class="dropdown-professional industries-mega-menu">
+          <div class="dropdown-content industries-grid">
+            <div class="industry-category">
+              <h4 class="category-title"><i class="fas fa-chart-line"></i> Business & Finance</h4>
+              <a href="/finance-crypto-seo-services/" class="dropdown-link industry-link">
+                <i class="fas fa-coins"></i>
+                <div>
+                  <strong>Finance & Crypto</strong>
+                  <span>Fintech, crypto, and financial advisors</span>
+                </div>
+              </a>
+              <a href="/real-estate-seo-services/" class="dropdown-link industry-link">
+                <i class="fas fa-home"></i>
+                <div>
+                  <strong>Real Estate</strong>
+                  <span>Agents, brokers, and property companies</span>
+                </div>
+              </a>
+            </div>
+            
+            <div class="industry-category">
+              <h4 class="category-title"><i class="fas fa-wrench"></i> Services</h4>
+              <a href="/home-services-seo/" class="dropdown-link industry-link">
+                <i class="fas fa-tools"></i>
+                <div>
+                  <strong>Home Services</strong>
+                  <span>HVAC, plumbing, landscaping, roofing</span>
+                </div>
+              </a>
+              <a href="/pet-seo-services/" class="dropdown-link industry-link">
+                <i class="fas fa-paw"></i>
+                <div>
+                  <strong>Pet Services</strong>
+                  <span>Veterinarians and pet businesses</span>
+                </div>
+              </a>
+            </div>
+            
+            <div class="industry-category">
+              <h4 class="category-title"><i class="fas fa-trophy"></i> Entertainment & Sports</h4>
+              <a href="/gaming-seo-services/" class="dropdown-link industry-link">
+                <i class="fas fa-gamepad"></i>
+                <div>
+                  <strong>Gaming Industry</strong>
+                  <span>Game developers and gaming businesses</span>
+                </div>
+              </a>
+              <a href="/football-soccer-seo-services/" class="dropdown-link industry-link">
+                <i class="fas fa-futbol"></i>
+                <div>
+                  <strong>Football (Soccer)</strong>
+                  <span>Clubs, academies, and soccer businesses</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </li>
@@ -235,7 +258,6 @@ import "../styles/legacy.css";
           <i class="fas fa-chevron-down dropdown-icon"></i>
         </button>
         <div class="mobile-dropdown-content">
-          <a href="/" class="mobile-nav-link"><span>Philippines SEO Services</span></a>
           <a href="/technical-seo-services-philippines/" class="mobile-nav-link"><span>Technical SEO</span></a>
           <a href="/on-page-seo-services-philippines/" class="mobile-nav-link"><span>On-Page SEO</span></a>
           <a href="/content-seo-services-philippines/" class="mobile-nav-link"><span>Content SEO</span></a>
@@ -254,12 +276,21 @@ import "../styles/legacy.css";
           <i class="fas fa-chevron-down dropdown-icon"></i>
         </button>
         <div class="mobile-dropdown-content">
-          <a href="/gaming-seo-services/" class="mobile-nav-link"><span>Gaming SEO Services</span></a>
-          <a href="/pet-seo-services/" class="mobile-nav-link"><span>Pet SEO Services</span></a>
-          <a href="/finance-crypto-seo-services/" class="mobile-nav-link"><span>Finance & Crypto SEO</span></a>
-          <a href="/real-estate-seo-services/" class="mobile-nav-link"><span>Real Estate SEO</span></a>
-          <a href="/home-services-seo/" class="mobile-nav-link"><span>Home Services SEO</span></a>
-          <a href="/football-soccer-seo-services/" class="mobile-nav-link"><span>Football (Soccer) SEO</span></a>
+          <div class="mobile-industry-group">
+            <span class="mobile-industry-label">Business & Finance</span>
+            <a href="/finance-crypto-seo-services/" class="mobile-nav-link"><span><i class="fas fa-coins"></i> Finance & Crypto</span></a>
+            <a href="/real-estate-seo-services/" class="mobile-nav-link"><span><i class="fas fa-home"></i> Real Estate</span></a>
+          </div>
+          <div class="mobile-industry-group">
+            <span class="mobile-industry-label">Services</span>
+            <a href="/home-services-seo/" class="mobile-nav-link"><span><i class="fas fa-tools"></i> Home Services</span></a>
+            <a href="/pet-seo-services/" class="mobile-nav-link"><span><i class="fas fa-paw"></i> Pet Services</span></a>
+          </div>
+          <div class="mobile-industry-group">
+            <span class="mobile-industry-label">Entertainment & Sports</span>
+            <a href="/gaming-seo-services/" class="mobile-nav-link"><span><i class="fas fa-gamepad"></i> Gaming</span></a>
+            <a href="/football-soccer-seo-services/" class="mobile-nav-link"><span><i class="fas fa-futbol"></i> Football (Soccer)</span></a>
+          </div>
         </div>
       </div>
       

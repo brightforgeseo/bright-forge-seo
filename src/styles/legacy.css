@@ -290,6 +290,89 @@ body {
   z-index: 1000;
 }
 
+/* Industries Mega Menu Styles */
+.industries-mega-menu {
+  min-width: 800px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 30px;
+}
+
+.industry-category {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.category-title {
+  color: var(--brand-dark);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--brand-accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-title i {
+  color: var(--brand-accent);
+  font-size: 16px;
+}
+
+.industry-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.industry-link:hover {
+  background: linear-gradient(135deg, #FFF6F5 0%, #FFE9E8 100%);
+  border-color: var(--brand-accent);
+  transform: translateX(5px);
+}
+
+.industry-link > i {
+  color: var(--brand-accent);
+  font-size: 20px;
+  width: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.industry-link div {
+  flex: 1;
+}
+
+.industry-link strong {
+  display: block;
+  color: var(--brand-dark);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.industry-link span {
+  display: block;
+  color: var(--brand-soft);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .nav-item-professional.has-dropdown:hover .dropdown-professional {
   opacity: 1;
   visibility: visible;
@@ -297,6 +380,42 @@ body {
 
 .dropdown-content {
   padding: 20px;
+}
+
+/* Mobile Industry Groups */
+.mobile-industry-group {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.mobile-industry-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.mobile-industry-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+
+.mobile-industry-group .mobile-nav-link {
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+.mobile-industry-group .mobile-nav-link i {
+  color: var(--brand-accent);
+  margin-right: 8px;
+  width: 16px;
+  display: inline-block;
 }
 
 .dropdown-link {
