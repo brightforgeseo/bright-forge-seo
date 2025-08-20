@@ -8,6 +8,7 @@ import ProcessSection from '../components/ProcessSection.astro';
 import PartnersSection from '../components/PartnersSection.astro';
 import TopAgencySection from '../components/TopAgencySection.astro';
 import PackagesSection from '../components/PackagesSection.astro';
+import WhatIsSEOSection from '../components/WhatIsSEOSection.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
 
 // Fetch latest blog posts from Contentful
@@ -161,6 +162,8 @@ const breadcrumbs = [
 
   <ReviewsSection />
 
+  <WhatIsSEOSection />
+ 
   <!-- Our Process Steps Section -->
   <ProcessSection />
 
