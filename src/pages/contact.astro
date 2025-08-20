@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/MainLayout.astro';
-import Header from '../components/Header.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/contact.css';
 
@@ -9,7 +9,7 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
 ---
 
 <Layout title={title} description={description}>
-  <Header slot="header" />
+  <LegacyHeader slot="header" />
   <Footer slot="footer" />
   <!-- Hero Section -->
   <section class="hero-contact">

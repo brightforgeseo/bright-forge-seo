@@ -137,32 +137,4 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 # Redirects for SEO and canonical URL enforcement
-# Force HTTPS and non-www canonical domain to eliminate redirect chains
-[[redirects]]
-  from = "http://brightforgeseo.com/*"
-  to = "https://brightforgeseo.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://www.brightforgeseo.com/*"
-  to = "https://brightforgeseo.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.brightforgeseo.com/*"
-  to = "https://brightforgeseo.com/:splat"
-  status = 301
-  force = true
-
-# Internal page redirects
-[[redirects]]
-  from = "/home"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
+ # Redirects are managed in public/_redirects (canonical domain + common page redirects)

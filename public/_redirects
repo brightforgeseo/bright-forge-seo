@@ -31,7 +31,8 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 # Prerender redirects for common pages
 /home  /  301
 /index  /  301
-
+/index.html  /  301
+ 
 # Cache headers for static assets
 /images/*  /images/:splat  200!  Cache-Control=public,max-age=31536000,immutable
 /css/*  /css/:splat  200!  Cache-Control=public,max-age=31536000,immutable
