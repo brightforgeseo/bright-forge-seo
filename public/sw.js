@@ -1,7 +1,7 @@
 // Service Worker for Bright Forge SEO - Performance Optimization
-const CACHE_NAME = 'brightforge-seo-v3';
-const STATIC_CACHE = 'brightforge-static-v3';
-const DYNAMIC_CACHE = 'brightforge-dynamic-v3';
+const CACHE_NAME = 'brightforge-seo-v4';
+const STATIC_CACHE = 'brightforge-static-v4';
+const DYNAMIC_CACHE = 'brightforge-dynamic-v4';
 
 // Assets to cache immediately
 const STATIC_ASSETS = [

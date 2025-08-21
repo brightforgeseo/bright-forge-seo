@@ -9,6 +9,14 @@ body {
   color: theme('colors.brand-dark');
 }
 
+/* Force root background to light grey site-wide */
+html {
+  background-color: #f8fafc !important;
+}
+body {
+  background-color: #f8fafc !important;
+}
+
 /* Global page centering fix */
 html {
   scroll-behavior: smooth;
@@ -94,7 +102,11 @@ section {
 /* Ensure main content area is properly structured */
 main {
   width: 100%;
-  min-height: 100vh;
+}
+
+/* Ensure latest blog section always uses light grey */
+section.latest-blog-section {
+  background-color: #f8fafc !important;
 }
 
 /* Additional centering helpers */
