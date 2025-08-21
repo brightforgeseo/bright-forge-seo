@@ -135,15 +135,4 @@ section.contact-section .contact-form-wrapper,
   align-items: center;
 }
 
-/* Bottom overscroll mask to prevent white strip beneath footer on some browsers */
-body::after {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: calc(12px + env(safe-area-inset-bottom));
-  background: #1E2022; /* brand-dark */
-  pointer-events: none;
-  z-index: 9990;
-}
+/* Removed global overscroll mask to avoid visible black bar during scrolling */
