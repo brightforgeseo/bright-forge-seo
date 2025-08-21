@@ -108,6 +108,14 @@ section.latest-blog-section {
   background-color: #f8fafc !important;
 }
 
+/* Enforce light grey background for contact form containers site-wide */
+section.contact-section .contact-form-container,
+section.contact-section .contact-form-wrapper,
+#contact-form .contact-form-container,
+#contact-form .contact-form-wrapper {
+  background-color: #f8fafc !important;
+}
+
 /* Additional centering helpers */
 .text-center {
   text-align: center;

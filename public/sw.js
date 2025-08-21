@@ -1,7 +1,7 @@
 // Service Worker for Bright Forge SEO - Performance Optimization
-const CACHE_NAME = 'brightforge-seo-v5';
-const STATIC_CACHE = 'brightforge-static-v5';
-const DYNAMIC_CACHE = 'brightforge-dynamic-v5';
+const CACHE_NAME = 'brightforge-seo-v6';
+const STATIC_CACHE = 'brightforge-static-v6';
+const DYNAMIC_CACHE = 'brightforge-dynamic-v6';
 
 // Assets to cache immediately
 const STATIC_ASSETS = [
@@ -12,16 +12,14 @@ const STATIC_ASSETS = [
   '/backlink-seo-services-philippines/',
   '/images/Hero-SEO-Agency-In-The-Philippines.webp',
   '/images/bright-forge-logo.png',
-  '/images/favcon/bright-forge-favcon.png',
-  '/_astro/critical.css',
-  '/_astro/bundled.css'
+  '/images/favcon/bright-forge-favcon.png'
 ];
 
 // Cache strategies
 const CACHE_STRATEGIES = {
   // Cache first for static assets
   static: [
-    /\/_astro\/.*\.(css|js)$/,
+    /\/assets\/(css|js)\/.*\.(css|js)$/,
     /\/images\/.*\.(png|jpg|jpeg|webp|avif|svg)$/,
     /\/fonts\/.*\.(woff|woff2|ttf|otf)$/
   ],
