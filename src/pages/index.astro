@@ -454,53 +454,53 @@ const breadcrumbs = [
   <TopAgencySection />
 
   <!-- Contact Section -->
-  <section class="contact-section bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-    <div class="container max-w-7xl mx-auto">
-      <div class="section-header">
+  <section class="contact-section py-20 bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="section-label">Contact Bright Forge SEO Agency</span>
         <h2 class="section-title">Get in <span>touch today</span></h2>
         <p class="section-subtitle">Success isn't just about being seen; it's about making an impact. At Bright Forge SEO, a results-driven Philippines SEO agency, we combine strategy, innovation, and a results-oriented approach to ensure your business leads in the digital arena. Whether you're just starting or scaling up, we're here to help you achieve digital excellence.</p>
       </div>
-      
-      <div class="contact-form-wrapper" style="background-color: #f8fafc !important;">
-        <div class="contact-form-container" style="background-color: #f8fafc !important;">
-          <p class="form-intro">Please fill out the form below, and a member of our team will get back to you as soon as possible.</p>
-          <form class="contact-form" name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Form Column (keeps original fields/content + Netlify) -->
+        <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+          <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="space-y-6">
             <input type="hidden" name="form-name" value="homepage-contact" />
             <input type="hidden" name="subject" value="New Contact Form Submission from Website" />
             <input type="hidden" name="notification-email" value="seo@brightforgeseo.com" />
             <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
-            <div class="form-row">
-            
-  <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-brand-soft mb-1">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
               </div>
-              <div class="form-group">
-                <label for="lastName">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(+63) 912 345 6789">
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-brand-soft mb-1">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
               </div>
             </div>
-            
-            <div class="form-group">
-              <label for="website">Website URL</label>
-              <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-sm font-medium text-brand-soft mb-1">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-brand-soft mb-1">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(+63) 912 345 6789" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+              </div>
             </div>
-            
-            <div class="form-group">
-              <label for="services">Services Interested In</label>
-              <select id="services" name="services" required>
+
+            <div>
+              <label for="website" class="block text-sm font-medium text-brand-soft mb-1">Website URL</label>
+              <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+            </div>
+
+            <div>
+              <label for="services" class="block text-sm font-medium text-brand-soft mb-1">Services Interested In</label>
+              <select id="services" name="services" required class="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-brand-accent focus:border-brand-accent">
                 <option value="">Select a service...</option>
                 <option value="seo-services">SEO Services Philippines</option>
                 <option value="content-seo">Content SEO Services Philippines</option>
@@ -509,17 +509,59 @@ const breadcrumbs = [
                 <option value="comprehensive">Comprehensive SEO Package</option>
               </select>
             </div>
-            
-            <div class="form-group">
-              <label for="message">Tell us about your project</label>
-              <textarea id="message" name="message" rows="4" placeholder="Describe your SEO goals, current challenges, and what you hope to achieve..."></textarea>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-brand-soft mb-1">Tell us about your project</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your SEO goals, current challenges, and what you hope to achieve..." class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent"></textarea>
             </div>
-            
-            <button type="submit" class="form-submit-btn">
-              <span>Get Your Free Consultation</span>
-              <i class="fas fa-arrow-right"></i>
+
+            <button type="submit" class="w-full py-3 rounded-md font-bold text-white transition-all bg-[#FF4438] hover:bg-[#FF6B35]">
+              Get Your Free Consultation
             </button>
           </form>
+        </div>
+
+        <!-- Info/Trust Column (mirrors service pages) -->
+        <div class="space-y-8">
+          <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+            <h3 class="text-xl font-bold mb-5 text-brand-dark">Get in Touch</h3>
+            <div class="flex items-start mb-5">
+              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
+                <i class="fas fa-envelope text-brand-accent"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-brand-dark">Email Us</h4>
+                <a href="mailto:seo@brightforgeseo.com" class="text-brand-soft hover:text-brand-accent transition-colors">seo@brightforgeseo.com</a>
+              </div>
+            </div>
+            <div class="flex items-start mb-5">
+              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
+                <i class="fas fa-phone-alt text-brand-accent"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-brand-dark">Call Us</h4>
+                <a href="tel:+639696206182" class="text-brand-soft hover:text-brand-accent transition-colors">(+63) 969 620 6182</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
+                <i class="fas fa-map-marker-alt text-brand-accent"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-brand-dark">Visit Our Office</h4>
+                <p class="text-brand-soft text-sm leading-relaxed">Kathleen Place 4, Block 16, Lot 37<br />Armani Street, 75 S Francisco<br />Novaliches, Quezon City<br />1116 Metro Manila, Philippines</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+            <h3 class="text-xl font-bold mb-5 text-brand-dark">Office Hours</h3>
+            <div class="space-y-3 text-brand-soft">
+              <div class="flex justify-between"><span>Monday - Friday:</span><span>9:00 AM - 6:00 PM</span></div>
+              <div class="flex justify-between"><span>Saturday:</span><span>10:00 AM - 4:00 PM</span></div>
+              <div class="flex justify-between"><span>Sunday:</span><span>Closed</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -786,6 +828,13 @@ const breadcrumbs = [
   section {
     overflow-x: hidden !important;
     overflow-y: visible !important;
+  }
+
+  /* Ensure the last section in main has no trailing gap before the footer */
+  main > section:last-of-type {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    background: #f8fafc !important;
   }
   
   /* Hero Section Styles */
@@ -3123,6 +3172,18 @@ const breadcrumbs = [
     background: #e63b2e;
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(255, 68, 56, 0.3);
+  }
+
+  /* Footer white-strip fix: ensure last section has no trailing gap and uses site grey */
+  .latest-blog-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    background: #f8fafc !important;
+  }
+  .latest-blog-section .container:last-child,
+  .latest-blog-section > *:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   /* Contact Section */

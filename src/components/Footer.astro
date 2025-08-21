@@ -112,3 +112,20 @@
     </div>
   </div>
 </footer>
+
+<style>
+  /* Ensure footer paints the safe-area at the very bottom in dark */
+  footer::after {
+    content: '';
+    display: block;
+    height: env(safe-area-inset-bottom);
+    background: var(--brand-dark, #1a1a1a);
+  }
+
+  /* Remove any accidental top margin on the footer */
+  footer {
+    margin-top: 0 !important;
+    position: relative;
+    z-index: 1;
+  }
+</style>
