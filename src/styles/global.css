@@ -13,6 +13,8 @@ body {
 html {
   background-color: #f8fafc !important;
   height: 100%;
+  /* Force light UI rendering for built-in form controls and UA styles */
+  color-scheme: light;
 }
 body {
   background-color: #f8fafc !important;
