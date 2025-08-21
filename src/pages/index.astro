@@ -770,7 +770,6 @@ const breadcrumbs = [
   html, body {
     overflow-x: hidden !important;
     width: 100%;
-    max-width: 100vw;
   }
   
   /* Remove any height restrictions that might cause scrolling */
@@ -781,9 +780,7 @@ const breadcrumbs = [
   }
   
   /* Fix for any element that might cause overflow */
-  * {
-    max-width: 100vw !important;
-  }
+  /* Removed overly aggressive global max-width that could cause rounding gaps */
   
   /* Specific fix for sections */
   section {
@@ -798,7 +795,6 @@ const breadcrumbs = [
     position: relative;
     overflow: hidden !important;
     width: 100%;
-    max-width: 100vw;
   }
   
   .hero-section::before {
