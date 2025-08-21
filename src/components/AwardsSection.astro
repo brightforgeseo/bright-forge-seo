@@ -52,17 +52,11 @@ const awards = [
   .awards-new-section {
     background: #f8fafc;
   }
-  @media (prefers-color-scheme: dark) {
-    .awards-new-section { background: #101010; }
-    .award-card { background:#181818; box-shadow:none; }
-    /* Ensure text is readable in dark mode */
-    .awards-new-section,
-    .awards-new-section h2,
-    .awards-new-section span,
-    .awards-new-section p,
-    .award-card h3,
-    .award-card p {
-      color:#e5e7eb;
-    }
-  }
+  /* Force light theme consistently across browsers */
+  .award-card { background: #ffffff; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  .awards-new-section h2 { color: #1E2022; }
+  .awards-new-section span { color: var(--brand-accent); }
+  .awards-new-section p { color: #52575D; }
+  .award-card h3 { color: #1E2022; }
+  .award-card p { color: var(--brand-accent); }
 </style>

@@ -71,17 +71,8 @@ const steps = [
   .process-new-section {
     background:#f8fafc;
   }
-  @media(prefers-color-scheme:dark){
-    .process-new-section{background:#111827;}
-    .step-card{background:#1f2937;}
-    /* Ensure readability */
-    .step-card,
-    .step-card h3,
-    .step-card p{
-      color:#e5e7eb;
-    }
-    /* Lighten section heading */
-    .process-new-section h2{color:#ffffff;}
-    .process-new-section h2 span{color:var(--brand-accent);}
-  }
+  /* Force light theme consistently across browsers */
+  .step-card { background:#f8fafc; }
+  .step-card h3 { color:#1E2022; }
+  .step-card p { color:#52575D; }
 </style>
