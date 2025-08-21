@@ -12,9 +12,13 @@ body {
 /* Force root background to light grey site-wide */
 html {
   background-color: #f8fafc !important;
+  height: 100%;
 }
 body {
   background-color: #f8fafc !important;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Global page centering fix */
@@ -22,12 +26,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  min-height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+/* Removed duplicate body styles - see above */
 
 /* Ensure proper container centering - IMPORTANT FIX */
 .container,
