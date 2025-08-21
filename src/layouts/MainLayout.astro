@@ -216,19 +216,20 @@ const isHome = Astro.url.pathname === '/';
     </script>
   </body>
 <style is:global>
-  /* Root-level fix for footer white strip */
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f8fafc !important; /* Site grey */
+  /* Final fix: Force html background to dark to hide any rendering gap */
+  html {
+    background-color: #1a1a1a; /* Footer dark color */
   }
+
   body {
+    background-color: #f8fafc !important; /* Site grey */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Fallback for older browsers */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
   }
+
   main {
     flex-grow: 1;
   }
