@@ -1287,6 +1287,67 @@ section {
 /* Legacy responsive styles removed - using enhanced hero design */
 
 /********************
+  FAQ Section
+*********************/
+.faq-section {
+  background: white;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  background: #fff;
+  border: 0;
+  padding: 1.25rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  cursor: pointer;
+}
+
+.faq-question i {
+  transition: transform 0.2s ease;
+  color: #6b7280;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1.25rem;
+  color: #4b5563;
+}
+
+.faq-item.open .faq-answer {
+  /* enough to fit a few paragraphs; JS will also set inline height for smoother animation */
+  max-height: 600px;
+  padding-bottom: 1.25rem;
+}
+
+.faq-item.open .faq-question i.fa-plus {
+  /* swap handled in JS; keep a rotate fallback */
+  transform: rotate(45deg);
+}
+
+/********************
   Mobile Responsive Styles
 *********************/
 @media (max-width: 768px) {
@@ -1607,5 +1668,52 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
   }
+});
+</script>
+
+<!-- FAQ behavior -->
+<script>
+// Expose globally for inline onclick handlers in markup
+  window.toggleFAQ = function(btn) {
+    try {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const answer = item.querySelector('.faq-answer');
+      const icon = btn.querySelector('i');
+
+      const isOpen = item.classList.contains('open');
+      // Close any inline height to allow transition
+      if (isOpen) {
+        answer.style.maxHeight = answer.scrollHeight + 'px'; // set current height
+        // force reflow before collapsing
+        void answer.offsetHeight;
+        answer.style.maxHeight = '0px';
+        item.classList.remove('open');
+        if (icon) { icon.classList.remove('fa-minus'); icon.classList.add('fa-plus'); }
+        btn.setAttribute('aria-expanded', 'false');
+        if (answer) answer.setAttribute('aria-hidden', 'true');
+      } else {
+        item.classList.add('open');
+        // set to scrollHeight for smooth transition
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        if (icon) { icon.classList.remove('fa-plus'); icon.classList.add('fa-minus'); }
+        btn.setAttribute('aria-expanded', 'true');
+        if (answer) answer.setAttribute('aria-hidden', 'false');
+      }
+    } catch (e) { /* no-op */ }
+  };
+
+// Progressive enhancement: initialize ARIA and collapsed state
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const btn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    if (btn && answer) {
+      btn.setAttribute('aria-expanded', 'false');
+      answer.setAttribute('aria-hidden', 'true');
+      // Ensure collapsed
+      answer.style.maxHeight = '0px';
+    }
+  });
 });
 </script>
