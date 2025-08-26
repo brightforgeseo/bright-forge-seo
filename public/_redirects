@@ -14,6 +14,10 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 /bright-forge-seo/* / 301
 /bright-forge-seo / 301
 
+# Retire deprecated Facebook OG Generator URL with 410 Gone
+/facebook-og-generator  /404.html  410
+/facebook-og-generator/  /404.html  410
+
 # SEO Services redirects - place above trailing slash to avoid chains
 /philippines-seo-services  /  301
 /philippines-seo-services/  /  301
