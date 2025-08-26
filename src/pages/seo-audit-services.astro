@@ -1266,22 +1266,45 @@ section {
   align-items: flex-start;
 }
 
-.feature-item .feature-icon {
-  color: var(--brand-primary);
-  font-size: 24px;
-  margin-top: 4px;
+.feature-item .feature-icon-large {
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--gradient-accent);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+  flex-shrink: 0;
 }
 
-.feature-item .feature-content h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--text-dark);
+.feature-item .feature-icon-large i {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.feature-item .feature-content h3 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  color: var(--brand-dark);
 }
 
 .feature-item .feature-content p {
-  color: var(--text-muted);
-  line-height: 1.6;
+  color: var(--brand-soft);
+  line-height: 1.65;
+}
+
+/* subtle meta/benefit line under each deliverable */
+.feature-item .feature-benefit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 0.95rem;
 }
 
 /* Legacy responsive styles removed - using enhanced hero design */
@@ -1709,10 +1732,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
     if (btn && answer) {
+      // Ensure starting collapsed
+      item.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
       answer.setAttribute('aria-hidden', 'true');
-      // Ensure collapsed
       answer.style.maxHeight = '0px';
+
+      // Bind click listener as a fallback to inline onclick
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.toggleFAQ(btn);
+      });
     }
   });
 });
