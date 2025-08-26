@@ -19,9 +19,8 @@ Crawl-delay: 5
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://brightforgeseo.com/sitemap-index.xml
-Sitemap: https://brightforgeseo.com/sitemap-0.xml
+# Sitemap location (manual sitemap)
+Sitemap: https://brightforgeseo.com/sitemap.xml
 
 # Block access to admin areas (if any)
 Disallow: /admin/
@@ -39,7 +38,6 @@ Allow: /contact
 # Crawl delay (optional - be conservative)
 Crawl-delay: 1
 
-# Block common non-essential files
+# Block common non-essential files (do not block XML to allow sitemap crawling)
 Disallow: /*.json$
-Disallow: /*.xml$ 
 Disallow: /*.txt$
