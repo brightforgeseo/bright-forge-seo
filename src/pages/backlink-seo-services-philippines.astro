@@ -369,6 +369,18 @@ import ContactSection from '../components/ContactSection.astro';
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
+  /* Decorative underline for hero heading */
+  .hero-content h1::after {
+    content: '';
+    display: block;
+    width: 160px;
+    height: 6px;
+    margin-top: 12px;
+    border-radius: 4px;
+    background: #FFEB3B; /* yellow underline */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  }
+  
   .hero-content h1 span {
     color: #FFE4E1;
   }
