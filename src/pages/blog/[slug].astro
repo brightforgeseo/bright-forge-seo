@@ -34,11 +34,11 @@ if (post.content) {
   // Convert rich text to HTML
   htmlContent = documentToHtmlString(post.content);
   
-  // Replace inline shortcodes like [[INFOGRAPHIC]] with interactive HTML we control
-  function generateInfographicHTML() {
+  // Replace inline shortcodes like [[INFOGRAPHIC type=...]] with interactive HTML we control
+  function generateAiBalanceHTML(title = 'AI in Marketing: The Balancing Act') {
     return `
 <section class="max-w-4xl mx-auto px-4" aria-labelledby="infographic-title">
-  <h3 id="infographic-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">AI in Marketing: The Balancing Act</h3>
+  <h3 id="infographic-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${title}</h3>
   <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
     <div class="space-y-5">
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
@@ -95,11 +95,100 @@ if (post.content) {
   obs.observe(root);
 })();</script>`;
   }
+  function escapeHtml(s=''){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m])); }
+
+  function generateProsConsHTML({ title = 'Pros and Cons', pros = '', cons = '' } = {}) {
+    const prosList = String(pros).split(';').map(s => s.trim()).filter(Boolean);
+    const consList = String(cons).split(';').map(s => s.trim()).filter(Boolean);
+    return `
+<section class="max-w-4xl mx-auto px-4">
+  <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(title)}</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="rounded-xl border border-green-200 bg-white p-5 shadow-[0_10px_30px_-10px_rgba(16,185,129,0.25)]">
+      <h4 class="font-bold text-green-700 mb-3">Pros</h4>
+      <ul class="list-disc ml-5 space-y-2 text-gray-800">${prosList.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>
+    </div>
+    <div class="rounded-xl border border-red-200 bg-white p-5 shadow-[0_10px_30px_-10px_rgba(239,68,68,0.25)]">
+      <h4 class="font-bold text-red-700 mb-3">Cons</h4>
+      <ul class="list-disc ml-5 space-y-2 text-gray-800">${consList.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>
+    </div>
+  </div>
+</section>`;
+  }
+
+  function generateBarsHTML({ title = 'AI vs Human Strengths', items = '' } = {}) {
+    const parsed = String(items)
+      .split(';')
+      .map(s => s.trim())
+      .filter(Boolean)
+      .map(row => {
+        const [label, value, color] = row.split(':');
+        const v = Math.max(0, Math.min(100, Number(value || 0)));
+        const col = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(String(color||'')) ? color : '#4285F4';
+        return { label: label || 'Item', value: v, color: col };
+      });
+    const bars = parsed.map(item => `
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+        <div class="sm:col-span-2 text-sm font-medium text-gray-700">${escapeHtml(item.label)}</div>
+        <div class="sm:col-span-3">
+          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: ${item.value}% ; background: ${item.color}" data-target-width="${item.value}"></div>
+          </div>
+          <div class="mt-1 text-xs text-gray-500"><span class="value">${item.value}</span>%</div>
+        </div>
+      </div>`).join('');
+    return `
+<section class="max-w-4xl mx-auto px-4" aria-labelledby="bars-title">
+  <h3 id="bars-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(title)}</h3>
+  <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
+    <div class="space-y-5">${bars}</div>
+    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="randomize">Randomize</button>
+      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="reset">Reset</button>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root = document.currentScript.previousElementSibling;
+  var bars = root.querySelectorAll('[data-target-width]');
+  var initial = Array.prototype.map.call(bars, function(b){ return Number(b.getAttribute('data-target-width')); });
+  var valueEls = root.querySelectorAll('.value');
+  function setValues(values){ values.forEach(function(v,i){ bars[i].style.width = v + '%'; valueEls[i].textContent = v; }); }
+  root.addEventListener('click', function(e){ var btn = e.target.closest('button[data-action]'); if(!btn) return; var a=btn.getAttribute('data-action'); if(a==='randomize'){ var next=initial.map(function(v){ return Math.max(0, Math.min(100, Math.round(v + (Math.random()*20-10))))}); setValues(next);} if(a==='reset'){ setValues(initial);} });
+  var obs=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ bars.forEach(function(bar,i){ bar.style.width='0%'; requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.style.width = initial[i] + '%'; });});}); obs.disconnect(); } }); },{threshold:0.2});
+  obs.observe(root);
+})();</script>`;
+  }
+
+  // Parse key=value pairs, allowing quoted values
+  function parseParams(paramStr = '') {
+    const params = {};
+    const re = /(\w+)=\s*("[^"]*"|'[^']*'|[^\s\]]+)/g;
+    let m;
+    while ((m = re.exec(paramStr)) !== null) {
+      const key = m[1];
+      let val = m[2];
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      params[key] = val;
+    }
+    return params;
+  }
 
   function replaceShortcodes(inputHtml) {
-    return inputHtml
-      .replace(/\[\[INFOGRAPHIC\]\]/g, generateInfographicHTML())
-      .replace(/<!--\s*INFOGRAPHIC\s*-->/g, generateInfographicHTML());
+    const re = /\[\[INFOGRAPHIC(?:\s+([^\]]+))?\]\]/g;
+    return inputHtml.replace(re, (_match, paramStr) => {
+      const params = parseParams(paramStr || '');
+      const type = (params.type || 'ai-balance').toLowerCase();
+      if (type === 'ai-balance') return generateAiBalanceHTML(params.title);
+      if (type === 'pros-cons') return generateProsConsHTML(params);
+      if (type === 'bars') return generateBarsHTML(params);
+      // fallback
+      return generateAiBalanceHTML(params.title);
+    })
+    // Also allow HTML comment marker as a basic fallback
+    .replace(/<!--\s*INFOGRAPHIC\s*-->/g, generateAiBalanceHTML());
   }
   
   htmlContent = replaceShortcodes(htmlContent);
