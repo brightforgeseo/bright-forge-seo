@@ -29,9 +29,11 @@ export interface Props {
     title: string;
     level: number;
   }>;
+  showInfographic?: boolean;
 }
 
 import MainLayout from '../layouts/MainLayout.astro';
+import Infographic from './Infographic.astro';
 
 const {
   title,
@@ -45,7 +47,8 @@ const {
   featuredImage,
   content,
   relatedArticles,
-  tableOfContents
+  tableOfContents,
+  showInfographic
 } = Astro.props;
 
 // Generate article schema
@@ -252,6 +255,15 @@ const formatDate = (dateString: string) => {
       </div>
     </div>
   </section>
+
+  {showInfographic && (
+    <section id="ai-balance" class="py-12 md:py-16">
+      <p class="text-center text-sm text-gray-500 mb-4">
+        Here’s a quick interactive breakdown of the key points:
+      </p>
+      <Infographic />
+    </section>
+  )}
 
   <!-- Author Bio -->
   <section class="author-section">

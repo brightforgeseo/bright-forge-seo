@@ -1,0 +1,85 @@
+---
+// Minimal interactive infographic without React.
+// Accept optional props in the future (e.g., data), but static for now.
+const { title = 'AI vs Human Strengths', items = [
+  { label: 'Pattern Recognition (AI)', value: 85, color: '#4285F4' },
+  { label: 'Strategic Judgment (Human)', value: 90, color: '#FF6B35' },
+  { label: 'Scale & Speed (AI)', value: 95, color: '#6AB7FF' },
+  { label: 'Context & Empathy (Human)', value: 88, color: '#FF4438' },
+] } = Astro.props;
+---
+<section class="max-w-4xl mx-auto px-4" aria-labelledby="infographic-title">
+  <h3 id="infographic-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">{title}</h3>
+
+  <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
+    <div class="space-y-5">
+      {items.map((item, idx) => (
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+          <div class="sm:col-span-2 text-sm font-medium text-gray-700">{item.label}</div>
+          <div class="sm:col-span-3">
+            <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-500 will-change-transform"
+                   style={`width: ${item.value}%; background: ${item.color}`}
+                   data-target-width={item.value}></div>
+            </div>
+            <div class="mt-1 text-xs text-gray-500"><span class="value">{item.value}</span>%</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="randomize">
+        Randomize
+      </button>
+      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="reset">
+        Reset
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.currentScript.closest('section');
+  const bars = root.querySelectorAll('[data-target-width]');
+  const initial = Array.from(bars).map(b => Number(b.dataset.targetWidth));
+  const valueEls = root.querySelectorAll('.value');
+
+  function setValues(values) {
+    values.forEach((v, i) => {
+      bars[i].style.width = v + '%';
+      valueEls[i].textContent = v;
+    });
+  }
+
+  root.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-action]');
+    if (!btn) return;
+    const action = btn.dataset.action;
+    if (action === 'randomize') {
+      const next = initial.map(v => Math.max(60, Math.min(100, Math.round(v + (Math.random()*20-10)))));
+      setValues(next);
+    }
+    if (action === 'reset') {
+      setValues(initial);
+    }
+  });
+
+  // Animate in on visibility
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        bars.forEach((bar, i) => {
+          bar.style.width = '0%';
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              bar.style.width = initial[i] + '%';
+            });
+          });
+        });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+  observer.observe(root);
+</script>

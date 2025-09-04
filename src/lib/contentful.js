@@ -20,7 +20,8 @@ export async function getAllBlogPosts() {
         'fields.dateTime', 
         'fields.author',
         'fields.featuredImage',
-        'fields.tags'
+        'fields.tags',
+        'fields.showInfographic'
       ]
     });
     
@@ -35,7 +36,8 @@ export async function getAllBlogPosts() {
       featuredImage: item.fields?.featuredImage?.fields?.file?.url 
         ? `https:${item.fields.featuredImage.fields.file.url}`
         : null,
-      tags: item.fields.tags || []
+      tags: item.fields.tags || [],
+      showInfographic: item.fields.showInfographic === true
     }));
   } catch (error) {
     console.error('Error fetching blog posts:', error);
@@ -69,7 +71,8 @@ export async function getBlogPostBySlug(slug) {
       featuredImage: item.fields?.featuredImage?.fields?.file?.url 
         ? `https:${item.fields.featuredImage.fields.file.url}`
         : null,
-      tags: item.fields.tags || []
+      tags: item.fields.tags || [],
+      showInfographic: item.fields.showInfographic === true
     };
   } catch (error) {
     console.error(`Error fetching blog post with slug ${slug}:`, error);
