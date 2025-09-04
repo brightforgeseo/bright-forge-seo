@@ -70,6 +70,7 @@ if (post.content) {
   htmlContent = documentToHtmlString(post.content, renderOptions);
   
   // Replace inline shortcodes like [[INFOGRAPHIC type=...]] with interactive HTML we control
+  // Force rebuild: timestamp 13:45
   function decodeEntities(s=''){
     return String(s)
       .replace(/&quot;/g, '"')
