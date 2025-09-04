@@ -63,6 +63,15 @@
     Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
     Expires = "Thu, 31 Dec 2025 23:59:59 GMT"
 
+# Override HTML caching for dynamic blog content to prevent stale pages after deploys
+[[headers]]
+  for = "/blog/*"
+  [headers.values]
+    # Ensure browsers always revalidate blog HTML so new deployments are visible immediately
+    Cache-Control = "no-cache, no-store, must-revalidate, max-age=0"
+    Pragma = "no-cache"
+    Expires = "0"
+
 # CSS and JS assets - Long-term caching
 [[headers]]
   for = "/assets/css/*"
