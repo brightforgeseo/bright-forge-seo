@@ -240,59 +240,40 @@ if (post.content) {
   function generateTabsHTML({ title = 'AI in Marketing: The Balancing Act' } = {}) {
     return `
 <section class="max-w-7xl mx-auto px-4">
-  <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-8 md:mb-12">${escapeHtml(decodeEntities(title))}</h2>
-  
-  <!-- Tabs -->
-  <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-10 mb-12">
-    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-red-200 shadow-[0_10px_30px_-10px_rgba(239,68,68,0.35)] min-h-[150px] md:min-h-[170px] lg:min-h-[190px]" data-tab="bright">
-      <div class="p-5 md:p-6">
-        <div class="flex items-center gap-2 mb-2">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          <span class="font-semibold text-gray-900 text-sm md:text-base">The Bright Side</span>
-        </div>
-        <p class="text-xs md:text-sm text-gray-600">Efficiency: AI drafts blogs in minutes instead of hours</p>
-      </div>
-      <div class="absolute inset-x-0 top-0 h-1 bg-red-500 tab-accent"></div>
+  <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
+
+  <!-- Pill Tab Navigation -->
+  <div role="tablist" aria-label="Infographic topics" class="flex gap-3 md:gap-4 overflow-x-auto pb-2 mb-8 no-scrollbar">
+    <button id="tab-bright" role="tab" aria-selected="true" aria-controls="panel-bright" data-tab="bright"
+      class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
+             bg-white border-red-200 text-red-700 shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)]">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      <span class="font-semibold">The Bright Side</span>
     </button>
-    
-    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-gray-200 hover:border-red-300 hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)] min-h-[150px] md:min-h-[170px] lg:min-h-[190px]" data-tab="dark">
-      <div class="p-5 md:p-6">
-        <div class="flex items-center gap-2 mb-2">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-          <span class="font-semibold text-gray-900 text-sm md:text-base">The Dark Side</span>
-        </div>
-        <p class="text-xs md:text-sm text-gray-600">Hallucinations: AI can state incorrect facts confidently</p>
-      </div>
-      <div class="absolute inset-x-0 top-0 h-1 bg-red-100 group-hover:bg-red-200 tab-accent"></div>
+    <button id="tab-dark" role="tab" aria-selected="false" aria-controls="panel-dark" data-tab="dark"
+      class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
+             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700">
+      <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+      <span class="font-semibold">The Dark Side</span>
     </button>
-    
-    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-gray-200 hover:border-red-300 hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)] min-h-[150px] md:min-h-[170px] lg:min-h-[190px]" data-tab="eeat">
-      <div class="p-5 md:p-6">
-        <div class="flex items-center gap-2 mb-2">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-          <span class="font-semibold text-gray-900 text-sm md:text-base">The E-E-A-T Framework</span>
-        </div>
-        <p class="text-xs md:text-sm text-gray-600">Experience: First-hand knowledge adds real value</p>
-      </div>
-      <div class="absolute inset-x-0 top-0 h-1 bg-red-100 group-hover:bg-red-200 tab-accent"></div>
+    <button id="tab-eeat" role="tab" aria-selected="false" aria-controls="panel-eeat" data-tab="eeat"
+      class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
+             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700">
+      <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+      <span class="font-semibold">The E-E-A-T Framework</span>
     </button>
-    
-    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-gray-200 hover:border-red-300 hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)] min-h-[150px] md:min-h-[170px] lg:min-h-[190px]" data-tab="future">
-      <div class="p-5 md:p-6">
-        <div class="flex items-center gap-2 mb-2">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-          <span class="font-semibold text-gray-900 text-sm md:text-base">Future-Proofing</span>
-        </div>
-        <p class="text-xs md:text-sm text-gray-600">Google SGE: Optimise for AI-powered search answers</p>
-      </div>
-      <div class="absolute inset-x-0 top-0 h-1 bg-red-100 group-hover:bg-red-200 tab-accent"></div>
+    <button id="tab-future" role="tab" aria-selected="false" aria-controls="panel-future" data-tab="future"
+      class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
+             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700">
+      <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+      <span class="font-semibold">Future-Proofing</span>
     </button>
   </div>
-  
-  <!-- Panel -->
-  <div class="rounded-2xl border border-red-200 bg-white shadow-[0_20px_40px_-20px_rgba(239,68,68,0.35)]">
+
+  <!-- Content Panel -->
+  <div class="rounded-2xl ring-1 ring-red-200 bg-white shadow-[0_20px_40px_-20px_rgba(239,68,68,0.30)]">
     <div class="p-6 md:p-8">
-      <div class="tab-panel" data-panel="bright">
+      <section id="panel-bright" role="tabpanel" aria-labelledby="tab-bright" tabindex="0" class="tab-panel" data-panel="bright">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">The Bright Side</h3>
@@ -302,9 +283,9 @@ if (post.content) {
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Scalability: Create content at a fraction of the cost</li>
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Data Power: Analyse competitor strategies with ease</li>
         </ul>
-      </div>
-      
-      <div class="tab-panel hidden" data-panel="dark">
+      </section>
+
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" tabindex="0" class="tab-panel hidden" data-panel="dark">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">The Dark Side</h3>
@@ -314,9 +295,9 @@ if (post.content) {
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Lack of Soul: Content often lacks originality and emotion</li>
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Risk: Can damage brand credibility if unchecked</li>
         </ul>
-      </div>
-      
-      <div class="tab-panel hidden" data-panel="eeat">
+      </section>
+
+      <section id="panel-eeat" role="tabpanel" aria-labelledby="tab-eeat" tabindex="0" class="tab-panel hidden" data-panel="eeat">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">The E-E-A-T Framework</h3>
@@ -327,9 +308,9 @@ if (post.content) {
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Authoritativeness: Builds recognition and trust</li>
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Trustworthiness: Ensures content accuracy and honesty</li>
         </ul>
-      </div>
-      
-      <div class="tab-panel hidden" data-panel="future">
+      </section>
+
+      <section id="panel-future" role="tabpanel" aria-labelledby="tab-future" tabindex="0" class="tab-panel hidden" data-panel="future">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">Future-Proofing</h3>
@@ -339,44 +320,48 @@ if (post.content) {
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Hyper-Personalisation: Tailor content to user behaviour</li>
           <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Balance: Use AI to amplify—not replace—human expertise</li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 </section>
 <script>(function(){
   var root = document.currentScript.previousElementSibling;
-  var tabs = root.querySelectorAll('.tab-btn');
+  var triggers = root.querySelectorAll('.tab-trigger');
   var panels = root.querySelectorAll('.tab-panel');
-  
-  function switchTab(targetTab) {
-    tabs.forEach(function(tab) {
-      if (tab.getAttribute('data-tab') === targetTab) {
-        tab.classList.add('border-red-200', 'shadow-[0_10px_30px_-10px_rgba(239,68,68,0.35)]');
-        tab.classList.remove('border-gray-200', 'hover:border-red-300', 'hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)]');
-        tab.querySelector('.tab-accent').classList.add('bg-red-500');
-        tab.querySelector('.tab-accent').classList.remove('bg-red-100', 'group-hover:bg-red-200');
-      } else {
-        tab.classList.remove('border-red-200', 'shadow-[0_10px_30px_-10px_rgba(239,68,68,0.35)]');
-        tab.classList.add('border-gray-200', 'hover:border-red-300', 'hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)]');
-        tab.querySelector('.tab-accent').classList.remove('bg-red-500');
-        tab.querySelector('.tab-accent').classList.add('bg-red-100', 'group-hover:bg-red-200');
-      }
+
+  function activate(target){
+    triggers.forEach(function(btn){
+      var isActive = btn.getAttribute('data-tab') === target;
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      btn.classList.toggle('border-red-200', isActive);
+      btn.classList.toggle('text-red-700', isActive);
+      btn.classList.toggle('shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)]', isActive);
+      btn.classList.toggle('border-gray-200', !isActive);
+      btn.classList.toggle('text-gray-700', !isActive);
     });
-    
-    panels.forEach(function(panel) {
-      if (panel.getAttribute('data-panel') === targetTab) {
-        panel.classList.remove('hidden');
-      } else {
-        panel.classList.add('hidden');
-      }
+
+    panels.forEach(function(panel){
+      var show = panel.getAttribute('data-panel') === target;
+      panel.classList.toggle('hidden', !show);
     });
   }
-  
-  tabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      switchTab(tab.getAttribute('data-tab'));
+
+  // Click
+  triggers.forEach(function(btn){
+    btn.addEventListener('click', function(){ activate(btn.getAttribute('data-tab')); });
+    // Keyboard: left/right to switch
+    btn.addEventListener('keydown', function(e){
+      if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var list = Array.prototype.slice.call(triggers);
+      var i = list.indexOf(btn);
+      var next = e.key === 'ArrowRight' ? (i+1) % list.length : (i-1+list.length) % list.length;
+      list[next].focus();
+      activate(list[next].getAttribute('data-tab'));
     });
   });
+
+  // Initial
+  activate('bright');
 })();</script>`;
   }
 
