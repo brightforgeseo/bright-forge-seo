@@ -53,6 +53,211 @@ if (post.content) {
               if (key !== 'type' && key !== 'title') {
                 shortcodeParams.push(`${key}="${value}"`);
               }
+
+  // Interactive E-E-A-T Radar (Experience, Expertise, Authoritativeness, Trust)
+  // Accessible with keyboard, animated polygon, sliders, presets, and live announcements
+  function generateEEATRadarHTML({
+    title = 'E-E-A-T Scorecard',
+    experience = 70,
+    expertise = 80,
+    authoritativeness = 65,
+    trust = 75
+  } = {}) {
+    // Coerce to [0,100]
+    function clamp01(v){ const n = Number(v); return Math.max(0, Math.min(100, isNaN(n) ? 0 : n)); }
+    const exp = clamp01(experience);
+    const exs = clamp01(expertise);
+    const auth = clamp01(authoritativeness);
+    const trst = clamp01(trust);
+    return `
+<section class="max-w-5xl mx-auto px-4" aria-labelledby="eeat-title">
+  <h2 id="eeat-title" class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
+    <!-- Chart Card -->
+    <div class="bg-white rounded-2xl ring-1 ring-red-100 shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)] p-4 md:p-6" data-widget="eeat-radar" data-experience="${exp}" data-expertise="${exs}" data-authoritativeness="${auth}" data-trust="${trst}">
+      <figure>
+        <svg class="w-full h-[320px] md:h-[360px]" viewBox="0 0 320 320" role="img" aria-labelledby="eeat-graphic-title eeat-graphic-desc">
+          <title id="eeat-graphic-title">E-E-A-T radar chart</title>
+          <desc id="eeat-graphic-desc">An interactive radar showing scores for Experience, Expertise, Authoritativeness, and Trust</desc>
+          <!-- Grid and axes will be drawn by script for clarity -->
+          <g data-grid></g>
+          <g data-axes></g>
+          <polygon data-polygon fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="2" points=""/>
+          <g data-dots fill="#ef4444"></g>
+          <g data-labels class="text-[12px] fill-gray-700"></g>
+        </svg>
+        <figcaption class="sr-only">Use the sliders to adjust each dimension and see the polygon update in real-time.</figcaption>
+      </figure>
+      <div class="sr-only" aria-live="polite" data-announcer></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="bg-white rounded-2xl ring-1 ring-gray-100 p-4 md:p-6">
+      <div role="group" aria-labelledby="eeat-sliders-title">
+        <h3 id="eeat-sliders-title" class="text-lg font-semibold text-gray-900 mb-4">Adjust Scores</h3>
+        <div class="space-y-4">
+          <label class="block">
+            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Experience</span><output data-out="experience" class="text-gray-900 font-semibold">${exp}</output></span>
+            <input type="range" min="0" max="100" step="1" value="${exp}" data-key="experience" class="w-full accent-red-500" aria-label="Experience score">
+          </label>
+          <label class="block">
+            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Expertise</span><output data-out="expertise" class="text-gray-900 font-semibold">${exs}</output></span>
+            <input type="range" min="0" max="100" step="1" value="${exs}" data-key="expertise" class="w-full accent-red-500" aria-label="Expertise score">
+          </label>
+          <label class="block">
+            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Authoritativeness</span><output data-out="authoritativeness" class="text-gray-900 font-semibold">${auth}</output></span>
+            <input type="range" min="0" max="100" step="1" value="${auth}" data-key="authoritativeness" class="w-full accent-red-500" aria-label="Authoritativeness score">
+          </label>
+          <label class="block">
+            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Trust</span><output data-out="trust" class="text-gray-900 font-semibold">${trst}</output></span>
+            <input type="range" min="0" max="100" step="1" value="${trst}" data-key="trust" class="w-full accent-red-500" aria-label="Trust score">
+          </label>
+        </div>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2">
+        <button class="px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition" data-action="randomize">Randomize</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition" data-action="reset">Reset</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-red-300 hover:text-red-700 transition" data-preset="new">Preset: New Site</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-red-300 hover:text-red-700 transition" data-preset="brand">Preset: Trusted Brand</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root = document.currentScript.previousElementSibling;
+  var widget = root.querySelector('[data-widget="eeat-radar"]');
+  // Fallback if HTML encoding clashes
+  if(!widget){ widget = root.querySelector('[data-widget=eeat-radar]'); }
+  if(!widget) return;
+
+  var svg = widget.querySelector('svg');
+  var gGrid = svg.querySelector('[data-grid]');
+  var gAxes = svg.querySelector('[data-axes]');
+  var gDots = svg.querySelector('[data-dots]');
+  var gLabels = svg.querySelector('[data-labels]');
+  var polygon = svg.querySelector('[data-polygon]');
+  var announcer = widget.querySelector('[data-announcer]');
+  var sliders = root.querySelectorAll('input[type=range][data-key]');
+  var outs = root.querySelectorAll('output[data-out]');
+
+  var cx = 160, cy = 160, rMax = 120;
+  var axes = [
+    { key: 'experience', label: 'Experience', angle: -90 },
+    { key: 'expertise', label: 'Expertise', angle:   0 },
+    { key: 'authoritativeness', label: 'Authoritativeness', angle: 90 },
+    { key: 'trust', label: 'Trust', angle: 180 }
+  ];
+
+  function clamp(v){ v = Number(v); return Math.max(0, Math.min(100, isNaN(v)?0:v)); }
+  function polar(val, angle){ var rad = (angle*Math.PI)/180; var r = (clamp(val)/100)*rMax; return [cx + r*Math.cos(rad), cy + -r*Math.sin(rad)]; }
+  function fmt(p){ return p.map(function(n){ return Math.round(n*10)/10; }).join(','); }
+
+  // Draw grid rings and axis lines + labels
+  (function drawOnce(){
+    var steps = [20,40,60,80,100];
+    steps.forEach(function(pct){
+      var pts = axes.map(function(a){ return polar(pct, a.angle); });
+      var poly = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+      poly.setAttribute('fill','none');
+      poly.setAttribute('stroke','#e5e7eb'); // gray-200
+      poly.setAttribute('points', pts.map(function(pt){return fmt(pt);} ).join(' '));
+      gGrid.appendChild(poly);
+    });
+    axes.forEach(function(a){
+      var end = polar(100, a.angle);
+      var ln = document.createElementNS('http://www.w3.org/2000/svg','line');
+      ln.setAttribute('x1', cx); ln.setAttribute('y1', cy); ln.setAttribute('x2', end[0]); ln.setAttribute('y2', end[1]);
+      ln.setAttribute('stroke','#e5e7eb');
+      gAxes.appendChild(ln);
+
+      var lbl = document.createElementNS('http://www.w3.org/2000/svg','text');
+      var off = 12;
+      lbl.setAttribute('x', end[0] + (a.angle===0?8:(a.angle===180?-8:0)));
+      lbl.setAttribute('y', end[1] + (a.angle===-90?-8:(a.angle===90?18:4)));
+      lbl.setAttribute('text-anchor', (a.angle===180)?'end':(a.angle===0?'start':'middle'));
+      lbl.textContent = a.label;
+      gLabels.appendChild(lbl);
+    });
+    axes.forEach(function(a){
+      var dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      dot.setAttribute('r','4');
+      dot.setAttribute('data-dot', a.key);
+      gDots.appendChild(dot);
+    });
+  })();
+
+  var prefersReduced = false;
+  try{ prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(_e){}
+
+  function getValues(){
+    var v = {};
+    axes.forEach(function(a){ v[a.key] = clamp(widget.getAttribute('data-'+a.key)); });
+    sliders.forEach(function(sl){ var k=sl.getAttribute('data-key'); v[k]=clamp(sl.value); });
+    return v;
+  }
+
+  function setOutputs(v){
+    outs.forEach(function(o){ var k=o.getAttribute('data-out'); if(k in v) o.textContent = v[k]; });
+  }
+
+  function update(v){
+    var pts = axes.map(function(a){ return polar(v[a.key], a.angle); });
+    polygon.setAttribute('points', pts.map(function(p){ return fmt(p); }).join(' '));
+    axes.forEach(function(a,i){
+      var dot = gDots.querySelector('[data-dot="'+a.key+'"]');
+      if(dot){ dot.setAttribute('cx', pts[i][0]); dot.setAttribute('cy', pts[i][1]); }
+    });
+    if(announcer){ announcer.textContent = 'Scores updated: Experience '+v.experience+', Expertise '+v.expertise+', Authoritativeness '+v.authoritativeness+', Trust '+v.trust+'.'; }
+  }
+
+  function animateTo(target){
+    if(prefersReduced){ update(target); return; }
+    var start = getValues();
+    var t0 = performance.now();
+    var dur = 400;
+    function step(now){
+      var k = Math.min(1, (now - t0) / dur);
+      var ease = k<0.5 ? 2*k*k : -1 + (4 - 2*k) * k;
+      var cur = {};
+      axes.forEach(function(a){ cur[a.key] = Math.round(start[a.key] + (target[a.key]-start[a.key]) * ease); });
+      setOutputs(cur); update(cur);
+      if(k<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function current(){ return getValues(); }
+
+  // Wire sliders
+  sliders.forEach(function(sl){ sl.addEventListener('input', function(){ var v=current(); v[sl.getAttribute('data-key')] = clamp(sl.value); setOutputs(v); update(v); }); });
+
+  // Buttons
+  root.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-action],[data-preset]');
+    if(!btn) return;
+    if(btn.hasAttribute('data-action')){
+      var a = btn.getAttribute('data-action');
+      if(a==='reset'){
+        var v0 = { experience: clamp(widget.getAttribute('data-experience')), expertise: clamp(widget.getAttribute('data-expertise')), authoritativeness: clamp(widget.getAttribute('data-authoritativeness')), trust: clamp(widget.getAttribute('data-trust')) };
+        setOutputs(v0); animateTo(v0);
+      } else if(a==='randomize'){
+        var v1 = { experience: Math.round(60+Math.random()*40), expertise: Math.round(60+Math.random()*40), authoritativeness: Math.round(50+Math.random()*50), trust: Math.round(60+Math.random()*40) };
+        setOutputs(v1); animateTo(v1);
+      }
+    } else if(btn.hasAttribute('data-preset')){
+      var p = btn.getAttribute('data-preset');
+      var v;
+      if(p==='new') v = { experience: 40, expertise: 55, authoritativeness: 35, trust: 45 };
+      else if(p==='brand') v = { experience: 75, expertise: 80, authoritativeness: 85, trust: 90 };
+      if(v){ setOutputs(v); animateTo(v); }
+    }
+  });
+
+  // Initial render
+  var init = { experience: clamp(widget.getAttribute('data-experience')), expertise: clamp(widget.getAttribute('data-expertise')), authoritativeness: clamp(widget.getAttribute('data-authoritativeness')), trust: clamp(widget.getAttribute('data-trust')) };
+  setOutputs(init); update(init);
+})();</script>`;
+  }
             });
           }
           
@@ -375,7 +580,13 @@ if (post.content) {
     const re = /\[\[INFOGRAPHIC(?:\s+([^\]]+))?\]\]/g;
     return inputHtml.replace(re, (_match, paramStr) => {
       const params = parseParams(paramStr || '');
-      const type = (params.type || 'tabs').toLowerCase();
+      let type = (params.type || 'tabs').toLowerCase();
+      const eeatTitle = String(params.title || '').toUpperCase();
+      // If it's an EEAT infographic and forceTabs is not true, upgrade to radar
+      if ((type === 'tabs' || type === 'eeat' || type === 'eeat-radar') && /E-?E-?A-?T/.test(eeatTitle) && String(params.forceTabs).toLowerCase() !== 'true') {
+        type = 'eeat-radar';
+      }
+      if (type === 'eeat-radar') return generateEEATRadarHTML(params);
       if (type === 'tabs') return generateTabsHTML(params);
       if (type === 'ai-balance') return generateAiBalanceHTML(params.title);
       if (type === 'pros-cons') return generateProsConsHTML(params);
