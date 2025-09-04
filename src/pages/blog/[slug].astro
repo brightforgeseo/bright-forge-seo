@@ -243,45 +243,45 @@ if (post.content) {
   <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
 
   <!-- Pill Tab Navigation -->
-  <div role="tablist" aria-label="Infographic topics" class="flex gap-3 md:gap-4 overflow-x-auto pb-2 mb-8 no-scrollbar">
+  <div role="tablist" aria-label="Infographic topics" class="flex flex-wrap justify-center gap-3 md:gap-4 overflow-x-auto md:overflow-visible pb-2 md:pb-0 mb-8 no-scrollbar">
     <button id="tab-bright" role="tab" aria-selected="true" aria-controls="panel-bright" data-tab="bright"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-red-200 text-red-700 shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)]">
+             bg-white border-red-200 text-red-700 shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       <span class="font-semibold">The Bright Side</span>
     </button>
     <button id="tab-dark" role="tab" aria-selected="false" aria-controls="panel-dark" data-tab="dark"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700">
+             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
       <span class="font-semibold">The Dark Side</span>
     </button>
     <button id="tab-eeat" role="tab" aria-selected="false" aria-controls="panel-eeat" data-tab="eeat"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700">
+             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
       <span class="font-semibold">The E-E-A-T Framework</span>
     </button>
     <button id="tab-future" role="tab" aria-selected="false" aria-controls="panel-future" data-tab="future"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700">
+             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
       <span class="font-semibold">Future-Proofing</span>
     </button>
   </div>
 
   <!-- Content Panel -->
-  <div class="rounded-2xl ring-1 ring-red-200 bg-white shadow-[0_20px_40px_-20px_rgba(239,68,68,0.30)]">
+  <div class="rounded-2xl ring-1 ring-red-100 bg-white shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)]">
     <div class="p-6 md:p-8">
       <section id="panel-bright" role="tabpanel" aria-labelledby="tab-bright" tabindex="0" class="tab-panel" data-panel="bright">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">The Bright Side</h3>
         </div>
-        <ul class="space-y-3 text-gray-800">
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Efficiency: AI drafts blogs in minutes instead of hours</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Scalability: Create content at a fraction of the cost</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Data Power: Analyse competitor strategies with ease</li>
+        <ul class="space-y-3 text-gray-800 leading-relaxed">
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Efficiency: AI drafts blogs in minutes instead of hours</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Scalability: Create content at a fraction of the cost</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Data Power: Analyse competitor strategies with ease</span></li>
         </ul>
       </section>
 
@@ -290,10 +290,10 @@ if (post.content) {
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">The Dark Side</h3>
         </div>
-        <ul class="space-y-3 text-gray-800">
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Hallucinations: AI can state incorrect facts confidently</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Lack of Soul: Content often lacks originality and emotion</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Risk: Can damage brand credibility if unchecked</li>
+        <ul class="space-y-3 text-gray-800 leading-relaxed">
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Hallucinations: AI can state incorrect facts confidently</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Lack of Soul: Content often lacks originality and emotion</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Risk: Can damage brand credibility if unchecked</span></li>
         </ul>
       </section>
 
@@ -302,11 +302,11 @@ if (post.content) {
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">The E-E-A-T Framework</h3>
         </div>
-        <ul class="space-y-3 text-gray-800">
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Experience: First-hand knowledge adds real value</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Expertise: Demonstrates authority in your field</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Authoritativeness: Builds recognition and trust</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Trustworthiness: Ensures content accuracy and honesty</li>
+        <ul class="space-y-3 text-gray-800 leading-relaxed">
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Experience: First-hand knowledge adds real value</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Expertise: Demonstrates authority in your field</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Authoritativeness: Builds recognition and trust</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Trustworthiness: Ensures content accuracy and honesty</span></li>
         </ul>
       </section>
 
@@ -315,10 +315,10 @@ if (post.content) {
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
           <h3 class="text-xl font-bold text-gray-900">Future-Proofing</h3>
         </div>
-        <ul class="space-y-3 text-gray-800">
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Google SGE: Optimise for AI-powered search answers</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Hyper-Personalisation: Tailor content to user behaviour</li>
-          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Balance: Use AI to amplify—not replace—human expertise</li>
+        <ul class="space-y-3 text-gray-800 leading-relaxed">
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Google SGE: Optimise for AI-powered search answers</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Hyper-Personalisation: Tailor content to user behaviour</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Balance: Use AI to amplify—not replace—human expertise</span></li>
         </ul>
       </section>
     </div>
