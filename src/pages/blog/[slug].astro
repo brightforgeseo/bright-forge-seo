@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { JSDOM } from 'jsdom';
 
 // Get the slug from the URL
@@ -31,14 +32,59 @@ let htmlContent = '';
 let tableOfContents = [];
 
 if (post.content) {
-  // Convert rich text to HTML
-  htmlContent = documentToHtmlString(post.content);
+  // Custom renderer to handle embedded InfographicBlock entries
+  const renderOptions = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        const entry = node.data.target;
+        
+        // Check if this is an InfographicBlock
+        if (entry?.sys?.contentType?.sys?.id === 'infographicBlock') {
+          const type = entry.fields?.infographicType || 'tabs';
+          const title = entry.fields?.title || '';
+          const params = entry.fields?.parameters || {};
+          
+          // Build shortcode string from the embedded entry
+          let shortcodeParams = [`type="${type}"`, `title="${title}"`];
+          
+          // Add any additional parameters from the JSON object
+          if (typeof params === 'object' && params !== null) {
+            Object.entries(params).forEach(([key, value]) => {
+              if (key !== 'type' && key !== 'title') {
+                shortcodeParams.push(`${key}="${value}"`);
+              }
+            });
+          }
+          
+          // Return the shortcode that will be processed by our existing shortcode system
+          return `[[INFOGRAPHIC ${shortcodeParams.join(' ')}]]`;
+        }
+        
+        // For other embedded entries, return empty string or default handling
+        return '';
+      }
+    }
+  };
+  
+  // Convert rich text to HTML with custom renderer
+  htmlContent = documentToHtmlString(post.content, renderOptions);
   
   // Replace inline shortcodes like [[INFOGRAPHIC type=...]] with interactive HTML we control
+  function decodeEntities(s=''){
+    return String(s)
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+      .replace(/&ldquo;|&rdquo;/g, '"')
+      .replace(/&lsquo;|&rsquo;/g, "'")
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>');
+  }
+
   function generateAiBalanceHTML(title = 'AI in Marketing: The Balancing Act') {
     return `
 <section class="max-w-4xl mx-auto px-4" aria-labelledby="infographic-title">
-  <h3 id="infographic-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${title}</h3>
+  <h3 id="infographic-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
   <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
     <div class="space-y-5">
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
@@ -98,11 +144,11 @@ if (post.content) {
   function escapeHtml(s=''){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m])); }
 
   function generateProsConsHTML({ title = 'Pros and Cons', pros = '', cons = '' } = {}) {
-    const prosList = String(pros).split(';').map(s => s.trim()).filter(Boolean);
-    const consList = String(cons).split(';').map(s => s.trim()).filter(Boolean);
+    const prosList = String(pros).split(';').map(s => decodeEntities(s).trim()).filter(Boolean);
+    const consList = String(cons).split(';').map(s => decodeEntities(s).trim()).filter(Boolean);
     return `
 <section class="max-w-4xl mx-auto px-4">
-  <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(title)}</h3>
+  <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="rounded-xl border border-green-200 bg-white p-5 shadow-[0_10px_30px_-10px_rgba(16,185,129,0.25)]">
       <h4 class="font-bold text-green-700 mb-3">Pros</h4>
@@ -125,7 +171,7 @@ if (post.content) {
         const [label, value, color] = row.split(':');
         const v = Math.max(0, Math.min(100, Number(value || 0)));
         const col = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(String(color||'')) ? color : '#4285F4';
-        return { label: label || 'Item', value: v, color: col };
+        return { label: decodeEntities(label || 'Item'), value: v, color: col };
       });
     const bars = parsed.map(item => `
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
@@ -139,7 +185,7 @@ if (post.content) {
       </div>`).join('');
     return `
 <section class="max-w-4xl mx-auto px-4" aria-labelledby="bars-title">
-  <h3 id="bars-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(title)}</h3>
+  <h3 id="bars-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
   <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
     <div class="space-y-5">${bars}</div>
     <div class="mt-6 flex flex-wrap gap-2 justify-center">
@@ -190,19 +236,163 @@ if (post.content) {
     return params;
   }
 
+  function generateTabsHTML({ title = 'AI in Marketing: The Balancing Act' } = {}) {
+    return `
+<section class="max-w-6xl mx-auto px-4">
+  <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-8">${escapeHtml(decodeEntities(title))}</h2>
+  
+  <!-- Tabs -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-red-200 shadow-[0_10px_30px_-10px_rgba(239,68,68,0.35)]" data-tab="bright">
+      <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <span class="font-semibold text-gray-900 text-sm">The Bright Side</span>
+        </div>
+        <p class="text-xs text-gray-600">Efficiency: AI drafts blogs in minutes instead of hours</p>
+      </div>
+      <div class="absolute inset-x-0 top-0 h-1 bg-red-500 tab-accent"></div>
+    </button>
+    
+    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-gray-200 hover:border-red-300 hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)]" data-tab="dark">
+      <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+          <span class="font-semibold text-gray-900 text-sm">The Dark Side</span>
+        </div>
+        <p class="text-xs text-gray-600">Hallucinations: AI can state incorrect facts confidently</p>
+      </div>
+      <div class="absolute inset-x-0 top-0 h-1 bg-red-100 group-hover:bg-red-200 tab-accent"></div>
+    </button>
+    
+    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-gray-200 hover:border-red-300 hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)]" data-tab="eeat">
+      <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          <span class="font-semibold text-gray-900 text-sm">The E-E-A-T Framework</span>
+        </div>
+        <p class="text-xs text-gray-600">Experience: First-hand knowledge adds real value</p>
+      </div>
+      <div class="absolute inset-x-0 top-0 h-1 bg-red-100 group-hover:bg-red-200 tab-accent"></div>
+    </button>
+    
+    <button class="tab-btn group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left bg-white border-gray-200 hover:border-red-300 hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)]" data-tab="future">
+      <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+          <span class="font-semibold text-gray-900 text-sm">Future-Proofing</span>
+        </div>
+        <p class="text-xs text-gray-600">Google SGE: Optimise for AI-powered search answers</p>
+      </div>
+      <div class="absolute inset-x-0 top-0 h-1 bg-red-100 group-hover:bg-red-200 tab-accent"></div>
+    </button>
+  </div>
+  
+  <!-- Panel -->
+  <div class="rounded-2xl border border-red-200 bg-white shadow-[0_20px_40px_-20px_rgba(239,68,68,0.35)]">
+    <div class="p-6 md:p-8">
+      <div class="tab-panel" data-panel="bright">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <h3 class="text-xl font-bold text-gray-900">The Bright Side</h3>
+        </div>
+        <ul class="space-y-3 text-gray-800">
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Efficiency: AI drafts blogs in minutes instead of hours</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Scalability: Create content at a fraction of the cost</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Data Power: Analyse competitor strategies with ease</li>
+        </ul>
+      </div>
+      
+      <div class="tab-panel hidden" data-panel="dark">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+          <h3 class="text-xl font-bold text-gray-900">The Dark Side</h3>
+        </div>
+        <ul class="space-y-3 text-gray-800">
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Hallucinations: AI can state incorrect facts confidently</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Lack of Soul: Content often lacks originality and emotion</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Risk: Can damage brand credibility if unchecked</li>
+        </ul>
+      </div>
+      
+      <div class="tab-panel hidden" data-panel="eeat">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          <h3 class="text-xl font-bold text-gray-900">The E-E-A-T Framework</h3>
+        </div>
+        <ul class="space-y-3 text-gray-800">
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Experience: First-hand knowledge adds real value</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Expertise: Demonstrates authority in your field</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Authoritativeness: Builds recognition and trust</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Trustworthiness: Ensures content accuracy and honesty</li>
+        </ul>
+      </div>
+      
+      <div class="tab-panel hidden" data-panel="future">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+          <h3 class="text-xl font-bold text-gray-900">Future-Proofing</h3>
+        </div>
+        <ul class="space-y-3 text-gray-800">
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Google SGE: Optimise for AI-powered search answers</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Hyper-Personalisation: Tailor content to user behaviour</li>
+          <li class="rounded-lg border border-gray-200 bg-gray-50 p-3">Balance: Use AI to amplify—not replace—human expertise</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root = document.currentScript.previousElementSibling;
+  var tabs = root.querySelectorAll('.tab-btn');
+  var panels = root.querySelectorAll('.tab-panel');
+  
+  function switchTab(targetTab) {
+    tabs.forEach(function(tab) {
+      if (tab.getAttribute('data-tab') === targetTab) {
+        tab.classList.add('border-red-200', 'shadow-[0_10px_30px_-10px_rgba(239,68,68,0.35)]');
+        tab.classList.remove('border-gray-200', 'hover:border-red-300', 'hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)]');
+        tab.querySelector('.tab-accent').classList.add('bg-red-500');
+        tab.querySelector('.tab-accent').classList.remove('bg-red-100', 'group-hover:bg-red-200');
+      } else {
+        tab.classList.remove('border-red-200', 'shadow-[0_10px_30px_-10px_rgba(239,68,68,0.35)]');
+        tab.classList.add('border-gray-200', 'hover:border-red-300', 'hover:shadow-[0_8px_24px_-12px_rgba(239,68,68,0.25)]');
+        tab.querySelector('.tab-accent').classList.remove('bg-red-500');
+        tab.querySelector('.tab-accent').classList.add('bg-red-100', 'group-hover:bg-red-200');
+      }
+    });
+    
+    panels.forEach(function(panel) {
+      if (panel.getAttribute('data-panel') === targetTab) {
+        panel.classList.remove('hidden');
+      } else {
+        panel.classList.add('hidden');
+      }
+    });
+  }
+  
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      switchTab(tab.getAttribute('data-tab'));
+    });
+  });
+})();</script>`;
+  }
+
   function replaceShortcodes(inputHtml) {
     const re = /\[\[INFOGRAPHIC(?:\s+([^\]]+))?\]\]/g;
     return inputHtml.replace(re, (_match, paramStr) => {
       const params = parseParams(paramStr || '');
-      const type = (params.type || 'ai-balance').toLowerCase();
+      const type = (params.type || 'tabs').toLowerCase();
+      if (type === 'tabs') return generateTabsHTML(params);
       if (type === 'ai-balance') return generateAiBalanceHTML(params.title);
       if (type === 'pros-cons') return generateProsConsHTML(params);
       if (type === 'bars') return generateBarsHTML(params);
       // fallback
-      return generateAiBalanceHTML(params.title);
+      return generateTabsHTML(params);
     })
     // Also allow HTML comment marker as a basic fallback
-    .replace(/<!--\s*INFOGRAPHIC\s*-->/g, generateAiBalanceHTML());
+    .replace(/<!--\s*INFOGRAPHIC\s*-->/g, generateTabsHTML());
   }
   
   htmlContent = replaceShortcodes(htmlContent);
