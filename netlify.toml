@@ -48,9 +48,9 @@
     X-XSS-Protection = "1; mode=block"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    # Allow FontAwesome CDN for styles and fonts
-    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://www.paypal.com https://www.paypalobjects.com https://www.googletagmanager.com https://scripts.simpleanalyticscdn.com; connect-src 'self' https://www.paypal.com https://api-m.paypal.com https://*.paypal.com https://www.paypalobjects.com https://*.paypalobjects.com https://www.google-analytics.com; frame-src https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://www.google.com https://*.google.com https://maps.gstatic.com https://*.gstatic.com;"
+    Permissions-Policy = "camera=(), microphone=(), geolocation()"
+    # Allow FontAwesome CDN for styles and fonts, and Tailwind CDN script
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.tailwindcss.com https://www.paypal.com https://www.paypalobjects.com https://www.googletagmanager.com https://scripts.simpleanalyticscdn.com; connect-src 'self' https://www.paypal.com https://api-m.paypal.com https://*.paypal.com https://www.paypalobjects.com https://*.paypalobjects.com https://www.google-analytics.com; frame-src https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://www.google.com https://*.google.com https://maps.gstatic.com https://*.gstatic.com;"
     
     # SEO and crawling
     Access-Control-Allow-Origin = "*"

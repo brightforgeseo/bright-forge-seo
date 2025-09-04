@@ -243,26 +243,26 @@ if (post.content) {
   <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
 
   <!-- Pill Tab Navigation -->
-  <div role="tablist" aria-label="Infographic topics" class="flex flex-wrap justify-center gap-3 md:gap-4 overflow-x-auto md:overflow-visible pb-2 md:pb-0 mb-8 no-scrollbar">
+  <div role="tablist" aria-label="Infographic topics" aria-orientation="horizontal" class="flex flex-wrap justify-center gap-3 md:gap-4 overflow-x-auto md:overflow-visible pb-2 md:pb-0 mb-8 no-scrollbar">
     <button id="tab-bright" role="tab" aria-selected="true" aria-controls="panel-bright" data-tab="bright"
-      class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
+      tabindex="0" class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
              bg-white border-red-200 text-red-700 shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       <span class="font-semibold">The Bright Side</span>
     </button>
-    <button id="tab-dark" role="tab" aria-selected="false" aria-controls="panel-dark" data-tab="dark"
+    <button id="tab-dark" role="tab" aria-selected="false" aria-controls="panel-dark" data-tab="dark" tabindex="-1"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
              bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
       <span class="font-semibold">The Dark Side</span>
     </button>
-    <button id="tab-eeat" role="tab" aria-selected="false" aria-controls="panel-eeat" data-tab="eeat"
+    <button id="tab-eeat" role="tab" aria-selected="false" aria-controls="panel-eeat" data-tab="eeat" tabindex="-1"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
              bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
       <span class="font-semibold">The E-E-A-T Framework</span>
     </button>
-    <button id="tab-future" role="tab" aria-selected="false" aria-controls="panel-future" data-tab="future"
+    <button id="tab-future" role="tab" aria-selected="false" aria-controls="panel-future" data-tab="future" tabindex="-1"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
              bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
@@ -333,6 +333,7 @@ if (post.content) {
     triggers.forEach(function(btn){
       var isActive = btn.getAttribute('data-tab') === target;
       btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      btn.setAttribute('tabindex', isActive ? '0' : '-1');
       btn.classList.toggle('border-red-200', isActive);
       btn.classList.toggle('text-red-700', isActive);
       btn.classList.toggle('shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)]', isActive);
@@ -351,12 +352,17 @@ if (post.content) {
     btn.addEventListener('click', function(){ activate(btn.getAttribute('data-tab')); });
     // Keyboard: left/right to switch
     btn.addEventListener('keydown', function(e){
-      if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
       var list = Array.prototype.slice.call(triggers);
       var i = list.indexOf(btn);
-      var next = e.key === 'ArrowRight' ? (i+1) % list.length : (i-1+list.length) % list.length;
-      list[next].focus();
-      activate(list[next].getAttribute('data-tab'));
+      var nextIdx = null;
+      if(e.key === 'ArrowRight') nextIdx = (i+1) % list.length;
+      else if(e.key === 'ArrowLeft') nextIdx = (i-1+list.length) % list.length;
+      else if(e.key === 'Home') nextIdx = 0;
+      else if(e.key === 'End') nextIdx = list.length - 1;
+      else return;
+      e.preventDefault();
+      list[nextIdx].focus();
+      activate(list[nextIdx].getAttribute('data-tab'));
     });
   });
 
