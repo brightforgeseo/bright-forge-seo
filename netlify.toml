@@ -7,8 +7,9 @@
 
 # Build processing and optimization
 # Content-Security-Policy header added for security
-[build.processing]
-  skip_processing = true
+# Build processing - removed to fix deployment issue
+# [build.processing]
+#   skip_processing = true
 
 # Disabled individual asset processing overrides since skip_processing=true disables them
 # [build.processing.css]
