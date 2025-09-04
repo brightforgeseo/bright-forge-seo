@@ -160,17 +160,31 @@ if (post.content) {
 })();</script>`;
   }
 
-  // Parse key=value pairs, allowing quoted values
+  // Parse key=value pairs, allowing straight and smart quotes, and clean stray entity quotes
   function parseParams(paramStr = '') {
     const params = {};
-    const re = /(\w+)=\s*("[^"]*"|'[^']*'|[^\s\]]+)/g;
+    const re = /(\w+)=\s*("[^"]*"|“[^”]*”|'[^']*'|‘[^’]*’|[^\s\]]+)/g;
+    const stripWrappingQuotes = (v) => {
+      if (!v) return v;
+      v = v.trim();
+      const pairs = [
+        ['"','"'],
+        ["'","'"],
+        ['“','”'],
+        ['‘','’'],
+      ];
+      for (const [l, r] of pairs) {
+        if (v.startsWith(l) && v.endsWith(r)) return v.slice(1, -1);
+      }
+      // Also strip common HTML entity quotes if present at edges
+      v = v.replace(/^&quot;|^&ldquo;|^&lsquo;/, '');
+      v = v.replace(/&quot;$|&rdquo;$|&rsquo;$/, '');
+      return v;
+    };
     let m;
     while ((m = re.exec(paramStr)) !== null) {
       const key = m[1];
-      let val = m[2];
-      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-        val = val.slice(1, -1);
-      }
+      let val = stripWrappingQuotes(m[2]);
       params[key] = val;
     }
     return params;
