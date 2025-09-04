@@ -34,6 +34,76 @@ if (post.content) {
   // Convert rich text to HTML
   htmlContent = documentToHtmlString(post.content);
   
+  // Replace inline shortcodes like [[INFOGRAPHIC]] with interactive HTML we control
+  function generateInfographicHTML() {
+    return `
+<section class="max-w-4xl mx-auto px-4" aria-labelledby="infographic-title">
+  <h3 id="infographic-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">AI in Marketing: The Balancing Act</h3>
+  <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
+    <div class="space-y-5">
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Pattern Recognition (AI)</div>
+        <div class="sm:col-span-3">
+          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 85%; background: #4285F4" data-target-width="85"></div>
+          </div>
+          <div class="mt-1 text-xs text-gray-500"><span class="value">85</span>%</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Strategic Judgment (Human)</div>
+        <div class="sm:col-span-3">
+          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 90%; background: #FF6B35" data-target-width="90"></div>
+          </div>
+          <div class="mt-1 text-xs text-gray-500"><span class="value">90</span>%</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Scale & Speed (AI)</div>
+        <div class="sm:col-span-3">
+          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 95%; background: #6AB7FF" data-target-width="95"></div>
+          </div>
+          <div class="mt-1 text-xs text-gray-500"><span class="value">95</span>%</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
+        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Context & Empathy (Human)</div>
+        <div class="sm:col-span-3">
+          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 88%; background: #FF4438" data-target-width="88"></div>
+          </div>
+          <div class="mt-1 text-xs text-gray-500"><span class="value">88</span>%</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="randomize">Randomize</button>
+      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="reset">Reset</button>
+    </div>
+  </div>
+</section>
+<script>(function(){
+  var root = document.currentScript.previousElementSibling;
+  var bars = root.querySelectorAll('[data-target-width]');
+  var initial = Array.prototype.map.call(bars, function(b){ return Number(b.getAttribute('data-target-width')); });
+  var valueEls = root.querySelectorAll('.value');
+  function setValues(values){ values.forEach(function(v,i){ bars[i].style.width = v + '%'; valueEls[i].textContent = v; }); }
+  root.addEventListener('click', function(e){ var btn = e.target.closest('button[data-action]'); if(!btn) return; var a=btn.getAttribute('data-action'); if(a==='randomize'){ var next=initial.map(function(v){ return Math.max(60, Math.min(100, Math.round(v + (Math.random()*20-10))))}); setValues(next);} if(a==='reset'){ setValues(initial);} });
+  var obs=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ bars.forEach(function(bar,i){ bar.style.width='0%'; requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.style.width = initial[i] + '%'; });});}); obs.disconnect(); } }); },{threshold:0.2});
+  obs.observe(root);
+})();</script>`;
+  }
+
+  function replaceShortcodes(inputHtml) {
+    return inputHtml
+      .replace(/\[\[INFOGRAPHIC\]\]/g, generateInfographicHTML())
+      .replace(/<!--\s*INFOGRAPHIC\s*-->/g, generateInfographicHTML());
+  }
+  
+  htmlContent = replaceShortcodes(htmlContent);
+  
   // Generate table of contents from HTML headings
   const dom = new JSDOM(htmlContent);
   const headings = [...dom.window.document.querySelectorAll('h2, h3')];
