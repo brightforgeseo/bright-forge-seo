@@ -1,0 +1,308 @@
+/* Red Theme Overrides - applied globally via MainLayout (non-article pages only)
+   Purpose: Make all sections across services and pages use red accents/gradients.
+   NOTE: Blog article pages use ArticleTemplate.astro which does NOT import MainLayout,
+   so these overrides will not affect articles. */
+
+:root {
+  /* Ensure brand accent is red sitewide for non-article pages */
+  --brand-accent: #FF4438;
+  --brand-accent-light: #FFE9E8;
+  --gradient-primary: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #FF4438 100%);
+}
+
+/* Generic hero backgrounds (exclude article hero) */
+.hero-section,
+section[class^="hero-"]:not(.article-hero),
+section[class*=" hero-"]:not(.article-hero),
+.hero-seo-audit,
+.case-study-hero,
+.contact-hero,
+.about-hero,
+.services-hero {
+  background: var(--gradient-primary) !important;
+}
+
+/* Section badges and heading accent spans */
+.section-badge,
+.section-label {
+  background: var(--gradient-secondary) !important;
+  color: #fff !important;
+}
+
+.section-header h2 span,
+.section-title span {
+  background: var(--gradient-secondary) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Primary CTA/button styles across pages */
+.cta-button,
+.service-button,
+.btn-primary,
+.cta-primary {
+  background: #FF4438 !important;
+  color: #fff !important;
+  border-color: #FF4438 !important;
+}
+
+.cta-button:hover,
+.service-button:hover,
+.btn-primary:hover,
+.cta-primary:hover {
+  background: #FF6B35 !important;
+  color: #fff !important;
+}
+
+/* Secondary CTAs with red borders */
+.cta-secondary {
+  color: #FF4438 !important;
+  border-color: rgba(255, 68, 56, 0.5) !important;
+}
+
+/* Feature and service card accents */
+.feature-card::before,
+.service-card::before,
+.card::before {
+  background: var(--gradient-secondary) !important;
+}
+
+/* Icons and accent text commonly used in sections */
+.text-brand-accent,
+.hover\:text-brand-accent:hover,
+.faq-icon i,
+.card-icon,
+.service-icon i,
+.stat-number,
+.metric-value {
+  color: #FF4438 !important;
+}
+
+/* Light red backgrounds used in subtle UI elements */
+.bg-brand-accent\/10,
+.badge-soft,
+.pill-soft {
+  background-color: rgba(255, 68, 56, 0.1) !important;
+}
+
+/* Borders that previously used blue */
+.border-brand-accent,
+.hover\:border-brand-accent:hover {
+  border-color: #FF4438 !important;
+}
+
+/* Links hover effect to red on non-article pages */
+main a:hover {
+  color: #FF4438;
+}
+
+/* FAQ chevrons, summaries, and interactive accents */
+.faq-section .faq-summary .faq-icon i,
+.faq-section .faq-summary:hover .faq-icon i {
+  color: #FF4438 !important;
+}
+
+/* ============================= */
+/* Case Study Template overrides */
+/* ============================= */
+.case-hero {
+  background: var(--gradient-primary) !important;
+}
+
+.achievement-card:hover {
+  border-color: rgba(255, 68, 56, 0.3) !important;
+}
+
+.achievement-rank,
+.achievement-icon,
+.step-icon-container {
+  background: linear-gradient(135deg, #FF4438, #FF6B35) !important;
+}
+
+.achievement-value,
+.summary-grid .stat-number {
+  background: linear-gradient(135deg, #FF4438, #FF6B35) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.achievement-glow {
+  background: linear-gradient(135deg, rgba(255, 68, 56, 0.08), rgba(255, 107, 53, 0.08)) !important;
+}
+
+.timeline-container::before,
+.vertical-line,
+.timeline-line {
+  background: linear-gradient(to bottom, #FF4438 0%, #FF6B35 100%) !important;
+}
+
+.story-marker {
+  background: linear-gradient(135deg, #FF4438, #FF6B35) !important;
+}
+
+.challenge-narrative,
+.acceptance-item,
+.payment-item,
+.responsibility-note,
+.liability-limit,
+.indemnification-item,
+.contact-item {
+  border-left: 4px solid #FF4438 !important;
+}
+
+.progress-fill,
+.progress-bar .progress-fill {
+  background: linear-gradient(90deg, #FF4438, #FF6B35) !important;
+}
+
+/* ============================= */
+/* Terms / Legal pages overrides */
+/* ============================= */
+.terms-section h2 {
+  border-image: linear-gradient(90deg, #FF4438, #FF6B35) 1 !important;
+}
+
+.section-icon,
+.ip-icon,
+.confidentiality-icon,
+.modifications-icon,
+.law-icon {
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%) !important;
+}
+
+.acceptance-item i,
+.contact-item i,
+.liability-item i {
+  color: #FF4438 !important;
+}
+
+/* ============================= */
+/* Industry & services common UI */
+/* ============================= */
+.step-number,
+.step-number-modern {
+  background: linear-gradient(135deg, #FF4438, #FF6B35) !important;
+  color: #fff !important;
+}
+
+.learn-more-link,
+.timeline-badge,
+.read-more,
+.cta-secondary { /* ensure text accents red */
+  color: #FF4438 !important;
+}
+
+.timeline-badge {
+  background: rgba(255, 68, 56, 0.1) !important;
+}
+
+/* Blog listing hero (non-article) is covered by hero-* rule; ensure section headers too */
+.hero-blog .hero-cta-btn.primary {
+  color: #FF4438 !important;
+}
+
+/* Fallback: any section or div with inline styles containing old blue */
+section[style*="#4285F4"],
+div[style*="#4285F4"] {
+  background: var(--gradient-primary) !important;
+}
+
+/* ============================= */
+/* Global section look (homepage) */
+/* ============================= */
+/* Light grey background for all primary sections except heros and articles */
+main > section:not([class*="hero"]):not(.article-hero):not(.article-content) {
+  background-color: #f8fafc !important;
+}
+
+/* Standard section header styles */
+.section-header .section-label,
+.section-header .section-badge,
+.section-label,
+.section-badge {
+  display: inline-block;
+  background: var(--gradient-secondary) !important;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.section-header h2,
+.section-title {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.section-header h2 span,
+.section-title span { /* already set earlier but re-affirm with higher specificity */
+  background: var(--gradient-secondary) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Feature card pattern (top red line + white card on light grey) */
+.feature-card,
+.service-card,
+.tech-card,
+.toolkit-card,
+.research-card,
+.growth-card,
+.benefit-card,
+.pricing-card,
+.article-card,
+.case-study-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(255, 68, 56, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06) !important;
+}
+
+.feature-card::before,
+.service-card::before,
+.tech-card::before,
+.toolkit-card::before,
+.research-card::before,
+.growth-card::before,
+.benefit-card::before,
+.pricing-card::before,
+.case-study-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--gradient-secondary) !important;
+}
+
+/* Icon tiles (square/rounded with white icon) */
+.feature-icon,
+.service-icon,
+.tech-icon,
+.toolkit-icon,
+.research-icon-large,
+.benefit-icon,
+.keyword-research-icon,
+.content-icon {
+  background: var(--gradient-secondary) !important;
+  color: #fff !important;
+}
+
+.feature-icon i,
+.service-icon i,
+.tech-icon i,
+.toolkit-icon i,
+.benefit-icon i,
+.keyword-research-icon i,
+.content-icon i {
+  color: #fff !important;
+}
+
+/* Font Awesome visibility fallback (in case CDN race) */
+[class^="fa-"], [class*=" fa-"], .fas, .far, .fab {
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "FontAwesome" !important;
+}

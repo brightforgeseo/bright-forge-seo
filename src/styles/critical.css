@@ -3,11 +3,11 @@
 
 :root {
   --brand-bg: #FF4438;
-  --brand-accent: #4285F4;
+  --brand-accent: #FF4438;
   --brand-dark: #1a1a1a;
   --brand-light: #f8f9fa;
-  --gradient-primary: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
-  --gradient-secondary: linear-gradient(135deg, #4285F4 0%, #FF4438 100%);
+  --gradient-primary: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #FF4438 100%);
 }
 
 /* Reset and base styles */

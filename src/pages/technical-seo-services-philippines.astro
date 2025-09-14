@@ -348,7 +348,7 @@ import ContactSection from '../components/ContactSection.astro';
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #FF6B35 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   overflow: hidden;
@@ -798,10 +798,7 @@ import ContactSection from '../components/ContactSection.astro';
   top: 40px;
   bottom: 40px;
   width: 4px;
-  background: linear-gradient(to bottom, 
-    #FF4438 0%, 
-    #4285F4 50%, 
-    #FF4438 100%);
+  background: linear-gradient(to bottom, #FF4438 0%, #FF6B35 100%);
   border-radius: 2px;
   opacity: 0.3;
   z-index: 1;
@@ -836,7 +833,7 @@ import ContactSection from '../components/ContactSection.astro';
 .step-number-modern {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #FF4438, #4285F4);
+  background: linear-gradient(135deg, #FF4438, #FF6B35);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -926,7 +923,7 @@ import ContactSection from '../components/ContactSection.astro';
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 15px;
-  background: linear-gradient(135deg, #FF4438, #4285F4);
+  background: linear-gradient(135deg, #FF4438, #FF6B35);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -954,7 +951,7 @@ import ContactSection from '../components/ContactSection.astro';
 }
 
 .detail-item {
-  background: linear-gradient(135deg, rgba(255,68,56,0.1), rgba(66,133,244,0.1));
+  background: linear-gradient(135deg, rgba(255,68,56,0.12), rgba(255,107,53,0.12));
   padding: 8px 12px;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -965,7 +962,7 @@ import ContactSection from '../components/ContactSection.astro';
 }
 
 .detail-item:hover {
-  background: linear-gradient(135deg, rgba(255,68,56,0.2), rgba(66,133,244,0.2));
+  background: linear-gradient(135deg, rgba(255,68,56,0.2), rgba(255,107,53,0.2));
   transform: translateY(-2px);
 }
 
@@ -987,7 +984,7 @@ import ContactSection from '../components/ContactSection.astro';
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #FF4438, #4285F4);
+  background: linear-gradient(90deg, #FF4438, #FF6B35);
   border-radius: 3px;
   width: 0%;
   transition: width 0.3s ease;
