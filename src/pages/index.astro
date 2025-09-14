@@ -8,7 +8,6 @@ import ProcessSection from '../components/ProcessSection.astro';
 import PartnersSection from '../components/PartnersSection.astro';
 import TopAgencySection from '../components/TopAgencySection.astro';
 import PackagesSection from '../components/PackagesSection.astro';
-import WhatIsSEOSection from '../components/WhatIsSEOSection.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
 
 // Fetch latest blog posts from Contentful
@@ -37,91 +36,51 @@ const breadcrumbs = [
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
-  <section class="relative min-h-screen overflow-hidden" style="background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-20 left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-20 right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/3 rounded-full blur-3xl"></div>
+  <section class="hero-homepage">
+    <!-- Animated Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
     </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20">
-      <div class="min-h-[90vh] flex items-center">
-        <div class="w-full grid lg:grid-cols-12 gap-8 items-center">
+    
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg class="w-5 h-5 mr-3 text-yellow-300 animate-spin-slow" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <span>#1 SEO Agency in the Philippines</span>
+          </div>
           
-          <!-- Left Content -->
-          <div class="lg:col-span-6 space-y-10 text-center lg:text-left">
-            <!-- Badge with Animation -->
-            <div class="flex justify-center lg:justify-start">
-              <div class="inline-flex items-center px-6 py-3 bg-white/15 backdrop-blur-md border border-white/30 rounded-full text-white text-sm font-semibold shadow-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-                <svg class="w-5 h-5 mr-3 text-yellow-300 animate-spin-slow" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                #1 SEO Agency in the Philippines
-              </div>
-            </div>
-
-            <!-- Main Headline with Enhanced Typography -->
-            <div class="space-y-6">
-              <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
-                <span class="block text-white/95 drop-shadow">Philippines SEO Company Forging the Path to Your Online Success</span>
-                <span class="mt-4 block h-1 w-full max-w-[56rem] bg-[#FFEB3B] rounded-full"></span>
-              </h1>
-              <p class="text-xl lg:text-2xl text-white/95 max-w-3xl leading-relaxed font-light">
-                Partner with Bright Forge, the Philippines SEO agency that businesses trust for sustainable, long-term growth.
-              </p>
-            </div>
-
-            <!-- Enhanced Stats Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-8 py-8">
-              <div class="bg-white/10 backdrop-blur-md rounded-2xl py-7 px-6 text-center border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-2 leading-tight">1,000+</div>
-                <div class="text-sm lg:text-base text-white/90 font-medium">Sites Ranked</div>
-              </div>
-              <div class="bg-white/10 backdrop-blur-md rounded-2xl py-7 px-6 text-center border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-2 leading-tight">15+</div>
-                <div class="text-sm lg:text-base text-white/90 font-medium">Years Experience</div>
-              </div>
-              <div class="bg-white/10 backdrop-blur-md rounded-2xl py-7 px-6 text-center border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-2 leading-tight">100%</div>
-                <div class="text-sm lg:text-base text-white/90 font-medium">White-Hat SEO</div>
-              </div>
-            </div>
-
-            <!-- Enhanced CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-6">
-              <a href="/seo-audit-services" class="group relative inline-flex items-center justify-center px-10 py-5 bg-white text-[#FF4438] font-bold text-lg rounded-2xl shadow-2xl hover:shadow-white/25 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 border-2 border-white/20">
-                <span class="relative z-10 flex items-center">
-                  <svg class="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                  </svg>
-                  Get Free SEO Audit
-                </span>
-                <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
-              
-              <a href="/contact" class="inline-flex items-center justify-center px-10 py-5 bg-white/15 backdrop-blur-md border-2 border-white/30 text-white font-bold text-lg rounded-2xl hover:bg-white/25 hover:border-white/50 transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                </svg>
-                Schedule Consultation
-              </a>
-            </div>
+          <h1>Philippines SEO Company Forging the Path to Your Online Success</h1>
+          
+          <div class="hero-story">
+            <p>Partner with Bright Forge, the Philippines SEO agency that businesses trust for sustainable, long-term growth.</p>
+          </div>
+          
+          <div class="hero-actions">
+            <a href="/seo-audit-services" class="cta-button primary">
+              <span>Get Free SEO Audit</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="/contact" class="cta-button secondary">
+              <i class="fas fa-comments"></i>
+              <span>Schedule Consultation</span>
+            </a>
           </div>
 
-          <!-- Right Content - Enhanced Hero Image -->
-          <div class="lg:col-span-6 relative">
-            <div class="relative mx-auto w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl">
-              <!-- Main Image Container with Enhanced Glassmorphism -->
-              <div class="relative overflow-hidden rounded-3xl bg-white/15 backdrop-blur-xl border border-white/30 p-6 md:p-8 shadow-2xl transform hover:scale-105 transition-all duration-500">
-                <img 
-                  src="/images/Hero-SEO-Agency-In-The-Philippines.webp" 
-                  alt="Sassin Lowe - Bright Forge SEO Expert Philippines" 
-                  class="w-full h-auto rounded-2xl shadow-2xl"
-                  loading="eager"
-                />
-              </div>
-            </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <img 
+              src="/images/Hero-SEO-Agency-In-The-Philippines.webp" 
+              alt="Sassin Lowe - Bright Forge SEO Expert Philippines" 
+              class="hero-image"
+              loading="eager"
+            />
           </div>
         </div>
       </div>
@@ -838,29 +797,166 @@ const breadcrumbs = [
   }
   
   /* Hero Section Styles */
-  .hero-section {
-    background: linear-gradient(135deg, var(--brand-bg) 0%, #ffffff 100%);
+  .hero-homepage {
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
+    color: white;
     padding: 80px 0;
     position: relative;
-    overflow: hidden !important;
-    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
   
-  .hero-section::before {
-    content: '';
+  .hero-bg-elements {
     position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 68, 56, 0.1) 0%, transparent 70%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .floating-circle {
+    position: absolute;
     border-radius: 50%;
-    pointer-events: none;
+    background: rgba(255, 255, 255, 0.05);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .circle-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .circle-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+  }
+
+  .circle-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 60%;
+    animation-delay: 4s;
   }
 
   .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    text-align: left;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: white;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+
+  .hero-story {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-story p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .cta-button.primary {
+    background: white;
+    color: #FF4438;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+    background: #f8fafc;
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
   }
   
   .hero-badge {
