@@ -1301,11 +1301,11 @@ document.addEventListener('DOMContentLoaded', function() {
     processSteps[activeStep].classList.add('active');
     updateProgress(activeStep);
     
-    // Smooth scroll to active step
-    processSteps[activeStep].scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
+    // Smooth scroll disabled to prevent page jumping from hero
+    // processSteps[activeStep].scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'center'
+    // });
   }, 5000);
   
   // Pause auto-cycle on hover
@@ -1317,10 +1317,11 @@ document.addEventListener('DOMContentLoaded', function() {
         processSteps.forEach(s => s.classList.remove('active'));
         processSteps[activeStep].classList.add('active');
         updateProgress(activeStep);
-        processSteps[activeStep].scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
+        // Smooth scroll disabled to prevent page jumping from hero
+        // processSteps[activeStep].scrollIntoView({
+        //   behavior: 'smooth',
+        //   block: 'center'
+        // });
       }, 5000);
     });
   });

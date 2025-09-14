@@ -9,6 +9,7 @@ import PartnersSection from '../components/PartnersSection.astro';
 import TopAgencySection from '../components/TopAgencySection.astro';
 import PackagesSection from '../components/PackagesSection.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
+ 
 
 // Fetch latest blog posts from Contentful
 const allPosts = await getAllBlogPosts();
@@ -36,7 +37,7 @@ const breadcrumbs = [
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
-  <section class="hero-homepage">
+  <section class="hero-homepage-new">
     <!-- Animated Background Elements -->
     <div class="hero-bg-elements">
       <div class="floating-circle circle-1"></div>
@@ -45,12 +46,17 @@ const breadcrumbs = [
     </div>
     
     <div class="max-w-7xl mx-auto px-4">
+      <!-- Breadcrumbs -->
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">SEO Agency Philippines</span>
+      </nav>
+      
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-badge">
-            <svg class="w-5 h-5 mr-3 text-yellow-300 animate-spin-slow" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
+            <i class="fas fa-star"></i>
             <span>#1 SEO Agency in the Philippines</span>
           </div>
           
@@ -58,6 +64,8 @@ const breadcrumbs = [
           
           <div class="hero-story">
             <p>Partner with Bright Forge, the Philippines SEO agency that businesses trust for sustainable, long-term growth.</p>
+            
+            <p>We combine data-driven strategies with local market expertise to help your business dominate search results and connect with customers who are ready to buy.</p>
           </div>
           
           <div class="hero-actions">
@@ -70,7 +78,7 @@ const breadcrumbs = [
               <span>Schedule Consultation</span>
             </a>
           </div>
-
+          
         </div>
         
         <div class="hero-visual">
@@ -738,172 +746,289 @@ const breadcrumbs = [
     margin-bottom: 0 !important;
   }
   
-  /* Hero Section Styles */
-  .hero-homepage {
-    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
-    color: white;
-    padding: 60px 0 80px 0;
+  /* Hero Section Styles - Content SEO Page Style */
+  .hero-homepage-new {
+    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 50%, #4285F4 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    padding: 7rem 0 8rem;
     position: relative;
-    min-height: 60vh;
     display: flex;
     align-items: center;
+    color: white;
+    overflow: hidden;
   }
-  
-  .hero-bg-elements {
+
+  /* Animated Background */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .hero-homepage-new .hero-bg-elements {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     overflow: hidden;
+    pointer-events: none;
     z-index: 1;
   }
 
-  .floating-circle {
+  .hero-homepage-new .floating-circle {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
     animation: float 6s ease-in-out infinite;
   }
 
-  .circle-1 {
-    width: 200px;
-    height: 200px;
-    top: 10%;
-    left: 10%;
+  .hero-homepage-new .circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -150px;
     animation-delay: 0s;
   }
 
-  .circle-2 {
-    width: 150px;
-    height: 150px;
-    top: 60%;
-    right: 15%;
+  .hero-homepage-new .circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    right: -100px;
     animation-delay: 2s;
   }
 
-  .circle-3 {
-    width: 100px;
-    height: 100px;
-    bottom: 20%;
-    left: 60%;
+  .hero-homepage-new .circle-3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
     animation-delay: 4s;
   }
 
-  .hero-container {
+  /* Breadcrumbs */
+  .hero-homepage-new .hero-breadcrumbs {
+    display: inline-block;
+    gap: 0.5rem;
+    margin-bottom: 3.5rem;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-homepage-new .breadcrumb-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .hero-homepage-new .breadcrumb-link:hover {
+    color: white;
+  }
+
+  .hero-homepage-new .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .hero-homepage-new .breadcrumb-current {
+    color: white;
+    font-weight: 500;
+  }
+
+  /* Hero Container */
+  .hero-homepage-new .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
   }
 
-  .hero-content {
+  /* Hero Content wrapper */
+  .hero-homepage-new .hero-content {
+    max-width: 680px;
     text-align: left;
   }
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
+  /* Hero Content */
+  .hero-homepage-new .hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2;
     margin-bottom: 2rem;
     color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    color: white;
-  }
-
-  .hero-story {
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-story p {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .cta-button {
+  .hero-homepage-new .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-weight: 700;
-    text-decoration: none;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
   }
 
-  .cta-button.primary {
-    background: white;
-    color: #FF4438;
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-  }
-
-  .cta-button.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
-    background: #f8fafc;
-  }
-
-  .cta-button.secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-  }
-
-  .cta-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
+  .hero-homepage-new .hero-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
   }
 
-  .hero-visual {
-    position: relative;
+  .hero-homepage-new .hero-badge i {
+    color: #FFEB3B;
   }
 
-  .hero-image-container {
+  /* Hero Story */
+  .hero-homepage-new .hero-story {
+    margin-bottom: 3rem;
+  }
+
+  .hero-homepage-new .hero-story p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Hero Actions */
+  .hero-homepage-new .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-homepage-new .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: 2px solid transparent;
+  }
+
+  .hero-homepage-new .cta-button.primary {
+    background: white;
+    color: #FF4438;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-homepage-new .cta-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+  }
+
+  .hero-homepage-new .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+  }
+
+  .hero-homepage-new .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Hero Visual */
+  .hero-homepage-new .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-homepage-new .hero-image-container {
     position: relative;
+    width: 100%;
+    max-width: 500px;
     border-radius: 20px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 15px;
-    max-width: 400px;
-    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
 
-  .hero-image {
+  .hero-homepage-new .hero-image {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: block;
   }
 
-  .hero-badge {
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-homepage-new .hero-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+    
+    .hero-homepage-new .hero-content h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-homepage-new {
+      min-height: auto;
+      padding: 4rem 0;
+    }
+    
+    .hero-homepage-new .hero-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .hero-homepage-new .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-homepage-new .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .hero-homepage-new .hero-visual {
+      display: none;
+    }
+    
+    .hero-homepage-new .floating-circle {
+      opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-homepage-new .hero-content h1 {
+      font-size: 2rem;
+    }
+    
+    .hero-homepage-new .hero-story p {
+      font-size: 1rem;
+    }
+  }
+
+  .hero-homepage-new .hero-badge {
     animation: fadeInUp 0.6s ease-out;
   }
   

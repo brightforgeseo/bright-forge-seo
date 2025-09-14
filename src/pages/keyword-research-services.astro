@@ -290,38 +290,38 @@ import ContactSection from '../components/ContactSection.astro';
   </section>
 
   <!-- Tools & Technology Section -->
-  <section class="tools-section">
+  <section class="tools-section" style="background-color:#f8fafc;">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
         <div class="section-badge">Professional Tools</div>
-        <h2>Premium <span>Research Tools</span></h2>
-        <p>We invest in the best keyword research technology to deliver accurate, actionable insights.</p>
+        <h2 style="color:#1E2022;">Premium <span style="background:none; -webkit-background-clip:initial; background-clip:initial; -webkit-text-fill-color:#ffffff; color:#ffffff;">Research Tools</span></h2>
+        <p style="color:#52575D;">We invest in the best keyword research technology to deliver accurate, actionable insights.</p>
       </div>
 
       <div class="tools-grid">
         <div class="tool-card">
           <div class="tool-logo">Ahrefs</div>
-          <p>Comprehensive backlink and keyword database with accurate difficulty scores</p>
+          <p style="color:#52575D;">Comprehensive backlink and keyword database with accurate difficulty scores</p>
         </div>
         <div class="tool-card">
           <div class="tool-logo">SEMrush</div>
-          <p>Advanced competitor analysis and keyword gap identification</p>
+          <p style="color:#52575D;">Advanced competitor analysis and keyword gap identification</p>
         </div>
         <div class="tool-card">
           <div class="tool-logo">Google Keyword Planner</div>
-          <p>Direct search volume data from Google's advertising platform</p>
+          <p style="color:#52575D;">Direct search volume data from Google's advertising platform</p>
         </div>
         <div class="tool-card">
           <div class="tool-logo">Answer The Public</div>
-          <p>Question-based keyword discovery for content optimization</p>
+          <p style="color:#52575D;">Question-based keyword discovery for content optimization</p>
         </div>
         <div class="tool-card">
           <div class="tool-logo">Keywords Everywhere</div>
-          <p>Real-time keyword metrics and trend analysis</p>
+          <p style="color:#52575D;">Real-time keyword metrics and trend analysis</p>
         </div>
         <div class="tool-card">
           <div class="tool-logo">Google Trends</div>
-          <p>Seasonal patterns and trending topic identification</p>
+          <p style="color:#52575D;">Seasonal patterns and trending topic identification</p>
         </div>
       </div>
     </div>
@@ -467,6 +467,13 @@ import ContactSection from '../components/ContactSection.astro';
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
 }
+
+/* Guarantee full visibility (no accidental dimming) */
+.tool-card, .tool-card * {
+  opacity: 1 !important;
+}
+
+.tool-card p { color: var(--brand-soft) !important; }
 
 * {
   margin: 0;
@@ -1260,8 +1267,29 @@ section {
   Tools Section
 *********************/
 .tools-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #f1f5f9 !important; /* darker light grey for visible contrast */
+  background-image: none !important;
+  color: var(--brand-dark) !important;
+}
+
+/* Keep inner container transparent so light grey shows through */
+.tools-section .max-w-7xl,
+.tools-section .container {
+  background: transparent !important;
+}
+
+/* Make the yellow-accented heading white in this section */
+.tools-section .section-header h2 { 
+  color: var(--brand-dark) !important; 
+}
+
+.tools-section .section-header h2 span,
+.tools-section h2 span {
+  background: var(--gradient-accent) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 }
 
 .tools-grid {
@@ -1271,30 +1299,53 @@ section {
 }
 
 .tool-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  position: relative;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  text-align: center !important;
+  border: 1px solid #f0f0f0 !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden !important;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--gradient-accent) !important;
 }
 
 .tool-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium) !important;
 }
 
 .tool-logo {
-  font-size: 1.3rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  height: 56px;
+  padding: 0 10px;
+  background: var(--gradient-accent) !important;
+  color: #ffffff !important;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
   margin-bottom: 1rem;
-  color: #ffd700;
 }
 
-.tool-card p {
-  color: rgba(255,255,255,0.9);
-  line-height: 1.6;
+.tool-card p { color: #52575D !important; line-height: 1.6 !important; }
+
+/* Ensure no global color inheritance turns text white */
+.tools-section .tool-card,
+.tools-section .tool-card p,
+.tools-section .tool-card a,
+.tools-section .tool-card span {
+  color: #52575D !important;
 }
 
 /********************
@@ -1486,7 +1537,6 @@ section {
 @media (prefers-reduced-motion: no-preference) {
   .feature-card,
   .research-card,
-  .tool-card,
   .feature-item {
     animation: fadeInUp 0.6s ease-out;
   }
@@ -1552,7 +1602,7 @@ if ('IntersectionObserver' in window) {
   });
 
   // Observe all animatable elements
-  document.querySelectorAll('.feature-card, .research-card, .tool-card, .feature-item').forEach(el => {
+  document.querySelectorAll('.feature-card, .research-card, .feature-item').forEach(el => {
     el.style.animationPlayState = 'paused';
     animateOnScroll.observe(el);
   });

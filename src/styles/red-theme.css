@@ -218,6 +218,22 @@ main > section:not([class*="hero"]):not(.article-hero):not(.article-content) {
   background-color: #f8fafc !important;
 }
 
+/* Ensure Tools sections always use light grey background (not gradients) */
+.tools-section {
+  background-color: #f8fafc !important;
+  background-image: none !important;
+}
+
+/* Make Tools section heading accent white (override global gradient) */
+.tools-section .section-header h2 span,
+.tools-section h2 span {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
 /* Standard section header styles */
 .section-header .section-label,
 .section-header .section-badge,
@@ -256,7 +272,8 @@ main > section:not([class*="hero"]):not(.article-hero):not(.article-content) {
 .benefit-card,
 .pricing-card,
 .article-card,
-.case-study-card {
+.case-study-card,
+.tool-card {
   background: #ffffff !important;
   border: 1px solid rgba(255, 68, 56, 0.08) !important;
   border-radius: 16px !important;
@@ -271,12 +288,37 @@ main > section:not([class*="hero"]):not(.article-hero):not(.article-content) {
 .growth-card::before,
 .benefit-card::before,
 .pricing-card::before,
-.case-study-card::before {
+.case-study-card::before,
+.tool-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
   background: var(--gradient-secondary) !important;
+}
+
+/* Tools section text and logo badge styling */
+.tools-section .section-header h2 {
+  color: #1E2022 !important;
+}
+
+.tool-card p,
+.tool-card a,
+.tool-card span {
+  color: #52575D !important;
+}
+
+.tool-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  height: 56px;
+  padding: 0 10px;
+  background: var(--gradient-secondary) !important;
+  color: #ffffff !important;
+  border-radius: 14px;
+  font-weight: 800;
 }
 
 /* Icon tiles (square/rounded with white icon) */
