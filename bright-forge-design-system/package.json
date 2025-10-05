@@ -1,0 +1,28 @@
+{
+  "name": "@brightforge/design-system",
+  "version": "1.0.0",
+  "description": "Bright Forge reusable component library and design system",
+  "main": "components/index.ts",
+  "types": "components/index.ts",
+  "files": [
+    "components",
+    "layouts",
+    "config"
+  ],
+  "keywords": [
+    "bright-forge",
+    "design-system",
+    "components",
+    "react",
+    "tailwind"
+  ],
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}
