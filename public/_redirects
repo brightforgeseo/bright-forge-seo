@@ -18,6 +18,10 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 /facebook-og-generator  /404.html  410
 /facebook-og-generator/  /404.html  410
 
+# Development Services redirects - old Astro page to new structure
+/astro-seo-website-development  /development/astro/  301
+/astro-seo-website-development/  /development/astro/  301
+
 # SEO Services redirects - place above trailing slash to avoid chains
 /philippines-seo-services  /  301
 /philippines-seo-services/  /  301

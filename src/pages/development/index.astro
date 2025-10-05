@@ -1,0 +1,280 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+---
+
+<MainLayout
+  title="Development Services in the Philippines | Bright Forge SEO"
+  description="Expert web development services in the Philippines. We build blazing-fast, SEO-optimized websites with modern frameworks like Astro, React, Next.js, and more."
+>
+  <LegacyHeader slot="header" />
+
+  <!-- Hero Section -->
+  <section class="hero-astro-development">
+    <div class="hero-bg-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <nav class="hero-breadcrumbs">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Development Services</span>
+      </nav>
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-code"></i>
+            <span>Expert Development Team</span>
+          </div>
+
+          <h1>Development Services <span>in the Philippines</span></h1>
+
+          <p>Build lightning-fast, SEO-optimized websites with modern frameworks. From blazing-fast static sites to dynamic web applications, we deliver solutions that rank and convert.</p>
+
+          <p>At Bright Forge SEO, we don't just build websites—we engineer digital experiences that drive business growth. Our development team specializes in modern frameworks and SEO-first architecture.</p>
+
+          <div class="hero-actions">
+            <a href="/contact/" class="cta-button primary">
+              <i class="fas fa-rocket"></i>
+              <span>Start Your Project</span>
+            </a>
+            <a href="#capabilities" class="cta-button secondary">
+              <i class="fas fa-info-circle"></i>
+              <span>View Our Capabilities</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <div class="astro-icon-grid">
+              <div class="astro-icon">
+                <i class="fab fa-react"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fab fa-node-js"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="astro-icon">
+                <i class="fab fa-wordpress"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Capabilities Section -->
+  <section id="capabilities" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Our Core Development Capabilities</h2>
+        <p class="text-xl text-gray-600">Specialized expertise in modern web technologies</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Frontend Development -->
+        <div class="capability-card bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
+          <div class="text-brand-accent text-4xl mb-4">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Frontend Development</h3>
+          <p class="text-gray-600 mb-4">Build blazing-fast, interactive user interfaces with modern JavaScript frameworks and best practices.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>React & Next.js</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Astro Framework</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>SvelteKit</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>TypeScript</li>
+          </ul>
+        </div>
+
+        <!-- Backend Development -->
+        <div class="capability-card bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
+          <div class="text-brand-accent text-4xl mb-4">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Backend Development</h3>
+          <p class="text-gray-600 mb-4">Scalable, secure server-side solutions with modern APIs and database architecture.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Node.js & Express</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>RESTful APIs</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Database Design</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Authentication</li>
+          </ul>
+        </div>
+
+        <!-- Full-Stack Development -->
+        <div class="capability-card bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
+          <div class="text-brand-accent text-4xl mb-4">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Full-Stack Solutions</h3>
+          <p class="text-gray-600 mb-4">End-to-end development from database to deployment, fully integrated and optimized.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Complete Web Apps</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>E-commerce Platforms</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>SaaS Products</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Custom Dashboards</li>
+          </ul>
+        </div>
+
+        <!-- CMS Integrations -->
+        <div class="capability-card bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
+          <div class="text-brand-accent text-4xl mb-4">
+            <i class="fas fa-puzzle-piece"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">CMS Integrations</h3>
+          <p class="text-gray-600 mb-4">Headless CMS solutions that give you flexibility and control over your content.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Contentful</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>WordPress Headless</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Strapi</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Sanity.io</li>
+          </ul>
+        </div>
+
+        <!-- SEO-Friendly Builds -->
+        <div class="capability-card bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
+          <div class="text-brand-accent text-4xl mb-4">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">SEO-Friendly Builds</h3>
+          <p class="text-gray-600 mb-4">Every website built with search engines in mind. Fast loading, clean code, perfect structure.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Core Web Vitals Optimized</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Semantic HTML</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Schema Markup</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Mobile-First Design</li>
+          </ul>
+        </div>
+
+        <!-- Maintenance & Support -->
+        <div class="capability-card bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
+          <div class="text-brand-accent text-4xl mb-4">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Maintenance & Support</h3>
+          <p class="text-gray-600 mb-4">Ongoing support, updates, and optimization to keep your site running smoothly.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Performance Monitoring</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Security Updates</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Bug Fixes</li>
+            <li><i class="fas fa-check text-brand-accent mr-2"></i>Feature Additions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Framework Specializations -->
+  <section class="py-20 bg-brand-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Our Framework Specializations</h2>
+        <p class="text-xl text-gray-600">Deep expertise in modern web frameworks</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Astro Development -->
+        <a href="/development/astro/" class="framework-card bg-white rounded-lg p-8 border-2 border-gray-200 hover:border-brand-accent hover:shadow-xl transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl text-brand-accent">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">Astro Development</h3>
+              <p class="text-gray-600 mb-3">Lightning-fast static sites with island architecture. Perfect for content-heavy and SEO-focused websites.</p>
+              <span class="text-brand-accent font-semibold">Learn More →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- React Development -->
+        <a href="/development/react/" class="framework-card bg-white rounded-lg p-8 border-2 border-gray-200 hover:border-brand-accent hover:shadow-xl transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl text-brand-accent">
+              <i class="fab fa-react"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">React Development</h3>
+              <p class="text-gray-600 mb-3">Interactive, component-based applications with the world's most popular JavaScript library.</p>
+              <span class="text-brand-accent font-semibold">Learn More →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Next.js Development -->
+        <a href="/development/nextjs/" class="framework-card bg-white rounded-lg p-8 border-2 border-gray-200 hover:border-brand-accent hover:shadow-xl transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl text-brand-accent">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">Next.js Development</h3>
+              <p class="text-gray-600 mb-3">Full-stack React framework with SSR, SSG, and API routes for production-ready applications.</p>
+              <span class="text-brand-accent font-semibold">Learn More →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- SvelteKit Development -->
+        <a href="/development/sveltekit/" class="framework-card bg-white rounded-lg p-8 border-2 border-gray-200 hover:border-brand-accent hover:shadow-xl transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl text-brand-accent">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">SvelteKit Development</h3>
+              <p class="text-gray-600 mb-3">Ultra-fast, compiler-based framework that writes highly optimized vanilla JavaScript.</p>
+              <span class="text-brand-accent font-semibold">Learn More →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- WordPress Headless -->
+        <a href="/development/wordpress/" class="framework-card bg-white rounded-lg p-8 border-2 border-gray-200 hover:border-brand-accent hover:shadow-xl transition-all group md:col-span-2">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl text-brand-accent">
+              <i class="fab fa-wordpress"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">WordPress Headless Development</h3>
+              <p class="text-gray-600 mb-3">Combine WordPress's powerful CMS with modern JavaScript frameworks for the best of both worlds.</p>
+              <span class="text-brand-accent font-semibold">Learn More →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <ContactSection />
+
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+  .capability-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .framework-card:hover {
+    transform: translateY(-4px);
+  }
+</style>
