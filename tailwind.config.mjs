@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-accent': '#FF4438',
-        'brand-accent-light': '#FFE9E8',
+        'brand-accent': '#f97316',
+        'brand-accent-light': '#fed7aa',
         'brand-dark': '#1E2022',
         'brand-soft': '#52575D',
         'brand-bg': '#FFF6F5',
