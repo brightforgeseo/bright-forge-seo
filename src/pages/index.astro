@@ -11,6 +11,7 @@ import PackagesSection from '../components/PackagesSection.astro';
 import RevenueSection from '../components/RevenueSection.astro';
 import TestimonialsMarquee from '../components/TestimonialsMarquee.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
+import TrustRecognition from '../components/TrustRecognition.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
  
 
@@ -97,37 +98,9 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
-  
-  <!-- Client/Partner Logo Carousel Section -->
-  <section class="partners-section py-12 bg-[#f8fafc]">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="section-header text-center mb-10">
-        <span class="section-label">TRUSTED BY</span>
-        <h2 class="section-title">Companies We've <span>Worked With</span></h2>
-        <p class="section-subtitle">See how we've helped businesses achieve remarkable growth through tailored SEO strategies</p>
-      </div>
-      
-      <div class="client-logos-container">
-        <div class="client-logo">
-          <img src="/images/clients/Ai-1.webp" alt="ThermoPest" loading="lazy" width="120" height="50" decoding="async">
-        </div>
-        <div class="client-logo">
-          <img src="/images/clients/EcoSpa1080x700px6-640w.webp" alt="EcoSpa" loading="lazy" width="120" height="50" decoding="async">
-        </div>
-        <div class="client-logo">
-          <img src="/images/clients/Logo-Matthew-Jeffery-1.svg" alt="Matthew Jeffery" loading="lazy" width="120" height="50" decoding="async">
-        </div>
-        <div class="client-logo">
-          <img src="/images/clients/WF_Logo-color .webp" alt="WF Logo" loading="lazy" width="120" height="50" decoding="async">
-        </div>
-        <div class="client-logo">
-          <img src="/images/clients/cropped-apple-touch-icon (1).webp" alt="Apple Touch Icon" loading="lazy" width="120" height="50" decoding="async">
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <AwardsSection />
+  <!-- Trust & Recognition Section -->
+  <TrustRecognition />
 
   <!-- Testimonials Marquee -->
   <TestimonialsMarquee />
@@ -520,9 +493,6 @@ const breadcrumbs = [
 
   <!-- Packages Section -->
   <PackagesSection />
-
-  <!-- What Makes Bright Forge Top SEO Agency Section -->
-  <TopAgencySection />
 
   <!-- Contact Section -->
   <section class="contact-section py-20 bg-[#f8fafc]" style="background-color: #f8fafc !important;">

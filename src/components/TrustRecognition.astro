@@ -1,0 +1,204 @@
+---
+// Props with defaults
+const {
+  trustedBadge = "TRUSTED BY",
+  companiesTitle = "Companies We've",
+  companiesTitleHighlight = "Worked With",
+  companiesDescription = "See how we've helped businesses achieve remarkable growth through tailored SEO strategies",
+  recognitionBadge = "RECOGNITION",
+  awardsTitle = "Awards &",
+  awardsTitleHighlight = "Accolades",
+  awardsDescription = "Industry bodies and leading publications that have acknowledged our commitment to performance, innovation and client success."
+} = Astro.props;
+
+// Client logos from existing section
+const clients = [
+  { name: "ThermoPest", logo: "/images/clients/Ai-1.webp" },
+  { name: "EcoSpa", logo: "/images/clients/EcoSpa1080x700px6-640w.webp" },
+  { name: "Matthew Jeffery", logo: "/images/clients/Logo-Matthew-Jeffery-1.svg" },
+  { name: "WeForest", logo: "/images/clients/WF_Logo-color .webp" },
+  { name: "SO ECO", logo: "/images/clients/cropped-apple-touch-icon (1).webp" }
+];
+
+// Award badges from existing AwardsSection
+const awards = [
+  {
+    title: "Top SEO Company",
+    subtitle: "Clutch Philippines 2025",
+    badge: "/images/awards/top-clutch-seo-company-philippines-2025.png"
+  },
+  {
+    title: "Top SEO Company Manila",
+    subtitle: "Clutch 2025",
+    badge: "/images/awards/top-clutch-seo-company-manila-2025.png"
+  },
+  {
+    title: "Top E-commerce SEO Company",
+    subtitle: "Clutch Philippines",
+    badge: "/images/awards/top-clutch-seo-company-ecommerce-philippines.png"
+  }
+];
+---
+
+<div class="bg-white py-16 px-4" id="trust-recognition-section">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Companies Section -->
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+          {trustedBadge}
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {companiesTitle} <span class="text-orange-500">{companiesTitleHighlight}</span>
+        </h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          {companiesDescription}
+        </p>
+      </div>
+
+      <!-- Logo Carousel - Auto-scrolling -->
+      <div class="relative overflow-hidden py-8">
+        <div class="flex gap-8">
+          <!-- First set -->
+          <div class="flex animate-marquee gap-8 shrink-0">
+            {clients.map((client) => (
+              <div
+                class="client-logo bg-gray-50 rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  class="max-w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
+
+          <!-- Duplicate set for seamless loop -->
+          <div class="flex animate-marquee gap-8 shrink-0" aria-hidden="true">
+            {clients.map((client) => (
+              <div
+                class="client-logo bg-gray-50 rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  class="max-w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards Section -->
+    <div>
+      <div class="text-center mb-12">
+        <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+          {recognitionBadge}
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {awardsTitle} <span class="text-orange-500">{awardsTitleHighlight}</span>
+        </h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          {awardsDescription}
+        </p>
+      </div>
+
+      <!-- Awards Grid -->
+      <div class="flex justify-center items-center gap-8 md:gap-12">
+        {awards.map((award) => (
+          <div class="text-center award-card group cursor-pointer flex-shrink-0">
+            <div
+              class="bg-gray-50 rounded-2xl p-6 mb-4 transition-all duration-300 hover:shadow-xl relative overflow-hidden"
+            >
+              {/* Glow effect background */}
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 blur-xl"></div>
+              </div>
+
+              <img
+                src={award.badge}
+                alt={award.title}
+                class="w-32 h-32 mx-auto relative z-10 group-hover:rotate-6 transition-transform duration-300"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-1 max-w-[180px]">
+              {award.title}
+            </h3>
+            <p class="text-orange-500 font-medium text-sm">
+              {award.subtitle}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Client logo hover effects
+  document.addEventListener('DOMContentLoaded', () => {
+    const clientLogos = document.querySelectorAll('.client-logo');
+
+    clientLogos.forEach(logo => {
+      logo.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+        this.style.backgroundColor = '#fff7ed';
+      });
+
+      logo.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.backgroundColor = '#f9fafb';
+      });
+    });
+
+    // Award cards hover effects
+    const awardCards = document.querySelectorAll('.award-card');
+
+    awardCards.forEach(card => {
+      const cardBg = card.querySelector('.bg-gray-50');
+
+      card.addEventListener('mouseenter', function() {
+        if (cardBg) {
+          cardBg.style.transform = 'translateY(-10px) scale(1.05)';
+          cardBg.style.backgroundColor = '#fff7ed';
+        }
+      });
+
+      card.addEventListener('mouseleave', function() {
+        if (cardBg) {
+          cardBg.style.transform = 'translateY(0) scale(1)';
+          cardBg.style.backgroundColor = '#f9fafb';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .client-logo,
+  .award-card .bg-gray-50 {
+    transition: all 0.3s ease;
+  }
+</style>
