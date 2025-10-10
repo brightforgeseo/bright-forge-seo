@@ -1,78 +1,97 @@
 ---
+// Props with defaults
+const {
+  badge = "OUR METHOD",
+  title = "Step-by-Step",
+  titleHighlight = "Process"
+} = Astro.props;
+
 const steps = [
   {
-    num: '01',
-    icon: 'fas fa-search',
-    title: 'In-Depth Website Audit',
-    desc: `We assess your website's structure, technical health, and content quality to uncover areas of improvement.`
+    number: "01",
+    title: "In-Depth Website Audit",
+    description: "We assess your website's structure, technical health, and content quality to uncover areas of improvement."
   },
   {
-    num: '02',
-    icon: 'fas fa-route',
-    title: 'Custom Strategy Development',
-    desc: `We build a detailed roadmap aligned with your business goals—from improving local visibility to capturing a global audience.`
+    number: "02",
+    title: "Custom Strategy Development",
+    description: "We build a detailed roadmap aligned with your business goals—from improving local visibility to capturing a global audience."
   },
   {
-    num: '03',
-    icon: 'fas fa-rocket',
-    title: 'Execution & Optimization',
-    desc: `We implement SEO enhancements, create targeted content, and build high-quality backlinks to strengthen your online presence.`
+    number: "03",
+    title: "Execution & Optimization",
+    description: "We implement SEO enhancements, create targeted content, and build high-quality backlinks to strengthen your online presence."
   },
   {
-    num: '04',
-    icon: 'fas fa-chart-line',
-    title: 'Continuous Performance Monitoring',
-    desc: `SEO is dynamic, and so are we. We analyze results, refine strategies, and ensure consistent progress over time.`
+    number: "04",
+    title: "Continuous Performance Monitoring",
+    description: "SEO is dynamic, and so are we. We analyze results, refine strategies, and ensure consistent progress over time."
   }
 ];
 ---
 
-<section class="process-new-section py-20 bg-[#f8fafc]">
-  <div class="container max-w-7xl mx-auto px-4">
+<div class="bg-gray-50 py-16 px-4">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
     <div class="text-center mb-12">
-      <span class="text-sm font-semibold tracking-widest text-brand-accent uppercase">Our Method</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark">Step-by-Step <span class="text-brand-accent">Process</span></h2>
+      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+        {badge}
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+        {title} <span class="text-orange-500">{titleHighlight}</span>
+      </h2>
     </div>
 
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-      {steps.map(s => (
-        <div class="step-card bg-[#f8fafc] rounded-2xl shadow-md p-8 relative group hover:shadow-lg transition-shadow duration-300">
-          <!-- Number badge -->
-          <div class="badge absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-brand-accent text-white flex items-center justify-center text-base font-bold shadow-lg">
-            {s.num}
+    <!-- Process Steps - 2 Column Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {steps.map((step) => (
+        <div
+          class="bg-white rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group hover:bg-orange-50"
+        >
+          <!-- Orange top border -->
+          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400 -mx-10 -mt-10 mb-6 rounded-t-lg"></div>
+
+          <!-- Step number circle -->
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:bg-orange-600 transition-colors">
+              {step.number}
+            </div>
           </div>
 
-          <!-- Icon -->
-          <div class="text-brand-accent text-3xl mb-4 text-center">
-            <i class={s.icon}></i>
+          <!-- Icon and Title -->
+          <div class="mb-4">
+            <h3 class="text-xl font-bold text-gray-900">
+              {step.title}
+            </h3>
           </div>
-
-          <!-- Title -->
-          <h3 class="text-lg font-semibold text-brand-dark text-center mb-2 leading-snug">
-            {s.title}
-          </h3>
 
           <!-- Description -->
-          <p class="text-sm text-text-primary text-center leading-relaxed">
-            {s.desc}
+          <p class="text-gray-700 leading-relaxed text-base">
+            {step.description}
           </p>
         </div>
       ))}
     </div>
+
   </div>
-</section>
+</div>
 
-<style is:global>
-  /* Hide legacy process section */
-  .process-section { display:none !important; }
-</style>
+<script>
+  // Add hover effects with JavaScript
+  document.addEventListener('DOMContentLoaded', () => {
+    const processCards = document.querySelectorAll('.group');
 
-<style>
-  .process-new-section {
-    background:#f8fafc;
-  }
-  /* Force light theme consistently across browsers */
-  .step-card { background:#f8fafc; }
-  .step-card h3 { color:#1E2022; }
-  .step-card p { color:#52575D; }
-</style>
+    processCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#fff7ed';
+        this.style.transform = 'scale(1.02)';
+      });
+
+      card.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'white';
+        this.style.transform = 'scale(1)';
+      });
+    });
+  });
+</script>
