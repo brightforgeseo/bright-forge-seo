@@ -1,0 +1,267 @@
+---
+// Props with defaults
+const {
+  badge = "WHY CHOOSE US",
+  title = "What Makes Us One Of The",
+  titleHighlight = "Top SEO Agencies",
+  titleEnd = "In The Philippines",
+  description = "Our proven track record, innovative strategies, and commitment to excellence set us apart as a leading Philippines SEO agency brands rely on for measurable results."
+} = Astro.props;
+
+const features = [
+  {
+    title: "15+ Years of Proven Expertise",
+    description: "With over 15 years in the SEO industry, we've helped hundreds of businesses achieve sustainable growth through data-driven strategies and cutting-edge techniques."
+  },
+  {
+    title: "Measurable Results & ROI",
+    description: "We don't just promise results – we deliver them. Our clients see an average of 156% increase in organic traffic and significant improvements in search rankings."
+  },
+  {
+    title: "Dedicated Philippine-Based Team",
+    description: "Our expert team understands the local market dynamics and cultural nuances, ensuring your SEO strategy resonates with Filipino and worldwide consumers."
+  }
+];
+
+const stats = [
+  { number: 1000, label: "Websites Ranked", suffix: "+" },
+  { number: 15, label: "Years Experience", suffix: "+" },
+  { number: 150, label: "Avg Traffic Increase", suffix: "%" },
+  { number: 98, label: "Client Satisfaction", suffix: "%" }
+];
+
+const bottomFeatures = [
+  {
+    title: "AI-Powered SEO",
+    description: "We leverage cutting-edge AI tools and machine learning algorithms to stay ahead of search engine updates and deliver superior results."
+  },
+  {
+    title: "White-Hat Practices",
+    description: "We strictly follow Google's guidelines and use only ethical, sustainable SEO practices that protect your website from penalties."
+  },
+  {
+    title: "24/7 Support",
+    description: "Our dedicated support team is available round-the-clock to address your concerns and keep your SEO campaigns running smoothly."
+  }
+];
+
+// Actual client testimonial from Bright Forge SEO
+const testimonial = {
+  quote: "We've worked on a number of projects together and we cannot recommend Bright Forge SEO Agency highly enough. Very professional, reliable and get results. A great partner business for us to work with.",
+  author: "Invoke Media",
+  source: "Facebook Review • 27 January"
+};
+---
+
+<div class="bg-gray-50 py-16 px-4" id="why-choose-us-section">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+        {badge}
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        {title} <span class="text-orange-500">{titleHighlight}</span> {titleEnd}
+      </h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        {description}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+
+      <!-- Left Side - Features -->
+      <div class="space-y-6">
+        {features.map((feature) => (
+          <div
+            class="feature-card bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
+          >
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-500 icon-box transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right Side - Stats Card -->
+      <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-white shadow-xl">
+        <h3 class="text-2xl font-bold mb-8">Our Track Record Speaks</h3>
+
+        <div class="grid grid-cols-2 gap-6 mb-8">
+          {stats.map((stat, index) => (
+            <div class="text-center">
+              <div class="text-4xl md:text-5xl font-bold mb-2 counter" data-target={stat.number} data-suffix={stat.suffix}>
+                0{stat.suffix}
+              </div>
+              <div class="text-orange-100 text-sm">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="border-t border-orange-400 pt-6 mt-6">
+          <h4 class="font-semibold mb-3 flex items-center gap-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            What Our Clients Say
+          </h4>
+          <p class="text-orange-50 italic leading-relaxed mb-4">
+            "{testimonial.quote}"
+          </p>
+          <p class="text-orange-200 text-sm">
+            - {testimonial.author}, {testimonial.source}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Features - 3 Columns -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      {bottomFeatures.map((feature) => (
+        <div
+          class="bottom-feature-card bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
+        >
+          <div class="w-16 h-16 bg-orange-500 rounded-xl flex items-center justify-center text-white mx-auto mb-4 bottom-icon transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            {feature.title}
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Animated Counter Script
+  function animateCounters() {
+    const section = document.getElementById('why-choose-us-section');
+    const counters = document.querySelectorAll('.counter');
+    let animated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+
+          counters.forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            const suffix = counter.dataset.suffix;
+            const duration = 2000;
+            const steps = 60;
+            const increment = target / steps;
+            let current = 0;
+            let step = 0;
+
+            const timer = setInterval(() => {
+              step++;
+              current += increment;
+
+              if (step >= steps) {
+                current = target;
+                clearInterval(timer);
+              }
+
+              // Format number with commas if it's 1000+
+              const displayValue = current >= 1000
+                ? Math.floor(current).toLocaleString()
+                : Math.floor(current);
+
+              counter.textContent = displayValue + suffix;
+            }, duration / steps);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (section) {
+      observer.observe(section);
+    }
+  }
+
+  // Hover effects for feature cards
+  document.addEventListener('DOMContentLoaded', () => {
+    animateCounters();
+
+    // Feature cards hover
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(8px)';
+        this.style.backgroundColor = '#fff7ed';
+        const icon = this.querySelector('.icon-box');
+        if (icon) {
+          icon.style.backgroundColor = '#f97316';
+          icon.style.color = 'white';
+        }
+      });
+
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+        this.style.backgroundColor = 'white';
+        const icon = this.querySelector('.icon-box');
+        if (icon) {
+          icon.style.backgroundColor = '#fed7aa';
+          icon.style.color = '#f97316';
+        }
+      });
+    });
+
+    // Bottom feature cards hover
+    const bottomCards = document.querySelectorAll('.bottom-feature-card');
+    bottomCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px)';
+        this.style.backgroundColor = '#fff7ed';
+        const icon = this.querySelector('.bottom-icon');
+        if (icon) {
+          icon.style.backgroundColor = '#ea580c';
+        }
+      });
+
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.backgroundColor = 'white';
+        const icon = this.querySelector('.bottom-icon');
+        if (icon) {
+          icon.style.backgroundColor = '#f97316';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .feature-card,
+  .bottom-feature-card {
+    transition: all 0.3s ease;
+  }
+
+  .icon-box,
+  .bottom-icon {
+    transition: all 0.3s ease;
+  }
+</style>
