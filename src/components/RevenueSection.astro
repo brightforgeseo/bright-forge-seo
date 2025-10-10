@@ -1,0 +1,134 @@
+---
+// Props with defaults
+const {
+  badge = "",
+  title = "REVENUE BOOSTING SEO",
+  subtitle = "Generate More Leads",
+  description = "More traffic is a win, but the right traffic truly drives your bottom line. Our SEO focus zeros in on prospects actively seeking the products or services you provide, laying the groundwork for meaningful conversions."
+} = Astro.props;
+
+const features = [
+  {
+    title: "E-Commerce & Lead-Generation SEO",
+    description: "Whether you run an online store or a service-based business, we tailor our optimization strategies to meet your revenue goals. By focusing on the most profitable search terms, we ensure that every visitor has a higher likelihood of becoming a sale or a valued lead."
+  },
+  {
+    title: "Local SEO",
+    description: "Our team tracks metrics that matter—like conversion rates, cost per acquisition, and average order value—to give you clear insights into how SEO directly impacts your bottom line."
+  },
+  {
+    title: "Data-Driven Optimizations",
+    description: "We use in-depth analytics to understand user behavior on your site. From spotting top-performing pages to identifying where visitors drop off, our continuous data monitoring allows us to fine-tune your content and funnels for maximum returns."
+  },
+  {
+    title: "Ongoing Refinement",
+    description: "Your market, audience, and industry evolve over time. We stay proactive by regularly revisiting and refining your SEO strategies so that your revenue growth never stalls."
+  }
+];
+---
+
+<div class="bg-white py-16 px-4">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Decorative dots -->
+    <div class="flex gap-2 mb-8">
+      <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+      <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+      <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
+    </div>
+
+    <!-- Main heading -->
+    <div class="mb-8">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+        {title}
+      </h2>
+      <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        {subtitle}
+      </h3>
+    </div>
+
+    <!-- Description -->
+    <p class="text-lg text-gray-700 leading-relaxed mb-12 max-w-4xl">
+      {description}
+    </p>
+
+    <!-- Chart Section - centered below title -->
+    <div class="flex justify-center mb-16">
+      <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 max-w-md w-full">
+        <div class="flex items-center justify-center mb-6">
+          <div class="relative w-64 h-64">
+            <!-- Circular progress chart -->
+            <svg class="transform -rotate-90 w-64 h-64">
+              <!-- Background circle -->
+              <circle
+                cx="128"
+                cy="128"
+                r="110"
+                stroke="#e5e7eb"
+                stroke-width="16"
+                fill="none"
+              />
+              <!-- Progress circle (65% = 245 degrees) -->
+              <circle
+                cx="128"
+                cy="128"
+                r="110"
+                stroke="#f97316"
+                stroke-width="16"
+                fill="none"
+                stroke-dasharray="691.15"
+                stroke-dashoffset="241.4"
+                stroke-linecap="round"
+              />
+            </svg>
+            <!-- Center text -->
+            <div class="absolute inset-0 flex items-center justify-center flex-col">
+              <span class="text-5xl font-bold text-gray-900">65%</span>
+              <span class="text-gray-600 mt-2">Revenue Growth</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-gray-600">
+          <p class="font-semibold text-lg">SEO Performance</p>
+          <p class="text-sm">Year over Year</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature list with left border and hover effects -->
+    <div class="space-y-4 max-w-4xl">
+      {features.map((feature) => (
+        <div
+          class="border-l-4 border-orange-500 pl-6 p-6 bg-white transition-all duration-300 hover:bg-orange-100 hover:border-orange-600 hover:shadow-xl hover:scale-105 cursor-pointer rounded-lg"
+        >
+          <h4 class="text-xl font-bold text-gray-900 mb-3">
+            {feature.title}
+          </h4>
+          <p class="text-gray-700 leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Add hover effects with JavaScript for better browser support
+  document.addEventListener('DOMContentLoaded', () => {
+    const featureCards = document.querySelectorAll('.border-l-4.border-orange-500');
+
+    featureCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#fed7aa';
+        this.style.transform = 'scale(1.02)';
+      });
+
+      card.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'white';
+        this.style.transform = 'scale(1)';
+      });
+    });
+  });
+</script>

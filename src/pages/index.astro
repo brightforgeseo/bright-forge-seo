@@ -8,6 +8,7 @@ import ProcessSection from '../components/ProcessSection.astro';
 import PartnersSection from '../components/PartnersSection.astro';
 import TopAgencySection from '../components/TopAgencySection.astro';
 import PackagesSection from '../components/PackagesSection.astro';
+import RevenueSection from '../components/RevenueSection.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
  
 
@@ -416,49 +417,7 @@ const breadcrumbs = [
   </section>
 
   <!-- Revenue Boosting SEO Section -->
-  <section class="revenue-section py-16 bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <span class="section-label">REVENUE BOOSTING SEO</span>
-        <h2 class="section-title">Generate More <span>Leads</span></h2>
-        <p class="section-subtitle">More traffic is a win, but the right traffic truly drives your bottom line. Our SEO focus zeros in on prospects actively seeking the products or services you provide, laying the groundwork for meaningful conversions.</p>
-      </div>
-      
-      <div class="revenue-grid grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        <div class="revenue-card bg-white p-8 rounded-lg shadow-md">
-          <div class="card-icon mb-5 text-brand-accent">
-            <i class="fas fa-shopping-cart text-4xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">E-Commerce & Lead-Generation SEO</h3>
-          <p class="text-gray-700">Whether you run an online store or a service-based business, we tailor our optimization strategies to meet your revenue goals. By focusing on the most profitable search terms, we ensure that every visitor has a higher likelihood of becoming a sale or a valued lead.</p>
-        </div>
-        
-        <div class="revenue-card bg-white p-8 rounded-lg shadow-md">
-          <div class="card-icon mb-5 text-brand-accent">
-            <i class="fas fa-map-marker-alt text-4xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Local SEO</h3>
-          <p class="text-gray-700">Our team tracks metrics that matter—like conversion rates, cost per acquisition, and average order value—to give you clear insights into how SEO directly impacts your bottom line.</p>
-        </div>
-        
-        <div class="revenue-card bg-white p-8 rounded-lg shadow-md">
-          <div class="card-icon mb-5 text-brand-accent">
-            <i class="fas fa-chart-bar text-4xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Data-Driven Optimizations</h3>
-          <p class="text-gray-700">We use in-depth analytics to understand user behavior on your site. From spotting top-performing pages to identifying where visitors drop off, our continuous data monitoring allows us to fine-tune your content and funnels for maximum returns.</p>
-        </div>
-        
-        <div class="revenue-card bg-white p-8 rounded-lg shadow-md">
-          <div class="card-icon mb-5 text-brand-accent">
-            <i class="fas fa-sync-alt text-4xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Ongoing Refinement</h3>
-          <p class="text-gray-700">Your market, audience, and industry evolve over time. We stay proactive by regularly revisiting and refining your SEO strategies so that your revenue growth never stalls.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <RevenueSection />
 
   <!-- Case Studies Section -->
   <section class="case-studies-section bg-[#f8fafc]" style="background-color: #f8fafc !important;">
