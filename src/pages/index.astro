@@ -133,74 +133,275 @@ const breadcrumbs = [
 
 
   <!-- Services Section -->
-  <section class="services-section bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-    <div class="container max-w-7xl mx-auto">
-      <div class="section-header">
-        <span class="section-label">OUR SERVICES</span>
-        <h2 class="section-title">SEO Services: <span>Transforming Your Online Presence</span></h2>
-        <p class="section-subtitle">From technical audits to content strategy, we cover every aspect of search engine optimization to drive meaningful results for your business.</p>
+  <section class="seo-services-section bg-gray-50 py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left Side - Image/Card -->
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-8 shadow-lg max-w-lg mx-auto">
+            <div class="bg-gray-200 rounded-2xl h-80 mb-6 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-200"></div>
+              <span class="text-gray-400 text-sm relative z-10">Image Placeholder</span>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="font-bold text-lg">SEO Services</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - Content -->
+        <div class="space-y-6">
+          <div>
+            <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide">
+              OUR SERVICES
+            </span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            SEO Services: <span class="text-orange-500">Transforming Your Online Presence</span>
+          </h1>
+
+          <p class="text-lg text-gray-700 leading-relaxed">
+            From technical audits to content strategy, we cover every aspect of search engine optimization to drive meaningful results for your business.
+          </p>
+
+          <div class="space-y-3 pt-4">
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-gray-900 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <p class="text-gray-900 font-medium">Plan smarter with real-time data.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-gray-900 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <p class="text-gray-900 font-medium">Reach your goals faster with detailed tracking.</p>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded-full font-medium hover:bg-orange-600 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Learn More
+            </a>
+          </div>
+        </div>
+
       </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-search"></i>
+
+      <!-- Services Grid - 6 cards in 2 columns -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16">
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400"></div>
+
+          <div class="p-8">
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+                alt="SEO Audits & Strategic Planning"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              SEO Audits & Strategic Planning
+            </h3>
+
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              We start by reviewing your site in detail. Technical setup, content quality, and backlinks all get checked. The aim is simple: show you what's working, what isn't, and where improvements will have the biggest impact.
+            </p>
+
+            <a
+              href="/seo-audit-services"
+              class="inline-flex items-center font-medium transition-colors"
+              style="color: #f97316;"
+            >
+              Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-          <h3>SEO Audits & Strategic Planning</h3>
-          <p>We start by reviewing your site in detail. Technical setup, content quality, and backlinks all get checked. The aim is simple: show you what's working, what isn't, and where improvements will have the biggest impact.</p>
-          <a href="/seo-audit-services" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-key"></i>
+
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400"></div>
+
+          <div class="p-8">
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
+                alt="Keyword Research"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Keyword Research
+            </h3>
+
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              It's not just about ranking for keywords, it's about ranking for the right ones. We dig into how your audience searches, spot the gaps your competitors overlook, and build a keyword strategy designed to deliver customers, not just clicks.
+            </p>
+
+            <a
+              href="/keyword-research-services"
+              class="inline-flex items-center font-medium transition-colors"
+              style="color: #f97316;"
+            >
+              Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-          <h3>Keyword Research</h3>
-          <p>It's not just about ranking for keywords, it's about ranking for the right ones. We dig into how your audience searches, spot the gaps your competitors overlook, and build a keyword strategy designed to deliver customers, not just clicks.</p>
-          <a href="/keyword-research-services" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-file-alt"></i>
+
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400"></div>
+
+          <div class="p-8">
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=400&h=300&fit=crop"
+                alt="On-Page SEO"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              On-Page SEO
+            </h3>
+
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              Small changes can make a big difference. Optimised titles, stronger internal links, improved content flow — these tweaks tell search engines exactly what your page is about, while keeping it natural for readers.
+            </p>
+
+            <a
+              href="/on-page-seo-services-philippines"
+              class="inline-flex items-center font-medium transition-colors"
+              style="color: #f97316;"
+            >
+              Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-          <h3>On-Page SEO</h3>
-          <p>Small changes can make a big difference. Optimised titles, stronger internal links, improved content flow — these tweaks tell search engines exactly what your page is about, while keeping it natural for readers.</p>
-          <a href="/on-page-seo-services-philippines" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cogs"></i>
+
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400"></div>
+
+          <div class="p-8">
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop"
+                alt="Technical SEO"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Technical SEO
+            </h3>
+
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              Technical SEO isn't glamorous, but it matters. We'll sort out crawl errors, improve loading times, and keep your site running properly on phones and tablets as well as desktops.
+            </p>
+
+            <a
+              href="/technical-seo-services-philippines"
+              class="inline-flex items-center font-medium transition-colors"
+              style="color: #f97316;"
+            >
+              Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-          <h3>Technical SEO</h3>
-          <p>Technical SEO isn't glamorous, but it matters. We'll sort out crawl errors, improve loading times, and keep your site running properly on phones and tablets as well as desktops.</p>
-          <a href="/technical-seo-services-philippines" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-link"></i>
+
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400"></div>
+
+          <div class="p-8">
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=300&fit=crop"
+                alt="Link Building"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Link Building
+            </h3>
+
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              Backlinks can help, but only if they're from the right sources. We'll target publications and websites that your audience actually pays attention to, rather than chasing numbers.
+            </p>
+
+            <a
+              href="/backlink-seo-services-philippines"
+              class="inline-flex items-center font-medium transition-colors"
+              style="color: #f97316;"
+            >
+              Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-          <h3>Link Building</h3>
-          <p>Backlinks can help, but only if they're from the right sources. We'll target publications and websites that your audience actually pays attention to, rather than chasing numbers.</p>
-          <a href="/backlink-seo-services-philippines" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-edit"></i>
+
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400"></div>
+
+          <div class="p-8">
+            <div class="w-full h-48 mb-6 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop"
+                alt="Content That Works"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Content That Works
+            </h3>
+
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              Getting people to your site is only half the job. We create content that explains what you do clearly, answers common questions, and encourages visitors to take the next step — whether that's making an enquiry, booking a call, or buying a product.
+            </p>
+
+            <a
+              href="/content-seo-services-philippines"
+              class="inline-flex items-center font-medium transition-colors"
+              style="color: #f97316;"
+            >
+              Learn More
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
-          <h3>Content That Works</h3>
-          <p>Getting people to your site is only half the job. We create content that explains what you do clearly, answers common questions, and encourages visitors to take the next step — whether that's making an enquiry, booking a call, or buying a product.</p>
-          <a href="/content-seo-services-philippines" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
-      </div>
-      
-      <div class="services-cta">
-        <h3>Not sure which service you need?</h3>
-        <p>Schedule a free consultation with our SEO experts to discuss your specific goals and challenges.</p>
-        <a href="/contact" class="cta-button">Book Your Consultation</a>
       </div>
     </div>
   </section>
