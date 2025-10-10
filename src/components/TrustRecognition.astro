@@ -40,7 +40,7 @@ const awards = [
 ];
 ---
 
-<div class="bg-white py-16 px-4" id="trust-recognition-section">
+<div class="bg-[#f8fafc] py-16 px-4" id="trust-recognition-section">
   <div class="max-w-7xl mx-auto">
 
     <!-- Companies Section -->
@@ -64,7 +64,7 @@ const awards = [
           <div class="flex animate-marquee gap-8 shrink-0">
             {clients.map((client) => (
               <div
-                class="client-logo bg-gray-50 rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
+                class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
               >
                 <img
                   src={client.logo}
@@ -79,7 +79,7 @@ const awards = [
           <div class="flex animate-marquee gap-8 shrink-0" aria-hidden="true">
             {clients.map((client) => (
               <div
-                class="client-logo bg-gray-50 rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
+                class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
               >
                 <img
                   src={client.logo}
@@ -112,7 +112,7 @@ const awards = [
         {awards.map((award) => (
           <div class="text-center award-card group cursor-pointer flex-shrink-0">
             <div
-              class="bg-gray-50 rounded-2xl p-6 mb-4 transition-all duration-300 hover:shadow-xl relative overflow-hidden"
+              class="bg-white rounded-2xl p-6 mb-4 transition-all duration-300 hover:shadow-xl relative overflow-hidden"
             >
               {/* Glow effect background */}
               <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
@@ -152,7 +152,7 @@ const awards = [
 
       logo.addEventListener('mouseleave', function() {
         this.style.transform = 'scale(1)';
-        this.style.backgroundColor = '#f9fafb';
+        this.style.backgroundColor = 'white';
       });
     });
 
@@ -160,7 +160,7 @@ const awards = [
     const awardCards = document.querySelectorAll('.award-card');
 
     awardCards.forEach(card => {
-      const cardBg = card.querySelector('.bg-gray-50');
+      const cardBg = card.querySelector('.bg-white');
 
       card.addEventListener('mouseenter', function() {
         if (cardBg) {
@@ -172,7 +172,7 @@ const awards = [
       card.addEventListener('mouseleave', function() {
         if (cardBg) {
           cardBg.style.transform = 'translateY(0) scale(1)';
-          cardBg.style.backgroundColor = '#f9fafb';
+          cardBg.style.backgroundColor = 'white';
         }
       });
     });
@@ -198,7 +198,7 @@ const awards = [
   }
 
   .client-logo,
-  .award-card .bg-gray-50 {
+  .award-card .bg-white {
     transition: all 0.3s ease;
   }
 </style>
