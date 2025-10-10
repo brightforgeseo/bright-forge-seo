@@ -10,42 +10,42 @@ const testimonials = [
     quote: "Solid experience. My organic traffic went from 1,000 to 64,000 and been growing more. Definitely a must service for all business owners who wants to rock the organic search!",
     name: "RJ GO",
     role: "Business Owner",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
+    initial: "R",
     reviewLink: "https://www.google.com/maps/contrib/110455532132624140129/reviews?hl=en"
   },
   {
     quote: "We've worked on a number of projects together and we cannot recommend Bright Forge SEO Agency highly enough. Very professional, reliable and get results. A great partner business for us to work with.",
     name: "Invoke Media",
     role: "Digital Agency Partner",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop",
+    initial: "I",
     reviewLink: "https://www.facebook.com/"
   },
   {
     quote: "Partnering with them has truly been a game-changer for our business. Their team of experts goes above and beyond in delivering exceptional results.",
     name: "Carhein Grace Saquilabon",
     role: "Business Partner",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    initial: "C",
     reviewLink: "https://www.google.com/maps/contrib/103554497002686626547/reviews/@14.7041129,121.0444777,17z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D"
   },
   {
     quote: "I found their ability to deliver what they promised most impressive.",
     name: "Jack Barron",
     role: "Invoke Media",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+    initial: "J",
     reviewLink: "https://clutch.co/profile/bright-forge-seo"
   },
   {
     quote: "Bright Forge provide the results quickly and are always prepared to go the extra mile. Friendly, straightforward and waffle-free SEO services.",
     name: "UK Auction List",
     role: "Property Auctions Platform",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop",
+    initial: "U",
     reviewLink: "https://www.facebook.com/"
   },
   {
     quote: "Working with Bright Forge SEO Agency felt like a true partnership; they genuinely invested in our success and ultimately delivered outstanding results.",
     name: "Marie Angela Benida",
     role: "Marketing Professional",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
+    initial: "M",
     reviewLink: "https://www.google.com/maps/contrib/113067213630516295340/reviews/@14.7041129,121.0444777,17z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D"
   }
 ];
@@ -81,11 +81,9 @@ const testimonials = [
 
             <div class="flex items-center gap-3">
               <div class="shrink-0">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  class="rounded-full w-12 h-12 object-cover bg-slate-100"
-                />
+                <div class="rounded-full w-12 h-12 flex items-center justify-center bg-gradient-to-br from-orange-500 to-purple-600 text-white font-semibold text-lg">
+                  {testimonial.initial}
+                </div>
               </div>
               <div>
                 <h3 class="font-medium text-slate-800">{testimonial.name}</h3>
@@ -111,11 +109,9 @@ const testimonials = [
 
             <div class="flex items-center gap-3">
               <div class="shrink-0">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  class="rounded-full w-12 h-12 object-cover bg-slate-100"
-                />
+                <div class="rounded-full w-12 h-12 flex items-center justify-center bg-gradient-to-br from-orange-500 to-purple-600 text-white font-semibold text-lg">
+                  {testimonial.initial}
+                </div>
               </div>
               <div>
                 <h3 class="font-medium text-slate-800">{testimonial.name}</h3>
