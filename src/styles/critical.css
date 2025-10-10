@@ -2,12 +2,12 @@
 /* This file contains above-the-fold styles to eliminate render-blocking CSS */
 
 :root {
-  --brand-bg: #FF4438;
-  --brand-accent: #FF4438;
+  --brand-bg: #f97316;
+  --brand-accent: #f97316;
   --brand-dark: #1a1a1a;
   --brand-light: #f8f9fa;
-  --gradient-primary: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
-  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #FF4438 100%);
+  --gradient-primary: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #f97316 100%);
 }
 
 /* Reset and base styles */

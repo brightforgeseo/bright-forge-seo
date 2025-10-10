@@ -545,14 +545,14 @@ import ContactSection from '../../components/ContactSection.astro';
   CSS Variables & Reset
 *********************/
 :root {
-  --brand-accent: #FF4438;
+  --brand-accent: #f97316;
   --brand-blue: #4285F4; /* legacy var (unused after red theme) */
   --brand-dark: #1E2022;
   --brand-soft: #52575D;
   --brand-light: #F8F9FA;
-  --gradient-primary: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
-  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #FF4438 100%);
-  --gradient-accent: linear-gradient(135deg, #FF4438 0%, #FF6B35 100%);
+  --gradient-primary: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #f97316 100%);
+  --gradient-accent: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
@@ -658,7 +658,7 @@ section {
   Enhanced Hero Section
 *********************/
 .hero-astro-development {
-  background: linear-gradient(135deg, #FF4438 0%, #FF6B35 30%, #FF6B35 100%);
+  background: linear-gradient(135deg, #f97316 0%, #FF6B35 30%, #FF6B35 100%);
   min-height: 100vh;
   padding: 2rem 0;
   position: relative;
@@ -671,10 +671,10 @@ section {
 
 @keyframes gradientShift {
   0%, 100% {
-    background: linear-gradient(135deg, #FF4438 0%, #FF6B35 30%, #FF6B35 100%);
+    background: linear-gradient(135deg, #f97316 0%, #FF6B35 30%, #FF6B35 100%);
   }
   50% {
-    background: linear-gradient(135deg, #FF6B35 0%, #FF4438 30%, #FF6B35 100%);
+    background: linear-gradient(135deg, #FF6B35 0%, #f97316 30%, #FF6B35 100%);
   }
 }
 
@@ -855,7 +855,7 @@ section {
 
 .cta-button.primary {
   background: white;
-  color: #FF4438;
+  color: #f97316;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -1103,7 +1103,7 @@ section {
 }
 
 .feature-icon.clean {
-  background: linear-gradient(135deg, #FF4438, #FF6B35);
+  background: linear-gradient(135deg, #f97316, #FF6B35);
 }
 
 .feature-icon.chart {
@@ -1235,7 +1235,7 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #FF6B35, #FF4438);
+  background: linear-gradient(135deg, #FF6B35, #f97316);
   border-radius: 16px 16px 0 0;
 }
 
@@ -1252,7 +1252,7 @@ section {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background: linear-gradient(135deg, #FF4438, #FF6B35);
+  background: linear-gradient(135deg, #f97316, #FF6B35);
   box-shadow: 0 8px 24px rgba(255,68,56,.25);
 }
 
@@ -1291,7 +1291,7 @@ section {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, #FF4438, #FF6B35);
+  background: linear-gradient(to bottom, #f97316, #FF6B35);
   transform: translateX(-50%);
   z-index: 1;
 }

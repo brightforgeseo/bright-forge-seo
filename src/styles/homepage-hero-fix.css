@@ -1,0 +1,141 @@
+/* Homepage Hero Layout Fix - Match Content SEO Page Style */
+.hero-homepage {
+  background: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
+  color: white;
+  padding: 80px 0;
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Remove floating circles */
+.hero-homepage .hero-bg-elements {
+  display: none;
+}
+
+.hero-homepage .hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-homepage .hero-content {
+  text-align: left;
+  max-width: 600px;
+  width: 100%;
+  padding-right: 2rem;
+}
+
+.hero-homepage .hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-homepage .hero-image-container {
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px;
+}
+
+/* Content Icon Grid */
+.hero-homepage .content-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hero-homepage .content-icon {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hero-homepage .content-icon:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-homepage {
+    padding: 60px 0;
+    min-height: auto;
+  }
+  
+  .hero-homepage .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-homepage .hero-content {
+    text-align: center;
+    max-width: 100%;
+    padding-right: 0;
+  }
+  
+  .hero-homepage .hero-visual {
+    display: none;
+  }
+  
+  .hero-homepage .content-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .hero-homepage .content-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero-homepage .hero-container {
+    gap: 3rem;
+  }
+  
+  .hero-homepage .hero-content {
+    padding-right: 1rem;
+  }
+  
+  .hero-homepage .content-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .hero-homepage .content-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+}

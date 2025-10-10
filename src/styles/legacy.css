@@ -1,5 +1,5 @@
 :root {
-  --brand-accent: #FF4438;
+  --brand-accent: #f97316;
   --brand-accent-light: #FFE9E8;
   --brand-dark: #1E2022;
   --brand-soft: #52575D;
@@ -52,7 +52,7 @@ body {
 }
 
 .contact-link:hover {
-  color: #FF4438;
+  color: #f97316;
 }
 
 .contact-link i {
@@ -80,7 +80,7 @@ body {
 }
 
 .social-link:hover {
-  background: #FF4438;
+  background: #f97316;
   color: white;
   transform: translateY(-2px);
 }
