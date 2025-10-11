@@ -1,0 +1,319 @@
+---
+interface Props {
+  badgeIcon?: string;
+  badgeText?: string;
+  title: string;
+  breadcrumbCurrent?: string;
+}
+
+const {
+  badgeIcon = "fas fa-star",
+  badgeText = "Professional Service",
+  title,
+  breadcrumbCurrent = "Home"
+} = Astro.props;
+---
+
+<section class="hero-standard">
+  <!-- Animated Background Elements -->
+  <div class="hero-bg-elements">
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+    <div class="floating-circle circle-3"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Breadcrumbs -->
+    <nav class="hero-breadcrumbs">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-current">{breadcrumbCurrent}</span>
+    </nav>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <!-- Hero Badge -->
+        <div class="hero-badge">
+          <i class={badgeIcon}></i>
+          <span>{badgeText}</span>
+        </div>
+
+        <!-- Hero Title -->
+        <h1 set:html={title} />
+
+        <!-- Hero Story (Slot for custom content) -->
+        <div class="hero-story">
+          <slot name="story" />
+        </div>
+
+        <!-- Hero Actions (Slot for buttons) -->
+        <div class="hero-actions">
+          <slot name="actions" />
+        </div>
+
+        <!-- Optional Stats (Slot) -->
+        <div class="hero-stats-wrapper">
+          <slot name="stats" />
+        </div>
+      </div>
+
+      <!-- Hero Visual (Slot for images or custom visual elements) -->
+      <div class="hero-visual">
+        <slot name="visual" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /********************
+    Hero Section
+  *********************/
+  .hero-standard {
+    position: relative;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+    padding: 3rem 0 3rem;
+    color: white;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Background Elements */
+  .hero-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -150px;
+    animation-delay: 0s;
+  }
+
+  .circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 2s;
+  }
+
+  .circle-3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    animation-delay: 4s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  /* Breadcrumbs */
+  .hero-breadcrumbs {
+    display: inline-block;
+    margin-bottom: 3.5rem;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .breadcrumb-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: white;
+  }
+
+  .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0.5rem;
+  }
+
+  .breadcrumb-current {
+    color: white;
+    font-weight: 500;
+  }
+
+  /* Hero Container */
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Hero Content */
+  .hero-content {
+    max-width: 680px;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-content h1 :global(span) {
+    background: linear-gradient(45deg, #ffffff, #f0f9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hero Badge */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .hero-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .hero-badge i {
+    color: #FFEB3B;
+  }
+
+  /* Hero Story */
+  .hero-story {
+    margin-bottom: 3rem;
+  }
+
+  .hero-story :global(p) {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Hero Actions */
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  /* Hero Stats Wrapper */
+  .hero-stats-wrapper {
+    margin-top: 2rem;
+  }
+
+  /* Hero Visual */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-standard {
+      min-height: auto;
+      padding: 4rem 0;
+    }
+
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+
+    .floating-circle {
+      opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .hero-story :global(p) {
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>
