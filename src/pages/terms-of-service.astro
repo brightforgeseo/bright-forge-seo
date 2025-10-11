@@ -3,27 +3,36 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="Terms of Service - Bright Forge SEO Agency Philippines" description="Terms of Service for Bright Forge SEO Agency. Understand our service terms, user responsibilities, and legal agreements for our SEO services.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs">
-        <a href="/">Home</a>
-        <span class="separator">›</span>
-        <span class="current">Terms of Service</span>
-      </nav>
-      
-      <div class="hero-content">
-        <h1>Welcome to Bright Forge SEO Agency</h1>
-        <p class="hero-subtitle">By accessing or using our services, you agree to comply with and be bound by these Terms of Service.</p>
+  <Hero
+    badgeIcon="fas fa-gavel"
+    badgeText="Legal Terms"
+    title="Welcome to Bright Forge SEO Agency"
+    breadcrumbCurrent="Terms of Service"
+  >
+    <Fragment slot="story">
+      <p>By accessing or using our services, you agree to comply with and be bound by these Terms of Service.</p>
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="terms-icon-grid">
+          <div class="terms-icon"><i class="fas fa-file-contract"></i></div>
+          <div class="terms-icon"><i class="fas fa-balance-scale"></i></div>
+          <div class="terms-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="terms-icon"><i class="fas fa-handshake"></i></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Terms Content -->
   <section class="terms-content">
@@ -271,52 +280,65 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-  /* Hero Section */
-  .hero-section {
-    background: linear-gradient(135deg, #f97316 0%, #4285F4 100%);
-    padding: 120px 0 80px;
-    color: white;
+  /* Terms Icon Grid (used in Hero visual slot) */
+  .hero-image-container {
     position: relative;
+    width: 100%;
+    max-width: 400px;
   }
 
-  .breadcrumbs {
-    margin-bottom: 40px;
-    font-size: 14px;
-    color: white !important;
+  .terms-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
   }
 
-  .breadcrumbs a {
-    color: white !important;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .breadcrumbs a:hover {
+  .terms-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
     color: white;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    animation: float 4s ease-in-out infinite;
   }
 
-  .separator {
-    margin: 0 8px;
-    opacity: 0.6;
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
   }
 
-  .current {
-    color: white;
-    font-weight: 500;
+  .terms-icon:nth-child(odd) {
+    animation-delay: 1s;
   }
 
-  .hero-content h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
+  .terms-icon:nth-child(even) {
+    animation-delay: 2s;
   }
 
-  .hero-subtitle {
-    font-size: 20px;
-    line-height: 1.6;
-    opacity: 0.95;
-    max-width: 700px;
+  .terms-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .terms-icon-grid {
+      gap: 1rem;
+    }
+
+    .terms-icon {
+      width: 70px;
+      height: 70px;
+      font-size: 1.8rem;
+    }
   }
 
   /* Terms Content */

@@ -3,86 +3,220 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="Backlink SEO Services Philippines - Bright Forge SEO" description="Boost your online presence with our expert backlink SEO services in the Philippines. Quality backlink strategies to elevate your search rankings.">
   <LegacyHeader slot="header" />
-  
-  <!-- Hero Section -->
-  <section class="hero-backlink-seo">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Backlink SEO Services Philippines</span>
-      </nav>
-      
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-link"></i>
-            <span>Backlink SEO Specialists</span>
-          </div>
-          
-          <h1>Boost Your Online Presence with Expert <span>Backlink SEO Services</span> in the Philippines</h1>
-          
-          <p>When it comes to SEO, backlinks are more than just a nice-to-have—they're a cornerstone of successful search engine optimisation. At Bright Forge SEO, we understand how powerful backlinks can be in propelling your website to the top of Google's search results.</p>
-          
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Get Your Free Backlink Audit</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#process" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>See Our Process</span>
-            </a>
-          </div>
-          
 
+  <!-- Hero Section -->
+  <Hero
+    badgeIcon="fas fa-link"
+    badgeText="Backlink SEO Specialists"
+    title="Boost Your Online Presence with Expert Backlink SEO Services in the Philippines"
+    breadcrumbCurrent="Backlink SEO Services Philippines"
+  >
+    <Fragment slot="story">
+      <p>When it comes to SEO, backlinks are more than just a nice-to-have—they're a cornerstone of successful search engine optimisation. At Bright Forge SEO, we understand how powerful backlinks can be in propelling your website to the top of Google's search results.</p>
+      <p>If you've ever tried to get your website to rank higher on Google, you've probably heard of backlinks. But why are they so critical? Backlinks, essentially links from other websites pointing to yours, act like votes of confidence for your site. The more quality backlinks you have, the more Google sees your site as trustworthy and authoritative.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Get Your Free Backlink Audit" />
+      <ButtonSecondary href="#services" text="See Our Process" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="backlink-icon-grid">
+          <div class="backlink-icon"><i class="fas fa-link"></i></div>
+          <div class="backlink-icon"><i class="fas fa-globe"></i></div>
+          <div class="backlink-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="backlink-icon"><i class="fas fa-handshake"></i></div>
+          <div class="backlink-icon"><i class="fas fa-star"></i></div>
+          <div class="backlink-icon"><i class="fas fa-trophy"></i></div>
         </div>
-        
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="backlink-icon-grid">
-              <div class="backlink-icon"><i class="fas fa-link"></i></div>
-              <div class="backlink-icon"><i class="fas fa-globe"></i></div>
-              <div class="backlink-icon"><i class="fas fa-chart-line"></i></div>
-              <div class="backlink-icon"><i class="fas fa-handshake"></i></div>
-              <div class="backlink-icon"><i class="fas fa-star"></i></div>
-              <div class="backlink-icon"><i class="fas fa-trophy"></i></div>
-            </div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <!-- Why Backlinks Matter Section -->
+  <section class="why-backlinks-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Why Are <span>Backlinks</span> So Important?</h2>
+      </div>
+
+      <div class="content-explanation">
+        <div class="content-card">
+          <div class="content-icon">
+            <i class="fas fa-link"></i>
+          </div>
+          <div class="content-text">
+            <p>Backlinks act like votes of confidence for your site. The more quality backlinks you have, the more Google sees your site as trustworthy and authoritative. It's like having a bunch of positive reviews from reputable sources!</p>
+
+            <p>However, not all backlinks are created equal. Quality matters more than quantity. You want backlinks from sites that are relevant, authoritative, and trustworthy. Our Backlink SEO Services focus on acquiring the highest quality links for your website to improve your search engine visibility.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Backlinks Matter Section -->
-  <section class="backlink-importance">
+  <!-- Core Backlink Services Section -->
+  <section id="services" class="services-section-new">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="importance-grid">
-        <div class="importance-content">
-          <h2>Why Are <span>Backlinks</span> So Important?</h2>
-          <p>If you've ever tried to get your website to rank higher on Google, you've probably heard of backlinks. But why are they so critical?</p>
-          <p>Backlinks, essentially links from other websites pointing to yours, act like votes of confidence for your site. The more quality backlinks you have, the more Google sees your site as trustworthy and authoritative. It's like having a bunch of positive reviews from reputable sources!</p>
-          <p class="highlight">However, not all backlinks are created equal. Quality matters more than quantity. You want backlinks from sites that are relevant, authoritative, and trustworthy.</p>
-          <p>Our Backlink SEO Services focus on acquiring the highest quality links for your website to improve your search engine visibility.</p>
-        </div>
-        <div class="importance-image">
-          <div class="image-container">
-            <img src="/images/backlins-seo-services-philippines.png" alt="Backlink SEO Services Philippines - Link Building Strategy" width="600" height="400" loading="lazy" decoding="async" />
+      <div class="services-layout">
+        <div class="services-content">
+          <h2>Our Backlink Building <span>Services</span></h2>
+
+          <div class="service-list">
+            <div class="service-item">
+              <h3>Strategic Link Prospecting</h3>
+              <p>We identify high-authority, relevant websites in your industry and analyze competitor backlink profiles to uncover valuable link opportunities that will boost your domain authority.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>White-Hat Link Building</h3>
+              <p>Ethical outreach campaigns, guest posting on authoritative sites, and content marketing strategies that naturally attract quality backlinks without risking search engine penalties.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Broken Link Reclamation</h3>
+              <p>We find broken backlinks pointing to your site, recover lost link equity, and identify broken links on relevant sites where we can offer your content as a replacement.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Link Profile Management</h3>
+              <p>Continuous monitoring of your backlink profile, toxic link identification and disavowal, and regular reporting on link acquisition progress and impact on rankings.</p>
+            </div>
           </div>
-          <div class="image-decoration bg-gradient"></div>
-          <div class="image-decoration border-decoration"></div>
+        </div>
+
+        <div class="services-visual">
+          <div class="visual-card">
+            <div class="visual-icon">
+              <i class="fas fa-link"></i>
+            </div>
+            <h3>Quality Links Built</h3>
+            <p class="visual-stat">250+</p>
+            <p class="visual-label">High-Quality Backlinks Per Campaign</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="process-header">
+        <h2>Our Backlink Building <span>Process</span></h2>
+        <p>We follow a strategic approach to build high-quality backlinks that improve your search rankings and drive sustainable results.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>Research & Analysis</h3>
+          <p>We analyze your website and competitors to identify link opportunities and conduct a comprehensive backlink audit to assess your current link profile.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Target Identification</h3>
+          <p>We focus on acquiring backlinks from reputable, industry-relevant websites that will provide the most value for your SEO efforts.</p>
+        </div>
+
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Outreach Campaigns</h3>
+          <p>We reach out to webmasters and bloggers with personalized messages, building authentic relationships that result in natural, credible backlinks.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Content Creation</h3>
+          <p>We create shareable, engaging content that naturally attracts backlinks—from blog posts to infographics and resource guides.</p>
+        </div>
+
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Quality Assurance</h3>
+          <p>Every backlink is vetted for quality and relevance. We use only white-hat SEO techniques that comply with Google's guidelines.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Monitoring & Reporting</h3>
+          <p>We continuously monitor your backlink profile and provide detailed reports so you can track progress and see real results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="benefits-header">
+        <h2>The Benefits of Quality <span>Backlinks</span></h2>
+        <p>Strategic backlink building delivers lasting advantages for your website's authority and search performance.</p>
+      </div>
+
+      <div class="benefits-layout">
+        <div class="benefits-visual">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+            alt="SEO analytics and backlink analysis dashboard"
+            class="benefits-image"
+          />
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Higher Rankings</h3>
+            <p>Quality backlinks signal trust to search engines, helping your website rank higher for competitive keywords and drive more organic traffic.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Increased Authority</h3>
+            <p>Build domain authority and establish your website as a trusted resource in your industry through strategic link acquisition.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Referral Traffic</h3>
+            <p>Quality backlinks don't just boost SEO—they drive targeted referral traffic from relevant websites to your content.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Long-Term Results</h3>
+            <p>Our white-hat approach ensures sustainable growth that will keep your website ranking well without risking search engine penalties.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -95,7 +229,7 @@ import ContactSection from '../components/ContactSection.astro';
         <h2>Why Choose <span>Bright Forge SEO</span> for Backlink Services?</h2>
         <p>Here's what makes us stand out in the world of Backlink SEO:</p>
       </div>
-      
+
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">
@@ -104,7 +238,7 @@ import ContactSection from '../components/ContactSection.astro';
           <h3>Experience You Can Trust</h3>
           <p>With years of experience in the SEO industry, we have a proven track record of improving search engine rankings for businesses across various sectors. We're a trusted <a href="/">SEO agency</a> in the Philippines that takes a hands-on approach to building your online authority.</p>
         </div>
-        
+
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-bullseye"></i>
@@ -112,7 +246,7 @@ import ContactSection from '../components/ContactSection.astro';
           <h3>Tailored Link Building Strategies</h3>
           <p>Every business is unique, so why should your link-building strategy be the same as everyone else's? We tailor our approach based on your specific needs, goals, and industry.</p>
         </div>
-        
+
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-eye"></i>
@@ -120,7 +254,7 @@ import ContactSection from '../components/ContactSection.astro';
           <h3>Transparency and Integrity</h3>
           <p>We believe in building trust, not just links. From day one, we ensure you're fully aware of the steps we're taking and the progress we're making. Our detailed reports give you full visibility into the work we're doing for you.</p>
         </div>
-        
+
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-chart-line"></i>
@@ -128,7 +262,7 @@ import ContactSection from '../components/ContactSection.astro';
           <h3>Sustainable Long-Term Results</h3>
           <p>We don't just aim for quick wins. Our backlink services are designed to provide sustainable growth that will keep your website ranking well in the long term, without risking penalties from search engines.</p>
         </div>
-        
+
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-shield-alt"></i>
@@ -140,53 +274,6 @@ import ContactSection from '../components/ContactSection.astro';
     </div>
   </section>
 
-  <!-- Process Section -->
-  <section id="process" class="backlink-process">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Our <span>Backlink Process</span></h2>
-        <h3>How Our Backlink SEO Strategy Works</h3>
-        <p>At Bright Forge SEO, we take a thoughtful, strategic approach to link building that gets results. Here's a glimpse into how we make it happen:</p>
-      </div>
-      
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h3>In-Depth Research and Analysis</h3>
-          <p>We start by analysing your website and your competitors to identify opportunities for growth. Our team conducts a comprehensive backlink audit to assess where you currently stand and find gaps we can fill with high-quality backlinks.</p>
-        </div>
-        
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h3>Targeting Relevant and Authoritative Websites</h3>
-          <p>We focus on acquiring backlinks from websites that are not only reputable but also relevant to your industry. This ensures that the links are more valuable and meaningful for your SEO.</p>
-        </div>
-        
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h3>Outreach Campaigns</h3>
-          <p>After identifying the perfect sites, we reach out to the webmasters and bloggers to get your content featured. We craft personalised messages that align with the site's content, building authentic relationships and ensuring that the backlinks are natural and credible.</p>
-        </div>
-        
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <h3><a href="/content-seo-services-philippines">Content Creation for Link Earning</a></h3>
-          <p>Quality content is the foundation of any successful link-building strategy. We create shareable, engaging content that naturally attracts backlinks. Whether it's a blog post, an infographic, or a resource guide, we ensure your content is link-worthy.</p>
-        </div>
-        
-        <div class="process-step">
-          <div class="step-number">5</div>
-          <h3>Ongoing Monitoring and Reporting</h3>
-          <p>The work doesn't stop once we secure backlinks. We continuously monitor your backlink profile to ensure everything is intact, and we provide detailed reports so you can track progress.</p>
-        </div>
-      </div>
-      
-      <div class="process-note">
-        <p>At Bright Forge SEO, we don't rely on shortcuts like buying links. We use white-hat SEO techniques to ensure that all links we build are safe, sustainable, and designed to drive long-term results.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ Section -->
   <section class="faq-section">
     <div class="max-w-7xl mx-auto px-4">
@@ -194,7 +281,7 @@ import ContactSection from '../components/ContactSection.astro';
         <h2>Frequently Asked Questions About <span>Backlink SEO</span></h2>
         <p>Got questions about our backlink SEO services? We've got answers.</p>
       </div>
-      
+
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFAQ(this)">
@@ -205,7 +292,7 @@ import ContactSection from '../components/ContactSection.astro';
             <p>Backlink SEO is the process of acquiring backlinks from other websites to improve your own site's search engine rankings. The goal is to build an authoritative backlink profile that signals trust to search engines like Google.</p>
           </div>
         </div>
-        
+
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFAQ(this)">
             <h3>How long does it take to see results from backlinks?</h3>
@@ -215,7 +302,7 @@ import ContactSection from '../components/ContactSection.astro';
             <p>While every website is different, most businesses see noticeable improvements in their rankings within 3-6 months of implementing a strategic backlink SEO campaign.</p>
           </div>
         </div>
-        
+
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFAQ(this)">
             <h3>Are all backlinks the same?</h3>
@@ -225,7 +312,7 @@ import ContactSection from '../components/ContactSection.astro';
             <p>No! The quality of a backlink is far more important than the quantity. A link from a reputable, industry-relevant site is far more valuable than dozens of links from low-quality websites.</p>
           </div>
         </div>
-        
+
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFAQ(this)">
             <h3>How do you choose the right websites for backlinks?</h3>
@@ -244,847 +331,698 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-  /* Enhanced Hero Section Styles */
-  .hero-backlink-seo {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    overflow: hidden;
-    padding: 2rem 0;
+/* Backlink Icon Grid (used in Hero visual slot) */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.backlink-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.backlink-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.backlink-icon:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.backlink-icon:nth-child(even) {
+  animation-delay: 2s;
+}
+
+.backlink-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .backlink-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
-  
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .backlink-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
-  
-  /* Background Elements */
-  .hero-bg-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  .floating-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .circle-1 {
-    width: 120px;
-    height: 120px;
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-  
-  .circle-2 {
-    width: 80px;
-    height: 80px;
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
-  }
-  
-  .circle-3 {
+
+  .backlink-icon {
     width: 60px;
     height: 60px;
-    bottom: 30%;
-    left: 20%;
-    animation-delay: 4s;
+    font-size: 1.5rem;
   }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Why Backlinks Section */
+.why-backlinks-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.section-header h2 span {
+  color: #f97316;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.content-explanation {
+  display: flex;
+  justify-content: center;
+}
+
+.content-card {
+  display: flex;
+  max-width: 900px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.content-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  font-size: 2rem;
+}
+
+.content-text {
+  padding: 30px;
+}
+
+.content-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.content-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* NEW Services Section - Reference Image Style */
+.services-section-new {
+  padding: 5rem 0;
+  background: white;
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.services-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.services-content h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-item {
+  background: #f8f9fa;
+  border-left: 4px solid #f97316;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  background: #f0f1f3;
+  transform: translateX(5px);
+}
+
+.service-item h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-visual {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.visual-card {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(255, 107, 53, 0.05));
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.visual-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.visual-stat {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0 0.5rem;
+  line-height: 1;
+}
+
+.visual-label {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  
-  /* Breadcrumbs */
-  .hero-breadcrumbs {
-    display: inline-block !important;
-    margin-bottom: 3rem;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1;
-    position: relative;
-    z-index: 10;
+
+  .services-visual {
+    position: static;
   }
-  
-  .hero-breadcrumbs * {
-    display: inline !important;
-    vertical-align: baseline !important;
+}
+
+/* Process Section */
+.process-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.process-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.process-box {
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.process-box.orange-bg {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+}
+
+.process-box.orange-bg h3,
+.process-box.orange-bg p {
+  color: white;
+}
+
+.process-box.white-bg {
+  background: white;
+}
+
+.process-box.white-bg h3 {
+  color: #1a1a1a;
+}
+
+.process-box.white-bg p {
+  color: #666;
+}
+
+.process-box-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.process-box.orange-bg .process-box-icon {
+  color: white;
+}
+
+.process-box.white-bg .process-box-icon {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-box:hover .process-box-icon {
+  transform: scale(1.1);
+}
+
+.process-box h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.process-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .breadcrumb-link {
-    color: white !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .breadcrumb-link:hover {
-    opacity: 1;
-    text-decoration: underline;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.benefits-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefits-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.benefits-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.benefits-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-image {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: white;
+  font-size: 1.75rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  
-  .breadcrumb-separator {
-    color: white !important;
-    margin: 0 8px;
-    opacity: 0.7;
+
+  .benefits-image {
+    height: 400px;
+    max-width: 100%;
   }
-  
-  .breadcrumb-current {
-    color: white !important;
-    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
   }
-  
-  /* Hero Container */
-  .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    z-index: 10;
+
+  .content-card {
+    flex-direction: column;
   }
-  
-  .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: white;
-    line-height: 1.1;
-    margin-bottom: 2rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Decorative underline for hero heading */
-  .hero-content h1::after {
-    content: '';
-    display: block;
-    width: 160px;
-    height: 6px;
-    margin-top: 12px;
-    border-radius: 4px;
-    background: #FFEB3B; /* yellow underline */
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
-  }
-  
-  .hero-content h1 span {
-    color: #FFE4E1;
-  }
-  
-  /* Hero Badge */
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
-    padding: 0.75rem 1.5rem;
-    margin-bottom: 2rem;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-  
-  .hero-badge i {
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-  
-  /* Hero Content */
-  .hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 3rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Hero Actions */
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-  }
-  
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    border: 2px solid transparent;
-  }
-  
-  .cta-button.primary {
-    background: white;
-    color: #f97316;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cta-button.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-    background: #f8f9fa;
-  }
-  
-  .cta-button.secondary {
-    background: transparent;
-    color: white;
-    border-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);
-  }
-  
-  .cta-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    transform: translateY(-2px);
-  }
-  
-  /* Hero Stats */
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .stat {
-    text-align: center;
-  }
-  
-  .hero-stats .stat-number,
-  .hero-backlink-seo .stat-number {
-    font-size: 2rem !important;
-    font-weight: 700 !important;
-    color: white !important;
-    color: #ffffff !important;
-    margin-bottom: 4px;
-  }
-  
-  .hero-stats .stat-label,
-  .hero-backlink-seo .stat-label {
-    font-size: 0.9rem !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-weight: 500;
-  }
-  
-  /* Hero Visual */
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .hero-image-container {
-    position: relative;
+
+  .content-icon {
     width: 100%;
-    max-width: 500px;
-  }
-  
-  .backlink-icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-  }
-  
-  .backlink-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    color: white;
-    font-size: 2rem;
-    transition: all 0.3s ease;
-    animation: float 4s ease-in-out infinite;
   }
-  
-  .backlink-icon:nth-child(odd) {
-    animation-delay: 1s;
-  }
-  
-  .backlink-icon:nth-child(even) {
-    animation-delay: 2s;
-  }
-  
-  .backlink-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .hero-container {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      text-align: center;
-    }
-    
-    .hero-content h1 {
-      font-size: 3rem;
-    }
-    
-    .backlink-icon-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .hero-backlink-seo {
-      min-height: auto;
-      padding: 4rem 0;
-    }
-    
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-stats {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    
-    .hero-actions {
-      flex-direction: column;
-      align-items: stretch;
-    }
-    
-    .backlink-icon-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-    
-    .backlink-icon {
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-    }
-    
-    .floating-circle {
-      opacity: 0.5;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-    
-    .hero-content p {
-      font-size: 1rem;
-    }
-    
-    .cta-button {
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9rem;
-    }
-  }
-  
-  /* Legacy hero styles - keeping for compatibility */
-  .hero-backlink {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
+}
 
-  .hero-backlink::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
-    z-index: 1;
-  }
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
 
-  .hero-backlink .max-w-7xl {
-    position: relative;
-    z-index: 2;
-  }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
 
+.feature-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08),
+              0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
 
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f97316, #FF6B35);
+  border-radius: 20px 20px 0 0;
+}
 
-  .hero-content {
-    text-align: center;
-  }
-  
-  .hero-backlink h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    color: white;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .hero-backlink h1 span {
-    color: #FFE9E8;
-  }
-  
-  .hero-backlink p {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 800px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.6;
-  }
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12),
+              0 10px 20px rgba(0, 0, 0, 0.08);
+}
 
-  .cta-button {
-    background: white;
-    color: #f97316;
-    padding: 15px 35px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  }
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+}
 
-  .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    background: #f8f9fa;
-  }
+.feature-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--brand-dark);
+  margin-bottom: 15px;
+}
 
-  /* Section Headers */
-  .section-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 60px;
-  }
-  
+.feature-card p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+}
+
+/* Internal Link Styling */
+.feature-card a {
+  color: #f97316;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.feature-card a:hover {
+  color: #4285F4;
+}
+
+.feature-card a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #f97316, #4285F4);
+  transition: width 0.3s ease;
+}
+
+.feature-card a:hover::after {
+  width: 100%;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 25px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.faq-question:hover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.faq-question h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brand-dark);
+  margin: 0;
+}
+
+.faq-question i {
+  color: #f97316;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  background: white;
+  padding: 0 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-answer.active {
+  padding: 25px 30px;
+  max-height: 200px;
+}
+
+.faq-answer p {
+  color: var(--brand-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .section-header h2 {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--brand-dark);
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 2rem;
   }
-  
-  .section-header h2 span {
-    color: var(--brand-accent);
-  }
-  
-  .section-header h3 {
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 15px;
-  }
-  
-  .section-header p {
-    font-size: 18px;
-    color: var(--brand-soft);
-    line-height: 1.6;
-  }
-  
-  /* Backlink Importance Section */
-  .backlink-importance {
-    padding: 100px 0;
-    background: white;
-  }
-  
-  .importance-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  
-  .importance-content h2 {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--brand-dark);
-    margin-bottom: 30px;
-    line-height: 1.2;
-  }
-  
-  .importance-content h2 span {
-    color: var(--brand-accent);
-  }
-  
-  .importance-content p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--brand-soft);
-    margin-bottom: 20px;
-  }
-  
-  .importance-content .highlight {
-    font-weight: 600;
-    color: var(--brand-dark);
-    font-size: 17px;
-  }
-  
-  .importance-image {
-    position: relative;
-  }
-  
-  .image-container {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .image-container img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-  
-  .image-decoration.bg-gradient {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(135deg, var(--brand-accent) 0%, #ff6b35 100%);
-    border-radius: 20px;
-    top: -30px;
-    left: -30px;
-    z-index: 1;
-  }
-  
-  .image-decoration.border-decoration {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 4px solid var(--brand-accent);
-    border-radius: 20px;
-    bottom: -30px;
-    right: -30px;
-    z-index: 1;
-  }
-  
-  /* Why Choose Us Section */
-  .why-choose-us {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  }
-  
+
   .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  
-  .feature-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 
-                0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    text-align: center;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-  }
-  
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--brand-accent), #ff6b35);
-    border-radius: 20px 20px 0 0;
-  }
-  
-  .feature-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 
-                0 10px 20px rgba(0, 0, 0, 0.08);
-  }
-  
-  .feature-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 25px;
-    background: linear-gradient(135deg, var(--brand-accent), #ff6b35);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    color: white;
-    box-shadow: 0 10px 25px rgba(255, 68, 56, 0.3);
-  }
-  
-  .feature-card h3 {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin-bottom: 15px;
-  }
-  
-  .feature-card p {
-    color: var(--brand-soft);
-    line-height: 1.6;
-  }
-  
-  /* Internal Link Styling */
-  .feature-card a {
-    color: #f97316;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-
-  .feature-card a:hover {
-    color: #4285F4;
-  }
-
-  .feature-card a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background: linear-gradient(90deg, #f97316, #4285F4);
-    transition: width 0.3s ease;
-  }
-
-  .feature-card a:hover::after {
-    width: 100%;
-  }
-  
-  /* Process Section */
-  .backlink-process {
-    padding: 100px 0;
-    background: white;
-  }
-  
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
-  }
-  
-  .process-step {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 20px;
-    padding: 40px 30px;
-    position: relative;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-  }
-  
-  .process-step:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-  }
-  
-  .step-number {
-    position: absolute;
-    top: -20px;
-    left: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--brand-accent), #ff6b35);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 20px;
-    box-shadow: 0 10px 25px rgba(255, 68, 56, 0.3);
-  }
-  
-  .process-step h3 {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin: 20px 0 15px;
-  }
-  
-  .process-step h3 a {
-    color: var(--brand-dark);
-    text-decoration: none;
-    transition: color 0.3s;
-    position: relative;
-  }
-  
-  .process-step h3 a:hover {
-    color: var(--brand-accent);
-  }
-  
-  .process-step h3 a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--brand-accent);
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s;
-  }
-  
-  .process-step h3 a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-  
-  .process-step p {
-    color: var(--brand-soft);
-    line-height: 1.6;
-  }
-  
-  .process-note {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 20px;
-    border-left: 5px solid var(--brand-accent);
-  }
-  
-  .process-note p {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin: 0;
-    line-height: 1.6;
-  }
-  
-  /* FAQ Section */
-  .faq-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  }
-  
-  .faq-container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .faq-item {
-    margin-bottom: 20px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  }
-  
-  .faq-question {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    padding: 25px 30px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-  }
-  
-  .faq-question:hover {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  }
-  
-  .faq-question h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--brand-dark);
-    margin: 0;
-  }
-  
-  .faq-question i {
-    color: var(--brand-accent);
-    transition: transform 0.3s ease;
-  }
-  
-  .faq-answer {
-    background: white;
-    padding: 0 30px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  
-  .faq-answer.active {
-    padding: 25px 30px;
-    max-height: 200px;
-  }
-  
-  .faq-answer p {
-    color: var(--brand-soft);
-    line-height: 1.6;
-    margin: 0;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-backlink h1 {
-      font-size: 36px;
-    }
-    
-    .hero-backlink p {
-      font-size: 18px;
-    }
-    
-    .importance-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-      text-align: center;
-    }
-    
-    .importance-content h2, .section-header h2 {
-      font-size: 32px;
-    }
-    
-    .features-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    
-    .process-steps {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    
-    .image-decoration.bg-gradient,
-    .image-decoration.border-decoration {
-      display: none;
-    }
-  }
+}
 </style>
 
 <script>
@@ -1093,7 +1031,7 @@ import ContactSection from '../components/ContactSection.astro';
     window.toggleFAQ = function(element) {
       const answer = element.nextElementSibling;
       const icon = element.querySelector('i');
-      
+
       // Close all other FAQs
       document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
         if (otherAnswer !== answer) {
@@ -1101,10 +1039,10 @@ import ContactSection from '../components/ContactSection.astro';
           otherAnswer.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
         }
       });
-      
+
       // Toggle current FAQ
       answer.classList.toggle('active');
-      
+
       // Rotate icon
       if (answer.classList.contains('active')) {
         icon.style.transform = 'rotate(180deg)';

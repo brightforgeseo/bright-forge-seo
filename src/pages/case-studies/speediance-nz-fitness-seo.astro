@@ -3,6 +3,9 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import LegacyHeader from "../../components/LegacyHeader.astro";
 import Footer from "../../components/Footer.astro";
 import ContactSection from "../../components/ContactSection.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
 import CaseStudyTemplate from "../../components/CaseStudyTemplate.astro";
 
 const caseStudyData = {
@@ -43,8 +46,179 @@ const caseStudyData = {
 <MainLayout title="Traffic Growth for Speediance NZ | Bright Forge SEO" description="Speediance NZ saw 177% more clicks. Learn how our fitness SEO strategy combined local search, stronger pages, and focused keyword targeting.">
   <LegacyHeader slot="header" />
 
+  <!-- Hero Section -->
+  <Hero
+    badgeIcon="fas fa-trophy"
+    badgeText="Success Story"
+    title={caseStudyData.title}
+    breadcrumbCurrent="Speediance NZ Case Study"
+  >
+    <Fragment slot="story">
+      <div class="client-badge">
+        <i class="fas fa-building"></i>
+        <span>{caseStudyData.industry}</span>
+        <div class="divider"></div>
+        <i class="fas fa-calendar"></i>
+        <span>{caseStudyData.duration}</span>
+      </div>
+
+      <p class="case-description">
+        Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.
+      </p>
+
+      <div class="primary-metric">
+        <div class="metric-number">{caseStudyData.keyMetrics[0]?.value}</div>
+        <div class="metric-label">{caseStudyData.keyMetrics[0]?.label}</div>
+        <div class="metric-description">{caseStudyData.keyMetrics[0]?.description}</div>
+      </div>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="#results" text="View Full Results" icon="fas fa-chart-line" />
+      <ButtonSecondary href="/contact" text="Discuss Your Project" icon="fas fa-comments" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      {caseStudyData.heroImage && (
+        <div class="hero-image-container">
+          <div class="results-showcase">
+            <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+            <div class="showcase-overlay">
+              <div class="growth-badge">
+                <i class="fas fa-trending-up"></i>
+                <span>Growth Achieved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </Fragment>
+  </Hero>
+
   <CaseStudyTemplate {...caseStudyData} />
 
   <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
+
+<style>
+/* Hero Visual Styles for Case Study */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.client-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 15px 25px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.client-badge .divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.case-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.primary-metric {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.metric-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.metric-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.metric-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.results-showcase {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+}
+
+.results-showcase img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.showcase-overlay {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.growth-badge {
+  background: rgba(52, 168, 83, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .metric-number {
+    font-size: 2.5rem;
+  }
+
+  .case-description {
+    font-size: 1.1rem;
+  }
+
+  .client-badge {
+    font-size: 12px;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+}
+
+/* Hide the CaseStudyTemplate's built-in hero since we're using the standardized Hero component */
+.case-hero {
+  display: none;
+}
+</style>

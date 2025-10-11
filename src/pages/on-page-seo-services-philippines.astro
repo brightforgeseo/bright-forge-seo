@@ -3,135 +3,84 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="On-Page SEO Services In The Philippines - Bright Forge SEO" description="Transform your website content into a powerful ranking asset. Expert on-page SEO services that help Philippine businesses dominate search results.">
   <LegacyHeader slot="header" />
-  
-  <!-- Hero Section -->
-  <section class="hero-onpage-seo">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">On-Page SEO Services Philippines</span>
-      </nav>
-      
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-edit"></i>
-            <span>On-Page SEO Specialists</span>
-          </div>
-          
-          <h1>On-Page SEO Services In The Philippines</h1>
-          
-          <div class="hero-story">
-            <p>Remember when having a website was enough to attract customers? Those days are long gone. A local business owner recently shared their frustration with me—they had invested in beautiful web design and quality content, yet their competitors consistently outranked them. The missing piece? Strategic on-page SEO optimization that speaks both to search engines and real people.</p>
-            
-            <p>At Bright Forge SEO, we transform your web pages into powerful ranking assets. Our on-page SEO services go beyond basic optimization—we craft an experience that naturally attracts both search engines and your target audience. By perfectly balancing technical optimization with user experience, we help Philippine businesses achieve and maintain top search positions.</p>
-          </div>
-          
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Optimize Your Pages</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#services" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>View Our Services</span>
-            </a>
-          </div>
 
-        </div>
-        
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="onpage-icon-grid">
-              <div class="onpage-icon"><i class="fas fa-heading"></i></div>
-              <div class="onpage-icon"><i class="fas fa-align-left"></i></div>
-              <div class="onpage-icon"><i class="fas fa-image"></i></div>
-              <div class="onpage-icon"><i class="fas fa-link"></i></div>
-              <div class="onpage-icon"><i class="fas fa-search"></i></div>
-              <div class="onpage-icon"><i class="fas fa-chart-line"></i></div>
-            </div>
-          </div>
+  <!-- Hero Section -->
+  <Hero
+    badgeIcon="fas fa-edit"
+    badgeText="On-Page SEO Specialists"
+    title="On-Page SEO Services In The Philippines"
+    breadcrumbCurrent="On-Page SEO Services Philippines"
+  >
+    <Fragment slot="story">
+      <p>Remember when having a website was enough to attract customers? Those days are long gone. A local business owner recently shared their frustration with me—they had invested in beautiful web design and quality content, yet their competitors consistently outranked them. The missing piece? Strategic on-page SEO optimization that speaks both to search engines and real people.</p>
+      <p>At Bright Forge SEO, we transform your web pages into powerful ranking assets. Our on-page SEO services go beyond basic optimization—we craft an experience that naturally attracts both search engines and your target audience. By perfectly balancing technical optimization with user experience, we help Philippine businesses achieve and maintain top search positions.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Optimize Your Pages" />
+      <ButtonSecondary href="#services" text="View Our Services" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="onpage-icon-grid">
+          <div class="onpage-icon"><i class="fas fa-heading"></i></div>
+          <div class="onpage-icon"><i class="fas fa-align-left"></i></div>
+          <div class="onpage-icon"><i class="fas fa-image"></i></div>
+          <div class="onpage-icon"><i class="fas fa-link"></i></div>
+          <div class="onpage-icon"><i class="fas fa-search"></i></div>
+          <div class="onpage-icon"><i class="fas fa-chart-line"></i></div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Core Services Section -->
   <section id="services" class="services-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Our On-Page SEO <span>Services</span></h2>
-        <p>We optimize every element of your web pages to maximize their ranking potential and user engagement.</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-heading"></i>
+      <div class="services-layout">
+        <div class="services-content">
+          <h2>Our On-Page SEO <span>Services</span></h2>
+
+          <div class="service-list">
+            <div class="service-item">
+              <h3>Title & Meta Optimization</h3>
+              <p>Strategic keyword placement, compelling meta descriptions, and header tag optimization to maximize click-through rates while maintaining your brand voice.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Content Enhancement</h3>
+              <p>Keyword-rich content creation with optimized structure, improved readability, topic cluster development, and comprehensive content gap analysis.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Media Optimization</h3>
+              <p>Complete image alt text optimization, schema markup implementation, video SEO optimization, and strategic multimedia content planning.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Internal Linking</h3>
+              <p>Strategic link placement with optimized anchor text, content siloing, navigation enhancement, and smart link equity distribution across your site.</p>
+            </div>
           </div>
-          <h3>Title & Meta Optimization</h3>
-          <ul>
-            <li>Strategic keyword placement</li>
-            <li>Compelling meta descriptions</li>
-            <li>Click-through rate optimization</li>
-            <li>Header tag optimization</li>
-            <li>Brand voice integration</li>
-          </ul>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-align-left"></i>
+        <div class="services-visual">
+          <div class="visual-card">
+            <div class="visual-icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <h3>On-Page Mastery</h3>
+            <p class="visual-stat">95%</p>
+            <p class="visual-label">Content Optimization Score</p>
           </div>
-          <h3>Content Enhancement</h3>
-          <ul>
-            <li>Keyword-rich content creation</li>
-            <li>Content structure optimization</li>
-            <li>Readability improvement</li>
-            <li>Topic cluster development</li>
-            <li>Content gap analysis</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-image"></i>
-          </div>
-          <h3>Media Optimization</h3>
-          <ul>
-            <li>Image alt text optimization</li>
-            <li>Schema markup implementation</li>
-            <li>Video SEO optimization</li>
-            <li>Multimedia content strategy</li>
-            <li>File name optimization</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-link"></i>
-          </div>
-          <h3>Internal Linking</h3>
-          <ul>
-            <li>Strategic link placement</li>
-            <li>Anchor text optimization</li>
-            <li>Content siloing</li>
-            <li>Navigation enhancement</li>
-            <li>Link equity distribution</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -140,58 +89,58 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- Our Process Section -->
   <section class="process-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
+      <div class="process-header">
         <h2>Our On-Page SEO <span>Process</span></h2>
         <p>We follow a proven methodology to optimize your pages for maximum search visibility and user engagement.</p>
       </div>
 
-      <div class="process-steps">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Page Analysis</h3>
-            <p>We conduct a thorough analysis of your existing pages, identifying strengths, weaknesses, and opportunities for improvement.</p>
+      <div class="process-grid">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-search-plus"></i>
           </div>
+          <h3>Page Analysis</h3>
+          <p>We conduct a thorough analysis of your existing pages, identifying strengths, weaknesses, and opportunities for improvement.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3><a href="/keyword-research-services">Keyword Research</a></h3>
-            <p>Using advanced tools, we identify the most valuable keywords that your target audience is actively searching for.</p>
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-key"></i>
           </div>
+          <h3>Keyword Research</h3>
+          <p>Using advanced tools, we identify the most valuable keywords that your target audience is actively searching for.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Content Strategy</h3>
-            <p>We develop a content strategy that aligns with search intent while maintaining your brand's unique voice and message.</p>
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-lightbulb"></i>
           </div>
+          <h3>Content Strategy</h3>
+          <p>We develop a content strategy that aligns with search intent while maintaining your brand's unique voice and message.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>On-Page Implementation</h3>
-            <p>Our team implements all necessary on-page optimizations, from meta tags to content structure and internal linking.</p>
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-code"></i>
           </div>
+          <h3>On-Page Implementation</h3>
+          <p>Our team implements all necessary on-page optimizations, from meta tags to content structure and internal linking.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <div class="step-content">
-            <h3>User Experience Enhancement</h3>
-            <p>We optimize the user experience to increase engagement, reduce bounce rates, and improve conversion rates.</p>
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-user-check"></i>
           </div>
+          <h3>User Experience Enhancement</h3>
+          <p>We optimize the user experience to increase engagement, reduce bounce rates, and improve conversion rates.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">6</div>
-          <div class="step-content">
-            <h3>Performance Monitoring</h3>
-            <p>We continuously monitor your pages' performance and make data-driven adjustments to improve rankings.</p>
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-chart-line"></i>
           </div>
+          <h3>Performance Monitoring</h3>
+          <p>We continuously monitor your pages' performance and make data-driven adjustments to improve rankings.</p>
         </div>
       </div>
     </div>
@@ -200,42 +149,52 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- Benefits Section -->
   <section class="benefits-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
+      <div class="benefits-header">
         <h2>The Impact of Professional <span>On-Page SEO</span></h2>
         <p>See how our on-page optimization services can transform your website's performance.</p>
       </div>
 
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3>Higher Rankings</h3>
-          <p>Well-optimized pages have a better chance of ranking higher in search results for your target keywords.</p>
+      <div class="benefits-layout">
+        <div class="benefits-visual">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+            alt="Analytics and data showing on-page SEO improvements"
+            class="benefits-image"
+          />
         </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-users"></i>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Higher Rankings</h3>
+            <p>Well-optimized pages have a better chance of ranking higher in search results for your target keywords.</p>
           </div>
-          <h3>More Targeted Traffic</h3>
-          <p>Attract more qualified visitors who are actively searching for your products or services.</p>
-        </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-chart-line"></i>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>More Targeted Traffic</h3>
+            <p>Attract more qualified visitors who are actively searching for your products or services.</p>
           </div>
-          <h3>Better Conversion Rates</h3>
-          <p>Optimized content and improved user experience lead to higher conversion rates and more sales.</p>
-        </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-trophy"></i>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Better Conversion Rates</h3>
+            <p>Optimized content and improved user experience lead to higher conversion rates and more sales.</p>
           </div>
-          <h3>Competitive Edge</h3>
-          <p>Stand out in the Philippine market with professionally optimized content that outperforms your competitors.</p>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Competitive Edge</h3>
+            <p>Stand out in the Philippine market with professionally optimized content that outperforms your competitors.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -248,220 +207,7 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-/* Enhanced Hero Section Styles */
-.hero-onpage-seo {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  overflow: hidden;
-  padding: 2rem 0;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Background Elements */
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle-1 {
-  width: 120px;
-  height: 120px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.circle-2 {
-  width: 80px;
-  height: 80px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.circle-3 {
-  width: 60px;
-  height: 60px;
-  bottom: 30%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-/* Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Hero Container */
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero Badge */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
-  padding: 0.75rem 1.5rem;
-  margin-bottom: 2rem;
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.hero-badge i {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* Hero Story */
-.hero-story {
-  margin-bottom: 3rem;
-}
-
-.hero-story p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero Actions */
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  border: 2px solid transparent;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  background: #f8f9fa;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-
-
-/* Hero Visual */
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* On-Page Icon Grid (used in Hero visual slot) */
 .hero-image-container {
   position: relative;
   width: 100%;
@@ -491,6 +237,11 @@ import ContactSection from '../components/ContactSection.astro';
   animation: float 4s ease-in-out infinite;
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
 .onpage-icon:nth-child(odd) {
   animation-delay: 1s;
 }
@@ -505,18 +256,7 @@ import ContactSection from '../components/ContactSection.astro';
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-  }
-  
   .onpage-icon-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -524,290 +264,392 @@ import ContactSection from '../components/ContactSection.astro';
 }
 
 @media (max-width: 768px) {
-  .hero-onpage-seo {
-    min-height: auto;
-    padding: 4rem 0;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
   .onpage-icon-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
-  
+
   .onpage-icon {
     width: 60px;
     height: 60px;
     font-size: 1.5rem;
   }
-  
-  .floating-circle {
-    opacity: 0.5;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-story p {
-    font-size: 1rem;
-  }
-  
-  .cta-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Legacy hero styles removed - using enhanced hero design */
-
-.cta-button {
-  display: inline-block;
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
-  color: white;
-  font-weight: 600;
-  padding: 15px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(255, 68, 56, 0.2);
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(255, 68, 56, 0.3);
 }
 
 /* Services Section */
 .services-section {
-  padding: 80px 0;
-  background: #f8f9fa;
+  padding: 5rem 0;
+  background: white;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 50px;
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
 }
 
-.section-header h2 {
+.services-content h2 {
   font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.services-content h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-item {
+  background: #f8f9fa;
+  border-left: 4px solid #f97316;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  background: #f0f1f3;
+  transform: translateX(5px);
+}
+
+.service-item h3 {
+  font-size: 1.125rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 20px;
-  line-height: 1.3;
+  margin-bottom: 0.5rem;
 }
 
-.section-header h2 span {
-  color: #f97316;
-}
-
-.section-header p {
-  font-size: 1.1rem;
+.service-item p {
+  font-size: 0.95rem;
   color: #666;
-  max-width: 700px;
-  margin: 0 auto;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+.services-visual {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
 }
 
-.service-card {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+.visual-card {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(255, 107, 53, 0.05));
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 0 auto 1.5rem;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
-.service-card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
+.visual-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 
-.service-card ul {
-  list-style: none;
-  padding: 0;
+.visual-stat {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0 0.5rem;
+  line-height: 1;
 }
 
-.service-card ul li {
-  padding: 8px 0;
+.visual-label {
   color: #666;
-  position: relative;
-  padding-left: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-.service-card ul li:before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #f97316;
-  font-weight: bold;
+@media (max-width: 1024px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .services-visual {
+    position: static;
+  }
 }
 
 /* Process Section */
 .process-section {
-  padding: 80px 0;
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.process-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.process-box {
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.process-box.orange-bg {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+}
+
+.process-box.orange-bg h3,
+.process-box.orange-bg p {
+  color: white;
+}
+
+.process-box.white-bg {
   background: white;
 }
 
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+.process-box.white-bg h3 {
+  color: #1a1a1a;
 }
 
-.step-card {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 30px;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.process-box.white-bg p {
+  color: #666;
 }
 
-.step-number {
-  position: absolute;
-  top: -20px;
-  left: 30px;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
-  border-radius: 50%;
+.process-box-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.process-box.orange-bg .process-box-icon {
   color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
 }
 
-.step-content {
-  margin-top: 15px;
+.process-box.white-bg .process-box-icon {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.step-content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 15px;
+.process-box:hover .process-box-icon {
+  transform: scale(1.1);
 }
 
-.step-content p {
-  color: #666;
+.process-box h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.process-box p {
+  font-size: 0.95rem;
   line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Benefits Section */
 .benefits-section {
-  padding: 80px 0;
-  background: #f8f9fa;
+  padding: 5rem 0;
+  background: white;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.benefits-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefits-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.benefits-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.benefits-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-image {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .benefit-card {
   background: white;
-  border-radius: 10px;
-  padding: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .benefit-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .benefit-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
+  background: linear-gradient(135deg, #f97316, #FF6B35);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 1.25rem;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
 }
 
 .benefit-card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 15px;
+  margin-bottom: 0.75rem;
 }
 
 .benefit-card p {
   color: #666;
   line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .benefits-image {
+    height: 400px;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero-content-text h1 {
-    font-size: 2.2rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2rem;
-  }
-  
-  .services-grid,
-  .process-steps,
   .benefits-grid {
     grid-template-columns: 1fr;
-  }
-
-  .step-card {
-    padding-top: 40px;
-  }
-
-  .service-card,
-  .benefit-card {
-    padding: 20px;
   }
 }
 </style>

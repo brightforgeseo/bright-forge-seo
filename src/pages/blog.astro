@@ -3,6 +3,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 import { getAllBlogPosts } from '../lib/contentful';
 
 // Fetch blog posts from Contentful
@@ -86,29 +89,22 @@ const recentPosts = [...blogPosts]
   ]}
 >
   <LegacyHeader slot="header" />
-  
-  <!-- Hero Section -->
-  <section class="hero-blog">
-    <div class="container mx-auto px-4 relative z-10">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Blog</span>
-      </nav>
 
-      <div class="hero-content">
-        <h1>Digital Marketing Insights</h1>
-        <p class="hero-subtitle">Expert analysis, case studies, and actionable strategies to help your business dominate search results and grow online.</p>
-        <p>Stay ahead of the curve with our latest insights on SEO, digital marketing trends, and proven strategies that deliver real results for businesses across the Philippines and beyond.</p>
-        
-        <div class="hero-cta-container">
-          <a href="#blog-posts" class="hero-cta-btn primary">Browse Articles</a>
-          <a href="/contact" class="hero-cta-btn secondary">Get SEO Consultation</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Hero Section -->
+  <Hero
+    title="Digital Marketing Insights"
+    breadcrumbCurrent="Blog"
+  >
+    <Fragment slot="story">
+      <p>Expert analysis, case studies, and actionable strategies to help your business dominate search results and grow online.</p>
+      <p>Stay ahead of the curve with our latest insights on SEO, digital marketing trends, and proven strategies that deliver real results for businesses across the Philippines and beyond.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="#blog-posts" text="Browse Articles" />
+      <ButtonSecondary href="/contact" text="Get SEO Consultation" />
+    </Fragment>
+  </Hero>
 
   <!-- Blog Content -->
   <section class="blog-section">
@@ -256,215 +252,6 @@ const recentPosts = [...blogPosts]
 </MainLayout>
 
 <style>
-/* Hero Section */
-.hero-blog {
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
-  color: white;
-  padding: 80px 0;
-  text-align: center;
-  position: relative;
-}
-
-/* Hero Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 2rem;
-  font-size: 14px;
-  font-weight: 500;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Hero Content */
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.hero-subtitle {
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  font-weight: 300;
-  color: white;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: white;
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Hero CTA Buttons */
-.hero-cta-container {
-  margin-top: 2.5rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.hero-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 16px;
-  border: 2px solid white;
-}
-
-.hero-cta-btn.primary {
-  background: white;
-  color: #f97316;
-}
-
-.hero-cta-btn.primary:hover {
-  background: transparent;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.hero-cta-btn.secondary {
-  background: transparent;
-  color: white;
-}
-
-.hero-cta-btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .hero-cta-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .hero-cta-btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-}
-
-.hero-content h1 {
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.1;
-  background: linear-gradient(to right, #ffffff, #e0e7ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  opacity: 0.95;
-  line-height: 1.6;
-}
-
-.search-container {
-  position: relative;
-  max-width: 550px;
-  margin: 40px auto 0;
-  border-radius: 50px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.search-container:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
-
-.search-input {
-  width: 100%;
-  padding: 18px 65px 18px 25px;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  background: rgba(255,255,255,1);
-  color: #333;
-  outline: none;
-  font-weight: 500;
-}
-
-.search-input:focus {
-  outline: none;
-  background: white;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.search-button {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #f97316;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.search-button:hover {
-  transform: translateY(-50%) scale(1.05);
-}
-
 /* Blog Section */
 .blog-section {
   padding: 100px 0;
@@ -1029,30 +816,26 @@ const recentPosts = [...blogPosts]
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
   .featured-text {
     padding: 0;
     display: flex;
     flex-direction: column;
   }
-  
+
   .sidebar-widget {
     padding: 20px;
   }
-  
+
   .filter-container {
     justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 10px;
   }
-  
+
   .filter-btn {
     white-space: nowrap;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;

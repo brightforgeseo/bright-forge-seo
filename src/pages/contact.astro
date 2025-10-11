@@ -2,6 +2,9 @@
 import Layout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 import '../styles/contact.css';
 
 const title = "Contact Bright Forge SEO | Get in Touch";
@@ -11,28 +14,22 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
 <Layout title={title} description={description}>
   <LegacyHeader slot="header" />
   <Footer slot="footer" />
-  <!-- Hero Section -->
-  <section class="hero-contact">
-    <div class="container mx-auto px-4 relative z-10">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Contact</span>
-      </nav>
 
-      <div class="hero-content">
-        <h1>Let's Grow Your Business Together</h1>
-        <p class="hero-subtitle">Ready to dominate search rankings? Our SEO experts are here to help you achieve your digital goals.</p>
-        <p>Get in touch with our team of experienced SEO professionals and discover how we can transform your online presence with proven strategies and measurable results.</p>
-        
-        <div class="hero-cta-container">
-          <a href="#contact-form" class="hero-cta-btn primary">Get Started Now</a>
-          <a href="tel:+639123456789" class="hero-cta-btn secondary">Call Us Today</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Hero Section -->
+  <Hero
+    title="Let's Grow Your Business Together"
+    breadcrumbCurrent="Contact"
+  >
+    <Fragment slot="story">
+      <p>Ready to dominate search rankings? Our SEO experts are here to help you achieve your digital goals.</p>
+      <p>Get in touch with our team of experienced SEO professionals and discover how we can transform your online presence with proven strategies and measurable results.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="#contact-form" text="Get Started Now" />
+      <ButtonSecondary href="tel:+447123456789" text="Call Us Today" />
+    </Fragment>
+  </Hero>
 
   <!-- Contact Form Section -->
   <section id="contact-form" class="contact-section bg-[#f8fafc] py-16" style="background-color: #f8fafc !important;">
@@ -205,147 +202,6 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
 </Layout>
 
 <style>
-  /* Hero Section */
-  .hero-contact {
-    background: #f97316;
-    color: white;
-    padding: 80px 0;
-    text-align: center;
-    position: relative;
-  }
-
-  /* Hero Breadcrumbs */
-  .hero-breadcrumbs {
-    display: inline-block !important;
-    margin-bottom: 2rem;
-    font-size: 14px;
-    font-weight: 500;
-    position: relative;
-    z-index: 10;
-  }
-
-  .hero-breadcrumbs * {
-    display: inline !important;
-    vertical-align: baseline !important;
-  }
-
-  .breadcrumb-link {
-    color: white !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    opacity: 0.9;
-  }
-
-  .breadcrumb-link:hover {
-    opacity: 1;
-    text-decoration: underline;
-  }
-
-  .breadcrumb-separator {
-    color: white !important;
-    margin: 0 8px;
-    opacity: 0.7;
-  }
-
-  .breadcrumb-current {
-    color: white !important;
-    font-weight: 600;
-  }
-
-  /* Hero Content */
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: white;
-  }
-
-  .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-    font-weight: 300;
-    color: white;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: white;
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Hero CTA Buttons */
-  .hero-cta-container {
-    margin-top: 2.5rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    border: 2px solid white;
-  }
-
-  .hero-cta-btn.primary {
-    background: white;
-    color: #f97316;
-  }
-
-  .hero-cta-btn.primary:hover {
-    background: transparent;
-    color: white;
-    transform: translateY(-2px);
-  }
-
-  .hero-cta-btn.secondary {
-    background: transparent;
-    color: white;
-  }
-
-  .hero-cta-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-  }
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .hero-cta-container {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .hero-cta-btn {
-      width: 100%;
-      max-width: 280px;
-      justify-content: center;
-    }
-    
-    .hero-content {
-      padding: 0 15px;
-    }
-  }
-
   .contact-section {
     background-image: linear-gradient(to bottom right, rgba(255, 68, 56, 0.05), rgba(255, 68, 56, 0.05));
   }

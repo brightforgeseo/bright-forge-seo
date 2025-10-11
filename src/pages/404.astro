@@ -2,6 +2,9 @@
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout
@@ -13,9 +16,31 @@ import MainLayout from '../layouts/MainLayout.astro';
   
   <main class="error-page">
     <!-- Hero Section -->
-    <section class="error-hero">
-      <div class="container">
-        <div class="error-content">
+    <Hero
+      title="Oops! This Page Got Lost in the Digital Space"
+      breadcrumbCurrent="404 - Page Not Found"
+    >
+      <Fragment slot="story">
+        <p>Don't worry, even the best SEO strategies sometimes encounter broken links. Let's get you back on track to ranking success!</p>
+
+        <!-- Search Box -->
+        <div class="search-container">
+          <form class="search-form" action="/search" method="get">
+            <input type="text" name="q" placeholder="Search our resources..." class="search-input">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </Fragment>
+
+      <Fragment slot="actions">
+        <ButtonPrimary href="/" text="Return Home" icon="fas fa-home" />
+        <ButtonSecondary href="/contact" text="Contact Support" icon="fas fa-headset" />
+      </Fragment>
+
+      <Fragment slot="visual">
+        <div class="error-visual-container">
           <!-- Animated 404 -->
           <div class="error-number">
             <span class="digit digit-4">4</span>
@@ -29,37 +54,9 @@ import MainLayout from '../layouts/MainLayout.astro';
             </div>
             <span class="digit digit-4-2">4</span>
           </div>
-          
-          <!-- Error Message -->
-          <div class="error-message">
-            <h1>Oops! This Page Got Lost in the Digital Space</h1>
-            <p>Don't worry, even the best SEO strategies sometimes encounter broken links. Let's get you back on track to ranking success!</p>
-          </div>
-          
-          <!-- Action Buttons -->
-          <div class="error-actions">
-            <a href="/" class="cta-primary">
-              <i class="fas fa-home"></i>
-              Return Home
-            </a>
-            <a href="/contact" class="cta-secondary">
-              <i class="fas fa-headset"></i>
-              Contact Support
-            </a>
-          </div>
-          
-          <!-- Search Box -->
-          <div class="search-container">
-            <form class="search-form" action="/search" method="get">
-              <input type="text" name="q" placeholder="Search our resources..." class="search-input">
-              <button type="submit" class="search-btn">
-                <i class="fas fa-search"></i>
-              </button>
-            </form>
-          </div>
         </div>
-      </div>
-    </section>
+      </Fragment>
+    </Hero>
 
     <!-- Helpful Links Section -->
     <section class="helpful-links">
@@ -142,59 +139,18 @@ import MainLayout from '../layouts/MainLayout.astro';
 </MainLayout>
 
 <style>
-/* CSS Variables */
-:root {
-  --brand-primary: #f97316;
-  --brand-secondary: #4285F4;
-  --brand-dark: #1a1a1a;
-  --brand-soft: #666666;
-  --brand-light: #f8f9fa;
-  --gradient-primary: linear-gradient(135deg, #f97316 0%, #4285F4 100%);
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-/* Global Styles */
-.error-page {
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
+/* Container Styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Hero Section */
-.error-hero {
-  background: var(--gradient-hero);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+/* 404 Visual Styles (used in Hero visual slot) */
+.error-visual-container {
   position: relative;
-  overflow: hidden;
-}
-
-.error-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(255, 68, 56, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(66, 133, 244, 0.3) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.error-content {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  color: white;
+  width: 100%;
+  max-width: 500px;
 }
 
 /* Animated 404 Number */
@@ -203,7 +159,6 @@ import MainLayout from '../layouts/MainLayout.astro';
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-bottom: 40px;
   font-family: 'Arial Black', sans-serif;
 }
 
@@ -280,71 +235,6 @@ import MainLayout from '../layouts/MainLayout.astro';
   left: 50%;
   transform: translateX(-50%);
   animation: planetPulse 2.5s ease-in-out infinite 1s;
-}
-
-/* Error Message */
-.error-message {
-  margin-bottom: 50px;
-}
-
-.error-message h1 {
-  font-size: clamp(28px, 5vw, 48px);
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.error-message p {
-  font-size: clamp(16px, 3vw, 20px);
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Action Buttons */
-.error-actions {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 50px;
-  flex-wrap: wrap;
-}
-
-.cta-primary, .cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-soft);
-}
-
-.cta-primary {
-  background: #f97316;
-  color: white;
-}
-
-.cta-primary:hover {
-  background: #e63b2e;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-strong);
-}
-
-.cta-secondary {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px);
 }
 
 /* Search Container */
@@ -579,45 +469,28 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .error-hero {
-    min-height: 80vh;
-    padding: 40px 0;
-  }
-  
   .error-number {
     gap: 10px;
-    margin-bottom: 30px;
   }
-  
-  .error-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cta-primary, .cta-secondary {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-  
+
   .helpful-links {
     padding: 60px 0;
   }
-  
+
   .links-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
+
   .link-category {
     padding: 30px 25px;
   }
-  
+
   .cta-content {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .error-cta {
     padding: 60px 0;
   }
@@ -627,20 +500,20 @@ import MainLayout from '../layouts/MainLayout.astro';
   .container {
     padding: 0 15px;
   }
-  
+
   .error-number {
     gap: 5px;
   }
-  
+
   .search-form {
     padding: 3px;
   }
-  
+
   .search-input {
     padding: 12px 20px;
     font-size: 14px;
   }
-  
+
   .search-btn {
     width: 44px;
     height: 44px;

@@ -3,89 +3,61 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="Keyword Research Services Philippines | Bright Forge SEO" description="We don't just find keywords we find your customer's language. Our research helps you rank, attract intent-driven traffic, and grow search visibility.">
   <LegacyHeader slot="header" />
 
-  <!-- Enhanced Hero Section -->
-  <section class="hero-keyword-research">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    
-    <div class="container mx-auto px-4">
-      <!-- Enhanced Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Keyword Research Services</span>
-      </nav>
-      
-      <div class="hero-container">
-        <!-- Hero Content -->
-        <div class="hero-content">
-          <!-- Hero Badge -->
-          <div class="hero-badge">
-            <i class="fas fa-search"></i>
-            <span>Keyword Research Experts</span>
-          </div>
-          
-          <h1>Data-Driven <span>Keyword Research Services</span></h1>
-          
-          <p>Discover what your customers actually type into Google - then use it to outrank the competition.</p>
-          
-          <p>Tired of creating content that never seems to get traction? Our Philippines-based SEO strategists dig deep into search data, intent, and trends to build a keyword roadmap that guides every blog post, landing page, and ad campaign you launch.</p>
-          
-          <p>Think of us as the translators between your offers and your audience's real-world questions.</p>
-          
-          <p>Our <strong>keyword research services Philippines</strong> help businesses discover high-converting search terms and optimize their content strategy with <strong>professional keyword analysis</strong> solutions. From strategy to execution, we uncover the exact terms your customers use as your trusted <strong>keyword research partner</strong>, so you can rank higher and convert better.</p>
-          
-          <!-- Hero Actions -->
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Request Your Keyword Map</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#process" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>See Our Process</span>
-            </a>
-          </div>
+  <!-- Hero Section -->
+  <Hero
+    badgeIcon="fas fa-search"
+    badgeText="Keyword Research Experts"
+    title="Data-Driven Keyword Research Services"
+    breadcrumbCurrent="Keyword Research Services"
+  >
+    <Fragment slot="story">
+      <p>Discover what your customers actually type into Google - then use it to outrank the competition.</p>
 
-        </div>
-        
-        <!-- Hero Visual -->
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="keyword-research-icon-grid">
-              <div class="keyword-research-icon">
-                <i class="fas fa-search"></i>
-              </div>
-              <div class="keyword-research-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="keyword-research-icon">
-                <i class="fas fa-bullseye"></i>
-              </div>
-              <div class="keyword-research-icon">
-                <i class="fas fa-lightbulb"></i>
-              </div>
-              <div class="keyword-research-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <div class="keyword-research-icon">
-                <i class="fas fa-trophy"></i>
-              </div>
-            </div>
+      <p>Tired of creating content that never seems to get traction? Our Philippines-based SEO strategists dig deep into search data, intent, and trends to build a keyword roadmap that guides every blog post, landing page, and ad campaign you launch.</p>
+
+      <p>Think of us as the translators between your offers and your audience's real-world questions.</p>
+
+      <p>Our <strong>keyword research services Philippines</strong> help businesses discover high-converting search terms and optimize their content strategy with <strong>professional keyword analysis</strong> solutions. From strategy to execution, we uncover the exact terms your customers use as your trusted <strong>keyword research partner</strong>, so you can rank higher and convert better.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Request Your Keyword Map" />
+      <ButtonSecondary href="#process" text="See Our Process" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="keyword-research-icon-grid">
+          <div class="keyword-research-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="keyword-research-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="keyword-research-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div class="keyword-research-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="keyword-research-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="keyword-research-icon">
+            <i class="fas fa-trophy"></i>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Why Keywords Section -->
   <section class="why-keywords-section">
@@ -130,6 +102,50 @@ import ContactSection from '../components/ContactSection.astro';
           <div class="feature-metric">
             <span class="metric-value">250%</span>
             <span class="metric-label">ROI Improvement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section-new">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="services-layout">
+        <div class="services-content">
+          <h2>Our Keyword Research <span>Services</span></h2>
+
+          <div class="service-list">
+            <div class="service-item">
+              <h3>Strategic Keyword Discovery</h3>
+              <p>Uncover high-value keywords aligned with your business goals through comprehensive research and competitor analysis.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Search Intent Analysis</h3>
+              <p>Classify keywords by user intent (informational, navigational, commercial, transactional) to match content to searcher needs.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Competitor Keyword Gap Analysis</h3>
+              <p>Identify opportunities your competitors are ranking for that you're missing, plus untapped keywords they haven't discovered.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Long-tail Keyword Mining</h3>
+              <p>Find specific, low-competition phrases that drive qualified traffic and convert better than broad generic terms.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-visual">
+          <div class="visual-card">
+            <div class="visual-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Research Excellence</h3>
+            <p class="visual-stat">2000+</p>
+            <p class="visual-label">Keywords Analyzed Per Project</p>
           </div>
         </div>
       </div>
@@ -195,133 +211,152 @@ import ContactSection from '../components/ContactSection.astro';
   </section>
 
   <!-- Our Process Section -->
-  <section id="process" class="process-section">
+  <section id="process" class="process-section-grid">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Our Process</div>
+      <div class="process-header">
         <h2>Our 5-Step <span>Research Process</span></h2>
         <p>A proven framework that turns raw data into a clear, actionable strategy.</p>
       </div>
 
-      <div class="process-timeline">
-        <div class="timeline-line"></div>
-        
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-content">
+      <div class="process-grid">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
           <h3>Discovery & Goal Setting</h3>
-            <p>We align on your target audiences, products, and KPIs - so we only chase keywords that matter.</p>
-            <div class="step-details">
-              <div class="detail-item">🎯 Business Goals Analysis</div>
-              <div class="detail-item">👥 Audience Persona Mapping</div>
-              <div class="detail-item">📊 Competitor Landscape Review</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🧭</div>
-          </div>
+          <p>We align on your target audiences, products, and KPIs - so we only chase keywords that matter.</p>
         </div>
 
-        <div class="step-card reverse">
-          <div class="step-number">2</div>
-          <div class="step-content">
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
           <h3>Topic & Seed Expansion</h3>
           <p>Using advanced tools and brainstorming sessions, we generate thousands of potential keywords around your core themes.</p>
-            <div class="step-details">
-              <div class="detail-item">🔧 Multi-Tool Analysis</div>
-              <div class="detail-item">🌱 Seed Keyword Expansion</div>
-              <div class="detail-item">💡 Creative Brainstorming</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🌱</div>
-          </div>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-content">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-search"></i>
+          </div>
           <h3>SERP & Intent Analysis</h3>
-            <p>We study search results to decode what users expect - blog post, product page, video - and tag each keyword accordingly.</p>
-            <div class="step-details">
-              <div class="detail-item">🔍 SERP Feature Analysis</div>
-              <div class="detail-item">🎯 Search Intent Classification</div>
-              <div class="detail-item">📱 Device-Specific Research</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🔍</div>
-          </div>
+          <p>We study search results to decode what users expect - blog post, product page, video - and tag each keyword accordingly.</p>
         </div>
 
-        <div class="step-card reverse">
-          <div class="step-number">4</div>
-          <div class="step-content">
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
           <h3>Difficulty & Opportunity Scoring</h3>
-            <p>By combining volume, competitiveness, and business fit, we surface quick wins and long-term plays.</p>
-            <div class="step-details">
-              <div class="detail-item">📈 Volume Analysis</div>
-              <div class="detail-item">⚔️ Competition Assessment</div>
-              <div class="detail-item">💎 Opportunity Scoring</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">⚖️</div>
-          </div>
+          <p>By combining volume, competitiveness, and business fit, we surface quick wins and long-term plays.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <div class="step-content">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-map"></i>
+          </div>
           <h3>Keyword Map & Content Plan</h3>
           <p>You receive a prioritized spreadsheet and calendar showing exactly which pages to create or optimize next.</p>
-            <div class="step-details">
-              <div class="detail-item">📋 Priority Matrix</div>
-              <div class="detail-item">📅 Content Calendar</div>
-              <div class="detail-item">🎯 Implementation Roadmap</div>
-            </div>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-rocket"></i>
           </div>
-          <div class="step-visual">
-            <div class="visual-icon">🗺️</div>
-          </div>
+          <h3>Implementation Support</h3>
+          <p>We help you execute the strategy with ongoing guidance, content support, and performance tracking.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Tools & Technology Section -->
-  <section class="tools-section" style="background-color:#f8fafc;">
+  <section class="tools-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
         <div class="section-badge">Professional Tools</div>
-        <h2 style="color:#1E2022;">Premium <span style="background:none; -webkit-background-clip:initial; background-clip:initial; -webkit-text-fill-color:#ffffff; color:#ffffff;">Research Tools</span></h2>
-        <p style="color:#52575D;">We invest in the best keyword research technology to deliver accurate, actionable insights.</p>
+        <h2>Premium <span>Research Tools</span></h2>
+        <p>We invest in the best keyword research technology to deliver accurate, actionable insights.</p>
       </div>
 
       <div class="tools-grid">
         <div class="tool-card">
-          <div class="tool-logo">Ahrefs</div>
-          <p style="color:#52575D;">Comprehensive backlink and keyword database with accurate difficulty scores</p>
+          <div class="tool-badge">Ahrefs</div>
+          <p>Comprehensive backlink and keyword database with accurate difficulty scores</p>
         </div>
         <div class="tool-card">
-          <div class="tool-logo">SEMrush</div>
-          <p style="color:#52575D;">Advanced competitor analysis and keyword gap identification</p>
+          <div class="tool-badge">SEMrush</div>
+          <p>Advanced competitor analysis and keyword gap identification</p>
         </div>
         <div class="tool-card">
-          <div class="tool-logo">Google Keyword Planner</div>
-          <p style="color:#52575D;">Direct search volume data from Google's advertising platform</p>
+          <div class="tool-badge">Google Keyword Planner</div>
+          <p>Direct search volume data from Google's advertising platform</p>
         </div>
         <div class="tool-card">
-          <div class="tool-logo">Answer The Public</div>
-          <p style="color:#52575D;">Question-based keyword discovery for content optimization</p>
+          <div class="tool-badge">Answer The Public</div>
+          <p>Question-based keyword discovery for content optimization</p>
         </div>
         <div class="tool-card">
-          <div class="tool-logo">Keywords Everywhere</div>
-          <p style="color:#52575D;">Real-time keyword metrics and trend analysis</p>
+          <div class="tool-badge">Keywords Everywhere</div>
+          <p>Real-time keyword metrics and trend analysis</p>
         </div>
         <div class="tool-card">
-          <div class="tool-logo">Google Trends</div>
-          <p style="color:#52575D;">Seasonal patterns and trending topic identification</p>
+          <div class="tool-badge">Google Trends</div>
+          <p>Seasonal patterns and trending topic identification</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="benefits-header">
+        <h2>The Benefits of Strategic <span>Keyword Research</span></h2>
+        <p>Investing in professional keyword research delivers lasting advantages for your content and marketing efforts.</p>
+      </div>
+
+      <div class="benefits-layout">
+        <div class="benefits-visual">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+            alt="Data analysis and keyword research visualization"
+            class="benefits-image"
+          />
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Higher Rankings</h3>
+            <p>Target the right keywords with proper intent matching to climb search results faster and more sustainably.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Better Targeting</h3>
+            <p>Reach your ideal customers with keywords that match their exact search queries and buying stage.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3>Lower Ad Costs</h3>
+            <p>Discover high-converting keywords with lower competition, reducing your PPC costs while increasing ROI.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Content Direction</h3>
+            <p>Know exactly what content to create next with a data-backed roadmap that aligns with user demand.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -468,13 +503,6 @@ import ContactSection from '../components/ContactSection.astro';
   --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Guarantee full visibility (no accidental dimming) */
-.tool-card, .tool-card * {
-  opacity: 1 !important;
-}
-
-.tool-card p { color: var(--brand-soft) !important; }
-
 * {
   margin: 0;
   padding: 0;
@@ -520,45 +548,6 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
-
-/* Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
 }
 
 /********************
@@ -611,255 +600,8 @@ section {
 }
 
 /********************
-  Hero Section
+  Hero Visual Styles (Page-specific icon grid)
 *********************/
-.hero-keyword-research {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #FF6B35 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  overflow: hidden;
-  padding: 2rem 0;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Background Elements */
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle-1 {
-  width: 120px;
-  height: 120px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.circle-2 {
-  width: 80px;
-  height: 80px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.circle-3 {
-  width: 100px;
-  height: 100px;
-  bottom: 30%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(120deg); }
-  66% { transform: translateY(10px) rotate(240deg); }
-}
-
-/* Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Hero Container */
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-}
-
-@media (min-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-}
-
-/* Hero Content */
-.hero-content {
-  color: white;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-content h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.hero-content h1 span {
-  background: linear-gradient(45deg, #ffffff, #f0f9ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.7;
-}
-
-/* Hero Actions */
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  background: #f8f9fa;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-/* Hero Stats */
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 2rem 0;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.8);
-  margin-top: 0.5rem;
-}
-
-/* Hero Visual */
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .hero-image-container {
   position: relative;
 }
@@ -904,54 +646,6 @@ section {
   display: inline-block !important;
   color: white !important;
   font-size: 1.5rem !important;
-}
-
-.hero-badge i {
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  text-rendering: auto !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  display: inline-block !important;
-  color: white !important;
-}
-
-.cta-button i {
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  text-rendering: auto !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  display: inline-block !important;
-}
-
-.cta-button.secondary {
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  backdrop-filter: blur(10px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-
-.logo-item {
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  box-shadow: var(--shadow-soft);
 }
 
 /********************
@@ -1055,6 +749,140 @@ section {
 }
 
 /********************
+  Services Section - 2 Column Layout
+*********************/
+.services-section-new {
+  padding: 5rem 0;
+  background: white;
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.services-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.services-content h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-item {
+  background: #f8f9fa;
+  border-left: 4px solid #f97316;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  background: #f0f1f3;
+  transform: translateX(5px);
+}
+
+.service-item h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-visual {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.visual-card {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(255, 107, 53, 0.05));
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.visual-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.visual-stat {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0 0.5rem;
+  line-height: 1;
+}
+
+.visual-label {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .services-visual {
+    position: static;
+  }
+}
+
+/********************
   Research Types Section
 *********************/
 .research-types-section {
@@ -1127,294 +955,471 @@ section {
 }
 
 /********************
-  Process Section
+  Process Section - 3x2 Grid
 *********************/
-.process-section {
+.process-section-grid {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.process-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.process-box {
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.process-box.orange-bg {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+}
+
+.process-box.orange-bg h3,
+.process-box.orange-bg p {
+  color: white;
+}
+
+.process-box.white-bg {
   background: white;
 }
 
-.process-timeline {
-  position: relative;
-  max-width: 1000px;
+.process-box.white-bg h3 {
+  color: #1a1a1a;
+}
+
+.process-box.white-bg p {
+  color: #666;
+}
+
+.process-box-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.process-box.orange-bg .process-box-icon {
+  color: white;
+}
+
+.process-box.white-bg .process-box-icon {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-box:hover .process-box-icon {
+  transform: scale(1.1);
+}
+
+.process-box h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.process-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/********************
+  Benefits Section
+*********************/
+.benefits-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.benefits-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefits-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, var(--brand-accent), var(--brand-blue));
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 30px;
-  }
-}
-
-.step-card {
+.benefits-layout {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
   align-items: center;
-  margin-bottom: 4rem;
-  position: relative;
-  z-index: 2;
 }
 
-.step-card.reverse {
-  grid-template-columns: 1fr auto 1fr;
+.benefits-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.step-card.reverse .step-content {
-  grid-column: 3;
-  text-align: left;
+.benefits-image {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 }
 
-.step-card.reverse .step-visual {
-  grid-column: 1;
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: white;
+  font-size: 1.75rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .benefits-image {
+    height: 400px;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-  .step-card,
-  .step-card.reverse {
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
+  .benefits-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .step-card .step-content,
-  .step-card.reverse .step-content {
-    grid-column: 2;
-    text-align: left;
-  }
-  
-  .step-card .step-visual,
-  .step-card.reverse .step-visual {
-    grid-column: 2;
-    grid-row: 1;
-  }
-}
-
-.step-number {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--gradient-accent);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1.5rem;
-  box-shadow: var(--shadow-medium);
-  position: relative;
-  z-index: 3;
-}
-
-.step-content {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
-}
-
-.step-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--brand-dark);
-}
-
-.step-content p {
-  color: var(--brand-soft);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.step-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.detail-item {
-  background: var(--brand-light);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: var(--brand-soft);
-}
-
-.step-visual {
-  width: 100px;
-  height: 100px;
-  background: var(--gradient-secondary);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-medium);
-}
-
-.visual-icon {
-  font-size: 2.5rem;
 }
 
 /********************
   Tools Section
 *********************/
 .tools-section {
-  background: #f1f5f9 !important; /* darker light grey for visible contrast */
-  background-image: none !important;
-  color: var(--brand-dark) !important;
+  background: #f8f9fa;
+  padding: 5rem 0;
 }
 
-/* Keep inner container transparent so light grey shows through */
-.tools-section .max-w-7xl,
-.tools-section .container {
-  background: transparent !important;
+.tools-section .section-header h2 {
+  color: #1a1a1a !important;
 }
 
-/* Make the yellow-accented heading white in this section */
-.tools-section .section-header h2 { 
-  color: var(--brand-dark) !important; 
-}
-
-.tools-section .section-header h2 span,
-.tools-section h2 span {
-  background: var(--gradient-accent) !important;
+.tools-section .section-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35) !important;
   -webkit-background-clip: text !important;
-  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
   color: transparent !important;
 }
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-top: 3rem;
 }
 
 .tool-card {
   position: relative;
-  background: #ffffff !important;
-  border-radius: 16px !important;
-  padding: 2rem !important;
-  text-align: center !important;
-  border: 1px solid #f0f0f0 !important;
-  box-shadow: var(--shadow-soft) !important;
-  transition: all 0.3s ease !important;
-  overflow: hidden !important;
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .tool-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 4px;
-  background: var(--gradient-accent) !important;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
 }
 
 .tool-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-medium) !important;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
 }
 
-.tool-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 56px;
-  height: 56px;
-  padding: 0 10px;
-  background: var(--gradient-accent) !important;
-  color: #ffffff !important;
-  border-radius: 14px;
+.tool-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  padding: 0.625rem 1.5rem;
+  border-radius: 8px;
   font-size: 0.95rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+  transition: all 0.3s ease;
 }
 
-.tool-card p { color: #52575D !important; line-height: 1.6 !important; }
+.tool-card:hover .tool-badge {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
+}
 
-/* Ensure no global color inheritance turns text white */
-.tools-section .tool-card,
-.tools-section .tool-card p,
-.tools-section .tool-card a,
-.tools-section .tool-card span {
-  color: #52575D !important;
+.tool-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /********************
   Deliverables Section
 *********************/
 .deliverables-section {
-  background: var(--brand-light);
+  background: white;
+  padding: 5rem 0;
 }
 
 .feature-list {
   display: grid;
   gap: 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .feature-item {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   background: white;
   padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.feature-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-item:hover::before {
+  opacity: 1;
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
 }
 
 .feature-icon-large {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 20px;
-  background: var(--gradient-accent);
+  background: linear-gradient(135deg, #f97316, #FF6B35);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: white;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+  transition: all 0.4s ease;
+}
+
+.feature-item:hover .feature-icon-large {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
+}
+
+.feature-content {
+  padding-top: 0.5rem;
 }
 
 .feature-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--brand-dark);
+  font-size: 1.625rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+  line-height: 1.3;
 }
 
 .feature-content p {
-  color: var(--brand-soft);
-  line-height: 1.6;
+  color: #666;
+  line-height: 1.7;
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .feature-benefit {
-  display: inline-block;
-  background: var(--brand-light);
-  color: var(--brand-accent);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(255, 107, 53, 0.1));
+  color: #f97316;
+  padding: 0.625rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-benefit {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  border-color: transparent;
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .feature-item {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .feature-icon-large {
+    margin: 0 auto;
+  }
+
+  .feature-content {
+    padding-top: 0;
+  }
 }
 
 /********************
@@ -1484,52 +1489,29 @@ section {
   section {
     padding: 3rem 0;
   }
-  
-  .hero-section {
-    padding: 6rem 0 4rem;
-    min-height: auto;
-  }
-  
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .hero-cta {
-    flex-direction: column;
-  }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .research-grid {
     grid-template-columns: 1fr;
   }
-  
-  .tools-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .case-metrics {
-    flex-direction: column;
+
+  /* Page-specific icon grid responsive */
+  .keyword-research-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
-  
-  .testimonial-author {
-    flex-direction: column;
-    gap: 1rem;
+
+  .keyword-research-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
   }
-  
-  .keyword-cloud {
-    height: 300px;
-    position: relative;
-  }
-  
-  .keyword-item {
-    position: relative;
-    display: inline-block;
-    margin: 0.5rem;
+
+  .keyword-research-icon i {
+    font-size: 1.2rem !important;
   }
 }
 

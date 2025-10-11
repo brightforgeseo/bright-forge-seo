@@ -3,120 +3,98 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="Comprehensive SEO Audit Services Philippines | Bright Forge SEO" description="Pinpoint technical issues, content gaps, and backlink weaknesses with our in-depth SEO audits. Get a clear roadmap to higher rankings and conversions.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
-  <section class="hero-seo-audit">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">SEO Audit Services</span>
-      </nav>
-      
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-search-plus"></i>
-            <span>SEO Audit Specialists</span>
-          </div>
-          
-          <h1>Comprehensive SEO Audit Services</h1>
-          
-          <div class="hero-story">
-            <p>Wondering why your traffic plateaued - or worse, dropped overnight? Let's shine a light on the hidden roadblocks.</p>
-            
-            <p>Our Philippines-based SEO detectives crawl every nook and cranny of your website - technical code, content, links, you name it. Then we translate all the jargon into a plain-English game plan you can actually act on.</p>
-          </div>
-          
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Get Your Free SEO Audit</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#deliverables" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>See Sample Report</span>
-            </a>
-          </div>
+  <Hero
+    badgeIcon="fas fa-search-plus"
+    badgeText="SEO Audit Specialists"
+    title="Comprehensive SEO Audit Services"
+    breadcrumbCurrent="SEO Audit Services"
+    padding="3rem 0 3rem"
+  >
+    <Fragment slot="story">
+      <p>Wondering why your traffic plateaued - or worse, dropped overnight? Let's shine a light on the hidden roadblocks.</p>
 
-        </div>
-        
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="audit-icon-grid">
-              <div class="audit-icon"><i class="fas fa-chart-line"></i></div>
-              <div class="audit-icon"><i class="fas fa-cogs"></i></div>
-              <div class="audit-icon"><i class="fas fa-link"></i></div>
-              <div class="audit-icon"><i class="fas fa-edit"></i></div>
-              <div class="audit-icon"><i class="fas fa-mobile-alt"></i></div>
-              <div class="audit-icon"><i class="fas fa-tachometer-alt"></i></div>
-            </div>
-          </div>
+      <p>Our Philippines-based SEO detectives crawl every nook and cranny of your website - technical code, content, links, you name it. Then we translate all the jargon into a plain-English game plan you can actually act on.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Get Your Free SEO Audit" />
+      <ButtonSecondary href="#deliverables" text="See Sample Report" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="audit-icon-grid">
+          <div class="audit-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="audit-icon"><i class="fas fa-cogs"></i></div>
+          <div class="audit-icon"><i class="fas fa-link"></i></div>
+          <div class="audit-icon"><i class="fas fa-edit"></i></div>
+          <div class="audit-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="audit-icon"><i class="fas fa-tachometer-alt"></i></div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Free SEO Audit Tool -->
-  <section class="py-40 bg-white">
-    <div class="max-w-6xl mx-auto px-8 text-center">
-      
-      <!-- Main Heading -->
-      <div class="mb-32">
-        <h1 class="text-7xl font-black text-gray-900 mb-8 leading-tight">
-          Free SEO Audit Tool
-        </h1>
-        <div class="w-40 h-1.5 bg-[#f97316] mx-auto mb-12"></div>
-        <p class="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          Get a comprehensive analysis of your website's SEO performance and discover what's holding you back from ranking higher in search results
-        </p>
+  <section class="audit-tool-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <div class="section-badge">Free Tool</div>
+        <h2>Free SEO <span>Audit Tool</span></h2>
+        <p>Get a comprehensive analysis of your website's SEO performance and discover what's holding you back from ranking higher in search results.</p>
       </div>
 
-      <!-- Main Form -->
-      <div class="max-w-3xl mx-auto mb-48">
-        <form name="seo-audit-tool" class="flex border-2 border-gray-900 rounded-none overflow-hidden">
-          <input 
-            type="url" 
-            id="audit-website-url" 
-            name="website-url" 
-            placeholder="Example.com" 
-            required 
-            class="flex-1 px-8 py-6 text-xl border-none focus:outline-none bg-white"
-          />
-          <button 
-            type="submit" 
-            class="bg-[#f97316] hover:bg-[#FF9500] text-white font-bold px-12 py-6 text-xl transition-colors"
-          >
-            Audit
-          </button>
-        </form>
-        
-        <p class="text-gray-600 mt-8 text-xl">
-          Enter your website URL and get a free comprehensive SEO analysis in seconds
-        </p>
-
-        <!-- Loading State -->
-        <div id="loading-state" class="hidden text-center py-12">
-          <div class="inline-flex items-center gap-4">
-            <div class="w-8 h-8 border-2 border-[#f97316] border-t-transparent rounded-full animate-spin"></div>
-            <span class="text-gray-600 text-lg">Analyzing your website...</span>
+      <div class="audit-tool-container">
+        <div class="audit-tool-card">
+          <!-- Icon Visual -->
+          <div class="audit-tool-icon">
+            <i class="fas fa-search-plus"></i>
           </div>
-        </div>
 
-        <!-- Results Container -->
-        <div id="audit-results" class="hidden mt-12"></div>
+          <!-- Form -->
+          <form name="seo-audit-tool" class="audit-form">
+            <div class="form-group">
+              <label for="audit-website-url" class="form-label">Enter Your Website URL</label>
+              <div class="input-wrapper">
+                <input
+                  type="url"
+                  id="audit-website-url"
+                  name="website-url"
+                  placeholder="example.com"
+                  required
+                  class="audit-input"
+                />
+                <button type="submit" class="audit-button">
+                  <span>Analyze Now</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <p class="audit-help-text">
+            <i class="fas fa-info-circle"></i>
+            Enter your website URL and get a free comprehensive SEO analysis in seconds
+          </p>
+
+          <!-- Loading State -->
+          <div id="loading-state" class="loading-state hidden">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Analyzing your website...</span>
+          </div>
+
+          <!-- Results Container -->
+          <div id="audit-results" class="hidden audit-results-wrapper"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -170,6 +148,50 @@ import ContactSection from '../components/ContactSection.astro';
     </div>
   </section>
 
+  <!-- Audit Services Section -->
+  <section id="services" class="services-section-new">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="services-layout">
+        <div class="services-content">
+          <h2>Our Comprehensive Audit <span>Services</span></h2>
+
+          <div class="service-list">
+            <div class="service-item">
+              <h3>Technical SEO Audit</h3>
+              <p>Deep analysis of site architecture, crawlability, indexing issues, page speed, mobile optimization, and Core Web Vitals.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>On-Page & Content Audit</h3>
+              <p>Evaluate keyword targeting, content quality, meta tags, headings, internal linking, and content gaps across your site.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Backlink Profile Analysis</h3>
+              <p>Review your link profile quality, identify toxic links, uncover link building opportunities, and compare with competitors.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Competitor Benchmarking</h3>
+              <p>Analyze top competitors' strategies, keyword rankings, content approaches, and backlink profiles to find your edge.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-visual">
+          <div class="visual-card">
+            <div class="visual-icon">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <h3>Audit Excellence</h3>
+            <p class="visual-stat">200+</p>
+            <p class="visual-label">Issues Typically Identified</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Signs You Need An Audit -->
   <section class="signs-section">
     <div class="max-w-7xl mx-auto px-4">
@@ -181,37 +203,49 @@ import ContactSection from '../components/ContactSection.astro';
       
       <div class="signs-grid">
         <div class="sign-card urgent">
-          <div class="sign-icon">📉</div>
+          <div class="sign-icon">
+            <i class="fas fa-arrow-down"></i>
+          </div>
           <h3>Traffic Dropping</h3>
           <p>Sudden drop in organic traffic without obvious cause</p>
         </div>
-        
+
         <div class="sign-card warning">
-          <div class="sign-icon">🐌</div>
+          <div class="sign-icon">
+            <i class="fas fa-hourglass-half"></i>
+          </div>
           <h3>Slow Loading</h3>
           <p>Pages taking ages to load, especially on mobile devices</p>
         </div>
-        
+
         <div class="sign-card attention">
-          <div class="sign-icon">📄</div>
+          <div class="sign-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
           <h3>Poor Rankings</h3>
           <p>Keywords stuck on page 2+ despite optimization efforts</p>
         </div>
-        
+
         <div class="sign-card warning">
-          <div class="sign-icon">📱</div>
+          <div class="sign-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
           <h3>Mobile Issues</h3>
           <p>Mobile users bouncing faster than desktop visitors</p>
         </div>
-        
+
         <div class="sign-card urgent">
-          <div class="sign-icon">❌</div>
+          <div class="sign-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
           <h3>Console Errors</h3>
           <p>Technical errors piling up in Google Search Console</p>
         </div>
-        
+
         <div class="sign-card attention">
-          <div class="sign-icon">🔍</div>
+          <div class="sign-icon">
+            <i class="fas fa-eye-slash"></i>
+          </div>
           <h3>Low Visibility</h3>
           <p>Not showing up for branded searches or key terms</p>
         </div>
@@ -220,7 +254,7 @@ import ContactSection from '../components/ContactSection.astro';
   </section>
 
   <!-- Audit Process Section -->
-  <section id="process" class="process-section">
+  <section id="process" class="process-section-new">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
         <div class="section-badge">Our Process</div>
@@ -228,86 +262,137 @@ import ContactSection from '../components/ContactSection.astro';
         <p>A systematic approach that leaves no stone unturned in diagnosing your SEO challenges.</p>
       </div>
 
-      <div class="process-timeline">
-        <div class="timeline-line"></div>
-        
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-content">
+      <div class="process-grid">
+        <div class="process-box orange-bg">
+          <div class="process-number">1</div>
+          <div class="process-icon">
+            <i class="fas fa-spider"></i>
+          </div>
           <h3>Crawl & Index Analysis</h3>
           <p>We run deep crawls to understand how search engines view your site.</p>
-            <div class="step-details">
-              <div class="detail-item">🕷️ Site Crawling</div>
-              <div class="detail-item">📋 Index Status Check</div>
-              <div class="detail-item">🔍 URL Structure Analysis</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🕸️</div>
-          </div>
+          <ul class="process-list">
+            <li>Site Crawling</li>
+            <li>Index Status Check</li>
+            <li>URL Structure Analysis</li>
+          </ul>
         </div>
 
-        <div class="step-card reverse">
-          <div class="step-number">2</div>
-          <div class="step-content">
+        <div class="process-box white-bg">
+          <div class="process-number">2</div>
+          <div class="process-icon">
+            <i class="fas fa-tools"></i>
+          </div>
           <h3><a href="/technical-seo-services-philippines">Technical Diagnostics</a></h3>
           <p>Identify speed bottlenecks, security issues, and mobile UX flaws.</p>
-            <div class="step-details">
-              <div class="detail-item">⚡ Speed Testing</div>
-              <div class="detail-item">🔒 Security Scan</div>
-              <div class="detail-item">📱 Mobile Analysis</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🔧</div>
-          </div>
+          <ul class="process-list">
+            <li>Speed Testing</li>
+            <li>Security Scan</li>
+            <li>Mobile Analysis</li>
+          </ul>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-content">
+        <div class="process-box orange-bg">
+          <div class="process-number">3</div>
+          <div class="process-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
           <h3><a href="/on-page-seo-services-philippines">On-Page & Content Review</a></h3>
           <p>Assess keyword usage, structure, and content depth for every key page.</p>
-            <div class="step-details">
-              <div class="detail-item">📝 Content Audit</div>
-              <div class="detail-item">🏷️ Meta Tag Review</div>
-              <div class="detail-item">🔗 Internal Link Analysis</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">📄</div>
-          </div>
+          <ul class="process-list">
+            <li>Content Audit</li>
+            <li>Meta Tag Review</li>
+            <li>Internal Link Analysis</li>
+          </ul>
         </div>
 
-        <div class="step-card reverse">
-          <div class="step-number">4</div>
-          <div class="step-content">
+        <div class="process-box white-bg">
+          <div class="process-number">4</div>
+          <div class="process-icon">
+            <i class="fas fa-link"></i>
+          </div>
           <h3><a href="/backlink-seo-services-philippines">Backlink & Competitor Benchmark</a></h3>
           <p>Compare your link profile and authority against top competitors.</p>
-            <div class="step-details">
-              <div class="detail-item">🔗 Link Profile Analysis</div>
-              <div class="detail-item">🏆 Competitor Research</div>
-              <div class="detail-item">📊 Authority Assessment</div>
-        </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🔗</div>
-          </div>
+          <ul class="process-list">
+            <li>Link Profile Analysis</li>
+            <li>Competitor Research</li>
+            <li>Authority Assessment</li>
+          </ul>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <div class="step-content">
+        <div class="process-box orange-bg">
+          <div class="process-number">5</div>
+          <div class="process-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
           <h3>Actionable Report & Roadmap</h3>
           <p>Deliver a prioritized task list complete with quick wins and long-term fixes.</p>
-            <div class="step-details">
-              <div class="detail-item">📊 Comprehensive Report</div>
-              <div class="detail-item">🎯 Priority Roadmap</div>
-              <div class="detail-item">🎥 Video Walkthrough</div>
-            </div>
+          <ul class="process-list">
+            <li>Comprehensive Report</li>
+            <li>Priority Roadmap</li>
+            <li>Video Walkthrough</li>
+          </ul>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-icon-large">
+            <i class="fas fa-rocket"></i>
           </div>
-          <div class="step-visual">
-            <div class="visual-icon">📋</div>
+          <h3>Ready to Get Started?</h3>
+          <p>Our comprehensive audit will give you the clarity and roadmap you need to dominate search rankings.</p>
+          <a href="/contact" class="process-cta">Get Your Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="benefits-header">
+        <h2>The Benefits of a Professional <span>SEO Audit</span></h2>
+        <p>Investing in an SEO audit delivers measurable improvements that impact your bottom line.</p>
+      </div>
+
+      <div class="benefits-layout">
+        <div class="benefits-visual">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+            alt="SEO audit data analysis and reporting"
+            class="benefits-image"
+          />
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Complete Visibility</h3>
+            <p>Uncover every issue holding your site back, from technical problems to content gaps and missed opportunities.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3>Clear Roadmap</h3>
+            <p>Get prioritized action plans with specific tasks, timelines, and expected impact for each recommendation.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Improved Rankings</h3>
+            <p>Fix critical issues and optimize key areas to climb search results and increase organic visibility.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3>Better ROI</h3>
+            <p>Stop wasting resources on ineffective tactics and focus on changes that deliver real business results.</p>
           </div>
         </div>
       </div>
@@ -323,48 +408,52 @@ import ContactSection from '../components/ContactSection.astro';
         <p>A comprehensive audit package designed to give you complete clarity and actionable next steps.</p>
       </div>
 
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="feature-icon-large">
+      <div class="deliverables-grid">
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
             <i class="fas fa-file-pdf"></i>
           </div>
-          <div class="feature-content">
-            <h3>Comprehensive PDF Report</h3>
-            <p>30+ pages detailing every issue & opportunity, ranked by priority with clear explanations and fix recommendations.</p>
-            <div class="feature-benefit">📄 Detailed 30-page analysis</div>
+          <h3>Comprehensive PDF Report</h3>
+          <p>30+ pages detailing every issue & opportunity, ranked by priority with clear explanations and fix recommendations.</p>
+          <div class="deliverable-meta">
+            <i class="fas fa-check-circle"></i>
+            <span>Detailed 30-page analysis</span>
           </div>
         </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon-large">
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
             <i class="fas fa-video"></i>
           </div>
-          <div class="feature-content">
-            <h3>Personal Video Walkthrough</h3>
-            <p>We record a screen-share video explaining the findings in human terms, so you understand exactly what needs fixing.</p>
-            <div class="feature-benefit">🎥 15-minute walkthrough</div>
+          <h3>Personal Video Walkthrough</h3>
+          <p>We record a screen-share video explaining the findings in human terms, so you understand exactly what needs fixing.</p>
+          <div class="deliverable-meta">
+            <i class="fas fa-check-circle"></i>
+            <span>15-minute walkthrough</span>
           </div>
         </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon-large">
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
             <i class="fas fa-tasks"></i>
           </div>
-          <div class="feature-content">
-            <h3>Implementation Spreadsheet</h3>
-            <p>Ready-to-import task list for your dev or content team with priorities, timelines, and success metrics.</p>
-            <div class="feature-benefit">📋 50+ actionable tasks</div>
+          <h3>Implementation Spreadsheet</h3>
+          <p>Ready-to-import task list for your dev or content team with priorities, timelines, and success metrics.</p>
+          <div class="deliverable-meta">
+            <i class="fas fa-check-circle"></i>
+            <span>50+ actionable tasks</span>
           </div>
         </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon-large">
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
             <i class="fas fa-phone"></i>
           </div>
-          <div class="feature-content">
-            <h3>Strategy Consultation Call</h3>
-            <p>60-minute follow-up call to discuss findings, answer questions, and create your custom implementation plan.</p>
-            <div class="feature-benefit">📞 1-hour strategy session</div>
+          <h3>Strategy Consultation Call</h3>
+          <p>60-minute follow-up call to discuss findings, answer questions, and create your custom implementation plan.</p>
+          <div class="deliverable-meta">
+            <i class="fas fa-check-circle"></i>
+            <span>1-hour strategy session</span>
           </div>
         </div>
       </div>
@@ -438,188 +527,7 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-/* Enhanced SEO Audit Hero Section Styles */
-.hero-seo-audit {
-  position: relative;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
-  overflow: hidden;
-  padding: 80px 0 120px 0;
-}
-
-
-/* Background Elements */
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle-1 {
-  width: 200px;
-  height: 200px;
-  top: 10%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.circle-2 {
-  width: 150px;
-  height: 150px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.circle-3 {
-  width: 100px;
-  height: 100px;
-  bottom: 20%;
-  left: 60%;
-  animation-delay: 4s;
-}
-
-.hero-breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.breadcrumb-link {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.breadcrumb-link:hover {
-  color: white;
-}
-
-.breadcrumb-separator {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.breadcrumb-current {
-  color: white;
-}
-
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-content {
-  text-align: left;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: white;
-}
-
-.hero-badge i {
-  margin-right: 8px;
-  color: #FFD700;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.hero-story {
-  margin-bottom: 2.5rem;
-}
-
-.hero-story p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1.5rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  background: #f8f9fa;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Page-specific Visual Styles - Audit Icon Grid */
 .hero-image-container {
   position: relative;
   width: 100%;
@@ -642,345 +550,36 @@ import ContactSection from '../components/ContactSection.astro';
   transition: transform 0.3s ease;
   color: white;
   font-size: 2rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.audit-icon:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.audit-icon:nth-child(even) {
+  animation-delay: 2s;
 }
 
 .audit-icon:hover {
   transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-actions {
-    justify-content: center;
-  }
-  
-  .audit-icon-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle-1 {
-  width: 120px;
-  height: 120px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.circle-2 {
-  width: 80px;
-  height: 80px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.circle-3 {
-  width: 100px;
-  height: 100px;
-  bottom: 30%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-.circle-4 {
-  width: 60px;
-  height: 60px;
-  top: 10%;
-  right: 30%;
-  animation-delay: 1s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(120deg); }
-  66% { transform: translateY(10px) rotate(240deg); }
-}
-
-/* Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Hero Container */
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-}
-
-/* Hero Content */
-.hero-content {
-  color: white;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.hero-badge i {
-  font-size: 1rem;
-  color: white;
-}
-
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  opacity: 0.95;
-  animation: fadeInUp 0.8s ease-out 0.6s both;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-  animation: fadeInUp 0.8s ease-out 0.8s both;
-}
-
-/* Hero Stats */
-.hero-stats {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
-  animation: fadeInUp 0.8s ease-out 1s both;
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2rem;
-  font-weight: 800;
-  color: white;
-  margin-bottom: 0.25rem;
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  opacity: 0.8;
-  font-weight: 500;
-}
-
-/* CTA Buttons */
-.hero-ctas {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  animation: fadeInUp 0.8s ease-out 1.2s both;
-}
-
-.cta-primary, .cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
-
-.cta-primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-primary:hover {
-  background: #f8f9fa;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.cta-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-}
-
-.cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-/* SEO Audit Icon Grid */
-.audit-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  animation: fadeInUp 0.8s ease-out 1.4s both;
-}
-
-.icon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  color: white;
-  transition: all 0.3s ease;
-  animation: iconFloat 3s ease-in-out infinite;
-}
-
-.icon-item:nth-child(even) {
-  animation-delay: 1s;
-}
-
-.icon-item:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.icon-item i {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  color: white;
-}
-
-.icon-item span {
-  font-size: 0.875rem;
-  font-weight: 500;
-  opacity: 0.9;
-}
-
-@keyframes iconFloat {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  
-  .hero-stats {
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  .hero-ctas {
-    flex-direction: column;
-    align-items: center;
-  }
-  
   .audit-icon-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
-  .icon-item {
+
+  .audit-icon {
     padding: 1rem;
-  }
-  
-  .icon-item i {
     font-size: 1.5rem;
-  }
-  
-  .cta-primary, .cta-secondary {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
   }
 }
 
@@ -1216,301 +815,805 @@ section {
 /* Removed */
 
 /********************
-  Signs Section
+  Audit Tool Section
 *********************/
-.signs-section {
-  background: white;
+.audit-tool-section {
+  background: var(--brand-light);
+  padding: 5rem 0;
 }
 
-.signs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.audit-tool-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.sign-card {
+.audit-tool-card {
   background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid #e5e7eb;
   position: relative;
   overflow: hidden;
 }
 
-.sign-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
+.audit-tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
 }
 
-.sign-card.urgent {
-  border-left: 4px solid #f97316;
+.audit-tool-icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  color: white;
+  font-size: 2.5rem;
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
 }
 
-.sign-card.warning {
-  border-left: 4px solid #f97316;
+.audit-form {
+  margin-bottom: 1.5rem;
 }
 
-.sign-card.attention {
-  border-left: 4px solid #f97316;
+.form-group {
+  width: 100%;
 }
 
-.sign-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #111111 !important;
-}
-
-.signs-grid .sign-card h3 {
-  color: #111111 !important;
-}
-
-.signs-grid .sign-card p {
-  color: #111111 !important;
-}
-
-.sign-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--brand-dark);
+  margin-bottom: 0.75rem;
+  text-align: center;
 }
 
-.sign-card p {
-  color: var(--brand-soft);
-  line-height: 1.6;
+.input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  background: #f8f9fa;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.audit-input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  color: var(--brand-dark);
+  outline: none;
+}
+
+.audit-input::placeholder {
+  color: #9ca3af;
+}
+
+.audit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.audit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+}
+
+.audit-button i {
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.audit-button:hover i {
+  transform: translateX(3px);
+}
+
+.audit-help-text {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.audit-help-text i {
+  color: #f97316;
+  font-size: 1rem;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f4f6;
+  border-top-color: #f97316;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.audit-results-wrapper {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .audit-tool-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .audit-tool-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .audit-button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /********************
-  Process Section
+  Signs Section
 *********************/
-.process-section {
-  background: white;
+.signs-section {
+  background: #f8f9fa;
+  padding: 5rem 0;
 }
 
-.process-timeline {
-  position: relative;
-  max-width: 1000px;
+.signs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, var(--brand-blue), var(--brand-accent));
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 30px;
-  }
-}
-
-.step-card {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 4rem;
+.sign-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #f97316;
+  transition: all 0.3s ease;
   position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.step-card.reverse {
-  grid-template-columns: 1fr auto 1fr;
+.sign-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15);
+  border-left-width: 6px;
 }
 
-.step-card.reverse .step-content {
-  grid-column: 3;
-  text-align: left;
+.sign-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1;
+  color: #f97316;
+  transition: all 0.3s ease;
 }
 
-.step-card.reverse .step-visual {
-  grid-column: 1;
+.sign-card:hover .sign-icon {
+  transform: scale(1.1);
+  color: #FF6B35;
+}
+
+.sign-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.sign-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .step-card,
-  .step-card.reverse {
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
+  .signs-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
-  
-  .step-card .step-content,
-  .step-card.reverse .step-content {
-    grid-column: 2;
-    text-align: left;
+
+  .sign-card {
+    padding: 2rem 1.5rem;
   }
-  
-  .step-card .step-visual,
-  .step-card.reverse .step-visual {
-    grid-column: 2;
-    grid-row: 1;
+
+  .sign-icon {
+    font-size: 3rem;
   }
 }
 
-.step-number {
-  width: 60px;
-  height: 60px;
+/********************
+  Services Section - 2 Column Layout
+*********************/
+.services-section-new {
+  padding: 5rem 0;
+  background: white;
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.services-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.services-content h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-item {
+  background: #f8f9fa;
+  border-left: 4px solid #f97316;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  background: #f0f1f3;
+  transform: translateX(5px);
+}
+
+.service-item h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-visual {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.visual-card {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(255, 107, 53, 0.05));
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
   border-radius: 50%;
-  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
   color: white;
+  font-size: 2rem;
+}
+
+.visual-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.visual-stat {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0 0.5rem;
+  line-height: 1;
+}
+
+.visual-label {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .services-visual {
+    position: static;
+  }
+}
+
+/********************
+  Benefits Section
+*********************/
+.benefits-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.benefits-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefits-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.benefits-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.benefits-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-image {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: white;
+  font-size: 1.75rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .benefits-image {
+    height: 400px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/********************
+  Process Section - 3x2 Grid
+*********************/
+.process-section-new {
+  background: var(--brand-light);
+  padding: 5rem 0;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 3rem;
+}
+
+.process-box {
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.process-box.orange-bg {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+}
+
+.process-box.white-bg {
+  background: white;
+  color: var(--brand-dark);
+}
+
+.process-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1.5rem;
-  box-shadow: var(--shadow-medium);
-  position: relative;
-  z-index: 3;
+  font-size: 1.25rem;
 }
 
-.step-content {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
+.process-box.white-bg .process-number {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
 }
 
-.step-content h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--color-heading);
-  margin-bottom: 0.5rem;
-}
-
-.step-content h3 a {
-  color: var(--color-heading);
-  text-decoration: none;
-  transition: color 0.3s;
-  position: relative;
-}
-
-.step-content h3 a:hover {
-  color: var(--brand-accent);
-}
-
-.step-content h3 a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--brand-accent);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s;
-}
-
-.step-content h3 a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.step-content p {
-  color: var(--brand-soft);
-  line-height: 1.6;
+.process-icon {
+  font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
-.step-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.process-box.white-bg .process-icon {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.detail-item {
-  background: var(--brand-light);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: var(--brand-soft);
+.process-icon-large {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.step-visual {
-  width: 100px;
-  height: 100px;
-  background: var(--gradient-secondary);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-medium);
+.process-box h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.visual-icon {
-  font-size: 2.5rem;
+.process-box h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.process-box h3 a:hover {
+  opacity: 0.8;
+}
+
+.process-box p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.process-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  max-width: 250px;
+}
+
+.process-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.process-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.process-box.white-bg .process-list li::before {
+  color: #f97316;
+}
+
+.process-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 1rem;
+}
+
+.process-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-box {
+    min-height: 350px;
+    padding: 2.5rem 2rem;
+  }
 }
 
 /********************
   Deliverables Section
 *********************/
 .deliverables-section {
-  background: var(--brand-light);
+  background: white;
+  padding: 5rem 0;
 }
 
-.feature-list {
+.deliverables-grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  margin-top: 3rem;
 }
 
-.feature-item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: flex-start;
+.deliverable-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.feature-item .feature-icon-large {
-  width: 56px;
-  height: 56px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  background: var(--gradient-accent);
-  color: #fff;
-  box-shadow: var(--shadow-soft);
-  flex-shrink: 0;
+.deliverable-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.feature-item .feature-icon-large i {
-  font-size: 22px;
-  line-height: 1;
+.deliverable-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
 }
 
-.feature-item .feature-content h3 {
-  font-size: 1.125rem; /* 18px */
-  font-weight: 700;
-  margin-top: 4px;
-  margin-bottom: 6px;
-  color: var(--brand-dark);
+.deliverable-card:hover::before {
+  opacity: 1;
 }
 
-.feature-item .feature-content p {
-  color: var(--brand-soft);
-  line-height: 1.65;
-}
-
-/* subtle meta/benefit line under each deliverable */
-.feature-item .feature-benefit {
+.deliverable-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-  color: #6b7280;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.deliverable-card:hover .deliverable-icon {
+  transform: scale(1.1);
+}
+
+.deliverable-card h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.deliverable-card p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
   font-size: 0.95rem;
+}
+
+.deliverable-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(249, 115, 22, 0.1);
+  padding: 0.625rem 1.25rem;
+  border-radius: 50px;
+  color: #f97316;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.deliverable-meta i {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .deliverables-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .deliverable-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .deliverable-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75rem;
+  }
 }
 
 /* Legacy responsive styles removed - using enhanced hero design */
