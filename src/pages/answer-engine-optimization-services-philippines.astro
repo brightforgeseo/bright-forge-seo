@@ -3,95 +3,67 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="Answer Engine Optimisation Services | Bright Forge SEO" description="Search is changing fast. Our AEO services help Philippine brands appear in AI answers, voice queries, and zero-click results where users now look.">
   <LegacyHeader slot="header" />
-  
-  <!-- Enhanced Hero Section -->
-  <section class="hero-aeo-services">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    
-    <div class="container mx-auto px-4">
-      <!-- Enhanced Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Answer Engine Optimization Services Philippines</span>
-      </nav>
-      
-      <div class="hero-container">
-        <!-- Hero Content -->
-        <div class="hero-content">
-          <!-- Hero Badge -->
-          <div class="hero-badge">
-            <i class="fas fa-robot"></i>
-            <span>AEO Specialists</span>
-          </div>
-          
-          <h1>Answer Engine Optimization <span>(AEO) Services</span></h1>
-          
-          <p>The Future of Search is Answers. Are You Providing Them?</p>
-          
-          <p>Traditional SEO is no longer enough. To win in today's search landscape, you need to be the definitive answer. Bright Forge SEO's Answer Engine Optimization (AEO) services position your brand as the go-to authority in the Philippines and beyond.</p>
-          
-          <p>In a world of voice assistants, AI-powered summaries, and instant-answer boxes, your customers are no longer just searching—they're asking questions. AEO is the science and art of ensuring your business is the one that provides the answer, directly and authoritatively.</p>
-          
-          <p>Our <strong>Answer Engine Optimization Philippines</strong> services help businesses dominate featured snippets and voice search results with <strong>professional AEO strategies</strong>. From voice search optimization to AI-powered content, we position your brand as the definitive answer source as your trusted <strong>AEO partner</strong>, so you can capture more visibility and traffic.</p>
-          
-          <!-- Hero Actions -->
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Get Your Free AEO Analysis</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#why-aeo" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>Learn About AEO</span>
-            </a>
-          </div>
-          
 
-        </div>
-        
-        <!-- Hero Visual -->
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="aeo-icon-grid">
-              <div class="aeo-icon">
-                <i class="fas fa-microphone"></i>
-              </div>
-              <div class="aeo-icon">
-                <i class="fas fa-robot"></i>
-              </div>
-              <div class="aeo-icon">
-                <i class="fas fa-comments"></i>
-              </div>
-              <div class="aeo-icon">
-                <i class="fas fa-magic"></i>
-              </div>
-              <div class="aeo-icon">
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="aeo-icon">
-                <i class="fas fa-trophy"></i>
-              </div>
-            </div>
+  <!-- Hero Section -->
+  <Hero
+    badgeIcon="fas fa-robot"
+    badgeText="AEO Specialists"
+    title="Answer Engine Optimization (AEO) Services"
+    breadcrumbCurrent="Answer Engine Optimization Services Philippines"
+  >
+    <Fragment slot="story">
+      <p>The Future of Search is Answers. Are You Providing Them?</p>
+
+      <p>Traditional SEO is no longer enough. To win in today's search landscape, you need to be the definitive answer. Bright Forge SEO's Answer Engine Optimization (AEO) services position your brand as the go-to authority in the Philippines and beyond.</p>
+
+      <p>In a world of voice assistants, AI-powered summaries, and instant-answer boxes, your customers are no longer just searching—they're asking questions. AEO is the science and art of ensuring your business is the one that provides the answer, directly and authoritatively.</p>
+
+      <p>Our <strong>Answer Engine Optimization Philippines</strong> services help businesses dominate featured snippets and voice search results with <strong>professional AEO strategies</strong>. From voice search optimization to AI-powered content, we position your brand as the definitive answer source as your trusted <strong>AEO partner</strong>, so you can capture more visibility and traffic.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Get Your Free AEO Analysis" />
+      <ButtonSecondary href="#why-aeo" text="Learn About AEO" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="aeo-icon-grid">
+          <div class="aeo-icon">
+            <i class="fas fa-microphone"></i>
+          </div>
+          <div class="aeo-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="aeo-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="aeo-icon">
+            <i class="fas fa-magic"></i>
+          </div>
+          <div class="aeo-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="aeo-icon">
+            <i class="fas fa-trophy"></i>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Why Old SEO Strategy is Falling Behind Section -->
   <section class="challenges-section" id="why-aeo">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">The Problem</div>
         <h2>Why Your Old SEO <span>Strategy is Falling Behind</span></h2>
         <p>The way we search has fundamentally changed. Users expect immediate, concise answers, and search engines have evolved to deliver them.</p>
       </div>
@@ -112,7 +84,7 @@ import ContactSection from '../components/ContactSection.astro';
         </div>
         
         <div class="challenge-image">
-          <img src="/images/old-seo-vs-aeo.svg" alt="Traditional SEO vs Answer Engine Optimization" class="rounded-lg shadow-lg">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Traditional SEO vs Answer Engine Optimization" class="rounded-lg shadow-lg">
         </div>
       </div>
     </div>
@@ -122,6 +94,7 @@ import ContactSection from '../components/ContactSection.astro';
   <section class="edge-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">The Solution</div>
         <h2>Gain a Competitive Edge with <span>Answer Engine Optimization (AEO)</span></h2>
         <p>Answer Engine Optimization is the next evolution of SEO. It's a holistic strategy designed to make your content the most direct, relevant, and authoritative answer to your audience's questions.</p>
       </div>
@@ -170,122 +143,122 @@ import ContactSection from '../components/ContactSection.astro';
   </section>
 
   <!-- Complete AEO Solution Section -->
-  <section class="solution-section">
+  <section class="solution-section-new">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">Our Process</div>
         <h2>Your Complete <span>AEO Solution</span></h2>
         <p>At Bright Forge SEO, we've developed a comprehensive AEO methodology to position our clients as industry leaders. Our process is transparent, data-driven, and tailored to the unique needs of the Philippine market.</p>
       </div>
-      
-      <div class="solution-content">
-        <div class="process-steps">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>AEO Strategy & Discovery</h3>
-              <p>We begin with a deep dive into your business, your target audience, and their most pressing questions. We conduct a thorough analysis to identify your "answer gaps" and uncover the most significant opportunities for AEO success.</p>
-            </div>
-          </div>
 
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Conversational Keyword & Question Research</h3>
-              <p>We move beyond basic keywords to uncover the specific questions, phrases, and natural language queries your customers are using in voice and text search. This allows us to create content that directly matches user intent.</p>
-            </div>
+      <div class="process-grid-aeo">
+        <div class="process-box-aeo orange-bg">
+          <div class="process-number-aeo">1</div>
+          <div class="process-icon-aeo">
+            <i class="fas fa-lightbulb"></i>
           </div>
+          <h3>AEO Strategy & Discovery</h3>
+          <p>We begin with a deep dive into your business, your target audience, and their most pressing questions. We conduct a thorough analysis to identify your "answer gaps" and uncover the most significant opportunities for AEO success.</p>
+        </div>
 
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3><a href="/content-seo-services-philippines">Content Optimization for Answers</a></h3>
-              <p>We re-engineer your existing content and create new, targeted pieces designed to be easily digestible by both users and answer engines. This includes creating robust FAQ sections, utilizing a clear question-and-answer format, and adopting a concise, conversational tone.</p>
-            </div>
+        <div class="process-box-aeo white-bg">
+          <div class="process-number-aeo">2</div>
+          <div class="process-icon-aeo">
+            <i class="fas fa-search"></i>
           </div>
+          <h3>Conversational Keyword & Question Research</h3>
+          <p>We move beyond basic keywords to uncover the specific questions, phrases, and natural language queries your customers are using in voice and text search. This allows us to create content that directly matches user intent.</p>
+        </div>
 
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              <h3><a href="/technical-seo-services-philippines">Technical SEO & Schema Markup</a></h3>
-              <p>This is the technical backbone of AEO. We implement advanced structured data (Schema.org markup), including FAQPage, HowTo, and Speakable schema. This code translates your content into a language that search engines can easily understand and feature.</p>
-            </div>
+        <div class="process-box-aeo orange-bg">
+          <div class="process-number-aeo">3</div>
+          <div class="process-icon-aeo">
+            <i class="fas fa-edit"></i>
           </div>
+          <h3><a href="/content-seo-services-philippines">Content Optimization for Answers</a></h3>
+          <p>We re-engineer your existing content and create new, targeted pieces designed to be easily digestible by both users and answer engines. This includes creating robust FAQ sections, utilizing a clear question-and-answer format, and adopting a concise, conversational tone.</p>
+        </div>
 
-          <div class="step-card">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <h3>Google Business Profile Optimization</h3>
-              <p>For businesses in the Philippines, local visibility is paramount. We optimize your Google Business Profile to dominate local search queries, ensuring you're the answer for customers in your area.</p>
-            </div>
+        <div class="process-box-aeo white-bg">
+          <div class="process-number-aeo">4</div>
+          <div class="process-icon-aeo">
+            <i class="fas fa-code"></i>
           </div>
+          <h3><a href="/technical-seo-services-philippines">Technical SEO & Schema Markup</a></h3>
+          <p>This is the technical backbone of AEO. We implement advanced structured data (Schema.org markup), including FAQPage, HowTo, and Speakable schema. This code translates your content into a language that search engines can easily understand and feature.</p>
+        </div>
 
-          <div class="step-card">
-            <div class="step-number">6</div>
-            <div class="step-content">
-              <h3>Performance Monitoring & Reporting</h3>
-              <p>AEO is not a "set it and forget it" service. We continuously track your performance in featured snippets, voice search rankings, and other AEO placements. You'll receive clear, actionable reports that demonstrate the tangible impact of our work.</p>
-            </div>
+        <div class="process-box-aeo orange-bg">
+          <div class="process-number-aeo">5</div>
+          <div class="process-icon-aeo">
+            <i class="fas fa-map-marker-alt"></i>
           </div>
+          <h3>Google Business Profile Optimization</h3>
+          <p>For businesses in the Philippines, local visibility is paramount. We optimize your Google Business Profile to dominate local search queries, ensuring you're the answer for customers in your area.</p>
+        </div>
+
+        <div class="process-box-aeo white-bg">
+          <div class="process-number-aeo">6</div>
+          <div class="process-icon-aeo">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Performance Monitoring & Reporting</h3>
+          <p>AEO is not a "set it and forget it" service. We continuously track your performance in featured snippets, voice search rankings, and other AEO placements. You'll receive clear, actionable reports that demonstrate the tangible impact of our work.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Benefits Section -->
-  <section class="benefits-section">
+  <section class="benefits-section-new">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">Benefits</div>
         <h2>The Tangible Benefits of <span>Becoming the Answer</span></h2>
         <p>Investing in AEO delivers a powerful return on investment by fundamentally enhancing your digital presence.</p>
       </div>
 
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <h3>Dominate "Position Zero"</h3>
-          <p>Leapfrog your competition by securing the most prominent position on the search results page.</p>
+      <div class="benefits-layout-new">
+        <div class="benefits-visual-new">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+            alt="Answer Engine Optimization benefits and voice search"
+            class="benefits-image-new"
+          />
         </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-shield-alt"></i>
+        <div class="benefits-grid-new">
+          <div class="benefit-card-new">
+            <div class="benefit-icon-new">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Dominate "Position Zero"</h3>
+            <p>Leapfrog your competition by securing the most prominent position on the search results page.</p>
           </div>
-          <h3>Increase Brand Authority & Trust</h3>
-          <p>Being the source of the definitive answer establishes your brand as a credible and trustworthy expert.</p>
-        </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-users"></i>
+          <div class="benefit-card-new">
+            <div class="benefit-icon-new">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Increase Brand Authority</h3>
+            <p>Being the source of the definitive answer establishes your brand as a credible and trustworthy expert.</p>
           </div>
-          <h3>Drive Highly Qualified Traffic</h3>
-          <p>Attract users who are actively seeking the solutions, products, or services you provide.</p>
-        </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-rocket"></i>
+          <div class="benefit-card-new">
+            <div class="benefit-icon-new">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Qualified Traffic</h3>
+            <p>Attract users who are actively seeking the solutions, products, or services you provide.</p>
           </div>
-          <h3>Future-Proof Your Digital Strategy</h3>
-          <p>Stay ahead of the curve as search continues its evolution towards AI and natural language processing.</p>
-        </div>
-        
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-comment-dots"></i>
-          </div>
-          <h3>Capture Voice Search Traffic</h3>
-          <p>Be the answer on the growing number of smart speakers and mobile voice assistants used by Filipinos every day.</p>
-        </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="fas fa-map-marker-alt"></i>
+          <div class="benefit-card-new">
+            <div class="benefit-icon-new">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Future-Proof Strategy</h3>
+            <p>Stay ahead as search evolves towards AI and natural language processing.</p>
           </div>
-          <h3>Enhance Local Visibility</h3>
-          <p>Become the go-to choice for customers in your geographic area, from Manila to Mindanao.</p>
         </div>
       </div>
     </div>
@@ -295,8 +268,9 @@ import ContactSection from '../components/ContactSection.astro';
   <section class="choose-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">Why Us</div>
         <h2>Why Choose <span>Bright Forge SEO?</span></h2>
-        <h3 class="subtitle">Your AEO Experts in the Philippines</h3>
+        <p class="subtitle">Your AEO Experts in the Philippines</p>
       </div>
 
       <div class="choose-grid">
@@ -339,6 +313,7 @@ import ContactSection from '../components/ContactSection.astro';
   <section class="faq-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
+        <div class="section-badge">FAQ</div>
         <h2>Frequently Asked <span>Questions about AEO</span></h2>
       </div>
 
@@ -384,230 +359,55 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-/* Enhanced Hero Section - AEO Services */
-.hero-aeo-services {
+/* AEO Icon Grid (used in Hero visual slot) */
+.hero-image-container {
   position: relative;
-  padding: 120px 0 100px;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 30%, #FF6B35 70%, #4285F4 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease-in-out infinite;
-  overflow: hidden;
-}
-
-@keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Floating Background Elements */
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
+  max-width: 500px;
 }
 
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  animation: float 6s ease-in-out infinite;
+.aeo-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.circle-1 {
-  width: 120px;
-  height: 120px;
-  top: 20%;
-  right: 15%;
-  animation-delay: 0s;
-}
-
-.circle-2 {
+.aeo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 80px;
   height: 80px;
-  top: 60%;
-  right: 25%;
-  animation-delay: 2s;
-}
-
-.circle-3 {
-  width: 60px;
-  height: 60px;
-  top: 40%;
-  right: 8%;
-  animation-delay: 4s;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-20px) rotate(120deg);
-  }
-  66% {
-    transform: translateY(10px) rotate(240deg);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-/* Hero Container */
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 60px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
+.aeo-icon:nth-child(odd) {
+  animation-delay: 1s;
 }
 
-/* Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
+.aeo-icon:nth-child(even) {
+  animation-delay: 2s;
 }
 
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
+.aeo-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Hero Content */
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-/* Hero Badge */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 50px;
-  margin-bottom: 24px;
-  font-size: 14px;
-  color: white;
-  font-weight: 500;
-}
-
-.hero-badge i {
-  font-size: 14px;
-}
-
-/* Hero Title */
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
-  color: white;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-.hero-content h1 span {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Hero Text */
-.hero-content p {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.hero-content p:first-of-type {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
-/* Hero Actions */
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  background: #f8f9fa;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-/* FontAwesome Icon Fixes */
 .aeo-icon i {
   font-family: "Font Awesome 5 Free" !important;
   font-weight: 900 !important;
@@ -621,129 +421,23 @@ import ContactSection from '../components/ContactSection.astro';
   font-size: 1.5rem !important;
 }
 
-.hero-badge i {
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  text-rendering: auto !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  display: inline-block !important;
-  color: white !important;
-}
-
-.cta-button i {
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  text-rendering: auto !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  display: inline-block !important;
-}
-
-/* Hero Stats */
-.hero-stats {
-  display: flex;
-  gap: 2rem;
-  margin-top: 3rem;
-  flex-wrap: wrap;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: white;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-}
-
-/* Hero Visual */
-.hero-visual {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* AEO Icon Grid */
-.aeo-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.aeo-icon {
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.aeo-icon:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-  
-  .hero-visual {
-    order: -1;
-  }
-  
-  .hero-stats {
-    justify-content: center;
-  }
-  
+@media (max-width: 1024px) {
   .aeo-icon-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aeo-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
-  
+
   .aeo-icon {
     width: 60px;
     height: 60px;
-  }
-  
-  .floating-circle {
-    display: none;
-  }
-  
-  .hero-actions {
-    justify-content: center;
+    font-size: 1.5rem;
   }
 }
 
@@ -775,6 +469,26 @@ import ContactSection from '../components/ContactSection.astro';
   color: #666;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.section-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-header .subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+  margin-top: 0.5rem;
 }
 
 .challenges-content {
@@ -888,84 +602,110 @@ import ContactSection from '../components/ContactSection.astro';
   margin-top: 30px;
 }
 
-/* Solution Section Styles */
-.solution-section {
+/* Solution Section - 3x2 Grid */
+.solution-section-new {
   padding: 80px 0;
-  background: white;
+  background: var(--brand-light, #f8f9fa);
 }
 
-.process-steps {
+.process-grid-aeo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 3rem;
 }
 
-.step-card {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 30px;
+.process-box-aeo {
+  padding: 3rem 2rem;
+  text-align: center;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.step-card:hover {
-  transform: translateY(-5px);
+.process-box-aeo.orange-bg {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
 }
 
-.step-number {
+.process-box-aeo.white-bg {
+  background: white;
+  color: var(--brand-dark, #1a1a1a);
+}
+
+.process-number-aeo {
   position: absolute;
-  top: -20px;
-  left: 30px;
+  top: 1.5rem;
+  right: 1.5rem;
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.25rem;
 }
 
-.step-content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 15px;
-}
-
-.step-content p {
-  color: #666;
-  line-height: 1.6;
-}
-
-.step-content h3 a {
+.process-box-aeo.white-bg .process-number-aeo {
+  background: rgba(249, 115, 22, 0.1);
   color: #f97316;
+}
+
+.process-icon-aeo {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.process-box-aeo.white-bg .process-icon-aeo {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-box-aeo h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.process-box-aeo h3 a {
+  color: inherit;
   text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s;
 }
 
-.step-content h3 a:hover {
-  color: #4285F4;
+.process-box-aeo h3 a:hover {
+  opacity: 0.8;
 }
 
-.step-content h3 a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background: linear-gradient(90deg, #f97316, #4285F4);
-  transition: width 0.3s ease;
+.process-box-aeo p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+  font-size: 1rem;
 }
 
-.step-content h3 a:hover::after {
-  width: 100%;
+@media (max-width: 1024px) {
+  .process-grid-aeo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-grid-aeo {
+    grid-template-columns: 1fr;
+  }
+
+  .process-box-aeo {
+    min-height: 350px;
+    padding: 2.5rem 2rem;
+  }
 }
 
 /* Benefits Section Styles */
@@ -1016,6 +756,99 @@ import ContactSection from '../components/ContactSection.astro';
 .benefit-card p {
   color: #666;
   line-height: 1.6;
+}
+
+/* Benefits Section - New Layout (Image + 2x2 Grid) */
+.benefits-section-new {
+  padding: 5rem 0;
+  background: white;
+}
+
+.benefits-layout-new {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.benefits-visual-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-image-new {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.benefits-grid-new {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card-new {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-card-new:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.benefit-icon-new {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: white;
+  font-size: 1.75rem;
+}
+
+.benefit-card-new h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.benefit-card-new p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .benefits-layout-new {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .benefits-image-new {
+    height: 400px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid-new {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Choose Us Section Styles */

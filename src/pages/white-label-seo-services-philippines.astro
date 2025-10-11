@@ -3,708 +3,316 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout 
-  title="White Label SEO Services Philippines | Bright Forge SEO" 
+<MainLayout
+  title="White Label SEO Services Philippines | Bright Forge SEO"
   description="Offer expert SEO without scaling in-house. Our white-label SEO from the Philippines delivers proven results your clients will see and trust."
   canonical="https://brightforgeseo.com/white-label-seo-services-philippines/"
   type="service"
 >
   <LegacyHeader slot="header" />
-  
-  <!-- Enhanced Hero Section -->
-  <section class="hero-white-label-seo">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    
-    <div class="container mx-auto px-4">
-      <!-- Enhanced Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">White Label SEO Services Philippines</span>
-      </nav>
-      
-      <div class="hero-container">
-        <!-- Hero Content -->
-        <div class="hero-content">
-          <!-- Hero Badge -->
-          <div class="hero-badge">
-            <i class="fas fa-handshake"></i>
-            <span>White Label SEO Partners</span>
-          </div>
-          
-          <h1>White Label SEO Services from the <span>Philippines</span>, Built for Real Partnerships</h1>
-          
-          <p>Growing a digital agency is challenging, especially when you're expected to be an expert in everything, including SEO. That's where we come in.</p>
-          
-          <p>As a white label SEO partner in the Philippines, we support your agency quietly and reliably, working behind the scenes to help you deliver consistent, high-quality results to your clients.</p>
-          
-          <p>Whether you're a freelancer, part of a small team, or running a full-service agency, our SEO reseller program is designed to grow with you. We focus on clear communication, dependable service, and a collaborative approach, so you can concentrate on what you do best.</p>
-          
-          <p>Our <strong>Philippines SEO reseller program</strong> helps agencies, freelancers, and marketing teams scale their services with <strong>affordable white label SEO Philippines</strong> solutions. From strategy to execution, we handle everything behind the scenes as your trusted <strong>Philippines SEO vendor</strong>, so you can grow faster and smarter.</p>
-          
-          <!-- Hero Actions -->
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Start Your Partnership Today</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#services" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>Learn About Our Services</span>
-            </a>
-          </div>
 
-        </div>
-        
-        <!-- Hero Visual -->
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="white-label-icon-grid">
-              <div class="white-label-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <div class="white-label-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="white-label-icon">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <div class="white-label-icon">
-                <i class="fas fa-cogs"></i>
-              </div>
-              <div class="white-label-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <div class="white-label-icon">
-                <i class="fas fa-trophy"></i>
-              </div>
-            </div>
+  <!-- Hero Section -->
+  <Hero
+    badgeIcon="fas fa-handshake"
+    badgeText="White Label SEO Partners"
+    title="White Label SEO Services from the Philippines, Built for Real Partnerships"
+    breadcrumbCurrent="White Label SEO Services Philippines"
+  >
+    <Fragment slot="story">
+      <p>Growing a digital agency is challenging, especially when you're expected to be an expert in everything, including SEO. That's where we come in.</p>
+
+      <p>As a white label SEO partner in the Philippines, we support your agency quietly and reliably, working behind the scenes to help you deliver consistent, high-quality results to your clients.</p>
+
+      <p>Whether you're a freelancer, part of a small team, or running a full-service agency, our SEO reseller program is designed to grow with you. We focus on clear communication, dependable service, and a collaborative approach, so you can concentrate on what you do best.</p>
+
+      <p>Our <strong>Philippines SEO reseller program</strong> helps agencies, freelancers, and marketing teams scale their services with <strong>affordable white label SEO Philippines</strong> solutions. From strategy to execution, we handle everything behind the scenes as your trusted <strong>Philippines SEO vendor</strong>, so you can grow faster and smarter.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Start Your Partnership Today" />
+      <ButtonSecondary href="#services" text="Learn About Our Services" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="white-label-icon-grid">
+          <div class="white-label-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="white-label-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="white-label-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="white-label-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="white-label-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="white-label-icon">
+            <i class="fas fa-trophy"></i>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- What Is White Label SEO Section -->
-  <section class="py-20 bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+  <section class="why-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">What Is White Label SEO Philippines and Why Does It Matter?</h2>
+      <div class="section-header">
+        <h2>What Is White Label SEO Philippines and <span>Why Does It Matter?</span></h2>
       </div>
-      
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-gradient-to-r from-red-50 to-blue-50 rounded-2xl p-8 mb-8">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <i class="fas fa-lightbulb text-white text-xl"></i>
-              </div>
-            </div>
-            <div>
-              <p class="text-lg text-gray-700 mb-4">White-label SEO allows you to outsource your clients' SEO work to our expert team while maintaining your brand identity. We work behind the scenes, providing branded reports, strategies, and results that you can present to your clients as your work.</p>
-              <p class="text-lg text-gray-700">This partnership model enables agencies to scale their SEO offerings without significant investment in hiring, training, and retaining specialized SEO talent. You focus on client relationships and business growth while we handle the technical complexities of modern search engine optimization.</p>
-            </div>
+
+      <div class="content-explanation">
+        <div class="content-card">
+          <div class="content-icon">
+            <i class="fas fa-lightbulb"></i>
           </div>
-        </div>
-        <!-- Key Benefits Grid -->
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-[#f8fafc] rounded-xl p-6 shadow-lg border border-gray-100" style="background-color: #f8fafc !important;">
-            <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-              <i class="fas fa-chart-line text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Scale Instantly</h3>
-            <p class="text-gray-600">Expand your service offerings without hiring additional staff or investing in expensive SEO tools and training.</p>
-          </div>
-          
-          <div class="bg-[#f8fafc] rounded-xl p-6 shadow-lg border border-gray-100" style="background-color: #f8fafc !important;">
-            <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-              <i class="fas fa-shield-alt text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Your Brand, Our Expertise</h3>
-            <p class="text-gray-600">All deliverables are fully branded with your company identity. Your clients never know we exist.</p>
-          </div>
-          
-          <div class="bg-[#f8fafc] rounded-xl p-6 shadow-lg border border-gray-100" style="background-color: #f8fafc !important;">
-            <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-              <i class="fas fa-dollar-sign text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Higher Profit Margins</h3>
-            <p class="text-gray-600">Reduce operational costs while increasing revenue with our <strong>affordable white label SEO Philippines</strong> pricing.</p>
+          <div class="content-text">
+            <p>White-label SEO allows you to outsource your clients' SEO work to our expert team while maintaining your brand identity. We work behind the scenes, providing branded reports, strategies, and results that you can present to your clients as your work.</p>
+            <p>This partnership model enables agencies to scale their SEO offerings without significant investment in hiring, training, and retaining specialized SEO talent. You focus on client relationships and business growth while we handle the technical complexities of modern search engine optimization.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Our White Label SEO Services Section -->
-  <section id="services" class="py-20 bg-gray-50">
+  <!-- White Label SEO Services Section -->
+  <section id="services" class="services-section-new">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our White Label SEO Philippines <span class="text-red-500">Services</span></h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive <strong>whitelabel SEO packages Philippines</strong> solutions that you can offer under your brand with complete confidence. As <strong>top white label SEO partners Philippines</strong>, we deliver results.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- SEO Audits & Analysis -->
-        <div class="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow" style="background-color: #f8fafc !important;">
-          <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-search text-white text-2xl"></i>
+      <div class="services-layout">
+        <div class="services-content">
+          <h2>Our White Label SEO Philippines <span>Services</span></h2>
+
+          <div class="service-list">
+            <div class="service-item">
+              <h3>SEO Audits & Strategy Development</h3>
+              <p>Comprehensive technical and competitive analysis, keyword research, site architecture review, performance benchmarking, and strategic roadmap creation for your clients' success.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Technical SEO Implementation</h3>
+              <p>Site speed optimization, mobile responsiveness, schema markup, XML sitemaps, crawl error fixes, and all technical optimizations needed for higher rankings.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Content Creation & Optimization</h3>
+              <p>SEO-optimized content creation, on-page optimization, meta tag optimization, internal linking strategies, and content gap analysis to dominate search results.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Link Building & Outreach</h3>
+              <p>High-quality backlink acquisition, digital PR, guest posting, broken link building, and white-hat link building strategies that drive authority and rankings.</p>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4"><a href="/seo-audit-services">SEO Audits & Analysis</a></h3>
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Complete technical SEO audits
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Competitive analysis
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Keyword research and mapping
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Site architecture review
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Performance benchmarking
-            </li>
-          </ul>
         </div>
 
-        <!-- Technical SEO -->
-        <div class="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow" style="background-color: #f8fafc !important;">
-          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-cogs text-white text-2xl"></i>
+        <div class="services-visual">
+          <div class="visual-card">
+            <div class="visual-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Trusted Partners</h3>
+            <p class="visual-stat">50+</p>
+            <p class="visual-label">Agency Partners Worldwide</p>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Technical SEO</h3>
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Site speed optimization
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Mobile optimization
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Schema markup implementation
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              XML sitemap creation
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Crawl error fixes
-            </li>
-          </ul>
-        </div>
-
-        <!-- Content & Link Building -->
-        <div class="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow" style="background-color: #f8fafc !important;">
-          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-link text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Content & Link Building</h3>
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              SEO-optimized content creation
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              <a href="/backlink-seo-services-philippines">High-quality backlink acquisition</a>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              On-page optimization
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Digital PR and outreach
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-green-500 mr-3"></i>
-              Branded monthly reports
-            </li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Do You Need to Hire White Label SEO Experts Section -->
-  <section class="py-20 bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+  <!-- Our Process Section -->
+  <section class="process-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose Philippines White Label SEO Solutions?</h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Scaling your digital agency or marketing service is exciting but can quickly become overwhelming, especially regarding SEO. It's technical, time-consuming, and constantly evolving. That's where <strong>outsourcing SEO in Philippines</strong> through our white-label program becomes invaluable.</p>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">The <strong>advantages of white label SEO Philippines</strong> partnerships go beyond just outsourcing work - it's about unlocking growth, saving time, and delivering expert-level results without the overhead. Our <strong>Philippines outsourcing SEO services</strong> provide the expertise you need.</p>
+      <div class="process-header">
+        <h2>Our White Label Partnership <span>Process</span></h2>
+        <p>A streamlined approach to scaling your agency with expert SEO services delivered under your brand.</p>
       </div>
-      
+
+      <div class="process-grid">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Discovery & Onboarding</h3>
+          <p>We learn about your agency, your clients' needs, and establish communication protocols to ensure seamless collaboration.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Custom Proposal</h3>
+          <p>Receive tailored service packages with transparent pricing and clear deliverables for your specific requirements.</p>
+        </div>
+
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Brand Integration</h3>
+          <p>We configure all reports, communications, and deliverables with your branding to maintain complete confidentiality.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Campaign Launch</h3>
+          <p>Begin delivering expert SEO services to your clients with our team working invisibly behind the scenes.</p>
+        </div>
+
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Monthly Reporting</h3>
+          <p>Receive fully branded monthly reports with performance metrics, progress updates, and strategic recommendations.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-sync"></i>
+          </div>
+          <h3>Continuous Optimization</h3>
+          <p>We continuously refine strategies based on performance data and algorithm updates to ensure ongoing success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="benefits-header">
+        <h2>The Benefits of White Label <span>SEO Partnerships</span></h2>
+        <p>Partnering with us unlocks powerful advantages for your agency and clients.</p>
+      </div>
+
+      <div class="benefits-layout">
+        <div class="benefits-visual">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+            alt="Professional team collaborating on white label SEO projects"
+            class="benefits-image"
+          />
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Scale Instantly</h3>
+            <p>Expand your service offerings without hiring additional staff or investing in expensive SEO tools and training programs.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Your Brand Protected</h3>
+            <p>All deliverables are fully branded with your company identity. Your clients never know we exist and we never contact them directly.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3>Higher Profit Margins</h3>
+            <p>Reduce operational costs while increasing revenue with our affordable white label SEO Philippines pricing structure.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>Expert Results</h3>
+            <p>Deliver consistent, high-quality results that build client trust and retention through proven SEO strategies and execution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="why-choose-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <div class="section-badge">Why Partner With Us</div>
+        <h2>Why Choose Philippines <span>White Label SEO Solutions?</span></h2>
+        <p>Scaling your digital agency or marketing service is exciting but can quickly become overwhelming, especially regarding SEO. That's where <strong>outsourcing SEO in Philippines</strong> through our white-label program becomes invaluable.</p>
+      </div>
+
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Scale Without Hiring -->
-        <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-                <i class="fas fa-chart-line text-white text-xl"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Scale Without Hiring an In-House Team</h3>
-              <p class="text-gray-700 mb-4">Building an in-house SEO team means recruiting, training, managing, and paying salaries, benefits, and tools. It's a significant investment in both time and money.</p>
-              <p class="text-gray-700 mb-4">White label SEO experts give you instant access to a team of strategists, writers, link builders, and analysts without adding a single person to your payroll.</p>
-              <div class="flex items-center text-green-600 font-semibold">
-                <i class="fas fa-check-circle mr-2"></i>
-                Result: Scale fast without increasing your fixed costs.
-              </div>
+        <div class="why-card orange-gradient">
+          <div class="why-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="why-content">
+            <h3>Scale Without Hiring an In-House Team</h3>
+            <p>Building an in-house SEO team means recruiting, training, managing, and paying salaries, benefits, and tools. It's a significant investment in both time and money.</p>
+            <p>White label SEO experts give you instant access to a team of strategists, writers, link builders, and analysts without adding a single person to your payroll.</p>
+            <div class="why-result">
+              <i class="fas fa-check-circle"></i>
+              Result: Scale fast without increasing your fixed costs.
             </div>
           </div>
         </div>
 
         <!-- Leverage Deep Knowledge -->
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <i class="fas fa-brain text-white text-xl"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Leverage Deep, Specialized SEO Knowledge</h3>
-              <p class="text-gray-700 mb-4">SEO isn't guesswork - it combines technical optimization, content strategy, keyword research, algorithm tracking, and link building. One mistake can tank rankings.</p>
-              <p class="text-gray-700 mb-4">White-label experts bring years of experience across industries, tools, and platforms. They stay on top of Google updates, so you don't have to.</p>
-              <div class="flex items-center text-green-600 font-semibold">
-                <i class="fas fa-check-circle mr-2"></i>
-                Result: Fewer mistakes, better rankings, and more confident client delivery.
-              </div>
+        <div class="why-card blue-gradient">
+          <div class="why-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="why-content">
+            <h3>Leverage Deep, Specialized SEO Knowledge</h3>
+            <p>SEO isn't guesswork - it combines technical optimization, content strategy, keyword research, algorithm tracking, and link building. One mistake can tank rankings.</p>
+            <p>White-label experts bring years of experience across industries, tools, and platforms. They stay on top of Google updates, so you don't have to.</p>
+            <div class="why-result">
+              <i class="fas fa-check-circle"></i>
+              Result: Fewer mistakes, better rankings, and more confident client delivery.
             </div>
           </div>
         </div>
 
         <!-- Save Time -->
-        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <i class="fas fa-clock text-white text-xl"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Save Time and Focus on What You Do Best</h3>
-              <p class="text-gray-700 mb-4">As an agency owner or marketing pro, your time is better spent closing deals, nurturing clients, and growing your business - not writing meta tags or running backlink audits.</p>
-              <p class="text-gray-700 mb-4">When you hire white-label SEO experts, you get to focus on high-impact work while they handle the technical and execution side behind the scenes.</p>
-              <div class="flex items-center text-green-600 font-semibold">
-                <i class="fas fa-check-circle mr-2"></i>
-                Result: More time for sales, strategy, and client relationships.
-              </div>
+        <div class="why-card purple-gradient">
+          <div class="why-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="why-content">
+            <h3>Save Time and Focus on What You Do Best</h3>
+            <p>As an agency owner or marketing pro, your time is better spent closing deals, nurturing clients, and growing your business - not writing meta tags or running backlink audits.</p>
+            <p>When you hire white-label SEO experts, you get to focus on high-impact work while they handle the technical and execution side behind the scenes.</p>
+            <div class="why-result">
+              <i class="fas fa-check-circle"></i>
+              Result: More time for sales, strategy, and client relationships.
             </div>
           </div>
         </div>
 
         <!-- Full-Service Package -->
-        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                <i class="fas fa-box text-white text-xl"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Offer a Full-Service Package to Your Clients</h3>
-              <p class="text-gray-700 mb-4">Clients love one-stop shops. If you only offer PPC, social media, or web design, you're leaving money on the table. Adding SEO to your services makes your agency more valuable and challenging to replace.</p>
-              <p class="text-gray-700 mb-4">White-label SEO experts let you instantly add SEO to your service menu without building it from scratch.</p>
-              <div class="flex items-center text-green-600 font-semibold">
-                <i class="fas fa-check-circle mr-2"></i>
-                Result: Increase revenue per client and reduce churn.
-              </div>
-            </div>
+        <div class="why-card green-gradient">
+          <div class="why-icon">
+            <i class="fas fa-box"></i>
           </div>
-        </div>
-
-        <!-- Consistent Results -->
-        <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <i class="fas fa-trophy text-white text-xl"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Deliver Consistent, High-Quality Results</h3>
-              <p class="text-gray-700 mb-4">Clients expect evident progress: higher rankings, more traffic, better leads. But SEO requires consistency - monthly audits, content, outreach, reporting.</p>
-              <p class="text-gray-700 mb-4">White-label SEO teams have the systems, workflows, and tools to deliver quality work on time, every time.</p>
-              <div class="flex items-center text-green-600 font-semibold">
-                <i class="fas fa-check-circle mr-2"></i>
-                Result: Happier clients, better retention, stronger reputation.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Brand Integrity -->
-        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-8">
-          <div class="flex items-start space-x-4">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                <i class="fas fa-shield-alt text-white text-xl"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Maintain Your Brand Integrity</h3>
-              <p class="text-gray-700 mb-4">The best part? With white-label SEO, your clients never know we exist.</p>
-              <p class="text-gray-700 mb-4">Everything, including audits, reports, and communications, is delivered under your brand. You stay in control of the relationship while we execute in the background.</p>
-              <div class="flex items-center text-green-600 font-semibold">
-                <i class="fas fa-check-circle mr-2"></i>
-                Result: You look like a full-service powerhouse without the extra workload.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Bright Forge Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Bright Forge for <span class="text-red-500">White Label SEO?</span></h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">We understand agencies' unique challenges and have built our services specifically to address them.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Complete Confidentiality -->
-        <div class="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center" style="background-color: #f8fafc !important;">
-          <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-user-secret text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Complete Confidentiality</h3>
-          <p class="text-gray-600">We operate entirely behind the scenes. Your clients will never know we exist and will never compete for your business.</p>
-        </div>
-
-        <!-- Expert Team -->
-        <div class="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center" style="background-color: #f8fafc !important;">
-          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-users text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Expert Team</h3>
-          <p class="text-gray-600">Our team includes certified SEO professionals, content creators, and technical specialists with years of experience in the Philippine and international markets.</p>
-        </div>
-
-        <!-- Proven Results -->
-        <div class="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center" style="background-color: #f8fafc !important;">
-          <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-chart-bar text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Proven Results</h3>
-          <p class="text-gray-600">We've helped agencies deliver exceptional results for their clients, with an average 156% increase in organic traffic within 6 months.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked <span class="text-red-500">Questions</span></h2>
-        <p class="text-lg text-gray-600">Common questions about our white label SEO partnership program.</p>
-      </div>
-
-      <div class="space-y-6">
-        <div class="bg-[#f8fafc] rounded-lg shadow-lg overflow-hidden" style="background-color: #f8fafc !important;">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">How does white label SEO work exactly?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">You provide us with your client's requirements and brand guidelines. We perform all SEO work behind the scenes and deliver branded reports, strategies, and results that you can present to your clients as your own. Your clients never know we exist, and we never contact them directly.</p>
-          </div>
-        </div>
-
-        <div class="bg-[#f8fafc] rounded-lg shadow-lg overflow-hidden" style="background-color: #f8fafc !important;">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">What's included in your white label SEO packages?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">Our packages include comprehensive SEO audits, technical optimization, keyword research, content creation, link building, monthly branded reports, and ongoing strategy adjustments. We customize each package based on your client's specific needs and your agency's requirements.</p>
-          </div>
-        </div>
-
-        <div class="bg-[#f8fafc] rounded-lg shadow-lg overflow-hidden" style="background-color: #f8fafc !important;">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">How long does it take to see SEO results?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">SEO is a long-term strategy, but most clients start seeing improvements within 3-4 months. Significant results typically appear within 6-12 months. We provide monthly reports showing progress in rankings, traffic, and other key metrics so you can keep your clients informed throughout the process.</p>
-          </div>
-        </div>
-
-        <div class="bg-[#f8fafc] rounded-lg shadow-lg overflow-hidden" style="background-color: #f8fafc !important;">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">Can you handle clients in different industries?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">Yes, our team has experience across various industries including e-commerce, healthcare, legal, real estate, hospitality, and B2B services. We adapt our strategies to match industry-specific requirements and compliance needs, especially for businesses targeting the Philippine market.</p>
-          </div>
-        </div>
-
-        <div class="bg-[#f8fafc] rounded-lg shadow-lg overflow-hidden" style="background-color: #f8fafc !important;">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">What are your pricing and contract terms?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">We offer flexible pricing based on the scope of work and number of clients. Contracts are typically month-to-month with no long-term commitments required. We provide transparent pricing with no hidden fees, and you can scale up or down as your agency grows.</p>
-          </div>
-        </div>
-
-        <div class="bg-[#f8fafc] rounded-lg shadow-lg overflow-hidden" style="background-color: #f8fafc !important;">
-          <button class="faq-toggle w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900">How do you ensure quality and communication?</h3>
-              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
-            </div>
-          </button>
-          <div class="faq-content hidden px-6 pb-6">
-            <p class="text-gray-600">You'll have a dedicated account manager who understands your agency's needs and maintains regular communication. We provide detailed monthly reports, strategy updates, and are available for consultations. All work is reviewed by senior SEO specialists before delivery to ensure consistent quality.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philippines SEO Industry Insights Section -->
-  <section class="py-20 bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Philippines SEO Industry <span class="text-red-500">Leadership</span></h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Understanding the <strong>Philippines SEO industry</strong> landscape and why <strong>digital marketing Philippines white label</strong> solutions are becoming essential for agency growth.</p>
-      </div>
-      
-      <div class="grid lg:grid-cols-3 gap-8 mb-12">
-        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center">
-          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-chart-line text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Growing Market Demand</h3>
-          <p class="text-gray-600">The <strong>Philippines SEO industry</strong> is experiencing unprecedented growth, with businesses increasingly recognizing the value of professional SEO services for online visibility.</p>
-        </div>
-        
-        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 text-center">
-          <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-users text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Expert Filipino Talent</h3>
-          <p class="text-gray-600">Our team of <strong>Filipino white label SEO experts</strong> combines international SEO knowledge with deep understanding of local and global market dynamics.</p>
-        </div>
-        
-        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 text-center">
-          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-dollar-sign text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Cost-Effective Solutions</h3>
-          <p class="text-gray-600">Discover competitive <strong>white label SEO cost Philippines</strong> pricing that allows agencies to maintain healthy margins while delivering premium services.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Local SEO Reseller Program Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Local SEO Reseller Philippines <span class="text-red-500">Program</span></h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our specialized <strong>local SEO reseller Philippines</strong> program helps agencies tap into the growing demand for location-based SEO services across the archipelago.</p>
-      </div>
-      
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Local SEO Matters in the Philippines</h3>
-          <div class="space-y-4">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center">
-                <i class="fas fa-check text-white text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900 mb-2">Mobile-First Market</h4>
-                <p class="text-gray-600">Philippines has one of the highest mobile usage rates globally, making local search optimization crucial for businesses.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center">
-                <i class="fas fa-check text-white text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900 mb-2">Regional Business Growth</h4>
-                <p class="text-gray-600">Local businesses across Metro Manila, Cebu, Davao, and other key cities need specialized SEO strategies.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center">
-                <i class="fas fa-check text-white text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900 mb-2">Cultural Understanding</h4>
-                <p class="text-gray-600">Our <strong>Philippines white label marketing</strong> approach incorporates local cultural nuances and search behaviors.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="bg-white rounded-2xl p-8 shadow-lg">
-          <h3 class="text-xl font-bold text-gray-900 mb-6">Local SEO Reseller Benefits</h3>
-          <div class="space-y-4">
-            <div class="flex items-center space-x-3">
-              <i class="fas fa-map-marker-alt text-red-500"></i>
-              <span class="text-gray-700">Google My Business optimization</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <i class="fas fa-star text-red-500"></i>
-              <span class="text-gray-700">Review management systems</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <i class="fas fa-search text-red-500"></i>
-              <span class="text-gray-700">Local keyword research & targeting</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <i class="fas fa-building text-red-500"></i>
-              <span class="text-gray-700">Local citation building</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <i class="fas fa-mobile-alt text-red-500"></i>
-              <span class="text-gray-700">Mobile-first optimization</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <i class="fas fa-chart-bar text-red-500"></i>
-              <span class="text-gray-700">Local SEO reporting & analytics</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-red-500 to-blue-600 text-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Scale Your Agency with White Label SEO Philippines?</h2>
-      <p class="text-xl mb-8 opacity-90">Partner with the <strong>best white label SEO providers Philippines</strong> and start delivering exceptional SEO results under your brand today. Join our <strong>Philippines SEO reseller program</strong> now!</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors" onclick="window.location.href='/contact/'; return false;">
-          Start Your Partnership
-        </a>
-        <a href="tel:+639123456789" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors">
-          Call Us Today
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Transparency Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Transparent <span class="text-red-500">Pricing Structure</span></h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Understanding <strong>white label SEO cost Philippines</strong> shouldn't be complicated. We believe in clear, predictable pricing that helps you plan and profit.</p>
-      </div>
-      
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="bg-gradient-to-br from-red-50 to-blue-50 rounded-2xl p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">What Affects Your Investment?</h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Project Scope & Complexity</h4>
-                  <p class="text-gray-600 text-sm">Technical SEO, content volume, and competitive landscape analysis</p>
-                </div>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Reporting & Communication Frequency</h4>
-                  <p class="text-gray-600 text-sm">Monthly, bi-weekly, or weekly branded reports and client calls</p>
-                </div>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">Service Package Selection</h4>
-                  <p class="text-gray-600 text-sm">From basic optimization to comprehensive digital marketing campaigns</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div>
-          <div class="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-8 text-white">
-            <h3 class="text-2xl font-bold mb-6">Why Our Pricing Works</h3>
-            <div class="space-y-6">
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <i class="fas fa-handshake text-white text-xl"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-lg">No Hidden Fees</h4>
-                  <p class="text-blue-100">Everything is outlined upfront in your service agreement. No surprises, no unexpected charges.</p>
-                </div>
-              </div>
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <i class="fas fa-chart-line text-white text-xl"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-lg">Scalable Investment</h4>
-                  <p class="text-blue-100">Start small and grow your partnership as your client base expands. Flexible terms that adapt to your business.</p>
-                </div>
-              </div>
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <i class="fas fa-trophy text-white text-xl"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-lg">Performance-Based Value</h4>
-                  <p class="text-blue-100">Our success is measured by your client satisfaction and retention. We're invested in your long-term growth.</p>
-                </div>
-              </div>
+          <div class="why-content">
+            <h3>Offer a Full-Service Package to Your Clients</h3>
+            <p>Clients love one-stop shops. If you only offer PPC, social media, or web design, you're leaving money on the table. Adding SEO to your services makes your agency more valuable.</p>
+            <p>White-label SEO experts let you instantly add SEO to your service menu without building it from scratch.</p>
+            <div class="why-result">
+              <i class="fas fa-check-circle"></i>
+              Result: Increase revenue per client and reduce churn.
             </div>
           </div>
         </div>
@@ -713,141 +321,150 @@ import ContactSection from '../components/ContactSection.astro';
   </section>
 
   <!-- Success Metrics Section -->
-  <section class="py-20 bg-gray-50">
+  <section class="metrics-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Proven <span class="text-red-500">Success Metrics</span></h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our <strong>best white label SEO providers Philippines</strong> track record speaks for itself. Here's what our agency partners achieve.</p>
+      <div class="section-header">
+        <div class="section-badge">Track Record</div>
+        <h2>Proven <span>Success Metrics</span></h2>
+        <p>Our <strong>best white label SEO providers Philippines</strong> track record speaks for itself. Here's what our agency partners achieve.</p>
       </div>
-      
-      <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
-          <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-percentage text-white text-2xl"></i>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon green-bg">
+            <i class="fas fa-percentage"></i>
           </div>
-          <div class="text-3xl font-bold text-gray-900 mb-2">94%</div>
-          <p class="text-gray-600 font-medium">Client Retention Rate</p>
-          <p class="text-sm text-gray-500 mt-2">Agencies stay with us long-term</p>
+          <div class="metric-stat">94%</div>
+          <p class="metric-label">Client Retention Rate</p>
+          <p class="metric-desc">Agencies stay with us long-term</p>
         </div>
-        
-        <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
-          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-clock text-white text-2xl"></i>
+
+        <div class="metric-card">
+          <div class="metric-icon blue-bg">
+            <i class="fas fa-clock"></i>
           </div>
-          <div class="text-3xl font-bold text-gray-900 mb-2">72hrs</div>
-          <p class="text-gray-600 font-medium">Average Response Time</p>
-          <p class="text-sm text-gray-500 mt-2">Quick turnaround on requests</p>
+          <div class="metric-stat">72hrs</div>
+          <p class="metric-label">Average Response Time</p>
+          <p class="metric-desc">Quick turnaround on requests</p>
         </div>
-        
-        <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
-          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-arrow-up text-white text-2xl"></i>
+
+        <div class="metric-card">
+          <div class="metric-icon purple-bg">
+            <i class="fas fa-arrow-up"></i>
           </div>
-          <div class="text-3xl font-bold text-gray-900 mb-2">156%</div>
-          <p class="text-gray-600 font-medium">Average Traffic Increase</p>
-          <p class="text-sm text-gray-500 mt-2">Within first 6 months</p>
+          <div class="metric-stat">156%</div>
+          <p class="metric-label">Average Traffic Increase</p>
+          <p class="metric-desc">Within first 6 months</p>
         </div>
-        
-        <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
-          <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-users text-white text-2xl"></i>
+
+        <div class="metric-card">
+          <div class="metric-icon orange-bg">
+            <i class="fas fa-users"></i>
           </div>
-          <div class="text-3xl font-bold text-gray-900 mb-2">500+</div>
-          <p class="text-gray-600 font-medium">Successful Projects</p>
-          <p class="text-sm text-gray-500 mt-2">Delivered across industries</p>
+          <div class="metric-stat">50+</div>
+          <p class="metric-label">Agency Partners</p>
+          <p class="metric-desc">Trusted worldwide</p>
         </div>
-      </div>
-      
-      <div class="bg-gradient-to-r from-red-500 to-blue-600 rounded-2xl p-8 text-white text-center">
-        <h3 class="text-2xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
-        <p class="text-lg mb-6 opacity-90">Discover why agencies across the Philippines choose us as their trusted <strong>Philippines seo reseller program</strong> partner.</p>
-        <a href="/contact/" class="inline-block bg-white text-red-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" onclick="window.location.href='/contact/'; return false;">
-          Start Your Partnership Today
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- Partnership Process Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Simple <span class="text-red-500">Partnership Process</span></h2>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Getting started with our <strong>outsourcing SEO in Philippines</strong> program is straightforward. Here's how we onboard new agency partners.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked <span class="text-gradient">Questions</span></h2>
+        <p class="text-lg text-gray-600">Common questions about our white label SEO partnership program.</p>
       </div>
-      
-      <div class="grid lg:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-white text-2xl font-bold">1</span>
+
+      <div class="space-y-6">
+        <div class="faq-item">
+          <button class="faq-toggle" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">How does white label SEO work exactly?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden">
+            <p class="text-gray-600">You provide us with your client's requirements and brand guidelines. We perform all SEO work behind the scenes and deliver branded reports, strategies, and results that you can present to your clients as your own. Your clients never know we exist, and we never contact them directly.</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery Call</h3>
-          <p class="text-gray-600">We discuss your agency's needs, current challenges, and growth objectives to customize our approach.</p>
         </div>
-        
-        <div class="text-center">
-          <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-white text-2xl font-bold">2</span>
+
+        <div class="faq-item">
+          <button class="faq-toggle" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">What's included in your white label SEO packages?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden">
+            <p class="text-gray-600">Our packages include comprehensive SEO audits, technical optimization, keyword research, content creation, link building, monthly branded reports, and ongoing strategy adjustments. We customize each package based on your client's specific needs and your agency's requirements.</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Custom Proposal</h3>
-          <p class="text-gray-600">Receive a tailored service package with transparent pricing and clear deliverables for your specific requirements.</p>
         </div>
-        
-        <div class="text-center">
-          <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-white text-2xl font-bold">3</span>
+
+        <div class="faq-item">
+          <button class="faq-toggle" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">How long does it take to see SEO results?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden">
+            <p class="text-gray-600">SEO is a long-term strategy, but most clients start seeing improvements within 3-4 months. Significant results typically appear within 6-12 months. We provide monthly reports showing progress in rankings, traffic, and other key metrics so you can keep your clients informed throughout the process.</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Onboarding Setup</h3>
-          <p class="text-gray-600">We configure branded reporting, establish communication protocols, and integrate with your existing workflows.</p>
         </div>
-        
-        <div class="text-center">
-          <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-white text-2xl font-bold">4</span>
+
+        <div class="faq-item">
+          <button class="faq-toggle" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">Can you handle clients in different industries?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden">
+            <p class="text-gray-600">Yes, our team has experience across various industries including e-commerce, healthcare, legal, real estate, hospitality, and B2B services. We adapt our strategies to match industry-specific requirements and compliance needs, especially for businesses targeting the Philippine market.</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Launch & Optimize</h3>
-          <p class="text-gray-600">Begin delivering results to your clients while we continuously optimize strategies based on performance data.</p>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">What are your pricing and contract terms?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden">
+            <p class="text-gray-600">We offer flexible pricing based on the scope of work and number of clients. Contracts are typically month-to-month with no long-term commitments required. We provide transparent pricing with no hidden fees, and you can scale up or down as your agency grows.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-gray-900">How do you ensure quality and communication?</h3>
+              <i class="fas fa-chevron-down text-gray-400 transform transition-transform"></i>
+            </div>
+          </button>
+          <div class="faq-content hidden">
+            <p class="text-gray-600">You'll have a dedicated account manager who understands your agency's needs and maintains regular communication. We provide detailed monthly reports, strategy updates, and are available for consultations. All work is reviewed by senior SEO specialists before delivery to ensure consistent quality.</p>
+          </div>
         </div>
       </div>
-      
-      <div class="mt-12 bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8">
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">What Makes Us Different?</h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-star text-white text-xs"></i>
-                </div>
-                <p class="text-gray-700"><strong>Dedicated Account Management:</strong> Your own project manager who understands your business and client needs.</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-star text-white text-xs"></i>
-                </div>
-                <p class="text-gray-700"><strong>Flexible Service Levels:</strong> Scale up or down based on client demand without long-term commitments.</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fas fa-star text-white text-xs"></i>
-                </div>
-                <p class="text-gray-700"><strong>Complete Brand Protection:</strong> Your clients never know we exist. All communications come from your team.</p>
-              </div>
-            </div>
-          </div>
-          <div class="text-center">
-            <div class="bg-white rounded-xl p-6 shadow-lg">
-              <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-rocket text-white text-2xl"></i>
-              </div>
-              <h4 class="text-xl font-bold text-gray-900 mb-2">Ready to Get Started?</h4>
-              <p class="text-gray-600 mb-4">Join the growing number of agencies leveraging our expertise to scale their SEO services.</p>
-              <a href="/contact/" class="inline-block bg-gradient-to-r from-red-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow" onclick="window.location.href='/contact/'; return false;">
-                Schedule Discovery Call
-              </a>
-            </div>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Scale Your Agency with White Label SEO Philippines?</h2>
+      <p class="text-xl mb-8 text-white opacity-90">Partner with the <strong>best white label SEO providers Philippines</strong> and start delivering exceptional SEO results under your brand today.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="cta-button-white">
+          Start Your Partnership
+        </a>
+        <a href="#services" class="cta-button-outline">
+          Explore Our Services
+        </a>
       </div>
     </div>
   </section>
@@ -857,417 +474,915 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-  /* Enhanced Hero Section Styles */
-  .hero-white-label-seo {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    overflow: hidden;
-    padding: 2rem 0;
+/* White Label Icon Grid (used in Hero visual slot) */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.white-label-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.white-label-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.white-label-icon:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.white-label-icon:nth-child(even) {
+  animation-delay: 2s;
+}
+
+.white-label-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .white-label-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
-  
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .white-label-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
-  
-  /* Background Elements */
-  .hero-bg-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  .floating-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .circle-1 {
-    width: 120px;
-    height: 120px;
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-  
-  .circle-2 {
-    width: 80px;
-    height: 80px;
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
-  }
-  
-  .circle-3 {
+
+  .white-label-icon {
     width: 60px;
     height: 60px;
-    bottom: 30%;
-    left: 20%;
-    animation-delay: 4s;
+    font-size: 1.5rem;
   }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Why Section */
+.why-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.content-explanation {
+  display: flex;
+  justify-content: center;
+}
+
+.content-card {
+  display: flex;
+  max-width: 1000px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.content-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  font-size: 2.5rem;
+}
+
+.content-text {
+  padding: 2.5rem;
+}
+
+.content-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.25rem;
+}
+
+.content-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .content-card {
+    flex-direction: column;
   }
-  
-  /* Breadcrumbs */
-  .hero-breadcrumbs {
-    display: inline-block !important;
-    margin-bottom: 3rem;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1;
-    position: relative;
-    z-index: 10;
-  }
-  
-  .hero-breadcrumbs * {
-    display: inline !important;
-    vertical-align: baseline !important;
-  }
-  
-  .breadcrumb-link {
-    color: white !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    opacity: 0.9;
-  }
-  
-  .breadcrumb-link:hover {
-    opacity: 1;
-    text-decoration: underline;
-  }
-  
-  .breadcrumb-separator {
-    color: white !important;
-    margin: 0 8px;
-    opacity: 0.7;
-  }
-  
-  .breadcrumb-current {
-    color: white !important;
-    font-weight: 600;
-  }
-  
-  /* Hero Container */
-  .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-  }
-  
-  .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: white;
-    line-height: 1.1;
-    margin-bottom: 2rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .hero-content h1 span {
-    color: #FFE4E1;
-  }
-  
-  /* Hero Badge */
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
-    padding: 0.75rem 1.5rem;
-    margin-bottom: 2rem;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-  
-  .hero-badge i {
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-  
-  /* Hero Content */
-  .hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.5rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Hero Actions */
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    margin: 3rem 0;
-    flex-wrap: wrap;
-  }
-  
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    border: 2px solid transparent;
-  }
-  
-  .cta-button.primary {
-    background: white;
-    color: #f97316;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cta-button.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-    background: #f8f9fa;
-  }
-  
-  .cta-button.secondary {
-    background: transparent;
-    color: white;
-    border-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);
-  }
-  
-  .cta-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    transform: translateY(-2px);
-  }
-  
-  /* Hero Stats */
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .stat {
-    text-align: center;
-  }
-  
-  .hero-stats .stat-number,
-  .hero-white-label-seo .stat-number {
-    font-size: 2rem !important;
-    font-weight: 700 !important;
-    color: white !important;
-    color: #ffffff !important;
-    margin-bottom: 4px;
-  }
-  
-  .hero-stats .stat-label,
-  .hero-white-label-seo .stat-label {
-    font-size: 0.9rem !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-weight: 500;
-  }
-  
-  /* Hero Visual */
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .hero-image-container {
-    position: relative;
+
+  .content-icon {
     width: 100%;
-    max-width: 500px;
-  }
-  
-  .white-label-icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    min-width: auto;
     padding: 2rem;
   }
-  
-  .white-label-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    color: white;
-    font-size: 2rem;
-    transition: all 0.3s ease;
-    animation: float 4s ease-in-out infinite;
-  }
-  
-  .white-label-icon:nth-child(odd) {
-    animation-delay: 1s;
-  }
-  
-  .white-label-icon:nth-child(even) {
-    animation-delay: 2s;
-  }
-  
-  .white-label-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .hero-container {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      text-align: center;
-    }
-    
-    .hero-content h1 {
-      font-size: 3rem;
-    }
-    
-    .white-label-icon-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .hero-white-label-seo {
-      min-height: auto;
-      padding: 4rem 0;
-    }
-    
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-stats {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    
-    .hero-actions {
-      flex-direction: column;
-      align-items: stretch;
-    }
-    
-    .white-label-icon-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-    
-    .white-label-icon {
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-    }
-    
-    .floating-circle {
-      opacity: 0.5;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-    
-    .hero-content p {
-      font-size: 1rem;
-    }
-    
-    .cta-button {
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9rem;
-    }
-  }
-  
-  /* Container and Layout Fixes */
-  .hero-white-label-seo .container {
-    max-width: 1200px;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-  }
-  
-  .hero-white-label-seo .hero-container {
-    max-width: none;
-    width: 100%;
-  }
-  
-  /* Typography Fixes */
-  .hero-white-label-seo .hero-content {
-    max-width: none;
-  }
-  
-  .hero-white-label-seo .hero-content p:last-of-type {
-    margin-bottom: 2rem;
+}
+
+/* Services Section */
+.services-section-new {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.services-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.services-content h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-item {
+  background: white;
+  border-left: 4px solid #f97316;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  background: #ffffff;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+}
+
+.service-item h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-visual {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.visual-card {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(255, 107, 53, 0.05));
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.visual-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.visual-stat {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0 0.5rem;
+  line-height: 1;
+}
+
+.visual-label {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  /* Internal Link Styling */
-  .bg-white ul li a {
-    color: #f97316;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
+  .services-visual {
+    position: static;
+  }
+}
+
+/* Process Section */
+.process-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.process-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.process-box {
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.process-box.orange-bg {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+}
+
+.process-box.orange-bg h3,
+.process-box.orange-bg p {
+  color: white;
+}
+
+.process-box.white-bg {
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.process-box.white-bg h3 {
+  color: #1a1a1a;
+}
+
+.process-box.white-bg p {
+  color: #666;
+}
+
+.process-box-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.process-box.orange-bg .process-box-icon {
+  color: white;
+}
+
+.process-box.white-bg .process-box-icon {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.process-box:hover .process-box-icon {
+  transform: scale(1.1);
+}
+
+.process-box h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.process-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.benefits-header h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefits-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.benefits-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.benefits-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-image {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  position: relative;
+  background: white;
+  border: 2px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+  transition: all 0.4s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
+}
+
+.benefit-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 0.875rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  .bg-white ul li a:hover {
-    color: #4285F4;
+  .benefits-image {
+    height: 400px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.why-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  background: white;
+  border: 2px solid #f0f0f0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.why-card.orange-gradient::before {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+}
+
+.why-card.blue-gradient::before {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.why-card.purple-gradient::before {
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+}
+
+.why-card.green-gradient::before {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.why-card.orange-gradient:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
+}
+
+.why-card.blue-gradient:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+}
+
+.why-card.purple-gradient:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 15px 40px rgba(168, 85, 247, 0.15);
+}
+
+.why-card.green-gradient:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.15);
+}
+
+.why-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+  transition: all 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
+}
+
+.why-content h3 {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.why-content p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 0.875rem;
+  font-size: 1rem;
+}
+
+.why-result {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(255, 107, 53, 0.1));
+  color: #f97316;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 50px;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  transition: all 0.3s ease;
+}
+
+.why-card:hover .why-result {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  border-color: transparent;
+  transform: translateX(5px);
+}
+
+.why-result i {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .why-card {
+    flex-direction: column;
+    padding: 2rem;
   }
 
-  .bg-white ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background: linear-gradient(90deg, #f97316, #4285F4);
-    transition: width 0.3s ease;
+  .why-icon {
+    margin: 0 auto;
   }
 
-  .bg-white ul li a:hover::after {
-    width: 100%;
+  .why-content {
+    text-align: center;
   }
+}
+
+/* Metrics Section */
+.metrics-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-card {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 2px solid #f0f0f0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.metric-card:hover::before {
+  opacity: 1;
+}
+
+.metric-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.metric-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+  transition: all 0.4s ease;
+}
+
+.metric-card::before {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+}
+
+.metric-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+}
+
+.metric-card:hover .metric-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
+}
+
+.metric-stat {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.metric-desc {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.faq-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-toggle:hover {
+  background: #f8f9fa;
+}
+
+.faq-toggle.active i {
+  transform: rotate(180deg);
+}
+
+.faq-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-content.hidden {
+  display: none;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+}
+
+.cta-button-white {
+  display: inline-block;
+  background: white;
+  color: #f97316;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button-white:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cta-button-outline {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button-outline:hover {
+  background: white;
+  color: #f97316;
+  transform: translateY(-2px);
+}
 </style>
 
 <script>
   function toggleFAQ(element) {
-    // Toggle the active class on the button
     element.classList.toggle('active');
-    
-    // Find the content container
     const content = element.nextElementSibling;
-    
-    // Toggle the hidden class on the content
+
     if (content.classList.contains('hidden')) {
       content.classList.remove('hidden');
       element.querySelector('i').classList.add('rotate-180');
@@ -1276,8 +1391,7 @@ import ContactSection from '../components/ContactSection.astro';
       element.querySelector('i').classList.remove('rotate-180');
     }
   }
-  
-  // Add event listeners to all FAQ toggles when the page loads
+
   document.addEventListener('DOMContentLoaded', function() {
     const faqToggles = document.querySelectorAll('.faq-toggle');
     faqToggles.forEach(toggle => {

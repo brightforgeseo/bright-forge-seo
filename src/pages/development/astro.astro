@@ -3,72 +3,44 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
 import ContactSection from '../../components/ContactSection.astro';
+import Hero from '../../components/Hero.astro';
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import ButtonSecondary from '../../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="Astro Website Development Services| Bright Forge SEO" description="We build blazing-fast, SEO-ready websites with Astro. Discover our Philippines-based web design & development service that boosts rankings and delights users.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
-  <section class="hero-technical-seo">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
+  <Hero
+    badgeIcon="fas fa-rocket"
+    badgeText="Astro Experts"
+    title="Astro Development Philippines"
+    breadcrumbCurrent="Astro Development"
+  >
+    <Fragment slot="story">
+      <p>Lightning-fast static sites with the power of island architecture.</p>
+      <p>At Bright Forge SEO, we specialize in Astro development that delivers blazing-fast performance and perfect SEO scores. From marketing sites to complex web applications, we build solutions that rank well and load instantly.</p>
+    </Fragment>
 
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <a href="/development/" class="breadcrumb-link">Development</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Astro Development</span>
-      </nav>
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Start Your Astro Project" />
+      <ButtonSecondary href="#process" text="Learn Our Process" />
+    </Fragment>
 
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-rocket"></i>
-            <span>Astro Experts</span>
-          </div>
-
-          <h1>Astro Development Philippines</h1>
-
-          <div class="hero-story">
-            <p>Lightning-fast static sites with the power of island architecture.</p>
-
-            <p>At Bright Forge SEO, we specialize in Astro development that delivers blazing-fast performance and perfect SEO scores. From marketing sites to complex web applications, we build solutions that rank well and load instantly.</p>
-          </div>
-
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Start Your Astro Project</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#process" class="cta-button secondary">
-              <i class="fas fa-play"></i>
-              <span>Learn Our Process</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="technical-icon-grid">
-              <div class="tech-icon"><i class="fas fa-rocket"></i></div>
-              <div class="tech-icon"><i class="fas fa-code"></i></div>
-              <div class="tech-icon"><i class="fas fa-search"></i></div>
-              <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
-              <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
-              <div class="tech-icon"><i class="fas fa-trophy"></i></div>
-            </div>
-          </div>
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="technical-icon-grid">
+          <div class="tech-icon"><i class="fas fa-rocket"></i></div>
+          <div class="tech-icon"><i class="fas fa-code"></i></div>
+          <div class="tech-icon"><i class="fas fa-search"></i></div>
+          <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="tech-icon"><i class="fas fa-trophy"></i></div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Social Proof Banner -->
   <section class="social-proof-banner">
@@ -655,352 +627,73 @@ section {
 }
 
 /********************
-  Enhanced Hero Section
+  Hero Visual Styles (Icon Grid)
 *********************/
-.hero-astro-development {
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 30%, #FF6B35 100%);
-  min-height: 100vh;
-  padding: 2rem 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  color: white;
-  animation: gradientShift 8s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 30%, #FF6B35 100%);
-  }
-  50% {
-    background: linear-gradient(135deg, #FF6B35 0%, #f97316 30%, #FF6B35 100%);
-  }
-}
-
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle-1 {
-  width: 80px;
-  height: 80px;
-  top: 20%;
-  left: 10%;
-  animation-delay: -1s;
-}
-
-.circle-2 {
-  width: 120px;
-  height: 120px;
-  top: 60%;
-  right: 15%;
-  animation-delay: -3s;
-}
-
-.circle-3 {
-  width: 60px;
-  height: 60px;
-  bottom: 30%;
-  left: 70%;
-  animation-delay: -5s;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
-}
-
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-}
-
-@media (min-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-badge i {
-  font-size: 1rem;
-  color: white;
-}
-
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.hero-content h1 span {
-  display: block;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-content p {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.hero-content p strong {
-  color: white;
-  font-weight: 700;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.cta-button.secondary {
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  backdrop-filter: blur(10px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-.cta-button i {
-  font-size: 1rem;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.stat {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem 1rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.stat-number {
-  display: block;
-  font-size: 2rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 0.5rem;
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .hero-image-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
-.astro-icon-grid {
+.technical-icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 2rem;
 }
 
-.astro-icon {
+.tech-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 80px;
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-.astro-icon:nth-child(even) {
-  animation-delay: -2s;
-}
-
-.astro-icon:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.astro-icon i {
-  font-size: 1.5rem;
+  border-radius: 20px;
   color: white;
-  font-family: 'Font Awesome 5 Free', sans-serif !important;
-  font-weight: 900;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  animation: float 4s ease-in-out infinite;
 }
 
-@keyframes iconFloat {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .hero-astro-development {
-    padding: 2rem 0;
-    min-height: auto;
-  }
-  
-  .hero-container {
-    gap: 2rem;
-  }
-  
-  .hero-content {
-    text-align: center;
-  }
-  
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .astro-icon-grid {
+.tech-icon:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.tech-icon:nth-child(even) {
+  animation-delay: 2s;
+}
+
+.tech-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .technical-icon-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
   }
-  
-  .astro-icon {
+}
+
+@media (max-width: 768px) {
+  .technical-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .tech-icon {
     width: 60px;
     height: 60px;
-  }
-  
-  .astro-icon i {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1209,8 +902,8 @@ section {
   Technical Section
 *********************/
 .technical-section {
-  background: #f8fafc;
-  color: #1a1a1a;
+  background: #f8f9fa;
+  padding: 5rem 0;
 }
 
 .tech-grid {
@@ -1221,55 +914,66 @@ section {
 
 .tech-card {
   position: relative;
-  background: #ffffff;
+  background: white;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   text-align: center;
-  border: 1px solid rgba(255, 68, 56, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .tech-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #FF6B35, #f97316);
-  border-radius: 16px 16px 0 0;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
 }
 
 .tech-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
 }
 
 .tech-icon {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 1rem;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 16px;
   background: linear-gradient(135deg, #f97316, #FF6B35);
-  box-shadow: 0 8px 24px rgba(255,68,56,.25);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover .tech-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
 }
 
 .tech-icon i {
-  font-size: 32px;
-  color: #ffffff;
+  font-size: 2rem;
+  color: white;
 }
 
 .tech-card h4 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
 }
 
 .tech-card p {
-  color: #666666;
-  line-height: 1.6;
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 /********************
@@ -1416,66 +1120,127 @@ section {
 *********************/
 .features-section {
   background: white;
+  padding: 5rem 0;
 }
 
 .feature-list {
   display: grid;
   gap: 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .feature-item {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   background: white;
   padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.feature-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-item:hover::before {
+  opacity: 1;
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
 }
 
 .feature-icon-large {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 20px;
-  background: var(--gradient-accent);
+  background: linear-gradient(135deg, #f97316, #FF6B35);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: white;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+  transition: all 0.4s ease;
+}
+
+.feature-item:hover .feature-icon-large {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
+}
+
+.feature-content {
+  padding-top: 0.5rem;
 }
 
 .feature-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--brand-dark);
+  font-size: 1.625rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+  line-height: 1.3;
 }
 
 .feature-content p {
-  color: var(--brand-soft);
-  line-height: 1.6;
+  color: #666;
+  line-height: 1.7;
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .feature-benefit {
-  display: inline-block;
-  background: var(--brand-light);
-  color: var(--brand-accent);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(255, 107, 53, 0.1));
+  color: #f97316;
+  padding: 0.625rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-benefit {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  border-color: transparent;
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .feature-item {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .feature-icon-large {
+    margin: 0 auto;
+  }
+
+  .feature-content {
+    padding-top: 0;
+  }
 }
 
 /********************

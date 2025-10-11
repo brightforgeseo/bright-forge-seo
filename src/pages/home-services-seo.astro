@@ -3,6 +3,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout 
@@ -11,54 +14,36 @@ import ContactSection from '../components/ContactSection.astro';
   keywords="home services SEO, plumbing SEO, HVAC SEO, landscaping SEO, roofing SEO, contractor SEO, local home services marketing"
 >
   <LegacyHeader slot="header" />
-  
+
   <!-- Hero Section -->
-  <section class="hero-home-services-seo">
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4">
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Home Services SEO</span>
-      </nav>
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-tools"></i>
-            <span>Home Services SEO Specialists</span>
-          </div>
-          <h1>Home Services SEO That Brings Customers to Your Door</h1>
-          <p class="hero-description">Ready to dominate your local home services market? At Bright Forge <a href="/">SEO Agency</a>, we specialize in driving qualified leads for plumbing, HVAC, landscaping, roofing, and other home service contractors. Our proven SEO strategies help you rank higher in local searches, attract emergency service calls, and build a steady stream of residential and commercial customers.</p>
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Get More Service Calls</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#services" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>Explore Our Services</span>
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="home-services-icon-grid">
-              <div class="home-services-icon"><i class="fas fa-wrench"></i></div>
-              <div class="home-services-icon"><i class="fas fa-thermometer-half"></i></div>
-              <div class="home-services-icon"><i class="fas fa-seedling"></i></div>
-              <div class="home-services-icon"><i class="fas fa-home"></i></div>
-              <div class="home-services-icon"><i class="fas fa-phone"></i></div>
-              <div class="home-services-icon"><i class="fas fa-star"></i></div>
-            </div>
-          </div>
+  <Hero
+    badgeIcon="fas fa-tools"
+    badgeText="Home Services SEO Specialists"
+    title="Home Services SEO That Brings Customers to Your Door"
+    breadcrumbCurrent="Home Services SEO"
+  >
+    <Fragment slot="story">
+      <p>Ready to dominate your local home services market? At Bright Forge <a href="/">SEO Agency</a>, we specialize in driving qualified leads for plumbing, HVAC, landscaping, roofing, and other home service contractors. Our proven SEO strategies help you rank higher in local searches, attract emergency service calls, and build a steady stream of residential and commercial customers.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Get More Service Calls" />
+      <ButtonSecondary href="#services" text="Explore Our Services" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="home-services-icon-grid">
+          <div class="home-services-icon"><i class="fas fa-wrench"></i></div>
+          <div class="home-services-icon"><i class="fas fa-thermometer-half"></i></div>
+          <div class="home-services-icon"><i class="fas fa-seedling"></i></div>
+          <div class="home-services-icon"><i class="fas fa-home"></i></div>
+          <div class="home-services-icon"><i class="fas fa-phone"></i></div>
+          <div class="home-services-icon"><i class="fas fa-star"></i></div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Why Home Services SEO Section -->
   <section class="why-home-services-seo">
@@ -259,189 +244,11 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-  .hero-home-services-seo {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    padding: 120px 0 80px;
+  /* Page-specific visual styles for home services icon grid */
+  .hero-image-container {
     position: relative;
-    overflow: hidden;
-    color: white;
-  }
-
-  .hero-bg-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-  }
-
-  .floating-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .circle-1 {
-    width: 120px;
-    height: 120px;
-    top: 20%;
-    right: 10%;
-    animation-delay: 0s;
-  }
-
-  .circle-2 {
-    width: 80px;
-    height: 80px;
-    top: 60%;
-    right: 20%;
-    animation-delay: 2s;
-  }
-
-  .circle-3 {
-    width: 60px;
-    height: 60px;
-    top: 40%;
-    left: 15%;
-    animation-delay: 4s;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-  }
-
-  .hero-breadcrumbs {
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-  }
-
-  .breadcrumb-link {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .breadcrumb-link:hover {
-    color: white;
-  }
-
-  .breadcrumb-separator {
-    margin: 0 0.5rem;
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .breadcrumb-current {
-    color: white;
-  }
-
-  .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    backdrop-filter: blur(10px);
-  }
-
-  .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .hero-description a {
-    color: white;
-    text-decoration: underline;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 3rem;
-  }
-
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-
-  .cta-button.primary {
-    background: white;
-    color: #f97316;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .cta-button.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-    background: #f8f9fa;
-  }
-
-  .cta-button.secondary {
-    background: transparent;
-    color: white;
-    border-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);
-  }
-
-  .cta-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    transform: translateY(-2px);
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .stat {
-    text-align: center;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 0.5rem;
-  }
-
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 500px;
   }
 
   .home-services-icon-grid {
@@ -454,24 +261,56 @@ import ContactSection from '../components/ContactSection.astro';
   .home-services-icon {
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     color: white;
-    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
     animation: iconFloat 4s ease-in-out infinite;
+  }
+
+  .home-services-icon:nth-child(odd) {
+    animation-delay: 1s;
   }
 
   .home-services-icon:nth-child(even) {
     animation-delay: 2s;
   }
 
+  .home-services-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
   @keyframes iconFloat {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
+  }
+
+  @media (max-width: 1024px) {
+    .home-services-icon-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home-services-icon-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .home-services-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
   }
 
   .why-home-services-seo {
@@ -547,30 +386,56 @@ import ContactSection from '../components/ContactSection.astro';
   }
 
   .feature-card {
+    position: relative;
     background: white;
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 2px solid #e2e8f0;
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #f97316, #FF6B35);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
   }
 
   .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+    border-color: rgba(249, 115, 22, 0.3);
   }
 
   .feature-icon {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     background: linear-gradient(135deg, #f97316, #FF6B35);
-    border-radius: 12px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
     margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
   }
 
   .feature-card h3 {
@@ -598,16 +463,29 @@ import ContactSection from '../components/ContactSection.astro';
   }
 
   .service-card {
+    position: relative;
     background: white;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #f97316, #FF6B35);
   }
 
   .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+    border-color: #f97316;
   }
 
   .service-header {
@@ -628,6 +506,11 @@ import ContactSection from '../components/ContactSection.astro';
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover .service-icon {
+    transform: scale(1.1);
   }
 
   .service-header h3 {
@@ -668,23 +551,6 @@ import ContactSection from '../components/ContactSection.astro';
   }
 
   @media (max-width: 768px) {
-    .hero-container {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-actions {
-      flex-direction: column;
-    }
-    
-    .hero-stats {
-      justify-content: center;
-    }
-    
     .home-services-card {
       flex-direction: column;
       text-align: center;

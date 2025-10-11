@@ -3,6 +3,9 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
 import ContactSection from '../../components/ContactSection.astro';
+import Hero from '../../components/Hero.astro';
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import ButtonSecondary from '../../components/ButtonSecondary.astro';
 ---
 
 <MainLayout
@@ -12,64 +15,36 @@ import ContactSection from '../../components/ContactSection.astro';
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
-  <section class="hero-technical-seo">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
+  <Hero
+    badgeIcon="fas fa-code"
+    badgeText="Full-Stack Development"
+    title="Full-Stack Development Services Philippines"
+    breadcrumbCurrent="Development Services"
+  >
+    <Fragment slot="story">
+      <p>Modern, scalable, and high-performance web solutions built to grow your business.</p>
 
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Development Services</span>
-      </nav>
+      <p>At Bright Forge SEO, we don't just build websites—we engineer digital experiences that drive business growth. Our development team specializes in modern frameworks and SEO-first architecture.</p>
+    </Fragment>
 
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-code"></i>
-            <span>Full-Stack Development</span>
-          </div>
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Discuss Your Project" />
+      <ButtonSecondary href="#capabilities" text="Our Process" />
+    </Fragment>
 
-          <h1>Full-Stack Development Services Philippines</h1>
-
-          <div class="hero-story">
-            <p>Modern, scalable, and high-performance web solutions built to grow your business.</p>
-
-            <p>At Bright Forge SEO, we don't just build websites—we engineer digital experiences that drive business growth. Our development team specializes in modern frameworks and SEO-first architecture.</p>
-          </div>
-
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Discuss Your Project</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#approach" class="cta-button secondary">
-              <i class="fas fa-play"></i>
-              <span>Our Process</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="technical-icon-grid">
-              <div class="tech-icon"><i class="fab fa-react"></i></div>
-              <div class="tech-icon"><i class="fas fa-rocket"></i></div>
-              <div class="tech-icon"><i class="fab fa-node-js"></i></div>
-              <div class="tech-icon"><i class="fas fa-database"></i></div>
-              <div class="tech-icon"><i class="fas fa-code"></i></div>
-              <div class="tech-icon"><i class="fab fa-wordpress"></i></div>
-            </div>
-          </div>
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="technical-icon-grid">
+          <div class="tech-icon"><i class="fab fa-react"></i></div>
+          <div class="tech-icon"><i class="fas fa-rocket"></i></div>
+          <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+          <div class="tech-icon"><i class="fas fa-database"></i></div>
+          <div class="tech-icon"><i class="fas fa-code"></i></div>
+          <div class="tech-icon"><i class="fab fa-wordpress"></i></div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Core Capabilities Section -->
   <section id="capabilities" class="py-20 bg-white">
@@ -262,211 +237,7 @@ import ContactSection from '../../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-/* Hero Section Styles */
-.hero-technical-seo {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #FF6B35 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  overflow: hidden;
-  padding: 2rem 0;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle-1 {
-  width: 120px;
-  height: 120px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.circle-2 {
-  width: 80px;
-  height: 80px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.circle-3 {
-  width: 60px;
-  height: 60px;
-  bottom: 30%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
-  padding: 0.75rem 1.5rem;
-  margin-bottom: 2rem;
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.hero-badge i {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-.hero-story {
-  margin-bottom: 3rem;
-}
-
-.hero-story p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  border: 2px solid transparent;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  background: #f8f9fa;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Page-specific visual styles - Technical Icon Grid */
 .hero-image-container {
   position: relative;
   width: 100%;
@@ -513,32 +284,7 @@ import ContactSection from '../../components/ContactSection.astro';
   50% { transform: translateY(-10px); }
 }
 
-@media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .hero-technical-seo {
-    min-height: auto;
-    padding: 4rem 0;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .technical-icon-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -549,25 +295,6 @@ import ContactSection from '../../components/ContactSection.astro';
     height: 60px;
     font-size: 1.5rem;
   }
-
-  .floating-circle {
-    opacity: 0.5;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-story p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
-  }
 }
 
 /* Page-specific styles */
@@ -577,5 +304,40 @@ import ContactSection from '../../components/ContactSection.astro';
 
 .framework-card:hover {
   transform: translateY(-4px);
+}
+
+/* Enhanced Framework Card Styling - Modern Design */
+.framework-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.framework-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.framework-card:hover::before {
+  opacity: 1;
+}
+
+.framework-card:hover {
+  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.framework-card .text-5xl {
+  transition: all 0.4s ease;
+}
+
+.framework-card:hover .text-5xl {
+  transform: scale(1.1) rotate(5deg);
 }
 </style>
