@@ -3,72 +3,45 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
 <MainLayout title="Content SEO Services In The Philippines - Bright Forge SEO" description="Great content deserves to be seen. Our SEO content services in the Philippines help brands rank with strategy-first writing that drives results.">
   <LegacyHeader slot="header" />
-  
-  <!-- Hero Section -->
-  <section class="hero-content-seo">
-    <!-- Animated Background Elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-circle circle-1"></div>
-      <div class="floating-circle circle-2"></div>
-      <div class="floating-circle circle-3"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="hero-breadcrumbs">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Content SEO Services Philippines</span>
-      </nav>
-      
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fas fa-pen-nib"></i>
-            <span>Content SEO Experts</span>
-          </div>
-          
-          <h1>Content SEO Services In The Philippines</h1>
-          
-          <div class="hero-story">
-            <p>Ever felt like you've done everything right—built a great website, designed eye-catching product pages, and shared posts on social media—yet still struggled to get noticed online? I've been there, too. A close friend once confided that her new e-commerce store had fantastic products but hardly any visitors. She thought she was missing some "secret sauce." Turns out, the key ingredient was well-structured, SEO-focused content.</p>
-            
-            <p>That's exactly what we offer here at Bright Forge SEO: carefully planned and brilliantly executed content that boosts visibility and sparks meaningful engagement. Our approach combines technical best practices with genuine storytelling, so you don't just rank—you connect with real people who are ready to become loyal customers.</p>
-          </div>
-          
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button primary">
-              <span>Start Your Content Journey</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#approach" class="cta-button secondary">
-              <i class="fas fa-comments"></i>
-              <span>See Our Process</span>
-            </a>
-          </div>
-          
 
-        </div>
-        
-        <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="content-icon-grid">
-              <div class="content-icon"><i class="fas fa-pen-nib"></i></div>
-              <div class="content-icon"><i class="fas fa-bullseye"></i></div>
-              <div class="content-icon"><i class="fas fa-chart-line"></i></div>
-              <div class="content-icon"><i class="fas fa-users"></i></div>
-              <div class="content-icon"><i class="fas fa-search"></i></div>
-              <div class="content-icon"><i class="fas fa-heart"></i></div>
-            </div>
-          </div>
+  <!-- Hero Section -->
+  <Hero
+    badgeIcon="fas fa-pen-nib"
+    badgeText="Content SEO Experts"
+    title="Content SEO Services In The Philippines"
+    breadcrumbCurrent="Content SEO Services Philippines"
+  >
+    <Fragment slot="story">
+      <p>Ever felt like you've done everything right—built a great website, designed eye-catching product pages, and shared posts on social media—yet still struggled to get noticed online? I've been there, too. A close friend once confided that her new e-commerce store had fantastic products but hardly any visitors. She thought she was missing some "secret sauce." Turns out, the key ingredient was well-structured, SEO-focused content.</p>
+
+      <p>That's exactly what we offer here at Bright Forge SEO: carefully planned and brilliantly executed content that boosts visibility and sparks meaningful engagement. Our approach combines technical best practices with genuine storytelling, so you don't just rank—you connect with real people who are ready to become loyal customers.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact" text="Start Your Content Journey" />
+      <ButtonSecondary href="#approach" text="See Our Process" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container">
+        <div class="content-icon-grid">
+          <div class="content-icon"><i class="fas fa-pen-nib"></i></div>
+          <div class="content-icon"><i class="fas fa-bullseye"></i></div>
+          <div class="content-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="content-icon"><i class="fas fa-users"></i></div>
+          <div class="content-icon"><i class="fas fa-search"></i></div>
+          <div class="content-icon"><i class="fas fa-heart"></i></div>
         </div>
       </div>
-    </div>
-  </section>
+    </Fragment>
+  </Hero>
 
   <!-- Why Great Content Section -->
   <section class="why-content-section">
@@ -92,204 +65,155 @@ import ContactSection from '../components/ContactSection.astro';
     </div>
   </section>
 
-  <!-- How Our Services Drive Growth -->
-  <section class="growth-section">
+  <!-- Services Section -->
+  <section id="services" class="services-section-new">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>How Our Content SEO Services In The Philippines <span>Drive Growth</span></h2>
-      </div>
+      <div class="services-layout">
+        <div class="services-content">
+          <h2>Our Content SEO <span>Services</span></h2>
 
-      <div class="growth-grid">
-        <div class="growth-card">
-          <div class="growth-icon">
-            <i class="fas fa-expand-arrows-alt"></i>
+          <div class="service-list">
+            <div class="service-item">
+              <h3>Strategic Keyword Research</h3>
+              <p>We dig into the search terms your audience actually uses and position your content so it appears right where they're looking. This approach amplifies your visibility and puts you on track to land on those coveted SERPs.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>SEO Copywriting</h3>
+              <p>Our copywriting SEO services are designed to connect with people on a deeper level. By addressing real-life questions, frustrations, and interests, we help turn casual browsers into enthusiastic customers.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Content Optimization</h3>
+              <p>Content that's optimized correctly tends to stay relevant over time. Through strategic planning, we make sure you get a steady flow of visitors who value what you offer—leading to long-term returns.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Custom Content Strategy</h3>
+              <p>Every business has its own story and audience. Whether you need direction for your content team or a complete overhaul, we'll shape a strategy that works for your unique journey.</p>
+            </div>
           </div>
-          <h3>Expand Your Organic Reach</h3>
-          <p>We dig into the search terms your audience actually uses and position your content so it appears right where they're looking. This approach amplifies your visibility and puts you on track to land on those coveted search engine results pages (SERPs).</p>
         </div>
 
-        <div class="growth-card">
-          <div class="growth-icon">
-            <i class="fas fa-heart"></i>
+        <div class="services-visual">
+          <div class="visual-card">
+            <div class="visual-icon">
+              <i class="fas fa-pen-nib"></i>
+            </div>
+            <h3>Content Excellence</h3>
+            <p class="visual-stat">95%</p>
+            <p class="visual-label">Content Optimization Score</p>
+            <p class="visual-description">Our content strategies consistently achieve top rankings and engagement metrics.</p>
           </div>
-          <h3>Engage and Convert</h3>
-          <p>Our copywriting SEO services are designed to connect with people on a deeper level. By addressing real-life questions, frustrations, and interests, we help turn casual browsers into enthusiastic customers.</p>
-        </div>
-
-        <div class="growth-card">
-          <div class="growth-icon">
-            <i class="fas fa-trending-up"></i>
-          </div>
-          <h3>Ongoing Results</h3>
-          <p>Content that's optimized correctly tends to stay relevant over time. Through strategic planning, we make sure you get a steady flow of visitors who value what you offer—leading to long-term returns on your marketing efforts.</p>
-        </div>
-
-        <div class="growth-card">
-          <div class="growth-icon">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <h3>Custom Made Plans</h3>
-          <p>Every business has its own story and audience. Some companies might already have a blog or content team but need direction, while others want a complete overhaul. Wherever you are in your journey, we'll shape a strategy that works for you.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Our Tailored Approach Section -->
-  <section id="approach" class="approach-section">
+  <!-- Process Section -->
+  <section id="approach" class="process-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Our Tailored Approach to <span>Copywriting & Content SEO</span></h2>
+        <h2>Our Content SEO <span>Process</span></h2>
         <p>Every business has its own story and audience. Wherever you are in your journey, we'll shape a strategy that works for you.</p>
       </div>
 
-      <div class="approach-steps">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Discovery & Goal Setting</h3>
-            <p>We begin by understanding your brand, target customers, and unique selling points. Then we figure out what success looks like—whether it's generating leads, selling products, or building brand awareness. This initial step ensures our efforts match your broader goals.</p>
-            <div class="key-activities">
-              <h4>Key Activities</h4>
-              <ul>
-                <li>Understanding audience personas and market landscape</li>
-                <li>Reviewing existing content assets</li>
-                <li>Defining success metrics and objectives</li>
-              </ul>
-            </div>
+      <div class="process-grid">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-compass"></i>
           </div>
+          <h3>Discovery & Goal Setting</h3>
+          <p>We begin by understanding your brand, target customers, and unique selling points. This initial step ensures our efforts match your broader goals.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3><a href="/keyword-research-services">Keyword Research & Gap Analysis</a></h3>
-            <p>Using our expertise in Content SEO Services Philippines, we map out the specific search terms that can connect you to your audience. We also check out what your competitors are doing and spot opportunities you may have missed.</p>
-            <div class="key-activities">
-              <h4>Key Activities</h4>
-              <ul>
-                <li>Extensive keyword discovery</li>
-                <li>Competitive keyword benchmarking</li>
-                <li>Finding new topic ideas for fresh content</li>
-              </ul>
-            </div>
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-search"></i>
           </div>
+          <h3>Keyword Research</h3>
+          <p>We map out the specific search terms that can connect you to your audience and spot opportunities competitors may have missed.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Content Optimization</h3>
-            <p>Many websites already have hidden potential. We revamp things like your title tags, headings, and overall structure. By making strategic tweaks, we help your pages shine in search rankings.</p>
-            <div class="key-activities">
-              <h4>Key Activities</h4>
-              <ul>
-                <li><a href="/on-page-seo-services-philippines">On-page SEO</a> (titles, meta descriptions, headers)</li>
-                <li>Improving user experience and readability</li>
-                <li>Aligning content layout with search intent</li>
-              </ul>
-            </div>
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-sliders-h"></i>
           </div>
+          <h3>Content Optimization</h3>
+          <p>We revamp your title tags, headings, and overall structure. By making strategic tweaks, we help your pages shine in search rankings.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>Copywriting & New Content Creation</h3>
-            <p>If you need fresh copy, our team of writers produces materials that inform and persuade. This could range from blog articles and service pages to whitepapers and eBooks. We ensure consistency in tone, style, and messaging.</p>
-            <div class="key-activities">
-              <h4>Key Activities</h4>
-              <ul>
-                <li>Crafting targeted landing pages and blog posts</li>
-                <li>Maintaining brand voice and style</li>
-                <li>Storytelling that sets you apart from competitors</li>
-              </ul>
-            </div>
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-pen-fancy"></i>
           </div>
+          <h3>Copywriting & Creation</h3>
+          <p>Our team produces materials that inform and persuade, from blog articles to service pages, ensuring consistency in tone and messaging.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <div class="step-content">
-            <h3>Adding Visuals & Multimedia</h3>
-            <p>While words are powerful, visuals can boost engagement further. We collaborate with designers and multimedia specialists to create graphics, infographics, or short videos that keep people on your site longer.</p>
-            <div class="key-activities">
-              <h4>Key Activities</h4>
-              <ul>
-                <li>Custom graphics and illustrations</li>
-                <li>Video content and simple animations</li>
-                <li>Data visualizations for quick understanding</li>
-              </ul>
-            </div>
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-images"></i>
           </div>
+          <h3>Visuals & Multimedia</h3>
+          <p>We collaborate with designers to create graphics, infographics, or short videos that keep people on your site longer.</p>
         </div>
 
-        <div class="step-card">
-          <div class="step-number">6</div>
-          <div class="step-content">
-            <h3>Strategic Roadmapping</h3>
-            <p>Using everything we've learned, we create a structured plan to expand your site's organic reach. This might involve a year-long content calendar, a rework of your site's architecture, or a new series of blog posts tailored for specific keywords.</p>
-            <div class="key-activities">
-              <h4>Key Activities</h4>
-              <ul>
-                <li>Crafting a comprehensive content calendar</li>
-                <li>Optimizing site structure and internal linking</li>
-                <li>Planning for continuous growth and content evolution</li>
-              </ul>
-            </div>
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-chart-line"></i>
           </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">7</div>
-          <div class="step-content">
-            <h3>Performance Tracking & Reporting</h3>
-            <p>Transparency matters. Each month, we share reports highlighting keyword positions, visitor behavior, and conversions. This data helps us adjust and improve your strategy so you can keep moving forward.</p>
-            <div class="key-activities">
-              <h4>Key Activities</h4>
-              <ul>
-                <li>Monthly KPI reports</li>
-                <li>Ongoing check-ins and updates</li>
-                <li>Data-driven recommendations for improvement</li>
-              </ul>
-            </div>
-          </div>
+          <h3>Performance Tracking</h3>
+          <p>Each month, we share reports highlighting keyword positions, visitor behavior, and conversions to continuously improve your strategy.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Content Process Toolkit Section -->
-  <section class="toolkit-section">
+  <!-- Benefits Section -->
+  <section class="benefits-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Our Essential Content <span>SEO Toolkit</span></h2>
-        <p>We use advanced platforms and tools to ensure your projects are completed efficiently and accurately:</p>
+        <h2>Why Choose Our Content <span>SEO Services</span></h2>
       </div>
 
-      <div class="toolkit-grid">
-        <div class="toolkit-card">
-          <div class="toolkit-icon">
-            <i class="fas fa-layer-group"></i>
-          </div>
-          <h3>Gather Content Integration</h3>
-          <p>Keeps track of ideas, drafts, and final versions in one place, making collaboration simple.</p>
+      <div class="benefits-layout">
+        <div class="benefits-visual">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Content strategy team collaborating" class="benefits-image" />
         </div>
 
-        <div class="toolkit-card">
-          <div class="toolkit-icon">
-            <i class="fas fa-robot"></i>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Strategic Planning</h3>
+            <p>Comprehensive content strategies that align with your business goals and target audience needs.</p>
           </div>
-          <h3>AI-Assisted Drafting (Human-Refined)</h3>
-          <p>Helps us handle large-scale projects quickly. Our human editors then refine the content to match your brand style and maintain accuracy.</p>
-        </div>
 
-        <div class="toolkit-card">
-          <div class="toolkit-icon">
-            <i class="fas fa-palette"></i>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>AI-Enhanced Writing</h3>
+            <p>Human-refined content combining AI efficiency with editorial excellence and brand consistency.</p>
           </div>
-          <h3>Professional Design & Visuals</h3>
-          <p>High-quality graphics, videos, and interactive assets that keep visitors engaged and coming back for more.</p>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Visual Content</h3>
+            <p>High-quality graphics, videos, and interactive assets that boost engagement and conversions.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Proven Results</h3>
+            <p>Data-driven approach with transparent reporting and continuous optimization for long-term success.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -351,246 +275,7 @@ import ContactSection from '../components/ContactSection.astro';
 </MainLayout>
 
 <style>
-/* Enhanced Hero Section Styles */
-.hero-content-seo {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #FF6B35 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  overflow: hidden;
-  padding: 2rem 0;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Background Elements */
-.hero-bg-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle-1 {
-  width: 120px;
-  height: 120px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.circle-2 {
-  width: 80px;
-  height: 80px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.circle-3 {
-  width: 60px;
-  height: 60px;
-  bottom: 30%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-/* Breadcrumbs */
-.hero-breadcrumbs {
-  display: inline-block !important;
-  margin-bottom: 3rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-breadcrumbs * {
-  display: inline !important;
-  vertical-align: baseline !important;
-}
-
-.breadcrumb-link {
-  color: white !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.breadcrumb-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: white !important;
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.breadcrumb-current {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Hero Container */
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero Badge */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
-  padding: 0.75rem 1.5rem;
-  margin-bottom: 2rem;
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.hero-badge i {
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* Hero Story */
-.hero-story {
-  margin-bottom: 3rem;
-}
-
-.hero-story p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero Actions */
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  border: 2px solid transparent;
-}
-
-.cta-button.primary {
-  background: white;
-  color: #f97316;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  background: #f8f9fa;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-}
-
-.cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-  transform: translateY(-2px);
-}
-
-/* Hero Stats */
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.stat {
-  text-align: center;
-}
-
-.hero-stats .stat-number,
-.hero-content-seo .stat-number {
-  font-size: 2rem !important;
-  font-weight: 700 !important;
-  color: white !important;
-  color: #ffffff !important;
-  margin-bottom: 4px;
-}
-
-.hero-stats .stat-label,
-.hero-content-seo .stat-label {
-  font-size: 0.9rem !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-weight: 500;
-}
-
-/* Hero Visual */
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Hero Content Icon Grid */
 .hero-image-container {
   position: relative;
   width: 100%;
@@ -604,7 +289,7 @@ import ContactSection from '../components/ContactSection.astro';
   padding: 2rem;
 }
 
-.content-icon {
+.content-icon-grid .content-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -620,90 +305,24 @@ import ContactSection from '../components/ContactSection.astro';
   animation: float 4s ease-in-out infinite;
 }
 
-.content-icon:nth-child(odd) {
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.content-icon-grid .content-icon:nth-child(odd) {
   animation-delay: 1s;
 }
 
-.content-icon:nth-child(even) {
+.content-icon-grid .content-icon:nth-child(even) {
   animation-delay: 2s;
 }
 
-.content-icon:hover {
+.content-icon-grid .content-icon:hover {
   transform: translateY(-5px) scale(1.05);
   background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.4);
 }
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-  }
-  
-  .content-icon-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content-seo {
-    min-height: auto;
-    padding: 4rem 0;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .content-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-  
-  .content-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-  
-  .floating-circle {
-    opacity: 0.5;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-story p {
-    font-size: 1rem;
-  }
-  
-  .cta-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Legacy hero styles removed to prevent conflicts with enhanced hero design */
 
 /* Section Headers */
 .section-header {
@@ -756,8 +375,8 @@ import ContactSection from '../components/ContactSection.astro';
   border: 1px solid rgba(255, 68, 56, 0.1);
 }
 
-.content-icon {
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
+.content-card .content-icon {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
   color: white;
   width: 80px;
   height: 80px;
@@ -767,7 +386,7 @@ import ContactSection from '../components/ContactSection.astro';
   justify-content: center;
   font-size: 2rem;
   flex-shrink: 0;
-  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
 }
 
 .content-text p {
@@ -781,243 +400,259 @@ import ContactSection from '../components/ContactSection.astro';
   margin-bottom: 0;
 }
 
-/* Growth Section */
-.growth-section {
+/* Services Section - 2 Column Layout */
+.services-section-new {
   padding: 100px 0;
+  background: white;
 }
 
-.growth-grid {
+.services-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.services-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.services-content h2 span {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-item {
+  padding-left: 30px;
+  border-left: 4px solid #f97316;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  border-left-color: #FF6B35;
+  transform: translateX(10px);
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.service-item p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.services-visual {
+  position: sticky;
+  top: 120px;
+}
+
+.visual-card {
+  background: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(249, 115, 22, 0.3);
+}
+
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2.5rem;
+}
+
+.visual-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.visual-stat {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 20px 0 10px;
+  line-height: 1;
+}
+
+.visual-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  opacity: 0.95;
+}
+
+.visual-description {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Process Section - 3x2 Grid */
+.process-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 20px;
 }
 
-.growth-card {
-  background: white;
+.process-box {
   padding: 40px 30px;
   border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 68, 56, 0.1);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 }
 
-.growth-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-}
-
-.growth-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.growth-icon {
+.process-box.orange-bg {
   background: linear-gradient(135deg, #f97316, #FF6B35);
   color: white;
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
+}
+
+.process-box.white-bg {
+  background: white;
+  color: #1a1a1a;
+  border: 2px solid #f0f0f0;
+}
+
+.process-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.process-box-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  margin: 0 auto 25px;
-  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
+  border-radius: 16px;
 }
 
-.growth-card h3 {
-  font-size: 1.4rem;
+.orange-bg .process-box-icon {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.white-bg .process-box-icon {
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+}
+
+.process-box h3 {
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #1a1a1a;
   margin-bottom: 15px;
 }
 
-.growth-card p {
-  color: #666;
+.process-box p {
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
-/* Approach Section */
-.approach-section {
+.orange-bg p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.white-bg p {
+  color: #666;
+}
+
+/* Benefits Section - Image + 2x2 Grid */
+.benefits-section {
   padding: 100px 0;
   background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
 }
 
-.approach-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.step-card {
-  display: flex;
-  gap: 30px;
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 68, 56, 0.1);
-  transition: all 0.3s ease;
-}
-
-.step-card:hover {
-  transform: translateX(10px);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
-}
-
-.step-number {
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  flex-shrink: 0;
-  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
-}
-
-.step-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 15px;
-}
-
-.step-content p {
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.key-activities {
-  background: #f8f9ff;
-  padding: 20px;
-  border-radius: 12px;
-  border-left: 4px solid #f97316;
-}
-
-.key-activities h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #f97316;
-  margin-bottom: 12px;
-}
-
-.key-activities ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.key-activities li {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 8px;
-}
-
-.key-activities ul li a {
-  color: #f97316;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.key-activities ul li a:hover {
-  color: #f97316;
-}
-
-.key-activities ul li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background: linear-gradient(90deg, #f97316, #FF6B35);
-  transition: width 0.3s ease;
-}
-
-.key-activities ul li a:hover::after {
-  width: 100%;
-}
-
-/* Toolkit Section */
-.toolkit-section {
-  padding: 100px 0;
-}
-
-.toolkit-grid {
+.benefits-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.toolkit-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 68, 56, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.toolkit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-}
-
-.toolkit-card:hover {
-  transform: translateY(-8px);
+.benefits-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 24px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
-.toolkit-icon {
-  background: linear-gradient(135deg, #f97316, #FF6B5B);
-  color: white;
-  width: 80px;
-  height: 80px;
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 30px;
   border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(249, 115, 22, 0.1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #f97316, #FF6B35);
+  color: white;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 25px;
-  box-shadow: 0 8px 25px rgba(255, 68, 56, 0.3);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-.toolkit-card h3 {
-  font-size: 1.4rem;
+.benefit-card h3 {
+  font-size: 1.2rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-.toolkit-card p {
+.benefit-card p {
   color: #666;
-  line-height: 1.7;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* FAQ Section */
@@ -1036,7 +671,7 @@ import ContactSection from '../components/ContactSection.astro';
   margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(66, 133, 244, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.1);
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -1092,34 +727,44 @@ import ContactSection from '../components/ContactSection.astro';
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .hero-content {
-    padding: 80px 0 60px;
-    text-align: center;
+@media (max-width: 1024px) {
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
+  .services-visual {
+    position: static;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .content-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
   .content-card {
     flex-direction: column;
     text-align: center;
     gap: 20px;
   }
 
-  .step-card {
-    flex-direction: column;
-    text-align: center;
+  .process-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .step-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .approach-steps {
-    gap: 20px;
-  }
-
-  .growth-grid,
-  .toolkit-grid {
+  .benefits-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -1128,30 +773,15 @@ import ContactSection from '../components/ContactSection.astro';
     margin-bottom: 40px;
   }
 
-  .hero-story p {
-    font-size: 1.1rem;
+  .content-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
-
-}
-
-@media (max-width: 480px) {
-  .hero-content {
-    padding: 60px 0 40px;
-  }
-
-  .section-header h2 {
-    font-size: 2rem;
-  }
-
-  .step-card,
-  .content-card {
-    padding: 25px;
-  }
-
-  .growth-card,
-  .toolkit-card {
-    padding: 30px 20px;
+  .content-icon-grid .content-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
   }
 
   .faq-question {
@@ -1163,6 +793,26 @@ import ContactSection from '../components/ContactSection.astro';
     padding: 0 20px 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .content-card {
+    padding: 25px;
+  }
+
+  .process-box {
+    padding: 30px 20px;
+  }
+
+  .benefit-card {
+    padding: 25px;
+  }
+}
+
+/* End of styles */
 </style>
 
 <script>
