@@ -33,7 +33,6 @@
 - keyword-research-services.astro
 - seo-audit-services.astro
 - answer-engine-optimization-services-philippines.astro
-- generative-engine-optimization.astro
 - website-migration-services.astro
 
 ### Industry Pages (6)
