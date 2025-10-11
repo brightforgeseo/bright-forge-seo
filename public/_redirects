@@ -30,11 +30,8 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 /services  /  301
 /services/  /  301
 
-# Fix double slashes (but keep trailing slashes)
-/*//  /:splat/  301
-
-# Enforce trailing slashes on all URLs
-/*  /:splat/  301!  conditions={path:!~/\.[a-z]+$/}
+# Fix double slashes - more specific pattern to avoid loops
+/*/*//  /:splat/  301
 
 # Prerender redirects for common pages
 /home  /  301
