@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
-import ReviewsSection from '../components/ReviewsSection.astro';
+import TestimonialsMarquee from '../components/TestimonialsMarquee.astro';
 import AwardsSection from '../components/AwardsSection.astro';
 import ProcessSection from '../components/ProcessSection.astro';
 import PartnersSection from '../components/PartnersSection.astro';
@@ -79,94 +79,113 @@ const breadcrumbs = [
   <FeaturedTestimonial />
 
   <!-- Case Studies Section -->
-  <section class="case-studies-section bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-    <div class="container max-w-7xl mx-auto">
-      <div class="section-header">
-        <span class="section-label">SUCCESS STORIES</span>
-        <h2 class="section-title">Our <span>Case Studies</span></h2>
-        <p class="section-subtitle">See how we've helped businesses achieve remarkable growth through tailored SEO strategies</p>
+  <section class="py-20 px-4" style="background: #f8fafc;">
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+          SUCCESS STORIES
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Our <span class="text-orange-500">Case Studies</span>
+        </h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          See how we've helped businesses achieve remarkable growth through tailored SEO strategies
+        </p>
       </div>
 
-      <div class="case-studies-container">
-        <div class="case-study-card">
-          <div class="case-study-image">
-            <img src="/images/case-studies/renamed/consulting-firm-seo.webp" alt="Consulting Firm SEO Case Study" width="400" height="300" loading="eager">
-            <div class="case-study-category">Consulting</div>
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden bg-white">
+            <img src="/images/case-studies/renamed/consulting-firm-seo.webp" alt="Consulting Firm SEO Case Study" class="w-full h-full object-cover" width="400" height="300" loading="eager">
+            <span class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Consulting</span>
           </div>
-          <div class="case-study-content">
-            <h3>19% Organic Traffic Growth for Consulting Firm</h3>
-            <div class="case-study-results">
-              <div class="result-item">
-                <span class="result-value">+19%</span>
-                <span class="result-label">Organic Traffic</span>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">19% Organic Traffic Growth for Consulting Firm</h3>
+            <div class="grid grid-cols-3 gap-4 mb-6">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">+19%</div>
+                <div class="text-xs text-gray-600 mt-1">ORGANIC TRAFFIC</div>
               </div>
-              <div class="result-item">
-                <span class="result-value">+86%</span>
-                <span class="result-label">Impressions</span>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">+86%</div>
+                <div class="text-xs text-gray-600 mt-1">IMPRESSIONS</div>
               </div>
-              <div class="result-item">
-                <span class="result-value">6 mo.</span>
-                <span class="result-label">Timeline</span>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">6 mo.</div>
+                <div class="text-xs text-gray-600 mt-1">TIMELINE</div>
               </div>
             </div>
-            <a href="/case-studies/consulting-firm-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+            <a href="/case-studies/consulting-firm-seo/" class="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 transition-colors">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
           </div>
         </div>
 
-
-        <div class="case-study-card">
-          <div class="case-study-image">
-            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance UK Fitness SEO Case Study" width="400" height="300" loading="eager">
-            <div class="case-study-category">Fitness</div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden bg-white">
+            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance UK Fitness SEO Case Study" class="w-full h-full object-cover" width="400" height="300" loading="eager">
+            <span class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Fitness</span>
           </div>
-          <div class="case-study-content">
-            <h3>119% Increase in Organic Traffic for Speediance UK</h3>
-            <div class="case-study-results">
-              <div class="result-item">
-                <span class="result-value">+119%</span>
-                <span class="result-label">Total Clicks</span>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">119% Increase in Organic Traffic for Speediance UK</h3>
+            <div class="grid grid-cols-3 gap-4 mb-6">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">+119%</div>
+                <div class="text-xs text-gray-600 mt-1">TOTAL CLICKS</div>
               </div>
-              <div class="result-item">
-                <span class="result-value">+135%</span>
-                <span class="result-label">Impressions</span>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">+135%</div>
+                <div class="text-xs text-gray-600 mt-1">IMPRESSIONS</div>
               </div>
-              <div class="result-item">
-                <span class="result-value">3 mo.</span>
-                <span class="result-label">Timeline</span>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">3 mo.</div>
+                <div class="text-xs text-gray-600 mt-1">TIMELINE</div>
               </div>
             </div>
-            <a href="/case-studies/speediance-uk-fitness-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+            <a href="/case-studies/speediance-uk-fitness-seo/" class="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 transition-colors">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
           </div>
         </div>
 
-        <div class="case-study-card">
-          <div class="case-study-image">
-            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance AU Fitness SEO Case Study" width="400" height="300" loading="eager">
-            <div class="case-study-category">Fitness</div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="relative h-48 overflow-hidden bg-white">
+            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance AU Fitness SEO Case Study" class="w-full h-full object-cover" width="400" height="300" loading="eager">
+            <span class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Fitness</span>
           </div>
-          <div class="case-study-content">
-            <h3>66% Organic Traffic Growth for Speediance AU</h3>
-            <div class="case-study-results">
-              <div class="result-item">
-                <span class="result-value">+66%</span>
-                <span class="result-label">Total Clicks</span>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">66% Organic Traffic Growth for Speediance AU</h3>
+            <div class="grid grid-cols-3 gap-4 mb-6">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">+66%</div>
+                <div class="text-xs text-gray-600 mt-1">TOTAL CLICKS</div>
               </div>
-              <div class="result-item">
-                <span class="result-value">+22%</span>
-                <span class="result-label">Impressions</span>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">+22%</div>
+                <div class="text-xs text-gray-600 mt-1">IMPRESSIONS</div>
               </div>
-              <div class="result-item">
-                <span class="result-value">6 mo.</span>
-                <span class="result-label">Timeline</span>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-orange-500">6 mo.</div>
+                <div class="text-xs text-gray-600 mt-1">TIMELINE</div>
               </div>
             </div>
-            <a href="/case-studies/speediance-au-fitness-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+            <a href="/case-studies/speediance-au-fitness-seo/" class="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 transition-colors">
+              View Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="case-studies-footer">
-        <a href="/case-studies/" class="view-all-button">View All Case Studies</a>
+      <!-- View All Button -->
+      <div class="text-center">
+        <a href="/case-studies/" class="inline-block bg-orange-500 text-white font-bold px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors shadow-lg hover:shadow-xl">
+          View All Case Studies
+        </a>
       </div>
     </div>
   </section>
@@ -464,8 +483,8 @@ const breadcrumbs = [
   <!-- Revenue Boosting SEO Section -->
   <RevenueSection />
 
-  <!-- What Our Clients Say Full Carousel -->
-  <ReviewsSection />
+  <!-- What Our Clients Say - Scrolling Marquee -->
+  <TestimonialsMarquee />
 
   <!-- Packages Section -->
   <PackagesSection />
@@ -3037,6 +3056,7 @@ const breadcrumbs = [
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+    background: transparent !important;
   }
   
   @media (max-width: 1024px) {
@@ -3075,7 +3095,7 @@ const breadcrumbs = [
   }
   
   .case-study-card {
-    background: white;
+    background: white !important;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -3089,6 +3109,7 @@ const breadcrumbs = [
   .case-study-image {
     position: relative;
     overflow: hidden;
+    background: white !important;
   }
   
   .case-study-image img {
@@ -3116,6 +3137,7 @@ const breadcrumbs = [
   
   .case-study-content {
     padding: 25px;
+    background: white !important;
   }
   
   .case-study-content h3 {
