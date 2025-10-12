@@ -9,9 +9,9 @@ import PartnersSection from '../components/PartnersSection.astro';
 import TopAgencySection from '../components/TopAgencySection.astro';
 import PackagesSection from '../components/PackagesSection.astro';
 import RevenueSection from '../components/RevenueSection.astro';
-import TestimonialsMarquee from '../components/TestimonialsMarquee.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
 import TrustRecognition from '../components/TrustRecognition.astro';
+import FeaturedTestimonial from '../components/FeaturedTestimonial.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
@@ -72,14 +72,107 @@ const breadcrumbs = [
     </Fragment>
   </Hero>
 
-  <!-- Why Choose Us Section -->
-  <WhyChooseUs />
-
   <!-- Trust & Recognition Section -->
   <TrustRecognition />
 
-  <!-- Testimonials Marquee -->
-  <TestimonialsMarquee />
+  <!-- Featured Testimonial -->
+  <FeaturedTestimonial />
+
+  <!-- Case Studies Section -->
+  <section class="case-studies-section bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+    <div class="container max-w-7xl mx-auto">
+      <div class="section-header">
+        <span class="section-label">SUCCESS STORIES</span>
+        <h2 class="section-title">Our <span>Case Studies</span></h2>
+        <p class="section-subtitle">See how we've helped businesses achieve remarkable growth through tailored SEO strategies</p>
+      </div>
+
+      <div class="case-studies-container">
+        <div class="case-study-card">
+          <div class="case-study-image">
+            <img src="/images/case-studies/renamed/consulting-firm-seo.webp" alt="Consulting Firm SEO Case Study" width="400" height="300" loading="eager">
+            <div class="case-study-category">Consulting</div>
+          </div>
+          <div class="case-study-content">
+            <h3>19% Organic Traffic Growth for Consulting Firm</h3>
+            <div class="case-study-results">
+              <div class="result-item">
+                <span class="result-value">+19%</span>
+                <span class="result-label">Organic Traffic</span>
+              </div>
+              <div class="result-item">
+                <span class="result-value">+86%</span>
+                <span class="result-label">Impressions</span>
+              </div>
+              <div class="result-item">
+                <span class="result-value">6 mo.</span>
+                <span class="result-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/consulting-firm-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+
+        <div class="case-study-card">
+          <div class="case-study-image">
+            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance UK Fitness SEO Case Study" width="400" height="300" loading="eager">
+            <div class="case-study-category">Fitness</div>
+          </div>
+          <div class="case-study-content">
+            <h3>119% Increase in Organic Traffic for Speediance UK</h3>
+            <div class="case-study-results">
+              <div class="result-item">
+                <span class="result-value">+119%</span>
+                <span class="result-label">Total Clicks</span>
+              </div>
+              <div class="result-item">
+                <span class="result-value">+135%</span>
+                <span class="result-label">Impressions</span>
+              </div>
+              <div class="result-item">
+                <span class="result-value">3 mo.</span>
+                <span class="result-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/speediance-uk-fitness-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="case-study-card">
+          <div class="case-study-image">
+            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance AU Fitness SEO Case Study" width="400" height="300" loading="eager">
+            <div class="case-study-category">Fitness</div>
+          </div>
+          <div class="case-study-content">
+            <h3>66% Organic Traffic Growth for Speediance AU</h3>
+            <div class="case-study-results">
+              <div class="result-item">
+                <span class="result-value">+66%</span>
+                <span class="result-label">Total Clicks</span>
+              </div>
+              <div class="result-item">
+                <span class="result-value">+22%</span>
+                <span class="result-label">Impressions</span>
+              </div>
+              <div class="result-item">
+                <span class="result-value">6 mo.</span>
+                <span class="result-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/speediance-au-fitness-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-studies-footer">
+        <a href="/case-studies/" class="view-all-button">View All Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <WhyChooseUs />
 
   <!-- Our Process Steps Section (red) -->
   <ProcessSection />
@@ -371,215 +464,11 @@ const breadcrumbs = [
   <!-- Revenue Boosting SEO Section -->
   <RevenueSection />
 
-  <!-- Case Studies Section -->
-  <section class="case-studies-section bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-    <div class="container max-w-7xl mx-auto">
-      <div class="section-header">
-        <span class="section-label">SUCCESS STORIES</span>
-        <h2 class="section-title">Our <span>Case Studies</span></h2>
-        <p class="section-subtitle">See how we've helped businesses achieve remarkable growth through tailored SEO strategies</p>
-      </div>
-      
-      <div class="case-studies-container">
-        <div class="case-study-card">
-          <div class="case-study-image">
-            <img src="/images/case-studies/renamed/consulting-firm-seo.webp" alt="Consulting Firm SEO Case Study" width="400" height="300" loading="eager">
-            <div class="case-study-category">Consulting</div>
-          </div>
-          <div class="case-study-content">
-            <h3>19% Organic Traffic Growth for Consulting Firm</h3>
-            <div class="case-study-results">
-              <div class="result-item">
-                <span class="result-value">+19%</span>
-                <span class="result-label">Organic Traffic</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">+86%</span>
-                <span class="result-label">Impressions</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">6 mo.</span>
-                <span class="result-label">Timeline</span>
-              </div>
-            </div>
-            <a href="/case-studies/consulting-firm-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        
-
-        <div class="case-study-card">
-          <div class="case-study-image">
-            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance UK Fitness SEO Case Study" width="400" height="300" loading="eager">
-            <div class="case-study-category">Fitness</div>
-          </div>
-          <div class="case-study-content">
-            <h3>119% Increase in Organic Traffic for Speediance UK</h3>
-            <div class="case-study-results">
-              <div class="result-item">
-                <span class="result-value">+119%</span>
-                <span class="result-label">Total Clicks</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">+135%</span>
-                <span class="result-label">Impressions</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">3 mo.</span>
-                <span class="result-label">Timeline</span>
-              </div>
-            </div>
-            <a href="/case-studies/speediance-uk-fitness-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        <div class="case-study-card">
-          <div class="case-study-image">
-            <img src="/images/case-studies/renamed/speediance-au-fitness-seo.webp" alt="Speediance AU Fitness SEO Case Study" width="400" height="300" loading="eager">
-            <div class="case-study-category">Fitness</div>
-          </div>
-          <div class="case-study-content">
-            <h3>66% Organic Traffic Growth for Speediance AU</h3>
-            <div class="case-study-results">
-              <div class="result-item">
-                <span class="result-value">+66%</span>
-                <span class="result-label">Total Clicks</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">+22%</span>
-                <span class="result-label">Impressions</span>
-              </div>
-              <div class="result-item">
-                <span class="result-value">6 mo.</span>
-                <span class="result-label">Timeline</span>
-              </div>
-            </div>
-            <a href="/case-studies/speediance-au-fitness-seo/" class="case-study-link">View Case Study <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="case-studies-footer">
-        <a href="/case-studies/" class="view-all-button">View All Case Studies</a>
-      </div>
-    </div>
-  </section>
+  <!-- What Our Clients Say Full Carousel -->
+  <ReviewsSection />
 
   <!-- Packages Section -->
   <PackagesSection />
-
-  <!-- Contact Section -->
-  <section class="contact-section py-20 bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="section-label">Contact Bright Forge SEO Agency</span>
-        <h2 class="section-title">Get in <span>touch today</span></h2>
-        <p class="section-subtitle">Success isn't just about being seen; it's about making an impact. At Bright Forge SEO, a results-driven Philippines SEO agency, we combine strategy, innovation, and a results-oriented approach to ensure your business leads in the digital arena. Whether you're just starting or scaling up, we're here to help you achieve digital excellence.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <!-- Form Column (keeps original fields/content + Netlify) -->
-        <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-          <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="space-y-6">
-            <input type="hidden" name="form-name" value="homepage-contact" />
-            <input type="hidden" name="subject" value="New Contact Form Submission from Website" />
-            <input type="hidden" name="notification-email" value="seo@brightforgeseo.com" />
-            <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
-
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label for="firstName" class="block text-sm font-medium text-brand-soft mb-1">First Name *</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
-              </div>
-              <div>
-                <label for="lastName" class="block text-sm font-medium text-brand-soft mb-1">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
-              </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label for="email" class="block text-sm font-medium text-brand-soft mb-1">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
-              </div>
-              <div>
-                <label for="phone" class="block text-sm font-medium text-brand-soft mb-1">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(+63) 912 345 6789" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
-              </div>
-            </div>
-
-            <div>
-              <label for="website" class="block text-sm font-medium text-brand-soft mb-1">Website URL</label>
-              <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
-            </div>
-
-            <div>
-              <label for="services" class="block text-sm font-medium text-brand-soft mb-1">Services Interested In</label>
-              <select id="services" name="services" required class="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-brand-accent focus:border-brand-accent">
-                <option value="">Select a service...</option>
-                <option value="seo-services">SEO Services Philippines</option>
-                <option value="content-seo">Content SEO Services Philippines</option>
-                <option value="white-label">White Label SEO Services Philippines</option>
-                <option value="backlink-seo">Backlink SEO Services In The Philippines</option>
-                <option value="comprehensive">Comprehensive SEO Package</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message" class="block text-sm font-medium text-brand-soft mb-1">Tell us about your project</label>
-              <textarea id="message" name="message" rows="5" placeholder="Describe your SEO goals, current challenges, and what you hope to achieve..." class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent"></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-3 rounded-md font-bold text-white transition-all bg-[#f97316] hover:bg-[#FF6B35]">
-              Get Your Free Consultation
-            </button>
-          </form>
-        </div>
-
-        <!-- Info/Trust Column (mirrors service pages) -->
-        <div class="space-y-8">
-          <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-            <h3 class="text-xl font-bold mb-5 text-brand-dark">Get in Touch</h3>
-            <div class="flex items-start mb-5">
-              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
-                <i class="fas fa-envelope text-brand-accent"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-brand-dark">Email Us</h4>
-                <a href="mailto:seo@brightforgeseo.com" class="text-brand-soft hover:text-brand-accent transition-colors">seo@brightforgeseo.com</a>
-              </div>
-            </div>
-            <div class="flex items-start mb-5">
-              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
-                <i class="fas fa-phone-alt text-brand-accent"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-brand-dark">Call Us</h4>
-                <a href="tel:+639696206182" class="text-brand-soft hover:text-brand-accent transition-colors">(+63) 969 620 6182</a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
-                <i class="fas fa-map-marker-alt text-brand-accent"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-brand-dark">Visit Our Office</h4>
-                <p class="text-brand-soft text-sm leading-relaxed">Kathleen Place 4, Block 16, Lot 37<br />Armani Street, 75 S Francisco<br />Novaliches, Quezon City<br />1116 Metro Manila, Philippines</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-            <h3 class="text-xl font-bold mb-5 text-brand-dark">Office Hours</h3>
-            <div class="space-y-3 text-brand-soft">
-              <div class="flex justify-between"><span>Monday - Friday:</span><span>9:00 AM - 6:00 PM</span></div>
-              <div class="flex justify-between"><span>Saturday:</span><span>10:00 AM - 4:00 PM</span></div>
-              <div class="flex justify-between"><span>Sunday:</span><span>Closed</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ Section -->
   <section class="faq-section py-16 bg-[#f8fafc]" style="background: #f8fafc !important; background-color: #f8fafc !important;">
@@ -812,6 +701,120 @@ const breadcrumbs = [
         <a href="/blog/" class="inline-block border border-brand-accent text-brand-accent font-medium rounded-md px-6 py-3 hover:bg-brand-accent hover:text-white transition-colors" style="background-color: #f8fafc !important;">
           View All Blog Posts
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section py-20 bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+    <div class="container max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="section-label">Contact Bright Forge SEO Agency</span>
+        <h2 class="section-title">Get in <span>touch today</span></h2>
+        <p class="section-subtitle">Success isn't just about being seen; it's about making an impact. At Bright Forge SEO, a results-driven Philippines SEO agency, we combine strategy, innovation, and a results-oriented approach to ensure your business leads in the digital arena. Whether you're just starting or scaling up, we're here to help you achieve digital excellence.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Form Column (keeps original fields/content + Netlify) -->
+        <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+          <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="space-y-6">
+            <input type="hidden" name="form-name" value="homepage-contact" />
+            <input type="hidden" name="subject" value="New Contact Form Submission from Website" />
+            <input type="hidden" name="notification-email" value="seo@brightforgeseo.com" />
+            <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-brand-soft mb-1">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-brand-soft mb-1">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-sm font-medium text-brand-soft mb-1">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-brand-soft mb-1">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(+63) 912 345 6789" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+              </div>
+            </div>
+
+            <div>
+              <label for="website" class="block text-sm font-medium text-brand-soft mb-1">Website URL</label>
+              <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+            </div>
+
+            <div>
+              <label for="services" class="block text-sm font-medium text-brand-soft mb-1">Services Interested In</label>
+              <select id="services" name="services" required class="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-brand-accent focus:border-brand-accent">
+                <option value="">Select a service...</option>
+                <option value="seo-services">SEO Services Philippines</option>
+                <option value="content-seo">Content SEO Services Philippines</option>
+                <option value="white-label">White Label SEO Services Philippines</option>
+                <option value="backlink-seo">Backlink SEO Services In The Philippines</option>
+                <option value="comprehensive">Comprehensive SEO Package</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-brand-soft mb-1">Tell us about your project</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your SEO goals, current challenges, and what you hope to achieve..." class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-md font-bold text-white transition-all bg-[#f97316] hover:bg-[#FF6B35]">
+              Get Your Free Consultation
+            </button>
+          </form>
+        </div>
+
+        <!-- Info/Trust Column (mirrors service pages) -->
+        <div class="space-y-8">
+          <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+            <h3 class="text-xl font-bold mb-5 text-brand-dark">Get in Touch</h3>
+            <div class="flex items-start mb-5">
+              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
+                <i class="fas fa-envelope text-brand-accent"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-brand-dark">Email Us</h4>
+                <a href="mailto:seo@brightforgeseo.com" class="text-brand-soft hover:text-brand-accent transition-colors">seo@brightforgeseo.com</a>
+              </div>
+            </div>
+            <div class="flex items-start mb-5">
+              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
+                <i class="fas fa-phone-alt text-brand-accent"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-brand-dark">Call Us</h4>
+                <a href="tel:+639696206182" class="text-brand-soft hover:text-brand-accent transition-colors">(+63) 969 620 6182</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
+                <i class="fas fa-map-marker-alt text-brand-accent"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-brand-dark">Visit Our Office</h4>
+                <p class="text-brand-soft text-sm leading-relaxed">Kathleen Place 4, Block 16, Lot 37<br />Armani Street, 75 S Francisco<br />Novaliches, Quezon City<br />1116 Metro Manila, Philippines</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-8 rounded-lg shadow-md bg-[#f8fafc]" style="background-color: #f8fafc !important;">
+            <h3 class="text-xl font-bold mb-5 text-brand-dark">Office Hours</h3>
+            <div class="space-y-3 text-brand-soft">
+              <div class="flex justify-between"><span>Monday - Friday:</span><span>9:00 AM - 6:00 PM</span></div>
+              <div class="flex justify-between"><span>Saturday:</span><span>10:00 AM - 4:00 PM</span></div>
+              <div class="flex justify-between"><span>Sunday:</span><span>Closed</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

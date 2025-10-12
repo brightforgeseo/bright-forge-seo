@@ -1,0 +1,103 @@
+---
+// Featured testimonial from RJ GO
+---
+
+<section class="featured-testimonial-section py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+        CLIENT SUCCESS
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        What Our Clients <span class="text-orange-500">Say</span>
+      </h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 md:p-12 shadow-xl border border-orange-100">
+        <div class="flex justify-center mb-6">
+          <div class="flex gap-2 text-yellow-400 text-2xl">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <blockquote class="text-xl md:text-2xl text-gray-800 text-center leading-relaxed mb-8 font-medium italic">
+          "Solid experience. My organic traffic went from 1,000 to 64,000 and been growing more. Definitely a must service for all business owners who wants to rock the organic search!"
+        </blockquote>
+
+        <div class="flex items-center justify-center gap-4">
+          <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+            R
+          </div>
+          <div class="text-left">
+            <h4 class="text-xl font-bold text-gray-900">
+              <a href="https://www.google.com/maps/contrib/110455532132624140129/reviews?hl=en" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors">
+                RJ GO
+              </a>
+            </h4>
+            <p class="text-orange-500 font-medium">Google Review • Jun 20, 2022</p>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-orange-200">
+          <div class="grid grid-cols-3 gap-6 text-center">
+            <div class="stat-highlight">
+              <div class="text-4xl font-bold text-orange-500 mb-2">1,000</div>
+              <div class="text-sm text-gray-600 font-medium">Starting Traffic</div>
+            </div>
+            <div class="stat-highlight">
+              <div class="text-4xl font-bold text-orange-500 mb-2">
+                <i class="fas fa-arrow-right text-2xl"></i>
+              </div>
+              <div class="text-sm text-gray-600 font-medium">Growth</div>
+            </div>
+            <div class="stat-highlight">
+              <div class="text-4xl font-bold text-orange-500 mb-2">64,000</div>
+              <div class="text-sm text-gray-600 font-medium">Current Traffic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-testimonial-section {
+    position: relative;
+  }
+
+  .featured-testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(249, 115, 22, 0.03) 100%);
+    pointer-events: none;
+  }
+
+  .stat-highlight {
+    transition: transform 0.3s ease;
+  }
+
+  .stat-highlight:hover {
+    transform: translateY(-5px);
+  }
+
+  blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: rgba(249, 115, 22, 0.2);
+    position: absolute;
+    margin-top: -2rem;
+    margin-left: -2rem;
+  }
+</style>
