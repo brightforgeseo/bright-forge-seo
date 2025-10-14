@@ -3,266 +3,119 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
 import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
 
 const caseStudyData = {
-  title: "How We Achieved 66% Organic Traffic Growth for Speediance AU – Fitness Equipment Supplier",
+  title: "How We Achieved 66% Organic Traffic Growth for Speediance AU",
   client: "Speediance AU",
   industry: "Fitness Equipment",
   duration: "6 months",
   heroImage: "/images/case-studies/SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp",
-  challenge: "Speediance AU is a prominent supplier of fitness equipment in Australia, serving both commercial gyms and individual customers. They faced significant challenges in a highly competitive Australian fitness equipment market with numerous established suppliers. Additionally, they needed to effectively target both commercial and retail fitness buyers with tailored SEO strategies while navigating seasonal variations that impact search demand and buying behavior.",
+  challenge: "Speediance AU faced significant challenges in a highly competitive Australian fitness equipment market with numerous established suppliers. Additionally, they needed to effectively target both commercial and retail fitness buyers with tailored SEO strategies while navigating seasonal variations that impact search demand and buying behavior.",
   solution: "We developed a comprehensive SEO strategy tailored specifically for the Australian fitness equipment market. This included thorough keyword research targeting Australian-specific fitness equipment search terms, optimizing website content and meta tags to better match user intent and regional preferences, improving technical SEO elements, developing high-quality backlinks from local fitness communities, and continuously analyzing Google Search Console data to fine-tune our tactics.",
   keyMetrics: [
-    {
-      label: "Organic Traffic",
-      value: "+66%",
-      description: "Increase in total organic clicks"
-    },
-    {
-      label: "Search Visibility",
-      value: "+22%",
-      description: "Growth in total impressions"
-    },
-    {
-      label: "CTR",
-      value: "+33%",
-      description: "Improvement in click-through rate"
-    }
+    { label: "Organic Traffic", value: "+66%", description: "Increase in total organic clicks" },
+    { label: "Search Visibility", value: "+22%", description: "Growth in total impressions" },
+    { label: "CTR", value: "+33%", description: "Improvement in click-through rate" }
   ],
   strategySteps: [
-    {
-      title: "Australian-Specific Keyword Research",
-      description: "We conducted thorough keyword research targeting Australian-specific fitness equipment search terms, focusing on local terminology, preferences, and search patterns unique to the Australian market.",
-      icon: "fa-magnifying-glass"
-    },
-    {
-      title: "Content & Meta Tag Optimization",
-      description: "We optimized website content, meta tags, and product pages to better match user intent and regional preferences, ensuring the content resonated with both commercial gym owners and individual fitness enthusiasts.",
-      icon: "fa-file-lines"
-    },
-    {
-      title: "Technical SEO Improvements",
-      description: "We improved technical SEO elements such as site speed and mobile usability for enhanced user experience, ensuring the website performed optimally across all devices and connection speeds.",
-      icon: "fa-gears"
-    },
-    {
-      title: "Local Backlink Development",
-      description: "We developed high-quality backlinks from local fitness communities, blogs, and directories to strengthen domain authority and establish Speediance AU as a trusted fitness equipment provider in Australia.",
-      icon: "fa-link"
-    },
-    {
-      title: "Continuous Performance Analysis",
-      description: "We continuously analyzed Google Search Console data to fine-tune SEO tactics, making data-driven adjustments to the strategy based on real-time performance metrics.",
-      icon: "fa-chart-line"
-    }
+    { title: "Australian-Specific Keyword Research", description: "We conducted thorough keyword research targeting Australian-specific fitness equipment search terms, focusing on local terminology, preferences, and search patterns unique to the Australian market." },
+    { title: "Content & Meta Tag Optimization", description: "We optimized website content, meta tags, and product pages to better match user intent and regional preferences, ensuring the content resonated with both commercial gym owners and individual fitness enthusiasts." },
+    { title: "Technical SEO Improvements", description: "We improved technical SEO elements such as site speed and mobile usability for enhanced user experience, ensuring the website performed optimally across all devices and connection speeds." },
+    { title: "Local Backlink Development", description: "We developed high-quality backlinks from local fitness communities, blogs, and directories to strengthen domain authority and establish Speediance AU as a trusted fitness equipment provider in Australia." },
+    { title: "Continuous Performance Analysis", description: "We continuously analyzed Google Search Console data to fine-tune SEO tactics, making data-driven adjustments to the strategy based on real-time performance metrics." }
   ],
   results: [
-    {
-      metric: "Total Clicks",
-      before: "6,550",
-      after: "10,900",
-      improvement: "+66%"
-    },
-    {
-      metric: "Total Impressions",
-      before: "279,000",
-      after: "339,000",
-      improvement: "+22%"
-    },
-    {
-      metric: "Click-Through Rate",
-      before: "2.4%",
-      after: "3.2%",
-      improvement: "+33%"
-    }
+    { metric: "Total Clicks", before: "6,550", after: "10,900", improvement: "+66%" },
+    { metric: "Total Impressions", before: "279,000", after: "339,000", improvement: "+22%" },
+    { metric: "Click-Through Rate", before: "2.4%", after: "3.2%", improvement: "+33%" }
   ],
-  testimonial: {
-    quote: "The SEO results delivered by Bright Forge have been outstanding. Our online visibility has significantly improved in the Australian market, and we're seeing more qualified leads coming through our website. Their targeted approach to both commercial and retail customers has helped us grow our business across all segments.",
-    author: "Sarah Thompson",
-    position: "Marketing Director",
-    company: "Speediance AU",
-    avatar: "/images/testimonials/sarah-thompson.jpg"
-  },
   keyTakeaways: [
     "Market-specific keyword research is essential for regional SEO success",
     "Balancing SEO strategies for different customer segments (commercial vs. retail) requires careful planning",
     "Technical SEO improvements directly impact user engagement metrics",
     "Local backlink development strengthens regional market presence",
     "Continuous data analysis allows for agile strategy adjustments"
-  ],
-  nextSteps: "Our targeted SEO approach significantly boosted Speediance AU's organic traffic and visibility in a competitive market. Moving forward, we'll continue to refine keyword strategies and enhance content to improve ranking positions and overall SEO performance in the Australian fitness equipment market."
+  ]
 };
 ---
 
 <MainLayout title="Case Study: Speediance AU Fitness SEO Success | Bright Forge SEO" description="Speediance AU didn't just grow they ranked. Discover how targeted fitness SEO delivered massive gains in traffic, leads, and local visibility.">
   <LegacyHeader slot="header" />
 
-  <!-- Hero -->
   <Hero
-    badgeIcon="fas fa-trophy"
-    badgeText="Success Story"
-    title="How We Achieved 66% Organic Traffic Growth for <span>Speediance AU</span>"
-    breadcrumbCurrent="Speediance AU Case Study"
-    padding="3rem 0 3rem"
+    title={caseStudyData.client}
+    breadcrumbCurrent="Speediance AU"
   >
     <Fragment slot="story">
-      <p>Speediance AU is a prominent supplier of fitness equipment in Australia, serving both commercial gyms and individual customers. They faced significant challenges in a highly competitive Australian fitness equipment market with numerous established suppliers.</p>
-      <p>Through our comprehensive SEO strategy tailored specifically for the Australian fitness equipment market, we achieved exceptional results: 66% increase in organic traffic, 22% growth in search visibility, and 33% improvement in click-through rate.</p>
+      <div class="case-meta">
+        <span class="meta-item">{caseStudyData.industry}</span>
+        <span class="meta-divider">•</span>
+        <span class="meta-item">{caseStudyData.duration}</span>
+      </div>
+      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies in the competitive Australian fitness equipment market.</p>
     </Fragment>
 
     <Fragment slot="actions">
       <ButtonPrimary href="#results" text="View Full Results" />
       <ButtonSecondary href="/contact/" text="Discuss Your Project" />
     </Fragment>
-
-    <Fragment slot="stats">
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">+66%</span>
-          <span class="stat-label">Organic Traffic</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">+22%</span>
-          <span class="stat-label">Search Visibility</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">+33%</span>
-          <span class="stat-label">CTR Improvement</span>
-        </div>
-      </div>
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="results-showcase">
-          <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
-          <div class="showcase-overlay">
-            <div class="growth-badge">
-              <i class="fas fa-trending-up"></i>
-              <span>Growth Achieved</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Fragment>
   </Hero>
 
-  <!-- Impact Results Section -->
-  <section class="impact-results">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="results-header">
-        <h2>Impact & Results</h2>
-        <p>The measurable transformation we delivered for {caseStudyData.client}</p>
-      </div>
-
-      <div class="achievement-grid">
-        {caseStudyData.keyMetrics.map((metric, index) => (
-          <div class="achievement-card">
-            <div class="achievement-rank">#{index + 1}</div>
-            <div class="achievement-icon">
-              <i class="fas fa-medal"></i>
-            </div>
-            <div class="achievement-data">
-              <div class="achievement-value">{metric.value}</div>
-              <h3 class="achievement-title">{metric.label}</h3>
-              <p class="achievement-desc">{metric.description}</p>
-            </div>
-            <div class="achievement-glow"></div>
+  <!-- Key Metrics Section -->
+  <section class="metrics-section">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="metrics-grid">
+        {caseStudyData.keyMetrics.map((metric) => (
+          <div class="metric-card">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <div class="metric-description">{metric.description}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- The Challenge Story -->
-  <section class="challenge-story">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="story-header">
-        <h2>The Challenge</h2>
-        <p>Every success story begins with overcoming obstacles</p>
-      </div>
-
-      <div class="timeline-container">
-        <div class="timeline-line"></div>
-
-        <div class="story-point initial-state">
-          <div class="story-marker">
-            <i class="fas fa-flag"></i>
-          </div>
-          <div class="story-content">
-            <div class="story-badge">Initial State</div>
-            <h3>The Situation</h3>
-            <div class="challenge-narrative">{caseStudyData.challenge}</div>
-
-            <div class="challenge-indicators">
-              <div class="indicator negative">
-                <i class="fas fa-trending-down"></i>
-                <span>Declining Performance</span>
-              </div>
-              <div class="indicator negative">
-                <i class="fas fa-search-minus"></i>
-                <span>Poor Visibility</span>
-              </div>
-              <div class="indicator negative">
-                <i class="fas fa-users-slash"></i>
-                <span>Limited Reach</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="story-point turning-point">
-          <div class="story-marker">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <div class="story-content">
-            <div class="story-badge">Turning Point</div>
-            <h3>The Solution Approach</h3>
-            <p>We identified the core issues and developed a comprehensive strategy to transform {caseStudyData.client}'s digital presence through strategic SEO implementation.</p>
-          </div>
-        </div>
+  <!-- Hero Image Section -->
+  <section class="image-section">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="case-image-container">
+        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
       </div>
     </div>
   </section>
 
-  <!-- Strategic Methodology -->
-  <section class="methodology-section">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="methodology-header">
-        <h2>Our Strategic Methodology</h2>
-        <p>The proven framework that delivered exceptional results for {caseStudyData.client}</p>
-      </div>
+  <!-- Challenge Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">The Challenge</h2>
+      <p class="section-text">{caseStudyData.challenge}</p>
+    </div>
+  </section>
 
-      <div class="methodology-flow">
+  <!-- Solution Section -->
+  <section class="content-section gray">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Our Approach</h2>
+      <p class="section-text">{caseStudyData.solution}</p>
+    </div>
+  </section>
+
+  <!-- Strategy Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Strategy</h2>
+
+      <div class="strategy-list">
         {caseStudyData.strategySteps.map((step, index) => (
-          <div class="methodology-step">
-            <div class="step-connector"></div>
-            <div class="method-card">
-              <div class="card-header">
-                <div class="step-count">
-                  <span>Step</span>
-                  <div class="step-num">{index + 1}</div>
-                </div>
-                <div class="step-icon-container">
-                  <i class={`fas ${step.icon}`}></i>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="method-title">{step.title}</h3>
-                <p class="method-description">{step.description}</p>
-                <div class="completion-status">
-                  <i class="fas fa-check-circle"></i>
-                  <span>Completed Successfully</span>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 100%"></div>
-                </div>
-              </div>
+          <div class="strategy-item">
+            <div class="strategy-number">{index + 1}</div>
+            <div class="strategy-content">
+              <h3 class="strategy-title">{step.title}</h3>
+              <p class="strategy-description">{step.description}</p>
             </div>
           </div>
         ))}
@@ -270,1192 +123,314 @@ const caseStudyData = {
     </div>
   </section>
 
-  <!-- Performance Transformation -->
-  <section class="performance-transformation" id="results">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="transformation-header">
-        <h2>Performance Transformation</h2>
-        <p>Dramatic improvements across all key metrics</p>
-      </div>
+  <!-- Results Section -->
+  <section class="content-section gray" id="results">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Results</h2>
 
-      <div class="comparison-container">
-        {caseStudyData.results.map((result) => (
-          <div class="comparison-card">
-            <div class="metric-header">
-              <h3 class="metric-name">{result.metric}</h3>
-            </div>
-
-            <div class="comparison-visual">
-              <div class="before-section">
-                <div class="section-label">
-                  <i class="fas fa-arrow-down"></i>
-                  <span>Before</span>
-                </div>
-                <div class="metric-value before-value">{result.before}</div>
-                <div class="value-indicator before"></div>
-              </div>
-
-              <div class="transformation-arrow">
-                <div class="arrow-icon">
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="transformation-label">Transformed</div>
-              </div>
-
-              <div class="after-section">
-                <div class="section-label">
-                  <i class="fas fa-arrow-up"></i>
-                  <span>After</span>
-                </div>
-                <div class="metric-value after-value">{result.after}</div>
-                <div class="value-indicator after"></div>
-              </div>
-            </div>
-
-            <div class="improvement-highlight">
-              <div class="improvement-badge">
-                <i class="fas fa-trophy"></i>
-                <span class="improvement-text">{result.improvement}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="transformation-footer">
-        <div class="footer-content">
-          <h3>Exceptional Growth Achieved</h3>
-          <p>These results demonstrate the power of strategic SEO implementation tailored specifically for {caseStudyData.client}'s industry and market position.</p>
-
-          <div class="success-indicators">
-            <div class="success-item">
-              <i class="fas fa-chart-line"></i>
-              <span>Sustainable Growth</span>
-            </div>
-            <div class="success-item">
-              <i class="fas fa-target"></i>
-              <span>Goals Exceeded</span>
-            </div>
-            <div class="success-item">
-              <i class="fas fa-rocket"></i>
-              <span>Market Leadership</span>
-            </div>
-          </div>
-        </div>
+      <div class="results-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            {caseStudyData.results.map((result) => (
+              <tr>
+                <td class="metric-name">{result.metric}</td>
+                <td>{result.before}</td>
+                <td>{result.after}</td>
+                <td class="improvement">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- Client Testimonial -->
-  {caseStudyData.testimonial && (
-    <section class="client-spotlight">
-      <div class="max-w-7xl mx-auto px-4 py-20">
-        <div class="spotlight-container">
-          <div class="spotlight-header">
-            <h2>Client Spotlight</h2>
-            <p>Hear directly from {caseStudyData.client} about their transformation journey</p>
-          </div>
+  <!-- Key Takeaways Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Key Takeaways</h2>
 
-          <div class="testimonial-showcase">
-            <div class="quote-section">
-              <div class="quote-mark">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <blockquote class="testimonial-text">
-                "{caseStudyData.testimonial.quote}"
-              </blockquote>
-            </div>
-
-            <div class="author-section">
-              <div class="author-profile">
-                {caseStudyData.testimonial.avatar && (
-                  <div class="author-avatar">
-                    <img src={caseStudyData.testimonial.avatar} alt={caseStudyData.testimonial.author} />
-                  </div>
-                )}
-                <div class="author-details">
-                  <h4 class="author-name">{caseStudyData.testimonial.author}</h4>
-                  <p class="author-title">{caseStudyData.testimonial.position}</p>
-                  <p class="author-company">{caseStudyData.testimonial.company}</p>
-                </div>
-              </div>
-
-              <div class="satisfaction-metrics">
-                <div class="satisfaction-item">
-                  <i class="fas fa-star"></i>
-                  <span>5-Star Partnership</span>
-                </div>
-                <div class="satisfaction-item">
-                  <i class="fas fa-handshake"></i>
-                  <span>Ongoing Collaboration</span>
-                </div>
-                <div class="satisfaction-item">
-                  <i class="fas fa-thumbs-up"></i>
-                  <span>Highly Recommended</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Strategic Insights -->
-  <section class="strategic-insights">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="insights-header">
-        <h2>Strategic Insights</h2>
-        <p>Key lessons learned from {caseStudyData.client}'s transformation journey</p>
-      </div>
-
-      <div class="insights-intro">
-        <div class="intro-content">
-          <h3>What We Learned</h3>
-          <p>Every successful project teaches us valuable lessons that can benefit future clients. Here are the strategic insights from {caseStudyData.client}'s transformation.</p>
-        </div>
-      </div>
-
-      <div class="insights-grid">
-        {caseStudyData.keyTakeaways.map((takeaway, index) => (
-          <div class="insight-card">
-            <div class="insight-header">
-              <div class="insight-number">
-                <span>{index + 1}</span>
-              </div>
-              <div class="insight-icon">
-                <i class="fas fa-lightbulb"></i>
-              </div>
-            </div>
-            <div class="insight-content">
-              <h4>Strategic Insight</h4>
-              <p class="insight-text">{takeaway}</p>
-              <div class="insight-category">
-                <i class="fas fa-tag"></i>
-                <span>Lesson Learned</span>
-              </div>
-            </div>
-            <div class="insight-glow"></div>
-          </div>
+      <ul class="takeaways-list">
+        {caseStudyData.keyTakeaways.map((takeaway) => (
+          <li>{takeaway}</li>
         ))}
-      </div>
-
-      <div class="insights-conclusion">
-        <div class="conclusion-card">
-          <h3>The Bottom Line</h3>
-          <p>These insights demonstrate that successful SEO requires a strategic, data-driven approach tailored to each client's unique challenges and market position.</p>
-          <div class="conclusion-cta">
-            <a href="/contact/" class="insights-btn">
-              <i class="fas fa-arrow-right"></i>
-              <span>Apply These Insights to Your Business</span>
-            </a>
-          </div>
-        </div>
-      </div>
+      </ul>
     </div>
   </section>
-
-  <!-- Next Steps CTA -->
-  {caseStudyData.nextSteps && (
-    <section class="features-section">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="cta-container" style="text-align: center; padding: 3rem 2rem; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1);">
-          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #1a1a1a;">Ready for Similar Results?</h3>
-          <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">{caseStudyData.nextSteps}</p>
-          <div class="hero-actions" style="justify-content: center;">
-            <a href="/contact/" class="cta-button primary">
-              <span>Get Started Today</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="/" class="cta-button secondary">
-              <i class="fas fa-info-circle"></i>
-              <span>Learn More</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
 
   <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/********************
-  Hero Stats (for stats slot)
-*********************/
-.hero-stats {
+/* Case Study Meta */
+.case-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-divider {
+  opacity: 0.5;
+}
+
+/* Metrics Section */
+.metrics-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.metrics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
 }
 
-.stat {
+.metric-card {
   text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: white !important;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
-/********************
-  Case Study Sections
-*********************/
-.impact-results {
-  background: #f8fafc;
-  padding: 100px 0;
-}
-
-.results-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.results-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-}
-
-.achievement-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-.achievement-card {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.achievement-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  border-color: rgba(66, 133, 244, 0.3);
-}
-
-.achievement-rank {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.achievement-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.achievement-icon i {
-  font-size: 24px;
-  color: white;
-}
-
-.achievement-value {
-  font-size: 3rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 10px;
-}
-
-.achievement-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 10px;
-}
-
-.achievement-desc {
-  color: #666;
-  line-height: 1.6;
-}
-
-.achievement-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 68, 56, 0.07), rgba(255, 107, 53, 0.07));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.achievement-card:hover .achievement-glow {
-  opacity: 1;
-}
-
-/* Challenge Story Timeline */
-.challenge-story {
-  background: white;
-  padding: 100px 0;
-}
-
-.story-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.story-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-}
-
-.timeline-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(to bottom, #f97316, #FF6B35);
-  transform: translateX(-50%);
-}
-
-.story-point {
-  position: relative;
-  margin-bottom: 60px;
-}
-
-.story-point:nth-child(odd) .story-content {
-  margin-right: 60%;
-  text-align: right;
-}
-
-.story-point:nth-child(even) .story-content {
-  margin-left: 60%;
-  text-align: left;
-}
-
-.story-marker {
-  position: absolute;
-  left: 50%;
-  top: 30px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.story-marker i {
-  color: white;
-  font-size: 20px;
-}
-
-.story-content {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 2px solid #f1f5f9;
-}
-
-.story-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-}
-
-.challenge-narrative {
-  background: #f8fafc;
-  padding: 30px;
-  border-radius: 15px;
-  margin: 20px 0;
-  border-left: 4px solid #f97316;
-  font-style: italic;
-  line-height: 1.8;
-}
-
-.challenge-indicators {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.indicator {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.indicator.negative {
-  background: rgba(220, 38, 38, 0.1);
-  color: #dc2626;
-}
-
-/* Strategic Methodology */
-.methodology-section {
-  background: #f8fafc;
-  padding: 100px 0;
-}
-
-.methodology-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.methodology-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-}
-
-.methodology-flow {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-bottom: 60px;
-}
-
-.methodology-step {
-  position: relative;
-}
-
-.method-card {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.method-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  border-color: rgba(66, 133, 244, 0.3);
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.step-count {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.step-count span {
-  font-size: 12px;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-}
-
-.step-num {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.step-icon-container {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-icon-container i {
-  color: white;
-  font-size: 24px;
-}
-
-.method-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 15px;
-}
-
-.method-description {
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.completion-status {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #34A853;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 6px;
-  background: #e2e8f0;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-  transition: width 0.8s ease;
-}
-
-/* Performance Transformation Section */
-.performance-transformation {
-  background: white;
-  padding: 100px 0;
-}
-
-.transformation-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.transformation-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-}
-
-.comparison-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
-  margin-bottom: 60px;
-}
-
-.comparison-card {
-  background: white;
-  border-radius: 25px;
-  padding: 40px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-  border: 3px solid #f1f5f9;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  position: relative;
-}
-
-.comparison-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
-  border-color: rgba(66, 133, 244, 0.3);
-}
-
-.metric-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.metric-name {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.comparison-visual {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.before-section,
-.after-section {
-  text-align: center;
-}
-
-.section-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-}
-
-.before-section .section-label {
-  color: #dc2626;
-}
-
-.after-section .section-label {
-  color: #16a34a;
+  padding: 24px 0;
 }
 
 .metric-value {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.before-value {
-  color: #dc2626;
-}
-
-.after-value {
-  background: linear-gradient(135deg, #16a34a, #4285F4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.value-indicator {
-  width: 80px;
-  height: 8px;
-  border-radius: 4px;
-  margin: 0 auto;
-}
-
-.value-indicator.before {
-  background: linear-gradient(to right, #dc2626, #ef4444);
-}
-
-.value-indicator.after {
-  background: linear-gradient(to right, #16a34a, #4285F4);
-}
-
-.transformation-arrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.arrow-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #f97316, #4285F4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 2s infinite;
-}
-
-.arrow-icon i {
-  color: white;
-  font-size: 20px;
-}
-
-.transformation-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.improvement-highlight {
-  text-align: center;
-}
-
-.improvement-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #FFD700, #FFA500);
-  color: #1a1a1a;
-  padding: 15px 25px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 16px;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-}
-
-.transformation-footer {
-  background: #f8fafc;
-  border-radius: 20px;
-  padding: 50px;
-  text-align: center;
-}
-
-.footer-content h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-}
-
-.success-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.success-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #4285F4;
-  font-weight: 600;
-}
-
-/* Client Spotlight Section */
-.client-spotlight {
-  background: #f8fafc;
-  padding: 100px 0;
-}
-
-.spotlight-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.spotlight-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.spotlight-header h2 {
   font-size: 3rem;
   font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
+  color: #f97316;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
-.testimonial-showcase {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-  background: white;
-  border-radius: 25px;
-  padding: 60px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-}
-
-.quote-section {
-  position: relative;
-}
-
-.quote-mark {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #f97316, #4285F4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.quote-mark i {
-  color: white;
-  font-size: 32px;
-}
-
-.testimonial-text {
-  font-size: 1.5rem;
-  line-height: 1.8;
-  color: #1a1a1a;
-  font-style: italic;
-  margin: 0;
-  position: relative;
-}
-
-.author-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.author-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.author-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 25px;
-  border: 4px solid #4285F4;
-}
-
-.author-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.author-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: 8px;
 }
 
-.author-title {
-  font-size: 1.1rem;
+.metric-description {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Image Section */
+.image-section {
+  background: #ffffff;
+}
+
+.case-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.case-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+/* Content Sections */
+.content-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.content-section.gray {
+  background: #f8fafc;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* Strategy List */
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.strategy-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.strategy-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #f97316;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.strategy-content {
+  flex: 1;
+}
+
+.strategy-title {
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #4285F4;
-  margin-bottom: 5px;
+  color: #1e293b;
+  margin-bottom: 8px;
 }
 
-.author-company {
+.strategy-description {
   font-size: 1rem;
-  color: #666;
-  font-weight: 500;
+  line-height: 1.6;
+  color: #64748b;
 }
 
-.satisfaction-metrics {
+/* Results Table */
+.results-table {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th {
+  text-align: left;
+  padding: 16px 20px;
+  background: #f1f5f9;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.results-table td {
+  padding: 20px;
+  font-size: 1rem;
+  color: #1e293b;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table .metric-name {
+  font-weight: 600;
+}
+
+.results-table .improvement {
+  color: #f97316;
+  font-weight: 600;
+}
+
+/* Takeaways List */
+.takeaways-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.satisfaction-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #f8fafc;
-  padding: 15px 20px;
-  border-radius: 15px;
-  border-left: 4px solid #4285F4;
-}
-
-.satisfaction-item i {
-  color: #4285F4;
-  font-size: 18px;
-}
-
-.satisfaction-item span {
-  font-weight: 600;
-  color: #1a1a1a;
-}
-
-/* Strategic Insights Section */
-.strategic-insights {
-  background: white;
-  padding: 100px 0;
-}
-
-.insights-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.insights-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-}
-
-.insights-intro {
-  max-width: 800px;
-  margin: 0 auto 80px;
-  text-align: center;
-}
-
-.intro-content h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-}
-
-.intro-content p {
-  font-size: 1.1rem;
-  color: #666;
+.takeaways-list li {
+  font-size: 1.125rem;
   line-height: 1.7;
-}
-
-.insights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.insight-card {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 2px solid #f1f5f9;
+  color: #475569;
+  padding-left: 32px;
   position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
 }
 
-.insight-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  border-color: rgba(66, 133, 244, 0.3);
-}
-
-.insight-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.insight-number {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.insight-icon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #4285F4, #34A853);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.insight-icon i {
-  color: white;
-  font-size: 20px;
-}
-
-.insight-content h4 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 15px;
-}
-
-.insight-text {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.insight-category {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #f8fafc;
-  color: #4285F4;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.insight-glow {
+.takeaways-list li::before {
+  content: '';
   position: absolute;
-  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 68, 56, 0.05), rgba(66, 133, 244, 0.05));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.insight-card:hover .insight-glow {
-  opacity: 1;
-}
-
-.insights-conclusion {
-  text-align: center;
-}
-
-.conclusion-card {
-  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-  border-radius: 25px;
-  padding: 60px;
-  border: 2px solid #e2e8f0;
-}
-
-.conclusion-card h3 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 25px;
-}
-
-.conclusion-card p {
-  font-size: 1.2rem;
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 40px;
-}
-
-.insights-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  background: linear-gradient(135deg, #f97316, #4285F4);
-  color: white;
-  padding: 20px 40px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(255, 68, 56, 0.3);
-}
-
-.insights-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(255, 68, 56, 0.4);
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 50%;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-stats {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .strategy-item {
+    gap: 16px;
+  }
+
+  .strategy-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .timeline-container::before {
-    left: 30px;
-  }
-
-  .story-marker {
-    left: 30px;
-  }
-
-  .story-point:nth-child(odd) .story-content,
-  .story-point:nth-child(even) .story-content {
-    margin-left: 80px;
-    margin-right: 0;
-    text-align: left;
-  }
-
-  .testimonial-showcase {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 40px;
-  }
-
-  .comparison-visual {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .transformation-arrow {
-    order: 2;
-  }
-
-  .success-indicators {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .methodology-flow {
-    gap: 30px;
-  }
-
-  .card-header {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
   }
 }
 </style>

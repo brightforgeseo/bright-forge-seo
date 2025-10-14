@@ -3,7 +3,6 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import LegacyHeader from "../../components/LegacyHeader.astro";
 import Footer from "../../components/Footer.astro";
 import ContactSection from "../../components/ContactSection.astro";
-import CaseStudyTemplate from "../../components/CaseStudyTemplate.astro";
 import Hero from "../../components/Hero.astro";
 import ButtonPrimary from "../../components/ButtonPrimary.astro";
 import ButtonSecondary from "../../components/ButtonSecondary.astro";
@@ -48,97 +47,391 @@ const caseStudyData = {
 
   <!-- Hero Section -->
   <Hero
-    badgeIcon="fas fa-trophy"
-    badgeText="Success Story"
-    title="SEO Case Study: 29% Organic Traffic Growth for Car Recycling Company"
-    breadcrumbCurrent="Car Recycling SEO Case Study"
+    title={caseStudyData.client}
+    breadcrumbCurrent="Car Recycling Business"
   >
     <Fragment slot="story">
-      <p>Competing in a crowded car recycling market with limited brand recognition and inconsistent prior SEO efforts presented significant challenges for our client. Through comprehensive keyword research, on-page improvements, technical fixes and quality backlink acquisition, we delivered quick traffic gains that transformed their online presence.</p>
-      <p>Discover how we helped this car recycling company achieve exceptional growth through data-driven SEO strategies, increasing their total clicks by 29% and impressions by 78% in just 3 months.</p>
+      <div class="case-meta">
+        <span class="meta-item">{caseStudyData.industry}</span>
+        <span class="meta-divider">•</span>
+        <span class="meta-item">{caseStudyData.duration}</span>
+      </div>
+      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="#results" text="View Full Results" icon="fas fa-chart-line" />
+      <ButtonPrimary href="#results" text="View Full Results" />
       <ButtonSecondary href="/contact/" text="Discuss Your Project" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="results-showcase">
-          <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
-          <div class="showcase-overlay">
-            <div class="growth-badge">
-              <i class="fas fa-trending-up"></i>
-              <span>Growth Achieved</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </Fragment>
   </Hero>
 
-  <CaseStudyTemplate {...caseStudyData} />
+  <!-- Key Metrics Section -->
+  <section class="metrics-section">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="metrics-grid">
+        {caseStudyData.keyMetrics.map((metric) => (
+          <div class="metric-card">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <div class="metric-description">{metric.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image Section -->
+  <section class="image-section">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="case-image-container">
+        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">The Challenge</h2>
+      <p class="section-text">{caseStudyData.challenge}</p>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="content-section gray">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Our Approach</h2>
+      <p class="section-text">{caseStudyData.solution}</p>
+    </div>
+  </section>
+
+  <!-- Strategy Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Strategy</h2>
+
+      <div class="strategy-list">
+        {caseStudyData.strategySteps.map((step, index) => (
+          <div class="strategy-item">
+            <div class="strategy-number">{index + 1}</div>
+            <div class="strategy-content">
+              <h3 class="strategy-title">{step.title}</h3>
+              <p class="strategy-description">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="content-section gray" id="results">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Results</h2>
+
+      <div class="results-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            {caseStudyData.results.map((result) => (
+              <tr>
+                <td class="metric-name">{result.metric}</td>
+                <td>{result.before}</td>
+                <td>{result.after}</td>
+                <td class="improvement">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Key Takeaways</h2>
+
+      <ul class="takeaways-list">
+        {caseStudyData.keyTakeaways.map((takeaway) => (
+          <li>{takeaway}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Hero Visual Styles */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.results-showcase {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 20px;
-}
-
-.results-showcase img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
-.showcase-overlay {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-}
-
-.growth-badge {
-  background: rgba(52, 168, 83, 0.9);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
+/* Case Study Meta */
+.case-meta {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  backdrop-filter: blur(10px);
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
 }
 
+.meta-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-divider {
+  opacity: 0.5;
+}
+
+/* Metrics Section */
+.metrics-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.metric-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f97316;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.metric-description {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Image Section */
+.image-section {
+  background: #ffffff;
+}
+
+.case-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.case-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+/* Content Sections */
+.content-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.content-section.gray {
+  background: #f8fafc;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* Strategy List */
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.strategy-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.strategy-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #f97316;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.strategy-content {
+  flex: 1;
+}
+
+.strategy-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.strategy-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* Results Table */
+.results-table {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th {
+  text-align: left;
+  padding: 16px 20px;
+  background: #f1f5f9;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.results-table td {
+  padding: 20px;
+  font-size: 1rem;
+  color: #1e293b;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table .metric-name {
+  font-weight: 600;
+}
+
+.results-table .improvement {
+  color: #f97316;
+  font-weight: 600;
+}
+
+/* Takeaways List */
+.takeaways-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.takeaways-list li {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+  padding-left: 32px;
+  position: relative;
+}
+
+.takeaways-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .hero-image-container {
-    max-width: 100%;
+  .hero-title {
+    font-size: 2.5rem;
   }
 
-  .showcase-overlay {
-    top: 15px;
-    right: 15px;
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 
-  .growth-badge {
-    padding: 8px 12px;
-    font-size: 12px;
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .strategy-item {
+    gap: 16px;
+  }
+
+  .strategy-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

@@ -57,82 +57,47 @@ const {
 <!-- CaseStudyTemplate - Content component without MainLayout wrapper -->
 <!-- Note: Hero section is now handled by the Hero component in individual case study pages -->
 
-  <!-- Impact Results Section -->
-  <section class="impact-results">
-    <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="results-header">
-        <h2>Impact & Results</h2>
-        <p>The measurable transformation we delivered for {client}</p>
+  <!-- Hero Image Section -->
+  {heroImage && (
+    <section class="hero-image-section">
+      <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="hero-image-container">
+          <img src={heroImage} alt={`${client} Case Study`} />
+        </div>
       </div>
+    </section>
+  )}
 
-      <div class="achievement-grid">
-        {keyMetrics.map((metric, index) => (
-          <div class="achievement-card">
-            <div class="achievement-rank">#{index + 1}</div>
-            <div class="achievement-icon">
-              <i class="fas fa-medal"></i>
-            </div>
-            <div class="achievement-data">
-              <div class="achievement-value">{metric.value}</div>
-              <h3 class="achievement-title">{metric.label}</h3>
-              <p class="achievement-desc">{metric.description}</p>
-            </div>
-            <div class="achievement-glow"></div>
+  <!-- Key Metrics Section -->
+  <section class="metrics-section">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="metrics-grid">
+        {keyMetrics.map((metric) => (
+          <div class="metric-card">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <div class="metric-description">{metric.description}</div>
           </div>
         ))}
       </div>
-      
-
     </div>
   </section>
 
-
-
-  <!-- The Challenge Story -->
-  <section class="challenge-story">
+  <!-- The Challenge & Solution -->
+  <section class="challenge-solution">
     <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="story-header">
-        <h2>The Challenge</h2>
-        <p>Every success story begins with overcoming obstacles</p>
-      </div>
-
-      <div class="timeline-container">
-        <div class="timeline-line"></div>
-        
-        <div class="story-point initial-state">
-          <div class="story-marker">
-            <i class="fas fa-flag"></i>
-          </div>
-          <div class="story-content">
-            <div class="story-badge">Initial State</div>
-            <h3>The Situation</h3>
-            <div class="challenge-narrative">{challenge}</div>
-            
-            <div class="challenge-indicators">
-              <div class="indicator negative">
-                <i class="fas fa-trending-down"></i>
-                <span>Declining Performance</span>
-              </div>
-              <div class="indicator negative">
-                <i class="fas fa-search-minus"></i>
-                <span>Poor Visibility</span>
-              </div>
-              <div class="indicator negative">
-                <i class="fas fa-users-slash"></i>
-                <span>Limited Reach</span>
-              </div>
-            </div>
+      <div class="two-column-layout">
+        <div class="challenge-column">
+          <h2>The Challenge</h2>
+          <div class="content-box">
+            <p>{challenge}</p>
           </div>
         </div>
-        
-        <div class="story-point turning-point">
-          <div class="story-marker">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <div class="story-content">
-            <div class="story-badge">Turning Point</div>
-            <h3>The Solution Approach</h3>
-            <p>We identified the core issues and developed a comprehensive strategy to transform {client}'s digital presence through strategic SEO implementation.</p>
+
+        <div class="solution-column">
+          <h2>Our Approach</h2>
+          <div class="content-box">
+            <p>{solution}</p>
           </div>
         </div>
       </div>
@@ -143,168 +108,70 @@ const {
   <section class="methodology-section">
     <div class="max-w-7xl mx-auto px-4 py-20">
       <div class="methodology-header">
-        <h2>Our Strategic Methodology</h2>
-        <p>The proven framework that delivered exceptional results for {client}</p>
+        <h2>Strategic Implementation</h2>
+        <p>Our systematic approach to achieving results</p>
       </div>
 
-      <div class="methodology-flow">
+      <div class="strategy-grid">
         {strategySteps.map((step, index) => (
-          <div class="methodology-step">
-            <div class="step-connector"></div>
-            <div class="method-card">
-              <div class="card-header">
-                <div class="step-count">
-                  <span>Step</span>
-                  <div class="step-num">{index + 1}</div>
-                </div>
-                <div class="step-icon-container">
-                  <i class={`fas fa-${step.icon}`}></i>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="method-title">{step.title}</h3>
-                <p class="method-description">{step.description}</p>
-                <div class="completion-status">
-                  <i class="fas fa-check-circle"></i>
-                  <span>Completed Successfully</span>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 100%"></div>
-                </div>
-              </div>
-            </div>
+          <div class="strategy-card">
+            <div class="strategy-number">{index + 1}</div>
+            <h3 class="strategy-title">{step.title}</h3>
+            <p class="strategy-description">{step.description}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Performance Transformation -->
-  <section class="performance-transformation" id="results">
+  <!-- Results Comparison -->
+  <section class="results-comparison" id="results">
     <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="transformation-header">
-        <h2>Performance Transformation</h2>
-        <p>Dramatic improvements across all key metrics</p>
+      <div class="section-header">
+        <h2>Results Overview</h2>
+        <p>Performance improvements across key metrics</p>
       </div>
 
-      <div class="comparison-container">
-        {results.map((result) => (
-          <div class="comparison-card">
-            <div class="metric-header">
-              <h3 class="metric-name">{result.metric}</h3>
-            </div>
-            
-            <div class="comparison-visual">
-              <div class="before-section">
-                <div class="section-label">
-                  <i class="fas fa-arrow-down"></i>
-                  <span>Before</span>
-                </div>
-                <div class="metric-value before-value">{result.before}</div>
-                <div class="value-indicator before"></div>
-              </div>
-              
-              <div class="transformation-arrow">
-                <div class="arrow-icon">
-                  <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="transformation-label">Transformed</div>
-              </div>
-              
-              <div class="after-section">
-                <div class="section-label">
-                  <i class="fas fa-arrow-up"></i>
-                  <span>After</span>
-                </div>
-                <div class="metric-value after-value">{result.after}</div>
-                <div class="value-indicator after"></div>
-              </div>
-            </div>
-            
-            <div class="improvement-highlight">
-              <div class="improvement-badge">
-                <i class="fas fa-trophy"></i>
-                <span class="improvement-text">{result.improvement}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      <div class="transformation-footer">
-        <div class="footer-content">
-          <h3>Exceptional Growth Achieved</h3>
-          <p>These results demonstrate the power of strategic SEO implementation tailored specifically for {client}'s industry and market position.</p>
-          
-          <div class="success-indicators">
-            <div class="success-item">
-              <i class="fas fa-chart-line"></i>
-              <span>Sustainable Growth</span>
-            </div>
-            <div class="success-item">
-              <i class="fas fa-target"></i>
-              <span>Goals Exceeded</span>
-            </div>
-            <div class="success-item">
-              <i class="fas fa-rocket"></i>
-              <span>Market Leadership</span>
-            </div>
-          </div>
-        </div>
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            {results.map((result) => (
+              <tr>
+                <td class="metric-name-cell">{result.metric}</td>
+                <td class="before-cell">{result.before}</td>
+                <td class="after-cell">{result.after}</td>
+                <td class="improvement-cell">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <!-- Client Testimonial -->
   {testimonial && (
-    <section class="client-spotlight">
+    <section class="client-testimonial">
       <div class="max-w-7xl mx-auto px-4 py-20">
-        <div class="spotlight-container">
-          <div class="spotlight-header">
-            <h2>Client Spotlight</h2>
-            <p>Hear directly from {client} about their transformation journey</p>
-          </div>
-          
-          <div class="testimonial-showcase">
-            <div class="quote-section">
-              <div class="quote-mark">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <blockquote class="testimonial-text">
-                "{testimonial.quote}"
-              </blockquote>
-            </div>
-            
-            <div class="author-section">
-              <div class="author-profile">
-                {testimonial.avatar && (
-                  <div class="author-avatar">
-                    <img src={testimonial.avatar} alt={testimonial.author} />
-                  </div>
-                )}
-                <div class="author-details">
-                  <h4 class="author-name">{testimonial.author}</h4>
-                  <p class="author-title">{testimonial.position}</p>
-                  <p class="author-company">{testimonial.company}</p>
-                </div>
-              </div>
-              
-              <div class="satisfaction-metrics">
-                <div class="satisfaction-item">
-                  <i class="fas fa-star"></i>
-                  <span>5-Star Partnership</span>
-                </div>
-                <div class="satisfaction-item">
-                  <i class="fas fa-handshake"></i>
-                  <span>Ongoing Collaboration</span>
-                </div>
-                <div class="satisfaction-item">
-                  <i class="fas fa-thumbs-up"></i>
-                  <span>Highly Recommended</span>
-                </div>
-              </div>
+        <div class="testimonial-container">
+          <h2>Client Feedback</h2>
+
+          <div class="testimonial-content">
+            <blockquote class="testimonial-quote">
+              "{testimonial.quote}"
+            </blockquote>
+
+            <div class="testimonial-author">
+              <div class="author-name">{testimonial.author}</div>
+              <div class="author-position">{testimonial.position}, {testimonial.company}</div>
             </div>
           </div>
         </div>
@@ -312,56 +179,21 @@ const {
     </section>
   )}
 
-  <!-- Strategic Insights -->
-  <section class="strategic-insights">
+  <!-- Key Takeaways -->
+  <section class="key-takeaways">
     <div class="max-w-7xl mx-auto px-4 py-20">
-      <div class="insights-header">
-        <h2>Strategic Insights</h2>
-        <p>Key lessons learned from {client}'s transformation journey</p>
+      <div class="section-header">
+        <h2>Key Takeaways</h2>
+        <p>Insights from this engagement</p>
       </div>
 
-      <div class="insights-intro">
-        <div class="intro-content">
-          <h3>What We Learned</h3>
-          <p>Every successful project teaches us valuable lessons that can benefit future clients. Here are the strategic insights from {client}'s transformation.</p>
-        </div>
-      </div>
-      
-      <div class="insights-grid">
+      <div class="takeaways-list">
         {keyTakeaways.map((takeaway, index) => (
-          <div class="insight-card">
-            <div class="insight-header">
-              <div class="insight-number">
-                <span>{index + 1}</span>
-              </div>
-              <div class="insight-icon">
-                <i class="fas fa-lightbulb"></i>
-              </div>
-            </div>
-            <div class="insight-content">
-              <h4>Strategic Insight</h4>
-              <p class="insight-text">{takeaway}</p>
-              <div class="insight-category">
-                <i class="fas fa-tag"></i>
-                <span>Lesson Learned</span>
-              </div>
-            </div>
-            <div class="insight-glow"></div>
+          <div class="takeaway-item">
+            <div class="takeaway-number">{index + 1}</div>
+            <p class="takeaway-text">{takeaway}</p>
           </div>
         ))}
-      </div>
-      
-      <div class="insights-conclusion">
-        <div class="conclusion-card">
-          <h3>The Bottom Line</h3>
-          <p>These insights demonstrate that successful SEO requires a strategic, data-driven approach tailored to each client's unique challenges and market position.</p>
-          <div class="conclusion-cta">
-            <a href="/contact/" class="insights-btn">
-              <i class="fas fa-arrow-right"></i>
-              <span>Apply These Insights to Your Business</span>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -393,420 +225,401 @@ const {
 
 <!-- MainLayout closing tag removed - handled by parent page -->
 
-<!-- Comprehensive Case Study CSS -->
+<!-- Professional Case Study CSS -->
 <style>
-  /* Impact Results Section */
-  .impact-results {
-    background: #f8fafc;
-    padding: 100px 0;
+  /* Hero Image Section */
+  .hero-image-section {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
   }
 
-  .results-header {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .results-header h2 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-  }
-
-  .achievement-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-  }
-
-  .achievement-card {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    position: relative;
+  .hero-image-container {
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 
-  .achievement-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    border-color: rgba(66, 133, 244, 0.3);
+  .hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: #f8fafc;
   }
 
-  .achievement-rank {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 14px;
+  /* Metrics Section */
+  .metrics-section {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
   }
 
-  .achievement-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
   }
 
-  .achievement-icon i {
-    font-size: 24px;
-    color: white;
-  }
-
-  .achievement-value {
-    font-size: 3rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 10px;
-  }
-
-  .achievement-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-  }
-
-  .achievement-desc {
-    color: #666;
-    line-height: 1.6;
-  }
-
-  .achievement-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 68, 56, 0.07), rgba(255, 107, 53, 0.07));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .achievement-card:hover .achievement-glow {
-    opacity: 1;
-  }
-
-  .success-summary {
-    background: white;
-    border-radius: 20px;
-    padding: 50px;
+  .metric-card {
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
   }
 
-  .success-meter {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 30px;
-    position: relative;
-  }
-
-  .meter-circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, #f97316 0%, #FF6B35 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .meter-inner {
-    width: 160px;
-    height: 160px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 900;
-    color: #1a1a1a;
-  }
-
-  /* Challenge Story Timeline */
-  .challenge-story {
-    background: white;
-    padding: 100px 0;
-  }
-
-  .story-header {
-    text-align: center;
-    margin-bottom: 80px;
-  }
-
-  .story-header h2 {
+  .metric-value {
     font-size: 3rem;
     font-weight: 800;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
+    color: #f97316;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
   }
 
-  .timeline-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .timeline-container::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(to bottom, #f97316, #FF6B35);
-    transform: translateX(-50%);
-  }
-
-  .story-point {
-    position: relative;
-    margin-bottom: 60px;
-  }
-
-  .story-point:nth-child(odd) .story-content {
-    margin-right: 60%;
-    text-align: right;
-  }
-
-  .story-point:nth-child(even) .story-content {
-    margin-left: 60%;
-    text-align: left;
-  }
-
-  .story-marker {
-    position: absolute;
-    left: 50%;
-    top: 30px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-
-  .story-marker i {
-    color: white;
-    font-size: 20px;
-  }
-
-  .story-content {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 2px solid #f1f5f9;
-  }
-
-  .story-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 12px;
+  .metric-label {
+    font-size: 0.875rem;
     font-weight: 600;
+    color: #1e293b;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
   }
 
-  .challenge-narrative {
-    background: #f8fafc;
+  .metric-description {
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+
+  /* Global Section Styling */
+  section {
+    background: white;
+  }
+
+  section:nth-child(even) {
+    background: #fafafa;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 400;
+  }
+
+  /* Challenge & Solution Section */
+  .challenge-solution {
+    background: white;
+    padding: 80px 0;
+  }
+
+  .two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .challenge-column h2,
+  .solution-column h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #f97316;
+  }
+
+  .content-box {
+    background: #fafafa;
     padding: 30px;
-    border-radius: 15px;
-    margin: 20px 0;
+    border-radius: 8px;
     border-left: 4px solid #f97316;
-    font-style: italic;
+  }
+
+  .content-box p {
+    font-size: 1.05rem;
+    color: #4b5563;
     line-height: 1.8;
+    margin: 0;
   }
 
   /* Strategic Methodology */
   .methodology-section {
-    background: #f8fafc;
+    background: #fafafa;
+    padding: 80px 0;
   }
 
   .methodology-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
 
   .methodology-header h2 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
-  .methodology-flow {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 60px;
-  }
-
-  .methodology-step {
-    position: relative;
-  }
-
-  .method-card {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-
-  .method-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    border-color: rgba(66, 133, 244, 0.3);
-  }
-
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-
-  .step-count {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .step-count span {
-    font-size: 12px;
+  .methodology-header p {
+    font-size: 1.1rem;
     color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
   }
 
-  .step-num {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .strategy-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    position: relative;
+    padding-top: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .strategy-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #d1d5db;
+  }
+
+  .strategy-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: #f97316;
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
     font-weight: 700;
+    font-size: 1.2rem;
   }
 
-  .step-icon-container {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .step-icon-container i {
-    color: white;
-    font-size: 24px;
-  }
-
-  .method-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 15px;
-  }
-
-  .method-description {
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  .completion-status {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #34A853;
+  .strategy-title {
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    color: #1a1a1a;
+    margin-bottom: 12px;
   }
 
-  .progress-bar {
-    width: 100%;
-    height: 6px;
-    background: #e2e8f0;
-    border-radius: 3px;
-    overflow: hidden;
+  .strategy-description {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
   }
 
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
-    transition: width 0.8s ease;
-  }
-
-  .methodology-summary {
+  /* Results Comparison Section */
+  .results-comparison {
     background: white;
-    border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 80px 0;
   }
 
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+  .results-table-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
   }
 
-  .summary-stat {
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+
+  .results-table thead {
+    background: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .results-table th {
+    padding: 16px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .results-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 1rem;
+  }
+
+  .results-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .results-table tbody tr:hover {
+    background: #f9fafb;
+  }
+
+  .metric-name-cell {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .before-cell {
+    color: #6b7280;
+  }
+
+  .after-cell {
+    color: #f97316;
+    font-weight: 600;
+  }
+
+  .improvement-cell {
+    color: #10b981;
+    font-weight: 700;
+  }
+
+  /* Client Testimonial Section */
+  .client-testimonial {
+    background: #fafafa;
+    padding: 80px 0;
+  }
+
+  .testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
   }
 
-  .stat-number {
-    font-size: 3rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 10px;
+  .testimonial-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 40px;
   }
 
-  .stat-label {
+  .testimonial-content {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #f97316;
+  }
+
+  .testimonial-quote {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #374151;
+    font-style: italic;
+    margin: 0 0 30px 0;
+  }
+
+  .testimonial-author {
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .author-name {
     font-size: 1.1rem;
-    font-weight: 600;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+  }
+
+  .author-position {
+    font-size: 0.95rem;
+    color: #6b7280;
+  }
+
+  /* Key Takeaways Section */
+  .key-takeaways {
+    background: white;
+    padding: 80px 0;
+  }
+
+  .takeaways-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .takeaway-item {
+    display: flex;
+    gap: 20px;
+    background: #fafafa;
+    padding: 25px 30px;
+    border-radius: 8px;
+    border-left: 4px solid #f97316;
+    align-items: flex-start;
+  }
+
+  .takeaway-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: #f97316;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .takeaway-text {
+    flex: 1;
+    font-size: 1.05rem;
+    color: #374151;
+    line-height: 1.7;
+    margin: 0;
+    padding-top: 6px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .two-column-layout {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .results-table-wrapper {
+      border-radius: 0;
+      margin: 0 -20px;
+    }
+
+    .results-table th,
+    .results-table td {
+      padding: 12px 15px;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-quote {
+      font-size: 1.1rem;
+    }
+
+    .takeaway-item {
+      padding: 20px;
+    }
   }
 
   /* Performance Transformation Section */
