@@ -25,7 +25,7 @@ import ButtonSecondary from '../../components/ButtonSecondary.astro';
 
     <Fragment slot="actions">
       <ButtonPrimary href="/contact/" text="Start Your Astro Project" />
-      <ButtonSecondary href="#process" text="Learn Our Process" />
+      <ButtonSecondary href="#features" text="View Features" />
     </Fragment>
 
     <Fragment slot="visual">
@@ -241,103 +241,49 @@ import ButtonSecondary from '../../components/ButtonSecondary.astro';
     </div>
   </section>
 
-  <!-- Process Section -->
-  <section id="process" class="process-section">
+  <!-- Our Process Section -->
+  <section class="seo-process-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Our Process</div>
-        <h2>Our SEO-First <span>Web Design Process</span></h2>
-        <p>Every build follows a proven, data-driven workflow that keeps search visibility front and center.</p>
+      <!-- Section Header -->
+      <div class="process-header">
+        <p class="process-badge">Our Process</p>
+        <h2>Our SEO-First Web Design Process</h2>
+        <div class="process-divider"></div>
+        <p class="process-description">Every build follows a proven, data-driven workflow that keeps search visibility front and center.</p>
       </div>
 
-      <div class="process-timeline">
-        <div class="timeline-line"></div>
-        
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Discovery & Strategy</h3>
-            <p>We dig into your goals, competitors, and keywords to architect a site that drives qualified traffic.</p>
-            <div class="step-details">
-              <div class="detail-item">🎯 Competitor Analysis</div>
-              <div class="detail-item">🔍 Keyword Research</div>
-              <div class="detail-item">📊 Technical Audit</div>
-            </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🧭</div>
-          </div>
-        </div>
+      <!-- Process Content -->
+      <div class="process-container">
+        <!-- Main Orange Blob -->
+        <div class="main-blob-container">
+          <div class="main-blob-wrapper">
+            <svg class="main-blob-svg" viewBox="0 0 600 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M300,80 Q420,80 480,180 Q540,280 480,400 Q420,520 300,520 Q180,520 120,400 Q60,280 120,180 Q180,80 300,80" fill="#FF6B35"/>
+            </svg>
 
-        <div class="step-card reverse">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Information Architecture</h3>
-            <p>Keyword mapping guides page hierarchy, ensuring search engines—and users—find exactly what they need.</p>
-            <div class="step-details">
-              <div class="detail-item">🗂️ Site Structure</div>
-              <div class="detail-item">🔗 Internal Linking</div>
-              <div class="detail-item">📋 Content Strategy</div>
+            <div class="main-blob-content" id="processContent">
+              <!-- Step 1 Content (Default) -->
+              <div class="step-badge">1</div>
+              <div class="step-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3 class="step-title">Discovery & Strategy</h3>
+              <p class="step-description">We dig into your goals, competitors, and keywords to architect a site that drives qualified traffic.</p>
+              <div class="step-features">
+                <div class="step-feature-item"><span class="feature-dot"></span>Competitor Analysis</div>
+                <div class="step-feature-item"><span class="feature-dot"></span>Keyword Research</div>
+                <div class="step-feature-item"><span class="feature-dot"></span>Technical Audit</div>
+              </div>
             </div>
           </div>
-          <div class="step-visual">
-            <div class="visual-icon">🏗️</div>
-          </div>
-        </div>
 
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Astro Development</h3>
-            <p>Our developers craft pixel-perfect pages with modular components, zero unnecessary JavaScript, and perfect Core Web Vitals.</p>
-            <div class="step-details">
-              <div class="detail-item">⚡ Island Architecture</div>
-              <div class="detail-item">🎨 Component Library</div>
-              <div class="detail-item">📱 Responsive Design</div>
-            </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">💻</div>
-          </div>
-        </div>
-
-        <div class="step-card reverse">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>Technical SEO Integration</h3>
-            <p>Schema markup, meta tags, XML sitemaps, and accessibility standards—baked in from day one.</p>
-            <div class="step-details">
-              <div class="detail-item">🏷️ Schema Markup</div>
-              <div class="detail-item">🗺️ XML Sitemaps</div>
-              <div class="detail-item">🔧 Meta Optimization</div>
-            </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">⚙️</div>
-          </div>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <div class="step-content">
-            <h3>Launch & Continuous Optimization</h3>
-            <p>Post-launch audits, performance monitoring, and conversion testing keep your site ahead of algorithm updates.</p>
-            <div class="step-details">
-              <div class="detail-item">🚀 Deployment</div>
-              <div class="detail-item">📈 Performance Monitoring</div>
-              <div class="detail-item">🔄 Ongoing Optimization</div>
-            </div>
-          </div>
-          <div class="step-visual">
-            <div class="visual-icon">🚀</div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Key Features Section -->
-  <section class="features-section">
+  <section id="features" class="features-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
         <div class="section-badge">Premium Features</div>
@@ -1216,142 +1162,202 @@ section {
 }
 
 /********************
-  Process Section
+  SEO Process Section
 *********************/
-.process-section {
-  background: #f8fafc;
-}
-
-.process-timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, #f97316, #FF6B35);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 30px;
-  }
-}
-
-.step-card {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 4rem;
-  position: relative;
-  z-index: 2;
-}
-
-.step-card.reverse {
-  grid-template-columns: 1fr auto 1fr;
-}
-
-.step-card.reverse .step-content {
-  grid-column: 3;
-  text-align: left;
-}
-
-.step-card.reverse .step-visual {
-  grid-column: 1;
-}
-
-@media (max-width: 768px) {
-  .step-card,
-  .step-card.reverse {
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-  }
-  
-  .step-card .step-content,
-  .step-card.reverse .step-content {
-    grid-column: 2;
-    text-align: left;
-  }
-  
-  .step-card .step-visual,
-  .step-card.reverse .step-visual {
-    grid-column: 2;
-    grid-row: 1;
-  }
-}
-
-.step-number {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--gradient-accent);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1.5rem;
-  box-shadow: var(--shadow-medium);
-  position: relative;
-  z-index: 3;
-}
-
-.step-content {
+.seo-process-section {
   background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
+  padding: 5rem 0;
+  overflow: hidden;
 }
 
-.step-content h3 {
-  font-size: 1.5rem;
+.process-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.process-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #9ca3af;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.process-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  margin-bottom: 1rem;
   color: var(--brand-dark);
-}
-
-.step-content p {
-  color: var(--brand-soft);
-  line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.step-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.process-divider {
+  height: 4px;
+  width: 4rem;
+  background: var(--brand-accent);
+  margin: 0 auto 1.5rem;
 }
 
-.detail-item {
-  background: var(--brand-light);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.process-description {
   color: var(--brand-soft);
+  font-size: 0.875rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.625;
 }
 
-.step-visual {
-  width: 100px;
-  height: 100px;
-  background: var(--gradient-secondary);
-  border-radius: 20px;
+.process-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-medium);
+  min-height: 700px;
+  padding: 2rem 1rem;
 }
 
-.visual-icon {
+/* Main Orange Blob */
+.main-blob-container {
+  position: relative;
+  width: 100%;
+  max-width: 42rem;
+}
+
+.main-blob-wrapper {
+  position: relative;
+}
+
+.main-blob-svg {
+  width: 100%;
+  height: auto;
+}
+
+.main-blob-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.step-badge {
+  background: white;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.25rem;
+}
+
+.step-icon {
+  color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon i {
   font-size: 2.5rem;
+}
+
+.step-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.step-description {
+  color: white;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  max-width: 24rem;
+}
+
+.main-blob-content .step-features {
+  background: white !important;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  width: 15rem;
+  max-width: 100%;
+}
+
+.main-blob-content .step-feature-item {
+  font-size: 0.875rem;
+  color: #374151 !important;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.main-blob-content .step-feature-item:last-child {
+  margin-bottom: 0;
+}
+
+.main-blob-content .feature-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: var(--brand-accent) !important;
+  flex-shrink: 0;
+}
+
+
+@media (max-width: 768px) {
+  .process-container {
+    min-height: 500px;
+    padding: 1rem;
+  }
+
+  .main-blob-container {
+    max-width: 500px;
+  }
+
+  .main-blob-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .step-features {
+    width: 240px;
+  }
+
+  .step-feature-item {
+    font-size: 0.8125rem;
+  }
+
+  .step-badge {
+    width: 60px;
+    height: 60px;
+    font-size: 1.875rem;
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+  }
+
+  .step-title {
+    font-size: 1.375rem;
+  }
+
+  .step-description {
+    font-size: 0.8125rem;
+  }
 }
 
 /********************
@@ -1840,6 +1846,105 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize
   createProgressIndicators();
   updateSlider();
+});
+
+// SEO Process Section functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const processSteps = [
+    {
+      step: "1",
+      icon: "fas fa-bullseye",
+      title: "Discovery & Strategy",
+      description: "We dig into your goals, competitors, and keywords to architect a site that drives qualified traffic.",
+      features: [
+        "Competitor Analysis",
+        "Keyword Research",
+        "Technical Audit"
+      ]
+    },
+    {
+      step: "2",
+      icon: "fas fa-sitemap",
+      title: "Information Architecture",
+      description: "Keyword mapping guides page hierarchy, ensuring search engines—and users—find exactly what they need.",
+      features: [
+        "Site Structure",
+        "Internal Linking",
+        "Content Strategy"
+      ]
+    },
+    {
+      step: "3",
+      icon: "fas fa-code",
+      title: "Astro Development",
+      description: "Our developers craft pixel-perfect pages with modular components, zero unnecessary JavaScript, and perfect Core Web Vitals.",
+      features: [
+        "Island Architecture",
+        "Component Library",
+        "Responsive Design"
+      ]
+    },
+    {
+      step: "4",
+      icon: "fas fa-cog",
+      title: "Technical SEO Integration",
+      description: "Schema markup, meta tags, XML sitemaps, and accessibility standards—baked in from day one.",
+      features: [
+        "Schema Markup",
+        "XML Sitemaps",
+        "Meta Optimization"
+      ]
+    },
+    {
+      step: "5",
+      icon: "fas fa-rocket",
+      title: "Launch & Continuous Optimization",
+      description: "Post-launch audits, performance monitoring, and conversion testing keep your site ahead of algorithm updates.",
+      features: [
+        "Deployment",
+        "Performance Monitoring",
+        "Ongoing Optimization"
+      ]
+    }
+  ];
+
+  const processContent = document.getElementById('processContent');
+  let currentStep = 0;
+
+  function updateProcessContent(index) {
+    const step = processSteps[index];
+
+    // Add fade out effect
+    processContent.style.opacity = '0';
+
+    setTimeout(() => {
+      processContent.innerHTML = `
+        <div class="step-badge" style="background: white; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #f97316; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); margin-bottom: 1.25rem;">${step.step}</div>
+        <div class="step-icon" style="color: white; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
+          <i class="${step.icon}" style="font-size: 2.5rem;"></i>
+        </div>
+        <h3 class="step-title" style="color: white; font-size: 1.25rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; line-height: 1.2;">${step.title}</h3>
+        <p class="step-description" style="color: white; text-align: center; font-size: 0.8125rem; line-height: 1.5; margin-bottom: 1rem; max-width: 24rem;">${step.description}</p>
+        <div class="step-features" style="background: white; border-radius: 1rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); padding: 1rem; width: 15rem; max-width: 100%;">
+          ${step.features.map(feature => `
+            <div class="step-feature-item" style="font-size: 0.8125rem; color: #374151; text-align: left; display: flex; align-items: center; gap: 0.5rem; line-height: 1.4; margin-bottom: 0.4rem;"><span class="feature-dot" style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: #f97316; flex-shrink: 0;"></span>${feature}</div>
+          `).join('')}
+        </div>
+      `;
+
+      // Fade in
+      processContent.style.opacity = '1';
+    }, 300);
+  }
+
+  // Auto-advance through steps
+  function nextStep() {
+    currentStep = (currentStep + 1) % processSteps.length;
+    updateProcessContent(currentStep);
+  }
+
+  // Auto-scroll every 4 seconds
+  setInterval(nextStep, 4000);
 });
 
 // FAQ toggle functionality
