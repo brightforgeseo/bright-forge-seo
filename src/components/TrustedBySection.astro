@@ -1,0 +1,127 @@
+---
+// Props with defaults
+const {
+  badge = "TRUSTED BY",
+  title = "Companies We've",
+  titleHighlight = "Worked With",
+  description = "See how we've helped businesses achieve remarkable growth through tailored SEO strategies"
+} = Astro.props;
+
+// Client logos
+const clients = [
+  { name: "ThermoPest", logo: "/images/clients/Ai-1.webp" },
+  { name: "EcoSpa", logo: "/images/clients/EcoSpa1080x700px6-640w.webp" },
+  { name: "Matthew Jeffery", logo: "/images/clients/Logo-Matthew-Jeffery-1.svg" },
+  { name: "WeForest", logo: "/images/clients/WF_Logo-color .webp" },
+  { name: "SO ECO", logo: "/images/clients/cropped-apple-touch-icon (1).webp" }
+];
+---
+
+<section class="trusted-by-section py-16 bg-[#f8fafc]">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+        {badge}
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+        {title} <span class="text-orange-500">{titleHighlight}</span>
+      </h2>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        {description}
+      </p>
+    </div>
+
+    <!-- Logo Carousel -->
+    <div class="relative overflow-hidden py-8">
+      <div class="flex gap-8">
+        <!-- First set -->
+        <div class="flex animate-marquee gap-8 shrink-0">
+          {clients.map((client) => (
+            <div class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0">
+              <img
+                src={client.logo}
+                alt={client.name}
+                class="max-w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
+        </div>
+
+        <!-- Duplicate set for seamless loop -->
+        <div class="flex animate-marquee gap-8 shrink-0" aria-hidden="true">
+          {clients.map((client) => (
+            <div class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0">
+              <img
+                src={client.logo}
+                alt={client.name}
+                class="max-w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.trusted-by-section .relative.overflow-hidden');
+    const clientLogos = document.querySelectorAll('.client-logo');
+    const animatingDivs = document.querySelectorAll('.animate-marquee');
+
+    clientLogos.forEach(logo => {
+      logo.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#fff7ed';
+        this.style.boxShadow = '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)';
+        // Pause all animations
+        animatingDivs.forEach(div => {
+          div.style.animationPlayState = 'paused';
+        });
+      });
+
+      logo.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'white';
+        this.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
+        // Resume all animations
+        animatingDivs.forEach(div => {
+          div.style.animationPlayState = 'running';
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .trusted-by-section {
+    background: #f8fafc;
+  }
+
+  .trusted-by-section span.bg-orange-500 {
+    color: #ffffff !important;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .client-logo {
+    transition: all 0.3s ease;
+  }
+</style>

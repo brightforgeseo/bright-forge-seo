@@ -21,7 +21,7 @@ const awards = [
 <section class="awards-new-section py-20 bg-[#f8fafc]">
   <div class="container max-w-7xl mx-auto px-4">
     <div class="text-center mb-12">
-      <span class="text-sm font-semibold tracking-widest text-brand-accent uppercase">Recognition</span>
+      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">RECOGNITION</span>
       <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">Awards &amp; <span class="text-brand-accent">Accolades</span></h2>
       <p class="text-lg text-text-secondary max-w-2xl mx-auto">Industry bodies and leading publications that have acknowledged our commitment to performance, innovation and client success.</p>
     </div>
@@ -55,8 +55,9 @@ const awards = [
   /* Force light theme consistently across browsers */
   .award-card { background: #ffffff; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
   .awards-new-section h2 { color: #1E2022; }
-  .awards-new-section span { color: var(--brand-accent); }
+  .awards-new-section h2 span { color: var(--brand-accent); }
   .awards-new-section p { color: #52575D; }
+  .awards-new-section span.bg-orange-500 { color: #ffffff !important; }
   .award-card h3 { color: #1E2022; }
   .award-card p { color: var(--brand-accent); }
 </style>
