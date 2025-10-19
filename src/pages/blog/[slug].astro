@@ -824,13 +824,13 @@ const formattedDate = post.publishDate ?
 
 // Get SEO metadata overrides if available
 const metadataOverride = getBlogMetadata(slug);
-const seoTitle = metadataOverride?.title || post.title;
-const seoDescription = metadataOverride?.description || post.excerpt || '';
 
 // Prepare ArticleTemplate props
 const templateProps = {
-  title: seoTitle,
-  excerpt: seoDescription,
+  title: post.title,  // Original title for H1 display
+  excerpt: post.excerpt || '',  // Original excerpt for page display
+  metaTitle: metadataOverride?.title,  // SEO-optimized title for meta tags
+  metaDescription: metadataOverride?.description,  // SEO-optimized description for meta tags
   author: {
     name: post.author || 'BrightForge Team',
     bio: 'Digital marketing experts specializing in SEO and content strategy.',
