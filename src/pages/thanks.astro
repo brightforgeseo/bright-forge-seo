@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
 const title = "Thank You | Bright Forge SEO";
 const description = "Thank you for contacting Bright Forge SEO. We'll get back to you shortly.";
 ---
 
 <Layout title={title} description={description}>
+  <LegacyHeader slot="header" />
+
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
     <h1 class="text-4xl md:text-5xl font-bold mb-6 text-[#f97316]">
       Message Sent Successfully
@@ -16,4 +20,6 @@ const description = "Thank you for contacting Bright Forge SEO. We'll get back t
       Back to Home
     </a>
   </section>
+
+  <Footer slot="footer" />
 </Layout>

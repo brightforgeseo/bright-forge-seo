@@ -40,7 +40,7 @@ const awards = [
 ];
 ---
 
-<div class="bg-[#f8fafc] py-16 px-4" id="trust-recognition-section">
+<div class="bg-gray-50 py-16 px-6 sm:px-4" id="trust-recognition-section">
   <div class="max-w-7xl mx-auto">
 
     <!-- Companies Section -->
@@ -49,10 +49,10 @@ const awards = [
         <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
           {trustedBadge}
         </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
           {companiesTitle} <span class="text-orange-500">{companiesTitleHighlight}</span>
         </h2>
-        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        <p class="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto px-4 sm:px-0">
           {companiesDescription}
         </p>
       </div>
@@ -63,9 +63,7 @@ const awards = [
           <!-- First set -->
           <div class="flex animate-marquee gap-8 shrink-0">
             {clients.map((client) => (
-              <div
-                class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
-              >
+              <div class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0">
                 <img
                   src={client.logo}
                   alt={client.name}
@@ -78,9 +76,7 @@ const awards = [
           <!-- Duplicate set for seamless loop -->
           <div class="flex animate-marquee gap-8 shrink-0" aria-hidden="true">
             {clients.map((client) => (
-              <div
-                class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0"
-              >
+              <div class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0">
                 <img
                   src={client.logo}
                   alt={client.name}
@@ -99,21 +95,19 @@ const awards = [
         <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
           {recognitionBadge}
         </span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
           {awardsTitle} <span class="text-orange-500">{awardsTitleHighlight}</span>
         </h2>
-        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        <p class="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto px-4 sm:px-0">
           {awardsDescription}
         </p>
       </div>
 
       <!-- Awards Grid -->
-      <div class="flex justify-center items-start gap-12 md:gap-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {awards.map((award) => (
-          <div class="text-center award-card group cursor-pointer flex-shrink-0">
-            <div
-              class="bg-white rounded-2xl p-8 mb-4 transition-all duration-300 hover:shadow-xl relative overflow-hidden w-[200px] h-[200px] flex items-center justify-center"
-            >
+          <div class="text-center award-card group cursor-pointer">
+            <div class="bg-white rounded-2xl p-8 mb-4 transition-all duration-300 hover:shadow-xl relative overflow-hidden w-[200px] h-[200px] flex items-center justify-center mx-auto">
               {/* Glow effect background */}
               <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
                 <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 blur-xl"></div>
@@ -125,7 +119,7 @@ const awards = [
                 class="w-36 h-36 object-contain mx-auto relative z-10 group-hover:rotate-6 transition-transform duration-300"
               />
             </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-1 max-w-[200px] mx-auto">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">
               {award.title}
             </h3>
             <p class="text-orange-500 font-medium text-sm">
