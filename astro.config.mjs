@@ -40,7 +40,7 @@ export default defineConfig({
     build: {
       // Enable minification and optimization
       minify: 'terser',
-      cssMinify: 'lightningcss', // Use Lightning CSS for faster minification
+      cssMinify: true, // Use default CSS minifier
       // Reduce chunk size for faster parsing
       chunkSizeWarningLimit: 250,
       // Target modern browsers for smaller code
@@ -148,16 +148,6 @@ export default defineConfig({
       devSourcemap: false,
       postcss: {
         plugins: []
-      },
-      // Minify CSS aggressively
-      lightningcss: {
-        minify: true,
-        targets: {
-          chrome: 100,
-          edge: 100,
-          firefox: 100,
-          safari: 15
-        }
       }
     },
     // Optimize dependencies and tree shaking
