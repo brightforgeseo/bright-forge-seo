@@ -12,7 +12,7 @@ export default defineConfig({
   trailingSlash: 'always',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
-    inlineStylesheets: 'auto', // Inline small stylesheets for better mobile performance
+    inlineStylesheets: 'always', // Inline all stylesheets to eliminate render-blocking CSS
     format: 'directory', // switch from "file" to "directory" to drop .html in canonical URLs
     assets: '_astro',
     // Enable asset bundling and optimization
@@ -123,9 +123,18 @@ export default defineConfig({
     ssr: {
       noExternal: []
     },
-    // Enable CSS code splitting
+    // Enable CSS code splitting and optimization
     css: {
-      devSourcemap: false
+      devSourcemap: false,
+      postcss: {
+        plugins: [
+          // Add autoprefixer if needed
+        ]
+      }
+    },
+    // Optimize CSS
+    optimizeDeps: {
+      include: []
     }
   },
   image: {
