@@ -364,29 +364,62 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
     }).render(selector);
   }
 
-  (async () => {
-    try {
-      const paypal = await loadPayPalSdk();
-      if (!paypal) {
-        const msg = '<span class="text-sm text-gray-600">Subscribe with PayPal is unavailable right now. Please refresh, disable ad blockers, or contact us.</span>';
+  // Defer PayPal loading until user scrolls near packages (saves 312ms blocking time!)
+  let paypalInitialized = false;
+
+  function initPayPal() {
+    if (paypalInitialized) return;
+    paypalInitialized = true;
+
+    (async () => {
+      try {
+        const paypal = await loadPayPalSdk();
+        if (!paypal) {
+          const msg = '<span class="text-sm text-gray-600">Subscribe with PayPal is unavailable right now. Please refresh, disable ad blockers, or contact us.</span>';
+          const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
+          ids.forEach((sel) => {
+            const el = document.querySelector(sel);
+            if (el) el.innerHTML = msg;
+          });
+          return;
+        }
+        renderSubscriptionButton('#paypal-starter', PLAN_STARTER);
+        renderSubscriptionButton('#paypal-growth', PLAN_GROWTH);
+        renderSubscriptionButton('#paypal-fast', PLAN_FAST);
+      } catch (e) {
+        console.error('Failed to load PayPal SDK', e);
+        const msg = '<span class="text-sm text-red-600">PayPal error: ' + e.message + '</span>';
         const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
         ids.forEach((sel) => {
           const el = document.querySelector(sel);
           if (el) el.innerHTML = msg;
         });
-        return;
       }
-      renderSubscriptionButton('#paypal-starter', PLAN_STARTER);
-      renderSubscriptionButton('#paypal-growth', PLAN_GROWTH);
-      renderSubscriptionButton('#paypal-fast', PLAN_FAST);
-    } catch (e) {
-      console.error('Failed to load PayPal SDK', e);
-      const msg = '<span class="text-sm text-red-600">PayPal error: ' + e.message + '</span>';
-      const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
-      ids.forEach((sel) => {
-        const el = document.querySelector(sel);
-        if (el) el.innerHTML = msg;
+    })();
+  }
+
+  // Use IntersectionObserver to load PayPal only when packages section is near viewport
+  if ('IntersectionObserver' in window) {
+    const packagesSection = document.getElementById('packages');
+    if (packagesSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            initPayPal();
+            observer.disconnect();
+          }
+        });
+      }, {
+        rootMargin: '300px' // Load 300px before section is visible
       });
+      observer.observe(packagesSection);
     }
-  })();
+  } else {
+    // Fallback: load after page is fully loaded
+    if (document.readyState === 'complete') {
+      initPayPal();
+    } else {
+      window.addEventListener('load', initPayPal);
+    }
+  }
 </script>
