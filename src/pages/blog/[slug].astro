@@ -3,6 +3,7 @@ import ArticleTemplate from '../../components/ArticleTemplate.astro';
 import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
 import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
+import { getBlogMetadata } from '../../lib/blogMetadata';
 
 export async function getStaticPaths() {
   const posts = await getAllBlogPosts();
@@ -817,14 +818,19 @@ if (post.content) {
 }
 
 // Format the publish date
-const formattedDate = post.publishDate ? 
-  new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(post.publishDate) : 
+const formattedDate = post.publishDate ?
+  new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(post.publishDate) :
   '';
+
+// Get SEO metadata overrides if available
+const metadataOverride = getBlogMetadata(slug);
+const seoTitle = metadataOverride?.title || post.title;
+const seoDescription = metadataOverride?.description || post.excerpt || '';
 
 // Prepare ArticleTemplate props
 const templateProps = {
-  title: post.title,
-  excerpt: post.excerpt || '',
+  title: seoTitle,
+  excerpt: seoDescription,
   author: {
     name: post.author || 'BrightForge Team',
     bio: 'Digital marketing experts specializing in SEO and content strategy.',
