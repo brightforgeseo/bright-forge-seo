@@ -7,6 +7,26 @@ export const contentfulClient = createClient({
   environment: 'master' // 'master' is the default environment for Contentful spaces
 });
 
+// Helper function to optimize Contentful images
+function optimizeContentfulImage(url, options = {}) {
+  if (!url) return null;
+
+  const {
+    width = 1200,
+    quality = 80,
+    format = 'webp'
+  } = options;
+
+  // Add Contentful image optimization parameters
+  const params = new URLSearchParams({
+    w: width.toString(),
+    q: quality.toString(),
+    fm: format
+  });
+
+  return `${url}?${params.toString()}`;
+}
+
 // Fetch all blog posts with selected fields
 export async function getAllBlogPosts() {
   try {
@@ -33,8 +53,8 @@ export async function getAllBlogPosts() {
       excerpt: item.fields.excerpt,
       publishDate: new Date(item.fields.dateTime), // Use dateTime field but map to publishDate in our app
       author: item.fields.author,
-      featuredImage: item.fields?.featuredImage?.fields?.file?.url 
-        ? `https:${item.fields.featuredImage.fields.file.url}`
+      featuredImage: item.fields?.featuredImage?.fields?.file?.url
+        ? optimizeContentfulImage(`https:${item.fields.featuredImage.fields.file.url}`)
         : null,
       tags: item.fields.tags || [],
       showInfographic: item.fields.showInfographic === true
@@ -68,8 +88,8 @@ export async function getBlogPostBySlug(slug) {
       content: item.fields.content,
       publishDate: new Date(item.fields.dateTime),  // Use dateTime field but map to publishDate in our app
       author: item.fields.author,
-      featuredImage: item.fields?.featuredImage?.fields?.file?.url 
-        ? `https:${item.fields.featuredImage.fields.file.url}`
+      featuredImage: item.fields?.featuredImage?.fields?.file?.url
+        ? optimizeContentfulImage(`https:${item.fields.featuredImage.fields.file.url}`)
         : null,
       tags: item.fields.tags || [],
       showInfographic: item.fields.showInfographic === true
