@@ -65,7 +65,11 @@ const isHome = Astro.url.pathname === '/';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Mobile-specific optimization -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <!-- Force consistent light color scheme across browsers -->
     <meta name="color-scheme" content="light" />
     <meta name="supported-color-schemes" content="light" />
@@ -136,7 +140,53 @@ const isHome = Astro.url.pathname === '/';
     </style>
     
     <!-- Preload hero image -->
-    <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp">
+    <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp" fetchpriority="high">
+
+    <!-- Mobile Performance Optimization Script -->
+    <script>
+      // Disable hover effects on mobile for better performance
+      if ('ontouchstart' in window) {
+        document.documentElement.classList.add('touch-device');
+      }
+
+      // Optimize scroll performance
+      if ('IntersectionObserver' in window) {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                imageObserver.unobserve(img);
+              }
+            }
+          });
+        });
+        lazyImages.forEach(img => imageObserver.observe(img));
+      }
+    </script>
+
+    <!-- Prevent layout shifts -->
+    <style>
+      /* Prevent CLS (Cumulative Layout Shift) */
+      img:not([width]):not([height]) {
+        aspect-ratio: attr(width) / attr(height);
+      }
+
+      /* Disable hover effects on touch devices */
+      .touch-device *:hover {
+        transition: none !important;
+      }
+
+      /* Optimize mobile fonts */
+      @media (max-width: 768px) {
+        * {
+          text-size-adjust: 100%;
+          -webkit-text-size-adjust: 100%;
+        }
+      }
+    </style>
     
     <!-- Updated Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favcon/bright-forge-favcon.png">

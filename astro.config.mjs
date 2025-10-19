@@ -12,12 +12,14 @@ export default defineConfig({
   trailingSlash: 'always',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
-    inlineStylesheets: 'never', // Force external CSS files instead of inlining
+    inlineStylesheets: 'auto', // Inline small stylesheets for better mobile performance
     format: 'directory', // switch from "file" to "directory" to drop .html in canonical URLs
     assets: '_astro',
     // Enable asset bundling and optimization
     // Split chunks for better caching
-    split: true
+    split: true,
+    // Optimize for mobile
+    assetsPrefix: undefined
   },
   markdown: {
     remarkPlugins: [],
