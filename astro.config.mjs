@@ -70,7 +70,42 @@ export default defineConfig({
       terserOptions: {
         compress: {
           drop_console: true,
-          drop_debugger: true
+          drop_debugger: true,
+          passes: 2,
+          pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace'],
+          unsafe_arrows: true,
+          unsafe_methods: true,
+          unsafe_proto: true,
+          unsafe_regexp: true,
+          reduce_funcs: true,
+          reduce_vars: true,
+          collapse_vars: true,
+          join_vars: true,
+          sequences: true,
+          dead_code: true,
+          conditionals: true,
+          evaluate: true,
+          booleans: true,
+          loops: true,
+          unused: true,
+          hoist_funs: true,
+          hoist_props: true,
+          hoist_vars: false,
+          if_return: true,
+          inline: true,
+          properties: true,
+          side_effects: true
+        },
+        mangle: {
+          toplevel: true,
+          safari10: true,
+          properties: {
+            regex: /^_/
+          }
+        },
+        format: {
+          comments: false,
+          ascii_only: true
         }
       }
     },
