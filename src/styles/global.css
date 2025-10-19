@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance Optimizations - Reduce Main Thread Work */
+
+/* Use content-visibility to reduce layout calculations for off-screen content */
+section:not(:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Reduce paint complexity */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize compositing */
+img,
+video,
+iframe {
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 /* Mobile Performance Optimizations */
 @media (max-width: 768px) {
   /* Improve scrolling performance on mobile */
@@ -19,7 +41,7 @@
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizeSpeed; /* Changed from optimizeLegibility for faster rendering */
   }
 
   /* Prevent horizontal scroll */
@@ -32,14 +54,18 @@
   img {
     max-width: 100%;
     height: auto;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: auto; /* Changed for better performance */
   }
 
   /* Improve button touch targets */
   button, a, input, select, textarea {
     min-height: 44px;
     min-width: 44px;
+  }
+
+  /* Reduce style recalculation on mobile */
+  section {
+    contain: layout style paint;
   }
 }
 

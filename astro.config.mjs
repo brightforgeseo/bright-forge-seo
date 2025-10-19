@@ -40,9 +40,17 @@ export default defineConfig({
     build: {
       // Enable minification and optimization
       minify: 'terser',
-      cssMinify: true,
+      cssMinify: 'lightningcss', // Use Lightning CSS for faster minification
       // Reduce chunk size for faster parsing
       chunkSizeWarningLimit: 250,
+      // Target modern browsers for smaller code
+      target: 'es2020',
+      // Enable module preload for faster loading
+      modulePreload: {
+        polyfill: false
+      },
+      // Optimize CSS code splitting
+      cssCodeSplit: true,
       rollupOptions: {
         output: {
           // Better asset naming for caching
@@ -77,17 +85,20 @@ export default defineConfig({
           }
         }
       },
-      // Enable terser for better compression
+      // Enable terser for better compression and reduce parse time
       terserOptions: {
         compress: {
           drop_console: true,
           drop_debugger: true,
-          passes: 2,
-          pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace'],
+          passes: 3, // Increased from 2 to 3 for maximum compression
+          pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace', 'console.warn'],
           unsafe_arrows: true,
           unsafe_methods: true,
           unsafe_proto: true,
           unsafe_regexp: true,
+          unsafe_comps: true,
+          unsafe_math: true,
+          unsafe_symbols: true,
           reduce_funcs: true,
           reduce_vars: true,
           collapse_vars: true,
@@ -103,21 +114,30 @@ export default defineConfig({
           hoist_props: true,
           hoist_vars: false,
           if_return: true,
-          inline: true,
+          inline: 3, // Aggressive inlining
           properties: true,
-          side_effects: true
+          side_effects: true,
+          switches: true,
+          negate_iife: true,
+          toplevel: true
         },
         mangle: {
           toplevel: true,
           safari10: true,
+          eval: true,
           properties: {
             regex: /^_/
           }
         },
         format: {
           comments: false,
-          ascii_only: true
-        }
+          ascii_only: true,
+          ecma: 2020,
+          semicolons: false
+        },
+        ecma: 2020,
+        module: true,
+        toplevel: true
       }
     },
     ssr: {
@@ -127,14 +147,27 @@ export default defineConfig({
     css: {
       devSourcemap: false,
       postcss: {
-        plugins: [
-          // Add autoprefixer if needed
-        ]
+        plugins: []
+      },
+      // Minify CSS aggressively
+      lightningcss: {
+        minify: true,
+        targets: {
+          chrome: 100,
+          edge: 100,
+          firefox: 100,
+          safari: 15
+        }
       }
     },
-    // Optimize CSS
+    // Optimize dependencies and tree shaking
     optimizeDeps: {
-      include: []
+      include: [],
+      esbuildOptions: {
+        target: 'es2020',
+        minify: true,
+        treeShaking: true
+      }
     }
   },
   image: {
