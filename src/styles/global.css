@@ -22,6 +22,12 @@ body {
   color: theme('colors.brand-dark');
 }
 
+/* Map font-weight 500 (medium) to 700 (bold) since we only load 400 and 700 */
+.font-medium,
+[class*="font-medium"] {
+  font-weight: 700 !important;
+}
+
 /* Force root background to light grey site-wide */
 html {
   background-color: #f8fafc !important;
