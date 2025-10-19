@@ -100,24 +100,39 @@ const isHome = Astro.url.pathname === '/';
     
     <slot name="head" />
     
-    <!-- DNS prefetch for external domains -->
+    <!-- Early hints for critical resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    
-    <!-- Preconnect to critical third-party domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Preload critical fonts with font-display: swap -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHQ.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <!-- Load only essential font weights (400 and 700) for smaller file size -->
+
+    <!-- Critical CSS inline for faster FCP -->
+    <style>
+      /* Critical inline CSS for instant render */
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        margin: 0;
+        font-display: swap;
+      }
+      img { max-width: 100%; height: auto; }
+      /* Prevent FOIT (Flash of Invisible Text) */
+      @font-face {
+        font-family: 'DM Sans Fallback';
+        src: local('Arial');
+        size-adjust: 100%;
+        ascent-override: 90%;
+        descent-override: 20%;
+      }
+    </style>
+
+    <!-- Load fonts asynchronously to not block rendering -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- FontAwesome 5.15.4 - Known stable version -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- FontAwesome - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
     
     <!-- FontAwesome CSS fix -->
     <style>
@@ -139,31 +154,14 @@ const isHome = Astro.url.pathname === '/';
       }
     </style>
     
-    <!-- Preload hero image -->
-    <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp" fetchpriority="high">
+    <!-- Preload hero image with highest priority -->
+    <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp" fetchpriority="high" imagesrcset="/images/Hero-SEO-Agency-In-The-Philippines.webp 1x" imagesizes="100vw">
 
-    <!-- Mobile Performance Optimization Script -->
-    <script>
+    <!-- Defer non-critical JavaScript -->
+    <script defer>
       // Disable hover effects on mobile for better performance
       if ('ontouchstart' in window) {
         document.documentElement.classList.add('touch-device');
-      }
-
-      // Optimize scroll performance
-      if ('IntersectionObserver' in window) {
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        const imageObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              if (img.dataset.src) {
-                img.src = img.dataset.src;
-                imageObserver.unobserve(img);
-              }
-            }
-          });
-        });
-        lazyImages.forEach(img => imageObserver.observe(img));
       }
     </script>
 

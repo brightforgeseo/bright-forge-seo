@@ -41,6 +41,8 @@ export default defineConfig({
       // Enable minification and optimization
       minify: 'terser',
       cssMinify: true,
+      // Reduce chunk size for faster parsing
+      chunkSizeWarningLimit: 250,
       rollupOptions: {
         output: {
           // Better asset naming for caching
@@ -60,9 +62,16 @@ export default defineConfig({
           },
           chunkFileNames: 'assets/js/[name].[hash].js',
           entryFileNames: 'assets/js/[name].[hash].js',
-          // Bundle vendor libraries separately for better caching
+          // Split into smaller chunks for faster parsing and execution
           manualChunks: (id) => {
+            // Split large vendors into separate chunks
             if (id.includes('node_modules')) {
+              if (id.includes('contentful')) {
+                return 'contentful';
+              }
+              if (id.includes('astro')) {
+                return 'astro-runtime';
+              }
               return 'vendor';
             }
           }
