@@ -12,7 +12,7 @@ import RevenueSection from '../components/RevenueSection.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
 import TrustedBySection from '../components/TrustedBySection.astro';
 import FeaturedTestimonial from '../components/FeaturedTestimonial.astro';
-import Hero from '../components/Hero.astro';
+import HomepageHero from '../components/HomepageHero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
@@ -44,33 +44,23 @@ const breadcrumbs = [
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-star"
-    badgeText="#1 SEO Agency in the Philippines"
+  <HomepageHero
+    badge="#1 SEO Agency in the Philippines"
     title="Philippines SEO Company Forging the Path to Your Online Success"
-    breadcrumbCurrent="SEO Agency Philippines"
+    buttonText="Get Free SEO Audit"
+    buttonHref="/seo-audit-services/"
+    secondaryButtonText="Schedule Consultation"
+    secondaryButtonHref="/contact/"
+    imageSrc="/images/Hero-SEO-Agency-In-The-Philippines.webp"
+    imageAlt="Sassin Lowe - Bright Forge SEO Expert Philippines"
+    trustBadgeCount="1000+"
+    trustBadgeText="Websites Ranked"
   >
-    <Fragment slot="story">
+    <Fragment slot="description">
       <p>Partner with Bright Forge, the Philippines SEO agency that businesses trust for sustainable, long-term growth.</p>
       <p>We combine data-driven strategies with local market expertise to help your business dominate search results and connect with customers who are ready to buy.</p>
     </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/seo-audit-services/" text="Get Free SEO Audit" />
-      <ButtonSecondary href="/contact/" text="Schedule Consultation" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <img
-          src="/images/Hero-SEO-Agency-In-The-Philippines.webp"
-          alt="Sassin Lowe - Bright Forge SEO Expert Philippines"
-          class="hero-image"
-          loading="eager"
-        />
-      </div>
-    </Fragment>
-  </Hero>
+  </HomepageHero>
 
   <!-- Trusted By Section -->
   <TrustedBySection />
