@@ -27,16 +27,17 @@ const { href, text, icon = "fas fa-comments" } = Astro.props;
   }
 
   .cta-button.secondary {
-    background: white;
-    color: #f97316;
-    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   .cta-button.secondary:hover {
-    background: #f8f9fa;
-    color: #f97316;
-    border-color: white;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
   }

@@ -1,6 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import ContactSection from '../components/ContactSection.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 export interface Props {
   title: string;
@@ -209,14 +211,8 @@ const {
           <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #1a1a1a;">Ready for Similar Results?</h3>
           <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">{nextSteps}</p>
           <div class="hero-actions" style="justify-content: center;">
-            <a href="/contact" class="cta-button primary">
-              <span>Get Started Today</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="/" class="cta-button secondary">
-              <i class="fas fa-info-circle"></i>
-              <span>Learn More</span>
-            </a>
+            <ButtonPrimary href="/contact" text="Get Started Today" />
+            <ButtonSecondary href="/" text="Learn More" icon="fas fa-info-circle" />
           </div>
         </div>
       </div>
