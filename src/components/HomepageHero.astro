@@ -28,7 +28,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="homepage-hero">
+<section class="homepage-hero" style="background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%) !important; background-size: 400% 400% !important; animation: gradientShift 15s ease infinite !important;">
   <div class="max-w-7xl mx-auto px-4 py-12 md:py-20">
     <div class="hero-grid">
       <!-- Left Column - Content -->
@@ -357,6 +357,11 @@ const {
 
     .hero-buttons {
       justify-content: center;
+    }
+
+    /* Hide hero image on mobile and tablet */
+    .hero-visual {
+      display: none;
     }
 
     .blob-container {

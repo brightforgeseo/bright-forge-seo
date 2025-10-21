@@ -7,21 +7,10 @@
   /* Ensure brand accent is red sitewide for non-article pages */
   --brand-accent: #f97316;
   --brand-accent-light: #FFE9E8;
-  --gradient-primary: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
   --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #f97316 100%);
 }
 
-/* Generic hero backgrounds (exclude article hero) */
-.hero-section,
-section[class^="hero-"]:not(.article-hero),
-section[class*=" hero-"]:not(.article-hero),
-.hero-seo-audit,
-.case-study-hero,
-.contact-hero,
-.about-hero,
-.services-hero {
-  background: var(--gradient-primary) !important;
-}
+/* Removed hero background overrides - let component styles handle this */
 
 /* Section badges and heading accent spans */
 .section-badge,
@@ -107,9 +96,7 @@ main a:hover {
 /* ============================= */
 /* Case Study Template overrides */
 /* ============================= */
-.case-hero {
-  background: var(--gradient-primary) !important;
-}
+/* Removed .case-hero background override - let component handle it */
 
 .achievement-card:hover {
   border-color: rgba(255, 68, 56, 0.3) !important;
@@ -204,19 +191,12 @@ main a:hover {
   color: #f97316 !important;
 }
 
-/* Fallback: any section or div with inline styles containing old blue */
-section[style*="#4285F4"],
-div[style*="#4285F4"] {
-  background: var(--gradient-primary) !important;
-}
+/* Removed fallback gradient override - let components handle their own backgrounds */
 
 /* ============================= */
 /* Global section look (homepage) */
 /* ============================= */
-/* Light grey background for all primary sections except heros and articles */
-main > section:not([class*="hero"]):not(.article-hero):not(.article-content) {
-  background-color: #f8fafc !important;
-}
+/* Removed global section background - let individual components handle their own backgrounds */
 
 /* Ensure Tools sections always use light grey background (not gradients) */
 .tools-section {
