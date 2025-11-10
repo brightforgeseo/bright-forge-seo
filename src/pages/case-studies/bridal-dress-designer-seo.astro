@@ -1,0 +1,492 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Hero from '../../components/Hero.astro';
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import ButtonSecondary from '../../components/ButtonSecondary.astro';
+
+const caseStudyData = {
+  title: "How We Increased Organic Traffic by 137.5% for a Bridal Dress Designer",
+  client: "Bridal Dress Designer & Retailer",
+  industry: "Bridal Fashion & E-Commerce",
+  duration: "3 months",
+  heroImage: "/images/case-studies/bridal-dress-seo.webp",
+  challenge: "A bridal dress designer and retailer struggled with third-page obscurity (position 24.8) in the highly competitive bridal industry, competing against established national chains, designer brands, and marketplaces. With less than 1% of total clicks coming from page 3 rankings, they needed a dramatic transformation to capture market share and compete with bigger brands during the critical wedding planning research phase.",
+  solution: "We implemented a comprehensive SEO strategy focused on dramatic ranking improvements through technical excellence, strategic content expansion targeting long-tail bridal queries, and aggressive backlink acquisition. Our approach combined position advancement with keyword portfolio expansion to achieve sustained growth in the competitive bridal market.",
+  keyMetrics: [
+    {
+      label: "Organic Traffic",
+      value: "+137.5%",
+      description: "Growth from 7.4K to 17.6K clicks"
+    },
+    {
+      label: "Search Visibility",
+      value: "+118.1%",
+      description: "Impressions from 342K to 746K"
+    },
+    {
+      label: "Average Position",
+      value: "+39.9%",
+      description: "Improved from 24.8 to 14.9"
+    }
+  ],
+  strategySteps: [
+    {
+      title: "Ranking Transformation Strategy",
+      description: "Executed dramatic 10-position climb from third-page obscurity (24.8) to solid second-page positioning (14.9), outranking approximately 10 competitor websites and displacing established bridal retailers. This moved the brand from <1% click potential to 3-5% visibility.",
+      icon: "fa-chart-line"
+    },
+    {
+      title: "Keyword Portfolio Expansion",
+      description: "Successfully expanded rankings across bridal-related terms including style variations, geographic keywords, seasonal terms, and long-tail queries like 'custom wedding dress designer,' 'modest wedding dresses,' and location-based searches.",
+      icon: "fa-search"
+    },
+    {
+      title: "Technical SEO Foundation",
+      description: "Implemented comprehensive technical optimization including Core Web Vitals for image-heavy pages, mobile experience enhancement for 70%+ mobile traffic, structured data for products and reviews, and speed optimization for dress gallery pages.",
+      icon: "fa-cogs"
+    },
+    {
+      title: "Content Strategy Execution",
+      description: "Created comprehensive style guides, trend reports, planning content, and real wedding features to build topical authority. Developed educational content covering fabric guides, silhouettes, and styling advice to capture buyers throughout their journey.",
+      icon: "fa-file-alt"
+    },
+    {
+      title: "Strategic Link Building",
+      description: "Targeted high-authority bridal and wedding sites including The Knot, WeddingWire, local wedding blogs, and vendor partnerships to strengthen domain authority and competitive positioning in the challenging bridal SEO landscape.",
+      icon: "fa-link"
+    }
+  ],
+  results: [
+    {
+      metric: "Total Clicks",
+      before: "7,410",
+      after: "17,600",
+      improvement: "+137.5%"
+    },
+    {
+      metric: "Total Impressions",
+      before: "342,000",
+      after: "746,000",
+      improvement: "+118.1%"
+    },
+    {
+      metric: "Average Position",
+      before: "24.8",
+      after: "14.9",
+      improvement: "+39.9%"
+    },
+    {
+      metric: "Average CTR",
+      before: "2.2%",
+      after: "2.4%",
+      improvement: "+9.1%"
+    }
+  ],
+  keyTakeaways: [
+    "Achieved 10-position jump from page 3 (position 24.8) to page 2 (position 14.9), increasing visibility potential from <1% to 3-5% of total clicks—a 3-5x improvement",
+    "Generated 10,190 additional monthly clicks representing potential revenue impact of $150K-$300K quarterly based on bridal industry conversion rates and average order values",
+    "Impression explosion of 118% (+404K) driven by keyword portfolio expansion across style categories, geographic terms, and seasonal variations in the competitive bridal landscape",
+    "Successfully competed against established national chains and designer brands by outranking approximately 10 competitor websites through sustained SEO investment",
+    "Estimated advertising value saved of $168K quarterly (10,190 clicks × $5.50 average CPC for bridal keywords × 3 months)",
+    "Positioned for 'first page breakthrough' opportunity—reaching positions 9-10 would likely result in 150-200% additional traffic growth to 50,000+ monthly clicks"
+  ],
+  nextSteps: "The brand now sits tantalizingly close to first-page rankings. Our next phase focuses on an aggressive 'first page breakthrough' strategy including content acceleration for topical authority, strategic link building targeting high-authority bridal sites, CTR optimization to 3.5-4%, and technical refinements. Breaking into first-page positions would likely result in 3-5x additional traffic increases."
+};
+---
+
+<MainLayout title="137% Traffic Growth for Bridal Dress Designer | Bright Forge SEO" description="A 137.5% organic traffic increase and dramatic position improvement from page 3 to page 2 for this bridal dress designer through comprehensive SEO strategy and sustained investment.">
+  <LegacyHeader slot="header" />
+
+  <!-- Hero Section -->
+  <Hero
+    title={caseStudyData.client}
+    breadcrumbCurrent="Bridal Dress Designer"
+  >
+    <Fragment slot="story">
+      <div class="case-meta">
+        <span class="meta-item">{caseStudyData.industry}</span>
+        <span class="meta-divider">•</span>
+        <span class="meta-item">{caseStudyData.duration}</span>
+      </div>
+      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="#results" text="View Full Results" />
+      <ButtonSecondary href="/contact/" text="Discuss Your Project" />
+    </Fragment>
+  </Hero>
+
+  <!-- Key Metrics Section -->
+  <section class="metrics-section">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="metrics-grid">
+        {caseStudyData.keyMetrics.map((metric) => (
+          <div class="metric-card">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <div class="metric-description">{metric.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image Section -->
+  <section class="image-section">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="case-image-container">
+        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">The Challenge</h2>
+      <p class="section-text">{caseStudyData.challenge}</p>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="content-section gray">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Our Approach</h2>
+      <p class="section-text">{caseStudyData.solution}</p>
+    </div>
+  </section>
+
+  <!-- Strategy Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Strategy</h2>
+
+      <div class="strategy-list">
+        {caseStudyData.strategySteps.map((step, index) => (
+          <div class="strategy-item">
+            <div class="strategy-number">{index + 1}</div>
+            <div class="strategy-content">
+              <h3 class="strategy-title">{step.title}</h3>
+              <p class="strategy-description">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="content-section gray" id="results">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Results</h2>
+
+      <div class="results-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            {caseStudyData.results.map((result) => (
+              <tr>
+                <td class="metric-name">{result.metric}</td>
+                <td>{result.before}</td>
+                <td>{result.after}</td>
+                <td class="improvement">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Key Takeaways</h2>
+
+      <ul class="takeaways-list">
+        {caseStudyData.keyTakeaways.map((takeaway) => (
+          <li>{takeaway}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+/* Case Study Meta */
+.case-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-divider {
+  opacity: 0.5;
+}
+
+/* Metrics Section */
+.metrics-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.metric-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f97316;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.metric-description {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Image Section */
+.image-section {
+  background: #ffffff;
+}
+
+.case-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.case-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+/* Content Sections */
+.content-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.content-section.gray {
+  background: #f8fafc;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* Strategy List */
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.strategy-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.strategy-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #f97316;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.strategy-content {
+  flex: 1;
+}
+
+.strategy-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.strategy-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* Results Table */
+.results-table {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th {
+  text-align: left;
+  padding: 16px 20px;
+  background: #f1f5f9;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.results-table td {
+  padding: 20px;
+  font-size: 1rem;
+  color: #1e293b;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table .metric-name {
+  font-weight: 600;
+}
+
+.results-table .improvement {
+  color: #f97316;
+  font-weight: 600;
+}
+
+/* Takeaways List */
+.takeaways-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.takeaways-list li {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+  padding-left: 32px;
+  position: relative;
+}
+
+.takeaways-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .strategy-item {
+    gap: 16px;
+  }
+
+  .strategy-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
