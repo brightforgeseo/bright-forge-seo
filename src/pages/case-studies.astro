@@ -45,10 +45,132 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <button class="modern-filter-btn" data-filter="automotive">Automotive</button>
         <button class="modern-filter-btn" data-filter="ecommerce">E-commerce</button>
         <button class="modern-filter-btn" data-filter="local">Local Services</button>
+        <button class="modern-filter-btn" data-filter="sports">Sports</button>
+        <button class="modern-filter-btn" data-filter="bridal">Bridal</button>
       </div>
 
       <!-- Modern Case Studies Grid -->
       <div id="case-studies-grid" class="case-studies-grid">
+        <!-- Modern Card - Bridal Dress Designer -->
+        <article class="modern-case-card bridal" data-category="bridal">
+          <div class="card-image-container">
+            <img src="/images/case-studies/bridal-dress-seo.webp" alt="Bridal Dress Designer SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge bridal-badge">
+              <span>Bridal Fashion</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Bridal Dress Designer</h3>
+              <div class="growth-indicator positive">+137.5%</div>
+            </div>
+            <p class="card-description">Achieved dramatic traffic growth for a bridal dress designer, moving from page 3 to page 2 through comprehensive SEO strategy.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+137.5%</span>
+                <span class="metric-label">Organic Traffic</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+118.1%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">3 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/bridal-dress-designer-seo/" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Modern Card - Leather Wallet E-Commerce -->
+        <article class="modern-case-card ecommerce" data-category="ecommerce">
+          <div class="card-image-container">
+            <img src="/images/case-studies/leather-wallet-ecommerce-seo.webp" alt="Leather Wallet E-Commerce SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge ecommerce-badge">
+              <span>E-commerce</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Leather Wallet E-Commerce</h3>
+              <div class="growth-indicator positive">+49.3%</div>
+            </div>
+            <p class="card-description">Boosted organic clicks through exceptional CTR optimization and brand messaging excellence for a leather goods brand.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+49.3%</span>
+                <span class="metric-label">Organic Clicks</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+45.2%</span>
+                <span class="metric-label">CTR</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">3 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/leather-wallet-ecommerce-seo/" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Modern Card - Football App -->
+        <article class="modern-case-card sports" data-category="sports">
+          <div class="card-image-container">
+            <img src="/images/case-studies/football-app-seo-case-study.webp" alt="Football App SEO Case Study" class="card-image" loading="lazy" decoding="async" />
+            <div class="card-overlay">
+              <span class="view-case-btn">View Full Case Study →</span>
+            </div>
+            <div class="industry-badge sports-badge">
+              <span>Sports & Entertainment</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <h3 class="card-title">Football Application</h3>
+              <div class="growth-indicator positive">+34%</div>
+            </div>
+            <p class="card-description">Increased organic traffic for a football app through strategic SEO optimization and content enhancement.</p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">+34%</span>
+                <span class="metric-label">Organic Traffic</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">+29.3%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">3 mo.</span>
+                <span class="metric-label">Timeline</span>
+              </div>
+            </div>
+            <a href="/case-studies/football-app-seo/" class="modern-cta-btn">
+              <span>Read Case Study</span>
+              <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
         <!-- Modern Card - Phoenix Spa and Beauty -->
         <article class="modern-case-card beauty" data-category="beauty">
           <div class="card-image-container">
@@ -663,6 +785,16 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   }
 
   .local-badge {
+    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
+    color: white;
+  }
+
+  .sports-badge {
+    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
+    color: white;
+  }
+
+  .bridal-badge {
     background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
     color: white;
   }
