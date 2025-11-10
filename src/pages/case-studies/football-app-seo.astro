@@ -1,0 +1,492 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Hero from '../../components/Hero.astro';
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import ButtonSecondary from '../../components/ButtonSecondary.astro';
+
+const caseStudyData = {
+  title: "How We Boosted Organic Traffic by 34% for a Football App",
+  client: "Football Application",
+  industry: "Sports & Entertainment",
+  duration: "3 months",
+  heroImage: "/images/case-studies/football-app-seo-case-study.webp",
+  challenge: "A football application needed to improve its organic search performance in a highly competitive sports content landscape. The app faced challenges with search visibility, competing against established sports media outlets and other football apps. The goal was to improve rankings, increase organic traffic, and establish authority in football-related search queries while maintaining relevance during match days and key sporting events.",
+  solution: "We developed a comprehensive SEO strategy focused on technical optimization, strategic content alignment with match schedules and sporting events, and improving search visibility across the critical first-page threshold. Our approach combined technical excellence with timely, relevant content targeting both broad and long-tail football queries.",
+  keyMetrics: [
+    {
+      label: "Organic Traffic",
+      value: "+34%",
+      description: "Increase from 200K to 268K clicks"
+    },
+    {
+      label: "Search Visibility",
+      value: "+29.3%",
+      description: "Growth from 7.14M to 9.23M impressions"
+    },
+    {
+      label: "Average Position",
+      value: "20.2%",
+      description: "Improved from 11.4 to 9.1"
+    }
+  ],
+  strategySteps: [
+    {
+      title: "Technical SEO Foundation",
+      description: "Implemented strong technical infrastructure with optimized crawl budget, fast page load times, and mobile optimization to support sustained growth and handle traffic spikes during match days.",
+      icon: "fa-cog"
+    },
+    {
+      title: "Strategic Content Alignment",
+      description: "Created and optimized content targeting long-tail football queries, aligned with fixtures and events, including match predictions, player stats, and team news with improved internal linking structure.",
+      icon: "fa-calendar-alt"
+    },
+    {
+      title: "Position Advancement Strategy",
+      description: "Focused efforts on moving from second-page rankings (position 11.4) to first-page territory (position 9.1), overtaking 2-3 competitors on average across the keyword portfolio.",
+      icon: "fa-chart-line"
+    },
+    {
+      title: "User Experience Optimization",
+      description: "Optimized title tags and meta descriptions to maintain strong CTR while improving impressions, ensuring content relevance and meeting user search intent effectively.",
+      icon: "fa-users"
+    },
+    {
+      title: "Performance Monitoring & Analysis",
+      description: "Tracked seasonal patterns and cyclical trends, identifying regular peaks on match days and optimizing for consistent week-over-week performance improvements.",
+      icon: "fa-analytics"
+    }
+  ],
+  results: [
+    {
+      metric: "Total Clicks",
+      before: "200,000",
+      after: "268,000",
+      improvement: "+34.0%"
+    },
+    {
+      metric: "Total Impressions",
+      before: "7.14M",
+      after: "9.23M",
+      improvement: "+29.3%"
+    },
+    {
+      metric: "Average Position",
+      before: "11.4",
+      after: "9.1",
+      improvement: "+20.2%"
+    },
+    {
+      metric: "Average CTR",
+      before: "2.8%",
+      after: "2.9%",
+      improvement: "+3.6%"
+    }
+  ],
+  keyTakeaways: [
+    "Moving from position 11.4 to 9.1 crossed the crucial first-page threshold, resulting in 68,000 additional clicks per month",
+    "The 2.3-position improvement moved the app into first-page territory across a broader keyword portfolio, capturing 92% of organic traffic potential",
+    "Successful expansion of keyword footprint with 2.09M additional impressions indicated improved relevance signals to Google",
+    "Maintained CTR performance while scaling volume demonstrates effective title tags, meta descriptions, and meeting user search intent",
+    "Clear weekly cyclical patterns with consistent peaks on match days enabled strategic content optimization around fixtures and events",
+    "Strong technical infrastructure supporting growth with optimized crawl budget and fast page loads maintained user engagement during traffic spikes"
+  ],
+  nextSteps: "Moving forward, we'll focus on featured snippet optimization for question-based queries, schema markup implementation for sports events and player profiles, and further position advancement to reach positions 5-7 for an estimated 50-100% increase in clicks. We'll also pursue content gap analysis to target competitor keywords where we're ranking 11-20."
+};
+---
+
+<MainLayout title="34% Traffic Growth for Football App | Bright Forge SEO" description="A 34% organic traffic increase and first-page rankings for this football app through strategic SEO, technical optimization, and content aligned with match schedules.">
+  <LegacyHeader slot="header" />
+
+  <!-- Hero Section -->
+  <Hero
+    title={caseStudyData.client}
+    breadcrumbCurrent="Football App"
+  >
+    <Fragment slot="story">
+      <div class="case-meta">
+        <span class="meta-item">{caseStudyData.industry}</span>
+        <span class="meta-divider">•</span>
+        <span class="meta-item">{caseStudyData.duration}</span>
+      </div>
+      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="#results" text="View Full Results" />
+      <ButtonSecondary href="/contact/" text="Discuss Your Project" />
+    </Fragment>
+  </Hero>
+
+  <!-- Key Metrics Section -->
+  <section class="metrics-section">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="metrics-grid">
+        {caseStudyData.keyMetrics.map((metric) => (
+          <div class="metric-card">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <div class="metric-description">{metric.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image Section -->
+  <section class="image-section">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="case-image-container">
+        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">The Challenge</h2>
+      <p class="section-text">{caseStudyData.challenge}</p>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="content-section gray">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Our Approach</h2>
+      <p class="section-text">{caseStudyData.solution}</p>
+    </div>
+  </section>
+
+  <!-- Strategy Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Strategy</h2>
+
+      <div class="strategy-list">
+        {caseStudyData.strategySteps.map((step, index) => (
+          <div class="strategy-item">
+            <div class="strategy-number">{index + 1}</div>
+            <div class="strategy-content">
+              <h3 class="strategy-title">{step.title}</h3>
+              <p class="strategy-description">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="content-section gray" id="results">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Results</h2>
+
+      <div class="results-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            {caseStudyData.results.map((result) => (
+              <tr>
+                <td class="metric-name">{result.metric}</td>
+                <td>{result.before}</td>
+                <td>{result.after}</td>
+                <td class="improvement">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Key Takeaways</h2>
+
+      <ul class="takeaways-list">
+        {caseStudyData.keyTakeaways.map((takeaway) => (
+          <li>{takeaway}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+/* Case Study Meta */
+.case-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-divider {
+  opacity: 0.5;
+}
+
+/* Metrics Section */
+.metrics-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.metric-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f97316;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.metric-description {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Image Section */
+.image-section {
+  background: #ffffff;
+}
+
+.case-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.case-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+/* Content Sections */
+.content-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.content-section.gray {
+  background: #f8fafc;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* Strategy List */
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.strategy-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.strategy-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #f97316;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.strategy-content {
+  flex: 1;
+}
+
+.strategy-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.strategy-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* Results Table */
+.results-table {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th {
+  text-align: left;
+  padding: 16px 20px;
+  background: #f1f5f9;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.results-table td {
+  padding: 20px;
+  font-size: 1rem;
+  color: #1e293b;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table .metric-name {
+  font-weight: 600;
+}
+
+.results-table .improvement {
+  color: #f97316;
+  font-weight: 600;
+}
+
+/* Takeaways List */
+.takeaways-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.takeaways-list li {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+  padding-left: 32px;
+  position: relative;
+}
+
+.takeaways-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .strategy-item {
+    gap: 16px;
+  }
+
+  .strategy-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
