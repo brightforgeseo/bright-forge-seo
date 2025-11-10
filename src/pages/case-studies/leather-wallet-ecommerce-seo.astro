@@ -1,0 +1,492 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Hero from '../../components/Hero.astro';
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import ButtonSecondary from '../../components/ButtonSecondary.astro';
+
+const caseStudyData = {
+  title: "How We Boosted Organic Clicks by 49% for a Leather Wallet E-Commerce Brand",
+  client: "Leather Wallet E-Commerce Brand",
+  industry: "E-Commerce - Leather Goods",
+  duration: "3 months",
+  heroImage: "/images/case-studies/leather-wallet-ecommerce-seo.webp",
+  challenge: "A leather wallet manufacturer faced challenges competing in a saturated e-commerce market with second-page search rankings (position 15.2). Despite strong brand recognition in the leather goods niche, they struggled to capture organic traffic due to poor visibility. The challenge was to dramatically increase click-through rates and traffic while working to improve rankings in a competitive marketplace dominated by major retailers and direct-to-consumer brands.",
+  solution: "We implemented a comprehensive CTR optimization strategy focused on brand messaging excellence, SERP enhancement tactics, and meta description optimization. Our approach emphasized converting existing visibility through superior messaging rather than just expanding reach, leveraging the brand's craftsmanship positioning and quality indicators to stand out even from second-page positions.",
+  keyMetrics: [
+    {
+      label: "Organic Clicks",
+      value: "+49.3%",
+      description: "Growth from 15.2K to 22.7K clicks"
+    },
+    {
+      label: "Click-Through Rate",
+      value: "+45.2%",
+      description: "Improved from 3.1% to 4.5%"
+    },
+    {
+      label: "Average Position",
+      value: "+9.2%",
+      description: "Moved from 15.2 to 13.8"
+    }
+  ],
+  strategySteps: [
+    {
+      title: "CTR Excellence Through Brand Messaging",
+      description: "Optimized meta descriptions and title tags to emphasize unique selling propositions like 'handcrafted leather,' 'premium Italian leather,' and 'lifetime guarantee,' achieving 4.5% CTR from position 13.8—nearly double the industry average.",
+      icon: "fa-bullhorn"
+    },
+    {
+      title: "SERP Enhancement Implementation",
+      description: "Maximized SERP presence through site links, review stars, product schema markup, and rich snippets to command attention and differentiate from competitors despite lower rankings.",
+      icon: "fa-star"
+    },
+    {
+      title: "High-Intent Commercial Targeting",
+      description: "Focused on quality over quantity with commercial intent keywords like 'handmade leather wallets' and 'minimalist leather wallet,' prioritizing conversion-focused terms over traffic volume.",
+      icon: "fa-bullseye"
+    },
+    {
+      title: "Product Page Optimization",
+      description: "Implemented comprehensive product schema markup, optimized category pages, strengthened internal linking structure, and ensured landing pages matched search intent with compelling product imagery and descriptions.",
+      icon: "fa-shopping-cart"
+    },
+    {
+      title: "Technical E-Commerce Foundation",
+      description: "Enhanced page load speeds, mobile optimization, clean URL structure, and effective crawl budget management to support sustainable growth and handle traffic increases.",
+      icon: "fa-cogs"
+    }
+  ],
+  results: [
+    {
+      metric: "Total Clicks",
+      before: "15,200",
+      after: "22,700",
+      improvement: "+49.3%"
+    },
+    {
+      metric: "Total Impressions",
+      before: "485,000",
+      after: "500,000",
+      improvement: "+3.1%"
+    },
+    {
+      metric: "Average CTR",
+      before: "3.1%",
+      after: "4.5%",
+      improvement: "+45.2%"
+    },
+    {
+      metric: "Average Position",
+      before: "15.2",
+      after: "13.8",
+      improvement: "+9.2%"
+    }
+  ],
+  keyTakeaways: [
+    "Achieved 4.5% CTR from position 13.8 (second page)—nearly double the industry average of 1.5-2.5% for that position range, demonstrating exceptional brand recognition and messaging excellence",
+    "Generated 7,500 additional monthly clicks with only 3.1% impression growth, proving efficiency over scale strategy and quality over quantity approach to keyword targeting",
+    "CTR performance at position 13.8 comparable to typical CTR expectations for positions 5-7 on page one, indicating strong competitive advantage through superior brand positioning",
+    "Meta description optimization emphasizing craftsmanship, quality indicators, and emotional triggers (gift-giving, durability) drove exceptional engagement despite second-page rankings",
+    "Product schema markup and SERP enhancements (site links, review stars, rich snippets) maximized visibility and commanded attention from lower positions",
+    "Estimated quarterly advertising value saved of $50,625 (7,500 monthly clicks × $2.25 average CPC × 3 months) plus potential additional revenue of $22,500-$135,000 from new conversions"
+  ],
+  nextSteps: "The next phase focuses on pushing for first-page rankings (positions 7-10) through strategic backlink acquisition and content refreshes. We're implementing a content expansion initiative including buyer guides and care tutorials to drive impression growth from 500K to 650K. The goal is to combine the proven 4%+ CTR performance with first-page visibility for an estimated 50-100% increase in total clicks."
+};
+---
+
+<MainLayout title="49% Click Growth for Leather Wallet Brand | Bright Forge SEO" description="A 49% organic click increase and 45% CTR improvement for this leather wallet e-commerce brand through brand messaging excellence and SERP optimization from second-page positions.">
+  <LegacyHeader slot="header" />
+
+  <!-- Hero Section -->
+  <Hero
+    title={caseStudyData.client}
+    breadcrumbCurrent="Leather Wallet E-Commerce"
+  >
+    <Fragment slot="story">
+      <div class="case-meta">
+        <span class="meta-item">{caseStudyData.industry}</span>
+        <span class="meta-divider">•</span>
+        <span class="meta-item">{caseStudyData.duration}</span>
+      </div>
+      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="#results" text="View Full Results" />
+      <ButtonSecondary href="/contact/" text="Discuss Your Project" />
+    </Fragment>
+  </Hero>
+
+  <!-- Key Metrics Section -->
+  <section class="metrics-section">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="metrics-grid">
+        {caseStudyData.keyMetrics.map((metric) => (
+          <div class="metric-card">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <div class="metric-description">{metric.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image Section -->
+  <section class="image-section">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="case-image-container">
+        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">The Challenge</h2>
+      <p class="section-text">{caseStudyData.challenge}</p>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="content-section gray">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Our Approach</h2>
+      <p class="section-text">{caseStudyData.solution}</p>
+    </div>
+  </section>
+
+  <!-- Strategy Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Strategy</h2>
+
+      <div class="strategy-list">
+        {caseStudyData.strategySteps.map((step, index) => (
+          <div class="strategy-item">
+            <div class="strategy-number">{index + 1}</div>
+            <div class="strategy-content">
+              <h3 class="strategy-title">{step.title}</h3>
+              <p class="strategy-description">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="content-section gray" id="results">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Results</h2>
+
+      <div class="results-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            {caseStudyData.results.map((result) => (
+              <tr>
+                <td class="metric-name">{result.metric}</td>
+                <td>{result.before}</td>
+                <td>{result.after}</td>
+                <td class="improvement">{result.improvement}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways Section -->
+  <section class="content-section">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">Key Takeaways</h2>
+
+      <ul class="takeaways-list">
+        {caseStudyData.keyTakeaways.map((takeaway) => (
+          <li>{takeaway}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+/* Case Study Meta */
+.case-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.meta-divider {
+  opacity: 0.5;
+}
+
+/* Metrics Section */
+.metrics-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 48px;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.metric-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f97316;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.metric-description {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Image Section */
+.image-section {
+  background: #ffffff;
+}
+
+.case-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.case-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+/* Content Sections */
+.content-section {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.content-section.gray {
+  background: #f8fafc;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* Strategy List */
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.strategy-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.strategy-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #f97316;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.strategy-content {
+  flex: 1;
+}
+
+.strategy-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.strategy-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* Results Table */
+.results-table {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th {
+  text-align: left;
+  padding: 16px 20px;
+  background: #f1f5f9;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.results-table td {
+  padding: 20px;
+  font-size: 1rem;
+  color: #1e293b;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table .metric-name {
+  font-weight: 600;
+}
+
+.results-table .improvement {
+  color: #f97316;
+  font-weight: 600;
+}
+
+/* Takeaways List */
+.takeaways-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.takeaways-list li {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+  padding-left: 32px;
+  position: relative;
+}
+
+.takeaways-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .strategy-item {
+    gap: 16px;
+  }
+
+  .strategy-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .results-table {
+    font-size: 0.875rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
