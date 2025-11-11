@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { JSDOM } from 'jsdom';
 
 // Get the slug from the URL
@@ -247,7 +247,8 @@ if (post.content) {
   }; */
   const renderOptions = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ENTRY]: () => ''
+      [BLOCKS.EMBEDDED_ENTRY]: () => '',
+      [BLOCKS.HEADING_4]: (node, next) => `<h4>${next(node.content)}</h4>`
     }
   };
   
