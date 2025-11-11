@@ -462,11 +462,24 @@ const formatDate = (dateString: string) => {
 }
 
 :global(.content-body h4) {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   color: #2d3748;
-  margin: 2rem 0 1rem 0;
-  line-height: 1.4;
+  margin: 3rem 0 1.5rem 0;
+  line-height: 1.2;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+:global(.content-body h4::before) {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 4px;
+  height: 1.8rem;
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  border-radius: 2px;
 }
 
 :global(.content-body h5) {
@@ -921,6 +934,11 @@ const formatDate = (dateString: string) => {
   font-size: 0.9rem;
 }
 
+.toc-level-4 {
+  padding-left: 2rem;
+  font-size: 0.85rem;
+}
+
 .table-of-contents h3 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -966,6 +984,12 @@ const formatDate = (dateString: string) => {
 .toc-level-3 a {
   padding-left: 30px;
   font-size: 0.85rem;
+}
+
+.toc-level-4 a {
+  padding-left: 45px;
+  font-size: 0.8rem;
+  color: #718096;
 }
 
 /* Main Content */

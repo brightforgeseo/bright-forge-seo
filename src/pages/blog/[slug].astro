@@ -794,18 +794,18 @@ if (post.content) {
   
   // Generate table of contents from HTML headings
   const dom = new JSDOM(htmlContent);
-  const headings = [...dom.window.document.querySelectorAll('h2, h3')];
-  
+  const headings = [...dom.window.document.querySelectorAll('h2, h3, h4')];
+
   tableOfContents = headings.map(heading => {
     const text = heading.textContent;
     const id = text
       .toLowerCase()
       .replace(/[^\w\s]/g, '')
       .replace(/\s+/g, '-');
-    
+
     // Add ID to the heading in the HTML
     heading.id = id;
-    
+
     return {
       id,
       title: text,
