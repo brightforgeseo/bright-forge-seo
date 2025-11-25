@@ -8,53 +8,50 @@ interface Props {
 const { href, text, icon = "fas fa-comments" } = Astro.props;
 ---
 
-<a href={href} class="cta-button secondary">
+<a href={href} class="btn-secondary-modern">
   <i class={icon}></i>
   <span>{text}</span>
 </a>
 
 <style>
-  .cta-button {
+  .btn-secondary-modern {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: 50px;
+    gap: 10px;
+    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 14px;
     font-weight: 600;
+    font-size: 15px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .cta-button.secondary {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .cta-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.25);
-    color: white;
-    border-color: rgba(255, 255, 255, 0.4);
+  .btn-secondary-modern:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
   }
 
-  .cta-button i {
-    transition: transform 0.3s ease;
+  .btn-secondary-modern i {
+    font-size: 14px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .cta-button.secondary:hover i {
+  .btn-secondary-modern:hover i {
     transform: scale(1.1);
   }
 
-  /* Responsive */
   @media (max-width: 480px) {
-    .cta-button {
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9rem;
+    .btn-secondary-modern {
+      padding: 12px 22px;
+      font-size: 14px;
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>

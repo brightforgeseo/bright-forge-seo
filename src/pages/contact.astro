@@ -32,57 +32,51 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
   </Hero>
 
   <!-- Contact Form Section -->
-  <section id="contact-form" class="contact-section bg-[#f8fafc] py-16" style="background-color: #f8fafc !important;">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+  <section id="contact-form" class="contact-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="contact-grid">
         <!-- Contact Form -->
-        <div class="contact-form-wrapper p-8 rounded-lg shadow-lg bg-[#f8fafc]" style="background-color: #f8fafc !important;">
-          <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" id="contactForm" class="space-y-6">
+        <div class="contact-form-card">
+          <h2>Send Us a Message</h2>
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" id="contactForm">
             <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
             <div class="form-group">
-              <label for="name" class="block text-gray-700 mb-2">Full Name *</label>
+              <label for="name">Full Name *</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-colors"
                 placeholder="Your name"
               />
             </div>
 
             <div class="form-group">
-              <label for="email" class="block text-gray-700 mb-2">Email Address *</label>
+              <label for="email">Email Address *</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-colors"
                 placeholder="your@email.com"
               />
             </div>
 
             <div class="form-group">
-              <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+              <label for="phone">Phone Number</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-colors"
                 placeholder="Your phone number"
               />
             </div>
 
             <div class="form-group">
-              <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
-              <select
-                id="service"
-                name="service"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-colors"
-              >
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
                 <option value="">Select a service</option>
                 <option value="philippines-seo">Philippines SEO Services</option>
                 <option value="white-label-seo">White Label SEO Services</option>
@@ -93,39 +87,39 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
             </div>
 
             <div class="form-group">
-              <label for="message" class="block text-gray-700 mb-2">Your Message *</label>
+              <label for="message">Your Message *</label>
               <textarea
                 id="message"
                 name="message"
                 required
                 rows="5"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20 transition-colors"
                 placeholder="Tell us about your project..."
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              class="w-full bg-[#f97316] text-white font-bold py-4 px-8 rounded-lg hover:opacity-90 transition-opacity"
-            >
-              Send Message
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </button>
           </form>
         </div>
 
         <!-- Contact Information -->
-        <div class="contact-info-wrapper">
-          <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
-          
-          <div class="space-y-8">
+        <div class="contact-info-card">
+          <h2>Get in Touch</h2>
+          <p class="info-subtitle">We'd love to hear from you. Here's how you can reach us.</p>
+
+          <div class="contact-items">
             <!-- Office Address -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-[#f97316] rounded-lg flex items-center justify-center">
-                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
               </div>
-              <div>
-                <h3 class="font-bold text-xl mb-2">Office Address</h3>
-                <p class="text-gray-600">
+              <div class="contact-details">
+                <h3>Office Address</h3>
+                <p>
                   Kathleen Place 4, Block 16, Lot 37,<br />
                   Armani Street, 75 S Francisco,<br />
                   Novachlies, Quezon City,<br />
@@ -135,39 +129,35 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
             </div>
 
             <!-- Email -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-[#f97316] rounded-lg flex items-center justify-center">
-                <i class="fas fa-envelope text-white text-xl"></i>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
               </div>
-              <div>
-                <h3 class="font-bold text-xl mb-2">Email Us</h3>
-                <a href="mailto:seo@brightforgeseo.com" class="text-gray-600 hover:text-[#f97316] transition-colors">
-                  seo@brightforgeseo.com
-                </a>
+              <div class="contact-details">
+                <h3>Email Us</h3>
+                <a href="mailto:seo@brightforgeseo.com">seo@brightforgeseo.com</a>
               </div>
             </div>
 
             <!-- Phone -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-[#f97316] rounded-lg flex items-center justify-center">
-                <i class="fas fa-phone-alt text-white text-xl"></i>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
               </div>
-              <div>
-                <h3 class="font-bold text-xl mb-2">Call Us</h3>
-                <a href="tel:+447123456789" class="text-gray-600 hover:text-[#f97316] transition-colors">
-                  +44 7123 456 789
-                </a>
+              <div class="contact-details">
+                <h3>Call Us</h3>
+                <a href="tel:+447123456789">+44 7123 456 789</a>
               </div>
             </div>
 
             <!-- Business Hours -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-[#f97316] rounded-lg flex items-center justify-center">
-                <i class="fas fa-clock text-white text-xl"></i>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
               </div>
-              <div>
-                <h3 class="font-bold text-xl mb-2">Business Hours</h3>
-                <p class="text-gray-600">
+              <div class="contact-details">
+                <h3>Business Hours</h3>
+                <p>
                   Monday - Friday: 9:00 AM - 6:00 PM<br />
                   Saturday: 9:00 AM - 2:00 PM<br />
                   Sunday: Closed
@@ -181,64 +171,294 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
   </section>
 
   <!-- Map Section -->
-  <section class="map-section py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-center">Visit Our Office</h2>
-        <div class="map-wrapper h-96 rounded-lg overflow-hidden shadow-lg">
-          <iframe
-            src="https://www.google.com/maps?q=14.704227661571542,121.04448433671261&hl=en&z=16&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+  <section class="map-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="map-header">
+        <h2>Visit Our Office</h2>
+        <p>Find us in the heart of Quezon City, Metro Manila</p>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps?q=14.704227661571542,121.04448433671261&hl=en&z=16&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
+  /* Contact Section */
   .contact-section {
-    background-image: linear-gradient(to bottom right, rgba(255, 68, 56, 0.05), rgba(255, 68, 56, 0.05));
+    padding: 5rem 0;
+    background: #f8fafc;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Contact Form Card */
+  .contact-form-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+  }
+
+  .contact-form-card h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
   }
 
   .form-group label {
-    font-weight: 500;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
   }
 
-  .contact-info-wrapper {
-    position: relative;
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 0.9375rem;
+    color: #0f172a;
+    transition: all 0.2s ease;
   }
 
-  @media (min-width: 768px) {
-    .contact-info-wrapper::before {
-      content: '';
-      position: absolute;
-      left: -2rem;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: #f97316;
-    }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #f97316;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #94a3b8;
+  }
+
+  .form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+
+  .submit-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+  }
+
+  .submit-btn svg {
+    transition: transform 0.3s ease;
+  }
+
+  .submit-btn:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* Contact Info Card */
+  .contact-info-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+  }
+
+  .contact-info-card h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .info-subtitle {
+    color: #64748b;
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon i {
+    font-size: 18px;
+    color: #f97316;
+  }
+
+  .contact-details h3 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.375rem;
+  }
+
+  .contact-details p {
+    color: #64748b;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .contact-details a {
+    color: #64748b;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .contact-details a:hover {
+    color: #f97316;
+  }
+
+  /* Map Section */
+  .map-section {
+    padding: 5rem 0;
+    background: #ffffff;
+  }
+
+  .map-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .map-header h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .map-header p {
+    color: #64748b;
+    font-size: 1rem;
   }
 
   .map-wrapper {
     position: relative;
     height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
   }
 
-  .map-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(255, 68, 56, 0.1), rgba(255, 68, 56, 0.1));
-    pointer-events: none;
+  .map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Hidden */
+  .hidden {
+    display: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-section,
+    .map-section {
+      padding: 3.5rem 0;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+      padding: 1.75rem;
+    }
+
+    .contact-form-card h2,
+    .contact-info-card h2 {
+      font-size: 1.25rem;
+    }
+
+    .map-wrapper {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-section,
+    .map-section {
+      padding: 3rem 0;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
   }
 </style>

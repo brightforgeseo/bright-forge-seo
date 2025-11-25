@@ -593,114 +593,120 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 <style>
   /* Hero subtitle styling */
   .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-    font-weight: 300;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+    font-weight: 400;
   }
 
   /* Case Studies Section */
   .case-studies-section {
     background: #f8fafc;
-    padding: 4rem 0;
+    padding: 5rem 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
   }
 
   .section-subtitle {
-    font-size: 1.1rem;
-    color: #6c757d;
-    max-width: 600px;
+    font-size: 1rem;
+    color: #64748b;
+    max-width: 540px;
     margin: 0 auto;
+    line-height: 1.65;
   }
 
   /* Modern Filter Buttons */
   .filter-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 40px;
+    gap: 10px;
+    margin-bottom: 2.5rem;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .modern-filter-btn {
     padding: 10px 20px;
-    border-radius: 50px;
-    border: 1px solid #e0e0e0;
-    background: white;
-    color: #333;
-    font-size: 0.9rem;
-    font-weight: 500;
+    border-radius: 100px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    font-size: 0.875rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
   }
 
   .modern-filter-btn:hover {
-    background: rgba(255, 68, 56, 0.1);
+    background: #fff7ed;
     color: #f97316;
     border-color: #f97316;
-    transform: translateY(-2px);
   }
 
   .modern-filter-btn.active {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     color: white;
-    border-color: #f97316;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 68, 56, 0.3);
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
   }
 
   /* Case Studies Grid */
   .case-studies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
   }
 
   /* Card Animation Classes */
   .card-fade-out {
     opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   .card-fade-in {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   /* Modern Case Cards */
   .modern-case-card {
-    background: white;
+    background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid #e2e8f0;
   }
 
   .modern-case-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
   }
 
   .card-image-container {
     position: relative;
-    height: 240px;
+    height: 200px;
     overflow: hidden;
   }
 
@@ -708,11 +714,11 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .modern-case-card:hover .card-image {
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
 
   .card-overlay {
@@ -721,7 +727,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 68, 56, 0.9) 0%, rgba(255, 107, 53, 0.9) 50%, rgba(66, 133, 244, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.92) 0%, rgba(234, 88, 12, 0.92) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -736,110 +742,71 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   .view-case-btn {
     color: white;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.9375rem;
     text-align: center;
   }
 
   /* Industry Badges */
   .industry-badge {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    top: 14px;
+    right: 14px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: white;
     z-index: 2;
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-  }
-
-  .beauty-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-  }
-
-  .fitness-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-  }
-
-  .automotive-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-  }
-
-  .ecommerce-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-  }
-
-  .consulting-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-  }
-
-  .local-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-  }
-
-  .sports-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
-  }
-
-  .bridal-badge {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    color: white;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   /* Card Content */
   .card-content {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    gap: 12px;
+    margin-bottom: 0.75rem;
   }
 
   .card-title {
-    font-size: 1.4rem;
+    font-size: 1.125rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: #0f172a;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.35;
   }
 
   .growth-indicator {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
     color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 0.8125rem;
+    font-weight: 700;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .card-description {
-    color: #6c757d;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    font-size: 0.9375rem;
   }
 
   .metrics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+    padding: 14px;
     background: #f8fafc;
     border-radius: 12px;
   }
@@ -850,47 +817,46 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
   .metric-value {
     display: block;
-    font-size: 1.3rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #f97316;
     line-height: 1.2;
   }
 
   .metric-label {
-    font-size: 0.8rem;
-    color: #6c757d;
+    font-size: 0.6875rem;
+    color: #64748b;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
   }
 
   .modern-cta-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 8px;
     width: 100%;
-    padding: 0.875rem 1.5rem;
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     color: white;
     text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     border: none;
     cursor: pointer;
   }
 
   .modern-cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 95, 56, 0.4);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
   }
 
   .cta-arrow {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     transition: transform 0.3s ease;
   }
 
@@ -898,51 +864,34 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     transform: translateX(4px);
   }
 
-  /* Legacy card styles for remaining old cards */
-  .case-study-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-  }
-
-  .case-study-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
-
   /* Responsive Design */
   @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2.5rem;
-    }
-
-    .hero-stats {
-      flex-direction: column;
-      gap: 1.5rem;
+    .case-studies-section {
+      padding: 3.5rem 0;
     }
 
     .section-title {
-      font-size: 2rem;
-    }
-
-    .filter-buttons {
-      justify-content: center;
+      font-size: 1.5rem;
     }
 
     .case-studies-grid {
       grid-template-columns: 1fr;
+      gap: 20px;
     }
 
     .metrics-grid {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 12px;
+    }
+
+    .metric-value {
+      font-size: 1rem;
     }
 
     .card-header {
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 8px;
     }
 
     .growth-indicator {
@@ -950,26 +899,33 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     }
 
     .card-content {
-      padding: 1.5rem;
+      padding: 1.25rem;
+    }
+
+    .filter-container {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
     }
   }
 
   @media (max-width: 480px) {
-    .hero-title {
-      font-size: 2rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
+    .case-studies-section {
+      padding: 3rem 0;
     }
 
     .modern-filter-btn {
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
+      padding: 8px 14px;
+      font-size: 0.8125rem;
     }
 
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1.0625rem;
+    }
+
+    .card-image-container {
+      height: 180px;
     }
   }
 </style>

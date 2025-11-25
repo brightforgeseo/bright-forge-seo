@@ -8,50 +8,48 @@ interface Props {
 const { href, text, icon = "fas fa-arrow-right" } = Astro.props;
 ---
 
-<a href={href} class="cta-button primary">
+<a href={href} class="btn-primary-modern">
   <span>{text}</span>
   <i class={icon}></i>
 </a>
 
 <style>
-  .cta-button {
+  .btn-primary-modern {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
+    gap: 10px;
+    padding: 14px 28px;
+    background: white;
+    color: #f97316;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 15px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border: none;
   }
 
-  .cta-button.primary {
-    background: white;
-    color: #f97316;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .cta-button.primary:hover {
+  .btn-primary-modern:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-    background: #f8f9fa;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   }
 
-  .cta-button i {
-    transition: transform 0.3s ease;
+  .btn-primary-modern i {
+    font-size: 14px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .cta-button:hover i {
+  .btn-primary-modern:hover i {
     transform: translateX(4px);
   }
 
-  /* Responsive */
   @media (max-width: 480px) {
-    .cta-button {
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9rem;
+    .btn-primary-modern {
+      padding: 12px 22px;
+      font-size: 14px;
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>
