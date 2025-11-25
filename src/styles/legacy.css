@@ -90,13 +90,19 @@ body {
 
 /* Modern Navigation - Clean & Minimal */
 .navbar-professional {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+@media (min-width: 769px) {
+  .navbar-professional {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.95);
+  }
 }
 
 .nav-container {

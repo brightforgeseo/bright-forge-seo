@@ -99,7 +99,11 @@ const {
             src={imageSrc}
             alt={imageAlt}
             class="hero-image"
+            width="480"
+            height="480"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
           <!-- Floating elements -->
           <div class="floating-card floating-card-1">
@@ -384,8 +388,8 @@ const {
   }
 
   .hero-image {
-    width: 100%;
-    height: auto;
+    width: 480px;
+    height: 480px;
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
@@ -540,6 +544,53 @@ const {
 
     .stat-label {
       font-size: 0.7rem;
+    }
+  }
+
+  /* Mobile performance: Disable animations */
+  @media (max-width: 768px) {
+    .bg-gradient {
+      animation: none;
+      background-position: 0% 50%;
+    }
+
+    .bg-glow-1,
+    .bg-glow-2 {
+      animation: none;
+    }
+
+    .badge-dot {
+      animation: none;
+    }
+
+    .floating-card {
+      animation: none;
+    }
+
+    /* Reduce blur for better performance */
+    .hero-badge {
+      backdrop-filter: none;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-hero-secondary {
+      backdrop-filter: none;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .image-glow {
+      display: none;
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .bg-gradient,
+    .bg-glow-1,
+    .bg-glow-2,
+    .badge-dot,
+    .floating-card {
+      animation: none;
     }
   }
 </style>

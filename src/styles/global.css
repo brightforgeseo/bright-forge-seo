@@ -121,28 +121,13 @@ section:not(:first-of-type) {
   box-sizing: border-box;
 }
 
-img,
-video,
-iframe {
-  will-change: auto;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
 /* Mobile Performance Optimizations */
 @media (max-width: 768px) {
   * {
     -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-  }
-
-  * {
-    will-change: auto !important;
   }
 
   body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
   }
 
@@ -154,7 +139,6 @@ iframe {
   img {
     max-width: 100%;
     height: auto;
-    image-rendering: auto;
   }
 
   button, a, input, select, textarea {
@@ -164,6 +148,12 @@ iframe {
 
   section {
     contain: layout style paint;
+  }
+
+  /* Disable transitions for better mobile performance */
+  .btn-modern,
+  .card-modern {
+    transition: none;
   }
 }
 
