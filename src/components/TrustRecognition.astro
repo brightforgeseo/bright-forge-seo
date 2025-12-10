@@ -106,7 +106,7 @@ const awards = [
       <!-- Awards Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {awards.map((award) => (
-          <div class="text-center award-card group cursor-pointer">
+          <a href="https://clutch.co/profile/bright-forge" target="_blank" rel="noopener noreferrer" class="text-center award-card group cursor-pointer block no-underline">
             <div class="bg-white rounded-2xl p-8 mb-4 transition-all duration-300 hover:shadow-xl relative overflow-hidden w-[200px] h-[200px] flex items-center justify-center mx-auto">
               {/* Glow effect background */}
               <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
@@ -125,7 +125,7 @@ const awards = [
             <p class="text-orange-500 font-medium text-sm">
               {award.subtitle}
             </p>
-          </div>
+          </a>
         ))}
       </div>
     </div>

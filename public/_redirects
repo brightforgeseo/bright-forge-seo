@@ -18,6 +18,12 @@ http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
 /facebook-og-generator  /404.html  410
 /facebook-og-generator/  /404.html  410
 
+# AI Search Optimization redirects - GEO and AEO pages merged
+/generative-engine-optimization-services-philippines  /ai-search-optimization-services-philippines/  301
+/generative-engine-optimization-services-philippines/  /ai-search-optimization-services-philippines/  301
+/answer-engine-optimization-services-philippines  /ai-search-optimization-services-philippines/  301
+/answer-engine-optimization-services-philippines/  /ai-search-optimization-services-philippines/  301
+
 # Development Services redirects - old Astro page to new structure
 /astro-seo-website-development  /development/astro/  301
 /astro-seo-website-development/  /development/astro/  301
