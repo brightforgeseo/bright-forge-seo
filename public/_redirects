@@ -3,11 +3,10 @@
 # Order matters: most specific first, then general patterns
 
 # Redirect old domain to new domain (with subpath support)
-# TEMPORARILY DISABLED until brightforge.com.ph SSL is provisioned
-# https://brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
-# https://www.brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
-# http://brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
-# http://www.brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+https://brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+https://www.brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+http://brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+http://www.brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
 
 # Force non-www for HTTPS (this catches the automatic HTTPS redirect)
 https://www.brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
