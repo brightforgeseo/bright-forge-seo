@@ -52,8 +52,8 @@ const {
   author,
   organization = {
     name: 'Bright Forge SEO',
-    url: 'https://brightforgeseo.com',
-    logo: 'https://brightforgeseo.com/images/logo.png',
+    url: 'https://brightforge.com.ph',
+    logo: 'https://brightforge.com.ph/images/logo.png',
     sameAs: [
       'https://www.facebook.com/brightforgeseo',
       'https://twitter.com/brightforgeseo',
@@ -92,10 +92,10 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Bright Forge SEO",
-  "url": "https://brightforgeseo.com",
+  "url": "https://brightforge.com.ph",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://brightforgeseo.com/search?q={search_term_string}",
+    "target": "https://brightforge.com.ph/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -114,7 +114,7 @@ const organizationSchema = {
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://brightforgeseo.com/#localbusiness",
+  "@id": "https://brightforge.com.ph/#localbusiness",
   "name": "Bright Forge SEO",
   "description": description,
   "url": organization.url,
@@ -328,7 +328,7 @@ if (resolvedType === 'article' || resolvedType === 'blog') {
     "@type": "Article",
     "headline": title,
     "description": description,
-    "image": image.startsWith('http') ? image : `https://brightforgeseo.com${image}`,
+    "image": image.startsWith('http') ? image : `https://brightforge.com.ph${image}`,
     "author": author ? {
       "@type": "Person",
       "name": author.name,
@@ -377,7 +377,7 @@ if (resolvedType === 'article' || resolvedType === 'blog') {
         "@type": "ContactPoint",
         "telephone": "+63-969-620-6182",
         "contactType": "customer service",
-        "email": "seo@brightforgeseo.com"
+        "email": "seo@brightforge.com.ph"
       }
     },
     "serviceType": title,
@@ -445,7 +445,7 @@ if (resolvedType === 'article' || resolvedType === 'blog') {
     "isPartOf": {
       "@type": "WebSite",
       "name": "Bright Forge SEO",
-      "url": "https://brightforgeseo.com"
+      "url": "https://brightforge.com.ph"
     },
     "publisher": {
       "@type": "Organization",
@@ -468,7 +468,7 @@ if (breadcrumbs && breadcrumbs.length > 0) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.url.startsWith('http') ? item.url : `https://brightforgeseo.com${item.url}`
+      "item": item.url.startsWith('http') ? item.url : `https://brightforge.com.ph${item.url}`
     }))
   };
 }
@@ -479,10 +479,10 @@ const localBusinessSchema = {
   "@type": ["LocalBusiness", "SEOAgency", "DigitalMarketingAgency"],
   "name": "Bright Forge SEO",
   "alternateName": "Bright Forge SEO Philippines",
-  "image": "https://brightforgeseo.com/images/logo-bright-forge.png",
-  "url": "https://brightforgeseo.com",
+  "image": "https://brightforge.com.ph/images/logo-bright-forge.png",
+  "url": "https://brightforge.com.ph",
   "telephone": "+63-969-620-6182",
-  "email": "seo@brightforgeseo.com",
+  "email": "seo@brightforge.com.ph",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Kathleen Place 4, Block 16, Lot 37, Armani Street",
@@ -595,7 +595,7 @@ const faqSchema = {
 <meta property="og:url" content={canonical} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="https://brightforgeseo.com/images/og-hero-wife-letterbox-v1.jpg?v=4" />
+<meta property="og:image" content="https://brightforge.com.ph/images/og-hero-wife-letterbox-v1.jpg?v=4" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:type" content="image/jpeg" />
@@ -613,7 +613,7 @@ const faqSchema = {
 <meta name="twitter:url" content={canonical} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content="https://brightforgeseo.com/images/og-hero-wife-letterbox-v1.jpg?v=4" />
+<meta name="twitter:image" content="https://brightforge.com.ph/images/og-hero-wife-letterbox-v1.jpg?v=4" />
 
 <!-- Main Page Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />

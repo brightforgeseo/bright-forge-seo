@@ -62,18 +62,18 @@ const caseStudySchema = {
   "@type": "Article",
   "headline": title,
   "description": challenge,
-  "image": heroImage ? (heroImage.startsWith('http') ? heroImage : `https://brightforgeseo.com${heroImage}`) : undefined,
+  "image": heroImage ? (heroImage.startsWith('http') ? heroImage : `https://brightforge.com.ph${heroImage}`) : undefined,
   "author": {
     "@type": "Organization",
     "name": "Bright Forge SEO",
-    "url": "https://brightforgeseo.com"
+    "url": "https://brightforge.com.ph"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Bright Forge SEO",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://brightforgeseo.com/images/logo.png"
+      "url": "https://brightforge.com.ph/images/logo.png"
     }
   },
   "datePublished": publishDate,
@@ -94,7 +94,7 @@ const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Bright Forge SEO",
-    "url": "https://brightforgeseo.com"
+    "url": "https://brightforge.com.ph"
   },
   "description": solution,
   "name": `SEO Services for ${industry}`,
@@ -122,13 +122,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://brightforgeseo.com/"
+      "item": "https://brightforge.com.ph/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Case Studies",
-      "item": "https://brightforgeseo.com/case-studies"
+      "item": "https://brightforge.com.ph/case-studies"
     },
     {
       "@type": "ListItem",

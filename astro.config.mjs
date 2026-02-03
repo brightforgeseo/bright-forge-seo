@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://brightforgeseo.com',
+  site: 'https://brightforge.com.ph',
   integrations: [
     tailwind()
   ],
@@ -165,7 +165,7 @@ export default defineConfig({
       entrypoint: 'astro/assets/services/sharp'
     },
     // Optimize images
-    domains: ['brightforgeseo.com'],
+    domains: ['brightforge.com.ph'],
     formats: ['webp', 'avif']
   }
 });

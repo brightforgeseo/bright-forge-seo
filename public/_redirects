@@ -2,12 +2,18 @@
 # Handle all possible domain variations to force single canonical domain
 # Order matters: most specific first, then general patterns
 
+# Redirect old domain to new domain (with subpath support)
+https://brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+https://www.brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+http://brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+http://www.brightforgeseo.com/*  https://brightforge.com.ph/:splat  301!
+
 # Force non-www for HTTPS (this catches the automatic HTTPS redirect)
-https://www.brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
+https://www.brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
 
 # Force HTTPS and non-www for HTTP variants
-http://www.brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
-http://brightforgeseo.com/*  https://brightforgeseo.com/:splat  301!
+http://www.brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
+http://brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
 
 # Other specific redirects
 /force-facebook-refresh.html / 301
