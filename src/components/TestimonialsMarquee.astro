@@ -1,5 +1,5 @@
 ---
-// Testimonials grid following dark design with featured center card
+// Testimonials - paginated 4-card grid (1 top + 3 below), click arrows for next set
 const starPath = "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z";
 
 const googleBadgePaths = [
@@ -11,21 +11,20 @@ const googleBadgePaths = [
 
 const testimonials = [
   {
+    quote: "Bright Forge SEO has been an absolute game changer for my business. From day one, their team was incredibly responsive and professional. We've seen consistent, meaningful growth in our rankings and organic traffic. This is a team that genuinely cares about the results they deliver.",
+    name: "Marie Angela Benida",
+    meta: "Business Owner",
+    initial: "M",
+    avatarClass: "av-m",
+    reviewLink: "https://www.google.com/maps/contrib/113067213630516295340/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s113067213630516295340!3m1!1e1?hl=en&entry=ttu"
+  },
+  {
     quote: "I am very happy with the results from BrightForge! My site gets more visitors and my business is growing. They explain things clearly and make the process easy. Great service all around.",
     name: "RJ Go",
     meta: "Local Guide · 34 reviews",
     initial: "R",
     avatarClass: "av-r",
     reviewLink: "https://www.google.com/maps/contrib/110455532132624140129/reviews?hl=en"
-  },
-  {
-    quote: "Bright Forge SEO has been an absolute game changer for my business. From day one, their team was incredibly responsive and professional. We've seen consistent, meaningful growth in our rankings and organic traffic. This is a team that genuinely cares about the results they deliver.",
-    name: "Marie Angela Benida",
-    meta: "Business Owner",
-    initial: "M",
-    avatarClass: "av-m",
-    featured: true,
-    reviewLink: "https://www.google.com/maps/contrib/113067213630516295340/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s113067213630516295340!3m1!1e1?hl=en&entry=ttu"
   },
   {
     quote: "We've been working with Bright Forge SEO for about three years now and they've been great. Really solid all-round SEO.",
@@ -50,15 +49,70 @@ const testimonials = [
     initial: "J",
     avatarClass: "av-j",
     reviewLink: "https://www.google.com/maps/contrib/110379106836716004255/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@34.2324049,59.1758012,3z/data=!4m6!1m5!8m4!1e1!2s110379106836716004255!3m1!1e1?hl=en&entry=ttu"
+  },
+  {
+    quote: "Bright Forge SEO is a solid investment if you want your business to stand out online. They were transparent throughout the entire process.",
+    name: "Khedive Adana",
+    meta: "Business Owner",
+    initial: "K",
+    avatarClass: "av-k",
+    reviewLink: "https://www.google.com/maps/contrib/104137701022042890317/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s104137701022042890317!3m1!1e1?hl=en&entry=ttu"
+  },
+  {
+    quote: "Working with BrightForgeSEO has been a fantastic experience. Their expertise truly shines through in every aspect of their work.",
+    name: "Gerry Wagner",
+    meta: "Local Guide · 8 reviews",
+    initial: "G",
+    avatarClass: "av-g",
+    reviewLink: "https://www.google.com/maps/contrib/110496565472620550231/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@-11.618867,130.440608,4z/data=!4m6!1m5!8m4!1e1!2s110496565472620550231!3m1!1e1?hl=en&entry=ttu"
+  },
+  {
+    quote: "We've been working with Ben and Bright Forge SEO for over 18 months, with the primary focus being our SEO needs. They deliver excellent results.",
+    name: "UK Auction List",
+    meta: "Property Auctions Platform",
+    initial: "U",
+    avatarClass: "av-u",
+    reviewLink: "https://www.google.com/maps/contrib/113689117491192336436/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@32.9703675,60.2359234,3z/data=!4m6!1m5!8m4!1e1!2s113689117491192336436!3m1!1e1?hl=en&entry=ttu"
+  },
+  {
+    quote: "Bright Forge SEO Services has been a game-changer for our online presence. Their team is knowledgeable, professional, and delivers results.",
+    name: "Aly Dons",
+    meta: "Business Owner",
+    initial: "A",
+    avatarClass: "av-a",
+    reviewLink: "https://www.google.com/maps/contrib/106013872966969466264/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s106013872966969466264!3m1!1e1?hl=en&entry=ttu"
+  },
+  {
+    quote: "We've been working with BrightforgeSEO for a while now and honestly, they've been fantastic. They really know their stuff.",
+    name: "Dee Tan",
+    meta: "Local Guide · 8 reviews",
+    initial: "D",
+    avatarClass: "av-d",
+    reviewLink: "https://www.google.com/maps/contrib/101734909762210360877/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@10.3899549,123.3333589,6z/data=!4m6!1m5!8m4!1e1!2s101734909762210360877!3m1!1e1?hl=en&entry=ttu"
+  },
+  {
+    quote: "Working with Bright Forge SEO has been a fantastic experience. Their team is professional, transparent and genuinely invested in our success.",
+    name: "Simon Kingsnorth",
+    meta: "Business Owner",
+    initial: "S",
+    avatarClass: "av-s",
+    reviewLink: "#"
+  },
+  {
+    quote: "Working with Bright Forge SEO has been a huge benefit for TeamStats. They understand our needs and deliver consistently.",
+    name: "Tom Stanbury",
+    meta: "Business Owner",
+    initial: "T",
+    avatarClass: "av-t",
+    reviewLink: "https://www.google.com/maps/contrib/116331598386131030776/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@33.1283139,60.4938897,3z/data=!4m6!1m5!8m4!1e1!2s116331598386131030776!3m1!1e1?hl=en&entry=ttu"
   }
 ];
 
-// Split: col1 = [0], col2 = [1] (featured), col3 = [2], row2: [3], [4]
-const col1Row1 = testimonials[0];
-const featured = testimonials[1];
-const col3Row1 = testimonials[2];
-const col1Row2 = testimonials[3];
-const col3Row2 = testimonials[4];
+// Chunk into pages of 4: first card = featured (top), next 3 = grid row
+const pages: typeof testimonials[] = [];
+for (let i = 0; i < testimonials.length; i += 4) {
+  pages.push(testimonials.slice(i, i + 4));
+}
 ---
 
 <section class="testimonials-section">
@@ -70,135 +124,92 @@ const col3Row2 = testimonials[4];
         <div class="tm-eyebrow">Client testimonials</div>
         <h2 class="tm-title">What our clients<br><span>say about us</span></h2>
       </div>
-      <div class="tm-rating-badge">
-        <div class="tm-stars">
-          {[...Array(5)].map(() => (
-            <svg class="tm-star" viewBox="0 0 20 20" fill="currentColor"><path d={starPath}/></svg>
-          ))}
+      <div class="tm-header-right">
+        <div class="tm-rating-badge">
+          <div class="tm-stars">
+            {[...Array(5)].map(() => (
+              <svg class="tm-star" viewBox="0 0 20 20" fill="currentColor"><path d={starPath}/></svg>
+            ))}
+          </div>
+          <span class="tm-rating-text"><strong>5.0</strong> on Google</span>
         </div>
-        <span class="tm-rating-text"><strong>5.0</strong> on Google</span>
+        <div class="tm-slider-nav">
+          <button class="tm-slider-btn tm-prev" aria-label="Previous reviews">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="tm-slider-btn tm-next" aria-label="Next reviews">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- Grid -->
-    <div class="tm-grid">
+    <!-- Pages -->
+    <div class="tm-pages">
+      {pages.map((group, pageIdx) => (
+        <div class={`tm-page ${pageIdx === 0 ? 'active' : ''}`} data-page={pageIdx}>
+          <!-- Top featured card -->
+          <a href={group[0].reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card tm-featured">
+            <div>
+              <div class="tm-card-stars">
+                {[...Array(5)].map(() => (
+                  <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
+                ))}
+              </div>
+              <div class="tm-quote-mark">&ldquo;</div>
+              <p class="tm-review-text tm-featured-text">{group[0].quote}</p>
+            </div>
+            <div class="tm-author">
+              <div class={`tm-avatar ${group[0].avatarClass}`}>{group[0].initial}</div>
+              <div class="tm-author-info">
+                <div class="tm-author-name">{group[0].name}</div>
+                <div class="tm-author-meta">{group[0].meta}</div>
+              </div>
+              <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
+                {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
+              </svg>
+            </div>
+          </a>
 
-      <!-- Card 1 (col1, row1) -->
-      <a href={col1Row1.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.05s">
-        <div>
-          <div class="tm-card-stars">
-            {[...Array(5)].map(() => (
-              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
-            ))}
-          </div>
-          <div class="tm-quote-mark">&ldquo;</div>
-          <p class="tm-review-text">{col1Row1.quote}</p>
+          <!-- Bottom 3-card grid -->
+          {group.length > 1 && (
+            <div class="tm-grid">
+              {group.slice(1).map((t) => (
+                <a href={t.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card">
+                  <div>
+                    <div class="tm-card-stars">
+                      {[...Array(5)].map(() => (
+                        <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
+                      ))}
+                    </div>
+                    <div class="tm-quote-mark">&ldquo;</div>
+                    <p class="tm-review-text">{t.quote}</p>
+                  </div>
+                  <div class="tm-author">
+                    <div class={`tm-avatar ${t.avatarClass}`}>{t.initial}</div>
+                    <div class="tm-author-info">
+                      <div class="tm-author-name">{t.name}</div>
+                      <div class="tm-author-meta">{t.meta}</div>
+                    </div>
+                    <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
+                      {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
+                    </svg>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-        <div class="tm-author">
-          <div class={`tm-avatar ${col1Row1.avatarClass}`}>{col1Row1.initial}</div>
-          <div class="tm-author-info">
-            <div class="tm-author-name">{col1Row1.name}</div>
-            <div class="tm-author-meta">{col1Row1.meta}</div>
-          </div>
-          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
-            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
-          </svg>
-        </div>
-      </a>
-
-      <!-- Featured Card (col2, spans 2 rows) -->
-      <a href={featured.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card tm-featured" style="--delay: 0.15s">
-        <div>
-          <div class="tm-card-stars">
-            {[...Array(5)].map(() => (
-              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
-            ))}
-          </div>
-          <div class="tm-quote-mark">&ldquo;</div>
-          <p class="tm-review-text tm-featured-text">{featured.quote}</p>
-        </div>
-        <div class="tm-author">
-          <div class={`tm-avatar ${featured.avatarClass}`}>{featured.initial}</div>
-          <div class="tm-author-info">
-            <div class="tm-author-name">{featured.name}</div>
-            <div class="tm-author-meta">{featured.meta}</div>
-          </div>
-          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
-            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
-          </svg>
-        </div>
-      </a>
-
-      <!-- Card 3 (col3, row1) -->
-      <a href={col3Row1.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.25s">
-        <div>
-          <div class="tm-card-stars">
-            {[...Array(5)].map(() => (
-              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
-            ))}
-          </div>
-          <div class="tm-quote-mark">&ldquo;</div>
-          <p class="tm-review-text">{col3Row1.quote}</p>
-        </div>
-        <div class="tm-author">
-          <div class={`tm-avatar ${col3Row1.avatarClass}`}>{col3Row1.initial}</div>
-          <div class="tm-author-info">
-            <div class="tm-author-name">{col3Row1.name}</div>
-            <div class="tm-author-meta">{col3Row1.meta}</div>
-          </div>
-          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
-            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
-          </svg>
-        </div>
-      </a>
-
-      <!-- Card 4 (col1, row2) -->
-      <a href={col1Row2.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.35s">
-        <div>
-          <div class="tm-card-stars">
-            {[...Array(5)].map(() => (
-              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
-            ))}
-          </div>
-          <div class="tm-quote-mark">&ldquo;</div>
-          <p class="tm-review-text">{col1Row2.quote}</p>
-        </div>
-        <div class="tm-author">
-          <div class={`tm-avatar ${col1Row2.avatarClass}`}>{col1Row2.initial}</div>
-          <div class="tm-author-info">
-            <div class="tm-author-name">{col1Row2.name}</div>
-            <div class="tm-author-meta">{col1Row2.meta}</div>
-          </div>
-          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
-            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
-          </svg>
-        </div>
-      </a>
-
-      <!-- Card 5 (col3, row2) -->
-      <a href={col3Row2.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.45s">
-        <div>
-          <div class="tm-card-stars">
-            {[...Array(5)].map(() => (
-              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
-            ))}
-          </div>
-          <div class="tm-quote-mark">&ldquo;</div>
-          <p class="tm-review-text">{col3Row2.quote}</p>
-        </div>
-        <div class="tm-author">
-          <div class={`tm-avatar ${col3Row2.avatarClass}`}>{col3Row2.initial}</div>
-          <div class="tm-author-info">
-            <div class="tm-author-name">{col3Row2.name}</div>
-            <div class="tm-author-meta">{col3Row2.meta}</div>
-          </div>
-          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
-            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
-          </svg>
-        </div>
-      </a>
-
+      ))}
     </div>
+
+    <!-- Dots -->
+    <div class="tm-dots">
+      {pages.map((_, i) => (
+        <button class={`tm-dot ${i === 0 ? 'active' : ''}`} data-dot={i} aria-label={`Page ${i + 1}`}></button>
+      ))}
+    </div>
+
   </div>
 </section>
 
@@ -239,6 +250,12 @@ const col3Row2 = testimonials[4];
     justify-content: space-between;
     gap: 24px;
     flex-wrap: wrap;
+  }
+
+  .tm-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
   }
 
   .tm-eyebrow {
@@ -307,11 +324,60 @@ const col3Row2 = testimonials[4];
     color: #ffffff;
   }
 
+  /* Nav arrows */
+  .tm-slider-nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  .tm-slider-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #131627;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #e0e3ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .tm-slider-btn:hover {
+    background: #1a1e32;
+    border-color: rgba(240,98,42,0.4);
+    color: #f0622a;
+  }
+
+  .tm-slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  /* Pages */
+  .tm-pages {
+    position: relative;
+  }
+
+  .tm-page {
+    display: none;
+    animation: tmPageIn 0.45s cubic-bezier(0.23,1,0.32,1) forwards;
+  }
+
+  .tm-page.active {
+    display: block;
+  }
+
+  @keyframes tmPageIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   /* Grid */
   .tm-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
     gap: 16px;
   }
 
@@ -328,17 +394,9 @@ const col3Row2 = testimonials[4];
     position: relative;
     overflow: hidden;
     transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), border-color 0.25s ease, box-shadow 0.35s ease;
-    opacity: 0;
-    transform: translateY(24px);
-    animation: tmFadeUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
-    animation-delay: var(--delay, 0s);
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-  }
-
-  @keyframes tmFadeUp {
-    to { opacity: 1; transform: translateY(0); }
   }
 
   .tm-card:hover {
@@ -351,8 +409,7 @@ const col3Row2 = testimonials[4];
   .tm-featured {
     background: linear-gradient(145deg, #1f1530 0%, #1a1632 60%, #151228 100%);
     border-color: rgba(240,98,42,0.25);
-    grid-column: 2;
-    grid-row: 1 / span 2;
+    margin-bottom: 16px;
   }
 
   .tm-featured::before {
@@ -449,6 +506,12 @@ const col3Row2 = testimonials[4];
   .av-l { background: linear-gradient(135deg, #10b981, #34d399); }
   .av-m { background: linear-gradient(135deg, #8b5cf6, #c084fc); }
   .av-k { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
+  .av-g { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+  .av-u { background: linear-gradient(135deg, #14b8a6, #5eead4); }
+  .av-d { background: linear-gradient(135deg, #ec4899, #f472b6); }
+  .av-a { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+  .av-s { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+  .av-t { background: linear-gradient(135deg, #22c55e, #4ade80); }
 
   .tm-author-name {
     font-family: 'Outfit', sans-serif;
@@ -474,14 +537,35 @@ const col3Row2 = testimonials[4];
     opacity: 0.6;
   }
 
+  /* Dots */
+  .tm-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .tm-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tm-dot.active {
+    background: #f0622a;
+    width: 24px;
+    border-radius: 4px;
+  }
+
   /* Responsive */
   @media (max-width: 900px) {
     .tm-grid {
       grid-template-columns: 1fr 1fr;
-    }
-    .tm-featured {
-      grid-column: 1 / span 2;
-      grid-row: auto;
     }
   }
 
@@ -492,15 +576,64 @@ const col3Row2 = testimonials[4];
     .tm-grid {
       grid-template-columns: 1fr;
     }
-    .tm-featured {
-      grid-column: 1;
-    }
     .tm-header {
       flex-direction: column;
       align-items: flex-start;
+    }
+    .tm-header-right {
+      width: 100%;
+      justify-content: space-between;
     }
     .tm-card {
       padding: 28px 24px 22px;
     }
   }
 </style>
+
+<script is:inline>
+(function() {
+  var allPages = document.querySelectorAll('.tm-page');
+  var prevBtn = document.querySelector('.tm-prev');
+  var nextBtn = document.querySelector('.tm-next');
+  var dots = document.querySelectorAll('.tm-dot');
+  if (!allPages.length) return;
+
+  var current = 0;
+  var total = allPages.length;
+
+  function show(idx) {
+    current = idx;
+    allPages.forEach(function(p, i) {
+      if (i === current) {
+        p.classList.add('active');
+        p.style.animation = 'none';
+        p.offsetHeight;
+        p.style.animation = '';
+      } else {
+        p.classList.remove('active');
+      }
+    });
+    dots.forEach(function(d, i) {
+      d.className = 'tm-dot' + (i === current ? ' active' : '');
+    });
+    prevBtn.disabled = current <= 0;
+    nextBtn.disabled = current >= total - 1;
+  }
+
+  prevBtn.addEventListener('click', function() {
+    if (current > 0) show(current - 1);
+  });
+
+  nextBtn.addEventListener('click', function() {
+    if (current < total - 1) show(current + 1);
+  });
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      show(parseInt(this.dataset.dot));
+    });
+  });
+
+  show(0);
+})();
+</script>
