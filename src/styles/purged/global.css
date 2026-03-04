@@ -4,7 +4,7 @@
 
 /* Custom styles that might be needed beyond Tailwind */
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: theme('colors.brand-dark');
 }

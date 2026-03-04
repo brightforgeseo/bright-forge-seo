@@ -20,7 +20,7 @@
   }
 
   body {
-    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: #e8eaf2;
     letter-spacing: -0.011em;
@@ -28,7 +28,7 @@
 
   /* Modern typography scale */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Outfit', sans-serif;
     letter-spacing: -0.02em;
     font-weight: 800;
     line-height: 1.15;
