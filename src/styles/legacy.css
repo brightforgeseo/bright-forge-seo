@@ -25,10 +25,10 @@ body {
 
 /* Modern Top Bar - Minimal & Clean */
 .top-bar-professional {
-  background: #ffffff;
+  background: #0d0f1a;
   padding: 8px 0;
   font-size: 13px;
-  color: #1e293b;
+  color: white;
 }
 
 .top-bar-container {
@@ -46,7 +46,7 @@ body {
 }
 
 .contact-link {
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -58,13 +58,13 @@ body {
 }
 
 .contact-link:hover {
-  color: #f0622a;
+  color: white;
 }
 
 .contact-link i {
   font-size: 12px;
   width: 14px;
-  color: #f0622a;
+  opacity: 0.7;
 }
 
 .social-links-professional {
@@ -73,7 +73,7 @@ body {
 }
 
 .social-link {
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   width: 32px;
   height: 32px;
@@ -81,7 +81,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   transition: all 0.2s ease;
   font-size: 13px;
 }
@@ -120,7 +120,7 @@ body {
 }
 
 .nav-logo img {
-  max-height: 60px;
+  max-height: 100px;
   width: auto;
 }
 
