@@ -1,0 +1,311 @@
+---
+// ContactPopup.astro — Timed popup form for SEO lead capture
+---
+
+<div id="contact-popup-overlay" class="popup-overlay" aria-hidden="true">
+  <div class="popup-card" role="dialog" aria-label="Contact us for SEO services">
+    <button type="button" class="popup-close" id="popup-close" aria-label="Close popup">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="popup-header">
+      <div class="popup-badge">
+        <span class="badge-dot"></span>
+        <span>Free Consultation</span>
+      </div>
+      <h2>Get Your Free SEO Consultation</h2>
+      <p>Tell us about your business and we'll show you how to dominate search results.</p>
+    </div>
+
+    <form name="popup-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/">
+      <input type="hidden" name="form-name" value="popup-contact" />
+      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email Address" required autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="Phone Number (optional)" autocomplete="tel" />
+      </div>
+
+      <div class="form-group">
+        <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
+      </div>
+
+      <button type="submit" class="popup-submit">
+        <span>Get Free Consultation</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function() {
+  const POPUP_DELAY = 15000;
+  const COOLDOWN_DAYS = 7;
+  const STORAGE_KEY = 'popupShown';
+
+  function shouldShow() {
+    try {
+      const last = localStorage.getItem(STORAGE_KEY);
+      if (!last) return true;
+      const elapsed = Date.now() - parseInt(last, 10);
+      return elapsed > COOLDOWN_DAYS * 24 * 60 * 60 * 1000;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  function showPopup() {
+    const overlay = document.getElementById('contact-popup-overlay');
+    if (!overlay) return;
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    try { localStorage.setItem(STORAGE_KEY, Date.now().toString()); } catch (e) {}
+  }
+
+  function closePopup() {
+    const overlay = document.getElementById('contact-popup-overlay');
+    if (!overlay) return;
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (shouldShow()) {
+    setTimeout(showPopup, POPUP_DELAY);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var closeBtn = document.getElementById('popup-close');
+    var overlay = document.getElementById('contact-popup-overlay');
+
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+
+    if (overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closePopup();
+      });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closePopup();
+    });
+  });
+})();
+</script>
+
+<style>
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .popup-card {
+    background: #131627;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .popup-overlay.active .popup-card {
+    transform: translateY(0);
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .popup-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .popup-header {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .popup-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(240, 98, 42, 0.12);
+    border: 1px solid rgba(240, 98, 42, 0.25);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .popup-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.625rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .popup-header p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+  }
+
+  .hidden-field {
+    display: none;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: #0d0f1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #f0622a;
+    box-shadow: 0 0 0 3px rgba(240, 98, 42, 0.15);
+    background: #131627;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .popup-submit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: #f0622a;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(240, 98, 42, 0.3);
+    margin-top: 4px;
+  }
+
+  .popup-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(240, 98, 42, 0.4);
+    background: #d4510e;
+  }
+
+  .popup-submit svg {
+    transition: transform 0.3s ease;
+  }
+
+  .popup-submit:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 560px) {
+    .popup-card {
+      padding: 28px 20px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .popup-header h2 {
+      font-size: 1.375rem;
+    }
+  }
+</style>
