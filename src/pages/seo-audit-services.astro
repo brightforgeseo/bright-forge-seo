@@ -587,14 +587,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   CSS Variables & Reset
 *********************/
 :root {
-  --brand-accent: #f97316;
-  --brand-blue: #f97316;
-  --brand-dark: #1E2022;
-  --brand-soft: #52575D;
-  --brand-light: #F8F9FA;
-  --gradient-primary: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
-  --gradient-secondary: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
-  --gradient-accent: linear-gradient(135deg, #f97316 0%, #FF6B35 100%);
+  --brand-accent: #f0622a;
+  --brand-blue: #f0622a;
+  --brand-dark: #e8eaf2;
+  --brand-soft: #7a7f99;
+  --brand-light: #0d0f1a;
+  --gradient-primary: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
+  --gradient-secondary: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
+  --gradient-accent: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
@@ -713,7 +713,7 @@ section {
   Why Audit Section
 *********************/
 .why-audit-section {
-  background: white;
+  background: #131627;
 }
 
 .features-grid {
@@ -723,7 +723,7 @@ section {
 }
 
 .feature-card {
-  background: white;
+  background: #131627;
   border-radius: 16px;
   padding: 2.5rem;
   text-align: center;
@@ -828,11 +828,11 @@ section {
 }
 
 .audit-tool-card {
-  background: white;
+  background: #131627;
   border-radius: 20px;
   padding: 3rem 2.5rem;
   box-shadow: var(--shadow-medium);
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.07);
   position: relative;
   overflow: hidden;
 }
@@ -850,7 +850,7 @@ section {
 .audit-tool-icon {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -858,7 +858,7 @@ section {
   margin: 0 auto 2rem;
   color: white;
   font-size: 2.5rem;
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 10px 30px rgba(240, 98, 42, 0.3);
 }
 
 .audit-form {
@@ -881,16 +881,16 @@ section {
 .input-wrapper {
   display: flex;
   gap: 0.5rem;
-  background: #f8f9fa;
-  border: 2px solid #e5e7eb;
+  background: #0d0f1a;
+  border: 2px solid rgba(255,255,255,0.07);
   border-radius: 12px;
   padding: 0.5rem;
   transition: all 0.3s ease;
 }
 
 .input-wrapper:focus-within {
-  border-color: #f97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  border-color: #f0622a;
+  box-shadow: 0 0 0 3px rgba(240, 98, 42, 0.1);
 }
 
 .audit-input {
@@ -911,7 +911,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   color: white;
   padding: 0.875rem 2rem;
   border: none;
@@ -925,7 +925,7 @@ section {
 
 .audit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 10px 25px rgba(240, 98, 42, 0.3);
 }
 
 .audit-button i {
@@ -949,7 +949,7 @@ section {
 }
 
 .audit-help-text i {
-  color: #f97316;
+  color: #f0622a;
   font-size: 1rem;
 }
 
@@ -966,7 +966,7 @@ section {
   width: 32px;
   height: 32px;
   border: 3px solid #f3f4f6;
-  border-top-color: #f97316;
+  border-top-color: #f0622a;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -1013,7 +1013,7 @@ section {
   Signs Section
 *********************/
 .signs-section {
-  background: #f8f9fa;
+  background: #0d0f1a;
   padding: 5rem 0;
 }
 
@@ -1026,13 +1026,13 @@ section {
 }
 
 .sign-card {
-  background: white;
+  background: #131627;
   border-radius: 12px;
   padding: 2.5rem 2rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #f97316;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-left: 4px solid #f0622a;
   transition: all 0.3s ease;
   position: relative;
   display: flex;
@@ -1042,7 +1042,7 @@ section {
 
 .sign-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 8px 24px rgba(240, 98, 42, 0.15);
   border-left-width: 6px;
 }
 
@@ -1050,20 +1050,20 @@ section {
   font-size: 3.5rem;
   margin-bottom: 1.25rem;
   line-height: 1;
-  color: #f97316;
+  color: #f0622a;
   transition: all 0.3s ease;
 }
 
 .sign-card:hover .sign-icon {
   transform: scale(1.1);
-  color: #FF6B35;
+  color: #d4510e;
 }
 
 .sign-card h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  color: #111827;
+  color: #ffffff;
 }
 
 .sign-card p {
@@ -1093,7 +1093,7 @@ section {
 *********************/
 .services-section-new {
   padding: 5rem 0;
-  background: white;
+  background: #131627;
 }
 
 .services-layout {
@@ -1106,13 +1106,13 @@ section {
 .services-content h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 2.5rem;
   line-height: 1.2;
 }
 
 .services-content h2 span {
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1125,28 +1125,28 @@ section {
 }
 
 .service-item {
-  background: #f8f9fa;
-  border-left: 4px solid #f97316;
+  background: #0d0f1a;
+  border-left: 4px solid #f0622a;
   padding: 1.5rem 2rem;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .service-item:hover {
-  background: #f0f1f3;
+  background: #1a1e32;
   transform: translateX(5px);
 }
 
 .service-item h3 {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .service-item p {
   font-size: 0.95rem;
-  color: #666;
+  color: #7a7f99;
   line-height: 1.6;
   margin: 0;
 }
@@ -1161,11 +1161,11 @@ section {
 }
 
 .visual-card {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(255, 107, 53, 0.05));
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.05), rgba(255, 107, 53, 0.05));
   border-radius: 20px;
   padding: 3rem 2rem;
   text-align: center;
-  border: 1px solid rgba(249, 115, 22, 0.2);
+  border: 1px solid rgba(240, 98, 42, 0.2);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1176,7 +1176,7 @@ section {
 .visual-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1189,14 +1189,14 @@ section {
 .visual-card h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
 .visual-stat {
   font-size: 4rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1205,7 +1205,7 @@ section {
 }
 
 .visual-label {
-  color: #666;
+  color: #7a7f99;
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
@@ -1227,7 +1227,7 @@ section {
 *********************/
 .benefits-section {
   padding: 5rem 0;
-  background: white;
+  background: #131627;
 }
 
 .benefits-header {
@@ -1238,20 +1238,20 @@ section {
 .benefits-header h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .benefits-header h2 span {
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .benefits-header p {
-  color: #666;
+  color: #7a7f99;
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto;
@@ -1286,8 +1286,8 @@ section {
 }
 
 .benefit-card {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: #131627;
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 12px;
   padding: 2rem 1.5rem;
   text-align: center;
@@ -1302,7 +1302,7 @@ section {
 .benefit-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1315,12 +1315,12 @@ section {
 .benefit-card h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 0.75rem;
 }
 
 .benefit-card p {
-  color: #666;
+  color: #7a7f99;
   line-height: 1.6;
   font-size: 0.95rem;
 }
@@ -1370,12 +1370,12 @@ section {
 }
 
 .process-box.orange-bg {
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   color: white;
 }
 
 .process-box.white-bg {
-  background: white;
+  background: #131627;
   color: var(--brand-dark);
 }
 
@@ -1395,8 +1395,8 @@ section {
 }
 
 .process-box.white-bg .process-number {
-  background: rgba(249, 115, 22, 0.1);
-  color: #f97316;
+  background: rgba(240, 98, 42, 0.1);
+  color: #f0622a;
 }
 
 .process-icon {
@@ -1405,7 +1405,7 @@ section {
 }
 
 .process-box.white-bg .process-icon {
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1414,7 +1414,7 @@ section {
 .process-icon-large {
   font-size: 4rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1464,12 +1464,12 @@ section {
 }
 
 .process-box.white-bg .process-list li::before {
-  color: #f97316;
+  color: #f0622a;
 }
 
 .process-cta {
   display: inline-block;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   color: white;
   padding: 0.875rem 2rem;
   border-radius: 50px;
@@ -1481,7 +1481,7 @@ section {
 
 .process-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 10px 25px rgba(240, 98, 42, 0.3);
 }
 
 @media (max-width: 1024px) {
@@ -1505,7 +1505,7 @@ section {
   Deliverables Section
 *********************/
 .deliverables-section {
-  background: white;
+  background: #131627;
   padding: 5rem 0;
 }
 
@@ -1517,8 +1517,8 @@ section {
 }
 
 .deliverable-card {
-  background: white;
-  border: 2px solid #e5e7eb;
+  background: #131627;
+  border: 2px solid rgba(255,255,255,0.07);
   border-radius: 16px;
   padding: 2.5rem 2rem;
   text-align: center;
@@ -1534,15 +1534,15 @@ section {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .deliverable-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
-  border-color: #f97316;
+  box-shadow: 0 12px 40px rgba(240, 98, 42, 0.15);
+  border-color: #f0622a;
 }
 
 .deliverable-card:hover::before {
@@ -1552,7 +1552,7 @@ section {
 .deliverable-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #f97316, #FF6B35);
+  background: linear-gradient(135deg, #f0622a, #d4510e);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1560,7 +1560,7 @@ section {
   margin: 0 auto 1.5rem;
   color: white;
   font-size: 2rem;
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 8px 20px rgba(240, 98, 42, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -1571,13 +1571,13 @@ section {
 .deliverable-card h3 {
   font-size: 1.375rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .deliverable-card p {
-  color: #666;
+  color: #7a7f99;
   line-height: 1.7;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
@@ -1587,10 +1587,10 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(249, 115, 22, 0.1);
+  background: rgba(240, 98, 42, 0.1);
   padding: 0.625rem 1.25rem;
   border-radius: 50px;
-  color: #f97316;
+  color: #f0622a;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -1622,7 +1622,7 @@ section {
   FAQ Section
 *********************/
 .faq-section {
-  background: white;
+  background: #131627;
 }
 
 .faq-list {
@@ -1632,8 +1632,8 @@ section {
 }
 
 .faq-item {
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: #131627;
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 12px;
   box-shadow: var(--shadow-soft);
   overflow: hidden;
@@ -1646,12 +1646,12 @@ section {
   justify-content: space-between;
   gap: 1rem;
   text-align: left;
-  background: #fff;
+  background: #131627;
   border: 0;
   padding: 1.25rem 1.25rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #111827;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -1665,7 +1665,7 @@ section {
   overflow: hidden;
   transition: max-height 0.3s ease;
   padding: 0 1.25rem;
-  color: #4b5563;
+  color: #7a7f99;
 }
 
 .faq-item.open .faq-answer {
@@ -1886,8 +1886,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </svg>
             Analysis Complete
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">SEO Audit Results</h3>
-          <p class="text-gray-600">${analysis.url}</p>
+          <h3 class="text-2xl font-bold text-[#e8eaf2] mb-2">SEO Audit Results</h3>
+          <p class="text-[#7a7f99]">${analysis.url}</p>
         </div>
 
         <!-- Overall Score -->
@@ -1895,8 +1895,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="inline-flex items-center justify-center w-24 h-24 ${overallColors.bg} ${overallColors.border} border-2 rounded-full mb-4">
             <span class="text-3xl font-bold ${overallColors.text}">${analysis.overallScore}</span>
           </div>
-          <div class="text-lg font-semibold text-gray-900">Overall SEO Score</div>
-          <div class="text-sm text-gray-600">
+          <div class="text-lg font-semibold text-[#e8eaf2]">Overall SEO Score</div>
+          <div class="text-sm text-[#7a7f99]">
             ${analysis.overallScore >= 80 ? 'Excellent! Your site is well optimized.' : 
               analysis.overallScore >= 60 ? 'Good foundation with room for improvement.' : 
               'Significant optimization opportunities available.'}
@@ -1915,9 +1915,9 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             
             return `
-              <div class="bg-white rounded-xl p-4 border border-gray-200 text-center">
+              <div class="bg-[#131627] rounded-xl p-4 border border-[rgba(255,255,255,0.07)] text-center">
                 <div class="text-2xl font-bold ${colors.text} mb-1">${score}%</div>
-                <div class="text-sm font-medium text-gray-900">${categoryNames[category]}</div>
+                <div class="text-sm font-medium text-[#e8eaf2]">${categoryNames[category]}</div>
               </div>
             `;
           }).join('')}
@@ -1926,8 +1926,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Issues & Recommendations -->
         <div class="grid md:grid-cols-2 gap-6">
           <!-- Issues -->
-          <div class="bg-white rounded-xl p-6 border border-gray-200">
-            <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+          <div class="bg-[#131627] rounded-xl p-6 border border-[rgba(255,255,255,0.07)]">
+            <h4 class="text-lg font-semibold text-[#e8eaf2] mb-4 flex items-center gap-2">
               <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
@@ -1935,14 +1935,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </h4>
             <div class="space-y-3">
               ${analysis.issues.map(issue => `
-                <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                <div class="flex items-start gap-3 p-3 bg-[#0d0f1a] rounded-lg">
                   <div class="w-2 h-2 rounded-full mt-2 ${
                     issue.type === 'critical' ? 'bg-red-500' : 
                     issue.type === 'warning' ? 'bg-yellow-500' : 'bg-blue-500'
                   }"></div>
                   <div class="flex-1">
-                    <div class="text-sm font-medium text-gray-900">${issue.text}</div>
-                    <div class="text-xs text-gray-600">Priority: ${issue.priority}</div>
+                    <div class="text-sm font-medium text-[#e8eaf2]">${issue.text}</div>
+                    <div class="text-xs text-[#7a7f99]">Priority: ${issue.priority}</div>
                   </div>
                 </div>
               `).join('')}
@@ -1950,8 +1950,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <!-- Recommendations -->
-          <div class="bg-white rounded-xl p-6 border border-gray-200">
-            <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+          <div class="bg-[#131627] rounded-xl p-6 border border-[rgba(255,255,255,0.07)]">
+            <h4 class="text-lg font-semibold text-[#e8eaf2] mb-4 flex items-center gap-2">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
@@ -1963,7 +1963,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-sm text-gray-900">${rec}</span>
+                  <span class="text-sm text-[#e8eaf2]">${rec}</span>
                 </div>
               `).join('')}
             </div>
@@ -1971,8 +1971,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <!-- CTA -->
-        <div class="text-center mt-8 pt-6 border-t border-gray-200">
-          <p class="text-gray-600 mb-4">Want a detailed analysis and implementation plan?</p>
+        <div class="text-center mt-8 pt-6 border-t border-[rgba(255,255,255,0.07)]">
+          <p class="text-[#7a7f99] mb-4">Want a detailed analysis and implementation plan?</p>
           <a href="/contact/" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-medium mb-4 shadow-2xl">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
@@ -1992,8 +1992,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Analysis Failed</h3>
-        <p class="text-gray-600 mb-4">We couldn't analyze your website. Please check the URL and try again.</p>
+        <h3 class="text-xl font-semibold text-[#e8eaf2] mb-2">Analysis Failed</h3>
+        <p class="text-[#7a7f99] mb-4">We couldn't analyze your website. Please check the URL and try again.</p>
         <button onclick="location.reload()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
           Try Again
         </button>

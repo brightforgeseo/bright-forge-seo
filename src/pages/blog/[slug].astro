@@ -46,10 +46,10 @@ if (post.content) {
     const trst = clamp01(trust);
     return `
 <section class="max-w-5xl mx-auto px-4" aria-labelledby="eeat-title">
-  <h2 id="eeat-title" class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
+  <h2 id="eeat-title" class="text-center text-2xl md:text-3xl font-bold text-[#e8eaf2] mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
     <!-- Chart Card -->
-    <div class="bg-white rounded-2xl ring-1 ring-red-100 shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)] p-4 md:p-6" data-widget="eeat-radar" data-experience="${exp}" data-expertise="${exs}" data-authoritativeness="${auth}" data-trust="${trst}">
+    <div class="bg-[#131627] rounded-2xl ring-1 ring-red-100 shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)] p-4 md:p-6" data-widget="eeat-radar" data-experience="${exp}" data-expertise="${exs}" data-authoritativeness="${auth}" data-trust="${trst}">
       <figure>
         <svg class="w-full h-[320px] md:h-[360px]" viewBox="0 0 320 320" role="img" aria-labelledby="eeat-graphic-title eeat-graphic-desc">
           <title id="eeat-graphic-title">E-E-A-T radar chart</title>
@@ -67,33 +67,33 @@ if (post.content) {
     </div>
 
     <!-- Controls -->
-    <div class="bg-white rounded-2xl ring-1 ring-gray-100 p-4 md:p-6">
+    <div class="bg-[#131627] rounded-2xl ring-1 ring-gray-100 p-4 md:p-6">
       <div role="group" aria-labelledby="eeat-sliders-title">
-        <h3 id="eeat-sliders-title" class="text-lg font-semibold text-gray-900 mb-4">Adjust Scores</h3>
+        <h3 id="eeat-sliders-title" class="text-lg font-semibold text-[#e8eaf2] mb-4">Adjust Scores</h3>
         <div class="space-y-4">
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Experience</span><output data-out="experience" class="text-gray-900 font-semibold">${exp}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Experience</span><output data-out="experience" class="text-[#e8eaf2] font-semibold">${exp}</output></span>
             <input type="range" min="0" max="100" step="1" value="${exp}" data-key="experience" class="w-full accent-red-500" aria-label="Experience score">
           </label>
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Expertise</span><output data-out="expertise" class="text-gray-900 font-semibold">${exs}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Expertise</span><output data-out="expertise" class="text-[#e8eaf2] font-semibold">${exs}</output></span>
             <input type="range" min="0" max="100" step="1" value="${exs}" data-key="expertise" class="w-full accent-red-500" aria-label="Expertise score">
           </label>
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Authoritativeness</span><output data-out="authoritativeness" class="text-gray-900 font-semibold">${auth}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Authoritativeness</span><output data-out="authoritativeness" class="text-[#e8eaf2] font-semibold">${auth}</output></span>
             <input type="range" min="0" max="100" step="1" value="${auth}" data-key="authoritativeness" class="w-full accent-red-500" aria-label="Authoritativeness score">
           </label>
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Trust</span><output data-out="trust" class="text-gray-900 font-semibold">${trst}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Trust</span><output data-out="trust" class="text-[#e8eaf2] font-semibold">${trst}</output></span>
             <input type="range" min="0" max="100" step="1" value="${trst}" data-key="trust" class="w-full accent-red-500" aria-label="Trust score">
           </label>
         </div>
       </div>
       <div class="mt-5 flex flex-wrap gap-2">
-        <button class="px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition" data-action="randomize">Randomize</button>
-        <button class="px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition" data-action="reset">Reset</button>
-        <button class="px-3 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-red-300 hover:text-red-700 transition" data-preset="new">Preset: New Site</button>
-        <button class="px-3 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-red-300 hover:text-red-700 transition" data-preset="brand">Preset: Trusted Brand</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#e8eaf2] transition" data-action="randomize">Randomize</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#e8eaf2] transition" data-action="reset">Reset</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#131627] border border-[rgba(255,255,255,0.07)] hover:border-red-300 hover:text-red-700 transition" data-preset="new">Preset: New Site</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#131627] border border-[rgba(255,255,255,0.07)] hover:border-red-300 hover:text-red-700 transition" data-preset="brand">Preset: Trusted Brand</button>
       </div>
     </div>
   </div>
@@ -286,10 +286,10 @@ if (post.content) {
     const trst = clamp01(trust);
     return `
 <section class="max-w-5xl mx-auto px-4" aria-labelledby="eeat-title">
-  <h2 id="eeat-title" class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
+  <h2 id="eeat-title" class="text-center text-2xl md:text-3xl font-bold text-[#e8eaf2] mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
     <!-- Chart Card -->
-    <div class="bg-white rounded-2xl ring-1 ring-red-100 shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)] p-4 md:p-6" data-widget="eeat-radar" data-experience="${exp}" data-expertise="${exs}" data-authoritativeness="${auth}" data-trust="${trst}">
+    <div class="bg-[#131627] rounded-2xl ring-1 ring-red-100 shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)] p-4 md:p-6" data-widget="eeat-radar" data-experience="${exp}" data-expertise="${exs}" data-authoritativeness="${auth}" data-trust="${trst}">
       <figure>
         <svg class="w-full h-[320px] md:h-[360px]" viewBox="0 0 320 320" role="img" aria-labelledby="eeat-graphic-title eeat-graphic-desc">
           <title id="eeat-graphic-title">E-E-A-T radar chart</title>
@@ -307,33 +307,33 @@ if (post.content) {
     </div>
 
     <!-- Controls -->
-    <div class="bg-white rounded-2xl ring-1 ring-gray-100 p-4 md:p-6">
+    <div class="bg-[#131627] rounded-2xl ring-1 ring-gray-100 p-4 md:p-6">
       <div role="group" aria-labelledby="eeat-sliders-title">
-        <h3 id="eeat-sliders-title" class="text-lg font-semibold text-gray-900 mb-4">Adjust Scores</h3>
+        <h3 id="eeat-sliders-title" class="text-lg font-semibold text-[#e8eaf2] mb-4">Adjust Scores</h3>
         <div class="space-y-4">
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Experience</span><output data-out="experience" class="text-gray-900 font-semibold">${exp}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Experience</span><output data-out="experience" class="text-[#e8eaf2] font-semibold">${exp}</output></span>
             <input type="range" min="0" max="100" step="1" value="${exp}" data-key="experience" class="w-full accent-red-500" aria-label="Experience score">
           </label>
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Expertise</span><output data-out="expertise" class="text-gray-900 font-semibold">${exs}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Expertise</span><output data-out="expertise" class="text-[#e8eaf2] font-semibold">${exs}</output></span>
             <input type="range" min="0" max="100" step="1" value="${exs}" data-key="expertise" class="w-full accent-red-500" aria-label="Expertise score">
           </label>
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Authoritativeness</span><output data-out="authoritativeness" class="text-gray-900 font-semibold">${auth}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Authoritativeness</span><output data-out="authoritativeness" class="text-[#e8eaf2] font-semibold">${auth}</output></span>
             <input type="range" min="0" max="100" step="1" value="${auth}" data-key="authoritativeness" class="w-full accent-red-500" aria-label="Authoritativeness score">
           </label>
           <label class="block">
-            <span class="flex items-center justify-between text-sm font-medium text-gray-700 mb-1"><span>Trust</span><output data-out="trust" class="text-gray-900 font-semibold">${trst}</output></span>
+            <span class="flex items-center justify-between text-sm font-medium text-[#7a7f99] mb-1"><span>Trust</span><output data-out="trust" class="text-[#e8eaf2] font-semibold">${trst}</output></span>
             <input type="range" min="0" max="100" step="1" value="${trst}" data-key="trust" class="w-full accent-red-500" aria-label="Trust score">
           </label>
         </div>
       </div>
       <div class="mt-5 flex flex-wrap gap-2">
-        <button class="px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition" data-action="randomize">Randomize</button>
-        <button class="px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition" data-action="reset">Reset</button>
-        <button class="px-3 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-red-300 hover:text-red-700 transition" data-preset="new">Preset: New Site</button>
-        <button class="px-3 py-1.5 text-sm rounded-full bg-white border border-gray-200 hover:border-red-300 hover:text-red-700 transition" data-preset="brand">Preset: Trusted Brand</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#e8eaf2] transition" data-action="randomize">Randomize</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#e8eaf2] transition" data-action="reset">Reset</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#131627] border border-[rgba(255,255,255,0.07)] hover:border-red-300 hover:text-red-700 transition" data-preset="new">Preset: New Site</button>
+        <button class="px-3 py-1.5 text-sm rounded-full bg-[#131627] border border-[rgba(255,255,255,0.07)] hover:border-red-300 hover:text-red-700 transition" data-preset="brand">Preset: Trusted Brand</button>
       </div>
     </div>
   </div>
@@ -477,49 +477,49 @@ if (post.content) {
   function generateAiBalanceHTML(title = 'AI in Marketing: The Balancing Act') {
     return `
 <section class="max-w-4xl mx-auto px-4" aria-labelledby="infographic-title">
-  <h3 id="infographic-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
-  <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
+  <h3 id="infographic-title" class="text-xl font-semibold text-[#e8eaf2] mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
+  <div class="bg-[#131627] rounded-xl shadow-lg border border-[rgba(255,255,255,0.07)] p-5 sm:p-6">
     <div class="space-y-5">
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
-        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Pattern Recognition (AI)</div>
+        <div class="sm:col-span-2 text-sm font-medium text-[#7a7f99]">Pattern Recognition (AI)</div>
         <div class="sm:col-span-3">
-          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+          <div class="h-3 w-full bg-[#1a1e32] rounded-full overflow-hidden">
             <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 85%; background: #4285F4" data-target-width="85"></div>
           </div>
-          <div class="mt-1 text-xs text-gray-500"><span class="value">85</span>%</div>
+          <div class="mt-1 text-xs text-[#7a7f99]"><span class="value">85</span>%</div>
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
-        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Strategic Judgment (Human)</div>
+        <div class="sm:col-span-2 text-sm font-medium text-[#7a7f99]">Strategic Judgment (Human)</div>
         <div class="sm:col-span-3">
-          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
-            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 90%; background: #FF6B35" data-target-width="90"></div>
+          <div class="h-3 w-full bg-[#1a1e32] rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 90%; background: #d4510e" data-target-width="90"></div>
           </div>
-          <div class="mt-1 text-xs text-gray-500"><span class="value">90</span>%</div>
+          <div class="mt-1 text-xs text-[#7a7f99]"><span class="value">90</span>%</div>
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
-        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Scale & Speed (AI)</div>
+        <div class="sm:col-span-2 text-sm font-medium text-[#7a7f99]">Scale & Speed (AI)</div>
         <div class="sm:col-span-3">
-          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+          <div class="h-3 w-full bg-[#1a1e32] rounded-full overflow-hidden">
             <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 95%; background: #6AB7FF" data-target-width="95"></div>
           </div>
-          <div class="mt-1 text-xs text-gray-500"><span class="value">95</span>%</div>
+          <div class="mt-1 text-xs text-[#7a7f99]"><span class="value">95</span>%</div>
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
-        <div class="sm:col-span-2 text-sm font-medium text-gray-700">Context & Empathy (Human)</div>
+        <div class="sm:col-span-2 text-sm font-medium text-[#7a7f99]">Context & Empathy (Human)</div>
         <div class="sm:col-span-3">
-          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
-            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 88%; background: #f97316" data-target-width="88"></div>
+          <div class="h-3 w-full bg-[#1a1e32] rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: 88%; background: #f0622a" data-target-width="88"></div>
           </div>
-          <div class="mt-1 text-xs text-gray-500"><span class="value">88</span>%</div>
+          <div class="mt-1 text-xs text-[#7a7f99]"><span class="value">88</span>%</div>
         </div>
       </div>
     </div>
     <div class="mt-6 flex flex-wrap gap-2 justify-center">
-      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="randomize">Randomize</button>
-      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="reset">Reset</button>
+      <button class="px-3 py-1.5 text-xs rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#7a7f99] transition" data-action="randomize">Randomize</button>
+      <button class="px-3 py-1.5 text-xs rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#7a7f99] transition" data-action="reset">Reset</button>
     </div>
   </div>
 </section>
@@ -541,15 +541,15 @@ if (post.content) {
     const consList = String(cons).split(';').map(s => decodeEntities(s).trim()).filter(Boolean);
     return `
 <section class="max-w-4xl mx-auto px-4">
-  <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
+  <h3 class="text-xl font-semibold text-[#e8eaf2] mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="rounded-xl border border-green-200 bg-white p-5 shadow-[0_10px_30px_-10px_rgba(16,185,129,0.25)]">
+    <div class="rounded-xl border border-green-200 bg-[#131627] p-5 shadow-[0_10px_30px_-10px_rgba(16,185,129,0.25)]">
       <h4 class="font-bold text-green-700 mb-3">Pros</h4>
-      <ul class="list-disc ml-5 space-y-2 text-gray-800">${prosList.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>
+      <ul class="list-disc ml-5 space-y-2 text-[#e8eaf2]">${prosList.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>
     </div>
-    <div class="rounded-xl border border-red-200 bg-white p-5 shadow-[0_10px_30px_-10px_rgba(239,68,68,0.25)]">
+    <div class="rounded-xl border border-red-200 bg-[#131627] p-5 shadow-[0_10px_30px_-10px_rgba(239,68,68,0.25)]">
       <h4 class="font-bold text-red-700 mb-3">Cons</h4>
-      <ul class="list-disc ml-5 space-y-2 text-gray-800">${consList.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>
+      <ul class="list-disc ml-5 space-y-2 text-[#e8eaf2]">${consList.map(li => `<li>${escapeHtml(li)}</li>`).join('')}</ul>
     </div>
   </div>
 </section>`;
@@ -568,22 +568,22 @@ if (post.content) {
       });
     const bars = parsed.map(item => `
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center">
-        <div class="sm:col-span-2 text-sm font-medium text-gray-700">${escapeHtml(item.label)}</div>
+        <div class="sm:col-span-2 text-sm font-medium text-[#7a7f99]">${escapeHtml(item.label)}</div>
         <div class="sm:col-span-3">
-          <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+          <div class="h-3 w-full bg-[#1a1e32] rounded-full overflow-hidden">
             <div class="h-full rounded-full transition-all duration-500 will-change-transform" style="width: ${item.value}% ; background: ${item.color}" data-target-width="${item.value}"></div>
           </div>
-          <div class="mt-1 text-xs text-gray-500"><span class="value">${item.value}</span>%</div>
+          <div class="mt-1 text-xs text-[#7a7f99]"><span class="value">${item.value}</span>%</div>
         </div>
       </div>`).join('');
     return `
 <section class="max-w-4xl mx-auto px-4" aria-labelledby="bars-title">
-  <h3 id="bars-title" class="text-xl font-semibold text-gray-800 mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
-  <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6">
+  <h3 id="bars-title" class="text-xl font-semibold text-[#e8eaf2] mb-6 text-center">${escapeHtml(decodeEntities(title))}</h3>
+  <div class="bg-[#131627] rounded-xl shadow-lg border border-[rgba(255,255,255,0.07)] p-5 sm:p-6">
     <div class="space-y-5">${bars}</div>
     <div class="mt-6 flex flex-wrap gap-2 justify-center">
-      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="randomize">Randomize</button>
-      <button class="px-3 py-1.5 text-xs rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition" data-action="reset">Reset</button>
+      <button class="px-3 py-1.5 text-xs rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#7a7f99] transition" data-action="randomize">Randomize</button>
+      <button class="px-3 py-1.5 text-xs rounded-full bg-[#1a1e32] hover:bg-[#232845] text-[#7a7f99] transition" data-action="reset">Reset</button>
     </div>
   </div>
 </section>
@@ -632,45 +632,45 @@ if (post.content) {
   function generateTabsHTML({ title = 'AI in Marketing: The Balancing Act' } = {}) {
     return `
 <section class="max-w-7xl mx-auto px-4">
-  <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
+  <h2 class="text-center text-2xl md:text-3xl font-bold text-[#e8eaf2] mb-6 md:mb-8">${escapeHtml(decodeEntities(title))}</h2>
 
   <!-- Pill Tab Navigation -->
   <div role="tablist" aria-label="Infographic topics" aria-orientation="horizontal" class="flex flex-wrap justify-center gap-3 md:gap-4 overflow-x-auto md:overflow-visible pb-2 md:pb-0 mb-8 no-scrollbar">
     <button id="tab-bright" role="tab" aria-selected="true" aria-controls="panel-bright" data-tab="bright"
       tabindex="0" class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-red-200 text-red-700 shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
+             bg-[#131627] border-red-200 text-red-700 shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       <span class="font-semibold">The Bright Side</span>
     </button>
     <button id="tab-dark" role="tab" aria-selected="false" aria-controls="panel-dark" data-tab="dark" tabindex="-1"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
+             bg-[#131627] border-[rgba(255,255,255,0.07)] text-[#7a7f99] hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
       <span class="font-semibold">The Dark Side</span>
     </button>
     <button id="tab-eeat" role="tab" aria-selected="false" aria-controls="panel-eeat" data-tab="eeat" tabindex="-1"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
+             bg-[#131627] border-[rgba(255,255,255,0.07)] text-[#7a7f99] hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
       <span class="font-semibold">The E-E-A-T Framework</span>
     </button>
     <button id="tab-future" role="tab" aria-selected="false" aria-controls="panel-future" data-tab="future" tabindex="-1"
       class="tab-trigger inline-flex items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm md:text-base transition-all duration-200
-             bg-white border-gray-200 text-gray-700 hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
+             bg-[#131627] border-[rgba(255,255,255,0.07)] text-[#7a7f99] hover:border-red-300 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2">
       <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
       <span class="font-semibold">Future-Proofing</span>
     </button>
   </div>
 
   <!-- Content Panel -->
-  <div class="rounded-2xl ring-1 ring-red-100 bg-white shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)]">
+  <div class="rounded-2xl ring-1 ring-red-100 bg-[#131627] shadow-[0_18px_36px_-18px_rgba(239,68,68,0.25)]">
     <div class="p-6 md:p-8">
       <section id="panel-bright" role="tabpanel" aria-labelledby="tab-bright" tabindex="0" class="tab-panel" data-panel="bright">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          <h3 class="text-xl font-bold text-gray-900">The Bright Side</h3>
+          <h3 class="text-xl font-bold text-[#e8eaf2]">The Bright Side</h3>
         </div>
-        <ul class="space-y-3 text-gray-800 leading-relaxed">
+        <ul class="space-y-3 text-[#e8eaf2] leading-relaxed">
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Efficiency: AI drafts blogs in minutes instead of hours</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Scalability: Create content at a fraction of the cost</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Data Power: Analyse competitor strategies with ease</span></li>
@@ -680,9 +680,9 @@ if (post.content) {
       <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" tabindex="0" class="tab-panel hidden" data-panel="dark">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-          <h3 class="text-xl font-bold text-gray-900">The Dark Side</h3>
+          <h3 class="text-xl font-bold text-[#e8eaf2]">The Dark Side</h3>
         </div>
-        <ul class="space-y-3 text-gray-800 leading-relaxed">
+        <ul class="space-y-3 text-[#e8eaf2] leading-relaxed">
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Hallucinations: AI can state incorrect facts confidently</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Lack of Soul: Content often lacks originality and emotion</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Risk: Can damage brand credibility if unchecked</span></li>
@@ -692,9 +692,9 @@ if (post.content) {
       <section id="panel-eeat" role="tabpanel" aria-labelledby="tab-eeat" tabindex="0" class="tab-panel hidden" data-panel="eeat">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-          <h3 class="text-xl font-bold text-gray-900">The E-E-A-T Framework</h3>
+          <h3 class="text-xl font-bold text-[#e8eaf2]">The E-E-A-T Framework</h3>
         </div>
-        <ul class="space-y-3 text-gray-800 leading-relaxed">
+        <ul class="space-y-3 text-[#e8eaf2] leading-relaxed">
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Experience: First-hand knowledge adds real value</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Expertise: Demonstrates authority in your field</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Authoritativeness: Builds recognition and trust</span></li>
@@ -705,9 +705,9 @@ if (post.content) {
       <section id="panel-future" role="tabpanel" aria-labelledby="tab-future" tabindex="0" class="tab-panel hidden" data-panel="future">
         <div class="flex items-center gap-3 mb-4">
           <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-          <h3 class="text-xl font-bold text-gray-900">Future-Proofing</h3>
+          <h3 class="text-xl font-bold text-[#e8eaf2]">Future-Proofing</h3>
         </div>
-        <ul class="space-y-3 text-gray-800 leading-relaxed">
+        <ul class="space-y-3 text-[#e8eaf2] leading-relaxed">
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Google SGE: Optimise for AI-powered search answers</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Hyper-Personalisation: Tailor content to user behaviour</span></li>
           <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-red-500"></span><span>Balance: Use AI to amplify—not replace—human expertise</span></li>
@@ -729,8 +729,8 @@ if (post.content) {
       btn.classList.toggle('border-red-200', isActive);
       btn.classList.toggle('text-red-700', isActive);
       btn.classList.toggle('shadow-[0_6px_18px_-8px_rgba(239,68,68,0.35)]', isActive);
-      btn.classList.toggle('border-gray-200', !isActive);
-      btn.classList.toggle('text-gray-700', !isActive);
+      btn.classList.toggle('border-[rgba(255,255,255,0.07)]', !isActive);
+      btn.classList.toggle('text-[#7a7f99]', !isActive);
     });
 
     panels.forEach(function(panel){

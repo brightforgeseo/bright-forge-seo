@@ -1,191 +1,506 @@
 ---
-// Props with defaults
-const {
-  heading = "What Our Clients Say"
-} = Astro.props;
+// Testimonials grid following dark design with featured center card
+const starPath = "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z";
 
-// Actual client reviews from Bright Forge SEO
+const googleBadgePaths = [
+  { d: "M21.805 10.023H12.18v3.955h5.538c-.238 1.29-1.452 3.786-5.538 3.786-3.33 0-6.046-2.757-6.046-6.159s2.715-6.159 6.046-6.159c1.895 0 3.166.808 3.893 1.505l2.653-2.56C16.957 3.124 14.74 2.16 12.18 2.16 6.628 2.16 2.16 6.628 2.16 12.18s4.468 10.02 10.02 10.02c5.782 0 9.616-4.064 9.616-9.786 0-.657-.07-1.157-.156-1.572l-.835-.819z", fill: "#4285F4" },
+  { d: "M3.545 7.344l3.26 2.392C7.617 8.01 9.774 6.6 12.18 6.6c1.895 0 3.166.808 3.893 1.505l2.653-2.56C16.957 3.124 14.74 2.16 12.18 2.16c-3.755 0-6.98 2.155-8.635 5.184z", fill: "#EA4335" },
+  { d: "M12.18 21.84c2.51 0 4.617-.831 6.155-2.258l-2.843-2.334c-.803.544-1.837.871-3.312.871-3.072 0-5.678-2.075-6.605-4.867L2.11 15.7c1.633 3.063 4.881 6.14 10.07 6.14z", fill: "#34A853" },
+  { d: "M21.805 10.023H12.18v3.955h5.538c-.455 1.208-1.384 2.226-2.617 2.87l2.843 2.334c1.659-1.532 2.892-3.813 2.892-6.354 0-.657-.07-1.157-.156-1.572l-.875-.233z", fill: "#FBBC05" }
+];
+
 const testimonials = [
   {
     quote: "I am very happy with the results from BrightForge! My site gets more visitors and my business is growing. They explain things clearly and make the process easy. Great service all around.",
-    name: "RJ GO",
-    role: "Local Guide • 34 reviews",
+    name: "RJ Go",
+    meta: "Local Guide · 34 reviews",
     initial: "R",
+    avatarClass: "av-r",
     reviewLink: "https://www.google.com/maps/contrib/110455532132624140129/reviews?hl=en"
   },
   {
-    quote: "Great company to work with, highly recommend. Attentive, proven results and great communication.",
-    name: "Jack Barron",
-    role: "Local Guide • 13 reviews",
-    initial: "J",
-    reviewLink: "https://www.google.com/maps/contrib/110379106836716004255/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@34.2324049,59.1758012,3z/data=!4m6!1m5!8m4!1e1!2s110379106836716004255!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-  },
-  {
-    quote: "I have hired these guys a few times and I'm never disappointed. If you want a great seo in Quezon city or anywhere you can't go wrong with Bright Forge SEO.",
-    name: "Rich Devman",
-    role: "Local Guide • 167 reviews",
-    initial: "R",
-    reviewLink: "https://www.google.com/maps/contrib/107541256675907093604/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,78.8569284,3z/data=!4m6!1m5!8m4!1e1!2s107541256675907093604!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+    quote: "Bright Forge SEO has been an absolute game changer for my business. From day one, their team was incredibly responsive and professional. We've seen consistent, meaningful growth in our rankings and organic traffic. This is a team that genuinely cares about the results they deliver.",
+    name: "Marie Angela Benida",
+    meta: "Business Owner",
+    initial: "M",
+    avatarClass: "av-m",
+    featured: true,
+    reviewLink: "https://www.google.com/maps/contrib/113067213630516295340/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s113067213630516295340!3m1!1e1?hl=en&entry=ttu"
   },
   {
     quote: "We've been working with Bright Forge SEO for about three years now and they've been great. Really solid all-round SEO.",
     name: "Louise Maclean",
-    role: "Business Owner",
+    meta: "Business Owner",
     initial: "L",
-    reviewLink: "https://www.google.com/maps/contrib/113085747629835627237/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s113085747629835627237!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+    avatarClass: "av-l",
+    reviewLink: "https://www.google.com/maps/contrib/113085747629835627237/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s113085747629835627237!3m1!1e1?hl=en&entry=ttu"
   },
   {
-    quote: "Bright Forge SEO has been an absolute game changer for my business. From day one, their team was incredibly responsive and professional.",
-    name: "Marie Angela Benida",
-    role: "Business Owner",
-    initial: "M",
-    reviewLink: "https://www.google.com/maps/contrib/113067213630516295340/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s113067213630516295340!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+    quote: "I have hired these guys a few times and I'm never disappointed. If you want a great SEO in Quezon City or anywhere, you can't go wrong with Bright Forge SEO.",
+    name: "Rich Devman",
+    meta: "Local Guide · 167 reviews",
+    initial: "R",
+    avatarClass: "av-ri",
+    reviewLink: "https://www.google.com/maps/contrib/107541256675907093604/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,78.8569284,3z/data=!4m6!1m5!8m4!1e1!2s107541256675907093604!3m1!1e1?hl=en&entry=ttu"
   },
   {
-    quote: "Bright Forge SEO is a solid investment if you want your business to stand out online. They were transparent throughout the entire process.",
-    name: "Khedive Adana",
-    role: "Business Owner",
-    initial: "K",
-    reviewLink: "https://www.google.com/maps/contrib/104137701022042890317/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s104137701022042890317!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-  },
-  {
-    quote: "Working with BrightForgeSEO has been a fantastic experience. Their expertise truly shines through in every aspect of their work.",
-    name: "Gerry Wagner",
-    role: "Local Guide • 8 reviews",
-    initial: "G",
-    reviewLink: "https://www.google.com/maps/contrib/110496565472620550231/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@-11.618867,130.440608,4z/data=!4m6!1m5!8m4!1e1!2s110496565472620550231!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-  },
-  {
-    quote: "We've been working with Ben and Bright Forge SEO for over 18 months, with the primary focus being our SEO needs. They deliver excellent results.",
-    name: "UK Auction List",
-    role: "Property Auctions Platform",
-    initial: "U",
-    reviewLink: "https://www.google.com/maps/contrib/113689117491192336436/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@32.9703675,60.2359234,3z/data=!4m6!1m5!8m4!1e1!2s113689117491192336436!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-  },
-  {
-    quote: "We've been working with BrightforgeSEO for a while now and honestly, they've been fantastic. They really know their stuff.",
-    name: "Dee Tan",
-    role: "Local Guide • 8 reviews",
-    initial: "D",
-    reviewLink: "https://www.google.com/maps/contrib/101734909762210360877/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@10.3899549,123.3333589,6z/data=!4m6!1m5!8m4!1e1!2s101734909762210360877!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-  },
-  {
-    quote: "Bright Forge SEO Services has been a game-changer for our online presence. Their team is knowledgeable, professional, and delivers results.",
-    name: "Aly Dons",
-    role: "Business Owner",
-    initial: "A",
-    reviewLink: "https://www.google.com/maps/contrib/106013872966969466264/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@14.7046174,121.0444284,17z/data=!4m6!1m5!8m4!1e1!2s106013872966969466264!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-  },
-  {
-    quote: "Working with Bright Forge SEO has been a fantastic experience. Their team is professional, transparent and genuinely invested in our success.",
-    name: "Simon Kingsnorth",
-    role: "Business Owner",
-    initial: "S",
-    reviewLink: "#"
-  },
-  {
-    quote: "Working with Bright Forge SEO has been a huge benefit for TeamStats. They understand our needs and deliver consistently.",
-    name: "Tom Stanbury",
-    role: "Business Owner",
-    initial: "T",
-    reviewLink: "https://www.google.com/maps/contrib/116331598386131030776/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@33.1283139,60.4938897,3z/data=!4m6!1m5!8m4!1e1!2s116331598386131030776!3m1!1e1?hl=en&entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+    quote: "Great company to work with, highly recommend. Attentive, proven results and great communication throughout the whole process.",
+    name: "Jack Barron",
+    meta: "Local Guide · 13 reviews",
+    initial: "J",
+    avatarClass: "av-j",
+    reviewLink: "https://www.google.com/maps/contrib/110379106836716004255/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@34.2324049,59.1758012,3z/data=!4m6!1m5!8m4!1e1!2s110379106836716004255!3m1!1e1?hl=en&entry=ttu"
   }
 ];
+
+// Split: col1 = [0], col2 = [1] (featured), col3 = [2], row2: [3], [4]
+const col1Row1 = testimonials[0];
+const featured = testimonials[1];
+const col3Row1 = testimonials[2];
+const col1Row2 = testimonials[3];
+const col3Row2 = testimonials[4];
 ---
 
-<div class="mt-10 relative overflow-x-clip py-16">
-  <!-- Background gradient blurs -->
-  <div class="absolute w-96 h-96 blur-3xl -z-10 bg-gradient-radial from-indigo-100 right-1/3 -top-10"></div>
-  <div class="absolute w-96 h-96 blur-3xl -z-10 bg-gradient-radial from-purple-100 right-1/3 translate-x-2/3 top-10"></div>
+<section class="testimonials-section">
+  <div class="testimonials-wrapper">
 
-  <!-- Optional heading -->
-  {heading && (
-    <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900">{heading}</h2>
+    <!-- Header -->
+    <div class="tm-header">
+      <div class="tm-header-left">
+        <div class="tm-eyebrow">Client testimonials</div>
+        <h2 class="tm-title">What our clients<br><span>say about us</span></h2>
+      </div>
+      <div class="tm-rating-badge">
+        <div class="tm-stars">
+          {[...Array(5)].map(() => (
+            <svg class="tm-star" viewBox="0 0 20 20" fill="currentColor"><path d={starPath}/></svg>
+          ))}
+        </div>
+        <span class="tm-rating-text"><strong>5.0</strong> on Google</span>
+      </div>
     </div>
-  )}
 
-  <!-- Marquee Container -->
-  <div class="relative overflow-hidden py-5">
-    <div class="flex gap-10">
-      <!-- First set of testimonials (scrolling) -->
-      <div class="flex animate-marquee gap-10 shrink-0">
-        {testimonials.map((testimonial) => (
-          <a
-            href={testimonial.reviewLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-2xl relative p-8 bg-gray-50/60 backdrop-blur-md transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg w-96 flex flex-col justify-between shrink-0 no-underline"
-          >
-            <blockquote class="text-lg md:text-xl leading-relaxed mb-10 text-gray-800">
-              {testimonial.quote}
-            </blockquote>
+    <!-- Grid -->
+    <div class="tm-grid">
 
-            <div class="flex items-center gap-3">
-              <div class="shrink-0">
-                <div class="rounded-full w-12 h-12 flex items-center justify-center bg-gradient-to-br from-orange-500 to-purple-600 text-white font-semibold text-lg">
-                  {testimonial.initial}
-                </div>
-              </div>
-              <div>
-                <h3 class="font-medium text-slate-800">{testimonial.name}</h3>
-                <p class="text-sm text-slate-600">{testimonial.role}</p>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
+      <!-- Card 1 (col1, row1) -->
+      <a href={col1Row1.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.05s">
+        <div>
+          <div class="tm-card-stars">
+            {[...Array(5)].map(() => (
+              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
+            ))}
+          </div>
+          <div class="tm-quote-mark">&ldquo;</div>
+          <p class="tm-review-text">{col1Row1.quote}</p>
+        </div>
+        <div class="tm-author">
+          <div class={`tm-avatar ${col1Row1.avatarClass}`}>{col1Row1.initial}</div>
+          <div class="tm-author-info">
+            <div class="tm-author-name">{col1Row1.name}</div>
+            <div class="tm-author-meta">{col1Row1.meta}</div>
+          </div>
+          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
+            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
+          </svg>
+        </div>
+      </a>
 
-      <!-- Duplicate set for seamless loop -->
-      <div class="flex animate-marquee gap-10 shrink-0" aria-hidden="true">
-        {testimonials.map((testimonial) => (
-          <a
-            href={testimonial.reviewLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-2xl relative p-8 bg-gray-50/60 backdrop-blur-md transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg w-96 flex flex-col justify-between shrink-0 no-underline"
-          >
-            <blockquote class="text-lg md:text-xl leading-relaxed mb-10 text-gray-800">
-              {testimonial.quote}
-            </blockquote>
+      <!-- Featured Card (col2, spans 2 rows) -->
+      <a href={featured.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card tm-featured" style="--delay: 0.15s">
+        <div>
+          <div class="tm-card-stars">
+            {[...Array(5)].map(() => (
+              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
+            ))}
+          </div>
+          <div class="tm-quote-mark">&ldquo;</div>
+          <p class="tm-review-text tm-featured-text">{featured.quote}</p>
+        </div>
+        <div class="tm-author">
+          <div class={`tm-avatar ${featured.avatarClass}`}>{featured.initial}</div>
+          <div class="tm-author-info">
+            <div class="tm-author-name">{featured.name}</div>
+            <div class="tm-author-meta">{featured.meta}</div>
+          </div>
+          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
+            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
+          </svg>
+        </div>
+      </a>
 
-            <div class="flex items-center gap-3">
-              <div class="shrink-0">
-                <div class="rounded-full w-12 h-12 flex items-center justify-center bg-gradient-to-br from-orange-500 to-purple-600 text-white font-semibold text-lg">
-                  {testimonial.initial}
-                </div>
-              </div>
-              <div>
-                <h3 class="font-medium text-slate-800">{testimonial.name}</h3>
-                <p class="text-sm text-slate-600">{testimonial.role}</p>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
+      <!-- Card 3 (col3, row1) -->
+      <a href={col3Row1.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.25s">
+        <div>
+          <div class="tm-card-stars">
+            {[...Array(5)].map(() => (
+              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
+            ))}
+          </div>
+          <div class="tm-quote-mark">&ldquo;</div>
+          <p class="tm-review-text">{col3Row1.quote}</p>
+        </div>
+        <div class="tm-author">
+          <div class={`tm-avatar ${col3Row1.avatarClass}`}>{col3Row1.initial}</div>
+          <div class="tm-author-info">
+            <div class="tm-author-name">{col3Row1.name}</div>
+            <div class="tm-author-meta">{col3Row1.meta}</div>
+          </div>
+          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
+            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
+          </svg>
+        </div>
+      </a>
+
+      <!-- Card 4 (col1, row2) -->
+      <a href={col1Row2.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.35s">
+        <div>
+          <div class="tm-card-stars">
+            {[...Array(5)].map(() => (
+              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
+            ))}
+          </div>
+          <div class="tm-quote-mark">&ldquo;</div>
+          <p class="tm-review-text">{col1Row2.quote}</p>
+        </div>
+        <div class="tm-author">
+          <div class={`tm-avatar ${col1Row2.avatarClass}`}>{col1Row2.initial}</div>
+          <div class="tm-author-info">
+            <div class="tm-author-name">{col1Row2.name}</div>
+            <div class="tm-author-meta">{col1Row2.meta}</div>
+          </div>
+          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
+            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
+          </svg>
+        </div>
+      </a>
+
+      <!-- Card 5 (col3, row2) -->
+      <a href={col3Row2.reviewLink} target="_blank" rel="noopener noreferrer" class="tm-card" style="--delay: 0.45s">
+        <div>
+          <div class="tm-card-stars">
+            {[...Array(5)].map(() => (
+              <svg class="tm-card-star" viewBox="0 0 20 20"><path d={starPath}/></svg>
+            ))}
+          </div>
+          <div class="tm-quote-mark">&ldquo;</div>
+          <p class="tm-review-text">{col3Row2.quote}</p>
+        </div>
+        <div class="tm-author">
+          <div class={`tm-avatar ${col3Row2.avatarClass}`}>{col3Row2.initial}</div>
+          <div class="tm-author-info">
+            <div class="tm-author-name">{col3Row2.name}</div>
+            <div class="tm-author-meta">{col3Row2.meta}</div>
+          </div>
+          <svg class="tm-google-badge" viewBox="0 0 24 24" fill="none">
+            {googleBadgePaths.map((p) => <path d={p.d} fill={p.fill}/>)}
+          </svg>
+        </div>
+      </a>
+
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
+  .testimonials-section {
+    background: #0d0f1a;
+    padding: 6rem 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(240,98,42,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .testimonials-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .tm-header {
+    margin-bottom: 64px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .tm-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f0622a;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tm-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1.5px;
+    background: #f0622a;
+  }
+
+  .tm-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    line-height: 1.08;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .tm-title span {
+    color: #f0622a;
+  }
+
+  .tm-rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #131627;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 100px;
+    padding: 12px 20px;
+    white-space: nowrap;
+  }
+
+  .tm-stars {
+    display: flex;
+    gap: 3px;
+  }
+
+  .tm-star {
+    width: 14px;
+    height: 14px;
+    color: #f5b327;
+  }
+
+  .tm-rating-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #e8eaf2;
+  }
+
+  .tm-rating-text strong {
+    color: #ffffff;
+  }
+
+  /* Grid */
+  .tm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  /* Cards */
+  .tm-card {
+    background: #131627;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 36px 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), border-color 0.25s ease, box-shadow 0.35s ease;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: tmFadeUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+    animation-delay: var(--delay, 0s);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  @keyframes tmFadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tm-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(240,98,42,0.3);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(240,98,42,0.12);
+  }
+
+  /* Featured card */
+  .tm-featured {
+    background: linear-gradient(145deg, #1f1530 0%, #1a1632 60%, #151228 100%);
+    border-color: rgba(240,98,42,0.25);
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .tm-featured::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(240,98,42,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Quote mark */
+  .tm-quote-mark {
+    font-family: 'Syne', sans-serif;
+    font-size: 72px;
+    line-height: 0.6;
+    color: #f0622a;
+    opacity: 0.25;
+    margin-bottom: -8px;
+    font-weight: 800;
+    user-select: none;
+  }
+
+  .tm-featured .tm-quote-mark {
+    opacity: 0.45;
+  }
+
+  /* Stars */
+  .tm-card-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 14px;
+  }
+
+  .tm-card-star {
+    width: 13px;
+    height: 13px;
+    fill: #f5b327;
+  }
+
+  /* Review text */
+  .tm-review-text {
+    font-size: 15px;
+    line-height: 1.72;
+    color: #c5c9de;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .tm-featured-text {
+    font-size: 17px;
+    color: #d8daee;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* Author */
+  .tm-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .tm-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .tm-avatar::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.3;
+    filter: blur(6px);
+    z-index: -1;
+  }
+
+  .av-r { background: linear-gradient(135deg, #f0622a, #ff9a62); }
+  .av-j { background: linear-gradient(135deg, #6c63ff, #a78bfa); }
+  .av-ri { background: linear-gradient(135deg, #ef4444, #f0622a); }
+  .av-l { background: linear-gradient(135deg, #10b981, #34d399); }
+  .av-m { background: linear-gradient(135deg, #8b5cf6, #c084fc); }
+  .av-k { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
+
+  .tm-author-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.01em;
+  }
+
+  .tm-author-meta {
+    font-size: 12px;
+    color: #7a7f99;
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  /* Google badge */
+  .tm-google-badge {
+    margin-left: auto;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .tm-grid {
+      grid-template-columns: 1fr 1fr;
     }
-    100% {
-      transform: translateX(-100%);
+    .tm-featured {
+      grid-column: 1 / span 2;
+      grid-row: auto;
     }
   }
 
-  .animate-marquee {
-    animation: marquee 40s linear infinite;
-  }
-
-  .animate-marquee:hover {
-    animation-play-state: paused;
-  }
-
-  .bg-gradient-radial {
-    background: radial-gradient(circle, var(--tw-gradient-from) 0%, transparent 70%);
+  @media (max-width: 580px) {
+    .testimonials-section {
+      padding: 4rem 16px;
+    }
+    .tm-grid {
+      grid-template-columns: 1fr;
+    }
+    .tm-featured {
+      grid-column: 1;
+    }
+    .tm-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .tm-card {
+      padding: 28px 24px 22px;
+    }
   }
 </style>

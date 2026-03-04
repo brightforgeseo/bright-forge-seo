@@ -134,7 +134,7 @@ const {
   .homepage-hero {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #f97316 0%, #fb923c 30%, #f97316 60%, #ea580c 100%);
+    background: #0d0f1a;
     min-height: auto;
     display: flex;
     align-items: center;
@@ -150,12 +150,10 @@ const {
   .bg-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg,
-      rgba(249, 115, 22, 0.95) 0%,
-      rgba(251, 146, 60, 0.9) 25%,
-      rgba(249, 115, 22, 0.95) 50%,
-      rgba(234, 88, 12, 0.95) 100%
-    );
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 120%, rgba(240, 98, 42, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 20% 50%, rgba(240, 98, 42, 0.06) 0%, transparent 60%),
+      #0d0f1a;
     background-size: 200% 200%;
     animation: gradientFlow 12s ease infinite;
   }
@@ -175,7 +173,7 @@ const {
   .bg-glow-1 {
     width: 600px;
     height: 600px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(240, 98, 42, 0.08);
     top: -200px;
     left: -200px;
     animation: float1 8s ease-in-out infinite;
@@ -184,7 +182,7 @@ const {
   .bg-glow-2 {
     width: 400px;
     height: 400px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(240, 98, 42, 0.08);
     bottom: -100px;
     right: -100px;
     animation: float2 10s ease-in-out infinite;
@@ -227,9 +225,9 @@ const {
     align-items: center;
     gap: 10px;
     padding: 8px 18px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(240, 98, 42, 0.12);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(240, 98, 42, 0.25);
     color: white;
     border-radius: 100px;
     font-size: 13px;
@@ -288,19 +286,20 @@ const {
     align-items: center;
     gap: 10px;
     padding: 16px 28px;
-    background: white;
-    color: #f97316;
+    background: #f0622a;
+    color: white;
     border-radius: 14px;
     font-weight: 700;
     font-size: 15px;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(240, 98, 42, 0.3);
   }
 
   .btn-hero-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgba(240, 98, 42, 0.4);
+    background: #d4510e;
   }
 
   .btn-hero-primary:hover .btn-arrow {
@@ -316,9 +315,9 @@ const {
     align-items: center;
     gap: 8px;
     padding: 16px 28px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     color: white;
     border-radius: 14px;
     font-weight: 600;
@@ -328,8 +327,8 @@ const {
   }
 
   .btn-hero-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
   }
 
@@ -382,7 +381,7 @@ const {
   .image-glow {
     position: absolute;
     inset: -20px;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(240,98,42,0.15) 0%, transparent 70%);
     border-radius: 50%;
     filter: blur(40px);
   }
@@ -405,10 +404,11 @@ const {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: white;
+    background: #131627;
     padding: 14px 18px;
     border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     z-index: 10;
     animation: floatCard 4s ease-in-out infinite;
   }
@@ -433,7 +433,7 @@ const {
   .floating-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+    background: linear-gradient(135deg, #f0622a 0%, #ff9a62 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -455,13 +455,13 @@ const {
   .floating-value {
     font-size: 1.1rem;
     font-weight: 800;
-    color: #1e293b;
+    color: #ffffff;
     letter-spacing: -0.02em;
   }
 
   .floating-label {
     font-size: 0.75rem;
-    color: #64748b;
+    color: #7a7f99;
     font-weight: 500;
   }
 
@@ -570,12 +570,12 @@ const {
     /* Reduce blur for better performance */
     .hero-badge {
       backdrop-filter: none;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(240, 98, 42, 0.15);
     }
 
     .btn-hero-secondary {
       backdrop-filter: none;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .image-glow {

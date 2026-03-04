@@ -30,16 +30,16 @@ const steps = [
 ];
 ---
 
-<div class="bg-gray-50 py-16 px-4">
+<div class="bg-[#0d0f1a] py-16 px-4">
   <div class="max-w-7xl mx-auto">
 
     <!-- Header -->
     <div class="text-center mb-12">
-      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+      <span class="inline-block bg-[#f0622a] text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
         {badge}
       </span>
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-        {title} <span class="text-orange-500">{titleHighlight}</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-2" style="font-family: 'Syne', sans-serif; font-weight: 800;">
+        {title} <span class="text-[#f0622a]">{titleHighlight}</span>
       </h2>
     </div>
 
@@ -47,27 +47,27 @@ const steps = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {steps.map((step) => (
         <div
-          class="bg-white rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group hover:bg-orange-50"
+          class="process-card bg-[#131627] rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group border border-[rgba(255,255,255,0.07)]"
         >
           <!-- Orange top border -->
-          <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400 -mx-10 -mt-10 mb-6 rounded-t-lg"></div>
+          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62] -mx-10 -mt-10 mb-6 rounded-t-lg"></div>
 
           <!-- Step number circle -->
           <div class="mb-6">
-            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:bg-orange-600 transition-colors">
+            <div class="w-16 h-16 bg-[#f0622a] rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:bg-[#ff9a62] transition-colors">
               {step.number}
             </div>
           </div>
 
           <!-- Icon and Title -->
           <div class="mb-4">
-            <h3 class="text-xl font-bold text-gray-900">
+            <h3 class="text-xl font-bold text-white">
               {step.title}
             </h3>
           </div>
 
           <!-- Description -->
-          <p class="text-gray-700 leading-relaxed text-base">
+          <p class="text-[#7a7f99] leading-relaxed text-base">
             {step.description}
           </p>
         </div>
@@ -80,16 +80,16 @@ const steps = [
 <script>
   // Add hover effects with JavaScript
   document.addEventListener('DOMContentLoaded', () => {
-    const processCards = document.querySelectorAll('.group');
+    const processCards = document.querySelectorAll('.process-card');
 
     processCards.forEach(card => {
       card.addEventListener('mouseenter', function() {
-        this.style.backgroundColor = '#fff7ed';
+        this.style.backgroundColor = 'rgba(240,98,42,0.05)';
         this.style.transform = 'scale(1.02)';
       });
 
       card.addEventListener('mouseleave', function() {
-        this.style.backgroundColor = 'white';
+        this.style.backgroundColor = '#131627';
         this.style.transform = 'scale(1)';
       });
     });

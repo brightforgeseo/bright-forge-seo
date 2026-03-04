@@ -17,111 +17,83 @@ const clients = [
 ];
 ---
 
-<section class="trusted-by-section py-16 bg-[#f8fafc]">
+<section class="trusted-by-section py-16 bg-[#0d0f1a]">
   <div class="max-w-7xl mx-auto px-4">
 
     <!-- Header -->
     <div class="text-center mb-12">
-      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
+      <span class="inline-block bg-[#f0622a] text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">
         {badge}
       </span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-        {title} <span class="text-orange-500">{titleHighlight}</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4" style="font-family: 'Syne', sans-serif; font-weight: 800;">
+        {title} <span class="text-[#f0622a]">{titleHighlight}</span>
       </h2>
-      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+      <p class="text-lg text-[#7a7f99] max-w-2xl mx-auto">
         {description}
       </p>
     </div>
 
-    <!-- Logo Carousel -->
-    <div class="relative overflow-hidden py-8">
-      <div class="flex gap-8">
-        <!-- First set -->
-        <div class="flex animate-marquee gap-8 shrink-0">
-          {clients.map((client) => (
-            <div class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0">
-              <img
-                src={client.logo}
-                alt={client.name}
-                class="max-w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-          ))}
+    <!-- Logo Grid -->
+    <div class="logo-grid">
+      {clients.map((client) => (
+        <div class="logo-item">
+          <img
+            src={client.logo}
+            alt={client.name}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-
-        <!-- Duplicate set for seamless loop -->
-        <div class="flex animate-marquee gap-8 shrink-0" aria-hidden="true">
-          {clients.map((client) => (
-            <div class="client-logo bg-white rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group w-[250px] shrink-0">
-              <img
-                src={client.logo}
-                alt={client.name}
-                class="max-w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      ))}
     </div>
 
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.trusted-by-section .relative.overflow-hidden');
-    const clientLogos = document.querySelectorAll('.client-logo');
-    const animatingDivs = document.querySelectorAll('.animate-marquee');
-
-    clientLogos.forEach(logo => {
-      logo.addEventListener('mouseenter', function() {
-        this.style.backgroundColor = '#fff7ed';
-        this.style.boxShadow = '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)';
-        // Pause all animations
-        animatingDivs.forEach(div => {
-          div.style.animationPlayState = 'paused';
-        });
-      });
-
-      logo.addEventListener('mouseleave', function() {
-        this.style.backgroundColor = 'white';
-        this.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
-        // Resume all animations
-        animatingDivs.forEach(div => {
-          div.style.animationPlayState = 'running';
-        });
-      });
-    });
-  });
-</script>
-
 <style>
   .trusted-by-section {
-    background: #f8fafc;
+    background: #0d0f1a;
   }
 
-  .trusted-by-section span.bg-orange-500 {
-    color: #ffffff !important;
+  .logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  .animate-marquee {
-    animation: marquee 30s linear infinite;
-  }
-
-  .animate-marquee:hover {
-    animation-play-state: paused;
-  }
-
-  .client-logo {
+  .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 80px;
     transition: all 0.3s ease;
+  }
+
+  .logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover img {
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    .logo-grid {
+      gap: 1.5rem 2rem;
+    }
+
+    .logo-item {
+      width: 110px;
+      height: 60px;
+    }
   }
 </style>

@@ -18,30 +18,30 @@ const awards = [
 ];
 ---
 
-<section class="awards-new-section py-20 bg-[#f8fafc]">
+<section class="awards-new-section py-20 bg-[#0d0f1a]">
   <div class="container max-w-7xl mx-auto px-4">
     <div class="text-center mb-12">
-      <span class="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">RECOGNITION</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">Awards &amp; <span class="text-brand-accent">Accolades</span></h2>
-      <p class="text-lg text-text-secondary max-w-2xl mx-auto">Industry bodies and leading publications that have acknowledged our commitment to performance, innovation and client success.</p>
+      <span class="inline-block bg-[#f0622a] text-white px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">RECOGNITION</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4" style="font-family: 'Syne', sans-serif; font-weight: 800;">Awards &amp; <span class="text-[#f0622a]">Accolades</span></h2>
+      <p class="text-lg text-[#7a7f99] max-w-2xl mx-auto">Industry bodies and leading publications that have acknowledged our commitment to performance, innovation and client success.</p>
     </div>
 
     <div class="flex justify-center items-center gap-8 flex-wrap">
       {awards.map((a) => (
-        <div class="award-card group bg-brand-bg rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-80">
+        <div class="award-card group bg-[#131627] rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-80 border border-[rgba(255,255,255,0.07)]">
           <div class="flex items-center justify-center mb-4">
-            <img 
-              src={a.img} 
-              alt={a.title} 
-              class="w-36 h-36 object-contain transition-transform duration-300 group-hover:scale-105" 
+            <img
+              src={a.img}
+              alt={a.title}
+              class="w-36 h-36 object-contain transition-transform duration-300 group-hover:scale-105"
               width="144"
               height="144"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <h3 class="text-lg font-semibold text-brand-dark text-center mb-1 leading-snug">{a.title}</h3>
-          <p class="text-sm text-brand-accent text-center font-medium">{a.by}</p>
+          <h3 class="text-lg font-semibold text-[#e8eaf2] text-center mb-1 leading-snug">{a.title}</h3>
+          <p class="text-sm text-[#f0622a] text-center font-medium">{a.by}</p>
         </div>
       ))}
     </div>
@@ -50,14 +50,12 @@ const awards = [
 
 <style>
   .awards-new-section {
-    background: #f8fafc;
+    background: #0d0f1a;
   }
-  /* Force light theme consistently across browsers */
-  .award-card { background: #ffffff; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-  .awards-new-section h2 { color: #1E2022; }
-  .awards-new-section h2 span { color: var(--brand-accent); }
-  .awards-new-section p { color: #52575D; }
-  .awards-new-section span.bg-orange-500 { color: #ffffff !important; }
-  .award-card h3 { color: #1E2022; }
-  .award-card p { color: var(--brand-accent); }
+  .award-card { background: #131627; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+  .awards-new-section h2 { color: #ffffff; }
+  .awards-new-section h2 span { color: #f0622a; }
+  .awards-new-section p { color: #7a7f99; }
+  .award-card h3 { color: #e8eaf2; }
+  .award-card p { color: #f0622a; }
 </style>

@@ -207,9 +207,9 @@ const {
   {nextSteps && (
     <section class="features-section">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="cta-container" style="text-align: center; padding: 3rem 2rem; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1);">
-          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #1a1a1a;">Ready for Similar Results?</h3>
-          <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">{nextSteps}</p>
+        <div class="cta-container" style="text-align: center; padding: 3rem 2rem; background: #131627; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.4);">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #e8eaf2;">Ready for Similar Results?</h3>
+          <p style="font-size: 1.2rem; color: #7a7f99; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">{nextSteps}</p>
           <div class="hero-actions" style="justify-content: center;">
             <ButtonPrimary href="/contact" text="Get Started Today" />
             <ButtonSecondary href="/" text="Learn More" icon="fas fa-info-circle" />
@@ -225,8 +225,8 @@ const {
 <style>
   /* Hero Image Section */
   .hero-image-section {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: #0d0f1a;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
   }
 
   .hero-image-container {
@@ -240,13 +240,13 @@ const {
     height: auto;
     display: block;
     object-fit: contain;
-    background: #f8fafc;
+    background: #1a1e32;
   }
 
   /* Metrics Section */
   .metrics-section {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: #0d0f1a;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
   }
 
   .metrics-grid {
@@ -263,7 +263,7 @@ const {
   .metric-value {
     font-size: 3rem;
     font-weight: 800;
-    color: #f97316;
+    color: #f0622a;
     margin-bottom: 12px;
     letter-spacing: -0.02em;
   }
@@ -271,7 +271,7 @@ const {
   .metric-label {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #e8eaf2;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 8px;
@@ -279,16 +279,16 @@ const {
 
   .metric-description {
     font-size: 0.875rem;
-    color: #64748b;
+    color: #7a7f99;
   }
 
   /* Global Section Styling */
   section {
-    background: white;
+    background: #0d0f1a;
   }
 
   section:nth-child(even) {
-    background: #fafafa;
+    background: #131627;
   }
 
   .section-header {
@@ -299,20 +299,20 @@ const {
   .section-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 0.75rem;
     letter-spacing: -0.02em;
   }
 
   .section-header p {
     font-size: 1.1rem;
-    color: #666;
+    color: #7a7f99;
     font-weight: 400;
   }
 
   /* Challenge & Solution Section */
   .challenge-solution {
-    background: white;
+    background: #0d0f1a;
     padding: 80px 0;
   }
 
@@ -328,29 +328,29 @@ const {
   .solution-column h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #f97316;
+    border-bottom: 3px solid #f0622a;
   }
 
   .content-box {
-    background: #fafafa;
+    background: #1a1e32;
     padding: 30px;
     border-radius: 8px;
-    border-left: 4px solid #f97316;
+    border-left: 4px solid #f0622a;
   }
 
   .content-box p {
     font-size: 1.05rem;
-    color: #4b5563;
+    color: #7a7f99;
     line-height: 1.8;
     margin: 0;
   }
 
   /* Strategic Methodology */
   .methodology-section {
-    background: #fafafa;
+    background: #0d0f1a;
     padding: 80px 0;
   }
 
@@ -362,13 +362,13 @@ const {
   .methodology-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 0.75rem;
   }
 
   .methodology-header p {
     font-size: 1.1rem;
-    color: #666;
+    color: #7a7f99;
   }
 
   .strategy-grid {
@@ -380,18 +380,18 @@ const {
   }
 
   .strategy-card {
-    background: white;
+    background: #131627;
     padding: 30px;
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid rgba(255,255,255,0.07);
     position: relative;
     padding-top: 50px;
     transition: all 0.3s ease;
   }
 
   .strategy-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-color: #d1d5db;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255,255,255,0.12);
   }
 
   .strategy-number {
@@ -400,7 +400,7 @@ const {
     left: 20px;
     width: 40px;
     height: 40px;
-    background: #f97316;
+    background: #f0622a;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -413,20 +413,20 @@ const {
   .strategy-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 12px;
   }
 
   .strategy-description {
     font-size: 0.95rem;
-    color: #6b7280;
+    color: #7a7f99;
     line-height: 1.6;
     margin: 0;
   }
 
   /* Results Comparison Section */
   .results-comparison {
-    background: white;
+    background: #0d0f1a;
     padding: 80px 0;
   }
 
@@ -435,18 +435,18 @@ const {
     margin: 0 auto;
     overflow-x: auto;
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid rgba(255,255,255,0.07);
   }
 
   .results-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    background: #131627;
   }
 
   .results-table thead {
-    background: #f9fafb;
-    border-bottom: 2px solid #e5e7eb;
+    background: #1a1e32;
+    border-bottom: 2px solid rgba(255,255,255,0.07);
   }
 
   .results-table th {
@@ -454,14 +454,14 @@ const {
     text-align: left;
     font-weight: 600;
     font-size: 0.95rem;
-    color: #374151;
+    color: #b0b4cc;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
 
   .results-table td {
     padding: 16px 20px;
-    border-bottom: 1px solid #f3f4f6;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     font-size: 1rem;
   }
 
@@ -470,20 +470,20 @@ const {
   }
 
   .results-table tbody tr:hover {
-    background: #f9fafb;
+    background: rgba(255,255,255,0.03);
   }
 
   .metric-name-cell {
     font-weight: 600;
-    color: #1a1a1a;
+    color: #e8eaf2;
   }
 
   .before-cell {
-    color: #6b7280;
+    color: #7a7f99;
   }
 
   .after-cell {
-    color: #f97316;
+    color: #f0622a;
     font-weight: 600;
   }
 
@@ -494,7 +494,7 @@ const {
 
   /* Client Testimonial Section */
   .client-testimonial {
-    background: #fafafa;
+    background: #0d0f1a;
     padding: 80px 0;
   }
 
@@ -507,46 +507,46 @@ const {
   .testimonial-container h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 40px;
   }
 
   .testimonial-content {
-    background: white;
+    background: #131627;
     padding: 50px 40px;
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    border-left: 4px solid #f97316;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-left: 4px solid #f0622a;
   }
 
   .testimonial-quote {
     font-size: 1.25rem;
     line-height: 1.8;
-    color: #374151;
+    color: #b0b4cc;
     font-style: italic;
     margin: 0 0 30px 0;
   }
 
   .testimonial-author {
     padding-top: 20px;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid rgba(255,255,255,0.07);
   }
 
   .author-name {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 5px;
   }
 
   .author-position {
     font-size: 0.95rem;
-    color: #6b7280;
+    color: #7a7f99;
   }
 
   /* Key Takeaways Section */
   .key-takeaways {
-    background: white;
+    background: #0d0f1a;
     padding: 80px 0;
   }
 
@@ -561,10 +561,10 @@ const {
   .takeaway-item {
     display: flex;
     gap: 20px;
-    background: #fafafa;
+    background: #1a1e32;
     padding: 25px 30px;
     border-radius: 8px;
-    border-left: 4px solid #f97316;
+    border-left: 4px solid #f0622a;
     align-items: flex-start;
   }
 
@@ -572,7 +572,7 @@ const {
     flex-shrink: 0;
     width: 36px;
     height: 36px;
-    background: #f97316;
+    background: #f0622a;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -585,7 +585,7 @@ const {
   .takeaway-text {
     flex: 1;
     font-size: 1.05rem;
-    color: #374151;
+    color: #b0b4cc;
     line-height: 1.7;
     margin: 0;
     padding-top: 6px;
@@ -620,7 +620,7 @@ const {
 
   /* Performance Transformation Section */
   .performance-transformation {
-    background: white;
+    background: #0d0f1a;
     padding: 100px 0;
   }
 
@@ -632,7 +632,7 @@ const {
   .transformation-header h2 {
     font-size: 3rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 1rem;
   }
 
@@ -644,11 +644,11 @@ const {
   }
 
   .comparison-card {
-    background: white;
+    background: #131627;
     border-radius: 25px;
     padding: 40px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-    border: 3px solid #f1f5f9;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(255,255,255,0.07);
     transition: all 0.3s ease;
     overflow: hidden;
     position: relative;
@@ -668,7 +668,7 @@ const {
   .metric-name {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin: 0;
   }
 
@@ -747,7 +747,7 @@ const {
   .arrow-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #f97316, #4285F4);
+    background: linear-gradient(135deg, #f0622a, #4285F4);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -763,7 +763,7 @@ const {
   .transformation-label {
     font-size: 12px;
     font-weight: 600;
-    color: #666;
+    color: #7a7f99;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -786,7 +786,7 @@ const {
   }
 
   .transformation-footer {
-    background: #f8fafc;
+    background: #131627;
     border-radius: 20px;
     padding: 50px;
     text-align: center;
@@ -795,7 +795,7 @@ const {
   .footer-content h3 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 20px;
   }
 
@@ -816,7 +816,7 @@ const {
 
   /* Client Spotlight Section */
   .client-spotlight {
-    background: #f8fafc;
+    background: #0d0f1a;
   }
 
   .spotlight-container {
@@ -832,7 +832,7 @@ const {
   .spotlight-header h2 {
     font-size: 3rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 1rem;
   }
 
@@ -840,10 +840,10 @@ const {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 60px;
-    background: white;
+    background: #131627;
     border-radius: 25px;
     padding: 60px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   }
 
   .quote-section {
@@ -853,7 +853,7 @@ const {
   .quote-mark {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #f97316, #4285F4);
+    background: linear-gradient(135deg, #f0622a, #4285F4);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -869,7 +869,7 @@ const {
   .testimonial-text {
     font-size: 1.5rem;
     line-height: 1.8;
-    color: #1a1a1a;
+    color: #e8eaf2;
     font-style: italic;
     margin: 0;
     position: relative;
@@ -907,7 +907,7 @@ const {
   .author-name {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 8px;
   }
 
@@ -920,7 +920,7 @@ const {
 
   .author-company {
     font-size: 1rem;
-    color: #666;
+    color: #7a7f99;
     font-weight: 500;
   }
 
@@ -934,7 +934,7 @@ const {
     display: flex;
     align-items: center;
     gap: 15px;
-    background: #f8fafc;
+    background: #1a1e32;
     padding: 15px 20px;
     border-radius: 15px;
     border-left: 4px solid #4285F4;
@@ -947,12 +947,12 @@ const {
 
   .satisfaction-item span {
     font-weight: 600;
-    color: #1a1a1a;
+    color: #e8eaf2;
   }
 
   /* Strategic Insights Section */
   .strategic-insights {
-    background: white;
+    background: #0d0f1a;
   }
 
   .insights-header {
@@ -963,7 +963,7 @@ const {
   .insights-header h2 {
     font-size: 3rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 1rem;
   }
 
@@ -976,13 +976,13 @@ const {
   .intro-content h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 20px;
   }
 
   .intro-content p {
     font-size: 1.1rem;
-    color: #666;
+    color: #7a7f99;
     line-height: 1.7;
   }
 
@@ -994,11 +994,11 @@ const {
   }
 
   .insight-card {
-    background: white;
+    background: #131627;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 2px solid #f1f5f9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255,255,255,0.07);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -1020,7 +1020,7 @@ const {
   .insight-number {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #f97316, #FF6B35);
+    background: linear-gradient(135deg, #f0622a, #d4510e);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1048,13 +1048,13 @@ const {
   .insight-content h4 {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 15px;
   }
 
   .insight-text {
     font-size: 1rem;
-    color: #666;
+    color: #7a7f99;
     line-height: 1.7;
     margin-bottom: 20px;
   }
@@ -1063,7 +1063,7 @@ const {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #f8fafc;
+    background: #1a1e32;
     color: #4285F4;
     padding: 8px 15px;
     border-radius: 20px;
@@ -1093,22 +1093,22 @@ const {
   }
 
   .conclusion-card {
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    background: linear-gradient(135deg, #131627, #1a1e32);
     border-radius: 25px;
     padding: 60px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid rgba(255,255,255,0.07);
   }
 
   .conclusion-card h3 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #e8eaf2;
     margin-bottom: 25px;
   }
 
   .conclusion-card p {
     font-size: 1.2rem;
-    color: #666;
+    color: #7a7f99;
     line-height: 1.7;
     margin-bottom: 40px;
   }
@@ -1117,7 +1117,7 @@ const {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-    background: linear-gradient(135deg, #f97316, #4285F4);
+    background: linear-gradient(135deg, #f0622a, #4285F4);
     color: white;
     padding: 20px 40px;
     border-radius: 50px;
@@ -1125,12 +1125,12 @@ const {
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(255, 68, 56, 0.3);
+    box-shadow: 0 10px 30px rgba(240, 98, 42, 0.3);
   }
 
   .insights-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 68, 56, 0.4);
+    box-shadow: 0 15px 40px rgba(240, 98, 42, 0.4);
   }
 
   @keyframes pulse {
@@ -1191,56 +1191,56 @@ const {
   }
   
   .results-table-container {
-    background: white;
+    background: #131627;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(66, 133, 244, 0.1);
   }
-  
+
   .results-table {
     width: 100%;
     border-collapse: collapse;
   }
-  
+
   .results-table thead {
-    background: linear-gradient(135deg, #f97316 0%, #4285F4 100%);
+    background: linear-gradient(135deg, #f0622a 0%, #4285F4 100%);
     color: white;
   }
-  
+
   .results-table th,
   .results-table td {
     padding: 1.5rem;
     text-align: left;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
-  
+
   .results-table th {
     font-weight: 600;
     font-size: 1.1rem;
   }
-  
+
   .results-table tbody tr:hover {
-    background: #f8fafc;
+    background: rgba(255,255,255,0.03);
   }
-  
+
   .metric-name {
     font-weight: 600;
-    color: #1a1a1a;
+    color: #e8eaf2;
   }
-  
+
   .before-value {
-    color: #666;
+    color: #7a7f99;
   }
-  
+
   .after-value {
     font-weight: 600;
     color: #4285F4;
   }
-  
+
   .improvement-value {
     font-weight: 700;
-    background: linear-gradient(135deg, #f97316, #4285F4);
+    background: linear-gradient(135deg, #f0622a, #4285F4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1320,18 +1320,18 @@ const {
 
 <style>
   :root {
-    --brand-primary: #1a1a1a;
-    --brand-accent: #f97316;
+    --brand-primary: #e8eaf2;
+    --brand-accent: #f0622a;
     --brand-secondary: #2563eb;
-    --brand-dark: #1f2937;
-    --brand-soft: #6b7280;
-    --brand-light: #f8fafc;
-    --brand-white: #ffffff;
+    --brand-dark: #e8eaf2;
+    --brand-soft: #7a7f99;
+    --brand-light: #0d0f1a;
+    --brand-white: #131627;
   }
 
   /* Hero Section */
   .hero-seo {
-    background: linear-gradient(135deg, #f97316 0%, #FF6B35 50%, #4285F4 100%);
+    background: linear-gradient(135deg, #f0622a 0%, #d4510e 50%, #4285F4 100%);
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -1503,14 +1503,14 @@ const {
 
   .cta-button.primary {
     background: white;
-    color: #f97316;
+    color: #f0622a;
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
   }
 
   .cta-button.primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
-    background: #f8f9fa;
+    background: #1a1e32;
   }
 
   .cta-button.secondary {
@@ -1650,7 +1650,7 @@ const {
   }
 
   .section-header h2 span {
-    background: linear-gradient(135deg, #f97316 0%, #ff6b5a 100%);
+    background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1677,23 +1677,23 @@ const {
   }
 
   .feature-card {
-    background: white;
+    background: #131627;
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 
   .feature-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #f97316 0%, #ff6b5a 100%);
+    background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1782,7 +1782,7 @@ const {
   /* Approach Section */
   .approach-section {
     padding: 100px 0;
-    background: white;
+    background: #0d0f1a;
   }
 
   .approach-steps {
@@ -1793,10 +1793,10 @@ const {
   }
 
   .step-card {
-    background: linear-gradient(145deg, #f8f9ff 0%, #ffffff 100%);
+    background: linear-gradient(145deg, #131627 0%, #1a1e32 100%);
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     position: relative;
     border: 1px solid rgba(255, 68, 56, 0.1);
@@ -1813,7 +1813,7 @@ const {
     left: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #f97316 0%, #ff6b5a 100%);
+    background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1821,7 +1821,7 @@ const {
     font-size: 1.2rem;
     font-weight: 700;
     color: white;
-    box-shadow: 0 5px 15px rgba(255, 68, 56, 0.3);
+    box-shadow: 0 5px 15px rgba(240, 98, 42, 0.3);
   }
 
   .step-card h3 {
@@ -1850,23 +1850,23 @@ const {
   }
 
   .service-card {
-    background: white;
+    background: #131627;
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 
   .service-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #f97316 0%, #ff6b5a 100%);
+    background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1958,7 +1958,7 @@ const {
   /* FAQ Section */
   .faq-section {
     padding: 100px 0;
-    background: white;
+    background: #0d0f1a;
   }
 
   .faq-container {
@@ -1966,12 +1966,12 @@ const {
   }
 
   .faq-item {
-    background: white;
+    background: #131627;
     border-radius: 15px;
     margin-bottom: 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .faq-question {
@@ -1980,12 +1980,12 @@ const {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(145deg, #f8f9ff 0%, #ffffff 100%);
+    background: linear-gradient(145deg, #1a1e32 0%, #131627 100%);
     transition: all 0.3s ease;
   }
 
   .faq-question:hover {
-    background: linear-gradient(145deg, #eef2ff 0%, #f8f9ff 100%);
+    background: linear-gradient(145deg, #212540 0%, #1a1e32 100%);
   }
 
   .faq-question h3 {

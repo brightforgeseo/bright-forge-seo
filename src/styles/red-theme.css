@@ -5,9 +5,9 @@
 
 :root {
   /* Ensure brand accent is red sitewide for non-article pages */
-  --brand-accent: #f97316;
+  --brand-accent: #f0622a;
   --brand-accent-light: #FFE9E8;
-  --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #f97316 100%);
+  --gradient-secondary: linear-gradient(135deg, #d4510e 0%, #f0622a 100%);
 }
 
 /* Removed hero background overrides - let component styles handle this */
@@ -33,7 +33,7 @@
 .btn-primary,
 .cta-primary {
   background: #ffffff !important;
-  color: #f97316 !important;
+  color: #f0622a !important;
   border-color: #ffffff !important;
 }
 
@@ -42,12 +42,12 @@
 .btn-primary:hover,
 .cta-primary:hover {
   background: #f8f9fa !important;
-  color: #f97316 !important;
+  color: #f0622a !important;
 }
 
 /* Secondary CTAs with red borders */
 .cta-secondary {
-  color: #f97316 !important;
+  color: #f0622a !important;
   border-color: rgba(255, 68, 56, 0.5) !important;
 }
 
@@ -66,7 +66,7 @@
 .service-icon i,
 .stat-number,
 .metric-value {
-  color: #f97316 !important;
+  color: #f0622a !important;
 }
 
 /* Light red backgrounds used in subtle UI elements */
@@ -79,18 +79,18 @@
 /* Borders that previously used blue */
 .border-brand-accent,
 .hover\:border-brand-accent:hover {
-  border-color: #f97316 !important;
+  border-color: #f0622a !important;
 }
 
 /* Links hover effect to red on non-article pages */
 main a:hover {
-  color: #f97316;
+  color: #f0622a;
 }
 
 /* FAQ chevrons, summaries, and interactive accents */
 .faq-section .faq-summary .faq-icon i,
 .faq-section .faq-summary:hover .faq-icon i {
-  color: #f97316 !important;
+  color: #f0622a !important;
 }
 
 /* ============================= */
@@ -105,12 +105,12 @@ main a:hover {
 .achievement-rank,
 .achievement-icon,
 .step-icon-container {
-  background: linear-gradient(135deg, #f97316, #FF6B35) !important;
+  background: linear-gradient(135deg, #f0622a, #d4510e) !important;
 }
 
 .achievement-value,
 .summary-grid .stat-number {
-  background: linear-gradient(135deg, #f97316, #FF6B35) !important;
+  background: linear-gradient(135deg, #f0622a, #d4510e) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -123,11 +123,11 @@ main a:hover {
 .timeline-container::before,
 .vertical-line,
 .timeline-line {
-  background: linear-gradient(to bottom, #f97316 0%, #FF6B35 100%) !important;
+  background: linear-gradient(to bottom, #f0622a 0%, #d4510e 100%) !important;
 }
 
 .story-marker {
-  background: linear-gradient(135deg, #f97316, #FF6B35) !important;
+  background: linear-gradient(135deg, #f0622a, #d4510e) !important;
 }
 
 .challenge-narrative,
@@ -137,19 +137,19 @@ main a:hover {
 .liability-limit,
 .indemnification-item,
 .contact-item {
-  border-left: 4px solid #f97316 !important;
+  border-left: 4px solid #f0622a !important;
 }
 
 .progress-fill,
 .progress-bar .progress-fill {
-  background: linear-gradient(90deg, #f97316, #FF6B35) !important;
+  background: linear-gradient(90deg, #f0622a, #d4510e) !important;
 }
 
 /* ============================= */
 /* Terms / Legal pages overrides */
 /* ============================= */
 .terms-section h2 {
-  border-image: linear-gradient(90deg, #f97316, #FF6B35) 1 !important;
+  border-image: linear-gradient(90deg, #f0622a, #d4510e) 1 !important;
 }
 
 .section-icon,
@@ -157,13 +157,13 @@ main a:hover {
 .confidentiality-icon,
 .modifications-icon,
 .law-icon {
-  background: linear-gradient(135deg, #f97316 0%, #FF6B35 100%) !important;
+  background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%) !important;
 }
 
 .acceptance-item i,
 .contact-item i,
 .liability-item i {
-  color: #f97316 !important;
+  color: #f0622a !important;
 }
 
 /* ============================= */
@@ -171,7 +171,7 @@ main a:hover {
 /* ============================= */
 .step-number,
 .step-number-modern {
-  background: linear-gradient(135deg, #f97316, #FF6B35) !important;
+  background: linear-gradient(135deg, #f0622a, #d4510e) !important;
   color: #fff !important;
 }
 
@@ -179,7 +179,7 @@ main a:hover {
 .timeline-badge,
 .read-more,
 .cta-secondary { /* ensure text accents red */
-  color: #f97316 !important;
+  color: #f0622a !important;
 }
 
 .timeline-badge {
@@ -188,7 +188,7 @@ main a:hover {
 
 /* Blog listing hero (non-article) is covered by hero-* rule; ensure section headers too */
 .hero-blog .hero-cta-btn.primary {
-  color: #f97316 !important;
+  color: #f0622a !important;
 }
 
 /* Removed fallback gradient override - let components handle their own backgrounds */
