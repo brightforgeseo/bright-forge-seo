@@ -29,8 +29,19 @@
 
   function initGlobe(canvas: HTMLCanvasElement) {
     const parent = canvas.parentElement!;
-    let width = parent.clientWidth;
-    let height = parent.clientHeight;
+    // Use the section (grandparent) for dimensions since parent is position:absolute
+    const section = parent.parentElement!;
+    let width = section.clientWidth;
+    let height = section.clientHeight;
+
+    // Bail if section hasn't laid out yet, retry shortly
+    if (!width || !height) {
+      requestAnimationFrame(() => {
+        canvas.dataset.initialized = '';
+        initGlobe(canvas);
+      });
+      return;
+    }
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({
@@ -211,8 +222,8 @@
 
     // Resize handler
     function onResize() {
-      width = parent.clientWidth;
-      height = parent.clientHeight;
+      width = section.clientWidth;
+      height = section.clientHeight;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
