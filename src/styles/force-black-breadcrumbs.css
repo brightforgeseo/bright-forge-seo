@@ -1,4 +1,4 @@
-/* FORCE BLACK BREADCRUMBS - HIGH PRIORITY OVERRIDE */
+/* FORCE WHITE BREADCRUMBS - for dark theme hero sections */
 
 /* Target all breadcrumb containers */
 [data-breadcrumb-container],
@@ -9,7 +9,7 @@ section.hero-content div:first-child > div:first-child,
 section.hero-seo div:first-child > div:first-child,
 section.hero-backlink div:first-child > div:first-child,
 section > div > div[style*="display: flex"][style*="align-items: center"] {
-  color: black !important;
+  color: white !important;
 }
 
 /* Target all breadcrumb links and elements */
@@ -28,8 +28,6 @@ section.hero-seo div:first-child > div:first-child a,
 section.hero-seo div:first-child > div:first-child span,
 section.hero-backlink div:first-child > div:first-child a,
 section.hero-backlink div:first-child > div:first-child span {
-  color: black !important;
-  color: #000000 !important;
-  color: rgb(0, 0, 0) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   text-decoration: none !important;
 }
