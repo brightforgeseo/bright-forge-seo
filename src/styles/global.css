@@ -35,6 +35,16 @@
     color: #ffffff;
   }
 
+  /* Ensure all FAQ/accordion answers use readable white text */
+  .faq-answer,
+  .faq-answer p,
+  .faq-content,
+  .faq-content p,
+  .faq-content ul li,
+  .faq-content ol li {
+    color: #ffffff;
+  }
+
   h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4rem); }
   h2 { font-size: clamp(2rem, 4vw + 0.5rem, 3rem); }
   h3 { font-size: clamp(1.5rem, 3vw + 0.25rem, 2rem); }
