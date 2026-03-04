@@ -1887,7 +1887,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Analysis Complete
           </div>
           <h3 class="text-2xl font-bold text-[#e8eaf2] mb-2">SEO Audit Results</h3>
-          <p class="text-[#7a7f99]">${analysis.url}</p>
+          <p class="text-[#d0d4e8]">${analysis.url}</p>
         </div>
 
         <!-- Overall Score -->
@@ -1896,7 +1896,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="text-3xl font-bold ${overallColors.text}">${analysis.overallScore}</span>
           </div>
           <div class="text-lg font-semibold text-[#e8eaf2]">Overall SEO Score</div>
-          <div class="text-sm text-[#7a7f99]">
+          <div class="text-sm text-[#d0d4e8]">
             ${analysis.overallScore >= 80 ? 'Excellent! Your site is well optimized.' : 
               analysis.overallScore >= 60 ? 'Good foundation with room for improvement.' : 
               'Significant optimization opportunities available.'}
@@ -1942,7 +1942,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   }"></div>
                   <div class="flex-1">
                     <div class="text-sm font-medium text-[#e8eaf2]">${issue.text}</div>
-                    <div class="text-xs text-[#7a7f99]">Priority: ${issue.priority}</div>
+                    <div class="text-xs text-[#d0d4e8]">Priority: ${issue.priority}</div>
                   </div>
                 </div>
               `).join('')}
@@ -1972,7 +1972,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- CTA -->
         <div class="text-center mt-8 pt-6 border-t border-[rgba(255,255,255,0.07)]">
-          <p class="text-[#7a7f99] mb-4">Want a detailed analysis and implementation plan?</p>
+          <p class="text-[#d0d4e8] mb-4">Want a detailed analysis and implementation plan?</p>
           <a href="/contact/" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-medium mb-4 shadow-2xl">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
@@ -1993,7 +1993,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </svg>
         </div>
         <h3 class="text-xl font-semibold text-[#e8eaf2] mb-2">Analysis Failed</h3>
-        <p class="text-[#7a7f99] mb-4">We couldn't analyze your website. Please check the URL and try again.</p>
+        <p class="text-[#d0d4e8] mb-4">We couldn't analyze your website. Please check the URL and try again.</p>
         <button onclick="location.reload()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
           Try Again
         </button>

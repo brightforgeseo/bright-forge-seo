@@ -454,7 +454,7 @@ const breadcrumbs = [
             SEO Services: <span class="text-[#f0622a]">Transforming Your Online Presence</span>
           </h2>
 
-          <p class="text-lg text-[#7a7f99] leading-relaxed">
+          <p class="text-lg text-[#d0d4e8] leading-relaxed">
             From technical audits to content strategy, we cover every aspect of search engine optimization to drive meaningful results for your business.
           </p>
 
@@ -511,7 +511,7 @@ const breadcrumbs = [
               SEO Audits & Strategic Planning
             </h3>
 
-            <p class="text-[#7a7f99] text-sm leading-relaxed mb-6">
+            <p class="text-[#d0d4e8] text-sm leading-relaxed mb-6">
               We start by reviewing your site in detail. Technical setup, content quality, and backlinks all get checked. The aim is simple: show you what's working, what isn't, and where improvements will have the biggest impact.
             </p>
 
@@ -545,7 +545,7 @@ const breadcrumbs = [
               Keyword Research
             </h3>
 
-            <p class="text-[#7a7f99] text-sm leading-relaxed mb-6">
+            <p class="text-[#d0d4e8] text-sm leading-relaxed mb-6">
               It's not just about ranking for keywords, it's about ranking for the right ones. We dig into how your audience searches, spot the gaps your competitors overlook, and build a keyword strategy designed to deliver customers, not just clicks.
             </p>
 
@@ -579,7 +579,7 @@ const breadcrumbs = [
               On-Page SEO
             </h3>
 
-            <p class="text-[#7a7f99] text-sm leading-relaxed mb-6">
+            <p class="text-[#d0d4e8] text-sm leading-relaxed mb-6">
               Small changes can make a big difference. Optimised titles, stronger internal links, improved content flow — these tweaks tell search engines exactly what your page is about, while keeping it natural for readers.
             </p>
 
@@ -613,7 +613,7 @@ const breadcrumbs = [
               Technical SEO
             </h3>
 
-            <p class="text-[#7a7f99] text-sm leading-relaxed mb-6">
+            <p class="text-[#d0d4e8] text-sm leading-relaxed mb-6">
               Technical SEO isn't glamorous, but it matters. We'll sort out crawl errors, improve loading times, and keep your site running properly on phones and tablets as well as desktops.
             </p>
 
@@ -647,7 +647,7 @@ const breadcrumbs = [
               Link Building
             </h3>
 
-            <p class="text-[#7a7f99] text-sm leading-relaxed mb-6">
+            <p class="text-[#d0d4e8] text-sm leading-relaxed mb-6">
               Backlinks can help, but only if they're from the right sources. We'll target publications and websites that your audience actually pays attention to, rather than chasing numbers.
             </p>
 
@@ -681,7 +681,7 @@ const breadcrumbs = [
               Content That Works
             </h3>
 
-            <p class="text-[#7a7f99] text-sm leading-relaxed mb-6">
+            <p class="text-[#d0d4e8] text-sm leading-relaxed mb-6">
               Getting people to your site is only half the job. We create content that explains what you do clearly, answers common questions, and encourages visitors to take the next step — whether that's making an enquiry, booking a call, or buying a product.
             </p>
 
@@ -873,7 +873,7 @@ const breadcrumbs = [
                 <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">
                   {post.tags && post.tags.length > 0 ? post.tags[0] : 'SEO'}
                 </span>
-                <span class="blog-date text-[#7a7f99] ml-3">
+                <span class="blog-date text-[#d0d4e8] ml-3">
                   {new Date(post.publishDate).toLocaleDateString('en-US', { 
                     year: 'numeric', 
                     month: 'long', 
@@ -886,7 +886,7 @@ const breadcrumbs = [
                   {post.title}
                 </a>
               </h3>
-              <p class="text-[#7a7f99] mb-3 text-sm line-clamp-2">
+              <p class="text-[#d0d4e8] mb-3 text-sm line-clamp-2">
                 {post.excerpt}
               </p>
               <a href={`/blog/${post.slug}/`} class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
@@ -1032,7 +1032,7 @@ const breadcrumbs = [
     --brand-accent: #f0622a;
     --brand-bg: #0d0f1a;
     --text-primary: #e8eaf2;
-    --text-secondary: #7a7f99;
+    --text-secondary: #d0d4e8;
     --border-color: rgba(255,255,255,0.07);
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
@@ -4220,7 +4220,7 @@ const breadcrumbs = [
     modalOverlay.appendChild(modalContent);
     
     const closeButton = document.createElement('button');
-    closeButton.className = 'absolute top-4 right-4 text-[#7a7f99] hover:text-[#e8eaf2]';
+    closeButton.className = 'absolute top-4 right-4 text-[#d0d4e8] hover:text-[#e8eaf2]';
     closeButton.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
     closeButton.onclick = () => modalOverlay.style.display = 'none';
     modalContent.appendChild(closeButton);
@@ -4545,7 +4545,7 @@ const breadcrumbs = [
     
     // Helper function for score colors
     function getScoreColorClass(score) {
-      if (score === 'N/A') return 'text-[#7a7f99]';
+      if (score === 'N/A') return 'text-[#d0d4e8]';
       if (score >= 80) return 'text-green-600';
       if (score >= 50) return 'text-yellow-600';
       return 'text-red-600';

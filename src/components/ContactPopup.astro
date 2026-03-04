@@ -53,15 +53,11 @@
 <script>
 (function() {
   const POPUP_DELAY = 15000;
-  const COOLDOWN_DAYS = 7;
   const STORAGE_KEY = 'popupShown';
 
   function shouldShow() {
     try {
-      const last = localStorage.getItem(STORAGE_KEY);
-      if (!last) return true;
-      const elapsed = Date.now() - parseInt(last, 10);
-      return elapsed > COOLDOWN_DAYS * 24 * 60 * 60 * 1000;
+      return !sessionStorage.getItem(STORAGE_KEY);
     } catch (e) {
       return true;
     }
@@ -73,7 +69,7 @@
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    try { localStorage.setItem(STORAGE_KEY, Date.now().toString()); } catch (e) {}
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
   }
 
   function closePopup() {
