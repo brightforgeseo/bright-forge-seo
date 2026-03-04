@@ -13,6 +13,7 @@
     "@astrojs/markdown-remark": "^6.3.2",
     "@astrojs/tailwind": "^5.0.0",
     "@contentful/rich-text-html-renderer": "^17.0.1",
+    "@csstools/color-helpers": "5.0.1",
     "astro": "^5.0.0",
     "contentful": "^11.7.2",
     "jsdom": "^26.1.0",
@@ -24,7 +25,7 @@
     "remark-html": "^16.0.1",
     "sanitize-html": "^2.17.0",
     "tailwindcss": "^3.0.24",
-    "@csstools/color-helpers": "5.0.1"
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",

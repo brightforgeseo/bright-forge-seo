@@ -12,15 +12,14 @@ const {
   title,
   breadcrumbCurrent = "Home"
 } = Astro.props;
+import HeroGlobe from './HeroGlobe.astro';
 ---
 
 <section class="hero-modern">
   <!-- Background Elements -->
   <div class="hero-bg">
     <div class="bg-gradient"></div>
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
-    <div class="bg-grid"></div>
+    <HeroGlobe />
   </div>
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -95,27 +94,6 @@ const {
   @keyframes gradientFlow {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
-  }
-
-  .bg-glow {
-    display: none;
-  }
-
-  .bg-glow-1 {
-    display: none;
-  }
-
-  .bg-glow-2 {
-    display: none;
-  }
-
-  .bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
   }
 
   /* Breadcrumbs */

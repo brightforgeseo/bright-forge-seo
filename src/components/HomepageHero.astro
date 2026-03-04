@@ -26,15 +26,14 @@ const {
   trustBadgeCount = "1000+",
   trustBadgeText = "Websites Ranked"
 } = Astro.props;
+import HeroGlobe from './HeroGlobe.astro';
 ---
 
 <section class="homepage-hero">
   <!-- Subtle background elements -->
   <div class="hero-bg-elements">
     <div class="bg-gradient"></div>
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
-    <div class="bg-grid"></div>
+    <HeroGlobe />
   </div>
 
   <div class="max-w-7xl mx-auto px-6 py-16 md:py-20 lg:py-24 relative z-10">
@@ -158,37 +157,6 @@ const {
   @keyframes gradientFlow {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
-  }
-
-  .bg-glow {
-    display: none;
-  }
-
-  .bg-glow-1 {
-    display: none;
-  }
-
-  .bg-glow-2 {
-    display: none;
-  }
-
-  @keyframes float1 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(30px, 30px); }
-  }
-
-  @keyframes float2 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-20px, -20px); }
-  }
-
-  .bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
   }
 
   /* Grid layout */
@@ -538,11 +506,6 @@ const {
       background-position: 0% 50%;
     }
 
-    .bg-glow-1,
-    .bg-glow-2 {
-      animation: none;
-    }
-
     .badge-dot {
       animation: none;
     }
@@ -570,8 +533,6 @@ const {
   /* Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
     .bg-gradient,
-    .bg-glow-1,
-    .bg-glow-2,
     .badge-dot,
     .floating-card {
       animation: none;
