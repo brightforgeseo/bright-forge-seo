@@ -211,7 +211,7 @@ body {
 .column-title {
   font-size: 11px;
   font-weight: 700;
-  color: var(--brand-soft);
+  color: #ffffff;
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -262,7 +262,7 @@ body {
 
 .service-info span {
   display: block;
-  color: var(--brand-soft);
+  color: #ffffff;
   font-size: 12px;
   line-height: 1.4;
   opacity: 0.8;
@@ -284,7 +284,7 @@ body {
 }
 
 .mega-highlight p {
-  color: var(--brand-soft);
+  color: #ffffff;
   font-size: 13px;
   margin-bottom: 14px;
   line-height: 1.5;
@@ -354,7 +354,7 @@ body {
 }
 
 .category-title {
-  color: var(--brand-soft);
+  color: #ffffff;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -440,7 +440,7 @@ body {
 
 .industry-link span {
   display: block;
-  color: var(--brand-soft);
+  color: #ffffff;
   font-size: 12px;
   line-height: 1.4;
   opacity: 0.8;
@@ -534,7 +534,7 @@ body {
 
 .dropdown-link span {
   display: block;
-  color: var(--brand-soft);
+  color: #ffffff;
   font-size: 12px;
   line-height: 1.4;
   opacity: 0.8;
