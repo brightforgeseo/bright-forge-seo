@@ -1,7 +1,7 @@
 ---
 /**
  * 3D wireframe globe background for hero sections.
- * Renders a slowly rotating globe with connection points using Three.js.
+ * Loads Three.js from CDN to avoid bundler/module issues.
  */
 ---
 
@@ -25,40 +25,30 @@
   }
 </style>
 
-<script>
-  import * as THREE from 'three';
-
-  function initGlobe(canvas: HTMLCanvasElement) {
-    // Walk up to find the section element for dimensions
-    let section: HTMLElement | null = canvas.parentElement;
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline>
+(function() {
+  function initGlobe(canvas) {
+    var section = canvas.parentElement;
     while (section && section.tagName !== 'SECTION') {
       section = section.parentElement;
     }
-    if (!section) {
-      console.error('[HeroGlobe] No parent section found');
-      return;
-    }
+    if (!section) return;
 
-    let width = section.clientWidth;
-    let height = section.clientHeight;
-    console.log('[HeroGlobe] Section dimensions:', width, 'x', height);
+    var width = section.clientWidth;
+    var height = section.clientHeight;
 
     if (!width || !height) {
-      setTimeout(() => {
-        canvas.dataset.initialized = '';
+      setTimeout(function() {
+        canvas.removeAttribute('data-init');
         initGlobe(canvas);
       }, 100);
       return;
     }
 
-    // Renderer
-    let renderer: THREE.WebGLRenderer;
+    var renderer;
     try {
-      renderer = new THREE.WebGLRenderer({
-        canvas,
-        alpha: true,
-        antialias: true,
-      });
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
     } catch (e) {
       console.error('[HeroGlobe] WebGL failed:', e);
       return;
@@ -67,34 +57,31 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(width, height);
 
-    // Scene & Camera
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
     camera.position.z = 3.2;
 
-    // Brand colors
-    const orange = new THREE.Color(0xf0622a);
-    const dimWhite = new THREE.Color(0x3a3f5c);
+    var orange = new THREE.Color(0xf0622a);
+    var dimWhite = new THREE.Color(0x3a3f5c);
 
-    // Globe group
-    const globe = new THREE.Group();
+    var globe = new THREE.Group();
     scene.add(globe);
 
-    // Wireframe sphere (latitude/longitude lines)
-    const sphereGeo = new THREE.SphereGeometry(1, 36, 18);
-    const wireframe = new THREE.LineSegments(
+    // Wireframe sphere
+    var sphereGeo = new THREE.SphereGeometry(1, 36, 18);
+    var wireframe = new THREE.LineSegments(
       new THREE.WireframeGeometry(sphereGeo),
       new THREE.LineBasicMaterial({ color: dimWhite, transparent: true, opacity: 0.25 })
     );
     globe.add(wireframe);
 
     // Latitude rings
-    for (let i = 1; i < 6; i++) {
-      const phi = (i / 6) * Math.PI;
-      const ringRadius = Math.sin(phi);
-      const ringY = Math.cos(phi);
-      const ringGeo = new THREE.RingGeometry(ringRadius - 0.002, ringRadius + 0.002, 64);
-      const ring = new THREE.Mesh(
+    for (var i = 1; i < 6; i++) {
+      var phi = (i / 6) * Math.PI;
+      var ringRadius = Math.sin(phi);
+      var ringY = Math.cos(phi);
+      var ringGeo = new THREE.RingGeometry(ringRadius - 0.002, ringRadius + 0.002, 64);
+      var ring = new THREE.Mesh(
         ringGeo,
         new THREE.MeshBasicMaterial({ color: dimWhite, transparent: true, opacity: 0.15, side: THREE.DoubleSide })
       );
@@ -103,105 +90,66 @@
       globe.add(ring);
     }
 
-    // Connection points (glowing dots on surface)
-    const pointPositions = [
-      { lat: 14.5, lng: 121 },   // Manila
-      { lat: 35.7, lng: 139.7 }, // Tokyo
-      { lat: 37.8, lng: -122.4 },// San Francisco
-      { lat: 51.5, lng: -0.1 },  // London
-      { lat: -33.9, lng: 151.2 },// Sydney
-      { lat: 1.35, lng: 103.8 }, // Singapore
-      { lat: 55.75, lng: 37.6 }, // Moscow
-      { lat: 22.3, lng: 114.2 }, // Hong Kong
-      { lat: 48.9, lng: 2.35 },  // Paris
-      { lat: -23.5, lng: -46.6 },// São Paulo
-      { lat: 25.2, lng: 55.3 },  // Dubai
-      { lat: 40.7, lng: -74 },   // New York
+    // City connection points
+    var cities = [
+      { lat: 14.5, lng: 121 },
+      { lat: 35.7, lng: 139.7 },
+      { lat: 37.8, lng: -122.4 },
+      { lat: 51.5, lng: -0.1 },
+      { lat: -33.9, lng: 151.2 },
+      { lat: 1.35, lng: 103.8 },
+      { lat: 55.75, lng: 37.6 },
+      { lat: 22.3, lng: 114.2 },
+      { lat: 48.9, lng: 2.35 },
+      { lat: -23.5, lng: -46.6 },
+      { lat: 25.2, lng: 55.3 },
+      { lat: 40.7, lng: -74 },
     ];
 
-    function latLngToVec3(lat: number, lng: number, radius: number): THREE.Vector3 {
-      const phi = (90 - lat) * (Math.PI / 180);
-      const theta = (lng + 180) * (Math.PI / 180);
+    function toVec3(lat, lng, r) {
+      var p = (90 - lat) * (Math.PI / 180);
+      var t = (lng + 180) * (Math.PI / 180);
       return new THREE.Vector3(
-        -radius * Math.sin(phi) * Math.cos(theta),
-        radius * Math.cos(phi),
-        radius * Math.sin(phi) * Math.sin(theta)
+        -r * Math.sin(p) * Math.cos(t),
+        r * Math.cos(p),
+        r * Math.sin(p) * Math.sin(t)
       );
     }
 
-    // Glow point material
-    const pointGeo = new THREE.SphereGeometry(0.025, 8, 8);
-    const glowGeo = new THREE.SphereGeometry(0.05, 8, 8);
+    var dotGeo = new THREE.SphereGeometry(0.025, 8, 8);
+    var haloGeo = new THREE.SphereGeometry(0.05, 8, 8);
 
-    pointPositions.forEach((p) => {
-      const pos = latLngToVec3(p.lat, p.lng, 1.01);
-
-      // Solid core
-      const core = new THREE.Mesh(
-        pointGeo,
-        new THREE.MeshBasicMaterial({ color: orange })
-      );
-      core.position.copy(pos);
-      globe.add(core);
-
-      // Glow halo
-      const glow = new THREE.Mesh(
-        glowGeo,
-        new THREE.MeshBasicMaterial({ color: orange, transparent: true, opacity: 0.3 })
-      );
-      glow.position.copy(pos);
-      globe.add(glow);
+    cities.forEach(function(c) {
+      var pos = toVec3(c.lat, c.lng, 1.01);
+      var dot = new THREE.Mesh(dotGeo, new THREE.MeshBasicMaterial({ color: orange }));
+      dot.position.copy(pos);
+      globe.add(dot);
+      var halo = new THREE.Mesh(haloGeo, new THREE.MeshBasicMaterial({ color: orange, transparent: true, opacity: 0.3 }));
+      halo.position.copy(pos);
+      globe.add(halo);
     });
 
-    // Connection arcs between some city pairs
-    const connections = [
-      [0, 1], [0, 5], [0, 7], // Manila connections
-      [2, 11], [2, 1],        // SF-NYC, SF-Tokyo
-      [3, 8], [3, 6],         // London-Paris, London-Moscow
-      [4, 5],                 // Sydney-Singapore
-      [10, 6],                // Dubai-Moscow
-      [9, 11],                // São Paulo-NYC
-    ];
-
-    connections.forEach(([a, b]) => {
-      const pA = pointPositions[a];
-      const pB = pointPositions[b];
-      const vA = latLngToVec3(pA.lat, pA.lng, 1.01);
-      const vB = latLngToVec3(pB.lat, pB.lng, 1.01);
-
-      // Create arc via midpoint lifted above surface
-      const mid = new THREE.Vector3().addVectors(vA, vB).multiplyScalar(0.5);
-      const dist = vA.distanceTo(vB);
+    // Connection arcs
+    var links = [[0,1],[0,5],[0,7],[2,11],[2,1],[3,8],[3,6],[4,5],[10,6],[9,11]];
+    links.forEach(function(pair) {
+      var a = pair[0], b = pair[1];
+      var vA = toVec3(cities[a].lat, cities[a].lng, 1.01);
+      var vB = toVec3(cities[b].lat, cities[b].lng, 1.01);
+      var mid = new THREE.Vector3().addVectors(vA, vB).multiplyScalar(0.5);
+      var dist = vA.distanceTo(vB);
       mid.normalize().multiplyScalar(1 + dist * 0.2);
-
-      const curve = new THREE.QuadraticBezierCurve3(vA, mid, vB);
-      const arcGeo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(32));
-      const arc = new THREE.Line(
-        arcGeo,
-        new THREE.LineBasicMaterial({ color: orange, transparent: true, opacity: 0.2 })
-      );
-      globe.add(arc);
+      var curve = new THREE.QuadraticBezierCurve3(vA, mid, vB);
+      var geo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(32));
+      globe.add(new THREE.Line(geo, new THREE.LineBasicMaterial({ color: orange, transparent: true, opacity: 0.2 })));
     });
 
-    // Outer atmosphere glow
-    const atmosphereGeo = new THREE.SphereGeometry(1.08, 32, 32);
-    const atmosphere = new THREE.Mesh(
-      atmosphereGeo,
+    // Atmosphere glow
+    var atmosGeo = new THREE.SphereGeometry(1.08, 32, 32);
+    var atmosphere = new THREE.Mesh(
+      atmosGeo,
       new THREE.ShaderMaterial({
-        vertexShader: `
-          varying vec3 vNormal;
-          void main() {
-            vNormal = normalize(normalMatrix * normal);
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          }
-        `,
-        fragmentShader: `
-          varying vec3 vNormal;
-          void main() {
-            float intensity = pow(0.65 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 3.0);
-            gl_FragColor = vec4(0.94, 0.384, 0.165, intensity * 0.4);
-          }
-        `,
+        vertexShader: 'varying vec3 vNormal; void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+        fragmentShader: 'varying vec3 vNormal; void main() { float intensity = pow(0.65 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 3.0); gl_FragColor = vec4(0.94, 0.384, 0.165, intensity * 0.4); }',
         side: THREE.BackSide,
         transparent: true,
         blending: THREE.AdditiveBlending,
@@ -209,72 +157,52 @@
     );
     globe.add(atmosphere);
 
-    // Tilt globe slightly
+    // Tilt
     globe.rotation.x = 0.3;
     globe.rotation.z = -0.1;
 
-    // Animation — globe drifts around the section in a slow lemniscate (figure-8) path
-    let animId: number;
-    let time = 0;
+    // Animation
+    var animId;
+    var time = 0;
 
     function animate() {
       animId = requestAnimationFrame(animate);
       time += 0.001;
-
-      // Slow figure-8 drift across the section
       globe.position.x = Math.sin(time * 0.7) * 1.2;
       globe.position.y = Math.sin(time * 1.4) * 0.4;
-
-      // Subtle depth shift
       globe.position.z = Math.cos(time * 0.5) * 0.3;
-
       globe.rotation.y += 0.0015;
       renderer.render(scene, camera);
     }
 
     animate();
-    console.log('[HeroGlobe] Running ✓', width, 'x', height);
+    console.log('[HeroGlobe] Running', width + 'x' + height);
 
-    // Resize handler
     function onResize() {
-      width = section!.clientWidth;
-      height = section!.clientHeight;
+      width = section.clientWidth;
+      height = section.clientHeight;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
     }
-
     window.addEventListener('resize', onResize);
-
-    // Cleanup on navigation (Astro view transitions)
-    document.addEventListener('astro:before-swap', () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener('resize', onResize);
-      renderer.dispose();
-    }, { once: true });
   }
 
-  // Initialize when DOM is ready
   function init() {
-    const canvases = document.querySelectorAll<HTMLCanvasElement>('.hero-globe-canvas');
-    console.log('[HeroGlobe] Found', canvases.length, 'canvas(es)');
-    canvases.forEach((canvas) => {
-      if (!canvas.dataset.initialized) {
-        canvas.dataset.initialized = 'true';
-        try {
-          initGlobe(canvas);
-        } catch (e) {
-          console.error('[HeroGlobe] Init error:', e);
-        }
+    var canvases = document.querySelectorAll('.hero-globe-canvas');
+    console.log('[HeroGlobe] Found ' + canvases.length + ' canvas(es)');
+    canvases.forEach(function(canvas) {
+      if (!canvas.getAttribute('data-init')) {
+        canvas.setAttribute('data-init', '1');
+        try { initGlobe(canvas); } catch(e) { console.error('[HeroGlobe] Error:', e); }
       }
     });
   }
 
-  // Support both initial load and Astro view transitions
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
-  document.addEventListener('astro:after-swap', init);
+})();
 </script>
