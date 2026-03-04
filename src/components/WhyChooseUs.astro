@@ -26,12 +26,7 @@ const features = [
   }
 ];
 
-const stats = [
-  { number: 1000, label: "Websites Ranked", suffix: "+" },
-  { number: 15, label: "Years Experience", suffix: "+" },
-  { number: 156, label: "Avg Traffic Increase", suffix: "%" },
-  { number: 98, label: "Client Satisfaction", suffix: "%" }
-];
+// Stats removed - already displayed in hero section
 
 const bottomFeatures = [
   {
@@ -51,12 +46,7 @@ const bottomFeatures = [
   }
 ];
 
-// Actual client testimonial from Bright Forge SEO
-const testimonial = {
-  quote: "We've worked on a number of projects together and we cannot recommend Bright Forge SEO Agency highly enough. Very professional, reliable and get results. A great partner business for us to work with.",
-  author: "Invoke Media",
-  source: "Facebook Review"
-};
+// Testimonial removed - covered by FeaturedTestimonial and TestimonialsMarquee sections
 ---
 
 <section class="why-choose-section" id="why-choose-us-section">
@@ -92,39 +82,37 @@ const testimonial = {
         ))}
       </div>
 
-      <!-- Right Side - Stats Card -->
+      <!-- Right Side - CTA Card -->
       <div class="stats-card">
         <div class="stats-header">
-          <h3>Our Track Record Speaks</h3>
-          <p>Numbers that demonstrate our commitment to excellence</p>
+          <h3>Ready to Grow Your Business?</h3>
+          <p>Join 1,000+ businesses that trust Bright Forge to deliver sustainable SEO results.</p>
         </div>
 
-        <div class="stats-grid">
-          {stats.map((stat) => (
-            <div class="stat-item">
-              <div class="stat-number counter" data-target={stat.number} data-suffix={stat.suffix}>
-                0{stat.suffix}
-              </div>
-              <div class="stat-label">{stat.label}</div>
+        <div class="cta-content">
+          <div class="cta-features">
+            <div class="cta-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Free comprehensive SEO audit</span>
             </div>
-          ))}
-        </div>
-
-        <div class="testimonial-box">
-          <div class="quote-icon">
-            <i class="fas fa-quote-left"></i>
+            <div class="cta-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Custom strategy tailored to your goals</span>
+            </div>
+            <div class="cta-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>No lock-in contracts</span>
+            </div>
           </div>
-          <blockquote class="testimonial-quote">
-            "{testimonial.quote}"
-          </blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <i class="fas fa-building"></i>
-            </div>
-            <div class="author-info">
-              <span class="author-name">{testimonial.author}</span>
-              <span class="author-source">{testimonial.source}</span>
-            </div>
+
+          <div class="cta-buttons">
+            <a href="/seo-audit-services/" class="cta-primary">
+              Get Free SEO Audit
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="/case-studies/" class="cta-secondary">
+              View Case Studies
+            </a>
           </div>
         </div>
       </div>
@@ -145,55 +133,6 @@ const testimonial = {
   </div>
 </section>
 
-<script>
-  // Animated Counter Script
-  function animateCounters() {
-    const section = document.getElementById('why-choose-us-section');
-    const counters = document.querySelectorAll('.counter');
-    let animated = false;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !animated) {
-          animated = true;
-
-          counters.forEach(counter => {
-            const target = parseInt(counter.dataset.target);
-            const suffix = counter.dataset.suffix;
-            const duration = 2000;
-            const steps = 60;
-            const increment = target / steps;
-            let current = 0;
-            let step = 0;
-
-            const timer = setInterval(() => {
-              step++;
-              current += increment;
-
-              if (step >= steps) {
-                current = target;
-                clearInterval(timer);
-              }
-
-              // Format number with commas if it's 1000+
-              const displayValue = current >= 1000
-                ? Math.floor(current).toLocaleString()
-                : Math.floor(current);
-
-              counter.textContent = displayValue + suffix;
-            }, duration / steps);
-          });
-        }
-      });
-    }, { threshold: 0.1 });
-
-    if (section) {
-      observer.observe(section);
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', animateCounters);
-</script>
 
 <style>
   .why-choose-section {
@@ -345,88 +284,81 @@ const testimonial = {
     margin: 0;
   }
 
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .stat-item {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-  }
-
-  .stat-number {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 0.8125rem;
-    opacity: 0.85;
-    font-weight: 500;
-  }
-
-  /* Testimonial box */
-  .testimonial-box {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 1.5rem;
+  /* CTA content */
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     margin-top: auto;
-    backdrop-filter: blur(10px);
   }
 
-  .quote-icon {
-    margin-bottom: 12px;
-    opacity: 0.5;
-    font-size: 1.25rem;
+  .cta-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .testimonial-quote {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    font-style: italic;
-    margin: 0 0 1rem;
-    opacity: 0.95;
-  }
-
-  .testimonial-author {
+  .cta-feature {
     display: flex;
     align-items: center;
     gap: 12px;
-  }
-
-  .author-avatar {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.95;
   }
 
-  .author-info {
+  .cta-feature i {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .cta-buttons {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 12px;
   }
 
-  .author-name {
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    background: white;
+    color: #f97316;
+    border-radius: 14px;
     font-weight: 700;
-    font-size: 0.9375rem;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
-  .author-source {
-    font-size: 0.8125rem;
-    opacity: 0.75;
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
   }
 
   /* Bottom features */
