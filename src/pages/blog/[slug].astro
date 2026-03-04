@@ -818,6 +818,9 @@ if (post.content) {
   htmlContent = dom.window.document.body.innerHTML;
 }
 
+// Replace old domain URLs to avoid 301 redirects
+htmlContent = htmlContent.replace(/https?:\/\/(www\.)?brightforgeseo\.com/g, 'https://brightforge.com.ph');
+
 // Format the publish date
 const formattedDate = post.publishDate ?
   new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(post.publishDate) :
