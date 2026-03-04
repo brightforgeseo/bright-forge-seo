@@ -200,7 +200,7 @@ main a:hover {
 
 /* Ensure Tools sections always use light grey background (not gradients) */
 .tools-section {
-  background-color: #f8fafc !important;
+  background-color: #0d0f1a !important;
   background-image: none !important;
 }
 

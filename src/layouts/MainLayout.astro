@@ -70,8 +70,8 @@ const isHome = Astro.url.pathname === '/';
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <!-- Force consistent light color scheme across browsers -->
-    <meta name="color-scheme" content="light" />
-    <meta name="supported-color-schemes" content="light" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
     <meta name="google-site-verification" content="ChxTytE2xXPqUiIN7QDHvdQD0Z3JKf6vpa1DcVKTRR4" />
     <!-- Title tag handled by SEO component to prevent duplicates -->
     
@@ -229,13 +229,13 @@ const isHome = Astro.url.pathname === '/';
     </script>
   </body>
 <style is:global>
-  /* Final fix: Force html background to dark to hide any rendering gap */
+  /* Force dark background site-wide */
   html {
-    background-color: #1a1a1a; /* Footer dark color */
+    background-color: #0d0f1a;
   }
 
   body {
-    background-color: #f8fafc !important; /* Site grey */
+    background-color: #0d0f1a !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
