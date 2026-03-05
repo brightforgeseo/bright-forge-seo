@@ -8,7 +8,18 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="Expert Gaming SEO Services | Bright Forge SEO" description="Gaming SEO services that level up your online presence and drive more players to your games. Bright Forge SEO specializes in gaming industry strategies.">
+<MainLayout
+  title="Expert Gaming SEO Services | Bright Forge SEO"
+  description="Gaming SEO services that level up your online presence and drive more players to your games. Bright Forge SEO specializes in gaming industry strategies."
+  faqs={[
+    { question: "How long before we see results?", answer: "Early wins often show within 4-8 weeks (brand protection, technical fixes). Competitive category gains typically build over 3-6 months as content, links, and store signals compound." },
+    { question: "Do you handle ASO as well as website SEO?", answer: "Yes. We optimize both app store listings and websites. Discovery is multi-surface for games, so we align titles, descriptions, tags, creatives, and on-site content to the same strategy." },
+    { question: "We're a small indie. Is SEO overkill?", answer: "Not at all. We right-size the work. A tight keyword strategy, a fast landing page, and a dozen helpful guides can meaningfully lift wishlists and organic installs without bloating your workload." },
+    { question: "Can SEO help at launch if we're late?", answer: "Yes. We prioritize high-impact changes: fix indexing, secure brand SERPs, optimize store assets, publish priority guides, and coordinate creator coverage so official pages win the click." },
+    { question: "How do you measure success beyond rankings?", answer: "We track the full path: impressions to clicks to wishlists/installs to retention. Reporting focuses on what content and store elements move players, not vanity metrics." },
+    { question: "Do you work with esports and live-service titles?", answer: "Absolutely. We maintain continuous content, surface patch cadence, and help creators cover updates. SEO becomes part of your live-ops rhythm." },
+  ]}
+>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -56,7 +67,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           <div class="gaming-text">
             <p>The gaming industry is incredibly competitive, with millions of games, apps, and gaming-related content fighting for attention. Generic SEO strategies simply don't cut it in this space. You need specialized knowledge of gaming keywords, player behavior, gaming platforms, and the unique search patterns of gamers.</p>
             
-            <p>Our gaming SEO expertise helps you connect with your target audience—whether they're casual mobile gamers, hardcore PC enthusiasts, console players, or esports fans. We understand the gaming ecosystem and craft strategies that speak directly to your players' search habits.</p>
+            <p>Our gaming SEO expertise helps you connect with your target audience -whether they're casual mobile gamers, hardcore PC enthusiasts, console players, or esports fans. We understand the gaming ecosystem and craft strategies that speak directly to your players' search habits.</p>
           </div>
         </div>
       </div>
@@ -141,7 +152,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="offering-card">
           <div class="offering-icon"><i class="fas fa-scroll"></i></div>
           <h3>Content That Gamers Search For</h3>
-          <p>Guides, build write‑ups, boss strategies, progression tips, patch notes, and FAQs — written for humans first, structured for search engines second.</p>
+          <p>Guides, build write‑ups, boss strategies, progression tips, patch notes, and FAQs  - written for humans first, structured for search engines second.</p>
           <a class="learn-more-link" href="/content-seo-services-philippines/">Content SEO</a>
         </div>
 
@@ -173,7 +184,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="offering-card">
           <div class="offering-icon"><i class="fas fa-chart-pie"></i></div>
           <h3>Analytics & Measurement</h3>
-          <p>We connect the dots between organic discovery and in‑game outcomes — wishlist to purchase, demo to install, and the content that actually moves players.</p>
+          <p>We connect the dots between organic discovery and in‑game outcomes  - wishlist to purchase, demo to install, and the content that actually moves players.</p>
         </div>
       </div>
     </div>
@@ -293,7 +304,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>How long before we see results?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p>Early wins often show within 4–8 weeks (brand protection, technical fixes). Competitive category gains typically build over 3–6 months as content, links, and store signals compound.</p>
@@ -303,7 +314,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Do you handle ASO as well as website SEO?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p>Yes. We optimize both app store listings and websites. Discovery is multi‑surface for games, so we align titles, descriptions, tags, creatives, and on‑site content to the same strategy.</p>
@@ -313,7 +324,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>We’re a small indie. Is SEO overkill?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p>Not at all. We right‑size the work. A tight keyword strategy, a fast landing page, and a dozen helpful guides can meaningfully lift wishlists and organic installs without bloating your workload.</p>
@@ -323,7 +334,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Can SEO help at launch if we’re late?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p>Yes. We prioritize high‑impact changes: fix indexing, secure brand SERPs, optimize store assets, publish priority guides, and coordinate creator coverage so official pages win the click.</p>
@@ -333,7 +344,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>How do you measure success beyond rankings?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p>We track the full path: impressions → clicks → wishlists/installs → retention. Reporting focuses on what content and store elements move players, not vanity metrics.</p>
@@ -343,7 +354,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Do you work with esports and live‑service titles?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p>Absolutely. We maintain continuous content, surface patch cadence, and help creators cover updates. SEO becomes part of your live‑ops rhythm.</p>
@@ -357,7 +368,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   <section class="cta-banner-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="cta-banner">
-        <h3>Let’s make your game easier to find — and harder to ignore.</h3>
+        <h3>Let’s make your game easier to find  - and harder to ignore.</h3>
         <div class="cta-actions">
           <ButtonPrimary href="/contact/" text="Talk to a strategist" />
           <ButtonSecondary href="/case-studies/" text="View case studies" icon="fas fa-folder-open" />
@@ -491,10 +502,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   }
 
   .section-header h2 span {
-    background: linear-gradient(135deg, #f0622a, #4285F4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f0622a;
   }
 
   .section-header p {
@@ -584,10 +592,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     color: var(--brand-text, #e8eaf2);
   }
   .section-header h2 span {
-    background: linear-gradient(135deg, #f0622a, #4285F4);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #f0622a;
   }
   .section-header p { color: #ffffff; max-width: 760px; margin: 0 auto; }
 
@@ -746,15 +751,18 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   .tool-card:hover { background: #0d0f1a; transform: translateY(-2px); }
 
   /* FAQ */
-  .faq-section { padding: 80px 0; background: #0d0f1a; }
-  .faq-list { max-width: 900px; margin: 0 auto; display: grid; gap: 1rem; }
-  .faq-item { background: #131627; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; }
+  .faq-section { padding: 5rem 0; background: #131627; }
+  .faq-list { max-width: 800px; margin: 0 auto; display: grid; gap: 1rem; }
+  .faq-item { background: #131627; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+  .faq-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
   .faq-question {
-    width: 100%; background: none; border: none; display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 1.25rem; font-size: 1rem; font-weight: 700; color: var(--brand-text, #e8eaf2); cursor: pointer;
+    width: 100%; background: transparent; border: none; display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem; font-size: 1rem; font-weight: 600; color: #e8eaf2; cursor: pointer; transition: background 0.3s ease; text-align: left;
   }
-  .faq-question i { color: #4285F4; }
-  .faq-answer { display: none; padding: 0 1.25rem 1.25rem; color: #ffffff; line-height: 1.7; }
+  .faq-question:hover { background: #0d0f1a; }
+  .faq-question i { color: #d0d4e8; transition: transform 0.3s ease; }
+  .faq-answer { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1rem; color: #d0d4e8; line-height: 1.7; }
+  .faq-item.active .faq-question i { transform: rotate(180deg); }
 
   /* CTA Banner */
   .cta-banner-section {
@@ -807,14 +815,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       const answer = element.nextElementSibling;
       const icon = element.querySelector('i');
       
-      if (answer.style.display === 'block') {
+      const item = element.closest('.faq-item');
+      if (item.classList.contains('active')) {
         answer.style.display = 'none';
-        icon.classList.remove('fa-minus');
-        icon.classList.add('fa-plus');
+        item.classList.remove('active');
       } else {
         answer.style.display = 'block';
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus');
+        item.classList.add('active');
       }
     };
   });

@@ -8,7 +8,18 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="Website Migration SEO Services Philippines | Bright Forge SEO" description="Seamlessly rebuild or replatform your website without sacrificing search traffic. Our SEO-led migration services safeguard rankings, traffic, and revenue.">
+<MainLayout
+  title="Website Migration SEO Services Philippines | Bright Forge SEO"
+  description="Seamlessly rebuild or replatform your website without sacrificing search traffic. Our SEO-led migration services safeguard rankings, traffic, and revenue."
+  faqs={[
+    { question: "How long does a migration take?", answer: "Simple site migrations finish in 4-6 weeks; complex e-commerce or international sites may take 3 months. We'll provide a detailed timeline after the initial audit. Timelines depend on site size, platform complexity, and custom requirements." },
+    { question: "Do you work with any CMS or platform?", answer: "Yes. We've successfully migrated sites to and from WordPress, Shopify, Webflow, Magento, Drupal, custom frameworks, and headless CMS solutions. Our team adapts to any platform combination and has experience with both legacy and modern systems." },
+    { question: "Will my rankings drop during migration?", answer: "Minor fluctuations are normal for any major site change, but our proven process is designed to prevent significant losses. Many clients actually see ranking improvements post-migration due to better site architecture and performance optimizations." },
+    { question: "Can you coordinate with my development team?", answer: "Absolutely. We can lead the project end-to-end or collaborate with in-house developers and designers. We provide detailed technical documentation and work closely with your team to ensure SEO requirements are met throughout the development process." },
+    { question: "What happens if something goes wrong after launch?", answer: "Our 24/7 monitoring system catches issues immediately. We provide 30 days of post-launch support and can quickly implement fixes. We also maintain rollback procedures and emergency response protocols for any critical issues." },
+    { question: "How much does a website migration cost?", answer: "Migration costs vary based on site complexity, platform, and requirements. Simple business sites start at ₱150,000 (~$2,700), while complex e-commerce migrations begin at ₱500,000 (~$9,000). Contact us for a detailed quote based on your specific needs." },
+  ]}
+>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -422,7 +433,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>How long does a migration take?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Simple site migrations finish in 4-6 weeks; complex e-commerce or international sites may take 3 months. We'll provide a detailed timeline after the initial audit. Timelines depend on site size, platform complexity, and custom requirements.</div>
         </div>
@@ -430,7 +441,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Do you work with any CMS or platform?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Yes. We've successfully migrated sites to and from WordPress, Shopify, Webflow, Magento, Drupal, custom frameworks, and headless CMS solutions. Our team adapts to any platform combination and has experience with both legacy and modern systems.</div>
         </div>
@@ -438,7 +449,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Will my rankings drop during migration?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Minor fluctuations are normal for any major site change, but our proven process is designed to prevent significant losses. Many clients actually see ranking improvements post-migration due to better site architecture and performance optimizations.</div>
         </div>
@@ -446,7 +457,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Can you coordinate with my development team?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Absolutely. We can lead the project end-to-end or collaborate with in-house developers and designers. We provide detailed technical documentation and work closely with your team to ensure SEO requirements are met throughout the development process.</div>
         </div>
@@ -454,7 +465,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>What happens if something goes wrong after launch?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Our 24/7 monitoring system catches issues immediately. We provide 30 days of post-launch support and can quickly implement fixes. We also maintain rollback procedures and emergency response protocols for any critical issues.</div>
         </div>
@@ -462,7 +473,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>How much does a website migration cost?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Migration costs vary based on site complexity, platform, and requirements. Simple business sites start at ₱150,000 (~$2,700), while complex e-commerce migrations begin at ₱500,000 (~$9,000). Contact us for a detailed quote based on your specific needs.</div>
         </div>
@@ -556,16 +567,19 @@ section {
 }
 
 .section-badge {
-  display: inline-block;
-  background: var(--gradient-accent);
-  color: white;
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
+  border: 1px solid rgba(240, 98, 42, 0.15);
+  color: #f0622a;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
 }
 
 .section-header h2 {
@@ -1113,7 +1127,8 @@ section {
   FAQ Section
 *********************/
 .faq-section {
-  background: var(--brand-light);
+  padding: 5rem 0;
+  background: #131627;
 }
 
 .faq-list {
@@ -1123,41 +1138,49 @@ section {
 
 .faq-item {
   background: #131627;
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 12px;
   margin-bottom: 1rem;
-  box-shadow: var(--shadow-soft);
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .faq-question {
   width: 100%;
-  background: none;
+  background: transparent;
   border: none;
   text-align: left;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: var(--brand-text, #e8eaf2);
+  transition: background 0.3s ease;
+  color: #e8eaf2;
 }
 
 .faq-question:hover {
-  background: var(--brand-light);
+  background: #0d0f1a;
 }
 
 .faq-question i {
-  color: var(--brand-accent);
+  color: #d0d4e8;
   transition: transform 0.3s ease;
 }
 
 .faq-answer {
   display: none;
-  padding: 0 2rem 1.5rem;
-  color: #ffffff;
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1rem;
+  color: #d0d4e8;
   line-height: 1.6;
 }
 
@@ -1166,7 +1189,7 @@ section {
 }
 
 .faq-item.active .faq-question i {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 /********************
@@ -1267,7 +1290,7 @@ section {
 
 <script>
 // FAQ toggle functionality
-function toggleFAQ(button) {
+window.toggleFAQ = function(button) {
   const item = button.parentElement;
   const isActive = item.classList.contains('active');
   

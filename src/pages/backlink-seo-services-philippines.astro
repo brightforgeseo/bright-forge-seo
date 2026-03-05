@@ -8,7 +8,28 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="Backlink SEO Services Philippines - Bright Forge SEO" description="Boost your online presence with our expert backlink SEO services in the Philippines. Quality backlink strategies to elevate your search rankings.">
+<MainLayout
+  title="Backlink SEO Services Philippines - Bright Forge SEO"
+  description="Boost your online presence with our expert backlink SEO services in the Philippines. Quality backlink strategies to elevate your search rankings."
+  faqs={[
+    {
+      question: "What is backlink SEO?",
+      answer: "Backlink SEO is the process of acquiring backlinks from other websites to improve your own site's search engine rankings. The goal is to build an authoritative backlink profile that signals trust to search engines like Google."
+    },
+    {
+      question: "How long does it take to see results from backlinks?",
+      answer: "While every website is different, most businesses see noticeable improvements in their rankings within 3-6 months of implementing a strategic backlink SEO campaign."
+    },
+    {
+      question: "Are all backlinks the same?",
+      answer: "No! The quality of a backlink is far more important than the quantity. A link from a reputable, industry-relevant site is far more valuable than dozens of links from low-quality websites."
+    },
+    {
+      question: "How do you choose the right websites for backlinks?",
+      answer: "We evaluate sites based on their domain authority, relevance to your industry, and overall trustworthiness. We focus on websites that align with your brand and have a positive reputation."
+    }
+  ]}
+>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -19,7 +40,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     breadcrumbCurrent="Backlink SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>When it comes to SEO, backlinks are more than just a nice-to-have—they're a cornerstone of successful search engine optimisation. At Bright Forge SEO, we understand how powerful backlinks can be in propelling your website to the top of Google's search results.</p>
+      <p>When it comes to SEO, backlinks are more than just a nice-to-have -they're a cornerstone of successful search engine optimisation. At Bright Forge SEO, we understand how powerful backlinks can be in propelling your website to the top of Google's search results.</p>
       <p>If you've ever tried to get your website to rank higher on Google, you've probably heard of backlinks. But why are they so critical? Backlinks, essentially links from other websites pointing to yours, act like votes of confidence for your site. The more quality backlinks you have, the more Google sees your site as trustworthy and authoritative.</p>
     </Fragment>
 
@@ -146,7 +167,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <i class="fas fa-file-alt"></i>
           </div>
           <h3>Content Creation</h3>
-          <p>We create shareable, engaging content that naturally attracts backlinks—from blog posts to infographics and resource guides.</p>
+          <p>We create shareable, engaging content that naturally attracts backlinks -from blog posts to infographics and resource guides.</p>
         </div>
 
         <div class="process-box orange-bg">
@@ -207,7 +228,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               <i class="fas fa-users"></i>
             </div>
             <h3>Referral Traffic</h3>
-            <p>Quality backlinks don't just boost SEO—they drive targeted referral traffic from relevant websites to your content.</p>
+            <p>Quality backlinks don't just boost SEO -they drive targeted referral traffic from relevant websites to your content.</p>
           </div>
 
           <div class="benefit-card">
@@ -950,60 +971,71 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 /* FAQ Section */
 .faq-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #0d0f1a 0%, rgba(255,255,255,0.07) 100%);
+  padding: 5rem 0;
+  background: #131627;
 }
 
 .faq-container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .faq-item {
-  margin-bottom: 20px;
-  border-radius: 15px;
+  background: #131627;
+  border: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 1rem;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .faq-question {
-  background: linear-gradient(135deg, #131627 0%, #0d0f1a 100%);
-  padding: 25px 30px;
+  background: transparent;
+  padding: 1.5rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: background 0.3s ease;
+  border: none;
+  width: 100%;
+  text-align: left;
 }
 
 .faq-question:hover {
-  background: linear-gradient(135deg, #0d0f1a 0%, rgba(255,255,255,0.07) 100%);
+  background: #0d0f1a;
 }
 
 .faq-question h3 {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--brand-text, #e8eaf2);
+  color: #e8eaf2;
   margin: 0;
 }
 
 .faq-question i {
-  color: #f0622a;
+  color: #d0d4e8;
   transition: transform 0.3s ease;
 }
 
 .faq-answer {
   background: #131627;
-  padding: 0 30px;
+  padding: 0 1.5rem;
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
+  border-top: 1px solid rgba(255,255,255,0.07);
 }
 
 .faq-answer.active {
-  padding: 25px 30px;
-  max-height: 200px;
+  padding: 0 1.5rem 1.5rem;
+  padding-top: 1rem;
+  max-height: 500px;
 }
 
 .faq-answer p {

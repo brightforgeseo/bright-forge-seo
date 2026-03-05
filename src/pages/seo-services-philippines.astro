@@ -425,10 +425,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .cta-final h2 span {
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #f0622a;
 }
 
 .cta-final p {
@@ -445,16 +442,19 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .section-badge {
-  display: inline-block;
-  background: var(--gradient-secondary);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
+  border: 1px solid rgba(240, 98, 42, 0.15);
+  color: #f0622a;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
 }
 
 .section-header h2 {
@@ -465,10 +465,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .section-header h2 span {
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #f0622a;
 }
 
 .section-header p {

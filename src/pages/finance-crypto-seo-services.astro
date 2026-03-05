@@ -257,10 +257,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   }
 
   .section-header h2 span {
-    background: linear-gradient(135deg, #f0622a, #4285F4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f0622a;
   }
 
   .section-header p {
@@ -373,14 +370,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       const answer = element.nextElementSibling;
       const icon = element.querySelector('i');
       
+      const item = element.closest('.faq-item') || element.parentElement;
       if (answer.style.display === 'block') {
         answer.style.display = 'none';
-        icon.classList.remove('fa-minus');
-        icon.classList.add('fa-plus');
+        if (item) item.classList.remove('active');
       } else {
         answer.style.display = 'block';
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus');
+        if (item) item.classList.add('active');
       }
     };
   });

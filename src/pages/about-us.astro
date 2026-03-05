@@ -8,7 +8,32 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="About Bright Forge SEO Philippines | 15+ Years Experience" description="For over 15 years, Bright Forge SEO has delivered strategic, data-driven solutions that help brands in the Philippines grow visibility, traffic, and ROI.">
+<MainLayout
+  title="About Bright Forge SEO Philippines | 15+ Years Experience"
+  description="For over 15 years, Bright Forge SEO has delivered strategic, data-driven solutions that help brands in the Philippines grow visibility, traffic, and ROI."
+  faqs={[
+    {
+      question: "What inspired Ben Lowe to start Bright Forge SEO Agency?",
+      answer: "Ben's passion for digital marketing and his desire to help businesses succeed in an increasingly competitive online environment motivated him to establish Bright Forge SEO Agency. With over 15 years of experience, Ben wanted to create an agency that combines innovation, expertise, and personalized strategies to deliver outstanding results."
+    },
+    {
+      question: "What sets Ben apart as an SEO specialist?",
+      answer: "Ben's unique combination of technical expertise, a data-driven approach, and a deep understanding of AI-driven search trends sets him apart. His ability to adapt to the evolving digital landscape and deliver customized solutions ensures his clients stay ahead of the competition."
+    },
+    {
+      question: "What industries has Ben worked with?",
+      answer: "Ben has collaborated with a wide range of industries, including e-commerce, SaaS companies, local businesses, and major corporations in both the UK and the United States."
+    },
+    {
+      question: "How does Ben approach client projects?",
+      answer: "Ben takes a personalized approach to every project, starting with a thorough analysis of the client's goals, audience, and competition. He then crafts a tailored SEO strategy designed to deliver measurable and sustainable results."
+    },
+    {
+      question: "What motivates Ben in his work?",
+      answer: "Ben is driven by a passion for helping businesses unlock their full potential through innovative and effective SEO strategies. Seeing his clients succeed and grow is his greatest reward."
+    }
+  ]}
+>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -645,47 +670,49 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   }
 
   .faq-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .faq-item {
     background: #131627;
-    border-radius: 14px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
     border: 1px solid rgba(255,255,255,0.07);
   }
 
   .faq-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border-color: #f0622a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .faq-question {
-    padding: 1.25rem 1.5rem;
-    background: #0d0f1a;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 1.5rem;
+    background: transparent;
+    border-bottom: none;
   }
 
   .faq-question h4 {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #e8eaf2;
     margin: 0;
     line-height: 1.5;
   }
 
   .faq-answer {
-    padding: 1.25rem 1.5rem;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 1rem;
   }
 
   .faq-answer p {
-    color: #ffffff;
-    line-height: 1.7;
+    color: #d0d4e8;
+    line-height: 1.6;
     margin: 0;
     font-size: 0.9375rem;
   }

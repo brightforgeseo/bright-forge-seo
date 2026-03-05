@@ -8,7 +8,28 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="Content SEO Services In The Philippines - Bright Forge SEO" description="Great content deserves to be seen. Our SEO content services in the Philippines help brands rank with strategy-first writing that drives results.">
+<MainLayout
+  title="Content SEO Services In The Philippines - Bright Forge SEO"
+  description="Great content deserves to be seen. Our SEO content services in the Philippines help brands rank with strategy-first writing that drives results."
+  faqs={[
+    {
+      question: "How does well-written content impact my SEO?",
+      answer: "Search engines reward websites that provide meaningful, user-focused information. By addressing reader needs and applying proven SEO practices, your site gains more credibility and ranks higher."
+    },
+    {
+      question: "How soon will I see changes in traffic or rankings?",
+      answer: "This varies based on factors like your industry and website health. Some businesses notice small improvements in a few weeks, but bigger shifts generally happen over a few months."
+    },
+    {
+      question: "Can you work with my existing content team?",
+      answer: "Yes! We often partner with in-house writers or designers. We'll guide them on keyword targeting, SEO-friendly structures, and editorial standards so your entire team stays on track."
+    },
+    {
+      question: "Do you handle graphics or video for SEO content?",
+      answer: "We do. Great content deserves to be seen. Our SEO content services in the Philippines help brands rank with strategy-first writing that drives results. Infographics, short videos, and animations that support your messaging."
+    }
+  ]}
+>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -19,9 +40,9 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     breadcrumbCurrent="Content SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>Ever felt like you've done everything right—built a great website, designed eye-catching product pages, and shared posts on social media—yet still struggled to get noticed online? I've been there, too. A close friend once confided that her new e-commerce store had fantastic products but hardly any visitors. She thought she was missing some "secret sauce." Turns out, the key ingredient was well-structured, SEO-focused content.</p>
+      <p>Ever felt like you've done everything right -built a great website, designed eye-catching product pages, and shared posts on social media -yet still struggled to get noticed online? I've been there, too. A close friend once confided that her new e-commerce store had fantastic products but hardly any visitors. She thought she was missing some "secret sauce." Turns out, the key ingredient was well-structured, SEO-focused content.</p>
 
-      <p>That's exactly what we offer here at Bright Forge SEO: carefully planned and brilliantly executed content that boosts visibility and sparks meaningful engagement. Our approach combines technical best practices with genuine storytelling, so you don't just rank—you connect with real people who are ready to become loyal customers.</p>
+      <p>That's exactly what we offer here at Bright Forge SEO: carefully planned and brilliantly executed content that boosts visibility and sparks meaningful engagement. Our approach combines technical best practices with genuine storytelling, so you don't just rank -you connect with real people who are ready to become loyal customers.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -85,7 +106,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
             <div class="service-item">
               <h3>Content Optimization</h3>
-              <p>Content that's optimized correctly tends to stay relevant over time. Through strategic planning, we make sure you get a steady flow of visitors who value what you offer—leading to long-term returns.</p>
+              <p>Content that's optimized correctly tends to stay relevant over time. Through strategic planning, we make sure you get a steady flow of visitors who value what you offer -leading to long-term returns.</p>
             </div>
 
             <div class="service-item">
@@ -657,8 +678,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 /* FAQ Section */
 .faq-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #0d0f1a 0%, #131627 100%);
+  padding: 5rem 0;
+  background: #131627;
 }
 
 .faq-container {
@@ -668,32 +689,32 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 .faq-item {
   background: #131627;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(240, 98, 42, 0.1);
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.07);
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
 
 .faq-item:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .faq-question {
   width: 100%;
-  padding: 25px 30px;
+  padding: 1.5rem;
   background: transparent;
   border: none;
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #e8eaf2;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .faq-question:hover {
@@ -701,29 +722,28 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .faq-question i {
-  color: #f0622a;
+  color: #d0d4e8;
   transition: transform 0.3s ease;
-  font-size: 1rem;
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.4s ease;
-  background: #0d0f1a;
+  transition: all 0.3s ease;
+  border-top: 1px solid rgba(255,255,255,0.07);
 }
 
 .faq-answer.active {
-  max-height: 200px;
-  padding: 0 30px 25px;
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem;
+  padding-top: 1rem;
 }
 
 .faq-answer p {
-  color: #ffffff;
-  line-height: 1.7;
+  color: #d0d4e8;
+  line-height: 1.6;
   font-size: 1rem;
   margin: 0;
-  padding-top: 10px;
 }
 
 /* Responsive Design */

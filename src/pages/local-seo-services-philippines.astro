@@ -12,6 +12,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   title="Local SEO Services Philippines | Bright Forge"
   description="Dominate local search results in the Philippines with our expert local SEO services. GBP optimization, local citations, and targeted strategies for businesses in Metro Manila and beyond."
   keywords="local SEO Philippines, Google Business Profile optimization, local search optimization, Philippines local SEO agency, Metro Manila SEO"
+  faqs={[
+    { question: "What is local SEO and why does my Philippines business need it?", answer: "Local SEO is the process of optimizing your online presence to attract more business from relevant local searches. For Philippines businesses, this means appearing when potential customers in your city or region search for your products or services. It's essential because 76% of people who search for something nearby on their phone visit a business within a day, and 28% of those searches result in a purchase. Without local SEO, you're invisible to these high-intent customers who are ready to buy." },
+    { question: "How long does it take to see results from local SEO?", answer: "Local SEO typically shows initial results faster than traditional SEO. Most businesses see improvements in their Google Business Profile visibility within 2-4 weeks, with significant local ranking improvements within 3-6 months. Factors affecting timeline include your current online presence, competition level in your area, and the consistency of optimization efforts." },
+    { question: "What's included in Google Business Profile optimization?", answer: "Our Google Business Profile optimization includes complete profile setup, business information verification, category optimization, service area configuration, photo and video uploads, post creation and scheduling, review response management, Q&A population, product/service catalog setup, and ongoing performance monitoring." },
+    { question: "How do you handle negative reviews?", answer: "Negative reviews are opportunities to showcase your customer service. We develop professional response strategies that acknowledge concerns, offer solutions, and demonstrate your commitment to customer satisfaction. We also implement proactive review generation campaigns to increase positive reviews, improving your overall rating." },
+    { question: "Can you help businesses with multiple locations?", answer: "Absolutely! We specialize in multi-location local SEO for businesses across the Philippines. Our approach includes individual optimization for each location while maintaining brand consistency, centralized management dashboards, location-specific content strategies, and coordinated review management across all branches." },
+    { question: "What makes your local SEO services different from others?", answer: "Our deep understanding of the Philippines market sets us apart. We know the local directories that matter, understand regional search behaviors, and have relationships with local platforms. Combined with our data-driven approach, transparent reporting, and proven track record of ranking 500+ local businesses, we deliver results that directly impact your revenue." },
+  ]}
 >
   <LegacyHeader slot="header" />
 
@@ -820,8 +828,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 /* FAQ Section */
 .faq-section {
-  padding: 80px 0;
-  background: #0d0f1a;
+  padding: 5rem 0;
+  background: #131627;
 }
 
 .faq-container {
@@ -846,17 +854,23 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 .faq-item {
   background: #131627;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 1rem;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .faq-question {
-  padding: 20px 30px;
-  font-size: 1.1rem;
+  padding: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #e8eaf2;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -869,7 +883,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .faq-question i {
-  color: #f0622a;
+  color: #d0d4e8;
   transition: transform 0.3s ease;
 }
 
@@ -878,15 +892,18 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .faq-answer {
-  padding: 0 30px;
+  padding: 0 1.5rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  color: #ffffff;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  color: #d0d4e8;
+  line-height: 1.6;
 }
 
 .faq-item.active .faq-answer {
-  padding: 20px 30px 30px;
+  padding: 0 1.5rem 1.5rem;
+  padding-top: 1rem;
   max-height: 500px;
 }
 </style>

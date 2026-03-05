@@ -25,7 +25,7 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
         Choose Your <span class="title-highlight">Growth Velocity</span>
       </h2>
       <p class="section-description">
-        Battle-tested SEO strategies tailored to your business goals. Every package includes full-service optimization—the only difference is speed of execution.
+        Battle-tested SEO strategies tailored to your business goals. Every package includes full-service optimization -the only difference is speed of execution.
       </p>
     </div>
 
@@ -609,14 +609,16 @@ const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #f0622a 0%, #e04d1a 100%);
-    color: white;
-    box-shadow: 0 4px 12px rgba(240, 98, 42, 0.3);
+    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05));
+    border: 1px solid rgba(240, 98, 42, 0.15);
+    color: #f0622a;
+    border-radius: 100px;
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(240, 98, 42, 0.4);
+    border-color: rgba(240, 98, 42, 0.4);
+    background: linear-gradient(135deg, rgba(240, 98, 42, 0.15), rgba(240, 98, 42, 0.08));
   }
 
   .btn-secondary {

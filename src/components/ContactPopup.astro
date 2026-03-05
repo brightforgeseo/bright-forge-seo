@@ -1,5 +1,5 @@
 ---
-// ContactPopup.astro — Timed popup form for SEO lead capture
+// ContactPopup.astro  - Timed popup form for SEO lead capture
 ---
 
 <div id="contact-popup-overlay" class="popup-overlay" aria-hidden="true">
@@ -264,23 +264,22 @@
     justify-content: center;
     gap: 10px;
     padding: 14px 28px;
-    background: #f0622a;
-    color: white;
-    border: none;
-    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05));
+    border: 1px solid rgba(240, 98, 42, 0.15);
+    color: #f0622a;
+    border-radius: 100px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(240, 98, 42, 0.3);
     margin-top: 4px;
   }
 
   .popup-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(240, 98, 42, 0.4);
-    background: #d4510e;
+    border-color: rgba(240, 98, 42, 0.4);
+    background: linear-gradient(135deg, rgba(240, 98, 42, 0.15), rgba(240, 98, 42, 0.08));
   }
 
   .popup-submit svg {

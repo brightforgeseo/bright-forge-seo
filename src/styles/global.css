@@ -300,7 +300,9 @@ main {
 }
 
 .bg-orange-500, .bg-\[\#f97316\] {
-  background-color: #f0622a !important;
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05)) !important;
+  border: 1px solid rgba(240, 98, 42, 0.15) !important;
+  color: #f0622a !important;
 }
 
 .border-orange-500 {

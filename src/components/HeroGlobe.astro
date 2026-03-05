@@ -67,7 +67,7 @@
 
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    camera.position.z = 3.2;
+    camera.position.z = width <= 768 ? 5.2 : 3.2;
 
     var orange = new THREE.Color(0xf0622a);
     var dimWhite = new THREE.Color(0x3a3f5c);
@@ -172,14 +172,20 @@
     // Animation
     var animId;
     var time = 0;
+    var isMobile = width <= 768;
+    var speed = isMobile ? 0.00085 : 0.00085;
+    var driftX = isMobile ? 0.9 : 0.9;
+    var driftY = isMobile ? 0.3 : 0.3;
+    var driftZ = isMobile ? 0.25 : 0.25;
+    var rotSpeed = isMobile ? 0.0012 : 0.0012;
 
     function animate() {
       animId = requestAnimationFrame(animate);
-      time += 0.001;
-      globe.position.x = Math.sin(time * 0.7) * 1.2;
-      globe.position.y = Math.sin(time * 1.4) * 0.4;
-      globe.position.z = Math.cos(time * 0.5) * 0.3;
-      globe.rotation.y += 0.0015;
+      time += speed;
+      globe.position.x = Math.sin(time * 0.7) * driftX;
+      globe.position.y = Math.sin(time * 1.4) * driftY;
+      globe.position.z = Math.cos(time * 0.5) * driftZ;
+      globe.rotation.y += rotSpeed;
       renderer.render(scene, camera);
     }
 

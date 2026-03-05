@@ -13,6 +13,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   description="Offer expert SEO without scaling in-house. Our white-label SEO from the Philippines delivers proven results your clients will see and trust."
   canonical="https://brightforge.com.ph/white-label-seo-services-philippines/"
   type="service"
+  faqs={[
+    { question: "How does white label SEO work exactly?", answer: "You provide us with your client's requirements and brand guidelines. We perform all SEO work behind the scenes and deliver branded reports, strategies, and results that you can present to your clients as your own. Your clients never know we exist, and we never contact them directly." },
+    { question: "What's included in your white label SEO packages?", answer: "Our packages include comprehensive SEO audits, technical optimization, keyword research, content creation, link building, monthly branded reports, and ongoing strategy adjustments. We customize each package based on your client's specific needs and your agency's requirements." },
+    { question: "How long does it take to see SEO results?", answer: "SEO is a long-term strategy, but most clients start seeing improvements within 3-4 months. Significant results typically appear within 6-12 months. We provide monthly reports showing progress in rankings, traffic, and other key metrics so you can keep your clients informed throughout the process." },
+    { question: "Can you handle clients in different industries?", answer: "Yes, our team has experience across various industries including e-commerce, healthcare, legal, real estate, hospitality, and B2B services. We adapt our strategies to match industry-specific requirements and compliance needs, especially for businesses targeting the Philippine market." },
+    { question: "What are your pricing and contract terms?", answer: "We offer flexible pricing based on the scope of work and number of clients. Contracts are typically month-to-month with no long-term commitments required. We provide transparent pricing with no hidden fees, and you can scale up or down as your agency grows." },
+    { question: "How do you ensure quality and communication?", answer: "You'll have a dedicated account manager who understands your agency's needs and maintains regular communication. We provide detailed monthly reports, strategy updates, and are available for consultations. All work is reviewed by senior SEO specialists before delivery to ensure consistent quality." },
+  ]}
 >
   <LegacyHeader slot="header" />
 
@@ -1345,14 +1353,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 .cta-button-white {
   display: inline-block;
-  background: #f0622a;
-  color: white;
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05));
+  border: 1px solid rgba(240, 98, 42, 0.15);
+  color: #f0622a;
   padding: 1rem 2rem;
-  border-radius: 8px;
+  border-radius: 100px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(240, 98, 42, 0.3);
 }
 
 .cta-button-white:hover {
@@ -1381,7 +1389,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 </style>
 
 <script>
-  function toggleFAQ(element) {
+  window.toggleFAQ = function(element) {
     element.classList.toggle('active');
     const content = element.nextElementSibling;
 

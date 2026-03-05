@@ -54,7 +54,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <i class="fas fa-heart"></i>
           </div>
           <div class="pet-text">
-            <p>The pet industry is driven by emotion and trust. Pet owners don't just search for services—they search for caring professionals who will treat their beloved companions with love and expertise. Generic SEO strategies miss the emotional connection that drives pet owner decisions.</p>
+            <p>The pet industry is driven by emotion and trust. Pet owners don't just search for services -they search for caring professionals who will treat their beloved companions with love and expertise. Generic SEO strategies miss the emotional connection that drives pet owner decisions.</p>
             
             <p>Our pet industry SEO expertise helps you connect with pet owners when they need you most. Whether they're searching for emergency vet care, a trusted groomer, or the perfect pet supplies, we ensure your business appears at the top of search results with messaging that resonates with pet lovers.</p>
           </div>
@@ -240,10 +240,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   }
 
   .section-header h2 span {
-    background: linear-gradient(135deg, #f0622a, #4285F4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f0622a;
   }
 
   .section-header p {
@@ -356,14 +353,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       const answer = element.nextElementSibling;
       const icon = element.querySelector('i');
       
+      const item = element.closest('.faq-item') || element.parentElement;
       if (answer.style.display === 'block') {
         answer.style.display = 'none';
-        icon.classList.remove('fa-minus');
-        icon.classList.add('fa-plus');
+        if (item) item.classList.remove('active');
       } else {
         answer.style.display = 'block';
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus');
+        if (item) item.classList.add('active');
       }
     };
   });

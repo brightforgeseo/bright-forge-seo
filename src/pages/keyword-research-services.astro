@@ -8,7 +8,18 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="Keyword Research Services Philippines | Bright Forge SEO" description="We don't just find keywords we find your customer's language. Our research helps you rank, attract intent-driven traffic, and grow search visibility.">
+<MainLayout
+  title="Keyword Research Services Philippines | Bright Forge SEO"
+  description="We don't just find keywords we find your customer's language. Our research helps you rank, attract intent-driven traffic, and grow search visibility."
+  faqs={[
+    { question: "Which tools do you use for keyword research?", answer: "We combine data from Ahrefs, SEMrush, Google Keyword Planner, Answer The Public, and firsthand SERP analysis to cross-validate every recommendation. This multi-tool approach ensures accuracy and uncovers opportunities single-tool research might miss." },
+    { question: "How long does the research take?", answer: "Most projects take 5-7 business days, but timelines vary based on site size, target markets, and research depth. E-commerce sites with large product catalogs may take up to 10 days, while service-based businesses typically complete faster." },
+    { question: "Do you cover multiple languages and regions?", answer: "Yes. Our team has experience researching English, Tagalog, and Spanish keywords for Philippine, US, and APAC markets. We can adapt to other languages and regions upon request, with native speaker consultation when needed." },
+    { question: "Will you help implement the findings?", answer: "Absolutely. We offer add-on content creation, on-page optimization, and SEO implementation services. We can also provide training sessions for your in-house team to ensure proper execution of the keyword strategy." },
+    { question: "How do you determine keyword difficulty and opportunity?", answer: "We analyze multiple factors including search volume, competition strength, SERP features, and your website's current authority. Our proprietary scoring system weighs these factors against your business goals to identify the best opportunities for quick wins and long-term growth." },
+    { question: "What's included in the content calendar?", answer: "The 90-day calendar includes blog post topics, landing page recommendations, FAQ suggestions, and social media content ideas. Each item includes target keywords, search intent, estimated traffic potential, and publishing priority recommendations." },
+  ]}
+>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -432,7 +443,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Which tools do you use for keyword research?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">We combine data from Ahrefs, SEMrush, Google Keyword Planner, Answer The Public, and firsthand SERP analysis to cross-validate every recommendation. This multi-tool approach ensures accuracy and uncovers opportunities single-tool research might miss.</div>
         </div>
@@ -440,7 +451,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>How long does the research take?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Most projects take 5-7 business days, but timelines vary based on site size, target markets, and research depth. E-commerce sites with large product catalogs may take up to 10 days, while service-based businesses typically complete faster.</div>
         </div>
@@ -448,7 +459,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Do you cover multiple languages and regions?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Yes. Our team has experience researching English, Tagalog, and Spanish keywords for Philippine, US, and APAC markets. We can adapt to other languages and regions upon request, with native speaker consultation when needed.</div>
         </div>
@@ -456,7 +467,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>Will you help implement the findings?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">Absolutely. We offer add-on content creation, on-page optimization, and SEO implementation services. We can also provide training sessions for your in-house team to ensure proper execution of the keyword strategy.</div>
         </div>
@@ -464,7 +475,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>How do you determine keyword difficulty and opportunity?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">We analyze multiple factors including search volume, competition strength, SERP features, and your website's current authority. Our proprietary scoring system weighs these factors against your business goals to identify the best opportunities for quick wins and long-term growth.</div>
         </div>
@@ -472,7 +483,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
             <span>What's included in the content calendar?</span>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">The 90-day calendar includes blog post topics, landing page recommendations, FAQ suggestions, and social media content ideas. Each item includes target keywords, search intent, estimated traffic potential, and publishing priority recommendations.</div>
         </div>
@@ -566,16 +577,19 @@ section {
 }
 
 .section-badge {
-  display: inline-block;
-  background: var(--gradient-accent);
-  color: white;
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
+  border: 1px solid rgba(240, 98, 42, 0.15);
+  color: #f0622a;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
 }
 
 .section-header h2 {
@@ -1426,7 +1440,8 @@ section {
   FAQ Section
 *********************/
 .faq-section {
-  background: var(--brand-light);
+  padding: 5rem 0;
+  background: #131627;
 }
 
 .faq-list {
@@ -1436,41 +1451,49 @@ section {
 
 .faq-item {
   background: #131627;
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 12px;
   margin-bottom: 1rem;
-  box-shadow: var(--shadow-soft);
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .faq-question {
   width: 100%;
-  background: none;
+  background: transparent;
   border: none;
   text-align: left;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: var(--brand-text, #e8eaf2);
+  transition: background 0.3s ease;
+  color: #e8eaf2;
 }
 
 .faq-question:hover {
-  background: var(--brand-light);
+  background: #0d0f1a;
 }
 
 .faq-question i {
-  color: var(--brand-accent);
+  color: #d0d4e8;
   transition: transform 0.3s ease;
 }
 
 .faq-answer {
   display: none;
-  padding: 0 2rem 1.5rem;
-  color: #ffffff;
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1rem;
+  color: #d0d4e8;
   line-height: 1.6;
 }
 
@@ -1479,7 +1502,7 @@ section {
 }
 
 .faq-item.active .faq-question i {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 /********************
@@ -1543,7 +1566,7 @@ section {
 
 <script>
 // FAQ toggle functionality
-function toggleFAQ(button) {
+window.toggleFAQ = function(button) {
   const item = button.parentElement;
   const isActive = item.classList.contains('active');
   
