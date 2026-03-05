@@ -266,12 +266,68 @@ section {
 
 /* Ensure all sections (except hero) have consistent dark background */
 section:not(.hero-modern):not(.homepage-hero):not(.hero-section) {
+  background: #0d0f1a !important;
+  background-color: #0d0f1a !important;
+}
+
+/* Override scoped section backgrounds across all pages */
+[class*="-section"]:not(.hero-modern):not(.homepage-hero):not(.hero-section):not(.contact-cta-section) {
+  background: #0d0f1a !important;
   background-color: #0d0f1a !important;
 }
 
 /* Ensure main content area is properly structured */
 main {
   width: 100%;
+}
+
+/* Hide icon grids, floating stat cards, and hero visuals from hero sections */
+.hero-visual,
+.hero-visual *,
+.hero-image-container,
+.hero-image-container *,
+.hero-stats,
+.hero-stats *,
+[class$="-icon-grid"],
+[class$="-icon-grid"] *,
+[class*="-icon-grid "],
+.technical-icon-grid,
+.technical-icon-grid * {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Normalize card styles site-wide: remove orange top accents and fix light borders */
+.feature-card::before,
+.audit-tool-card::before,
+.deliverable-card::before,
+.service-card::before,
+.benefit-card::before,
+.tool-card::before,
+.research-card::before,
+.visual-card::before,
+.capability-card::before {
+  background: rgba(255, 255, 255, 0.07) !important;
+  height: 1px !important;
+}
+
+/* Fix all light-theme borders to dark theme */
+[class*="-card"],
+[class*="_card"] {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Normalize all feature/section icons to brand orange + white */
+.feature-icon,
+.feature-icon.reveal,
+.feature-icon.lightbulb,
+.feature-icon.roadmap,
+.step-icon,
+.audit-icon,
+.metric-icon,
+.tool-icon {
+  background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%) !important;
+  color: white !important;
 }
 
 /* Dark theme overrides for Tailwind utility bg classes used inline */

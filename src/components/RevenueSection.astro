@@ -52,12 +52,10 @@ const features = [
       {description}
     </p>
 
-    <!-- Feature list with left border and hover effects -->
-    <div class="space-y-4 max-w-4xl">
+    <!-- Feature grid -->
+    <div class="revenue-grid">
       {features.map((feature) => (
-        <div
-          class="revenue-card border-l-4 border-[#f0622a] pl-6 p-6 bg-[#131627] transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer rounded-lg"
-        >
+        <div class="revenue-card">
           <h4 class="text-xl font-bold text-white mb-3">
             {feature.title}
           </h4>
@@ -70,6 +68,36 @@ const features = [
 
   </div>
 </div>
+
+<style>
+  .revenue-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .revenue-card {
+    background: #131627;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-left: 4px solid #f0622a;
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .revenue-card:hover {
+    background: rgba(240,98,42,0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 768px) {
+    .revenue-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 
 <script>
   // Add hover effects with JavaScript for better browser support

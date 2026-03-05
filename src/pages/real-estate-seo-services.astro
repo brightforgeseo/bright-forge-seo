@@ -548,11 +548,12 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   }
 
   .service-features li:before {
-    content: "✓";
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #f0622a;
     position: absolute;
     left: 0;
-    color: #f0622a;
-    font-weight: bold;
   }
 
   @media (max-width: 768px) {
