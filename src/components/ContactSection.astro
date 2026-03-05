@@ -63,28 +63,9 @@
     overflow: hidden;
   }
 
-  .contact-cta-section::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    filter: blur(60px);
-  }
-
+  .contact-cta-section::before,
   .contact-cta-section::after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    filter: blur(60px);
+    display: none;
   }
 
   .contact-cta-wrapper {

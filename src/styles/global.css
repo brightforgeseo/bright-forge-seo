@@ -264,6 +264,11 @@ section {
   width: 100%;
 }
 
+/* Ensure all sections (except hero) have consistent dark background */
+section:not(.hero-modern):not(.homepage-hero):not(.hero-section) {
+  background-color: #0d0f1a !important;
+}
+
 /* Ensure main content area is properly structured */
 main {
   width: 100%;
