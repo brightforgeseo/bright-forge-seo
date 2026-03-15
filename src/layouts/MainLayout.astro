@@ -135,8 +135,9 @@ const isHome = Astro.url.pathname === '/';
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Preload LCP image (header logo) with highest priority -->
-    <link rel="preload" as="image" href="/images/header-logo-360w.webp" fetchpriority="high">
+    <!-- Preload LCP images: hero image for desktop, header logo for mobile -->
+    <link rel="preload" as="image" href="/images/hero-480w.webp" fetchpriority="high" media="(min-width: 1025px)">
+    <link rel="preload" as="image" href="/images/header-logo-360w.webp" fetchpriority="high" media="(max-width: 1024px)">
 
     <!-- Defer non-critical JavaScript -->
     <script defer>

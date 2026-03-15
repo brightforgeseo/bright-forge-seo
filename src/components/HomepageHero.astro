@@ -95,7 +95,7 @@ import HeroGlobe from './HeroGlobe.astro';
         <div class="hero-image-wrapper">
           <div class="image-glow"></div>
           <img
-            src={imageSrc}
+            src="/images/hero-480w.webp"
             alt={imageAlt}
             class="hero-image"
             width="480"
@@ -150,20 +150,9 @@ import HeroGlobe from './HeroGlobe.astro';
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, #0d0f1a 0%, #131627 40%, #0d0f1a 100%);
-    background-size: 200% 200%;
-    animation: gradientFlow 12s ease infinite;
   }
 
-  @keyframes gradientFlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  /* Reduce paint cost by promoting to compositor layer */
-  .bg-gradient {
-    will-change: background-position;
-    contain: strict;
-  }
+  /* gradientFlow animation removed — continuous animation wastes main-thread time */
 
   /* Grid layout */
   .hero-grid {
@@ -509,11 +498,6 @@ import HeroGlobe from './HeroGlobe.astro';
 
   /* Mobile performance: Disable animations */
   @media (max-width: 768px) {
-    .bg-gradient {
-      animation: none;
-      background-position: 0% 50%;
-    }
-
     .badge-dot {
       animation: none;
     }
@@ -540,7 +524,6 @@ import HeroGlobe from './HeroGlobe.astro';
 
   /* Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
-    .bg-gradient,
     .badge-dot,
     .floating-card {
       animation: none;
