@@ -219,24 +219,18 @@ const isHome = Astro.url.pathname === '/';
     <!-- Contact popup - appears after 15 seconds -->
     <ContactPopup />
 
-    <!-- Load non-critical resources after page load -->
+    <!-- Load non-critical resources well after page load -->
     <script>
-      // Load FontAwesome after first paint to avoid render blocking
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(function() {
+      // Load FontAwesome after page is fully loaded and idle
+      // Using load + setTimeout to ensure it never competes with LCP
+      window.addEventListener('load', function() {
+        setTimeout(function() {
           var fa = document.createElement('link');
           fa.rel = 'stylesheet';
           fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
           document.head.appendChild(fa);
-        });
-      } else {
-        window.addEventListener('load', function() {
-          var fa = document.createElement('link');
-          fa.rel = 'stylesheet';
-          fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
-          document.head.appendChild(fa);
-        });
-      }
+        }, 100);
+      });
 
       // Load analytics after page load
       window.addEventListener('load', function() {
