@@ -103,8 +103,10 @@ const isHome = Astro.url.pathname === '/';
     <!-- Early hints for critical resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
     <!-- Critical CSS inline for faster FCP -->
     <style>
@@ -124,6 +126,9 @@ const isHome = Astro.url.pathname === '/';
       }
       /* Inline critical icon styles to avoid FontAwesome blocking */
       .fas, .far, .fab { display: inline-block; width: 1em; height: 1em; }
+      /* Force font-display:swap for Font Awesome to prevent FOIT */
+      @font-face { font-family: 'Font Awesome 5 Free'; font-display: swap; }
+      @font-face { font-family: 'Font Awesome 5 Brands'; font-display: swap; }
     </style>
 
     <!-- Load fonts asynchronously to not block rendering -->

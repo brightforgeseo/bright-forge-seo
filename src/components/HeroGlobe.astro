@@ -192,12 +192,16 @@
     animate();
     console.log('[HeroGlobe] Running', width + 'x' + height);
 
+    var resizeTimer;
     function onResize() {
-      width = section.clientWidth;
-      height = section.clientHeight;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        width = section.clientWidth;
+        height = section.clientHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+      }, 150);
     }
     window.addEventListener('resize', onResize);
   }
@@ -217,7 +221,19 @@
     loadThree(init);
   }
 
-  if (document.readyState === 'loading') {
+  // Defer Three.js loading until canvas is near viewport to reduce initial load
+  var canvases = document.querySelectorAll('.hero-globe-canvas');
+  if ('IntersectionObserver' in window && canvases.length) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          start();
+        }
+      });
+    }, { rootMargin: '200px' });
+    canvases.forEach(function(c) { observer.observe(c); });
+  } else if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {
     start();
