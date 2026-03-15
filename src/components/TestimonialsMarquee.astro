@@ -607,8 +607,8 @@ for (let i = 0; i < testimonials.length; i += 4) {
       if (i === current) {
         p.classList.add('active');
         p.style.animation = 'none';
-        p.offsetHeight;
-        p.style.animation = '';
+        void p.getAnimations();
+        requestAnimationFrame(function() { p.style.animation = ''; });
       } else {
         p.classList.remove('active');
       }

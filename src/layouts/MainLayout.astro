@@ -135,8 +135,8 @@ const isHome = Astro.url.pathname === '/';
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Preload hero image with highest priority -->
-    <link rel="preload" as="image" href="/images/Hero-SEO-Agency-In-The-Philippines.webp" fetchpriority="high" imagesrcset="/images/Hero-SEO-Agency-In-The-Philippines.webp 1x" imagesizes="100vw">
+    <!-- Preload LCP image (header logo) with highest priority -->
+    <link rel="preload" as="image" href="/images/Footer-Bright-Forge-SEO-Logo-In-The-Philippines.webp" fetchpriority="high">
 
     <!-- Defer non-critical JavaScript -->
     <script defer>
@@ -156,6 +156,17 @@ const isHome = Astro.url.pathname === '/';
       /* Disable hover effects on touch devices */
       .touch-device *:hover {
         transition: none !important;
+      }
+
+      /* Skip rendering off-screen sections until scrolled into view */
+      .testimonials-section,
+      .case-studies-section,
+      .awards-new-section,
+      .partners-section,
+      .trusted-by-section,
+      .footer-modern {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 600px;
       }
 
       /* Optimize mobile fonts */
