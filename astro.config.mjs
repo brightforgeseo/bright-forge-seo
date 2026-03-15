@@ -12,7 +12,7 @@ export default defineConfig({
   trailingSlash: 'always',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
-    inlineStylesheets: 'always', // Inline all stylesheets to eliminate render-blocking CSS
+    inlineStylesheets: 'auto', // Only inline small stylesheets, load larger ones as files
     format: 'directory', // switch from "file" to "directory" to drop .html in canonical URLs
     assets: '_astro',
     // Enable asset bundling and optimization

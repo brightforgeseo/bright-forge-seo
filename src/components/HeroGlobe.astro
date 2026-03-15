@@ -221,6 +221,9 @@
     loadThree(init);
   }
 
+  // Skip globe on mobile — heavy WebGL for barely visible effect (opacity 0.35)
+  if (window.innerWidth <= 768) return;
+
   // Defer Three.js loading until canvas is near viewport to reduce initial load
   var canvases = document.querySelectorAll('.hero-globe-canvas');
   if ('IntersectionObserver' in window && canvases.length) {
