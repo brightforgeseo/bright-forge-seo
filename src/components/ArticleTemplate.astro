@@ -379,7 +379,17 @@ const formatDate = (dateString: string) => {
         <div class="newsletter-content">
           <h3>Stay Updated with SEO Insights</h3>
           <p>Get the latest SEO strategies, case studies, and industry updates delivered to your inbox.</p>
-          <a href="/contact" class="cta-button">Subscribe to Newsletter</a>
+          <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p class="hidden" style="display:none;">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            <div class="newsletter-input-group">
+              <input type="email" name="email" placeholder="Enter your email address" required class="newsletter-email" />
+              <button type="submit" class="cta-button newsletter-btn">Subscribe</button>
+            </div>
+            <p class="newsletter-success" style="display:none;">Thanks for subscribing!</p>
+          </form>
         </div>
       </div>
     </div>
@@ -1364,6 +1374,51 @@ const formatDate = (dateString: string) => {
   box-shadow: 0 12px 35px rgba(66, 133, 244, 0.4);
 }
 
+.newsletter-form {
+  margin-top: 0;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.newsletter-email {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #1a1e32;
+  color: #e8eaf2;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-email::placeholder {
+  color: #7a7f99;
+}
+
+.newsletter-email:focus {
+  border-color: #4285F4;
+}
+
+.newsletter-btn {
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+.newsletter-success {
+  color: #48bb78;
+  font-weight: 600;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .content-layout {
@@ -1395,6 +1450,14 @@ const formatDate = (dateString: string) => {
     flex-direction: column;
     text-align: center;
     gap: 25px;
+  }
+
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
   }
 
   .share-buttons {
@@ -1481,6 +1544,39 @@ if (document.readyState !== 'loading') {
   rehydrateInlineContentScripts();
 } else {
   document.addEventListener('DOMContentLoaded', rehydrateInlineContentScripts, { once: true });
+}
+
+// Newsletter form submission
+const newsletterForm = document.querySelector('form[name="newsletter"]');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.newsletter-btn');
+    const successMsg = form.querySelector('.newsletter-success');
+    const originalBtnText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(response => {
+      if (response.ok) {
+        form.querySelector('.newsletter-input-group').style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
+      }
+    })
+    .catch(() => {
+      btn.textContent = 'Try Again';
+      btn.disabled = false;
+    });
+  });
 }
 </script>
   </main>
