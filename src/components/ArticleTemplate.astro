@@ -278,19 +278,24 @@ const formatDate = (dateString: string) => {
     <div class="max-w-4xl mx-auto px-4">
       <div class="author-card">
         <div class="author-avatar">
-          {author.avatar && (
-            <img 
-              src={author.avatar} 
-              alt={author.name} 
-              width="60"
-              height="60"
+          {author.avatar ? (
+            <img
+              src={author.avatar}
+              alt={author.name}
+              width="120"
+              height="120"
               loading="lazy"
               decoding="async"
             />
+          ) : (
+            <div class="avatar-placeholder">
+              {author.name.charAt(0)}
+            </div>
           )}
         </div>
         <div class="author-info">
-          <h3>About {author.name}</h3>
+          <span class="author-label">Author</span>
+          <h3>{author.name}</h3>
           <p>{author.bio}</p>
           {author.linkedin && (
             <a href={author.linkedin} class="linkedin-link" target="_blank" rel="noopener">
@@ -1092,43 +1097,65 @@ const formatDate = (dateString: string) => {
 
 .author-card {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  background: #131627;
-  padding: 40px;
+  gap: 35px;
+  align-items: center;
+  background: linear-gradient(135deg, #131627 0%, #1a1e32 100%);
+  padding: 45px;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.author-avatar img,
-.avatar-placeholder {
-  width: 120px;
-  height: 120px;
+.author-avatar {
+  flex-shrink: 0;
+}
+
+.author-avatar img {
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid rgba(66, 133, 244, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .avatar-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   background: linear-gradient(135deg, #4285F4, #6AB7FF);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  border: 3px solid rgba(66, 133, 244, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.author-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #4285F4;
+  margin-bottom: 6px;
 }
 
 .author-info h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #e8eaf2;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .author-info p {
-  color: #ffffff;
-  line-height: 1.7;
+  color: #a0a4b8;
+  line-height: 1.8;
   margin-bottom: 20px;
+  font-size: 1rem;
 }
 
 .linkedin-link {
