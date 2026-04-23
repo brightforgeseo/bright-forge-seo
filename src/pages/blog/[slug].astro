@@ -4,6 +4,7 @@ import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
 import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
 import { getBlogMetadata } from '../../lib/blogMetadata';
+import { getAuthorSlug } from '../../lib/authors';
 
 export async function getStaticPaths() {
   const posts = await getAllBlogPosts();
@@ -863,12 +864,13 @@ const templateProps = {
         linkedin: ''
       }
     };
-    return authors[authorName] || {
+    const base = authors[authorName] || {
       name: authorName,
       bio: 'Digital marketing experts at Bright Forge SEO Agency specializing in SEO and content strategy.',
       avatar: '',
       linkedin: ''
     };
+    return { ...base, slug: getAuthorSlug(base.name) };
   })(),
   publishDate: formattedDate,
   readTime: '5 min read', // You could calculate this based on content length

@@ -1,0 +1,727 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LegacyHeader from '../../components/LegacyHeader.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import ButtonPrimary from '../../components/ButtonPrimary.astro';
+import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import { authors, getAuthorBySlug } from '../../lib/authors.js';
+import { getAllBlogPosts } from '../../lib/contentful.js';
+
+export async function getStaticPaths() {
+  return Object.keys(authors).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const author = getAuthorBySlug(slug);
+
+if (!author) {
+  return Astro.redirect('/404');
+}
+
+// Fetch all posts and filter to this author's articles (newest first, max 6)
+const allPosts = await getAllBlogPosts();
+const authorPosts = allPosts
+  .filter((p) => (p.author || '').trim().toLowerCase() === author.name.toLowerCase())
+  .slice(0, 6);
+
+const formatDate = (d) =>
+  d
+    ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(d)
+    : '';
+
+const pageTitle = `${author.name} - ${author.role} | Bright Forge SEO`;
+const pageDescription = author.shortBio;
+
+// Person schema for richer search results
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: author.name,
+  jobTitle: author.role,
+  description: author.shortBio,
+  image: `https://brightforge.com.ph${author.avatar}`,
+  url: `https://brightforge.com.ph/authors/${author.slug}/`,
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Bright Forge SEO',
+    url: 'https://brightforge.com.ph/'
+  },
+  knowsAbout: author.expertise,
+  alumniOf: author.education
+    ? { '@type': 'EducationalOrganization', name: author.education.split(',').pop().trim() }
+    : undefined
+};
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  type="profile"
+  image={author.avatar}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://brightforge.com.ph/' },
+    { name: 'Authors', url: 'https://brightforge.com.ph/authors/' },
+    { name: author.name, url: `https://brightforge.com.ph/authors/${author.slug}/` }
+  ]}
+  faqs={author.faqs}
+>
+  <LegacyHeader slot="header" />
+
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(personSchema)} />
+
+  <!-- Author Hero -->
+  <section class="author-hero">
+    <div class="author-hero-bg"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <nav class="hero-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/blog/" class="breadcrumb-link">Blog</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">{author.name}</span>
+      </nav>
+
+      <div class="author-hero-grid">
+        <div class="author-hero-text">
+          <span class="author-eyebrow">Author</span>
+          <h1>{author.name}</h1>
+          <p class="author-role">{author.role} · Bright Forge SEO Agency</p>
+          <p class="author-lede">{author.shortBio}</p>
+
+          <div class="author-meta-row">
+            {author.yearsExperience && (
+              <div class="meta-pill">
+                <i class="fas fa-award"></i>
+                <span>{author.yearsExperience} Years Experience</span>
+              </div>
+            )}
+            {author.location && (
+              <div class="meta-pill">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>{author.location}</span>
+              </div>
+            )}
+            {author.education && (
+              <div class="meta-pill">
+                <i class="fas fa-graduation-cap"></i>
+                <span>{author.education}</span>
+              </div>
+            )}
+          </div>
+
+          <div class="author-actions">
+            <ButtonPrimary href="/contact/" text="Work With Ben" icon="fas fa-arrow-right" />
+            <ButtonSecondary href="/blog/" text="Read Articles" icon="fas fa-book-open" />
+          </div>
+        </div>
+
+        <div class="author-hero-visual">
+          <div class="author-photo">
+            <img
+              src={author.avatar}
+              alt={`${author.name}, ${author.role} at Bright Forge SEO`}
+              width="420"
+              height="480"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Long Bio -->
+  <section class="about-author">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header">
+        <h2>About <span>{author.name.split(' ')[0]}</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          {author.longBio.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <aside class="about-card">
+          <h3>Quick Facts</h3>
+          <dl>
+            <div>
+              <dt>Role</dt>
+              <dd>{author.role}</dd>
+            </div>
+            <div>
+              <dt>Experience</dt>
+              <dd>{author.yearsExperience} years in digital marketing</dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>{author.location}</dd>
+            </div>
+            <div>
+              <dt>Education</dt>
+              <dd>{author.education}</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section class="expertise-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header">
+        <h2>Areas of <span>Expertise</span></h2>
+        <p>Core disciplines {author.name.split(' ')[0]} brings to every engagement.</p>
+      </div>
+      <div class="expertise-grid">
+        {author.expertise.map((item) => (
+          <div class="expertise-card">
+            <i class="fas fa-check-circle"></i>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="industries-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header">
+        <h2>Industries <span>Served</span></h2>
+        <p>Cross-industry experience in the UK, the US, and the Philippines.</p>
+      </div>
+      <div class="industries-cloud">
+        {author.industries.map((industry) => (
+          <span class="industry-chip">{industry}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Articles -->
+  {authorPosts.length > 0 && (
+    <section class="author-articles">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="section-header">
+          <h2>Latest <span>Articles</span></h2>
+          <p>Recent insights published by {author.name}.</p>
+        </div>
+        <div class="articles-grid">
+          {authorPosts.map((post) => (
+            <a class="article-card" href={`/blog/${post.slug}/`}>
+              {post.featuredImage && (
+                <div class="article-thumb">
+                  <img src={post.featuredImage} alt={post.title} width="400" height="225" loading="lazy" decoding="async" />
+                </div>
+              )}
+              <div class="article-body">
+                <span class="article-date">{formatDate(post.publishDate)}</span>
+                <h3>{post.title}</h3>
+                {post.excerpt && <p>{post.excerpt}</p>}
+                <span class="article-read">Read article →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div class="articles-footer">
+          <ButtonSecondary href="/blog/" text="See all articles" icon="fas fa-arrow-right" />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="author-faq-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header">
+        <h2>Frequently Asked <span>Questions</span></h2>
+        <p>Common questions about {author.name.split(' ')[0]} and how he works.</p>
+      </div>
+      <div class="faq-grid">
+        {author.faqs.map((faq) => (
+          <div class="faq-item">
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+  /* Section header reused across sections */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .section-header h2 span {
+    color: #f0622a;
+  }
+  .section-header p {
+    font-size: 1.0625rem;
+    color: #d0d4e8;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Hero */
+  .author-hero {
+    position: relative;
+    padding: 7rem 0 5rem;
+    overflow: hidden;
+    color: #ffffff;
+  }
+  .author-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0d0f1a 0%, #131627 40%, #0d0f1a 100%);
+    z-index: 0;
+  }
+  .author-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px circle at 20% 10%, rgba(240, 98, 42, 0.18), transparent 50%),
+      radial-gradient(500px circle at 80% 90%, rgba(66, 133, 244, 0.12), transparent 55%);
+  }
+
+  .hero-breadcrumbs {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+  }
+  .hero-breadcrumbs .breadcrumb-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero-breadcrumbs .breadcrumb-link:hover {
+    color: #ffffff;
+  }
+  .hero-breadcrumbs .breadcrumb-sep {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .hero-breadcrumbs .breadcrumb-current {
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .author-hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .author-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #f0622a;
+    margin-bottom: 0.75rem;
+  }
+
+  .author-hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .author-role {
+    font-size: 1.1rem;
+    color: #e8eaf2;
+    font-weight: 600;
+    margin: 0 0 1.5rem;
+  }
+
+  .author-lede {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 640px;
+    margin: 0 0 2rem;
+  }
+
+  .author-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: #e8eaf2;
+  }
+  .meta-pill i {
+    color: #f0622a;
+    font-size: 0.8rem;
+  }
+
+  .author-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .author-hero-visual {
+    display: flex;
+    justify-content: center;
+  }
+  .author-photo {
+    position: relative;
+    width: 340px;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #131627;
+  }
+  .author-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(13, 15, 26, 0.55) 100%);
+    z-index: 1;
+  }
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* About */
+  .about-author {
+    padding: 5rem 0;
+    background: #131627;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .about-copy p {
+    font-size: 1.0625rem;
+    line-height: 1.85;
+    color: #e8eaf2;
+    margin: 0 0 1.25rem;
+  }
+  .about-copy p:last-child {
+    margin-bottom: 0;
+  }
+  .about-card {
+    background: #0d0f1a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .about-card h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #f0622a;
+    margin: 0 0 1.5rem;
+  }
+  .about-card dl {
+    margin: 0;
+  }
+  .about-card dl > div {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .about-card dl > div:last-child {
+    border-bottom: none;
+  }
+  .about-card dt {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #7a7f99;
+    margin-bottom: 6px;
+  }
+  .about-card dd {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  /* Expertise */
+  .expertise-section {
+    padding: 5rem 0;
+    background: #0d0f1a;
+  }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .expertise-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #131627;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 16px 20px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .expertise-card:hover {
+    transform: translateY(-3px);
+    border-color: #f0622a;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  .expertise-card i {
+    color: #f0622a;
+    font-size: 1.1rem;
+  }
+
+  /* Industries */
+  .industries-section {
+    padding: 5rem 0;
+    background: #131627;
+  }
+  .industries-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .industry-chip {
+    padding: 12px 20px;
+    background: #0d0f1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    color: #e8eaf2;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  .industry-chip:hover {
+    border-color: #f0622a;
+    color: #ffffff;
+    background: rgba(240, 98, 42, 0.1);
+  }
+
+  /* Articles */
+  .author-articles {
+    padding: 5rem 0;
+    background: #0d0f1a;
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    background: #131627;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    border-color: #f0622a;
+  }
+  .article-thumb {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0d0f1a;
+  }
+  .article-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .article-card:hover .article-thumb img {
+    transform: scale(1.05);
+  }
+  .article-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+  }
+  .article-date {
+    font-size: 0.8rem;
+    color: #7a7f99;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .article-body h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+  }
+  .article-body p {
+    margin: 0;
+    color: #d0d4e8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .article-read {
+    margin-top: auto;
+    color: #f0622a;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .articles-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  /* FAQ */
+  .author-faq-section {
+    padding: 5rem 0;
+    background: #131627;
+  }
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-item {
+    background: #0d0f1a;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.3s ease;
+  }
+  .faq-item:hover {
+    border-color: rgba(240, 98, 42, 0.4);
+  }
+  .faq-item h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.6rem;
+    line-height: 1.4;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #d0d4e8;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .author-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .author-hero-visual {
+      order: -1;
+    }
+    .author-photo {
+      width: 260px;
+    }
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .expertise-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .articles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .author-hero {
+      padding: 5rem 0 3.5rem;
+    }
+    .author-hero-text h1 {
+      font-size: 2.25rem;
+    }
+    .author-role {
+      font-size: 1rem;
+    }
+    .author-lede {
+      font-size: 1rem;
+    }
+    .about-author,
+    .expertise-section,
+    .industries-section,
+    .author-articles,
+    .author-faq-section {
+      padding: 3.5rem 0;
+    }
+    .author-actions {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
+    .author-actions :global(a) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .expertise-grid,
+    .articles-grid {
+      grid-template-columns: 1fr;
+    }
+    .author-photo {
+      width: 220px;
+    }
+  }
+</style>

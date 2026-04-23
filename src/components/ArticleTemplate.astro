@@ -11,6 +11,7 @@ export interface Props {
     bio: string;
     avatar?: string;
     linkedin?: string;
+    slug?: string | null;
   };
   publishDate: string;
   modifiedDate?: string;
@@ -278,7 +279,22 @@ const formatDate = (dateString: string) => {
     <div class="max-w-4xl mx-auto px-4">
       <div class="author-card">
         <div class="author-avatar">
-          {author.avatar ? (
+          {author.slug ? (
+            <a href={`/authors/${author.slug}/`} aria-label={`View author profile for ${author.name}`}>
+              {author.avatar ? (
+                <img
+                  src={author.avatar}
+                  alt={author.name}
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div class="avatar-placeholder">{author.name.charAt(0)}</div>
+              )}
+            </a>
+          ) : author.avatar ? (
             <img
               src={author.avatar}
               alt={author.name}
@@ -295,14 +311,28 @@ const formatDate = (dateString: string) => {
         </div>
         <div class="author-info">
           <span class="author-label">Author</span>
-          <h3>{author.name}</h3>
+          <h3>
+            {author.slug ? (
+              <a href={`/authors/${author.slug}/`} class="author-name-link">{author.name}</a>
+            ) : (
+              author.name
+            )}
+          </h3>
           <p>{author.bio}</p>
-          {author.linkedin && (
-            <a href={author.linkedin} class="linkedin-link" target="_blank" rel="noopener">
-              <i class="fab fa-linkedin"></i>
-              Connect on LinkedIn
-            </a>
-          )}
+          <div class="author-cta-row">
+            {author.slug && (
+              <a href={`/authors/${author.slug}/`} class="author-profile-link">
+                View full profile
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            )}
+            {author.linkedin && (
+              <a href={author.linkedin} class="linkedin-link" target="_blank" rel="noopener">
+                <i class="fab fa-linkedin"></i>
+                Connect on LinkedIn
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -1156,6 +1186,44 @@ const formatDate = (dateString: string) => {
   line-height: 1.8;
   margin-bottom: 20px;
   font-size: 1rem;
+}
+
+.author-name-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.author-name-link:hover {
+  color: #f0622a;
+}
+
+.author-avatar a {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.author-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.author-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f0622a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.author-profile-link:hover {
+  color: #fb923c;
+  gap: 12px;
 }
 
 .linkedin-link {
