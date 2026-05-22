@@ -8,7 +8,16 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="Technical SEO Services In The Philippines - Bright Forge SEO" description="Fix crawling issues, speed up your site, and boost rankings. Our tech SEO services in the Philippines make your site easier to find and faster to trust.">
+<MainLayout
+  title="Technical SEO Services In The Philippines - Bright Forge SEO"
+  description="Technical SEO services in the Philippines for crawlability, Core Web Vitals, indexation, migrations, structured data and site health fixes that protect rankings and leads."
+  faqs={[
+    { question: "What does technical SEO fix first?", answer: "We usually start with crawl access, indexation, Core Web Vitals, mobile rendering, broken internal links, redirect chains, duplicate pages, sitemap hygiene and schema issues. The priority is not the longest issue list; it is the fixes most likely to unlock rankings, traffic and enquiries." },
+    { question: "Do we need technical SEO if the site already looks good?", answer: "Yes, because design quality and search accessibility are different things. A site can look polished while Google struggles with slow templates, blocked resources, duplicate URLs, weak internal links or JavaScript rendering problems." },
+    { question: "Can you work with our developer?", answer: "Yes. We can diagnose the issues, write the implementation brief, QA the developer's changes and monitor Search Console after release so fixes do not create new ranking or conversion problems." },
+    { question: "How quickly can technical SEO improve results?", answer: "Critical crawl and indexation fixes can show movement within weeks. Performance, architecture and migration work usually compounds over one to three months as Google recrawls the site and users get a faster path to enquiry." }
+  ]}
+>
   <LegacyHeader slot="header" />
   
   <!-- Hero Section -->
@@ -19,8 +28,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     breadcrumbCurrent="Technical SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>Have you ever wondered why your website isn't performing as well as it should, despite having great content and beautiful design? I've seen it countless times -business owners investing heavily in their online presence only to be held back by invisible technical barriers. One client came to us after spending months creating premium content that simply wasn't ranking. The culprit? Technical SEO issues that were hiding their site from Google's view.</p>
-      <p>At Bright Forge SEO, we specialize in uncovering and fixing these hidden obstacles. Our technical SEO services go beyond surface-level optimizations to address the foundational elements that search engines care about most. We transform your website into a well-oiled machine that both search engines and users love to interact with -because when your technical foundation is solid, everything else falls into place.</p>
+      <p>A site can look fine and still leak rankings through crawl waste, Core Web Vitals, indexation problems, duplicate URLs, weak internal links or JavaScript that search engines struggle to render. That is the work technical SEO is meant to catch before it quietly costs traffic.</p>
+      <p>We audit the parts users do not see, then turn the findings into fixes developers can actually ship. The goal is a cleaner technical foundation, faster pages, better crawl access and less friction between search visibility and enquiries.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -46,7 +55,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   <section class="why-technical-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Why Technical SEO Is Your Website's <span>Secret Weapon</span></h2>
+        <h2>Why Technical SEO Is Usually the <span>Hidden Blocker</span></h2>
       </div>
       
       <div class="content-explanation">
@@ -55,9 +64,9 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <i class="fas fa-cogs"></i>
           </div>
           <div class="content-text">
-            <p>Technical SEO is like the engine of your car -you don't see it, but it powers everything. While content and backlinks get most of the attention, technical issues can completely undermine your SEO efforts if left unaddressed. Search engines need to efficiently crawl, render, and index your website before your content even has a chance to rank.</p>
+            <p>Content and backlinks cannot do their job if search engines are wasting crawl budget, landing on duplicate URLs, missing important pages or giving up on slow templates. Technical SEO makes the site easier to crawl, render, index and trust.</p>
             
-            <p>Our technical SEO services ensure your website meets and exceeds Google's increasingly demanding technical requirements, giving you a competitive edge in the Philippine market where many businesses still overlook these critical optimizations.</p>
+            <p>We prioritise the fixes with commercial impact: pages that should be indexed, templates that are too slow, redirects that dilute signals, schema that needs tightening and internal links that should point authority towards the pages that sell.</p>
           </div>
         </div>
       </div>
@@ -99,9 +108,9 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <div class="visual-icon">
               <i class="fas fa-cogs"></i>
             </div>
-            <h3>Technical Excellence</h3>
-            <p class="visual-stat">98%</p>
-            <p class="visual-label">Technical Score Improvement</p>
+            <h3>Technical Priorities</h3>
+            <p class="visual-stat">Fix first</p>
+            <p class="visual-label">Crawl, speed, indexation, schema and conversion blockers</p>
           </div>
         </div>
       </div>
@@ -218,6 +227,35 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <p>Your website will perform flawlessly across all devices, capturing the growing mobile audience in the Philippines.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-proof-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="commercial-proof-layout">
+        <div>
+          <p class="eyebrow">What we look for</p>
+          <h2>Technical SEO questions businesses usually ask after rankings stall</h2>
+          <p>We do not hand over a 70-page export and call it strategy. We isolate the issues that are most likely to affect visibility, leads and migration safety, then we give the developer or content team a practical fix path.</p>
+        </div>
+        <ul class="proof-list">
+          <li><strong>Can Google reach the right pages?</strong><span>Crawl paths, sitemaps, canonicals, redirects and robots rules.</span></li>
+          <li><strong>Are templates costing conversions?</strong><span>Core Web Vitals, mobile layout, slow scripts and heavy media.</span></li>
+          <li><strong>Is the site sending mixed signals?</strong><span>Duplicate content, thin pages, weak internal links and schema drift.</span></li>
+          <li><strong>Will fixes survive release?</strong><span>QA checks, Search Console monitoring and post-launch crawl comparisons.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section-commercial">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2>Technical SEO questions businesses usually ask</h2>
+      <div class="faq-list-commercial">
+        <article><h3>What does technical SEO fix first?</h3><p>We start with the blockers most likely to affect search visibility and enquiries: crawl access, indexation, Core Web Vitals, mobile rendering, broken links, redirect chains, duplicate pages, sitemap hygiene and schema issues.</p></article>
+        <article><h3>Can you work with our developer?</h3><p>Yes. We can diagnose the issue, write the implementation brief, QA the changes and monitor Search Console after release.</p></article>
+        <article><h3>How quickly can technical SEO improve results?</h3><p>Critical crawl and indexation fixes can show movement within weeks. Architecture and performance work usually compounds over one to three months.</p></article>
       </div>
     </div>
   </section>
@@ -674,6 +712,108 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     grid-template-columns: 1fr;
   }
 }
+
+.commercial-proof-section {
+  padding: 5rem 0;
+  background: #0d0f1a;
+}
+
+.commercial-proof-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3rem;
+  align-items: start;
+  background: #131627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.eyebrow {
+  color: #f0622a;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.commercial-proof-layout h2,
+.faq-section-commercial h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.commercial-proof-layout p {
+  color: #d4d8e6;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.proof-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.proof-list li {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem 0 1.2rem 1.2rem;
+  border-left: 3px solid #f0622a;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.proof-list strong {
+  color: white;
+  font-size: 1.05rem;
+}
+
+.proof-list span {
+  color: #c9cedd;
+  line-height: 1.55;
+}
+
+.faq-section-commercial {
+  padding: 5rem 0;
+  background: #111421;
+}
+
+.faq-list-commercial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.faq-list-commercial article {
+  background: #171b2d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.4rem;
+  padding: 1.5rem;
+}
+
+.faq-list-commercial h3 {
+  color: white;
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+.faq-list-commercial p {
+  color: #c9cedd;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .commercial-proof-layout,
+  .faq-list-commercial {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 
 <style>
@@ -753,5 +893,107 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     height: 80px;
   }
 }
+
+.commercial-proof-section {
+  padding: 5rem 0;
+  background: #0d0f1a;
+}
+
+.commercial-proof-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3rem;
+  align-items: start;
+  background: #131627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.eyebrow {
+  color: #f0622a;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.commercial-proof-layout h2,
+.faq-section-commercial h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.commercial-proof-layout p {
+  color: #d4d8e6;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.proof-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.proof-list li {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem 0 1.2rem 1.2rem;
+  border-left: 3px solid #f0622a;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.proof-list strong {
+  color: white;
+  font-size: 1.05rem;
+}
+
+.proof-list span {
+  color: #c9cedd;
+  line-height: 1.55;
+}
+
+.faq-section-commercial {
+  padding: 5rem 0;
+  background: #111421;
+}
+
+.faq-list-commercial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.faq-list-commercial article {
+  background: #171b2d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.4rem;
+  padding: 1.5rem;
+}
+
+.faq-list-commercial h3 {
+  color: white;
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+.faq-list-commercial p {
+  color: #c9cedd;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .commercial-proof-layout,
+  .faq-list-commercial {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 

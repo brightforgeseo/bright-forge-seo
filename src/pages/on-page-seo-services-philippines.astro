@@ -8,7 +8,16 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="On-Page SEO Services In The Philippines - Bright Forge SEO" description="Transform your website content into a powerful ranking asset. Expert on-page SEO services that help Philippine businesses dominate search results.">
+<MainLayout
+  title="On-Page SEO Services In The Philippines - Bright Forge SEO"
+  description="On-page SEO services in the Philippines for search intent, metadata, internal links, page structure, content depth and conversion-focused landing page improvements."
+  faqs={[
+    { question: "What is included in on-page SEO?", answer: "On-page SEO usually covers search intent, page titles, meta descriptions, headings, copy structure, internal links, image alt text, schema, content depth and conversion messaging. We treat the page as both a ranking asset and a sales asset." },
+    { question: "Is on-page SEO just keyword placement?", answer: "No. Keyword placement matters, but modern on-page SEO is more about matching intent, answering the buyer's real questions, making the page easy to understand and giving search engines clear topic signals." },
+    { question: "Can you improve existing pages instead of writing new ones?", answer: "Yes. Many campaigns need better money pages before they need more blog posts. We improve existing service pages, category pages, local pages and landing pages where there is already search demand or traffic potential." },
+    { question: "How does on-page SEO help conversions?", answer: "Clearer page structure, better CTAs, stronger proof, sharper FAQs and stronger internal links help visitors understand the offer faster. That means SEO traffic has a better chance of becoming a lead." }
+  ]}
+>
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -19,8 +28,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     breadcrumbCurrent="On-Page SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>Remember when having a website was enough to attract customers? Those days are long gone. A local business owner recently shared their frustration with me -they had invested in beautiful web design and quality content, yet their competitors consistently outranked them. The missing piece? Strategic on-page SEO optimization that speaks both to search engines and real people.</p>
-      <p>At Bright Forge SEO, we transform your web pages into powerful ranking assets. Our on-page SEO services go beyond basic optimization -we craft an experience that naturally attracts both search engines and your target audience. By perfectly balancing technical optimization with user experience, we help Philippine businesses achieve and maintain top search positions.</p>
+      <p>Search intent, page structure and conversion copy should work together. If a service page has the right keywords but vague copy, weak internal links or no clear next step, it can rank without producing enough enquiries.</p>
+      <p>We improve the pages that need to earn money: titles, metadata, headings, FAQs, internal links, content depth, trust signals and calls to action. The aim is simple: make the page easier for Google to understand and easier for buyers to act on.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -52,12 +61,12 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           <div class="service-list">
             <div class="service-item">
               <h3>Title & Meta Optimization</h3>
-              <p>Strategic keyword placement, compelling meta descriptions, and header tag optimization to maximize click-through rates while maintaining your brand voice.</p>
+              <p>Search-led page titles, sharper meta descriptions and heading structures that match buyer intent while keeping the page readable and commercially useful.</p>
             </div>
 
             <div class="service-item">
               <h3>Content Enhancement</h3>
-              <p>Keyword-rich content creation with optimized structure, improved readability, topic cluster development, and comprehensive content gap analysis.</p>
+              <p>Better page copy, stronger answers, improved readability, useful supporting sections and content gaps mapped to what buyers actually search before they enquire.</p>
             </div>
 
             <div class="service-item">
@@ -77,9 +86,9 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <div class="visual-icon">
               <i class="fas fa-edit"></i>
             </div>
-            <h3>On-Page Mastery</h3>
-            <p class="visual-stat">95%</p>
-            <p class="visual-label">Content Optimization Score</p>
+            <h3>Page Priorities</h3>
+            <p class="visual-stat">Rank + convert</p>
+            <p class="visual-label">Intent, copy, internal links, proof and CTAs working together</p>
           </div>
         </div>
       </div>
@@ -91,7 +100,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     <div class="max-w-7xl mx-auto px-4">
       <div class="process-header">
         <h2>Our On-Page SEO <span>Process</span></h2>
-        <p>We follow a proven methodology to optimize your pages for maximum search visibility and user engagement.</p>
+        <p>We improve the page around the searcher, the offer and the action you want them to take.</p>
       </div>
 
       <div class="process-grid">
@@ -196,6 +205,35 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <p>Stand out in the Philippine market with professionally optimized content that outperforms your competitors.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-proof-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="commercial-proof-layout">
+        <div>
+          <p class="eyebrow">What changes</p>
+          <h2>On-page SEO questions businesses usually ask when traffic is not converting</h2>
+          <p>We look at the page as a search result, a landing page and a sales conversation. If one of those jobs is weak, rankings alone will not do enough.</p>
+        </div>
+        <ul class="proof-list">
+          <li><strong>Does the page match intent?</strong><span>The offer, headings and copy need to answer the searcher's real question.</span></li>
+          <li><strong>Can Google understand the topic?</strong><span>Titles, headings, entities, schema and internal links should be clear.</span></li>
+          <li><strong>Does the visitor trust it?</strong><span>Proof, examples, practical language and FAQs reduce hesitation.</span></li>
+          <li><strong>Is there a clear next step?</strong><span>Better CTAs and page flow help organic traffic become leads.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section-commercial">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2>On-page SEO questions businesses usually ask</h2>
+      <div class="faq-list-commercial">
+        <article><h3>Is on-page SEO just keyword placement?</h3><p>No. Keywords matter, but the bigger job is matching intent, making the page useful and giving search engines clear signals about the service.</p></article>
+        <article><h3>Can you improve existing pages?</h3><p>Yes. Improving money pages is often more valuable than publishing more blogs, especially when a page already has impressions or rankings.</p></article>
+        <article><h3>How does on-page SEO help conversions?</h3><p>Clearer copy, stronger proof, better FAQs and stronger CTAs make it easier for visitors to understand the offer and enquire.</p></article>
       </div>
     </div>
   </section>
@@ -652,4 +690,106 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     grid-template-columns: 1fr;
   }
 }
+
+.commercial-proof-section {
+  padding: 5rem 0;
+  background: #0d0f1a;
+}
+
+.commercial-proof-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3rem;
+  align-items: start;
+  background: #131627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.eyebrow {
+  color: #f0622a;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.commercial-proof-layout h2,
+.faq-section-commercial h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.commercial-proof-layout p {
+  color: #d4d8e6;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.proof-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.proof-list li {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem 0 1.2rem 1.2rem;
+  border-left: 3px solid #f0622a;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.proof-list strong {
+  color: white;
+  font-size: 1.05rem;
+}
+
+.proof-list span {
+  color: #c9cedd;
+  line-height: 1.55;
+}
+
+.faq-section-commercial {
+  padding: 5rem 0;
+  background: #111421;
+}
+
+.faq-list-commercial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.faq-list-commercial article {
+  background: #171b2d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.4rem;
+  padding: 1.5rem;
+}
+
+.faq-list-commercial h3 {
+  color: white;
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+.faq-list-commercial p {
+  color: #c9cedd;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .commercial-proof-layout,
+  .faq-list-commercial {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>

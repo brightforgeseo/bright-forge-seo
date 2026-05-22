@@ -8,7 +8,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 import '../styles/contact.css';
 
 const title = "Contact Bright Forge SEO | Get in Touch";
-const description = "Contact Bright Forge SEO for expert SEO services in the Philippines. Get a free consultation and boost your online presence today.";
+const description = "Contact Bright Forge SEO for a practical SEO review covering rankings, leads, technical issues, AI search readiness and conversion opportunities.";
 ---
 
 <Layout title={title} description={description}>
@@ -17,17 +17,17 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
 
   <!-- Hero Section -->
   <Hero
-    title="Let's Grow Your Business Together"
+    title="Tell Us What You Want SEO to Fix"
     breadcrumbCurrent="Contact"
   >
     <Fragment slot="story">
-      <p>Ready to improve rankings, leads and search visibility? Our SEO experts are here to review your market, site and conversion path.</p>
-      <p>Get in touch with our team of experienced SEO professionals and discover how we can transform your online presence with proven strategies and measurable results.</p>
+      <p>Tell us what you want SEO to fix: rankings, enquiries, technical issues, AI search visibility, weak service pages or a site that gets traffic but does not produce enough leads.</p>
+      <p>We will review the site, look for the highest-impact opportunities and come back with a practical next step rather than a generic sales pitch.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="#contact-form" text="Get Started Now" />
-      <ButtonSecondary href="tel:+447123456789" text="Call Us Today" />
+      <ButtonPrimary href="#contact-form" text="Request an SEO Review" />
+      <ButtonSecondary href="tel:+639696206182" text="Call Us Today" />
     </Fragment>
   </Hero>
 
@@ -37,7 +37,7 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
       <div class="contact-grid">
         <!-- Contact Form -->
         <div class="contact-form-card">
-          <h2>Send Us a Message</h2>
+          <h2>Request an SEO Review</h2>
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" id="contactForm">
             <input type="hidden" name="form-name" value="contact" />
             <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -83,6 +83,11 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
                 <option value="backlink-seo">Backlink SEO Services</option>
                 <option value="content-seo">Content SEO Services</option>
                 <option value="technical-seo">Technical SEO</option>
+                <option value="on-page-seo">On-Page SEO</option>
+                <option value="local-seo">Local SEO</option>
+                <option value="ai-search-readiness">AI Search Readiness</option>
+                <option value="cro">SEO and Conversion Improvement</option>
+                <option value="not-sure">Not Sure Yet</option>
               </select>
             </div>
 
@@ -93,7 +98,7 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
                 name="message"
                 required
                 rows="5"
-                placeholder="Tell us about your project..."
+                placeholder="Tell us your website, target market and what you want SEO to improve. Rankings, leads, technical issues, AI visibility or conversion problems are all useful starting points."
               ></textarea>
             </div>
 
@@ -109,7 +114,7 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
         <!-- Contact Information -->
         <div class="contact-info-card">
           <h2>Get in Touch</h2>
-          <p class="info-subtitle">We'd love to hear from you. Here's how you can reach us.</p>
+          <p class="info-subtitle">If there is a clear SEO opportunity, we will say so. If the site needs fixing before more traffic will help, we will say that too.</p>
 
           <div class="contact-items">
             <!-- Office Address -->
@@ -146,7 +151,7 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
               </div>
               <div class="contact-details">
                 <h3>Call Us</h3>
-                <a href="tel:+447123456789">+44 7123 456 789</a>
+                <a href="tel:+639696206182">(+63) 969 620 6182</a>
               </div>
             </div>
 
@@ -166,6 +171,23 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-steps-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="next-steps-card">
+        <div>
+          <p class="eyebrow">No mystery funnel</p>
+          <h2>What happens after you enquire</h2>
+          <p>We check the site, the search market and the obvious conversion path before recommending work. That keeps the conversation practical from the start.</p>
+        </div>
+        <ol class="next-steps-list">
+          <li><strong>We review the site.</strong><span>Technical health, service pages, rankings, GSC signals where available and obvious conversion blockers.</span></li>
+          <li><strong>We identify the highest-value fixes.</strong><span>Not every issue matters equally, so we separate urgent blockers from nice-to-have clean-up.</span></li>
+          <li><strong>We map a sensible next step.</strong><span>That may be an audit, monthly SEO, technical clean-up, content improvement or AI search readiness work.</span></li>
+        </ol>
       </div>
     </div>
   </section>
@@ -459,6 +481,69 @@ const description = "Contact Bright Forge SEO for expert SEO services in the Phi
     .contact-info-card {
       padding: 1.5rem;
       border-radius: 16px;
+    }
+  }
+
+  .next-steps-section {
+    padding: 5rem 0;
+    background: #111421;
+  }
+
+  .next-steps-card {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    background: #131627;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2rem;
+    padding: 3rem;
+  }
+
+  .eyebrow {
+    color: #f0622a;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .next-steps-card h2 {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.08;
+    margin-bottom: 1rem;
+  }
+
+  .next-steps-card p,
+  .next-steps-list span {
+    color: #c9cedd;
+    line-height: 1.65;
+  }
+
+  .next-steps-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .next-steps-list li {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.2rem;
+    border-left: 3px solid #f0622a;
+    background: rgba(255, 255, 255, 0.035);
+    border-radius: 0 1rem 1rem 0;
+  }
+
+  .next-steps-list strong {
+    color: white;
+  }
+
+  @media (max-width: 900px) {
+    .next-steps-card {
+      grid-template-columns: 1fr;
     }
   }
 </style>

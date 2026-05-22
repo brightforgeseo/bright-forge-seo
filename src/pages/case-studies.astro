@@ -8,7 +8,7 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="Case Studies - Bright Forge SEO Philippines" description="Real-world examples of how Bright Forge SEO Philippines has delivered outstanding SEO results for businesses.">
+<MainLayout title="SEO Case Studies - Bright Forge SEO Philippines" description="SEO case studies showing how stronger technical foundations, on-page improvements, content strategy and local search work turned organic visibility into measurable growth.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -17,8 +17,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     breadcrumbCurrent="Case Studies"
   >
     <Fragment slot="story">
-      <p class="hero-subtitle">Real results from real businesses - see how our SEO strategies drive measurable growth.</p>
-      <p>Discover how we've transformed businesses across industries with data-driven SEO strategies that deliver lasting success. From local businesses to enterprise-level projects, these case studies showcase our comprehensive approach to search engine optimization.</p>
+      <p class="hero-subtitle">Real search improvements, with the commercial context left in.</p>
+      <p>The useful bit is not the percentage on its own. It is the problem, the diagnosis, the work carried out and why the result mattered. These case studies show how SEO becomes more valuable when technical fixes, better pages, content and conversion paths point in the same direction.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -27,13 +27,30 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     </Fragment>
   </Hero>
 
+  <section class="case-study-proof-section">
+    <div class="container">
+      <div class="case-study-proof-card">
+        <div>
+          <p class="eyebrow">Proof with context</p>
+          <h2>What these case studies prove</h2>
+          <p>We are not interested in vanity traffic. The best SEO work either unlocks demand that was already there, fixes a bottleneck that was suppressing rankings, or makes an existing page better at turning searchers into leads.</p>
+        </div>
+        <div class="proof-points">
+          <article><strong>Diagnosis before activity</strong><span>Technical blockers, intent gaps and weak page structure get separated before work begins.</span></article>
+          <article><strong>Commercial pages first</strong><span>Service, category and local pages usually carry more value than generic blog volume.</span></article>
+          <article><strong>Traffic needs a job</strong><span>Rankings matter, but the page still needs proof, clarity and a clear enquiry path.</span></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Modern Filter & Grid Section -->
   <section class="case-studies-section">
     <div class="container">
       <!-- Section Header -->
       <div class="section-header">
-        <h2 class="section-title">Explore Our Success Stories</h2>
-        <p class="section-subtitle">Filter by industry to see how we've helped businesses like yours achieve exceptional growth</p>
+        <h2 class="section-title">Explore Our SEO Case Studies</h2>
+        <p class="section-subtitle">Filter by industry and look beyond the headline metric. The stronger stories show search visibility becoming enquiries, sales opportunities or cleaner market coverage.</p>
       </div>
 
       <!-- Modern Filter Buttons -->
@@ -67,7 +84,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               <h3 class="card-title">Bridal Dress Designer</h3>
               <div class="growth-indicator positive">+137.5%</div>
             </div>
-            <p class="card-description">Achieved dramatic traffic growth for a bridal dress designer, moving from page 3 to page 2 through comprehensive SEO strategy.</p>
+            <p class="card-description">Improved organic traffic and impressions for a bridal designer by tightening page relevance and moving competitive terms closer to commercial visibility.</p>
             <div class="metrics-grid">
               <div class="metric-item">
                 <span class="metric-value">+137.5%</span>
@@ -107,7 +124,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               <h3 class="card-title">Leather Wallet E-Commerce</h3>
               <div class="growth-indicator positive">+49.3%</div>
             </div>
-            <p class="card-description">Boosted organic clicks through exceptional CTR optimization and brand messaging excellence for a leather goods brand.</p>
+            <p class="card-description">Lifted organic clicks for a leather goods brand by improving search snippets, page alignment and the message users saw before they clicked.</p>
             <div class="metrics-grid">
               <div class="metric-item">
                 <span class="metric-value">+49.3%</span>
@@ -147,7 +164,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               <h3 class="card-title">Football Application</h3>
               <div class="growth-indicator positive">+34%</div>
             </div>
-            <p class="card-description">Increased organic traffic for a football app through strategic SEO optimization and content enhancement.</p>
+            <p class="card-description">Grew organic traffic for a football app by improving content coverage around the searches users already made before choosing a tool.</p>
             <div class="metrics-grid">
               <div class="metric-item">
                 <span class="metric-value">+34%</span>
@@ -187,7 +204,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               <h3 class="card-title">Phoenix Spa and Beauty</h3>
               <div class="growth-indicator positive">+70%</div>
             </div>
-            <p class="card-description">Transformed a premier beauty salon's online presence, driving significant local client growth through strategic SEO optimization.</p>
+            <p class="card-description">Improved local search visibility for a beauty salon by making service demand, location signals and page relevance work harder together.</p>
             <div class="metrics-grid">
               <div class="metric-item">
                 <span class="metric-value">+70%</span>
@@ -928,4 +945,65 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       height: 180px;
     }
   }
+
+.case-study-proof-section {
+  padding: 5rem 0 2rem;
+  background: #0d0f1a;
+}
+
+.case-study-proof-card {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3rem;
+  align-items: start;
+  background: #131627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.eyebrow {
+  color: #f0622a;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.case-study-proof-card h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+}
+
+.case-study-proof-card p,
+.proof-points span {
+  color: #c9cedd;
+  line-height: 1.65;
+}
+
+.proof-points {
+  display: grid;
+  gap: 1rem;
+}
+
+.proof-points article {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem;
+  border-left: 3px solid #f0622a;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.proof-points strong {
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .case-study-proof-card {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
