@@ -8,7 +8,16 @@ import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 ---
 
-<MainLayout title="SEO Services Philippines | Bright Forge SEO" description="Bright Forge delivers transparent SEO services Philippines businesses trust for rankings and revenue growth. Contact us today for more information.">
+<MainLayout
+  title="SEO Services Philippines | Bright Forge SEO"
+  description="Bright Forge delivers transparent SEO services for Philippine businesses that need stronger rankings, better leads and clearer commercial growth."
+  faqs={[
+    { question: "What SEO services do Philippine businesses usually need first?", answer: "Most campaigns start with technical SEO, keyword mapping, on-page improvements, internal linking and content gap work. Local businesses also need Google Business Profile optimisation and location signals, while national or ecommerce sites usually need stronger architecture, category content and authority building." },
+    { question: "How long does SEO take to work?", answer: "Technical fixes and on-page improvements can show movement within weeks, but meaningful commercial growth usually takes 3 to 6 months. Competitive markets often need 6 to 12 months of consistent technical, content and authority work." },
+    { question: "Do we still need SEO if AI search is changing Google?", answer: "Yes. AI search still depends on clear, crawlable, trustworthy source material. We treat AI readiness as a layer on top of SEO, not a replacement for technical health, strong content, links, reviews and conversion-focused pages." },
+    { question: "What makes Bright Forge different from cheap SEO packages?", answer: "We do not sell mystery tasks or thin monthly busywork. We prioritise the fixes that can affect rankings, leads and revenue, then show what changed, what the data says and what should happen next." }
+  ]}
+>
   <Fragment slot="head">
     <script type="application/ld+json">
       {
@@ -54,7 +63,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             {"@type": "ListItem", "position": 5, "name": "SEO Audits", "url": "https://brightforge.com.ph/seo-audit-services/"},
             {"@type": "ListItem", "position": 6, "name": "Keyword Research", "url": "https://brightforge.com.ph/keyword-research-services/"},
             {"@type": "ListItem", "position": 7, "name": "Link Building", "url": "https://brightforge.com.ph/backlink-seo-services-philippines/"},
-            {"@type": "ListItem", "position": 8, "name": "Answer Engine Optimization", "url": "https://brightforge.com.ph/answer-engine-optimization-services-philippines/"},
+            {"@type": "ListItem", "position": 8, "name": "AI Search Optimization", "url": "https://brightforge.com.ph/ai-search-optimization-services-philippines/"},
             {"@type": "ListItem", "position": 9, "name": "Astro Website Development", "url": "https://brightforge.com.ph/development/astro/"},
             {"@type": "ListItem", "position": 10, "name": "Website Migration", "url": "https://brightforge.com.ph/website-migration-services/"},
             {"@type": "ListItem", "position": 11, "name": "White Label SEO", "url": "https://brightforge.com.ph/white-label-seo-services-philippines/"}
@@ -73,8 +82,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     breadcrumbCurrent="SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>Transform your online presence with comprehensive SEO services from the Philippines' trusted digital partner. We deliver measurable growth through technical excellence, strategic content, and ethical optimization.</p>
-      <p>From Fortune 500 companies to local startups, we've helped businesses across industries dominate search results and drive sustainable revenue growth. Our proven frameworks adapt to your unique goals while maintaining the highest standards of quality and transparency.</p>
+      <p>SEO is not a bundle of disconnected tasks. We fix the parts of the site that stop search engines understanding it, strengthen the pages that should win enquiries, and build the trust signals needed to compete in tougher Philippine and international markets.</p>
+      <p>That means technical clean-up, content that matches buyer intent, internal links that guide authority, and reporting that connects movement in rankings to leads, sales and pipeline. AI search readiness sits on top of that foundation, because Google and AI tools both need clear, reliable source material before they can recommend a business.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -132,7 +141,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <a class="service-card" href="/local-seo-services-philippines/">
           <div class="service-card-inner">
             <h3>Local SEO</h3>
-            <p>Dominate maps and local pack with GBP optimization, citations, and geo-targeted content.</p>
+            <p>Improve visibility in maps and local organic results with Google Business Profile optimisation, citations, location content and review signals.</p>
           </div>
         </a>
 
@@ -155,10 +164,10 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <p>Quality-first outreach and digital PR to earn links that move rankings safely.</p>
           </div>
         </a>
-        <a class="service-card" href="/answer-engine-optimization-services-philippines/">
+        <a class="service-card" href="/ai-search-optimization-services-philippines/">
           <div class="service-card-inner">
-            <h3>Answer Engine Optimization</h3>
-            <p>Optimize for featured snippets, AI-overviews, and voice search with structured, concise answers.</p>
+            <h3>AI Search Optimization</h3>
+            <p>Make your SEO foundations easier for Google, AI answers and agentic search tools to understand, cite and recommend.</p>
           </div>
         </a>
 
@@ -191,7 +200,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       <div class="section-header">
         <div class="section-badge">Why Bright Forge</div>
         <h2>Performance-Driven <span>SEO Excellence</span></h2>
-        <p>We combine data-driven strategies with proven methodologies to deliver consistent, measurable results for businesses of all sizes.</p>
+        <p>We combine technical diagnosis, practical implementation and commercial judgement. The goal is not to make reports look busy. It is to move the pages that can win qualified traffic and turn that traffic into enquiries.</p>
       </div>
 
       <div class="benefits-grid">
@@ -200,7 +209,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <i class="fas fa-chart-bar"></i>
           </div>
           <h3>Data-Driven Strategies</h3>
-          <p>Every decision backed by comprehensive analytics, competitor research, and market insights to maximize your ROI.</p>
+          <p>Every recommendation is tied to evidence: crawl data, search demand, competitor gaps, analytics and the commercial value of the page.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
@@ -223,6 +232,35 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           <h3>Expert Team</h3>
           <p>Senior SEO specialists with 15+ years combined experience delivering results for global brands and local businesses.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="seo-faq-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="section-header">
+        <div class="section-badge">SEO Questions</div>
+        <h2>What businesses usually ask before starting SEO</h2>
+        <p>Clear answers before the proposal stage, because good SEO should not feel like buying fog in a jar.</p>
+      </div>
+      <div class="seo-faq-list">
+        <article class="seo-faq-item">
+          <h3>What SEO services do Philippine businesses usually need first?</h3>
+          <p>Most campaigns start with technical SEO, keyword mapping, on-page improvements, internal linking and content gap work. Local businesses also need Google Business Profile optimisation and location signals, while national or ecommerce sites usually need stronger architecture, category content and authority building.</p>
+        </article>
+        <article class="seo-faq-item">
+          <h3>How long does SEO take to work?</h3>
+          <p>Technical fixes and on-page improvements can show movement within weeks, but meaningful commercial growth usually takes 3 to 6 months. Competitive markets often need 6 to 12 months of consistent technical, content and authority work.</p>
+        </article>
+        <article class="seo-faq-item">
+          <h3>Do we still need SEO if AI search is changing Google?</h3>
+          <p>Yes. AI search still depends on clear, crawlable, trustworthy source material. We treat AI readiness as a layer on top of SEO, not a replacement for technical health, strong content, links, reviews and conversion-focused pages.</p>
+        </article>
+        <article class="seo-faq-item">
+          <h3>What makes Bright Forge different from cheap SEO packages?</h3>
+          <p>We do not sell mystery tasks or thin monthly busywork. We prioritise the fixes that can affect rankings, leads and revenue, then show what changed, what the data says and what should happen next.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -407,6 +445,34 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 .benefit-card p {
   color: #ffffff;
   line-height: 1.6;
+}
+
+.seo-faq-section {
+  padding: 5rem 0;
+  background: #131627;
+}
+
+.seo-faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.seo-faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.seo-faq-item h3 {
+  color: #e8eaf2;
+  font-size: 1.05rem;
+  margin-bottom: .75rem;
+}
+
+.seo-faq-item p {
+  color: #d0d4e8;
+  line-height: 1.7;
 }
 
 /********************

@@ -446,7 +446,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
+          <button class="faq-question">
             <span>How long does an SEO audit take?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
@@ -454,7 +454,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </div>
         
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
+          <button class="faq-question">
             <span>Will you implement the fixes for me?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
@@ -462,7 +462,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </div>
         
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
+          <button class="faq-question">
             <span>Is the audit compliant with Google's latest guidelines?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
@@ -470,7 +470,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </div>
         
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
+          <button class="faq-question">
             <span>What access do you need?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
@@ -478,7 +478,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </div>
         
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
+          <button class="faq-question">
             <span>How much does an SEO audit cost?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
@@ -486,7 +486,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </div>
         
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
+          <button class="faq-question">
             <span>Do you provide ongoing support after the audit?</span>
             <i class="fas fa-chevron-down"></i>
           </button>
@@ -2039,7 +2039,7 @@ document.addEventListener('DOMContentLoaded', () => {
       answer.setAttribute('aria-hidden', 'true');
       answer.style.maxHeight = '0px';
 
-      // Bind click listener as a fallback to inline onclick
+      // Bind click listener for FAQ toggles
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         window.toggleFAQ(btn);
