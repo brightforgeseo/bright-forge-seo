@@ -169,9 +169,9 @@ body {
 /* Modern Mega Menu - Elevated & Clean */
 .mega-menu-professional {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateX(-50%) translateY(0);
   width: 860px;
   background: var(--brand-surface2);
   border-radius: 20px;
@@ -314,7 +314,7 @@ body {
 /* Modern Dropdown - Clean Floating Card */
 .dropdown-professional {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
   min-width: 280px;
   background: var(--brand-surface2);
@@ -324,16 +324,21 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s var(--ease-out-expo);
-  transform: translateY(10px);
+  transform: translateY(0);
   z-index: 1000;
   overflow: hidden;
+}
+
+.nav-item-professional:last-child .dropdown-professional {
+  left: auto;
+  right: 0;
 }
 
 /* Industries Mega Menu */
 .industries-mega-menu {
   min-width: 780px;
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateX(-50%) translateY(0);
 }
 
 .nav-item-professional.has-dropdown:hover .industries-mega-menu {
@@ -377,7 +382,7 @@ body {
 .dev-mega-menu {
   min-width: 640px;
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateX(-50%) translateY(0);
 }
 
 .nav-item-professional.has-dropdown:hover .dev-mega-menu {
