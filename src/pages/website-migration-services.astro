@@ -631,7 +631,23 @@ const faqs = [
     line-height: 1.45;
   }
 
+  :global(body .hero-visual) {
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  :global(body .hero-visual *) {
+    display: revert !important;
+    visibility: visible !important;
+  }
+
+  :global(body .migration-visual),
+  :global(body .migration-visual *) {
+    visibility: visible !important;
+  }
+
   .migration-visual {
+    display: flex !important;
     width: min(420px, 100%);
     min-height: 420px;
     border: 1px solid rgba(240, 98, 42, 0.25);
