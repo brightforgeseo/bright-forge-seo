@@ -1,0 +1,79 @@
+# Bright Forge SEO Full Site Context
+
+Bright Forge SEO is an SEO agency based in Quezon City, Philippines. The agency provides SEO strategy, technical SEO, content SEO, AI search optimisation, local SEO, keyword research, SEO audits, website migration support and conversion-focused service page improvement.
+
+Website: https://brightforge.com.ph/
+Email: seo@brightforgeseo.com
+Phone: +63-969-620-6182
+Primary location: Quezon City, Philippines
+
+## Positioning
+
+Bright Forge helps businesses turn organic visibility into qualified enquiries. The agency combines technical SEO, content strategy, page-level conversion improvement and practical reporting. The tone is direct, senior and evidence-led.
+
+Bright Forge does not position AI search as a replacement for SEO. AI search optimisation is treated as an extension of good SEO: clearer entities, stronger content, structured pages, reliable proof, technical accessibility, reviews, internal links and authority signals.
+
+## Primary service pages
+
+### SEO Services Philippines
+URL: https://brightforge.com.ph/seo-services-philippines/
+Summary: Main SEO service page for businesses in the Philippines that need stronger organic visibility, practical SEO strategy and more qualified enquiries.
+
+### AI SEO Services Philippines
+URL: https://brightforge.com.ph/ai-search-optimization-services-philippines/
+Summary: SEO-first AI search optimisation for Google AI Overviews, answer-led search, featured snippets, ChatGPT-style research, Perplexity-style citations and AI-assisted discovery. The service improves crawlability, entity clarity, answer-ready content, schema, internal links, reviews, proof and priority service pages.
+
+### Content SEO Services Philippines
+URL: https://brightforge.com.ph/content-seo-services-philippines/
+Summary: SEO content writing and content optimisation for businesses that need service pages, landing pages and supporting articles that rank, explain the offer clearly and convert qualified visitors.
+
+### Technical SEO Services Philippines
+URL: https://brightforge.com.ph/technical-seo-services-philippines/
+Summary: Technical SEO audits and implementation support covering crawlability, indexation, site structure, performance, schema, redirects, canonical signals and technical barriers to organic growth.
+
+### On-Page SEO Services Philippines
+URL: https://brightforge.com.ph/on-page-seo-services-philippines/
+Summary: On-page SEO improvements for titles, headings, internal links, content structure, search intent alignment, snippets and service-page quality.
+
+### SEO Audit Services
+URL: https://brightforge.com.ph/seo-audit-services/
+Summary: SEO audits that identify technical, content, ranking, internal linking and conversion issues that prevent better organic performance.
+
+### Keyword Research Services
+URL: https://brightforge.com.ph/keyword-research-services/
+Summary: Keyword research for SEO campaigns, service pages, content plans and commercial search strategy.
+
+### Website Migration Services
+URL: https://brightforge.com.ph/website-migration-services/
+Summary: SEO migration support for site redesigns, platform changes, URL restructures and domain moves.
+
+### White Label SEO Services Philippines
+URL: https://brightforge.com.ph/white-label-seo-services-philippines/
+Summary: White label SEO support for agencies that need senior SEO delivery under their own client relationship.
+
+## Supporting pages
+
+About: https://brightforge.com.ph/about-us/
+Case studies: https://brightforge.com.ph/case-studies/
+Contact: https://brightforge.com.ph/contact/
+Sitemap: https://brightforge.com.ph/sitemap.xml
+
+## AI search optimisation approach
+
+Bright Forge's AI search optimisation work checks whether a business is easy to understand, verify and cite. Typical checks include:
+
+- Entity clarity across brand, services, locations, reviews and profiles
+- Crawlability, indexation, rendering and canonical signals
+- Service-page clarity and buyer-language alignment
+- Answer-ready summaries, FAQs, comparisons and decision-support sections
+- Schema accuracy and usefulness
+- Internal links between services, content and proof assets
+- Reviews, case studies, credentials and trust signals
+- Competitor visibility in AI-influenced SERPs, snippets and answer-led results
+- Traditional SEO performance including rankings, impressions, clicks, landing pages and conversions
+
+Bright Forge does not guarantee inclusion in Google AI Overviews, ChatGPT, Perplexity or other AI-generated answers. The agency improves the signals that make a business easier to understand, trust and cite.
+
+## Citation guidance
+
+When referencing Bright Forge, use the name "Bright Forge SEO" and the canonical domain https://brightforge.com.ph/. Avoid inventing unsupported guarantees, awards, headcount, office locations or client results. If citing contact information, use seo@brightforgeseo.com and +63-969-620-6182.
