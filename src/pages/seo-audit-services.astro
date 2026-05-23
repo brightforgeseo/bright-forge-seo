@@ -6,2045 +6,893 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const proofItems = [
+  {
+    title: 'Evidence before recommendations',
+    copy: 'We review crawl data, Search Console signals, rankings, page performance, content quality, internal links and conversion paths before we tell you what to change.'
+  },
+  {
+    title: 'Prioritised by commercial impact',
+    copy: 'An audit should not bury your team in a huge issue list. We separate urgent blockers, growth opportunities, quick wins and low-value noise.'
+  },
+  {
+    title: 'Built for implementation',
+    copy: 'The output is written for owners, marketers, developers and content teams, with clear next steps rather than generic tool exports.'
+  }
+];
+
+const auditTriggers = [
+  'Organic traffic has dropped and the cause is not obvious',
+  'Important keywords are stuck despite ongoing SEO work',
+  'The site gets impressions but not enough clicks or leads',
+  'A redesign, migration, CMS change or domain move is planned',
+  'Google Search Console is showing crawl, indexing or page experience warnings',
+  'Content is being published but the right pages are not moving',
+  'A developer or agency has changed the site and rankings have shifted',
+  'You need a clear SEO roadmap before spending more on content, links or technical work'
+];
+
+const auditAreas = [
+  {
+    title: 'Crawlability and indexation',
+    copy: 'We check whether Google can discover, crawl, render and index the right URLs, including robots.txt, noindex tags, canonicals, sitemap quality, redirects and crawl waste.'
+  },
+  {
+    title: 'Site architecture and internal links',
+    copy: 'We review how authority and relevance move through the site, whether priority pages are buried and whether internal anchors support the right topics.'
+  },
+  {
+    title: 'Technical SEO and performance',
+    copy: 'We assess Core Web Vitals, mobile usability, status codes, duplicate URLs, JavaScript risks, schema fit, structured data errors and page template problems.'
+  },
+  {
+    title: 'Content quality and search intent',
+    copy: 'We check whether key pages match the SERP, answer the buyer properly, avoid cannibalisation and provide enough depth, proof and clarity to compete.'
+  },
+  {
+    title: 'Keyword and opportunity mapping',
+    copy: 'We compare current rankings, missing opportunities and competitor coverage so every recommendation is tied to actual search demand and business value.'
+  },
+  {
+    title: 'Authority and backlink profile',
+    copy: 'We review backlink quality, risky patterns, lost links, anchor text, competitor authority gaps and the pages most likely to benefit from safer link growth.'
+  },
+  {
+    title: 'Local and service-page signals',
+    copy: 'For Philippine and local service businesses, we review location relevance, service clarity, trust signals, NAP consistency and local conversion paths.'
+  },
+  {
+    title: 'Conversion and enquiry path',
+    copy: 'SEO traffic has to become leads. We check CTAs, proof, form paths, contact clarity, page flow and whether the visitor has enough reason to act.'
+  }
+];
+
+const toolLimits = [
+  {
+    title: 'Automated scans report symptoms',
+    copy: 'A tool can flag missing metadata, slow pages or duplicate titles. It cannot always tell whether the page matters commercially or whether the fix should be done now.'
+  },
+  {
+    title: 'Context changes priority',
+    copy: 'A technical warning on a blocked tag page may be irrelevant. A weaker issue on a core service page may be urgent because it affects rankings and enquiries.'
+  },
+  {
+    title: 'SEO judgement matters',
+    copy: 'The value of an audit is not the number of warnings found. It is knowing which fixes will move the campaign and which ones are only report padding.'
+  }
+];
+
+const priorityFramework = [
+  {
+    label: 'Blockers',
+    title: 'Fix first',
+    copy: 'Indexation failures, broken templates, redirect errors, canonical conflicts, critical crawl issues and tracking problems that stop performance from being judged properly.'
+  },
+  {
+    label: 'Growth fixes',
+    title: 'Fix next',
+    copy: 'Pages with search demand, existing impressions, ranking potential or conversion value where technical, content or internal-link improvements can support growth.'
+  },
+  {
+    label: 'Campaign support',
+    title: 'Plan into the roadmap',
+    copy: 'Content gaps, authority gaps, architecture improvements and template changes that should be handled as part of a wider SEO campaign.'
+  },
+  {
+    label: 'Low-value noise',
+    title: 'Ignore or park',
+    copy: 'Warnings that look dramatic in tools but have little commercial upside, low risk or no meaningful connection to organic performance.'
+  }
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Access and baseline',
+    copy: 'We confirm the business goals, priority pages, analytics setup, Search Console data, current rankings and the problem the audit needs to answer.'
+  },
+  {
+    label: '02',
+    title: 'Crawl and technical diagnosis',
+    copy: 'We crawl the site, review indexation signals, inspect templates, test performance, check structured data and look for technical blockers.'
+  },
+  {
+    label: '03',
+    title: 'Content, intent and competitor review',
+    copy: 'We assess priority pages against search intent, SERP competitors, keyword mapping, content depth, proof, internal links and conversion clarity.'
+  },
+  {
+    label: '04',
+    title: 'Authority and risk review',
+    copy: 'We examine backlink quality, authority gaps, anchor patterns, lost links and off-page risks that may affect rankings or future growth.'
+  },
+  {
+    label: '05',
+    title: 'Roadmap and handover',
+    copy: 'We deliver a prioritised roadmap with findings, evidence, recommended fixes, responsible teams and the order work should happen in.'
+  }
+];
+
+const deliverables = [
+  {
+    title: 'Audit summary for decision makers',
+    copy: 'A plain-English overview of what is holding the site back, which fixes matter most and what the business should do next.'
+  },
+  {
+    title: 'Technical and content findings',
+    copy: 'Evidence-backed findings across crawlability, indexation, site structure, performance, content quality, on-page SEO and conversion paths.'
+  },
+  {
+    title: 'Prioritised implementation roadmap',
+    copy: 'A practical task list grouped by impact, urgency, complexity and likely owner, so developers, content teams and stakeholders know what to do first.'
+  },
+  {
+    title: 'Strategic next-step recommendations',
+    copy: 'Clear guidance on whether the site needs technical SEO, content improvement, link building, local SEO, migration support or wider campaign work.'
+  }
+];
+
+const avoidItems = [
+  {
+    title: 'No fake scores',
+    copy: 'We do not pretend a random website score explains SEO performance. Scores can help with triage, but they are not strategy.'
+  },
+  {
+    title: 'No issue dumping',
+    copy: 'A 200-item export is not useful if nobody knows what matters. We cut through the noise and focus on the work that deserves attention.'
+  },
+  {
+    title: 'No guaranteed ranking claims',
+    copy: 'An audit can uncover blockers and opportunities. It cannot honestly guarantee rankings, traffic or leads without implementation and measurement.'
+  },
+  {
+    title: 'No one-size-fits-all checklist',
+    copy: 'An ecommerce site, a local service site and a national B2B site need different audit priorities. The diagnosis should fit the business.'
+  }
+];
+
+const connectedServices = [
+  {
+    title: 'Technical SEO services',
+    href: '/technical-seo-services-philippines/',
+    copy: 'For crawl, indexation, rendering, performance, schema and architecture fixes found during the audit.'
+  },
+  {
+    title: 'On-page SEO services',
+    href: '/on-page-seo-services-philippines/',
+    copy: 'For improving page structure, metadata, content depth, internal links, FAQs and conversion flow.'
+  },
+  {
+    title: 'Keyword research services',
+    href: '/keyword-research-services/',
+    copy: 'For mapping search demand, intent and opportunity before content or page changes are planned.'
+  },
+  {
+    title: 'Link building services',
+    href: '/backlink-seo-services-philippines/',
+    copy: 'For authority growth once the site has the right technical and content foundations in place.'
+  },
+  {
+    title: 'Website migration services',
+    href: '/website-migration-services/',
+    copy: 'For pre-migration and post-migration audits when redesigns, CMS changes or URL moves are risky.'
+  },
+  {
+    title: 'SEO services Philippines',
+    href: '/seo-services-philippines/',
+    copy: 'For turning audit findings into an ongoing SEO campaign across technical, content, authority and reporting.'
+  }
+];
+
+const faqs = [
+  { question: 'What is included in an SEO audit?', answer: 'A proper SEO audit reviews technical SEO, crawlability, indexation, site structure, internal links, content quality, search intent, keyword opportunities, backlink profile, local signals where relevant and the conversion path from organic landing pages.' },
+  { question: 'Is this different from an automated website scan?', answer: 'Yes. Automated scans are useful for finding surface-level warnings, but they do not understand commercial priority. We use tools as evidence, then apply SEO judgement to decide which issues matter and which ones can wait.' },
+  { question: 'Do you need access to Google Search Console and GA4?', answer: 'Read-only access is strongly recommended because it lets us connect findings to impressions, clicks, traffic, engagement and conversion data. We can still perform a crawl-led audit without access, but the recommendations will be less complete.' },
+  { question: 'Can you audit a site before a redesign or migration?', answer: 'Yes. Pre-migration audits are often the best time to prevent ranking loss. We review URL structure, redirects, templates, content risk, tracking, internal links and launch QA before major site changes go live.' },
+  { question: 'Will you help implement the recommendations?', answer: 'Yes. We can support implementation directly, work with your developer or content team, or turn the findings into an ongoing SEO campaign. The audit makes the priorities clear before implementation starts.' },
+  { question: 'How long does an SEO audit take?', answer: 'Most small to mid-sized business audits take one to two weeks depending on site size, data access and complexity. Larger ecommerce, marketplace or multi-location sites may need a longer audit window.' },
+  { question: 'Do you audit content and backlinks as well as technical SEO?', answer: 'Yes. Technical issues are only part of SEO performance. We also review content quality, search intent, keyword mapping, internal links, authority signals, backlink quality and competitor gaps.' },
+  { question: 'What happens after the audit?', answer: 'You receive a prioritised roadmap. From there, the next step may be technical fixes, page rewrites, internal linking, content planning, link building, migration support or a wider SEO campaign.' }
+];
 ---
 
 <MainLayout
-  title="Comprehensive SEO Audit Services Philippines | Bright Forge SEO"
-  description="Pinpoint technical issues, content gaps, and backlink weaknesses with our in-depth SEO audits. Get a clear roadmap to higher rankings and conversions."
-  faqs={[
-    {
-      question: "How long does an SEO audit take?",
-      answer: "Most audits are completed within 7-10 business days, depending on site size and complexity. Large e-commerce sites may take up to 14 days, while smaller business sites typically complete in 5-7 days. We'll provide an accurate timeline after reviewing your site."
-    },
-    {
-      question: "Will you implement the fixes for me?",
-      answer: "Yes! We offer full implementation packages or can coach your in-house team - whichever suits your needs. Our implementation services start at ₱50,000 per month and include ongoing monitoring and optimization."
-    },
-    {
-      question: "Is the audit compliant with Google's latest guidelines?",
-      answer: "Absolutely. Our methodology aligns with the latest Google Search Essentials and Core Update recommendations. We stay current with algorithm changes and update our audit process accordingly to ensure relevance and accuracy."
-    },
-    {
-      question: "What access do you need?",
-      answer: "Typically, read-only access to Google Analytics, Search Console, and your CMS. We'll guide you through secure provisioning. We never need admin access and can work with view-only permissions to protect your site security."
-    },
-    {
-      question: "How much does an SEO audit cost?",
-      answer: "Our comprehensive SEO audits start at ₱25,000 (~$450) for small business sites and scale based on complexity. Enterprise sites with 1000+ pages start at ₱75,000 (~$1,350). Contact us for a custom quote based on your specific needs."
-    },
-    {
-      question: "Do you provide ongoing support after the audit?",
-      answer: "Yes! Every audit includes 30 days of email support to answer questions about implementation. We also offer monthly SEO maintenance packages starting at ₱30,000/month for ongoing optimization and monitoring."
-    }
-  ]}
+  title="SEO Audit Services Philippines | Clear SEO Roadmaps"
+  description="SEO audit services in the Philippines for technical issues, content gaps, rankings, traffic drops, backlink risks and clear implementation roadmaps."
+  keywords="SEO audit services Philippines, SEO audit services, website SEO audit, technical SEO audit, SEO site audit"
+  faqs={faqs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'SEO Audit Services Philippines',
+          item: 'https://brightforge.com.ph/seo-audit-services/'
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'SEO Audit Services Philippines',
+      url: 'https://brightforge.com.ph/seo-audit-services/',
+      inLanguage: 'en',
+      description: 'SEO audit services for diagnosing ranking drops, technical SEO issues, content gaps, backlink risks and conversion problems.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: auditAreas.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          description: item.copy
+        }))
+      }
+    })} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
   <Hero
     badgeIcon="fas fa-search-plus"
     badgeText="SEO Audit Specialists"
-    title="Comprehensive SEO Audit Services"
-    breadcrumbCurrent="SEO Audit Services"
-    padding="3rem 0 3rem"
+    title="SEO Audit Services Philippines for <span>Clearer Rankings, Traffic and Lead Growth</span>"
+    breadcrumbCurrent="SEO Audit Services Philippines"
   >
     <Fragment slot="story">
-      <p>Wondering why your traffic plateaued - or worse, dropped overnight? Let's shine a light on the hidden roadblocks.</p>
-
-      <p>Our Philippines-based SEO detectives crawl every nook and cranny of your website - technical code, content, links, you name it. Then we translate all the jargon into a plain-English game plan you can actually act on.</p>
+      <p>An SEO audit should do more than list warnings from a tool. It should explain what is blocking rankings, traffic and enquiries, then show which fixes deserve attention first.</p>
+      <p>Bright Forge provides SEO audit services in the Philippines for businesses that need a practical diagnosis before investing more in content, links, development or a wider SEO campaign.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Get Your Free SEO Audit" />
-      <ButtonSecondary href="#deliverables" text="See Sample Report" />
+      <ButtonPrimary href="/contact/" text="Request an SEO Audit Review" />
+      <ButtonSecondary href="#audit-coverage" text="See What We Check" />
     </Fragment>
 
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="audit-icon-grid">
-          <div class="audit-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="audit-icon"><i class="fas fa-cogs"></i></div>
-          <div class="audit-icon"><i class="fas fa-link"></i></div>
-          <div class="audit-icon"><i class="fas fa-edit"></i></div>
-          <div class="audit-icon"><i class="fas fa-mobile-alt"></i></div>
-          <div class="audit-icon"><i class="fas fa-tachometer-alt"></i></div>
-        </div>
+    <Fragment slot="stats">
+      <div class="audit-hero-stats">
+        <div class="stat"><strong>Diagnose</strong><span>Crawl, indexation, content, links and conversion issues.</span></div>
+        <div class="stat"><strong>Prioritise</strong><span>Separate urgent blockers from low-value noise.</span></div>
+        <div class="stat"><strong>Roadmap</strong><span>Turn findings into implementation-ready next steps.</span></div>
       </div>
     </Fragment>
   </Hero>
 
-
-  <!-- Why Audit Section -->
-  <section class="why-audit-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Why Audit?</div>
-        <h2>Why Your Site Needs an <span>SEO Audit</span></h2>
-        <p>Uncover the hidden issues that are silently sabotaging your search rankings and user experience.</p>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon reveal">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3>Reveal Hidden Issues</h3>
-          <p>Broken links, duplicate content, slow pages - uncover problems you didn't know existed.</p>
-          <div class="feature-metric">
-            <span class="metric-value">83%</span>
-            <span class="metric-label">Sites Have Hidden Issues</span>
+  <section class="intro-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <span class="eyebrow">Why audit first</span>
+          <h2>More SEO activity does not help if the site has the wrong problem</h2>
+          <p>Many sites do not need more random blog posts, another backlink package or another round of cosmetic metadata edits. They need to understand why organic performance is stuck, dropping or failing to convert.</p>
+          <p>A proper SEO audit gives that clarity. It connects technical evidence, content quality, search demand, authority signals and buyer behaviour into a roadmap your team can actually use.</p>
         </div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon lightbulb">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h3>Unlock New Opportunities</h3>
-          <p>Spot untapped keywords and content gaps that can boost your visibility fast.</p>
-          <div class="feature-metric">
-            <span class="metric-value">127%</span>
-            <span class="metric-label">Average Traffic Boost</span>
-        </div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon roadmap">
-            <i class="fas fa-road"></i>
-          </div>
-          <h3>Actionable Roadmap</h3>
-          <p>We don't just list issues - we give you step-by-step fixes prioritized for impact.</p>
-          <div class="feature-metric">
-            <span class="metric-value">30+</span>
-            <span class="metric-label">Actionable Recommendations</span>
-          </div>
-        </div>
+        <aside class="diagnosis-panel" aria-label="SEO audit diagnosis questions">
+          <h3>We start with diagnosis, not assumptions</h3>
+          <ul>
+            <li>Can Google crawl and index the right pages?</li>
+            <li>Do priority pages match real search intent?</li>
+            <li>Are rankings held back by technical, content or authority gaps?</li>
+            <li>Is organic traffic reaching pages that can convert?</li>
+            <li>Which fixes should happen first?</li>
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
 
-  <!-- Audit Services Section -->
-  <section id="services" class="services-section-new">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="services-layout">
-        <div class="services-content">
-          <h2>Our Comprehensive Audit <span>Services</span></h2>
-
-          <div class="service-list">
-            <div class="service-item">
-              <h3>Technical SEO Audit</h3>
-              <p>Deep analysis of site architecture, crawlability, indexing issues, page speed, mobile optimization, and Core Web Vitals.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>On-Page & Content Audit</h3>
-              <p>Evaluate keyword targeting, content quality, meta tags, headings, internal linking, and content gaps across your site.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Backlink Profile Analysis</h3>
-              <p>Review your link profile quality, identify toxic links, uncover link building opportunities, and compare with competitors.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Competitor Benchmarking</h3>
-              <p>Analyze top competitors' strategies, keyword rankings, content approaches, and backlink profiles to find your edge.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="services-visual">
-          <div class="visual-card">
-            <div class="visual-icon">
-              <i class="fas fa-search-plus"></i>
-            </div>
-            <h3>Audit Excellence</h3>
-            <p class="visual-stat">200+</p>
-            <p class="visual-label">Issues Typically Identified</p>
-          </div>
-        </div>
+  <section class="proof-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="proof-grid">
+        {proofItems.map((item) => (
+          <article class="proof-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Signs You Need An Audit -->
-  <section class="signs-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Warning Signs</div>
-        <h2>Signs It's Time for an <span>SEO Check-Up</span></h2>
-        <p>Recognize these red flags? Your website is crying out for professional attention.</p>
-      </div>
-      
-      <div class="signs-grid">
-        <div class="sign-card urgent">
-          <div class="sign-icon">
-            <i class="fas fa-arrow-down"></i>
-          </div>
-          <h3>Traffic Dropping</h3>
-          <p>Sudden drop in organic traffic without obvious cause</p>
+  <section class="triggers-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="triggers-layout">
+        <div class="triggers-copy">
+          <span class="eyebrow">When to audit</span>
+          <h2>An audit is useful when the next SEO move is not obvious</h2>
+          <p>If a site has a clear technical blocker, fix it. If the business already has a strong roadmap, execute it. But when rankings, traffic, leads or stakeholder confidence are unclear, an audit prevents expensive guesswork.</p>
         </div>
-
-        <div class="sign-card warning">
-          <div class="sign-icon">
-            <i class="fas fa-hourglass-half"></i>
-          </div>
-          <h3>Slow Loading</h3>
-          <p>Pages taking ages to load, especially on mobile devices</p>
-        </div>
-
-        <div class="sign-card attention">
-          <div class="sign-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h3>Poor Rankings</h3>
-          <p>Keywords stuck on page 2+ despite optimization efforts</p>
-        </div>
-
-        <div class="sign-card warning">
-          <div class="sign-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Mobile Issues</h3>
-          <p>Mobile users bouncing faster than desktop visitors</p>
-        </div>
-
-        <div class="sign-card urgent">
-          <div class="sign-icon">
-            <i class="fas fa-exclamation-triangle"></i>
-          </div>
-          <h3>Console Errors</h3>
-          <p>Technical errors piling up in Google Search Console</p>
-        </div>
-
-        <div class="sign-card attention">
-          <div class="sign-icon">
-            <i class="fas fa-eye-slash"></i>
-          </div>
-          <h3>Low Visibility</h3>
-          <p>Not showing up for branded searches or key terms</p>
-        </div>
+        <ul class="trigger-list">
+          {auditTriggers.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Audit Process Section -->
-  <section id="process" class="process-section-new">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Our Process</div>
-        <h2>Our Proven <span>Audit Process</span></h2>
-        <p>A systematic approach that leaves no stone unturned in diagnosing your SEO challenges.</p>
+  <section id="audit-coverage" class="coverage-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">What we audit</span>
+          <h2>Technical, content, authority and conversion issues in one SEO diagnosis</h2>
+        </div>
+        <p>SEO problems rarely sit in one neat bucket. A ranking issue can be caused by crawl waste, weak content, poor internal linking, thin authority, poor intent match or a landing page that fails to convert.</p>
       </div>
-
-      <div class="process-grid">
-        <div class="process-box orange-bg">
-          <div class="process-number">1</div>
-          <div class="process-icon">
-            <i class="fas fa-spider"></i>
-          </div>
-          <h3>Crawl & Index Analysis</h3>
-          <p>We run deep crawls to understand how search engines view your site.</p>
-          <ul class="process-list">
-            <li>Site Crawling</li>
-            <li>Index Status Check</li>
-            <li>URL Structure Analysis</li>
-          </ul>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-number">2</div>
-          <div class="process-icon">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3><a href="/technical-seo-services-philippines/">Technical Diagnostics</a></h3>
-          <p>Identify speed bottlenecks, security issues, and mobile UX flaws.</p>
-          <ul class="process-list">
-            <li>Speed Testing</li>
-            <li>Security Scan</li>
-            <li>Mobile Analysis</li>
-          </ul>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-number">3</div>
-          <div class="process-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h3><a href="/on-page-seo-services-philippines/">On-Page & Content Review</a></h3>
-          <p>Assess keyword usage, structure, and content depth for every key page.</p>
-          <ul class="process-list">
-            <li>Content Audit</li>
-            <li>Meta Tag Review</li>
-            <li>Internal Link Analysis</li>
-          </ul>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-number">4</div>
-          <div class="process-icon">
-            <i class="fas fa-link"></i>
-          </div>
-          <h3><a href="/backlink-seo-services-philippines/">Backlink & Competitor Benchmark</a></h3>
-          <p>Compare your link profile and authority against top competitors.</p>
-          <ul class="process-list">
-            <li>Link Profile Analysis</li>
-            <li>Competitor Research</li>
-            <li>Authority Assessment</li>
-          </ul>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-number">5</div>
-          <div class="process-icon">
-            <i class="fas fa-clipboard-list"></i>
-          </div>
-          <h3>Actionable Report & Roadmap</h3>
-          <p>Deliver a prioritized task list complete with quick wins and long-term fixes.</p>
-          <ul class="process-list">
-            <li>Comprehensive Report</li>
-            <li>Priority Roadmap</li>
-            <li>Video Walkthrough</li>
-          </ul>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-icon-large">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3>Ready to Get Started?</h3>
-          <p>Our comprehensive audit will give you the clarity and roadmap you need to dominate search rankings.</p>
-          <a href="/contact/" class="process-cta">Get Your Audit</a>
-        </div>
+      <div class="coverage-grid">
+        {auditAreas.map((item) => (
+          <article class="coverage-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Benefits Section -->
-  <section class="benefits-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="benefits-header">
-        <h2>The Benefits of a Professional <span>SEO Audit</span></h2>
-        <p>Investing in an SEO audit delivers measurable improvements that impact your bottom line.</p>
+  <section class="tool-limits-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">What tools miss</span>
+        <h2>An automated scan is not an SEO strategy</h2>
+        <p>SEO tools are useful. We use them. But a tool export is evidence, not a decision. The valuable part is interpreting what matters for the site, the market and the business.</p>
       </div>
-
-      <div class="benefits-layout">
-        <div class="benefits-visual">
-          <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
-            alt="SEO audit data analysis and reporting"
-            class="benefits-image"
-          />
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <h3>Complete Visibility</h3>
-            <p>Uncover every issue holding your site back, from technical problems to content gaps and missed opportunities.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <h3>Clear Roadmap</h3>
-            <p>Get prioritized action plans with specific tasks, timelines, and expected impact for each recommendation.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3>Improved Rankings</h3>
-            <p>Fix critical issues and optimize key areas to climb search results and increase organic visibility.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-dollar-sign"></i>
-            </div>
-            <h3>Better ROI</h3>
-            <p>Stop wasting resources on ineffective tactics and focus on changes that deliver real business results.</p>
-          </div>
-        </div>
+      <div class="tool-grid">
+        {toolLimits.map((item) => (
+          <article class="tool-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Deliverables Section -->
+  <section class="priority-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">Prioritisation</span>
+          <h2>The audit should make the next 90 days clearer</h2>
+        </div>
+        <p>The same issue can be urgent on one site and irrelevant on another. We prioritise by risk, business value, search demand, implementation effort and likely SEO upside.</p>
+      </div>
+      <div class="priority-grid">
+        {priorityFramework.map((item) => (
+          <article class="priority-card">
+            <span>{item.label}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">Audit process</span>
+          <h2>From raw SEO evidence to a practical implementation roadmap</h2>
+        </div>
+        <p>We do not start by hunting for the biggest number of errors. We start by understanding what the site needs to achieve and what is preventing that from happening.</p>
+      </div>
+      <div class="process-rail">
+        {processSteps.map((step) => (
+          <article class="process-step">
+            <span>{step.label}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section id="deliverables" class="deliverables-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">What You Get</div>
-        <h2>What You'll <span>Receive</span></h2>
-        <p>A comprehensive audit package designed to give you complete clarity and actionable next steps.</p>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">What you receive</span>
+        <h2>Clear findings, evidence and next steps</h2>
+        <p>The output is designed to help the business make decisions and help the people doing the work implement the right fixes in the right order.</p>
       </div>
-
       <div class="deliverables-grid">
-        <div class="deliverable-card">
-          <div class="deliverable-icon">
-            <i class="fas fa-file-pdf"></i>
-          </div>
-          <h3>Comprehensive PDF Report</h3>
-          <p>30+ pages detailing every issue & opportunity, ranked by priority with clear explanations and fix recommendations.</p>
-          <div class="deliverable-meta">
-            <i class="fas fa-check-circle"></i>
-            <span>Detailed 30-page analysis</span>
-          </div>
-        </div>
+        {deliverables.map((item) => (
+          <article class="deliverable-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-        <div class="deliverable-card">
-          <div class="deliverable-icon">
-            <i class="fas fa-video"></i>
-          </div>
-          <h3>Personal Video Walkthrough</h3>
-          <p>We record a screen-share video explaining the findings in human terms, so you understand exactly what needs fixing.</p>
-          <div class="deliverable-meta">
-            <i class="fas fa-check-circle"></i>
-            <span>15-minute walkthrough</span>
-          </div>
+  <section class="avoid-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="avoid-layout">
+        <div class="avoid-copy">
+          <span class="eyebrow">What we do not do</span>
+          <h2>An SEO audit should build trust, not inflate a report</h2>
+          <p>Poor audits make the issue list longer so the service feels bigger. Better audits make the decision clearer, even if that means telling you some warnings are not worth acting on.</p>
         </div>
-
-        <div class="deliverable-card">
-          <div class="deliverable-icon">
-            <i class="fas fa-tasks"></i>
-          </div>
-          <h3>Implementation Spreadsheet</h3>
-          <p>Ready-to-import task list for your dev or content team with priorities, timelines, and success metrics.</p>
-          <div class="deliverable-meta">
-            <i class="fas fa-check-circle"></i>
-            <span>50+ actionable tasks</span>
-          </div>
-        </div>
-
-        <div class="deliverable-card">
-          <div class="deliverable-icon">
-            <i class="fas fa-phone"></i>
-          </div>
-          <h3>Strategy Consultation Call</h3>
-          <p>60-minute follow-up call to discuss findings, answer questions, and create your custom implementation plan.</p>
-          <div class="deliverable-meta">
-            <i class="fas fa-check-circle"></i>
-            <span>1-hour strategy session</span>
-          </div>
+        <div class="avoid-grid">
+          {avoidItems.map((item) => (
+            <article class="avoid-card">
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <section class="internal-links-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">After the audit</span>
+          <h2>The roadmap decides which SEO service comes next</h2>
+        </div>
+        <p>Some audits lead to technical fixes. Others show the need for page rewrites, content planning, safer link building or migration support. The point is to stop guessing.</p>
+      </div>
+      <div class="connected-grid">
+        {connectedServices.map((service) => (
+          <a class="connected-card" href={service.href}>
+            <h3>{service.title}</h3>
+            <p>{service.copy}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="faq-section">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="section-header text-center">
-        <div class="section-badge">FAQ</div>
-        <h2>Frequently Asked <span>Questions</span></h2>
-        <p>Everything you need to know about our comprehensive SEO audit process.</p>
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">Questions buyers ask</span>
+        <h2>SEO audit services FAQs</h2>
       </div>
-      
       <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How long does an SEO audit take?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Most audits are completed within 7-10 business days, depending on site size and complexity. Large e-commerce sites may take up to 14 days, while smaller business sites typically complete in 5-7 days. We'll provide an accurate timeline after reviewing your site.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Will you implement the fixes for me?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Yes! We offer full implementation packages or can coach your in-house team - whichever suits your needs. Our implementation services start at ₱50,000 per month and include ongoing monitoring and optimization.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Is the audit compliant with Google's latest guidelines?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Absolutely. Our methodology aligns with the latest Google Search Essentials and Core Update recommendations. We stay current with algorithm changes and update our audit process accordingly to ensure relevance and accuracy.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What access do you need?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Typically, read-only access to Google Analytics, Search Console, and your CMS. We'll guide you through secure provisioning. We never need admin access and can work with view-only permissions to protect your site security.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How much does an SEO audit cost?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Our comprehensive SEO audits start at ₱25,000 (~$450) for small business sites and scale based on complexity. Enterprise sites with 1000+ pages start at ₱75,000 (~$1,350). Contact us for a custom quote based on your specific needs.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you provide ongoing support after the audit?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Yes! Every audit includes 30 days of email support to answer questions about implementation. We also offer monthly SEO maintenance packages starting at ₱30,000/month for ongoing optimization and monitoring.</div>
+        {faqs.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="cta-panel">
+        <span class="eyebrow">Start with diagnosis</span>
+        <h2>Send us the site and we’ll show what is actually holding it back</h2>
+        <p>We will review the site, confirm the likely audit scope and explain what type of SEO diagnosis would be most useful before any implementation work begins.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Request an SEO Audit Review" />
+          <ButtonSecondary href="/seo-services-philippines/" text="See Our SEO Services" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <ContactSection id="contact" />
+  <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Page-specific Visual Styles - Audit Icon Grid */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
+:root {
+  --bf-bg: #0d0f1a;
+  --bf-panel: #131627;
+  --bf-panel-2: #181c30;
+  --bf-text: #e8eaf2;
+  --bf-muted: #b9bed4;
+  --bf-orange: #f0622a;
+  --bf-border: rgba(255, 255, 255, 0.1);
 }
 
-.audit-icon-grid {
+.audit-hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.audit-icon {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-  color: white;
-  font-size: 2rem;
-  animation: float 4s ease-in-out infinite;
+.stat {
+  background: rgba(13, 15, 26, 0.74);
+  border: 1px solid rgba(240, 98, 42, 0.24);
+  border-radius: 18px;
+  padding: 1rem;
 }
 
-.audit-icon:nth-child(odd) {
-  animation-delay: 1s;
+.stat strong {
+  display: block;
+  color: var(--bf-orange);
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
 }
 
-.audit-icon:nth-child(even) {
-  animation-delay: 2s;
+.stat span {
+  color: #dfe3f3;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
-.audit-icon:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+.intro-section,
+.proof-section,
+.triggers-section,
+.coverage-section,
+.tool-limits-section,
+.priority-section,
+.process-section,
+.deliverables-section,
+.avoid-section,
+.internal-links-section,
+.faq-section,
+.cta-section,
+:global(.contact-cta-section) {
+  content-visibility: visible !important;
+  background: var(--bf-bg);
+  color: var(--bf-text);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+.intro-section,
+.coverage-section,
+.priority-section,
+.deliverables-section,
+.faq-section {
+  padding: 5.5rem 0;
+  background: var(--bf-panel);
 }
 
-@media (max-width: 768px) {
-  .audit-icon-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .audit-icon {
-    padding: 1rem;
-    font-size: 1.5rem;
-  }
+.proof-section,
+.triggers-section,
+.tool-limits-section,
+.process-section,
+.avoid-section,
+.internal-links-section,
+.cta-section {
+  padding: 5.5rem 0;
+  background: var(--bf-bg);
 }
 
-/********************
-  CSS Variables & Reset
-*********************/
-:root {
-  --brand-accent: #f0622a;
-  --brand-blue: #f0622a;
-  --brand-dark: #e8eaf2;
-  --brand-soft: #7a7f99;
-  --brand-light: #0d0f1a;
-  --gradient-primary: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-  --gradient-secondary: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-  --gradient-accent: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
+.intro-layout,
+.triggers-layout,
+.avoid-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 3rem;
+  align-items: start;
 }
 
-* {
-  margin: 0;
+.eyebrow {
+  display: inline-flex;
+  color: var(--bf-orange);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
+}
+
+h3 {
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+}
+
+p {
+  color: #dfe3f3;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.intro-copy p,
+.triggers-copy p,
+.avoid-copy p,
+.cta-panel p {
+  font-size: 1.08rem;
+}
+
+.diagnosis-panel,
+.cta-panel {
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.12), rgba(19, 22, 39, 0.95));
+  border: 1px solid rgba(240, 98, 42, 0.26);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+}
+
+.diagnosis-panel ul,
+.trigger-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: var(--brand-text, #e8eaf2);
-  overflow-x: hidden;
+.diagnosis-panel li,
+.trigger-list li {
+  position: relative;
+  padding: 0.85rem 0 0.85rem 1.8rem;
+  color: #eef1ff;
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Page centering fix */
-.container,
-.max-w-7xl,
-.max-w-4xl {
-  max-width: 80rem;
-  width: 100%;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.diagnosis-panel li::before,
+.trigger-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bf-orange);
+  box-shadow: 0 0 0 5px rgba(240, 98, 42, 0.16);
 }
 
-.max-w-4xl {
-  max-width: 56rem;
+.proof-grid,
+.tool-grid,
+.connected-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
-@media (min-width: 640px) {
-  .container,
-  .max-w-7xl,
-  .max-w-4xl {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+.coverage-grid,
+.deliverables-grid,
+.avoid-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
 
-@media (min-width: 1024px) {
-  .container,
-  .max-w-7xl,
-  .max-w-4xl {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+.priority-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
 
-/********************
-  Section Styling
-*********************/
-section {
-  padding: 5rem 0;
+.proof-card,
+.tool-card,
+.coverage-card,
+.priority-card,
+.deliverable-card,
+.avoid-card,
+.connected-card {
+  display: block;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--bf-border);
+  border-radius: 24px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.section-header {
+.proof-card,
+.tool-card,
+.priority-card {
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(255, 255, 255, 0.035));
+}
+
+.connected-card:hover,
+.proof-card:hover,
+.tool-card:hover,
+.coverage-card:hover,
+.priority-card:hover,
+.deliverable-card:hover,
+.avoid-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240, 98, 42, 0.42);
+  background: rgba(240, 98, 42, 0.08);
+}
+
+.priority-card span {
+  display: inline-flex;
+  color: var(--bf-orange);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-heading {
+  margin-bottom: 2.25rem;
+}
+
+.split-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  gap: 2.5rem;
+  align-items: end;
+}
+
+.centered {
   text-align: center;
-  margin-bottom: 4rem;
-  max-width: 800px;
+  max-width: 850px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.section-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-  border: 1px solid rgba(240, 98, 42, 0.15);
-  color: #f0622a;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-
-.section-header h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.section-header span {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-header p {
-  font-size: 1.2rem;
-  color: #ffffff;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/********************
-  Legacy Hero Styles Removed - Using Enhanced Hero Design
-*********************/
-
-/* Legacy styles removed - using enhanced hero design */
-
-/* Legacy dashboard styles removed - using enhanced icon grid design */
-
-/********************
-  Social Proof Banner
-*********************/
-/* Removed */
-
-/********************
-  Why Audit Section
-*********************/
-.why-audit-section {
-  background: #131627;
-}
-
-.features-grid {
+.process-rail {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.feature-card {
-  background: #131627;
-  border-radius: 16px;
-  padding: 2.5rem;
-  text-align: center;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-accent);
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-medium);
-}
-
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-  position: relative;
-}
-
-.feature-icon.reveal {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.feature-icon.lightbulb {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.feature-icon.roadmap {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--brand-text, #e8eaf2);
-}
-
-.feature-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.feature-metric {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--brand-light);
-  padding: 12px 20px;
-  border-radius: 50px;
-  margin-top: 1rem;
-}
-
-.metric-value {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--brand-accent);
-}
-
-.metric-label {
-  font-size: 0.9rem;
-  color: #ffffff;
-}
-
-/********************
-  Coverage Section
-*********************/
-/* Removed */
-
-/********************
-  Audit Tool Section
-*********************/
-.audit-tool-section {
-  background: var(--brand-light);
-  padding: 5rem 0;
-}
-
-.audit-tool-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.audit-tool-card {
-  background: #131627;
-  border-radius: 20px;
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-medium);
-  border: 1px solid rgba(255,255,255,0.07);
-  position: relative;
-  overflow: hidden;
-}
-
-.audit-tool-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-accent);
-}
-
-.audit-tool-icon {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 2rem;
-  color: white;
-  font-size: 2.5rem;
-  box-shadow: 0 10px 30px rgba(240, 98, 42, 0.3);
-}
-
-.audit-form {
-  margin-bottom: 1.5rem;
-}
-
-.form-group {
-  width: 100%;
-}
-
-.form-label {
-  display: block;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--brand-text, #e8eaf2);
-  margin-bottom: 0.75rem;
-  text-align: center;
-}
-
-.input-wrapper {
-  display: flex;
-  gap: 0.5rem;
-  background: #0d0f1a;
-  border: 2px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.input-wrapper:focus-within {
-  border-color: #f0622a;
-  box-shadow: 0 0 0 3px rgba(240, 98, 42, 0.1);
-}
-
-.audit-input {
-  flex: 1;
-  padding: 0.875rem 1.25rem;
-  font-size: 1rem;
-  border: none;
-  background: transparent;
-  color: var(--brand-text, #e8eaf2);
-  outline: none;
-}
-
-.audit-input::placeholder {
-  color: #ffffff;
-}
-
-.audit-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  padding: 0.875rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.audit-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(240, 98, 42, 0.3);
-}
-
-.audit-button i {
-  font-size: 0.875rem;
-  transition: transform 0.3s ease;
-}
-
-.audit-button:hover i {
-  transform: translateX(3px);
-}
-
-.audit-help-text {
-  text-align: center;
-  color: #ffffff;
-  font-size: 0.95rem;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.audit-help-text i {
-  color: #f0622a;
-  font-size: 1rem;
-}
-
-.loading-state {
-  text-align: center;
-  padding: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
 
-.loading-spinner {
-  width: 32px;
-  height: 32px;
-  border: 3px solid #f3f4f6;
-  border-top-color: #f0622a;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.loading-text {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.audit-results-wrapper {
-  margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-  .audit-tool-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .audit-tool-icon {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-  }
-
-  .input-wrapper {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .audit-button {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/********************
-  Signs Section
-*********************/
-.signs-section {
-  background: #0d0f1a;
-  padding: 5rem 0;
-}
-
-.signs-grid {
+.process-step {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.sign-card {
-  background: #131627;
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-left: 4px solid #f0622a;
-  transition: all 0.3s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sign-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(240, 98, 42, 0.15);
-  border-left-width: 6px;
-}
-
-.sign-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.25rem;
-  line-height: 1;
-  color: #f0622a;
-  transition: all 0.3s ease;
-}
-
-.sign-card:hover .sign-icon {
-  transform: scale(1.1);
-  color: #d4510e;
-}
-
-.sign-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-}
-
-.sign-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .signs-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-  }
-
-  .sign-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .sign-icon {
-    font-size: 3rem;
-  }
-}
-
-/********************
-  Services Section - 2 Column Layout
-*********************/
-.services-section-new {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.services-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.services-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 2.5rem;
-  line-height: 1.2;
-}
-
-.services-content h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.service-list {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 90px minmax(0, 1fr);
   gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem;
+  border: 1px solid var(--bf-border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.035);
 }
 
-.service-item {
-  background: #0d0f1a;
-  border-left: 4px solid #f0622a;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.service-item:hover {
-  background: #1a1e32;
-  transform: translateX(5px);
-}
-
-.service-item h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.service-item p {
-  font-size: 0.95rem;
-  color: #ffffff;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.services-visual {
-  position: sticky;
-  top: 2rem;
+.process-step > span {
   display: flex;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
-}
-
-.visual-card {
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.05), rgba(255, 107, 53, 0.05));
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(240, 98, 42, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.visual-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.visual-stat {
-  font-size: 4rem;
+  background: rgba(240, 98, 42, 0.16);
+  color: var(--bf-orange);
   font-weight: 900;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 1rem 0 0.5rem;
-  line-height: 1;
-}
-
-.visual-label {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .services-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .services-visual {
-    position: static;
-  }
-}
-
-/********************
-  Benefits Section
-*********************/
-.benefits-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.benefits-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.benefits-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.benefits-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.benefits-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.benefits-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.benefits-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.benefits-image {
-  width: 100%;
-  max-width: 400px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.benefit-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem;
-  color: white;
-  font-size: 1.75rem;
-}
-
-.benefit-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-}
-
-.benefit-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 1024px) {
-  .benefits-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .benefits-image {
-    height: 400px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/********************
-  Process Section - 3x2 Grid
-*********************/
-.process-section-new {
-  background: var(--brand-light);
-  padding: 5rem 0;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin-top: 3rem;
-}
-
-.process-box {
-  padding: 3rem 2rem;
-  text-align: center;
-  position: relative;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.process-box.orange-bg {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-}
-
-.process-box.white-bg {
-  background: #131627;
-  color: var(--brand-text, #e8eaf2);
-}
-
-.process-number {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1.25rem;
-}
-
-.process-box.white-bg .process-number {
-  background: rgba(240, 98, 42, 0.1);
-  color: #f0622a;
-}
-
-.process-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-.process-box.white-bg .process-icon {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-icon-large {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-box h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.process-box h3 a {
-  color: inherit;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-.process-box h3 a:hover {
-  opacity: 0.8;
-}
-
-.process-box p {
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  opacity: 0.95;
-}
-
-.process-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  max-width: 250px;
-}
-
-.process-list li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.process-list li::before {
-  content: "\f00c";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #f0622a;
-  position: absolute;
-  left: 0;
-}
-
-.process-box.white-bg .process-list li::before {
-  color: #f0622a;
-}
-
-.process-cta {
-  display: inline-block;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  padding: 0.875rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s, box-shadow 0.3s;
-  margin-top: 1rem;
-}
-
-.process-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(240, 98, 42, 0.3);
-}
-
-@media (max-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .process-box {
-    min-height: 350px;
-    padding: 2.5rem 2rem;
-  }
-}
-
-/********************
-  Deliverables Section
-*********************/
-.deliverables-section {
-  background: #131627;
-  padding: 5rem 0;
-}
-
-.deliverables-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.deliverable-card {
-  background: #131627;
-  border: 2px solid rgba(255,255,255,0.07);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.deliverable-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.deliverable-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(240, 98, 42, 0.15);
-  border-color: #f0622a;
-}
-
-.deliverable-card:hover::before {
-  opacity: 1;
-}
-
-.deliverable-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-  box-shadow: 0 8px 20px rgba(240, 98, 42, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.deliverable-card:hover .deliverable-icon {
-  transform: scale(1.1);
-}
-
-.deliverable-card h3 {
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.3;
-}
-
-.deliverable-card p {
-  color: #ffffff;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-}
-
-.deliverable-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(240, 98, 42, 0.1);
-  padding: 0.625rem 1.25rem;
-  border-radius: 50px;
-  color: #f0622a;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.deliverable-meta i {
-  font-size: 1rem;
-}
-
-@media (max-width: 768px) {
-  .deliverables-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .deliverable-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .deliverable-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 1.75rem;
-  }
-}
-
-/* Legacy responsive styles removed - using enhanced hero design */
-
-/********************
-  FAQ Section
-*********************/
-.faq-section {
-  padding: 5rem 0;
-  background: #131627;
+  font-size: 1.05rem;
 }
 
 .faq-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
 }
 
 .faq-item {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
+  border: 1px solid var(--bf-border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
 }
 
-.faq-item:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.faq-question {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  text-align: left;
-  background: transparent;
-  border: 0;
-  padding: 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #e8eaf2;
+.faq-item summary {
   cursor: pointer;
-  transition: background 0.3s ease;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 1.25rem 1.5rem;
+  list-style: none;
 }
 
-.faq-question:hover {
-  background: #0d0f1a;
+.faq-item summary::-webkit-details-marker {
+  display: none;
 }
 
-.faq-question i {
-  transition: transform 0.3s ease;
-  color: #d0d4e8;
+.faq-item summary::after {
+  content: '+';
+  float: right;
+  color: var(--bf-orange);
+  font-size: 1.3rem;
 }
 
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  color: #d0d4e8;
-  line-height: 1.6;
+.faq-item[open] summary::after {
+  content: '-';
 }
 
-.faq-item.open .faq-answer {
-  max-height: 600px;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+.faq-item p {
+  margin: 0;
+  padding: 0 1.5rem 1.5rem;
 }
 
-.faq-item.open .faq-question i {
-  transform: rotate(180deg);
+.cta-panel {
+  text-align: center;
+  padding: 3rem;
 }
 
-/********************
-  Mobile Responsive Styles
-*********************/
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 0;
-  }
-  
-  .section-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  .coverage-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .process-steps {
-    grid-template-columns: 1fr;
-  }
-  
-  .deliverables-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .coverage-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .signs-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .case-metrics {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .testimonial-author {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .audit-dashboard {
-    padding: 1.5rem;
-  }
-  
-  .dashboard-header {
-    flex-direction: column;
-    gap: 1rem;
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .coverage-grid,
+  .deliverables-grid,
+  .avoid-grid,
+  .priority-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/********************
-  Animations
-*********************/
-@media (prefers-reduced-motion: no-preference) {
-  .feature-card,
-  .coverage-card,
-  .sign-card,
-  .feature-item {
-    animation: fadeInUp 0.6s ease-out;
+@media (max-width: 900px) {
+  .audit-hero-stats,
+  .proof-grid,
+  .tool-grid,
+  .connected-grid,
+  .coverage-grid,
+  .deliverables-grid,
+  .avoid-grid,
+  .priority-grid,
+  .intro-layout,
+  .triggers-layout,
+  .avoid-layout,
+  .split-heading {
+    grid-template-columns: 1fr;
   }
-  
-  .feature-card:nth-child(2) { animation-delay: 0.1s; }
-  .feature-card:nth-child(3) { animation-delay: 0.2s; }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .process-step {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro-section,
+  .proof-section,
+  .triggers-section,
+  .coverage-section,
+  .tool-limits-section,
+  .priority-section,
+  .process-section,
+  .deliverables-section,
+  .avoid-section,
+  .internal-links-section,
+  .faq-section,
+  .cta-section {
+    padding: 4rem 0;
+  }
+
+  .cta-panel {
+    padding: 2rem;
   }
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form[name="seo-audit-tool"]');
-  const input = document.getElementById('audit-website-url');
-  const loadingState = document.getElementById('loading-state');
-  const resultsContainer = document.getElementById('audit-results');
-  
-  if (!form || !input || !loadingState || !resultsContainer) {
-    console.error('Required elements not found');
-    return;
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const url = input.value.trim();
-    if (!url) return;
-
-    // Show loading state
-    loadingState.classList.remove('hidden');
-    resultsContainer.classList.add('hidden');
-    
-    // Simulate analysis delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    try {
-      const analysis = await analyzeWebsite(url);
-      displayResults(analysis, resultsContainer);
-      
-      // Hide loading, show results
-      loadingState.classList.add('hidden');
-      resultsContainer.classList.remove('hidden');
-      
-      // Smooth scroll to results
-      resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      
-    } catch (error) {
-      console.error('Analysis failed:', error);
-      showError(resultsContainer);
-      loadingState.classList.add('hidden');
-      resultsContainer.classList.remove('hidden');
-    }
-  });
-
-  async function analyzeWebsite(url) {
-    // Simulate realistic SEO analysis with varying scores
-    const baseScore = 60 + Math.random() * 30; // 60-90 range
-    
-    const scores = {
-      technical: Math.max(50, Math.min(100, baseScore + (Math.random() - 0.5) * 20)),
-      content: Math.max(40, Math.min(100, baseScore + (Math.random() - 0.5) * 25)),
-      performance: Math.max(30, Math.min(100, baseScore + (Math.random() - 0.5) * 30)),
-      mobile: Math.max(60, Math.min(100, baseScore + (Math.random() - 0.5) * 15))
-    };
-    
-    const overallScore = Math.round((scores.technical + scores.content + scores.performance + scores.mobile) / 4);
-    
-    return {
-      url,
-      overallScore,
-      scores: {
-        technical: Math.round(scores.technical),
-        content: Math.round(scores.content),
-        performance: Math.round(scores.performance),
-        mobile: Math.round(scores.mobile)
-      },
-      issues: generateIssues(overallScore),
-      recommendations: generateRecommendations(overallScore)
-    };
-  }
-
-  function generateIssues(score) {
-    const allIssues = [
-      { type: 'critical', text: 'Missing meta descriptions on key pages', priority: 'High' },
-      { type: 'warning', text: 'Images missing alt text attributes', priority: 'Medium' },
-      { type: 'info', text: 'Page loading speed could be improved', priority: 'Medium' },
-      { type: 'warning', text: 'No schema markup detected', priority: 'Low' },
-      { type: 'critical', text: 'Broken internal links found', priority: 'High' },
-      { type: 'info', text: 'Mobile viewport not optimized', priority: 'Medium' },
-      { type: 'warning', text: 'H1 tags missing on some pages', priority: 'High' },
-      { type: 'info', text: 'SSL certificate needs renewal soon', priority: 'Low' }
-    ];
-    
-    // Show more issues for lower scores
-    const issueCount = score >= 80 ? 2 : score >= 60 ? 4 : 6;
-    return allIssues.slice(0, issueCount);
-  }
-
-  function generateRecommendations(score) {
-    const allRecommendations = [
-      'Add compelling meta descriptions to all pages',
-      'Optimize images with proper alt text and compression',
-      'Improve page loading speed with caching',
-      'Implement schema markup for better rich snippets',
-      'Fix broken internal links',
-      'Optimize for mobile devices',
-      'Add proper H1 tags to all pages',
-      'Update SSL certificate'
-    ];
-    
-    const recCount = score >= 80 ? 3 : score >= 60 ? 5 : 7;
-    return allRecommendations.slice(0, recCount);
-  }
-
-  function displayResults(analysis, container) {
-    const getScoreColor = (score) => {
-      if (score >= 80) return { text: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' };
-      if (score >= 60) return { text: 'text-yellow-600', bg: 'bg-yellow-100', border: 'border-yellow-200' };
-      return { text: 'text-red-600', bg: 'bg-red-100', border: 'border-red-200' };
-    };
-
-    const overallColors = getScoreColor(analysis.overallScore);
-    
-    container.innerHTML = `
-      <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
-        <!-- Header -->
-        <div class="text-center mb-8">
-          <div class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-            Analysis Complete
-          </div>
-          <h3 class="text-2xl font-bold text-[#e8eaf2] mb-2">SEO Audit Results</h3>
-          <p class="text-[#d0d4e8]">${analysis.url}</p>
-        </div>
-
-        <!-- Overall Score -->
-        <div class="text-center mb-8">
-          <div class="inline-flex items-center justify-center w-24 h-24 ${overallColors.bg} ${overallColors.border} border-2 rounded-full mb-4">
-            <span class="text-3xl font-bold ${overallColors.text}">${analysis.overallScore}</span>
-          </div>
-          <div class="text-lg font-semibold text-[#e8eaf2]">Overall SEO Score</div>
-          <div class="text-sm text-[#d0d4e8]">
-            ${analysis.overallScore >= 80 ? 'Excellent! Your site is well optimized.' : 
-              analysis.overallScore >= 60 ? 'Good foundation with room for improvement.' : 
-              'Significant optimization opportunities available.'}
-          </div>
-        </div>
-
-        <!-- Score Breakdown -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          ${Object.entries(analysis.scores).map(([category, score]) => {
-            const colors = getScoreColor(score);
-            const categoryNames = {
-              technical: 'Technical SEO',
-              content: 'Content Quality', 
-              performance: 'Performance',
-              mobile: 'Mobile UX'
-            };
-            
-            return `
-              <div class="bg-[#131627] rounded-xl p-4 border border-[rgba(255,255,255,0.07)] text-center">
-                <div class="text-2xl font-bold ${colors.text} mb-1">${score}%</div>
-                <div class="text-sm font-medium text-[#e8eaf2]">${categoryNames[category]}</div>
-              </div>
-            `;
-          }).join('')}
-        </div>
-
-        <!-- Issues & Recommendations -->
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Issues -->
-          <div class="bg-[#131627] rounded-xl p-6 border border-[rgba(255,255,255,0.07)]">
-            <h4 class="text-lg font-semibold text-[#e8eaf2] mb-4 flex items-center gap-2">
-              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              Issues Found
-            </h4>
-            <div class="space-y-3">
-              ${analysis.issues.map(issue => `
-                <div class="flex items-start gap-3 p-3 bg-[#0d0f1a] rounded-lg">
-                  <div class="w-2 h-2 rounded-full mt-2 ${
-                    issue.type === 'critical' ? 'bg-red-500' : 
-                    issue.type === 'warning' ? 'bg-yellow-500' : 'bg-blue-500'
-                  }"></div>
-                  <div class="flex-1">
-                    <div class="text-sm font-medium text-[#e8eaf2]">${issue.text}</div>
-                    <div class="text-xs text-[#d0d4e8]">Priority: ${issue.priority}</div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- Recommendations -->
-          <div class="bg-[#131627] rounded-xl p-6 border border-[rgba(255,255,255,0.07)]">
-            <h4 class="text-lg font-semibold text-[#e8eaf2] mb-4 flex items-center gap-2">
-              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              Recommendations
-            </h4>
-            <div class="space-y-3">
-              ${analysis.recommendations.map(rec => `
-                <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                  <svg class="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                  </svg>
-                  <span class="text-sm text-[#e8eaf2]">${rec}</span>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="text-center mt-8 pt-6 border-t border-[rgba(255,255,255,0.07)]">
-          <p class="text-[#d0d4e8] mb-4">Want a detailed analysis and implementation plan?</p>
-          <a href="/contact/" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-medium mb-4 shadow-2xl">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-            Get Professional SEO Help
-          </a>
-        </div>
-      </div>
-    `;
-  }
-
-  function showError(container) {
-    container.innerHTML = `
-      <div class="bg-red-50 border border-red-200 rounded-2xl p-8 text-center">
-        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-[#e8eaf2] mb-2">Analysis Failed</h3>
-        <p class="text-[#d0d4e8] mb-4">We couldn't analyze your website. Please check the URL and try again.</p>
-        <button onclick="location.reload()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
-          Try Again
-        </button>
-      </div>
-    `;
-  }
-});
-</script>
-
-<!-- FAQ behavior -->
-<script>
-// Expose globally for inline onclick handlers in markup
-  window.toggleFAQ = function(btn) {
-    try {
-      const item = btn.closest('.faq-item');
-      if (!item) return;
-      const answer = item.querySelector('.faq-answer');
-      const icon = btn.querySelector('i');
-
-      const isOpen = item.classList.contains('open');
-      // Close any inline height to allow transition
-      if (isOpen) {
-        answer.style.maxHeight = answer.scrollHeight + 'px'; // set current height
-        // force reflow before collapsing
-        void answer.offsetHeight;
-        answer.style.maxHeight = '0px';
-        item.classList.remove('open');
-        // chevron rotation handled by CSS
-        btn.setAttribute('aria-expanded', 'false');
-        if (answer) answer.setAttribute('aria-hidden', 'true');
-      } else {
-        item.classList.add('open');
-        // set to scrollHeight for smooth transition
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        // chevron rotation handled by CSS
-        btn.setAttribute('aria-expanded', 'true');
-        if (answer) answer.setAttribute('aria-hidden', 'false');
-      }
-    } catch (e) { /* no-op */ }
-  };
-
-// Progressive enhancement: initialize ARIA and collapsed state
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.faq-item').forEach((item) => {
-    const btn = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    if (btn && answer) {
-      // Ensure starting collapsed
-      item.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      answer.setAttribute('aria-hidden', 'true');
-      answer.style.maxHeight = '0px';
-
-      // Bind click listener for FAQ toggles
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.toggleFAQ(btn);
-      });
-    }
-  });
-});
-</script>
