@@ -1,492 +1,916 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
-import Footer from '../../components/Footer.astro';
-import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import ContactSection from "../../components/ContactSection.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
 
-const caseStudyData = {
-  title: "How We Increased Organic Traffic by 137.5% for a Bridal Dress Designer",
-  client: "Bridal Dress Designer & Retailer",
-  industry: "Bridal Fashion & E-Commerce",
-  duration: "3 months",
-  heroImage: "/images/case-studies/bridal-dress-seo.webp",
-  challenge: "A bridal dress designer and retailer struggled with third-page obscurity (position 24.8) in the highly competitive bridal industry, competing against established national chains, designer brands, and marketplaces. With less than 1% of total clicks coming from page 3 rankings, they needed a dramatic transformation to capture market share and compete with bigger brands during the critical wedding planning research phase.",
-  solution: "We implemented a comprehensive SEO strategy focused on dramatic ranking improvements through technical excellence, strategic content expansion targeting long-tail bridal queries, and aggressive backlink acquisition. Our approach combined position advancement with keyword portfolio expansion to achieve sustained growth in the competitive bridal market.",
-  keyMetrics: [
-    {
-      label: "Organic Traffic",
-      value: "+137.5%",
-      description: "Growth from 7.4K to 17.6K clicks"
-    },
-    {
-      label: "Search Visibility",
-      value: "+118.1%",
-      description: "Impressions from 342K to 746K"
-    },
-    {
-      label: "Average Position",
-      value: "+39.9%",
-      description: "Improved from 24.8 to 14.9"
+const canonical = "https://brightforge.com.ph/case-studies/bridal-dress-designer-seo/";
+const image = "/images/case-studies/bridal-dress-seo.webp";
+
+const metrics = [
+  {
+    label: "Organic clicks",
+    before: "7.4k",
+    after: "17.6k",
+    change: "+137.5%",
+    note: "More visits from people searching during the bridal research and dress selection journey."
+  },
+  {
+    label: "Impressions",
+    before: "342k",
+    after: "746k",
+    change: "+118.1%",
+    note: "The site appeared across a much wider set of dress style, designer and buying-intent searches."
+  },
+  {
+    label: "Average position",
+    before: "24.8",
+    after: "14.9",
+    change: "10 place lift",
+    note: "A meaningful move from weak page-three visibility toward stronger page-two coverage, not a first-page claim."
+  },
+  {
+    label: "CTR",
+    before: "2.2%",
+    after: "2.4%",
+    change: "+0.2pp",
+    note: "CTR improved slightly while impressions more than doubled, so the click growth came mainly from wider visibility."
+  }
+];
+
+const workstreams = [
+  {
+    title: "Commercial intent mapping",
+    text: "We separated broad inspiration searches from stronger buying-intent phrases around bridal dress styles, designer language, custom options and retailer comparison intent."
+  },
+  {
+    title: "Page relevance improvements",
+    text: "Priority pages needed clearer titles, headings, copy and internal links so Google could understand which pages matched dress style, designer and purchase-stage searches."
+  },
+  {
+    title: "Gallery and image SEO checks",
+    text: "Bridal sites are image heavy. We reviewed how dress imagery, filenames, alt text, speed and page presentation supported search visibility without turning the pages into thin image galleries."
+  },
+  {
+    title: "Structured data and page trust signals",
+    text: "The campaign strengthened page-level signals around products, collections and brand credibility so the site gave search engines more useful context about the dresses and business."
+  },
+  {
+    title: "Long-tail content and internal linking",
+    text: "We used Search Console and keyword data to guide supporting content and internal links around dress styles, buyer questions and collection pages rather than publishing generic wedding content."
+  }
+];
+
+const lessons = [
+  "Bridal SEO needs to separate inspiration traffic from commercial research. Both can matter, but they do not deserve the same pages or the same success metrics.",
+  "A move from average position 24.8 to 14.9 is commercially useful, but it is not a first-page win. The stronger story is improved reach and a better base for the next phase.",
+  "Click growth can outpace CTR movement when a site starts appearing across many more relevant searches. That is still valuable if the new visibility fits real dress research and buying behaviour.",
+  "Image-led ecommerce pages need more than attractive photography. Search engines still need crawlable context, useful copy, internal links and clear page purpose."
+];
+
+const faqs = [
+  {
+    question: "What changed in this bridal dress SEO campaign?",
+    answer: "The work focused on improving page relevance, query coverage, image-led page quality, internal linking and structured signals around bridal dress searches. The result was stronger visibility across commercial research terms, with clicks rising from 7.4k to 17.6k."
+  },
+  {
+    question: "Why did clicks grow so much in three months?",
+    answer: "Clicks grew because impressions more than doubled and average position improved by almost ten places. CTR only moved from 2.2% to 2.4%, so the main gain came from broader visibility and better rankings across more relevant searches."
+  },
+  {
+    question: "Is moving from position 24.8 to 14.9 enough to matter?",
+    answer: "Yes, when the query set is commercially relevant. It moved the site from weak page-three visibility toward stronger page-two coverage. That is not the same as owning first page rankings, but it creates more search exposure and a better platform for future gains."
+  },
+  {
+    question: "What SEO work matters most for bridal retailers and designers?",
+    answer: "Bridal SEO usually needs strong collection pages, clear dress style coverage, useful buyer guidance, optimised imagery, structured data, internal links and page copy that matches how brides research before booking or buying."
+  },
+  {
+    question: "Should bridal brands focus on blogs or commercial pages first?",
+    answer: "Commercial pages should usually come first. Blog and guide content can support the journey, but dress collections, designer pages, appointment pages and high-intent buying pages normally carry the clearest business value."
+  },
+  {
+    question: "Does Bright Forge guarantee the same result for other bridal brands?",
+    answer: "No. Results depend on the market, starting position, site quality, product range, competition and how much can be improved. This case study shows the type of diagnostic work and SEO thinking involved, not a guaranteed outcome."
+  }
+];
+
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Bridal Dress SEO Case Study",
+  description: "How SEO work helped a bridal dress designer grow organic clicks, impressions and average position by improving page relevance and commercial search coverage.",
+  image: `https://brightforge.com.ph${image}`,
+  author: {
+    "@type": "Organization",
+    name: "Bright Forge SEO",
+    url: "https://brightforge.com.ph/"
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Bright Forge SEO",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://brightforge.com.ph/images/header-logo-360w.webp"
     }
-  ],
-  strategySteps: [
-    {
-      title: "Ranking Transformation Strategy",
-      description: "Executed dramatic 10-position climb from third-page obscurity (24.8) to solid second-page positioning (14.9), outranking approximately 10 competitor websites and displacing established bridal retailers. This moved the brand from <1% click potential to 3-5% visibility.",
-      icon: "fa-chart-line"
-    },
-    {
-      title: "Keyword Portfolio Expansion",
-      description: "Successfully expanded rankings across bridal-related terms including style variations, geographic keywords, seasonal terms, and long-tail queries like 'custom wedding dress designer,' 'modest wedding dresses,' and location-based searches.",
-      icon: "fa-search"
-    },
-    {
-      title: "Technical SEO Foundation",
-      description: "Implemented comprehensive technical optimization including Core Web Vitals for image-heavy pages, mobile experience enhancement for 70%+ mobile traffic, structured data for products and reviews, and speed optimization for dress gallery pages.",
-      icon: "fa-cogs"
-    },
-    {
-      title: "Content Strategy Execution",
-      description: "Created comprehensive style guides, trend reports, planning content, and real wedding features to build topical authority. Developed educational content covering fabric guides, silhouettes, and styling advice to capture buyers throughout their journey.",
-      icon: "fa-file-alt"
-    },
-    {
-      title: "Strategic Link Building",
-      description: "Targeted high-authority bridal and wedding sites including The Knot, WeddingWire, local wedding blogs, and vendor partnerships to strengthen domain authority and competitive positioning in the challenging bridal SEO landscape.",
-      icon: "fa-link"
-    }
-  ],
-  results: [
-    {
-      metric: "Total Clicks",
-      before: "7,410",
-      after: "17,600",
-      improvement: "+137.5%"
-    },
-    {
-      metric: "Total Impressions",
-      before: "342,000",
-      after: "746,000",
-      improvement: "+118.1%"
-    },
-    {
-      metric: "Average Position",
-      before: "24.8",
-      after: "14.9",
-      improvement: "+39.9%"
-    },
-    {
-      metric: "Average CTR",
-      before: "2.2%",
-      after: "2.4%",
-      improvement: "+9.1%"
-    }
-  ],
-  keyTakeaways: [
-    "Achieved 10-position jump from page 3 (position 24.8) to page 2 (position 14.9), increasing visibility potential from <1% to 3-5% of total clicks -a 3-5x improvement",
-    "Generated 10,190 additional monthly clicks representing potential revenue impact of $150K-$300K quarterly based on bridal industry conversion rates and average order values",
-    "Impression explosion of 118% (+404K) driven by keyword portfolio expansion across style categories, geographic terms, and seasonal variations in the competitive bridal landscape",
-    "Successfully competed against established national chains and designer brands by outranking approximately 10 competitor websites through sustained SEO investment",
-    "Estimated advertising value saved of $168K quarterly (10,190 clicks × $5.50 average CPC for bridal keywords × 3 months)",
-    "Positioned for 'first page breakthrough' opportunity -reaching positions 9-10 would likely result in 150-200% additional traffic growth to 50,000+ monthly clicks"
-  ],
-  nextSteps: "The brand now sits tantalizingly close to first-page rankings. Our next phase focuses on an aggressive 'first page breakthrough' strategy including content acceleration for topical authority, strategic link building targeting high-authority bridal sites, CTR optimization to 3.5-4%, and technical refinements. Breaking into first-page positions would likely result in 3-5x additional traffic increases."
+  },
+  mainEntityOfPage: canonical,
+  articleSection: "SEO Case Studies",
+  about: ["Bridal SEO", "Ecommerce SEO", "Content SEO", "On-page SEO", "Image SEO"]
 };
 ---
 
-<MainLayout title="137% Traffic Growth for Bridal Dress Designer | Bright Forge SEO" description="A 137.5% organic traffic increase and dramatic position improvement from page 3 to page 2 for this bridal dress designer through comprehensive SEO strategy and sustained investment.">
+<MainLayout
+  title="Bridal Dress SEO Case Study | Bright Forge"
+  description="How SEO helped a bridal dress designer grow organic clicks by 137.5%, impressions by 118.1% and move from page three toward page two visibility."
+  canonical={canonical}
+  image={image}
+  type="article"
+  author={{ name: "Bright Forge SEO", url: "https://brightforge.com.ph/" }}
+  article={{ section: "SEO Case Studies", tags: ["Bridal SEO", "Ecommerce SEO", "Content SEO", "Case Study"] }}
+  breadcrumbs={[
+    { name: "Home", url: "https://brightforge.com.ph/" },
+    { name: "Case Studies", url: "https://brightforge.com.ph/case-studies/" },
+    { name: "Bridal Dress SEO", url: canonical }
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseStudySchema)} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
   <Hero
-    title={caseStudyData.client}
-    breadcrumbCurrent="Bridal Dress Designer"
+    title="Bridal Dress SEO Case Study"
+    breadcrumbCurrent="Bridal Dress SEO"
   >
     <Fragment slot="story">
       <div class="case-meta">
-        <span class="meta-item">{caseStudyData.industry}</span>
-        <span class="meta-divider">•</span>
-        <span class="meta-item">{caseStudyData.duration}</span>
+        <span>Bridal fashion</span>
+        <span>Ecommerce and appointments</span>
+        <span>3 month comparison</span>
       </div>
-      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.</p>
+      <p class="hero-subtitle">How a bridal dress designer grew organic clicks by 137.5% by improving relevance across commercial research searches.</p>
+      <p>Bridal search is crowded, image-led and full of mixed intent. The useful result here was not a claim of instant first-page control. It was a measurable move from weak page-three visibility toward stronger page-two coverage, alongside much broader impression growth.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="#results" text="View Full Results" />
-      <ButtonSecondary href="/contact/" text="Discuss Your Project" />
+      <ButtonPrimary href="#results" text="View Results" />
+      <ButtonSecondary href="/contact/" text="Request an SEO Review" />
     </Fragment>
   </Hero>
 
-  <!-- Key Metrics Section -->
-  <section class="metrics-section">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="metrics-grid">
-        {caseStudyData.keyMetrics.map((metric) => (
-          <div class="metric-card">
-            <div class="metric-value">{metric.value}</div>
-            <div class="metric-label">{metric.label}</div>
-            <div class="metric-description">{metric.description}</div>
-          </div>
-        ))}
+  <main class="case-study-page">
+    <section class="proof-strip" aria-label="Case study summary metrics">
+      <div class="case-container">
+        <div class="proof-grid">
+          {metrics.map((metric) => (
+            <article class="proof-card">
+              <span class="proof-label">{metric.label}</span>
+              <strong>{metric.change}</strong>
+              <span>{metric.before} to {metric.after}</span>
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Hero Image Section -->
-  <section class="image-section">
-    <div class="max-w-6xl mx-auto px-6 py-12">
-      <div class="case-image-container">
-        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+    <section class="overview-section">
+      <div class="case-container overview-grid">
+        <div>
+          <p class="eyebrow">The short version</p>
+          <h2>Better visibility during the bridal research window</h2>
+          <p>A bridal dress designer had useful products and strong visual appeal, but organic visibility was stuck too far down the results for many valuable searches. Average position sat at 24.8, which meant the site was often appearing where searchers rarely reach.</p>
+          <p>Over the comparison period, organic clicks increased from 7.4k to 17.6k and impressions increased from 342k to 746k. Average position improved to 14.9. That is a meaningful visibility gain, but it should be read honestly: the site moved much closer to first-page competition, not all the way through it.</p>
+        </div>
+        <aside class="case-summary-card">
+          <h3>Campaign snapshot</h3>
+          <dl>
+            <div><dt>Industry</dt><dd>Bridal fashion and dress retail</dd></div>
+            <div><dt>Market type</dt><dd>Image-led ecommerce and appointments</dd></div>
+            <div><dt>Timeframe</dt><dd>3 month comparison</dd></div>
+            <div><dt>Main KPI</dt><dd>Organic clicks from Google Search</dd></div>
+            <div><dt>Primary work</dt><dd>Page relevance, bridal query coverage, imagery and internal links</dd></div>
+          </dl>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Challenge Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">The Challenge</h2>
-      <p class="section-text">{caseStudyData.challenge}</p>
-    </div>
-  </section>
-
-  <!-- Solution Section -->
-  <section class="content-section gray">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Our Approach</h2>
-      <p class="section-text">{caseStudyData.solution}</p>
-    </div>
-  </section>
-
-  <!-- Strategy Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Strategy</h2>
-
-      <div class="strategy-list">
-        {caseStudyData.strategySteps.map((step, index) => (
-          <div class="strategy-item">
-            <div class="strategy-number">{index + 1}</div>
-            <div class="strategy-content">
-              <h3 class="strategy-title">{step.title}</h3>
-              <p class="strategy-description">{step.description}</p>
-            </div>
-          </div>
-        ))}
+    <section class="visual-proof-section">
+      <div class="case-container">
+        <div class="case-image-card">
+          <img src={image} alt="Google Search Console performance comparison for a bridal dress designer SEO campaign" loading="eager" decoding="async" />
+        </div>
+        <p class="image-note">Search Console metrics used in this case study: 7.4k to 17.6k clicks, 342k to 746k impressions, average position 24.8 to 14.9 and CTR 2.2% to 2.4%.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Results Section -->
-  <section class="content-section gray" id="results">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Results</h2>
-
-      <div class="results-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Before</th>
-              <th>After</th>
-              <th>Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            {caseStudyData.results.map((result) => (
-              <tr>
-                <td class="metric-name">{result.metric}</td>
-                <td>{result.before}</td>
-                <td>{result.after}</td>
-                <td class="improvement">{result.improvement}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <section class="content-section" id="challenge">
+      <div class="case-container two-column">
+        <div>
+          <p class="eyebrow">Starting problem</p>
+          <h2>The site had bridal demand, but too much of it was being reached from weak positions</h2>
+        </div>
+        <div class="section-copy">
+          <p>Bridal dress SEO has a difficult mix of intent. Some searches are early inspiration. Some are style research. Some come from shoppers comparing designers, boutiques or appointment options. Treating all of those searches as the same opportunity leads to vague pages and wasted effort.</p>
+          <p>The starting data showed a site with visibility, but not enough strength in the results. The work had to make page purpose clearer, improve coverage around bridal dress searches and support image-heavy pages with stronger crawlable context.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Key Takeaways Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Key Takeaways</h2>
+    <section class="constraints-section">
+      <div class="case-container">
+        <p class="eyebrow">Constraints</p>
+        <h2>Why bridal SEO needs more than pretty pages and generic content</h2>
+        <div class="constraint-grid">
+          <article>
+            <h3>Mixed buyer intent</h3>
+            <p>Brides search across inspiration, dress styles, designers, prices, locations and appointment intent. The page strategy had to respect those differences.</p>
+          </article>
+          <article>
+            <h3>Image-heavy pages</h3>
+            <p>Strong photography helps users, but search engines still need useful text, alt context, fast loading and clear page structure.</p>
+          </article>
+          <article>
+            <h3>Competitive commercial terms</h3>
+            <p>Established retailers, marketplaces and publishers compete for many bridal searches, so relevance and authority had to build together.</p>
+          </article>
+          <article>
+            <h3>Short comparison window</h3>
+            <p>The three-month improvement was strong, but the page still needed honest framing because average position ended at 14.9, not page-one dominance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <ul class="takeaways-list">
-        {caseStudyData.keyTakeaways.map((takeaway) => (
-          <li>{takeaway}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
+    <section class="work-section" id="work">
+      <div class="case-container">
+        <div class="section-header">
+          <p class="eyebrow">What changed</p>
+          <h2>The work focused on commercial relevance, visual-page quality and cleaner query coverage</h2>
+          <p>For a bridal designer, the search opportunity sits across dress styles, collections, designer language, appointment intent and research questions. The campaign aimed to make the right pages easier to understand and easier to find.</p>
+        </div>
+        <div class="work-list">
+          {workstreams.map((item, index) => (
+            <article class="work-item">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">What moved</p>
+          <h2>Clicks and impressions grew sharply while average position moved from page three toward page two</h2>
+          <p>The strongest movement was the almost ten-place average position improvement. That helped the site appear in more useful places across more searches, which explains why clicks rose faster than CTR.</p>
+        </div>
+        <div class="result-grid">
+          {metrics.map((metric) => (
+            <article class="result-card">
+              <div class="result-topline">
+                <span>{metric.label}</span>
+                <strong>{metric.change}</strong>
+              </div>
+              <div class="before-after">
+                <div><span>Before</span><strong>{metric.before}</strong></div>
+                <div><span>After</span><strong>{metric.after}</strong></div>
+              </div>
+              <p>{metric.note}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="commercial-section">
+      <div class="case-container commercial-card">
+        <div>
+          <p class="eyebrow">Commercial meaning</p>
+          <h2>The result gave the brand more chances to be found during dress research</h2>
+          <p>Bridal purchases are high-consideration decisions. Searchers compare styles, designers, locations, galleries and appointment options before they commit. More visibility during that research window gives the brand more chances to be shortlisted.</p>
+          <p>The data does not prove revenue and it should not be dressed up as if it does. What it does show is stronger organic reach, more visits and a better position from which to compete for first-page terms in the next phase.</p>
+        </div>
+        <div class="meaning-points">
+          <article><strong>More research-stage reach</strong><span>The site appeared across a wider set of relevant bridal dress searches.</span></article>
+          <article><strong>Stronger commercial foundation</strong><span>Average position improved enough to create a more realistic path toward page-one competition.</span></article>
+          <article><strong>Clearer next actions</strong><span>The campaign could now focus on the terms and pages closest to first-page opportunity.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lessons-section">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">Lessons for similar businesses</p>
+          <h2>What bridal and fashion ecommerce brands should take from this</h2>
+        </div>
+        <div class="lesson-grid">
+          {lessons.map((lesson) => (
+            <article>
+              <p>{lesson}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="related-services-section">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">Relevant services</p>
+          <h2>Where this work connects to Bright Forge SEO services</h2>
+        </div>
+        <div class="service-link-grid">
+          <a href="/content-seo-services-philippines/">
+            <span>Content SEO</span>
+            <p>Dress style, collection and buying-intent content shaped around how customers actually search.</p>
+          </a>
+          <a href="/on-page-seo-services-philippines/">
+            <span>On-page SEO</span>
+            <p>Titles, headings, internal links and page copy that make relevance clearer on commercial pages.</p>
+          </a>
+          <a href="/technical-seo-services-philippines/">
+            <span>Technical SEO</span>
+            <p>Speed, crawlability, structured data and image-led page checks for ecommerce and catalogue sites.</p>
+          </a>
+          <a href="/seo-services-philippines/">
+            <span>SEO services</span>
+            <p>Senior SEO strategy for businesses that need commercial visibility, not just more content volume.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="case-container faq-layout">
+        <div>
+          <p class="eyebrow">Questions this case study should answer</p>
+          <h2>Bridal dress SEO case study FAQs</h2>
+          <p>Useful case studies should explain the work, the limits and the meaning behind the metrics.</p>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="case-cta-section">
+      <div class="case-container case-cta-card">
+        <p class="eyebrow">Selling products where visuals and search intent both matter?</p>
+        <h2>We can inspect the pages, queries and technical signals limiting organic growth.</h2>
+        <p>If your ecommerce or appointment-led site has strong products but uneven search visibility, start with a focused SEO review. We will look at Search Console data, page relevance, crawlability, image-led page quality and the work most likely to move the campaign forward.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Request an SEO Review" />
+          <ButtonSecondary href="/case-studies/" text="View More Case Studies" />
+        </div>
+      </div>
+    </section>
+  </main>
 
   <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Case Study Meta */
+.case-study-page,
+.case-study-page * {
+  box-sizing: border-box;
+}
+
+.case-study-page {
+  background: #0d0f1a;
+  color: #ffffff;
+}
+
+.case-container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
 .case-meta {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 24px;
-  font-size: 16px;
-  font-weight: 500;
+}
+
+.case-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.9);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
-.meta-item {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.meta-divider {
-  opacity: 0.5;
-}
-
-/* Metrics Section */
-.metrics-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 48px;
-}
-
-.metric-card {
-  text-align: center;
-  padding: 24px 0;
-}
-
-.metric-value {
-  font-size: 3rem;
+.hero-subtitle {
+  color: #ffffff;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.35;
   font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.proof-strip,
+.overview-section,
+.visual-proof-section,
+.content-section,
+.constraints-section,
+.work-section,
+.results-section,
+.commercial-section,
+.lessons-section,
+.related-services-section,
+.faq-section,
+.case-cta-section {
+  content-visibility: visible !important;
+  contain-intrinsic-size: auto none !important;
+}
+
+.proof-strip {
+  padding: 34px 0;
+  background: #131627;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proof-card,
+.result-card,
+.case-summary-card,
+.constraint-grid article,
+.lesson-grid article,
+.service-link-grid a,
+.faq-item,
+.case-cta-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+}
+
+.proof-card {
+  min-height: 154px;
+  padding: 24px;
+  border-radius: 22px;
+}
+
+.proof-label,
+.eyebrow {
+  display: block;
   color: #f0622a;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-
-.metric-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
 }
 
-.metric-description {
-  font-size: 0.875rem;
+.proof-card strong {
+  display: block;
+  margin: 12px 0 8px;
   color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
 }
 
-/* Image Section */
-.image-section {
+.proof-card span:last-child {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+}
+
+.overview-section,
+.content-section,
+.work-section,
+.commercial-section,
+.related-services-section,
+.case-cta-section {
+  padding: 92px 0;
+  background: #0d0f1a;
+}
+
+.visual-proof-section,
+.constraints-section,
+.results-section,
+.lessons-section,
+.faq-section {
+  padding: 92px 0;
   background: #131627;
 }
 
-.case-image-container {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+.overview-grid,
+.two-column,
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
 }
 
-.case-image-container img {
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+}
+
+h3 {
+  color: #ffffff;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.case-summary-card {
+  position: sticky;
+  top: 110px;
+  padding: 28px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.13), rgba(255, 255, 255, 0.045));
+}
+
+.case-summary-card dl {
+  margin: 0;
+}
+
+.case-summary-card div {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-summary-card div:last-child {
+  border-bottom: 0;
+}
+
+.case-summary-card dt {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.case-summary-card dd {
+  color: #ffffff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.case-image-card {
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0d0f1a;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.case-image-card img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: contain;
   background: #0d0f1a;
 }
 
-/* Content Sections */
-.content-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+.image-note {
+  max-width: 820px;
+  margin: 18px auto 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.95rem;
 }
 
-.content-section.gray {
-  background: #0d0f1a;
+.section-copy p:last-child,
+.case-cta-card p:last-child {
+  margin-bottom: 0;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
+.constraint-grid,
+.result-grid,
+.lesson-grid,
+.service-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
 }
 
-.section-text {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #ffffff;
+.constraint-grid article,
+.lesson-grid article,
+.service-link-grid a {
+  border-radius: 24px;
+  padding: 28px;
 }
 
-/* Strategy List */
-.strategy-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 32px;
+.constraint-grid p,
+.lesson-grid p,
+.service-link-grid p {
+  margin-bottom: 0;
 }
 
-.strategy-item {
-  display: flex;
+.section-header {
+  max-width: 840px;
+  margin-bottom: 40px;
+}
+
+.section-header.compact {
+  margin-bottom: 30px;
+}
+
+.work-list {
+  display: grid;
+  gap: 18px;
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
   gap: 24px;
-  align-items: flex-start;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
 }
 
-.strategy-number {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: #f0622a;
-  color: white;
-  border-radius: 8px;
-  display: flex;
+.work-item > span {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.strategy-content {
-  flex: 1;
-}
-
-.strategy-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.strategy-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ffffff;
-}
-
-/* Results Table */
-.results-table {
-  margin-top: 32px;
-  overflow-x: auto;
-}
-
-.results-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.results-table th {
-  text-align: left;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid #e2e8f0;
-}
-
-.results-table td {
-  padding: 20px;
-  font-size: 1rem;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.results-table tr:last-child td {
-  border-bottom: none;
-}
-
-.results-table .metric-name {
-  font-weight: 600;
-}
-
-.results-table .improvement {
-  color: #f0622a;
-  font-weight: 600;
-}
-
-/* Takeaways List */
-.takeaways-list {
-  list-style: none;
-  padding: 0;
-  margin: 32px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.takeaways-list li {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #ffffff;
-  padding-left: 32px;
-  position: relative;
-}
-
-.takeaways-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 6px;
-  height: 6px;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
   background: #f0622a;
-  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 900;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .metric-value {
-    font-size: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  .strategy-item {
-    gap: 16px;
-  }
-
-  .strategy-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .results-table {
-    font-size: 0.875rem;
-  }
-
-  .results-table th,
-  .results-table td {
-    padding: 12px;
-  }
+.work-item p {
+  margin-bottom: 0;
 }
 
-@media (max-width: 480px) {
-  .metrics-grid {
+.result-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.result-card {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.result-topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.result-topline span {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 800;
+}
+
+.result-topline strong {
+  color: #f0622a;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.before-after div {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.before-after span {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.before-after strong {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.result-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.commercial-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+  padding: clamp(32px, 5vw, 56px);
+  border-radius: 32px;
+  border: 1px solid rgba(240, 98, 42, 0.25);
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.12), rgba(255, 255, 255, 0.035));
+}
+
+.meaning-points {
+  display: grid;
+  gap: 14px;
+}
+
+.meaning-points article {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meaning-points strong,
+.meaning-points span,
+.service-link-grid span {
+  display: block;
+}
+
+.meaning-points strong,
+.service-link-grid span {
+  color: #ffffff;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.meaning-points span {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.55;
+}
+
+.service-link-grid a {
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-link-grid a:hover {
+  border-color: rgba(240, 98, 42, 0.5);
+  transform: translateY(-2px);
+}
+
+.faq-layout {
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 22px 24px;
+  color: #ffffff;
+  font-weight: 900;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  padding: 0 24px 24px;
+  margin: 0;
+}
+
+.case-cta-card {
+  text-align: center;
+  padding: clamp(36px, 6vw, 68px);
+  border-radius: 34px;
+  background: radial-gradient(circle at top left, rgba(240, 98, 42, 0.22), rgba(255, 255, 255, 0.045) 44%, rgba(255, 255, 255, 0.035));
+}
+
+.case-cta-card h2,
+.case-cta-card p {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+:global(.case-study-page .btn-secondary),
+:global(.case-study-page .btn-primary) {
+  min-height: 48px;
+}
+
+@media (max-width: 980px) {
+  .proof-grid,
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-grid,
+  .two-column,
+  .commercial-card,
+  .faq-layout {
     grid-template-columns: 1fr;
+  }
+
+  .case-summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .case-container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .overview-section,
+  .visual-proof-section,
+  .content-section,
+  .constraints-section,
+  .work-section,
+  .results-section,
+  .commercial-section,
+  .lessons-section,
+  .related-services-section,
+  .faq-section,
+  .case-cta-section {
+    padding: 64px 0;
+  }
+
+  .proof-grid,
+  .result-grid,
+  .constraint-grid,
+  .lesson-grid,
+  .service-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-item {
+    grid-template-columns: 1fr;
+  }
+
+  .work-item > span {
+    width: 50px;
+    height: 50px;
   }
 }
 </style>
