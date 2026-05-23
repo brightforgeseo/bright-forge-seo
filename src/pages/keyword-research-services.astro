@@ -6,1612 +6,891 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const proofItems = [
+  {
+    title: 'Search demand mapped to pages',
+    copy: 'We do not stop at keyword lists. We decide which terms belong on service pages, category pages, local pages, articles, FAQs and supporting assets.'
+  },
+  {
+    title: 'Priorities, not noise',
+    copy: 'Every recommendation is filtered by intent, realistic ranking potential, commercial value, existing visibility and the work needed to win the query.'
+  },
+  {
+    title: 'A roadmap your team can use',
+    copy: 'You get clear page targets, content actions, internal-link opportunities and implementation notes, not a raw export from a keyword tool.'
+  }
+];
+
+const researchDeliverables = [
+  {
+    title: 'Keyword opportunity set',
+    copy: 'A cleaned and grouped keyword set with search intent, commercial relevance, difficulty signals, volume context and priority notes.'
+  },
+  {
+    title: 'Page mapping',
+    copy: 'Primary and secondary terms mapped to existing URLs or recommended new pages, with clear action labels such as create, rewrite, merge, expand or monitor.'
+  },
+  {
+    title: 'Competitor keyword gaps',
+    copy: 'Competitor terms reviewed for business fit, not blindly copied. We separate genuine opportunities from brand noise, weak-fit queries and vanity rankings.'
+  },
+  {
+    title: 'Search intent and SERP notes',
+    copy: 'SERP checks that identify whether Google wants a service page, collection page, guide, comparison, local result, video, FAQ or another page type.'
+  },
+  {
+    title: 'Quick-win targets',
+    copy: 'Queries where existing pages already have enough relevance or impressions to justify focused on-page, content or internal-link improvements.'
+  },
+  {
+    title: 'Content and page roadmap',
+    copy: 'A practical roadmap showing which pages should be built or improved first, how they connect and what each page is meant to achieve.'
+  }
+];
+
+const mappingFields = [
+  'Primary keyword and close variants',
+  'Search intent and buyer stage',
+  'Existing URL or new page recommendation',
+  'Recommended page type',
+  'Priority level and reason',
+  'Content action required',
+  'Supporting FAQ or article ideas',
+  'Internal-link opportunities',
+  'Competitor or SERP notes',
+  'Measurement notes for rankings, impressions and enquiries'
+];
+
+const siteTypes = [
+  {
+    title: 'Service businesses',
+    copy: 'We map core services, location modifiers, comparison queries, pricing questions, problem-led searches and supporting articles around the pages most likely to generate enquiries.'
+  },
+  {
+    title: 'Ecommerce and catalogue sites',
+    copy: 'We separate category, subcategory, product, buying-guide and comparison intent so the site is not trying to rank the wrong type of page.'
+  },
+  {
+    title: 'Local SEO campaigns',
+    copy: 'We identify service-area, suburb, city, Google Business Profile, review and local-intent opportunities without creating doorway-style location pages.'
+  },
+  {
+    title: 'Agencies and white-label teams',
+    copy: 'We build keyword maps that give content teams, developers and account managers a clear brief without exposing clients to messy research exports.'
+  }
+];
+
+const avoidItems = [
+  {
+    title: 'No raw keyword dumps',
+    copy: 'A long spreadsheet is not a strategy. We remove duplicates, irrelevant variants, weak-fit topics and terms that do not justify a page or content action.'
+  },
+  {
+    title: 'No volume chasing',
+    copy: 'High-volume keywords are not always the best target. We prioritise intent, business fit, SERP reality and the page type needed to compete.'
+  },
+  {
+    title: 'No competitor copying',
+    copy: 'A competitor ranking for a keyword does not automatically make it a good opportunity. We check relevance, buyer fit and whether the client can actually serve that search.'
+  },
+  {
+    title: 'No cannibalisation traps',
+    copy: 'We avoid recommending multiple pages for the same intent unless there is a clear reason. Strong mapping protects the site from competing with itself.'
+  }
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Business and site context',
+    copy: 'We review the offer, ideal customers, priority services, locations, margins, current pages, conversion goals and any existing Search Console or ranking data.'
+  },
+  {
+    label: '02',
+    title: 'Keyword discovery and cleanup',
+    copy: 'We collect candidate terms from multiple sources, then remove noise, duplicates, impossible terms and anything that does not fit the business.'
+  },
+  {
+    label: '03',
+    title: 'SERP and intent validation',
+    copy: 'We check what Google is actually rewarding so the recommendation matches the right page type, format, depth and searcher expectation.'
+  },
+  {
+    label: '04',
+    title: 'Page mapping and prioritisation',
+    copy: 'We group terms into page targets, flag existing-page opportunities, identify missing pages and order the work by likely commercial impact.'
+  },
+  {
+    label: '05',
+    title: 'Roadmap and handoff',
+    copy: 'You receive a usable keyword map with actions, priorities, page notes and next steps for content, on-page SEO, internal links and tracking.'
+  }
+];
+
+const connectedServices = [
+  {
+    title: 'SEO services Philippines',
+    href: '/seo-services-philippines/',
+    copy: 'For the wider campaign that turns research into technical fixes, page improvements, content, links and reporting.'
+  },
+  {
+    title: 'SEO content writing services',
+    href: '/content-seo-services-philippines/',
+    copy: 'For writing or rewriting the pages, articles and FAQs identified in the keyword map.'
+  },
+  {
+    title: 'On-page SEO services',
+    href: '/on-page-seo-services-philippines/',
+    copy: 'For improving mapped pages with stronger metadata, structure, copy, internal links, proof and CTAs.'
+  },
+  {
+    title: 'SEO audit services',
+    href: '/seo-audit-services/',
+    copy: 'For diagnosing why existing pages are not ranking, converting or supporting the wider SEO campaign properly.'
+  },
+  {
+    title: 'Technical SEO services',
+    href: '/technical-seo-services-philippines/',
+    copy: 'For crawl, indexation, rendering, schema and architecture issues that affect whether keyword targets can perform.'
+  },
+  {
+    title: 'Local SEO services',
+    href: '/local-seo-services-philippines/',
+    copy: 'For mapping service, location and Google Maps intent into local landing pages, GBP work and citation strategy.'
+  }
+];
+
+const faqs = [
+  { question: 'What is included in keyword research services?', answer: 'Keyword research should include more than a keyword list. We usually include keyword discovery, search intent checks, competitor gap review, page mapping, priority scoring, existing-page opportunities, new-page recommendations, FAQ ideas and a practical SEO roadmap.' },
+  { question: 'How is this different from exporting keywords from Ahrefs or SEMrush?', answer: 'Tool exports show possible terms. Strategy decides which terms matter, which page should target them, whether the site can realistically compete and what work is needed. We filter the data into decisions your team can actually use.' },
+  { question: 'Do you map keywords to existing pages?', answer: 'Yes. We review existing URLs and decide whether each priority keyword should be mapped to a current page, a rewritten page, a merged page or a new page. This helps avoid duplication and keyword cannibalisation.' },
+  { question: 'Can you find competitor keyword gaps?', answer: 'Yes. We compare relevant competitors, then filter the gaps for business fit. We do not recommend a keyword just because a competitor ranks for it. It has to match the offer, market, page type and commercial opportunity.' },
+  { question: 'How do you prioritise keywords?', answer: 'We look at search intent, volume context, keyword difficulty signals, current rankings, Search Console visibility, commercial value, page fit, competitor strength and the amount of work needed to compete.' },
+  { question: 'Do you include a content plan?', answer: 'Yes, when content is the right action. Some keywords need new articles, but others need stronger service pages, category pages, location pages, FAQs or internal links. We separate those actions clearly.' },
+  { question: 'Can our content team use the keyword map directly?', answer: 'Yes. The keyword map is built for implementation. It gives page targets, priority terms, intent notes, page actions and supporting topics so writers, SEOs and developers know what to do next.' },
+  { question: 'Do you help implement the keyword research?', answer: 'Yes. Keyword research can feed into our SEO services, content SEO, on-page SEO, local SEO and technical SEO work. We can also hand the roadmap to your internal team if you only need the research.' }
+];
 ---
 
 <MainLayout
-  title="Keyword Research Services Philippines | Bright Forge SEO"
-  description="We don't just find keywords we find your customer's language. Our research helps you rank, attract intent-driven traffic, and grow search visibility."
-  faqs={[
-    { question: "Which tools do you use for keyword research?", answer: "We combine data from Ahrefs, SEMrush, Google Keyword Planner, Answer The Public, and firsthand SERP analysis to cross-validate every recommendation. This multi-tool approach ensures accuracy and uncovers opportunities single-tool research might miss." },
-    { question: "How long does the research take?", answer: "Most projects take 5-7 business days, but timelines vary based on site size, target markets, and research depth. E-commerce sites with large product catalogs may take up to 10 days, while service-based businesses typically complete faster." },
-    { question: "Do you cover multiple languages and regions?", answer: "Yes. Our team has experience researching English, Tagalog, and Spanish keywords for Philippine, US, and APAC markets. We can adapt to other languages and regions upon request, with native speaker consultation when needed." },
-    { question: "Will you help implement the findings?", answer: "Absolutely. We offer add-on content creation, on-page optimization, and SEO implementation services. We can also provide training sessions for your in-house team to ensure proper execution of the keyword strategy." },
-    { question: "How do you determine keyword difficulty and opportunity?", answer: "We analyze multiple factors including search volume, competition strength, SERP features, and your website's current authority. Our proprietary scoring system weighs these factors against your business goals to identify the best opportunities for quick wins and long-term growth." },
-    { question: "What's included in the content calendar?", answer: "The 90-day calendar includes blog post topics, landing page recommendations, FAQ suggestions, and social media content ideas. Each item includes target keywords, search intent, estimated traffic potential, and publishing priority recommendations." },
-  ]}
+  title="Keyword Research Services Philippines | SEO Keyword Mapping"
+  description="Keyword research services in the Philippines for SEO keyword mapping, content planning, competitor gaps and practical page-by-page search strategy."
+  keywords="keyword research services Philippines, SEO keyword research services, keyword mapping services, keyword analysis services, SEO content planning"
+  faqs={faqs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Keyword Research Services Philippines',
+          item: 'https://brightforge.com.ph/keyword-research-services/'
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Keyword Research Services Philippines',
+      url: 'https://brightforge.com.ph/keyword-research-services/',
+      description: 'Keyword research services in the Philippines for SEO keyword mapping, content planning, competitor gaps and practical page-by-page search strategy.',
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Keyword Research Services Philippines',
+      serviceType: 'SEO keyword research and keyword mapping',
+      provider: {
+        '@type': 'LocalBusiness',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/',
+        telephone: '+63-969-620-6182',
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'PH'
+        }
+      },
+      areaServed: ['Philippines', 'Australia', 'United Kingdom', 'United States'],
+      url: 'https://brightforge.com.ph/keyword-research-services/',
+      description: 'SEO keyword research, keyword mapping, competitor gap analysis and content roadmap planning for businesses that need practical search strategy.'
+    })} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
   <Hero
-    badgeIcon="fas fa-search"
-    badgeText="Keyword Research Experts"
-    title="Data-Driven Keyword Research Services"
+    badgeIcon="fas fa-map-signs"
+    badgeText="SEO Keyword Mapping"
+    title="Keyword Research Services Philippines for SEO Roadmaps That Get Used"
     breadcrumbCurrent="Keyword Research Services"
   >
     <Fragment slot="story">
-      <p>Discover what your customers actually type into Google - then use it to outrank the competition.</p>
-
-      <p>Tired of creating content that never seems to get traction? Our Philippines-based SEO strategists dig deep into search data, intent, and trends to build a keyword roadmap that guides every blog post, landing page, and ad campaign you launch.</p>
-
-      <p>Think of us as the translators between your offers and your audience's real-world questions.</p>
-
-      <p>Our <strong>keyword research services Philippines</strong> help businesses discover high-converting search terms and optimize their content strategy with <strong>professional keyword analysis</strong> solutions. From strategy to execution, we uncover the exact terms your customers use as your trusted <strong>keyword research partner</strong>, so you can rank higher and convert better.</p>
+      <p>Keyword research should not end with a spreadsheet nobody uses.</p>
+      <p>We turn search demand into a practical SEO roadmap: which pages to build, which existing pages to improve, which keywords are worth chasing and which ones should be ignored.</p>
+      <p>Our keyword research services help businesses, agencies and content teams plan SEO work around real search intent, commercial value and page-level priorities.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Request Your Keyword Map" />
-      <ButtonSecondary href="#process" text="See Our Process" />
+      <ButtonPrimary href="/contact/" text="Request a Keyword Map" />
+      <ButtonSecondary href="#deliverables" text="See What You Get" />
+    </Fragment>
+
+    <Fragment slot="stats">
+      <div class="keyword-hero-proof">
+        {proofItems.map((item) => (
+          <article>
+            <strong>{item.title}</strong>
+            <span>{item.copy}</span>
+          </article>
+        ))}
+      </div>
     </Fragment>
 
     <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="keyword-research-icon-grid">
-          <div class="keyword-research-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <div class="keyword-research-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="keyword-research-icon">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <div class="keyword-research-icon">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <div class="keyword-research-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <div class="keyword-research-icon">
-            <i class="fas fa-trophy"></i>
-          </div>
+      <div class="keyword-map-panel" aria-label="Keyword map example">
+        <div class="panel-header">
+          <span>Keyword map</span>
+          <strong>Priority view</strong>
+        </div>
+        <div class="map-row high">
+          <span>SEO services Philippines</span>
+          <strong>Service page</strong>
+        </div>
+        <div class="map-row medium">
+          <span>SEO pricing Philippines</span>
+          <strong>Guide or sales page</strong>
+        </div>
+        <div class="map-row medium">
+          <span>local SEO consultant Manila</span>
+          <strong>Local service page</strong>
+        </div>
+        <div class="map-row low">
+          <span>what is SEO</span>
+          <strong>Support content</strong>
         </div>
       </div>
     </Fragment>
   </Hero>
 
-  <!-- Why Keywords Section -->
-  <section class="why-keywords-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Why Keywords Matter</div>
-        <h2>Why Smart <span>Keyword Research</span> Matters</h2>
-        <p>The foundation of every successful SEO campaign starts with understanding your audience's search behavior.</p>
+  <section class="intro-section visible-section">
+    <div class="content-wrap split-layout">
+      <div>
+        <p class="eyebrow">Search demand into decisions</p>
+        <h2>Good keyword research tells you what to do next</h2>
+        <p>Most keyword research fails because it treats every phrase like a content idea. That creates bloated spreadsheets, duplicate pages, weak blog plans and service pages that never get the focus they need.</p>
+        <p>We use keyword research to make decisions. Some terms need a dedicated landing page. Some belong inside an existing service page. Some are FAQ opportunities. Some should be ignored because the intent is wrong or the SERP is unrealistic.</p>
+        <p>The output is a roadmap for SEO work, not just a list of words.</p>
       </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon conversations">
-            <i class="fas fa-comments"></i>
-        </div>
-          <h3>Speak Your Customer's Language</h3>
-          <p>No more jargon. We surface the phrases real people use, so your website feels like a helpful conversation - not a pitch.</p>
-          <div class="feature-metric">
-            <span class="metric-value">85%</span>
-            <span class="metric-label">Better Engagement</span>
-          </div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon trophy">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <h3>Outrank Tough Competitors</h3>
-          <p>We uncover untapped niches and long-tail gems that bigger brands overlook - giving you a fast track to page one.</p>
-          <div class="feature-metric">
-            <span class="metric-value">300%</span>
-            <span class="metric-label">More Opportunities</span>
-        </div>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon coins">
-            <i class="fas fa-coins"></i>
-          </div>
-          <h3>Maximize Marketing ROI</h3>
-          <p>Knowing keyword value up-front lets you prioritize content and ads that actually move revenue, not vanity metrics.</p>
-          <div class="feature-metric">
-            <span class="metric-value">250%</span>
-            <span class="metric-label">ROI Improvement</span>
-          </div>
-        </div>
+      <aside class="statement-card">
+        <span>Bright Forge approach</span>
+        <strong>Research only matters when it changes the page plan.</strong>
+        <p>We connect keywords to URLs, page types, content actions and measurable SEO priorities.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="deliverables" class="deliverables-section visible-section">
+    <div class="content-wrap">
+      <div class="section-heading">
+        <p class="eyebrow">What you get</p>
+        <h2>Keyword research deliverables built for implementation</h2>
+        <p>These are the pieces that turn research into page strategy, content planning and campaign direction.</p>
+      </div>
+      <div class="deliverable-grid">
+        {researchDeliverables.map((item) => (
+          <article class="deliverable-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services-section-new">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="services-layout">
-        <div class="services-content">
-          <h2>Our Keyword Research <span>Services</span></h2>
-
-          <div class="service-list">
-            <div class="service-item">
-              <h3>Strategic Keyword Discovery</h3>
-              <p>Uncover high-value keywords aligned with your business goals through comprehensive research and competitor analysis.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Search Intent Analysis</h3>
-              <p>Classify keywords by user intent (informational, navigational, commercial, transactional) to match content to searcher needs.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Competitor Keyword Gap Analysis</h3>
-              <p>Identify opportunities your competitors are ranking for that you're missing, plus untapped keywords they haven't discovered.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Long-tail Keyword Mining</h3>
-              <p>Find specific, low-competition phrases that drive qualified traffic and convert better than broad generic terms.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="services-visual">
-          <div class="visual-card">
-            <div class="visual-icon">
-              <i class="fas fa-search"></i>
-            </div>
-            <h3>Research Excellence</h3>
-            <p class="visual-stat">2000+</p>
-            <p class="visual-label">Keywords Analyzed Per Project</p>
-          </div>
-        </div>
+  <section class="mapping-section visible-section">
+    <div class="content-wrap mapping-layout">
+      <div>
+        <p class="eyebrow">Keyword mapping</p>
+        <h2>The keyword map is the commercial bit</h2>
+        <p>A keyword map shows where each search opportunity belongs. Without that step, research turns into guesswork and content teams end up creating pages that overlap, miss the intent or chase the wrong terms.</p>
+        <p>We map keywords to the structure of the site, then prioritise the work around commercial value, ranking potential and what the business can realistically implement.</p>
+        <a class="text-link" href="/on-page-seo-services-philippines/">See how this connects to on-page SEO</a>
+      </div>
+      <div class="field-panel">
+        <h3>Typical keyword map fields</h3>
+        <ul>
+          {mappingFields.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Research Types Section -->
-  <section class="research-types-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Research Types</div>
-        <h2>Comprehensive <span>Research Approach</span></h2>
-        <p>We don't just find keywords - we discover opportunities across every stage of your customer journey.</p>
+  <section class="site-types-section visible-section">
+    <div class="content-wrap">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Different sites need different maps</p>
+        <h2>We do not use the same keyword logic for every campaign</h2>
+        <p>A local service site, ecommerce catalogue and agency client campaign need different research filters. The page type matters as much as the keyword.</p>
       </div>
-
-      <div class="research-grid">
-        <div class="research-card">
-          <div class="research-icon-large">
-            <i class="fas fa-eye"></i>
-          </div>
-          <div class="research-content">
-            <h3>Awareness Stage Keywords</h3>
-            <p>Capture users in the discovery phase with informational and educational keywords that build trust and authority.</p>
-            <div class="research-examples">
-              <span class="example">"how to improve SEO"</span>
-              <span class="example">"SEO best practices"</span>
-              <span class="example">"what is technical SEO"</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="research-card">
-          <div class="research-icon-large">
-            <i class="fas fa-search"></i>
-          </div>
-          <div class="research-content">
-            <h3>Consideration Stage Keywords</h3>
-            <p>Target users comparing solutions with keywords that showcase your expertise and differentiate your services.</p>
-            <div class="research-examples">
-              <span class="example"><a href="/">"best SEO agency Philippines"</a></span>
-              <span class="example">"SEO services comparison"</span>
-              <span class="example">"local vs national SEO"</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="research-card">
-          <div class="research-icon-large">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <div class="research-content">
-            <h3>Decision Stage Keywords</h3>
-            <p>Convert ready-to-buy prospects with high-intent commercial keywords that drive qualified leads and sales.</p>
-            <div class="research-examples">
-              <span class="example"><a href="/contact/">"hire SEO consultant"</a></span>
-              <span class="example">"SEO services pricing"</span>
-              <span class="example">"professional SEO audit"</span>
-            </div>
-          </div>
-        </div>
+      <div class="type-list">
+        {siteTypes.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Our Process Section -->
-  <section id="process" class="process-section-grid">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="process-header">
-        <h2>Our 5-Step <span>Research Process</span></h2>
-        <p>A proven framework that turns raw data into a clear, actionable strategy.</p>
+  <section class="avoid-section visible-section">
+    <div class="content-wrap split-layout reverse">
+      <div class="avoid-list">
+        {avoidItems.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
       </div>
-
-      <div class="process-grid">
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <h3>Discovery & Goal Setting</h3>
-          <p>We align on your target audiences, products, and KPIs - so we only chase keywords that matter.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-seedling"></i>
-          </div>
-          <h3>Topic & Seed Expansion</h3>
-          <p>Using advanced tools and brainstorming sessions, we generate thousands of potential keywords around your core themes.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3>SERP & Intent Analysis</h3>
-          <p>We study search results to decode what users expect - blog post, product page, video - and tag each keyword accordingly.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-balance-scale"></i>
-          </div>
-          <h3>Difficulty & Opportunity Scoring</h3>
-          <p>By combining volume, competitiveness, and business fit, we surface quick wins and long-term plays.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-map"></i>
-          </div>
-          <h3>Keyword Map & Content Plan</h3>
-          <p>You receive a prioritized spreadsheet and calendar showing exactly which pages to create or optimize next.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3>Implementation Support</h3>
-          <p>We help you execute the strategy with ongoing guidance, content support, and performance tracking.</p>
-        </div>
+      <div>
+        <p class="eyebrow">What we refuse to do</p>
+        <h2>Keyword research should reduce waste, not create more of it</h2>
+        <p>Bad keyword research makes every term look like an opportunity. Senior SEO means knowing what not to do.</p>
+        <p>We filter aggressively so the roadmap focuses on pages and content that can support rankings, enquiries and long-term search visibility.</p>
       </div>
     </div>
   </section>
 
-  <!-- Tools & Technology Section -->
-  <section class="tools-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Professional Tools</div>
-        <h2>Premium <span>Research Tools</span></h2>
-        <p>We invest in the best keyword research technology to deliver accurate, actionable insights.</p>
+  <section class="process-section visible-section">
+    <div class="content-wrap">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Process</p>
+        <h2>How we turn keyword data into an SEO roadmap</h2>
       </div>
-
-      <div class="tools-grid">
-        <div class="tool-card">
-          <div class="tool-badge">Ahrefs</div>
-          <p>Comprehensive backlink and keyword database with accurate difficulty scores</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-badge">SEMrush</div>
-          <p>Advanced competitor analysis and keyword gap identification</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-badge">Google Keyword Planner</div>
-          <p>Direct search volume data from Google's advertising platform</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-badge">Answer The Public</div>
-          <p>Question-based keyword discovery for content optimization</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-badge">Keywords Everywhere</div>
-          <p>Real-time keyword metrics and trend analysis</p>
-        </div>
-        <div class="tool-card">
-          <div class="tool-badge">Google Trends</div>
-          <p>Seasonal patterns and trending topic identification</p>
-        </div>
+      <div class="process-list">
+        {processSteps.map((step) => (
+          <article>
+            <span>{step.label}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Benefits Section -->
-  <section class="benefits-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="benefits-header">
-        <h2>The Benefits of Strategic <span>Keyword Research</span></h2>
-        <p>Investing in professional keyword research delivers lasting advantages for your content and marketing efforts.</p>
+  <section class="implementation-section visible-section">
+    <div class="content-wrap split-layout">
+      <div>
+        <p class="eyebrow">After the research</p>
+        <h2>The next step is usually page work</h2>
+        <p>Keyword research is most useful when it feeds directly into implementation. That might mean rewriting a service page, building a new location page, improving internal links, creating supporting articles or fixing technical issues that block the target pages.</p>
+        <p>If you only need the research, we can hand over the roadmap. If you want execution, we can turn the plan into content, on-page improvements, technical fixes and campaign tracking.</p>
       </div>
-
-      <div class="benefits-layout">
-        <div class="benefits-visual">
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-            alt="Data analysis and keyword research visualization"
-            class="benefits-image"
-          />
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3>Higher Rankings</h3>
-            <p>Target the right keywords with proper intent matching to climb search results faster and more sustainably.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-bullseye"></i>
-            </div>
-            <h3>Better Targeting</h3>
-            <p>Reach your ideal customers with keywords that match their exact search queries and buying stage.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-dollar-sign"></i>
-            </div>
-            <h3>Lower Ad Costs</h3>
-            <p>Discover high-converting keywords with lower competition, reducing your PPC costs while increasing ROI.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Content Direction</h3>
-            <p>Know exactly what content to create next with a data-backed roadmap that aligns with user demand.</p>
-          </div>
-        </div>
+      <div class="implementation-links">
+        {connectedServices.map((service) => (
+          <a href={service.href}>
+            <strong>{service.title}</strong>
+            <span>{service.copy}</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Deliverables Section -->
-  <section class="deliverables-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">What You Get</div>
-        <h2>What's Inside Your <span>Keyword Package</span></h2>
-        <p>Every keyword research project includes comprehensive deliverables to fuel your content and marketing strategy.</p>
+  <section class="cta-band visible-section">
+    <div class="content-wrap cta-inner">
+      <div>
+        <p class="eyebrow">Start with the map</p>
+        <h2>Need a clearer SEO content plan?</h2>
+        <p>Send us the site, the market and the main services you want to grow. We will review whether keyword research, an SEO audit or page-level optimisation is the right first step.</p>
       </div>
-
-      <div class="feature-list">
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-file-excel"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Master Spreadsheet</h3>
-            <p>All keywords with volume, difficulty, intent, and priority flags organized for easy implementation.</p>
-            <div class="feature-benefit"><i class="fas fa-chart-bar" style="color:#f0622a"></i> 2000+ keywords analyzed</div>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <div class="feature-content">
-            <h3>90-Day Content Calendar</h3>
-            <p>Blog topics, landing pages, and FAQs mapped to business goals with publishing schedule recommendations.</p>
-            <div class="feature-benefit">📅 12 weeks of content</div>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Quick-Win Targets</h3>
-            <p>A shortlist of low-competition phrases you can rank for in weeks, not months, with implementation guidance.</p>
-            <div class="feature-benefit"><i class="fas fa-bolt" style="color:#f0622a"></i> 30-day ranking potential</div>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-ban"></i>
-          </div>
-          <div class="feature-content">
-            <h3>PPC Negatives List</h3>
-            <p>Save ad spend by excluding irrelevant queries from your campaigns with our curated negative keyword list.</p>
-            <div class="feature-benefit"><i class="fas fa-coins" style="color:#f0622a"></i> 20% cost savings</div>
-          </div>
-        </div>
-      </div>
+      <ButtonPrimary href="/contact/" text="Request a Keyword Map" />
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="section-header text-center">
-        <div class="section-badge">FAQ</div>
-        <h2>Your Questions, <span>Answered</span></h2>
-        <p>Everything you need to know about our keyword research process and deliverables.</p>
+  <section class="faq-section visible-section">
+    <div class="content-wrap narrow">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Keyword research questions, answered properly</h2>
       </div>
-      
       <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Which tools do you use for keyword research?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">We combine data from Ahrefs, SEMrush, Google Keyword Planner, Answer The Public, and firsthand SERP analysis to cross-validate every recommendation. This multi-tool approach ensures accuracy and uncovers opportunities single-tool research might miss.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How long does the research take?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Most projects take 5-7 business days, but timelines vary based on site size, target markets, and research depth. E-commerce sites with large product catalogs may take up to 10 days, while service-based businesses typically complete faster.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you cover multiple languages and regions?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Yes. Our team has experience researching English, Tagalog, and Spanish keywords for Philippine, US, and APAC markets. We can adapt to other languages and regions upon request, with native speaker consultation when needed.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Will you help implement the findings?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">Absolutely. We offer add-on content creation, on-page optimization, and SEO implementation services. We can also provide training sessions for your in-house team to ensure proper execution of the keyword strategy.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How do you determine keyword difficulty and opportunity?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">We analyze multiple factors including search volume, competition strength, SERP features, and your website's current authority. Our proprietary scoring system weighs these factors against your business goals to identify the best opportunities for quick wins and long-term growth.</div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What's included in the content calendar?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">The 90-day calendar includes blog post topics, landing page recommendations, FAQ suggestions, and social media content ideas. Each item includes target keywords, search intent, estimated traffic potential, and publishing priority recommendations.</div>
-        </div>
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Contact CTA -->
   <ContactSection id="contact" />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/********************
-  CSS Variables & Reset
-*********************/
-:root {
-  --brand-accent: #f0622a;
-  --brand-blue: #4285F4; /* legacy */
-  --brand-dark: #e8eaf2;
-  --brand-soft: #7a7f99;
-  --brand-light: #0d0f1a;
-  --gradient-primary: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-  --gradient-secondary: linear-gradient(135deg, #d4510e 0%, #f0622a 100%);
-  --gradient-accent: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: var(--brand-text, #e8eaf2);
-  overflow-x: hidden;
-}
-
-/* Page centering fix */
-.container,
-.max-w-7xl,
-.max-w-4xl {
-  max-width: 80rem;
-  width: 100%;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.max-w-4xl {
-  max-width: 56rem;
-}
-
-@media (min-width: 640px) {
-  .container,
-  .max-w-7xl,
-  .max-w-4xl {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container,
-  .max-w-7xl,
-  .max-w-4xl {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/********************
-  Section Styling
-*********************/
-section {
-  padding: 5rem 0;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.section-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-  border: 1px solid rgba(240, 98, 42, 0.15);
-  color: #f0622a;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-
-.section-header h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.section-header span {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-header p {
-  font-size: 1.2rem;
-  color: #ffffff;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/********************
-  Hero Visual Styles (Page-specific icon grid)
-*********************/
-.hero-image-container {
-  position: relative;
-}
-
-.keyword-research-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.keyword-research-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.keyword-research-icon:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* FontAwesome Icon Fixes */
-.keyword-research-icon i {
-  font-family: "Font Awesome 5 Free" !important;
-  font-weight: 900 !important;
-  font-style: normal !important;
-  font-variant: normal !important;
-  text-rendering: auto !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  display: inline-block !important;
-  color: white !important;
-  font-size: 1.5rem !important;
-}
-
-/********************
-  Why Keywords Section
-*********************/
-.why-keywords-section {
-  background: #131627;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.feature-card {
-  background: #131627;
-  border-radius: 16px;
-  padding: 2.5rem;
-  text-align: center;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-accent);
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-medium);
-}
-
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-  position: relative;
-}
-
-.feature-icon.conversations {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.feature-icon.trophy {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.feature-icon.coins {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--brand-text, #e8eaf2);
-}
-
-.feature-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.feature-metric {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--brand-light);
-  padding: 12px 20px;
-  border-radius: 50px;
-  margin-top: 1rem;
-}
-
-.metric-value {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--brand-accent);
-}
-
-.metric-label {
-  font-size: 0.9rem;
-  color: #ffffff;
-}
-
-/********************
-  Services Section - 2 Column Layout
-*********************/
-.services-section-new {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.services-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.services-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 2.5rem;
-  line-height: 1.2;
-}
-
-.services-content h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.service-item {
-  background: #0d0f1a;
-  border-left: 4px solid #f0622a;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.service-item:hover {
-  background: #1a1e32;
-  transform: translateX(5px);
-}
-
-.service-item h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.service-item p {
-  font-size: 0.95rem;
-  color: #ffffff;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.services-visual {
-  position: sticky;
-  top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-}
-
-.visual-card {
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.05), rgba(255, 107, 53, 0.05));
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(240, 98, 42, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.visual-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.visual-stat {
-  font-size: 4rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 1rem 0 0.5rem;
-  line-height: 1;
-}
-
-.visual-label {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .services-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  :global(html) {
+    scroll-behavior: smooth;
   }
 
-  .services-visual {
-    position: static;
-  }
-}
-
-/********************
-  Research Types Section
-*********************/
-.research-types-section {
-  background: #0d0f1a;
-}
-
-.research-grid {
-  display: grid;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.research-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: center;
-  background: #131627;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
-}
-
-.research-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
-}
-
-.research-icon-large {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background: var(--gradient-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-}
-
-.research-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--brand-text, #e8eaf2);
-}
-
-.research-content p {
-  color: #ffffff;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.research-examples {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.example {
-  background: var(--brand-light);
-  color: var(--brand-accent);
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-/********************
-  Process Section - 3x2 Grid
-*********************/
-.process-section-grid {
-  padding: 5rem 0;
-  background: #0d0f1a;
-}
-
-.process-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.process-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.process-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-
-.process-box {
-  padding: 3rem 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.process-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.process-box.orange-bg {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.process-box.orange-bg h3,
-.process-box.orange-bg p {
-  color: white;
-}
-
-.process-box.white-bg {
-  background: #131627;
-}
-
-.process-box.white-bg h3 {
-  color: #ffffff;
-}
-
-.process-box.white-bg p {
-  color: #ffffff;
-}
-
-.process-box-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  transition: all 0.3s ease;
-}
-
-.process-box.orange-bg .process-box-icon {
-  color: white;
-}
-
-.process-box.white-bg .process-box-icon {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-box:hover .process-box-icon {
-  transform: scale(1.1);
-}
-
-.process-box h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.process-box p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/********************
-  Benefits Section
-*********************/
-.benefits-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.benefits-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.benefits-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.benefits-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.benefits-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.benefits-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.benefits-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.benefits-image {
-  width: 100%;
-  max-width: 400px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.benefit-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem;
-  color: white;
-  font-size: 1.75rem;
-}
-
-.benefit-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-}
-
-.benefit-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 1024px) {
-  .benefits-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  :global(body) {
+    background: #0d0f1a;
+    color: #e8eaf2;
   }
 
-  .benefits-image {
-    height: 400px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/********************
-  Tools Section
-*********************/
-.tools-section {
-  background: #0d0f1a;
-  padding: 5rem 0;
-}
-
-.tools-section .section-header h2 {
-  color: #ffffff !important;
-}
-
-.tools-section .section-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: transparent !important;
-}
-
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.tool-card {
-  position: relative;
-  background: #131627;
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.07);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.tool-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.tool-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(240, 98, 42, 0.15);
-  border-color: #f0622a;
-}
-
-.tool-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  padding: 0.625rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(240, 98, 42, 0.25);
-  transition: all 0.3s ease;
-}
-
-.tool-card:hover .tool-badge {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(240, 98, 42, 0.35);
-}
-
-.tool-card p {
-  color: #ffffff;
-  line-height: 1.7;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .tools-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .tools-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/********************
-  Deliverables Section
-*********************/
-.deliverables-section {
-  background: #131627;
-  padding: 5rem 0;
-}
-
-.feature-list {
-  display: grid;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.feature-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: start;
-  background: #131627;
-  padding: 2.5rem;
-  border-radius: 20px;
-  border: 2px solid #f0f0f0;
-  transition: all 0.4s ease;
-  overflow: hidden;
-}
-
-.feature-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.feature-item:hover::before {
-  opacity: 1;
-}
-
-.feature-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(240, 98, 42, 0.15);
-  border-color: rgba(240, 98, 42, 0.3);
-}
-
-.feature-icon-large {
-  width: 90px;
-  height: 90px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.25rem;
-  color: white;
-  flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(240, 98, 42, 0.25);
-  transition: all 0.4s ease;
-}
-
-.feature-item:hover .feature-icon-large {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 12px 30px rgba(240, 98, 42, 0.35);
-}
-
-.feature-content {
-  padding-top: 0.5rem;
-}
-
-.feature-content h3 {
-  font-size: 1.625rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-  line-height: 1.3;
-}
-
-.feature-content p {
-  color: #ffffff;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.feature-benefit {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(255, 107, 53, 0.1));
-  color: #f0622a;
-  padding: 0.625rem 1.25rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: 1px solid rgba(240, 98, 42, 0.2);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover .feature-benefit {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  border-color: transparent;
-  transform: translateX(5px);
-}
-
-@media (max-width: 768px) {
-  .feature-item {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 2rem;
-    text-align: center;
+  .visible-section,
+  .intro-section,
+  .deliverables-section,
+  .mapping-section,
+  .site-types-section,
+  .avoid-section,
+  .process-section,
+  .implementation-section,
+  .cta-band,
+  .faq-section {
+    content-visibility: visible !important;
+    contain-intrinsic-size: auto !important;
+    padding: 5.5rem 0;
+    background: #0d0f1a;
+    color: #e8eaf2;
   }
 
-  .feature-icon-large {
+  .deliverables-section,
+  .site-types-section,
+  .implementation-section,
+  .faq-section {
+    background: #131627;
+  }
+
+  .content-wrap {
+    width: min(1120px, calc(100% - 2rem));
     margin: 0 auto;
   }
 
-  .feature-content {
-    padding-top: 0;
-  }
-}
-
-/********************
-  FAQ Section
-*********************/
-.faq-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.faq-question {
-  width: 100%;
-  background: transparent;
-  border: none;
-  text-align: left;
-  padding: 1.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  color: #e8eaf2;
-}
-
-.faq-question:hover {
-  background: #0d0f1a;
-}
-
-.faq-question i {
-  color: #d0d4e8;
-  transition: transform 0.3s ease;
-}
-
-.faq-answer {
-  display: none;
-  padding: 0 1.5rem 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding-top: 1rem;
-  color: #d0d4e8;
-  line-height: 1.6;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-.faq-item.active .faq-question i {
-  transform: rotate(180deg);
-}
-
-/********************
-  Responsive Design
-*********************/
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 0;
+  .content-wrap.narrow,
+  .section-heading.narrow {
+    max-width: 860px;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
+  .split-layout,
+  .mapping-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 3rem;
+    align-items: center;
   }
 
-  .research-grid {
-    grid-template-columns: 1fr;
+  .split-layout.reverse {
+    grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
   }
 
-  /* Page-specific icon grid responsive */
-  .keyword-research-icon-grid {
+  .eyebrow {
+    color: #f0622a;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin: 0 0 0.9rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.15rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.2rem;
+  }
+
+  h3 {
+    color: #fff;
+    font-size: 1.12rem;
+    line-height: 1.25;
+    margin: 0 0 0.65rem;
+  }
+
+  p {
+    color: #c9cedd;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin: 0 0 1rem;
+  }
+
+  .keyword-hero-proof {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+  }
+
+  .keyword-hero-proof article {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 18px;
+    padding: 1rem;
+  }
+
+  .keyword-hero-proof strong,
+  .keyword-hero-proof span {
+    display: block;
+  }
+
+  .keyword-hero-proof strong {
+    color: #fff;
+    font-size: 0.92rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .keyword-hero-proof span {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .keyword-map-panel {
+    background: linear-gradient(145deg, rgba(19, 22, 39, 0.96), rgba(13, 15, 26, 0.96));
+    border: 1px solid rgba(240, 98, 42, 0.28);
+    border-radius: 26px;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+    padding: 1.4rem;
+    width: min(100%, 460px);
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .panel-header span {
+    color: #f0622a;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.76rem;
+  }
+
+  .map-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-left: 4px solid #f0622a;
+    border-radius: 16px;
+    color: #fff;
+    margin-top: 0.75rem;
+    padding: 0.95rem;
+  }
+
+  .map-row strong {
+    background: rgba(240, 98, 42, 0.15);
+    border-radius: 999px;
+    color: #ffb18e;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .map-row.medium {
+    border-left-color: #f59e0b;
+  }
+
+  .map-row.low {
+    border-left-color: #64748b;
+  }
+
+  .statement-card,
+  .field-panel {
+    background: linear-gradient(145deg, rgba(240, 98, 42, 0.13), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(240, 98, 42, 0.24);
+    border-radius: 26px;
+    padding: 2rem;
+  }
+
+  .statement-card span {
+    color: #f0622a;
+    display: block;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .statement-card strong {
+    color: #fff;
+    display: block;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 1.12;
+    margin-bottom: 1rem;
+  }
+
+  .section-heading {
+    margin: 0 auto 3rem;
+    max-width: 860px;
+    text-align: center;
+  }
+
+  .section-heading p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 680px;
+  }
+
+  .deliverable-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
   }
 
-  .keyword-research-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.2rem;
+  .deliverable-card,
+  .type-list article,
+  .avoid-list article {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    padding: 1.5rem;
   }
 
-  .keyword-research-icon i {
-    font-size: 1.2rem !important;
+  .deliverable-card p,
+  .type-list p,
+  .avoid-list p {
+    font-size: 0.96rem;
+    margin-bottom: 0;
   }
-}
 
-/********************
-  Animations
-*********************/
-@media (prefers-reduced-motion: no-preference) {
-  .feature-card,
-  .research-card,
-  .feature-item {
-    animation: fadeInUp 0.6s ease-out;
+  .field-panel ul {
+    display: grid;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
   }
-  
-  .feature-card:nth-child(2) { animation-delay: 0.1s; }
-  .feature-card:nth-child(3) { animation-delay: 0.2s; }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
+
+  .field-panel li {
+    color: #dfe3ee;
+    padding-left: 1.4rem;
+    position: relative;
+  }
+
+  .field-panel li::before {
+    color: #f0622a;
+    content: '•';
+    font-weight: 900;
+    left: 0;
+    position: absolute;
+  }
+
+  .text-link {
+    color: #ff9a6e;
+    display: inline-flex;
+    font-weight: 800;
+    margin-top: 0.5rem;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: #fff;
+  }
+
+  .type-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .avoid-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .process-list {
+    display: grid;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .process-list article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    padding: 1.35rem;
+  }
+
+  .process-list span {
+    align-items: center;
+    background: #f0622a;
+    border-radius: 999px;
+    color: #fff;
+    display: inline-flex;
+    font-weight: 900;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+  }
+
+  .process-list p {
+    margin-bottom: 0;
+  }
+
+  .implementation-links {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .implementation-links a {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .implementation-links a:hover {
+    border-color: rgba(240, 98, 42, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .implementation-links strong,
+  .implementation-links span {
+    display: block;
+  }
+
+  .implementation-links strong {
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  .implementation-links span {
+    color: #c9cedd;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .cta-band {
+    background: linear-gradient(135deg, #f0622a, #d4510e);
+  }
+
+  .cta-inner {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  .cta-band .eyebrow,
+  .cta-band p,
+  .cta-band h2 {
+    color: #fff;
+  }
+
+  .cta-band p {
+    max-width: 700px;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    color: #fff;
+    cursor: pointer;
+    font-weight: 800;
+    list-style: none;
+    padding: 1.2rem 1.35rem;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0;
+    padding: 1.2rem 1.35rem;
+  }
+
+  @media (max-width: 980px) {
+    .split-layout,
+    .split-layout.reverse,
+    .mapping-layout {
+      grid-template-columns: 1fr;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    .keyword-hero-proof,
+    .deliverable-grid,
+    .type-list {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
     }
   }
-}
+
+  @media (max-width: 640px) {
+    .visible-section,
+    .intro-section,
+    .deliverables-section,
+    .mapping-section,
+    .site-types-section,
+    .avoid-section,
+    .process-section,
+    .implementation-section,
+    .cta-band,
+    .faq-section {
+      padding: 4rem 0;
+    }
+
+    .keyword-hero-proof,
+    .deliverable-grid,
+    .type-list {
+      grid-template-columns: 1fr;
+    }
+
+    .map-row {
+      grid-template-columns: 1fr;
+    }
+
+    .map-row strong {
+      width: fit-content;
+    }
+  }
 </style>
-
-<script>
-// FAQ toggle functionality
-window.toggleFAQ = function(button) {
-  const item = button.parentElement;
-  const isActive = item.classList.contains('active');
-  
-  // Close all other FAQ items
-  document.querySelectorAll('.faq-item').forEach(faq => {
-    faq.classList.remove('active');
-  });
-  
-  // Toggle current item
-  if (!isActive) {
-    item.classList.add('active');
-  }
-}
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// Intersection Observer for animation triggers
-if ('IntersectionObserver' in window) {
-  const animateOnScroll = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  });
-
-  // Observe all animatable elements
-  document.querySelectorAll('.feature-card, .research-card, .feature-item').forEach(el => {
-    el.style.animationPlayState = 'paused';
-    animateOnScroll.observe(el);
-  });
-}
-</script>
