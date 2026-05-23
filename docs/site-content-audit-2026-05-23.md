@@ -4,7 +4,7 @@ Date: 2026-05-23
 
 ## Executive summary
 
-The site has a strong base: 68 built pages, a clear SEO-first service architecture, good internal coverage across technical SEO, content SEO, local SEO, AI search readiness, migrations, audits and white label fulfilment. The main issue is not missing pages. It is uneven quality between newer strategic pages and older template-led service pages.
+The site has a strong base: 78 built pages, a clear SEO-first service architecture, good internal coverage across technical SEO, content SEO, local SEO, AI search readiness, migrations, audits, white label fulfilment, industry pages, development pages and case studies. The main issue is no longer missing pages. It is keeping the newer strategic page standard consistent across remaining legacy service and trust pages.
 
 Highest priority fixes completed in this pass:
 
@@ -13,6 +13,9 @@ Highest priority fixes completed in this pass:
 - Fixed the only broken internal service link: the SEO services hub pointed to a non-existent answer-engine URL instead of the live AI Search Optimization page.
 - Strengthened the SEO services hub with clearer commercial copy, a visible FAQ section and FAQ schema.
 - Reduced generic sales phrasing on the SEO services hub.
+- Reworked the core case studies into stronger commercial narratives with measured-result framing and FAQ schema.
+- Reworked the industry pages around buyer intent, sector-specific search behaviour and practical SEO mechanisms.
+- Reworked the development pages around SEO-first build quality, migration risk, rendering, performance and maintainability.
 
 ## Site-wide findings
 
@@ -57,11 +60,9 @@ Next recommendation:
 
 ### 4. Older service pages still feel templated
 
-Pages needing a second-stage rewrite because they still use generic agency language or older SEO copy patterns:
+Pages already improved during this audit programme:
 
-- `/on-page-seo-services-philippines/`
 - `/technical-seo-services-philippines/`
-- `/backlink-seo-services-philippines/`
 - `/local-seo-services-philippines/`
 - `/content-seo-services-philippines/`
 - `/gaming-seo-services/`
@@ -70,6 +71,13 @@ Pages needing a second-stage rewrite because they still use generic agency langu
 - `/football-soccer-seo-services/`
 - `/finance-crypto-seo-services/`
 - `/pet-seo-services/`
+
+Pages still worth a final second-stage review because they may retain older service-page patterns or deserve a conversion pass:
+
+- `/on-page-seo-services-philippines/`
+- `/backlink-seo-services-philippines/`
+- `/white-label-seo-services-philippines/`
+- `/ai-search-optimization-services-philippines/`
 
 Common patterns to remove:
 
@@ -95,7 +103,7 @@ Example direction:
 
 ### 5. Case studies need stronger commercial stories
 
-Case study pages are not technically thin after rendering, but many still read like templated cards. They need better narrative shape:
+Case study pages now follow a stronger narrative shape:
 
 - Starting problem
 - Constraints
@@ -104,7 +112,7 @@ Case study pages are not technically thin after rendering, but many still read l
 - Commercial meaning
 - Lessons for similar businesses
 
-Priority pages for improvement:
+Completed case study improvements:
 
 - `/case-studies/boiler-heating-spares-seo/`
 - `/case-studies/pest-control-core-update-seo/`
@@ -138,7 +146,7 @@ Completed improvements:
 
 ### 8. Internal linking opportunities
 
-Add contextual links from service pages to:
+Continue adding contextual links from remaining legacy/service-support pages to:
 
 - SEO audit page
 - AI search readiness page
@@ -150,20 +158,27 @@ Add contextual links from service pages to:
 
 ### Sprint 1: flagship service quality
 
-- Rewrite `/seo-services-philippines/` into a true hub page with proof strip and service-path navigation.
-- Rewrite `/technical-seo-services-philippines/` with diagnostics, crawl/indexation, CWV, JS rendering, schema and migration risk.
-- Rewrite `/on-page-seo-services-philippines/` with page-level relevance, intent matching, internal links and conversion copy.
+- Completed: `/seo-services-philippines/` hub improvements.
+- Completed: `/technical-seo-services-philippines/` improvements.
+- Remaining: audit and improve `/on-page-seo-services-philippines/` with page-level relevance, intent matching, internal links and conversion copy.
+- Remaining: audit and improve `/backlink-seo-services-philippines/` with authority quality, risk control, relevance and proof-led link acquisition positioning.
 
 ### Sprint 2: trust and conversion
 
-- Improve case study narrative templates.
+- Completed: improve case study narrative templates.
 - Add CRO language to service pages without diluting SEO targeting.
 
 ### Sprint 3: industry pages
 
-- Rewrite industry pages around buyer intent and sector-specific search behaviour.
-- Add industry-specific FAQs.
-- Add internal links to the most relevant core service pages.
+- Completed: rewrite industry pages around buyer intent and sector-specific search behaviour.
+- Completed: add industry-specific FAQs.
+- Completed: add internal links to the most relevant core service pages.
+
+### Sprint 4: site trust and housekeeping
+
+- Review the About page for remaining first-person language and trust proof gaps.
+- Revisit white label and AI search pages for a final conversion pass.
+- Add a short proof strip to the SEO services hub linking to the strongest relevant case studies.
 
 ## Implementation rules going forward
 
