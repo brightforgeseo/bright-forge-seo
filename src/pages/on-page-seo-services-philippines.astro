@@ -6,790 +6,852 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const proofItems = [
+  {
+    title: 'Intent before edits',
+    copy: 'We check what the page needs to satisfy: the search result, the buyer, the offer and the next step. Then we decide what should change.'
+  },
+  {
+    title: 'SEO and CRO together',
+    copy: 'Titles, headings and internal links matter, but so do proof, page flow, FAQs, clarity and the action you want the visitor to take.'
+  },
+  {
+    title: 'Priority pages first',
+    copy: 'We do not optimise pages at random. We focus on service pages, local pages, category pages and landing pages that can affect rankings and enquiries.'
+  }
+];
+
+const optimisationAreas = [
+  {
+    title: 'Search intent alignment',
+    copy: 'We check whether the page matches the reason someone searched, whether the angle fits the SERP and whether the offer answers the buyer quickly enough.'
+  },
+  {
+    title: 'Title tags and meta descriptions',
+    copy: 'We write titles and descriptions that support relevance, click-through and commercial clarity without stuffing the same keyword into every line.'
+  },
+  {
+    title: 'H1 and heading structure',
+    copy: 'We make the page easier to scan, easier to understand and easier for search engines to map around the main topic and supporting questions.'
+  },
+  {
+    title: 'Service and offer copy',
+    copy: 'We strengthen weak page copy with clearer inclusions, buyer-fit language, proof points, objections, process details and practical next steps.'
+  },
+  {
+    title: 'Internal links and anchors',
+    copy: 'We connect related service pages, supporting articles and priority URLs so authority and relevance flow to the pages that need to rank.'
+  },
+  {
+    title: 'FAQs and answer blocks',
+    copy: 'We add useful question-led content that handles objections, supports long-tail searches and gives AI answers clearer source material to extract.'
+  },
+  {
+    title: 'Schema recommendations',
+    copy: 'We review whether page-level schema supports the visible content, including FAQ, Service, Breadcrumb and WebPage markup where appropriate.'
+  },
+  {
+    title: 'Proof and conversion signals',
+    copy: 'We improve how the page uses trust signals, examples, case-study links, CTA placement and contact prompts so rankings have a better chance of becoming leads.'
+  }
+];
+
+const pageTypes = [
+  {
+    title: 'Service pages',
+    copy: 'For pages that need to explain a high-value offer, rank for commercial intent and convert visitors into enquiries.'
+  },
+  {
+    title: 'Local landing pages',
+    copy: 'For location or service-area pages where local relevance, proof, contact clarity and internal links need to work together.'
+  },
+  {
+    title: 'Category and ecommerce pages',
+    copy: 'For collection pages where crawlability, indexable copy, product discovery, filters and commercial copy affect organic sales.'
+  },
+  {
+    title: 'Blog and support assets',
+    copy: 'For articles that already earn impressions but need better structure, stronger answers, fresher information or clearer internal links.'
+  }
+];
+
+const prioritySignals = [
+  'Pages with impressions but poor click-through from Search Console',
+  'Pages ranking on page two or lower page one for useful commercial terms',
+  'Service pages that get visits but do not generate enough enquiries',
+  'Pages competing with stronger internal pages or unclear keyword mapping',
+  'Important pages with weak headings, thin copy, poor proof or vague CTAs',
+  'Pages that should support AI search answers but lack clear extractable detail',
+  'Pages with weak internal links from related service, blog or location content',
+  'Pages where a small improvement could support a larger SEO campaign goal'
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Page audit and baseline',
+    copy: 'We review rankings, Search Console data, current copy, metadata, headings, internal links, schema, conversion path and competitor page patterns.'
+  },
+  {
+    label: '02',
+    title: 'Intent and page mapping',
+    copy: 'We confirm the primary intent, supporting topics, related pages and role of the page in the wider SEO campaign before rewriting anything.'
+  },
+  {
+    label: '03',
+    title: 'Structure and copy improvements',
+    copy: 'We improve titles, headings, body copy, FAQs, proof, calls to action and page flow so the page is clearer for both search engines and buyers.'
+  },
+  {
+    label: '04',
+    title: 'Internal links and technical checks',
+    copy: 'We add or refine contextual internal links, check indexability signals, review schema fit and make sure the page supports the wider site structure.'
+  },
+  {
+    label: '05',
+    title: 'QA and measurement',
+    copy: 'We check the page after implementation, then watch rankings, impressions, clicks, CTR, enquiries and behaviour signals to decide the next improvement.'
+  }
+];
+
+const avoidItems = [
+  {
+    title: 'No keyword stuffing',
+    copy: 'Repeating a phrase until the page reads badly is not strategy. Relevance should come from structure, coverage, entities and useful answers.'
+  },
+  {
+    title: 'No metadata-only SEO',
+    copy: 'Changing title tags and meta descriptions can help, but it is not enough when the actual page fails to explain the offer or earn trust.'
+  },
+  {
+    title: 'No thin AI padding',
+    copy: 'Adding generic paragraphs just to increase word count makes the page weaker. Extra copy has to answer a real buyer or search-intent need.'
+  },
+  {
+    title: 'No pointless FAQ spam',
+    copy: 'FAQs should handle real objections and long-tail questions. They should not exist only to stuff schema or create fake depth.'
+  }
+];
+
+const measurementItems = [
+  'Keyword movement for the mapped primary and secondary queries',
+  'Search Console impressions, clicks and click-through rate',
+  'Organic landing page sessions and engagement quality',
+  'Enquiries, form submissions, call clicks and tracked conversion actions',
+  'Internal link flow to and from related priority pages',
+  'Changes in SERP appearance, snippets and AI-search extractability signals'
+];
+
+const connectedServices = [
+  {
+    title: 'SEO services Philippines',
+    href: '/seo-services-philippines/',
+    copy: 'For the wider campaign that connects on-page work with technical SEO, content, authority and reporting.'
+  },
+  {
+    title: 'SEO content writing services',
+    href: '/content-seo-services-philippines/',
+    copy: 'For new or rewritten page copy, content briefs, article strategy and stronger search-led content assets.'
+  },
+  {
+    title: 'Technical SEO services',
+    href: '/technical-seo-services-philippines/',
+    copy: 'For crawl, indexation, site speed, schema, rendering and architecture issues that affect page performance.'
+  },
+  {
+    title: 'Keyword research services',
+    href: '/keyword-research-services/',
+    copy: 'For mapping the right search intent to the right page before content or optimisation work starts.'
+  },
+  {
+    title: 'SEO audit services',
+    href: '/seo-audit-services/',
+    copy: 'For a deeper diagnosis when rankings, traffic or conversions are underperforming and the cause is unclear.'
+  },
+  {
+    title: 'Link building services',
+    href: '/backlink-seo-services-philippines/',
+    copy: 'For authority growth once the target pages are strong enough to deserve and benefit from more links.'
+  }
+];
+
+const faqs = [
+  { question: 'What is included in on-page SEO?', answer: 'On-page SEO usually includes search intent checks, title tags, meta descriptions, H1s, heading structure, body copy, internal links, image alt text, schema recommendations, FAQs, proof placement and conversion-focused calls to action.' },
+  { question: 'Is on-page SEO just keyword placement?', answer: 'No. Keyword placement is only one part of it. Good on-page SEO makes the page clearer, more useful, better structured, easier to understand and more persuasive for the visitor.' },
+  { question: 'Can you improve existing pages instead of writing new ones?', answer: 'Yes. In many SEO campaigns, improving existing money pages is more valuable than publishing more blogs. We look for pages that already have impressions, rankings or commercial value, then improve the parts holding them back.' },
+  { question: 'How does on-page SEO help conversions?', answer: 'Better page structure, clearer copy, stronger proof, useful FAQs, internal links and better CTAs help visitors understand the offer faster. That gives organic traffic a better chance of turning into leads.' },
+  { question: 'How do you choose which pages to optimise first?', answer: 'We prioritise pages by search demand, current rankings, impressions, traffic, commercial value, conversion potential, internal-link importance and how much upside the page has compared with competing pages.' },
+  { question: 'Will you rewrite all the copy on a page?', answer: 'Only if the page needs it. Some pages need a full rewrite. Others need a better title, stronger intro, clearer sections, improved FAQs, better internal links or more proof around the existing offer.' },
+  { question: 'How long does on-page SEO take to work?', answer: 'Some metadata and internal-link changes can show movement within weeks. Larger page rewrites usually need time for crawling, ranking adjustment and enough conversion data to judge properly. Competitive pages often need continued refinement.' },
+  { question: 'Does on-page SEO help AI search visibility?', answer: 'Yes, when it makes the page clearer and more extractable. AI answers rely on well-structured, trustworthy source material, so clear service definitions, FAQs, schema, proof and entity clarity all help.' }
+];
 ---
 
 <MainLayout
-  title="On-Page SEO Services In The Philippines - Bright Forge SEO"
-  description="On-page SEO services in the Philippines for search intent, metadata, internal links, page structure, content depth and conversion-focused landing page improvements."
-  faqs={[
-    { question: "What is included in on-page SEO?", answer: "On-page SEO usually covers search intent, page titles, meta descriptions, headings, copy structure, internal links, image alt text, schema, content depth and conversion messaging. We treat the page as both a ranking asset and a sales asset." },
-    { question: "Is on-page SEO just keyword placement?", answer: "No. Keyword placement matters, but modern on-page SEO is more about matching intent, answering the buyer's real questions, making the page easy to understand and giving search engines clear topic signals." },
-    { question: "Can you improve existing pages instead of writing new ones?", answer: "Yes. Many campaigns need better money pages before they need more blog posts. We improve existing service pages, category pages, local pages and landing pages where there is already search demand or traffic potential." },
-    { question: "How does on-page SEO help conversions?", answer: "Clearer page structure, better CTAs, stronger proof, sharper FAQs and stronger internal links help visitors understand the offer faster. That means SEO traffic has a better chance of becoming a lead." }
-  ]}
+  title="On-Page SEO Services Philippines | Pages That Rank & Convert"
+  description="On-page SEO services in the Philippines for search intent, metadata, headings, internal links, content depth, proof and conversion-focused page improvements."
+  keywords="on-page SEO services Philippines, on-page SEO services, on-page optimization services, website SEO optimization, internal linking services"
+  faqs={faqs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'On-Page SEO Services Philippines',
+          item: 'https://brightforge.com.ph/on-page-seo-services-philippines/'
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'On-Page SEO Services Philippines',
+      url: 'https://brightforge.com.ph/on-page-seo-services-philippines/',
+      inLanguage: 'en',
+      description: 'On-page SEO services for improving search intent alignment, page structure, internal links, content depth, trust signals and conversion paths.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: optimisationAreas.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          description: item.copy
+        }))
+      }
+    })} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
   <Hero
     badgeIcon="fas fa-edit"
     badgeText="On-Page SEO Specialists"
-    title="On-Page SEO Services In The Philippines"
+    title="On-Page SEO Services Philippines for <span>Pages That Rank and Convert</span>"
     breadcrumbCurrent="On-Page SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>Search intent, page structure and conversion copy should work together. If a service page has the right keywords but vague copy, weak internal links or no clear next step, it can rank without producing enough enquiries.</p>
-      <p>We improve the pages that need to earn money: titles, metadata, headings, FAQs, internal links, content depth, trust signals and calls to action. The aim is simple: make the page easier for Google to understand and easier for buyers to act on.</p>
+      <p>Some pages do not need another blog supporting them. They need better structure, clearer intent, stronger proof, cleaner internal links and a reason for the visitor to act.</p>
+      <p>Bright Forge provides on-page SEO services in the Philippines for businesses that need their service pages, local pages, category pages and landing pages to become clearer for Google and more convincing for buyers.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Optimize Your Pages" />
-      <ButtonSecondary href="#services" text="View Our Services" />
+      <ButtonPrimary href="/contact/" text="Get a Page SEO Audit" />
+      <ButtonSecondary href="#optimise" text="See What We Optimise" />
     </Fragment>
 
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="onpage-icon-grid">
-          <div class="onpage-icon"><i class="fas fa-heading"></i></div>
-          <div class="onpage-icon"><i class="fas fa-align-left"></i></div>
-          <div class="onpage-icon"><i class="fas fa-image"></i></div>
-          <div class="onpage-icon"><i class="fas fa-link"></i></div>
-          <div class="onpage-icon"><i class="fas fa-search"></i></div>
-          <div class="onpage-icon"><i class="fas fa-chart-line"></i></div>
-        </div>
+    <Fragment slot="stats">
+      <div class="onpage-hero-stats">
+        <div class="stat"><strong>Clarify</strong><span>Intent, titles, headings, copy and page purpose.</span></div>
+        <div class="stat"><strong>Connect</strong><span>Internal links, related services and supporting content.</span></div>
+        <div class="stat"><strong>Convert</strong><span>Proof, FAQs, CTAs and enquiry paths.</span></div>
       </div>
     </Fragment>
   </Hero>
 
-  <!-- Core Services Section -->
-  <section id="services" class="services-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="services-layout">
-        <div class="services-content">
-          <h2>Our On-Page SEO <span>Services</span></h2>
-
-          <div class="service-list">
-            <div class="service-item">
-              <h3>Title & Meta Optimization</h3>
-              <p>Search-led page titles, sharper meta descriptions and heading structures that match buyer intent while keeping the page readable and commercially useful.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Content Enhancement</h3>
-              <p>Better page copy, stronger answers, improved readability, useful supporting sections and content gaps mapped to what buyers actually search before they enquire.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Media Optimization</h3>
-              <p>Complete image alt text optimization, schema markup implementation, video SEO optimization, and strategic multimedia content planning.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Internal Linking</h3>
-              <p>Strategic link placement with optimized anchor text, content siloing, navigation enhancement, and smart link equity distribution across your site.</p>
-            </div>
-          </div>
+  <section class="intro-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <span class="eyebrow">Why on-page SEO matters</span>
+          <h2>A page can rank and still fail commercially</h2>
+          <p>Ranking is only one job. A commercial page also has to explain the offer, match the searcher’s intent, show enough trust, answer objections and give the visitor a clear next step.</p>
+          <p>On-page SEO is where relevance, copy, structure and conversion judgement meet. If a page gets impressions but few clicks, ranks but attracts the wrong traffic, or gets visits without enquiries, the page itself usually needs work.</p>
         </div>
-
-        <div class="services-visual">
-          <div class="visual-card">
-            <div class="visual-icon">
-              <i class="fas fa-edit"></i>
-            </div>
-            <h3>Page Priorities</h3>
-            <p class="visual-stat">Rank + convert</p>
-            <p class="visual-label">Intent, copy, internal links, proof and CTAs working together</p>
-          </div>
-        </div>
+        <aside class="diagnosis-panel" aria-label="On-page SEO diagnosis questions">
+          <h3>We start with the questions that matter</h3>
+          <ul>
+            <li>Does the page match the real search intent?</li>
+            <li>Is the offer clear within the first few seconds?</li>
+            <li>Are the title, H1 and headings aligned?</li>
+            <li>Does the page prove enough to earn trust?</li>
+            <li>Is there a clear path to enquiry?</li>
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
 
-  <!-- Our Process Section -->
-  <section class="process-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="process-header">
-        <h2>Our On-Page SEO <span>Process</span></h2>
-        <p>We improve the page around the searcher, the offer and the action you want them to take.</p>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-search-plus"></i>
-          </div>
-          <h3>Page Analysis</h3>
-          <p>We conduct a thorough analysis of your existing pages, identifying strengths, weaknesses, and opportunities for improvement.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-key"></i>
-          </div>
-          <h3>Keyword Research</h3>
-          <p>Using advanced tools, we identify the most valuable keywords that your target audience is actively searching for.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h3>Content Strategy</h3>
-          <p>We develop a content strategy that aligns with search intent while maintaining your brand's unique voice and message.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>On-Page Implementation</h3>
-          <p>Our team implements all necessary on-page optimizations, from meta tags to content structure and internal linking.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-user-check"></i>
-          </div>
-          <h3>User Experience Enhancement</h3>
-          <p>We optimize the user experience to increase engagement, reduce bounce rates, and improve conversion rates.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Performance Monitoring</h3>
-          <p>We continuously monitor your pages' performance and make data-driven adjustments to improve rankings.</p>
-        </div>
+  <section class="proof-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="proof-grid">
+        {proofItems.map((item) => (
+          <article class="proof-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Benefits Section -->
-  <section class="benefits-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="benefits-header">
-        <h2>The Impact of Professional <span>On-Page SEO</span></h2>
-        <p>See how our on-page optimization services can transform your website's performance.</p>
-      </div>
-
-      <div class="benefits-layout">
-        <div class="benefits-visual">
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-            alt="Analytics and data showing on-page SEO improvements"
-            class="benefits-image"
-          />
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-search"></i>
-            </div>
-            <h3>Higher Rankings</h3>
-            <p>Well-optimized pages have a better chance of ranking higher in search results for your target keywords.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>More Targeted Traffic</h3>
-            <p>Attract more qualified visitors who are actively searching for your products or services.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3>Better Conversion Rates</h3>
-            <p>Optimized content and improved user experience lead to higher conversion rates and more sales.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <h3>Competitive Edge</h3>
-            <p>Stand out in the Philippine market with professionally optimized content that outperforms your competitors.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="commercial-proof-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="commercial-proof-layout">
+  <section id="optimise" class="optimise-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
         <div>
-          <p class="eyebrow">What changes</p>
-          <h2>On-page SEO questions businesses usually ask when traffic is not converting</h2>
-          <p>We look at the page as a search result, a landing page and a sales conversation. If one of those jobs is weak, rankings alone will not do enough.</p>
+          <span class="eyebrow">What we optimise</span>
+          <h2>On-page SEO improvements that affect relevance, trust and action</h2>
         </div>
-        <ul class="proof-list">
-          <li><strong>Does the page match intent?</strong><span>The offer, headings and copy need to answer the searcher's real question.</span></li>
-          <li><strong>Can Google understand the topic?</strong><span>Titles, headings, entities, schema and internal links should be clear.</span></li>
-          <li><strong>Does the visitor trust it?</strong><span>Proof, examples, practical language and FAQs reduce hesitation.</span></li>
-          <li><strong>Is there a clear next step?</strong><span>Better CTAs and page flow help organic traffic become leads.</span></li>
+        <p>We do not treat on-page SEO as a checklist of keyword placements. We review the whole page as a search asset, a sales asset and part of the wider site structure.</p>
+      </div>
+      <div class="optimise-grid">
+        {optimisationAreas.map((item) => (
+          <article class="optimise-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-types-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">Where it applies</span>
+        <h2>Priority pages should earn their place in search</h2>
+        <p>The strongest on-page SEO work usually happens on pages with commercial value, existing search signals or a clear role in the customer journey.</p>
+      </div>
+      <div class="page-types-grid">
+        {pageTypes.map((item) => (
+          <article class="page-type-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="priority-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="priority-layout">
+        <div class="priority-copy">
+          <span class="eyebrow">Page prioritisation</span>
+          <h2>We optimise the pages with the clearest upside first</h2>
+          <p>Not every page deserves the same attention. A thin old article and a high-value service page should not receive the same level of effort. We use search demand, performance data and commercial value to decide where on-page SEO can make the biggest difference.</p>
+          <p>This keeps the work focused on rankings, clicks and enquiries, not cosmetic edits that make a report look busy.</p>
+        </div>
+        <ul class="priority-list">
+          {prioritySignals.map((item) => <li>{item}</li>)}
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="faq-section-commercial">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2>On-page SEO questions businesses usually ask</h2>
-      <div class="faq-list-commercial">
-        <article><h3>Is on-page SEO just keyword placement?</h3><p>No. Keywords matter, but the bigger job is matching intent, making the page useful and giving search engines clear signals about the service.</p></article>
-        <article><h3>Can you improve existing pages?</h3><p>Yes. Improving money pages is often more valuable than publishing more blogs, especially when a page already has impressions or rankings.</p></article>
-        <article><h3>How does on-page SEO help conversions?</h3><p>Clearer copy, stronger proof, better FAQs and stronger CTAs make it easier for visitors to understand the offer and enquire.</p></article>
+  <section class="process-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">Our process</span>
+          <h2>From page audit to measurable improvement</h2>
+        </div>
+        <p>Good on-page SEO is evidence-led. We diagnose first, map intent second and only then change the page.</p>
+      </div>
+      <div class="process-rail">
+        {processSteps.map((step) => (
+          <article class="process-step">
+            <span>{step.label}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <ContactSection />
+  <section class="avoid-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="avoid-layout">
+        <div class="avoid-copy">
+          <span class="eyebrow">What we avoid</span>
+          <h2>On-page SEO should make the page better, not just busier</h2>
+          <p>There is a lot of poor on-page SEO that looks active but adds very little. We avoid edits that make pages longer, clumsier or more robotic without improving intent match, clarity or conversion value.</p>
+        </div>
+        <div class="avoid-grid">
+          {avoidItems.map((item) => (
+            <article class="avoid-card">
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="measurement-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="measurement-layout">
+        <div class="measurement-panel">
+          <span class="eyebrow">Measurement</span>
+          <h2>We judge page improvements by visibility and behaviour</h2>
+          <p>On-page SEO should show up in more than a changed title tag. The right measures depend on the page, but the aim is clearer search visibility, better click-through and stronger enquiry performance.</p>
+        </div>
+        <ul class="measurement-list">
+          {measurementItems.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="internal-links-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">Connected SEO work</span>
+          <h2>On-page SEO is strongest when the rest of the campaign supports it</h2>
+        </div>
+        <p>A page can only carry so much by itself. Technical SEO, keyword research, content quality, internal linking and authority all affect whether an on-page improvement can hold.</p>
+      </div>
+      <div class="connected-grid">
+        {connectedServices.map((service) => (
+          <a class="connected-card" href={service.href}>
+            <h3>{service.title}</h3>
+            <p>{service.copy}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">Questions buyers ask</span>
+        <h2>On-page SEO FAQs</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="cta-panel">
+        <span class="eyebrow">Start with one page</span>
+        <h2>Send us an underperforming page and we’ll show what is holding it back</h2>
+        <p>We will review search intent, structure, metadata, internal links, copy, proof and conversion path, then show which changes are likely to matter most.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Get a Page SEO Audit" />
+          <ButtonSecondary href="/case-studies/" text="View Case Studies" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* On-Page Icon Grid (used in Hero visual slot) */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
+:root {
+  --bf-bg: #0d0f1a;
+  --bf-panel: #131627;
+  --bf-panel-2: #181c30;
+  --bf-text: #e8eaf2;
+  --bf-muted: #b9bed4;
+  --bf-orange: #f0622a;
+  --bf-border: rgba(255, 255, 255, 0.1);
 }
 
-.onpage-icon-grid {
+.onpage-hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.onpage-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  color: white;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-  animation: float 4s ease-in-out infinite;
+.stat {
+  background: rgba(13, 15, 26, 0.74);
+  border: 1px solid rgba(240, 98, 42, 0.24);
+  border-radius: 18px;
+  padding: 1rem;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+.stat strong {
+  display: block;
+  color: var(--bf-orange);
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
 }
 
-.onpage-icon:nth-child(odd) {
-  animation-delay: 1s;
+.stat span {
+  color: #dfe3f3;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
-.onpage-icon:nth-child(even) {
-  animation-delay: 2s;
+.intro-section,
+.proof-section,
+.optimise-section,
+.page-types-section,
+.priority-section,
+.process-section,
+.avoid-section,
+.measurement-section,
+.internal-links-section,
+.faq-section,
+.cta-section,
+:global(.contact-cta-section) {
+  content-visibility: visible !important;
+  background: var(--bf-bg);
+  color: var(--bf-text);
 }
 
-.onpage-icon:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
+.intro-section,
+.optimise-section,
+.priority-section,
+.measurement-section,
+.faq-section {
+  padding: 5.5rem 0;
+  background: var(--bf-panel);
 }
 
-@media (max-width: 1024px) {
-  .onpage-icon-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+.proof-section,
+.page-types-section,
+.process-section,
+.avoid-section,
+.internal-links-section,
+.cta-section {
+  padding: 5.5rem 0;
+  background: var(--bf-bg);
 }
 
-@media (max-width: 768px) {
-  .onpage-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .onpage-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Services Section */
-.services-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.services-layout {
+.intro-layout,
+.priority-layout,
+.avoid-layout,
+.measurement-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.services-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 2.5rem;
-  line-height: 1.2;
-}
-
-.services-content h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.service-item {
-  background: #0d0f1a;
-  border-left: 4px solid #f0622a;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.service-item:hover {
-  background: #1a1e32;
-  transform: translateX(5px);
-}
-
-.service-item h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.service-item p {
-  font-size: 0.95rem;
-  color: #ffffff;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.services-visual {
-  position: sticky;
-  top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-}
-
-.visual-card {
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.05), rgba(255, 107, 53, 0.05));
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(240, 98, 42, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.visual-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.visual-stat {
-  font-size: 4rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 1rem 0 0.5rem;
-  line-height: 1;
-}
-
-.visual-label {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .services-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .services-visual {
-    position: static;
-  }
-}
-
-/* Process Section */
-.process-section {
-  padding: 5rem 0;
-  background: #0d0f1a;
-}
-
-.process-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.process-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.process-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-
-.process-box {
-  padding: 3rem 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.process-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.process-box.orange-bg {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.process-box.orange-bg h3,
-.process-box.orange-bg p {
-  color: white;
-}
-
-.process-box.white-bg {
-  background: #131627;
-}
-
-.process-box.white-bg h3 {
-  color: #ffffff;
-}
-
-.process-box.white-bg p {
-  color: #ffffff;
-}
-
-.process-box-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  transition: all 0.3s ease;
-}
-
-.process-box.orange-bg .process-box-icon {
-  color: white;
-}
-
-.process-box.white-bg .process-box-icon {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-box:hover .process-box-icon {
-  transform: scale(1.1);
-}
-
-.process-box h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.process-box p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Benefits Section */
-.benefits-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.benefits-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.benefits-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.benefits-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.benefits-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.benefits-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.benefits-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.benefits-image {
-  width: 100%;
-  max-width: 400px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.benefit-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem;
-  color: white;
-  font-size: 1.75rem;
-}
-
-.benefit-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-}
-
-.benefit-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 1024px) {
-  .benefits-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .benefits-image {
-    height: 400px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.commercial-proof-section {
-  padding: 5rem 0;
-  background: #0d0f1a;
-}
-
-.commercial-proof-layout {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   gap: 3rem;
   align-items: start;
-  background: #131627;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2rem;
-  padding: 3rem;
 }
 
 .eyebrow {
-  color: #f0622a;
+  display: inline-flex;
+  color: var(--bf-orange);
+  font-size: 0.78rem;
   font-weight: 800;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   margin-bottom: 1rem;
 }
 
-.commercial-proof-layout h2,
-.faq-section-commercial h2 {
-  color: white;
-  font-size: clamp(2rem, 4vw, 3rem);
+h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.35rem);
   line-height: 1.08;
-  margin-bottom: 1.5rem;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
 }
 
-.commercial-proof-layout p {
-  color: #d4d8e6;
+h3 {
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+}
+
+p {
+  color: #dfe3f3;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.intro-copy p,
+.priority-copy p,
+.avoid-copy p,
+.measurement-panel p,
+.cta-panel p {
   font-size: 1.08rem;
-  line-height: 1.7;
 }
 
-.proof-list {
+.diagnosis-panel,
+.measurement-panel,
+.cta-panel {
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.12), rgba(19, 22, 39, 0.95));
+  border: 1px solid rgba(240, 98, 42, 0.26);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+}
+
+.diagnosis-panel ul,
+.priority-list,
+.measurement-list {
   list-style: none;
-  display: grid;
-  gap: 1rem;
-  margin: 0;
+  margin: 1.25rem 0 0;
   padding: 0;
 }
 
-.proof-list li {
-  display: grid;
-  gap: 0.35rem;
-  padding: 1.2rem 0 1.2rem 1.2rem;
-  border-left: 3px solid #f0622a;
-  background: rgba(255, 255, 255, 0.035);
-  border-radius: 0 1rem 1rem 0;
-}
-
-.proof-list strong {
-  color: white;
-  font-size: 1.05rem;
-}
-
-.proof-list span {
-  color: #c9cedd;
+.diagnosis-panel li,
+.priority-list li,
+.measurement-list li {
+  position: relative;
+  padding: 0.85rem 0 0.85rem 1.8rem;
+  color: #eef1ff;
   line-height: 1.55;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.faq-section-commercial {
-  padding: 5rem 0;
-  background: #111421;
+.diagnosis-panel li::before,
+.priority-list li::before,
+.measurement-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bf-orange);
+  box-shadow: 0 0 0 5px rgba(240, 98, 42, 0.16);
 }
 
-.faq-list-commercial {
+.proof-grid,
+.page-types-grid,
+.connected-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-.faq-list-commercial article {
-  background: #171b2d;
+.optimise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.proof-card,
+.optimise-card,
+.page-type-card,
+.avoid-card,
+.process-step,
+.connected-card,
+.faq-item {
+  background: rgba(19, 22, 39, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.4rem;
-  padding: 1.5rem;
+  border-radius: 22px;
+  padding: 1.6rem;
 }
 
-.faq-list-commercial h3 {
-  color: white;
-  font-size: 1.15rem;
-  margin-bottom: 0.8rem;
+.proof-card,
+.connected-card {
+  border-color: rgba(240, 98, 42, 0.24);
 }
 
-.faq-list-commercial p {
-  color: #c9cedd;
-  line-height: 1.6;
+.proof-card p,
+.optimise-card p,
+.page-type-card p,
+.avoid-card p,
+.process-step p,
+.connected-card p,
+.faq-item p {
+  margin: 0;
 }
 
-@media (max-width: 900px) {
-  .commercial-proof-layout,
-  .faq-list-commercial {
-    grid-template-columns: 1fr;
+.section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.split-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.75fr);
+  gap: 3rem;
+  align-items: end;
+}
+
+.split-heading p,
+.centered p {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.centered {
+  text-align: center;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.optimise-card,
+.page-type-card,
+.connected-card,
+.proof-card {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.optimise-card:hover,
+.page-type-card:hover,
+.connected-card:hover,
+.proof-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240, 98, 42, 0.38);
+}
+
+.priority-list,
+.measurement-list {
+  background: rgba(13, 15, 26, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 26px;
+  padding: 1rem 1.5rem;
+}
+
+.process-rail {
+  display: grid;
+  gap: 1rem;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.process-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bf-orange), #d4510e);
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.avoid-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.connected-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 1.35rem 1.5rem;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  float: right;
+  color: var(--bf-orange);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  content: '-';
+}
+
+.faq-item p {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.cta-panel {
+  text-align: center;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1180px) {
+  .optimise-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (max-width: 1024px) {
+  .intro-layout,
+  .priority-layout,
+  .avoid-layout,
+  .measurement-layout,
+  .split-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-grid,
+  .page-types-grid,
+  .connected-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .onpage-hero-stats,
+  .proof-grid,
+  .optimise-grid,
+  .page-types-grid,
+  .connected-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-section,
+  .proof-section,
+  .optimise-section,
+  .page-types-section,
+  .priority-section,
+  .process-section,
+  .avoid-section,
+  .measurement-section,
+  .internal-links-section,
+  .faq-section,
+  .cta-section {
+    padding: 4rem 0;
+  }
+
+  .process-step {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
