@@ -7,430 +7,910 @@ import Hero from "../../components/Hero.astro";
 import ButtonPrimary from "../../components/ButtonPrimary.astro";
 import ButtonSecondary from "../../components/ButtonSecondary.astro";
 
-const caseStudyData = {
-  title: "SEO Case Study: Recovering Organic Traffic for a Pest Control Firm After Core Update",
-  client: "Pest Control Firm",
-  industry: "Home Services",
-  duration: "6 Months",
-  heroImage: "/images/case-studies/SEO Case Study- Recovering and Growing Organic Traffic for a Pest Control Firm After Core Update .webp",
-  challenge: "Severe traffic and ranking losses following a Google core update coupled with stiff local competition.",
-  solution: "Comprehensive audit, E-E-A-T-focused content upgrades, technical fixes and high-quality backlink outreach to regain authority and visibility.",
-  keyMetrics: [
-    { label: "Total Clicks", value: "+128%", description: "10.3k → 23.5k" },
-    { label: "Total Impressions", value: "+147%", description: "1.26M → 3.12M" },
-    { label: "Avg. Position", value: "19.1 → 17.2", description: "Ranking improvement" },
-    { label: "CTR", value: "0.8%", description: "Steady" }
-  ],
-  strategySteps: [
-    { title: "Comprehensive Site Audit", description: "Diagnosed content and technical issues linked to update penalties." },
-    { title: "Content E-E-A-T Enhancements", description: "Improved expertise, relevance and user intent alignment." },
-    { title: "Technical SEO", description: "Boosted speed, mobile usability & crawlability." },
-    { title: "Authoritative Backlinks", description: "Secured industry citations to rebuild trust signals." },
-    { title: "Continuous Monitoring", description: "Weekly GSC checks guiding iterative optimisation." }
-  ],
-  results: [
-    { metric: "Total Clicks", before: "10,300", after: "23,500", improvement: "+128%" },
-    { metric: "Total Impressions", before: "1.26M", after: "3.12M", improvement: "+147%" },
-    { metric: "Average Position", before: "19.1", after: "17.2", improvement: "Improved" },
-    { metric: "CTR", before: "0.8%", after: "0.8%", improvement: "Steady" }
-  ],
-  keyTakeaways: [
-    "E-E-A-T content and technical health are critical after core updates.",
-    "Strategic backlink rebuilding accelerates recovery.",
-    "Iterative data-driven optimisation sustains regained growth."
-  ]
+const canonical = "https://brightforge.com.ph/case-studies/pest-control-core-update-seo/";
+const image = "/images/case-studies/SEO Case Study- Recovering and Growing Organic Traffic for a Pest Control Firm After Core Update .webp";
+
+const metrics = [
+  {
+    label: "Organic clicks",
+    before: "10.3k",
+    after: "23.5k",
+    change: "+128%",
+    note: "More visits from people searching for pest control help after the site recovered lost organic reach."
+  },
+  {
+    label: "Impressions",
+    before: "1.26M",
+    after: "3.12M",
+    change: "+147%",
+    note: "The site appeared across a much wider set of local pest, treatment and service-area searches."
+  },
+  {
+    label: "Average position",
+    before: "19.1",
+    after: "17.2",
+    change: "Modest lift",
+    note: "The ranking movement was useful but not dramatic. The main gain came from broader visibility and stronger query coverage."
+  },
+  {
+    label: "CTR",
+    before: "0.8%",
+    after: "0.8%",
+    change: "Steady",
+    note: "CTR held steady while impressions expanded sharply, which is a fair outcome during wider recovery."
+  }
+];
+
+const workstreams = [
+  {
+    title: "Core update impact diagnosis",
+    text: "We reviewed Search Console patterns, affected page types and query movement to separate update-related visibility loss from normal local search volatility."
+  },
+  {
+    title: "Service relevance improvements",
+    text: "Priority pest control pages needed clearer alignment between service intent, local language, headings, title tags and supporting copy. The aim was to make page purpose obvious."
+  },
+  {
+    title: "Technical and crawl checks",
+    text: "Recovery work included checking indexation, crawl paths, internal links and page quality signals so important service pages were not buried or sending mixed signals."
+  },
+  {
+    title: "Trust and local authority signals",
+    text: "For a home service business, recovery depends on credibility as well as keywords. We strengthened local and topical signals around the services customers actually search for."
+  },
+  {
+    title: "Search Console led iteration",
+    text: "The campaign was adjusted from weekly query and page data. That made it possible to spot which services were recovering, which pages lagged and where search demand was widening."
+  }
+];
+
+const lessons = [
+  "Core update recovery is rarely one fix. It usually needs better page quality, cleaner technical signals, stronger internal links and a more believable service footprint.",
+  "Clicks can grow faster than average position when a site recovers across a wider set of searches. That is still valuable if the new visibility matches real service demand.",
+  "Flat CTR is not automatically a failure. In this case, CTR held steady while impressions more than doubled, so the site was exposed to a much wider search market without wasting the extra reach.",
+  "Local service SEO should not depend on one trophy keyword. The stronger commercial result usually comes from many service, problem and location searches working together."
+];
+
+const faqs = [
+  {
+    question: "Can SEO recover after a Google core update?",
+    answer: "Yes, but recovery usually depends on diagnosing which pages and signals lost trust, then improving quality, relevance, crawlability and authority over time. It is not a button press or a single technical fix."
+  },
+  {
+    question: "What made this pest control SEO case study different?",
+    answer: "The site had to recover lost organic visibility while competing in a local service market where customers search by pest problem, treatment type, urgency and location. The work had to improve both relevance and trust."
+  },
+  {
+    question: "Why did clicks grow more than average position improved?",
+    answer: "Average position improved from 19.1 to 17.2, which is useful but modest. The bigger story is that the site started appearing across many more relevant searches, so total clicks grew even without a dramatic average ranking jump."
+  },
+  {
+    question: "Is a flat CTR a concern in this result?",
+    answer: "Not in isolation. CTR stayed at 0.8%, but impressions grew from 1.26M to 3.12M. Holding CTR steady while visibility expands sharply can still produce a strong click gain."
+  },
+  {
+    question: "What should a local service business check after a core update hit?",
+    answer: "Start with Search Console page and query losses, thin or overlapping service pages, weak local intent coverage, technical crawl issues, internal linking and trust signals. The goal is to identify why Google became less confident in the site."
+  },
+  {
+    question: "Does Bright Forge guarantee the same recovery for other pest control sites?",
+    answer: "No. Results depend on the market, site condition, competition, previous SEO work and how much can be improved. Case studies show the diagnostic approach and type of work involved, not a guaranteed outcome."
+  }
+];
+
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Pest Control SEO Case Study After a Google Core Update",
+  description: "How SEO work helped a pest control business recover organic clicks and impressions after a Google core update, with honest context around average position and CTR.",
+  image: `https://brightforge.com.ph${image}`,
+  author: {
+    "@type": "Organization",
+    name: "Bright Forge SEO",
+    url: "https://brightforge.com.ph/"
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Bright Forge SEO",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://brightforge.com.ph/images/header-logo-360w.webp"
+    }
+  },
+  mainEntityOfPage: canonical,
+  articleSection: "SEO Case Studies",
+  about: ["Pest control SEO", "Local SEO", "Core update recovery", "Technical SEO", "Content SEO"]
 };
 ---
 
-<MainLayout title="Pest Control SEO & Core Update Case | Bright Forge SEO" description="After a core update hit rankings, we helped this pest control brand recover fast with refined content, SEO audits, better links, and site fixes.">
+<MainLayout
+  title="Pest Control SEO Case Study | Core Update Recovery"
+  description="How SEO helped a pest control business recover after a Google core update, growing clicks by 128% and impressions by 147% over a six-month comparison."
+  canonical={canonical}
+  image={image}
+  type="article"
+  author={{ name: "Bright Forge SEO", url: "https://brightforge.com.ph/" }}
+  article={{ section: "SEO Case Studies", tags: ["Pest Control SEO", "Local SEO", "Core Update Recovery", "Case Study"] }}
+  breadcrumbs={[
+    { name: "Home", url: "https://brightforge.com.ph/" },
+    { name: "Case Studies", url: "https://brightforge.com.ph/case-studies/" },
+    { name: "Pest Control SEO Recovery", url: canonical }
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseStudySchema)} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
 
   <Hero
-    title={caseStudyData.client}
-    breadcrumbCurrent="Pest Control Firm"
+    title="Pest Control SEO Case Study"
+    breadcrumbCurrent="Pest Control SEO Recovery"
   >
     <Fragment slot="story">
       <div class="case-meta">
-        <span class="meta-item">{caseStudyData.industry}</span>
-        <span class="meta-divider">•</span>
-        <span class="meta-item">{caseStudyData.duration}</span>
+        <span>Local services</span>
+        <span>Core update recovery</span>
+        <span>6 month comparison</span>
       </div>
-      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies after being hit by a Google core update.</p>
+      <p class="hero-subtitle">How a pest control business recovered organic reach after a Google core update without pretending every metric moved equally.</p>
+      <p>The campaign rebuilt visibility by tightening service relevance, technical quality, internal linking and local trust signals. Clicks and impressions recovered strongly. Average position improved more modestly, which is exactly why the result is worth explaining properly.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="#results" text="View Full Results" />
-      <ButtonSecondary href="/contact/" text="Discuss Your Project" />
+      <ButtonPrimary href="#results" text="View Results" />
+      <ButtonSecondary href="/contact/" text="Request an SEO Review" />
     </Fragment>
   </Hero>
 
-  <!-- Key Metrics Section -->
-  <section class="metrics-section">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="metrics-grid">
-        {caseStudyData.keyMetrics.map((metric) => (
-          <div class="metric-card">
-            <div class="metric-value">{metric.value}</div>
-            <div class="metric-label">{metric.label}</div>
-            <div class="metric-description">{metric.description}</div>
-          </div>
-        ))}
+  <main class="case-study-page">
+    <section class="proof-strip" aria-label="Case study summary metrics">
+      <div class="case-container">
+        <div class="proof-grid">
+          {metrics.map((metric) => (
+            <article class="proof-card">
+              <span class="proof-label">{metric.label}</span>
+              <strong>{metric.change}</strong>
+              <span>{metric.before} to {metric.after}</span>
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Hero Image Section -->
-  <section class="image-section">
-    <div class="max-w-6xl mx-auto px-6 py-12">
-      <div class="case-image-container">
-        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+    <section class="overview-section">
+      <div class="case-container overview-grid">
+        <div>
+          <p class="eyebrow">The short version</p>
+          <h2>Recovering local service visibility after an algorithm hit</h2>
+          <p>A pest control company had lost organic momentum after a Google core update. The problem was not just rankings. The site needed to rebuild confidence across local service pages, pest problem searches and commercial queries that could turn into calls or quote requests.</p>
+          <p>Over the comparison period, organic clicks increased from 10.3k to 23.5k and impressions increased from 1.26M to 3.12M. Average position moved from 19.1 to 17.2, so the honest story is broader recovery and demand capture rather than a neat miracle ranking jump.</p>
+        </div>
+        <aside class="case-summary-card">
+          <h3>Campaign snapshot</h3>
+          <dl>
+            <div><dt>Industry</dt><dd>Pest control and home services</dd></div>
+            <div><dt>Market type</dt><dd>Local service SEO</dd></div>
+            <div><dt>Timeframe</dt><dd>6 month comparison</dd></div>
+            <div><dt>Main KPI</dt><dd>Organic clicks from Google Search</dd></div>
+            <div><dt>Primary work</dt><dd>Core update diagnosis, page relevance, technical checks and local trust signals</dd></div>
+          </dl>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Challenge Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">The Challenge</h2>
-      <p class="section-text">{caseStudyData.challenge}</p>
-    </div>
-  </section>
-
-  <!-- Solution Section -->
-  <section class="content-section gray">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Our Approach</h2>
-      <p class="section-text">{caseStudyData.solution}</p>
-    </div>
-  </section>
-
-  <!-- Strategy Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Strategy</h2>
-
-      <div class="strategy-list">
-        {caseStudyData.strategySteps.map((step, index) => (
-          <div class="strategy-item">
-            <div class="strategy-number">{index + 1}</div>
-            <div class="strategy-content">
-              <h3 class="strategy-title">{step.title}</h3>
-              <p class="strategy-description">{step.description}</p>
-            </div>
-          </div>
-        ))}
+    <section class="visual-proof-section">
+      <div class="case-container">
+        <div class="case-image-card">
+          <img src={image} alt="Google Search Console performance comparison for a pest control SEO recovery campaign" loading="eager" decoding="async" />
+        </div>
+        <p class="image-note">Search Console metrics used in this case study: 10.3k to 23.5k clicks, 1.26M to 3.12M impressions, average position 19.1 to 17.2 and CTR steady at 0.8%.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Results Section -->
-  <section class="content-section gray" id="results">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Results</h2>
-
-      <div class="results-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Before</th>
-              <th>After</th>
-              <th>Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            {caseStudyData.results.map((result) => (
-              <tr>
-                <td class="metric-name">{result.metric}</td>
-                <td>{result.before}</td>
-                <td>{result.after}</td>
-                <td class="improvement">{result.improvement}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <section class="content-section" id="challenge">
+      <div class="case-container two-column">
+        <div>
+          <p class="eyebrow">Starting problem</p>
+          <h2>The site needed to recover confidence across service and local search intent</h2>
+        </div>
+        <div class="section-copy">
+          <p>Core updates tend to expose underlying quality, relevance and trust problems. In this case, the site needed more than a quick metadata pass. The useful work was to understand which pages had lost traction, how Google was interpreting service relevance and where the site was failing to support local buyer intent.</p>
+          <p>Pest control search behaviour is also fragmented. People search by pest type, treatment need, home problem, urgency and location. A recovery plan had to support that spread without turning the site into a collection of thin, overlapping pages.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Key Takeaways Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Key Takeaways</h2>
+    <section class="constraints-section">
+      <div class="case-container">
+        <p class="eyebrow">Constraints</p>
+        <h2>Why this was not just a ranking recovery campaign</h2>
+        <div class="constraint-grid">
+          <article>
+            <h3>Core update uncertainty</h3>
+            <p>There is rarely one obvious cause after a core update. The campaign had to work from patterns across pages, queries and visibility loss.</p>
+          </article>
+          <article>
+            <h3>Local service intent</h3>
+            <p>Pest control demand is often urgent and location sensitive. Pages needed to make service fit and local relevance clearer.</p>
+          </article>
+          <article>
+            <h3>Many small query groups</h3>
+            <p>The opportunity was spread across pest types, treatment searches, service pages and problem-led searches rather than one tidy keyword.</p>
+          </article>
+          <article>
+            <h3>Honest metric interpretation</h3>
+            <p>Clicks and impressions grew sharply, but average position only improved modestly. The result needed context, not inflated language.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <ul class="takeaways-list">
-        {caseStudyData.keyTakeaways.map((takeaway) => (
-          <li>{takeaway}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
+    <section class="work-section" id="work">
+      <div class="case-container">
+        <div class="section-header">
+          <p class="eyebrow">What changed</p>
+          <h2>The work focused on relevance, crawl clarity and local trust after the update</h2>
+          <p>Recovery work needs to improve the things that make a site easier to trust and easier to understand. For this pest control campaign, the strongest workstreams sat across content, technical SEO and local service signals.</p>
+        </div>
+        <div class="work-list">
+          {workstreams.map((item, index) => (
+            <article class="work-item">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">What moved</p>
+          <h2>Clicks and impressions recovered strongly, while average position improved modestly</h2>
+          <p>The strongest result was not a single keyword leaping to the top. It was a wider recovery across relevant searches. That matters for pest control because demand comes from many combinations of pest, service, problem and location language.</p>
+        </div>
+        <div class="result-grid">
+          {metrics.map((metric) => (
+            <article class="result-card">
+              <div class="result-topline">
+                <span>{metric.label}</span>
+                <strong>{metric.change}</strong>
+              </div>
+              <div class="before-after">
+                <div><span>Before</span><strong>{metric.before}</strong></div>
+                <div><span>After</span><strong>{metric.after}</strong></div>
+              </div>
+              <p>{metric.note}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="commercial-section">
+      <div class="case-container commercial-card">
+        <div>
+          <p class="eyebrow">Commercial meaning</p>
+          <h2>The recovery gave the business more chances to win service enquiries</h2>
+          <p>Pest control SEO is valuable when it connects the business with people who already have a problem to solve. A lift in clicks after a core update means more opportunities to capture searches from people comparing treatment options, looking for local providers or trying to solve urgent pest issues.</p>
+          <p>The impression growth also matters. It shows the site was being reconsidered across more searches, not only squeezing a few more clicks from the same old visibility. That wider footprint can reduce dependence on paid search and make organic search a stronger lead source again.</p>
+        </div>
+        <div class="meaning-points">
+          <article><strong>More local entry points</strong><span>Service pages could appear across more pest, treatment and location-led searches.</span></article>
+          <article><strong>Recovery with context</strong><span>The win was broader visibility and click growth, not an exaggerated claim about instant ranking dominance.</span></article>
+          <article><strong>Better monthly decisions</strong><span>Search Console data shaped the next actions instead of relying on a fixed checklist.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lessons-section">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">Lessons for similar businesses</p>
+          <h2>What other home service companies should take from this</h2>
+        </div>
+        <div class="lesson-grid">
+          {lessons.map((lesson) => (
+            <article>
+              <p>{lesson}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="related-services-section">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">Relevant services</p>
+          <h2>Where this work connects to Bright Forge SEO services</h2>
+        </div>
+        <div class="service-link-grid">
+          <a href="/local-seo-services-philippines/">
+            <span>Local SEO</span>
+            <p>Service-area visibility, local intent coverage and better organic presence for businesses that depend on location-based enquiries.</p>
+          </a>
+          <a href="/technical-seo-services-philippines/">
+            <span>Technical SEO</span>
+            <p>Crawl, indexation, internal linking and site-quality checks that support recovery work after visibility drops.</p>
+          </a>
+          <a href="/content-seo-services-philippines/">
+            <span>Content SEO</span>
+            <p>Service page improvements shaped around buyer intent, search demand and clear relevance rather than generic content volume.</p>
+          </a>
+          <a href="/seo-audit-services/">
+            <span>SEO audits</span>
+            <p>Find the technical, content and trust issues behind organic drops before spending months on the wrong fixes.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="case-container faq-layout">
+        <div>
+          <p class="eyebrow">Questions this case study should answer</p>
+          <h2>Pest control SEO recovery FAQs</h2>
+          <p>Core update case studies should explain the conditions, limits and interpretation behind the numbers.</p>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="case-cta-section">
+      <div class="case-container case-cta-card">
+        <p class="eyebrow">Hit by an update or losing organic leads?</p>
+        <h2>We can inspect the pages, queries and technical signals behind the drop.</h2>
+        <p>If your local service site has lost visibility, start with a focused SEO review. We will look at Search Console data, page quality, local intent coverage, indexation and the work most likely to move the campaign forward.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Request an SEO Review" />
+          <ButtonSecondary href="/case-studies/" text="View More Case Studies" />
+        </div>
+      </div>
+    </section>
+  </main>
 
   <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Case Study Meta */
+.case-study-page,
+.case-study-page * {
+  box-sizing: border-box;
+}
+
+.case-study-page {
+  background: #0d0f1a;
+  color: #ffffff;
+}
+
+.case-container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
 .case-meta {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 24px;
-  font-size: 16px;
-  font-weight: 500;
+}
+
+.case-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.9);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
-.meta-item {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.meta-divider {
-  opacity: 0.5;
-}
-
-/* Metrics Section */
-.metrics-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 48px;
-}
-
-.metric-card {
-  text-align: center;
-  padding: 24px 0;
-}
-
-.metric-value {
-  font-size: 3rem;
+.hero-subtitle {
+  color: #ffffff;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.35;
   font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.proof-strip,
+.overview-section,
+.visual-proof-section,
+.content-section,
+.constraints-section,
+.work-section,
+.results-section,
+.commercial-section,
+.lessons-section,
+.related-services-section,
+.faq-section,
+.case-cta-section {
+  content-visibility: visible !important;
+  contain-intrinsic-size: auto none !important;
+}
+
+.proof-strip {
+  padding: 34px 0;
+  background: #131627;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proof-card,
+.result-card,
+.case-summary-card,
+.constraint-grid article,
+.lesson-grid article,
+.service-link-grid a,
+.faq-item,
+.case-cta-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+}
+
+.proof-card {
+  min-height: 154px;
+  padding: 24px;
+  border-radius: 22px;
+}
+
+.proof-label,
+.eyebrow {
+  display: block;
   color: #f0622a;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-
-.metric-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
 }
 
-.metric-description {
-  font-size: 0.875rem;
+.proof-card strong {
+  display: block;
+  margin: 12px 0 8px;
   color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
 }
 
-/* Image Section */
-.image-section {
+.proof-card span:last-child {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+}
+
+.overview-section,
+.content-section,
+.work-section,
+.commercial-section,
+.related-services-section,
+.case-cta-section {
+  padding: 92px 0;
+  background: #0d0f1a;
+}
+
+.visual-proof-section,
+.constraints-section,
+.results-section,
+.lessons-section,
+.faq-section {
+  padding: 92px 0;
   background: #131627;
 }
 
-.case-image-container {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+.overview-grid,
+.two-column,
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
 }
 
-.case-image-container img {
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+}
+
+h3 {
+  color: #ffffff;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.case-summary-card {
+  position: sticky;
+  top: 110px;
+  padding: 28px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.13), rgba(255, 255, 255, 0.045));
+}
+
+.case-summary-card dl {
+  margin: 0;
+}
+
+.case-summary-card div {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-summary-card div:last-child {
+  border-bottom: 0;
+}
+
+.case-summary-card dt {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.case-summary-card dd {
+  color: #ffffff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.case-image-card {
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0d0f1a;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.case-image-card img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: contain;
   background: #0d0f1a;
 }
 
-/* Content Sections */
-.content-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+.image-note {
+  max-width: 820px;
+  margin: 18px auto 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.95rem;
 }
 
-.content-section.gray {
-  background: #0d0f1a;
+.section-copy p:last-child,
+.case-cta-card p:last-child {
+  margin-bottom: 0;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
+.constraint-grid,
+.result-grid,
+.lesson-grid,
+.service-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
 }
 
-.section-text {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #ffffff;
+.constraint-grid article,
+.lesson-grid article,
+.service-link-grid a {
+  border-radius: 24px;
+  padding: 28px;
 }
 
-/* Strategy List */
-.strategy-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 32px;
+.constraint-grid p,
+.lesson-grid p,
+.service-link-grid p {
+  margin-bottom: 0;
 }
 
-.strategy-item {
-  display: flex;
+.section-header {
+  max-width: 840px;
+  margin-bottom: 40px;
+}
+
+.section-header.compact {
+  margin-bottom: 30px;
+}
+
+.work-list {
+  display: grid;
+  gap: 18px;
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
   gap: 24px;
-  align-items: flex-start;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
 }
 
-.strategy-number {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: #f0622a;
-  color: white;
-  border-radius: 8px;
-  display: flex;
+.work-item > span {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.strategy-content {
-  flex: 1;
-}
-
-.strategy-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.strategy-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ffffff;
-}
-
-/* Results Table */
-.results-table {
-  margin-top: 32px;
-  overflow-x: auto;
-}
-
-.results-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.results-table th {
-  text-align: left;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid #e2e8f0;
-}
-
-.results-table td {
-  padding: 20px;
-  font-size: 1rem;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.results-table tr:last-child td {
-  border-bottom: none;
-}
-
-.results-table .metric-name {
-  font-weight: 600;
-}
-
-.results-table .improvement {
-  color: #f0622a;
-  font-weight: 600;
-}
-
-/* Takeaways List */
-.takeaways-list {
-  list-style: none;
-  padding: 0;
-  margin: 32px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.takeaways-list li {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #ffffff;
-  padding-left: 32px;
-  position: relative;
-}
-
-.takeaways-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 6px;
-  height: 6px;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
   background: #f0622a;
-  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 900;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .metric-value {
-    font-size: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  .strategy-item {
-    gap: 16px;
-  }
-
-  .strategy-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .results-table {
-    font-size: 0.875rem;
-  }
-
-  .results-table th,
-  .results-table td {
-    padding: 12px;
-  }
+.work-item p {
+  margin-bottom: 0;
 }
 
-@media (max-width: 480px) {
-  .metrics-grid {
+.result-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.result-card {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.result-topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.result-topline span {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 800;
+}
+
+.result-topline strong {
+  color: #f0622a;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.before-after div {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.before-after span {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.before-after strong {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.result-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.commercial-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+  padding: clamp(32px, 5vw, 56px);
+  border-radius: 32px;
+  border: 1px solid rgba(240, 98, 42, 0.25);
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.12), rgba(255, 255, 255, 0.035));
+}
+
+.meaning-points {
+  display: grid;
+  gap: 14px;
+}
+
+.meaning-points article {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meaning-points strong,
+.meaning-points span,
+.service-link-grid span {
+  display: block;
+}
+
+.meaning-points strong,
+.service-link-grid span {
+  color: #ffffff;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.meaning-points span {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.55;
+}
+
+.service-link-grid a {
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-link-grid a:hover {
+  border-color: rgba(240, 98, 42, 0.5);
+  transform: translateY(-2px);
+}
+
+.faq-layout {
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 22px 24px;
+  color: #ffffff;
+  font-weight: 900;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  padding: 0 24px 24px;
+  margin: 0;
+}
+
+.case-cta-card {
+  text-align: center;
+  padding: clamp(36px, 6vw, 68px);
+  border-radius: 34px;
+  background: radial-gradient(circle at top left, rgba(240, 98, 42, 0.22), rgba(255, 255, 255, 0.045) 44%, rgba(255, 255, 255, 0.035));
+}
+
+.case-cta-card h2,
+.case-cta-card p {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+:global(.case-study-page .btn-secondary),
+:global(.case-study-page .btn-primary) {
+  min-height: 48px;
+}
+
+@media (max-width: 980px) {
+  .proof-grid,
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-grid,
+  .two-column,
+  .commercial-card,
+  .faq-layout {
     grid-template-columns: 1fr;
+  }
+
+  .case-summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .case-container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .overview-section,
+  .visual-proof-section,
+  .content-section,
+  .constraints-section,
+  .work-section,
+  .results-section,
+  .commercial-section,
+  .lessons-section,
+  .related-services-section,
+  .faq-section,
+  .case-cta-section {
+    padding: 64px 0;
+  }
+
+  .proof-grid,
+  .result-grid,
+  .constraint-grid,
+  .lesson-grid,
+  .service-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-item {
+    grid-template-columns: 1fr;
+  }
+
+  .work-item > span {
+    width: 50px;
+    height: 50px;
   }
 }
 </style>
