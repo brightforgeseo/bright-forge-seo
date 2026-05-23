@@ -636,13 +636,17 @@ p {
 .connected-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .optimise-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .proof-card,
@@ -652,10 +656,17 @@ p {
 .process-step,
 .connected-card,
 .faq-item {
-  background: rgba(19, 22, 39, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
   padding: 1.6rem;
+}
+
+.optimise-card,
+.avoid-card {
+  background: rgba(19, 22, 39, 0.92);
+  border-right: 0;
 }
 
 .proof-card,
@@ -701,15 +712,15 @@ p {
 .page-type-card,
 .connected-card,
 .proof-card {
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: none;
 }
 
 .optimise-card:hover,
 .page-type-card:hover,
 .connected-card:hover,
 .proof-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(240, 98, 42, 0.38);
+  transform: none;
+  border-color: transparent;
 }
 
 .priority-list,
@@ -730,6 +741,9 @@ p {
   grid-template-columns: 90px minmax(0, 1fr);
   gap: 1.5rem;
   align-items: start;
+  padding: 0 0 1.5rem;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .process-step span {
@@ -738,10 +752,11 @@ p {
   justify-content: center;
   width: 64px;
   height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--bf-orange), #d4510e);
-  color: #ffffff;
+  border-radius: 0;
+  background: transparent;
+  color: var(--bf-orange);
   font-weight: 900;
+  border-right: 1px solid rgba(240, 98, 42, 0.34);
 }
 
 .avoid-grid {
