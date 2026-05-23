@@ -21,11 +21,11 @@ const proof = [
   }
 ];
 const inclusions = [
-  "Repositioned the page around buyer intent instead of generic industry claims",
-  "Added native FAQ markup with matching FAQPage schema",
-  "Removed JavaScript FAQ patterns where present",
-  "Added clearer process, fit, QA and internal links",
-  "Kept claims cautious and evidence-led"
+  "Club, academy, coaching, fan and ecommerce intent",
+  "Local and national page opportunities",
+  "Content quality around fixtures, training and products",
+  "Technical performance and crawlability",
+  "Conversion paths for signups, bookings, sales or enquiries"
 ];
 const fit = [
   {
@@ -115,10 +115,10 @@ const faqs = [
     <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
   <main class="service-page">
-    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page relied too much on football metaphors</h2><p>Football businesses do not need another page promising to score goals online. They need an SEO plan that understands match-day demand, local academy searches, sports content, technical performance and conversion into users, players, fans or enquiries.</p><p>This rewrite gives the page a clearer commercial role and ties football SEO to search behaviour, content timing and technical reliability.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">SEO focus</p><h2>Football SEO should turn match-day and training demand into measurable discovery</h2><p>Football searches range from clubs, academies and coaching to fixtures, products, fan content and local programmes. The SEO plan needs to understand those different intents before recommending content or technical work.</p><p>We focus on useful page structure, technical visibility, stronger trust signals and search paths that can support users, players, fans, enquiries or ecommerce revenue.</p></div><aside class="panel"><h3>What we check first</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
     <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What football SEO should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For football seo buyers who need SEO tied to business outcomes</h2><p>This suits football clubs, academies, coaching businesses, apps, fan platforms, ecommerce brands and sports services with real search demand around teams, training, fixtures or products.</p></div><div class="panel"><h3>Not the right fit when</h3><p>there is no clear offer, no useful pages to rank, or the strategy is only social hype without an organic search role.</p></div></div></section>
-    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for football seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For football SEO buyers who need SEO tied to business outcomes</h2><p>This suits football clubs, academies, coaching businesses, apps, fan platforms, ecommerce brands and sports services with real search demand around teams, training, fixtures or products.</p></div><div class="panel"><h3>Not the right fit when</h3><p>there is no clear offer, no useful pages to rank, or the strategy is only social hype without an organic search role.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for football SEO</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we keep football SEO grounded</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
     <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Football SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>

@@ -21,11 +21,11 @@ const proof = [
   }
 ];
 const inclusions = [
-  "Repositioned the page around buyer intent instead of generic industry claims",
-  "Added native FAQ markup with matching FAQPage schema",
-  "Removed JavaScript FAQ patterns where present",
-  "Added clearer process, fit, QA and internal links",
-  "Kept claims cautious and evidence-led"
+  "Service and location page coverage",
+  "Google Business Profile and local visibility signals",
+  "Review, proof and trust gaps",
+  "Technical health, speed and mobile usability",
+  "Calls, forms and quote request tracking"
 ];
 const fit = [
   {
@@ -115,10 +115,10 @@ const faqs = [
     <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
   <main class="service-page">
-    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page was too generic for high-intent local service buyers</h2><p>Home service searches are practical and urgent. People want to know who serves their area, what the business does, whether they can trust them and how quickly they can get help. Generic SEO copy does not answer those questions.</p><p>This rewrite focuses on the pages, proof, location signals and conversion paths that matter for service-area businesses.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">SEO focus</p><h2>Home services SEO should help urgent buyers choose the right provider</h2><p>Home service searches are practical, local and often urgent. People want to know who serves their area, what the business does, whether they can trust it and how quickly they can get help.</p><p>We focus on service pages, location signals, reviews, proof, technical basics and conversion paths that help local buyers move from search result to enquiry.</p></div><aside class="panel"><h3>What we check first</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
     <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What home services SEO should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For home seo buyers who need SEO tied to business outcomes</h2><p>This suits plumbers, HVAC companies, roofers, electricians, cleaners, landscapers, pest control firms and other service businesses that need more qualified enquiries from local search.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the business cannot handle new leads, has no defined service areas, or wants rankings without fixing weak pages, reviews, tracking or enquiry flow.</p></div></div></section>
-    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for home seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For home services SEO buyers who need SEO tied to business outcomes</h2><p>This suits plumbers, HVAC companies, roofers, electricians, cleaners, landscapers, pest control firms and other service businesses that need more qualified enquiries from local search.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the business cannot handle new leads, has no defined service areas, or wants rankings without fixing weak pages, reviews, tracking or enquiry flow.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for home services SEO</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we protect lead quality</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
     <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Home services SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>

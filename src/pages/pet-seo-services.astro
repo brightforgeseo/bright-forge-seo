@@ -21,11 +21,11 @@ const proof = [
   }
 ];
 const inclusions = [
-  "Repositioned the page around buyer intent instead of generic industry claims",
-  "Added native FAQ markup with matching FAQPage schema",
-  "Removed JavaScript FAQ patterns where present",
-  "Added clearer process, fit, QA and internal links",
-  "Kept claims cautious and evidence-led"
+  "Service, product and local search intent",
+  "Review quality and trust signals",
+  "Care content, advice pages and thin content gaps",
+  "Technical crawlability and mobile performance",
+  "Booking, enquiry or ecommerce conversion paths"
 ];
 const fit = [
   {
@@ -115,10 +115,10 @@ const faqs = [
     <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
   <main class="service-page">
-    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page had the right market, but needed stronger proof of judgement</h2><p>Pet SEO has to balance local visibility, trust, care content and conversion. A page that simply lists pet business types does not show enough SEO thinking.</p><p>This rewrite clarifies what we check, how we prioritise service pages and how pet businesses can earn useful local search visibility.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">SEO focus</p><h2>Pet SEO has to balance care, trust and local search demand</h2><p>Pet businesses need search visibility that feels credible, not generic. Owners compare services, locations, reviews, care standards and practical advice before they book or buy.</p><p>We focus on service pages, local signals, review quality, useful content, technical health and conversion paths that support clinics, groomers, trainers, stores and pet brands.</p></div><aside class="panel"><h3>What we check first</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
     <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What pet SEO should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For pet seo buyers who need SEO tied to business outcomes</h2><p>This suits veterinary clinics, groomers, trainers, pet stores, shelters, ecommerce brands and service businesses that need stronger local or commercial search visibility.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the business has no clear services, no service areas, poor review practices, or wants generic blog output instead of fixing the pages that drive enquiries.</p></div></div></section>
-    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for pet seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For pet SEO buyers who need SEO tied to business outcomes</h2><p>This suits veterinary clinics, groomers, trainers, pet stores, shelters, ecommerce brands and service businesses that need stronger local or commercial search visibility.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the business has no clear services, no service areas, poor review practices, or wants generic blog output instead of fixing the pages that drive enquiries.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for pet SEO</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we keep pet SEO useful and trustworthy</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
     <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Pet SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>

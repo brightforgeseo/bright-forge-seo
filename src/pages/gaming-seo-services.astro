@@ -21,11 +21,11 @@ const proof = [
   }
 ];
 const inclusions = [
-  "Repositioned the page around buyer intent instead of generic industry claims",
-  "Added native FAQ markup with matching FAQPage schema",
-  "Removed JavaScript FAQ patterns where present",
-  "Added clearer process, fit, QA and internal links",
-  "Kept claims cautious and evidence-led"
+  "Player, buyer and community search intent",
+  "Product, app, guide and category page quality",
+  "Technical performance, crawlability and indexation",
+  "Internal linking between discovery and conversion pages",
+  "Tracking for signups, enquiries, sales or other useful actions"
 ];
 const fit = [
   {
@@ -115,10 +115,10 @@ const faqs = [
     <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
   <main class="service-page">
-    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page leaned too hard on gaming puns and broad claims</h2><p>Gaming buyers, app users and community members do not need another agency page saying we help brands level up. They need proof that the SEO plan understands player intent, technical performance, platform constraints and how content supports acquisition.</p><p>This rewrite shifts the page from generic industry marketing into a practical service page: what we check, what we fix, what we measure and what we refuse to promise.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">SEO focus</p><h2>Gaming SEO should connect search demand to players, signups and revenue</h2><p>Gaming search covers discovery, guides, app comparisons, community questions, reviews, updates and brand demand. The work has to separate useful intent from hype before deciding which pages deserve attention.</p><p>We focus on crawlable pages, stronger technical foundations, content that matches player intent and measurement that shows whether organic search is helping acquisition.</p></div><aside class="panel"><h3>What we check first</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
     <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What gaming SEO should actually cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For gaming seo buyers who need SEO tied to business outcomes</h2><p>This suits studios, gaming apps, communities, media brands and ecommerce stores that have real search demand behind games, tools, guides or products.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the product has no clear search demand, no conversion path, or the goal is only hype rather than measurable discovery, signups or revenue.</p></div></div></section>
-    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for gaming seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For gaming SEO buyers who need SEO tied to business outcomes</h2><p>This suits studios, gaming apps, communities, media brands and ecommerce stores that have real search demand behind games, tools, guides or products.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the product has no clear search demand, no conversion path, or the goal is only hype rather than measurable discovery, signups or revenue.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for gaming SEO</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we keep gaming SEO credible</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
     <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Gaming SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
