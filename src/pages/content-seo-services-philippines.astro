@@ -6,201 +6,254 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const contentFaqs = [
+  {
+    question: "What is included in SEO content writing services?",
+    answer: "Our SEO content writing services include keyword research, search intent mapping, content briefs, page structure, copywriting, metadata, internal linking guidance, FAQ planning and optimisation recommendations for blogs, service pages, landing pages and existing content."
+  },
+  {
+    question: "Do you only write new content or can you improve existing pages?",
+    answer: "We do both. New content helps build topical authority, but existing pages often have faster gains. We use ranking and Google Search Console data to identify pages that need stronger headings, clearer search intent, better internal links, fresher information or sharper conversion copy."
+  },
+  {
+    question: "Can you work with our in-house writers or marketing team?",
+    answer: "Yes. We can create SEO content briefs, review drafts, improve page structure and guide your team on keyword targeting, internal links, EEAT signals and editorial standards while your writers keep control of brand voice."
+  },
+  {
+    question: "Do you use AI for SEO content?",
+    answer: "We use AI carefully as a workflow tool, not as a replacement for SEO judgement or editorial review. Strategy, search intent, structure, fact checking, brand fit and final edits stay human-led, because generic AI content is exactly what most websites need to avoid."
+  },
+  {
+    question: "How long does content SEO take to work?",
+    answer: "It depends on the site, competition and authority behind the page. Content refreshes can sometimes move faster because Google already knows the URL. New content usually needs more time, internal links and supporting authority before it becomes a reliable source of traffic or enquiries."
+  },
+  {
+    question: "How do you measure content SEO performance?",
+    answer: "We track rankings, impressions, clicks, landing page performance, enquiries where tracking is available, internal link impact and whether the content is supporting the right commercial pages. The aim is not just more articles, it is more useful visibility that helps the business grow."
+  }
+];
 ---
 
 <MainLayout
-  title="Content SEO Services In The Philippines - Bright Forge SEO"
-  description="Great content deserves to be seen. Our SEO content services in the Philippines help brands rank with strategy-first writing that drives results."
-  faqs={[
-    {
-      question: "How does well-written content impact my SEO?",
-      answer: "Search engines reward websites that provide meaningful, user-focused information. By addressing reader needs and applying proven SEO practices, your site gains more credibility and ranks higher."
-    },
-    {
-      question: "How soon will I see changes in traffic or rankings?",
-      answer: "This varies based on factors like your industry and website health. Some businesses notice small improvements in a few weeks, but bigger shifts generally happen over a few months."
-    },
-    {
-      question: "Can you work with my existing content team?",
-      answer: "Yes! We often partner with in-house writers or designers. We'll guide them on keyword targeting, SEO-friendly structures, and editorial standards so your entire team stays on track."
-    },
-    {
-      question: "Do you handle graphics or video for SEO content?",
-      answer: "We do. Great content deserves to be seen. Our SEO content services in the Philippines help brands rank with strategy-first writing that drives results. Infographics, short videos, and animations that support your messaging."
-    }
-  ]}
+  title="SEO Content Writing Services Philippines | Bright Forge SEO"
+  description="SEO content writing and optimisation services for Philippine businesses. We plan, write and improve content that targets the right searches and turns traffic into enquiries."
+  faqs={contentFaqs}
 >
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
   <Hero
     badgeIcon="fas fa-pen-nib"
-    badgeText="Content SEO Experts"
-    title="Content SEO Services In The Philippines"
-    breadcrumbCurrent="Content SEO Services Philippines"
+    badgeText="SEO Content Writing"
+    title="SEO Content Writing Services Philippines"
+    breadcrumbCurrent="SEO Content Writing Services"
   >
     <Fragment slot="story">
-      <p>Ever felt like you've done everything right -built a great website, designed eye-catching product pages, and shared posts on social media -yet still struggled to get noticed online? I've been there, too. A close friend once confided that her new e-commerce store had fantastic products but hardly any visitors. She thought she was missing some "secret sauce." Turns out, the key ingredient was well-structured, SEO-focused content.</p>
+      <p>SEO content should do more than fill a blog. We plan, write and improve content that targets the right searches, supports your service pages, builds topical authority and helps turn organic traffic into enquiries.</p>
 
-      <p>That's exactly what we offer here at Bright Forge SEO: carefully planned and brilliantly executed content that boosts visibility and sparks meaningful engagement. Our approach combines technical best practices with genuine storytelling, so you don't just rank -you connect with real people who are ready to become loyal customers.</p>
+      <p>Bright Forge SEO works with businesses that need content led by search intent, not guesswork. That means clear keyword mapping, practical content briefs, stronger page structure, better internal links, useful FAQs and copy that gives buyers a reason to act.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Start Your Content Journey" />
-      <ButtonSecondary href="#approach" text="See Our Process" />
+      <ButtonPrimary href="/contact/" text="Get a Free Content SEO Audit" />
+      <ButtonSecondary href="#approach" text="See How We Work" />
     </Fragment>
 
     <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="content-icon-grid">
-          <div class="content-icon"><i class="fas fa-pen-nib"></i></div>
-          <div class="content-icon"><i class="fas fa-bullseye"></i></div>
-          <div class="content-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="content-icon"><i class="fas fa-users"></i></div>
-          <div class="content-icon"><i class="fas fa-search"></i></div>
-          <div class="content-icon"><i class="fas fa-heart"></i></div>
+      <div class="hero-image-container strategy-panel">
+        <p class="panel-kicker">Content that earns its place</p>
+        <div class="strategy-flow">
+          <div><span>01</span><strong>Search intent</strong><small>What the buyer actually needs</small></div>
+          <div><span>02</span><strong>Page mapping</strong><small>Where each topic should live</small></div>
+          <div><span>03</span><strong>Content brief</strong><small>Structure, links, proof and CTA</small></div>
+          <div><span>04</span><strong>Performance refresh</strong><small>Rankings, clicks and enquiries</small></div>
         </div>
       </div>
     </Fragment>
   </Hero>
 
-  <!-- Why Great Content Section -->
-  <section class="why-content-section">
+  <section class="proof-strip-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Great Content Powers Your <span>SEO Success</span></h2>
-      </div>
-      
-      <div class="content-explanation">
-        <div class="content-card">
-          <div class="content-icon">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <div class="content-text">
-            <p>Content is more than just words. It's the vehicle that carries your brand's voice and connects you with real people online. Ranking well on Google is important, but your ultimate goal is to turn those clicks into leads, sales, and repeat customers.</p>
-            
-            <p>Our combination of data-driven keyword strategies, compelling narratives, and user-centric design strikes the perfect balance for search engines and readers.</p>
-          </div>
+      <div class="proof-strip">
+        <div>
+          <strong>Built for commercial search</strong>
+          <span>Service pages, blogs, location pages, guides and refreshes mapped to buyer intent.</span>
+        </div>
+        <div>
+          <strong>SEO plus CRO</strong>
+          <span>Content planned around rankings, internal links, trust signals and enquiry paths.</span>
+        </div>
+        <div>
+          <strong>Human-edited output</strong>
+          <span>AI can help the workflow, but strategy, fact checking and final polish stay human-led.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
+  <section class="why-content-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="editorial-layout">
+        <div class="editorial-copy">
+          <p class="eyebrow">Why content SEO matters</p>
+          <h2>Better content gives Google a reason to rank you and buyers a reason to trust you</h2>
+          <p>Most business content fails because it is written around what the company wants to say, not what the buyer is trying to solve. Good SEO content connects those two things. It answers the search properly, proves the business can help and points visitors towards the next sensible action.</p>
+          <p>We use keyword research, SERP review, competitor checks and page-level performance data to decide what should be written, what should be improved and what should be left alone. That is how content becomes a growth asset rather than another monthly deliverable.</p>
+        </div>
+        <div class="editorial-panel">
+          <h3>What we look for first</h3>
+          <ul>
+            <li>Pages ranking but not earning clicks</li>
+            <li>Topics with commercial search intent</li>
+            <li>Thin service pages that need supporting content</li>
+            <li>Old articles losing impressions or relevance</li>
+            <li>Internal link gaps between blogs and money pages</li>
+            <li>FAQs and answer blocks that can support AI search readiness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="services" class="services-section-new">
     <div class="max-w-7xl mx-auto px-4">
       <div class="services-layout">
         <div class="services-content">
-          <h2>Our Content SEO <span>Services</span></h2>
+          <p class="eyebrow">What is included</p>
+          <h2>SEO content services built around <span>search intent and revenue pages</span></h2>
 
           <div class="service-list">
             <div class="service-item">
-              <h3>Strategic Keyword Research</h3>
-              <p>We dig into the search terms your audience actually uses and position your content so it appears right where they're looking. This approach amplifies your visibility and puts you on track to land on those coveted SERPs.</p>
+              <h3>SEO Content Strategy</h3>
+              <p>We map topics to real searches, buyer stages and priority pages, so content supports the pages that need to rank and convert. That includes topic clusters, content calendars, keyword grouping and search intent review.</p>
             </div>
 
             <div class="service-item">
-              <h3>SEO Copywriting</h3>
-              <p>Our copywriting SEO services are designed to connect with people on a deeper level. By addressing real-life questions, frustrations, and interests, we help turn casual browsers into enthusiastic customers.</p>
+              <h3>SEO Content Writing</h3>
+              <p>We write service pages, blog posts, landing pages, local pages, FAQs and supporting guides with clear structure, useful headings, natural keyword coverage and conversion-focused calls to action.</p>
             </div>
 
             <div class="service-item">
-              <h3>Content Optimization</h3>
-              <p>Content that's optimized correctly tends to stay relevant over time. Through strategic planning, we make sure you get a steady flow of visitors who value what you offer -leading to long-term returns.</p>
+              <h3>Content Optimisation</h3>
+              <p>We improve existing pages using ranking data, Google Search Console signals and on-page checks. That can include rewritten sections, metadata, H1 and H2 changes, answer blocks, internal links, freshness updates and stronger proof.</p>
             </div>
 
             <div class="service-item">
-              <h3>Custom Content Strategy</h3>
-              <p>Every business has its own story and audience. Whether you need direction for your content team or a complete overhaul, we'll shape a strategy that works for your unique journey.</p>
+              <h3>Content Briefs and Editorial QA</h3>
+              <p>If your team writes in-house, we can handle the SEO layer. We create briefs, review drafts, check search intent, tighten headings, add internal link direction and make sure the finished page has a real job to do.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>AI Search Ready Content</h3>
+              <p>We structure content so services, locations, proof, FAQs and entity signals are easy for search engines and AI answer systems to understand. This is still SEO-first, just written for how search is changing.</p>
             </div>
           </div>
         </div>
 
         <div class="services-visual">
-          <div class="visual-card">
+          <div class="visual-card evidence-card">
             <div class="visual-icon">
-              <i class="fas fa-pen-nib"></i>
+              <i class="fas fa-route"></i>
             </div>
-            <h3>Content Excellence</h3>
-            <p class="visual-stat">95%</p>
-            <p class="visual-label">Content Optimization Score</p>
-            <p class="visual-description">Our content strategies consistently achieve top rankings and engagement metrics.</p>
+            <h3>From keyword to enquiry</h3>
+            <p class="visual-description">A useful content plan does not start with article titles. It starts with the pages that need more visibility, the questions buyers ask before they enquire and the internal links needed to move authority through the site.</p>
+            <a href="/keyword-research-services/">See our keyword research approach</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process Section -->
+  <section class="buyer-fit-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="buyer-fit-layout">
+        <div>
+          <p class="eyebrow">Who this suits</p>
+          <h2>For businesses that need content with a commercial job, not another pile of blog posts</h2>
+        </div>
+        <div class="buyer-fit-list">
+          <p><strong>Service businesses</strong> that need stronger pages, better local visibility and more enquiry-led content.</p>
+          <p><strong>Ecommerce and product-led brands</strong> that need category, guide and comparison content to support buying decisions.</p>
+          <p><strong>In-house marketing teams</strong> that already write content but need SEO briefs, structure and quality control.</p>
+          <p><strong>Agencies and partners</strong> that need reliable white-label SEO content without generic filler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="approach" class="process-section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="section-header">
-        <h2>Our Content SEO <span>Process</span></h2>
-        <p>Every business has its own story and audience. Wherever you are in your journey, we'll shape a strategy that works for you.</p>
+        <p class="eyebrow">Our process</p>
+        <h2>How we turn content into <span>search assets</span></h2>
+        <p>Every page needs a clear purpose before anyone starts writing. We decide the target, structure and proof first, then build the content around that plan.</p>
       </div>
 
       <div class="process-grid">
         <div class="process-box orange-bg">
           <div class="process-box-icon">
-            <i class="fas fa-compass"></i>
-          </div>
-          <h3>Discovery & Goal Setting</h3>
-          <p>We begin by understanding your brand, target customers, and unique selling points. This initial step ensures our efforts match your broader goals.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
             <i class="fas fa-search"></i>
           </div>
-          <h3>Keyword Research</h3>
-          <p>We map out the specific search terms that can connect you to your audience and spot opportunities competitors may have missed.</p>
+          <h3>Audit</h3>
+          <p>We review current rankings, page quality, Search Console signals, internal links and content gaps.</p>
         </div>
 
         <div class="process-box white-bg">
           <div class="process-box-icon">
-            <i class="fas fa-sliders-h"></i>
+            <i class="fas fa-map-signs"></i>
           </div>
-          <h3>Content Optimization</h3>
-          <p>We revamp your title tags, headings, and overall structure. By making strategic tweaks, we help your pages shine in search rankings.</p>
+          <h3>Map</h3>
+          <p>We match keywords and topics to the right pages, so blogs do not compete with service pages.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h3>Brief</h3>
+          <p>We define search intent, headings, internal links, proof points, FAQs and the conversion angle.</p>
         </div>
 
         <div class="process-box orange-bg">
           <div class="process-box-icon">
             <i class="fas fa-pen-fancy"></i>
           </div>
-          <h3>Copywriting & Creation</h3>
-          <p>Our team produces materials that inform and persuade, from blog articles to service pages, ensuring consistency in tone and messaging.</p>
+          <h3>Write</h3>
+          <p>We create useful, readable content with SEO structure and enough commercial clarity to earn enquiries.</p>
         </div>
 
         <div class="process-box orange-bg">
           <div class="process-box-icon">
-            <i class="fas fa-images"></i>
+            <i class="fas fa-link"></i>
           </div>
-          <h3>Visuals & Multimedia</h3>
-          <p>We collaborate with designers to create graphics, infographics, or short videos that keep people on your site longer.</p>
+          <h3>Connect</h3>
+          <p>We add internal link direction so supporting content passes relevance to your priority pages.</p>
         </div>
 
         <div class="process-box white-bg">
           <div class="process-box-icon">
             <i class="fas fa-chart-line"></i>
           </div>
-          <h3>Performance Tracking</h3>
-          <p>Each month, we share reports highlighting keyword positions, visitor behavior, and conversions to continuously improve your strategy.</p>
+          <h3>Improve</h3>
+          <p>We track rankings, impressions, clicks and leads, then refresh the content when the data says it needs work.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Benefits Section -->
   <section class="benefits-section">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Choose Our Content <span>SEO Services</span></h2>
-      </div>
-
       <div class="benefits-layout">
-        <div class="benefits-visual">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Content strategy team collaborating" class="benefits-image" />
+        <div class="proof-panel">
+          <p class="eyebrow">Why Bright Forge</p>
+          <h2>Senior SEO thinking before the first draft</h2>
+          <p>Content quality is not just grammar. It is whether the page deserves to rank, whether it answers the query better than the current SERP, whether it supports the right commercial page and whether the visitor knows what to do next.</p>
+          <p>That is why we treat content as part of the SEO system: keyword research, on-page SEO, internal links, technical foundations, proof, reporting and conversion paths all need to work together.</p>
+          <div class="proof-links">
+            <a href="/seo-services-philippines/">Explore SEO services</a>
+            <a href="/on-page-seo-services-philippines/">View on-page SEO</a>
+            <a href="/case-studies/">See case studies</a>
+          </div>
         </div>
 
         <div class="benefits-grid">
@@ -208,39 +261,56 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <div class="benefit-icon">
               <i class="fas fa-layer-group"></i>
             </div>
-            <h3>Strategic Planning</h3>
-            <p>Comprehensive content strategies that align with your business goals and target audience needs.</p>
+            <h3>Topic clusters</h3>
+            <p>Content planned around connected themes, not random articles that never support the money pages.</p>
           </div>
 
           <div class="benefit-card">
             <div class="benefit-icon">
-              <i class="fas fa-robot"></i>
+              <i class="fas fa-user-check"></i>
             </div>
-            <h3>AI-Enhanced Writing</h3>
-            <p>Human-refined content combining AI efficiency with editorial excellence and brand consistency.</p>
+            <h3>Buyer-led copy</h3>
+            <p>Pages built around questions, objections, proof and decision points, not vague traffic promises.</p>
           </div>
 
           <div class="benefit-card">
             <div class="benefit-icon">
-              <i class="fas fa-palette"></i>
+              <i class="fas fa-sync-alt"></i>
             </div>
-            <h3>Visual Content</h3>
-            <p>High-quality graphics, videos, and interactive assets that boost engagement and conversions.</p>
+            <h3>Content refreshes</h3>
+            <p>Existing pages improved when rankings stall, clicks drop, facts age or the SERP changes.</p>
           </div>
 
           <div class="benefit-card">
             <div class="benefit-icon">
-              <i class="fas fa-trophy"></i>
+              <i class="fas fa-chart-pie"></i>
             </div>
-            <h3>Proven Results</h3>
-            <p>Data-driven approach with transparent reporting and continuous optimization for long-term success.</p>
+            <h3>Useful reporting</h3>
+            <p>We report on the content signals that matter: rankings, impressions, clicks, links, enquiries and next actions.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <section class="next-steps-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="next-steps-card">
+        <div>
+          <p class="eyebrow">What happens after you enquire</p>
+          <h2>We start with the content that can move the needle fastest</h2>
+          <p>We review your current pages, rankings and content gaps, then show where new content, page refreshes or internal linking fixes can make the biggest difference. If there is a quick win hiding in existing content, we will usually find that before recommending a new calendar.</p>
+        </div>
+        <ol>
+          <li>Review current rankings and page quality</li>
+          <li>Identify content gaps and underperforming pages</li>
+          <li>Map content to commercial priorities</li>
+          <li>Build a practical content SEO roadmap</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-section">
     <div class="max-w-4xl mx-auto px-4">
       <div class="section-header">
@@ -248,44 +318,30 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       </div>
 
       <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>How does well-written content impact my SEO?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Search engines reward websites that provide meaningful, user-focused information. By addressing reader needs and applying proven SEO practices, your site gains more credibility and ranks higher.</p>
+        {contentFaqs.map((faq) => (
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>{faq.question}</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>How soon will I see changes in traffic or rankings?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>This varies based on factors like your industry and website health. Some businesses notice small improvements in a few weeks, but bigger shifts generally happen over a few months.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>Can you work with my existing content team?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Yes! We often partner with in-house writers or designers. We'll guide them on keyword targeting, SEO-friendly structures, and editorial standards so your entire team stays on track.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>Do you handle graphics or video for SEO content?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>We do. Great content deserves to be seen. Our SEO content services in the Philippines help brands rank with strategy-first writing that drives results. Infographics, short videos, and animations that support your messaging.</p>
-          </div>
+  <section class="content-cta-section">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="content-cta-card">
+        <p class="eyebrow">Ready to improve your content?</p>
+        <h2>Get a free content SEO audit</h2>
+        <p>We will review your current content, identify the pages with the clearest upside and show what should be created, improved or consolidated first.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Request Your Free Audit" />
+          <ButtonSecondary href="mailto:seo@brightforgeseo.com" text="Email the Team" />
         </div>
       </div>
     </div>
@@ -296,62 +352,75 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 </MainLayout>
 
 <style>
-/* Hero Content Icon Grid */
 .hero-image-container {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
 }
 
-.content-icon-grid {
+.strategy-panel {
+  background: rgba(13, 15, 26, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.panel-kicker,
+.eyebrow {
+  color: #f0622a;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.strategy-flow {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+  gap: 16px;
 }
 
-.content-icon-grid .content-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  color: white;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-  animation: float 4s ease-in-out infinite;
+.strategy-flow div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+.strategy-flow span {
+  grid-row: 1 / span 2;
+  color: #f9b089;
+  font-weight: 900;
 }
 
-.content-icon-grid .content-icon:nth-child(odd) {
-  animation-delay: 1s;
+.strategy-flow strong {
+  color: #ffffff;
+  font-size: 1rem;
 }
 
-.content-icon-grid .content-icon:nth-child(even) {
-  animation-delay: 2s;
+.strategy-flow small {
+  color: #d0d4e8;
+  line-height: 1.5;
 }
 
-.content-icon-grid .content-icon:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Section Headers */
 .section-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.section-header h2 {
+.section-header h2,
+.editorial-copy h2,
+.services-content h2,
+.buyer-fit-layout h2,
+.proof-panel h2,
+.next-steps-card h2,
+.content-cta-card h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   color: #ffffff;
@@ -359,7 +428,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   line-height: 1.2;
 }
 
-.section-header h2 span {
+.section-header h2 span,
+.services-content h2 span {
   background: linear-gradient(135deg, #f0622a, #d4510e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -367,62 +437,116 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .section-header p {
-  font-size: 1.2rem;
-  color: #ffffff;
-  max-width: 600px;
+  font-size: 1.1rem;
+  color: #d0d4e8;
+  max-width: 720px;
   margin: 0 auto;
+  line-height: 1.7;
+}
+
+.proof-strip-section {
+  padding: 34px 0;
+  background: #0d0f1a;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.proof-strip div {
+  background: #131627;
+  border: 1px solid rgba(240, 98, 42, 0.18);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.proof-strip strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.proof-strip span {
+  color: #d0d4e8;
   line-height: 1.6;
 }
 
-/* Why Content Section */
-.why-content-section {
+.why-content-section,
+.benefits-section,
+.next-steps-section {
   padding: 100px 0;
   background: linear-gradient(135deg, #0d0f1a 0%, #131627 100%);
 }
 
-.content-explanation {
-  max-width: 900px;
-  margin: 0 auto;
+.editorial-layout,
+.buyer-fit-layout,
+.benefits-layout,
+.next-steps-card {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.content-card {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  background: #131627;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 68, 56, 0.1);
-}
-
-.content-card .content-icon {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  flex-shrink: 0;
-  box-shadow: 0 8px 25px rgba(240, 98, 42, 0.3);
-}
-
-.content-text p {
-  font-size: 1.1rem;
+.editorial-copy p,
+.proof-panel p,
+.next-steps-card p,
+.content-cta-card p {
+  color: #d0d4e8;
+  font-size: 1.08rem;
   line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.editorial-panel,
+.proof-panel,
+.next-steps-card,
+.content-cta-card {
+  background: #131627;
+  border: 1px solid rgba(240, 98, 42, 0.16);
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+}
+
+.editorial-panel h3 {
   color: #ffffff;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-.content-text p:last-child {
-  margin-bottom: 0;
+.editorial-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Services Section - 2 Column Layout */
-.services-section-new {
+.editorial-panel li {
+  color: #d0d4e8;
+  line-height: 1.7;
+  padding: 12px 0 12px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+}
+
+.editorial-panel li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #f0622a;
+}
+
+.services-section-new,
+.process-section,
+.faq-section,
+.content-cta-section {
   padding: 100px 0;
   background: #131627;
 }
@@ -432,21 +556,6 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px;
   align-items: start;
-}
-
-.services-content h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 40px;
-  line-height: 1.2;
-}
-
-.services-content h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .service-list {
@@ -473,10 +582,12 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   margin-bottom: 12px;
 }
 
-.service-item p {
-  color: #ffffff;
+.service-item p,
+.buyer-fit-list p,
+.benefit-card p {
+  color: #d0d4e8;
   line-height: 1.7;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
 }
 
 .services-visual {
@@ -488,54 +599,64 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
   padding: 40px;
   border-radius: 24px;
-  text-align: center;
   color: white;
   box-shadow: 0 20px 60px rgba(240, 98, 42, 0.3);
 }
 
 .visual-icon {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-size: 2.1rem;
 }
 
 .visual-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.visual-stat {
-  font-size: 4rem;
-  font-weight: 900;
-  margin: 20px 0 10px;
-  line-height: 1;
-}
-
-.visual-label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  opacity: 0.95;
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin-bottom: 16px;
 }
 
 .visual-description {
-  font-size: 0.95rem;
-  opacity: 0.9;
-  line-height: 1.6;
+  font-size: 1rem;
+  opacity: 0.95;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-/* Process Section - 3x2 Grid */
-.process-section {
-  padding: 100px 0;
+.visual-card a,
+.proof-links a {
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.buyer-fit-section {
+  padding: 90px 0;
+  background: #0d0f1a;
+}
+
+.buyer-fit-list {
+  display: grid;
+  gap: 18px;
+}
+
+.buyer-fit-list p {
   background: #131627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 22px;
+  margin: 0;
+}
+
+.buyer-fit-list strong {
+  color: #ffffff;
 }
 
 .process-grid {
@@ -560,7 +681,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 .process-box.white-bg {
   background: #131627;
   color: #ffffff;
-  border: 2px solid #f0f0f0;
+  border: 2px solid rgba(255, 255, 255, 0.12);
 }
 
 .process-box:hover {
@@ -606,28 +727,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .white-bg p {
-  color: #ffffff;
+  color: #d0d4e8;
 }
 
-/* Benefits Section - Image + 2x2 Grid */
-.benefits-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #0d0f1a 0%, #131627 100%);
-}
-
-.benefits-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.benefits-image {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+.proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
 }
 
 .benefits-grid {
@@ -670,16 +777,41 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   margin-bottom: 12px;
 }
 
-.benefit-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 0.95rem;
+.next-steps-card {
+  align-items: center;
 }
 
-/* FAQ Section */
-.faq-section {
-  padding: 5rem 0;
-  background: #131627;
+.next-steps-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: steps;
+}
+
+.next-steps-card li {
+  counter-increment: steps;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 18px 18px 18px 58px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.next-steps-card li:before {
+  content: counter(steps);
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0622a;
+  color: #ffffff;
+  font-weight: 900;
 }
 
 .faq-container {
@@ -697,10 +829,6 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   transition: all 0.3s ease;
 }
 
-.faq-item:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
 .faq-question {
   width: 100%;
   padding: 1.5rem;
@@ -713,6 +841,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   align-items: center;
   transition: background 0.3s ease;
 }
@@ -734,9 +863,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .faq-answer.active {
-  max-height: 500px;
-  padding: 0 1.5rem 1.5rem;
-  padding-top: 1rem;
+  max-height: 700px;
+  padding: 1rem 1.5rem 1.5rem;
 }
 
 .faq-answer p {
@@ -746,9 +874,30 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   margin: 0;
 }
 
-/* Responsive Design */
+.content-cta-section {
+  padding-top: 50px;
+}
+
+.content-cta-card {
+  text-align: center;
+  background: linear-gradient(135deg, #0d0f1a 0%, #1f2338 100%);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
 @media (max-width: 1024px) {
-  .services-layout {
+  .proof-strip,
+  .services-layout,
+  .editorial-layout,
+  .buyer-fit-layout,
+  .benefits-layout,
+  .next-steps-card {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -760,48 +909,25 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .benefits-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .content-icon-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .content-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .process-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
+  .proof-strip,
+  .process-grid,
   .benefits-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .section-header {
     margin-bottom: 40px;
   }
 
-  .content-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .content-icon-grid .content-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+  .strategy-panel,
+  .editorial-panel,
+  .proof-panel,
+  .next-steps-card,
+  .content-cta-card {
+    padding: 28px;
   }
 
   .faq-question {
@@ -810,29 +936,26 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   }
 
   .faq-answer.active {
-    padding: 0 20px 20px;
+    padding: 1rem 20px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .section-header h2 {
+  .section-header h2,
+  .editorial-copy h2,
+  .services-content h2,
+  .buyer-fit-layout h2,
+  .proof-panel h2,
+  .next-steps-card h2,
+  .content-cta-card h2 {
     font-size: 2rem;
   }
 
-  .content-card {
-    padding: 25px;
-  }
-
-  .process-box {
+  .process-box,
+  .benefit-card {
     padding: 30px 20px;
   }
-
-  .benefit-card {
-    padding: 25px;
-  }
 }
-
-/* End of styles */
 </style>
 
 <script>
@@ -840,16 +963,14 @@ document.addEventListener('DOMContentLoaded', function() {
   window.toggleFAQ = function(element) {
     const answer = element.nextElementSibling;
     const icon = element.querySelector('i');
-    
-    // Close all other FAQ answers
+
     document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
       if (otherAnswer !== answer) {
         otherAnswer.classList.remove('active');
         otherAnswer.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
       }
     });
-    
-    // Toggle current FAQ
+
     answer.classList.toggle('active');
     if (answer.classList.contains('active')) {
       icon.style.transform = 'rotate(180deg)';
