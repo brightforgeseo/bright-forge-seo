@@ -6,994 +6,712 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const technicalChecks = [
+  {
+    title: 'Crawl access and indexation',
+    copy: 'We check whether Google can reach the right pages, ignore the wrong ones and understand which URLs should be indexed. That includes robots.txt, XML sitemaps, canonicals, noindex tags, redirects, crawl traps and index bloat.'
+  },
+  {
+    title: 'Core Web Vitals and speed',
+    copy: 'We identify the templates, scripts, images, hosting issues and layout shifts that slow the site down or make key pages harder to use, then prioritise fixes by commercial impact.'
+  },
+  {
+    title: 'Site architecture and internal links',
+    copy: 'We review whether the site structure pushes authority towards important service, category and location pages instead of burying money pages behind weak navigation or orphaned URLs.'
+  },
+  {
+    title: 'JavaScript and rendering',
+    copy: 'We test whether key content, links, metadata and structured data are available to crawlers, especially on JavaScript-heavy sites where visible content is not always crawlable content.'
+  },
+  {
+    title: 'Schema and entity signals',
+    copy: 'We clean up structured data, remove unsupported claims, align schema with visible page content and make business, service, FAQ and local signals easier for search engines to interpret.'
+  },
+  {
+    title: 'Migration and release QA',
+    copy: 'We support redesigns, CMS changes, domain moves, URL changes and template releases so rankings are protected before, during and after launch.'
+  }
+];
+
+const issueTypes = [
+  'Important pages missing from the index',
+  'Duplicate URLs splitting ranking signals',
+  'Slow templates weakening rankings and conversions',
+  'Redirect chains wasting crawl equity',
+  'Thin or conflicting canonical signals',
+  'Weak internal links to commercial pages',
+  'Broken schema or unsupported review markup',
+  'Mobile usability and layout problems',
+  'JavaScript hiding important content or links',
+  'Migration risks before a redesign or CMS move'
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Technical discovery',
+    copy: 'We review the site with crawls, Search Console, page templates, index coverage, speed data, analytics signals and manual checks. The aim is to find the technical issues that can actually affect rankings, traffic or leads.'
+  },
+  {
+    label: '02',
+    title: 'Priority diagnosis',
+    copy: 'We separate real blockers from harmless noise. A crawl export can contain thousands of warnings, but only some deserve developer time. We prioritise by commercial impact, risk and implementation effort.'
+  },
+  {
+    label: '03',
+    title: 'Fix briefs and implementation',
+    copy: 'We provide developer-ready instructions or handle the fixes where appropriate. Every recommendation should explain the problem, the fix, the affected URLs and how success will be checked.'
+  },
+  {
+    label: '04',
+    title: 'QA and monitoring',
+    copy: 'We verify changes after release, compare crawls, watch Search Console and check whether the fix created any new problems. Technical SEO is not finished when a ticket moves to Done.'
+  }
+];
+
+const fitBlocks = [
+  {
+    title: 'Sites with rankings stuck below page one',
+    copy: 'If content and links are improving but rankings are not moving, crawlability, indexation, architecture or page experience may be limiting the campaign.'
+  },
+  {
+    title: 'Websites about to migrate or redesign',
+    copy: 'A redesign can wipe out years of organic progress if redirects, URL mapping, canonicals, metadata, content and crawl controls are handled badly.'
+  },
+  {
+    title: 'Ecommerce and large catalogue sites',
+    copy: 'Filters, faceted navigation, category depth, duplicate URLs, internal search pages and product churn can create crawl waste and indexation mess quickly.'
+  },
+  {
+    title: 'Service businesses with weak lead flow',
+    copy: 'Slow pages, broken tracking, poor mobile layouts, buried service pages and unclear internal links can reduce both rankings and enquiry conversion.'
+  }
+];
+
+const proofItems = [
+  {
+    title: 'Migration safety',
+    copy: 'Technical SEO prevents avoidable traffic loss during redesigns, URL changes, CMS moves and domain changes.'
+  },
+  {
+    title: 'Cleaner crawl signals',
+    copy: 'A cleaner technical foundation helps Google spend more time on the pages that matter and less time on duplicates, traps and dead ends.'
+  },
+  {
+    title: 'Better conversion paths',
+    copy: 'Speed, mobile usability, tracking and template fixes support the CRO side of SEO, not just rankings.'
+  }
+];
+
+const faqs = [
+  { question: 'What are technical SEO services?', answer: 'Technical SEO services improve the crawlability, indexation, speed, structure, rendering, schema and release safety of a website. The aim is to remove technical blockers that stop search engines finding, understanding and ranking important pages.' },
+  { question: 'Is technical SEO different from an SEO audit?', answer: 'A technical SEO audit diagnoses problems. Technical SEO services go further by prioritising the issues, writing implementation briefs, helping developers fix them, checking the release and monitoring results after Google recrawls the site.' },
+  { question: 'What technical SEO issues usually matter most?', answer: 'The highest-impact issues are usually indexation problems, blocked pages, duplicate URLs, broken canonicals, slow templates, redirect chains, weak internal links, mobile usability issues, JavaScript rendering problems and unsupported schema.' },
+  { question: 'Can you work with our developer?', answer: 'Yes. We can provide developer-ready tickets, explain the SEO risk, review staging changes, test the release and monitor Search Console after deployment. We can also implement fixes directly when the access and platform allow it.' },
+  { question: 'How quickly does technical SEO improve rankings?', answer: 'Critical crawl and indexation fixes can show movement within weeks. Speed, architecture, internal linking and template improvements usually compound over one to three months as Google recrawls the site and users get a better experience.' },
+  { question: 'Do small websites need technical SEO?', answer: 'Yes, but the scope is usually lighter. A small business site may only need crawl checks, indexation cleanup, speed fixes, schema validation, mobile checks and stronger internal links to service pages.' },
+  { question: 'Do ecommerce websites need more technical SEO?', answer: 'Usually, yes. Ecommerce sites often have filters, variants, category duplication, product churn, pagination, internal search URLs, faceted navigation and performance issues that can waste crawl budget and weaken category rankings.' },
+  { question: 'Can technical SEO help AI search visibility?', answer: 'Yes, indirectly. AI search systems still rely on clear, crawlable and trustworthy source material. Clean structure, schema, entity clarity, fast pages and accessible content make the site easier to understand in normal search and AI-assisted search.' }
+];
 ---
 
 <MainLayout
-  title="Technical SEO Services In The Philippines - Bright Forge SEO"
-  description="Technical SEO services in the Philippines for crawlability, Core Web Vitals, indexation, migrations, structured data and site health fixes that protect rankings and leads."
-  faqs={[
-    { question: "What does technical SEO fix first?", answer: "We usually start with crawl access, indexation, Core Web Vitals, mobile rendering, broken internal links, redirect chains, duplicate pages, sitemap hygiene and schema issues. The priority is not the longest issue list; it is the fixes most likely to unlock rankings, traffic and enquiries." },
-    { question: "Do we need technical SEO if the site already looks good?", answer: "Yes, because design quality and search accessibility are different things. A site can look polished while Google struggles with slow templates, blocked resources, duplicate URLs, weak internal links or JavaScript rendering problems." },
-    { question: "Can you work with our developer?", answer: "Yes. We can diagnose the issues, write the implementation brief, QA the developer's changes and monitor Search Console after release so fixes do not create new ranking or conversion problems." },
-    { question: "How quickly can technical SEO improve results?", answer: "Critical crawl and indexation fixes can show movement within weeks. Performance, architecture and migration work usually compounds over one to three months as Google recrawls the site and users get a faster path to enquiry." }
-  ]}
+  title="Technical SEO Services Philippines | Site Health & Rankings"
+  description="Technical SEO services in the Philippines for crawlability, indexation, Core Web Vitals, schema, migrations and site health fixes that protect growth."
+  faqs={faqs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Technical SEO Services Philippines',
+          item: 'https://brightforge.com.ph/technical-seo-services-philippines/'
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Technical SEO Services Philippines',
+      url: 'https://brightforge.com.ph/technical-seo-services-philippines/',
+      inLanguage: 'en',
+      description: 'Technical SEO services for crawlability, indexation, Core Web Vitals, schema, migrations, architecture and site health fixes.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: technicalChecks.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          description: item.copy
+        }))
+      }
+    })} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
-  
-  <!-- Hero Section -->
+
   <Hero
     badgeIcon="fas fa-cogs"
-    badgeText="Technical SEO Experts"
-    title="Technical SEO Services In The Philippines"
+    badgeText="Technical SEO Services"
+    title="Technical SEO Services Philippines for <span>Site Health, Indexation and Growth</span>"
     breadcrumbCurrent="Technical SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>A site can look fine and still leak rankings through crawl waste, Core Web Vitals, indexation problems, duplicate URLs, weak internal links or JavaScript that search engines struggle to render. That is the work technical SEO is meant to catch before it quietly costs traffic.</p>
-      <p>We audit the parts users do not see, then turn the findings into fixes developers can actually ship. The goal is a cleaner technical foundation, faster pages, better crawl access and less friction between search visibility and enquiries.</p>
+      <p>A website can look polished and still be difficult for search engines to crawl, render, index or trust. Technical SEO finds the hidden problems behind stalled rankings, wasted crawl budget, slow templates, duplicate URLs and risky site changes.</p>
+      <p>Bright Forge provides technical SEO services in the Philippines for businesses that need clean foundations, safer releases and stronger organic growth. We turn the audit into practical fixes, not a spreadsheet graveyard.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Fix Your Technical Foundation" />
-      <ButtonSecondary href="#services" text="View Our Services" />
+      <ButtonPrimary href="/contact/" text="Get a Technical SEO Audit" />
+      <ButtonSecondary href="#checks" text="See What We Check" />
     </Fragment>
 
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="technical-icon-grid">
-          <div class="tech-icon"><i class="fas fa-cogs"></i></div>
-          <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-sitemap"></i></div>
-          <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-shield-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-code"></i></div>
-        </div>
+    <Fragment slot="stats">
+      <div class="hero-stats">
+        <div class="stat"><strong>Indexation</strong><span>Find the pages Google should and should not index.</span></div>
+        <div class="stat"><strong>Performance</strong><span>Improve speed, Core Web Vitals and mobile experience.</span></div>
+        <div class="stat"><strong>Release safety</strong><span>Protect rankings during migrations, redesigns and CMS changes.</span></div>
       </div>
     </Fragment>
   </Hero>
 
-  <!-- Why Technical SEO Section -->
-  <section class="why-technical-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Technical SEO Is Usually the <span>Hidden Blocker</span></h2>
-      </div>
-      
-      <div class="content-explanation">
-        <div class="content-card">
-          <div class="content-icon">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <div class="content-text">
-            <p>Content and backlinks cannot do their job if search engines are wasting crawl budget, landing on duplicate URLs, missing important pages or giving up on slow templates. Technical SEO makes the site easier to crawl, render, index and trust.</p>
-            
-            <p>We prioritise the fixes with commercial impact: pages that should be indexed, templates that are too slow, redirects that dilute signals, schema that needs tightening and internal links that should point authority towards the pages that sell.</p>
-          </div>
+  <section class="diagnosis-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="diagnosis-layout">
+        <div class="diagnosis-copy">
+          <span class="eyebrow">Why technical SEO matters</span>
+          <h2>Technical problems usually hide behind normal-looking pages</h2>
+          <p>Most businesses do not discover technical SEO problems because the homepage looks broken. They discover them when rankings stall, important pages refuse to index, traffic drops after a redesign or a site becomes slower every time another plugin, script or template change is added.</p>
+          <p>Technical SEO connects the website build to commercial performance. If Google wastes time on duplicates, misses key pages, struggles to render content or finds inconsistent signals, content and links have to work harder than they should.</p>
         </div>
+        <aside class="diagnosis-panel" aria-label="Technical SEO audit priorities">
+          <h3>We look for the issues that can change outcomes</h3>
+          <ul>
+            {issueTypes.map((issue) => <li>{issue}</li>)}
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
 
-  <!-- Core Technical SEO Services Section -->
-  <section id="services" class="services-section-new">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="services-layout">
-        <div class="services-content">
-          <h2>Our Core Technical SEO <span>Services</span></h2>
-
-          <div class="service-list">
-            <div class="service-item">
-              <h3>Site Architecture Optimization</h3>
-              <p>Streamline your URL structure, internal linking, site hierarchy, XML sitemaps, and robots.txt to help search engines crawl and understand your site efficiently.</p>
+  <section id="checks" class="checks-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading">
+        <span class="eyebrow">What we check</span>
+        <h2>Technical SEO services that support rankings, leads and safer growth</h2>
+        <p>The work is not about collecting errors. It is about finding the technical issues that hold back search visibility, damage user experience or create release risk.</p>
+      </div>
+      <div class="checks-list">
+        {technicalChecks.map((check, index) => (
+          <article class="check-item">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{check.title}</h3>
+              <p>{check.copy}</p>
             </div>
-
-            <div class="service-item">
-              <h3>Performance Optimization</h3>
-              <p>Improve page speed, Core Web Vitals, server response times, and resource delivery through minification, compression, and image optimization for better rankings and user experience.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Mobile Optimization</h3>
-              <p>Ensure mobile-first indexing compliance with responsive design, mobile usability fixes, proper touch element spacing, and lightning-fast mobile page speeds.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Security & Indexing</h3>
-              <p>Implement SSL, manage HTTPS migrations, configure security headers, and optimize crawl budgets to improve index coverage and protect your site's reputation.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="services-visual">
-          <div class="visual-card">
-            <div class="visual-icon">
-              <i class="fas fa-cogs"></i>
-            </div>
-            <h3>Technical Priorities</h3>
-            <p class="visual-stat">Fix first</p>
-            <p class="visual-label">Crawl, speed, indexation, schema and conversion blockers</p>
-          </div>
-        </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Our Process Section -->
-  <section class="process-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="process-header">
-        <h2>Our Technical SEO <span>Process</span></h2>
-        <p>We follow a systematic approach to identify, fix, and monitor your website's technical health.</p>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3>Technical Audit</h3>
-          <p>We perform a comprehensive technical analysis of your website using advanced tools to identify all issues affecting your search performance.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <h3>Issue Prioritization</h3>
-          <p>We categorize and prioritize technical issues based on their impact on your search rankings and user experience.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-clipboard-list"></i>
-          </div>
-          <h3>Implementation Plan</h3>
-          <p>We create a detailed roadmap for fixing technical issues, ensuring changes are made safely and effectively.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3>Optimization Execution</h3>
-          <p>Our team implements the necessary technical fixes and optimizations, carefully monitoring for any potential impacts.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-vial"></i>
-          </div>
-          <h3>Testing & Validation</h3>
-          <p>We thoroughly test all changes across different devices and browsers to ensure everything works perfectly.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <h3>Monitoring & Maintenance</h3>
-          <p>We continuously monitor your website's technical health and performance, addressing new issues as they arise.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section class="benefits-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="benefits-header">
-        <h2>The Benefits of Strong <span>Technical SEO</span></h2>
-        <p>Investing in technical SEO delivers lasting advantages for your website and business.</p>
-      </div>
-
-      <div class="benefits-layout">
-        <div class="benefits-visual">
-          <img
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
-            alt="Professional team collaborating on technical SEO projects"
-            class="benefits-image"
-          />
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3>Improved Rankings</h3>
-            <p>A technically optimized website has a better chance of ranking higher in search results, as search engines can easily crawl and understand your content.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h3>Faster Loading Times</h3>
-            <p>Technical optimizations lead to faster page loading times, reducing bounce rates and improving user engagement.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>Better User Experience</h3>
-            <p>A well-structured, fast-loading website provides a superior user experience, leading to higher conversion rates.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h3>Mobile Excellence</h3>
-            <p>Your website will perform flawlessly across all devices, capturing the growing mobile audience in the Philippines.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="commercial-proof-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="commercial-proof-layout">
+  <section class="fit-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fit-layout">
         <div>
-          <p class="eyebrow">What we look for</p>
-          <h2>Technical SEO questions businesses usually ask after rankings stall</h2>
-          <p>We do not hand over a 70-page export and call it strategy. We isolate the issues that are most likely to affect visibility, leads and migration safety, then we give the developer or content team a practical fix path.</p>
+          <span class="eyebrow">Who it is for</span>
+          <h2>Useful when SEO work is happening, but the site still feels held back</h2>
+          <p>Technical SEO is often the layer that makes the rest of the campaign work properly. It is especially important before major releases, on larger sites and when rankings or indexation behave unpredictably.</p>
         </div>
-        <ul class="proof-list">
-          <li><strong>Can Google reach the right pages?</strong><span>Crawl paths, sitemaps, canonicals, redirects and robots rules.</span></li>
-          <li><strong>Are templates costing conversions?</strong><span>Core Web Vitals, mobile layout, slow scripts and heavy media.</span></li>
-          <li><strong>Is the site sending mixed signals?</strong><span>Duplicate content, thin pages, weak internal links and schema drift.</span></li>
-          <li><strong>Will fixes survive release?</strong><span>QA checks, Search Console monitoring and post-launch crawl comparisons.</span></li>
-        </ul>
+        <div class="fit-list">
+          {fitBlocks.map((block) => (
+            <article>
+              <h3>{block.title}</h3>
+              <p>{block.copy}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="faq-section-commercial">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2>Technical SEO questions businesses usually ask</h2>
-      <div class="faq-list-commercial">
-        <article><h3>What does technical SEO fix first?</h3><p>We start with the blockers most likely to affect search visibility and enquiries: crawl access, indexation, Core Web Vitals, mobile rendering, broken links, redirect chains, duplicate pages, sitemap hygiene and schema issues.</p></article>
-        <article><h3>Can you work with our developer?</h3><p>Yes. We can diagnose the issue, write the implementation brief, QA the changes and monitor Search Console after release.</p></article>
-        <article><h3>How quickly can technical SEO improve results?</h3><p>Critical crawl and indexation fixes can show movement within weeks. Architecture and performance work usually compounds over one to three months.</p></article>
+  <section class="process-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="process-layout">
+        <div class="process-intro">
+          <span class="eyebrow">How we work</span>
+          <h2>From crawl export to fixes that developers can actually ship</h2>
+          <p>A technical SEO audit is only useful if someone can implement it. We turn findings into prioritised actions, clear tickets and measurable checks.</p>
+        </div>
+        <div class="timeline">
+          {processSteps.map((step) => (
+            <article class="timeline-item">
+              <span>{step.label}</span>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <section class="proof-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="proof-layout">
+        <div class="proof-copy">
+          <span class="eyebrow">Commercial impact</span>
+          <h2>Technical SEO protects the parts of organic growth that are easy to break</h2>
+          <p>Organic growth depends on more than content quality. The site has to be accessible, fast, internally coherent and safe to change. Technical SEO reduces the risk of invisible problems becoming expensive traffic losses.</p>
+          <div class="proof-links">
+            <a href="/seo-services-philippines/">SEO Services Philippines</a>
+            <a href="/seo-audit-services/">SEO Audit Services</a>
+            <a href="/website-migration-services/">Website Migration Services</a>
+          </div>
+        </div>
+        <div class="proof-cards">
+          {proofItems.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="collab-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="collab-panel">
+        <span class="eyebrow">Developer friendly</span>
+        <h2>We can work with your developer, your CMS or your internal team</h2>
+        <p>Technical SEO often fails because recommendations are too vague for developers or too technical for marketing teams. We bridge that gap with clear issue explanations, affected URL examples, implementation notes, priority levels and QA checks.</p>
+        <div class="collab-grid">
+          <div><strong>For founders</strong><span>Clear commercial priorities, not technical fog.</span></div>
+          <div><strong>For marketers</strong><span>Practical SEO fixes linked to rankings, traffic and conversions.</span></div>
+          <div><strong>For developers</strong><span>Specific tickets, expected behaviour and QA criteria.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="section-heading">
+        <span class="eyebrow">Technical SEO FAQs</span>
+        <h2>Questions businesses ask before fixing the technical layer</h2>
+        <p>Technical SEO can get nerdy fast. The useful version stays tied to visibility, risk and lead flow.</p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <article class="faq-item">
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="final-cta-panel">
+        <span class="eyebrow">Start with the crawl</span>
+        <h2>Get a technical SEO audit before the next SEO push, redesign or migration</h2>
+        <p>We will review the technical layer, identify the highest-risk blockers and show what needs fixing first.</p>
+        <div class="final-actions">
+          <ButtonPrimary href="/contact/" text="Request a Technical SEO Audit" />
+          <ButtonSecondary href="mailto:seo@brightforgeseo.com" text="Email Bright Forge" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <ContactSection />
-
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Technical Icon Grid (used in Hero visual slot) */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
+:root {
+  --bf-bg: #0d0f1a;
+  --bf-panel: #131627;
+  --bf-panel-2: #181c30;
+  --bf-text: #e8eaf2;
+  --bf-muted: #b9bed4;
+  --bf-soft: #8e94ad;
+  --bf-orange: #f0622a;
+  --bf-orange-dark: #b73510;
+  --bf-border: rgba(255, 255, 255, 0.1);
 }
 
-.technical-icon-grid {
+.hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  padding: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stat strong {
+  display: block;
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: .45rem;
+}
+
+.stat span {
+  display: block;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: .86rem;
+  line-height: 1.45;
+}
+
+.diagnosis-section,
+.checks-section,
+.fit-section,
+.process-section,
+.proof-section,
+.collab-section,
+.faq-section,
+.final-cta-section,
+:global(.contact-cta-section) {
+  content-visibility: visible !important;
+}
+
+.diagnosis-section,
+.checks-section,
+.proof-section,
+.faq-section,
+.final-cta-section {
+  background: var(--bf-bg);
+  color: var(--bf-text);
+  padding: 6rem 0;
+}
+
+.fit-section,
+.process-section,
+.collab-section {
+  background: var(--bf-panel);
+  color: var(--bf-text);
+  padding: 6rem 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  color: var(--bf-orange);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.diagnosis-layout,
+.fit-layout,
+.process-layout,
+.proof-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .9fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.diagnosis-copy h2,
+.section-heading h2,
+.fit-layout h2,
+.process-intro h2,
+.proof-copy h2,
+.collab-panel h2,
+.final-cta-panel h2 {
+  color: var(--bf-text);
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
+}
+
+.diagnosis-copy p,
+.section-heading p,
+.fit-layout p,
+.process-intro p,
+.proof-copy p,
+.collab-panel p,
+.final-cta-panel p {
+  color: var(--bf-muted);
+  font-size: 1.06rem;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+}
+
+.diagnosis-panel {
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.18), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(240, 98, 42, 0.22);
+  border-radius: 2rem;
   padding: 2rem;
 }
 
-.tech-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  color: white;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-  animation: float 4s ease-in-out infinite;
+.diagnosis-panel h3 {
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-.tech-icon:nth-child(odd) {
-  animation-delay: 1s;
-}
-
-.tech-icon:nth-child(even) {
-  animation-delay: 2s;
-}
-
-.tech-icon:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-@media (max-width: 1024px) {
-  .technical-icon-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .technical-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .tech-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-
-/* NEW Services Section - Reference Image Style */
-.services-section-new {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.services-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.services-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 2.5rem;
-  line-height: 1.2;
-}
-
-.services-content h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.service-item {
-  background: #0d0f1a;
-  border-left: 4px solid #f0622a;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.service-item:hover {
-  background: #1a1e32;
-  transform: translateX(5px);
-}
-
-.service-item h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.service-item p {
-  font-size: 0.95rem;
-  color: #ffffff;
-  line-height: 1.6;
+.diagnosis-panel ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
+  display: grid;
+  gap: .75rem;
 }
 
-.services-visual {
-  position: sticky;
-  top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
+.diagnosis-panel li {
+  color: var(--bf-muted);
+  line-height: 1.5;
+  padding-left: 1.2rem;
+  position: relative;
 }
 
-.visual-card {
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.05), rgba(255, 107, 53, 0.05));
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(240, 98, 42, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
+.diagnosis-panel li::before {
+  content: '';
+  width: .42rem;
+  height: .42rem;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
+  background: var(--bf-orange);
+  position: absolute;
+  left: 0;
+  top: .55rem;
 }
 
-.visual-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
+.section-heading {
+  max-width: 840px;
+  text-align: center;
+  margin: 0 auto 3.5rem;
 }
 
-.visual-stat {
-  font-size: 4rem;
+.checks-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.4rem;
+  padding: 1.5rem;
+  border: 1px solid var(--bf-border);
+  border-radius: 1.3rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.check-item > span,
+.timeline-item > span {
+  color: var(--bf-orange);
   font-weight: 900;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 1rem 0 0.5rem;
-  line-height: 1;
+  letter-spacing: .08em;
 }
 
-.visual-label {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
+.check-item h3,
+.fit-list h3,
+.timeline-item h3,
+.proof-cards h3,
+.faq-item h3 {
+  color: #fff;
+  font-size: 1.22rem;
+  font-weight: 850;
+  margin: 0 0 .55rem;
+}
+
+.check-item p,
+.fit-list p,
+.timeline-item p,
+.proof-cards p,
+.faq-item p {
+  color: var(--bf-muted);
+  line-height: 1.7;
   margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .services-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .services-visual {
-    position: static;
-  }
-}
-
-/* Process Section */
-.process-section {
-  padding: 5rem 0;
-  background: #0d0f1a;
-}
-
-.process-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.process-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.process-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.process-grid {
+.fit-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 1rem;
 }
 
-.process-box {
-  padding: 3rem 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
+.fit-list article {
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  border-left: 2px solid rgba(240, 98, 42, 0.55);
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  padding: 1.5rem;
+  border: 1px solid var(--bf-border);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.timeline-item > span {
+  display: inline-block;
+  margin-bottom: .65rem;
+}
+
+.proof-layout {
+  grid-template-columns: .9fr 1.1fr;
+}
+
+.proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.proof-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border: 1px solid rgba(240, 98, 42, 0.35);
+  border-radius: 999px;
+  padding: .7rem 1rem;
+  background: rgba(240, 98, 42, 0.08);
+}
+
+.proof-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.proof-cards article {
+  padding: 1.4rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(240, 98, 42, 0.22);
+  background: linear-gradient(180deg, rgba(240, 98, 42, 0.12), rgba(255, 255, 255, 0.035));
+}
+
+.collab-panel {
+  padding: clamp(2rem, 5vw, 4rem);
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.process-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.process-box.orange-bg {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.process-box.orange-bg h3,
-.process-box.orange-bg p {
-  color: white;
-}
-
-.process-box.white-bg {
-  background: #131627;
-}
-
-.process-box.white-bg h3 {
-  color: #ffffff;
-}
-
-.process-box.white-bg p {
-  color: #ffffff;
-}
-
-.process-box-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  transition: all 0.3s ease;
-}
-
-.process-box.orange-bg .process-box-icon {
-  color: white;
-}
-
-.process-box.white-bg .process-box-icon {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-box:hover .process-box-icon {
-  transform: scale(1.1);
-}
-
-.process-box h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.process-box p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Benefits Section */
-.benefits-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.benefits-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.benefits-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.benefits-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.benefits-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.benefits-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.benefits-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.benefits-image {
-  width: 100%;
-  max-width: 400px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.benefit-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem;
-  color: white;
-  font-size: 1.75rem;
-}
-
-.benefit-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-}
-
-.benefit-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 1024px) {
-  .benefits-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .benefits-image {
-    height: 400px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.commercial-proof-section {
-  padding: 5rem 0;
-  background: #0d0f1a;
-}
-
-.commercial-proof-layout {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 3rem;
-  align-items: start;
-  background: #131627;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 2rem;
-  padding: 3rem;
+  background: var(--bf-bg);
 }
 
-.eyebrow {
-  color: #f0622a;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-
-.commercial-proof-layout h2,
-.faq-section-commercial h2 {
-  color: white;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.08;
-  margin-bottom: 1.5rem;
-}
-
-.commercial-proof-layout p {
-  color: #d4d8e6;
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.proof-list {
-  list-style: none;
+.collab-grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin: 0;
-  padding: 0;
+  margin-top: 2rem;
 }
 
-.proof-list li {
-  display: grid;
-  gap: 0.35rem;
-  padding: 1.2rem 0 1.2rem 1.2rem;
-  border-left: 3px solid #f0622a;
-  background: rgba(255, 255, 255, 0.035);
-  border-radius: 0 1rem 1rem 0;
+.collab-grid div {
+  padding: 1.25rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--bf-border);
 }
 
-.proof-list strong {
-  color: white;
-  font-size: 1.05rem;
+.collab-grid strong {
+  display: block;
+  color: #fff;
+  margin-bottom: .45rem;
 }
 
-.proof-list span {
-  color: #c9cedd;
+.collab-grid span {
+  color: var(--bf-muted);
   line-height: 1.55;
 }
 
-.faq-section-commercial {
-  padding: 5rem 0;
-  background: #111421;
-}
-
-.faq-list-commercial {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.faq-list-commercial article {
-  background: #171b2d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.4rem;
-  padding: 1.5rem;
-}
-
-.faq-list-commercial h3 {
-  color: white;
-  font-size: 1.15rem;
-  margin-bottom: 0.8rem;
-}
-
-.faq-list-commercial p {
-  color: #c9cedd;
-  line-height: 1.6;
-}
-
-@media (max-width: 900px) {
-  .commercial-proof-layout,
-  .faq-list-commercial {
-    grid-template-columns: 1fr;
-  }
-}
-
-</style>
-
-<style>
-/* Why Technical SEO Section */
-.why-technical-section {
-  padding: 80px 0;
-  background: #131627;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.section-header h2 span {
-  color: #f0622a;
-}
-
-.content-explanation {
-  display: flex;
-  justify-content: center;
-}
-
-.content-card {
-  display: flex;
-  max-width: 900px;
-  background: #0d0f1a;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.content-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  font-size: 2rem;
-}
-
-.content-text {
-  padding: 30px;
-}
-
-.content-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .hero-content-text h1 {
-    font-size: 2.2rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2rem;
-  }
-  
-  .content-card {
-    flex-direction: column;
-  }
-  
-  .content-icon {
-    width: 100%;
-    height: 80px;
-  }
-}
-
-.commercial-proof-section {
-  padding: 5rem 0;
-  background: #0d0f1a;
-}
-
-.commercial-proof-layout {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 3rem;
-  align-items: start;
-  background: #131627;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2rem;
-  padding: 3rem;
-}
-
-.eyebrow {
-  color: #f0622a;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-
-.commercial-proof-layout h2,
-.faq-section-commercial h2 {
-  color: white;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.08;
-  margin-bottom: 1.5rem;
-}
-
-.commercial-proof-layout p {
-  color: #d4d8e6;
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.proof-list {
-  list-style: none;
+.faq-list {
   display: grid;
   gap: 1rem;
-  margin: 0;
-  padding: 0;
 }
 
-.proof-list li {
-  display: grid;
-  gap: 0.35rem;
-  padding: 1.2rem 0 1.2rem 1.2rem;
-  border-left: 3px solid #f0622a;
-  background: rgba(255, 255, 255, 0.035);
-  border-radius: 0 1rem 1rem 0;
-}
-
-.proof-list strong {
-  color: white;
-  font-size: 1.05rem;
-}
-
-.proof-list span {
-  color: #c9cedd;
-  line-height: 1.55;
-}
-
-.faq-section-commercial {
-  padding: 5rem 0;
-  background: #111421;
-}
-
-.faq-list-commercial {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.faq-list-commercial article {
-  background: #171b2d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.4rem;
+.faq-item {
   padding: 1.5rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--bf-border);
 }
 
-.faq-list-commercial h3 {
-  color: white;
-  font-size: 1.15rem;
-  margin-bottom: 0.8rem;
+.final-cta-panel {
+  text-align: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: 2rem;
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.18), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(240, 98, 42, 0.22);
 }
 
-.faq-list-commercial p {
-  color: #c9cedd;
-  line-height: 1.6;
+.final-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
-@media (max-width: 900px) {
-  .commercial-proof-layout,
-  .faq-list-commercial {
+@media (max-width: 1000px) {
+  .diagnosis-layout,
+  .fit-layout,
+  .process-layout,
+  .proof-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .proof-cards,
+  .collab-grid {
     grid-template-columns: 1fr;
   }
 }
 
-</style>
+@media (max-width: 700px) {
+  .diagnosis-section,
+  .checks-section,
+  .fit-section,
+  .process-section,
+  .proof-section,
+  .collab-section,
+  .faq-section,
+  .final-cta-section {
+    padding: 4rem 0;
+  }
 
+  .hero-stats,
+  .proof-cards,
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .check-item {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+}
+</style>
