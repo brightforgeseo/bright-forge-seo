@@ -7,430 +7,910 @@ import Hero from "../../components/Hero.astro";
 import ButtonPrimary from "../../components/ButtonPrimary.astro";
 import ButtonSecondary from "../../components/ButtonSecondary.astro";
 
-const caseStudyData = {
-  title: "SEO Case Study: Driving Sustained Growth for a Boiler & Heating Spares Supplier",
-  client: "Boiler & Heating Spares Supplier",
-  industry: "Home & DIY",
-  duration: "6 Months",
-  heroImage: "/images/case-studies/SEO Case Study- Driving Sustained Growth for a Boiler & Heating Spares Supplier .webp",
-  challenge: "Competing in a crowded parts market with technically complex products while needing broader brand visibility across hundreds of boiler-spare SKUs.",
-  solution: "We executed targeted keyword research, on-page optimisation, refined site architecture and authoritative link building – underpinned by constant performance monitoring – to deliver steady organic growth.",
-  keyMetrics: [
-    { label: "Total Clicks", value: "+18%", description: "14.1k → 16.6k" },
-    { label: "Total Impressions", value: "+10%", description: "1.06M → 1.17M" },
-    { label: "Avg. Position", value: "18.5 → 18.0", description: "Ranking improvement" },
-    { label: "CTR", value: "1.3% → 1.4%", description: "+0.1pp" }
-  ],
-  strategySteps: [
-    { title: "Keyword Research", description: "Mapped high-intent spare-part queries and informational search terms." },
-    { title: "On-Page Optimisation", description: "Enhanced titles, meta and product copy for relevancy and engagement." },
-    { title: "Site Architecture & Internal Linking", description: "Restructured categories and internal links for crawl efficiency." },
-    { title: "Authority Backlinks", description: "Acquired links from plumbing / DIY publications and forums." },
-    { title: "Ongoing Monitoring", description: "Reviewed GSC data monthly and iterated tactics accordingly." }
-  ],
-  results: [
-    { metric: "Total Clicks", before: "14,100", after: "16,600", improvement: "+18%" },
-    { metric: "Total Impressions", before: "1.06M", after: "1.17M", improvement: "+10%" },
-    { metric: "Average Position", before: "18.5", after: "18.0", improvement: "Improved" },
-    { metric: "CTR", before: "1.3%", after: "1.4%", improvement: "+0.1pp" }
-  ],
-  keyTakeaways: [
-    "Product-level SEO drives measurable e-commerce gains.",
-    "Clear site architecture boosts crawlability and UX.",
-    "Continuous data-driven iteration sustains momentum."
-  ]
+const canonical = "https://brightforge.com.ph/case-studies/boiler-heating-spares-seo/";
+const image = "/images/case-studies/SEO Case Study- Driving Sustained Growth for a Boiler & Heating Spares Supplier .webp";
+
+const metrics = [
+  {
+    label: "Organic clicks",
+    before: "14.1k",
+    after: "16.6k",
+    change: "+18%",
+    note: "More visits from people already searching for boiler and heating spare parts."
+  },
+  {
+    label: "Impressions",
+    before: "1.06M",
+    after: "1.17M",
+    change: "+10%",
+    note: "Broader visibility across product, category and long-tail spare-part searches."
+  },
+  {
+    label: "Average position",
+    before: "18.5",
+    after: "18.0",
+    change: "Small lift",
+    note: "The commercial story was not a dramatic ranking jump. It was steadier coverage and better click capture."
+  },
+  {
+    label: "CTR",
+    before: "1.3%",
+    after: "1.4%",
+    change: "+0.1pp",
+    note: "A modest snippet improvement matters when the site is already showing across more than a million impressions."
+  }
+];
+
+const workstreams = [
+  {
+    title: "Search demand mapping",
+    text: "We separated boiler model searches, spare-part names, compatibility queries and broader heating repair intent so the site was not treating every keyword like the same product search."
+  },
+  {
+    title: "Category and product relevance",
+    text: "Priority pages needed clearer titles, headings, copy and internal links so search engines could understand which pages deserved to rank for specific parts and categories."
+  },
+  {
+    title: "Crawl and architecture checks",
+    text: "Large ecommerce sites can bury useful pages. We reviewed how important categories, product groups and support pages were linked so crawl attention was not wasted."
+  },
+  {
+    title: "Authority and trust signals",
+    text: "We supported the stronger page structure with relevant authority work, avoiding generic link activity that would not help specialist spare-part searches."
+  },
+  {
+    title: "Monthly Search Console review",
+    text: "The campaign was adjusted from actual query, page and click data, not from a fixed list of SEO tasks that stayed the same for six months."
+  }
+];
+
+const lessons = [
+  "Specialist ecommerce SEO is usually won through detail, not slogans. Model numbers, product naming, category clarity and compatibility language all matter.",
+  "A small average-position improvement can still produce useful growth when the site has large impression volume and better coverage across long-tail searches.",
+  "Clicks and impressions need context. The meaningful point here is steadier demand capture across a technical catalogue, not a miracle ranking graph.",
+  "Search Console should shape the next month of work. For parts suppliers, the data often reveals query variations that the catalogue structure has not caught yet."
+];
+
+const faqs = [
+  {
+    question: "What made this boiler spares SEO campaign difficult?",
+    answer: "The site was competing in a technical ecommerce market where buyers search by boiler model, part name, compatibility issue and repair symptom. That creates a large long-tail SEO problem rather than one simple keyword target."
+  },
+  {
+    question: "Were the results mainly from rankings or click-through improvements?",
+    answer: "Both played a part, but the data shows a practical mix: impressions increased, clicks increased and CTR improved slightly. Average position only moved from 18.5 to 18.0, so the strongest story is broader and cleaner demand capture rather than one big ranking jump."
+  },
+  {
+    question: "Why does a 0.1 percentage point CTR lift matter?",
+    answer: "At more than one million impressions, even a small CTR improvement can create extra traffic. It is not a dramatic metric on its own, but it matters when paired with stronger visibility and better page targeting."
+  },
+  {
+    question: "What SEO work matters most for spare parts ecommerce sites?",
+    answer: "Category structure, product naming, compatibility content, internal linking, indexation control, schema and search snippet clarity usually matter more than publishing generic blog content."
+  },
+  {
+    question: "Can this approach work for other technical ecommerce catalogues?",
+    answer: "Yes, when the catalogue has real search demand and the business can support useful product, category and compatibility information. The exact plan should still start with a crawl, Search Console review and keyword mapping."
+  },
+  {
+    question: "Does Bright Forge guarantee the same growth for other ecommerce sites?",
+    answer: "No. Results depend on the market, technical condition, competition, catalogue quality and available resources. We use case studies to show the kind of diagnostic work and commercial thinking involved, not to promise identical numbers."
+  }
+];
+
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Boiler and Heating Spares SEO Case Study",
+  description: "How SEO work helped a specialist boiler and heating spares supplier improve organic clicks, impressions and search coverage across a technical ecommerce catalogue.",
+  image: `https://brightforge.com.ph${image}`,
+  author: {
+    "@type": "Organization",
+    name: "Bright Forge SEO",
+    url: "https://brightforge.com.ph/"
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Bright Forge SEO",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://brightforge.com.ph/images/header-logo-360w.webp"
+    }
+  },
+  mainEntityOfPage: canonical,
+  articleSection: "SEO Case Studies",
+  about: ["Ecommerce SEO", "Technical SEO", "Content SEO", "Internal linking", "Boiler spares"]
 };
 ---
 
-<MainLayout title="SEO Growth for Boiler Supplier | Bright Forge SEO" description="Traffic up. Crawl errors down. Discover how technical SEO, better structure, and content clarity helped this boiler spares brand grow online.">
+<MainLayout
+  title="Boiler Spares SEO Case Study | Bright Forge"
+  description="How SEO helped a boiler and heating spares supplier grow organic clicks by 18% and improve search coverage across a technical ecommerce catalogue."
+  canonical={canonical}
+  image={image}
+  type="article"
+  author={{ name: "Bright Forge SEO", url: "https://brightforge.com.ph/" }}
+  article={{ section: "SEO Case Studies", tags: ["Ecommerce SEO", "Technical SEO", "Content SEO", "Case Study"] }}
+  breadcrumbs={[
+    { name: "Home", url: "https://brightforge.com.ph/" },
+    { name: "Case Studies", url: "https://brightforge.com.ph/case-studies/" },
+    { name: "Boiler Spares SEO", url: canonical }
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseStudySchema)} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
 
   <Hero
-    title={caseStudyData.client}
-    breadcrumbCurrent="Boiler & Heating Spares Supplier"
+    title="Boiler Spares SEO Case Study"
+    breadcrumbCurrent="Boiler Spares SEO"
   >
     <Fragment slot="story">
       <div class="case-meta">
-        <span class="meta-item">{caseStudyData.industry}</span>
-        <span class="meta-divider">•</span>
-        <span class="meta-item">{caseStudyData.duration}</span>
+        <span>Specialist ecommerce</span>
+        <span>Home and DIY</span>
+        <span>6 month comparison</span>
       </div>
-      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies in a crowded parts market.</p>
+      <p class="hero-subtitle">How a technical parts supplier increased organic clicks by 18% without pretending the work was a magic ranking trick.</p>
+      <p>Boiler and heating spares SEO is not glamorous. That is exactly why it is valuable. Buyers search with model numbers, symptoms, compatibility questions and urgent replacement intent. The work was about helping the right pages catch that demand more consistently.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="#results" text="View Full Results" />
-      <ButtonSecondary href="/contact/" text="Discuss Your Project" />
+      <ButtonPrimary href="#results" text="View Results" />
+      <ButtonSecondary href="/contact/" text="Request an SEO Review" />
     </Fragment>
   </Hero>
 
-  <!-- Key Metrics Section -->
-  <section class="metrics-section">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="metrics-grid">
-        {caseStudyData.keyMetrics.map((metric) => (
-          <div class="metric-card">
-            <div class="metric-value">{metric.value}</div>
-            <div class="metric-label">{metric.label}</div>
-            <div class="metric-description">{metric.description}</div>
-          </div>
-        ))}
+  <main class="case-study-page">
+    <section class="proof-strip" aria-label="Case study summary metrics">
+      <div class="case-container">
+        <div class="proof-grid">
+          {metrics.map((metric) => (
+            <article class="proof-card">
+              <span class="proof-label">{metric.label}</span>
+              <strong>{metric.change}</strong>
+              <span>{metric.before} to {metric.after}</span>
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Hero Image Section -->
-  <section class="image-section">
-    <div class="max-w-6xl mx-auto px-6 py-12">
-      <div class="case-image-container">
-        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+    <section class="overview-section">
+      <div class="case-container overview-grid">
+        <div>
+          <p class="eyebrow">The short version</p>
+          <h2>Steadier search demand capture for a specialist parts catalogue</h2>
+          <p>A boiler spares supplier had useful products in a market with clear search demand, but the SEO opportunity was spread across hundreds of technical queries. The goal was not to chase one vanity keyword. It was to make the catalogue easier to understand, easier to crawl and more relevant to the searches buyers actually use.</p>
+          <p>The result was a practical lift in organic clicks and impressions over the comparison period, with a modest improvement in average position and CTR. That matters because technical ecommerce sites often win through cumulative long-tail gains rather than one headline ranking.</p>
+        </div>
+        <aside class="case-summary-card">
+          <h3>Campaign snapshot</h3>
+          <dl>
+            <div><dt>Industry</dt><dd>Boiler and heating spare parts</dd></div>
+            <div><dt>Market type</dt><dd>Technical ecommerce</dd></div>
+            <div><dt>Timeframe</dt><dd>6 month comparison</dd></div>
+            <div><dt>Main KPI</dt><dd>Organic clicks from Google Search</dd></div>
+            <div><dt>Primary work</dt><dd>Keyword mapping, page relevance, internal links and monitoring</dd></div>
+          </dl>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Challenge Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">The Challenge</h2>
-      <p class="section-text">{caseStudyData.challenge}</p>
-    </div>
-  </section>
-
-  <!-- Solution Section -->
-  <section class="content-section gray">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Our Approach</h2>
-      <p class="section-text">{caseStudyData.solution}</p>
-    </div>
-  </section>
-
-  <!-- Strategy Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Strategy</h2>
-
-      <div class="strategy-list">
-        {caseStudyData.strategySteps.map((step, index) => (
-          <div class="strategy-item">
-            <div class="strategy-number">{index + 1}</div>
-            <div class="strategy-content">
-              <h3 class="strategy-title">{step.title}</h3>
-              <p class="strategy-description">{step.description}</p>
-            </div>
-          </div>
-        ))}
+    <section class="visual-proof-section">
+      <div class="case-container">
+        <div class="case-image-card">
+          <img src={image} alt="Google Search Console performance comparison for a boiler and heating spares SEO campaign" loading="eager" decoding="async" />
+        </div>
+        <p class="image-note">Search Console metrics used in this case study: 14.1k to 16.6k clicks, 1.06M to 1.17M impressions, average position 18.5 to 18.0 and CTR 1.3% to 1.4%.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Results Section -->
-  <section class="content-section gray" id="results">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Results</h2>
-
-      <div class="results-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Before</th>
-              <th>After</th>
-              <th>Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            {caseStudyData.results.map((result) => (
-              <tr>
-                <td class="metric-name">{result.metric}</td>
-                <td>{result.before}</td>
-                <td>{result.after}</td>
-                <td class="improvement">{result.improvement}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <section class="content-section" id="challenge">
+      <div class="case-container two-column">
+        <div>
+          <p class="eyebrow">Starting problem</p>
+          <h2>The site needed clearer coverage across technical, high-intent searches</h2>
+        </div>
+        <div class="section-copy">
+          <p>Boiler spare parts are searched for in messy ways. Some buyers know the exact part. Others search by boiler model, fault, compatibility or a category phrase. A useful SEO plan has to account for all of that without creating duplicate, thin or confusing pages.</p>
+          <p>The challenge was to improve visibility across a specialist catalogue while keeping the work grounded in commercial intent. Traffic was only useful if it brought people closer to finding the correct part or category.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Key Takeaways Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Key Takeaways</h2>
+    <section class="constraints-section">
+      <div class="case-container">
+        <p class="eyebrow">Constraints</p>
+        <h2>Why this was not a simple content campaign</h2>
+        <div class="constraint-grid">
+          <article>
+            <h3>Technical product language</h3>
+            <p>Searches often include part names, boiler models and compatibility clues. Generic ecommerce copy would miss the point.</p>
+          </article>
+          <article>
+            <h3>Large long-tail spread</h3>
+            <p>The value was distributed across many searches, not concentrated in one obvious keyword.</p>
+          </article>
+          <article>
+            <h3>Crawl attention mattered</h3>
+            <p>Important categories and products had to be easier for search engines to find, prioritise and connect.</p>
+          </article>
+          <article>
+            <h3>Proof had to stay honest</h3>
+            <p>The average position moved only slightly, so the case study should explain the real win rather than exaggerate it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <ul class="takeaways-list">
-        {caseStudyData.keyTakeaways.map((takeaway) => (
-          <li>{takeaway}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
+    <section class="work-section" id="work">
+      <div class="case-container">
+        <div class="section-header">
+          <p class="eyebrow">What changed</p>
+          <h2>The work focused on page relevance, catalogue structure and iteration from real data</h2>
+          <p>For a specialist parts supplier, SEO needs to help search engines and buyers understand what each page is for. The workstreams below are the parts that mattered most.</p>
+        </div>
+        <div class="work-list">
+          {workstreams.map((item, index) => (
+            <article class="work-item">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">What moved</p>
+          <h2>Organic clicks and visibility improved, with the caveat that average position only moved slightly</h2>
+          <p>This is a stronger case study when it is read honestly. The site did not leap from page two to position one. It captured more demand across a technical catalogue and turned a broader set of impressions into more clicks.</p>
+        </div>
+        <div class="result-grid">
+          {metrics.map((metric) => (
+            <article class="result-card">
+              <div class="result-topline">
+                <span>{metric.label}</span>
+                <strong>{metric.change}</strong>
+              </div>
+              <div class="before-after">
+                <div><span>Before</span><strong>{metric.before}</strong></div>
+                <div><span>After</span><strong>{metric.after}</strong></div>
+              </div>
+              <p>{metric.note}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="commercial-section">
+      <div class="case-container commercial-card">
+        <div>
+          <p class="eyebrow">Commercial meaning</p>
+          <h2>The win was better capture of existing buyer demand</h2>
+          <p>For ecommerce spare parts, the commercial value is rarely about making people interested in boilers. They already have a need. SEO has to help the right category or product appear when that need becomes a search.</p>
+          <p>The +18% click lift suggests the site became better at collecting demand that already existed. The impression growth shows broader search coverage, while the small CTR lift suggests search snippets and relevance improved enough to convert slightly more visibility into traffic.</p>
+        </div>
+        <div class="meaning-points">
+          <article><strong>More qualified entry points</strong><span>Useful pages could be found across more product and category searches.</span></article>
+          <article><strong>Better catalogue signals</strong><span>Page purpose, internal links and query alignment became clearer.</span></article>
+          <article><strong>More useful reporting</strong><span>The campaign could be judged by page and query movement, not vague traffic charts.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lessons-section">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">Lessons for similar businesses</p>
+          <h2>What other technical ecommerce sites should take from this</h2>
+        </div>
+        <div class="lesson-grid">
+          {lessons.map((lesson) => (
+            <article>
+              <p>{lesson}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="related-services-section">
+      <div class="case-container">
+        <div class="section-header compact">
+          <p class="eyebrow">Relevant services</p>
+          <h2>Where this work connects to Bright Forge SEO services</h2>
+        </div>
+        <div class="service-link-grid">
+          <a href="/technical-seo-services-philippines/">
+            <span>Technical SEO</span>
+            <p>Crawl, indexation, site structure and performance checks for sites with many moving parts.</p>
+          </a>
+          <a href="/content-seo-services-philippines/">
+            <span>Content SEO</span>
+            <p>Better category, product and support content shaped around how buyers actually search.</p>
+          </a>
+          <a href="/on-page-seo-services-philippines/">
+            <span>On-page SEO</span>
+            <p>Titles, headings, internal links and page copy that make relevance obvious.</p>
+          </a>
+          <a href="/seo-audit-services/">
+            <span>SEO audits</span>
+            <p>Find the technical and content bottlenecks before spending months on the wrong tasks.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="case-container faq-layout">
+        <div>
+          <p class="eyebrow">Questions this case study should answer</p>
+          <h2>Boiler spares SEO case study FAQs</h2>
+          <p>Useful case studies should explain the conditions, limits and practical lessons behind the numbers.</p>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="case-cta-section">
+      <div class="case-container case-cta-card">
+        <p class="eyebrow">Want this kind of review for your site?</p>
+        <h2>We can inspect the pages, queries and technical signals that are limiting organic growth.</h2>
+        <p>If your ecommerce site has real demand but uneven organic performance, start with a focused SEO review. We will look at Search Console data, page structure, indexation and where the catalogue is leaking opportunity.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Request an SEO Review" />
+          <ButtonSecondary href="/case-studies/" text="View More Case Studies" />
+        </div>
+      </div>
+    </section>
+  </main>
 
   <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Case Study Meta */
+.case-study-page,
+.case-study-page * {
+  box-sizing: border-box;
+}
+
+.case-study-page {
+  background: #0d0f1a;
+  color: #ffffff;
+}
+
+.case-container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
 .case-meta {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 24px;
-  font-size: 16px;
-  font-weight: 500;
+}
+
+.case-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.9);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
-.meta-item {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.meta-divider {
-  opacity: 0.5;
-}
-
-/* Metrics Section */
-.metrics-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 48px;
-}
-
-.metric-card {
-  text-align: center;
-  padding: 24px 0;
-}
-
-.metric-value {
-  font-size: 3rem;
+.hero-subtitle {
+  color: #ffffff;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.35;
   font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.proof-strip,
+.overview-section,
+.visual-proof-section,
+.content-section,
+.constraints-section,
+.work-section,
+.results-section,
+.commercial-section,
+.lessons-section,
+.related-services-section,
+.faq-section,
+.case-cta-section {
+  content-visibility: visible !important;
+  contain-intrinsic-size: auto none !important;
+}
+
+.proof-strip {
+  padding: 34px 0;
+  background: #131627;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proof-card,
+.result-card,
+.case-summary-card,
+.constraint-grid article,
+.lesson-grid article,
+.service-link-grid a,
+.faq-item,
+.case-cta-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+}
+
+.proof-card {
+  min-height: 154px;
+  padding: 24px;
+  border-radius: 22px;
+}
+
+.proof-label,
+.eyebrow {
+  display: block;
   color: #f0622a;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-
-.metric-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
 }
 
-.metric-description {
-  font-size: 0.875rem;
+.proof-card strong {
+  display: block;
+  margin: 12px 0 8px;
   color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
 }
 
-/* Image Section */
-.image-section {
+.proof-card span:last-child {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+}
+
+.overview-section,
+.content-section,
+.work-section,
+.commercial-section,
+.related-services-section,
+.case-cta-section {
+  padding: 92px 0;
+  background: #0d0f1a;
+}
+
+.visual-proof-section,
+.constraints-section,
+.results-section,
+.lessons-section,
+.faq-section {
+  padding: 92px 0;
   background: #131627;
 }
 
-.case-image-container {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+.overview-grid,
+.two-column,
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
 }
 
-.case-image-container img {
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+}
+
+h3 {
+  color: #ffffff;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.case-summary-card {
+  position: sticky;
+  top: 110px;
+  padding: 28px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.13), rgba(255, 255, 255, 0.045));
+}
+
+.case-summary-card dl {
+  margin: 0;
+}
+
+.case-summary-card div {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-summary-card div:last-child {
+  border-bottom: 0;
+}
+
+.case-summary-card dt {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.case-summary-card dd {
+  color: #ffffff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.case-image-card {
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0d0f1a;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.case-image-card img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: contain;
   background: #0d0f1a;
 }
 
-/* Content Sections */
-.content-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+.image-note {
+  max-width: 820px;
+  margin: 18px auto 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.95rem;
 }
 
-.content-section.gray {
-  background: #0d0f1a;
+.section-copy p:last-child,
+.case-cta-card p:last-child {
+  margin-bottom: 0;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
+.constraint-grid,
+.result-grid,
+.lesson-grid,
+.service-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
 }
 
-.section-text {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #ffffff;
+.constraint-grid article,
+.lesson-grid article,
+.service-link-grid a {
+  border-radius: 24px;
+  padding: 28px;
 }
 
-/* Strategy List */
-.strategy-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 32px;
+.constraint-grid p,
+.lesson-grid p,
+.service-link-grid p {
+  margin-bottom: 0;
 }
 
-.strategy-item {
-  display: flex;
+.section-header {
+  max-width: 840px;
+  margin-bottom: 40px;
+}
+
+.section-header.compact {
+  margin-bottom: 30px;
+}
+
+.work-list {
+  display: grid;
+  gap: 18px;
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
   gap: 24px;
-  align-items: flex-start;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.045);
 }
 
-.strategy-number {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: #f0622a;
-  color: white;
-  border-radius: 8px;
-  display: flex;
+.work-item > span {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.strategy-content {
-  flex: 1;
-}
-
-.strategy-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.strategy-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ffffff;
-}
-
-/* Results Table */
-.results-table {
-  margin-top: 32px;
-  overflow-x: auto;
-}
-
-.results-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.results-table th {
-  text-align: left;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid #e2e8f0;
-}
-
-.results-table td {
-  padding: 20px;
-  font-size: 1rem;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.results-table tr:last-child td {
-  border-bottom: none;
-}
-
-.results-table .metric-name {
-  font-weight: 600;
-}
-
-.results-table .improvement {
-  color: #f0622a;
-  font-weight: 600;
-}
-
-/* Takeaways List */
-.takeaways-list {
-  list-style: none;
-  padding: 0;
-  margin: 32px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.takeaways-list li {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #ffffff;
-  padding-left: 32px;
-  position: relative;
-}
-
-.takeaways-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 6px;
-  height: 6px;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
   background: #f0622a;
-  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 900;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .metric-value {
-    font-size: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  .strategy-item {
-    gap: 16px;
-  }
-
-  .strategy-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .results-table {
-    font-size: 0.875rem;
-  }
-
-  .results-table th,
-  .results-table td {
-    padding: 12px;
-  }
+.work-item p {
+  margin-bottom: 0;
 }
 
-@media (max-width: 480px) {
-  .metrics-grid {
+.result-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.result-card {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.result-topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.result-topline span {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 800;
+}
+
+.result-topline strong {
+  color: #f0622a;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.before-after div {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.before-after span {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.before-after strong {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.result-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.commercial-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+  padding: clamp(32px, 5vw, 56px);
+  border-radius: 32px;
+  border: 1px solid rgba(240, 98, 42, 0.25);
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.12), rgba(255, 255, 255, 0.035));
+}
+
+.meaning-points {
+  display: grid;
+  gap: 14px;
+}
+
+.meaning-points article {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meaning-points strong,
+.meaning-points span,
+.service-link-grid span {
+  display: block;
+}
+
+.meaning-points strong,
+.service-link-grid span {
+  color: #ffffff;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.meaning-points span {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.55;
+}
+
+.service-link-grid a {
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-link-grid a:hover {
+  border-color: rgba(240, 98, 42, 0.5);
+  transform: translateY(-2px);
+}
+
+.faq-layout {
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 22px 24px;
+  color: #ffffff;
+  font-weight: 900;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  padding: 0 24px 24px;
+  margin: 0;
+}
+
+.case-cta-card {
+  text-align: center;
+  padding: clamp(36px, 6vw, 68px);
+  border-radius: 34px;
+  background: radial-gradient(circle at top left, rgba(240, 98, 42, 0.22), rgba(255, 255, 255, 0.045) 44%, rgba(255, 255, 255, 0.035));
+}
+
+.case-cta-card h2,
+.case-cta-card p {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+:global(.case-study-page .btn-secondary),
+:global(.case-study-page .btn-primary) {
+  min-height: 48px;
+}
+
+@media (max-width: 980px) {
+  .proof-grid,
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-grid,
+  .two-column,
+  .commercial-card,
+  .faq-layout {
     grid-template-columns: 1fr;
+  }
+
+  .case-summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .case-container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .overview-section,
+  .visual-proof-section,
+  .content-section,
+  .constraints-section,
+  .work-section,
+  .results-section,
+  .commercial-section,
+  .lessons-section,
+  .related-services-section,
+  .faq-section,
+  .case-cta-section {
+    padding: 64px 0;
+  }
+
+  .proof-grid,
+  .result-grid,
+  .constraint-grid,
+  .lesson-grid,
+  .service-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-item {
+    grid-template-columns: 1fr;
+  }
+
+  .work-item > span {
+    width: 50px;
+    height: 50px;
   }
 }
 </style>
