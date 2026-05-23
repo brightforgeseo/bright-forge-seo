@@ -328,23 +328,35 @@ const breadcrumbs = [
 
     .case-studies-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
       margin-bottom: 3rem;
     }
 
     .case-study-card {
-      background: #131627;
-      border-radius: 20px;
+      grid-column: span 2;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.028), rgba(255,255,255,0.01)),
+        #111421;
+      border-radius: 16px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.07);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    .case-study-card:first-child {
+      grid-column: span 3;
+    }
+
+    .case-study-card:nth-child(2) {
+      grid-column: span 3;
+    }
+
     .case-study-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+      border-color: rgba(240, 98, 42, 0.25);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
     }
 
     .card-image {
@@ -368,14 +380,16 @@ const breadcrumbs = [
       position: absolute;
       top: 16px;
       left: 16px;
-      background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-      color: white;
+      background: rgba(13, 15, 26, 0.82);
+      color: #f7d7ca;
       padding: 6px 14px;
-      border-radius: 100px;
+      border: 1px solid rgba(240, 98, 42, 0.35);
+      border-radius: 8px;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      backdrop-filter: blur(10px);
     }
 
     .card-content {
@@ -394,15 +408,23 @@ const breadcrumbs = [
     .card-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      gap: 0;
       margin-bottom: 1.25rem;
       padding: 1rem;
-      background: #1a1e32;
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
     }
 
     .stat {
-      text-align: center;
+      text-align: left;
+      padding-right: 0.75rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+      padding-left: 0.75rem;
     }
 
     .stat-value {
@@ -482,6 +504,12 @@ const breadcrumbs = [
       .case-studies-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .case-study-card,
+      .case-study-card:first-child,
+      .case-study-card:nth-child(2) {
+        grid-column: span 1;
+      }
     }
 
     @media (max-width: 640px) {
@@ -491,6 +519,12 @@ const breadcrumbs = [
 
       .case-studies-grid {
         grid-template-columns: 1fr;
+      }
+
+      .case-study-card,
+      .case-study-card:first-child,
+      .case-study-card:nth-child(2) {
+        grid-column: span 1;
       }
 
       .case-studies-section .section-header {
@@ -4206,19 +4240,41 @@ const breadcrumbs = [
   }
 
   .commercial-panel {
-    background: linear-gradient(145deg, #f0622a, #b73510);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012)),
+      #111421;
     color: #fff;
-    border-radius: 2rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 1.25rem;
     padding: clamp(1.5rem, 3vw, 2.5rem);
     display: grid;
     align-content: center;
-    box-shadow: 0 28px 70px rgba(0,0,0,0.32);
-    transform: rotate(1deg);
+    box-shadow: 0 28px 70px rgba(0,0,0,0.22);
+    transform: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .commercial-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 5px;
+    background: linear-gradient(180deg, #f0622a, rgba(240,98,42,0.08));
   }
 
   .panel-row {
-    padding: 1.15rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.28);
+    padding: 1.25rem 0 1.25rem 1.35rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+  }
+
+  .panel-row:nth-child(1) {
+    padding-top: 0.35rem;
+  }
+
+  .panel-row:nth-child(even) {
+    margin-left: clamp(0rem, 3vw, 2rem);
   }
 
   .panel-row:last-child {
@@ -4227,10 +4283,10 @@ const breadcrumbs = [
 
   .panel-row span {
     display: block;
-    color: rgba(255,255,255,0.76);
+    color: #f0622a;
     font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
     margin-bottom: 0.35rem;
   }
@@ -4238,9 +4294,9 @@ const breadcrumbs = [
   .panel-row strong {
     display: block;
     color: #fff;
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.05rem, 1.5vw, 1.45rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
   }
 
   .fit-path-layout {

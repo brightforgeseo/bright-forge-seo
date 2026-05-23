@@ -44,32 +44,24 @@ const steps = [
     </div>
 
     <!-- Process Steps - 2 Column Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="process-grid">
       {steps.map((step) => (
         <div
-          class="process-card bg-[#131627] rounded-lg p-10 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group border border-[rgba(255,255,255,0.07)]"
+          class="process-card"
         >
-          <!-- Orange top border -->
-          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62] -mx-10 -mt-10 mb-6 rounded-t-lg"></div>
-
-          <!-- Step number circle -->
-          <div class="mb-6">
-            <div class="w-16 h-16 bg-[#f0622a] rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:bg-[#ff9a62] transition-colors">
-              {step.number}
-            </div>
+          <div class="process-number">
+            {step.number}
           </div>
 
-          <!-- Icon and Title -->
-          <div class="mb-4">
+          <div class="process-copy">
             <h3 class="text-xl font-bold text-white">
               {step.title}
             </h3>
-          </div>
 
-          <!-- Description -->
-          <p class="text-[#d0d4e8] leading-relaxed text-base">
-            {step.description}
-          </p>
+            <p class="text-[#d0d4e8] leading-relaxed text-base">
+              {step.description}
+            </p>
+          </div>
         </div>
       ))}
     </div>
@@ -77,21 +69,57 @@ const steps = [
   </div>
 </div>
 
-<script>
-  // Add hover effects with JavaScript
-  document.addEventListener('DOMContentLoaded', () => {
-    const processCards = document.querySelectorAll('.process-card');
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+  }
 
-    processCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.backgroundColor = 'rgba(240,98,42,0.05)';
-        this.style.transform = 'scale(1.02)';
-      });
+  .process-card {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 1.35rem;
+    background: #111421;
+    padding: clamp(1.35rem, 3vw, 2.25rem);
+    min-height: 190px;
+  }
 
-      card.addEventListener('mouseleave', function() {
-        this.style.backgroundColor = '#131627';
-        this.style.transform = 'scale(1)';
-      });
-    });
-  });
-</script>
+  .process-number {
+    color: #f0622a;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 0.85;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    opacity: 0.9;
+  }
+
+  .process-copy h3 {
+    margin: 0 0 0.85rem;
+    line-height: 1.2;
+  }
+
+  .process-copy p {
+    margin: 0;
+  }
+
+  .process-card:nth-child(2),
+  .process-card:nth-child(3) {
+    background: #0f121f;
+  }
+
+  @media (max-width: 768px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-card {
+      grid-template-columns: 60px 1fr;
+      min-height: auto;
+    }
+  }
+</style>
