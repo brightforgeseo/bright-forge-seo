@@ -6,921 +6,622 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const proofItems = [
+  {
+    title: 'Google Business Profile first',
+    copy: 'We treat your GBP as a commercial asset, not a directory listing. Categories, services, photos, posts, reviews, Q&A and tracking all need to support enquiries.'
+  },
+  {
+    title: 'Local search plus conversion',
+    copy: 'Local SEO should lead to calls, direction requests, form fills and booked jobs. Rankings are useful only when the page and profile help people choose you.'
+  },
+  {
+    title: 'Clean local signals',
+    copy: 'We fix inconsistent NAP data, weak location pages, thin service pages, duplicate listings and citation gaps that make local trust harder to build.'
+  }
+];
+
+const serviceBlocks = [
+  {
+    title: 'Google Business Profile optimisation',
+    copy: 'We review categories, services, business description, opening hours, service areas, products, photos, posts, Q&A, tracking links and profile completeness. The goal is a profile that is accurate, active and built around how customers search.'
+  },
+  {
+    title: 'Google Maps and local pack strategy',
+    copy: 'We identify the search terms, locations and competitor profiles that matter, then improve the signals that influence map visibility: relevance, proximity, prominence, reviews, landing pages and business data consistency.'
+  },
+  {
+    title: 'Citation and NAP cleanup',
+    copy: 'We check whether your business name, address, phone number, website and core details are consistent across important local platforms, directories and data sources. Messy citations weaken trust and waste effort.'
+  },
+  {
+    title: 'Review growth and response systems',
+    copy: 'We help build ethical review collection and response processes. No fake reviews, no spam, no risky shortcuts. Local trust comes from real customer feedback handled professionally.'
+  },
+  {
+    title: 'Location and service page support',
+    copy: 'We improve the pages connected to your local visibility, including city pages, service pages and contact pages. GBP traffic often leaks if the landing page is weak, slow, generic or unclear.'
+  },
+  {
+    title: 'Local SEO tracking and reporting',
+    copy: 'We track the metrics that matter: local rankings, GBP actions, calls, website clicks, direction requests, form enquiries, Search Console visibility and changes in qualified lead flow.'
+  }
+];
+
+const fitBlocks = [
+  {
+    title: 'Service-area businesses',
+    copy: 'Plumbers, clinics, repair companies, trades, consultants, legal services, cleaning companies and other businesses that need calls or enquiries from a defined location.'
+  },
+  {
+    title: 'Physical locations',
+    copy: 'Shops, offices, clinics, showrooms, gyms, restaurants, schools and customer-facing locations that need stronger visibility in Maps and near-me searches.'
+  },
+  {
+    title: 'Multi-location brands',
+    copy: 'Businesses with several branches that need consistent GBP management, location-page structure, review standards and reporting across each location.'
+  },
+  {
+    title: 'Growing businesses with messy local data',
+    copy: 'Companies with duplicate listings, old phone numbers, moved addresses, inconsistent citations, weak reviews or location pages that do not convert.'
+  }
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Local visibility audit',
+    copy: 'We review your GBP, local rankings, competitors, citations, reviews, landing pages, tracking and service-area signals. This separates real blockers from cosmetic profile tweaks.'
+  },
+  {
+    label: '02',
+    title: 'Profile and signal cleanup',
+    copy: 'We correct business data, optimise categories and services, clean up listing issues, improve profile content and make sure the public information matches the website.'
+  },
+  {
+    label: '03',
+    title: 'Page and proof improvements',
+    copy: 'We strengthen the pages that support local search, including service pages, location pages, internal links, trust signals, photos, reviews and clear enquiry paths.'
+  },
+  {
+    label: '04',
+    title: 'Ongoing local growth',
+    copy: 'We monitor rankings, GBP actions, reviews, competitor changes, citation health and enquiry quality, then adjust the campaign around the locations and services that matter most.'
+  }
+];
+
+const signals = [
+  'Correct primary and secondary GBP categories',
+  'Accurate business name, address, phone and opening hours',
+  'Service areas that match how the business actually operates',
+  'Strong service descriptions and product or service entries',
+  'Fresh photos that show real people, premises, work or results',
+  'Review requests and responses handled without spam or scripts',
+  'Citation consistency across useful local platforms',
+  'Location or service pages that match GBP intent',
+  'Tracking for calls, forms, clicks and direction requests',
+  'Internal links from relevant service and contact pages'
+];
+
+const faqs = [
+  { question: 'What are local SEO services?', answer: 'Local SEO services improve how a business appears in Google Maps, Google Business Profile, local pack results and location-based organic searches. The work includes GBP optimisation, local landing pages, citation cleanup, review strategy, local content, tracking and ongoing performance improvements.' },
+  { question: 'Is local SEO only for businesses with a physical shop?', answer: 'No. Local SEO also matters for service-area businesses such as trades, clinics, legal services, repair companies, consultants and home service providers. The strategy changes depending on whether customers visit you, you visit them, or both.' },
+  { question: 'How long does local SEO take?', answer: 'Some Google Business Profile improvements can show within weeks, especially if the listing is incomplete or inconsistent. Competitive local rankings usually take two to six months depending on the market, location, reviews, website strength and competitor activity.' },
+  { question: 'What is included in Google Business Profile optimisation?', answer: 'GBP optimisation can include category review, service setup, business description improvements, service-area checks, photo guidance, posts, Q&A, review response standards, tracking links, duplicate listing checks and alignment between the profile and website.' },
+  { question: 'Can local SEO help us appear in Google Maps?', answer: 'Yes, that is one of the main goals. Google Maps visibility depends on relevance, proximity and prominence, so we improve the profile, reviews, citations, landing pages and local signals that help Google understand when your business is a strong result.' },
+  { question: 'Do reviews affect local SEO?', answer: 'Reviews influence trust, conversion and local visibility. We do not recommend fake reviews or risky shortcuts. The right approach is a consistent review request process, professional responses and clear internal ownership so real customers are encouraged to leave useful feedback.' },
+  { question: 'Do we need separate location pages?', answer: 'Usually, yes, if you serve multiple important areas or have more than one branch. Location pages should be useful, specific and connected to real services, not doorway pages created only to stuff city names into the site.' },
+  { question: 'How do you measure local SEO performance?', answer: 'We measure local rankings, Google Business Profile actions, calls, website clicks, direction requests, form enquiries, Search Console visibility and landing-page performance. The goal is not just map visibility; it is more qualified local enquiries.' }
+];
 ---
 
 <MainLayout
-  title="Local SEO Services Philippines | Bright Forge"
-  description="Dominate local search results in the Philippines with our expert local SEO services. GBP optimization, local citations, and targeted strategies for businesses in Metro Manila and beyond."
-  keywords="local SEO Philippines, Google Business Profile optimization, local search optimization, Philippines local SEO agency, Metro Manila SEO"
-  faqs={[
-    { question: "What is local SEO and why does my Philippines business need it?", answer: "Local SEO is the process of optimizing your online presence to attract more business from relevant local searches. For Philippines businesses, this means appearing when potential customers in your city or region search for your products or services. It's essential because 76% of people who search for something nearby on their phone visit a business within a day, and 28% of those searches result in a purchase. Without local SEO, you're invisible to these high-intent customers who are ready to buy." },
-    { question: "How long does it take to see results from local SEO?", answer: "Local SEO typically shows initial results faster than traditional SEO. Most businesses see improvements in their Google Business Profile visibility within 2-4 weeks, with significant local ranking improvements within 3-6 months. Factors affecting timeline include your current online presence, competition level in your area, and the consistency of optimization efforts." },
-    { question: "What's included in Google Business Profile optimization?", answer: "Our Google Business Profile optimization includes complete profile setup, business information verification, category optimization, service area configuration, photo and video uploads, post creation and scheduling, review response management, Q&A population, product/service catalog setup, and ongoing performance monitoring." },
-    { question: "How do you handle negative reviews?", answer: "Negative reviews are opportunities to showcase your customer service. We develop professional response strategies that acknowledge concerns, offer solutions, and demonstrate your commitment to customer satisfaction. We also implement proactive review generation campaigns to increase positive reviews, improving your overall rating." },
-    { question: "Can you help businesses with multiple locations?", answer: "Absolutely! We specialize in multi-location local SEO for businesses across the Philippines. Our approach includes individual optimization for each location while maintaining brand consistency, centralized management dashboards, location-specific content strategies, and coordinated review management across all branches." },
-    { question: "What makes your local SEO services different from others?", answer: "Our deep understanding of the Philippines market sets us apart. We know the local directories that matter, understand regional search behaviors, and have relationships with local platforms. Combined with our data-driven approach, transparent reporting, and proven track record of ranking 500+ local businesses, we deliver results that directly impact your revenue." },
-  ]}
+  title="Local SEO Services Philippines | Google Maps & GBP"
+  description="Local SEO services in the Philippines for Google Business Profile, Google Maps visibility, reviews, citations, local pages and enquiry growth."
+  keywords="local SEO services Philippines, local SEO Philippines, Google Business Profile optimization Philippines, Google Maps SEO Philippines, local SEO agency Philippines"
+  faqs={faqs}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Local SEO Services Philippines',
+          item: 'https://brightforge.com.ph/local-seo-services-philippines/'
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Local SEO Services Philippines',
+      url: 'https://brightforge.com.ph/local-seo-services-philippines/',
+      inLanguage: 'en',
+      description: 'Local SEO services for Google Business Profile, Google Maps visibility, reviews, citations, local landing pages and enquiry growth.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: serviceBlocks.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          description: item.copy
+        }))
+      }
+    })} />
+  </Fragment>
+
   <LegacyHeader slot="header" />
 
-  <!-- Hero Section -->
   <Hero
     badgeIcon="fas fa-map-marker-alt"
-    badgeText="Top Local SEO Agency"
-    title="Local SEO Services That Put Your Philippines Business on the Map"
+    badgeText="Local SEO Services"
+    title="Local SEO Services Philippines for <span>Google Maps, GBP and Local Leads</span>"
     breadcrumbCurrent="Local SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>Transform your local presence and dominate search results in your city. We specialize in helping Philippines businesses attract more customers through strategic local SEO, Google Business Profile optimization, and targeted local search strategies.</p>
+      <p>Local SEO is not just about showing up on a map. It is about helping nearby customers find the right business, trust it quickly and take the next step, whether that means calling, booking, visiting, asking for directions or sending an enquiry.</p>
+      <p>Bright Forge provides local SEO services in the Philippines for businesses that need stronger Google Business Profile performance, cleaner local signals, better location pages and more qualified enquiries from the areas they actually serve.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Get Free Local SEO Audit" />
-      <ButtonSecondary href="#services" text="Schedule Consultation" />
+      <ButtonPrimary href="/contact/" text="Get a Local SEO Audit" />
+      <ButtonSecondary href="#local-work" text="See What We Fix" />
     </Fragment>
 
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="local-stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">300%</div>
-            <div class="stat-label">Local Businesses Ranked</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">5x</div>
-            <div class="stat-label">Average Local Traffic Increase</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">90%</div>
-            <div class="stat-label">Map Pack Success Rate</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">48hr</div>
-            <div class="stat-label">Response Time</div>
-          </div>
-        </div>
+    <Fragment slot="stats">
+      <div class="hero-stats">
+        <div class="stat"><strong>GBP</strong><span>Profile accuracy, services, photos, posts, Q&A and tracking.</span></div>
+        <div class="stat"><strong>Maps</strong><span>Local pack visibility for the services and areas that matter.</span></div>
+        <div class="stat"><strong>Leads</strong><span>Calls, forms, direction requests and website actions, not vanity traffic.</span></div>
       </div>
     </Fragment>
   </Hero>
 
-  <!-- Why Local SEO Section -->
-  <section class="why-local-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Local SEO Is Essential for <span>Philippines Businesses</span></h2>
+  <section class="intro-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <span class="eyebrow">Why local SEO matters</span>
+          <h2>Local customers make quick decisions from search results</h2>
+          <p>When someone searches for a nearby service, they usually compare a small set of businesses. The Google Business Profile, review quality, map position, photos, services, website and call path all influence that decision before the visitor reads a long sales page.</p>
+          <p>That is why local SEO needs more than citation submissions. The business information must be accurate, the profile must be active, the website must support the same services and locations, and the enquiry path must be clear.</p>
+        </div>
+        <aside class="local-panel" aria-label="Local SEO commercial outcomes">
+          <h3>Local SEO should support real actions</h3>
+          <ul>
+            <li>More qualified calls from target service areas</li>
+            <li>Better visibility in Google Maps and local pack results</li>
+            <li>Cleaner trust signals across business listings</li>
+            <li>Stronger conversion paths from GBP to website</li>
+            <li>More useful reviews and professional responses</li>
+          </ul>
+        </aside>
       </div>
+    </div>
+  </section>
 
-      <div class="content-explanation">
-        <div class="content-card">
-          <div class="content-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="content-text">
-            <p>In today's digital landscape, 46% of all Google searches have local intent. When customers in Metro Manila, Cebu, Davao, or anywhere in the Philippines search for products and services, they're looking for businesses near them. Local SEO ensures you're the business they find and choose.</p>
+  <section class="proof-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="proof-grid">
+        {proofItems.map((item) => (
+          <article class="proof-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-            <p>Our local SEO services help Philippines businesses dominate Google Maps, the local 3-pack, and location-based searches. We optimize every aspect of your local presence to ensure maximum visibility when customers in your area are ready to buy.</p>
-          </div>
+  <section id="local-work" class="services-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading narrow">
+        <span class="eyebrow">What we fix</span>
+        <h2>Local SEO services built around Maps visibility, trust and enquiries</h2>
+        <p>The work starts with the places customers actually see: your Google Business Profile, map results, review profile, service pages, location pages and local citations.</p>
+      </div>
+      <div class="service-list">
+        {serviceBlocks.map((service) => (
+          <article class="service-item">
+            <h3>{service.title}</h3>
+            <p>{service.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="fit-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fit-layout">
+        <div class="fit-copy">
+          <span class="eyebrow">Who this is for</span>
+          <h2>Best fit for businesses where location affects buying decisions</h2>
+          <p>Local SEO is strongest when customers choose based on area, availability, reviews, trust and convenience. That includes both walk-in businesses and service-area companies that travel to customers.</p>
+          <p>It is not a shortcut for weak service, fake reviews or low-effort city pages. The campaign has to reflect how the business really operates.</p>
+        </div>
+        <div class="fit-grid">
+          {fitBlocks.map((fit) => (
+            <article class="fit-card">
+              <h3>{fit.title}</h3>
+              <p>{fit.copy}</p>
+            </article>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Google Business Profile Services Section -->
-  <section id="services" class="services-section-new">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="services-layout">
-        <div class="services-content">
-          <h2>Google Business Profile <span>Optimization</span></h2>
-
-          <div class="service-list">
-            <div class="service-item">
-              <h3>Complete Profile Setup</h3>
-              <p>Business information accuracy, category selection, service area configuration, business description optimization, and attribute selection for maximum visibility and engagement.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Visual Content Strategy</h3>
-              <p>Professional photo optimization, 360-degree virtual tours, video integration, regular photo updates to show activity, and cover photo and logo optimization.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Review Management</h3>
-              <p>Strategic review acquisition, professional response templates, negative review mitigation, review monitoring and alerts, and showcasing positive testimonials.</p>
-            </div>
-
-            <div class="service-item">
-              <h3>Google Posts & Updates</h3>
-              <p>Regular post creation and scheduling, promotional offers and events, product and service highlights, seasonal content strategy, and community engagement.</p>
-            </div>
-          </div>
+  <section class="signals-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="signals-layout">
+        <div class="signals-copy">
+          <span class="eyebrow">Local trust signals</span>
+          <h2>The small details decide whether local SEO works</h2>
+          <p>Most local SEO failures are not caused by one dramatic issue. They are usually caused by weak signals stacking up: an incomplete profile, old phone numbers, thin service pages, no review process, generic photos, poor tracking and inconsistent business information.</p>
         </div>
-
-        <div class="services-visual">
-          <div class="visual-card">
-            <div class="visual-icon">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <h3>Map Pack Success</h3>
-            <p class="visual-stat">92%</p>
-            <p class="visual-label">Map Pack Visibility Rate</p>
-          </div>
+        <div class="signals-list">
+          {signals.map((signal) => <span>{signal}</span>)}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Our Process Section -->
   <section class="process-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="process-header">
-        <h2>Our Proven Local SEO <span>Process</span></h2>
-        <p>We follow a systematic approach to elevate your local search presence and deliver consistent results.</p>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading">
+        <span class="eyebrow">How we work</span>
+        <h2>A local SEO process that starts with diagnosis, not guesswork</h2>
       </div>
-
       <div class="process-grid">
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3>Local Audit</h3>
-          <p>Comprehensive assessment of your current local presence, competitor analysis, and opportunity identification across all local ranking factors.</p>
-        </div>
+        {processSteps.map((step) => (
+          <article class="process-card">
+            <span>{step.label}</span>
+            <h3>{step.title}</h3>
+            <p>{step.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <h3>Profile Optimization</h3>
-          <p>Complete Google Business Profile setup and optimization, ensuring every element is perfectly configured for maximum local visibility.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-sitemap"></i>
-          </div>
-          <h3>Citation Building</h3>
-          <p>Strategic placement in relevant Philippines directories and citation sources to build local authority and trust signals.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h3>Content Localization</h3>
-          <p>Create location-specific content that resonates with your local audience and targets high-value local search queries.</p>
-        </div>
-
-        <div class="process-box orange-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <h3>Review Campaign</h3>
-          <p>Implement systematic review generation strategies to build social proof and improve local rankings through authentic customer feedback.</p>
-        </div>
-
-        <div class="process-box white-bg">
-          <div class="process-box-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Monitor & Optimize</h3>
-          <p>Continuous monitoring of local rankings, competitor movements, and performance metrics with ongoing optimization for sustained growth.</p>
+  <section class="cta-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="cta-panel">
+        <span class="eyebrow">Next step</span>
+        <h2>Find out what is holding back your local visibility</h2>
+        <p>We can review your Google Business Profile, local search footprint, citations, reviews, landing pages and tracking, then show where the biggest local SEO opportunities are.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Get a Local SEO Audit" />
+          <ButtonSecondary href="/seo-services-philippines/" text="View SEO Services" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Benefits Section -->
-  <section class="benefits-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="benefits-header">
-        <h2>Why Choose Our Local SEO <span>Services</span></h2>
-        <p>Partner with a team that understands the Philippines market and delivers measurable results.</p>
-      </div>
-
-      <div class="benefits-layout">
-        <div class="benefits-visual">
-          <img
-            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80"
-            alt="Local business owner managing Google Business Profile on mobile device"
-            class="benefits-image"
-          />
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <h3>Local Expertise</h3>
-            <p>Deep understanding of the Philippines market, local directories, and regional search behaviors to maximize your local visibility.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <h3>Proven Results</h3>
-            <p>Track record of ranking 500+ local businesses across the Philippines with measurable increases in foot traffic and calls.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-chart-bar"></i>
-            </div>
-            <h3>Transparent Reporting</h3>
-            <p>Clear, detailed reports showing local ranking improvements, customer actions, and ROI from your local SEO investment.</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-headset"></i>
-            </div>
-            <h3>Dedicated Support</h3>
-            <p>Responsive team dedicated to your success with ongoing optimization, review management, and strategic guidance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
   <section class="faq-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2 class="section-title">Local SEO Questions Answered</h2>
-        <p class="section-subtitle">
-          Get answers to common questions about local SEO services and how we can help your Philippines business grow.
-        </p>
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="section-heading">
+        <span class="eyebrow">Questions</span>
+        <h2>Local SEO questions businesses usually ask before investing</h2>
       </div>
-
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            What is local SEO and why does my Philippines business need it?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Local SEO is the process of optimizing your online presence to attract more business from relevant local searches. For Philippines businesses, this means appearing when potential customers in your city or region search for your products or services. It's essential because 76% of people who search for something nearby on their phone visit a business within a day, and 28% of those searches result in a purchase. Without local SEO, you're invisible to these high-intent customers who are ready to buy.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            How long does it take to see results from local SEO?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Local SEO typically shows initial results faster than traditional SEO. Most businesses see improvements in their Google Business Profile visibility within 2-4 weeks, with significant local ranking improvements within 3-6 months. Factors affecting timeline include your current online presence, competition level in your area, and the consistency of optimization efforts. Our systematic approach ensures steady progress with measurable milestones along the way.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            What's included in Google Business Profile optimization?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Our Google Business Profile optimization includes complete profile setup, business information verification, category optimization, service area configuration, photo and video uploads, post creation and scheduling, review response management, Q&A population, product/service catalog setup, and ongoing performance monitoring. We ensure every aspect of your profile is optimized to maximize visibility and engagement with potential customers.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            How do you handle negative reviews?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Negative reviews are opportunities to showcase your customer service. We develop professional response strategies that acknowledge concerns, offer solutions, and demonstrate your commitment to customer satisfaction. We also implement proactive review generation campaigns to increase positive reviews, improving your overall rating. Our approach turns potential reputation issues into trust-building moments that actually strengthen your local presence.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            Can you help businesses with multiple locations?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Absolutely! We specialize in multi-location local SEO for businesses across the Philippines. Our approach includes individual optimization for each location while maintaining brand consistency, centralized management dashboards, location-specific content strategies, and coordinated review management across all branches. Whether you have 2 or 200 locations, we ensure each one achieves maximum local visibility.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            What makes your local SEO services different from others?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Our deep understanding of the Philippines market sets us apart. We know the local directories that matter, understand regional search behaviors, and have relationships with local platforms. Combined with our data-driven approach, transparent reporting, and proven track record of ranking 500+ local businesses, we deliver results that directly impact your revenue. We don't just improve rankings; we drive foot traffic, phone calls, and sales to your business.</p>
-          </div>
-        </div>
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
   <ContactSection />
-
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Page-specific visual styles */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.local-stats-grid {
+.hero-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.stat-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
+.stat {
+  background: rgba(13, 15, 26, 0.82);
+  border: 1px solid rgba(240, 98, 42, 0.28);
+  border-radius: 18px;
+  padding: 1.25rem;
 }
 
-.stat-card:hover {
-  transform: translateY(-5px);
-}
-
-.local-stats-grid .stat-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff !important;
-  margin-bottom: 0.5rem;
-}
-
-.local-stats-grid .stat-label {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-
-@media (max-width: 768px) {
-  .local-stats-grid {
-    gap: 1rem;
-  }
-}
-
-/* Why Local SEO Section */
-.why-local-section {
-  padding: 80px 0;
-  background: #131627;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.stat strong {
+  display: block;
   color: #ffffff;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.section-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.content-explanation {
-  display: flex;
-  justify-content: center;
-}
-
-.content-card {
-  display: flex;
-  max-width: 900px;
-  background: #0d0f1a;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.content-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  font-size: 2rem;
-}
-
-.content-text {
-  padding: 30px;
-}
-
-.content-text p {
   font-size: 1.1rem;
-  line-height: 1.7;
-  color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 0.35rem;
 }
 
-.content-text p:last-child {
-  margin-bottom: 0;
+.stat span {
+  color: #d0d4e8;
+  line-height: 1.55;
 }
 
-@media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 2rem;
-  }
-
-  .content-card {
-    flex-direction: column;
-  }
-
-  .content-icon {
-    width: 100%;
-    height: 80px;
-  }
-}
-
-/* Services Section - 2 Column Layout */
-.services-section-new {
-  padding: 5rem 0;
+.intro-section,
+.services-section,
+.signals-section,
+.faq-section {
   background: #131627;
+  padding: 5rem 0;
 }
 
-.services-layout {
+.proof-section,
+.fit-section,
+.process-section,
+.cta-section {
+  background: #0d0f1a;
+  padding: 5rem 0;
+}
+
+.intro-layout,
+.fit-layout,
+.signals-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
   gap: 4rem;
   align-items: start;
 }
 
-.services-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
+.intro-copy h2,
+.fit-copy h2,
+.signals-copy h2,
+.section-heading h2,
+.cta-panel h2 {
   color: #ffffff;
-  margin-bottom: 2.5rem;
-  line-height: 1.2;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0.75rem 0 1.25rem;
+  font-weight: 850;
 }
 
-.services-content h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.intro-copy p,
+.fit-copy p,
+.signals-copy p,
+.section-heading p,
+.cta-panel p {
+  color: #d0d4e8;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  color: #f0622a;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+.local-panel {
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.12), rgba(13, 15, 26, 0.92));
+  border: 1px solid rgba(240, 98, 42, 0.28);
+  border-radius: 24px;
+  padding: 2rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.local-panel h3 {
+  color: #ffffff;
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
+}
+
+.local-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.local-panel li {
+  color: #e8eaf2;
+  line-height: 1.55;
+  padding-left: 1.45rem;
+  position: relative;
+}
+
+.local-panel li::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #f0622a;
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.proof-card,
+.service-item,
+.fit-card,
+.process-card,
+.faq-list details {
+  background: #131627;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.6rem;
+}
+
+.proof-card h3,
+.service-item h3,
+.fit-card h3,
+.process-card h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.proof-card p,
+.service-item p,
+.fit-card p,
+.process-card p,
+.faq-list p {
+  color: #d0d4e8;
+  line-height: 1.68;
+  margin: 0;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 3rem;
+}
+
+.section-heading.narrow {
+  max-width: 760px;
 }
 
 .service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
 }
 
 .service-item {
-  background: #0d0f1a;
   border-left: 4px solid #f0622a;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
-.service-item:hover {
-  background: #1a1e32;
-  transform: translateX(5px);
+.fit-grid {
+  display: grid;
+  gap: 1rem;
 }
 
-.service-item h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.service-item p {
-  font-size: 0.95rem;
-  color: #ffffff;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.services-visual {
-  position: sticky;
-  top: 2rem;
+.signals-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
-.visual-card {
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.05), rgba(255, 107, 53, 0.05));
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(240, 98, 42, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  color: white;
-  font-size: 2rem;
-}
-
-.visual-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
+.signals-list span {
   color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.visual-stat {
-  font-size: 4rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 1rem 0 0.5rem;
-  line-height: 1;
-}
-
-.visual-label {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .services-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .services-visual {
-    position: static;
-  }
-}
-
-/* Process Section - 3x2 Grid with Alternating Colors */
-.process-section {
-  padding: 5rem 0;
-  background: #0d0f1a;
-}
-
-.process-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.process-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.process-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
+  background: rgba(240, 98, 42, 0.11);
+  border: 1px solid rgba(240, 98, 42, 0.24);
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  line-height: 1.4;
 }
 
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
-.process-box {
-  padding: 3rem 2rem;
+.process-card span {
+  color: #f0622a;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.cta-panel {
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.18), rgba(19, 22, 39, 0.96));
+  border: 1px solid rgba(240, 98, 42, 0.32);
+  border-radius: 28px;
+  padding: clamp(2rem, 5vw, 4rem);
   text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.process-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.process-box.orange-bg {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.process-box.orange-bg h3,
-.process-box.orange-bg p {
-  color: white;
-}
-
-.process-box.white-bg {
-  background: #131627;
-}
-
-.process-box.white-bg h3 {
-  color: #ffffff;
-}
-
-.process-box.white-bg p {
-  color: #ffffff;
-}
-
-.process-box-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
+.cta-actions {
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  transition: all 0.3s ease;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
-.process-box.orange-bg .process-box-icon {
-  color: white;
-}
-
-.process-box.white-bg .process-box-icon {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.process-box:hover .process-box-icon {
-  transform: scale(1.1);
-}
-
-.process-box h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.process-box p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Benefits Section - Image + 2x2 Grid */
-.benefits-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.benefits-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.benefits-header h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.benefits-header h2 span {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.benefits-header p {
-  color: #ffffff;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.benefits-layout {
+.faq-list {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 1rem;
 }
 
-.benefits-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.benefits-image {
-  width: 100%;
-  max-width: 400px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.benefit-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem;
-  color: white;
-  font-size: 1.75rem;
-}
-
-.benefit-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
+.faq-list summary {
   color: #ffffff;
-  margin-bottom: 0.75rem;
-}
-
-.benefit-card p {
-  color: #ffffff;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 1024px) {
-  .benefits-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .benefits-image {
-    height: 400px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* FAQ Section */
-.faq-section {
-  padding: 5rem 0;
-  background: #131627;
-}
-
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: #ffffff;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.faq-item {
-  background: #131627;
-  border: 1px solid rgba(255,255,255,0.07);
-  margin-bottom: 1rem;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.faq-question {
-  padding: 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #e8eaf2;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.3s ease;
+  font-weight: 750;
+  font-size: 1.05rem;
+  line-height: 1.45;
 }
 
-.faq-question:hover {
-  background: #0d0f1a;
+.faq-list details[open] summary {
+  color: #f0622a;
+  margin-bottom: 0.9rem;
 }
 
-.faq-question i {
-  color: #d0d4e8;
-  transition: transform 0.3s ease;
+@media (max-width: 1024px) {
+  .intro-layout,
+  .fit-layout,
+  .signals-layout,
+  .service-list,
+  .process-grid,
+  .proof-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .local-panel {
+    position: static;
+  }
 }
 
-.faq-item.active .faq-question i {
-  transform: rotate(180deg);
-}
+@media (max-width: 760px) {
+  .intro-section,
+  .services-section,
+  .signals-section,
+  .faq-section,
+  .proof-section,
+  .fit-section,
+  .process-section,
+  .cta-section {
+    padding: 3.5rem 0;
+  }
 
-.faq-answer {
-  padding: 0 1.5rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  color: #d0d4e8;
-  line-height: 1.6;
-}
+  .intro-layout,
+  .fit-layout,
+  .signals-layout,
+  .service-list,
+  .process-grid,
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
 
-.faq-item.active .faq-answer {
-  padding: 0 1.5rem 1.5rem;
-  padding-top: 1rem;
-  max-height: 500px;
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 </style>
-
-<script>
-  // FAQ Accordion
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-      const item = question.parentElement;
-      item.classList.toggle('active');
-
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.classList.remove('active');
-        }
-      });
-    });
-  });
-</script>
