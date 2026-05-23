@@ -122,15 +122,19 @@ Watch-outs:
 - Avoid saying `llms.txt` is a Google ranking factor.
 - Keep CRO tied to SEO because clicks are becoming more valuable.
 
-### 7. Contact page is underpowered
+### 7. Contact page strengthened
 
-The contact page works but is light compared with the rest of the site. It should become a better conversion page:
+The contact page has been reworked into a practical SEO review request page rather than a generic contact page.
 
-- Add who should enquire.
-- Add what happens after sending the form.
-- Add expected response time.
-- Add service fit questions.
-- Replace generic line "transform your online presence".
+Completed improvements:
+
+- Reframed the H1 and hero around requesting an SEO review.
+- Added response-time expectation.
+- Added service-fit guidance.
+- Added a website URL field and fuller service dropdown.
+- Strengthened the submit CTA.
+- Added a proof-before-pitch section and next-step explanation.
+- Suppressed the timed popup form on the contact page so only one lead form renders.
 
 ### 8. Internal linking opportunities
 
@@ -152,7 +156,6 @@ Add contextual links from service pages to:
 
 ### Sprint 2: trust and conversion
 
-- Rework contact page.
 - Improve case study narrative templates.
 - Add CRO language to service pages without diluting SEO targeting.
 

@@ -33,6 +33,7 @@ interface Props {
   }>;
   noindex?: boolean;
   nofollow?: boolean;
+  disableContactPopup?: boolean;
   faqs?: Array<{
     question: string;
     answer: string;
@@ -52,6 +53,7 @@ const {
   breadcrumbs,
   noindex = false,
   nofollow = false,
+  disableContactPopup = false,
   faqs
 } = Astro.props;
 
@@ -216,8 +218,8 @@ const isHome = Astro.url.pathname === '/';
     </main>
     <slot name="footer" />
 
-    <!-- Contact popup - appears after 15 seconds -->
-    <ContactPopup />
+    <!-- Contact popup - appears after 45 seconds on non-contact pages -->
+    {!disableContactPopup && <ContactPopup />}
 
     <!-- Load non-critical resources well after page load -->
     <script>
