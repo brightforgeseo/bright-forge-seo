@@ -1,343 +1,122 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
-import Footer from '../../components/Footer.astro';
-import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
+const canonical="https://brightforge.com.ph/development/";
+const proof=[
+  {
+    "title": "SEO before design polish",
+    "text": "We protect crawlability, metadata, content structure and redirects before visual extras."
+  },
+  {
+    "title": "Performance matters",
+    "text": "Fast pages help users and reduce technical drag before SEO work even starts."
+  },
+  {
+    "title": "Human QA",
+    "text": "Every build still needs manual checks for forms, schema, indexing and conversion paths."
+  }
+];
+const checks=[
+  {
+    "title": "Crawlable pages",
+    "text": "Search engines need clean URLs, internal links, server-rendered content where needed and sensible indexation controls."
+  },
+  {
+    "title": "Content structure",
+    "text": "Pages need headings, body copy, proof, FAQs and conversion points that support SEO rather than sit behind visual components."
+  },
+  {
+    "title": "Performance and Core Web Vitals",
+    "text": "We reduce bloat, unnecessary scripts, layout shifts and render delays that weaken user experience."
+  },
+  {
+    "title": "Redirect and migration safety",
+    "text": "When replacing an old site, URL mapping and launch QA matter more than a prettier homepage."
+  },
+  {
+    "title": "Schema and metadata",
+    "text": "Titles, descriptions, canonical tags, structured data and Open Graph basics should be built in, not bolted on later."
+  },
+  {
+    "title": "Analytics and forms",
+    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+  }
+];
+const process=[
+  {
+    "title": "Audit",
+    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+  },
+  {
+    "title": "Plan",
+    "text": "Map templates, URLs, content sections, redirects, schema and development priorities."
+  },
+  {
+    "title": "Build",
+    "text": "Develop the site around speed, accessibility, crawlability and editorial control."
+  },
+  {
+    "title": "QA",
+    "text": "Test pages, metadata, forms, mobile layouts, redirects, schema and indexation settings."
+  },
+  {
+    "title": "Launch",
+    "text": "Deploy with a launch checklist, Search Console monitoring and post-launch crawl checks."
+  },
+  {
+    "title": "Improve",
+    "text": "Use ranking, crawl and conversion data to refine pages after launch."
+  }
+];
+const faqs=[
+  {
+    "question": "Is Development good for SEO?",
+    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+  },
+  {
+    "question": "Do we need to rebuild our whole website?",
+    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+  },
+  {
+    "question": "How do you protect rankings during a rebuild?",
+    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+  },
+  {
+    "question": "Can your team work with our existing developer?",
+    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+  },
+  {
+    "question": "Which framework should we choose?",
+    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+  },
+  {
+    "question": "Do you guarantee better rankings after a new website?",
+    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+  }
+];
 ---
-
-<MainLayout
-  title="Development Services in the Philippines | Bright Forge SEO"
-  description="Expert web development services in the Philippines. We build blazing-fast, SEO-optimized websites with modern frameworks like Astro, React, Next.js, and more."
->
-  <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-code"
-    badgeText="Full-Stack Development"
-    title="Full-Stack Development Services Philippines"
-    breadcrumbCurrent="Development Services"
-  >
-    <Fragment slot="story">
-      <p>Modern, scalable, and high-performance web solutions built to grow your business.</p>
-
-      <p>At Bright Forge SEO, we don't just build websites -we engineer digital experiences that drive business growth. Our development team specializes in modern frameworks and SEO-first architecture.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Discuss Your Project" />
-      <ButtonSecondary href="#capabilities" text="Our Process" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="technical-icon-grid">
-          <div class="tech-icon"><i class="fab fa-react"></i></div>
-          <div class="tech-icon"><i class="fas fa-rocket"></i></div>
-          <div class="tech-icon"><i class="fab fa-node-js"></i></div>
-          <div class="tech-icon"><i class="fas fa-database"></i></div>
-          <div class="tech-icon"><i class="fas fa-code"></i></div>
-          <div class="tech-icon"><i class="fab fa-wordpress"></i></div>
-        </div>
-      </div>
-    </Fragment>
-  </Hero>
-
-  <!-- Core Capabilities Section -->
-  <section id="capabilities" class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Our Core Development Capabilities</h2>
-        <p class="text-xl text-[#d0d4e8]">Specialized expertise in modern web technologies</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Frontend Development -->
-        <div class="capability-card bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-desktop"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Frontend Development</h3>
-          <p class="text-[#d0d4e8] mb-4">Build blazing-fast, interactive user interfaces with modern JavaScript frameworks and best practices.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>React & Next.js</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Astro Framework</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>SvelteKit</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>TypeScript</li>
-          </ul>
-        </div>
-
-        <!-- Backend Development -->
-        <div class="capability-card bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Backend Development</h3>
-          <p class="text-[#d0d4e8] mb-4">Scalable, secure server-side solutions with modern APIs and database architecture.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Node.js & Express</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>RESTful APIs</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Database Design</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Authentication</li>
-          </ul>
-        </div>
-
-        <!-- Full-Stack Development -->
-        <div class="capability-card bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-layer-group"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Full-Stack Solutions</h3>
-          <p class="text-[#d0d4e8] mb-4">End-to-end development from database to deployment, fully integrated and optimized.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Complete Web Apps</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>E-commerce Platforms</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>SaaS Products</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Custom Dashboards</li>
-          </ul>
-        </div>
-
-        <!-- CMS Integrations -->
-        <div class="capability-card bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-puzzle-piece"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">CMS Integrations</h3>
-          <p class="text-[#d0d4e8] mb-4">Headless CMS solutions that give you flexibility and control over your content.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Contentful</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>WordPress Headless</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Strapi</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Sanity.io</li>
-          </ul>
-        </div>
-
-        <!-- SEO-Friendly Builds -->
-        <div class="capability-card bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">SEO-Friendly Builds</h3>
-          <p class="text-[#d0d4e8] mb-4">Every website built with search engines in mind. Fast loading, clean code, perfect structure.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Core Web Vitals Optimized</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Semantic HTML</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Schema Markup</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Mobile-First Design</li>
-          </ul>
-        </div>
-
-        <!-- Maintenance & Support -->
-        <div class="capability-card bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Maintenance & Support</h3>
-          <p class="text-[#d0d4e8] mb-4">Ongoing support, updates, and optimization to keep your site running smoothly.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Performance Monitoring</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Security Updates</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Bug Fixes</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Feature Additions</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Framework Specializations -->
-  <section class="py-20 bg-brand-bg">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Our Framework Specializations</h2>
-        <p class="text-xl text-[#d0d4e8]">Deep expertise in modern web frameworks</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Astro Development -->
-        <a href="/development/astro/" class="framework-card bg-[#131627] rounded-lg p-8 border-2 border-[rgba(255,255,255,0.07)] hover:border-brand-accent hover:shadow-xl transition-all group">
-          <div class="flex items-start gap-4">
-            <div class="text-5xl text-brand-accent">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">Astro Development</h3>
-              <p class="text-[#d0d4e8] mb-3">Lightning-fast static sites with island architecture. Perfect for content-heavy and SEO-focused websites.</p>
-              <span class="text-brand-accent font-semibold">Learn More →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- React Development -->
-        <a href="/development/react/" class="framework-card bg-[#131627] rounded-lg p-8 border-2 border-[rgba(255,255,255,0.07)] hover:border-brand-accent hover:shadow-xl transition-all group">
-          <div class="flex items-start gap-4">
-            <div class="text-5xl text-brand-accent">
-              <i class="fab fa-react"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">React Development</h3>
-              <p class="text-[#d0d4e8] mb-3">Interactive, component-based applications with the world's most popular JavaScript library.</p>
-              <span class="text-brand-accent font-semibold">Learn More →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Next.js Development -->
-        <a href="/development/nextjs/" class="framework-card bg-[#131627] rounded-lg p-8 border-2 border-[rgba(255,255,255,0.07)] hover:border-brand-accent hover:shadow-xl transition-all group">
-          <div class="flex items-start gap-4">
-            <div class="text-5xl text-brand-accent">
-              <i class="fas fa-layer-group"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">Next.js Development</h3>
-              <p class="text-[#d0d4e8] mb-3">Full-stack React framework with SSR, SSG, and API routes for production-ready applications.</p>
-              <span class="text-brand-accent font-semibold">Learn More →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- SvelteKit Development -->
-        <a href="/development/sveltekit/" class="framework-card bg-[#131627] rounded-lg p-8 border-2 border-[rgba(255,255,255,0.07)] hover:border-brand-accent hover:shadow-xl transition-all group">
-          <div class="flex items-start gap-4">
-            <div class="text-5xl text-brand-accent">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">SvelteKit Development</h3>
-              <p class="text-[#d0d4e8] mb-3">Ultra-fast, compiler-based framework that writes highly optimized vanilla JavaScript.</p>
-              <span class="text-brand-accent font-semibold">Learn More →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- WordPress Headless -->
-        <a href="/development/wordpress/" class="framework-card bg-[#131627] rounded-lg p-8 border-2 border-[rgba(255,255,255,0.07)] hover:border-brand-accent hover:shadow-xl transition-all group md:col-span-2">
-          <div class="flex items-start gap-4">
-            <div class="text-5xl text-brand-accent">
-              <i class="fab fa-wordpress"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-accent transition-colors">WordPress Headless Development</h3>
-              <p class="text-[#d0d4e8] mb-3">Combine WordPress's powerful CMS with modern JavaScript frameworks for the best of both worlds.</p>
-              <span class="text-brand-accent font-semibold">Learn More →</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <ContactSection />
-
-  <Footer slot="footer" />
+<MainLayout title="SEO-First Web Development Philippines | Bright Forge" description="SEO-first web development for Philippine businesses that need fast, crawlable, conversion-ready websites without technical debt." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Development",url:canonical}]} faqs={faqs}>
+<LegacyHeader slot="header" />
+<Hero title="SEO-First Web Development" breadcrumbCurrent="Development">
+<Fragment slot="story"><p class="hero-subtitle">Web development that protects rankings, performance and conversion paths from the start.</p><p>A good website build should not make SEO harder. We plan structure, speed, content, redirects, schema and tracking before launch so the site is ready to earn visibility, not just look finished.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
+</Hero>
+<main class="dev-page">
+<section><div class="page-container two-column"><div><p class="eyebrow">Audit finding</p><h2>The old development hub sold frameworks before it sold business outcomes</h2><p>Framework choice matters, but only after the page strategy, migration risk, crawlability and conversion path are understood. A development hub should help buyers choose the right build approach without turning the page into a tech menu.</p><p>The rewrite turns the section into a practical SEO-first development offer, with clear QA and safer launch language.</p></div><aside class="panel"><h3>What this page now proves</h3><p>The page now explains when the stack is suitable, what SEO risks need controlling and how the work is QA checked before launch.</p></aside></div></section>
+<section id="checks"><div class="page-container"><p class="eyebrow">SEO-first development</p><h2>SEO-first development needs more than a fast framework</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container"><p class="eyebrow">Process</p><h2>How we build without creating SEO debt</h2><div class="grid process">{process.map((item,index)=>(<article class="card"><span>{String(index+1).padStart(2,"0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where development has a clear role</h2><p>This suits businesses replacing an old website, rebuilding a slow WordPress site, launching a new service site, or trying to protect rankings during a design refresh.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the stack around the job, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Development questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Need a site that does not break your SEO on launch?</h2><p>We can audit the current site, map the risks and recommend the right build path before anyone starts redesigning pages.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+</main><Footer slot="footer"/>
 </MainLayout>
 
 <style>
-/* Page-specific visual styles - Technical Icon Grid */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.technical-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.tech-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-.tech-icon:nth-child(even) {
-  animation-delay: -2s;
-}
-
-.tech-icon:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.tech-icon i {
-  font-size: 1.75rem;
-  color: white;
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@media (max-width: 768px) {
-  .technical-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .tech-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Page-specific styles */
-.capability-card:hover {
-  transform: translateY(-4px);
-}
-
-.framework-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Enhanced Framework Card Styling - Modern Design */
-.framework-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.framework-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.framework-card:hover::before {
-  opacity: 1;
-}
-
-.framework-card:hover {
-  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.3);
-}
-
-.framework-card .text-5xl {
-  transition: all 0.4s ease;
-}
-
-.framework-card:hover .text-5xl {
-  transform: scale(1.1) rotate(5deg);
-}
+.dev-page{background:#0d0f1a;color:#fff}.page-container{width:min(100% - 40px,1120px);margin:0 auto}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}.hero-proof article,.panel,.card,.faq-item,.cta-card,.link-grid a{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:24px;box-shadow:0 18px 48px rgba(0,0,0,.18)}.hero-proof article,.card,.panel,.link-grid a{padding:24px}.hero-proof strong,.link-grid span{display:block;color:#fff;font-weight:900;margin-bottom:8px}.hero-proof span{color:rgba(255,255,255,.66);line-height:1.5}.dev-page section{padding:78px 0;content-visibility:visible!important}.dev-page section:nth-child(even){background:#111421}.eyebrow{display:block;color:#f0622a;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}h2{color:#fff;font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 22px}h3{color:#fff;font-size:1.16rem;margin:0 0 10px}p,li{color:rgba(255,255,255,.74);font-size:1.02rem;line-height:1.72}a{color:#f0622a}.two-column,.faq-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,5vw,60px);align-items:start}.grid,.link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.process span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;color:#fff;background:rgba(240,98,42,.25);font-weight:900;margin-bottom:18px}.link-grid a{color:inherit;text-decoration:none}.faq-list{display:grid;gap:14px}.faq-item{overflow:hidden}.faq-item summary{cursor:pointer;padding:22px 24px;color:#fff;font-weight:900;list-style:none}.faq-item summary::-webkit-details-marker{display:none}.faq-item p{padding:0 24px 24px;margin:0}.cta-card{text-align:center;padding:clamp(36px,6vw,68px);background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045))}.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}@media(max-width:920px){.hero-proof,.two-column,.grid,.link-grid,.faq-layout{grid-template-columns:1fr}}
 </style>
+

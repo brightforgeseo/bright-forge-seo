@@ -1,409 +1,122 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
-import Footer from '../../components/Footer.astro';
-import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
+const canonical="https://brightforge.com.ph/development/wordpress/";
+const proof=[
+  {
+    "title": "SEO before design polish",
+    "text": "We protect crawlability, metadata, content structure and redirects before visual extras."
+  },
+  {
+    "title": "Performance matters",
+    "text": "Fast pages help users and reduce technical drag before SEO work even starts."
+  },
+  {
+    "title": "Human QA",
+    "text": "Every build still needs manual checks for forms, schema, indexing and conversion paths."
+  }
+];
+const checks=[
+  {
+    "title": "Crawlable pages",
+    "text": "Search engines need clean URLs, internal links, server-rendered content where needed and sensible indexation controls."
+  },
+  {
+    "title": "Content structure",
+    "text": "Pages need headings, body copy, proof, FAQs and conversion points that support SEO rather than sit behind visual components."
+  },
+  {
+    "title": "Performance and Core Web Vitals",
+    "text": "We reduce bloat, unnecessary scripts, layout shifts and render delays that weaken user experience."
+  },
+  {
+    "title": "Redirect and migration safety",
+    "text": "When replacing an old site, URL mapping and launch QA matter more than a prettier homepage."
+  },
+  {
+    "title": "Schema and metadata",
+    "text": "Titles, descriptions, canonical tags, structured data and Open Graph basics should be built in, not bolted on later."
+  },
+  {
+    "title": "Analytics and forms",
+    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+  }
+];
+const process=[
+  {
+    "title": "Audit",
+    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+  },
+  {
+    "title": "Plan",
+    "text": "Map templates, URLs, content sections, redirects, schema and development priorities."
+  },
+  {
+    "title": "Build",
+    "text": "Develop the site around speed, accessibility, crawlability and editorial control."
+  },
+  {
+    "title": "QA",
+    "text": "Test pages, metadata, forms, mobile layouts, redirects, schema and indexation settings."
+  },
+  {
+    "title": "Launch",
+    "text": "Deploy with a launch checklist, Search Console monitoring and post-launch crawl checks."
+  },
+  {
+    "title": "Improve",
+    "text": "Use ranking, crawl and conversion data to refine pages after launch."
+  }
+];
+const faqs=[
+  {
+    "question": "Is WordPress good for SEO?",
+    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+  },
+  {
+    "question": "Do we need to rebuild our whole website?",
+    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+  },
+  {
+    "question": "How do you protect rankings during a rebuild?",
+    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+  },
+  {
+    "question": "Can your team work with our existing developer?",
+    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+  },
+  {
+    "question": "Which framework should we choose?",
+    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+  },
+  {
+    "question": "Do you guarantee better rankings after a new website?",
+    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+  }
+];
 ---
-
-<MainLayout
-  title="WordPress Headless Dev Philippines | Bright Forge SEO"
-  description="WordPress Headless Development Philippines by Bright Forge SEO combines WordPress CMS with modern frameworks. Get faster sites with API-first architecture."
->
-  <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fab fa-wordpress"
-    badgeText="Headless CMS Experts"
-    title="WordPress Headless Development Philippines"
-    breadcrumbCurrent="WordPress Development"
-  >
-    <Fragment slot="story">
-      <p>Combine the content management power of WordPress with the flexibility of modern JavaScript frameworks.</p>
-      <p>At Bright Forge SEO, we specialize in WordPress headless development Philippines  - delivering lightning-fast, modern frontend experiences with the familiar WordPress editing workflow.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Start Your WordPress Project" />
-      <ButtonSecondary href="#approach" text="Our Approach" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="technical-icon-grid">
-          <div class="tech-icon"><i class="fab fa-wordpress"></i></div>
-          <div class="tech-icon"><i class="fas fa-code"></i></div>
-          <div class="tech-icon"><i class="fas fa-layer-group"></i></div>
-          <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-rocket"></i></div>
-        </div>
-      </div>
-    </Fragment>
-  </Hero>
-
-  <!-- Why Choose Us -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Why Choose Our WordPress Headless Development Services</h2>
-        <p class="text-xl text-[#d0d4e8]">Expertise that delivers results</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fab fa-wordpress"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">WordPress Familiarity</h3>
-          <p class="text-[#d0d4e8]">Keep using the WordPress editor your team knows and loves, with all its plugins and familiar interface.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Modern Frontend Performance</h3>
-          <p class="text-[#d0d4e8]">Lightning-fast page loads with modern JavaScript frameworks like React, Next.js, or Astro on the frontend.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-edit"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Content Management Power</h3>
-          <p class="text-[#d0d4e8]">Leverage WordPress's robust content management, custom fields, media library, and extensive plugin ecosystem.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-plug"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">API-First Architecture</h3>
-          <p class="text-[#d0d4e8]">WordPress REST API or GraphQL powers your frontend, enabling multi-channel content delivery to web, mobile, and beyond.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-expand-arrows-alt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Scalable & Secure</h3>
-          <p class="text-[#d0d4e8]">Separate backend and frontend layers improve security, reduce attack surface, and enable independent scaling.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Best of Both Worlds</h3>
-          <p class="text-[#d0d4e8]">Combine WordPress's content management excellence with modern frontend technology for unbeatable results.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Approach with WordPress Headless -->
-  <section id="approach" class="py-20 bg-brand-bg">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Our Approach with WordPress Headless</h2>
-        <p class="text-xl text-[#d0d4e8]">How we build world-class headless WordPress solutions</p>
-      </div>
-
-      <div class="space-y-8 max-w-4xl mx-auto">
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">01</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">WordPress Backend Setup</h3>
-              <p class="text-[#d0d4e8]">We configure WordPress as a headless CMS, setting up custom post types, fields, and optimizing the REST API or GraphQL endpoint for your content structure.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">02</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Frontend Framework Selection</h3>
-              <p class="text-[#d0d4e8]">We choose the right modern framework for your needs -Next.js for dynamic apps, Astro for content-heavy sites, or React for custom solutions.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">03</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">API Integration & Development</h3>
-              <p class="text-[#d0d4e8]">We build seamless integration between WordPress and your frontend, implementing efficient data fetching, caching strategies, and preview modes.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">04</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Performance Optimization</h3>
-              <p class="text-[#d0d4e8]">Static generation, incremental regeneration, image optimization, and CDN deployment ensure blazing-fast performance.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">05</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Deployment & Training</h3>
-              <p class="text-[#d0d4e8]">We deploy to modern hosting platforms, set up automated workflows, and train your team on the WordPress editor and content workflow.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Example Use Cases -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Example Use Cases</h2>
-        <p class="text-xl text-[#d0d4e8]">What we can build with WordPress Headless</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-building text-brand-accent mr-3"></i>
-            Corporate Websites
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Build professional corporate sites with WordPress content management and modern frontend performance for superior user experience.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Fast-loading pages with optimal SEO</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Easy content updates by non-technical teams</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Custom page builders and flexible layouts</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-newspaper text-brand-accent mr-3"></i>
-            News & Media Sites
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Create high-traffic news and media platforms with WordPress editorial tools and lightning-fast content delivery.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Handle high traffic with static generation</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Familiar WordPress editorial workflow</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Real-time content updates and previews</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-bullhorn text-brand-accent mr-3"></i>
-            Marketing Websites
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Develop marketing sites that combine WordPress's flexibility with modern frontend performance for better conversions.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Fast-loading landing pages that convert</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>A/B testing and analytics integration</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Marketing team can update content easily</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-sitemap text-brand-accent mr-3"></i>
-            Multi-Site Networks
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Build multi-site networks with centralized WordPress content management serving multiple frontend applications.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>One CMS powering multiple sites</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Consistent content across platforms</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Web, mobile, and app content delivery</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Back to Hub CTA -->
-  <section class="py-16" style="background: #0d0f1a;">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-white" style="font-family: 'Outfit', sans-serif;">Explore Our Other Development Services</h2>
-      <p class="text-xl mb-8" style="color: rgba(255,255,255,0.7);">We specialize in multiple modern frameworks to meet your specific needs.</p>
-      <a href="/development/" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-all" style="background: linear-gradient(135deg, rgba(240,98,42,0.1), rgba(240,98,42,0.05)); border: 1px solid rgba(240,98,42,0.15); color: #f0622a;">
-        <i class="fas fa-arrow-left"></i>
-        View All Development Services
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <ContactSection />
-
-  <Footer slot="footer" />
+<MainLayout title="WordPress Development Philippines | Bright Forge" description="WordPress development for businesses that need CMS control, cleaner structure, faster templates and SEO-safe rebuilds." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"WordPress",url:canonical}]} faqs={faqs}>
+<LegacyHeader slot="header" />
+<Hero title="WordPress Development Services" breadcrumbCurrent="WordPress">
+<Fragment slot="story"><p class="hero-subtitle">WordPress builds with cleaner architecture, SEO controls and less plugin bloat.</p><p>WordPress is still the right choice for many businesses, but only when the theme, plugins, content model and SEO controls are planned properly. A bloated setup can make every SEO task harder.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
+</Hero>
+<main class="dev-page">
+<section><div class="page-container two-column"><div><p class="eyebrow">Audit finding</p><h2>The old WordPress page needed a stronger SEO quality angle</h2><p>WordPress buyers need to know how the build will avoid plugin bloat, messy templates, weak metadata control and crawl issues. The CMS is not the strategy.</p><p>The rewrite makes the page about safe implementation, editorial control and technical SEO foundations.</p></div><aside class="panel"><h3>What this page now proves</h3><p>The page now explains when the stack is suitable, what SEO risks need controlling and how the work is QA checked before launch.</p></aside></div></section>
+<section id="checks"><div class="page-container"><p class="eyebrow">SEO-first development</p><h2>WordPress development should protect content control without creating technical drag</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container"><p class="eyebrow">Process</p><h2>How we build without creating SEO debt</h2><div class="grid process">{process.map((item,index)=>(<article class="card"><span>{String(index+1).padStart(2,"0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where wordpress has a clear role</h2><p>This suits businesses that need easy editing, blog or resource sections, CMS workflows, service pages and reliable SEO controls without losing speed.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the stack around the job, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>WordPress development questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Need WordPress without the usual SEO mess?</h2><p>We can review your current theme, plugins and page structure before recommending a rebuild, cleanup or migration plan.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+</main><Footer slot="footer"/>
 </MainLayout>
 
 <style>
-/* Page-specific visual styles for technical icon grid */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.technical-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.tech-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-.tech-icon:nth-child(even) {
-  animation-delay: -2s;
-}
-
-.tech-icon:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.tech-icon i {
-  font-size: 1.75rem;
-  color: white;
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@media (max-width: 768px) {
-  .technical-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .tech-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-
-/********************
-  Enhanced Feature Cards (Why Choose Us Section)
-*********************/
-/* Target the feature cards in "Why Choose Us" section */
-.py-20.bg-[#131627] .grid.md\:grid-cols-2.lg\:grid-cols-3 > div {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2.lg\:grid-cols-3 > div::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2.lg\:grid-cols-3 > div:hover::before {
-  opacity: 1;
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2.lg\:grid-cols-3 > div:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.3);
-}
-
-/* Enhanced icon styling with larger size and rotation effect */
-.py-20.bg-[#131627] .grid.md\:grid-cols-2.lg\:grid-cols-3 > div > div:first-child {
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
-  transition: all 0.4s ease;
-  margin: 0 auto 1.5rem;
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2.lg\:grid-cols-3 > div:hover > div:first-child {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2.lg\:grid-cols-3 > div > div:first-child i {
-  font-size: 2.25rem;
-  color: white;
-}
-
-/********************
-  Enhanced Use Cases Cards (Example Use Cases Section)
-*********************/
-/* Target the use case cards */
-.py-20.bg-[#131627] .grid.md\:grid-cols-2 > div {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  border: 2px solid rgba(255,255,255,0.07);
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2 > div::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2 > div:hover::before {
-  opacity: 1;
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2 > div:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.3);
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2 > div h3 i {
-  transition: all 0.4s ease;
-}
-
-.py-20.bg-[#131627] .grid.md\:grid-cols-2 > div:hover h3 i {
-  transform: scale(1.1) rotate(5deg);
-}
+.dev-page{background:#0d0f1a;color:#fff}.page-container{width:min(100% - 40px,1120px);margin:0 auto}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}.hero-proof article,.panel,.card,.faq-item,.cta-card,.link-grid a{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:24px;box-shadow:0 18px 48px rgba(0,0,0,.18)}.hero-proof article,.card,.panel,.link-grid a{padding:24px}.hero-proof strong,.link-grid span{display:block;color:#fff;font-weight:900;margin-bottom:8px}.hero-proof span{color:rgba(255,255,255,.66);line-height:1.5}.dev-page section{padding:78px 0;content-visibility:visible!important}.dev-page section:nth-child(even){background:#111421}.eyebrow{display:block;color:#f0622a;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}h2{color:#fff;font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 22px}h3{color:#fff;font-size:1.16rem;margin:0 0 10px}p,li{color:rgba(255,255,255,.74);font-size:1.02rem;line-height:1.72}a{color:#f0622a}.two-column,.faq-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,5vw,60px);align-items:start}.grid,.link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.process span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;color:#fff;background:rgba(240,98,42,.25);font-weight:900;margin-bottom:18px}.link-grid a{color:inherit;text-decoration:none}.faq-list{display:grid;gap:14px}.faq-item{overflow:hidden}.faq-item summary{cursor:pointer;padding:22px 24px;color:#fff;font-weight:900;list-style:none}.faq-item summary::-webkit-details-marker{display:none}.faq-item p{padding:0 24px 24px;margin:0}.cta-card{text-align:center;padding:clamp(36px,6vw,68px);background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045))}.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}@media(max-width:920px){.hero-proof,.two-column,.grid,.link-grid,.faq-layout{grid-template-columns:1fr}}
 </style>
+

@@ -1,429 +1,122 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
-import Footer from '../../components/Footer.astro';
-import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
+const canonical="https://brightforge.com.ph/development/nextjs/";
+const proof=[
+  {
+    "title": "SEO before design polish",
+    "text": "We protect crawlability, metadata, content structure and redirects before visual extras."
+  },
+  {
+    "title": "Performance matters",
+    "text": "Fast pages help users and reduce technical drag before SEO work even starts."
+  },
+  {
+    "title": "Human QA",
+    "text": "Every build still needs manual checks for forms, schema, indexing and conversion paths."
+  }
+];
+const checks=[
+  {
+    "title": "Crawlable pages",
+    "text": "Search engines need clean URLs, internal links, server-rendered content where needed and sensible indexation controls."
+  },
+  {
+    "title": "Content structure",
+    "text": "Pages need headings, body copy, proof, FAQs and conversion points that support SEO rather than sit behind visual components."
+  },
+  {
+    "title": "Performance and Core Web Vitals",
+    "text": "We reduce bloat, unnecessary scripts, layout shifts and render delays that weaken user experience."
+  },
+  {
+    "title": "Redirect and migration safety",
+    "text": "When replacing an old site, URL mapping and launch QA matter more than a prettier homepage."
+  },
+  {
+    "title": "Schema and metadata",
+    "text": "Titles, descriptions, canonical tags, structured data and Open Graph basics should be built in, not bolted on later."
+  },
+  {
+    "title": "Analytics and forms",
+    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+  }
+];
+const process=[
+  {
+    "title": "Audit",
+    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+  },
+  {
+    "title": "Plan",
+    "text": "Map templates, URLs, content sections, redirects, schema and development priorities."
+  },
+  {
+    "title": "Build",
+    "text": "Develop the site around speed, accessibility, crawlability and editorial control."
+  },
+  {
+    "title": "QA",
+    "text": "Test pages, metadata, forms, mobile layouts, redirects, schema and indexation settings."
+  },
+  {
+    "title": "Launch",
+    "text": "Deploy with a launch checklist, Search Console monitoring and post-launch crawl checks."
+  },
+  {
+    "title": "Improve",
+    "text": "Use ranking, crawl and conversion data to refine pages after launch."
+  }
+];
+const faqs=[
+  {
+    "question": "Is Next.js good for SEO?",
+    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+  },
+  {
+    "question": "Do we need to rebuild our whole website?",
+    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+  },
+  {
+    "question": "How do you protect rankings during a rebuild?",
+    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+  },
+  {
+    "question": "Can your team work with our existing developer?",
+    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+  },
+  {
+    "question": "Which framework should we choose?",
+    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+  },
+  {
+    "question": "Do you guarantee better rankings after a new website?",
+    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+  }
+];
 ---
-
-<MainLayout
-  title="Next.js Development Philippines | Bright Forge SEO"
-  description="Expert Next.js Development Philippines services for fast, SEO-optimized web applications. We build scalable React solutions with SSR and SSG."
->
-  <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-layer-group"
-    badgeText="Next.js Experts"
-    title="Next.js Development Philippines"
-    breadcrumbCurrent="Next.js Development"
-  >
-    <Fragment slot="story">
-      <p>Enterprise-grade applications with SEO optimisation, server rendering, and speed.</p>
-
-      <p>Our Next.js development Philippines expertise combines React's flexibility with Next.js's performance optimizations. From marketing sites to complex web applications, we deliver solutions that are fast, scalable, and SEO-friendly.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Start Your Next.js Project" />
-      <ButtonSecondary href="#approach" text="Learn About Next.js" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="technical-icon-grid">
-          <div class="tech-icon"><i class="fas fa-layer-group"></i></div>
-          <div class="tech-icon"><i class="fab fa-react"></i></div>
-          <div class="tech-icon"><i class="fas fa-server"></i></div>
-          <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-search"></i></div>
-          <div class="tech-icon"><i class="fas fa-code"></i></div>
-        </div>
-      </div>
-    </Fragment>
-  </Hero>
-
-  <!-- Why Choose Us -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Why Choose Our Next.js Development Services</h2>
-        <p class="text-xl text-[#d0d4e8]">The best of both worlds: React power + server-side performance</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Server-Side Rendering (SSR)</h3>
-          <p class="text-[#d0d4e8]">Dynamic pages rendered on the server for optimal SEO and performance. Perfect for content-heavy applications.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-file-code"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Static Site Generation (SSG)</h3>
-          <p class="text-[#d0d4e8]">Pre-render pages at build time for blazing-fast load speeds and maximum performance.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-exchange-alt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">API Routes</h3>
-          <p class="text-[#d0d4e8]">Build full-stack applications with built-in API routes -no separate backend needed.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-image"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Image Optimization</h3>
-          <p class="text-[#d0d4e8]">Automatic image optimization with lazy loading, responsive images, and modern formats.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">SEO-First Architecture</h3>
-          <p class="text-[#d0d4e8]">Built-in SEO features including meta tags, sitemaps, and structured data for maximum search visibility.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Edge Runtime Support</h3>
-          <p class="text-[#d0d4e8]">Deploy to the edge for the fastest possible response times worldwide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Approach -->
-  <section id="approach" class="py-20 bg-brand-bg">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Our Approach with Next.js</h2>
-        <p class="text-xl text-[#d0d4e8]">How we build production-ready Next.js applications</p>
-      </div>
-
-      <div class="space-y-8 max-w-4xl mx-auto">
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">01</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Architecture Planning</h3>
-              <p class="text-[#d0d4e8]">We determine the right rendering strategy (SSR, SSG, or ISR) for each page based on your content and performance needs.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">02</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">App Router Implementation</h3>
-              <p class="text-[#d0d4e8]">We use Next.js 14's App Router for improved performance, layouts, and streaming capabilities.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">03</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Performance Optimization</h3>
-              <p class="text-[#d0d4e8]">Code splitting, prefetching, image optimization, and caching strategies ensure maximum speed.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">04</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">API Development</h3>
-              <p class="text-[#d0d4e8]">Build robust API routes with proper error handling, validation, and authentication.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">05</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Deployment & Monitoring</h3>
-              <p class="text-[#d0d4e8]">Deploy to Vercel, AWS, or your preferred platform with CI/CD, analytics, and performance monitoring.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Example Use Cases -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Example Use Cases</h2>
-        <p class="text-xl text-[#d0d4e8]">Perfect applications for Next.js</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-newspaper text-brand-accent mr-3"></i>
-            Content-Rich Websites
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Blogs, news sites, and documentation with dynamic routing, MDX support, and SEO optimization.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>ISR for fresh content without full rebuilds</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Dynamic OG images and meta tags</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Built-in sitemap generation</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-shopping-bag text-brand-accent mr-3"></i>
-            E-Commerce Platforms
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Headless commerce with Shopify, Stripe integration, and dynamic product pages.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Product catalog with SSG for speed</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Real-time inventory and cart</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Secure payment processing</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-building text-brand-accent mr-3"></i>
-            Marketing Websites
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Corporate sites, landing pages, and portfolios with perfect Lighthouse scores.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>SSG for maximum performance</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Form submissions with API routes</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Analytics and tracking</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-cube text-brand-accent mr-3"></i>
-            SaaS Applications
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Full-featured web apps with authentication, dashboards, and real-time data.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Server components for data fetching</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Role-based access control</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>WebSocket integration</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Back to Hub CTA -->
-  <section class="py-16" style="background: #0d0f1a;">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-white" style="font-family: 'Outfit', sans-serif;">Explore Our Other Development Services</h2>
-      <p class="text-xl mb-8" style="color: rgba(255,255,255,0.7);">We specialize in multiple modern frameworks to meet your specific needs.</p>
-      <a href="/development/" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-all" style="background: linear-gradient(135deg, rgba(240,98,42,0.1), rgba(240,98,42,0.05)); border: 1px solid rgba(240,98,42,0.15); color: #f0622a;">
-        <i class="fas fa-arrow-left"></i>
-        View All Development Services
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <ContactSection />
-
-  <Footer slot="footer" />
+<MainLayout title="Next.js Development Philippines | Bright Forge" description="Next.js development for SEO-aware applications, dashboards and dynamic websites that need performance, structure and reliable rendering." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Next.js",url:canonical}]} faqs={faqs}>
+<LegacyHeader slot="header" />
+<Hero title="Next.js Development Services" breadcrumbCurrent="Next.js">
+<Fragment slot="story"><p class="hero-subtitle">Next.js builds for dynamic sites where React, server rendering and SEO planning all need to line up.</p><p>Next.js can be powerful for product-led sites and web applications, but it can also create SEO problems if rendering, metadata, routing and performance are not planned properly.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
+</Hero>
+<main class="dev-page">
+<section><div class="page-container two-column"><div><p class="eyebrow">Audit finding</p><h2>The old Next.js page sounded like a framework pitch</h2><p>The buyer needs to know when Next.js is actually the right tool, how content will be crawlable and how the build will avoid JavaScript-heavy SEO issues.</p><p>The rewrite ties Next.js development to rendering choices, application structure, performance and technical QA.</p></div><aside class="panel"><h3>What this page now proves</h3><p>The page now explains when the stack is suitable, what SEO risks need controlling and how the work is QA checked before launch.</p></aside></div></section>
+<section id="checks"><div class="page-container"><p class="eyebrow">SEO-first development</p><h2>Next.js development should solve a product problem, not create an SEO one</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container"><p class="eyebrow">Process</p><h2>How we build without creating SEO debt</h2><div class="grid process">{process.map((item,index)=>(<article class="card"><span>{String(index+1).padStart(2,"0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where next.js has a clear role</h2><p>This suits apps, SaaS sites, dashboards, portals and dynamic marketing sites that need React architecture without sacrificing crawlability or performance.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the stack around the job, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Next.js development questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Need a Next.js build that search engines can actually understand?</h2><p>We can review your product, pages and rendering needs before recommending a Next.js architecture.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+</main><Footer slot="footer"/>
 </MainLayout>
 
 <style>
-/* Page-specific visual styles - Technical Icon Grid */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.technical-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.tech-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-.tech-icon:nth-child(even) {
-  animation-delay: -2s;
-}
-
-.tech-icon:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.tech-icon i {
-  font-size: 1.75rem;
-  color: white;
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@media (max-width: 768px) {
-  .technical-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .tech-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Modern Tech Card Design (for "Why Choose Us" section cards) */
-section .bg-[#131627].border-2 {
-  position: relative;
-  background: #131627;
-  border-radius: 16px;
-  padding: 2rem;
-  border: 1px solid rgba(255,255,255,0.07);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-section .bg-[#131627].border-2::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-section .bg-[#131627].border-2:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
-  border-color: #f0622a;
-}
-
-section .bg-[#131627].border-2 .text-brand-accent {
-  transition: all 0.3s ease;
-}
-
-section .bg-[#131627].border-2:hover .text-brand-accent {
-  transform: scale(1.1);
-}
-
-/* Enhanced Feature Item Design (for "Example Use Cases" section) */
-section .bg-brand-bg.rounded-lg {
-  position: relative;
-  background: #131627;
-  border-radius: 20px;
-  padding: 2.5rem;
-  border: 2px solid rgba(255,255,255,0.07);
-  transition: all 0.4s ease;
-  overflow: hidden;
-}
-
-section .bg-brand-bg.rounded-lg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-section .bg-brand-bg.rounded-lg:hover::before {
-  opacity: 1;
-}
-
-section .bg-brand-bg.rounded-lg:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.3);
-}
-
-section .bg-brand-bg.rounded-lg h3 {
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-section .bg-brand-bg.rounded-lg h3 i {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  margin-right: 1rem;
-  transition: all 0.4s ease;
-}
-
-section .bg-brand-bg.rounded-lg:hover h3 i {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
-}
-
-section .bg-brand-bg.rounded-lg ul li {
-  position: relative;
-  padding-left: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-section .bg-brand-bg.rounded-lg ul li i.fa-check {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  font-size: 0.75rem;
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(255, 107, 53, 0.1));
-  border-radius: 50%;
-  border: 1px solid rgba(249, 115, 22, 0.2);
-  transition: all 0.3s ease;
-}
-
-section .bg-brand-bg.rounded-lg:hover ul li i.fa-check {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  border-color: transparent;
-}
+.dev-page{background:#0d0f1a;color:#fff}.page-container{width:min(100% - 40px,1120px);margin:0 auto}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}.hero-proof article,.panel,.card,.faq-item,.cta-card,.link-grid a{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:24px;box-shadow:0 18px 48px rgba(0,0,0,.18)}.hero-proof article,.card,.panel,.link-grid a{padding:24px}.hero-proof strong,.link-grid span{display:block;color:#fff;font-weight:900;margin-bottom:8px}.hero-proof span{color:rgba(255,255,255,.66);line-height:1.5}.dev-page section{padding:78px 0;content-visibility:visible!important}.dev-page section:nth-child(even){background:#111421}.eyebrow{display:block;color:#f0622a;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}h2{color:#fff;font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 22px}h3{color:#fff;font-size:1.16rem;margin:0 0 10px}p,li{color:rgba(255,255,255,.74);font-size:1.02rem;line-height:1.72}a{color:#f0622a}.two-column,.faq-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,5vw,60px);align-items:start}.grid,.link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.process span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;color:#fff;background:rgba(240,98,42,.25);font-weight:900;margin-bottom:18px}.link-grid a{color:inherit;text-decoration:none}.faq-list{display:grid;gap:14px}.faq-item{overflow:hidden}.faq-item summary{cursor:pointer;padding:22px 24px;color:#fff;font-weight:900;list-style:none}.faq-item summary::-webkit-details-marker{display:none}.faq-item p{padding:0 24px 24px;margin:0}.cta-card{text-align:center;padding:clamp(36px,6vw,68px);background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045))}.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}@media(max-width:920px){.hero-proof,.two-column,.grid,.link-grid,.faq-layout{grid-template-columns:1fr}}
 </style>
+

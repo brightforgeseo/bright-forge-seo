@@ -1,588 +1,147 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import LegacyHeader from '../components/LegacyHeader.astro';
-import Footer from '../components/Footer.astro';
-import ContactSection from '../components/ContactSection.astro';
-import Hero from '../components/Hero.astro';
-import ButtonPrimary from '../components/ButtonPrimary.astro';
-import ButtonSecondary from '../components/ButtonSecondary.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import LegacyHeader from "../components/LegacyHeader.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+const canonical = "https://brightforge.com.ph/home-services-seo/";
+const proof = [
+  {
+    "title": "Intent before content",
+    "text": "We map what buyers or users are trying to do before deciding what pages need work."
+  },
+  {
+    "title": "Commercial pages first",
+    "text": "Service, product, category and location pages usually matter more than generic blog volume."
+  },
+  {
+    "title": "Measured next steps",
+    "text": "We track rankings, visibility, clicks and enquiry paths so the work has a job."
+  }
+];
+const inclusions = [
+  "Repositioned the page around buyer intent instead of generic industry claims",
+  "Added native FAQ markup with matching FAQPage schema",
+  "Removed JavaScript FAQ patterns where present",
+  "Added clearer process, fit, QA and internal links",
+  "Kept claims cautious and evidence-led"
+];
+const fit = [
+  {
+    "title": "Search intent mapping",
+    "text": "We separate informational, local, commercial and comparison searches so each page has a clear role."
+  },
+  {
+    "title": "Page quality and structure",
+    "text": "We improve headings, copy, internal links, proof and conversion paths so pages deserve to rank and convert."
+  },
+  {
+    "title": "Technical foundations",
+    "text": "We check crawlability, speed, mobile usability, schema, indexation and site architecture before scaling content."
+  }
+];
+const process = [
+  {
+    "title": "Audit",
+    "text": "Review rankings, pages, Search Console data, technical issues, local signals and conversion gaps."
+  },
+  {
+    "title": "Map",
+    "text": "Match topics and keywords to the right page type so content does not compete with money pages."
+  },
+  {
+    "title": "Fix",
+    "text": "Improve page structure, copy, metadata, internal links, schema recommendations and technical blockers."
+  },
+  {
+    "title": "Build",
+    "text": "Create supporting content only where it helps authority, buyer education or service-page relevance."
+  },
+  {
+    "title": "Measure",
+    "text": "Track visibility, clicks, rankings and enquiries where tracking is available."
+  },
+  {
+    "title": "Refine",
+    "text": "Refresh pages and priorities as the data shows what is working and what is stuck."
+  }
+];
+const qa = [
+  {
+    "title": "No fake guarantees",
+    "text": "We do not promise rankings, traffic or revenue outcomes that the data cannot support."
+  },
+  {
+    "title": "Human SEO review",
+    "text": "AI can help with workflow, but strategy, fact checking and final judgement stay human-led."
+  },
+  {
+    "title": "Proof over filler",
+    "text": "Recommendations focus on specific pages, user intent, trust signals and measurable next steps."
+  }
+];
+const faqs = [
+  {
+    "question": "What is home seo?",
+    "answer": "Home SEO is SEO work focused on the searches, pages, technical signals and conversion paths that matter in this market. The plan should start with demand, page quality and measurable business outcomes."
+  },
+  {
+    "question": "How long does home seo take to work?",
+    "answer": "It depends on competition, site condition, authority, technical issues and implementation speed. Existing pages can sometimes improve faster than new content, but sustainable results usually need several months of consistent work."
+  },
+  {
+    "question": "Do we need new content or better existing pages?",
+    "answer": "Usually both, but existing service, product, category and location pages should be checked first. New content only helps when it supports a clear search intent or authority gap."
+  },
+  {
+    "question": "How do you measure success?",
+    "answer": "We track rankings, impressions, clicks, landing page performance, enquiry paths where tracking is available and whether the right pages are gaining visibility."
+  },
+  {
+    "question": "Can you work with our existing developer or content team?",
+    "answer": "Yes. We can provide SEO direction, content outlines, technical recommendations and QA while your team handles implementation."
+  },
+  {
+    "question": "Do you guarantee rankings?",
+    "answer": "No. Search results depend on competition, site quality, authority and market demand. We provide evidence-led SEO work, clear priorities and honest reporting."
+  }
+];
 ---
-
-<MainLayout
-  title="Expert Home Services SEO | Bright Forge SEO"
-  description="Home Services SEO That Brings Customers to Your Door with proven strategies for plumbers, HVAC, landscaping, and roofing contractors. Contact us today."
-  keywords="home services SEO, plumbing SEO, HVAC SEO, landscaping SEO, roofing SEO, contractor SEO, local home services marketing"
->
+<MainLayout title="Home Services SEO Philippines | Bright Forge" description="SEO for plumbers, HVAC, roofing, cleaning and trade businesses that need better local visibility, service pages and enquiry quality." canonical={canonical} type="service" breadcrumbs={[{ name: "Home", url: "https://brightforge.com.ph/" }, { name: "Home Services SEO", url: canonical }]} faqs={faqs}>
   <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-tools"
-    badgeText="Home Services SEO Specialists"
-    title="Home Services SEO That Brings Customers to Your Door"
-    breadcrumbCurrent="Home Services SEO"
-  >
-    <Fragment slot="story">
-      <p>Ready to dominate your local home services market? At Bright Forge <a href="/">SEO Agency</a>, we specialize in driving qualified leads for plumbing, HVAC, landscaping, roofing, and other home service contractors. Our proven SEO strategies help you rank higher in local searches, attract emergency service calls, and build a steady stream of residential and commercial customers.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Get More Service Calls" />
-      <ButtonSecondary href="#services" text="Explore Our Services" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="home-services-icon-grid">
-          <div class="home-services-icon"><i class="fas fa-wrench"></i></div>
-          <div class="home-services-icon"><i class="fas fa-thermometer-half"></i></div>
-          <div class="home-services-icon"><i class="fas fa-seedling"></i></div>
-          <div class="home-services-icon"><i class="fas fa-home"></i></div>
-          <div class="home-services-icon"><i class="fas fa-phone"></i></div>
-          <div class="home-services-icon"><i class="fas fa-star"></i></div>
-        </div>
-      </div>
-    </Fragment>
+  <Hero title="Home Services SEO" breadcrumbCurrent="Home Services SEO">
+    <Fragment slot="story"><p class="hero-subtitle">SEO for trade and home service businesses where calls, trust and service-area coverage matter.</p><p>Home services SEO is not just ranking a homepage. It needs strong service pages, local signals, Google Business Profile support, review proof and a website that makes it easy to enquire.</p><div class="hero-proof">{proof.map((item) => (<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
-
-  <!-- Why Home Services SEO Section -->
-  <section class="why-home-services-seo">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Home Service Contractors Need <span>Specialized SEO</span></h2>
-      </div>
-      
-      <div class="home-services-explanation">
-        <div class="home-services-card">
-          <div class="home-services-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="home-services-text">
-            <p>Home services operate in a hyper-competitive local market where customers need immediate solutions for urgent problems. Generic SEO strategies fail to capture the urgency of emergency calls, seasonal demand fluctuations, and the trust-building required for in-home services.</p>
-            
-            <p>Our home services SEO expertise helps you dominate "near me" searches, capture emergency service calls, and build authority in your service areas. We understand the unique challenges of plumbing emergencies, HVAC seasonal peaks, landscaping project cycles, and roofing storm response marketing.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Features Section -->
-  <section class="features-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>What Makes Our Home Services <span>SEO</span> Market-Leading</h2>
-        <p>We combine deep home services industry knowledge with proven local SEO strategies to drive qualified leads</p>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <h3>Emergency Call Optimization</h3>
-          <p>Specialized optimization for urgent service searches like "emergency plumber" and "24/7 HVAC repair" to capture high-value emergency calls when customers need help most.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-map-marked-alt"></i>
-          </div>
-          <h3>Hyper-Local Service Area SEO</h3>
-          <p>Target specific neighborhoods, cities, and service areas with location-based content that establishes your presence in every community you serve.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <h3>Seasonal Campaign Strategy</h3>
-          <p>Strategic content and SEO campaigns aligned with seasonal demand - HVAC maintenance seasons, landscaping growing seasons, and roofing storm response periods.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Trust & Credibility Building</h3>
-          <p>Build customer confidence through strategic review management, licensing verification, and authority content that positions you as the trusted local expert.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Mobile-First Emergency Response</h3>
-          <p>Optimized for mobile searches with fast-loading pages, click-to-call functionality, and seamless user experience for customers in urgent situations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="services-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Specialized Home Services <span>SEO Solutions</span></h2>
-        <p>Tailored SEO strategies for every type of home service contractor and trade professional</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-wrench"></i>
-            </div>
-            <h3>Plumbing SEO Services</h3>
-          </div>
-          <div class="service-content">
-            <p>Dominate local plumbing searches with specialized SEO for emergency repairs, drain cleaning, water heater installation, and residential plumbing services.</p>
-            <ul class="service-features">
-              <li>Emergency plumbing call optimization</li>
-              <li>Drain cleaning service targeting</li>
-              <li>Water heater replacement campaigns</li>
-              <li>Residential & commercial plumbing</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-thermometer-half"></i>
-            </div>
-            <h3>HVAC SEO Services</h3>
-          </div>
-          <div class="service-content">
-            <p>Capture seasonal HVAC demand with targeted SEO for heating, cooling, installation, maintenance, and emergency HVAC repair services.</p>
-            <ul class="service-features">
-              <li>Seasonal heating & cooling campaigns</li>
-              <li>HVAC installation optimization</li>
-              <li>Emergency repair call capture</li>
-              <li>Maintenance contract generation</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-seedling"></i>
-            </div>
-            <h3>Landscaping SEO Services</h3>
-          </div>
-          <div class="service-content">
-            <p>Grow your landscaping business with SEO strategies for lawn care, landscape design, hardscaping, and seasonal maintenance services.</p>
-            <ul class="service-features">
-              <li>Seasonal lawn care campaigns</li>
-              <li>Landscape design project targeting</li>
-              <li>Hardscaping & outdoor living</li>
-              <li>Commercial landscaping services</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-home"></i>
-            </div>
-            <h3>Roofing SEO Services</h3>
-          </div>
-          <div class="service-content">
-            <p>Capture roofing leads with specialized SEO for roof repair, replacement, storm damage, and commercial roofing services.</p>
-            <ul class="service-features">
-              <li>Storm damage response optimization</li>
-              <li>Roof replacement campaigns</li>
-              <li>Emergency leak repair targeting</li>
-              <li>Commercial roofing services</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3>General Contractor SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Comprehensive SEO for general contractors, home remodeling, kitchen & bath renovation, and construction project services.</p>
-            <ul class="service-features">
-              <li>Home remodeling project targeting</li>
-              <li>Kitchen & bathroom renovation</li>
-              <li>Construction project optimization</li>
-              <li>Permit & licensing authority</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h3>Local Home Services SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Dominate local search results with comprehensive local SEO strategies designed specifically for home service contractors.</p>
-            <ul class="service-features">
-              <li>Google My Business optimization</li>
-              <li>Local citation building</li>
-              <li>Service area targeting</li>
-              <li>Review management systems</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <ContactSection />
-  <Footer slot="footer" />
+  <main class="service-page">
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page was too generic for high-intent local service buyers</h2><p>Home service searches are practical and urgent. People want to know who serves their area, what the business does, whether they can trust them and how quickly they can get help. Generic SEO copy does not answer those questions.</p><p>This rewrite focuses on the pages, proof, location signals and conversion paths that matter for service-area businesses.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What home services SEO should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For home seo buyers who need SEO tied to business outcomes</h2><p>This suits plumbers, HVAC companies, roofers, electricians, cleaners, landscapers, pest control firms and other service businesses that need more qualified enquiries from local search.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the business cannot handle new leads, has no defined service areas, or wants rankings without fixing weak pages, reviews, tracking or enquiry flow.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for home seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we protect lead quality</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
+    <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Home services SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+    <section><div class="page-container"><div class="cta-card"><h2>Want more useful local enquiries, not just more traffic?</h2><p>We can review your service pages, Google Business Profile signals, local visibility and conversion path before recommending the next work.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="/case-studies/" text="View Case Studies" /></div></div></div></section>
+  </main><Footer slot="footer" />
 </MainLayout>
 
 <style>
-  /* Page-specific visual styles for home services icon grid */
-  .hero-image-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .home-services-icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .home-services-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    transition: all 0.3s ease;
-    animation: iconFloat 4s ease-in-out infinite;
-  }
-
-  .home-services-icon:nth-child(odd) {
-    animation-delay: 1s;
-  }
-
-  .home-services-icon:nth-child(even) {
-    animation-delay: 2s;
-  }
-
-  .home-services-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  @keyframes iconFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  @media (max-width: 1024px) {
-    .home-services-icon-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .home-services-icon-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .home-services-icon {
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-    }
-  }
-
-  .why-home-services-seo {
-    padding: 80px 0;
-    background: #0d0f1a;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-
-  .section-header h2 span {
-    color: #f0622a;
-  }
-
-  .home-services-explanation {
-    max-width: 4xl;
-    margin: 0 auto;
-  }
-
-  .home-services-card {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    background: #131627;
-    padding: 3rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .home-services-card .home-services-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    flex-shrink: 0;
-  }
-
-  .home-services-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-  }
-
-  .home-services-text p:last-child {
-    margin-bottom: 0;
-  }
-
-  .features-section {
-    padding: 80px 0;
-    background: #131627;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .feature-card {
-    position: relative;
-    background: #131627;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255,255,255,0.07);
-    overflow: hidden;
-  }
-
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .feature-card:hover::before {
-    opacity: 1;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(240, 98, 42, 0.15);
-    border-color: rgba(240, 98, 42, 0.3);
-  }
-
-  .feature-icon {
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(240, 98, 42, 0.25);
-    transition: all 0.3s ease;
-  }
-
-  .feature-card:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 30px rgba(240, 98, 42, 0.35);
-  }
-
-  .feature-card h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-
-  .feature-card p {
-    color: #ffffff;
-    line-height: 1.6;
-  }
-
-  .services-section {
-    padding: 80px 0;
-    background: #0d0f1a;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .service-card {
-    position: relative;
-    background: #131627;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.07);
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-  }
-
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(240, 98, 42, 0.15);
-    border-color: #f0622a;
-  }
-
-  .service-header {
-    background: #131627;
-    color: white;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .service-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
-  }
-
-  .service-card:hover .service-icon {
-    transform: scale(1.1);
-  }
-
-  .service-header h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0;
-  }
-
-  .service-content {
-    padding: 2rem;
-  }
-
-  .service-content p {
-    color: #ffffff;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .service-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .service-features li {
-    color: #ffffff;
-    padding: 0.5rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-  }
-
-  .service-features li:before {
-    content: "\f00c";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: #f0622a;
-    position: absolute;
-    left: 0;
-  }
-
-  @media (max-width: 768px) {
-    .home-services-card {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+.service-page { background:#0d0f1a; color:#fff; }
+.page-container { width:min(100% - 40px,1120px); margin:0 auto; }
+.hero-proof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:26px; }
+.hero-proof article, .panel, .fit-card, .process-card, .qa-card, .faq-item, .cta-card { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; box-shadow:0 18px 48px rgba(0,0,0,.18); }
+.hero-proof article { padding:18px; } .hero-proof strong { display:block; color:#fff; font-size:1.05rem; margin-bottom:6px; } .hero-proof span { color:rgba(255,255,255,.66); font-size:.92rem; line-height:1.5; }
+.service-page section { padding:78px 0; content-visibility:visible !important; } .service-page section:nth-child(even) { background:#111421; }
+.eyebrow { display:block; color:#f0622a; font-size:.78rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); line-height:1.05; margin:0 0 22px; } h3 { color:#fff; font-size:1.16rem; margin:0 0 10px; } p, li { color:rgba(255,255,255,.74); font-size:1.02rem; line-height:1.72; } a { color:#f0622a; }
+.intro-grid, .two-column, .faq-layout { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr); gap:clamp(30px,5vw,60px); align-items:start; } .panel { padding:28px; } .panel ul { margin:0; padding-left:20px; }
+.fit-grid, .process-grid, .qa-grid, .link-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } .fit-card, .process-card, .qa-card, .link-grid a { padding:24px; }
+.process-card span { display:inline-grid; place-items:center; width:42px; height:42px; border-radius:14px; color:#fff; background:rgba(240,98,42,.25); font-weight:900; margin-bottom:18px; }
+.link-grid a { color:inherit; text-decoration:none; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; } .link-grid span { display:block; color:#fff; font-weight:900; margin-bottom:8px; }
+.faq-list { display:grid; gap:14px; } .faq-item { overflow:hidden; } .faq-item summary { cursor:pointer; padding:22px 24px; color:#fff; font-weight:900; list-style:none; } .faq-item summary::-webkit-details-marker { display:none; } .faq-item p { padding:0 24px 24px; margin:0; }
+.cta-card { text-align:center; padding:clamp(36px,6vw,68px); background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045)); } .cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-top:28px; }
+:global(.service-page .btn-primary), :global(.service-page .btn-secondary) { min-height:48px; }
+@media (max-width:920px){ .hero-proof,.intro-grid,.two-column,.fit-grid,.process-grid,.qa-grid,.link-grid,.faq-layout{grid-template-columns:1fr;} }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      const answer = item.querySelector('.faq-answer');
-      
-      if (question && answer) {
-        question.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          
-          faqItems.forEach(faq => {
-            faq.classList.remove('active');
-            const faqAnswer = faq.querySelector('.faq-answer');
-            if (faqAnswer) faqAnswer.style.maxHeight = null;
-          });
-          
-          if (!isActive) {
-            item.classList.add('active');
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-          }
-        });
-      }
-    });
-  });
-</script>

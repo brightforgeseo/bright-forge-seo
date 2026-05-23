@@ -1,815 +1,147 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import LegacyHeader from '../components/LegacyHeader.astro';
-import Footer from '../components/Footer.astro';
-import ContactSection from '../components/ContactSection.astro';
-import Hero from '../components/Hero.astro';
-import ButtonPrimary from '../components/ButtonPrimary.astro';
-import ButtonSecondary from '../components/ButtonSecondary.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import LegacyHeader from "../components/LegacyHeader.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+const canonical = "https://brightforge.com.ph/gaming-seo-services/";
+const proof = [
+  {
+    "title": "Intent before content",
+    "text": "We map what buyers or users are trying to do before deciding what pages need work."
+  },
+  {
+    "title": "Commercial pages first",
+    "text": "Service, product, category and location pages usually matter more than generic blog volume."
+  },
+  {
+    "title": "Measured next steps",
+    "text": "We track rankings, visibility, clicks and enquiry paths so the work has a job."
+  }
+];
+const inclusions = [
+  "Repositioned the page around buyer intent instead of generic industry claims",
+  "Added native FAQ markup with matching FAQPage schema",
+  "Removed JavaScript FAQ patterns where present",
+  "Added clearer process, fit, QA and internal links",
+  "Kept claims cautious and evidence-led"
+];
+const fit = [
+  {
+    "title": "Search intent mapping",
+    "text": "We separate informational, local, commercial and comparison searches so each page has a clear role."
+  },
+  {
+    "title": "Page quality and structure",
+    "text": "We improve headings, copy, internal links, proof and conversion paths so pages deserve to rank and convert."
+  },
+  {
+    "title": "Technical foundations",
+    "text": "We check crawlability, speed, mobile usability, schema, indexation and site architecture before scaling content."
+  }
+];
+const process = [
+  {
+    "title": "Audit",
+    "text": "Review rankings, pages, Search Console data, technical issues, local signals and conversion gaps."
+  },
+  {
+    "title": "Map",
+    "text": "Match topics and keywords to the right page type so content does not compete with money pages."
+  },
+  {
+    "title": "Fix",
+    "text": "Improve page structure, copy, metadata, internal links, schema recommendations and technical blockers."
+  },
+  {
+    "title": "Build",
+    "text": "Create supporting content only where it helps authority, buyer education or service-page relevance."
+  },
+  {
+    "title": "Measure",
+    "text": "Track visibility, clicks, rankings and enquiries where tracking is available."
+  },
+  {
+    "title": "Refine",
+    "text": "Refresh pages and priorities as the data shows what is working and what is stuck."
+  }
+];
+const qa = [
+  {
+    "title": "No fake guarantees",
+    "text": "We do not promise rankings, traffic or revenue outcomes that the data cannot support."
+  },
+  {
+    "title": "Human SEO review",
+    "text": "AI can help with workflow, but strategy, fact checking and final judgement stay human-led."
+  },
+  {
+    "title": "Proof over filler",
+    "text": "Recommendations focus on specific pages, user intent, trust signals and measurable next steps."
+  }
+];
+const faqs = [
+  {
+    "question": "What is gaming seo?",
+    "answer": "Gaming SEO is SEO work focused on the searches, pages, technical signals and conversion paths that matter in this market. The plan should start with demand, page quality and measurable business outcomes."
+  },
+  {
+    "question": "How long does gaming seo take to work?",
+    "answer": "It depends on competition, site condition, authority, technical issues and implementation speed. Existing pages can sometimes improve faster than new content, but sustainable results usually need several months of consistent work."
+  },
+  {
+    "question": "Do we need new content or better existing pages?",
+    "answer": "Usually both, but existing service, product, category and location pages should be checked first. New content only helps when it supports a clear search intent or authority gap."
+  },
+  {
+    "question": "How do you measure success?",
+    "answer": "We track rankings, impressions, clicks, landing page performance, enquiry paths where tracking is available and whether the right pages are gaining visibility."
+  },
+  {
+    "question": "Can you work with our existing developer or content team?",
+    "answer": "Yes. We can provide SEO direction, content outlines, technical recommendations and QA while your team handles implementation."
+  },
+  {
+    "question": "Do you guarantee rankings?",
+    "answer": "No. Search results depend on competition, site quality, authority and market demand. We provide evidence-led SEO work, clear priorities and honest reporting."
+  }
+];
 ---
-
-<MainLayout
-  title="Expert Gaming SEO Services | Bright Forge SEO"
-  description="Gaming SEO services that level up your online presence and drive more players to your games. Bright Forge SEO specializes in gaming industry strategies."
-  faqs={[
-    { question: "How long before we see results?", answer: "Early wins often show within 4-8 weeks (brand protection, technical fixes). Competitive category gains typically build over 3-6 months as content, links, and store signals compound." },
-    { question: "Do you handle ASO as well as website SEO?", answer: "Yes. We optimize both app store listings and websites. Discovery is multi-surface for games, so we align titles, descriptions, tags, creatives, and on-site content to the same strategy." },
-    { question: "We're a small indie. Is SEO overkill?", answer: "Not at all. We right-size the work. A tight keyword strategy, a fast landing page, and a dozen helpful guides can meaningfully lift wishlists and organic installs without bloating your workload." },
-    { question: "Can SEO help at launch if we're late?", answer: "Yes. We prioritize high-impact changes: fix indexing, secure brand SERPs, optimize store assets, publish priority guides, and coordinate creator coverage so official pages win the click." },
-    { question: "How do you measure success beyond rankings?", answer: "We track the full path: impressions to clicks to wishlists/installs to retention. Reporting focuses on what content and store elements move players, not vanity metrics." },
-    { question: "Do you work with esports and live-service titles?", answer: "Absolutely. We maintain continuous content, surface patch cadence, and help creators cover updates. SEO becomes part of your live-ops rhythm." },
-  ]}
->
+<MainLayout title="Gaming SEO Services Philippines | Bright Forge" description="SEO for gaming brands, studios, apps and communities that need stronger organic visibility, technical foundations and player acquisition pages." canonical={canonical} type="service" breadcrumbs={[{ name: "Home", url: "https://brightforge.com.ph/" }, { name: "Gaming SEO", url: canonical }]} faqs={faqs}>
   <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-gamepad"
-    badgeText="Gaming SEO Specialists"
-    title="Gaming SEO Services That Level Up Your Online Presence"
-    breadcrumbCurrent="Gaming SEO Services"
-  >
-    <Fragment slot="story">
-      <p>Ready to dominate the gaming industry's search rankings? At Bright Forge <a href="/">SEO Agency</a>, we understand the unique challenges of marketing gaming businesses. From indie game developers to major gaming studios, we craft specialized SEO strategies that drive more players, increase downloads, and boost your gaming brand's visibility in this competitive digital landscape.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Start Your Gaming SEO Quest" />
-      <ButtonSecondary href="#services" text="Explore Our Services" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="gaming-icon-grid">
-          <div class="gaming-icon"><i class="fas fa-gamepad"></i></div>
-          <div class="gaming-icon"><i class="fas fa-trophy"></i></div>
-          <div class="gaming-icon"><i class="fas fa-rocket"></i></div>
-          <div class="gaming-icon"><i class="fas fa-users"></i></div>
-          <div class="gaming-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="gaming-icon"><i class="fas fa-star"></i></div>
-        </div>
-      </div>
-    </Fragment>
+  <Hero title="Gaming SEO Services" breadcrumbCurrent="Gaming SEO">
+    <Fragment slot="story"><p class="hero-subtitle">SEO for gaming brands that need players, signups and communities, not vanity traffic.</p><p>Gaming search is messy. It includes discovery, guides, app comparisons, community searches, reviews, updates and brand queries. We build pages and technical foundations that help gaming businesses earn useful search demand without relying on hype.</p><div class="hero-proof">{proof.map((item) => (<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
-
-  <!-- Why Gaming SEO Section -->
-  <section class="why-gaming-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Gaming Businesses Need <span>Specialized SEO</span></h2>
-      </div>
-      
-      <div class="gaming-explanation">
-        <div class="gaming-card">
-          <div class="gaming-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <div class="gaming-text">
-            <p>The gaming industry is incredibly competitive, with millions of games, apps, and gaming-related content fighting for attention. Generic SEO strategies simply don't cut it in this space. You need specialized knowledge of gaming keywords, player behavior, gaming platforms, and the unique search patterns of gamers.</p>
-            
-            <p>Our gaming SEO expertise helps you connect with your target audience -whether they're casual mobile gamers, hardcore PC enthusiasts, console players, or esports fans. We understand the gaming ecosystem and craft strategies that speak directly to your players' search habits.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Features Section -->
-  <section class="features-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>What Makes Our Gaming <span>SEO Services</span> Legendary</h2>
-        <p>We combine deep gaming industry knowledge with proven SEO strategies to deliver results that matter</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-gamepad"></i>
-          </div>
-          <h3>Gaming Industry Expertise</h3>
-          <p>We live and breathe gaming culture. Our team understands gaming terminology, trends, platforms, and player psychology. This insider knowledge translates into SEO strategies that resonate with your gaming audience.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3>Platform-Specific Optimization</h3>
-          <p>From Steam and Epic Games Store to mobile app stores and gaming websites, we optimize for the platforms where your audience discovers games. Each platform has unique ranking factors we leverage for maximum visibility.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>Data-Driven Results</h3>
-          <p>We track metrics that matter to gaming businesses: download rates, user acquisition costs, player engagement, and lifetime value. Our SEO strategies are designed to improve these key performance indicators.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3>Community-Focused Approach</h3>
-          <p>Gaming is all about community. We help you build and engage with your player base through content marketing, social SEO, and community-driven link building strategies that gaming audiences love.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Multi-Platform Strategy</h3>
-          <p>Whether you're targeting mobile gamers, PC enthusiasts, or console players, we create comprehensive SEO strategies that work across all gaming platforms and devices.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Services for Gaming Teams -->
-  <section id="services" class="services-offerings-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Services Built For <span>Gaming Teams</span></h2>
-        <p>From solo indies to established studios and publishers, we tailor our SEO to how players actually search and discover games.</p>
-      </div>
-
-      <div class="offerings-grid">
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fas fa-store"></i></div>
-          <h3>Store Listing Optimization (ASO + SEO)</h3>
-          <p>Optimize your Steam, App Store, and Google Play pages for search and conversion. We refine titles, short/long descriptions, tags, screenshots, and trailers to earn more wishlists and installs.</p>
-          <a class="learn-more-link" href="/keyword-research-services/">Keyword Research</a>
-        </div>
-
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fas fa-cogs"></i></div>
-          <h3>Technical SEO for Gaming Sites</h3>
-          <p>Faster loads, cleaner architecture, and structured markup across landing pages, wikis, and patch hubs. We improve Core Web Vitals and crawling so players land where they should.</p>
-          <a class="learn-more-link" href="/seo-audit-services/">SEO Audits</a>
-        </div>
-
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fas fa-scroll"></i></div>
-          <h3>Content That Gamers Search For</h3>
-          <p>Guides, build write‑ups, boss strategies, progression tips, patch notes, and FAQs  - written for humans first, structured for search engines second.</p>
-          <a class="learn-more-link" href="/content-seo-services-philippines/">Content SEO</a>
-        </div>
-
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fas fa-users"></i></div>
-          <h3>Community & UGC SEO</h3>
-          <p>Reddit, Discord, YouTube, and wiki ecosystems already talk about your game. We help you earn links naturally, index the right threads, and turn UGC into a discoverability engine.</p>
-          <a class="learn-more-link" href="/backlink-seo-services-philippines/">Link Earning</a>
-        </div>
-
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fab fa-youtube"></i></div>
-          <h3>YouTube & Creator SEO</h3>
-          <p>From official trailers to how‑to videos and devlogs, we optimize titles, thumbnails, descriptions, and chaptering so players actually find and watch your content.</p>
-        </div>
-
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fas fa-globe"></i></div>
-          <h3>International & Localization</h3>
-          <p>Multi‑language store pages and websites with proper hreflang, translated metadata, and cultural keyword research to meet players where they are.</p>
-        </div>
-
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fas fa-code"></i></div>
-          <h3>Schema & Rich Results</h3>
-          <p>Game, VideoObject, HowTo, Product, and SoftwareApplication schema to power rich results, knowledge panels, and better SERP real estate for your brand.</p>
-        </div>
-
-        <div class="offering-card">
-          <div class="offering-icon"><i class="fas fa-chart-pie"></i></div>
-          <h3>Analytics & Measurement</h3>
-          <p>We connect the dots between organic discovery and in‑game outcomes  - wishlist to purchase, demo to install, and the content that actually moves players.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How We Work -->
-  <section class="approach-section gaming-approach">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>How We <span>Work</span> With Gaming Teams</h2>
-        <p>Simple process. Clear deliverables. Built for the realities of game development.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3>Discovery & Alignment</h3>
-          <ul>
-            <li>Understand your game, audience, platform, and milestones</li>
-            <li>Audit site/store presence and competitors</li>
-            <li>Create goals for wishlist, install, and community growth</li>
-          </ul>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3>Technical & Platform Optimization</h3>
-          <ul>
-            <li>Fix crawl, indexation, and Web Vitals issues</li>
-            <li>Optimize Steam/App Store/Google Play assets</li>
-            <li>Implement schema and internal linking</li>
-          </ul>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3>Content & Community</h3>
-          <ul>
-            <li>Editorial calendar for guides, updates, and devlogs</li>
-            <li>YouTube SEO and creator collaboration guidelines</li>
-            <li>Earn links via news beats, assets, and helpful resources</li>
-          </ul>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <h3>Measure & Iterate</h3>
-          <ul>
-            <li>Dashboards tying discovery to installs and revenue</li>
-            <li>Quarterly roadmaps with prioritized improvements</li>
-            <li>Continuous testing across titles and regions</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Launch Timeline -->
-  <section class="launch-timeline-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>SEO For <span>Pre‑Launch → Live Ops</span></h2>
-        <p>We plug into your roadmap. The work shifts as you move from announcement to launch to ongoing updates.</p>
-      </div>
-
-      <div class="timeline-grid">
-        <div class="timeline-card">
-          <div class="timeline-badge">Pre‑Launch</div>
-          <h3>Build Discoverability Early</h3>
-          <p>Secure brand terms, create a fast landing page, and seed guide topics so your future players can find you. Optimize your store coming soon page for wishlists.</p>
-        </div>
-        <div class="timeline-card">
-          <div class="timeline-badge">Beta</div>
-          <h3>Feedback → Content</h3>
-          <p>Turn feedback into searchable FAQs, patch notes, and video explainers. Surface bug fix updates and new features clearly in search.</p>
-        </div>
-        <div class="timeline-card">
-          <div class="timeline-badge">Launch</div>
-          <h3>Own The SERP</h3>
-          <p>Ship final store assets, coordinate creator beats, and ensure your official pages outrank imitation content for critical queries.</p>
-        </div>
-        <div class="timeline-card">
-          <div class="timeline-badge">Live Ops</div>
-          <h3>Sustain Momentum</h3>
-          <p>Publish seasonal content, capture changelogs, and maintain category rankings. Keep guides fresh as metas evolve.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tools We Use -->
-  <section class="tools-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Tools We <span>Use</span></h2>
-        <p>We integrate with your stack so reporting is simple and decisions are fast.</p>
-      </div>
-      <div class="tools-grid">
-        <div class="tool-card"><i class="fab fa-steam"></i><span>Steamworks</span></div>
-        <div class="tool-card"><i class="fab fa-apple"></i><span>App Store Connect</span></div>
-        <div class="tool-card"><i class="fab fa-google-play"></i><span>Google Play Console</span></div>
-        <div class="tool-card"><i class="fab fa-google"></i><span>Search Console</span></div>
-        <div class="tool-card"><i class="fas fa-chart-line"></i><span>GA4 & Looker</span></div>
-        <div class="tool-card"><i class="fas fa-search"></i><span>Ahrefs / Semrush</span></div>
-        <div class="tool-card"><i class="fab fa-youtube"></i><span>YouTube Studio</span></div>
-        <div class="tool-card"><i class="fab fa-discord"></i><span>Discord & Reddit</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section gaming-faq">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Gaming SEO <span>FAQs</span></h2>
-        <p>Honest answers based on years of working with game teams of every size.</p>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>How long before we see results?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Early wins often show within 4–8 weeks (brand protection, technical fixes). Competitive category gains typically build over 3–6 months as content, links, and store signals compound.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>Do you handle ASO as well as website SEO?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. We optimize both app store listings and websites. Discovery is multi‑surface for games, so we align titles, descriptions, tags, creatives, and on‑site content to the same strategy.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>We’re a small indie. Is SEO overkill?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Not at all. We right‑size the work. A tight keyword strategy, a fast landing page, and a dozen helpful guides can meaningfully lift wishlists and organic installs without bloating your workload.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>Can SEO help at launch if we’re late?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Yes. We prioritize high‑impact changes: fix indexing, secure brand SERPs, optimize store assets, publish priority guides, and coordinate creator coverage so official pages win the click.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>How do you measure success beyond rankings?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>We track the full path: impressions → clicks → wishlists/installs → retention. Reporting focuses on what content and store elements move players, not vanity metrics.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>Do you work with esports and live‑service titles?</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Absolutely. We maintain continuous content, surface patch cadence, and help creators cover updates. SEO becomes part of your live‑ops rhythm.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <ContactSection />
-  <Footer slot="footer" />
+  <main class="service-page">
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page leaned too hard on gaming puns and broad claims</h2><p>Gaming buyers, app users and community members do not need another agency page saying we help brands level up. They need proof that the SEO plan understands player intent, technical performance, platform constraints and how content supports acquisition.</p><p>This rewrite shifts the page from generic industry marketing into a practical service page: what we check, what we fix, what we measure and what we refuse to promise.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What gaming SEO should actually cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For gaming seo buyers who need SEO tied to business outcomes</h2><p>This suits studios, gaming apps, communities, media brands and ecommerce stores that have real search demand behind games, tools, guides or products.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the product has no clear search demand, no conversion path, or the goal is only hype rather than measurable discovery, signups or revenue.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for gaming seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we keep gaming SEO credible</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
+    <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Gaming SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+    <section><div class="page-container"><div class="cta-card"><h2>Ready to find the searches your players already make?</h2><p>We can audit your current pages, search demand and technical setup before recommending content, fixes or acquisition work.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="/case-studies/" text="View Case Studies" /></div></div></div></section>
+  </main><Footer slot="footer" />
 </MainLayout>
 
 <style>
-  :root {
-    --brand-primary: #1a1a1a;
-    --brand-accent: #f0622a;
-    --brand-secondary: #2563eb;
-    --brand-dark: #e8eaf2;
-    --brand-soft: #6b7280;
-    --brand-light: #0d0f1a;
-    --brand-white: #131627;
-  }
-
-  /* Gaming Icon Grid (used in Hero visual slot) */
-  .hero-image-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .gaming-icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    padding: 2rem;
-  }
-
-  .gaming-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    color: white;
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-    animation: iconFloat 4s ease-in-out infinite;
-  }
-
-  .gaming-icon:nth-child(1) { animation-delay: 0s; }
-  .gaming-icon:nth-child(2) { animation-delay: 0.5s; }
-  .gaming-icon:nth-child(3) { animation-delay: 1s; }
-  .gaming-icon:nth-child(4) { animation-delay: 1.5s; }
-  .gaming-icon:nth-child(5) { animation-delay: 2s; }
-  .gaming-icon:nth-child(6) { animation-delay: 2.5s; }
-
-  @keyframes iconFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .gaming-icon:hover {
-    transform: scale(1.1) translateY(-5px);
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  /* Why Gaming Section */
-  .why-gaming-section {
-    padding: 80px 0;
-    background: #0d0f1a;
-  }
-
-  .gaming-explanation {
-    max-width: 4xl;
-    margin: 0 auto;
-  }
-
-  .gaming-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    background: #131627;
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .gaming-card .gaming-icon {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2rem;
-  }
-
-  .gaming-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--brand-text, #e8eaf2);
-    margin-bottom: 1.5rem;
-  }
-
-  .gaming-text p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Features Section */
-  .features-section {
-    padding: 80px 0;
-    background: #131627;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .section-header h2 {
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    font-weight: 700;
-    color: var(--brand-text, #e8eaf2);
-    margin-bottom: 1rem;
-  }
-
-  .section-header h2 span {
-    color: #f0622a;
-  }
-
-  .section-header p {
-    font-size: 1.2rem;
-    color: #ffffff;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .feature-card {
-    position: relative;
-    background: #131627;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    border: 2px solid #f0f0f0;
-    overflow: hidden;
-  }
-
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .feature-card:hover::before {
-    opacity: 1;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(240, 98, 42, 0.15);
-    border-color: rgba(240, 98, 42, 0.3);
-  }
-
-  .feature-icon {
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2.25rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(240, 98, 42, 0.25);
-    transition: all 0.4s ease;
-  }
-
-  .feature-card:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 30px rgba(240, 98, 42, 0.35);
-  }
-
-  .feature-card h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--brand-text, #e8eaf2);
-    margin-bottom: 1rem;
-  }
-
-  .feature-card p {
-    color: #ffffff;
-    line-height: 1.6;
-  }
-
-  /* Shared Section Header */
-  .section-header { text-align: center; margin-bottom: 2rem; }
-  .section-header h2 {
-    margin: 0 0 .5rem 0;
-    font-size: clamp(1.75rem, 3vw, 2.25rem);
-    font-weight: 900;
-    color: var(--brand-text, #e8eaf2);
-  }
-  .section-header h2 span {
-    color: #f0622a;
-  }
-  .section-header p { color: #ffffff; max-width: 760px; margin: 0 auto; }
-
-  /* Services Offerings Section */
-  .services-offerings-section {
-    padding: 80px 0;
-    background: #0d0f1a;
-  }
-
-  .offerings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-  }
-
-  .offering-card {
-    position: relative;
-    background: #131627;
-    padding: 2.5rem 2rem;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.07);
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .offering-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-  }
-
-  .offering-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(240, 98, 42, 0.15);
-    border-color: #f0622a;
-  }
-
-  .offering-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    color: #fff;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    box-shadow: 0 8px 20px rgba(240, 98, 42, 0.25);
-    transition: all 0.3s ease;
-  }
-
-  .offering-card:hover .offering-icon {
-    transform: scale(1.1);
-    box-shadow: 0 12px 30px rgba(240, 98, 42, 0.35);
-  }
-
-  .offering-card h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--brand-text, #e8eaf2);
-    margin-bottom: .5rem;
-  }
-
-  .offering-card p { color: #ffffff; }
-
-  .learn-more-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(255, 107, 53, 0.1));
-    color: #f0622a;
-    padding: 0.625rem 1.25rem;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    border: 1px solid rgba(240, 98, 42, 0.2);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .offering-card:hover .learn-more-link {
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    color: white;
-    border-color: transparent;
-    transform: translateX(5px);
-  }
-
-  /* Approach Section */
-  .approach-section {
-    padding: 80px 0;
-    background: #131627;
-  }
-
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-  }
-
-  .step-card {
-    background: #131627;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 18px;
-    padding: 2rem;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    transition: transform .3s ease, box-shadow .3s ease;
-  }
-
-  .step-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); }
-
-  .step-number {
-    width: 40px; height: 40px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    color: #fff; border-radius: 10px;
-    display: inline-flex; align-items: center; justify-content: center;
-    font-weight: 800; margin-bottom: .75rem;
-  }
-
-  .step-card h3 { margin-bottom: .5rem; color: var(--brand-text, #e8eaf2); }
-  .step-card ul { margin: 0; padding-left: 1rem; color: #ffffff; line-height: 1.7; }
-  .step-card li { margin-bottom: .35rem; }
-
-  /* Launch Timeline */
-  .launch-timeline-section { padding: 80px 0; background: #0d0f1a; }
-  .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
-  .timeline-card {
-    background: #131627; border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 2rem;
-    position: relative; overflow: hidden;
-  }
-  .timeline-card::after {
-    content: '';
-    position: absolute; right: -20px; top: -20px; width: 120px; height: 120px;
-    background: radial-gradient(closest-side, rgba(240,98,42,.15), transparent 70%);
-    border-radius: 50%;
-  }
-  .timeline-badge {
-    display: inline-block; padding: .35rem .75rem; border-radius: 999px; font-size: .75rem; font-weight: 700;
-    background: rgba(240,98,42,.1); color: #f0622a; margin-bottom: .75rem;
-  }
-
-  /* Tools Section */
-  .tools-section { padding: 80px 0; background: #131627; }
-  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-  .tool-card {
-    display: flex; align-items: center; gap: .75rem; padding: 1rem 1.25rem; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px;
-    transition: background .3s ease, transform .2s ease;
-  }
-  .tool-card i { font-size: 1.25rem; color: #f0622a; }
-  .tool-card span { color: var(--brand-text, #e8eaf2); font-weight: 600; }
-  .tool-card:hover { background: #0d0f1a; transform: translateY(-2px); }
-
-  /* FAQ */
-  .faq-section { padding: 5rem 0; background: #131627; }
-  .faq-list { max-width: 800px; margin: 0 auto; display: grid; gap: 1rem; }
-  .faq-item { background: #131627; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.3s ease; }
-  .faq-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-  .faq-question {
-    width: 100%; background: transparent; border: none; display: flex; justify-content: space-between; align-items: center;
-    padding: 1.5rem; font-size: 1rem; font-weight: 600; color: #e8eaf2; cursor: pointer; transition: background 0.3s ease; text-align: left;
-  }
-  .faq-question:hover { background: #0d0f1a; }
-  .faq-question i { color: #d0d4e8; transition: transform 0.3s ease; }
-  .faq-answer { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1rem; color: #d0d4e8; line-height: 1.7; }
-  .faq-item.active .faq-question i { transform: rotate(180deg); }
-
-  /* CTA Banner */
-  .cta-banner-section {
-    padding: 80px 0;
-    background: #131627;
-    color: #fff;
-  }
-  .cta-banner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-  .cta-banner h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; margin: 0; }
-  .cta-banner .cta-actions { display: flex; gap: .75rem; }
-  .cta-button { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1rem; border-radius: 10px; font-weight: 700; text-decoration: none; }
-  .cta-button.primary { background: #131627; color: #ffffff; }
-  .cta-button.secondary { background: rgba(255,255,255,.15); color: #ffffff; border: 1px solid rgba(255,255,255,.35); }
-  .cta-button:hover { transform: translateY(-1px); transition: transform .2s ease; }
-
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .gaming-icon-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .gaming-icon {
-      width: 60px;
-      height: 60px;
-      font-size: 1.4rem;
-    }
-
-    .gaming-card {
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-    .offerings-grid { grid-template-columns: 1fr; }
-    .steps-grid { grid-template-columns: 1fr; }
-    .timeline-grid { grid-template-columns: 1fr; }
-    .tools-grid { grid-template-columns: 1fr; }
-    .cta-banner { flex-direction: column; align-items: flex-start; }
-  }
+.service-page { background:#0d0f1a; color:#fff; }
+.page-container { width:min(100% - 40px,1120px); margin:0 auto; }
+.hero-proof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:26px; }
+.hero-proof article, .panel, .fit-card, .process-card, .qa-card, .faq-item, .cta-card { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; box-shadow:0 18px 48px rgba(0,0,0,.18); }
+.hero-proof article { padding:18px; } .hero-proof strong { display:block; color:#fff; font-size:1.05rem; margin-bottom:6px; } .hero-proof span { color:rgba(255,255,255,.66); font-size:.92rem; line-height:1.5; }
+.service-page section { padding:78px 0; content-visibility:visible !important; } .service-page section:nth-child(even) { background:#111421; }
+.eyebrow { display:block; color:#f0622a; font-size:.78rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); line-height:1.05; margin:0 0 22px; } h3 { color:#fff; font-size:1.16rem; margin:0 0 10px; } p, li { color:rgba(255,255,255,.74); font-size:1.02rem; line-height:1.72; } a { color:#f0622a; }
+.intro-grid, .two-column, .faq-layout { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr); gap:clamp(30px,5vw,60px); align-items:start; } .panel { padding:28px; } .panel ul { margin:0; padding-left:20px; }
+.fit-grid, .process-grid, .qa-grid, .link-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } .fit-card, .process-card, .qa-card, .link-grid a { padding:24px; }
+.process-card span { display:inline-grid; place-items:center; width:42px; height:42px; border-radius:14px; color:#fff; background:rgba(240,98,42,.25); font-weight:900; margin-bottom:18px; }
+.link-grid a { color:inherit; text-decoration:none; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; } .link-grid span { display:block; color:#fff; font-weight:900; margin-bottom:8px; }
+.faq-list { display:grid; gap:14px; } .faq-item { overflow:hidden; } .faq-item summary { cursor:pointer; padding:22px 24px; color:#fff; font-weight:900; list-style:none; } .faq-item summary::-webkit-details-marker { display:none; } .faq-item p { padding:0 24px 24px; margin:0; }
+.cta-card { text-align:center; padding:clamp(36px,6vw,68px); background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045)); } .cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-top:28px; }
+:global(.service-page .btn-primary), :global(.service-page .btn-secondary) { min-height:48px; }
+@media (max-width:920px){ .hero-proof,.intro-grid,.two-column,.fit-grid,.process-grid,.qa-grid,.link-grid,.faq-layout{grid-template-columns:1fr;} }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    window.toggleFAQ = function(element) {
-      const answer = element.nextElementSibling;
-      const icon = element.querySelector('i');
-      
-      const item = element.closest('.faq-item');
-      if (item.classList.contains('active')) {
-        answer.style.display = 'none';
-        item.classList.remove('active');
-      } else {
-        answer.style.display = 'block';
-        item.classList.add('active');
-      }
-    };
-  });
-</script>

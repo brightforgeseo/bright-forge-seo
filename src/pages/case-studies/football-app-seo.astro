@@ -1,492 +1,263 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
-import Footer from '../../components/Footer.astro';
-import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
 
-const caseStudyData = {
-  title: "How We Boosted Organic Traffic by 34% for a Football App",
-  client: "Football Application",
-  industry: "Sports & Entertainment",
-  duration: "3 months",
-  heroImage: "/images/case-studies/football-app-seo-case-study.webp",
-  challenge: "A football application needed to improve its organic search performance in a highly competitive sports content landscape. The app faced challenges with search visibility, competing against established sports media outlets and other football apps. The goal was to improve rankings, increase organic traffic, and establish authority in football-related search queries while maintaining relevance during match days and key sporting events.",
-  solution: "We developed a comprehensive SEO strategy focused on technical optimization, strategic content alignment with match schedules and sporting events, and improving search visibility across the critical first-page threshold. Our approach combined technical excellence with timely, relevant content targeting both broad and long-tail football queries.",
-  keyMetrics: [
-    {
-      label: "Organic Traffic",
-      value: "+34%",
-      description: "Increase from 200K to 268K clicks"
-    },
-    {
-      label: "Search Visibility",
-      value: "+29.3%",
-      description: "Growth from 7.14M to 9.23M impressions"
-    },
-    {
-      label: "Average Position",
-      value: "20.2%",
-      description: "Improved from 11.4 to 9.1"
+const canonical = "https://brightforge.com.ph/case-studies/football-app-seo/";
+const image = "/images/case-studies/football-app-seo-case-study.webp";
+const metrics = [
+  {
+    "label": "Organic clicks",
+    "before": "200k",
+    "after": "268k",
+    "change": "+34%"
+  },
+  {
+    "label": "Impressions",
+    "before": "7.14M",
+    "after": "9.23M",
+    "change": "+29.3%"
+  },
+  {
+    "label": "Average position",
+    "before": "11.4",
+    "after": "9.1",
+    "change": "+2.3 places"
+  },
+  {
+    "label": "Average CTR",
+    "before": "2.8%",
+    "after": "2.9%",
+    "change": "+0.1pp"
+  }
+];
+const workstreams = [
+  {
+    "title": "Technical SEO foundation",
+    "text": "We reviewed crawlability, speed, mobile performance and indexation so the app could support visibility gains and traffic spikes."
+  },
+  {
+    "title": "Fixture and query alignment",
+    "text": "Content and page targeting were mapped around how fans search before, during and after key matches and competitions."
+  },
+  {
+    "title": "Internal linking and page signals",
+    "text": "Important football pages needed clearer paths and stronger contextual links so search engines could understand their role."
+  },
+  {
+    "title": "Snippet relevance",
+    "text": "Titles and descriptions were checked so pages matched the query without overpromising or chasing vague sports keywords."
+  },
+  {
+    "title": "Performance monitoring",
+    "text": "Search Console data was reviewed around peaks and recurring patterns so the campaign could respond to actual demand."
+  }
+];
+const results = [
+  {
+    "metric": "Organic clicks",
+    "before": "200k",
+    "after": "268k",
+    "change": "+34%",
+    "note": "The app gained 68k extra organic clicks during the comparison period."
+  },
+  {
+    "metric": "Impressions",
+    "before": "7.14M",
+    "after": "9.23M",
+    "change": "+29.3%",
+    "note": "The site appeared for more searches across the football query set."
+  },
+  {
+    "metric": "Average position",
+    "before": "11.4",
+    "after": "9.1",
+    "change": "+2.3 places",
+    "note": "Moving from just outside page one to page-one territory was the strongest ranking signal."
+  },
+  {
+    "metric": "Average CTR",
+    "before": "2.8%",
+    "after": "2.9%",
+    "change": "+0.1pp",
+    "note": "CTR stayed broadly stable, which means the traffic lift came mainly from more visibility and better rankings."
+  }
+];
+const constraints = [
+  {
+    "title": "Large sports publishers",
+    "text": "The app competed with media brands and football properties with stronger authority and constant fresh coverage."
+  },
+  {
+    "title": "Seasonal search behaviour",
+    "text": "Match days, transfer windows and competition schedules changed demand patterns throughout the campaign."
+  },
+  {
+    "title": "Mobile expectations",
+    "text": "Football users expect fast pages and clear answers, especially around fixtures and match information."
+  },
+  {
+    "title": "CTR barely moved",
+    "text": "CTR went from 2.8% to 2.9%, so the result should be framed around visibility and ranking movement rather than click-through transformation."
+  }
+];
+const lessons = [
+  "Crossing from position 11 to position 9 can matter because it moves a wider keyword set into first-page visibility.",
+  "CTR stability is not failure when impressions and rankings grow. It means the next opportunity is better snippets and stronger landing-page intent match.",
+  "Sports SEO needs timing. Fixtures, news cycles and seasonal demand change what users need from search results.",
+  "Technical foundations matter more when traffic spikes are predictable around matches or events."
+];
+const faqs = [
+  {
+    "question": "What was the main result in this football app SEO case study?",
+    "answer": "Organic clicks increased from 200k to 268k, a 34% lift. Impressions also grew from 7.14M to 9.23M."
+  },
+  {
+    "question": "Did the football app reach page one?",
+    "answer": "Average position improved from 11.4 to 9.1, which suggests broader movement from just outside page one into page-one territory across the tracked search set."
+  },
+  {
+    "question": "Was CTR the main reason traffic grew?",
+    "answer": "No. CTR only moved from 2.8% to 2.9%. The main growth drivers were stronger visibility and improved average position."
+  },
+  {
+    "question": "What SEO work matters for football apps?",
+    "answer": "Technical crawlability, fast mobile pages, fixture-aware content, internal links, structured information and Search Console monitoring all matter."
+  },
+  {
+    "question": "Can this approach work for other sports platforms?",
+    "answer": "Yes, if the platform has real search demand and pages that can serve fan intent. The strategy still needs to account for seasonality, authority and technical constraints."
+  },
+  {
+    "question": "Does Bright Forge guarantee the same sports SEO result?",
+    "answer": "No. Results depend on competition, authority, technical condition, content quality and user demand. Case studies show the method and interpretation, not a promise."
+  }
+];
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Football App SEO Case Study",
+  "description": "How SEO helped a football app grow organic clicks by 34% by improving technical foundations, query coverage and match-day search relevance.",
+  "image": "https://brightforge.com.ph/images/case-studies/football-app-seo-case-study.webp",
+  "author": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "url": "https://brightforge.com.ph/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://brightforge.com.ph/images/header-logo-360w.webp"
     }
-  ],
-  strategySteps: [
-    {
-      title: "Technical SEO Foundation",
-      description: "Implemented strong technical infrastructure with optimized crawl budget, fast page load times, and mobile optimization to support sustained growth and handle traffic spikes during match days.",
-      icon: "fa-cog"
-    },
-    {
-      title: "Strategic Content Alignment",
-      description: "Created and optimized content targeting long-tail football queries, aligned with fixtures and events, including match predictions, player stats, and team news with improved internal linking structure.",
-      icon: "fa-calendar-alt"
-    },
-    {
-      title: "Position Advancement Strategy",
-      description: "Focused efforts on moving from second-page rankings (position 11.4) to first-page territory (position 9.1), overtaking 2-3 competitors on average across the keyword portfolio.",
-      icon: "fa-chart-line"
-    },
-    {
-      title: "User Experience Optimization",
-      description: "Optimized title tags and meta descriptions to maintain strong CTR while improving impressions, ensuring content relevance and meeting user search intent effectively.",
-      icon: "fa-users"
-    },
-    {
-      title: "Performance Monitoring & Analysis",
-      description: "Tracked seasonal patterns and cyclical trends, identifying regular peaks on match days and optimizing for consistent week-over-week performance improvements.",
-      icon: "fa-analytics"
-    }
-  ],
-  results: [
-    {
-      metric: "Total Clicks",
-      before: "200,000",
-      after: "268,000",
-      improvement: "+34.0%"
-    },
-    {
-      metric: "Total Impressions",
-      before: "7.14M",
-      after: "9.23M",
-      improvement: "+29.3%"
-    },
-    {
-      metric: "Average Position",
-      before: "11.4",
-      after: "9.1",
-      improvement: "+20.2%"
-    },
-    {
-      metric: "Average CTR",
-      before: "2.8%",
-      after: "2.9%",
-      improvement: "+3.6%"
-    }
-  ],
-  keyTakeaways: [
-    "Moving from position 11.4 to 9.1 crossed the crucial first-page threshold, resulting in 68,000 additional clicks per month",
-    "The 2.3-position improvement moved the app into first-page territory across a broader keyword portfolio, capturing 92% of organic traffic potential",
-    "Successful expansion of keyword footprint with 2.09M additional impressions indicated improved relevance signals to Google",
-    "Maintained CTR performance while scaling volume demonstrates effective title tags, meta descriptions, and meeting user search intent",
-    "Clear weekly cyclical patterns with consistent peaks on match days enabled strategic content optimization around fixtures and events",
-    "Strong technical infrastructure supporting growth with optimized crawl budget and fast page loads maintained user engagement during traffic spikes"
-  ],
-  nextSteps: "Moving forward, we'll focus on featured snippet optimization for question-based queries, schema markup implementation for sports events and player profiles, and further position advancement to reach positions 5-7 for an estimated 50-100% increase in clicks. We'll also pursue content gap analysis to target competitor keywords where we're ranking 11-20."
+  },
+  "mainEntityOfPage": "https://brightforge.com.ph/case-studies/football-app-seo/",
+  "articleSection": "SEO Case Studies",
+  "about": [
+    "Sports SEO",
+    "Technical SEO",
+    "Content SEO",
+    "App SEO"
+  ]
 };
 ---
 
-<MainLayout title="34% Traffic Growth for Football App | Bright Forge SEO" description="A 34% organic traffic increase and first-page rankings for this football app through strategic SEO, technical optimization, and content aligned with match schedules.">
+<MainLayout
+  title="Football App SEO Case Study | Bright Forge"
+  description="How SEO helped a football app grow organic clicks by 34% by improving technical foundations, query coverage and match-day search relevance."
+  canonical={canonical}
+  image={image}
+  type="article"
+  author={{ name: "Bright Forge SEO", url: "https://brightforge.com.ph/" }}
+  article={{ section: "SEO Case Studies", tags: [
+  "Sports SEO",
+  "Technical SEO",
+  "Content SEO",
+  "App SEO"
+] }}
+  breadcrumbs={[
+    { name: "Home", url: "https://brightforge.com.ph/" },
+    { name: "Case Studies", url: "https://brightforge.com.ph/case-studies/" },
+    { name: "Football App SEO", url: canonical }
+  ]}
+  faqs={faqs}
+>
+  <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(caseStudySchema)} /></Fragment>
   <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    title={caseStudyData.client}
-    breadcrumbCurrent="Football App"
-  >
+  <Hero title="Football App SEO Case Study" breadcrumbCurrent="Football App SEO">
     <Fragment slot="story">
-      <div class="case-meta">
-        <span class="meta-item">{caseStudyData.industry}</span>
-        <span class="meta-divider">•</span>
-        <span class="meta-item">{caseStudyData.duration}</span>
-      </div>
-      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.</p>
+      <div class="case-meta"><span>Sports application</span><span>Football and fan engagement</span><span>3 month comparison</span></div>
+      <p class="hero-subtitle">How a football app increased organic clicks by 34% and moved average position from 11.4 to 9.1.</p>
+      <p>The useful story is the shift from edge-of-page-one visibility into stronger first-page coverage across a broader football query set, supported by technical foundations and content aligned to how fans search.</p>
     </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="#results" text="View Full Results" />
-      <ButtonSecondary href="/contact/" text="Discuss Your Project" />
-    </Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="#results" text="View Results" /><ButtonSecondary href="/contact/" text="Request an SEO Review" /></Fragment>
   </Hero>
-
-  <!-- Key Metrics Section -->
-  <section class="metrics-section">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="metrics-grid">
-        {caseStudyData.keyMetrics.map((metric) => (
-          <div class="metric-card">
-            <div class="metric-value">{metric.value}</div>
-            <div class="metric-label">{metric.label}</div>
-            <div class="metric-description">{metric.description}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Hero Image Section -->
-  <section class="image-section">
-    <div class="max-w-6xl mx-auto px-6 py-12">
-      <div class="case-image-container">
-        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
-      </div>
-    </div>
-  </section>
-
-  <!-- Challenge Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">The Challenge</h2>
-      <p class="section-text">{caseStudyData.challenge}</p>
-    </div>
-  </section>
-
-  <!-- Solution Section -->
-  <section class="content-section gray">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Our Approach</h2>
-      <p class="section-text">{caseStudyData.solution}</p>
-    </div>
-  </section>
-
-  <!-- Strategy Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Strategy</h2>
-
-      <div class="strategy-list">
-        {caseStudyData.strategySteps.map((step, index) => (
-          <div class="strategy-item">
-            <div class="strategy-number">{index + 1}</div>
-            <div class="strategy-content">
-              <h3 class="strategy-title">{step.title}</h3>
-              <p class="strategy-description">{step.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Results Section -->
-  <section class="content-section gray" id="results">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Results</h2>
-
-      <div class="results-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Before</th>
-              <th>After</th>
-              <th>Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            {caseStudyData.results.map((result) => (
-              <tr>
-                <td class="metric-name">{result.metric}</td>
-                <td>{result.before}</td>
-                <td>{result.after}</td>
-                <td class="improvement">{result.improvement}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Takeaways Section -->
-  <section class="content-section">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Key Takeaways</h2>
-
-      <ul class="takeaways-list">
-        {caseStudyData.keyTakeaways.map((takeaway) => (
-          <li>{takeaway}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <ContactSection />
+  <main class="case-study-page">
+    <section class="proof-strip"><div class="case-container"><div class="proof-grid">{metrics.map((metric) => (<article class="proof-card"><span class="proof-label">{metric.label}</span><strong>{metric.change}</strong><span>{metric.before} to {metric.after}</span></article>))}</div></div></section>
+    <section class="overview-section"><div class="case-container overview-grid"><div><p class="eyebrow">The short version</p><h2>First-page movement across a high-volume football search set</h2><p>Football search demand is volatile. Fixtures, teams, player news and match-day behaviour all change what people search for and when they search for it. The app needed stronger technical foundations and content alignment to compete with large sports publishers and other football tools.</p><p>Clicks increased from 200k to 268k and impressions increased from 7.14M to 9.23M. Average position moved from 11.4 to 9.1, which is commercially meaningful because it crossed into page-one territory across the wider query set. CTR was broadly stable, so the growth came from more visibility and better position coverage rather than a dramatic snippet win.</p></div><aside class="case-summary-card"><h3>Campaign snapshot</h3><dl><div><dt>Industry</dt><dd>Sports application</dd></div><div><dt>Market type</dt><dd>Football and fan engagement</dd></div><div><dt>Timeframe</dt><dd>3 month comparison</dd></div><div><dt>Main KPI</dt><dd>Organic clicks from Google Search</dd></div><div><dt>Primary work</dt><dd>Technical SEO, content alignment, search intent mapping and performance monitoring</dd></div></dl></aside></div></section>
+    <section class="visual-proof-section"><div class="case-container"><div class="case-image-card"><img src={image} alt="Search Console comparison for a football app SEO campaign" loading="eager" decoding="async" /></div><p class="image-note">Search Console metrics used in this case study: 200k to 268k clicks, 7.14M to 9.23M impressions, average position 11.4 to 9.1 and CTR 2.8% to 2.9%.</p></div></section>
+    <section class="content-section" id="challenge"><div class="case-container two-column"><div><p class="eyebrow">Starting problem</p><h2>The app had to compete in a fast-moving sports search landscape</h2></div><div><p>Football SERPs move quickly around fixtures, team news, player updates and fan questions. Search intent can change by the day, so the app needed pages and content structures that could match demand without becoming thin or chaotic.</p><p>The challenge was to improve organic performance against established sports media sites while keeping technical performance strong enough for traffic spikes and mobile-heavy usage.</p></div></div></section>
+    <section class="constraints-section"><div class="case-container"><p class="eyebrow">Constraints</p><h2>Why this was not a simple SEO win</h2><div class="constraint-grid">{constraints.map((item) => (<article><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section class="work-section" id="work"><div class="case-container"><p class="eyebrow">What changed</p><h2>The work connected technical stability with football search intent</h2><div class="work-grid">{workstreams.map((item, index) => (<article class="work-item"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section class="results-section" id="results"><div class="case-container"><p class="eyebrow">What moved</p><h2>Visibility and average position improved enough to create meaningful traffic growth</h2><div class="result-grid">{results.map((result) => (<article class="result-card"><div><span class="proof-label">{result.metric}</span><strong>{result.change}</strong></div><div class="before-after"><div><span>Before</span><strong>{result.before}</strong></div><div><span>After</span><strong>{result.after}</strong></div></div><p>{result.note}</p></article>))}</div></div></section>
+    <section class="commercial-section"><div class="case-container commercial-card"><div><p class="eyebrow">Commercial meaning</p><h2>The growth mattered because the app reached more football users at the point of intent</h2><p>For apps and sports platforms, organic search can support acquisition when users are looking for fixtures, tools, stats, predictions or team information. The traffic is valuable when those visits lead into app usage, signups or repeat engagement.</p><p>The campaign also showed why technical SEO and content planning need to work together. Content alone is not enough if the app cannot support crawl, speed and mobile expectations.</p></div><div class="case-summary-card"><h3>What matters here</h3><p>This case supports sports SEO, technical SEO and content strategy work where search demand is high but competitive timing and site performance matter.</p></div></div></section>
+    <section class="lessons-section"><div class="case-container"><p class="eyebrow">Lessons</p><h2>What sports platforms should take from this</h2><div class="lesson-grid">{lessons.map((lesson) => (<article><p>{lesson}</p></article>))}</div></div></section>
+    <section class="related-services-section"><div class="case-container"><p class="eyebrow">Related services</p><h2>Where this kind of work fits</h2><div class="service-link-grid"><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, structure, performance and indexation issues.</a><a href="/on-page-seo-services-philippines/"><span>On-page SEO</span>Improve page relevance, snippets and conversion paths.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Turn search intent into stronger pages and supporting content.</a></div></div></section>
+    <section class="faq-section"><div class="case-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Questions this case study should answer</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+    <section class="case-cta-section"><div class="case-container"><div class="case-cta-card"><h2>Want to know what is holding your search traffic back?</h2><p>We can review the pages, queries and technical signals that matter before recommending any rewrite, content plan or link activity.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="/case-studies/" text="View More Case Studies" /></div></div></div></section>
+  </main>
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-/* Case Study Meta */
-.case-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-  font-size: 16px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.meta-item {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.meta-divider {
-  opacity: 0.5;
-}
-
-/* Metrics Section */
-.metrics-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 48px;
-}
-
-.metric-card {
-  text-align: center;
-  padding: 24px 0;
-}
-
-.metric-value {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #f0622a;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-
-.metric-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
-}
-
-.metric-description {
-  font-size: 0.875rem;
-  color: #ffffff;
-}
-
-/* Image Section */
-.image-section {
-  background: #131627;
-}
-
-.case-image-container {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.case-image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  background: #0d0f1a;
-}
-
-/* Content Sections */
-.content-section {
-  background: #131627;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.content-section.gray {
-  background: #0d0f1a;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
-}
-
-.section-text {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #ffffff;
-}
-
-/* Strategy List */
-.strategy-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 32px;
-}
-
-.strategy-item {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.strategy-number {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: #f0622a;
-  color: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.strategy-content {
-  flex: 1;
-}
-
-.strategy-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.strategy-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ffffff;
-}
-
-/* Results Table */
-.results-table {
-  margin-top: 32px;
-  overflow-x: auto;
-}
-
-.results-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.results-table th {
-  text-align: left;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid #e2e8f0;
-}
-
-.results-table td {
-  padding: 20px;
-  font-size: 1rem;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.results-table tr:last-child td {
-  border-bottom: none;
-}
-
-.results-table .metric-name {
-  font-weight: 600;
-}
-
-.results-table .improvement {
-  color: #f0622a;
-  font-weight: 600;
-}
-
-/* Takeaways List */
-.takeaways-list {
-  list-style: none;
-  padding: 0;
-  margin: 32px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.takeaways-list li {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #ffffff;
-  padding-left: 32px;
-  position: relative;
-}
-
-.takeaways-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 6px;
-  height: 6px;
-  background: #f0622a;
-  border-radius: 50%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .metric-value {
-    font-size: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  .strategy-item {
-    gap: 16px;
-  }
-
-  .strategy-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .results-table {
-    font-size: 0.875rem;
-  }
-
-  .results-table th,
-  .results-table td {
-    padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .metrics-grid {
-    grid-template-columns: 1fr;
-  }
-}
+.case-study-page { background: #0d0f1a; color: #fff; }
+.case-container { width: min(100% - 40px, 1120px); margin: 0 auto; }
+.case-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.case-meta span { padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,.1); color: rgba(255,255,255,.82); font-size: .86rem; font-weight: 800; }
+.hero-subtitle { color: #fff; font-weight: 900; font-size: clamp(1.15rem, 2vw, 1.45rem); }
+.proof-strip, .overview-section, .visual-proof-section, .content-section, .constraints-section, .work-section, .results-section, .commercial-section, .lessons-section, .related-services-section, .faq-section, .case-cta-section { padding: 78px 0; content-visibility: visible !important; }
+.proof-grid, .constraint-grid, .work-grid, .result-grid, .lesson-grid, .service-link-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.proof-card, .case-summary-card, .case-image-card, .constraint-grid article, .work-item, .result-card, .lesson-grid article, .service-link-grid a, .faq-item, .case-cta-card { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.045); border-radius: 24px; box-shadow: 0 18px 48px rgba(0,0,0,.18); }
+.proof-card { padding: 24px; }
+.proof-label, .eyebrow { display: block; color: #f0622a; font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+.proof-card strong { display: block; color: #fff; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; margin-bottom: 8px; }
+.proof-card span:last-child { color: rgba(255,255,255,.68); }
+.overview-section, .constraints-section, .results-section, .lessons-section, .faq-section { background: #111421; }
+.overview-grid, .two-column, .commercial-card, .faq-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: clamp(30px, 5vw, 60px); align-items: start; }
+h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0 0 22px; }
+h3 { color: #fff; font-size: 1.15rem; margin: 0 0 10px; }
+p, li, dd { color: rgba(255,255,255,.74); font-size: 1.02rem; line-height: 1.72; }
+a { color: #f0622a; }
+.case-summary-card, .constraint-grid article, .work-item, .result-card, .lesson-grid article, .service-link-grid a { padding: 24px; }
+.case-summary-card dl { display: grid; gap: 14px; margin: 0; }
+.case-summary-card div { display: grid; gap: 4px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+dt { color: rgba(255,255,255,.5); font-weight: 900; text-transform: uppercase; font-size: .75rem; letter-spacing: .08em; }
+.case-image-card { overflow: hidden; padding: 10px; background: rgba(255,255,255,.07); }
+.case-image-card img { width: 100%; border-radius: 18px; display: block; }
+.image-note { font-size: .92rem; margin-top: 14px; color: rgba(255,255,255,.62); }
+.work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.work-item span { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; color: #fff; background: rgba(240,98,42,.25); font-weight: 900; margin-bottom: 18px; }
+.result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.result-card strong { color: #f0622a; font-size: 1.7rem; }
+.before-after { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0; }
+.before-after div { padding: 14px; border-radius: 16px; background: rgba(0,0,0,.2); }
+.before-after span { display: block; color: rgba(255,255,255,.48); font-size: .75rem; font-weight: 900; text-transform: uppercase; margin-bottom: 6px; }
+.commercial-card { padding: clamp(32px, 5vw, 58px); border-radius: 32px; background: linear-gradient(145deg, rgba(240,98,42,.14), rgba(255,255,255,.04)); }
+.lesson-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-link-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.service-link-grid a { color: inherit; text-decoration: none; }
+.service-link-grid span { display: block; color: #fff; font-weight: 900; margin-bottom: 8px; }
+.faq-list { display: grid; gap: 14px; }
+.faq-item { overflow: hidden; }
+.faq-item summary { cursor: pointer; padding: 22px 24px; color: #fff; font-weight: 900; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item p { padding: 0 24px 24px; margin: 0; }
+.case-cta-card { text-align: center; padding: clamp(36px, 6vw, 68px); background: radial-gradient(circle at top left, rgba(240,98,42,.22), rgba(255,255,255,.045)); }
+.cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+@media (max-width: 920px) { .proof-grid, .constraint-grid, .work-grid, .result-grid, .lesson-grid, .service-link-grid, .overview-grid, .two-column, .commercial-card, .faq-layout { grid-template-columns: 1fr; } }
 </style>
+

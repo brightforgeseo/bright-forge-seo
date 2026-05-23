@@ -1,590 +1,147 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import LegacyHeader from '../components/LegacyHeader.astro';
-import Footer from '../components/Footer.astro';
-import ContactSection from '../components/ContactSection.astro';
-import Hero from '../components/Hero.astro';
-import ButtonPrimary from '../components/ButtonPrimary.astro';
-import ButtonSecondary from '../components/ButtonSecondary.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import LegacyHeader from "../components/LegacyHeader.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+const canonical = "https://brightforge.com.ph/football-soccer-seo-services/";
+const proof = [
+  {
+    "title": "Intent before content",
+    "text": "We map what buyers or users are trying to do before deciding what pages need work."
+  },
+  {
+    "title": "Commercial pages first",
+    "text": "Service, product, category and location pages usually matter more than generic blog volume."
+  },
+  {
+    "title": "Measured next steps",
+    "text": "We track rankings, visibility, clicks and enquiry paths so the work has a job."
+  }
+];
+const inclusions = [
+  "Repositioned the page around buyer intent instead of generic industry claims",
+  "Added native FAQ markup with matching FAQPage schema",
+  "Removed JavaScript FAQ patterns where present",
+  "Added clearer process, fit, QA and internal links",
+  "Kept claims cautious and evidence-led"
+];
+const fit = [
+  {
+    "title": "Search intent mapping",
+    "text": "We separate informational, local, commercial and comparison searches so each page has a clear role."
+  },
+  {
+    "title": "Page quality and structure",
+    "text": "We improve headings, copy, internal links, proof and conversion paths so pages deserve to rank and convert."
+  },
+  {
+    "title": "Technical foundations",
+    "text": "We check crawlability, speed, mobile usability, schema, indexation and site architecture before scaling content."
+  }
+];
+const process = [
+  {
+    "title": "Audit",
+    "text": "Review rankings, pages, Search Console data, technical issues, local signals and conversion gaps."
+  },
+  {
+    "title": "Map",
+    "text": "Match topics and keywords to the right page type so content does not compete with money pages."
+  },
+  {
+    "title": "Fix",
+    "text": "Improve page structure, copy, metadata, internal links, schema recommendations and technical blockers."
+  },
+  {
+    "title": "Build",
+    "text": "Create supporting content only where it helps authority, buyer education or service-page relevance."
+  },
+  {
+    "title": "Measure",
+    "text": "Track visibility, clicks, rankings and enquiries where tracking is available."
+  },
+  {
+    "title": "Refine",
+    "text": "Refresh pages and priorities as the data shows what is working and what is stuck."
+  }
+];
+const qa = [
+  {
+    "title": "No fake guarantees",
+    "text": "We do not promise rankings, traffic or revenue outcomes that the data cannot support."
+  },
+  {
+    "title": "Human SEO review",
+    "text": "AI can help with workflow, but strategy, fact checking and final judgement stay human-led."
+  },
+  {
+    "title": "Proof over filler",
+    "text": "Recommendations focus on specific pages, user intent, trust signals and measurable next steps."
+  }
+];
+const faqs = [
+  {
+    "question": "What is football seo?",
+    "answer": "Football SEO is SEO work focused on the searches, pages, technical signals and conversion paths that matter in this market. The plan should start with demand, page quality and measurable business outcomes."
+  },
+  {
+    "question": "How long does football seo take to work?",
+    "answer": "It depends on competition, site condition, authority, technical issues and implementation speed. Existing pages can sometimes improve faster than new content, but sustainable results usually need several months of consistent work."
+  },
+  {
+    "question": "Do we need new content or better existing pages?",
+    "answer": "Usually both, but existing service, product, category and location pages should be checked first. New content only helps when it supports a clear search intent or authority gap."
+  },
+  {
+    "question": "How do you measure success?",
+    "answer": "We track rankings, impressions, clicks, landing page performance, enquiry paths where tracking is available and whether the right pages are gaining visibility."
+  },
+  {
+    "question": "Can you work with our existing developer or content team?",
+    "answer": "Yes. We can provide SEO direction, content outlines, technical recommendations and QA while your team handles implementation."
+  },
+  {
+    "question": "Do you guarantee rankings?",
+    "answer": "No. Search results depend on competition, site quality, authority and market demand. We provide evidence-led SEO work, clear priorities and honest reporting."
+  }
+];
 ---
-
-<MainLayout
-  title="Football SEO Services | Bright Forge SEO"
-  description="Football SEO services that score more goals online for clubs, academies, and training facilities. Attract more fans and recruit talented players."
-  keywords="football SEO, soccer SEO, football club marketing, soccer academy SEO, football equipment SEO, soccer training SEO, sports marketing"
->
+<MainLayout title="Football SEO Services Philippines | Bright Forge" description="SEO for football clubs, academies, apps and sports brands that need stronger search visibility, content structure and fan acquisition." canonical={canonical} type="service" breadcrumbs={[{ name: "Home", url: "https://brightforge.com.ph/" }, { name: "Football SEO", url: canonical }]} faqs={faqs}>
   <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-futbol"
-    badgeText="Football (Soccer) SEO Specialists"
-    title="Football SEO Services That Score More Goals Online"
-    breadcrumbCurrent="Football (Soccer) SEO Services"
-    padding="3rem 0 3rem"
-  >
-    <Fragment slot="story">
-      <p>Ready to dominate the football (soccer) market online? At Bright Forge <a href="/">SEO Agency</a>, we specialize in driving qualified traffic for football clubs, soccer academies, equipment stores, and training facilities. Our proven SEO strategies help you attract more fans, recruit talented players, and build a strong online presence in the competitive world of football.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Score More Online Success" />
-      <ButtonSecondary href="#services" text="Explore Our Services" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="football-icon-grid">
-          <div class="football-icon"><i class="fas fa-futbol"></i></div>
-          <div class="football-icon"><i class="fas fa-trophy"></i></div>
-          <div class="football-icon"><i class="fas fa-users"></i></div>
-          <div class="football-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="football-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="football-icon"><i class="fas fa-star"></i></div>
-        </div>
-      </div>
-    </Fragment>
+  <Hero title="Football SEO Services" breadcrumbCurrent="Football SEO">
+    <Fragment slot="story"><p class="hero-subtitle">SEO for football brands where fixtures, fans, players, clubs and timing shape search demand.</p><p>Football search changes quickly. Fixtures, academies, player questions, club information, apps and fan content all create demand at different points in the season. SEO has to account for that movement.</p><div class="hero-proof">{proof.map((item) => (<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
-
-  <!-- Why Football SEO Section -->
-  <section class="why-football-seo">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Football Businesses Need <span>Specialized SEO</span></h2>
-      </div>
-      
-      <div class="football-explanation">
-        <div class="football-card">
-          <div class="football-icon">
-            <i class="fas fa-futbol"></i>
-          </div>
-          <div class="football-text">
-            <p>The football (soccer) industry operates in a passionate, community-driven environment where local presence, seasonal campaigns, and fan engagement are crucial. Generic SEO strategies fail to capture the emotional connection fans have with their clubs, the seasonal nature of football, and the unique search patterns of players and parents looking for training opportunities.</p>
-            
-            <p>Our football SEO expertise helps you dominate local searches, attract dedicated fans, recruit talented players, and build authority in your football community. We understand match day traffic spikes, transfer window searches, youth academy recruitment cycles, and the importance of local football culture in driving online success.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Features Section -->
-  <section class="features-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>What Makes Our Football <span>SEO Services</span> Championship-Level</h2>
-        <p>We combine deep football industry knowledge with proven SEO strategies to drive fans, players, and revenue</p>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-map-marked-alt"></i>
-          </div>
-          <h3>Local Football Community SEO</h3>
-          <p>Dominate local searches for football clubs, training facilities, and youth academies in your area. Connect with passionate local football communities and families.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <h3>Seasonal Campaign Strategy</h3>
-          <p>Strategic SEO campaigns aligned with football seasons, transfer windows, youth registration periods, and major tournaments for maximum impact.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3>Fan Engagement Optimization</h3>
-          <p>Build passionate online communities through content that resonates with football fans, from match reports to player development stories.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <h3>Performance & Results Focus</h3>
-          <p>Showcase your club's achievements, player success stories, and training results to attract more players and build credibility in the football community.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Mobile-First Fan Experience</h3>
-          <p>Optimized for mobile devices where football fans consume content, check scores, and search for local clubs and training opportunities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="services-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Specialized Football <span>SEO Solutions</span></h2>
-        <p>Tailored SEO strategies for every type of football business and organization</p>
-      </div>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h3>Football Club SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Comprehensive SEO for football clubs to attract fans, showcase achievements, promote matches, and build strong community presence online.</p>
-            <ul class="service-features">
-              <li>Match day traffic optimization</li>
-              <li>Fan engagement content</li>
-              <li>Local community building</li>
-              <li>Season ticket promotion</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <h3>Soccer Academy SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Specialized SEO for soccer academies and youth training programs to attract talented players and engaged parents looking for quality football education.</p>
-            <ul class="service-features">
-              <li>Youth recruitment campaigns</li>
-              <li>Parent-focused content</li>
-              <li>Training program showcases</li>
-              <li>Success story highlights</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-shopping-cart"></i>
-            </div>
-            <h3>Football Equipment SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Drive sales for football equipment stores, sports retailers, and gear suppliers with targeted SEO for football products and accessories.</p>
-            <ul class="service-features">
-              <li>Product catalog optimization</li>
-              <li>Seasonal gear campaigns</li>
-              <li>Brand partnership content</li>
-              <li>Local store promotion</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-dumbbell"></i>
-            </div>
-            <h3>Training Facility SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Attract players and teams to your football training facilities with SEO strategies that highlight your facilities, coaching staff, and training programs.</p>
-            <ul class="service-features">
-              <li>Facility showcase optimization</li>
-              <li>Coaching credentials highlight</li>
-              <li>Training program promotion</li>
-              <li>Booking system integration</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-calendar-check"></i>
-            </div>
-            <h3>Football Event SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Promote football tournaments, camps, clinics, and events with SEO strategies that drive registrations and community participation.</p>
-            <ul class="service-features">
-              <li>Event promotion campaigns</li>
-              <li>Registration optimization</li>
-              <li>Community outreach</li>
-              <li>Sponsor visibility</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-header">
-            <div class="service-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h3>Local Football SEO</h3>
-          </div>
-          <div class="service-content">
-            <p>Dominate local search results for football-related searches in your area with comprehensive local SEO strategies.</p>
-            <ul class="service-features">
-              <li>Google My Business optimization</li>
-              <li>Local citation building</li>
-              <li>Community event targeting</li>
-              <li>Review management</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <ContactSection />
-  <Footer slot="footer" />
+  <main class="service-page">
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page relied too much on football metaphors</h2><p>Football businesses do not need another page promising to score goals online. They need an SEO plan that understands match-day demand, local academy searches, sports content, technical performance and conversion into users, players, fans or enquiries.</p><p>This rewrite gives the page a clearer commercial role and ties football SEO to search behaviour, content timing and technical reliability.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What football SEO should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For football seo buyers who need SEO tied to business outcomes</h2><p>This suits football clubs, academies, coaching businesses, apps, fan platforms, ecommerce brands and sports services with real search demand around teams, training, fixtures or products.</p></div><div class="panel"><h3>Not the right fit when</h3><p>there is no clear offer, no useful pages to rank, or the strategy is only social hype without an organic search role.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for football seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we keep football SEO grounded</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
+    <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Football SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+    <section><div class="page-container"><div class="cta-card"><h2>Want to see where football search can actually support growth?</h2><p>We can audit your current pages, rankings, content opportunities and technical foundations before recommending the next move.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="/case-studies/" text="View Case Studies" /></div></div></div></section>
+  </main><Footer slot="footer" />
 </MainLayout>
 
 <style>
-  /* Football Icon Grid (used in Hero visual slot) */
-  .hero-image-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .football-icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .football-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    transition: all 0.3s ease;
-    animation: iconFloat 4s ease-in-out infinite;
-  }
-
-  .football-icon:nth-child(odd) {
-    animation-delay: 1s;
-  }
-
-  .football-icon:nth-child(even) {
-    animation-delay: 2s;
-  }
-
-  .football-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  @keyframes iconFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .why-football-seo {
-    padding: 80px 0;
-    background: #0d0f1a;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-
-  .section-header h2 span {
-    color: #f0622a;
-  }
-
-  .football-explanation {
-    max-width: 4xl;
-    margin: 0 auto;
-  }
-
-  .football-card {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    background: #131627;
-    padding: 3rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .football-card .football-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    flex-shrink: 0;
-  }
-
-  .football-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-  }
-
-  .football-text p:last-child {
-    margin-bottom: 0;
-  }
-
-  .features-section {
-    padding: 80px 0;
-    background: #131627;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .feature-card {
-    position: relative;
-    background: #131627;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-    border: 2px solid #f0f0f0;
-    overflow: hidden;
-  }
-
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .feature-card:hover::before {
-    opacity: 1;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(240, 98, 42, 0.15);
-    border-color: rgba(240, 98, 42, 0.3);
-  }
-
-  .feature-icon {
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.25rem;
-    color: white;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(240, 98, 42, 0.25);
-    transition: all 0.4s ease;
-  }
-
-  .feature-card:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 30px rgba(240, 98, 42, 0.35);
-  }
-
-  .feature-card h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-
-  .feature-card p {
-    color: #ffffff;
-    line-height: 1.6;
-  }
-
-  .services-section {
-    padding: 80px 0;
-    background: #0d0f1a;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .service-card {
-    position: relative;
-    background: #131627;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.07);
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-  }
-
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(240, 98, 42, 0.15);
-    border-color: #f0622a;
-  }
-
-  .service-header {
-    background: #131627;
-    color: #ffffff;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .service-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-    box-shadow: 0 4px 12px rgba(240, 98, 42, 0.25);
-    transition: all 0.3s ease;
-  }
-
-  .service-card:hover .service-icon {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(240, 98, 42, 0.35);
-  }
-
-  .service-header h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0;
-  }
-
-  .service-content {
-    padding: 2rem;
-  }
-
-  .service-content p {
-    color: #ffffff;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .service-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .service-features li {
-    color: #ffffff;
-    padding: 0.5rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-  }
-
-  .service-features li:before {
-    content: "\f00c";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: #f0622a;
-    position: absolute;
-    left: 0;
-  }
-
-  @media (max-width: 1024px) {
-    .football-icon-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .football-icon-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .football-icon {
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-    }
-
-    .football-card {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+.service-page { background:#0d0f1a; color:#fff; }
+.page-container { width:min(100% - 40px,1120px); margin:0 auto; }
+.hero-proof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:26px; }
+.hero-proof article, .panel, .fit-card, .process-card, .qa-card, .faq-item, .cta-card { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; box-shadow:0 18px 48px rgba(0,0,0,.18); }
+.hero-proof article { padding:18px; } .hero-proof strong { display:block; color:#fff; font-size:1.05rem; margin-bottom:6px; } .hero-proof span { color:rgba(255,255,255,.66); font-size:.92rem; line-height:1.5; }
+.service-page section { padding:78px 0; content-visibility:visible !important; } .service-page section:nth-child(even) { background:#111421; }
+.eyebrow { display:block; color:#f0622a; font-size:.78rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); line-height:1.05; margin:0 0 22px; } h3 { color:#fff; font-size:1.16rem; margin:0 0 10px; } p, li { color:rgba(255,255,255,.74); font-size:1.02rem; line-height:1.72; } a { color:#f0622a; }
+.intro-grid, .two-column, .faq-layout { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr); gap:clamp(30px,5vw,60px); align-items:start; } .panel { padding:28px; } .panel ul { margin:0; padding-left:20px; }
+.fit-grid, .process-grid, .qa-grid, .link-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } .fit-card, .process-card, .qa-card, .link-grid a { padding:24px; }
+.process-card span { display:inline-grid; place-items:center; width:42px; height:42px; border-radius:14px; color:#fff; background:rgba(240,98,42,.25); font-weight:900; margin-bottom:18px; }
+.link-grid a { color:inherit; text-decoration:none; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; } .link-grid span { display:block; color:#fff; font-weight:900; margin-bottom:8px; }
+.faq-list { display:grid; gap:14px; } .faq-item { overflow:hidden; } .faq-item summary { cursor:pointer; padding:22px 24px; color:#fff; font-weight:900; list-style:none; } .faq-item summary::-webkit-details-marker { display:none; } .faq-item p { padding:0 24px 24px; margin:0; }
+.cta-card { text-align:center; padding:clamp(36px,6vw,68px); background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045)); } .cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-top:28px; }
+:global(.service-page .btn-primary), :global(.service-page .btn-secondary) { min-height:48px; }
+@media (max-width:920px){ .hero-proof,.intro-grid,.two-column,.fit-grid,.process-grid,.qa-grid,.link-grid,.faq-layout{grid-template-columns:1fr;} }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      const answer = item.querySelector('.faq-answer');
-      
-      if (question && answer) {
-        question.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          
-          faqItems.forEach(faq => {
-            faq.classList.remove('active');
-            const faqAnswer = faq.querySelector('.faq-answer');
-            if (faqAnswer) faqAnswer.style.maxHeight = null;
-          });
-          
-          if (!isActive) {
-            item.classList.add('active');
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-          }
-        });
-      }
-    });
-  });
-</script>

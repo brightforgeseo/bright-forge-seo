@@ -1,497 +1,122 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
-import Footer from '../../components/Footer.astro';
-import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
+const canonical="https://brightforge.com.ph/development/sveltekit/";
+const proof=[
+  {
+    "title": "SEO before design polish",
+    "text": "We protect crawlability, metadata, content structure and redirects before visual extras."
+  },
+  {
+    "title": "Performance matters",
+    "text": "Fast pages help users and reduce technical drag before SEO work even starts."
+  },
+  {
+    "title": "Human QA",
+    "text": "Every build still needs manual checks for forms, schema, indexing and conversion paths."
+  }
+];
+const checks=[
+  {
+    "title": "Crawlable pages",
+    "text": "Search engines need clean URLs, internal links, server-rendered content where needed and sensible indexation controls."
+  },
+  {
+    "title": "Content structure",
+    "text": "Pages need headings, body copy, proof, FAQs and conversion points that support SEO rather than sit behind visual components."
+  },
+  {
+    "title": "Performance and Core Web Vitals",
+    "text": "We reduce bloat, unnecessary scripts, layout shifts and render delays that weaken user experience."
+  },
+  {
+    "title": "Redirect and migration safety",
+    "text": "When replacing an old site, URL mapping and launch QA matter more than a prettier homepage."
+  },
+  {
+    "title": "Schema and metadata",
+    "text": "Titles, descriptions, canonical tags, structured data and Open Graph basics should be built in, not bolted on later."
+  },
+  {
+    "title": "Analytics and forms",
+    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+  }
+];
+const process=[
+  {
+    "title": "Audit",
+    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+  },
+  {
+    "title": "Plan",
+    "text": "Map templates, URLs, content sections, redirects, schema and development priorities."
+  },
+  {
+    "title": "Build",
+    "text": "Develop the site around speed, accessibility, crawlability and editorial control."
+  },
+  {
+    "title": "QA",
+    "text": "Test pages, metadata, forms, mobile layouts, redirects, schema and indexation settings."
+  },
+  {
+    "title": "Launch",
+    "text": "Deploy with a launch checklist, Search Console monitoring and post-launch crawl checks."
+  },
+  {
+    "title": "Improve",
+    "text": "Use ranking, crawl and conversion data to refine pages after launch."
+  }
+];
+const faqs=[
+  {
+    "question": "Is SvelteKit good for SEO?",
+    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+  },
+  {
+    "question": "Do we need to rebuild our whole website?",
+    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+  },
+  {
+    "question": "How do you protect rankings during a rebuild?",
+    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+  },
+  {
+    "question": "Can your team work with our existing developer?",
+    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+  },
+  {
+    "question": "Which framework should we choose?",
+    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+  },
+  {
+    "question": "Do you guarantee better rankings after a new website?",
+    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+  }
+];
 ---
-
-<MainLayout
-  title="SvelteKit Development Philippines | Bright Forge SEO"
-  description="Expert SvelteKit Development Philippines services from Bright Forge SEO. Build ultra-fast web apps with minimal runtime overhead. Contact us today."
->
-  <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-bolt"
-    badgeText="SvelteKit Experts"
-    title="SvelteKit Development Philippines"
-    breadcrumbCurrent="SvelteKit Development"
-  >
-    <Fragment slot="story">
-      <p>Ultra-fast, reactive, and efficient web experiences built with SvelteKit.</p>
-
-      <p>At Bright Forge SEO, we specialize in SvelteKit development that writes highly optimized vanilla JavaScript. Get blazing-fast performance with minimal bundle sizes and superior developer experience.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Build with SvelteKit" />
-      <ButtonSecondary href="#approach" text="See Our Process" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="technical-icon-grid">
-          <div class="tech-icon"><i class="fas fa-bolt"></i></div>
-          <div class="tech-icon"><i class="fas fa-feather-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-code"></i></div>
-          <div class="tech-icon"><i class="fas fa-rocket"></i></div>
-        </div>
-      </div>
-    </Fragment>
-  </Hero>
-
-  <!-- Why Choose Us -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Why Choose Our SvelteKit Development Services</h2>
-        <p class="text-xl text-[#d0d4e8]">The power of compilation over runtime overhead</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="fas fa-feather-alt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">No Virtual DOM</h3>
-          <p class="text-[#d0d4e8]">Write less code, do more. Svelte compiles components to efficient JavaScript that updates the DOM directly -no runtime overhead.</p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="fas fa-tachometer-alt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Ultra-Fast Performance</h3>
-          <p class="text-[#d0d4e8]">Compiler-based architecture means your app runs faster with minimal JavaScript payload. Lightning-fast load times and smooth interactions.</p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="fas fa-route"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Built-in Routing</h3>
-          <p class="text-[#d0d4e8]">File-based routing with layouts, nested routes, and server-side rendering out of the box. No additional router library needed.</p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="fas fa-layer-group"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Progressive Enhancement</h3>
-          <p class="text-[#d0d4e8]">Apps work without JavaScript and progressively enhance when it's available. Better accessibility and resilience.</p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">SEO-Optimized</h3>
-          <p class="text-[#d0d4e8]">Server-side rendering, static generation, and meta tag management ensure your SvelteKit app ranks well in search engines.</p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="fas fa-weight-hanging"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Small Bundle Size</h3>
-          <p class="text-[#d0d4e8]">Ship dramatically less JavaScript than other frameworks. Your users get faster load times and better mobile performance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Approach with SvelteKit -->
-  <section id="approach" class="py-20 bg-brand-bg">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Our Approach with SvelteKit</h2>
-        <p class="text-xl text-[#d0d4e8]">How we build blazing-fast SvelteKit applications</p>
-      </div>
-
-      <div class="space-y-8 max-w-4xl mx-auto">
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-puzzle-piece"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Component Architecture</h3>
-            <p>We design efficient, reactive components that leverage Svelte's compiler to produce the smallest possible JavaScript bundles.</p>
-            <div class="feature-benefit"><i class="fas fa-bolt" style="color:#f0622a"></i> Minimal JavaScript</div>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-server"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Rendering Strategy</h3>
-            <p>We implement the optimal mix of SSR, SSG, and CSR for each route based on your content and performance requirements.</p>
-            <div class="feature-benefit"><i class="fas fa-bullseye" style="color:#f0622a"></i> Optimized Delivery</div>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-layer-group"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Progressive Enhancement</h3>
-            <p>Build apps that work without JavaScript and progressively enhance with interactivity, ensuring accessibility and resilience.</p>
-            <div class="feature-benefit"><i class="fas fa-check" style="color:#f0622a"></i> Better Accessibility</div>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-tachometer-alt"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Performance Optimization</h3>
-            <p>Leverage Svelte's reactivity system, code splitting, and preloading strategies to achieve exceptional performance scores.</p>
-            <div class="feature-benefit"><i class="fas fa-rocket" style="color:#f0622a"></i> Perfect Scores</div>
-          </div>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon-large">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <div class="feature-content">
-            <h3>Deployment & Scaling</h3>
-            <p>Deploy to Vercel, Netlify, or any Node.js environment with optimal configurations for edge delivery and performance.</p>
-            <div class="feature-benefit"><i class="fas fa-cloud" style="color:#f0622a"></i> Edge Optimized</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Example Use Cases -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Example Use Cases</h2>
-        <p class="text-xl text-[#d0d4e8]">Perfect applications for SvelteKit</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-rocket text-brand-accent mr-3"></i>
-            High-Performance Websites
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Marketing sites, portfolios, and landing pages with perfect Lighthouse scores and instant page loads.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Minimal JavaScript for faster load times</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Static generation for maximum speed</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Built-in image optimization</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-desktop text-brand-accent mr-3"></i>
-            Interactive Web Apps
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Dashboards, admin panels, and data visualization tools with smooth, reactive interfaces.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Reactive state management built-in</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Real-time data updates</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Smooth animations and transitions</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-mobile-alt text-brand-accent mr-3"></i>
-            Progressive Web Apps (PWAs)
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Offline-capable applications with native-like experiences and excellent mobile performance.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Service worker integration</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Offline functionality</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>App-like user experience</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-file-alt text-brand-accent mr-3"></i>
-            Content-Driven Sites
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Blogs, documentation, and content platforms with excellent SEO and fast navigation.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>MDX/Markdown support</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Dynamic routing for content</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>SEO-optimized by default</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Back to Hub CTA -->
-  <section class="py-16" style="background: #0d0f1a;">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-white" style="font-family: 'Outfit', sans-serif;">Explore Our Other Development Services</h2>
-      <p class="text-xl mb-8" style="color: rgba(255,255,255,0.7);">We specialize in multiple modern frameworks to meet your specific needs.</p>
-      <a href="/development/" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-all" style="background: linear-gradient(135deg, rgba(240,98,42,0.1), rgba(240,98,42,0.05)); border: 1px solid rgba(240,98,42,0.15); color: #f0622a;">
-        <i class="fas fa-arrow-left"></i>
-        View All Development Services
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <ContactSection />
-
-  <Footer slot="footer" />
+<MainLayout title="SvelteKit Development Philippines | Bright Forge" description="SvelteKit development for fast web apps and content-led sites that need careful SEO planning, clean routing and low front-end bloat." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"SvelteKit",url:canonical}]} faqs={faqs}>
+<LegacyHeader slot="header" />
+<Hero title="SvelteKit Development Services" breadcrumbCurrent="SvelteKit">
+<Fragment slot="story"><p class="hero-subtitle">SvelteKit builds for fast, lean sites where performance and developer experience both matter.</p><p>SvelteKit can produce fast, elegant sites, but the SEO value still depends on routing, content structure, metadata, internal links and launch QA.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
+</Hero>
+<main class="dev-page">
+<section><div class="page-container two-column"><div><p class="eyebrow">Audit finding</p><h2>The old SvelteKit page focused too much on speed alone</h2><p>Speed matters, but it is not the whole SEO story. Buyers need to know how the build handles content, routes, schema, tracking and migration risk.</p><p>The rewrite connects SvelteKit to practical SEO implementation and safer launch checks.</p></div><aside class="panel"><h3>What this page now proves</h3><p>The page now explains when the stack is suitable, what SEO risks need controlling and how the work is QA checked before launch.</p></aside></div></section>
+<section id="checks"><div class="page-container"><p class="eyebrow">SEO-first development</p><h2>SvelteKit development should pair speed with search clarity</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container"><p class="eyebrow">Process</p><h2>How we build without creating SEO debt</h2><div class="grid process">{process.map((item,index)=>(<article class="card"><span>{String(index+1).padStart(2,"0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where sveltekit has a clear role</h2><p>This suits fast marketing sites, interactive content projects, lean applications and rebuilds where performance matters but SEO cannot be compromised.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the stack around the job, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>SvelteKit development questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Considering SvelteKit for a faster site?</h2><p>We can review your goals, current SEO risk and content needs before recommending SvelteKit or a safer alternative.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+</main><Footer slot="footer"/>
 </MainLayout>
 
 <style>
-/* Page-specific visual styles for icon grid */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.technical-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.tech-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-.tech-icon:nth-child(even) {
-  animation-delay: -2s;
-}
-
-.tech-icon:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.tech-icon i {
-  font-size: 1.75rem;
-  color: white;
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@media (max-width: 768px) {
-  .technical-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .tech-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Modern Tech Card Design */
-.tech-card {
-  position: relative;
-  background: #131627;
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.07);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.tech-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.tech-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
-  border-color: #f0622a;
-}
-
-.tech-card .tech-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
-  transition: all 0.3s ease;
-}
-
-.tech-card:hover .tech-icon {
-  transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
-}
-
-.tech-card .tech-icon i {
-  font-size: 2rem;
-  color: white;
-}
-
-.tech-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-}
-
-.tech-card p {
-  color: #e8eaf2;
-  line-height: 1.7;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-/* Modern Feature Item Design */
-.feature-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: start;
-  background: #131627;
-  padding: 2.5rem;
-  border-radius: 20px;
-  border: 2px solid rgba(255,255,255,0.07);
-  transition: all 0.4s ease;
-  overflow: hidden;
-}
-
-.feature-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.feature-item:hover::before {
-  opacity: 1;
-}
-
-.feature-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.3);
-}
-
-.feature-icon-large {
-  width: 90px;
-  height: 90px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.25rem;
-  color: white;
-  flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
-  transition: all 0.4s ease;
-}
-
-.feature-item:hover .feature-icon-large {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
-}
-
-.feature-content {
-  padding-top: 0.5rem;
-}
-
-.feature-content h3 {
-  font-size: 1.625rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-  line-height: 1.3;
-}
-
-.feature-content p {
-  color: #e8eaf2;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.feature-benefit {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(255, 107, 53, 0.1));
-  color: #f0622a;
-  padding: 0.625rem 1.25rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: 1px solid rgba(249, 115, 22, 0.2);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover .feature-benefit {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  border-color: transparent;
-  transform: translateX(5px);
-}
-
-@media (max-width: 768px) {
-  .feature-item {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .feature-icon-large {
-    margin: 0 auto;
-  }
-
-  .feature-content {
-    padding-top: 0;
-  }
-}
+.dev-page{background:#0d0f1a;color:#fff}.page-container{width:min(100% - 40px,1120px);margin:0 auto}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}.hero-proof article,.panel,.card,.faq-item,.cta-card,.link-grid a{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:24px;box-shadow:0 18px 48px rgba(0,0,0,.18)}.hero-proof article,.card,.panel,.link-grid a{padding:24px}.hero-proof strong,.link-grid span{display:block;color:#fff;font-weight:900;margin-bottom:8px}.hero-proof span{color:rgba(255,255,255,.66);line-height:1.5}.dev-page section{padding:78px 0;content-visibility:visible!important}.dev-page section:nth-child(even){background:#111421}.eyebrow{display:block;color:#f0622a;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}h2{color:#fff;font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 22px}h3{color:#fff;font-size:1.16rem;margin:0 0 10px}p,li{color:rgba(255,255,255,.74);font-size:1.02rem;line-height:1.72}a{color:#f0622a}.two-column,.faq-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,5vw,60px);align-items:start}.grid,.link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.process span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;color:#fff;background:rgba(240,98,42,.25);font-weight:900;margin-bottom:18px}.link-grid a{color:inherit;text-decoration:none}.faq-list{display:grid;gap:14px}.faq-item{overflow:hidden}.faq-item summary{cursor:pointer;padding:22px 24px;color:#fff;font-weight:900;list-style:none}.faq-item summary::-webkit-details-marker{display:none}.faq-item p{padding:0 24px 24px;margin:0}.cta-card{text-align:center;padding:clamp(36px,6vw,68px);background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045))}.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}@media(max-width:920px){.hero-proof,.two-column,.grid,.link-grid,.faq-layout{grid-template-columns:1fr}}
 </style>
+

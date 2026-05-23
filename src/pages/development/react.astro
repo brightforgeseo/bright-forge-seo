@@ -1,517 +1,122 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import LegacyHeader from '../../components/LegacyHeader.astro';
-import Footer from '../../components/Footer.astro';
-import ContactSection from '../../components/ContactSection.astro';
-import Hero from '../../components/Hero.astro';
-import ButtonPrimary from '../../components/ButtonPrimary.astro';
-import ButtonSecondary from '../../components/ButtonSecondary.astro';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
+const canonical="https://brightforge.com.ph/development/react/";
+const proof=[
+  {
+    "title": "SEO before design polish",
+    "text": "We protect crawlability, metadata, content structure and redirects before visual extras."
+  },
+  {
+    "title": "Performance matters",
+    "text": "Fast pages help users and reduce technical drag before SEO work even starts."
+  },
+  {
+    "title": "Human QA",
+    "text": "Every build still needs manual checks for forms, schema, indexing and conversion paths."
+  }
+];
+const checks=[
+  {
+    "title": "Crawlable pages",
+    "text": "Search engines need clean URLs, internal links, server-rendered content where needed and sensible indexation controls."
+  },
+  {
+    "title": "Content structure",
+    "text": "Pages need headings, body copy, proof, FAQs and conversion points that support SEO rather than sit behind visual components."
+  },
+  {
+    "title": "Performance and Core Web Vitals",
+    "text": "We reduce bloat, unnecessary scripts, layout shifts and render delays that weaken user experience."
+  },
+  {
+    "title": "Redirect and migration safety",
+    "text": "When replacing an old site, URL mapping and launch QA matter more than a prettier homepage."
+  },
+  {
+    "title": "Schema and metadata",
+    "text": "Titles, descriptions, canonical tags, structured data and Open Graph basics should be built in, not bolted on later."
+  },
+  {
+    "title": "Analytics and forms",
+    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+  }
+];
+const process=[
+  {
+    "title": "Audit",
+    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+  },
+  {
+    "title": "Plan",
+    "text": "Map templates, URLs, content sections, redirects, schema and development priorities."
+  },
+  {
+    "title": "Build",
+    "text": "Develop the site around speed, accessibility, crawlability and editorial control."
+  },
+  {
+    "title": "QA",
+    "text": "Test pages, metadata, forms, mobile layouts, redirects, schema and indexation settings."
+  },
+  {
+    "title": "Launch",
+    "text": "Deploy with a launch checklist, Search Console monitoring and post-launch crawl checks."
+  },
+  {
+    "title": "Improve",
+    "text": "Use ranking, crawl and conversion data to refine pages after launch."
+  }
+];
+const faqs=[
+  {
+    "question": "Is React good for SEO?",
+    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+  },
+  {
+    "question": "Do we need to rebuild our whole website?",
+    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+  },
+  {
+    "question": "How do you protect rankings during a rebuild?",
+    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+  },
+  {
+    "question": "Can your team work with our existing developer?",
+    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+  },
+  {
+    "question": "Which framework should we choose?",
+    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+  },
+  {
+    "question": "Do you guarantee better rankings after a new website?",
+    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+  }
+];
 ---
-
-<MainLayout
-  title="React Development Philippines | Bright Forge SEO"
-  description="Expert React Development Philippines services for fast, scalable web applications. We build SEO-optimized, component-based solutions that engage users."
->
-  <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fab fa-react"
-    badgeText="React Experts"
-    title="React Development Philippines"
-    breadcrumbCurrent="React Development"
-  >
-    <Fragment slot="story">
-      <p>Fast, interactive, and scalable frontends powered by React.</p>
-
-      <p>At Bright Forge SEO, we specialize in React development Philippines that combines cutting-edge technology with SEO best practices. From simple landing pages to complex web applications, we deliver solutions that engage users and rank well.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Start Your React Project" />
-      <ButtonSecondary href="#approach" text="Our React Approach" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="technical-icon-grid">
-          <div class="tech-icon"><i class="fab fa-react"></i></div>
-          <div class="tech-icon"><i class="fas fa-code"></i></div>
-          <div class="tech-icon"><i class="fas fa-layer-group"></i></div>
-          <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-tachometer-alt"></i></div>
-          <div class="tech-icon"><i class="fas fa-cogs"></i></div>
-        </div>
-      </div>
-    </Fragment>
-  </Hero>
-
-  <!-- Why Choose Us -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Why Choose Our React Development Services</h2>
-        <p class="text-xl text-[#d0d4e8]">Expertise that delivers results</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-puzzle-piece"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Component-Based Architecture</h3>
-          <p class="text-[#d0d4e8]">Reusable, modular components that make your application maintainable, scalable, and easy to update.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Lightning-Fast Performance</h3>
-          <p class="text-[#d0d4e8]">Virtual DOM and optimized rendering ensure smooth, responsive user experiences even with complex UIs.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-database"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Advanced State Management</h3>
-          <p class="text-[#d0d4e8]">Redux, Zustand, or Context API -we implement the right state management solution for your needs.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Mobile-Responsive Design</h3>
-          <p class="text-[#d0d4e8]">Every React application we build works flawlessly across all devices and screen sizes.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">SEO-Optimized</h3>
-          <p class="text-[#d0d4e8]">Server-side rendering (SSR) and proper meta tags ensure your React app ranks well in search engines.</p>
-        </div>
-
-        <div class="bg-[#131627] border-2 border-[rgba(255,255,255,0.07)] rounded-lg p-8 hover:border-brand-accent hover:shadow-xl transition-all">
-          <div class="text-brand-accent text-4xl mb-4">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">Secure & Tested</h3>
-          <p class="text-[#d0d4e8]">Comprehensive testing, security best practices, and clean code that you can trust.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Approach with React -->
-  <section id="approach" class="py-20 bg-brand-bg">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Our Approach with React</h2>
-        <p class="text-xl text-[#d0d4e8]">How we build world-class React applications</p>
-      </div>
-
-      <div class="space-y-8 max-w-4xl mx-auto">
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">01</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Discovery & Planning</h3>
-              <p class="text-[#d0d4e8]">We start by understanding your business goals, user needs, and technical requirements. This shapes our architecture and component design.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">02</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Component Architecture</h3>
-              <p class="text-[#d0d4e8]">We design a scalable component hierarchy, breaking down the UI into reusable, testable pieces that follow React best practices.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">03</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Development & Testing</h3>
-              <p class="text-[#d0d4e8]">We build with TypeScript for type safety, implement unit and integration tests, and follow strict code quality standards.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">04</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Performance Optimization</h3>
-              <p class="text-[#d0d4e8]">Code splitting, lazy loading, memoization, and other techniques ensure your app loads fast and runs smoothly.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#131627] rounded-lg p-8 border-l-4 border-brand-accent shadow-lg">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl font-bold text-brand-accent">05</div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Deployment & Support</h3>
-              <p class="text-[#d0d4e8]">We deploy to modern hosting platforms, set up CI/CD pipelines, and provide ongoing maintenance and support.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Example Use Cases -->
-  <section class="py-20 bg-[#131627]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Example Use Cases</h2>
-        <p class="text-xl text-[#d0d4e8]">What we can build with React</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-shopping-cart text-brand-accent mr-3"></i>
-            E-Commerce Platforms
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Build feature-rich online stores with real-time inventory, shopping carts, payment integration, and admin dashboards.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Product catalogs with filtering and search</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Secure checkout and payment processing</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>User accounts and order tracking</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-chart-line text-brand-accent mr-3"></i>
-            SaaS Dashboards
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Create data-rich dashboards and admin panels with real-time updates, charts, and complex data visualization.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Interactive charts and analytics</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Role-based access control</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Real-time data synchronization</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-comments text-brand-accent mr-3"></i>
-            Social Platforms
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Develop social features like feeds, messaging, notifications, and user profiles with real-time interactions.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Real-time messaging and notifications</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>User-generated content feeds</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Social authentication integration</li>
-          </ul>
-        </div>
-
-        <div class="bg-brand-bg rounded-lg p-8">
-          <h3 class="text-2xl font-bold mb-4">
-            <i class="fas fa-graduation-cap text-brand-accent mr-3"></i>
-            Learning Management Systems
-          </h3>
-          <p class="text-[#d0d4e8] mb-4">Build interactive educational platforms with courses, quizzes, progress tracking, and student management.</p>
-          <ul class="space-y-2 text-[#d0d4e8]">
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Video lessons and interactive content</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Progress tracking and certificates</li>
-            <li><i class="fas fa-check text-brand-accent mr-2"></i>Quizzes and assessments</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Back to Hub CTA -->
-  <section class="py-16" style="background: #0d0f1a;">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-white" style="font-family: 'Outfit', sans-serif;">Explore Our Other Development Services</h2>
-      <p class="text-xl mb-8" style="color: rgba(255,255,255,0.7);">We specialize in multiple modern frameworks to meet your specific needs.</p>
-      <a href="/development/" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-all" style="background: linear-gradient(135deg, rgba(240,98,42,0.1), rgba(240,98,42,0.05)); border: 1px solid rgba(240,98,42,0.15); color: #f0622a;">
-        <i class="fas fa-arrow-left"></i>
-        View All Development Services
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <ContactSection />
-
-  <Footer slot="footer" />
+<MainLayout title="React Development Philippines | Bright Forge" description="React development for interactive websites and applications that still need SEO planning, performance control and clean user journeys." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"React",url:canonical}]} faqs={faqs}>
+<LegacyHeader slot="header" />
+<Hero title="React Development Services" breadcrumbCurrent="React">
+<Fragment slot="story"><p class="hero-subtitle">React builds for interfaces that need interactivity without turning SEO into an afterthought.</p><p>React is useful when the interface needs real interactivity, but it needs careful planning around rendering, routing, metadata and performance if organic search matters.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
+</Hero>
+<main class="dev-page">
+<section><div class="page-container two-column"><div><p class="eyebrow">Audit finding</p><h2>The old React page did not separate app logic from SEO risk</h2><p>Not every website needs React. When it is the right fit, the build still needs crawlable content, sensible routes, performance control and conversion-focused templates.</p><p>The rewrite frames React as an implementation choice with SEO guardrails, not a universal answer.</p></div><aside class="panel"><h3>What this page now proves</h3><p>The page now explains when the stack is suitable, what SEO risks need controlling and how the work is QA checked before launch.</p></aside></div></section>
+<section id="checks"><div class="page-container"><p class="eyebrow">SEO-first development</p><h2>React development needs SEO guardrails from the start</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container"><p class="eyebrow">Process</p><h2>How we build without creating SEO debt</h2><div class="grid process">{process.map((item,index)=>(<article class="card"><span>{String(index+1).padStart(2,"0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where react has a clear role</h2><p>This suits interactive tools, portals, dashboards, calculators and application interfaces where user experience needs more than static pages.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the stack around the job, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>React development questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Need React without making SEO harder?</h2><p>We can review whether React is the right fit and where server rendering, static content or a simpler stack would be safer.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+</main><Footer slot="footer"/>
 </MainLayout>
 
 <style>
-/********************
-  CSS Variables & Reset
-*********************/
-:root {
-  --brand-accent: #f0622a;
-  --brand-dark: #1E2022;
-  --brand-soft: #52575D;
-  --brand-light: #0d0f1a;
-  --gradient-primary: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-  --gradient-secondary: linear-gradient(135deg, #d4510e 0%, #f0622a 100%);
-  --gradient-accent: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
-}
-
-/********************
-  Technical Icon Grid (Hero Visual)
-*********************/
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.technical-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.tech-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-.tech-icon:nth-child(even) {
-  animation-delay: -2s;
-}
-
-.tech-icon:hover {
-  transform: translateY(-5px) scale(1.1);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.tech-icon i {
-  font-size: 1.75rem;
-  color: white;
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@media (max-width: 768px) {
-  .technical-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .tech-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .tech-icon i {
-    font-size: 1.5rem;
-  }
-}
-
-/********************
-  Tech Card Section (Modern Tool Cards)
-*********************/
-.tech-card {
-  position: relative;
-  background: #131627;
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.07);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.tech-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-}
-
-.tech-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
-  border-color: #f0622a;
-}
-
-.tech-card .tech-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
-  transition: all 0.3s ease;
-}
-
-.tech-card:hover .tech-icon {
-  transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
-}
-
-.tech-card .tech-icon i {
-  font-size: 2rem;
-  color: white;
-}
-
-.tech-card h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-}
-
-.tech-card p {
-  color: #e8eaf2;
-  line-height: 1.7;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-/********************
-  Feature Item Section (Enhanced Design)
-*********************/
-.feature-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
-  align-items: start;
-  background: #131627;
-  padding: 2.5rem;
-  border-radius: 20px;
-  border: 2px solid rgba(255,255,255,0.07);
-  transition: all 0.4s ease;
-  overflow: hidden;
-}
-
-.feature-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.feature-item:hover::before {
-  opacity: 1;
-}
-
-.feature-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.3);
-}
-
-.feature-icon-large {
-  width: 90px;
-  height: 90px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.25rem;
-  color: white;
-  flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
-  transition: all 0.4s ease;
-}
-
-.feature-item:hover .feature-icon-large {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
-}
-
-.feature-content {
-  padding-top: 0.5rem;
-}
-
-.feature-content h3 {
-  font-size: 1.625rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-  line-height: 1.3;
-}
-
-.feature-content p {
-  color: #e8eaf2;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.feature-benefit {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(255, 107, 53, 0.1));
-  color: #f0622a;
-  padding: 0.625rem 1.25rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: 1px solid rgba(249, 115, 22, 0.2);
-  transition: all 0.3s ease;
-}
-
-.feature-item:hover .feature-benefit {
-  background: linear-gradient(135deg, #f0622a, #d4510e);
-  color: white;
-  border-color: transparent;
-  transform: translateX(5px);
-}
-
-@media (max-width: 768px) {
-  .feature-item {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .feature-icon-large {
-    margin: 0 auto;
-  }
-
-  .feature-content {
-    padding-top: 0;
-  }
-}
+.dev-page{background:#0d0f1a;color:#fff}.page-container{width:min(100% - 40px,1120px);margin:0 auto}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}.hero-proof article,.panel,.card,.faq-item,.cta-card,.link-grid a{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);border-radius:24px;box-shadow:0 18px 48px rgba(0,0,0,.18)}.hero-proof article,.card,.panel,.link-grid a{padding:24px}.hero-proof strong,.link-grid span{display:block;color:#fff;font-weight:900;margin-bottom:8px}.hero-proof span{color:rgba(255,255,255,.66);line-height:1.5}.dev-page section{padding:78px 0;content-visibility:visible!important}.dev-page section:nth-child(even){background:#111421}.eyebrow{display:block;color:#f0622a;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}h2{color:#fff;font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 22px}h3{color:#fff;font-size:1.16rem;margin:0 0 10px}p,li{color:rgba(255,255,255,.74);font-size:1.02rem;line-height:1.72}a{color:#f0622a}.two-column,.faq-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,5vw,60px);align-items:start}.grid,.link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.process span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;color:#fff;background:rgba(240,98,42,.25);font-weight:900;margin-bottom:18px}.link-grid a{color:inherit;text-decoration:none}.faq-list{display:grid;gap:14px}.faq-item{overflow:hidden}.faq-item summary{cursor:pointer;padding:22px 24px;color:#fff;font-weight:900;list-style:none}.faq-item summary::-webkit-details-marker{display:none}.faq-item p{padding:0 24px 24px;margin:0}.cta-card{text-align:center;padding:clamp(36px,6vw,68px);background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045))}.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}@media(max-width:920px){.hero-proof,.two-column,.grid,.link-grid,.faq-layout{grid-template-columns:1fr}}
 </style>
+

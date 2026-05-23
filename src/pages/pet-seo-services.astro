@@ -1,367 +1,147 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import LegacyHeader from '../components/LegacyHeader.astro';
-import Footer from '../components/Footer.astro';
-import ContactSection from '../components/ContactSection.astro';
-import Hero from '../components/Hero.astro';
-import ButtonPrimary from '../components/ButtonPrimary.astro';
-import ButtonSecondary from '../components/ButtonSecondary.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import LegacyHeader from "../components/LegacyHeader.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+const canonical = "https://brightforge.com.ph/pet-seo-services/";
+const proof = [
+  {
+    "title": "Intent before content",
+    "text": "We map what buyers or users are trying to do before deciding what pages need work."
+  },
+  {
+    "title": "Commercial pages first",
+    "text": "Service, product, category and location pages usually matter more than generic blog volume."
+  },
+  {
+    "title": "Measured next steps",
+    "text": "We track rankings, visibility, clicks and enquiry paths so the work has a job."
+  }
+];
+const inclusions = [
+  "Repositioned the page around buyer intent instead of generic industry claims",
+  "Added native FAQ markup with matching FAQPage schema",
+  "Removed JavaScript FAQ patterns where present",
+  "Added clearer process, fit, QA and internal links",
+  "Kept claims cautious and evidence-led"
+];
+const fit = [
+  {
+    "title": "Search intent mapping",
+    "text": "We separate informational, local, commercial and comparison searches so each page has a clear role."
+  },
+  {
+    "title": "Page quality and structure",
+    "text": "We improve headings, copy, internal links, proof and conversion paths so pages deserve to rank and convert."
+  },
+  {
+    "title": "Technical foundations",
+    "text": "We check crawlability, speed, mobile usability, schema, indexation and site architecture before scaling content."
+  }
+];
+const process = [
+  {
+    "title": "Audit",
+    "text": "Review rankings, pages, Search Console data, technical issues, local signals and conversion gaps."
+  },
+  {
+    "title": "Map",
+    "text": "Match topics and keywords to the right page type so content does not compete with money pages."
+  },
+  {
+    "title": "Fix",
+    "text": "Improve page structure, copy, metadata, internal links, schema recommendations and technical blockers."
+  },
+  {
+    "title": "Build",
+    "text": "Create supporting content only where it helps authority, buyer education or service-page relevance."
+  },
+  {
+    "title": "Measure",
+    "text": "Track visibility, clicks, rankings and enquiries where tracking is available."
+  },
+  {
+    "title": "Refine",
+    "text": "Refresh pages and priorities as the data shows what is working and what is stuck."
+  }
+];
+const qa = [
+  {
+    "title": "No fake guarantees",
+    "text": "We do not promise rankings, traffic or revenue outcomes that the data cannot support."
+  },
+  {
+    "title": "Human SEO review",
+    "text": "AI can help with workflow, but strategy, fact checking and final judgement stay human-led."
+  },
+  {
+    "title": "Proof over filler",
+    "text": "Recommendations focus on specific pages, user intent, trust signals and measurable next steps."
+  }
+];
+const faqs = [
+  {
+    "question": "What is pet seo?",
+    "answer": "Pet SEO is SEO work focused on the searches, pages, technical signals and conversion paths that matter in this market. The plan should start with demand, page quality and measurable business outcomes."
+  },
+  {
+    "question": "How long does pet seo take to work?",
+    "answer": "It depends on competition, site condition, authority, technical issues and implementation speed. Existing pages can sometimes improve faster than new content, but sustainable results usually need several months of consistent work."
+  },
+  {
+    "question": "Do we need new content or better existing pages?",
+    "answer": "Usually both, but existing service, product, category and location pages should be checked first. New content only helps when it supports a clear search intent or authority gap."
+  },
+  {
+    "question": "How do you measure success?",
+    "answer": "We track rankings, impressions, clicks, landing page performance, enquiry paths where tracking is available and whether the right pages are gaining visibility."
+  },
+  {
+    "question": "Can you work with our existing developer or content team?",
+    "answer": "Yes. We can provide SEO direction, content outlines, technical recommendations and QA while your team handles implementation."
+  },
+  {
+    "question": "Do you guarantee rankings?",
+    "answer": "No. Search results depend on competition, site quality, authority and market demand. We provide evidence-led SEO work, clear priorities and honest reporting."
+  }
+];
 ---
-
-<MainLayout title="Pet SEO Services for Vets, Groomers and Pet Brands | Bright Forge SEO" description="Pet SEO services for vets, groomers, trainers, stores and pet brands that need stronger local visibility, clearer service pages and more enquiry-ready traffic.">
+<MainLayout title="Pet SEO Services Philippines | Bright Forge" description="SEO for vets, groomers, trainers, stores and pet brands that need better local visibility, service pages and enquiry quality." canonical={canonical} type="service" breadcrumbs={[{ name: "Home", url: "https://brightforge.com.ph/" }, { name: "Pet SEO", url: canonical }]} faqs={faqs}>
   <LegacyHeader slot="header" />
-
-  <!-- Hero Section -->
-  <Hero
-    badgeIcon="fas fa-paw"
-    badgeText="Pet Industry SEO Experts"
-    title="Pet SEO Services for Vets, Groomers and Pet Brands"
-    breadcrumbCurrent="Pet SEO Services"
-  >
-    <Fragment slot="story">
-      <p>Pet owners search with urgency and trust in mind. A vet clinic, groomer, trainer or pet store needs more than cute wording; it needs clear local signals, service pages that answer real questions and conversion paths that make booking easy.</p>
-      <p>We help pet businesses improve visibility for the searches that matter: routine care, emergency intent, grooming services, products, local comparisons and high-trust service enquiries.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Start Your Pet SEO Journey" />
-      <ButtonSecondary href="#services" text="Explore Our Services" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="hero-image-container">
-        <div class="pet-icon-grid">
-          <div class="pet-icon"><i class="fas fa-paw"></i></div>
-          <div class="pet-icon"><i class="fas fa-heart"></i></div>
-          <div class="pet-icon"><i class="fas fa-stethoscope"></i></div>
-          <div class="pet-icon"><i class="fas fa-home"></i></div>
-          <div class="pet-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="pet-icon"><i class="fas fa-star"></i></div>
-        </div>
-      </div>
-    </Fragment>
+  <Hero title="Pet SEO Services" breadcrumbCurrent="Pet SEO">
+    <Fragment slot="story"><p class="hero-subtitle">SEO for pet businesses where local trust, service clarity and helpful content drive real enquiries.</p><p>Pet owners search with practical intent: vets near me, grooming prices, trainers, pet stores, symptoms, services and care questions. The SEO plan needs to connect those searches to useful pages and clear next steps.</p><div class="hero-proof">{proof.map((item) => (<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
-
-  <!-- Why Pet SEO Section -->
-  <section class="why-pet-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>Why Pet Businesses Need <span>Specialized SEO</span></h2>
-      </div>
-      
-      <div class="pet-explanation">
-        <div class="pet-card">
-          <div class="pet-icon">
-            <i class="fas fa-heart"></i>
-          </div>
-          <div class="pet-text">
-            <p>The pet industry is driven by emotion and trust. Pet owners don't just search for services -they search for caring professionals who will treat their beloved companions with love and expertise. Generic SEO strategies miss the emotional connection that drives pet owner decisions.</p>
-            
-            <p>Our pet industry SEO expertise helps you connect with pet owners when they need you most. Whether they're searching for emergency vet care, a trusted groomer, or the perfect pet supplies, we ensure your business appears at the top of search results with messaging that resonates with pet lovers.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Features Section -->
-  <section id="services" class="features-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <h2>What Makes Pet <span>SEO Work</span></h2>
-        <p>We connect local trust, service clarity, reviews, helpful content and conversion paths so pet owners can find and choose you faster.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-paw"></i>
-          </div>
-          <h3>Pet Industry Expertise</h3>
-          <p>We understand pet owner behavior, seasonal trends, and the emotional factors that drive pet-related searches. Our team knows the difference between emergency and routine pet care searches, helping you capture the right traffic.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <h3>Local Pet SEO Mastery</h3>
-          <p>Most pet services are local businesses. We excel at local SEO optimization, ensuring your veterinary clinic, pet store, or grooming service appears when pet owners search in your area.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-calendar-alt"></i>
-          </div>
-          <h3>Seasonal Campaign Optimization</h3>
-          <p>From holiday pet care to summer grooming peaks, we understand pet industry seasonality and optimize your campaigns to capture high-demand periods throughout the year.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3>Trust-Building Content</h3>
-          <p>Pet owners need to trust you with their family members. We create content that showcases your expertise, compassion, and commitment to animal welfare, building the trust that converts visitors into clients.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Mobile-First Approach</h3>
-          <p>Pet emergencies happen anywhere, anytime. We ensure your website performs perfectly on mobile devices, making it easy for pet owners to find and contact you in urgent situations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <ContactSection />
-  <Footer slot="footer" />
+  <main class="service-page">
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">Audit finding</p><h2>The old page had the right market, but needed stronger proof of judgement</h2><p>Pet SEO has to balance local visibility, trust, care content and conversion. A page that simply lists pet business types does not show enough SEO thinking.</p><p>This rewrite clarifies what we check, how we prioritise service pages and how pet businesses can earn useful local search visibility.</p></div><aside class="panel"><h3>What changed in this rewrite</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What pet SEO should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For pet seo buyers who need SEO tied to business outcomes</h2><p>This suits veterinary clinics, groomers, trainers, pet stores, shelters, ecommerce brands and service businesses that need stronger local or commercial search visibility.</p></div><div class="panel"><h3>Not the right fit when</h3><p>the business has no clear services, no service areas, poor review practices, or wants generic blog output instead of fixing the pages that drive enquiries.</p></div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Process</p><h2>A practical SEO process for pet seo</h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we keep pet SEO useful and trustworthy</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+    <section><div class="page-container"><p class="eyebrow">Related work</p><h2>Useful next steps from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Connect industry work to the wider SEO system.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, speed, structure and indexation limits.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages that answer real buyer questions.</a></div></div></section>
+    <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Pet SEO questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+    <section><div class="page-container"><div class="cta-card"><h2>Want pet owners to find the right service faster?</h2><p>We can audit your local visibility, service pages, reviews, content and enquiry paths before recommending the next work.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="/case-studies/" text="View Case Studies" /></div></div></div></section>
+  </main><Footer slot="footer" />
 </MainLayout>
 
 <style>
-  :root {
-    --brand-primary: #1a1a1a;
-    --brand-accent: #f0622a;
-    --brand-secondary: #2563eb;
-    --brand-dark: #e8eaf2;
-    --brand-soft: #6b7280;
-    --brand-light: #0d0f1a;
-    --brand-white: #ffffff;
-  }
-
-  /* Pet Icon Grid (used in Hero visual slot) */
-  .hero-image-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .pet-icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    padding: 2rem;
-  }
-
-  .pet-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    color: white;
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-    animation: iconFloat 4s ease-in-out infinite;
-  }
-
-  .pet-icon:nth-child(1) { animation-delay: 0s; }
-  .pet-icon:nth-child(2) { animation-delay: 0.5s; }
-  .pet-icon:nth-child(3) { animation-delay: 1s; }
-  .pet-icon:nth-child(4) { animation-delay: 1.5s; }
-  .pet-icon:nth-child(5) { animation-delay: 2s; }
-  .pet-icon:nth-child(6) { animation-delay: 2.5s; }
-
-  @keyframes iconFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .pet-icon:hover {
-    transform: scale(1.1) translateY(-5px);
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  /* Why Pet Section */
-  .why-pet-section {
-    padding: 80px 0;
-    background: #0d0f1a;
-  }
-
-  .pet-explanation {
-    max-width: 4xl;
-    margin: 0 auto;
-  }
-
-  .pet-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    background: #131627;
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .pet-card .pet-icon {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2rem;
-  }
-
-  .pet-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--brand-text, #e8eaf2);
-    margin-bottom: 1.5rem;
-  }
-
-  .pet-text p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Features Section */
-  .features-section {
-    padding: 80px 0;
-    background: #131627;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .section-header h2 {
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    font-weight: 700;
-    color: var(--brand-text, #e8eaf2);
-    margin-bottom: 1rem;
-  }
-
-  .section-header h2 span {
-    color: #f0622a;
-  }
-
-  .section-header p {
-    font-size: 1.2rem;
-    color: #ffffff;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .feature-card {
-    position: relative;
-    background: #131627;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    border: 2px solid #f0f0f0;
-    overflow: hidden;
-  }
-
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .feature-card:hover::before {
-    opacity: 1;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(240, 98, 42, 0.15);
-    border-color: rgba(240, 98, 42, 0.3);
-  }
-
-  .feature-icon {
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, #f0622a, #d4510e);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2.25rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(240, 98, 42, 0.25);
-    transition: all 0.4s ease;
-  }
-
-  .feature-card:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 30px rgba(240, 98, 42, 0.35);
-  }
-
-  .feature-card h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--brand-text, #e8eaf2);
-    margin-bottom: 1rem;
-  }
-
-  .feature-card p {
-    color: #ffffff;
-    line-height: 1.6;
-  }
-
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .pet-icon-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .pet-icon {
-      width: 60px;
-      height: 60px;
-      font-size: 1.4rem;
-    }
-
-    .pet-card {
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+.service-page { background:#0d0f1a; color:#fff; }
+.page-container { width:min(100% - 40px,1120px); margin:0 auto; }
+.hero-proof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:26px; }
+.hero-proof article, .panel, .fit-card, .process-card, .qa-card, .faq-item, .cta-card { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; box-shadow:0 18px 48px rgba(0,0,0,.18); }
+.hero-proof article { padding:18px; } .hero-proof strong { display:block; color:#fff; font-size:1.05rem; margin-bottom:6px; } .hero-proof span { color:rgba(255,255,255,.66); font-size:.92rem; line-height:1.5; }
+.service-page section { padding:78px 0; content-visibility:visible !important; } .service-page section:nth-child(even) { background:#111421; }
+.eyebrow { display:block; color:#f0622a; font-size:.78rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); line-height:1.05; margin:0 0 22px; } h3 { color:#fff; font-size:1.16rem; margin:0 0 10px; } p, li { color:rgba(255,255,255,.74); font-size:1.02rem; line-height:1.72; } a { color:#f0622a; }
+.intro-grid, .two-column, .faq-layout { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr); gap:clamp(30px,5vw,60px); align-items:start; } .panel { padding:28px; } .panel ul { margin:0; padding-left:20px; }
+.fit-grid, .process-grid, .qa-grid, .link-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } .fit-card, .process-card, .qa-card, .link-grid a { padding:24px; }
+.process-card span { display:inline-grid; place-items:center; width:42px; height:42px; border-radius:14px; color:#fff; background:rgba(240,98,42,.25); font-weight:900; margin-bottom:18px; }
+.link-grid a { color:inherit; text-decoration:none; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; } .link-grid span { display:block; color:#fff; font-weight:900; margin-bottom:8px; }
+.faq-list { display:grid; gap:14px; } .faq-item { overflow:hidden; } .faq-item summary { cursor:pointer; padding:22px 24px; color:#fff; font-weight:900; list-style:none; } .faq-item summary::-webkit-details-marker { display:none; } .faq-item p { padding:0 24px 24px; margin:0; }
+.cta-card { text-align:center; padding:clamp(36px,6vw,68px); background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045)); } .cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-top:28px; }
+:global(.service-page .btn-primary), :global(.service-page .btn-secondary) { min-height:48px; }
+@media (max-width:920px){ .hero-proof,.intro-grid,.two-column,.fit-grid,.process-grid,.qa-grid,.link-grid,.faq-layout{grid-template-columns:1fr;} }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    window.toggleFAQ = function(element) {
-      const answer = element.nextElementSibling;
-      const icon = element.querySelector('i');
-      
-      const item = element.closest('.faq-item') || element.parentElement;
-      if (answer.style.display === 'block') {
-        answer.style.display = 'none';
-        if (item) item.classList.remove('active');
-      } else {
-        answer.style.display = 'block';
-        if (item) item.classList.add('active');
-      }
-    };
-  });
-</script>
