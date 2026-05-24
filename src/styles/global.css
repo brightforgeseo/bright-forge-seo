@@ -494,6 +494,14 @@ html body .ben-faq .faq-list details.faq-item.faq-item.faq-item[open] summary {
   width: 100% !important;
 }
 
+html body .faq-section .faq-list details.faq-item.faq-item.faq-item[open],
+html body .faq-section .faq-grid details.faq-item.faq-item.faq-item[open],
+html body .faq-section .faq-container details.faq-item.faq-item.faq-item[open],
+html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item[open],
+html body .ben-faq .faq-list details.faq-item.faq-item.faq-item[open] {
+  border-color: rgba(255, 122, 69, 0.28) !important;
+}
+
 html body .faq-section .faq-list details.faq-item.faq-item.faq-item > p,
 html body .faq-section .faq-grid details.faq-item.faq-item.faq-item > p,
 html body .faq-section .faq-container details.faq-item.faq-item.faq-item > p,
@@ -503,7 +511,7 @@ html body .ben-faq .faq-list details.faq-item.faq-item.faq-item > p {
   font-size: 1rem !important;
   line-height: 1.7 !important;
   margin: 0 !important;
-  padding: 0 1.5rem 1.5rem !important;
+  padding: 0.15rem 1.5rem 1.5rem !important;
 }
 
 :where(.faq-item:hover, .faq-list details:hover, .faq-details:hover),
@@ -575,7 +583,11 @@ body .faq-layout .faq-item:hover {
 }
 
 :where(.faq-list details > p, .faq-item > .faq-answer, .faq-item > .faq-content) {
-  padding: 0 1.5rem 1.5rem !important;
+  padding: 0.15rem 1.5rem 1.5rem !important;
+}
+
+:where(.faq-item[open], .faq-list details[open], .faq-container details[open], .faq-grid details[open]) {
+  border-color: rgba(255, 122, 69, 0.28) !important;
 }
 
 :where(.faq-item p + p, .faq-answer p + p, .faq-content p + p) {
