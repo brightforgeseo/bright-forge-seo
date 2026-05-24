@@ -1,0 +1,181 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import LegacyHeader from "./LegacyHeader.astro";
+import Footer from "./Footer.astro";
+import Hero from "./Hero.astro";
+import ButtonPrimary from "./ButtonPrimary.astro";
+import ButtonSecondary from "./ButtonSecondary.astro";
+
+const { data } = Astro.props;
+const image = data.image || "/images/header-logo-360w.webp";
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": data.schemaHeadline || data.title,
+  "description": data.description,
+  "image": `https://brightforge.com.ph${image}`,
+  "author": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "url": "https://brightforge.com.ph/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bright Forge SEO",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://brightforge.com.ph/images/header-logo-360w.webp"
+    }
+  },
+  "mainEntityOfPage": data.canonical,
+  "articleSection": "AI Search Case Studies",
+  "about": data.tags
+};
+---
+
+<MainLayout
+  title={data.metaTitle}
+  description={data.description}
+  canonical={data.canonical}
+  image={image}
+  type="article"
+  author={{ name: "Bright Forge SEO", url: "https://brightforge.com.ph/" }}
+  article={{ section: "AI Search Case Studies", tags: data.tags }}
+  breadcrumbs={[
+    { name: "Home", url: "https://brightforge.com.ph/" },
+    { name: "Case Studies", url: "https://brightforge.com.ph/case-studies/" },
+    { name: data.breadcrumb, url: data.canonical }
+  ]}
+  faqs={data.faqs}
+>
+  <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(articleSchema)} /></Fragment>
+  <LegacyHeader slot="header" />
+  <Hero title={data.title} breadcrumbCurrent={data.breadcrumb}>
+    <Fragment slot="story">
+      <div class="case-meta">{data.meta.map((item) => <span>{item}</span>)}</div>
+      <p class="hero-subtitle">{data.heroSubtitle}</p>
+      <p>{data.heroCopy}</p>
+    </Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="#results" text="View AI Results" /><ButtonSecondary href="/ai-search-optimization-services-philippines/" text="AI Search SEO" /></Fragment>
+  </Hero>
+
+  <main class="case-study-page ai-case-study-page">
+    <section class="proof-strip">
+      <div class="case-container">
+        <div class="proof-grid">{data.metrics.map((metric) => (<article class="proof-card"><span class="proof-label">{metric.label}</span><strong>{metric.change}</strong><span>{metric.context}</span></article>))}</div>
+      </div>
+    </section>
+
+    <section class="overview-section">
+      <div class="case-container overview-grid">
+        <div>
+          <p class="eyebrow">The short version</p>
+          <h2>{data.shortTitle}</h2>
+          {data.overview.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <aside class="case-summary-card"><h3>Campaign snapshot</h3><dl>{data.snapshot.map((item) => (<div><dt>{item.label}</dt><dd>{item.value}</dd></div>))}</dl></aside>
+      </div>
+    </section>
+
+    <section class="visual-proof-section">
+      <div class="case-container ai-proof-panel">
+        <div>
+          <p class="eyebrow">AI search evidence</p>
+          <h2>{data.evidenceTitle}</h2>
+          <p>{data.evidenceCopy}</p>
+        </div>
+        <div class="ai-channel-grid">{data.channels.map((channel) => (<article><span>{channel.label}</span><strong>{channel.value}</strong><p>{channel.note}</p></article>))}</div>
+      </div>
+    </section>
+
+    <section class="content-section" id="challenge">
+      <div class="case-container two-column">
+        <div><p class="eyebrow">Starting problem</p><h2>{data.problemTitle}</h2></div>
+        <div>{data.problem.map((paragraph) => <p>{paragraph}</p>)}</div>
+      </div>
+    </section>
+
+    <section class="constraints-section">
+      <div class="case-container"><p class="eyebrow">Constraints</p><h2>Why this was not a simple AI traffic story</h2><div class="constraint-grid">{data.constraints.map((item) => (<article><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
+    </section>
+
+    <section class="work-section" id="work">
+      <div class="case-container"><p class="eyebrow">What changed</p><h2>{data.workTitle}</h2><div class="work-grid">{data.workstreams.map((item, index) => (<article class="work-item"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
+    </section>
+
+    <section class="results-section" id="results">
+      <div class="case-container"><p class="eyebrow">What moved</p><h2>{data.resultsTitle}</h2><div class="result-grid">{data.results.map((result) => (<article class="result-card"><div><span class="proof-label">{result.metric}</span><strong>{result.change}</strong></div><div class="before-after"><div><span>Before</span><strong>{result.before}</strong></div><div><span>After</span><strong>{result.after}</strong></div></div><p>{result.note}</p></article>))}</div></div>
+    </section>
+
+    <section class="commercial-section">
+      <div class="case-container commercial-card">
+        <div><p class="eyebrow">Commercial meaning</p><h2>{data.commercialTitle}</h2>{data.commercial.map((paragraph) => <p>{paragraph}</p>)}</div>
+        <div class="case-summary-card"><h3>What matters here</h3><p>{data.whatMatters}</p></div>
+      </div>
+    </section>
+
+    <section class="lessons-section">
+      <div class="case-container"><p class="eyebrow">Lessons</p><h2>{data.lessonsTitle}</h2><div class="lesson-grid">{data.lessons.map((lesson) => (<article><p>{lesson}</p></article>))}</div></div>
+    </section>
+
+    <section class="related-services-section">
+      <div class="case-container"><p class="eyebrow">Related services</p><h2>Where this kind of work fits</h2><div class="service-link-grid"><a href="/ai-search-optimization-services-philippines/"><span>AI search optimisation</span>Improve entity clarity, source eligibility and AI answer visibility.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Fix crawl, rendering, schema and accessibility issues.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Build pages and resources that answer buyer questions clearly.</a></div></div>
+    </section>
+
+    <section class="faq-section">
+      <div class="case-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Questions this AI case study should answer</h2></div><div class="faq-list">{data.faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div>
+    </section>
+
+    <section class="case-cta-section"><div class="case-container"><div class="case-cta-card"><h2>Want to see how visible your business is in AI search?</h2><p>We can review the pages, schema, entity signals and content patterns that decide whether AI systems can understand and recommend your brand.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an AI Search Review" /><ButtonSecondary href="/case-studies/" text="View More Case Studies" /></div></div></div></section>
+  </main>
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+.case-study-page { background: #0d0f1a; color: #fff; }
+.case-container { width: min(100% - 40px, 1120px); margin: 0 auto; }
+.case-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.case-meta span { padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,.1); color: rgba(255,255,255,.82); font-size: .86rem; font-weight: 800; }
+.hero-subtitle { color: #fff; font-weight: 900; font-size: clamp(1.15rem, 2vw, 1.45rem); }
+.proof-strip, .overview-section, .visual-proof-section, .content-section, .constraints-section, .work-section, .results-section, .commercial-section, .lessons-section, .related-services-section, .faq-section, .case-cta-section { padding: 78px 0; content-visibility: visible !important; }
+.proof-grid, .constraint-grid, .work-grid, .result-grid, .lesson-grid, .service-link-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.proof-card, .case-summary-card, .constraint-grid article, .work-item, .result-card, .lesson-grid article, .service-link-grid a, .faq-item, .case-cta-card, .ai-channel-grid article { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.045); border-radius: 24px; box-shadow: 0 18px 48px rgba(0,0,0,.18); }
+.proof-card { padding: 24px; }
+.proof-label, .eyebrow { display: block; color: #f0622a; font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+.proof-card strong { display: block; color: #fff; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; margin-bottom: 8px; }
+.proof-card span:last-child { color: rgba(255,255,255,.68); }
+.overview-section, .constraints-section, .results-section, .lessons-section, .faq-section { background: #111421; }
+.overview-grid, .two-column, .commercial-card, .faq-layout, .ai-proof-panel { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: clamp(30px, 5vw, 60px); align-items: start; }
+h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 0 0 22px; }
+h3 { color: #fff; font-size: 1.15rem; margin: 0 0 10px; }
+p, li, dd { color: rgba(255,255,255,.74); font-size: 1.02rem; line-height: 1.72; }
+a { color: #f0622a; }
+.case-summary-card, .constraint-grid article, .work-item, .result-card, .lesson-grid article, .service-link-grid a, .ai-channel-grid article { padding: 24px; }
+.case-summary-card dl { display: grid; gap: 14px; margin: 0; }
+.case-summary-card div { display: grid; gap: 4px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+dt { color: rgba(255,255,255,.5); font-weight: 900; text-transform: uppercase; font-size: .75rem; letter-spacing: .08em; }
+.ai-proof-panel { padding: clamp(32px, 5vw, 58px); border-radius: 32px; background: radial-gradient(circle at top left, rgba(240,98,42,.18), rgba(255,255,255,.04)); border: 1px solid rgba(255,255,255,.1); }
+.ai-channel-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.ai-channel-grid span { color: rgba(255,255,255,.55); display: block; font-size: .75rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+.ai-channel-grid strong { color: #fff; font-size: 1.55rem; display: block; margin-bottom: 8px; }
+.work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.work-item span { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; color: #fff; background: rgba(240,98,42,.25); font-weight: 900; margin-bottom: 18px; }
+.result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.result-card strong { color: #f0622a; font-size: 1.7rem; }
+.before-after { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 18px 0; }
+.before-after div { padding: 14px; border-radius: 16px; background: rgba(0,0,0,.2); }
+.before-after span { display: block; color: rgba(255,255,255,.48); font-size: .75rem; font-weight: 900; text-transform: uppercase; margin-bottom: 6px; }
+.commercial-card { padding: clamp(32px, 5vw, 58px); border-radius: 32px; background: linear-gradient(145deg, rgba(240,98,42,.14), rgba(255,255,255,.04)); }
+.lesson-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-link-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.service-link-grid a { color: inherit; text-decoration: none; }
+.service-link-grid span { display: block; color: #fff; font-weight: 900; margin-bottom: 8px; }
+.faq-list { display: grid; gap: 14px; }
+.faq-item { overflow: hidden; }
+.faq-item summary { cursor: pointer; padding: 22px 24px; color: #fff; font-weight: 900; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item p { padding: 0 24px 24px; margin: 0; }
+.case-cta-card { text-align: center; padding: clamp(36px, 6vw, 68px); background: radial-gradient(circle at top left, rgba(240,98,42,.22), rgba(255,255,255,.045)); }
+.cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+@media (max-width: 920px) { .proof-grid, .constraint-grid, .work-grid, .result-grid, .lesson-grid, .service-link-grid, .overview-grid, .two-column, .commercial-card, .faq-layout, .ai-proof-panel, .ai-channel-grid { grid-template-columns: 1fr; } }
+</style>
