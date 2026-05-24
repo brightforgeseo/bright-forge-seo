@@ -321,10 +321,10 @@ const faqs = [
       </div>
       <div class="faq-list">
         {faqs.map((faq) => (
-          <article class="faq-item">
-            <h3>{faq.question}</h3>
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
             <p>{faq.answer}</p>
-          </article>
+          </details>
         ))}
       </div>
     </div>
@@ -714,4 +714,5 @@ const faqs = [
     padding: 1.25rem;
   }
 }
+
 </style>

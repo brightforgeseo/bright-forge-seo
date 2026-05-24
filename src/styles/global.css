@@ -406,7 +406,7 @@ input:focus, select:focus, textarea:focus {
 /* Site-wide FAQ standard
    Match the on-page SEO FAQ treatment: simple dark accordions with plain orange +/- controls. */
 :where(.faq-section, .author-faq-section) {
-  background: #131627 !important;
+  background: #0d0f1a !important;
   padding-top: 5.5rem !important;
   padding-bottom: 5.5rem !important;
 }
@@ -450,6 +450,60 @@ body .faq-layout details {
   overflow: hidden !important;
   transform: none !important;
   transition: none !important;
+}
+
+body .faq-list details.faq-item,
+body .faq-grid details.faq-item,
+body .faq-container details.faq-item,
+body .faq-layout details.faq-item,
+html body .faq-section .faq-list details.faq-item.faq-item.faq-item,
+html body .faq-section .faq-grid details.faq-item.faq-item.faq-item,
+html body .faq-section .faq-container details.faq-item.faq-item.faq-item,
+html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item,
+html body .ben-faq .faq-list details.faq-item.faq-item.faq-item {
+  background: #131627 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+html body .faq-section .faq-list details.faq-item.faq-item.faq-item summary,
+html body .faq-section .faq-grid details.faq-item.faq-item.faq-item summary,
+html body .faq-section .faq-container details.faq-item.faq-item.faq-item summary,
+html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item summary,
+html body .ben-faq .faq-list details.faq-item.faq-item.faq-item summary,
+html body .faq-section .faq-list details.faq-item.faq-item.faq-item[open] summary,
+html body .faq-section .faq-grid details.faq-item.faq-item.faq-item[open] summary,
+html body .faq-section .faq-container details.faq-item.faq-item.faq-item[open] summary,
+html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item[open] summary,
+html body .ben-faq .faq-list details.faq-item.faq-item.faq-item[open] summary {
+  color: #ffffff !important;
+  cursor: pointer !important;
+  display: block !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: clamp(1rem, 1.3vw, 1.14rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 1.35rem 1.5rem !important;
+  width: 100% !important;
+}
+
+html body .faq-section .faq-list details.faq-item.faq-item.faq-item > p,
+html body .faq-section .faq-grid details.faq-item.faq-item.faq-item > p,
+html body .faq-section .faq-container details.faq-item.faq-item.faq-item > p,
+html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item > p,
+html body .ben-faq .faq-list details.faq-item.faq-item.faq-item > p {
+  color: #dfe3f3 !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  padding: 0 1.5rem 1.5rem !important;
 }
 
 :where(.faq-item:hover, .faq-list details:hover, .faq-details:hover),

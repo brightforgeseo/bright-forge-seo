@@ -388,12 +388,12 @@ const aiSearchFaqs = [
         <h2>AI Search Optimisation <span>FAQs</span></h2>
       </div>
 
-      <div class="faq-grid">
+      <div class="faq-list">
         {aiSearchFaqs.map((faq) => (
-          <div class="faq-item">
-            <h3>{faq.question}</h3>
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
             <p>{faq.answer}</p>
-          </div>
+          </details>
         ))}
       </div>
     </div>
@@ -938,4 +938,5 @@ const aiSearchFaqs = [
     grid-template-columns: 1fr;
   }
 }
+
 </style>

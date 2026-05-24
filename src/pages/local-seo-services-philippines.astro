@@ -322,7 +322,7 @@ const faqs = [
       </div>
       <div class="faq-list">
         {faqs.map((faq) => (
-          <details>
+          <details class="faq-item">
             <summary>{faq.question}</summary>
             <p>{faq.answer}</p>
           </details>
@@ -624,4 +624,5 @@ const faqs = [
     align-items: stretch;
   }
 }
+
 </style>

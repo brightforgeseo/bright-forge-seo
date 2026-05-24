@@ -239,12 +239,12 @@ const personSchema = {
         <h2>Frequently Asked <span>Questions</span></h2>
         <p>Common questions about {author.name.split(' ')[0]} and how he works.</p>
       </div>
-      <div class="faq-grid">
+      <div class="faq-list">
         {author.faqs.map((faq) => (
-          <div class="faq-item">
-            <h3>{faq.question}</h3>
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
             <p>{faq.answer}</p>
-          </div>
+          </details>
         ))}
       </div>
     </div>
@@ -724,4 +724,5 @@ const personSchema = {
       width: 220px;
     }
   }
+
 </style>
