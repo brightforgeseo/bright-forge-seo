@@ -15,9 +15,10 @@ export default {
         'brand-border': 'rgba(255,255,255,0.07)',
       },
       fontFamily: {
-        'syne': ['"Syne"', 'sans-serif'],
-        'dm-sans': ['"DM Sans"', 'sans-serif'],
-        'sans': ['"DM Sans"', 'sans-serif'],
+        'syne': ['"Outfit"', 'sans-serif'],
+        'dm-sans': ['"Inter"', 'system-ui', 'sans-serif'],
+        'sans': ['"Inter"', 'system-ui', 'sans-serif'],
+        'heading': ['"Outfit"', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.3), 0 10px 20px -2px rgba(0, 0, 0, 0.2)',

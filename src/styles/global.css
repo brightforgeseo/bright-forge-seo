@@ -115,8 +115,40 @@
 
   /* Modern gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-brand-accent via-brand-accent-light to-brand-accent
-           bg-clip-text text-transparent;
+    color: #f0622a;
+  }
+
+  :where(h1, h2) :where(span, .highlight, .accent-text, .gradient-text) {
+    color: #f0622a !important;
+    -webkit-text-fill-color: #f0622a;
+  }
+
+  /* Site-wide Bright Forge heading system */
+  :where(section, article, main) h2 {
+    color: #ffffff !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.08 !important;
+  }
+
+  :where(section, article, main) h2 + p,
+  :where(.section-subtitle, .section-description, .section-copy, .section-lede, .intro-copy, .lead, .subheading) {
+    color: #d0d4e8 !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.18rem) !important;
+    line-height: 1.75 !important;
+    font-weight: 400 !important;
+  }
+
+  :where(.eyebrow, .section-label, .kicker, .proof-label) {
+    color: #f0622a !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.12em !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
   }
 
   /* Section container */

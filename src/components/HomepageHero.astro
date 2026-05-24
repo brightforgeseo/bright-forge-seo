@@ -26,6 +26,17 @@ const {
   trustBadgeCount = "1000+",
   trustBadgeText = "Websites Ranked"
 } = Astro.props;
+
+const addHeroHighlight = (value: string) => {
+  if (value.includes('<span')) return value;
+  const words = value.trim().split(/\s+/);
+  if (words.length <= 2) return `<span>${value}</span>`;
+  const splitAt = Math.max(words.length - 3, 1);
+  return `${words.slice(0, splitAt).join(' ')} <span>${words.slice(splitAt).join(' ')}</span>`;
+};
+
+const highlightedTitle = addHeroHighlight(title);
+
 import HeroGlobe from './HeroGlobe.astro';
 ---
 
@@ -49,7 +60,7 @@ import HeroGlobe from './HeroGlobe.astro';
         )}
 
         <!-- Main Heading -->
-        <h1 class="hero-title" set:html={title} />
+        <h1 class="hero-title" set:html={highlightedTitle} />
 
         <!-- Description -->
         <div class="hero-description">
@@ -203,6 +214,10 @@ import HeroGlobe from './HeroGlobe.astro';
     color: white;
     margin-bottom: 24px;
     letter-spacing: -0.02em;
+  }
+
+  .hero-title :global(span) {
+    color: #f0622a !important;
   }
 
   .hero-description {

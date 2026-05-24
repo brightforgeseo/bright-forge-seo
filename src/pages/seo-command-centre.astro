@@ -1,0 +1,955 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const commandCentreUrl = 'https://brightforge.com.ph/seo-command-centre/';
+
+const systemLayers = [
+  {
+    title: 'SEO monitoring',
+    copy: 'GSC, ranking, page and query signals are reviewed for movement, risk and opportunity instead of being left until the next monthly report.'
+  },
+  {
+    title: 'Opportunity detection',
+    copy: 'We look for high-impression pages, weak CTR, query gaps, competitor pressure, internal link gaps and content opportunities that should be acted on.'
+  },
+  {
+    title: 'Delivery QA',
+    copy: 'Work is checked against evidence, implementation quality and realistic next steps so tasks do not become vague busywork.'
+  },
+  {
+    title: 'Reporting intelligence',
+    copy: 'Performance data is turned into a clear commercial narrative: what changed, why it matters and what should happen next.'
+  },
+  {
+    title: 'AI search readiness',
+    copy: 'Priority pages are reviewed for entity clarity, answer readiness, technical access, proof signals and citation potential across answer-led search.'
+  },
+  {
+    title: 'Approval-gated operations',
+    copy: 'The system can surface recommendations and proposed actions, but client-facing messages, publishing and material board changes stay approval-led.'
+  }
+];
+
+const swarmRoles = [
+  {
+    title: 'Search data analyst',
+    copy: 'Reviews GSC, ranking and report signals to separate useful movement from noise.'
+  },
+  {
+    title: 'Technical SEO reviewer',
+    copy: 'Checks crawl, indexation, rendering, schema, internal links, performance and release risks.'
+  },
+  {
+    title: 'Content strategist',
+    copy: 'Assesses search intent, page depth, topical support, answer blocks, FAQs and proof gaps.'
+  },
+  {
+    title: 'CRO reviewer',
+    copy: 'Looks at CTAs, trust, commercial clarity and whether traffic has a sensible conversion path.'
+  },
+  {
+    title: 'AI readiness reviewer',
+    copy: 'Checks whether pages are clear enough for AI Overviews, answer engines and assisted research tools to understand and cite.'
+  },
+  {
+    title: 'QA editor',
+    copy: 'Challenges weak recommendations, unsupported claims and tasks that lack evidence before they are treated as complete.'
+  }
+];
+
+const useCases = [
+  'Monthly SEO campaigns that need sharper monitoring and prioritisation',
+  'Businesses with multiple service pages, locations, products or content streams',
+  'Teams that want senior SEO oversight without waiting for end-of-month reporting',
+  'Brands investing in AI search readiness but needing SEO foundations first',
+  'Agencies or internal teams that need better task quality and evidence standards',
+  'Websites where technical, content, CRO and reporting work need to connect'
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Audit the current SEO operating model',
+    copy: 'We review the site, data sources, reporting cadence, current tasks, priority pages, decision bottlenecks and where SEO work is being missed or delayed.'
+  },
+  {
+    label: '02',
+    title: 'Build the command centre around real workflows',
+    copy: 'We define the monitoring layers, specialist review paths, approval gates, evidence rules and reporting outputs that match how the business actually operates.'
+  },
+  {
+    label: '03',
+    title: 'Run evidence-led reviews',
+    copy: 'The system reviews search data, technical issues, content gaps, AI readiness signals, page quality and delivery status, then turns findings into prioritised actions.'
+  },
+  {
+    label: '04',
+    title: 'QA actions before they become Done',
+    copy: 'Recommendations are checked for evidence, duplication, business impact and implementation proof. The aim is fewer loose ends and stronger campaign control.'
+  }
+];
+
+const faqs = [
+  {
+    question: 'What is an SEO command centre?',
+    answer: 'An SEO command centre is an operating layer for monitoring search performance, finding opportunities, checking technical and content issues, improving reporting and keeping SEO work connected to evidence. It is not just a dashboard. It combines data, process, review and approval gates.'
+  },
+  {
+    question: 'Is this the same as an AI SEO tool?',
+    answer: 'No. AI tools can help with analysis, drafting and monitoring, but the value is the process around them. The Bright Forge SEO Command Centre is built around SEO judgement, evidence, QA and approval gates, not unsupervised automation.'
+  },
+  {
+    question: 'Who is this service for?',
+    answer: 'It is best suited to businesses with ongoing SEO investment, multiple priority pages, technical and content workstreams, or a need for better reporting and delivery oversight. It can also support agencies and in-house teams that need stronger SEO operations.'
+  },
+  {
+    question: 'Does the command centre replace monthly SEO work?',
+    answer: 'No. It improves how monthly SEO work is diagnosed, prioritised, reviewed and reported. Technical SEO, content, links, CRO and AI readiness still need implementation. The system helps make that work more focused and accountable.'
+  },
+  {
+    question: 'Can it send messages or publish changes automatically?',
+    answer: 'Not by default. We use approval gates for client-facing messages, publishing, major task changes and external actions. The system is designed to reduce risk, not create a fast way to make mistakes in public.'
+  },
+  {
+    question: 'How is success measured?',
+    answer: 'Success is measured through better prioritisation, fewer missed actions, stronger reporting, clearer evidence before tasks are completed, improved page-level SEO decisions and the campaign metrics that matter: rankings, impressions, clicks, enquiries and revenue where tracking allows.'
+  }
+];
+---
+
+<MainLayout
+  title="SEO Command Centre Services | Bright Forge SEO"
+  description="AI-assisted SEO command centre services for monitoring, opportunity detection, reporting intelligence, delivery QA and approval-gated SEO operations."
+  canonical={commandCentreUrl}
+  type="service"
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'SEO Command Centre Services',
+          item: commandCentreUrl
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'SEO Command Centre Services',
+      serviceType: 'SEO operations, monitoring and delivery intelligence',
+      url: commandCentreUrl,
+      provider: {
+        '@type': 'Organization',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      },
+      areaServed: ['Philippines', 'Australia', 'United Kingdom', 'United States'],
+      description: 'AI-assisted SEO command centre services for search monitoring, opportunity detection, reporting intelligence, delivery QA and approval-gated SEO operations.',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'SEO Command Centre Layers',
+        itemListElement: systemLayers.map((layer, index) => ({
+          '@type': 'Offer',
+          position: index + 1,
+          itemOffered: {
+            '@type': 'Service',
+            name: layer.title,
+            description: layer.copy
+          }
+        }))
+      }
+    })} />
+  </Fragment>
+
+  <LegacyHeader slot="header" />
+
+  <Hero
+    badgeIcon="fas fa-network-wired"
+    badgeText="SEO Command Centre"
+    title="AI-Assisted SEO Command Centre for <span>Monitoring, QA and Growth Control</span>"
+    breadcrumbCurrent="SEO Command Centre"
+  >
+    <Fragment slot="story">
+      <p>Most SEO campaigns do not fail because nobody knows what SEO is. They fail because signals are missed, reports are disconnected from action, tasks are marked complete without enough proof and senior judgement is spread too thin.</p>
+      <p>The Bright Forge SEO Command Centre is an AI-assisted operating layer for search campaigns. It monitors data, surfaces opportunities, reviews delivery quality, strengthens reporting and keeps important SEO actions tied to evidence.</p>
+      <p>It is not blind automation. It is a controlled system for making technical SEO, content, CRO, AI search readiness and reporting work together with human approval where it matters.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Discuss an SEO Command Centre" />
+      <ButtonSecondary href="#system-layers" text="See What It Monitors" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="command-hero-panel" aria-label="SEO command centre operating layers">
+        <div class="command-core">
+          <span>Bright Forge</span>
+          <strong>SEO Command Centre</strong>
+          <small>Evidence-led operations</small>
+        </div>
+        <div class="orbit-card card-data"><span>Data</span><strong>GSC + Rankings</strong></div>
+        <div class="orbit-card card-content"><span>Pages</span><strong>Content + CRO</strong></div>
+        <div class="orbit-card card-tech"><span>Technical</span><strong>Crawl + Schema</strong></div>
+        <div class="orbit-card card-qa"><span>QA</span><strong>Evidence Before Done</strong></div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <main>
+    <section class="proof-strip-section">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="proof-strip">
+          <div>
+            <strong>Always-on review</strong>
+            <span>Search signals, page issues and campaign risks are checked more often than monthly reporting allows.</span>
+          </div>
+          <div>
+            <strong>Approval-gated</strong>
+            <span>The system proposes actions, but material client-facing or publishing decisions stay controlled.</span>
+          </div>
+          <div>
+            <strong>Built for SEO reality</strong>
+            <span>Technical, content, internal links, CRO, AI readiness and reporting are reviewed together.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="why-command-centre">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="section-header left-header">
+          <p class="eyebrow">The problem it solves</p>
+          <h2>SEO campaigns need an <span>operating system</span>, not another loose dashboard</h2>
+          <p>Dashboards show numbers. They do not decide what matters, whether a task was actually finished, which page needs attention next or when a ranking movement is a risk instead of noise.</p>
+        </div>
+
+        <div class="split-layout">
+          <div class="copy-block">
+            <p>Good SEO needs technical checks, content decisions, internal links, reporting, CRO, competitor awareness and follow-through. When those pieces live in separate tools and conversations, opportunities get delayed and weak work can look complete.</p>
+            <p>The command centre connects the signals. It helps identify what changed, what needs action, what needs evidence and what should be watched before it becomes a client problem.</p>
+            <p><strong>The goal is not more automation. The goal is better control.</strong></p>
+          </div>
+
+          <div class="issue-panel">
+            <h3>Where campaigns leak value</h3>
+            <ul>
+              <li>GSC opportunities found too late</li>
+              <li>Technical issues separated from reporting context</li>
+              <li>Content tasks created without search intent or proof</li>
+              <li>Done statuses with no evidence or QA</li>
+              <li>AI search advice detached from SEO fundamentals</li>
+              <li>Client risks spotted after the awkward email arrives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="system-section" id="system-layers">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="section-header">
+          <p class="eyebrow">System layers</p>
+          <h2>What the SEO <span>Command Centre</span> monitors and reviews</h2>
+          <p>Each layer is designed to turn SEO signals into practical decisions, not just another report export.</p>
+        </div>
+
+        <div class="layer-grid">
+          {systemLayers.map((layer) => (
+            <article class="layer-card">
+              <h3>{layer.title}</h3>
+              <p>{layer.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="swarm-section">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="section-header left-header">
+          <p class="eyebrow">Specialist review</p>
+          <h2>Multi-agent SEO review, <span>controlled by senior judgement</span></h2>
+          <p>The system can split a complex SEO problem into specialist reviews, then merge the findings into one practical decision brief.</p>
+        </div>
+
+        <div class="role-grid">
+          {swarmRoles.map((role) => (
+            <article class="role-card">
+              <h3>{role.title}</h3>
+              <p>{role.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="fit-section">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="fit-layout">
+          <div>
+            <p class="eyebrow">Best fit</p>
+            <h2>Who benefits from an <span>SEO command centre?</span></h2>
+            <p>This is for businesses where SEO is already important enough that missed actions, weak reporting or slow decisions have a commercial cost.</p>
+          </div>
+          <div class="fit-list">
+            {useCases.map((item) => (
+              <div class="fit-item">
+                <i class="fas fa-check"></i>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="process">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="section-header">
+          <p class="eyebrow">How it works</p>
+          <h2>A controlled system for <span>finding, prioritising and QAing SEO work</span></h2>
+        </div>
+
+        <div class="process-grid">
+          {processSteps.map((step) => (
+            <article class="process-card">
+              <span>{step.label}</span>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="related-section">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="section-header">
+          <p class="eyebrow">Related services</p>
+          <h2>Where the command centre <span>connects to wider SEO work</span></h2>
+        </div>
+        <div class="related-grid">
+          <a href="/seo-services-philippines/">
+            <span>SEO services</span>
+            Connect the command centre to campaign strategy, technical SEO, content and growth priorities.
+          </a>
+          <a href="/technical-seo-services-philippines/">
+            <span>Technical SEO</span>
+            Diagnose crawl, indexation, rendering, schema and release issues that can limit growth.
+          </a>
+          <a href="/content-seo-services-philippines/">
+            <span>Content SEO</span>
+            Turn search intent, page gaps and internal links into stronger service and support content.
+          </a>
+          <a href="/ai-search-optimization-services-philippines/">
+            <span>AI search optimisation</span>
+            Improve entity clarity, answer readiness and citation signals on top of strong SEO foundations.
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="max-w-7xl mx-auto px-4 faq-layout">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions about <span>SEO command centre services</span></h2>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="cta-card">
+          <p class="eyebrow">Build control into SEO</p>
+          <h2>Want a clearer <span>operating layer</span> for SEO growth?</h2>
+          <p>We can review your current SEO reporting, task flow, priority pages and monitoring setup, then identify where a command centre would reduce missed actions and improve decision quality.</p>
+          <div class="cta-actions">
+            <ButtonPrimary href="/contact/" text="Request a Command Centre Review" />
+            <ButtonSecondary href="/ai-search-optimization-services-philippines/" text="View AI Search SEO" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ContactSection />
+  </main>
+
+  <Footer />
+</MainLayout>
+
+<style>
+  :global(html),
+  :global(body) {
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 769px) {
+    :global(body .hero-visual),
+    :global(body .hero-visual *) {
+      display: flex !important;
+      visibility: visible !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    :global(body .hero-visual) {
+      display: none !important;
+    }
+
+    :global(body .hero-content),
+    :global(body .hero-content h1),
+    :global(body .hero-story),
+    :global(body .hero-story p),
+    :global(body .hero-actions),
+    :global(body .hero-badge) {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    :global(body .hero-content) {
+      align-items: stretch !important;
+    }
+
+    :global(body .hero-content h1) {
+      text-align: center !important;
+    }
+
+    :global(body .hero-modern) {
+      padding-bottom: 2.5rem !important;
+    }
+
+    .proof-strip-section {
+      padding-top: 2rem !important;
+    }
+
+    :global(body .hero-badge) {
+      justify-content: center;
+    }
+  }
+
+  :global(.hero-modern) {
+    overflow: hidden;
+  }
+
+  .command-hero-panel {
+    position: relative;
+    width: min(440px, calc(100vw - 4rem));
+    min-height: 420px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background:
+      radial-gradient(circle at 25% 20%, rgba(240, 98, 42, 0.35), transparent 28%),
+      radial-gradient(circle at 75% 75%, rgba(253, 224, 71, 0.18), transparent 32%),
+      rgba(255, 255, 255, 0.06);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .command-core {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f0622a, #f97316);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.35rem;
+    box-shadow: 0 20px 55px rgba(240, 98, 42, 0.35);
+    padding: 1.25rem;
+  }
+
+  .command-core span,
+  .command-core small,
+  .orbit-card span {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+  }
+
+  .command-core strong {
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
+
+  .orbit-card {
+    position: absolute;
+    width: 150px;
+    min-height: 86px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 1rem;
+    border-radius: 20px;
+    background: rgba(13, 15, 26, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  }
+
+  .orbit-card strong {
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .card-data { top: 1.5rem; left: 1.5rem; }
+  .card-content { top: 1.5rem; right: 1.5rem; }
+  .card-tech { bottom: 1.5rem; left: 1.5rem; }
+  .card-qa { bottom: 1.5rem; right: 1.5rem; }
+
+  section {
+    position: relative;
+  }
+
+  .proof-strip-section,
+  .system-section,
+  .fit-section,
+  .related-section,
+  .faq-section,
+  .cta-section {
+    background:
+      radial-gradient(circle at 18% 20%, rgba(240, 98, 42, 0.12), transparent 30%),
+      linear-gradient(135deg, #0d0f1a 0%, #151827 100%);
+    color: #fff;
+    padding: 5rem 0;
+  }
+
+  .proof-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .proof-strip div {
+    padding: 1.6rem;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background:
+      radial-gradient(circle at 18% 0%, rgba(240, 98, 42, 0.12), transparent 30%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .proof-strip strong,
+  .proof-strip span {
+    display: block;
+  }
+
+  .proof-strip strong {
+    color: #fff;
+    margin-bottom: 0.45rem;
+    font-size: 1rem;
+  }
+
+  .proof-strip span {
+    color: #d0d4e8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .dark-section,
+  .swarm-section,
+  .process-section {
+    background: #0d0f1a;
+    color: #fff;
+    padding: 6rem 0;
+  }
+
+  .section-header {
+    max-width: 960px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .left-header {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .eyebrow {
+    color: #f0622a;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .section-header h2,
+  .fit-layout h2,
+  .cta-card h2,
+  .faq-layout h2 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .section-header h2 span,
+  .fit-layout h2 span,
+  .cta-card h2 span,
+  .faq-layout h2 span {
+    color: #f0622a;
+  }
+
+  .dark-section .section-header h2,
+  .swarm-section .section-header h2,
+  .process-section .section-header h2 {
+    color: #fff;
+  }
+
+  .section-header p,
+  .fit-layout p,
+  .cta-card p,
+  .faq-layout p {
+    color: #d0d4e8;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .section-header .eyebrow,
+  .fit-layout .eyebrow,
+  .cta-card .eyebrow,
+  .faq-layout .eyebrow {
+    color: #f0622a;
+    font-size: 0.78rem;
+    line-height: 1.2;
+  }
+
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .copy-block,
+  .issue-panel,
+  .layer-card,
+  .role-card,
+  .process-card,
+  .cta-card {
+    border-radius: 28px;
+  }
+
+  .copy-block,
+  .issue-panel {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background:
+      radial-gradient(circle at 18% 0%, rgba(240, 98, 42, 0.12), transparent 30%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+  }
+
+  .copy-block p,
+  .issue-panel li {
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
+  }
+
+  .copy-block strong,
+  .issue-panel h3 {
+    color: #fff;
+  }
+
+  .issue-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .issue-panel li {
+    position: relative;
+    padding-left: 1.4rem;
+  }
+
+  .issue-panel li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f0622a;
+  }
+
+  .layer-grid,
+  .role-grid,
+  .process-grid,
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .layer-card,
+  .role-card,
+  .process-card {
+    padding: 1.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background:
+      radial-gradient(circle at 18% 0%, rgba(240, 98, 42, 0.12), transparent 30%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .layer-card h3,
+  .role-card h3,
+  .process-card h3 {
+    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .layer-card p,
+  .role-card p,
+  .process-card p {
+    color: #d0d4e8;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .process-card span {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #f0622a;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .fit-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .fit-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .fit-item {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    padding: 1rem 1.1rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e8eaf2;
+    line-height: 1.55;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .fit-item span {
+    color: #e8eaf2;
+  }
+
+  .fit-item i {
+    color: #f0622a;
+    margin-top: 0.05rem;
+    width: 1.45rem;
+    height: 1.45rem;
+    min-width: 1.45rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(240, 98, 42, 0.08);
+    border: 1px solid rgba(240, 98, 42, 0.32);
+    font-size: 0.9rem;
+    text-shadow: 0 0 10px rgba(240, 98, 42, 0.45);
+  }
+
+  .related-grid a {
+    display: block;
+    padding: 1.5rem;
+    border-radius: 24px;
+    background:
+      radial-gradient(circle at 18% 0%, rgba(240, 98, 42, 0.12), transparent 32%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #d0d4e8;
+    text-decoration: none;
+    line-height: 1.65;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 20px 52px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .related-grid a:hover {
+    transform: translateY(-4px);
+    border-color: rgba(240, 98, 42, 0.36);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28), 0 0 34px rgba(240, 98, 42, 0.08);
+  }
+
+  .related-grid span {
+    display: block;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 0.45rem;
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 18% 0%, rgba(240, 98, 42, 0.1), transparent 34%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .faq-item p {
+    margin: 1rem 0 0;
+    color: #d0d4e8;
+    line-height: 1.7;
+  }
+
+  .cta-card {
+    background:
+      radial-gradient(circle at 15% 20%, rgba(240, 98, 42, 0.25), transparent 28%),
+      linear-gradient(135deg, #0d0f1a, #151827);
+    color: #fff;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 28px 80px rgba(13, 15, 26, 0.22);
+  }
+
+  .cta-card h2,
+  .cta-card p {
+    color: #fff;
+  }
+
+  .cta-card p {
+    max-width: 760px;
+    margin: 0 auto 1.6rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .proof-strip,
+    .layer-grid,
+    .role-grid,
+    .process-grid,
+    .related-grid,
+    .split-layout,
+    .fit-layout,
+    .faq-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .command-hero-panel {
+      min-height: 360px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .proof-strip-section,
+    .system-section,
+    .fit-section,
+    .related-section,
+    .faq-section,
+    .cta-section,
+    .dark-section,
+    .swarm-section,
+    .process-section {
+      padding: 3.5rem 0;
+    }
+
+    .command-hero-panel {
+      min-height: 430px;
+      padding: 1rem;
+    }
+
+    .command-core {
+      width: 170px;
+      height: 170px;
+    }
+
+    .orbit-card {
+      width: 135px;
+      min-height: 78px;
+      padding: 0.85rem;
+    }
+
+    .card-data { top: 1rem; left: 1rem; }
+    .card-content { top: 1rem; right: 1rem; }
+    .card-tech { bottom: 1rem; left: 1rem; }
+    .card-qa { bottom: 1rem; right: 1rem; }
+
+    .cta-card {
+      padding: 2rem 1.3rem;
+    }
+  }
+</style>
