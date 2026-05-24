@@ -7,7 +7,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "qa": "python scripts/brightforge_qa.py",
+    "qa:static": "python scripts/brightforge_qa.py --static-only"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.2",
