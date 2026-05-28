@@ -5,22 +5,89 @@
  */
 ---
 
+<div class="hero-globe-fallback" aria-hidden="true">
+  <span class="globe-ring ring-1"></span>
+  <span class="globe-ring ring-2"></span>
+  <span class="globe-ring ring-3"></span>
+  <span class="globe-node node-1"></span>
+  <span class="globe-node node-2"></span>
+  <span class="globe-node node-3"></span>
+  <span class="globe-node node-4"></span>
+</div>
 <canvas class="hero-globe-canvas" aria-hidden="true"></canvas>
 
 <style>
+  .hero-globe-fallback,
   .hero-globe-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.6;
     z-index: 1;
   }
+
+  .hero-globe-canvas {
+    opacity: 0.78;
+  }
+
+  .hero-globe-fallback {
+    opacity: 0.95;
+    background:
+      radial-gradient(circle at 73% 43%, rgba(240, 98, 42, 0.22), transparent 18rem),
+      radial-gradient(circle at 73% 43%, rgba(240, 98, 42, 0.08), transparent 28rem);
+  }
+
+  .globe-ring {
+    position: absolute;
+    left: 58%;
+    top: 14%;
+    width: min(42vw, 34rem);
+    aspect-ratio: 1;
+    border: 1px solid rgba(240, 98, 42, 0.35);
+    border-radius: 50%;
+    box-shadow: 0 0 2.25rem rgba(240, 98, 42, 0.16);
+    transform: rotateX(58deg) rotateZ(-18deg);
+  }
+
+  .ring-2 {
+    transform: rotateX(18deg) rotateZ(28deg);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .ring-3 {
+    transform: rotateX(78deg) rotateZ(8deg);
+    border-color: rgba(240, 98, 42, 0.18);
+  }
+
+  .globe-node {
+    position: absolute;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: #f0622a;
+    box-shadow: 0 0 1.2rem rgba(240, 98, 42, 0.9);
+  }
+
+  .node-1 { left: 69%; top: 27%; }
+  .node-2 { left: 82%; top: 40%; }
+  .node-3 { left: 66%; top: 55%; }
+  .node-4 { left: 78%; top: 67%; }
 
   @media (max-width: 768px) {
     .hero-globe-canvas {
       opacity: 0.35;
+    }
+
+    .hero-globe-fallback {
+      opacity: 0.45;
+      background: radial-gradient(circle at 82% 22%, rgba(240, 98, 42, 0.18), transparent 14rem);
+    }
+
+    .globe-ring {
+      left: 64%;
+      top: 4%;
+      width: min(72vw, 22rem);
     }
   }
 </style>
@@ -168,8 +235,9 @@
     var animId;
     var time = 0;
     var speed = 0.00085;
-    var driftX = 0.9;
-    var driftY = 0.3;
+    var baseX = width <= 768 ? 0.9 : 1.15;
+    var driftX = width <= 768 ? 0.35 : 0.45;
+    var driftY = 0.22;
     var driftZ = 0.25;
     var rotSpeed = 0.0012;
     var visible = true;
@@ -185,7 +253,7 @@
       animId = requestAnimationFrame(animate);
       if (!visible || document.hidden) return;
       time += speed;
-      globe.position.x = Math.sin(time * 0.7) * driftX;
+      globe.position.x = baseX + Math.sin(time * 0.7) * driftX;
       globe.position.y = Math.sin(time * 1.4) * driftY;
       globe.position.z = Math.cos(time * 0.5) * driftZ;
       globe.rotation.y += rotSpeed;
@@ -227,10 +295,9 @@
   }
 
   function deferStart() {
+    setTimeout(init, 900);
     if ('requestIdleCallback' in window) {
       requestIdleCallback(init, { timeout: 3500 });
-    } else {
-      setTimeout(init, 1200);
     }
   }
 
