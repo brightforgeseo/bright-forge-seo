@@ -12,7 +12,11 @@ export default defineConfig({
   trailingSlash: 'always',
   // Output each page as /path/index.html so public URL is extension-less (/path)
   build: {
-    inlineStylesheets: 'always', // Inline all CSS to eliminate render-blocking requests
+    // Keep CSS in hashed external files. Inlining every component stylesheet makes
+    // the homepage HTML ~440KB and hurts desktop Lighthouse TTFB/FCP when Netlify
+    // has to process the document. External CSS is cacheable and much smaller on
+    // the critical HTML path.
+    inlineStylesheets: 'auto',
     format: 'directory', // switch from "file" to "directory" to drop .html in canonical URLs
     assets: '_astro',
     // Enable asset bundling and optimization
