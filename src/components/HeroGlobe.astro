@@ -25,9 +25,32 @@
   }
 </style>
 
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script is:inline>
 (function() {
+  var threeLoading = false;
+
+  function ensureThree(callback) {
+    if (window.THREE) {
+      callback();
+      return;
+    }
+
+    document.addEventListener('hero-globe-three-ready', callback, { once: true });
+
+    if (threeLoading) return;
+    threeLoading = true;
+
+    var script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
+    script.async = true;
+    script.onload = function() {
+      document.dispatchEvent(new Event('hero-globe-three-ready'));
+    };
+    script.onerror = function(e) {
+      console.error('[HeroGlobe] Three.js failed to load:', e);
+    };
+    document.head.appendChild(script);
+  }
   function initGlobe(canvas) {
     var section = canvas.parentElement;
     while (section && section.tagName !== 'SECTION') {
@@ -190,13 +213,15 @@
 
   function init() {
     if (!window.matchMedia('(min-width: 1025px)').matches) return;
-    var canvases = document.querySelectorAll('.hero-globe-canvas');
-    console.log('[HeroGlobe] Found ' + canvases.length + ' canvas(es)');
-    canvases.forEach(function(canvas) {
-      if (!canvas.getAttribute('data-init')) {
-        canvas.setAttribute('data-init', '1');
-        try { initGlobe(canvas); } catch(e) { console.error('[HeroGlobe] Error:', e); }
-      }
+    ensureThree(function() {
+      var canvases = document.querySelectorAll('.hero-globe-canvas');
+      console.log('[HeroGlobe] Found ' + canvases.length + ' canvas(es)');
+      canvases.forEach(function(canvas) {
+        if (!canvas.getAttribute('data-init')) {
+          canvas.setAttribute('data-init', '1');
+          try { initGlobe(canvas); } catch(e) { console.error('[HeroGlobe] Error:', e); }
+        }
+      });
     });
   }
 
