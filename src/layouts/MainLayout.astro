@@ -259,28 +259,6 @@ const isHome = Astro.url.pathname === '/';
         }, 100);
       });
 
-      // Load analytics after first user engagement, with a long fallback. It is non-visual and must not compete with CWV.
-      window.addEventListener('load', function() {
-        var loadedAnalytics = false;
-        var loadAnalytics = function() {
-          if (loadedAnalytics) return;
-          loadedAnalytics = true;
-          var sa = document.createElement('script');
-          sa.async = true;
-          sa.src = 'https://scripts.simpleanalyticscdn.com/latest.js';
-          document.head.appendChild(sa);
-        };
-        ['pointerdown', 'keydown', 'scroll'].forEach(function(eventName) {
-          window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
-        });
-        setTimeout(function() {
-          if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadAnalytics, { timeout: 3000 });
-          } else {
-            loadAnalytics();
-          }
-        }, 60000);
-      });
     </script>
   </body>
 <style is:global>

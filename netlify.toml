@@ -49,8 +49,8 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation()"
-    # Allow FontAwesome CDN for icon styles and fonts. Analytics is Simple Analytics only; Google tag injection is intentionally blocked for CWV.
-    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdnjs.cloudflare.com https://www.paypal.com https://www.paypalobjects.com https://scripts.simpleanalyticscdn.com; worker-src 'self' blob:; connect-src 'self' https://www.paypal.com https://api-m.paypal.com https://*.paypal.com https://www.paypalobjects.com https://*.paypalobjects.com; frame-src https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://www.google.com https://*.google.com https://maps.gstatic.com https://*.gstatic.com;"
+    # Allow FontAwesome CDN for desktop icon styles and fonts. Third-party analytics injection is intentionally blocked from first load for CWV.
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdnjs.cloudflare.com https://www.paypal.com https://www.paypalobjects.com; worker-src 'self' blob:; connect-src 'self' https://www.paypal.com https://api-m.paypal.com https://*.paypal.com https://www.paypalobjects.com https://*.paypalobjects.com; frame-src https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://www.google.com https://*.google.com https://maps.gstatic.com https://*.gstatic.com;"
 
     # SEO and crawling
     Access-Control-Allow-Origin = "*"
