@@ -18,9 +18,9 @@
     z-index: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .hero-globe-canvas {
-      opacity: 0.35;
+      display: none;
     }
   }
 </style>
@@ -189,6 +189,7 @@
   }
 
   function init() {
+    if (!window.matchMedia('(min-width: 1025px)').matches) return;
     var canvases = document.querySelectorAll('.hero-globe-canvas');
     console.log('[HeroGlobe] Found ' + canvases.length + ' canvas(es)');
     canvases.forEach(function(canvas) {
