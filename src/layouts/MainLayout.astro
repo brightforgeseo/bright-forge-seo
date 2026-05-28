@@ -102,10 +102,6 @@ const isHome = Astro.url.pathname === '/';
     
     <slot name="head" />
     
-    <!-- Early hints for critical resources -->
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-
     <!-- Local critical fonts. Desktop preloads keep the premium type treatment fast; mobile keeps hero text on system fonts so these must not compete with LCP. -->
     <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" media="(min-width: 1025px)">
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" media="(min-width: 1025px)">

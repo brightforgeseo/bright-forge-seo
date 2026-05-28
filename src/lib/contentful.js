@@ -12,8 +12,8 @@ function optimizeContentfulImage(url, options = {}) {
   if (!url) return null;
 
   const {
-    width = 1200,
-    quality = 80,
+    width = 800,
+    quality = 72,
     format = 'webp'
   } = options;
 
