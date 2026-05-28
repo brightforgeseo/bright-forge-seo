@@ -162,7 +162,7 @@ const isHome = Astro.url.pathname === '/';
     <link rel="preload" as="image" href="/images/header-logo-cropped.webp" fetchpriority="high" media="(max-width: 1024px)">
 
     <!-- Defer non-critical JavaScript -->
-    <script defer>
+    <script is:inline>
       // Disable hover effects on mobile for better performance
       if ('ontouchstart' in window) {
         document.documentElement.classList.add('touch-device');

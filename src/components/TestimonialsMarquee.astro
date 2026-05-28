@@ -606,9 +606,6 @@ for (let i = 0; i < testimonials.length; i += 4) {
     allPages.forEach(function(p, i) {
       if (i === current) {
         p.classList.add('active');
-        p.style.animation = 'none';
-        void p.getAnimations();
-        requestAnimationFrame(function() { p.style.animation = ''; });
       } else {
         p.classList.remove('active');
       }

@@ -28,10 +28,10 @@ export default defineConfig({
     smartypants: true
   },
   compressHTML: true,
-  prefetch: {
-    prefetchAll: false,
-    defaultStrategy: 'viewport'
-  },
+  // Avoid Astro's client-side prefetch runtime on the public site. It adds a
+  // module-script dependency chain to the critical path for negligible benefit
+  // on this mostly static marketing site.
+  prefetch: false,
   server: {
     port: 4321,
     open: true
