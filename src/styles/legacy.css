@@ -119,9 +119,25 @@ body {
   height: 72px;
 }
 
+.nav-logo {
+  flex: 0 0 300px;
+  width: 300px;
+  height: 200px;
+}
+
+.nav-logo a {
+  display: block;
+  width: 300px;
+  height: 200px;
+}
+
 .nav-logo img {
+  display: block;
+  width: 300px;
+  height: 200px;
+  max-width: none;
   max-height: 200px;
-  width: auto;
+  object-fit: contain;
 }
 
 .nav-menu-professional {

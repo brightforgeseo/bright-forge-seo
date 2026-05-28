@@ -1,7 +1,7 @@
 ---
 /**
  * 3D wireframe globe background for hero sections.
- * Loads Three.js from CDN to avoid bundler/module issues.
+ * Three.js is code-split and loaded only after the page is idle on desktop.
  */
 ---
 
@@ -25,18 +25,20 @@
   }
 </style>
 
-<script is:inline>
+<script>
 (function() {
-  function loadThree(cb) {
-    if (window.THREE) return cb();
-    var s = document.createElement('script');
-    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
-    s.onload = cb;
-    s.onerror = function() { console.error('[HeroGlobe] Failed to load Three.js'); };
-    document.head.appendChild(s);
+  if (window.__brightForgeHeroGlobeLoaded) return;
+  window.__brightForgeHeroGlobeLoaded = true;
+
+  let threePromise;
+  function loadThree() {
+    if (!threePromise) {
+      threePromise = import('three');
+    }
+    return threePromise;
   }
 
-  function initGlobe(canvas) {
+  function initGlobe(canvas, THREE) {
     var section = canvas.parentElement;
     while (section && section.tagName !== 'SECTION') {
       section = section.parentElement;
@@ -49,20 +51,20 @@
     if (!width || !height) {
       setTimeout(function() {
         canvas.removeAttribute('data-init');
-        initGlobe(canvas);
+        initGlobe(canvas, THREE);
       }, 100);
       return;
     }
 
     var renderer;
     try {
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
     } catch (e) {
       console.error('[HeroGlobe] WebGL failed:', e);
       return;
     }
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(width, height);
 
     var scene = new THREE.Scene();
@@ -75,7 +77,6 @@
     var globe = new THREE.Group();
     scene.add(globe);
 
-    // Wireframe sphere
     var sphereGeo = new THREE.SphereGeometry(1, 36, 18);
     var wireframe = new THREE.LineSegments(
       new THREE.WireframeGeometry(sphereGeo),
@@ -83,7 +84,6 @@
     );
     globe.add(wireframe);
 
-    // Latitude rings
     for (var i = 1; i < 6; i++) {
       var phi = (i / 6) * Math.PI;
       var ringRadius = Math.sin(phi);
@@ -98,7 +98,6 @@
       globe.add(ring);
     }
 
-    // City connection points
     var cities = [
       { lat: 14.5, lng: 121 },
       { lat: 35.7, lng: 139.7 },
@@ -137,7 +136,6 @@
       globe.add(halo);
     });
 
-    // Connection arcs
     var links = [[0,1],[0,5],[0,7],[2,11],[2,1],[3,8],[3,6],[4,5],[10,6],[9,11]];
     links.forEach(function(pair) {
       var a = pair[0], b = pair[1];
@@ -151,7 +149,6 @@
       globe.add(new THREE.Line(geo, new THREE.LineBasicMaterial({ color: orange, transparent: true, opacity: 0.2 })));
     });
 
-    // Atmosphere glow
     var atmosGeo = new THREE.SphereGeometry(1.08, 32, 32);
     var atmosphere = new THREE.Mesh(
       atmosGeo,
@@ -165,22 +162,28 @@
     );
     globe.add(atmosphere);
 
-    // Tilt
     globe.rotation.x = 0.3;
     globe.rotation.z = -0.1;
 
-    // Animation
     var animId;
     var time = 0;
-    var isMobile = width <= 768;
-    var speed = isMobile ? 0.00085 : 0.00085;
-    var driftX = isMobile ? 0.9 : 0.9;
-    var driftY = isMobile ? 0.3 : 0.3;
-    var driftZ = isMobile ? 0.25 : 0.25;
-    var rotSpeed = isMobile ? 0.0012 : 0.0012;
+    var speed = 0.00085;
+    var driftX = 0.9;
+    var driftY = 0.3;
+    var driftZ = 0.25;
+    var rotSpeed = 0.0012;
+    var visible = true;
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        visible = entries[0] && entries[0].isIntersecting;
+      }, { rootMargin: '250px' });
+      observer.observe(canvas);
+    }
 
     function animate() {
       animId = requestAnimationFrame(animate);
+      if (!visible || document.hidden) return;
       time += speed;
       globe.position.x = Math.sin(time * 0.7) * driftX;
       globe.position.y = Math.sin(time * 1.4) * driftY;
@@ -190,7 +193,6 @@
     }
 
     animate();
-    console.log('[HeroGlobe] Running', width + 'x' + height);
 
     var resizeTimer;
     function onResize() {
@@ -203,40 +205,39 @@
         renderer.setSize(width, height);
       }, 150);
     }
-    window.addEventListener('resize', onResize);
+    window.addEventListener('resize', onResize, { passive: true });
   }
 
-  function init() {
+  async function init() {
+    if (window.innerWidth <= 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var canvases = document.querySelectorAll('.hero-globe-canvas');
-    console.log('[HeroGlobe] Found ' + canvases.length + ' canvas(es)');
-    canvases.forEach(function(canvas) {
-      if (!canvas.getAttribute('data-init')) {
-        canvas.setAttribute('data-init', '1');
-        try { initGlobe(canvas); } catch(e) { console.error('[HeroGlobe] Error:', e); }
-      }
-    });
+    if (!canvases.length) return;
+
+    try {
+      var THREE = await loadThree();
+      canvases.forEach(function(canvas) {
+        if (!canvas.getAttribute('data-init')) {
+          canvas.setAttribute('data-init', '1');
+          try { initGlobe(canvas, THREE); } catch(e) { console.error('[HeroGlobe] Error:', e); }
+        }
+      });
+    } catch (e) {
+      console.error('[HeroGlobe] Failed to load Three.js chunk:', e);
+    }
   }
 
-  function start() {
-    loadThree(init);
-  }
-
-  // Skip globe on mobile, heavy WebGL for barely visible effect (opacity 0.35)
-  if (window.innerWidth <= 768) return;
-
-  // On desktop, defer Three.js until after page load to not compete with LCP
   function deferStart() {
     if ('requestIdleCallback' in window) {
-      requestIdleCallback(start, { timeout: 3000 });
+      requestIdleCallback(init, { timeout: 3500 });
     } else {
-      setTimeout(start, 1000);
+      setTimeout(init, 1200);
     }
   }
 
   if (document.readyState === 'complete') {
     deferStart();
   } else {
-    window.addEventListener('load', deferStart);
+    window.addEventListener('load', deferStart, { once: true });
   }
 })();
 </script>
