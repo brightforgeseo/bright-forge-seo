@@ -71,13 +71,13 @@
 
     var renderer;
     try {
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
     } catch (e) {
       console.error('[HeroGlobe] WebGL failed:', e);
       return;
     }
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     renderer.setSize(width, height);
 
     var scene = new THREE.Scene();
@@ -199,7 +199,6 @@
     }
 
     animate();
-    console.log('[HeroGlobe] Running', width + 'x' + height);
 
     function onResize() {
       width = section.clientWidth;
@@ -215,7 +214,6 @@
     if (!window.matchMedia('(min-width: 1025px)').matches) return;
     ensureThree(function() {
       var canvases = document.querySelectorAll('.hero-globe-canvas');
-      console.log('[HeroGlobe] Found ' + canvases.length + ' canvas(es)');
       canvases.forEach(function(canvas) {
         if (!canvas.getAttribute('data-init')) {
           canvas.setAttribute('data-init', '1');
@@ -225,10 +223,22 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
+  function scheduleInit() {
+    var start = function() {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(init, { timeout: 2500 });
+      } else {
+        setTimeout(init, 1200);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      start();
+    } else {
+      window.addEventListener('load', start, { once: true });
+    }
   }
+
+  scheduleInit();
 })();
 </script>

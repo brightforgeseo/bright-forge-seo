@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[[edge_functions]]
+  function = "strip-simple-analytics"
+  path = "/*"
+
 # Build processing and optimization
 # Content-Security-Policy header added for security
 # Build processing - removed to fix deployment issue
