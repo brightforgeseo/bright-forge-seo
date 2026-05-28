@@ -158,7 +158,7 @@ const isHome = Astro.url.pathname === '/';
 
     <!-- Preload LCP images: hero image for desktop, header logo for mobile -->
     <link rel="preload" as="image" href="/images/hero-480w.webp" fetchpriority="high" media="(min-width: 1025px)">
-    <link rel="preload" as="image" href="/images/header-logo-360w.webp" fetchpriority="high" media="(max-width: 1024px)">
+    <link rel="preload" as="image" href="/images/header-logo-cropped.webp" fetchpriority="high" media="(max-width: 1024px)">
 
     <!-- Defer non-critical JavaScript -->
     <script defer>
