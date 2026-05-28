@@ -7,6 +7,7 @@ import ContactPopup from '../components/ContactPopup.astro';
 import '../styles/global.css';
 import '../styles/case-study-fix.css';
 import '../styles/bundled.css';
+import '../styles/fontawesome-subset.css';
 // Removed breadcrumbs.css - now using inline styles to prevent conflicts
 import '../styles/force-black-breadcrumbs.css'; // Global CSS override for black breadcrumb text
 // REMOVED critical.css and red-theme.css - they were overriding hero gradients
@@ -105,6 +106,8 @@ const isHome = Astro.url.pathname === '/';
     <!-- Local critical fonts. Desktop preloads keep the premium type treatment fast; mobile keeps hero text on system fonts so these must not compete with LCP. -->
     <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" media="(min-width: 1025px)">
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" media="(min-width: 1025px)">
+    <link rel="preload" href="/fonts/fontawesome/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/fontawesome/fa-brands-subset.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Critical CSS inline for faster FCP -->
     <style>
@@ -150,11 +153,8 @@ const isHome = Astro.url.pathname === '/';
         body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
       }
       img { max-width: 100%; height: auto; }
-      /* Inline critical icon styles to avoid FontAwesome blocking */
-      .fas, .far, .fab { display: inline-block; width: 1em; height: 1em; }
-      /* Force font-display:swap for Font Awesome to prevent FOIT */
-      @font-face { font-family: 'Font Awesome 5 Free'; font-display: swap; }
-      @font-face { font-family: 'Font Awesome 5 Brands'; font-display: swap; }
+      /* Keep icon slots stable while the tiny local Font Awesome subset loads. */
+      .fas, .far, .fab { display: inline-block; width: 1em; min-width: 1em; }
     </style>
 
     <!-- Preload LCP images: hero image for desktop, header logo for mobile -->
@@ -241,21 +241,6 @@ const isHome = Astro.url.pathname === '/';
     <!-- Contact popup - appears after 45 seconds on non-contact pages -->
     {!disableContactPopup && <ContactPopup />}
 
-    <!-- Load non-critical resources well after page load -->
-    <script>
-      // Load FontAwesome after page is fully loaded and idle
-      // Using load + setTimeout to ensure it never competes with LCP
-      window.addEventListener('load', function() {
-        if (!window.matchMedia('(min-width: 1025px)').matches) return;
-        setTimeout(function() {
-          var fa = document.createElement('link');
-          fa.rel = 'stylesheet';
-          fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
-          document.head.appendChild(fa);
-        }, 100);
-      });
-
-    </script>
   </body>
 <style is:global>
   /* Force dark background site-wide */
