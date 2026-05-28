@@ -1,67 +1,208 @@
 ---
 /**
- * 3D-style static network globe for the homepage hero.
- * Desktop only, no Three.js, no canvas, no mobile request.
+ * 3D wireframe globe background for hero sections.
+ * Loads Three.js from CDN to avoid bundler/module issues.
  */
 ---
 
-<div class="hero-globe-fallback" aria-hidden="true">
-  <picture class="original-globe">
-    <source media="(min-width: 1025px)" srcset="/images/hero-globe-network-v2.svg" />
-    <img
-      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
-      alt=""
-      width="900"
-      height="620"
-      loading="eager"
-      decoding="async"
-    />
-  </picture>
-</div>
+<canvas class="hero-globe-canvas" aria-hidden="true"></canvas>
 
 <style>
-  .hero-globe-fallback {
+  .hero-globe-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
+    opacity: 0.6;
     z-index: 1;
-    opacity: 0.98;
-    overflow: hidden;
   }
 
-  .hero-globe-fallback::before {
-    content: '';
-    position: absolute;
-    right: -11%;
-    top: -14%;
-    width: min(78vw, 62rem);
-    aspect-ratio: 1.05;
-    border-radius: 999px;
-    background: radial-gradient(ellipse at 62% 38%, rgba(255, 122, 53, 0.36) 0%, rgba(240, 98, 42, 0.20) 36%, rgba(196, 78, 22, 0.08) 58%, transparent 74%);
-    filter: blur(18px);
-    transform: translateX(10%);
-  }
-
-  .original-globe {
-    position: absolute;
-    right: clamp(-6.5rem, -5vw, -3.5rem);
-    top: clamp(-5.25rem, -6vw, -2.75rem);
-    width: min(66vw, 54rem);
-    height: auto;
-    display: block;
-  }
-
-  .original-globe img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  @media (max-width: 1024px) {
-    .hero-globe-fallback {
-      display: none;
+  @media (max-width: 768px) {
+    .hero-globe-canvas {
+      opacity: 0.35;
     }
   }
 </style>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline>
+(function() {
+  function initGlobe(canvas) {
+    var section = canvas.parentElement;
+    while (section && section.tagName !== 'SECTION') {
+      section = section.parentElement;
+    }
+    if (!section) return;
+
+    var width = section.clientWidth;
+    var height = section.clientHeight;
+
+    if (!width || !height) {
+      setTimeout(function() {
+        canvas.removeAttribute('data-init');
+        initGlobe(canvas);
+      }, 100);
+      return;
+    }
+
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    } catch (e) {
+      console.error('[HeroGlobe] WebGL failed:', e);
+      return;
+    }
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(width, height);
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    camera.position.z = 3.2;
+
+    var orange = new THREE.Color(0xf0622a);
+    var dimWhite = new THREE.Color(0x3a3f5c);
+
+    var globe = new THREE.Group();
+    scene.add(globe);
+
+    // Wireframe sphere
+    var sphereGeo = new THREE.SphereGeometry(1, 36, 18);
+    var wireframe = new THREE.LineSegments(
+      new THREE.WireframeGeometry(sphereGeo),
+      new THREE.LineBasicMaterial({ color: dimWhite, transparent: true, opacity: 0.25 })
+    );
+    globe.add(wireframe);
+
+    // Latitude rings
+    for (var i = 1; i < 6; i++) {
+      var phi = (i / 6) * Math.PI;
+      var ringRadius = Math.sin(phi);
+      var ringY = Math.cos(phi);
+      var ringGeo = new THREE.RingGeometry(ringRadius - 0.002, ringRadius + 0.002, 64);
+      var ring = new THREE.Mesh(
+        ringGeo,
+        new THREE.MeshBasicMaterial({ color: dimWhite, transparent: true, opacity: 0.15, side: THREE.DoubleSide })
+      );
+      ring.position.y = ringY;
+      ring.rotation.x = Math.PI / 2;
+      globe.add(ring);
+    }
+
+    // City connection points
+    var cities = [
+      { lat: 14.5, lng: 121 },
+      { lat: 35.7, lng: 139.7 },
+      { lat: 37.8, lng: -122.4 },
+      { lat: 51.5, lng: -0.1 },
+      { lat: -33.9, lng: 151.2 },
+      { lat: 1.35, lng: 103.8 },
+      { lat: 55.75, lng: 37.6 },
+      { lat: 22.3, lng: 114.2 },
+      { lat: 48.9, lng: 2.35 },
+      { lat: -23.5, lng: -46.6 },
+      { lat: 25.2, lng: 55.3 },
+      { lat: 40.7, lng: -74 },
+    ];
+
+    function toVec3(lat, lng, r) {
+      var p = (90 - lat) * (Math.PI / 180);
+      var t = (lng + 180) * (Math.PI / 180);
+      return new THREE.Vector3(
+        -r * Math.sin(p) * Math.cos(t),
+        r * Math.cos(p),
+        r * Math.sin(p) * Math.sin(t)
+      );
+    }
+
+    var dotGeo = new THREE.SphereGeometry(0.025, 8, 8);
+    var haloGeo = new THREE.SphereGeometry(0.05, 8, 8);
+
+    cities.forEach(function(c) {
+      var pos = toVec3(c.lat, c.lng, 1.01);
+      var dot = new THREE.Mesh(dotGeo, new THREE.MeshBasicMaterial({ color: orange }));
+      dot.position.copy(pos);
+      globe.add(dot);
+      var halo = new THREE.Mesh(haloGeo, new THREE.MeshBasicMaterial({ color: orange, transparent: true, opacity: 0.3 }));
+      halo.position.copy(pos);
+      globe.add(halo);
+    });
+
+    // Connection arcs
+    var links = [[0,1],[0,5],[0,7],[2,11],[2,1],[3,8],[3,6],[4,5],[10,6],[9,11]];
+    links.forEach(function(pair) {
+      var a = pair[0], b = pair[1];
+      var vA = toVec3(cities[a].lat, cities[a].lng, 1.01);
+      var vB = toVec3(cities[b].lat, cities[b].lng, 1.01);
+      var mid = new THREE.Vector3().addVectors(vA, vB).multiplyScalar(0.5);
+      var dist = vA.distanceTo(vB);
+      mid.normalize().multiplyScalar(1 + dist * 0.2);
+      var curve = new THREE.QuadraticBezierCurve3(vA, mid, vB);
+      var geo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(32));
+      globe.add(new THREE.Line(geo, new THREE.LineBasicMaterial({ color: orange, transparent: true, opacity: 0.2 })));
+    });
+
+    // Atmosphere glow
+    var atmosGeo = new THREE.SphereGeometry(1.08, 32, 32);
+    var atmosphere = new THREE.Mesh(
+      atmosGeo,
+      new THREE.ShaderMaterial({
+        vertexShader: 'varying vec3 vNormal; void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+        fragmentShader: 'varying vec3 vNormal; void main() { float intensity = pow(0.65 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 3.0); gl_FragColor = vec4(0.94, 0.384, 0.165, intensity * 0.4); }',
+        side: THREE.BackSide,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+      })
+    );
+    globe.add(atmosphere);
+
+    // Tilt
+    globe.rotation.x = 0.3;
+    globe.rotation.z = -0.1;
+
+    // Animation
+    var animId;
+    var time = 0;
+
+    function animate() {
+      animId = requestAnimationFrame(animate);
+      time += 0.001;
+      globe.position.x = Math.sin(time * 0.7) * 1.2;
+      globe.position.y = Math.sin(time * 1.4) * 0.4;
+      globe.position.z = Math.cos(time * 0.5) * 0.3;
+      globe.rotation.y += 0.0015;
+      renderer.render(scene, camera);
+    }
+
+    animate();
+    console.log('[HeroGlobe] Running', width + 'x' + height);
+
+    function onResize() {
+      width = section.clientWidth;
+      height = section.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+    window.addEventListener('resize', onResize);
+  }
+
+  function init() {
+    var canvases = document.querySelectorAll('.hero-globe-canvas');
+    console.log('[HeroGlobe] Found ' + canvases.length + ' canvas(es)');
+    canvases.forEach(function(canvas) {
+      if (!canvas.getAttribute('data-init')) {
+        canvas.setAttribute('data-init', '1');
+        try { initGlobe(canvas); } catch(e) { console.error('[HeroGlobe] Error:', e); }
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
