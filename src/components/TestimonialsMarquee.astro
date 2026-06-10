@@ -407,7 +407,7 @@ for (let i = 0; i < testimonials.length; i += 4) {
 
   /* Featured card */
   .tm-featured {
-    background: linear-gradient(145deg, #1f1530 0%, #1a1632 60%, #151228 100%);
+    background: #161a2e;
     border-color: rgba(240,98,42,0.25);
     margin-bottom: 16px;
   }
@@ -489,29 +489,13 @@ for (let i = 0; i < testimonials.length; i += 4) {
     position: relative;
   }
 
-  .tm-avatar::after {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 50%;
-    background: inherit;
-    opacity: 0.3;
-    filter: blur(6px);
-    z-index: -1;
+  /* Single brand treatment for every avatar; the rainbow-gradient-per-person
+     look read as templated against the navy/orange palette. */
+  .tm-avatar {
+    background: #1d2238;
+    border: 1px solid rgba(240, 98, 42, 0.4);
+    color: #ff9a62;
   }
-
-  .av-r { background: linear-gradient(135deg, #f0622a, #ff9a62); }
-  .av-j { background: linear-gradient(135deg, #6c63ff, #a78bfa); }
-  .av-ri { background: linear-gradient(135deg, #ef4444, #f0622a); }
-  .av-l { background: linear-gradient(135deg, #10b981, #34d399); }
-  .av-m { background: linear-gradient(135deg, #8b5cf6, #c084fc); }
-  .av-k { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
-  .av-g { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
-  .av-u { background: linear-gradient(135deg, #14b8a6, #5eead4); }
-  .av-d { background: linear-gradient(135deg, #ec4899, #f472b6); }
-  .av-a { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
-  .av-s { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
-  .av-t { background: linear-gradient(135deg, #22c55e, #4ade80); }
 
   .tm-author-name {
     font-family: 'Outfit', sans-serif;
