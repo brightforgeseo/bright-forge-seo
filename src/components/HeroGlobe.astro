@@ -224,27 +224,21 @@
   }
 
   function scheduleInit() {
-    // The globe is decorative, so keep the 630KB Three.js download entirely off
-    // the loading critical path: fetch it only after the visitor first interacts.
-    var started = false;
-    var events = ['pointermove', 'pointerdown', 'touchstart', 'scroll', 'keydown'];
-
+    // Preserve the visible desktop globe while keeping Three.js out of the
+    // critical path: initialise after page load/idle, not only after interaction.
     var start = function() {
-      if (started) return;
-      started = true;
-      events.forEach(function(evt) {
-        window.removeEventListener(evt, start);
-      });
       if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(init, { timeout: 1500 });
+        window.requestIdleCallback(init, { timeout: 2500 });
       } else {
-        setTimeout(init, 200);
+        setTimeout(init, 1200);
       }
     };
 
-    events.forEach(function(evt) {
-      window.addEventListener(evt, start, { once: true, passive: true });
-    });
+    if (document.readyState === 'complete') {
+      start();
+    } else {
+      window.addEventListener('load', start, { once: true });
+    }
   }
 
   scheduleInit();
