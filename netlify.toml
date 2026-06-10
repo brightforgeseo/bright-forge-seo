@@ -63,8 +63,8 @@
     # Enable compression detection
     Vary = "Accept-Encoding"
     
-    # Default caching for HTML with proper Expires header
-    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+    # HTML must revalidate so new deploys are visible immediately (Netlify ETags make this a cheap 304)
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Override HTML caching for dynamic blog content to prevent stale pages after deploys
 [[headers]]
