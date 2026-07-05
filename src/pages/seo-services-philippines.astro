@@ -6,6 +6,7 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
+import { seoServicesHreflangs } from '../data/internationalSeoPages.js';
 
 const servicePillars = [
   {
@@ -152,6 +153,7 @@ const faqs = [
   title="SEO Services Philippines for Rankings & Leads | Bright Forge"
   description="SEO services in the Philippines for businesses that need stronger rankings, better leads and clearer growth. Technical SEO, content, local SEO and CRO."
   faqs={faqs}
+  hreflangs={seoServicesHreflangs}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({

@@ -1,0 +1,501 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
+import { seoServicesHreflangs } from '../data/internationalSeoPages.js';
+
+const faqs = [
+  {
+    question: 'Why would a US business use an SEO agency in the Philippines?',
+    answer: 'US agency retainers routinely run $2,500 to $5,000+ a month, and a large share of that pays for account management layers, not SEO. We deliver senior strategy, technical work, content direction and reporting from the Philippines, so your budget buys hands-on optimization. The Philippines has served US companies for decades — English is an official language and working US-adjacent hours is normal here.'
+  },
+  {
+    question: 'Do you understand the US market and google.com?',
+    answer: 'Yes. The US market is the most competitive search landscape in the world, and campaigns targeting it get scoped accordingly: realistic keyword targets, competitor-gap analysis against well-funded US rivals, and content written in American English for American buyers.'
+  },
+  {
+    question: 'How do the time zones work between the US and the Philippines?',
+    answer: 'Manila is 12 to 13 hours ahead of US Eastern time and 15 to 16 ahead of Pacific. In practice that is an overnight turnaround: brief us before you log off, and finished work is waiting when you start your next day. For calls, our morning overlaps with US evenings and our evening with US mornings — we schedule around you.'
+  },
+  {
+    question: 'Do you invoice in US dollars?',
+    answer: 'Yes. USD is our default for international clients, and we accept international bank transfer and card payments.'
+  },
+  {
+    question: 'Will content be written in American English?',
+    answer: 'Yes. US campaigns get American spelling and terminology — optimization, color, analyze — with human editorial review before delivery. No British spelling on your landing pages, no raw AI dumps.'
+  },
+  {
+    question: 'Can you build links from US websites?',
+    answer: 'For US campaigns we prioritize US-relevant link opportunities: American publications, industry directories, partner sites and digital PR angles that make sense to a US audience. Link relevance is a meaningful signal for country rankings, and we do not sell spam packages.'
+  },
+  {
+    question: 'Can you do local SEO for US cities?',
+    answer: 'We can optimize Google Business Profiles, local landing pages, citations and review strategy for US businesses with physical locations or service areas. Map-pack visibility depends on your US location; the organic strategy and execution can be run from anywhere — that is what we do.'
+  },
+  {
+    question: 'Do you work with US agencies?',
+    answer: 'Yes. Alongside direct campaigns we provide white label SEO for US agencies that need dependable overnight fulfilment — audits, deliverables and client-ready reporting under your brand. See our white label SEO page for the partnership model.'
+  }
+];
+---
+
+<MainLayout
+  title="SEO Services USA | US SEO Agency Support | Bright Forge SEO"
+  description="SEO services for US businesses from a senior Philippines-based team. Technical SEO, American-English content, US link building and clear reporting — at offshore pricing."
+  canonical="https://brightforge.com.ph/seo-services-usa/"
+  type="service"
+  faqs={faqs}
+  hreflangs={seoServicesHreflangs}
+  geoRegion="US"
+  geoPlacename="United States"
+  contentLanguage="en-US"
+>
+  <LegacyHeader slot="header" />
+
+  <Hero
+    badgeIcon="fas fa-globe-americas"
+    badgeText="SEO for US Businesses"
+    title="SEO Services for US Businesses That Want <span>Senior Work Done While You Sleep</span>"
+    breadcrumbCurrent="SEO Services USA"
+  >
+    <Fragment slot="story">
+      <p>We help US ecommerce brands, SaaS companies and service businesses compete on google.com with senior technical SEO, American-English content, US-relevant link building and reporting that answers the only question that matters: is this making us money?</p>
+      <p>Bright Forge is based in the Philippines. For US clients that means one thing above all: you brief us at the end of your day, and finished work is in your inbox the next morning.</p>
+      <p>The US is the world's most competitive search market — which is exactly why paying agency-overhead prices for junior execution is the wrong move.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Get a US SEO Proposal" />
+      <ButtonSecondary href="#services" text="See What We Deliver" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="market-visual" aria-label="US SEO campaign snapshot">
+        <div class="market-node">
+          <span>Your market</span>
+          <strong>google.com, US buyers, US competitors</strong>
+        </div>
+        <div class="market-line"></div>
+        <div class="market-node forge">
+          <span>Your SEO team</span>
+          <strong>Senior delivery from the Philippines</strong>
+        </div>
+        <div class="market-line"></div>
+        <div class="market-node">
+          <span>Your advantage</span>
+          <strong>Brief today, deliverables tomorrow morning</strong>
+        </div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <section class="proof-strip" aria-label="US SEO proof points">
+    <div class="container">
+      <div class="proof-grid">
+        <div><strong>Overnight turnaround</strong><span>Your night is our workday</span></div>
+        <div><strong>American English content</strong><span>Written for US buyers</span></div>
+        <div><strong>USD pricing</strong><span>Predictable monthly costs</span></div>
+        <div><strong>Senior SEO review</strong><span>On everything we ship</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="why-us">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Why US businesses choose us</p>
+        <h2>The most competitive market needs <span>budget spent on work, not overhead</span></h2>
+        <p class="lead">Competing on google.com means out-executing well-funded rivals. Every dollar that goes to an agency's office lease is a dollar not spent on content, fixes and links.</p>
+        <p>The Philippines has been the outsourcing partner of choice for US companies for decades for a reason: strong English, US-aligned working culture, and senior talent at rates that let you do more, faster. We put that to work on your rankings.</p>
+      </div>
+      <div class="card-grid small">
+        <article class="card"><h3>Ecommerce brands</h3><p>Category and product page SEO plus content that captures US buying intent against marketplace giants.</p></article>
+        <article class="card"><h3>SaaS and platforms</h3><p>Comparison, feature and use-case pages plus authority building for brutal US software SERPs.</p></article>
+        <article class="card"><h3>Service businesses</h3><p>Service and location page strategy, Google Business Profile work and local organic visibility for US cities.</p></article>
+        <article class="card"><h3>US agencies</h3><p>White label SEO fulfilment under your brand — see our <a href="/white-label-seo-services-philippines/">white label SEO services</a>.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section darker" id="services">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">What we deliver</p>
+        <h2>Full-service <span>SEO for the US market</span></h2>
+        <p>Every campaign is built around your market, your competitors and your commercial goals — not a fixed task list.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card"><i class="fas fa-search"></i><h3>SEO audits</h3><p>Technical, content and authority diagnosis against your real US competitors, with prioritized fixes.</p></article>
+        <article class="service-card"><i class="fas fa-sitemap"></i><h3>Technical SEO</h3><p>Crawlability, indexation, site speed, schema and structure — the foundations US rankings are built on.</p></article>
+        <article class="service-card"><i class="fas fa-pen-nib"></i><h3>US content SEO</h3><p>American-English content mapped to US search demand, buyer language and commercial intent.</p></article>
+        <article class="service-card"><i class="fas fa-link"></i><h3>US link building</h3><p>Relevance-led links from American publications, directories and industry sites. No spam packages.</p></article>
+        <article class="service-card"><i class="fas fa-key"></i><h3>Keyword research</h3><p>US search demand mapped to pages, sized honestly against the competition you are actually facing.</p></article>
+        <article class="service-card"><i class="fas fa-robot"></i><h3>AI search readiness</h3><p>Entity clarity and answer-ready structure so US buyers find you in AI results, not just blue links.</p></article>
+        <article class="service-card"><i class="fas fa-map-marker-alt"></i><h3>US local SEO</h3><p>Google Business Profile, local landing pages, citations and reviews for location-based US businesses.</p></article>
+        <article class="service-card"><i class="fas fa-handshake"></i><h3>White label for agencies</h3><p>Overnight behind-the-scenes fulfilment for US agencies that need dependable SEO delivery.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="timezone">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">The practical stuff</p>
+        <h2>The 12-hour difference is <span>a delivery superpower</span></h2>
+        <p class="lead">Manila is roughly 12 hours ahead of New York and 15 ahead of Los Angeles. Our entire workday fits inside your night.</p>
+        <p>Send requirements at 5pm Eastern and we are just starting our day. By your next morning the audit is done, the fixes are documented, the content is drafted. US agencies charge premium rates for that turnaround; for us it is just the clock.</p>
+      </div>
+      <div class="timezone-card">
+        <h3>A typical working day</h3>
+        <ul>
+          <li><strong>5:00pm ET / 5:00am PH</strong> — you send briefs and feedback before logging off</li>
+          <li><strong>Your overnight</strong> — audits, fixes, content and reporting completed during our business hours</li>
+          <li><strong>8:00am ET / 8:00pm PH</strong> — deliverables in your inbox; we are still online for questions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container narrow">
+      <div class="section-head centered">
+        <p class="eyebrow">US SEO FAQs</p>
+        <h2><span>Questions US businesses ask</span> before working with us</h2>
+      </div>
+
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container narrow cta-box">
+      <p class="eyebrow">Ready to talk?</p>
+      <h2>Get a straight answer about <span>SEO for your US business</span></h2>
+      <p>Tell us your market, your site and what growth needs to look like. We will tell you honestly what SEO can and cannot do for you — before any money changes hands.</p>
+      <div class="cta-actions">
+        <a href="/contact/" class="cta-primary">Get a US SEO Proposal</a>
+        <a href="/case-studies/" class="cta-secondary">View All Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection slot="contact" />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(900px, calc(100% - 2rem));
+}
+
+.market-visual {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(19, 22, 39, 0.96), rgba(13, 15, 26, 0.92));
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+.market-node {
+  padding: 1.2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.market-node span {
+  display: block;
+  color: #ff8a5c;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.market-node strong {
+  display: block;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.market-line {
+  height: 26px;
+  width: 2px;
+  background: linear-gradient(#ff6b35, transparent);
+  margin-left: 1.2rem;
+}
+
+.proof-strip {
+  background: #0d0f1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 0;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.proof-grid div {
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proof-grid strong,
+.proof-grid span {
+  display: block;
+}
+
+.proof-grid strong {
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.proof-grid span {
+  color: #cfd3e6;
+  font-size: 0.92rem;
+}
+
+.section {
+  padding: 5.5rem 0;
+}
+
+.dark {
+  background: #131627;
+}
+
+.darker {
+  background: #0d0f1a;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.eyebrow {
+  color: #ff8a5c;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  margin-bottom: 0.85rem;
+}
+
+h2 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+p,
+li {
+  color: #d0d4e8;
+  line-height: 1.75;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: #e4e7f5;
+}
+
+.section-head {
+  max-width: 820px;
+  margin-bottom: 3rem;
+}
+
+.centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-grid,
+.service-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card-grid.small {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card,
+.service-card,
+.timezone-card,
+.faq-item {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 1.5rem;
+}
+
+.card a {
+  color: #ff8a5c;
+}
+
+.service-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.service-card i {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b35, #ff9f1c);
+}
+
+.timezone-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+}
+
+.timezone-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+
+.timezone-card li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.timezone-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ff8a5c;
+  font-weight: 800;
+}
+
+.faq-section {
+  background: #131627;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.faq-item p {
+  margin-top: 1rem;
+}
+
+.cta-section {
+  padding: 5rem 0;
+  background: #0d0f1a;
+}
+
+.cta-box {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.18), rgba(255, 159, 28, 0.08));
+  border: 1px solid rgba(255, 107, 53, 0.28);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cta-primary {
+  color: #0d0f1a;
+  background: #fff;
+}
+
+.cta-secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 980px) {
+  .proof-grid,
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .proof-grid,
+  .service-grid,
+  .card-grid.small {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    padding: 2rem 1.25rem;
+  }
+}
+</style>
