@@ -38,6 +38,6 @@ Allow: /contact
 # Crawl delay (optional - be conservative)
 Crawl-delay: 1
 
-# Block common non-essential files (do not block XML to allow sitemap crawling)
+# Block common non-essential files (do not block XML to allow sitemap crawling;
+# do not block .txt so llms.txt and llms-full.txt stay crawlable)
 Disallow: /*.json$
-Disallow: /*.txt$

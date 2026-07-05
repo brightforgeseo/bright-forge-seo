@@ -39,6 +39,17 @@ interface Props {
     question: string;
     answer: string;
   }>;
+  // International targeting: hreflang alternates for pages that belong to a
+  // country cluster (e.g. the SEO services pages for PH/UK/AU/US).
+  hreflangs?: Array<{
+    hreflang: string;
+    href: string;
+  }>;
+  // Geo meta overrides so country landing pages are not stamped with the
+  // Quezon City defaults. Defaults preserve existing behaviour for PH pages.
+  geoRegion?: string;
+  geoPlacename?: string;
+  contentLanguage?: string;
 }
 
 const { 
@@ -55,8 +66,15 @@ const {
   noindex = false,
   nofollow = false,
   disableContactPopup = false,
-  faqs
+  faqs,
+  hreflangs,
+  geoRegion = 'PH-00',
+  geoPlacename = 'Quezon City, Philippines',
+  contentLanguage = 'en-PH'
 } = Astro.props;
+
+// Office coordinates only make sense on Philippines-targeted pages.
+const isPhilippinesGeo = geoRegion.startsWith('PH');
 
 // With trailingSlash set to 'always', canonical can simply use current URL
 const finalCanonical = canonical;
@@ -213,13 +231,18 @@ const isHome = Astro.url.pathname === '/';
     
     <!-- Additional SEO Meta Tags -->
     <meta name="format-detection" content="telephone=no">
-    <meta name="geo.region" content="PH-00">
-    <meta name="geo.placename" content="Quezon City, Philippines">
-    <meta name="geo.position" content="14.6760;121.0437">
-    <meta name="ICBM" content="14.6760, 121.0437">
-    <meta name="language" content="en-PH">
+    <meta name="geo.region" content={geoRegion}>
+    <meta name="geo.placename" content={geoPlacename}>
+    {isPhilippinesGeo && <meta name="geo.position" content="14.6760;121.0437">}
+    {isPhilippinesGeo && <meta name="ICBM" content="14.6760, 121.0437">}
+    <meta name="language" content={contentLanguage}>
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
+
+    <!-- Hreflang alternates for country-targeted page clusters -->
+    {hreflangs && hreflangs.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
     
     <!-- Business Information -->
     <meta name="business:contact_data:street_address" content="Kathleen Place 4, Block 16, Lot 37, Armani Street">
