@@ -1,0 +1,631 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const faqs = [
+  {
+    question: 'How is ecommerce SEO different from normal SEO?',
+    answer: 'Ecommerce SEO is dominated by templates and scale. Instead of optimising twenty pages, you are optimising category architecture, faceted navigation, thousands of product pages, out-of-stock handling, duplicate variants and product schema — and every fix multiplies across the catalogue. It also has a direct revenue line: rankings turn into sessions, sessions into add-to-carts. Our ecommerce campaigns are built around that template-level thinking rather than page-by-page tweaks.'
+  },
+  {
+    question: 'Which ecommerce platforms do you work with?',
+    answer: 'Shopify, WooCommerce, Magento, BigCommerce and headless or custom builds. Each platform has its own SEO quirks — Shopify\'s collection and tag duplication, WooCommerce\'s crawl bloat from filtered URLs, Magento\'s layered navigation — and knowing where each platform fights you is half the technical work. We also handle replatforming: our website migration service exists because store migrations are where ecommerce rankings most often die.'
+  },
+  {
+    question: 'What results have you achieved for online stores?',
+    answer: 'Published examples: Speediance UK grew organic traffic 119% in three months; Speediance Australia grew clicks 66% in six months; Speediance New Zealand grew 177% in the same window; a bridal dress designer grew organic clicks 137.5% in three months; a leather wallet brand grew clicks 49.3% with CTR up from 3.1% to 4.5%. Every one of those is a published case study with the Search Console numbers shown.'
+  },
+  {
+    question: 'How long does ecommerce SEO take to show results?',
+    answer: 'Technical fixes on a large catalogue can move numbers faster than people expect — indexation and template fixes affect thousands of URLs at once. Our published ecommerce results range from 119% and 137.5% traffic growth over three-month comparisons to 66% and 177% over six months. Plan for three to six months to see meaningful movement and judge a campaign properly over six to twelve.'
+  },
+  {
+    question: 'Do you optimise product pages, category pages or both?',
+    answer: 'Both, but in the right order. Category and collection pages usually carry the commercial head terms and deserve first attention: architecture, internal linking, on-page copy that actually helps buyers, and clean pagination. Product pages then win the long tail with unique descriptions, review markup, product schema and image optimisation. We map the demand first so effort lands where the revenue is.'
+  },
+  {
+    question: 'Can you fix our store\'s technical SEO problems?',
+    answer: 'Yes — technical work is usually where ecommerce campaigns start. Common culprits we fix: index bloat from filtered and tagged URLs, duplicate content across variants, thin or empty categories, broken canonical logic, slow templates hurting Core Web Vitals, missing or invalid product schema, and internal links that bury money pages. Our technical SEO service covers the full diagnostic and the fixes.'
+  },
+  {
+    question: 'Does ecommerce SEO still matter with AI search and ChatGPT?',
+    answer: 'More than ever — AI assistants now recommend products and stores directly. We measure this: a leather goods ecommerce brand we work with grew AI referral sessions 434.7% over a six-month comparison, with ChatGPT driving 93% of that traffic. A bridal ecommerce site grew LLM referrals 1,660% on top of a 71.6% search visibility gain. The same foundations power both: crawlable catalogues, clear product entities and content AI can cite.'
+  },
+  {
+    question: 'How much does ecommerce SEO cost?',
+    answer: 'Market rates for ecommerce SEO typically run higher than local SEO because of catalogue scale — agencies in the UK, US and Australia commonly charge the equivalent of £2,000 to £10,000+ a month for competitive stores. We scope by catalogue size, competition and growth targets, quote a fixed monthly figure in writing, and because we deliver from the Philippines, more of the budget buys actual work. No percentage-of-revenue pricing, no surprise line items.'
+  },
+  {
+    question: 'Do you write product and category descriptions?',
+    answer: 'Yes. Our content SEO team produces category copy that supports rankings without burying the product grid, unique product descriptions at scale, and buying guides that capture research-stage searches and feed internal links to money pages. Everything is written for your market\'s English — UK, US or Australian — and passes human editorial review before it ships.'
+  },
+  {
+    question: 'Can you help with international or multi-store ecommerce SEO?',
+    answer: 'Yes — it is one of our specialities. We ran coordinated campaigns for Speediance across the UK, Australia and New Zealand storefronts, growing all three without the country sites cannibalising each other: correct hreflang, country-relevant links and market-specific content. If you sell into multiple countries from one store or several, we structure the SEO so each market can rank.'
+  },
+  {
+    question: 'Will you work with our existing developers?',
+    answer: 'Happily. Every technical recommendation ships with priority, expected impact and implementation notes a developer can act on without translation. For stores without dev resource, we can implement directly on most platforms. Either way, changes are agreed before they happen — nobody wants surprise edits on a live store.'
+  }
+];
+---
+
+<MainLayout
+  title="Ecommerce SEO Services That Grow Revenue | Bright Forge"
+  description="Ecommerce SEO agency with published results: +119%, +137% and +177% organic growth for online stores. Technical, content and AI search for Shopify, WooCommerce and more."
+  canonical="https://brightforge.com.ph/ecommerce-seo-services/"
+  type="service"
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://brightforge.com.ph/' },
+        { '@type': 'ListItem', position: 2, name: 'Ecommerce SEO Services', item: 'https://brightforge.com.ph/ecommerce-seo-services/' }
+      ]
+    })} />
+  </Fragment>
+
+  <LegacyHeader slot="header" />
+
+  <Hero
+    badgeIcon="fas fa-shopping-cart"
+    badgeText="Ecommerce SEO Specialists"
+    title="Ecommerce SEO Services That Turn Catalogues Into <span>Compounding Organic Revenue</span>"
+    breadcrumbCurrent="Ecommerce SEO Services"
+  >
+    <Fragment slot="story">
+      <p>Most of our strongest published case studies are online stores. Fitness equipment, bridal, leather goods, technical spares — stores where rankings translate directly into orders.</p>
+      <p>Ecommerce SEO is template work at scale: category architecture, product page optimisation, technical health across thousands of URLs, and content that captures buyers at every stage. We do all of it, with senior review on everything that ships.</p>
+      <p>The numbers are public: <a href="/case-studies/speediance-uk-fitness-seo/">+119% organic traffic in three months</a>, <a href="/case-studies/bridal-dress-designer-seo/">+137.5% clicks in three months</a>, <a href="/case-studies/speediance-nz-fitness-seo/">+177% in six</a>.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Get an Ecommerce SEO Proposal" />
+      <ButtonSecondary href="#store-results" text="See Store Results" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="market-visual" aria-label="Ecommerce SEO growth snapshot">
+        <div class="market-node">
+          <span>Speediance UK</span>
+          <strong>+119% organic traffic in 3 months</strong>
+        </div>
+        <div class="market-line"></div>
+        <div class="market-node forge">
+          <span>Bridal ecommerce</span>
+          <strong>+137.5% organic clicks in 3 months</strong>
+        </div>
+        <div class="market-line"></div>
+        <div class="market-node">
+          <span>Speediance NZ</span>
+          <strong>+177% organic growth in 6 months</strong>
+        </div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <section class="proof-strip" aria-label="Ecommerce SEO proof points">
+    <div class="container">
+      <div class="proof-grid">
+        <div><strong>8 ecommerce case studies</strong><span>Published with real numbers</span></div>
+        <div><strong>3-country store growth</strong><span>UK, AU and NZ simultaneously</span></div>
+        <div><strong>AI search measured</strong><span>+434% LLM referrals for one brand</span></div>
+        <div><strong>All major platforms</strong><span>Shopify, Woo, Magento, headless</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="who-for">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Who this is for</p>
+        <h2>An ecommerce SEO agency for stores that <span>compete on more than ad spend</span></h2>
+        <p class="lead">Paid acquisition gets more expensive every quarter. Organic search is the channel where effort compounds instead of resetting each month.</p>
+        <p>We work with stores that want category terms, product long-tail and buying-intent content working together — whether you are fighting marketplaces, big-box retailers or well-funded DTC rivals.</p>
+      </div>
+      <div class="card-grid small">
+        <article class="card"><h3>DTC brands</h3><p>Own your demand instead of renting it — category and content strategy that reduces paid dependence.</p></article>
+        <article class="card"><h3>Multi-country stores</h3><p>Coordinated international SEO so your UK, AU and other storefronts grow without cannibalising each other.</p></article>
+        <article class="card"><h3>Technical catalogues</h3><p>Spares, parts and specification-heavy stores where search intent is precise and margins reward accuracy.</p></article>
+        <article class="card"><h3>Replatforming stores</h3><p>Moving platforms? Our <a href="/website-migration-services/">migration service</a> protects the rankings you already own.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section darker" id="store-results">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">Published store results</p>
+        <h2>Ecommerce SEO results <span>we show in public</span></h2>
+        <p>Every card below links to a full case study with the Search Console data on the page.</p>
+      </div>
+
+      <div class="results-grid">
+        <article class="result-card">
+          <p class="result-tag">Fitness Equipment · UK</p>
+          <h3>+119% organic traffic in 3 months</h3>
+          <p>Speediance UK: clicks up from 2.16K to 4.74K, impressions from 47.2K to 111K in the UK's crowded home-gym market.</p>
+          <a href="/case-studies/speediance-uk-fitness-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Bridal Fashion</p>
+          <h3>+137.5% organic clicks in 3 months</h3>
+          <p>A bridal dress designer grew from 7.4k to 17.6k clicks with impressions up 118% — driven by category and product page work.</p>
+          <a href="/case-studies/bridal-dress-designer-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Fitness Equipment · AU + NZ</p>
+          <h3>+66% and +177% in 6 months</h3>
+          <p>Coordinated campaigns for Speediance Australia and New Zealand grew both storefronts side by side without cannibalisation.</p>
+          <a href="/case-studies/speediance-au-fitness-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Leather Goods · DTC</p>
+          <h3>+49.3% clicks, CTR 3.1% → 4.5%</h3>
+          <p>A leather wallet brand added 7.5k monthly clicks through on-page and snippet optimisation across the catalogue.</p>
+          <a href="/case-studies/leather-wallet-ecommerce-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Technical Parts Ecommerce</p>
+          <h3>+18% clicks on a 1M+ impression store</h3>
+          <p>A boiler and heating spares supplier grew from 14.1k to 16.6k monthly clicks in a precise, specification-driven niche.</p>
+          <a href="/case-studies/boiler-heating-spares-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">AI Search · Ecommerce</p>
+          <h3>+1,660% AI referrals for a bridal store</h3>
+          <p>LLM referral sessions grew from 5 to 88 on top of a 71.6% search visibility gain — AI search now sends real buyers.</p>
+          <a href="/case-studies/ai-bridal-ecommerce-geo/">Read the case study →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="services">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">What we deliver</p>
+        <h2>Full-stack <span>SEO for online stores</span></h2>
+        <p>Ecommerce campaigns pull together technical, content, authority and measurement work — sequenced by revenue impact, not by a fixed task list.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card"><i class="fas fa-sitemap"></i><h3>Catalogue architecture</h3><p>Category structure, faceted navigation control, internal linking and pagination that help money pages rank.</p></article>
+        <article class="service-card"><i class="fas fa-cogs"></i><h3>Technical SEO</h3><p>Index bloat, duplicate variants, canonical logic, Core Web Vitals and crawl efficiency across thousands of URLs. See our <a href="/technical-seo-services-philippines/">technical SEO service</a>.</p></article>
+        <article class="service-card"><i class="fas fa-tags"></i><h3>Product page SEO</h3><p>Unique descriptions, product schema, review markup and image optimisation that win the long tail.</p></article>
+        <article class="service-card"><i class="fas fa-pen-nib"></i><h3>Commerce content</h3><p>Category copy, buying guides and comparison content mapped to real search demand via our <a href="/content-seo-services-philippines/">content SEO service</a>.</p></article>
+        <article class="service-card"><i class="fas fa-key"></i><h3>Keyword &amp; demand mapping</h3><p>Commercial head terms, long-tail product demand and research-stage queries mapped to the right page types.</p></article>
+        <article class="service-card"><i class="fas fa-link"></i><h3>Authority building</h3><p>Relevance-led <a href="/backlink-seo-services-philippines/">link building</a> — digital PR angles and industry placements, never bulk packages.</p></article>
+        <article class="service-card"><i class="fas fa-robot"></i><h3>AI search optimisation</h3><p>Product entity clarity and citable content so AI assistants recommend your store — measured, not guessed. See <a href="/ai-search-optimization-services-philippines/">AI search optimisation</a>.</p></article>
+        <article class="service-card"><i class="fas fa-chart-line"></i><h3>Revenue reporting</h3><p>Monthly reports tied to GA4 ecommerce data: rankings, clicks, revenue movement, work completed, next priorities.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section darker" id="platforms">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Platforms</p>
+        <h2>We know where each platform <span>fights your SEO</span></h2>
+        <p class="lead">Every ecommerce platform has built-in SEO traps. Knowing them saves months of guessing.</p>
+        <p>Shopify duplicates collections through tags and produces crawlable variant URLs. WooCommerce bloats crawl budget with filtered archives. Magento's layered navigation can spawn millions of URLs. Headless builds break rendering assumptions. We have worked through all of them — and our fixes come with platform-specific implementation notes your developers can act on directly.</p>
+      </div>
+      <div class="timezone-card">
+        <h3>Platform coverage</h3>
+        <ul>
+          <li><strong>Shopify &amp; Shopify Plus</strong> — collection architecture, tag duplication, app bloat control</li>
+          <li><strong>WooCommerce</strong> — crawl budget, filtered URLs, performance on WordPress hosting</li>
+          <li><strong>Magento / Adobe Commerce</strong> — layered navigation, index management at scale</li>
+          <li><strong>BigCommerce &amp; headless</strong> — rendering, structured data and URL control on custom stacks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="process">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">How a campaign runs</p>
+        <h2>The first 90 days of an <span>ecommerce SEO campaign</span></h2>
+      </div>
+
+      <div class="timeline">
+        <article><span>Days 1–15</span><h3>Store diagnosis</h3><p>Full crawl, indexation audit, GA4 and Search Console review, competitor gap analysis and a revenue-mapped priority list.</p></article>
+        <article><span>Days 16–45</span><h3>Template-level fixes</h3><p>Technical and on-page fixes that touch thousands of URLs at once: canonicals, schema, internal links, category copy.</p></article>
+        <article><span>Days 46–75</span><h3>Content and authority</h3><p>Buying guides, category expansion and link acquisition targeting the terms your revenue depends on.</p></article>
+        <article><span>Days 76–90</span><h3>Measure and compound</h3><p>Review what moved in clicks, revenue and AI visibility, then double down where the data points.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container narrow">
+      <div class="section-head centered">
+        <p class="eyebrow">Ecommerce SEO FAQs</p>
+        <h2><span>Questions store owners ask</span> before working with us</h2>
+      </div>
+
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container narrow cta-box">
+      <p class="eyebrow">Ready to talk?</p>
+      <h2>Get a straight answer about <span>SEO for your store</span></h2>
+      <p>Tell us your platform, your market and what growth needs to look like. We will tell you honestly where the opportunity is — and where it is not — before any money changes hands.</p>
+      <div class="cta-actions">
+        <a href="/contact/" class="cta-primary">Get an Ecommerce SEO Proposal</a>
+        <a href="/case-studies/" class="cta-secondary">View All Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection slot="contact" />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(900px, calc(100% - 2rem));
+}
+
+.market-visual {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(19, 22, 39, 0.96), rgba(13, 15, 26, 0.92));
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+.market-node {
+  padding: 1.2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.market-node.forge {
+  border-color: rgba(255, 107, 53, 0.35);
+}
+
+.market-node span {
+  display: block;
+  color: #ff8a5c;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.market-node strong {
+  display: block;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.market-line {
+  height: 26px;
+  width: 2px;
+  background: linear-gradient(#ff6b35, transparent);
+  margin-left: 1.2rem;
+}
+
+.proof-strip {
+  background: #0d0f1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 0;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.proof-grid div {
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proof-grid strong,
+.proof-grid span {
+  display: block;
+}
+
+.proof-grid strong {
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.proof-grid span {
+  color: #cfd3e6;
+  font-size: 0.92rem;
+}
+
+.section {
+  padding: 5.5rem 0;
+}
+
+.dark {
+  background: #131627;
+}
+
+.darker {
+  background: #0d0f1a;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.eyebrow {
+  color: #ff8a5c;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  margin-bottom: 0.85rem;
+}
+
+h2 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+p,
+li {
+  color: #d0d4e8;
+  line-height: 1.75;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: #e4e7f5;
+}
+
+.section-head {
+  max-width: 820px;
+  margin-bottom: 3rem;
+}
+
+.centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-grid,
+.service-grid,
+.results-grid,
+.timeline {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card-grid.small {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card,
+.service-card,
+.result-card,
+.timezone-card,
+.timeline article,
+.faq-item {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 1.5rem;
+}
+
+.card a,
+.service-card a {
+  color: #ff8a5c;
+}
+
+.service-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.service-card i {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b35, #ff9f1c);
+}
+
+.results-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.result-tag {
+  color: #ff8a5c;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.result-card a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #ff8a5c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.timeline {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.timeline span {
+  display: inline-block;
+  color: #ff8a5c;
+  font-weight: 800;
+  margin-bottom: 0.9rem;
+}
+
+.timezone-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+}
+
+.timezone-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+
+.timezone-card li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.timezone-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ff8a5c;
+  font-weight: 800;
+}
+
+.faq-section {
+  background: #131627;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.faq-item p {
+  margin-top: 1rem;
+}
+
+.cta-section {
+  padding: 5rem 0;
+  background: #0d0f1a;
+}
+
+.cta-box {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.18), rgba(255, 159, 28, 0.08));
+  border: 1px solid rgba(255, 107, 53, 0.28);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cta-primary {
+  color: #0d0f1a;
+  background: #fff;
+}
+
+.cta-secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 980px) {
+  .proof-grid,
+  .service-grid,
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .proof-grid,
+  .service-grid,
+  .timeline,
+  .card-grid.small {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    padding: 2rem 1.25rem;
+  }
+}
+</style>
