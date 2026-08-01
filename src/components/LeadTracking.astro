@@ -119,7 +119,7 @@
       });
     };
 
-    const forms = [...document.querySelectorAll('form[data-netlify="true"]')];
+    const forms = [...document.querySelectorAll('form[data-lead-form]')];
     forms.forEach((form) => {
       populateAttribution(form);
       let started = false;
