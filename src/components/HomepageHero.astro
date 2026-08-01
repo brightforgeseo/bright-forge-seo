@@ -14,7 +14,7 @@ interface Props {
 }
 
 const {
-  badge = "#1 SEO Agency in the Philippines",
+  badge = "British-led SEO, based in the Philippines",
   title,
   subtitle,
   buttonText = "Get Started",
@@ -23,8 +23,8 @@ const {
   secondaryButtonHref,
   imageSrc,
   imageAlt,
-  trustBadgeCount = "1000+",
-  trustBadgeText = "Websites Ranked"
+  trustBadgeCount = "17",
+  trustBadgeText = "Published Case Studies"
 } = Astro.props;
 
 const addHeroHighlight = (value: string) => {
@@ -69,14 +69,14 @@ import HeroGlobe from './HeroGlobe.astro';
 
         <!-- CTA Buttons -->
         <div class="hero-buttons">
-          <a href={buttonHref} class="btn-hero-primary">
+          <a href={buttonHref} class="btn-hero-primary" data-analytics-event="hero_primary_cta">
             <span>{buttonText}</span>
             <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
           {secondaryButtonText && secondaryButtonHref && (
-            <a href={secondaryButtonHref} class="btn-hero-secondary">
+            <a href={secondaryButtonHref} class="btn-hero-secondary" data-analytics-event="hero_secondary_cta">
               <span>{secondaryButtonText}</span>
             </a>
           )}
@@ -85,8 +85,8 @@ import HeroGlobe from './HeroGlobe.astro';
         <!-- Stats row -->
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-number">1000+</span>
-            <span class="stat-label">Websites Ranked</span>
+            <span class="stat-number">{trustBadgeCount}</span>
+            <span class="stat-label">{trustBadgeText}</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
@@ -95,8 +95,8 @@ import HeroGlobe from './HeroGlobe.astro';
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
-            <span class="stat-number">156%</span>
-            <span class="stat-label">Avg. Traffic Growth</span>
+            <span class="stat-number">Clutch</span>
+            <span class="stat-label">Listed Agency</span>
           </div>
         </div>
       </div>
@@ -124,8 +124,8 @@ import HeroGlobe from './HeroGlobe.astro';
               <i class="fas fa-chart-line"></i>
             </div>
             <div class="floating-text">
-              <span class="floating-value">+156%</span>
-              <span class="floating-label">Traffic Growth</span>
+              <span class="floating-value">Senior-led</span>
+              <span class="floating-label">Strategy & QA</span>
             </div>
           </div>
           <div class="floating-card floating-card-2">
@@ -133,8 +133,8 @@ import HeroGlobe from './HeroGlobe.astro';
               <i class="fas fa-check"></i>
             </div>
             <div class="floating-text">
-              <span class="floating-value">98%</span>
-              <span class="floating-label">Client Satisfaction</span>
+              <span class="floating-value">Lead-focused</span>
+              <span class="floating-label">SEO + CRO</span>
             </div>
           </div>
         </div>

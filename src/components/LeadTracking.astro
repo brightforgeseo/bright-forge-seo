@@ -1,0 +1,183 @@
+---
+// Privacy-safe first-touch/current-touch attribution and lead-event tracking.
+// Stores campaign context only. No form values or personal data are persisted.
+---
+
+<script is:inline>
+  (() => {
+    const FIRST_TOUCH_KEY = 'bf_first_touch_v1';
+    const PENDING_LEAD_KEY = 'bf_pending_lead_v1';
+    const FIRST_TOUCH_TTL_MS = 90 * 24 * 60 * 60 * 1000;
+    const ATTRIBUTION_FIELDS = [
+      'landing_page',
+      'page_path',
+      'referrer',
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_term',
+      'utm_content',
+      'first_touch_landing_page',
+      'first_touch_referrer',
+      'first_touch_utm_source',
+      'first_touch_utm_medium',
+      'first_touch_utm_campaign'
+    ];
+
+    const safeStorage = {
+      get(store, key) {
+        try { return store.getItem(key); } catch { return null; }
+      },
+      set(store, key, value) {
+        try { store.setItem(key, value); } catch { /* Storage may be blocked. */ }
+      },
+      remove(store, key) {
+        try { store.removeItem(key); } catch { /* Storage may be blocked. */ }
+      }
+    };
+
+    const query = new URLSearchParams(window.location.search);
+    const sanitiseUrl = (value) => {
+      if (!value) return '';
+      try {
+        const url = new URL(value, window.location.origin);
+        return `${url.origin}${url.pathname}`;
+      } catch {
+        return '';
+      }
+    };
+    const currentTouch = {
+      landing_page: sanitiseUrl(window.location.href),
+      page_path: window.location.pathname,
+      referrer: sanitiseUrl(document.referrer),
+      utm_source: query.get('utm_source') || '',
+      utm_medium: query.get('utm_medium') || '',
+      utm_campaign: query.get('utm_campaign') || '',
+      utm_term: query.get('utm_term') || '',
+      utm_content: query.get('utm_content') || ''
+    };
+
+    let firstTouch;
+    try {
+      firstTouch = JSON.parse(safeStorage.get(window.localStorage, FIRST_TOUCH_KEY) || 'null');
+    } catch {
+      firstTouch = null;
+    }
+
+    const firstTouchExpired = !firstTouch?.captured_at || (Date.now() - firstTouch.captured_at) > FIRST_TOUCH_TTL_MS;
+    if (!firstTouch || firstTouchExpired) {
+      firstTouch = {
+        landing_page: currentTouch.landing_page,
+        referrer: currentTouch.referrer,
+        utm_source: currentTouch.utm_source,
+        utm_medium: currentTouch.utm_medium,
+        utm_campaign: currentTouch.utm_campaign,
+        captured_at: Date.now()
+      };
+      safeStorage.set(window.localStorage, FIRST_TOUCH_KEY, JSON.stringify(firstTouch));
+    }
+
+    const attribution = {
+      ...currentTouch,
+      first_touch_landing_page: firstTouch.landing_page || '',
+      first_touch_referrer: firstTouch.referrer || '',
+      first_touch_utm_source: firstTouch.utm_source || '',
+      first_touch_utm_medium: firstTouch.utm_medium || '',
+      first_touch_utm_campaign: firstTouch.utm_campaign || ''
+    };
+
+    const track = (eventName, eventParams = {}) => {
+      const payload = {
+        page_path: window.location.pathname,
+        ...eventParams
+      };
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, payload);
+        return;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: eventName, ...payload });
+    };
+
+    const ensureHiddenField = (form, name) => {
+      let input = form.elements.namedItem(name);
+      if (!input || input instanceof RadioNodeList) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.appendChild(input);
+      }
+      return input;
+    };
+
+    const populateAttribution = (form) => {
+      ATTRIBUTION_FIELDS.forEach((name) => {
+        const input = ensureHiddenField(form, name);
+        input.value = attribution[name] || '';
+      });
+    };
+
+    document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
+      populateAttribution(form);
+      let started = false;
+      const formName = form.getAttribute('name') || form.id || 'website-form';
+
+      form.addEventListener('focusin', (event) => {
+        const target = event.target;
+        if (started || !(target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement)) return;
+        if (target.type === 'hidden' || target.name === 'bot-field') return;
+        started = true;
+        track('lead_form_start', { form_name: formName });
+      });
+
+      form.addEventListener('submit', () => {
+        populateAttribution(form);
+        const pending = {
+          form_name: formName,
+          landing_page: attribution.landing_page,
+          first_touch_landing_page: attribution.first_touch_landing_page,
+          utm_source: attribution.utm_source || attribution.first_touch_utm_source,
+          utm_medium: attribution.utm_medium || attribution.first_touch_utm_medium,
+          utm_campaign: attribution.utm_campaign || attribution.first_touch_utm_campaign
+        };
+        safeStorage.set(window.sessionStorage, PENDING_LEAD_KEY, JSON.stringify(pending));
+        track('lead_form_submit', { form_name: formName });
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      const link = event.target instanceof Element ? event.target.closest('a,button') : null;
+      if (!link) return;
+
+      const href = link instanceof HTMLAnchorElement ? link.getAttribute('href') || '' : '';
+      const label = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+      const explicitEvent = link.getAttribute('data-analytics-event');
+
+      if (explicitEvent) {
+        track(explicitEvent, { link_text: label, destination: href });
+      } else if (href.startsWith('tel:')) {
+        track('phone_click', { link_text: label, destination: href });
+      } else if (href.startsWith('mailto:')) {
+        track('email_click', { link_text: label, destination: href });
+      }
+    });
+
+    if (window.location.pathname === '/thanks/' || window.location.pathname === '/thanks') {
+      let pending;
+      try {
+        pending = JSON.parse(safeStorage.get(window.sessionStorage, PENDING_LEAD_KEY) || 'null');
+      } catch {
+        pending = null;
+      }
+
+      if (pending) {
+        track('generate_lead', pending);
+        safeStorage.remove(window.sessionStorage, PENDING_LEAD_KEY);
+      }
+    }
+
+    window.BFLeadTracking = { track, attribution };
+  })();
+</script>
