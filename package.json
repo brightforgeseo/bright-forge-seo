@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "qa": "python scripts/brightforge_qa.py",
-    "qa:static": "python scripts/brightforge_qa.py --static-only"
+    "qa:static": "python scripts/brightforge_qa.py --static-only",
+    "qa:lead-gen": "python scripts/verify_lead_generation_implementation.py"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.2",

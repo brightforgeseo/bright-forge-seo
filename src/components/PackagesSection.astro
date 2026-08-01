@@ -1,680 +1,503 @@
 ---
-// PackagesSection.astro - Modern Forged SEO Packages pricing section
-const FALLBACK_PLAN_STARTER = 'P-3P2511639M442461SNCPPDNQ';
-const FALLBACK_PLAN_GROWTH = 'P-0XV95953GX3131429NCPPFJA';
-const FALLBACK_PLAN_FAST = 'P-95B79324H9815422TNCPPF4Y';
-
-const ENV_PAYPAL_CLIENT_ID = import.meta.env.PUBLIC_PAYPAL_CLIENT_ID;
-const ENV_PLAN_STARTER = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_STARTER || FALLBACK_PLAN_STARTER;
-const ENV_PLAN_GROWTH = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_GROWTH || FALLBACK_PLAN_GROWTH;
-const ENV_PLAN_FAST = import.meta.env.PUBLIC_PAYPAL_PLAN_ID_FAST || FALLBACK_PLAN_FAST;
-const ENV_SUCCESS_URL = import.meta.env.PUBLIC_PAYPAL_SUCCESS_URL || '/thanks';
-const ENV_CANCEL_URL = import.meta.env.PUBLIC_PAYPAL_CANCEL_URL || '/?payment=cancel';
-const ENV_CURRENCY = import.meta.env.PUBLIC_PAYPAL_CURRENCY || 'PHP';
+const offers = [
+  {
+    index: '01',
+    eyebrow: 'DIAGNOSE',
+    icon: 'fa-search',
+    title: 'SEO Diagnostic & 90-Day Roadmap',
+    summary: 'A defined review of the technical, content, authority and conversion issues most likely to limit qualified organic growth.',
+    bestFor: 'Businesses that need evidence and priorities before committing to ongoing SEO.',
+    model: 'Scoped diagnostic project',
+    includes: [
+      'Technical, content and commercial opportunity review',
+      'Priority roadmap with impact and implementation detail',
+      'Search, conversion and measurement baseline',
+      'Senior findings review and recommended next step'
+    ],
+    href: '/seo-audit-services/',
+    cta: 'Explore the audit scope',
+    featured: true
+  },
+  {
+    index: '02',
+    eyebrow: 'PROTECT',
+    icon: 'fa-route',
+    title: 'Migration & Ranking Recovery Support',
+    summary: 'Pre-launch protection or post-launch diagnosis for businesses changing domains, platforms, templates or site architecture.',
+    bestFor: 'Website migrations, redesigns, unexplained traffic loss and high-risk technical changes.',
+    model: 'Pre-launch or recovery scope',
+    includes: [
+      'Baseline crawl and priority-page inventory',
+      'Redirect, canonical, indexation and staging checks',
+      'Launch monitoring and post-change validation',
+      'Recovery priorities tied to evidence'
+    ],
+    href: '/website-migration-services/',
+    cta: 'Discuss migration support'
+  },
+  {
+    index: '03',
+    eyebrow: 'STRENGTHEN',
+    icon: 'fa-robot',
+    title: 'AI Search Visibility Assessment',
+    summary: 'An evidence-led assessment of whether your entities, content, schema and proof give search and answer engines strong material to understand and cite.',
+    bestFor: 'Established sites that already have SEO foundations and need an AI-search readiness plan.',
+    model: 'Standalone assessment',
+    includes: [
+      'Entity and service-understanding review',
+      'Content structure and answer-readiness checks',
+      'Schema, sourceworthiness and proof gaps',
+      'Prioritised actions that support SEO first'
+    ],
+    href: '/ai-search-optimization-services-philippines/',
+    cta: 'Review AI-search readiness'
+  },
+  {
+    index: '04',
+    eyebrow: 'GROW',
+    icon: 'fa-chart-line',
+    title: 'Ongoing SEO Growth Programme',
+    summary: 'Senior strategy and governed delivery across technical SEO, content, authority, conversion and reporting, scoped around the site and market.',
+    bestFor: 'Businesses with clear growth goals, implementation capacity and a need for sustained SEO ownership.',
+    model: 'Monthly programme after fit review',
+    includes: [
+      'Quarterly priorities and monthly implementation plan',
+      'Technical, content, CRO and authority work',
+      'SEO Management Sheet with accountable actions',
+      'Reporting tied to visibility, enquiries and next steps'
+    ],
+    href: '/contact/',
+    cta: 'Discuss an ongoing programme'
+  }
+];
 ---
 
-<section id="packages" class="packages-section">
-  <div class="max-w-7xl mx-auto px-6">
-    <!-- Header -->
-    <div class="section-header">
-      <span class="section-badge">
-        <i class="fas fa-crown"></i>
-        Premium SEO Packages
-      </span>
-      <h2 class="section-title">
-        Choose Your <span class="title-highlight">Growth Velocity</span>
-      </h2>
-      <p class="section-description">
-        Battle-tested SEO strategies tailored to your business goals. Every package includes full-service optimization -the only difference is speed of execution.
-      </p>
-    </div>
-
-    <!-- Pricing Cards -->
-    <div class="pricing-grid">
-      <!-- Starter Pace -->
-      <div class="pricing-card">
-        <div class="card-header">
-          <span class="plan-badge">
-            <i class="fas fa-rocket"></i>
-            Starter
-          </span>
-          <h3 class="plan-name">Forged SEO Starter Pace</h3>
-          <div class="plan-price">
-            <span class="price-amount">₱26,400</span>
-            <span class="price-period">/month</span>
-          </div>
-          <div class="plan-hours">
-            <i class="fas fa-clock"></i>
-            <span>16 hours/month • 4 hrs/week</span>
-          </div>
-        </div>
-
-        <div class="card-features">
-          <ul class="feature-list">
-            <li><i class="fas fa-check"></i><span>Full-service SEO tailored to your goals</span></li>
-            <li><i class="fas fa-check"></i><span>Transparent tracking & management sheet</span></li>
-            <li><i class="fas fa-check"></i><span><a href="/on-page-seo-services-philippines">On-page</a> & <a href="/technical-seo-services-philippines">Technical SEO</a></span></li>
-            <li><i class="fas fa-check"></i><span>Content & <a href="/keyword-research-services">keyword optimization</a></span></li>
-            <li><i class="fas fa-check"></i><span>Google Business Profile optimization</span></li>
-            <li><i class="fas fa-check"></i><span>Steady progress on high-priority tasks</span></li>
-          </ul>
-        </div>
-
-        <div class="card-footer">
-          <div id="paypal-starter" class="paypal-button-container"></div>
-          <p class="secure-note">
-            <i class="fas fa-lock"></i>
-            Secure checkout via PayPal
-          </p>
-        </div>
+<section id="packages" class="offers-section">
+  <div class="offers-shell">
+    <div class="offers-intro">
+      <div class="offers-heading">
+        <span class="section-badge"><i class="fas fa-compass" aria-hidden="true"></i> CHOOSE THE RIGHT START</span>
+        <h2>Start with the problem, <span>not a block of hours</span>.</h2>
       </div>
-
-      <!-- Growth Pace - Featured -->
-      <div class="pricing-card featured">
-        <div class="featured-badge">Most Popular</div>
-        <div class="card-header">
-          <span class="plan-badge featured">
-            <i class="fas fa-fire"></i>
-            Growth
-          </span>
-          <h3 class="plan-name">Forged SEO Growth Pace</h3>
-          <div class="plan-price">
-            <span class="price-amount">₱49,500</span>
-            <span class="price-period">/month</span>
-          </div>
-          <div class="plan-hours">
-            <i class="fas fa-clock"></i>
-            <span>30 hours/month • 7.5 hrs/week</span>
-          </div>
-        </div>
-
-        <div class="card-features">
-          <ul class="feature-list">
-            <li><i class="fas fa-check"></i><span><strong>Everything in Starter, plus:</strong></span></li>
-            <li><i class="fas fa-check"></i><span>2x faster optimization & content delivery</span></li>
-            <li><i class="fas fa-check"></i><span>Expanded keyword targeting & content</span></li>
-            <li><i class="fas fa-check"></i><span>Advanced <a href="/technical-seo-services-philippines">technical SEO</a> & CRO</span></li>
-            <li><i class="fas fa-check"></i><span>Priority competitor analysis</span></li>
-            <li><i class="fas fa-check"></i><span>Faster turnaround on all tasks</span></li>
-          </ul>
-        </div>
-
-        <div class="card-footer">
-          <div id="paypal-growth" class="paypal-button-container"></div>
-          <p class="secure-note">
-            <i class="fas fa-lock"></i>
-            Secure checkout via PayPal
-          </p>
-        </div>
-      </div>
-
-      <!-- Fast Track -->
-      <div class="pricing-card">
-        <div class="card-header">
-          <span class="plan-badge accent">
-            <i class="fas fa-bolt"></i>
-            Fast Track
-          </span>
-          <h3 class="plan-name">Forged SEO Fast Track</h3>
-          <div class="plan-price">
-            <span class="price-amount">₱82,500+</span>
-            <span class="price-period">/month</span>
-          </div>
-          <div class="plan-hours">
-            <i class="fas fa-clock"></i>
-            <span>50+ hours/month • 12.5+ hrs/week</span>
-          </div>
-        </div>
-
-        <div class="card-features">
-          <ul class="feature-list">
-            <li><i class="fas fa-check"></i><span><strong>Everything in Growth, plus:</strong></span></li>
-            <li><i class="fas fa-check"></i><span>Maximum speed & volume delivery</span></li>
-            <li><i class="fas fa-check"></i><span>Full <a href="/seo-audit-services">site audit</a> in weeks</span></li>
-            <li><i class="fas fa-check"></i><span>Massive content & <a href="/backlink-seo-services-philippines">backlink campaigns</a></span></li>
-            <li><i class="fas fa-check"></i><span>Rapid testing & scaling strategies</span></li>
-            <li><i class="fas fa-check"></i><span>Ideal for aggressive growth & fast ROI</span></li>
-          </ul>
-        </div>
-
-        <div class="card-footer">
-          <div id="paypal-fast" class="paypal-button-container"></div>
-          <p class="secure-note">
-            <i class="fas fa-lock"></i>
-            Secure checkout via PayPal
-          </p>
+      <div class="offers-copy">
+        <p>SEO scope should reflect the commercial problem, technical risk, current evidence and implementation capacity. We review fit first, define the work clearly and only recommend an ongoing programme when it is justified.</p>
+        <div class="offer-principles" aria-label="How Bright Forge scopes SEO work">
+          <span>Defined deliverables</span>
+          <span>Suitability criteria</span>
+          <span>Evidence before activity</span>
         </div>
       </div>
     </div>
 
-    <!-- Bottom CTA -->
-    <div class="section-cta">
-      <p class="cta-text">Not sure which package is right for you? Let's discuss your goals and create a custom strategy.</p>
-      <div class="cta-buttons">
-        <a href="/contact" class="btn-primary">
-          <i class="fas fa-comments"></i>
-          Get Free Consultation
-        </a>
-        <a href="/case-studies" class="btn-secondary">
-          <i class="fas fa-chart-line"></i>
-          View Success Stories
-        </a>
+    <div class="offers-grid">
+      {offers.map((offer) => (
+        <article class:list={['offer-card', { featured: offer.featured }]}>
+          <div class="offer-topline">
+            <span class="offer-index">{offer.index}</span>
+            <span class="offer-eyebrow">{offer.eyebrow}</span>
+            {offer.featured && <span class="offer-flag">Recommended first step</span>}
+          </div>
+
+          <div class="offer-title-row">
+            <div class="offer-icon" aria-hidden="true"><i class={`fas ${offer.icon}`}></i></div>
+            <h3>{offer.title}</h3>
+          </div>
+
+          <p class="offer-summary">{offer.summary}</p>
+
+          <div class="offer-fit">
+            <span>BEST FOR</span>
+            <p>{offer.bestFor}</p>
+          </div>
+
+          <ul class="offer-list">
+            {offer.includes.map((item) => (
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>{item}</span></li>
+            ))}
+          </ul>
+
+          <div class="offer-footer">
+            <div class="offer-model"><span>Commercial model</span><strong>{offer.model}</strong></div>
+            <a href={offer.href} class="offer-cta" data-analytics-event={`offer_${offer.index}_cta`}>
+              {offer.cta}
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="offers-final">
+      <div>
+        <span class="offers-final-label">NOT SURE WHICH ROUTE FITS?</span>
+        <h3>Describe the site, market and main commercial problem.</h3>
+        <p>We will recommend the narrowest sensible next step. That may be a diagnostic, a migration scope, an AI-search assessment or an ongoing programme.</p>
       </div>
+      <a href="/contact/" class="offers-final-cta" data-analytics-event="offers_final_review_cta">Request an SEO review</a>
     </div>
   </div>
 </section>
 
-<script is:inline define:vars={{
-  PAYPAL_CLIENT_ID: ENV_PAYPAL_CLIENT_ID,
-  PLAN_STARTER: ENV_PLAN_STARTER,
-  PLAN_GROWTH: ENV_PLAN_GROWTH,
-  PLAN_FAST: ENV_PLAN_FAST,
-  SUCCESS_URL: ENV_SUCCESS_URL,
-  CANCEL_URL: ENV_CANCEL_URL,
-  CURRENCY: ENV_CURRENCY
-}}>
-
-  function loadPayPalSdk() {
-    return new Promise((resolve, reject) => {
-      if (typeof window === 'undefined') return resolve(null);
-      if (window.paypal) return resolve(window.paypal);
-      const existing = document.getElementById('paypal-sdk');
-      if (existing) {
-        existing.addEventListener('load', () => resolve(window.paypal));
-        existing.addEventListener('error', reject);
-        return;
-      }
-      if (!PAYPAL_CLIENT_ID) {
-        console.warn('PayPal client ID not configured');
-        return resolve(null);
-      }
-      const script = document.createElement('script');
-      script.id = 'paypal-sdk';
-      script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(PAYPAL_CLIENT_ID)}&components=buttons&vault=true&intent=subscription&currency=${encodeURIComponent(CURRENCY)}`;
-      script.async = true;
-      script.onload = () => resolve(window.paypal);
-      script.onerror = reject;
-      document.head.appendChild(script);
-    });
-  }
-
-  function renderSubscriptionButton(selector, planId) {
-    const target = document.querySelector(selector);
-    if (!target || !planId) return;
-
-    paypal.Buttons({
-      style: {
-        shape: 'rect',
-        color: 'black',
-        layout: 'vertical',
-        label: 'subscribe',
-        height: 48,
-        tagline: false
-      },
-      createSubscription: (data, actions) => {
-        return actions.subscription.create({
-          plan_id: planId
-        });
-      },
-      onApprove: (data, actions) => {
-        const subscriptionId = data.subscriptionID;
-        window.location.href = `${SUCCESS_URL}?subscriptionID=${subscriptionId}`;
-      },
-      onCancel: () => {
-        window.location.href = CANCEL_URL;
-      },
-      onError: (err) => {
-        console.error('PayPal error', err);
-        target.innerHTML = '<span class="paypal-error">Payment initialization failed. Please try again or contact support.</span>';
-      }
-    }).render(selector);
-  }
-
-  let paypalInitialized = false;
-
-  function initPayPal() {
-    if (paypalInitialized) return;
-    paypalInitialized = true;
-
-    (async () => {
-      try {
-        const paypal = await loadPayPalSdk();
-        if (!paypal) {
-          const msg = '<span class="paypal-error">Subscribe with PayPal is unavailable right now. Please refresh, disable ad blockers, or contact us.</span>';
-          const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
-          ids.forEach((sel) => {
-            const el = document.querySelector(sel);
-            if (el) el.innerHTML = msg;
-          });
-          return;
-        }
-        renderSubscriptionButton('#paypal-starter', PLAN_STARTER);
-        renderSubscriptionButton('#paypal-growth', PLAN_GROWTH);
-        renderSubscriptionButton('#paypal-fast', PLAN_FAST);
-      } catch (e) {
-        console.error('Failed to load PayPal SDK', e);
-        const msg = '<span class="paypal-error">PayPal error: ' + e.message + '</span>';
-        const ids = ['#paypal-starter', '#paypal-growth', '#paypal-fast'];
-        ids.forEach((sel) => {
-          const el = document.querySelector(sel);
-          if (el) el.innerHTML = msg;
-        });
-      }
-    })();
-  }
-
-  if ('IntersectionObserver' in window) {
-    const packagesSection = document.getElementById('packages');
-    if (packagesSection) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            initPayPal();
-            observer.disconnect();
-          }
-        });
-      }, {
-        rootMargin: '300px'
-      });
-      observer.observe(packagesSection);
-    }
-  } else {
-    if (document.readyState === 'complete') {
-      initPayPal();
-    } else {
-      window.addEventListener('load', initPayPal);
-    }
-  }
-</script>
-
 <style>
-  .packages-section {
-    padding: 6rem 0;
-    background: #0d0f1a;
-    position: relative;
+  .offers-section {
+    background:
+      radial-gradient(circle at 82% 18%, rgba(240, 98, 42, 0.08), transparent 30%),
+      #0d0f1a;
+    padding: clamp(4.5rem, 8vw, 7rem) 1.25rem;
   }
 
-  /* Header */
-  .section-header {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 4rem;
+  .offers-shell {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+  }
+
+  .offers-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+    gap: clamp(2rem, 6vw, 5.5rem);
+    align-items: end;
+    margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
   }
 
   .section-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-    border: 1px solid rgba(240, 98, 42, 0.15);
+    gap: 0.55rem;
+    margin-bottom: 1.25rem;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid rgba(240, 98, 42, 0.22);
+    border-radius: 999px;
+    background: rgba(240, 98, 42, 0.08);
     color: #f0622a;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 20px;
-  }
-
-  .section-badge i {
-    font-size: 10px;
-  }
-
-  .section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: 0.72rem;
     font-weight: 800;
-    color: #ffffff;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.12em;
   }
 
-  .title-highlight {
-    color: #f0622a;
-  }
-
-  .section-description {
-    font-size: 1.125rem;
-    color: #ffffff;
-    line-height: 1.7;
-  }
-
-  /* Pricing Grid */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-    align-items: stretch;
-  }
-
-  /* Pricing Card */
-  .pricing-card {
-    background: #131627;
-    border-radius: 24px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-  }
-
-  .pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .pricing-card.featured {
-    border: 2px solid #f0622a;
-    box-shadow: 0 10px 40px rgba(240, 98, 42, 0.15);
-    transform: scale(1.02);
-    z-index: 1;
-  }
-
-  .pricing-card.featured:hover {
-    transform: scale(1.02) translateY(-4px);
-  }
-
-  .featured-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #f0622a 0%, #ff9a62 100%);
-    color: white;
-    padding: 6px 20px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-  }
-
-  /* Card Header */
-  .card-header {
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    margin-bottom: 1.5rem;
-  }
-
-  .plan-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: #1a1e32;
-    color: #ffffff;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 12px;
-  }
-
-  .plan-badge.featured {
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-    color: #f0622a;
-  }
-
-  .plan-badge.accent {
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-    color: #f0622a;
-  }
-
-  .plan-badge i {
-    font-size: 10px;
-  }
-
-  .plan-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #e8eaf2;
-    margin-bottom: 12px;
-    letter-spacing: -0.01em;
-  }
-
-  .plan-price {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    margin-bottom: 12px;
-  }
-
-  .price-amount {
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #e8eaf2;
-    letter-spacing: -0.02em;
-  }
-
-  .pricing-card.featured .price-amount {
-    color: #f0622a;
-  }
-
-  .price-period {
-    font-size: 1rem;
-    color: #ffffff;
-    font-weight: 500;
-  }
-
-  .plan-hours {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    background: #1a1e32;
-    border-radius: 10px;
-    font-size: 13px;
-    color: #ffffff;
-    font-weight: 500;
-  }
-
-  .plan-hours i {
-    color: #f0622a;
-    font-size: 12px;
-  }
-
-  /* Card Features */
-  .card-features {
-    flex: 1;
-    margin-bottom: 1.5rem;
-  }
-
-  .feature-list {
-    list-style: none;
-    padding: 0;
+  .offers-heading h2 {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    max-width: 760px;
+    color: #f7f8fc;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
   }
 
-  .feature-list li {
+  .offers-heading h2 span {
+    color: #f0622a;
+  }
+
+  .offers-copy > p {
+    margin: 0 0 1.5rem;
+    color: #c7cada;
+    font-size: 1.05rem;
+    line-height: 1.72;
+  }
+
+  .offer-principles {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .offer-principles span {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 0.9375rem;
-    color: #e0e3ef;
+    align-items: center;
+    gap: 0.7rem;
+    color: #e8eaf2;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .offer-principles span::before {
+    content: '';
+    width: 18px;
+    height: 2px;
+    background: #f0622a;
+    box-shadow: 0 0 12px rgba(240, 98, 42, 0.45);
+  }
+
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .offer-card {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 1.35rem;
+    background: linear-gradient(150deg, rgba(25, 29, 48, 0.96), rgba(15, 18, 31, 0.98));
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.24);
+    padding: clamp(1.45rem, 3vw, 2.25rem);
+  }
+
+  .offer-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, #f0622a, rgba(240, 98, 42, 0));
+    opacity: 0.55;
+  }
+
+  .offer-card.featured {
+    border-color: rgba(240, 98, 42, 0.32);
+    box-shadow: 0 26px 70px rgba(240, 98, 42, 0.09);
+  }
+
+  .offer-topline {
+    display: flex;
+    min-height: 28px;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .offer-index {
+    color: #6f758e;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .offer-eyebrow {
+    color: #f0622a;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .offer-flag {
+    margin-left: auto;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: #f0622a;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+  }
+
+  .offer-title-row {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .offer-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(240, 98, 42, 0.22);
+    border-radius: 0.9rem;
+    background: rgba(240, 98, 42, 0.09);
+    color: #f0622a;
+  }
+
+  .offer-title-row h3 {
+    margin: 0;
+    color: #f4f5fa;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+    font-weight: 750;
+    line-height: 1.12;
+  }
+
+  .offer-summary {
+    margin: 0 0 1.4rem;
+    color: #c8cbda;
+    line-height: 1.65;
+  }
+
+  .offer-fit {
+    margin-bottom: 1.4rem;
+    padding: 0.9rem 1rem;
+    border-left: 2px solid #f0622a;
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  .offer-fit > span,
+  .offer-model > span {
+    display: block;
+    margin-bottom: 0.28rem;
+    color: #f0622a;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+  }
+
+  .offer-fit p {
+    margin: 0;
+    color: #e5e7ef;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
 
-  .feature-list li i {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    background: rgba(240, 98, 42, 0.15);
-    border: 1px solid rgba(240, 98, 42, 0.4);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ff9a62;
-    font-size: 10px;
-    margin-top: 2px;
+  .offer-list {
+    display: grid;
+    gap: 0.72rem;
+    margin: 0 0 1.8rem;
+    padding: 0;
+    list-style: none;
   }
 
-  .feature-list li a {
+  .offer-list li {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 0.65rem;
+    align-items: start;
+    color: #d8dae5;
+    font-size: 0.91rem;
+    line-height: 1.48;
+  }
+
+  .offer-list i {
+    margin-top: 0.18rem;
     color: #f0622a;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    font-size: 0.72rem;
   }
 
-  .feature-list li a:hover {
-    color: #ff9a62;
-    text-decoration: underline;
-  }
-
-  .feature-list li strong {
-    font-weight: 600;
-    color: #e8eaf2;
-  }
-
-  /* Card Footer */
-  .card-footer {
+  .offer-footer {
+    display: grid;
+    gap: 1.15rem;
     margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
 
-  .paypal-button-container {
-    min-height: 45px;
-    max-height: 45px;
-    margin-bottom: 12px;
-    border-radius: 10px;
-    overflow: hidden;
+  .offer-model strong {
+    color: #f1f2f7;
+    font-size: 0.9rem;
   }
 
-  .paypal-button-container :global(iframe) {
-    border-radius: 10px;
-  }
-
-  .secure-note {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    font-size: 12px;
-    color: #ffffff;
-    margin: 0;
-  }
-
-  .secure-note i {
-    font-size: 10px;
-  }
-
-  :global(.paypal-error) {
-    display: block;
-    text-align: center;
-    font-size: 13px;
-    color: #ef4444;
-    padding: 12px;
-    background: rgba(239, 68, 68, 0.1);
-    border-radius: 8px;
-  }
-
-  /* Section CTA */
-  .section-cta {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .cta-text {
-    font-size: 1rem;
-    color: #ffffff;
-    margin-bottom: 24px;
-  }
-
-  .cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary,
-  .btn-secondary {
+  .offer-cta {
     display: inline-flex;
+    width: fit-content;
     align-items: center;
-    gap: 10px;
-    padding: 14px 24px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05));
-    border: 1px solid rgba(240, 98, 42, 0.15);
+    gap: 0.6rem;
     color: #f0622a;
-    border-radius: 100px;
+    font-weight: 800;
+    text-decoration: none;
   }
 
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    border-color: rgba(240, 98, 42, 0.4);
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.15), rgba(240, 98, 42, 0.08));
+  .offer-cta:hover,
+  .offer-cta:focus-visible {
+    color: #ff8a56;
   }
 
-  .btn-secondary {
-    background: #1a1e32;
-    color: #e8eaf2;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  .offers-final {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 1.25rem;
+    padding: clamp(1.5rem, 3.5vw, 2.6rem);
+    border: 1px solid rgba(240, 98, 42, 0.24);
+    border-radius: 1.35rem;
+    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(19, 22, 39, 0.96) 48%);
   }
 
-  .btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.15);
+  .offers-final-label {
+    color: #f0622a;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
   }
 
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .pricing-grid {
+  .offers-final h3 {
+    margin: 0.45rem 0;
+    color: #fff;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+  }
+
+  .offers-final p {
+    max-width: 790px;
+    margin: 0;
+    color: #c8cbda;
+    line-height: 1.6;
+  }
+
+  .offers-final-cta {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.25rem;
+    border-radius: 999px;
+    background: #f0622a;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 12px 30px rgba(240, 98, 42, 0.2);
+  }
+
+  .offers-final-cta:hover,
+  .offers-final-cta:focus-visible {
+    background: #ff7440;
+  }
+
+  @media (max-width: 900px) {
+    .offers-intro,
+    .offers-final {
       grid-template-columns: 1fr;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .pricing-card.featured {
-      transform: none;
+    .offers-grid {
+      grid-template-columns: 1fr;
     }
 
-    .pricing-card.featured:hover {
-      transform: translateY(-4px);
+    .offers-final-cta {
+      width: fit-content;
     }
   }
 
-  @media (max-width: 640px) {
-    .packages-section {
-      padding: 4rem 0;
+  @media (max-width: 560px) {
+    .offers-section {
+      padding-inline: 1rem;
     }
 
-    .section-header {
-      margin-bottom: 3rem;
+    .offers-heading h2 {
+      font-size: clamp(2.15rem, 12vw, 3rem);
     }
 
-    .pricing-card {
-      padding: 1.5rem;
+    .offer-card {
+      border-radius: 1.05rem;
+      padding: 1.25rem;
     }
 
-    .cta-buttons {
-      flex-direction: column;
+    .offer-topline {
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
 
-    .btn-primary,
-    .btn-secondary {
+    .offer-flag {
       width: 100%;
-      justify-content: center;
+      margin-left: 0;
+      text-align: center;
+    }
+
+    .offer-title-row {
+      grid-template-columns: 42px minmax(0, 1fr);
+    }
+
+    .offer-icon {
+      width: 42px;
+      height: 42px;
+    }
+
+    .offers-final-cta {
+      width: 100%;
     }
   }
 </style>

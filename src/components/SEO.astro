@@ -92,12 +92,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Bright Forge SEO",
-  "url": "https://brightforge.com.ph",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://brightforge.com.ph/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "url": "https://brightforge.com.ph"
 };
 
 // Organization schema
@@ -622,7 +617,7 @@ const faqSchema = {
 {includeWebsite && (
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 )}
-{includeOrganization && !schema?.provider && (
+{includeOrganization && schema?.['@type'] !== 'Organization' && !schema?.provider && (
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 )}
 {includeLocalBusiness && (

@@ -2,6 +2,7 @@
 // MainLayout.astro
 import SEO from '../components/SEO.astro';
 import ContactPopup from '../components/ContactPopup.astro';
+import LeadTracking from '../components/LeadTracking.astro';
 
 // Standard Astro CSS imports - these should automatically generate link tags
 import '../styles/global.css';
@@ -112,11 +113,11 @@ const isHome = Astro.url.pathname === '/';
       noindex={noindex}
       nofollow={nofollow}
       includeWebsite={isHome}
-      includeOrganization={isHome}
+      includeOrganization={false}
       includeLocalBusiness={false}
       includeGenericFAQ={false}
       faqs={faqs}
-      includeReviews={true}
+      includeReviews={false}
     />
     
     <slot name="head" />
@@ -264,6 +265,7 @@ const isHome = Astro.url.pathname === '/';
 
     <!-- Contact popup - appears after 45 seconds on non-contact pages -->
     {!disableContactPopup && <ContactPopup />}
+    <LeadTracking />
 
   </body>
 <style is:global>

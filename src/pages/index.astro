@@ -18,7 +18,7 @@ import { getAllBlogPosts } from '../lib/contentful.js';
 const allPosts = await getAllBlogPosts();
 const latestPosts = allPosts.slice(0, 3); // Get latest 3 posts for homepage
 
-const title = "Bright Forge SEO - Top Rated SEO Agency Philippines";
+const title = "Bright Forge SEO | Philippines SEO for Leads & Growth";
 const description = "Bright Forge SEO is a Philippines SEO agency helping businesses improve rankings, leads and revenue through technical SEO, content, local search and conversion-focused strategy.";
 const type = "company";
 const image = "/images/og-image.jpg";
@@ -29,7 +29,7 @@ const breadcrumbs = [
 ---
 
 <MainLayout
-  title="Bright Forge SEO - Top Rated SEO Agency Philippines"
+  title="Bright Forge SEO | Philippines SEO for Leads & Growth"
   description="Bright Forge SEO is a Philippines SEO agency helping businesses improve rankings, leads and revenue through technical SEO, content, local search and conversion-focused strategy."
   type="company"
   image="/images/og-image.jpg"
@@ -49,16 +49,16 @@ const breadcrumbs = [
   
   <!-- Hero Section -->
   <HomepageHero
-    badge="#1 SEO Agency in the Philippines"
+    badge="British-led SEO, based in the Philippines"
     title="Philippines SEO Agency Focused on Rankings, Leads and Commercial Growth"
-    buttonText="Get a Free SEO Growth Audit"
+    buttonText="Explore the SEO Growth Audit"
     buttonHref="/seo-audit-services/"
-    secondaryButtonText="Book a 20-Minute SEO Strategy Call"
+    secondaryButtonText="Request an SEO Review"
     secondaryButtonHref="/contact/"
     imageSrc="/images/Hero-SEO-Agency-In-The-Philippines.webp"
     imageAlt="Sassin Lowe - Bright Forge SEO Expert Philippines"
-    trustBadgeCount="1000+"
-    trustBadgeText="Websites Ranked"
+    trustBadgeCount="17"
+    trustBadgeText="Published Case Studies"
   >
     <Fragment slot="description">
       <p>Partner with Bright Forge, the Philippines SEO agency businesses trust when rankings need to turn into enquiries, calls and revenue.</p>
@@ -73,7 +73,7 @@ const breadcrumbs = [
         <span class="section-label">COMMERCIAL SEO</span>
         <h2>SEO for businesses that need the <span>phone to ring</span>, not just rankings in a report.</h2>
         <p>Bright Forge is built around the work that turns search visibility into enquiries: technical fixes, stronger service pages, local visibility, proof, tracking and clearer next steps for buyers.</p>
-        <p>We keep the site focused on SEO agency Philippines and SEO company Philippines, but the content now does a better job of explaining why someone should trust us with the campaign.</p>
+        <p>We prioritise the technical, content and conversion work most likely to improve qualified organic growth, then report what changed and what should happen next.</p>
         <div class="commercial-actions">
           <a href="/seo-audit-services/" class="btn-view-all">Get a Free SEO Growth Audit</a>
           <a href="/case-studies/" class="text-link">View case studies</a>
@@ -1073,10 +1073,23 @@ const breadcrumbs = [
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Form Column (keeps original fields/content + Netlify) -->
         <div class="p-8 rounded-lg shadow-md bg-[#131627]" style="background-color: #131627 !important;">
-          <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks" class="space-y-6">
+          <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/" class="space-y-6">
             <input type="hidden" name="form-name" value="homepage-contact" />
             <input type="hidden" name="subject" value="New Contact Form Submission from Website" />
             <input type="hidden" name="notification-email" value="seo@brightforgeseo.com" />
+            <input type="hidden" name="landing_page" value="" />
+            <input type="hidden" name="page_path" value="" />
+            <input type="hidden" name="referrer" value="" />
+            <input type="hidden" name="utm_source" value="" />
+            <input type="hidden" name="utm_medium" value="" />
+            <input type="hidden" name="utm_campaign" value="" />
+            <input type="hidden" name="utm_term" value="" />
+            <input type="hidden" name="utm_content" value="" />
+            <input type="hidden" name="first_touch_landing_page" value="" />
+            <input type="hidden" name="first_touch_referrer" value="" />
+            <input type="hidden" name="first_touch_utm_source" value="" />
+            <input type="hidden" name="first_touch_utm_medium" value="" />
+            <input type="hidden" name="first_touch_utm_campaign" value="" />
             <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
 
             <div class="grid sm:grid-cols-2 gap-6">

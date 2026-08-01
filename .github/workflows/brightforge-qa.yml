@@ -28,8 +28,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Python QA dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-qa.txt
+
       - name: Build site
         run: npm run build
 
       - name: Run static Bright Forge QA
         run: npm run qa:static
+
+      - name: Run lead-generation regression
+        run: npm run qa:lead-gen
