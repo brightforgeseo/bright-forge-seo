@@ -119,7 +119,8 @@
       });
     };
 
-    document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
+    const forms = [...document.querySelectorAll('form[data-netlify="true"]')];
+    forms.forEach((form) => {
       populateAttribution(form);
       let started = false;
       const formName = form.getAttribute('name') || form.id || 'website-form';
@@ -146,6 +147,17 @@
         track('lead_form_submit', { form_name: formName });
       });
     });
+
+    const refreshAttribution = () => forms.forEach(populateAttribution);
+    const scheduleAttributionRefresh = () => {
+      window.requestAnimationFrame(refreshAttribution);
+      window.setTimeout(refreshAttribution, 250);
+      window.setTimeout(refreshAttribution, 1500);
+    };
+
+    window.addEventListener('load', scheduleAttributionRefresh, { once: true });
+    window.addEventListener('pageshow', scheduleAttributionRefresh);
+    scheduleAttributionRefresh();
 
     document.addEventListener('click', (event) => {
       const link = event.target instanceof Element ? event.target.closest('a,button') : null;
@@ -178,6 +190,6 @@
       }
     }
 
-    window.BFLeadTracking = { track, attribution };
+    window.BFLeadTracking = { track, attribution, refreshAttribution };
   })();
 </script>

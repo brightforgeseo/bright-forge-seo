@@ -142,6 +142,7 @@ for event_name in ["lead_form_start", "lead_form_submit", "generate_lead", "phon
 expect("bf_first_touch_v1" in tracking_source and "bf_pending_lead_v1" in tracking_source and "FIRST_TOUCH_TTL_MS" in tracking_source, "Tracking stores time-limited campaign context and pending lead state")
 expect("landing_page: sanitiseUrl(window.location.href)" in tracking_source, "Landing URLs are stripped to origin and path before storage")
 expect("referrer: sanitiseUrl(document.referrer)" in tracking_source, "Referrer URLs are stripped to origin and path before storage")
+expect("scheduleAttributionRefresh" in tracking_source and "pageshow" in tracking_source and "refreshAttribution" in tracking_source, "Attribution is restored after load, pageshow and production form-runtime resets")
 expect("lead_form_start" in home_html and "generate_lead" in thanks_html, "Tracking script is rendered on homepage and thank-you page")
 
 schemas = []
