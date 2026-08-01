@@ -123,10 +123,16 @@ required_fields = {
     "first_touch_utm_medium",
     "first_touch_utm_campaign",
 }
-for page_name, soup in [("home", home), ("contact", contact)]:
-    forms = soup.select('form[data-netlify="true"]')
-    expect(bool(forms), f"{page_name} contains at least one Netlify form")
+expected_forms = {
+    "homepage": {"homepage-contact", "popup-contact"},
+    "contact": {"contact"},
+}
+for page_name, soup in [("homepage", home), ("contact", contact)]:
+    forms = soup.select("form[data-lead-form]")
+    form_names = {form.get("name") for form in forms}
+    expect(expected_forms[page_name].issubset(form_names), f"{page_name} has every expected persistent lead form: {sorted(expected_forms[page_name])}")
     for form in forms:
+        expect(bool(form.get("data-lead-form")), f"{page_name} form {form.get('name')} keeps a production-safe lead-form marker")
         names = {field.get("name") for field in form.find_all(["input", "select", "textarea"])}
         missing = sorted(required_fields - names)
         expect(not missing, f"{page_name} form {form.get('name')} includes all attribution fields")
@@ -143,6 +149,7 @@ expect("bf_first_touch_v1" in tracking_source and "bf_pending_lead_v1" in tracki
 expect("landing_page: sanitiseUrl(window.location.href)" in tracking_source, "Landing URLs are stripped to origin and path before storage")
 expect("referrer: sanitiseUrl(document.referrer)" in tracking_source, "Referrer URLs are stripped to origin and path before storage")
 expect("scheduleAttributionRefresh" in tracking_source and "pageshow" in tracking_source and "refreshAttribution" in tracking_source, "Attribution is restored after load, pageshow and production form-runtime resets")
+expect("form[data-lead-form]" in tracking_source and 'form[data-netlify="true"]' not in tracking_source, "Lead tracking uses an attribute Netlify preserves in production")
 expect("lead_form_start" in home_html and "generate_lead" in thanks_html, "Tracking script is rendered on homepage and thank-you page")
 
 schemas = []
