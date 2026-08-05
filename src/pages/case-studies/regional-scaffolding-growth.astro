@@ -1,0 +1,47 @@
+---
+import GscCaseStudyPage from "../../components/GscCaseStudyPage.astro";
+
+const data = {
+  slug: "regional-scaffolding-growth",
+  metaTitle: "Scaffolding SEO Case Study: 20% More Organic Clicks | Bright Forge",
+  description: "An anonymised Google Search Console case study showing how a regional scaffolding contractor grew organic clicks by 19.7% while improving average position.",
+  title: "How a regional scaffolding contractor earned 20% more organic clicks from a tighter search footprint",
+  breadcrumb: "Regional Scaffolding Growth",
+  industry: "Regional construction services",
+  period: "7 May to 4 August 2026, compared with the prior 90 days",
+  lede: "The site earned 1,216 Google organic clicks in the latest 90 days, up from 1,016. The result is more useful than a broad visibility claim because average position improved from 18.1 to 14.7 while total impressions fell.",
+  evidenceImage: "/images/case-studies/regional-scaffolding-growth-gsc-evidence.png",
+  evidenceAlt: "Redacted Google Search Console performance visual showing 1,216 clicks and an improved average position for an anonymised regional scaffolding contractor.",
+  metrics: [
+    { value: "+19.7%", label: "Organic clicks", note: "1,016 to 1,216" },
+    { value: "18.1 → 14.7", label: "Average position", note: "3.4-position improvement" },
+    { value: "+33.8%", label: "Click-through rate", note: "0.37% to 0.50%" },
+    { value: "90 days", label: "Comparison window", note: "Two like-for-like periods" }
+  ],
+  evidenceHeading: "More clicks, even with less total impression volume",
+  evidenceIntro: "The chart is a redacted Google Search Console snapshot. The search footprint became more efficient: fewer total impressions, a stronger average position and a higher click-through rate produced 200 additional organic clicks.",
+  problemHeading: "Regional service demand needs qualified visibility, not a broad impression total",
+  problem: [
+    "For a regional contractor, an impression can come from a useful project or service search, or from a query that will never become an enquiry. The useful test is whether the site becomes easier to find for searches it can genuinely serve.",
+    "This Search Console pattern is therefore not presented as a blanket traffic win. It shows that the site converted its organic search exposure more efficiently during the latest period."
+  ],
+  readingHeading: "The ranking and click signals moved in the same useful direction",
+  reading: [
+    "Average position improved by 3.4 places and click-through rate increased from 0.37% to 0.50%. That combination is more meaningful than reporting clicks alone, because it indicates the site was more competitive where it did appear.",
+    "Impressions were down 10.6%. Rather than hiding that, the case records it directly. Search Console does not prove why the query mix changed, but it does show that the traffic outcome improved despite a smaller total impression pool."
+  ],
+  takeaways: [
+    "A narrower search footprint can still create more useful organic traffic when ranking and snippet performance improve.",
+    "Local and regional SEO should be judged on search quality and commercial fit, not only on impression volume.",
+    "A 90-day comparison is a starting point for diagnosis, not a revenue claim or a ranking guarantee."
+  ],
+  results: [
+    { metric: "Organic clicks", before: "1,016", after: "1,216", note: "+19.7%, or 200 additional clicks" },
+    { metric: "Impressions", before: "272,961", after: "244,153", note: "-10.6%, a smaller search footprint" },
+    { metric: "Average position", before: "18.1", after: "14.7", note: "Improved by 3.4 positions" },
+    { metric: "Click-through rate", before: "0.37%", after: "0.50%", note: "+33.8% relative improvement" }
+  ],
+  boundary: "This is an anonymised Google Search Console case study. It records Google organic clicks, impressions, click-through rate and average position for two 90-day periods. It does not reveal the client, property, queries or commercial data, and it does not claim that any one activity caused the result. Search performance is not a guarantee of future leads, sales or rankings."
+};
+---
+<GscCaseStudyPage data={data} />

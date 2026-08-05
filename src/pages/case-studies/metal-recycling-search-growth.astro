@@ -1,0 +1,47 @@
+---
+import GscCaseStudyPage from "../../components/GscCaseStudyPage.astro";
+
+const data = {
+  slug: "metal-recycling-search-growth",
+  metaTitle: "Metal Recycling SEO Case Study: 25% More Clicks | Bright Forge",
+  description: "An anonymised Google Search Console case study showing a metal recycling business adding 4,621 organic clicks while expanding search coverage.",
+  title: "How a metal recycling business added 4,621 organic clicks without relying on a single ranking headline",
+  breadcrumb: "Metal Recycling Growth",
+  industry: "Metal recycling",
+  period: "7 May to 4 August 2026, compared with the prior 90 days",
+  lede: "Organic clicks rose from 18,252 to 22,873 in 90 days. Impressions also grew by more than half a million, while average position moved in the other direction. The honest story is growth in search demand coverage, not a simple claim that every ranking improved.",
+  evidenceImage: "/images/case-studies/metal-recycling-search-growth-gsc-evidence.png",
+  evidenceAlt: "Redacted Google Search Console performance visual showing 22,873 clicks for an anonymised metal recycling business.",
+  metrics: [
+    { value: "+25.3%", label: "Organic clicks", note: "18,252 to 22,873" },
+    { value: "+519,291", label: "Impressions", note: "+24.0% search exposure" },
+    { value: "22,873", label: "Latest-period clicks", note: "Google organic search" },
+    { value: "90 days", label: "Comparison window", note: "Two like-for-like periods" }
+  ],
+  evidenceHeading: "Search reach expanded and organic clicks grew with it",
+  evidenceIntro: "The evidence visual uses redacted Search Console data. It shows a substantial increase in organic clicks alongside a broader pool of impressions, making this a coverage-growth case rather than a narrow single-keyword result.",
+  problemHeading: "Large, fragmented demand needs coverage across more than one search theme",
+  problem: [
+    "Recycling demand is rarely expressed through one perfect commercial term. Searchers use material-specific, service-specific and location-led language, and a useful organic footprint needs enough relevant pages to capture that variety.",
+    "The public case does not expose the client’s query set. The performance evidence does show that more search exposure converted into more site visits over the selected comparison window."
+  ],
+  readingHeading: "More visibility produced more clicks, but the average-position figure needs context",
+  reading: [
+    "Clicks increased by 4,621 and impressions increased by 519,291. Click-through rate remained effectively stable, moving from 0.84% to 0.85%. That is consistent with the site reaching a wider pool of searches without losing its ability to earn clicks.",
+    "Average position moved from 7.0 to 9.0. That is not presented as a win. It can happen when a site begins appearing for a wider, more competitive query mix. The right next step is to separate high-value pages and query groups rather than relying on one blended average."
+  ],
+  takeaways: [
+    "A wider query footprint can add meaningful traffic even when the blended average position becomes less flattering.",
+    "Search Console averages need page and query-level follow-up before they become an SEO diagnosis.",
+    "Traffic growth should be paired with commercial-page and conversion analysis before claiming business impact."
+  ],
+  results: [
+    { metric: "Organic clicks", before: "18,252", after: "22,873", note: "+25.3%, or 4,621 additional clicks" },
+    { metric: "Impressions", before: "2,167,384", after: "2,686,675", note: "+24.0%, or 519,291 additional impressions" },
+    { metric: "Average position", before: "7.0", after: "9.0", note: "Worse by 2.0 positions, requiring query-level review" },
+    { metric: "Click-through rate", before: "0.84%", after: "0.85%", note: "Broadly stable while coverage expanded" }
+  ],
+  boundary: "This case study uses anonymised Google Search Console data only. It reports Google organic-search performance for two equal 90-day periods and deliberately retains the less favourable average-position movement. Client identity, queries, URLs, revenue and lead data are not published. The result is not a promise of similar performance for another business."
+};
+---
+<GscCaseStudyPage data={data} />

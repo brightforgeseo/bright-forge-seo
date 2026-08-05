@@ -1,0 +1,47 @@
+---
+import GscCaseStudyPage from "../../components/GscCaseStudyPage.astro";
+
+const data = {
+  slug: "industrial-parts-washing-search-growth",
+  metaTitle: "Industrial Equipment SEO Case Study: 50% More Clicks | Bright Forge",
+  description: "An anonymised Google Search Console case study showing an industrial parts-washing equipment manufacturer growing organic clicks by 49.7%.",
+  title: "How an industrial equipment manufacturer added 350 organic clicks as search coverage grew",
+  breadcrumb: "Industrial Equipment Growth",
+  industry: "Industrial equipment manufacturing",
+  period: "7 May to 4 August 2026, compared with the prior 90 days",
+  lede: "The latest 90 days produced 1,054 organic clicks, up from 704. Impressions grew by 68.9%, while click-through rate and average position softened. It is a useful example of how industrial SEO needs to separate reach growth from efficiency work still to do.",
+  evidenceImage: "/images/case-studies/industrial-parts-washing-search-growth-gsc-evidence.png",
+  evidenceAlt: "Redacted Google Search Console performance visual showing 1,054 clicks for an anonymised industrial parts-washing equipment manufacturer.",
+  metrics: [
+    { value: "+49.7%", label: "Organic clicks", note: "704 to 1,054" },
+    { value: "+68.9%", label: "Impressions", note: "44,715 to 75,544" },
+    { value: "+350", label: "Additional clicks", note: "Latest 90 days" },
+    { value: "90 days", label: "Comparison window", note: "Two like-for-like periods" }
+  ],
+  evidenceHeading: "More industrial search exposure created a larger organic click base",
+  evidenceIntro: "The redacted Search Console visual shows an increase in both organic clicks and impressions. The result is deliberately presented with its trade-off: more reach, but lower click-through rate and a weaker blended average position.",
+  problemHeading: "Technical products need visibility across specific use cases, not only broad category terms",
+  problem: [
+    "Industrial buyers arrive with varied language: equipment type, process problem, specification, maintenance need or purchasing route. A useful search footprint needs pages that can meet those different intents without relying on generic traffic.",
+    "Search Console can establish whether organic discovery is increasing. It cannot, on its own, prove which product pages or technical changes created the movement, so this public case keeps the claim to what the data supports."
+  ],
+  readingHeading: "The case shows useful reach growth, with clear optimisation work remaining",
+  reading: [
+    "Impressions rose by 30,829 and clicks rose by 350. That is evidence that the site became visible to more relevant searches overall, but the blended click-through rate slipped from 1.57% to 1.40%.",
+    "Average position also moved from 13.6 to 15.6. Rather than treating that as a hidden footnote, it identifies the next analysis job: isolate the newly visible query groups and improve the pages where impressions have outpaced clicks."
+  ],
+  takeaways: [
+    "Industrial visibility should be measured by product, service and process intent, not just a domain-wide average.",
+    "A larger impression base is an opportunity, not automatic proof of commercial success.",
+    "Search Console is strongest when it directs page-level and query-level improvements after the headline trend is understood."
+  ],
+  results: [
+    { metric: "Organic clicks", before: "704", after: "1,054", note: "+49.7%, or 350 additional clicks" },
+    { metric: "Impressions", before: "44,715", after: "75,544", note: "+68.9%, or 30,829 additional impressions" },
+    { metric: "Average position", before: "13.6", after: "15.6", note: "Worse by 2.0 positions, a clear next optimisation focus" },
+    { metric: "Click-through rate", before: "1.57%", after: "1.40%", note: "Lower as the footprint broadened" }
+  ],
+  boundary: "This is an anonymised Google Search Console case study for a 90-day versus 90-day comparison. The client, property, search queries and URLs are redacted. It records organic-search visibility and clicks, not revenue, enquiries, product sales or a guaranteed future outcome. No individual tactic is attributed from Search Console data alone."
+};
+---
+<GscCaseStudyPage data={data} />

@@ -1,0 +1,109 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import LegacyHeader from "./LegacyHeader.astro";
+import Footer from "./Footer.astro";
+import ContactSection from "./ContactSection.astro";
+import ButtonPrimary from "./ButtonPrimary.astro";
+import ButtonSecondary from "./ButtonSecondary.astro";
+
+const { data } = Astro.props;
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: data.title,
+  description: data.description,
+  image: `https://brightforge.com.ph${data.evidenceImage}`,
+  mainEntityOfPage: `https://brightforge.com.ph/case-studies/${data.slug}/`,
+  author: { "@type": "Organization", name: "Bright Forge SEO" },
+  publisher: { "@type": "Organization", name: "Bright Forge SEO", url: "https://brightforge.com.ph/" },
+  about: data.industry
+};
+---
+
+<MainLayout title={data.metaTitle} description={data.description}>
+  <LegacyHeader slot="header" />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Anonymised organic-search case study</p>
+        <p class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies/">Case Studies</a><span>/</span>{data.breadcrumb}</p>
+        <h1><span>{data.title}</span></h1>
+        <p class="lede">{data.lede}</p>
+        <div class="hero-meta">
+          <span>{data.industry}</span><span>Google organic search</span><span>{data.period}</span>
+        </div>
+        <div class="hero-actions"><ButtonPrimary href="#results" text="View the evidence" /><ButtonSecondary href="/contact/" text="Discuss your search growth" /></div>
+      </div>
+    </section>
+
+    <section class="summary" aria-label="Case study results">
+      <div class="container metrics">
+        {data.metrics.map((metric) => <article class="metric"><strong>{metric.value}</strong><span>{metric.label}</span><small>{metric.note}</small></article>)}
+      </div>
+    </section>
+
+    <section class="evidence-section" id="results">
+      <div class="container narrow">
+        <p class="eyebrow">Redacted Search Console evidence</p>
+        <h2>{data.evidenceHeading}</h2>
+        <p>{data.evidenceIntro}</p>
+        <figure>
+          <img src={data.evidenceImage} alt={data.evidenceAlt} width="1600" height="900" loading="eager" decoding="async" />
+          <figcaption>Google Search Console performance evidence. The property, queries and client identity have been redacted.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container two-col">
+        <div><p class="eyebrow">The search problem</p><h2>{data.problemHeading}</h2></div>
+        <div>{data.problem.map((paragraph) => <p>{paragraph}</p>)}</div>
+      </div>
+    </section>
+
+    <section class="content-section muted">
+      <div class="container two-col">
+        <div><p class="eyebrow">Reading the result properly</p><h2>{data.readingHeading}</h2></div>
+        <div>
+          {data.reading.map((paragraph) => <p>{paragraph}</p>)}
+          <ul>{data.takeaways.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container narrow">
+        <p class="eyebrow">Before and after</p>
+        <h2>90-day Search Console comparison</h2>
+        <div class="result-table-wrap"><table><thead><tr><th>Metric</th><th>Previous 90 days</th><th>Latest 90 days</th><th>Readout</th></tr></thead><tbody>{data.results.map((row) => <tr><th>{row.metric}</th><td>{row.before}</td><td>{row.after}</td><td>{row.note}</td></tr>)}</tbody></table></div>
+      </div>
+    </section>
+
+    <section class="boundary-section">
+      <div class="container narrow"><p class="eyebrow">Evidence boundary</p><h2>What this case study does and does not prove</h2><p>{data.boundary}</p></div>
+    </section>
+
+    <section class="cta"><div class="container"><div><p class="eyebrow">Your next move</p><h2>Find the search demand already within reach.</h2><p>We review the pages, query patterns and technical barriers that are holding useful search visibility back.</p></div><ButtonPrimary href="/contact/" text="Request an SEO review" /></div></section>
+  </main>
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+  .container { width:min(1160px, calc(100% - 40px)); margin:0 auto; }
+  .narrow { width:min(900px, calc(100% - 40px)); }
+  .hero { background:#121526; color:#fff; padding:100px 0 82px; }
+  .eyebrow { color:#f0622a; text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:800; margin:0 0 14px; }
+  .breadcrumbs { display:flex; flex-wrap:wrap; gap:9px; color:#c5c9d4; font-size:.9rem; margin:0 0 24px; }.breadcrumbs a { color:#fff; text-decoration:none; }.breadcrumbs a:hover { color:#f0622a; }
+  h1 { max-width:900px; font-size:clamp(2.35rem, 5.2vw, 4.8rem); line-height:1.04; letter-spacing:-.045em; margin:0 0 24px; color:#fff; }
+  h2 { color:#171a2b; font-size:clamp(1.85rem,3.4vw,3rem); line-height:1.1; letter-spacing:-.035em; margin:0 0 20px; }.hero h2 { color:#fff; }
+  .lede { max-width:800px; font-size:1.22rem; line-height:1.7; color:#e6e8ef; margin:0; }.hero-meta { display:flex; flex-wrap:wrap; gap:10px; margin:30px 0; }.hero-meta span { border:1px solid rgba(255,255,255,.2); color:#e6e8ef; padding:8px 12px; border-radius:99px; font-size:.9rem; }.hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+  .summary { background:#0d1020; padding:32px 0; }.metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }.metric { padding:8px 4px; }.metric strong { display:block; color:#f0622a; font-size:2rem; line-height:1.1; }.metric span { display:block; color:#fff; font-weight:700; margin:8px 0 4px; }.metric small { color:#bec4d1; line-height:1.45; }
+  .evidence-section, .content-section, .boundary-section { padding:90px 0; }.evidence-section { background:#fff; }.evidence-section p, .content-section p, .boundary-section p { color:#4d5360; font-size:1.08rem; line-height:1.75; }.evidence-section figure { margin:36px 0 0; border:1px solid #dde1e8; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 16px 45px rgba(17,22,41,.09); }.evidence-section figure img { display:block; width:100%; height:auto; }.evidence-section figcaption { padding:15px 18px; color:#5f6571; font-size:.92rem; border-top:1px solid #dde1e8; }
+  .content-section { background:#fff; border-top:1px solid #edf0f4; }.content-section.muted, .boundary-section { background:#f6f7fa; }.two-col { display:grid; grid-template-columns:minmax(240px,.82fr) minmax(0,1.18fr); gap:80px; }.two-col p:first-child { margin-top:0; }.two-col ul { padding-left:22px; color:#3f4654; line-height:1.65; }.two-col li { margin:10px 0; }
+  .result-table-wrap { overflow-x:auto; border:1px solid #dde1e8; border-radius:14px; }.result-table-wrap table { border-collapse:collapse; width:100%; min-width:700px; }.result-table-wrap th, .result-table-wrap td { padding:17px 18px; text-align:left; border-bottom:1px solid #e8ebef; color:#414754; line-height:1.45; }.result-table-wrap thead th { background:#15192a; color:#fff; font-size:.88rem; }.result-table-wrap tbody th { color:#171a2b; }.result-table-wrap tr:last-child th,.result-table-wrap tr:last-child td { border:0; }
+  .cta { background:#15192a; color:#fff; padding:64px 0; }.cta .container { display:flex; gap:36px; justify-content:space-between; align-items:center; }.cta h2 { color:#fff; max-width:650px; }.cta p:not(.eyebrow) { color:#d3d7df; font-size:1.08rem; margin-bottom:0; max-width:680px; }
+  @media(max-width:760px) { .hero { padding:72px 0 58px; }.metrics { grid-template-columns:repeat(2,1fr); gap:22px; }.evidence-section, .content-section, .boundary-section { padding:64px 0; }.two-col { grid-template-columns:1fr; gap:22px; }.cta .container { align-items:flex-start; flex-direction:column; }.cta { padding:54px 0; } }
+</style>
