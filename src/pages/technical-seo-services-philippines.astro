@@ -112,7 +112,8 @@ const faqs = [
   { question: 'How quickly does technical SEO improve rankings?', answer: 'Critical crawl and indexation fixes can show movement within weeks. Speed, architecture, internal linking and template improvements usually compound over one to three months as Google recrawls the site and users get a better experience.' },
   { question: 'Do small websites need technical SEO?', answer: 'Yes, but the scope is usually lighter. A small business site may only need crawl checks, indexation cleanup, speed fixes, schema validation, mobile checks and stronger internal links to service pages.' },
   { question: 'Do ecommerce websites need more technical SEO?', answer: 'Usually, yes. Ecommerce sites often have filters, variants, category duplication, product churn, pagination, internal search URLs, faceted navigation and performance issues that can waste crawl budget and weaken category rankings.' },
-  { question: 'Can technical SEO help AI search visibility?', answer: 'Yes, indirectly. AI search systems still rely on clear, crawlable and trustworthy source material. Clean structure, schema, entity clarity, fast pages and accessible content make the site easier to understand in normal search and AI-assisted search.' }
+  { question: 'Can technical SEO help AI search visibility?', answer: 'Yes, indirectly. AI search systems still rely on clear, crawlable and trustworthy source material. Clean structure, schema, entity clarity, fast pages and accessible content make the site easier to understand in normal search and AI-assisted search.' },
+  { question: 'Can you provide technical SEO for overseas businesses and agencies?', answer: 'Yes. We support direct businesses and white label agency partners in Australia, the UK and other English-language markets. The technical standards stay consistent, while implementation notes, reporting, time-zone handovers and market-specific page architecture are adapted to the client and country.' }
 ];
 ---
 
@@ -312,6 +313,51 @@ const faqs = [
     </div>
   </section>
 
+  <section class="international-section" id="international-delivery">
+    <div class="max-w-7xl mx-auto px-6 international-layout">
+      <div class="international-copy">
+        <span class="eyebrow">International delivery</span>
+        <h2>Philippines-based technical SEO for <span>overseas sites and agency teams</span></h2>
+        <p>Technical SEO does not become local just because a crawler runs in one country. The important differences are the site architecture, target markets, development stack and the people who need to act on the findings.</p>
+        <p>We work directly with businesses and behind the scenes for agencies. Each engagement defines who owns implementation, how staging is reviewed, which market is affected and what evidence will prove the release worked.</p>
+      </div>
+      <div class="delivery-notes">
+        <article>
+          <span>Australia</span>
+          <div>
+            <h3>Same-day technical collaboration</h3>
+            <p>Our working day overlaps Australia, including identical hours with Perth. This suits live debugging, developer questions and release QA that cannot wait overnight.</p>
+            <a href="/seo-services-australia/">Technical SEO for Australian campaigns →</a>
+          </div>
+        </article>
+        <article>
+          <span>United Kingdom</span>
+          <div>
+            <h3>Reviewed work ready for the UK morning</h3>
+            <p>We can audit and prepare implementation notes during the Philippine day, then hand them over as the UK team starts work.</p>
+            <a href="/seo-services-uk/">Technical SEO for UK campaigns →</a>
+          </div>
+        </article>
+        <article>
+          <span>Agency fulfilment</span>
+          <div>
+            <h3>Client-safe technical delivery under your brand</h3>
+            <p>Agency partners receive prioritised findings, affected URL examples, developer instructions and QA criteria that can be presented without rebuilding the audit.</p>
+            <a href="/white-label-seo-services-philippines/">White label technical SEO support →</a>
+          </div>
+        </article>
+        <article>
+          <span>Large catalogues</span>
+          <div>
+            <h3>Technical SEO for ecommerce scale</h3>
+            <p>Filters, variants, category architecture and product churn need a catalogue-level plan rather than a page-by-page checklist.</p>
+            <a href="/ecommerce-seo-services/">Ecommerce SEO delivery →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-section">
     <div class="max-w-4xl mx-auto px-6">
       <div class="section-heading">
@@ -338,7 +384,7 @@ const faqs = [
         <p>We will review the technical layer, identify the highest-risk blockers and show what needs fixing first.</p>
         <div class="final-actions">
           <ButtonPrimary href="/contact/" text="Request a Technical SEO Audit" />
-          <ButtonSecondary href="mailto:seo@brightforgeseo.com" text="Email Bright Forge" />
+          <ButtonSecondary href="/case-studies/" text="View SEO Case Studies" />
         </div>
       </div>
     </div>
@@ -648,6 +694,79 @@ const faqs = [
   line-height: 1.55;
 }
 
+.international-section {
+  background: var(--bf-bg);
+  color: var(--bf-text);
+  padding: 6rem 0;
+  border-top: 1px solid var(--bf-border);
+  border-bottom: 1px solid var(--bf-border);
+}
+
+.international-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 7vw, 6rem);
+  align-items: start;
+}
+
+.international-copy {
+  position: sticky;
+  top: 7rem;
+}
+
+.international-copy h2 {
+  color: var(--bf-text);
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
+}
+
+.international-copy p {
+  color: var(--bf-muted);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.delivery-notes {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.delivery-notes article {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.delivery-notes article > span {
+  color: var(--bf-orange);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.delivery-notes h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 0 0 .55rem;
+}
+
+.delivery-notes p {
+  color: var(--bf-muted);
+  line-height: 1.7;
+  margin: 0 0 .65rem;
+}
+
+.delivery-notes a {
+  color: var(--bf-orange);
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .faq-list {
   display: grid;
   gap: 1rem;
@@ -680,9 +799,14 @@ const faqs = [
   .diagnosis-layout,
   .fit-layout,
   .process-layout,
-  .proof-layout {
+  .proof-layout,
+  .international-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .international-copy {
+    position: static;
   }
 
   .proof-cards,
@@ -703,6 +827,10 @@ const faqs = [
     padding: 4rem 0;
   }
 
+  .international-section {
+    padding: 4rem 0;
+  }
+
   .hero-stats,
   .proof-cards,
   .collab-grid {
@@ -712,6 +840,11 @@ const faqs = [
   .check-item {
     grid-template-columns: 1fr;
     padding: 1.25rem;
+  }
+
+  .delivery-notes article {
+    grid-template-columns: 1fr;
+    gap: .65rem;
   }
 }
 
