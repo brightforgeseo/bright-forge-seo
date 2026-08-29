@@ -5,6 +5,7 @@ node_modules/
 dist/
 .astro/
 qa-artifacts/
+__pycache__/
 
 # Environment variables
 .env

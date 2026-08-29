@@ -31,13 +31,17 @@ const contentFaqs = [
   {
     question: "How do you measure content SEO performance?",
     answer: "We track rankings, impressions, clicks, landing page performance, enquiries where tracking is available, internal link impact and whether the content is supporting the right commercial pages. The aim is not just more articles, it is more useful visibility that helps the business grow."
+  },
+  {
+    question: "Can you write SEO content for Australian and UK audiences?",
+    answer: "Yes. We plan around the target market, not just the language setting. Australian work uses Australian English and local buyer phrasing. UK work uses British English, UK examples and the search intent visible on google.co.uk. Agencies can also use the service as white label content fulfilment under an agreed brief and QA process."
   }
 ];
 ---
 
 <MainLayout
   title="SEO Content Writing Services Philippines | Bright Forge SEO"
-  description="SEO content writing and optimisation for Philippine businesses, built around search intent, page quality, internal links and enquiries."
+  description="Philippines-based SEO content writing for local and overseas brands, built around search intent, human editing, internal links and enquiries."
   canonical="https://brightforge.com.ph/content-seo-services-philippines/"
   type="service"
   faqs={contentFaqs}
@@ -57,7 +61,7 @@ const contentFaqs = [
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Get a Free Content SEO Audit" />
+      <ButtonPrimary href="/contact/" text="Get a Content SEO Proposal" />
       <ButtonSecondary href="#approach" text="See How We Work" />
     </Fragment>
 
@@ -179,6 +183,44 @@ const contentFaqs = [
           <p><strong>In-house marketing teams</strong> that already write content but need SEO outlines, structure and quality control.</p>
           <p><strong>Agencies and partners</strong> that need reliable white-label SEO content without generic filler.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="international-content-section" id="international-content">
+    <div class="max-w-7xl mx-auto px-4 international-content-layout">
+      <div class="international-content-intro">
+        <p class="eyebrow">Content across markets</p>
+        <h2>Written in the Philippines, <span>shaped around the buyer's market</span></h2>
+        <p>Outsourced content fails when the same article is lightly relabelled for every country. We start with the market, SERP, commercial page and brand evidence before deciding the angle or language.</p>
+        <p>That lets one delivery team support direct brands and agency partners without flattening Australian, UK and international audiences into generic English.</p>
+      </div>
+
+      <div class="editorial-markets">
+        <article>
+          <p class="market-kicker">Australia</p>
+          <h3>Australian English and local buying context</h3>
+          <p>We use Australian English, AU search results, local terminology and southern-hemisphere timing where it changes the answer. The content then supports the pages intended to rank in Australia.</p>
+          <a href="/seo-services-australia/">SEO delivery for Australian businesses →</a>
+        </article>
+        <article>
+          <p class="market-kicker">United Kingdom</p>
+          <h3>British English without the offshore voice problem</h3>
+          <p>UK content uses British English, UK buyer questions and google.co.uk intent. Human editorial review checks facts, tone and brand fit before anything is ready to publish.</p>
+          <a href="/seo-services-uk/">SEO delivery for UK businesses →</a>
+        </article>
+        <article>
+          <p class="market-kicker">Agency partners</p>
+          <h3>White label briefs, writing and editorial QA</h3>
+          <p>Agencies can use us for outlines, full drafts, page refreshes or a final SEO and editorial pass. The scope states whose brand guide, approval path and reporting format applies.</p>
+          <a href="/white-label-seo-services-philippines/">White label content fulfilment →</a>
+        </article>
+        <article>
+          <p class="market-kicker">Online stores</p>
+          <h3>Category, product and buying-guide content</h3>
+          <p>Ecommerce content is mapped to category architecture and buying stages so editorial work strengthens revenue pages instead of becoming a disconnected blog calendar.</p>
+          <a href="/ecommerce-seo-services/">Ecommerce SEO and content →</a>
+        </article>
       </div>
     </div>
   </section>
@@ -340,11 +382,11 @@ const contentFaqs = [
     <div class="max-w-5xl mx-auto px-4">
       <div class="content-cta-card">
         <p class="eyebrow">Ready to improve your content?</p>
-        <h2>Get a free <span>content SEO audit</span></h2>
-        <p>We will review your current content, identify the pages with the clearest upside and show what should be created, improved or consolidated first.</p>
+        <h2>Get a scoped <span>content SEO proposal</span></h2>
+        <p>Tell us which market, pages and commercial goals matter. We will review the brief and recommend what should be created, improved or consolidated first.</p>
         <div class="cta-actions">
-          <ButtonPrimary href="/contact/" text="Request Your Free Audit" />
-          <ButtonSecondary href="mailto:seo@brightforgeseo.com" text="Email the Team" />
+          <ButtonPrimary href="/contact/" text="Request a Content SEO Proposal" />
+          <ButtonSecondary href="/case-studies/" text="View SEO Case Studies" />
         </div>
       </div>
     </div>
@@ -722,6 +764,81 @@ const contentFaqs = [
   color: #ffffff;
 }
 
+.international-content-section {
+  padding: 90px 0;
+  background: #131627;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.international-content-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(48px, 7vw, 96px);
+  align-items: start;
+}
+
+.international-content-intro {
+  position: sticky;
+  top: 120px;
+}
+
+.international-content-intro h2 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+
+.international-content-intro p {
+  color: #d0d4e8;
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+.editorial-markets {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.editorial-markets article {
+  display: grid;
+  grid-template-columns: minmax(105px, 0.3fr) minmax(190px, 0.8fr) minmax(230px, 1.1fr);
+  column-gap: 22px;
+  align-items: start;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.editorial-markets .market-kicker {
+  color: #f0622a;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.editorial-markets h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.editorial-markets p:not(.market-kicker) {
+  color: #d0d4e8;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.editorial-markets a {
+  grid-column: 2 / -1;
+  color: #f9b089;
+  font-weight: 800;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
 .process-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -983,9 +1100,23 @@ const contentFaqs = [
   .editorial-layout,
   .buyer-fit-layout,
   .benefits-layout,
-  .next-steps-card {
+  .next-steps-card,
+  .international-content-layout {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .international-content-intro {
+    position: static;
+  }
+
+  .editorial-markets article {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .editorial-markets a {
+    grid-column: 1;
   }
 
   .services-visual {
