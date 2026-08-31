@@ -1,0 +1,212 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import LegacyHeader from "../components/LegacyHeader.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+
+const canonical = "https://brightforge.com.ph/legal-seo-services/";
+const faqs = [
+  {
+    question: "What is legal SEO?",
+    answer: "Legal SEO is search work that helps a law firm get found for the practice areas it actually handles. The core is practice-area pages, lawyer profiles, local signals where the firm is real, reviews, technical health and an intake path people will use. It is YMYL, so accuracy and trust matter more than blog volume.",
+  },
+  {
+    question: "Which keywords should a law firm rank for?",
+    answer: "The money terms are almost always practice area plus intent: SEO for lawyers, law firm SEO, personal injury lawyer, family lawyer, and the city variants you can honestly serve. We do not stuff every legal noun onto one page. Each practice area gets its own URL.",
+  },
+  {
+    question: "Why do law firm SEO pages fail?",
+    answer: "Most firms bury five practice areas on one Services page, then publish generic legal explainers. People searching for a personal injury lawyer want that problem, the process, proof and a clear way to enquire. Google treats legal pages as Your Money or Your Life content, so thin copy and invented claims get ignored.",
+  },
+  {
+    question: "Do you write legal advice?",
+    answer: "No. We structure pages, metadata, internal links, schema recommendations and intake paths. Legal accuracy stays with the firm. We will not invent case results, bar admissions, awards or guaranteed outcomes.",
+  },
+  {
+    question: "How do you measure law firm SEO?",
+    answer: "We track rankings and clicks, then whether contact forms, calls and booked consultations are captured. A traffic lift with no intake tracking is incomplete. Where tracking is missing, we say so.",
+  },
+  {
+    question: "Do you guarantee page-one rankings for lawyers?",
+    answer: "No. Legal markets are competitive and local. We work from evidence, fix the pages that can win, and report honestly. Anyone promising first page in 30 days is selling you a problem.",
+  },
+];
+---
+
+<MainLayout title="Legal SEO | SEO for Law Firms | Bright Forge" description="SEO for lawyers and law firms: practice-area pages, trust signals and consultation intake. Published injury-law Search Console growth, no ranking guarantees." canonical={canonical} type="service" breadcrumbs={[{ name: "Home", url: "https://brightforge.com.ph/" }, { name: "Legal SEO", url: canonical }]} faqs={faqs}>
+  <LegacyHeader slot="header" />
+  <Hero title="Legal SEO for <span>law firms</span>" breadcrumbCurrent="Legal SEO">
+    <Fragment slot="story">
+      <p class="hero-subtitle">SEO for lawyers who need consultations from the practice areas they actually handle.</p>
+      <p>People do not search for a generic law firm. They search for the problem: injury, family, property, employment. We build those pages properly, keep the claims holdable, and make the next step obvious.</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Request an SEO Review" />
+      <ButtonSecondary href="#results" text="See Published Results" />
+    </Fragment>
+  </Hero>
+  <main class="service-page">
+    <section>
+      <div class="page-container intro-grid">
+        <div>
+          <p class="eyebrow">Who this is for</p>
+          <h2><span>SEO for lawyers</span> who need the right cases, not vanity traffic</h2>
+          <p>Legal SEO only works when the site matches how people hire a firm. That means a page for each practice area, lawyer bios that show who does the work, location pages only for offices or markets you serve, and an intake form that a stressed visitor can finish.</p>
+          <p>This is YMYL content. We will not write fake results, fake reviews or guaranteed rankings. The firm stays responsible for legal accuracy. We stay responsible for structure, visibility and whether the page can convert.</p>
+        </div>
+        <aside class="panel">
+          <h3>Keywords this page is built to own</h3>
+          <ul>
+            <li>Legal SEO</li>
+            <li>SEO for lawyers</li>
+            <li>Law firm SEO</li>
+            <li>SEO for law firms</li>
+            <li>Practice-area lawyer searches the firm can serve</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="page-container">
+        <p class="eyebrow">Published proof</p>
+        <h2>One legal campaign we can <span>show in public</span></h2>
+        <p class="lead">We do not name the firm. The Search Console comparison is already on the case study.</p>
+        <div class="results-grid single">
+          <article class="result-card">
+            <p class="result-tag">Legal · Personal injury</p>
+            <h3>+106.5% organic clicks</h3>
+            <p>A personal-injury law firm reached 2,065 clicks in 90 days. Clicks doubled from a modest rise in exposure, with stronger average position and CTR at 0.60%.</p>
+            <a href="/case-studies/injury-law-organic-growth/">Read the case study</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="included">
+      <div class="page-container">
+        <p class="eyebrow">What the work covers</p>
+        <h2>What <span>law firm SEO</span> should cover</h2>
+        <div class="fit-grid">
+          <article class="fit-card">
+            <h3>Practice-area pages first</h3>
+            <p>Injury, family, employment or property each need their own URL. A combined Services page cannot rank for every hiring query at once.</p>
+          </article>
+          <article class="fit-card">
+            <h3>Lawyer pages that do a job</h3>
+            <p>People look up the person they might instruct. Bios need real credentials the firm can stand behind, not stock copy.</p>
+          </article>
+          <article class="fit-card">
+            <h3>Local only when the office is real</h3>
+            <p>City pages are for markets you serve. We will not publish a map of places the firm cannot represent.</p>
+          </article>
+          <article class="fit-card">
+            <h3>Trust on the page</h3>
+            <p>Reviews, professional listings and clear contact details belong on the practice-area page, not buried on About.</p>
+          </article>
+          <article class="fit-card">
+            <h3>Intake that can be measured</h3>
+            <p>Calls, forms and booked consultations are the point. If tracking is missing, we say the reporting will be incomplete.</p>
+          </article>
+          <article class="fit-card">
+            <h3>Technical and schema basics</h3>
+            <p>Crawl, speed, mobile usability and recommended LegalService or FAQ markup only where the visible page supports it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="page-container two-column">
+        <div>
+          <p class="eyebrow">Fit</p>
+          <h2>Right when the firm can name its <span>practice areas</span></h2>
+          <p>This suits firms that already know which cases they want more of, will fact-check the copy, and can handle extra consultations. It is not a content mill for every legal topic under the sun.</p>
+        </div>
+        <div class="panel">
+          <h3>Not the right fit when</h3>
+          <p>the firm wants guaranteed rankings, will not review legal accuracy, or expects us to invent case results, awards or offices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="page-container">
+        <p class="eyebrow">Related work</p>
+        <h2><span>Useful next steps</span> from here</h2>
+        <div class="link-grid">
+          <a href="/construction-seo-services/"><span>Construction SEO</span>Builders, contractors and industrial suppliers.</a>
+          <a href="/local-seo-services-philippines/"><span>Local SEO</span>Maps, listings and location pages that match real coverage.</a>
+          <a href="/case-studies/injury-law-organic-growth/"><span>Injury-law case</span>The Search Console evidence behind this page.</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="page-container faq-layout">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2><span>Legal SEO</span> questions</h2>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="page-container">
+        <div class="cta-card">
+          <h2>Want practice-area pages that bring <span>consultations</span>?</h2>
+          <p>We can review the current lawyer pages, intake path and the queries the firm should actually own before recommending work.</p>
+          <div class="cta-actions">
+            <ButtonPrimary href="/contact/" text="Request an SEO Review" />
+            <ButtonSecondary href="/case-studies/" text="View Case Studies" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+.service-page { background:#0d0f1a; color:#fff; }
+.page-container { width:min(100% - 40px,1120px); margin:0 auto; }
+.service-page section { padding:78px 0; content-visibility:visible !important; }
+.service-page section:nth-child(even) { background:#111421; }
+.eyebrow { display:block; color:#f0622a; font-size:.78rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); line-height:1.05; margin:0 0 22px; }
+h3 { color:#fff; font-size:1.16rem; margin:0 0 10px; }
+p, li { color:rgba(255,255,255,.74); font-size:1.02rem; line-height:1.72; }
+a { color:#f0622a; }
+.lead { max-width:68ch; margin:0 0 28px; }
+.intro-grid, .two-column, .faq-layout { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr); gap:clamp(30px,5vw,60px); align-items:start; }
+.panel, .fit-card, .result-card, .faq-item, .cta-card { border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; box-shadow:0 18px 48px rgba(0,0,0,.18); }
+.panel { padding:28px; }
+.panel ul { margin:0; padding-left:20px; }
+.fit-grid, .results-grid, .link-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.results-grid.single { grid-template-columns:1fr; max-width:720px; }
+.fit-card, .result-card, .link-grid a { padding:24px; }
+.result-tag { color:#f0622a; font-size:.78rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; margin:0 0 10px; }
+.result-card a { font-weight:800; }
+.link-grid a { color:inherit; text-decoration:none; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); border-radius:24px; }
+.link-grid span { display:block; color:#fff; font-weight:900; margin-bottom:8px; }
+.faq-list { display:grid; gap:14px; }
+.faq-item summary { cursor:pointer; padding:22px 24px; color:#fff; font-weight:900; list-style:none; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item p { padding:0 24px 24px; margin:0; }
+.cta-card { text-align:center; padding:clamp(36px,6vw,68px); background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255,255,255,.045)); }
+.cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-top:28px; }
+:global(.service-page .btn-primary), :global(.service-page .btn-secondary) { min-height:48px; }
+@media (max-width:920px){
+  .intro-grid,.two-column,.fit-grid,.results-grid,.link-grid,.faq-layout{grid-template-columns:1fr;}
+}
+</style>
