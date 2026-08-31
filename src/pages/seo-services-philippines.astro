@@ -210,6 +210,7 @@ const faqs = [
     <Fragment slot="story">
       <p>SEO should not feel like a bag of disconnected tasks. We fix the technical, content, authority and conversion issues that stop a website becoming a reliable source of enquiries.</p>
       <p>Bright Forge provides SEO services for Philippine businesses and international teams that need clearer rankings, stronger pages and honest reporting. AI search readiness is part of the work, but the foundation is still the same: crawlable websites, useful content, trusted signals and pages that help visitors take action.</p>
+      <p>For Philippine businesses comparing SEO services, the useful question is not how many tasks sit in a package. It is whether technical fixes, local search, on-page improvements, content, authority and conversion support are joined around the same commercial goal.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -365,6 +366,24 @@ const faqs = [
     </div>
   </section>
 
+  <section id="pricing-and-scope" class="pricing-scope-section">
+    <div class="max-w-7xl mx-auto px-6 pricing-scope-layout">
+      <div class="pricing-scope-copy">
+        <span class="eyebrow">Pricing without a public rate card</span>
+        <h2>How <span>SEO pricing in the Philippines</span> is worked out</h2>
+        <p>SEO costs in the Philippines vary because the workload varies. Site size, competition, technical condition, implementation access, content requirements, local coverage and the authority gap all change what a useful campaign needs.</p>
+        <p>That is why our SEO packages in the Philippines are scoped around the actual growth problem rather than published as a cheap checklist. We review the evidence first, then provide a private proposal with the work, priorities and terms written down.</p>
+        <a class="pricing-scope-link" href="/contact/">Request a private SEO proposal →</a>
+      </div>
+      <div class="scope-ledger" aria-label="Factors that shape an SEO proposal">
+        <div><span>Site and market</span><strong>Page count, platforms, locations and competition</strong></div>
+        <div><span>Work required</span><strong>Technical, content, local, authority and CRO priorities</strong></div>
+        <div><span>Implementation</span><strong>Who makes changes, access available and release support</strong></div>
+        <div><span>Campaign shape</span><strong>One-off diagnosis, focused project or ongoing delivery</strong></div>
+      </div>
+    </div>
+  </section>
+
   <section class="proof-section">
     <div class="max-w-7xl mx-auto px-6">
       <div class="proof-header">
@@ -504,6 +523,7 @@ const faqs = [
 .included-section,
 .process-section,
 .engagement-section,
+.pricing-scope-section,
 .proof-section,
 .difference-section,
 .faq-section,
@@ -517,6 +537,7 @@ const faqs = [
 .commercial-section,
 .included-section,
 .engagement-section,
+.pricing-scope-section,
 .difference-section,
 .final-cta-section {
   padding: 6rem 0;
@@ -642,6 +663,61 @@ const faqs = [
 .section-heading.left {
   text-align: left;
   margin-left: 0;
+}
+
+.pricing-scope-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.pricing-scope-copy h2 {
+  color: var(--bf-text);
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
+}
+
+.pricing-scope-copy p {
+  color: var(--bf-muted);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.pricing-scope-link {
+  display: inline-flex;
+  margin-top: .75rem;
+  color: var(--bf-orange);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.scope-ledger {
+  border-top: 1px solid var(--bf-border);
+}
+
+.scope-ledger div {
+  display: grid;
+  grid-template-columns: minmax(130px, .55fr) minmax(0, 1.45fr);
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--bf-border);
+}
+
+.scope-ledger span {
+  color: var(--bf-orange);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.scope-ledger strong {
+  color: #fff;
+  line-height: 1.55;
 }
 
 .pillar-grid {
@@ -966,10 +1042,16 @@ const faqs = [
   .commercial-layout,
   .fit-layout,
   .process-grid,
+  .pricing-scope-layout,
   .proof-header,
   .difference-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .scope-ledger div {
+    grid-template-columns: 1fr;
+    gap: .45rem;
   }
 
   .commercial-panel {
