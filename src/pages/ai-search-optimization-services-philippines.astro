@@ -3,940 +3,937 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
-import Hero from '../components/Hero.astro';
-import ButtonPrimary from '../components/ButtonPrimary.astro';
-import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 const aiSearchFaqs = [
   {
-    question: 'Is AI search optimisation different from SEO?',
-    answer: 'AI search optimisation is not a replacement for SEO. It is an extra layer that makes your technical setup, content, proof, reviews and service pages easier for Google, AI Overviews and answer-led systems to understand, verify and cite.'
+    question: 'What is the difference between AI SEO, GEO and AEO?',
+    answer: 'AI SEO is the broad practice of improving visibility across AI-assisted discovery. Generative engine optimisation, or GEO, focuses on how brands and sources appear in generated answers. Answer engine optimisation, or AEO, focuses on direct answers and citation-ready information. We treat them as connected layers of SEO, not separate magic tricks.'
   },
   {
-    question: 'Can you guarantee that our business appears in ChatGPT or Google AI Overviews?',
-    answer: 'No agency can guarantee inclusion in AI answers or Google AI Overviews. We improve the signals that make a business easier to understand, trust and cite: crawlability, entity clarity, structured content, useful answers, reviews, authority and strong service pages.'
+    question: 'Does AI search optimisation replace traditional SEO?',
+    answer: 'No. Google states that the same SEO fundamentals still apply to AI Overviews and AI Mode. Crawlability, indexation, useful content, internal links, page experience, entity clarity and authority remain the foundation. AI search work makes those foundations clearer and more useful across answer-led experiences.'
   },
   {
-    question: 'What makes a page more likely to be cited in AI search?',
-    answer: 'Clear answers, accurate entities, visible proof, consistent business information, useful service detail, structured headings, strong internal links, relevant schema, reviews and external authority all help. Thin pages, vague claims and unclear service positioning make citation less likely.'
+    question: 'Can you guarantee citations in ChatGPT, Perplexity or Google AI Overviews?',
+    answer: 'No agency can guarantee inclusion, citations or a fixed position in generated answers. The systems, sources and responses change. We improve the conditions that support visibility, then measure what can be observed without presenting sampled prompts as guaranteed market coverage.'
   },
   {
-    question: 'Do we need new content or can existing pages be improved?',
-    answer: 'Most campaigns start by improving existing priority pages. We tighten service copy, add direct answers, strengthen proof, clean up schema, improve internal links and fix technical issues. New content is added when the site has unanswered buyer questions or missing topical coverage.'
+    question: 'Do we need an llms.txt file or special AI schema?',
+    answer: 'Not for Google AI Overviews or AI Mode. Google says there is no special schema or AI text file required. We use valid structured data where it helps describe real visible content, and we check crawler controls such as OAI-SearchBot separately for platforms that publish them.'
+  },
+  {
+    question: 'What does an AI search visibility audit include?',
+    answer: 'We review priority prompt and query families, current citations, competing sources, crawler access, indexation, entity clarity, content structure, evidence, third-party authority, internal links and measurement. The result is a prioritised programme tied to pages and commercial journeys.'
   },
   {
     question: 'How do you measure AI search visibility?',
-    answer: 'We measure traditional SEO signals first, including rankings, impressions, clicks, landing pages and conversions. We can also monitor whether the brand, competitors and priority pages appear in answer-led SERPs, Google AI Overviews and AI-assisted research results where tracking is practical.'
+    answer: 'We combine prompt-set observations with platform data where available, including Search Console, Bing Webmaster Tools AI Performance, referral traffic and GA4 conversion events. We distinguish a citation, a visit, a tracked action and a confirmed lead rather than treating every mention as revenue.'
   },
   {
-    question: 'Is AI SEO useful for Philippine businesses?',
-    answer: 'Yes, especially for service businesses, ecommerce brands, B2B companies and local firms where buyers compare options before enquiring. The Philippine search market is still early for AI SEO, which makes this a positioning opportunity rather than a saturated channel.'
+    question: 'How long does AI SEO take?',
+    answer: 'Timing depends on crawl health, authority, competition, content quality and how much of the site needs repair. Some technical and content changes can be implemented quickly, but discovery, recrawling, citation changes and commercial results develop over time. We scope the work before setting expectations.'
+  },
+  {
+    question: 'How much do GEO and AI SEO services cost?',
+    answer: 'We price through a private proposal after reviewing the number of markets, platforms, priority topics, pages, technical issues, authority gaps and reporting requirements. We do not publish a generic rate because a focused service-site audit and an international ecommerce programme are not the same job.'
+  }
+];
+
+const methodSteps = [
+  {
+    number: '01',
+    title: 'Map the questions that shape a buying decision',
+    copy: 'We group real commercial queries and prompts around discovery, comparison, proof, objections and selection. This creates a useful test set, not a random list of vanity prompts.',
+    output: 'Prompt and query map'
+  },
+  {
+    number: '02',
+    title: 'Establish where the brand is present, absent or misrepresented',
+    copy: 'We record cited domains, landing pages, answer themes and competitor appearances across the agreed surfaces. Each observation keeps its date, market and prompt context.',
+    output: 'Visibility baseline'
+  },
+  {
+    number: '03',
+    title: 'Repair the source material',
+    copy: 'We strengthen crawl access, service clarity, entity relationships, evidence, internal links and the sections answer systems can quote without losing the original meaning.',
+    output: 'Prioritised page work'
+  },
+  {
+    number: '04',
+    title: 'Build authority beyond the page',
+    copy: 'Your own claims are only one source. We identify relevant reviews, profiles, publications, citations and digital PR opportunities that can corroborate the business honestly.',
+    output: 'Authority plan'
+  },
+  {
+    number: '05',
+    title: 'Measure citations and commercial movement separately',
+    copy: 'We track the signals each platform exposes, then connect referral visits and conversion events where possible. A citation is visibility. It is not automatically a lead or sale.',
+    output: 'Decision-ready reporting'
+  }
+];
+
+const platformRows = [
+  {
+    platform: 'Google',
+    surface: 'AI Overviews and AI Mode',
+    reality: 'Pages still need to be indexed, snippet-eligible and built on normal SEO fundamentals. Google says there is no special schema required.',
+    check: 'Indexation, content usefulness, internal discovery, snippet controls and Search Console performance.'
+  },
+  {
+    platform: 'OpenAI',
+    surface: 'ChatGPT search',
+    reality: 'OpenAI documents OAI-SearchBot as the crawler used to surface sites in ChatGPT search results. Search access is separate from GPTBot training controls.',
+    check: 'Crawler access, cited-page quality, brand accuracy, referral traffic and priority research prompts.'
+  },
+  {
+    platform: 'Perplexity',
+    surface: 'Cited research answers',
+    reality: 'Answers can cite multiple web sources and change as retrieval changes. Clear, current source pages and corroborating authority matter more than keyword repetition.',
+    check: 'Citation patterns, competing sources, source-page depth, evidence and freshness.'
+  },
+  {
+    platform: 'Microsoft',
+    surface: 'Copilot and Bing AI answers',
+    reality: 'Bing Webmaster Tools now reports citations, cited URLs and sampled grounding queries through AI Performance.',
+    check: 'AI Performance, Bing indexation, cited URLs, grounding-query themes and IndexNow suitability.'
   }
 ];
 ---
 
 <MainLayout
-  title="AI SEO Services Philippines | Bright Forge SEO"
-  description="Improve visibility across Google, AI Overviews, ChatGPT and answer-led search with SEO-first AI search optimisation for Philippine businesses."
+  title="AI SEO, GEO & AEO Services | Bright Forge"
+  description="AI SEO, GEO and AEO services for Google AI Overviews, ChatGPT, Perplexity and Copilot. Build clearer, citable pages that support qualified leads."
   canonical="https://brightforge.com.ph/ai-search-optimization-services-philippines/"
   type="service"
   faqs={aiSearchFaqs}
 >
   <LegacyHeader slot="header" />
 
-  <Hero
-    badgeIcon="fas fa-brain"
-    badgeText="SEO-First AI Search Optimisation"
-    title="AI SEO Services for <span>Philippine Businesses</span>"
-    breadcrumbCurrent="AI SEO Services Philippines"
-  >
-    <Fragment slot="story">
-      <p>SEO-first optimisation for Google AI Overviews, answer-led search, featured snippets and AI-assisted discovery.</p>
+  <main class="ai-page">
+    <section class="ai-hero">
+      <div class="ai-shell">
+        <nav class="ai-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>AI SEO, GEO &amp; AEO Services</span>
+        </nav>
 
-      <p>AI search is not a magic replacement for SEO. It rewards the same things serious SEO has always worked toward: technically accessible pages, clear entities, useful answers, strong proof, real authority and content that helps buyers make decisions.</p>
-
-      <p>We help Philippine businesses make their priority pages easier for Google, AI Overviews, ChatGPT-style answers, Perplexity-style citations and direct-answer search experiences to understand, verify and cite.</p>
-
-      <p>That means we do not chase acronyms for the sake of it. We strengthen the search foundations that make your business clearer, more trusted and more likely to be chosen.</p>
-    </Fragment>
-
-    <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Request an AI Search Visibility Audit" />
-      <ButtonSecondary href="#ai-search-audit" text="See What We Check" />
-    </Fragment>
-
-    <Fragment slot="visual">
-      <div class="ai-hero-system" aria-label="AI search visibility system diagram">
-        <div class="signal-card google-card">
-          <span>Google</span>
-          <strong>AI Overviews</strong>
-        </div>
-        <div class="signal-card answer-card">
-          <span>Answer Engines</span>
-          <strong>Direct Answers</strong>
-        </div>
-        <div class="core-orb">
-          <i class="fas fa-search"></i>
-          <strong>SEO</strong>
-          <span>Foundation</span>
-        </div>
-        <div class="signal-card proof-card">
-          <span>Proof</span>
-          <strong>Reviews + Authority</strong>
-        </div>
-        <div class="signal-card content-card">
-          <span>Content</span>
-          <strong>Clear Service Pages</strong>
-        </div>
-      </div>
-    </Fragment>
-  </Hero>
-
-  <section class="proof-strip" aria-label="AI SEO service proof points">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="proof-grid">
-        <div>
-          <strong>SEO-first</strong>
-          <span>No “SEO is dead” nonsense</span>
-        </div>
-        <div>
-          <strong>Answer-ready</strong>
-          <span>Built for snippets, AI Overviews and direct answers</span>
-        </div>
-        <div>
-          <strong>Evidence-led</strong>
-          <span>Technical SEO, content, reviews and authority together</span>
-        </div>
-        <div>
-          <strong>Commercial</strong>
-          <span>Focused on enquiries, not vanity AI mentions</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="dark-section" id="why-ai-search">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header left-header">
-        <div class="section-badge">The Shift</div>
-        <h2>Why AI Search Visibility Starts With <span>Strong SEO</span></h2>
-        <p>Search is becoming more answer-led. Buyers still use Google, but they also see AI summaries, featured snippets, People Also Ask, review-led SERPs and AI-assisted research before they contact a business.</p>
-      </div>
-
-      <div class="split-layout">
-        <div class="copy-block">
-          <p>When someone asks which company to trust, which service provider to compare, or what solution fits their situation, search systems need clear source material. If your pages are vague, thin or technically messy, they are harder to include.</p>
-
-          <p>AI search optimisation makes your best pages easier to interpret. It clarifies who you are, what you do, where you serve, why you are credible and what answer your page provides.</p>
-
-          <p><strong>The goal is not to manipulate AI systems. The goal is to remove ambiguity.</strong></p>
-        </div>
-
-        <div class="issue-panel">
-          <h3>Common gaps we find</h3>
-          <ul>
-            <li>Services described in agency language instead of buyer language</li>
-            <li>Pages with claims but no evidence, reviews or examples</li>
-            <li>Weak internal links between services, content and proof assets</li>
-            <li>Schema that exists but does not clarify the page properly</li>
-            <li>Content that answers definitions but avoids buying questions</li>
-            <li>Competitors being cited where your site is absent or unclear</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="audit-section" id="ai-search-audit">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Diagnostic Layer</div>
-        <h2>What We Check in an <span>AI Search Audit</span></h2>
-        <p>Before rewriting pages or adding schema, we check whether your business is clear enough to be understood, trusted and cited.</p>
-      </div>
-
-      <div class="audit-grid">
-        <div class="audit-card">
-          <i class="fas fa-sitemap"></i>
-          <h3>Entity clarity</h3>
-          <p>We check whether Google can clearly connect your brand, services, locations, people, reviews, social profiles and source pages.</p>
-        </div>
-        <div class="audit-card">
-          <i class="fas fa-file-alt"></i>
-          <h3>Answer readiness</h3>
-          <p>We identify whether priority pages answer direct buyer questions in a format that works for humans, snippets and answer-led search.</p>
-        </div>
-        <div class="audit-card">
-          <i class="fas fa-code"></i>
-          <h3>Technical access</h3>
-          <p>We review crawlability, indexation, rendering, canonical signals, schema, internal links and page structure for interpretation issues.</p>
-        </div>
-        <div class="audit-card">
-          <i class="fas fa-medal"></i>
-          <h3>Proof and trust</h3>
-          <p>We check whether reviews, case studies, credentials, examples and commercial proof are visible enough to support recommendations.</p>
-        </div>
-        <div class="audit-card">
-          <i class="fas fa-users"></i>
-          <h3>Competitor citations</h3>
-          <p>We look at where competitors appear in AI-influenced SERPs, snippets, review blocks and answer results so we can close the gap.</p>
-        </div>
-        <div class="audit-card">
-          <i class="fas fa-chart-line"></i>
-          <h3>Commercial impact</h3>
-          <p>We connect AI search work to rankings, impressions, clicks, qualified enquiries and the service pages most likely to generate revenue.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="method-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header left-header">
-        <div class="section-badge">Method</div>
-        <h2>How We Make Pages Easier to <span>Understand, Trust and Cite</span></h2>
-        <p>We improve AI search visibility by fixing the same practical issues that hold back organic performance.</p>
-      </div>
-
-      <div class="method-list">
-        <div class="method-item">
-          <span>01</span>
-          <div>
-            <h3>Clarify the service offer</h3>
-            <p>We rewrite vague service copy into clear buyer language: who the service is for, what problem it solves, what work is included and when it makes sense.</p>
+        <div class="ai-hero-layout">
+          <div class="ai-hero-copy">
+            <p class="ai-kicker"><span></span> Search visibility beyond blue links</p>
+            <h1>AI SEO, GEO &amp; AEO services for <span>brands worth citing</span></h1>
+            <p class="ai-lede">We make your business easier to find, understand and verify across Google AI Overviews, ChatGPT, Perplexity, Microsoft Copilot and the search journeys around them.</p>
+            <p class="ai-hero-note">SEO stays underneath it. Clear entities, strong source pages, technical access, useful evidence and external authority do the real work.</p>
+            <div class="ai-actions">
+              <a class="ai-button ai-button-primary" href="/contact/">Request an AI visibility audit <span aria-hidden="true">→</span></a>
+              <a class="ai-button ai-button-secondary" href="#method">See the method</a>
+            </div>
+            <ul class="ai-trust-line" aria-label="Service positioning">
+              <li>British-led</li>
+              <li>Philippines-based</li>
+              <li>International delivery</li>
+              <li>No citation guarantees</li>
+            </ul>
           </div>
-        </div>
-        <div class="method-item">
-          <span>02</span>
-          <div>
-            <h3>Build answer-ready sections</h3>
-            <p>We add concise summaries, comparison blocks, FAQs, process explanations and decision-support content that can answer specific queries directly.</p>
-          </div>
-        </div>
-        <div class="method-item">
-          <span>03</span>
-          <div>
-            <h3>Strengthen technical and structured signals</h3>
-            <p>We clean up crawlability, schema, headings, internal links, canonical signals and content structure so search systems can interpret the page accurately.</p>
-          </div>
-        </div>
-        <div class="method-item">
-          <span>04</span>
-          <div>
-            <h3>Connect proof to priority pages</h3>
-            <p>We surface reviews, examples, case studies, locations, team expertise and trust signals where buyers and search systems need them.</p>
-          </div>
-        </div>
-        <div class="method-item">
-          <span>05</span>
-          <div>
-            <h3>Monitor visibility and refine</h3>
-            <p>We track traditional SEO performance first, then layer in AI-influenced visibility checks where they can produce useful business intelligence.</p>
+
+          <div class="citation-observatory" aria-label="Illustration of a brand becoming a cited source in AI search">
+            <div class="observatory-bar">
+              <span><i></i><i></i><i></i></span>
+              <small>ILLUSTRATIVE CITATION PATH</small>
+            </div>
+            <div class="observatory-query">
+              <span>Buyer question</span>
+              <strong>Which provider can solve this with credible evidence?</strong>
+            </div>
+            <div class="answer-surface">
+              <div class="answer-label"><span>Generated answer</span><small>Sources checked</small></div>
+              <p>A credible recommendation needs a clear service fit, verifiable proof and sources that agree on the business.</p>
+              <div class="answer-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="source-stack">
+                <div><span>01</span><p><strong>Your service page</strong><small>Specific offer and market fit</small></p><b>READY</b></div>
+                <div><span>02</span><p><strong>Your evidence</strong><small>Cases, reviews and named expertise</small></p><b>PROOF</b></div>
+                <div><span>03</span><p><strong>Independent sources</strong><small>Relevant third-party corroboration</small></p><b>TRUST</b></div>
+              </div>
+            </div>
+            <svg class="signal-path" viewBox="0 0 560 480" aria-hidden="true" preserveAspectRatio="none">
+              <path d="M42 405 C150 350 155 250 267 233 S407 160 520 74" />
+              <circle cx="42" cy="405" r="5" />
+              <circle cx="267" cy="233" r="5" />
+              <circle cx="520" cy="74" r="5" />
+            </svg>
+            <p class="observatory-caption"><span>Signal, not theatre.</span> No live client data is shown in this illustration.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="platform-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Where It Applies</div>
-        <h2>AI Search Optimisation Is Bigger Than <span>One Platform</span></h2>
-        <p>We focus on the search surfaces that influence discovery, research and enquiries.</p>
-      </div>
-
-      <div class="platform-grid">
-        <div class="platform-card">
-          <h3>Google AI Overviews</h3>
-          <p>Improve the clarity, usefulness and authority of pages that may support AI-assisted summaries and answer-led SERPs.</p>
+    <section class="ai-shift">
+      <div class="ai-shell ai-shift-layout">
+        <div class="shift-statement">
+          <p class="ai-kicker"><span></span> The commercial shift</p>
+          <h2>Your next customer may meet the <em>answer</em> before they meet your website.</h2>
         </div>
-        <div class="platform-card">
-          <h3>Featured snippets and PAA</h3>
-          <p>Structure content around direct answers, definitions, comparisons and useful next steps for high-intent queries.</p>
-        </div>
-        <div class="platform-card">
-          <h3>ChatGPT-style research</h3>
-          <p>Make the business easier to describe accurately through clearer service positioning, proof, entity consistency and crawlable source pages.</p>
-        </div>
-        <div class="platform-card">
-          <h3>Perplexity-style citations</h3>
-          <p>Improve the quality of source pages that can support cited answers, competitor comparisons and commercial research queries.</p>
-        </div>
-        <div class="platform-card">
-          <h3>Local and review-led discovery</h3>
-          <p>Connect local SEO, reviews, service areas and proof so answer-led discovery has stronger trust signals to work with.</p>
-        </div>
-        <div class="platform-card">
-          <h3>Voice and mobile answers</h3>
-          <p>Support concise, useful answers for searches where users want a recommendation, direction, explanation or immediate next step.</p>
+        <div class="shift-copy">
+          <p>Buyers now ask systems to compare providers, shortlist options, explain trade-offs and recommend next steps. A classic ranking can still matter while the click happens later, lands on a different page or never happens at all.</p>
+          <p>That creates a new visibility problem. Your brand must be retrievable, accurately described and supported by sources an answer system can use. The work is often called <strong>AI SEO</strong>, <strong>generative engine optimisation</strong> or <strong>GEO</strong>, <strong>answer engine optimisation</strong> or <strong>AEO</strong>, and <strong>LLM SEO</strong>.</p>
+          <p>We keep those labels on one existing owner page because the buyer problem is the same: become a credible source and turn the visibility into qualified demand.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="fit-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="fit-card">
+    <section class="ai-reality" id="reality">
+      <div class="ai-shell">
+        <div class="ai-section-heading">
+          <p class="ai-kicker"><span></span> The no-nonsense version</p>
+          <h2>What AI search optimisation can change, and what it cannot</h2>
+        </div>
+        <div class="reality-rule"></div>
+        <div class="reality-columns">
+          <div class="reality-side reality-side-positive">
+            <p class="reality-label">WE CAN IMPROVE</p>
+            <ul>
+              <li><span>01</span><p><strong>Retrievability</strong>Your important pages can be crawled, indexed and discovered through strong internal architecture.</p></li>
+              <li><span>02</span><p><strong>Clarity</strong>Your brand, services, markets, expertise and proof can be understood without guesswork.</p></li>
+              <li><span>03</span><p><strong>Source quality</strong>Your pages can answer useful questions with specific evidence and current information.</p></li>
+              <li><span>04</span><p><strong>Corroboration</strong>Relevant third-party signals can support what your own site says about the business.</p></li>
+              <li><span>05</span><p><strong>Measurement</strong>Observed citations, cited URLs, referrals and tracked actions can inform the next decision.</p></li>
+            </ul>
+          </div>
+          <div class="reality-side reality-side-limit">
+            <p class="reality-label">WE WILL NOT PRETEND</p>
+            <ul>
+              <li><span>×</span><p><strong>There is a secret GEO switch</strong>Google says normal SEO fundamentals still underpin its AI features.</p></li>
+              <li><span>×</span><p><strong>Special markup guarantees inclusion</strong>There is no special schema that forces a brand into Google AI Overviews or AI Mode.</p></li>
+              <li><span>×</span><p><strong>A prompt sample is market share</strong>Generated answers vary by model, time, location, retrieval and wording.</p></li>
+              <li><span>×</span><p><strong>A mention is a sale</strong>A citation, referral visit, tracked action and confirmed lead are different commercial signals.</p></li>
+              <li><span>×</span><p><strong>No agency can guarantee citations</strong>We improve eligibility and source strength. Platforms decide what they retrieve and present.</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-method" id="method">
+      <div class="ai-shell">
+        <div class="method-intro">
+          <div>
+            <p class="ai-kicker"><span></span> The Bright Forge method</p>
+            <h2>From invisible brand to usable source</h2>
+          </div>
+          <p>Not a checklist sold as strategy. Each stage produces an evidence-backed output that tells us what to fix, why it matters and how we will judge movement.</p>
+        </div>
+
+        <div class="method-ledger">
+          {methodSteps.map((step) => (
+            <article class="method-row">
+              <span class="method-number">{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+              <strong>{step.output}</strong>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-source-system">
+      <div class="ai-shell source-layout">
+        <div class="source-copy">
+          <p class="ai-kicker"><span></span> Citation readiness</p>
+          <h2>An answer engine needs more than a well-written paragraph.</h2>
+          <p>We connect the page to a wider source system. That means the technical route into the content, the facts on the page, the evidence behind those facts and the independent signals that help verify them.</p>
+          <p>This is where our <a href="/technical-seo-services-philippines/">technical SEO</a>, <a href="/content-seo-services-philippines/">content SEO</a>, <a href="/backlink-seo-services-philippines/">authority work</a> and <a href="/seo-command-centre/">measurement layer</a> work together.</p>
+        </div>
+        <div class="source-orbit" aria-label="Four connected layers of citation readiness">
+          <div class="orbit-core"><small>USEFUL</small><strong>SOURCE</strong><span>for a real buyer question</span></div>
+          <div class="orbit-ring orbit-ring-one"><span>Technical access</span></div>
+          <div class="orbit-ring orbit-ring-two"><span>Entity clarity</span></div>
+          <div class="orbit-ring orbit-ring-three"><span>Evidence</span></div>
+          <div class="orbit-ring orbit-ring-four"><span>Authority</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-platforms">
+      <div class="ai-shell">
+        <div class="platform-heading">
+          <div>
+            <p class="ai-kicker"><span></span> Different surfaces, one strategy</p>
+            <h2>We optimise for the search ecosystem, not one screenshot.</h2>
+          </div>
+          <p>Every platform exposes different controls and reporting. We use what the platforms document, then apply experienced SEO judgement where the data remains incomplete.</p>
+        </div>
+
+        <div class="platform-run" role="table" aria-label="AI search platforms and optimisation checks">
+          <div class="platform-run-head" role="row">
+            <span role="columnheader">Platform</span>
+            <span role="columnheader">Surface</span>
+            <span role="columnheader">What matters</span>
+            <span role="columnheader">What we check</span>
+          </div>
+          {platformRows.map((row, index) => (
+            <article class="platform-row" role="row">
+              <div role="cell"><small>0{index + 1}</small><strong>{row.platform}</strong></div>
+              <p role="cell">{row.surface}</p>
+              <p role="cell">{row.reality}</p>
+              <p role="cell">{row.check}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-measurement">
+      <div class="ai-shell measurement-layout">
+        <div class="measurement-copy">
+          <p class="ai-kicker"><span></span> Measurement without make-believe</p>
+          <h2>We separate visibility from visits, and visits from leads.</h2>
+          <p>AI search reporting is still uneven. We build a defensible view from the strongest available evidence instead of inventing a single visibility score.</p>
+          <a href="/seo-command-centre/">See our wider SEO measurement approach <span aria-hidden="true">→</span></a>
+        </div>
+        <ol class="measurement-chain">
+          <li><span>01</span><p><strong>Observed citation</strong><small>A brand or page appears for a recorded prompt at a recorded time.</small></p></li>
+          <li><span>02</span><p><strong>Cited URL or grounding query</strong><small>A platform exposes the source page or retrieval theme.</small></p></li>
+          <li><span>03</span><p><strong>Referral visit</strong><small>Analytics records traffic from an identifiable AI or search surface.</small></p></li>
+          <li><span>04</span><p><strong>Tracked action</strong><small>A visitor submits, calls, books or completes another configured conversion event.</small></p></li>
+          <li><span>05</span><p><strong>Confirmed lead or sale</strong><small>Your commercial process confirms the outcome. Analytics alone does not.</small></p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="ai-deliverables">
+      <div class="ai-shell deliverables-layout">
+        <div class="deliverables-title">
+          <p class="ai-kicker"><span></span> What the engagement can include</p>
+          <h2>Senior SEO work, adapted for AI-assisted discovery.</h2>
+        </div>
+        <div class="deliverables-list">
+          <article><span>DIAGNOSE</span><h3>AI visibility and citation audit</h3><p>Priority prompts, answer surfaces, cited competitors, source pages, crawler access, indexation and commercial gaps.</p></article>
+          <article><span>CLARIFY</span><h3>Entity and service architecture</h3><p>Clear relationships between the brand, people, services, locations, products, proof assets and authoritative profiles.</p></article>
+          <article><span>STRENGTHEN</span><h3>Citation-ready page improvements</h3><p>Direct answers, original evidence, comparison detail, scannable structure, internal links and useful supporting media.</p></article>
+          <article><span>VALIDATE</span><h3>Technical access and structured data</h3><p>Robots rules, rendering, indexability, snippet controls and valid schema that reflects visible page content.</p></article>
+          <article><span>CORROBORATE</span><h3>Authority and digital PR direction</h3><p>Relevant reviews, publications, profiles and third-party sources that can substantiate the business without fake mentions.</p></article>
+          <article><span>MEASURE</span><h3>AI and organic visibility reporting</h3><p>Prompt observations, platform data, referrals and conversion signals presented with the limits clearly stated.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-fit">
+      <div class="ai-shell fit-layout">
+        <div class="fit-heading">
+          <p class="ai-kicker"><span></span> Commercial fit</p>
+          <h2>This work is valuable when the decision is valuable.</h2>
+        </div>
+        <div class="fit-editorial">
+          <div>
+            <h3>Strong fit</h3>
+            <p>B2B, professional services, considered ecommerce, SaaS, healthcare, education, property, industrial and multi-market brands where buyers research before choosing.</p>
+          </div>
+          <div>
+            <h3>Usually needs foundations first</h3>
+            <p>Sites with blocked crawling, weak service pages, no useful proof, unclear positioning or little conventional search visibility. We repair the source before selling monitoring theatre.</p>
+          </div>
+          <div>
+            <h3>Not a fit</h3>
+            <p>Businesses asking for guaranteed ChatGPT recommendations, fabricated mentions, mass AI pages or a shortcut around earning trust.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-commercial" id="scope">
+      <div class="ai-shell">
+        <div class="commercial-brief">
+          <div class="commercial-copy">
+            <p class="ai-kicker"><span></span> Private scope and proposal</p>
+            <h2>No mystery package. No public rate pretending every site is the same.</h2>
+            <p>We scope AI SEO services around the work required, the markets that matter and the commercial value of the decisions being influenced.</p>
+            <a class="ai-button ai-button-primary" href="/contact/">Discuss your AI search opportunity <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="commercial-factors">
+            <p>YOUR PRIVATE PROPOSAL CONSIDERS</p>
+            <ul>
+              <li>Markets, languages and priority platforms</li>
+              <li>Number of services, products and source pages</li>
+              <li>Technical, content and entity repair required</li>
+              <li>Prompt-set depth and competitor monitoring</li>
+              <li>Authority, evidence and digital PR gaps</li>
+              <li>Reporting and conversion-measurement needs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-sources">
+      <div class="ai-shell sources-layout">
         <div>
-          <div class="section-badge">Best Fit</div>
-          <h2>Who This <span>Service Is For</span></h2>
-          <p>AI SEO is most useful when a business already needs organic visibility, trust and better service-page conversion. It is not a shortcut around weak SEO. It is a way to make good SEO clearer and more resilient.</p>
+          <p class="ai-kicker"><span></span> Primary-source reality check</p>
+          <h2>What the platforms actually say</h2>
         </div>
-        <div class="fit-list">
-          <ul>
-            <li>Service businesses competing on expertise and trust</li>
-            <li>Local companies that need stronger discovery in Google and AI-assisted results</li>
-            <li>B2B firms where buyers research before enquiring</li>
-            <li>Ecommerce brands with complex products or comparison journeys</li>
-            <li>Businesses with good services but vague, underpowered website content</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="investment-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Investment</div>
-        <h2>AI Search Optimisation <span>Retainers</span></h2>
-        <p>Pricing depends on the strength of your existing SEO foundation, the number of priority services, technical requirements and monitoring scope.</p>
-      </div>
-
-      <div class="investment-grid">
-        <div class="investment-card">
-          <i class="fas fa-search-dollar"></i>
-          <h3>Starting investment</h3>
-          <p>AI search optimisation retainers start from <strong>$480 USD per month</strong> for focused audit, implementation and monitoring work.</p>
-        </div>
-        <div class="investment-card">
-          <i class="fas fa-calendar-check"></i>
-          <h3>Minimum term</h3>
-          <p>We recommend a <strong>six-month commitment</strong> because technical, content, authority and visibility improvements need time to compound.</p>
-        </div>
-        <div class="investment-card">
-          <i class="fas fa-clipboard-list"></i>
-          <h3>What is included</h3>
-          <p>Audit work, technical recommendations, content optimisation, answer-ready page improvements, competitor checks and practical reporting.</p>
+        <div class="source-links">
+          <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">
+            <span>GOOGLE SEARCH CENTRAL</span>
+            <strong>AI features and your website</strong>
+            <p>Google says standard SEO best practices remain relevant and no special schema is required.</p>
+          </a>
+          <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">
+            <span>OPENAI</span>
+            <strong>Overview of OpenAI crawlers</strong>
+            <p>OpenAI explains OAI-SearchBot, GPTBot and ChatGPT-User as separate controls and use cases.</p>
+          </a>
+          <a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview" target="_blank" rel="noopener noreferrer">
+            <span>MICROSOFT BING</span>
+            <strong>AI Performance in Bing Webmaster Tools</strong>
+            <p>Bing documents citation counts, cited URLs and sampled grounding queries for AI answers.</p>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="timeline-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">Timeline</div>
-        <h2>What You Can <span>Expect</span></h2>
-        <p>AI search work should be measured alongside traditional SEO performance. The early wins usually come from cleaner structure, better answers and stronger priority pages.</p>
-      </div>
-
-      <div class="timeline-grid">
-        <div class="timeline-card">
-          <span>1 to 3 months</span>
-          <h3>Foundation</h3>
-          <p>Audit, technical fixes, schema cleanup, priority page improvements and baseline visibility checks.</p>
+    <section class="ai-faq">
+      <div class="ai-shell faq-layout">
+        <div class="faq-heading">
+          <p class="ai-kicker"><span></span> Straight answers</p>
+          <h2>AI SEO, GEO and AEO FAQs</h2>
+          <p>Enough acronyms. Here is what matters before you invest.</p>
         </div>
-        <div class="timeline-card">
-          <span>3 to 6 months</span>
-          <h3>Expansion</h3>
-          <p>More answer-ready content, stronger internal links, better proof placement and refined service-page targeting.</p>
-        </div>
-        <div class="timeline-card">
-          <span>6 to 12 months</span>
-          <h3>Authority</h3>
-          <p>Compounding topical authority, stronger citation potential and a clearer footprint across organic and answer-led discovery.</p>
+        <div class="faq-list">
+          {aiSearchFaqs.map((faq, index) => (
+            <details>
+              <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="difference-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header left-header">
-        <div class="section-badge">The Difference</div>
-        <h2>Why Bright Forge Approaches AI Search <span>Differently</span></h2>
-        <p>We treat AI search as an SEO operating layer, not a new buzzword product bolted onto weak fundamentals.</p>
-      </div>
-
-      <div class="difference-grid">
+    <section class="ai-final-cta">
+      <div class="ai-shell final-cta-layout">
+        <p>READY TO BECOME A BETTER SOURCE?</p>
+        <h2>Find out where your brand disappears from the answer.</h2>
         <div>
-          <h3>We do not sell AI magic</h3>
-          <p>No one can force Google AI Overviews or ChatGPT to recommend a business. We improve the evidence and structure that make inclusion more plausible.</p>
-        </div>
-        <div>
-          <h3>We keep conversion in the frame</h3>
-          <p>Visibility is only useful if the page can turn attention into enquiries. AI SEO still needs persuasive service copy, trust signals and strong calls to action.</p>
-        </div>
-        <div>
-          <h3>We use senior SEO judgement</h3>
-          <p>With more than 15 years of SEO experience behind the process, we separate useful AI-search changes from fashionable busywork.</p>
-        </div>
-        <div>
-          <h3>We understand the Philippine market</h3>
-          <p>The category is still early locally. That gives serious businesses a chance to build clarity and authority before the SERPs get noisier.</p>
+          <p>We will assess the search foundations, source pages, authority and measurable AI visibility behind your priority commercial topics.</p>
+          <a class="ai-button ai-button-primary" href="/contact/">Request an AI visibility audit <span aria-hidden="true">→</span></a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="faq-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="section-header">
-        <div class="section-badge">FAQ</div>
-        <h2>AI Search Optimisation <span>FAQs</span></h2>
-      </div>
-
-      <div class="faq-list">
-        {aiSearchFaqs.map((faq) => (
-          <details class="faq-item">
-            <summary>{faq.question}</summary>
-            <p>{faq.answer}</p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="cta-container">
-        <div class="section-badge">Next Step</div>
-        <h2>Request an <span>AI Search Visibility Audit</span></h2>
-        <p>We will review how clearly your business, services, proof and priority pages are understood across Google, AI-assisted results and answer-led search.</p>
-        <a href="/contact/" class="cta-button">Request Your Audit</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <ContactSection />
-
   <Footer slot="footer" />
 </MainLayout>
 
 <style>
-:root {
-  --bf-bg: #0d0f1a;
-  --bf-panel: #131627;
-  --bf-panel-2: #1a1e32;
-  --bf-orange: #f0622a;
-  --bf-orange-dark: #d4510e;
-  --bf-text: #ffffff;
-  --bf-muted: #d0d4e8;
-  --bf-border: rgba(255, 255, 255, 0.08);
-}
-
-.ai-hero-system {
-  position: relative;
-  min-height: 460px;
-  width: min(520px, 100%);
-  margin: 0 auto;
-}
-
-.core-orb {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  width: 190px;
-  height: 190px;
-  border-radius: 999px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.22), rgba(240,98,42,0.96));
-  border: 1px solid rgba(255,255,255,0.28);
-  box-shadow: 0 24px 80px rgba(240, 98, 42, 0.34);
-  color: white;
-  text-align: center;
-}
-
-.core-orb i {
-  font-size: 2.2rem;
-}
-
-.core-orb strong {
-  font-size: 2.2rem;
-  line-height: 1;
-}
-
-.core-orb span {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.signal-card {
-  position: absolute;
-  width: 190px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(19, 22, 39, 0.86);
-  border: 1px solid rgba(255,255,255,0.16);
-  color: white;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.25);
-}
-
-.signal-card span {
-  display: block;
-  color: var(--bf-orange);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 5px;
-}
-
-.signal-card strong {
-  display: block;
-  font-size: 1rem;
-  line-height: 1.25;
-}
-
-.google-card { top: 20px; left: 30px; }
-.answer-card { top: 75px; right: 0; }
-.proof-card { bottom: 72px; left: 0; }
-.content-card { bottom: 20px; right: 35px; }
-
-.proof-strip {
-  background: #090b13;
-  padding: 28px 0;
-  border-top: 1px solid var(--bf-border);
-  border-bottom: 1px solid var(--bf-border);
-}
-
-.proof-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--bf-border);
-  border-bottom: 1px solid var(--bf-border);
-}
-
-.proof-grid div {
-  padding: 20px 24px;
-  border: 0;
-  border-right: 1px solid var(--bf-border);
-  border-radius: 0;
-  background: transparent;
-}
-
-.proof-grid div:first-child {
-  padding-left: 0;
-}
-
-.proof-grid div:last-child {
-  border-right: 0;
-  padding-right: 0;
-}
-
-.proof-grid strong,
-.proof-grid span {
-  display: block;
-}
-
-.proof-grid strong {
-  color: var(--bf-orange);
-  font-size: 1.05rem;
-  margin-bottom: 4px;
-}
-
-.proof-grid span {
-  color: var(--bf-muted);
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
-
-.dark-section,
-.audit-section,
-.platform-section,
-.timeline-section,
-.faq-section {
-  padding: 86px 0;
-  background: var(--bf-bg);
-}
-
-.method-section,
-.fit-section,
-.investment-section,
-.difference-section,
-.cta-section {
-  padding: 86px 0;
-  background: var(--bf-panel);
-}
-
-.section-header {
-  text-align: center;
-  max-width: 850px;
-  margin: 0 auto 48px;
-}
-
-.left-header {
-  text-align: left;
-  margin-left: 0;
-}
-
-.section-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.14), rgba(240, 98, 42, 0.05));
-  border: 1px solid rgba(240, 98, 42, 0.22);
-  color: var(--bf-orange);
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-
-.section-header h2,
-.fit-card h2,
-.cta-container h2 {
-  color: white;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.12;
-  font-weight: 800;
-  margin: 0 0 18px;
-}
-
-.section-header h2 span {
-  color: var(--bf-orange);
-}
-
-.section-header p,
-.copy-block p,
-.fit-card p,
-.cta-container p {
-  color: var(--bf-muted);
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 42px;
-  align-items: start;
-}
-
-.copy-block {
-  padding: 34px;
-  border-radius: 22px;
-  background: var(--bf-panel);
-  border: 1px solid var(--bf-border);
-}
-
-.copy-block strong {
-  color: white;
-}
-
-.issue-panel,
-.fit-card,
-.cta-container {
-  padding: 38px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.11), rgba(255,255,255,0.03));
-  border: 1px solid rgba(240, 98, 42, 0.22);
-}
-
-.issue-panel h3,
-.fit-list h3 {
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 18px;
-}
-
-.issue-panel ul,
-.fit-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.issue-panel li,
-.fit-list li {
-  position: relative;
-  color: var(--bf-muted);
-  padding: 0 0 14px 28px;
-  line-height: 1.55;
-}
-
-.issue-panel li::before,
-.fit-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--bf-orange);
-  font-weight: 800;
-}
-
-.audit-grid,
-.platform-grid,
-.investment-grid,
-.difference-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--bf-border);
-  border: 1px solid var(--bf-border);
-}
-
-.audit-grid,
-.platform-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.difference-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.audit-card,
-.platform-card,
-.investment-card,
-.difference-grid > div,
-.faq-item,
-.timeline-card {
-  background: var(--bf-panel);
-  border: 0;
-  border-radius: 0;
-  padding: 28px;
-  color: white;
-  transition: none;
-}
-
-.audit-card:hover,
-.platform-card:hover,
-.investment-card:hover,
-.difference-grid > div:hover,
-.timeline-card:hover {
-  transform: none;
-  border-color: transparent;
-}
-
-.audit-card i,
-.investment-card i {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  background: transparent;
-  color: var(--bf-orange);
-  font-size: 1.2rem;
-  margin-bottom: 18px;
-}
-
-.audit-card h3,
-.platform-card h3,
-.investment-card h3,
-.difference-grid h3,
-.faq-item h3,
-.timeline-card h3 {
-  color: white;
-  font-size: 1.25rem;
-  font-weight: 750;
-  margin: 0 0 12px;
-}
-
-.audit-card p,
-.platform-card p,
-.investment-card p,
-.difference-grid p,
-.faq-item p,
-.timeline-card p {
-  color: var(--bf-muted);
-  line-height: 1.65;
-  margin: 0;
-}
-
-.method-list {
-  display: grid;
-  gap: 18px;
-}
-
-.method-item {
-  display: grid;
-  grid-template-columns: 82px 1fr;
-  gap: 24px;
-  align-items: start;
-  padding: 0 0 28px;
-  border-radius: 0;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--bf-border);
-}
-
-.method-item > span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
-  border-radius: 0;
-  background: transparent;
-  color: var(--bf-orange);
-  font-weight: 800;
-  border-right: 1px solid rgba(240, 98, 42, 0.34);
-}
-
-.method-item h3 {
-  color: white;
-  font-size: 1.35rem;
-  margin: 0 0 8px;
-}
-
-.method-item p {
-  color: var(--bf-muted);
-  line-height: 1.65;
-  margin: 0;
-}
-
-.fit-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--bf-border);
-  border-bottom: 1px solid var(--bf-border);
-}
-
-.timeline-card {
-  text-align: left;
-  border-right: 1px solid var(--bf-border);
-}
-
-.timeline-card:last-child {
-  border-right: 0;
-}
-
-.timeline-card span {
-  display: inline-flex;
-  padding: 8px 16px;
-  border-radius: 100px;
-  background: rgba(240, 98, 42, 0.13);
-  color: var(--bf-orange);
-  font-weight: 800;
-  margin-bottom: 18px;
-}
-
-.faq-grid {
-  display: grid;
-  gap: 16px;
-  max-width: 920px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  background: var(--bf-panel-2);
-}
-
-.cta-container {
-  text-align: center;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8px;
-  padding: 16px 34px;
-  border-radius: 100px;
-  background: linear-gradient(135deg, var(--bf-orange), var(--bf-orange-dark));
-  color: white;
-  text-decoration: none;
-  font-weight: 800;
-  box-shadow: 0 14px 34px rgba(240, 98, 42, 0.24);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 44px rgba(240, 98, 42, 0.34);
-}
-
-@media (max-width: 1024px) {
-  .proof-grid,
-  .audit-grid,
-  .platform-grid,
-  .investment-grid,
-  .difference-grid,
-  .timeline-grid {
-    grid-template-columns: repeat(2, 1fr);
+  :root {
+    --ai-ink: #080a13;
+    --ai-night: #0d1020;
+    --ai-panel: #14182a;
+    --ai-panel-soft: #1a1f34;
+    --ai-orange: #f0622a;
+    --ai-orange-bright: #ff7a3d;
+    --ai-cream: #f3efe8;
+    --ai-white: #ffffff;
+    --ai-muted: #b7bdcf;
+    --ai-border: rgba(255, 255, 255, 0.11);
+    --ai-line: rgba(240, 98, 42, 0.42);
   }
 
-  .split-layout,
-  .fit-card {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .ai-hero-system {
-    min-height: 430px;
+  .ai-page {
+    background: var(--ai-ink);
+    color: var(--ai-white);
+    overflow: hidden;
   }
 
-  .core-orb {
-    width: 150px;
-    height: 150px;
+  .ai-shell {
+    width: min(1240px, calc(100% - 48px));
+    margin-inline: auto;
   }
 
-  .signal-card {
-    width: 155px;
-    padding: 14px;
+  .ai-hero {
+    position: relative;
+    padding: 42px 0 112px;
+    background:
+      radial-gradient(circle at 82% 17%, rgba(240, 98, 42, 0.14), transparent 25%),
+      linear-gradient(115deg, #0f1222 0%, #090b14 60%, #0b0d18 100%) !important;
+    border-bottom: 1px solid var(--ai-border);
   }
 
-  .google-card { top: 10px; left: 0; }
-  .answer-card { top: 78px; right: 0; }
-  .proof-card { bottom: 82px; left: 0; }
-  .content-card { bottom: 16px; right: 0; }
-
-  .proof-grid,
-  .audit-grid,
-  .platform-grid,
-  .investment-grid,
-  .difference-grid,
-  .timeline-grid {
-    grid-template-columns: 1fr;
+  .ai-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: .22;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
   }
 
-  .dark-section,
-  .audit-section,
-  .platform-section,
-  .timeline-section,
-  .faq-section,
-  .method-section,
-  .fit-section,
-  .investment-section,
-  .difference-section,
-  .cta-section {
-    padding: 64px 0;
+  .ai-breadcrumb {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 62px;
+    color: #8f96aa;
+    font-size: .82rem;
   }
 
-  .copy-block,
-  .issue-panel,
-  .fit-card,
-  .cta-container,
-  .method-item {
-    padding: 24px;
+  .ai-breadcrumb a { color: #cdd1de; text-decoration: none; }
+  .ai-breadcrumb a:hover { color: var(--ai-orange-bright); }
+
+  .ai-hero-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(480px, .78fr);
+    align-items: center;
+    gap: clamp(48px, 7vw, 108px);
   }
 
-  .method-item {
-    grid-template-columns: 1fr;
+  .ai-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 20px;
+    color: #c6cad7;
+    font-size: .73rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
   }
-}
 
+  .ai-kicker > span {
+    width: 26px;
+    height: 1px;
+    background: var(--ai-orange);
+    box-shadow: 10px 0 20px var(--ai-orange);
+  }
+
+  .ai-hero h1 {
+    max-width: 760px;
+    margin: 0;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3.35rem, 5.25vw, 5.8rem);
+    font-weight: 700;
+    line-height: .97;
+    letter-spacing: -.055em;
+  }
+
+  .ai-hero h1 span,
+  .ai-page h2 em {
+    color: var(--ai-orange);
+    font-style: normal;
+  }
+
+  .ai-lede {
+    max-width: 680px;
+    margin: 32px 0 0;
+    color: #eef0f7;
+    font-size: clamp(1.12rem, 1.5vw, 1.34rem);
+    line-height: 1.55;
+  }
+
+  .ai-hero-note {
+    max-width: 640px;
+    margin: 18px 0 0;
+    color: var(--ai-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .ai-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+  .ai-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 0 22px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  }
+
+  .ai-button:hover { transform: translateY(-2px); }
+  .ai-button-primary { background: var(--ai-orange); box-shadow: 0 16px 38px rgba(240,98,42,.2); }
+  .ai-button-primary:hover { background: var(--ai-orange-bright); }
+  .ai-button-secondary { border-color: rgba(255,255,255,.19); background: rgba(255,255,255,.04); }
+  .ai-button-secondary:hover { border-color: rgba(240,98,42,.58); }
+
+  .ai-trust-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin: 32px 0 0;
+    padding: 0;
+    color: #9299ad;
+    font-size: .78rem;
+    list-style: none;
+  }
+
+  .ai-trust-line li { position: relative; }
+  .ai-trust-line li:not(:last-child)::after { content: '·'; position: absolute; right: -15px; color: var(--ai-orange); }
+
+  .citation-observatory {
+    position: relative;
+    min-height: 580px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(25,30,51,.96), rgba(11,14,25,.96));
+    box-shadow: 0 38px 100px rgba(0,0,0,.42), 0 0 70px rgba(240,98,42,.08);
+    isolation: isolate;
+  }
+
+  .citation-observatory::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,255,255,.045), transparent 42%);
+    pointer-events: none;
+  }
+
+  .observatory-bar { display: flex; justify-content: space-between; align-items: center; padding: 4px 2px 16px; border-bottom: 1px solid var(--ai-border); }
+  .observatory-bar > span { display: flex; gap: 6px; }
+  .observatory-bar i { width: 6px; height: 6px; border-radius: 50%; background: #485067; }
+  .observatory-bar i:first-child { background: var(--ai-orange); }
+  .observatory-bar small { color: #7f879c; font-size: .61rem; letter-spacing: .16em; }
+
+  .observatory-query { position: relative; z-index: 2; margin: 22px 8px 18px; padding: 18px 20px; border-left: 2px solid var(--ai-orange); background: rgba(255,255,255,.035); }
+  .observatory-query span { display: block; margin-bottom: 7px; color: var(--ai-orange-bright); font-size: .65rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+  .observatory-query strong { display: block; max-width: 390px; font-size: 1rem; line-height: 1.45; }
+
+  .answer-surface { position: relative; z-index: 2; margin: 0 8px; padding: 24px; border: 1px solid var(--ai-border); background: rgba(7,9,17,.72); }
+  .answer-label { display: flex; justify-content: space-between; color: #8f96aa; font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; }
+  .answer-surface > p { max-width: 390px; margin: 20px 0 16px; color: #e7e9f0; font-size: .91rem; line-height: 1.55; }
+  .answer-lines { display: grid; gap: 6px; margin-bottom: 22px; }
+  .answer-lines i { height: 4px; background: linear-gradient(90deg, rgba(240,98,42,.56), rgba(255,255,255,.08)); }
+  .answer-lines i:nth-child(2) { width: 82%; }
+  .answer-lines i:nth-child(3) { width: 58%; }
+
+  .source-stack { display: grid; gap: 8px; }
+  .source-stack > div { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.025); }
+  .source-stack > div > span { color: #747d94; font-family: monospace; font-size: .67rem; }
+  .source-stack p { margin: 0; }
+  .source-stack strong { display: block; font-size: .77rem; }
+  .source-stack small { display: block; margin-top: 2px; color: #7f879c; font-size: .67rem; }
+  .source-stack b { color: #f49a73; font-size: .58rem; letter-spacing: .12em; }
+
+  .signal-path { position: absolute; inset: 46px 2px 36px; z-index: 1; width: calc(100% - 4px); height: calc(100% - 82px); opacity: .68; pointer-events: none; }
+  .signal-path path { fill: none; stroke: var(--ai-orange); stroke-width: 1.2; stroke-dasharray: 4 8; }
+  .signal-path circle { fill: var(--ai-orange); filter: drop-shadow(0 0 8px var(--ai-orange)); }
+
+  .observatory-caption { position: absolute; z-index: 2; right: 26px; bottom: 20px; left: 26px; margin: 0; color: #727a90; font-size: .68rem; }
+  .observatory-caption span { color: #b9bfce; }
+
+  .ai-shift { padding: 112px 0; background: var(--ai-cream) !important; color: #151724; }
+  .ai-shift-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(64px, 10vw, 150px); }
+  .ai-shift .ai-kicker { color: #5f6270; }
+  .shift-statement h2 { margin: 0; font-family: 'Outfit', sans-serif; font-size: clamp(2.65rem, 4.5vw, 4.9rem); line-height: 1.02; letter-spacing: -.05em; }
+  .shift-copy { padding-top: 48px; border-top: 1px solid rgba(12,14,24,.2); }
+  .shift-copy p { margin: 0 0 22px; color: #444754; font-size: 1.04rem; line-height: 1.75; }
+  .shift-copy strong { color: #151724; }
+
+  .ai-reality,
+  .ai-method,
+  .ai-platforms,
+  .ai-deliverables,
+  .ai-faq { padding: 112px 0; }
+
+  .ai-section-heading { max-width: 880px; }
+  .ai-section-heading h2,
+  .method-intro h2,
+  .source-copy h2,
+  .platform-heading h2,
+  .measurement-copy h2,
+  .deliverables-title h2,
+  .fit-heading h2,
+  .commercial-copy h2,
+  .sources-layout h2,
+  .faq-heading h2,
+  .ai-final-cta h2 {
+    margin: 0;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 4.35rem);
+    line-height: 1.04;
+    letter-spacing: -.045em;
+  }
+
+  .reality-rule { height: 1px; margin: 54px 0 0; background: linear-gradient(90deg, var(--ai-orange), var(--ai-border) 35%, var(--ai-border)); }
+  .reality-columns { display: grid; grid-template-columns: 1fr 1fr; }
+  .reality-side { padding: 48px 48px 0 0; }
+  .reality-side + .reality-side { padding-right: 0; padding-left: 48px; border-left: 1px solid var(--ai-border); }
+  .reality-label { margin: 0 0 28px; color: #858da2; font-size: .68rem; font-weight: 700; letter-spacing: .15em; }
+  .reality-side ul { margin: 0; padding: 0; list-style: none; }
+  .reality-side li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.07); }
+  .reality-side li > span { display: grid; place-items: center; width: 25px; height: 25px; color: var(--ai-orange-bright); border: 1px solid rgba(240,98,42,.4); font-family: monospace; font-size: .68rem; }
+  .reality-side p { margin: 0; color: var(--ai-muted); line-height: 1.6; }
+  .reality-side strong { display: block; margin-bottom: 5px; color: white; font-size: 1.02rem; }
+  .reality-side-limit { opacity: .78; }
+
+  .ai-method { background: #101323; border-block: 1px solid var(--ai-border); }
+  .method-intro { display: grid; grid-template-columns: 1.1fr .7fr; gap: 80px; align-items: end; margin-bottom: 62px; }
+  .method-intro > p { margin: 0 0 5px; color: var(--ai-muted); font-size: 1.02rem; line-height: 1.7; }
+  .method-ledger { border-top: 1px solid rgba(255,255,255,.16); }
+  .method-row { display: grid; grid-template-columns: 64px minmax(240px,.9fr) minmax(300px,1.2fr) 170px; gap: 28px; align-items: start; padding: 32px 0; border-bottom: 1px solid var(--ai-border); }
+  .method-number { color: var(--ai-orange); font-family: monospace; font-size: .72rem; }
+  .method-row h3 { margin: -5px 0 0; color: white; font-family: 'Outfit', sans-serif; font-size: 1.45rem; line-height: 1.2; }
+  .method-row p { margin: 0; color: var(--ai-muted); line-height: 1.65; }
+  .method-row > strong { color: #f2a482; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+
+  .ai-source-system { padding: 125px 0; background: var(--ai-cream) !important; color: #191b27; }
+  .source-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 110px; align-items: center; }
+  .ai-source-system .ai-kicker { color: #5f6270; }
+  .source-copy h2 { color: #171925; }
+  .source-copy > p:not(.ai-kicker) { max-width: 570px; color: #4b4e5a; font-size: 1.03rem; line-height: 1.75; }
+  .source-copy a { color: #b44214; font-weight: 700; }
+  .source-orbit { position: relative; min-height: 510px; display: grid; place-items: center; }
+  .source-orbit::before { content: ''; position: absolute; width: 76%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(240,98,42,.19), rgba(240,98,42,0) 68%); }
+  .orbit-core { position: relative; z-index: 3; display: grid; place-items: center; width: 178px; height: 178px; border-radius: 50%; background: #111421; color: white; box-shadow: 0 25px 80px rgba(12,15,26,.28); text-align: center; }
+  .orbit-core small { color: #f29b75; font-size: .61rem; letter-spacing: .16em; }
+  .orbit-core strong { font-family: 'Outfit', sans-serif; font-size: 1.65rem; }
+  .orbit-core span { max-width: 116px; color: #9ba2b7; font-size: .7rem; line-height: 1.4; }
+  .orbit-ring { position: absolute; display: flex; align-items: center; border: 1px solid rgba(19,22,34,.2); border-radius: 50%; }
+  .orbit-ring span { position: absolute; padding: 6px 10px; background: var(--ai-cream); color: #3d404d; font-size: .67rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .orbit-ring-one { width: 255px; height: 255px; transform: rotate(9deg); }
+  .orbit-ring-one span { top: 10px; left: 40px; transform: rotate(-9deg); }
+  .orbit-ring-two { width: 340px; height: 340px; transform: rotate(-17deg); }
+  .orbit-ring-two span { right: -4px; top: 92px; transform: rotate(17deg); }
+  .orbit-ring-three { width: 425px; height: 425px; transform: rotate(26deg); }
+  .orbit-ring-three span { right: 42px; bottom: 30px; transform: rotate(-26deg); }
+  .orbit-ring-four { width: 500px; height: 500px; transform: rotate(-8deg); }
+  .orbit-ring-four span { left: 8px; top: 142px; transform: rotate(8deg); }
+
+  .ai-platforms { background: #0c0f1b; }
+  .platform-heading { display: grid; grid-template-columns: 1.15fr .65fr; gap: 80px; align-items: end; margin-bottom: 60px; }
+  .platform-heading > p { margin: 0; color: var(--ai-muted); line-height: 1.7; }
+  .platform-run { border-top: 1px solid rgba(255,255,255,.17); }
+  .platform-run-head,
+  .platform-row { display: grid; grid-template-columns: .55fr .85fr 1.45fr 1.15fr; gap: 28px; }
+  .platform-run-head { padding: 15px 0; color: #6e768c; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .platform-row { padding: 30px 0; border-top: 1px solid rgba(255,255,255,.07); }
+  .platform-row > div { display: flex; gap: 14px; }
+  .platform-row small { color: var(--ai-orange); font-family: monospace; font-size: .65rem; }
+  .platform-row strong { color: white; font-size: 1.04rem; }
+  .platform-row p { margin: 0; color: var(--ai-muted); font-size: .9rem; line-height: 1.6; }
+
+  .ai-measurement { padding: 125px 0; background: linear-gradient(118deg, #ea5721 0%, #f36b34 53%, #d84715 100%) !important; }
+  .measurement-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; align-items: start; }
+  .measurement-copy .ai-kicker { color: rgba(255,255,255,.78); }
+  .measurement-copy .ai-kicker > span { background: white; box-shadow: none; }
+  .measurement-copy p:not(.ai-kicker) { color: rgba(255,255,255,.85); font-size: 1.02rem; line-height: 1.7; }
+  .measurement-copy > a { display: inline-block; margin-top: 18px; color: white; font-weight: 700; }
+  .measurement-chain { margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.35); list-style: none; }
+  .measurement-chain li { display: grid; grid-template-columns: 54px 1fr; gap: 18px; padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,.28); }
+  .measurement-chain > li > span { font-family: monospace; font-size: .7rem; }
+  .measurement-chain p { margin: 0; }
+  .measurement-chain strong { display: block; margin-bottom: 5px; font-family: 'Outfit', sans-serif; font-size: 1.3rem; }
+  .measurement-chain small { display: block; color: rgba(255,255,255,.78); font-size: .86rem; line-height: 1.5; }
+
+  .ai-deliverables { background: var(--ai-night); }
+  .deliverables-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 100px; }
+  .deliverables-title { position: sticky; top: 110px; align-self: start; }
+  .deliverables-list { border-top: 1px solid rgba(255,255,255,.16); }
+  .deliverables-list article { padding: 30px 0; border-bottom: 1px solid var(--ai-border); }
+  .deliverables-list article > span { color: var(--ai-orange); font-size: .62rem; font-weight: 700; letter-spacing: .14em; }
+  .deliverables-list h3 { margin: 8px 0 8px; color: white; font-family: 'Outfit', sans-serif; font-size: 1.5rem; }
+  .deliverables-list p { max-width: 650px; margin: 0; color: var(--ai-muted); line-height: 1.65; }
+
+  .ai-fit { padding: 112px 0; background: var(--ai-cream) !important; color: #171925; }
+  .fit-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 100px; }
+  .ai-fit .ai-kicker { color: #5f6270; }
+  .fit-heading h2 { color: #171925; }
+  .fit-editorial { border-top: 1px solid rgba(13,15,24,.22); }
+  .fit-editorial > div { display: grid; grid-template-columns: .55fr 1.45fr; gap: 42px; padding: 30px 0; border-bottom: 1px solid rgba(13,15,24,.15); }
+  .fit-editorial h3 { margin: 0; font-family: 'Outfit', sans-serif; font-size: 1.23rem; }
+  .fit-editorial p { margin: 0; color: #50535e; line-height: 1.65; }
+
+  .ai-commercial { padding: 112px 0; background: #0a0c16; }
+  .commercial-brief { position: relative; display: grid; grid-template-columns: 1fr .82fr; gap: 90px; padding: 68px; border: 1px solid rgba(240,98,42,.32); background: linear-gradient(135deg, rgba(240,98,42,.12), rgba(255,255,255,.025) 45%, rgba(255,255,255,.01)); }
+  .commercial-brief::before { content: ''; position: absolute; top: -1px; left: 68px; width: 120px; height: 3px; background: var(--ai-orange); box-shadow: 0 0 30px var(--ai-orange); }
+  .commercial-copy > p:not(.ai-kicker) { color: var(--ai-muted); line-height: 1.7; }
+  .commercial-copy .ai-button { margin-top: 16px; }
+  .commercial-factors { padding-left: 44px; border-left: 1px solid var(--ai-border); }
+  .commercial-factors > p { margin: 0 0 20px; color: #7e869c; font-size: .65rem; font-weight: 700; letter-spacing: .14em; }
+  .commercial-factors ul { margin: 0; padding: 0; list-style: none; }
+  .commercial-factors li { position: relative; padding: 13px 0 13px 24px; border-top: 1px solid rgba(255,255,255,.07); color: #d7dae4; }
+  .commercial-factors li::before { content: ''; position: absolute; left: 2px; top: 21px; width: 6px; height: 6px; background: var(--ai-orange); }
+
+  .ai-sources { padding: 100px 0; background: #111421; }
+  .sources-layout { display: grid; grid-template-columns: .65fr 1.35fr; gap: 100px; }
+  .source-links { border-top: 1px solid rgba(255,255,255,.16); }
+  .source-links a { display: grid; grid-template-columns: .48fr .82fr 1.1fr; gap: 28px; padding: 26px 0; border-bottom: 1px solid var(--ai-border); color: inherit; text-decoration: none; }
+  .source-links a:hover strong { color: var(--ai-orange-bright); }
+  .source-links span { color: var(--ai-orange); font-size: .62rem; font-weight: 700; letter-spacing: .13em; }
+  .source-links strong { color: white; transition: color .2s ease; }
+  .source-links p { margin: 0; color: var(--ai-muted); font-size: .86rem; line-height: 1.6; }
+
+  .ai-faq { background: #0a0c16; }
+  .faq-layout { display: grid; grid-template-columns: .62fr 1.38fr; gap: 100px; }
+  .faq-heading { position: sticky; top: 110px; align-self: start; }
+  .faq-heading > p:not(.ai-kicker) { color: var(--ai-muted); }
+  .faq-list { border-top: 1px solid rgba(255,255,255,.16); }
+  .faq-list details { border-bottom: 1px solid var(--ai-border); }
+  .faq-list summary { display: grid; grid-template-columns: 42px 1fr 28px; gap: 16px; align-items: center; padding: 25px 0; color: white; font-family: 'Outfit', sans-serif; font-size: 1.12rem; cursor: pointer; list-style: none; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary span { color: var(--ai-orange); font-family: monospace; font-size: .65rem; }
+  .faq-list summary i { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--ai-border); border-radius: 50%; color: var(--ai-orange); font-style: normal; }
+  .faq-list details[open] summary i { transform: rotate(45deg); }
+  .faq-list details > p { margin: -4px 38px 26px 58px; color: var(--ai-muted); line-height: 1.7; }
+
+  .ai-final-cta { padding: 105px 0; background: var(--ai-cream) !important; color: #161824; }
+  .final-cta-layout { display: grid; grid-template-columns: .4fr 1.05fr .65fr; gap: 70px; align-items: start; }
+  .ai-final-cta > .ai-shell > p { margin: 8px 0 0; color: #a6411a; font-size: .65rem; font-weight: 700; letter-spacing: .15em; }
+  .ai-final-cta h2 { color: #161824; }
+  .ai-final-cta div > p { margin: 8px 0 24px; color: #525560; line-height: 1.7; }
+
+  /* global.css deliberately forces every section dark with a high-specificity
+     important rule. These page-owned surfaces need a stronger selector so the
+     art direction and text contrast survive the global fallback. */
+  .ai-page.ai-page .ai-hero.ai-hero {
+    background:
+      radial-gradient(circle at 82% 17%, rgba(240, 98, 42, 0.14), transparent 25%),
+      linear-gradient(115deg, #0f1222 0%, #090b14 60%, #0b0d18 100%) !important;
+  }
+  .ai-page.ai-page .ai-shift.ai-shift,
+  .ai-page.ai-page .ai-source-system.ai-source-system,
+  .ai-page.ai-page .ai-fit.ai-fit,
+  .ai-page.ai-page .ai-final-cta.ai-final-cta {
+    background: var(--ai-cream) !important;
+  }
+  .ai-page.ai-page .ai-measurement.ai-measurement {
+    background: linear-gradient(118deg, #ea5721 0%, #f36b34 53%, #d84715 100%) !important;
+  }
+  .ai-page.ai-page .ai-shift.ai-shift .shift-statement h2,
+  .ai-page.ai-page .ai-source-system.ai-source-system .source-copy h2,
+  .ai-page.ai-page .ai-fit.ai-fit .fit-heading h2,
+  .ai-page.ai-page .ai-final-cta.ai-final-cta h2 {
+    color: #171925 !important;
+  }
+  .ai-page.ai-page .ai-source-system.ai-source-system .source-copy > p:not(.ai-kicker),
+  .ai-page.ai-page .ai-final-cta.ai-final-cta div > p {
+    color: #4b4e5a !important;
+  }
+
+  @media (max-width: 1080px) {
+    .ai-hero-layout { grid-template-columns: 1fr; }
+    .ai-hero-copy { max-width: 850px; }
+    .citation-observatory { width: min(720px, 100%); min-height: 540px; }
+    .method-row { grid-template-columns: 48px .9fr 1.2fr; }
+    .method-row > strong { grid-column: 2 / -1; }
+    .source-layout,
+    .measurement-layout,
+    .deliverables-layout,
+    .fit-layout,
+    .faq-layout { gap: 62px; }
+    .orbit-ring-four { width: 450px; height: 450px; }
+    .orbit-ring-three { width: 380px; height: 380px; }
+    .final-cta-layout { grid-template-columns: 1fr 2fr; }
+    .final-cta-layout > div { grid-column: 2; }
+  }
+
+  @media (max-width: 820px) {
+    .ai-shell { width: min(100% - 32px, 720px); }
+    .ai-hero { padding-top: 28px; padding-bottom: 78px; }
+    .ai-breadcrumb { margin-bottom: 44px; }
+    .ai-hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
+    .ai-shift-layout,
+    .reality-columns,
+    .method-intro,
+    .source-layout,
+    .platform-heading,
+    .measurement-layout,
+    .deliverables-layout,
+    .fit-layout,
+    .commercial-brief,
+    .sources-layout,
+    .faq-layout,
+    .final-cta-layout { grid-template-columns: 1fr; gap: 42px; }
+    .reality-side { padding-right: 0; }
+    .reality-side + .reality-side { padding: 46px 0 0; border-left: 0; border-top: 1px solid var(--ai-border); }
+    .method-row { grid-template-columns: 38px 1fr; gap: 18px; }
+    .method-row > p,
+    .method-row > strong { grid-column: 2; }
+    .source-orbit { min-height: 480px; }
+    .platform-run-head { display: none; }
+    .platform-row { grid-template-columns: 1fr; gap: 14px; }
+    .platform-row p::before { display: block; margin-bottom: 5px; color: #6e768c; font-size: .58rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .platform-row p:nth-child(2)::before { content: 'Surface'; }
+    .platform-row p:nth-child(3)::before { content: 'What matters'; }
+    .platform-row p:nth-child(4)::before { content: 'What we check'; }
+    .deliverables-title,
+    .faq-heading { position: static; }
+    .commercial-brief { padding: 44px; }
+    .commercial-factors { padding: 36px 0 0; border-top: 1px solid var(--ai-border); border-left: 0; }
+    .source-links a { grid-template-columns: 1fr; gap: 9px; }
+    .final-cta-layout > div { grid-column: auto; }
+  }
+
+  @media (max-width: 520px) {
+    .ai-shell { width: min(100% - 28px, 500px); }
+    .ai-breadcrumb { align-items: flex-start; flex-wrap: wrap; }
+    .ai-hero-layout { gap: 48px; }
+    .ai-hero h1 { font-size: 2.78rem; line-height: 1.01; }
+    .ai-lede { font-size: 1.05rem; }
+    .ai-actions { display: grid; }
+    .ai-button { width: 100%; padding-inline: 16px; text-align: center; }
+    .ai-trust-line { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 16px; }
+    .ai-trust-line li::after { display: none; }
+    .citation-observatory { min-height: 570px; padding: 12px; }
+    .observatory-bar small { font-size: .52rem; }
+    .observatory-query { margin-inline: 2px; padding: 14px; }
+    .answer-surface { margin-inline: 2px; padding: 16px; }
+    .source-stack > div { grid-template-columns: 24px 1fr; }
+    .source-stack b { display: none; }
+    .observatory-caption { right: 17px; left: 17px; }
+    .ai-shift,
+    .ai-reality,
+    .ai-method,
+    .ai-platforms,
+    .ai-deliverables,
+    .ai-fit,
+    .ai-commercial,
+    .ai-sources,
+    .ai-faq,
+    .ai-final-cta,
+    .ai-source-system,
+    .ai-measurement { padding-block: 78px; }
+    .ai-section-heading h2,
+    .method-intro h2,
+    .source-copy h2,
+    .platform-heading h2,
+    .measurement-copy h2,
+    .deliverables-title h2,
+    .fit-heading h2,
+    .commercial-copy h2,
+    .sources-layout h2,
+    .faq-heading h2,
+    .ai-final-cta h2,
+    .shift-statement h2 { font-size: 2.42rem; }
+    .reality-side li { grid-template-columns: 30px 1fr; }
+    .method-row { padding: 26px 0; }
+    .source-orbit { min-height: 340px; transform: scale(.72); margin: -45px -70px; }
+    .commercial-brief { padding: 34px 24px; }
+    .commercial-brief::before { left: 24px; }
+    .fit-editorial > div { grid-template-columns: 1fr; gap: 10px; }
+    .faq-list summary { grid-template-columns: 30px 1fr 26px; gap: 10px; font-size: 1rem; }
+    .faq-list details > p { margin: 0 0 24px 40px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-button { transition: none; }
+  }
 </style>
