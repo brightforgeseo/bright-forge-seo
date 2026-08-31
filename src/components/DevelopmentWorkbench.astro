@@ -67,27 +67,44 @@ const shinobi = "https://shinobiseo.netlify.app";
       ></iframe>
     </article>
 
-    <article class="page-frame" aria-label="Shinobi homepage anatomy">
-      <p class="frame-label">What shipped on the first screen</p>
-      <div class="frame-meta">
-        <span>Title</span>
-        <b class="type-line">Creative Industry SEO Philippines | Shinobi</b>
+    <article class="build-portfolio" aria-label="Interactive Shinobi build portfolio">
+      <p class="frame-label">Explore the build</p>
+      <h3>Four decisions behind the live Shinobi site</h3>
+      <div class="portfolio-tabs" role="tablist" aria-label="Shinobi build decisions">
+        <button type="button" role="tab" id="tab-hero" aria-controls="panel-hero" aria-selected="true" data-demo-tab="hero">01 Hero</button>
+        <button type="button" role="tab" id="tab-stack" aria-controls="panel-stack" aria-selected="false" tabindex="-1" data-demo-tab="stack">02 TanStack + Tailwind</button>
+        <button type="button" role="tab" id="tab-manga" aria-controls="panel-manga" aria-selected="false" tabindex="-1" data-demo-tab="manga">03 Manga UI</button>
+        <button type="button" role="tab" id="tab-seo" aria-controls="panel-seo" aria-selected="false" tabindex="-1" data-demo-tab="seo">04 SEO + handoff</button>
       </div>
-      <div class="frame-h1">The phone has to ring. Not just the report.</div>
-      <div class="frame-body">
-        <p>Video is the scene. The H1 still has to do the commercial job.</p>
-        <ul>
-          <li>Hero video with poster, muted, looping</li>
-          <li>Manga paper overlay so the line stays readable</li>
-          <li>Parent named: Bright Forge SEO</li>
-          <li>Review and cases on the same first screen</li>
-        </ul>
-      </div>
-      <div class="frame-chips">
-        <span>hero.mp4</span>
-        <span>TanStack</span>
-        <span>manga UI</span>
-        <span>parent link</span>
+
+      <div class="portfolio-stage">
+        <section id="panel-hero" role="tabpanel" aria-labelledby="tab-hero" data-demo-panel="hero">
+          <p class="portfolio-number">01 / Hero system</p>
+          <h4>The video builds the world. The copy still sells the job.</h4>
+          <p>We used a full-bleed <code>hero.mp4</code> with a poster and muted loop to make Shinobi feel like a creative studio before the visitor reads a word. A manga-paper wash protects contrast, while the H1 stays plain and commercial: “The phone has to ring. Not just the report.”</p>
+          <div class="portfolio-points"><span>Full-bleed video</span><span>Readable H1</span><span>Mobile poster</span><span>Reduced-motion safe</span></div>
+        </section>
+
+        <section id="panel-stack" role="tabpanel" aria-labelledby="tab-stack" data-demo-panel="stack" hidden>
+          <p class="portfolio-number">02 / Technology</p>
+          <h4>TanStack Start for real routes. Tailwind for a custom visual system.</h4>
+          <p>Shinobi is not an Astro build. We chose TanStack Start because the site needed React components, route-led pages and room to grow into interactive tools without becoming a one-page app. Tailwind let us build the ink borders, paper layers, stamps and responsive states as a consistent system instead of fighting a purchased theme.</p>
+          <div class="portfolio-points"><span>TanStack Start</span><span>React 19</span><span>Tailwind CSS</span><span>Nitro deployment</span></div>
+        </section>
+
+        <section id="panel-manga" role="tabpanel" aria-labelledby="tab-manga" data-demo-panel="manga" hidden>
+          <p class="portfolio-number">03 / Art direction</p>
+          <h4>Manga made sense for the audience. It was not decoration pasted on later.</h4>
+          <p>Shinobi targets creative-industry businesses, so a normal agency grid would have made the brand forgettable. We built the interface around ink borders, speech panels, paper texture, a painted lockup and a red 参上 stamp. The style carries through navigation, cards and calls to action rather than appearing only in the hero.</p>
+          <div class="portfolio-points"><span>Ink borders</span><span>Paper texture</span><span>Painted lockup</span><span>Consistent components</span></div>
+        </section>
+
+        <section id="panel-seo" role="tabpanel" aria-labelledby="tab-seo" data-demo-panel="seo" hidden>
+          <p class="portfolio-number">04 / Search and ownership</p>
+          <h4>The creative idea still had to ship as a crawlable business site.</h4>
+          <p>Home, cases, studio, services, industries, development, blog, about and contact are real routes. Titles and H1s do different jobs. Bright Forge is labelled as the parent, the Open Graph image uses an absolute URL, and the contact path stays on the same domain. The result can be crawled, shared and handed over.</p>
+          <div class="portfolio-points"><span>Real routes</span><span>Title + H1</span><span>Parent labelled</span><span>Absolute OG card</span></div>
+        </section>
       </div>
     </article>
   </div>
@@ -155,6 +172,33 @@ const shinobi = "https://shinobiseo.netlify.app";
   }
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('[data-studio] video').forEach((v) => v.removeAttribute('autoplay'));
+  }
+
+  if (studio) {
+    const tabs = Array.from(studio.querySelectorAll('[data-demo-tab]'));
+    const panels = Array.from(studio.querySelectorAll('[data-demo-panel]'));
+    const activateTab = (tab) => {
+      const target = tab.getAttribute('data-demo-tab');
+      tabs.forEach((item) => {
+        const active = item === tab;
+        item.setAttribute('aria-selected', String(active));
+        item.setAttribute('tabindex', active ? '0' : '-1');
+      });
+      panels.forEach((panel) => {
+        panel.hidden = panel.getAttribute('data-demo-panel') !== target;
+      });
+    };
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab));
+      tab.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+        event.preventDefault();
+        const step = event.key === 'ArrowRight' ? 1 : -1;
+        const next = tabs[(index + step + tabs.length) % tabs.length];
+        activateTab(next);
+        next.focus();
+      });
+    });
   }
 </script>
 
@@ -299,7 +343,7 @@ const shinobi = "https://shinobiseo.netlify.app";
     line-height: 1.65;
   }
   .workbench,
-  .page-frame,
+  .build-portfolio,
   .job,
   .launch-sheet {
     border: 1px solid rgba(255,255,255,.1);
@@ -321,7 +365,7 @@ const shinobi = "https://shinobiseo.netlify.app";
     border: 0;
     background: #0a0c16;
   }
-  .page-frame { border-radius: 16px; padding: 22px; }
+  .build-portfolio { border-radius: 16px; padding: clamp(24px, 4vw, 40px); }
   .workbench-bar {
     display: flex;
     align-items: center;
@@ -389,55 +433,89 @@ const shinobi = "https://shinobiseo.netlify.app";
     text-transform: uppercase;
     margin: 0 0 16px;
   }
-  .frame-meta {
+  .build-portfolio > h3 {
+    color: #fff;
+    font-size: clamp(1.45rem, 3vw, 2.15rem);
+    margin: 0 0 24px;
+  }
+  .portfolio-tabs {
     display: grid;
-    gap: 4px;
-    margin-bottom: 16px;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed rgba(255,255,255,.12);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
   }
-  .frame-meta span {
-    color: rgba(255,255,255,.45);
-    font-size: .72rem;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-  }
-  .frame-meta b, .frame-h1 { color: #fff; }
-  .frame-h1 {
-    font-size: 1.45rem;
+  .portfolio-tabs button {
+    min-height: 54px;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    background: #0e1221;
+    color: rgba(255,255,255,.62);
+    font: inherit;
+    font-size: .82rem;
     font-weight: 800;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .portfolio-tabs button:hover,
+  .portfolio-tabs button:focus-visible {
+    border-color: rgba(240,98,42,.7);
+    color: #fff;
+    outline: none;
+  }
+  .portfolio-tabs button[aria-selected="true"] {
+    border-color: #f0622a;
+    background: rgba(240,98,42,.14);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  .portfolio-stage {
+    min-height: 310px;
+    padding: clamp(24px, 4vw, 42px);
+    border: 1px solid rgba(240,98,42,.22);
+    border-radius: 12px;
+    background:
+      radial-gradient(circle at top right, rgba(240,98,42,.12), transparent 34%),
+      #0e1221;
+  }
+  .portfolio-stage section[hidden] { display: none; }
+  .portfolio-number {
+    margin: 0 0 12px;
+    color: #f0622a;
+    font-size: .75rem;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .portfolio-stage h4 {
+    max-width: 25ch;
+    margin: 0 0 16px;
+    color: #fff;
+    font-size: clamp(1.35rem, 3vw, 2rem);
     line-height: 1.15;
-    margin-bottom: 12px;
-    clip-path: inset(0 100% 0 0);
   }
-  .studio.is-live .frame-h1 { animation: reveal 1.1s .4s ease forwards; }
-  .frame-body p, .frame-body li {
-    color: rgba(255,255,255,.7);
-    font-size: .95rem;
-    line-height: 1.6;
+  .portfolio-stage section > p:not(.portfolio-number) {
+    max-width: 78ch;
+    margin: 0;
+    color: rgba(255,255,255,.72);
+    font-size: 1rem;
+    line-height: 1.72;
   }
-  .frame-chips {
+  .portfolio-points {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 18px;
+    margin-top: 24px;
   }
-  .frame-chips span {
+  .portfolio-points span {
     border: 1px solid rgba(240,98,42,.35);
     color: #f3c2a8;
-    font-size: .72rem;
-    padding: 5px 8px;
+    font-size: .75rem;
+    font-weight: 700;
+    padding: 7px 10px;
     border-radius: 4px;
-    transform: rotate(-6deg) scale(.86);
-    opacity: 0;
   }
-  .studio.is-live .frame-chips span {
-    animation: stamp .45s cubic-bezier(.2,1.4,.3,1) forwards;
-  }
-  .studio.is-live .frame-chips span:nth-child(1) { animation-delay: 1.1s; }
-  .studio.is-live .frame-chips span:nth-child(2) { animation-delay: 1.3s; }
-  .studio.is-live .frame-chips span:nth-child(3) { animation-delay: 1.5s; }
-  .studio.is-live .frame-chips span:nth-child(4) { animation-delay: 1.7s; }
   .studio .page-container.jobs-block { margin: 0 auto 88px; }
   .jobs-block h2 { margin: 0 0 28px; }
   .jobs {
@@ -494,12 +572,13 @@ const shinobi = "https://shinobiseo.netlify.app";
   @keyframes sweep { to { transform: rotate(360deg); } }
   @media (max-width: 900px) {
     .studio-grid, .launch-grid, .jobs { grid-template-columns: 1fr; }
+    .portfolio-tabs { grid-template-columns: 1fr 1fr; }
     .job-wide { grid-column: auto; }
     .crawl-head { grid-template-columns: 1fr auto; }
     .hud-status { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .crawler, .crawl-track, .build-log li, .frame-h1, .frame-chips span, .launch-sheet li, .live-pill, .hud-track, .radar i {
+    .crawler, .crawl-track, .build-log li, .launch-sheet li, .live-pill, .hud-track, .radar i {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
