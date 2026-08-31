@@ -794,11 +794,11 @@ const platformRows = [
   .faq-list details[open] summary i { transform: rotate(45deg); }
   .faq-list details > p { margin: -4px 38px 26px 58px; color: var(--ai-muted); line-height: 1.7; }
 
-  .ai-final-cta { padding: 105px 0; background: var(--ai-cream) !important; color: #161824; }
+  .ai-final-cta { padding: 105px 0; background: var(--ai-bg) !important; color: var(--ai-white); }
   .final-cta-layout { display: grid; grid-template-columns: .4fr 1.05fr .65fr; gap: 70px; align-items: start; }
-  .ai-final-cta > .ai-shell > p { margin: 8px 0 0; color: #a6411a; font-size: .65rem; font-weight: 700; letter-spacing: .15em; }
-  .ai-final-cta h2 { color: #161824; }
-  .ai-final-cta div > p { margin: 8px 0 24px; color: #525560; line-height: 1.7; }
+  .ai-final-cta > .ai-shell > p { margin: 8px 0 0; color: var(--ai-orange-bright); font-size: .65rem; font-weight: 700; letter-spacing: .15em; }
+  .ai-final-cta h2 { color: white; }
+  .ai-final-cta div > p { margin: 8px 0 24px; color: var(--ai-muted); line-height: 1.7; }
 
   /* global.css deliberately forces every section dark with a high-specificity
      important rule. These page-owned surfaces need a stronger selector so the
@@ -810,21 +810,22 @@ const platformRows = [
   }
   .ai-page.ai-page .ai-shift.ai-shift,
   .ai-page.ai-page .ai-source-system.ai-source-system,
-  .ai-page.ai-page .ai-fit.ai-fit,
-  .ai-page.ai-page .ai-final-cta.ai-final-cta {
+  .ai-page.ai-page .ai-fit.ai-fit {
     background: var(--ai-cream) !important;
+  }
+  .ai-page.ai-page .ai-final-cta.ai-final-cta {
+    background: var(--ai-bg) !important;
+    color: var(--ai-white) !important;
   }
   .ai-page.ai-page .ai-measurement.ai-measurement {
     background: linear-gradient(118deg, #ea5721 0%, #f36b34 53%, #d84715 100%) !important;
   }
   .ai-page.ai-page .ai-shift.ai-shift .shift-statement h2,
   .ai-page.ai-page .ai-source-system.ai-source-system .source-copy h2,
-  .ai-page.ai-page .ai-fit.ai-fit .fit-heading h2,
-  .ai-page.ai-page .ai-final-cta.ai-final-cta h2 {
+  .ai-page.ai-page .ai-fit.ai-fit .fit-heading h2 {
     color: #171925 !important;
   }
-  .ai-page.ai-page .ai-source-system.ai-source-system .source-copy > p:not(.ai-kicker),
-  .ai-page.ai-page .ai-final-cta.ai-final-cta div > p {
+  .ai-page.ai-page .ai-source-system.ai-source-system .source-copy > p:not(.ai-kicker) {
     color: #4b4e5a !important;
   }
 
