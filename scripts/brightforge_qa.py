@@ -171,10 +171,13 @@ def route_to_dist_path(route: str) -> Path:
 
 
 def check_sitemap() -> None:
-    if not PUBLIC_SITEMAP.exists():
-        fail("public/sitemap.xml is missing")
+    sitemap = DIST / "sitemap.xml"
+    if not sitemap.exists():
+        sitemap = PUBLIC_SITEMAP
+    if not sitemap.exists():
+        fail("sitemap.xml is missing from dist/ and public/")
     try:
-        tree = ET.parse(PUBLIC_SITEMAP)
+        tree = ET.parse(sitemap)
     except ET.ParseError as exc:
         fail(f"sitemap XML parse failed: {exc}")
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
