@@ -138,14 +138,24 @@ def test_light_editorial_surfaces_keep_dark_readable_type():
         ".ai-page.ai-page .ai-source-system.ai-source-system .source-copy h2",
         ".ai-page.ai-page .ai-source-system.ai-source-system .source-copy > p:not(.ai-kicker)",
         ".ai-page.ai-page .ai-fit.ai-fit .fit-heading h2",
-        ".ai-page.ai-page .ai-final-cta.ai-final-cta h2",
-        ".ai-page.ai-page .ai-final-cta.ai-final-cta div > p",
     ]
     for selector in protected_type:
         start = SOURCE.find(selector)
         assert start >= 0, f"Missing light-surface contrast rule: {selector}"
         block = SOURCE[start:SOURCE.find("}", start) + 1]
         assert re.search(r"color\s*:[^;]+!important", block), selector
+
+
+def test_final_cta_keeps_the_page_dark_background_and_readable_type():
+    selector = ".ai-page.ai-page .ai-final-cta.ai-final-cta"
+    start = SOURCE.find(selector)
+    assert start >= 0
+    block = SOURCE[start:SOURCE.find("}", start) + 1]
+    assert "var(--ai-bg) !important" in block
+    assert "var(--ai-cream) !important" not in block
+    assert re.search(r"color\s*:\s*(?:white|var\(--ai-white\))\s*!important", block)
+    assert ".ai-final-cta h2 { color: white; }" in SOURCE
+    assert ".ai-final-cta div > p { margin: 8px 0 24px; color: var(--ai-muted);" in SOURCE
 
 
 def test_metadata_targets_broad_buyer_intent_without_stuffing():
