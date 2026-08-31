@@ -55,4 +55,7 @@ Correct the provider-focused competitor gap pass by auditing unmodified SEO and 
 - Staged static security scan returned zero detected hits.
 - First independent review identified stale QA status in this worknote and requested exact fixture cardinality. Both were fixed.
 - Second independent pre-commit review passed with no security, logic, stuffing, cannibalisation or pricing-privacy findings.
-- Deployment verification remains pending.
+- PR #7 passed GitHub Actions and Netlify deploy-preview checks, then was squash-merged.
+- Main run 33354012931 passed build, static QA and lead-generation checks.
+- Production readback passed six routes, 17 phrase checks, pricing privacy, one H1 per route and six forbidden-route 404 checks.
+- Live production mobile renders for the development and WordPress pages passed visual QA with no clipping, overflow or broken layout.
