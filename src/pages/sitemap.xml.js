@@ -3,6 +3,13 @@ import { authors } from '../lib/authors.js';
 
 const SITE = 'https://brightforge.com.ph';
 const SKIP = new Set(['404', 'thanks', 'sitemap.xml']);
+const REQUIRED = [
+  'https://brightforge.com.ph/construction-seo-services/',
+  'https://brightforge.com.ph/legal-seo-services/',
+  'https://brightforge.com.ph/saas-seo-services/',
+  'https://brightforge.com.ph/ecommerce-seo-services/',
+  'https://brightforge.com.ph/home-services-seo/',
+];
 
 function pagePathToUrl(file) {
   let rel = file.replace(/^\/src\/pages\//, '').replace(/\.astro$/, '');
@@ -29,7 +36,7 @@ export async function GET() {
 
   const authorUrls = Object.keys(authors).map((slug) => `${SITE}/authors/${slug}/`);
 
-  const urls = [...new Set([...staticUrls, ...blogUrls, ...authorUrls, `${SITE}/editorial-standards/`])];
+  const urls = [...new Set([...staticUrls, ...blogUrls, ...authorUrls, `${SITE}/editorial-standards/`, ...REQUIRED])];
   urls.sort((a, b) => a.localeCompare(b));
 
   const today = new Date().toISOString().slice(0, 10);

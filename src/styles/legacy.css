@@ -351,10 +351,9 @@ body {
 }
 
 /* Industries Mega Menu */
-.industries-mega-menu {
-  min-width: 780px;
-  left: 50%;
-  transform: translateX(-50%) translateY(0);
+.mega-menu-professional.industries-mega-menu {
+  width: min(980px, calc(100vw - 32px));
+  overflow: visible;
 }
 
 .nav-item-professional.has-dropdown:hover .industries-mega-menu {

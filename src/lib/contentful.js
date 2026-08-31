@@ -30,28 +30,39 @@ function optimizeContentfulImage(url, options = {}) {
 // Fetch all blog posts with selected fields
 export async function getAllBlogPosts() {
   try {
-    const entries = await contentfulClient.getEntries({
-      content_type: 'blogPost',
-      order: '-fields.dateTime', // Sort by publication date, newest first
-      select: [
-        'fields.title', 
-        'fields.slug', 
-        'fields.excerpt', 
-        'fields.dateTime', 
-        'fields.author',
-        'fields.featuredImage',
-        'fields.tags',
-        'fields.showInfographic'
-      ]
-    });
-    
-    // Transform the data structure to be easier to work with
-    return entries.items.map(item => ({
+    const raw = [];
+    let skip = 0;
+    const limit = 100;
+    while (true) {
+      const entries = await contentfulClient.getEntries({
+        content_type: 'blogPost',
+        order: '-fields.dateTime',
+        limit,
+        skip,
+        select: [
+          'fields.title',
+          'fields.slug',
+          'fields.excerpt',
+          'fields.dateTime',
+          'fields.author',
+          'fields.featuredImage',
+          'fields.tags',
+          'fields.showInfographic'
+        ]
+      });
+      raw.push(...entries.items);
+      skip += entries.items.length;
+      if (!entries.items.length || skip >= entries.total) break;
+    }
+
+    return raw
+      .filter((item) => item.fields?.slug)
+      .map((item) => ({
       id: item.sys.id,
       title: item.fields.title,
       slug: item.fields.slug,
       excerpt: item.fields.excerpt,
-      publishDate: new Date(item.fields.dateTime), // Use dateTime field but map to publishDate in our app
+      publishDate: new Date(item.fields.dateTime),
       author: item.fields.author,
       featuredImage: item.fields?.featuredImage?.fields?.file?.url
         ? optimizeContentfulImage(`https:${item.fields.featuredImage.fields.file.url}`)
