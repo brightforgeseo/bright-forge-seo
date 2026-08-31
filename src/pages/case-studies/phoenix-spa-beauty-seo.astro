@@ -8,8 +8,9 @@ import ButtonPrimary from "../../components/ButtonPrimary.astro";
 import ButtonSecondary from "../../components/ButtonSecondary.astro";
 
 const caseStudyData = {
-  title: "Phoenix Spa and Beauty SEO Case Study",
-  client: "Phoenix Spa and Beauty",
+  title: "Phoenix Brighton Spa SEO Case Study",
+  client: "Phoenix Brighton Spa",
+  website: "https://www.phoenixbrighton.co.uk/",
   industry: "Beauty & Wellness",
   duration: "6 Months",
   heroImage: "/images/case-studies/SEO Case Study- Growing Organic Traffic for Phoenix Spa and Beauty – Beauty Salon and Spa .webp",
@@ -48,7 +49,7 @@ const caseStudyData = {
   <!-- Hero Section -->
   <Hero
     title={caseStudyData.client}
-    breadcrumbCurrent="Phoenix Spa and Beauty"
+    breadcrumbCurrent="Phoenix Brighton Spa"
   >
     <Fragment slot="story">
       <div class="case-meta">
@@ -56,7 +57,7 @@ const caseStudyData = {
         <span class="meta-divider">•</span>
         <span class="meta-item">{caseStudyData.duration}</span>
       </div>
-      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies in the competitive beauty and wellness market.</p>
+      <p>We worked on <a href="https://www.phoenixbrighton.co.uk/" rel="noopener">phoenixbrighton.co.uk</a>. Local spa and beauty search in Brighton is crowded. The job was service pages, GBP and location relevance, not a national brand campaign.</p>
     </Fragment>
 
     <Fragment slot="actions">

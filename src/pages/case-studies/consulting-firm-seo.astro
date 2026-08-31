@@ -8,12 +8,13 @@ import ButtonPrimary from '../../components/ButtonPrimary.astro';
 import ButtonSecondary from '../../components/ButtonSecondary.astro';
 
 const caseStudyData = {
-  title: "How We Boosted Organic Traffic by 19% for a Consulting Firm",
-  client: "Professional Consulting Firm",
+  title: "How We Boosted Organic Traffic by 19% for Conscient",
+  client: "Conscient",
+  website: "https://www.conscient.co.uk/",
   industry: "Business Consulting",
   duration: "6 months",
   heroImage: "/images/case-studies/SEO Case Study- Increasing Organic Traffic for a Consulting Firm .webp",
-  challenge: "Our client is a professional consulting firm offering expert advice and solutions across various industries. They faced significant challenges in a competitive consulting landscape with many established firms. They needed to target diverse consulting service keywords while improving visibility for both branded and non-branded search queries.",
+  challenge: "Conscient is a UK B2B marketing consultancy for telecoms, technology and data-centre buyers. The site had to rank for consultancy work without looking like a generic agency brochure.",
   solution: "We developed a comprehensive SEO strategy focused on content optimization, technical improvements, and authority building to increase organic search visibility and attract more qualified leads.",
   keyMetrics: [
     {
@@ -109,7 +110,7 @@ const caseStudyData = {
   <!-- Hero Section -->
   <Hero
     title={caseStudyData.client}
-    breadcrumbCurrent="Consulting Firm"
+    breadcrumbCurrent="Conscient"
   >
     <Fragment slot="story">
       <div class="case-meta">
@@ -117,7 +118,7 @@ const caseStudyData = {
         <span class="meta-divider">•</span>
         <span class="meta-item">{caseStudyData.duration}</span>
       </div>
-      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies.</p>
+      <p>We worked on <a href="https://www.conscient.co.uk/" rel="noopener">conscient.co.uk</a>. Organic clicks rose 19% as impressions widened first. That is the usual B2B pattern: visibility, then qualified visits.</p>
     </Fragment>
 
     <Fragment slot="actions">
