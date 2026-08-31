@@ -112,38 +112,46 @@ def test_public_copy_uses_we_voice_and_no_em_dashes():
     assert not re.search(r"(?:^|[.!?]\s+)I\s+(?:help|audit|build|check|create|deliver|optimise|optimize|measure)", visible)
 
 
-def test_art_directed_section_surfaces_survive_the_global_dark_override():
-    protected_surfaces = [
+def test_sections_follow_established_bright_forge_dark_background():
+    section_names = [
         "ai-hero",
         "ai-shift",
+        "ai-reality",
+        "ai-method",
         "ai-source-system",
+        "ai-platforms",
         "ai-measurement",
+        "ai-deliverables",
         "ai-fit",
+        "ai-commercial",
+        "ai-sources",
+        "ai-faq",
         "ai-final-cta",
     ]
-    for surface in protected_surfaces:
-        rule = re.search(rf"\.{surface}\s*\{{([^}}]+)\}}", SOURCE, flags=re.DOTALL)
-        assert rule, f"Missing surface rule: {surface}"
-        assert re.search(r"background\s*:[^;]+!important", rule.group(1)), (
-            f"{surface} background will lose to global.css section !important override"
-        )
-        assert f".ai-page.ai-page .{surface}.{surface}" in SOURCE, (
-            f"{surface} lacks the specificity needed to beat global.css"
-        )
+    selector = ",\n  ".join(f".ai-page.ai-page .{name}.{name}" for name in section_names)
+    start = SOURCE.find(selector)
+    assert start >= 0, "All AI service-page sections must share the established dark background rule"
+    block = SOURCE[start:SOURCE.find("}", start) + 1]
+    assert "background: #0d0f1a !important" in block
+    assert "color: var(--ai-white) !important" in block
+
+    assert "background: var(--ai-cream) !important" not in SOURCE
+    assert "background: linear-gradient(118deg" not in SOURCE
 
 
-def test_light_editorial_surfaces_keep_dark_readable_type():
-    protected_type = [
-        ".ai-page.ai-page .ai-shift.ai-shift .shift-statement h2",
-        ".ai-page.ai-page .ai-source-system.ai-source-system .source-copy h2",
-        ".ai-page.ai-page .ai-source-system.ai-source-system .source-copy > p:not(.ai-kicker)",
-        ".ai-page.ai-page .ai-fit.ai-fit .fit-heading h2",
+def test_former_light_sections_keep_readable_dark_surface_type():
+    required_rules = [
+        ".ai-shift .ai-kicker { color: var(--ai-muted); }",
+        ".shift-copy p { margin: 0 0 22px; color: var(--ai-muted);",
+        ".shift-copy strong { color: white; }",
+        ".source-copy h2 { color: white; }",
+        ".source-copy > p:not(.ai-kicker) { max-width: 570px; color: var(--ai-muted);",
+        ".orbit-ring span { position: absolute; padding: 6px 10px; background: #0d0f1a; color: #d7dae4;",
+        ".fit-heading h2 { color: white; }",
+        ".fit-editorial p { margin: 0; color: var(--ai-muted);",
     ]
-    for selector in protected_type:
-        start = SOURCE.find(selector)
-        assert start >= 0, f"Missing light-surface contrast rule: {selector}"
-        block = SOURCE[start:SOURCE.find("}", start) + 1]
-        assert re.search(r"color\s*:[^;]+!important", block), selector
+    for rule in required_rules:
+        assert rule in SOURCE
 
 
 def test_final_cta_keeps_the_page_dark_background_and_readable_type():
@@ -151,7 +159,7 @@ def test_final_cta_keeps_the_page_dark_background_and_readable_type():
     start = SOURCE.find(selector)
     assert start >= 0
     block = SOURCE[start:SOURCE.find("}", start) + 1]
-    assert "var(--ai-bg) !important" in block
+    assert "#0d0f1a !important" in block
     assert "var(--ai-cream) !important" not in block
     assert re.search(r"color\s*:\s*(?:white|var\(--ai-white\))\s*!important", block)
     assert ".ai-final-cta h2 { color: white; }" in SOURCE
