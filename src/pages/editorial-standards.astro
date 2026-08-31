@@ -1,0 +1,122 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
+
+const faqs = [
+  {
+    question: 'Do you publish client websites in case studies?',
+    answer: 'Not by default. Most businesses do not want their site named in public marketing. We describe the work by problem, market and method, and we only name a business when that business has given written permission.'
+  },
+  {
+    question: 'What counts as proof in SEO reporting?',
+    answer: 'Search Console, ranking tools, crawl data, analytics events and enquiry paths. Traffic on its own is not treated as a win if the page is not generating the action the business actually wants.'
+  },
+  {
+    question: 'Will you invent rankings, leads or AI citations?',
+    answer: 'No. We do not invent clients, traffic, rankings, AI citations or revenue. If a number is shown, it comes from a named data source for that account.'
+  }
+];
+---
+
+<MainLayout
+  title="Editorial Standards | How We Prove SEO Work"
+  description="How Bright Forge checks SEO work, what we will and will not claim, and how we report rankings, crawl data and enquiries without naming client websites."
+  faqs={faqs}
+>
+  <LegacyHeader slot="header" />
+
+  <Hero
+    title="How we <span>prove SEO work</span>"
+    breadcrumbCurrent="Editorial Standards"
+  >
+    <Fragment slot="story">
+      <p class="hero-subtitle">Search advice is easy to fake. This page is the public rule for how we write, check and report work.</p>
+      <p>We do not name client websites here. Proof is the method, the data source and the change we can show in the account, not a screenshot of someone else's domain.</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <ButtonPrimary href="/about-us/" text="Meet the team" icon="fas fa-users" />
+      <ButtonSecondary href="/contact/" text="Talk to us" icon="fas fa-comments" />
+    </Fragment>
+  </Hero>
+
+  <section class="editorial-body">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="block">
+        <h2>Who writes and who checks</h2>
+        <p>Public pages and client recommendations are written by the people named on our <a href="/about-us/">about page</a>. Strategy sits with Ben Lowe. Campaign delivery is run by the in-house team in Quezon City, including Jani A. Cañonero and Jewe O. Manalo. Senior review happens before a recommendation is treated as ready to implement.</p>
+        <p>Blog posts carry a named author, not a generic agency byline, so a reader can see who is accountable for the advice.</p>
+      </div>
+
+      <div class="block">
+        <h2>What we use as evidence</h2>
+        <ul>
+          <li>Google Search Console for queries, pages, coverage and crawl issues.</li>
+          <li>Ranking software for tracked terms, with the engine and location stated.</li>
+          <li>Crawls for indexation, canonicals, status codes and internal links.</li>
+          <li>Analytics events for form submits, calls and other enquiry actions the business already tracks.</li>
+        </ul>
+        <p>If a channel was not set up by us, we say so. A tracking gap is not treated as an SEO delivery failure, and it is not filled with made-up conversions.</p>
+      </div>
+
+      <div class="block">
+        <h2>How we talk about results</h2>
+        <p>We describe the problem, the diagnosis and the work. We do not publish another company's URL to win a pitch. Where a public case study exists, it is written around the job and the market, not the domain, unless the business has agreed in writing that the name can appear.</p>
+        <p>We do not claim guaranteed rankings, guaranteed AI Overview inclusion, or guaranteed citations in ChatGPT, Gemini, Perplexity or Copilot. Those systems choose sources. We can improve eligibility. We cannot sell inclusion.</p>
+      </div>
+
+      <div class="block">
+        <h2>What we will not publish</h2>
+        <ul>
+          <li>Invented clients, quotes, rankings, traffic, leads or revenue.</li>
+          <li>Public rate cards or package prices.</li>
+          <li>Thin location pages for cities or countries where we do not operate an office.</li>
+          <li>Separate thin URLs for GEO, AEO or ChatGPT SEO when the work belongs on the existing AI search service.</li>
+          <li>Corrections hidden. If we get a fact wrong on this site, we fix the page rather than leaving the error live.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>How this site is maintained</h2>
+        <p>Service pages, this standards page and named author profiles are part of the same record. Contact details, the Quezon City address and the company LinkedIn profile are kept consistent so a person or a search system can tell who runs the work.</p>
+        <p>If you want the same standard applied to your own site, start with an <a href="/seo-audit-services/">SEO audit</a> or the <a href="/contact/">contact form</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+  <Footer />
+</MainLayout>
+
+<style>
+  .editorial-body {
+    padding: 70px 0 40px;
+    background: #0d0f1a;
+  }
+  .editorial-body .block {
+    margin-bottom: 48px;
+  }
+  .editorial-body h2 {
+    font-family: Outfit, sans-serif;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .editorial-body p,
+  .editorial-body li {
+    color: #d0d4e8;
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  .editorial-body p { margin-bottom: 14px; }
+  .editorial-body ul {
+    margin: 0 0 16px;
+    padding-left: 1.2rem;
+  }
+  .editorial-body li { margin-bottom: 8px; }
+  .editorial-body a { color: #f0622a; }
+</style>

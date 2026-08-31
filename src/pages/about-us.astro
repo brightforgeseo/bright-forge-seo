@@ -196,7 +196,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <img src="/images/About us/ben-lowe-owner.webp" alt="Ben Lowe" width="300" height="300" loading="lazy" decoding="async" />
           </div>
           <div class="team-info">
-            <h3>Ben Lowe</h3>
+            <h3><a href="/authors/ben-lowe/">Ben Lowe</a></h3>
             <p>Founder & CEO</p>
           </div>
         </div>
@@ -206,7 +206,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <img src="/images/About us/sassin-lowe-owner.webp" alt="Sassin Lowe" width="300" height="300" loading="lazy" decoding="async" />
           </div>
           <div class="team-info">
-            <h3>Sassin Lowe</h3>
+            <h3><a href="/authors/sassin-lowe/">Sassin Lowe</a></h3>
             <p>Co-Founder</p>
           </div>
         </div>
@@ -216,13 +216,21 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <img src="/images/About us/Janin-seo-manager.webp" alt="Jani A. Cañonero" width="300" height="300" loading="lazy" decoding="async" />
           </div>
           <div class="team-info">
-            <h3>Jani A. Cañonero</h3>
+            <h3><a href="/authors/janin-a-canonero/">Jani A. Cañonero</a></h3>
             <p>Head of Team</p>
           </div>
         </div>
-        
-
+        <div class="team-card">
+          <div class="team-image">
+            <img src="/images/About us/jewe-seo-expert.webp" alt="Jewe O. Manalo" width="300" height="300" loading="lazy" decoding="async" />
+          </div>
+          <div class="team-info">
+            <h3><a href="/authors/jewe-o-manalo/">Jewe O. Manalo</a></h3>
+            <p>SEO Expert</p>
+          </div>
+        </div>
       </div>
+      <p class="team-standards-note">How we check work, what we will not claim, and why we do not name client websites: <a href="/editorial-standards/">editorial standards</a>.</p>
     </div>
   </section>
 
@@ -578,6 +586,19 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     color: #ffffff;
     margin-bottom: 4px;
   }
+  .team-info h3 a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .team-info h3 a:hover {
+    color: #f0622a;
+  }
+  .team-standards-note {
+    margin-top: 28px;
+    color: #d0d4e8;
+    text-align: center;
+  }
+  .team-standards-note a { color: #f0622a; }
 
   .team-info p {
     color: #f0622a;
