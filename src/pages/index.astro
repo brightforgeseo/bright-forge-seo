@@ -11,6 +11,7 @@ import WhyChooseUs from '../components/WhyChooseUs.astro';
 import TrustedBySection from '../components/TrustedBySection.astro';
 import FeaturedTestimonial from '../components/FeaturedTestimonial.astro';
 import HomepageHero from '../components/HomepageHero.astro';
+import HomepageSearchLab from '../components/HomepageSearchLab.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
  
 
@@ -102,50 +103,7 @@ const breadcrumbs = [
     </div>
   </section>
 
-  <!-- Buyer Fit and Enquiry Path Section -->
-  <section class="fit-path-section bg-[#0d0f1a] px-4 pb-16 md:pb-24">
-    <div class="max-w-7xl mx-auto fit-path-layout">
-      <div class="fit-column">
-        <span class="section-label">WHO WE HELP</span>
-        <h2><span>Best fit clients</span></h2>
-        <div class="fit-list">
-          <div><strong>Philippine businesses</strong><span>Local and national companies that need stronger organic visibility, better service pages and more qualified enquiries.</span></div>
-          <div><strong>International companies</strong><span>Brands targeting the Philippines or using a Philippines-based SEO team for technical, content and reporting delivery.</span></div>
-          <div><strong>Agency partners</strong><span>White-label SEO support for agencies that need reliable fulfilment without hiring a full in-house SEO department.</span></div>
-          <div><strong>Service and ecommerce teams</strong><span>Businesses where rankings only matter if they lead to calls, quote requests, bookings, product views or sales.</span></div>
-        </div>
-      </div>
-
-      <div class="path-column">
-        <span class="section-label">WHAT HAPPENS NEXT</span>
-        <h2>No mystery sales funnel. Just a useful <span>first review</span>.</h2>
-        <ol class="path-list">
-          <li><span>01</span><p><strong>We review your search position.</strong> Site health, rankings, competitors, tracking and the pages most likely to drive leads.</p></li>
-          <li><span>02</span><p><strong>We find the commercial gaps.</strong> Technical issues, weak content, missing proof, unclear CTAs and conversion friction.</p></li>
-          <li><span>03</span><p><strong>We map the growth plan.</strong> A practical roadmap for SEO, content, authority, AI-search readiness and conversion improvements.</p></li>
-          <li><span>04</span><p><strong>We scope it only if there is a fit.</strong> No generic package if the site needs something more specific.</p></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO + CRO Section -->
-  <section class="search-to-lead-section bg-[#0d0f1a] px-4 pb-16 md:pb-24">
-    <div class="max-w-7xl mx-auto search-to-lead-panel">
-      <div class="search-to-lead-copy">
-        <span class="section-label">SEO + CRO</span>
-        <h2>Rankings get the visitor in. The page still has to do the <span>selling</span>.</h2>
-        <p>As AI answers and crowded search results make every click more valuable, SEO needs to work harder after the visitor lands. We improve the proof, structure and conversion paths that turn organic traffic into enquiries.</p>
-      </div>
-      <div class="lead-checks">
-        <span>Clear above-the-fold value proposition and CTA</span>
-        <span>Service pages that answer cost, process, timing and trust objections</span>
-        <span>Reviews, proof, case studies and credentials near decision points</span>
-        <span>Mobile-friendly calls, forms, quote paths and tracking</span>
-        <span>GA4, GSC, form, call and GBP reporting tied back to organic growth</span>
-      </div>
-    </div>
-  </section>
+  <HomepageSearchLab />
 
   <!-- Trusted By Section -->
   <TrustedBySection />
