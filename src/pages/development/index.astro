@@ -113,6 +113,10 @@ const faqs=[
 ];
 ---
 <MainLayout title="Web Design & Development Philippines | Bright Forge" description="Outsource web design and web development in the Philippines. SEO-safe builds, WordPress or modern stacks, private proposal, no public rate card." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Development",url:canonical}]} faqs={faqs}>
+<Fragment slot="head">
+  <link rel="dns-prefetch" href="//shinobiseo.netlify.app" />
+  <link rel="preconnect" href="https://shinobiseo.netlify.app" crossorigin="anonymous" />
+</Fragment>
 <LegacyHeader slot="header" />
 <Hero title="Outsource <span>Web Design</span>" breadcrumbCurrent="Development">
 <Fragment slot="story"><p class="hero-subtitle">Web design and web development in the Philippines that you can outsource without handing the rankings to chance.</p><p>We design and build for Philippine and international businesses that need a site with a commercial job: crawlable pages, clean URLs, redirects, schema and tracking before launch. Outsource the build. Keep control of the brief, the reviews and what goes live.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
