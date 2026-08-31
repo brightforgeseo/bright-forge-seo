@@ -20,6 +20,10 @@ const { eyebrow = 'In this stack', title, intro, jobs } = Astro.props;
 
 <style>
   .stack-work { padding: 78px 0; background: #111421; }
+  .stack-work .page-container {
+    width: min(100% - 40px, 1120px);
+    margin: 0 auto;
+  }
   .stack-intro { max-width: 46rem; margin: 0 0 28px; }
   .stack-jobs {
     display: grid;
