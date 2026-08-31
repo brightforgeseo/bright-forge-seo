@@ -51,10 +51,7 @@ const groups = [
 
   <button type="button" class="scroll-menu-toggle" data-scroll-menu-toggle aria-expanded="false" aria-controls="scroll-menu-panel">
     <img src="/images/menu-paint-splash.webp" alt="" width="900" height="297" />
-    <span class="scroll-menu-copy">
-      <span data-scroll-menu-label>Menu</span>
-      <span class="scroll-menu-arrow" aria-hidden="true">↑</span>
-    </span>
+    <span class="scroll-menu-copy" data-scroll-menu-label>MENU</span>
   </button>
 </div>
 
@@ -95,30 +92,17 @@ const groups = [
 }
 .scroll-menu-copy {
   position: absolute;
-  left: 32%;
-  top: 44%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  gap: .35rem;
+  left: 16%;
+  top: 46%;
+  transform: translateY(-50%);
   font-family: Outfit, sans-serif;
   font-weight: 800;
-  font-size: clamp(1.15rem, 2.8vw, 1.55rem);
+  font-size: clamp(1.35rem, 3.4vw, 1.9rem);
   font-style: normal;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   line-height: 1;
-  text-transform: uppercase;
   color: #fff;
 }
-.scroll-menu-arrow {
-  font-size: .55em;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0;
-  transform: translateY(-.08em);
-  transition: transform .2s ease;
-}
-.scroll-menu.is-open .scroll-menu-arrow { transform: rotate(180deg); }
 .scroll-menu-panel {
   pointer-events: auto;
   width: 100%;
@@ -192,7 +176,7 @@ const groups = [
     function setOpen(open) {
       root.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      label.textContent = open ? "Close" : "Menu";
+      label.textContent = open ? "CLOSE" : "MENU";
       if (open) panel.removeAttribute("hidden");
       else panel.setAttribute("hidden", "");
     }
