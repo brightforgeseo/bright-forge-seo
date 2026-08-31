@@ -50,7 +50,8 @@ const groups = [
   </div>
 
   <button type="button" class="scroll-menu-toggle" data-scroll-menu-toggle aria-expanded="false" aria-controls="scroll-menu-panel" aria-label="Menu">
-    <img src="/images/menu-paint-splash.webp?v=graffiti2" alt="" width="1100" height="266" />
+    <img class="scroll-menu-open-off" src="/images/menu-paint-splash.webp?v=graffiti2" alt="" width="1100" height="266" />
+    <img class="scroll-menu-open-on" src="/images/menu-paint-close.webp?v=graffiti2" alt="" width="1100" height="266" />
   </button>
 </div>
 
@@ -75,7 +76,7 @@ const groups = [
   position: relative;
   display: grid;
   place-items: center;
-  width: min(100%, 640px);
+  width: min(calc(100vw - 48px), 420px);
   padding: 0;
   border: 0;
   background: transparent;
@@ -89,6 +90,9 @@ const groups = [
   pointer-events: none;
   filter: drop-shadow(0 16px 28px rgba(0,0,0,.45));
 }
+.scroll-menu-toggle .scroll-menu-open-on { display: none; }
+.scroll-menu.is-open .scroll-menu-open-off { display: none; }
+.scroll-menu.is-open .scroll-menu-open-on { display: block; }
 .scroll-menu-panel {
   pointer-events: auto;
   width: 100%;
@@ -161,6 +165,7 @@ const groups = [
     function setOpen(open) {
       root.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close" : "Menu");
       if (open) panel.removeAttribute("hidden");
       else panel.setAttribute("hidden", "");
     }
