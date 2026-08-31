@@ -660,6 +660,8 @@ body .faq-layout .faq-item:hover {
 
 .faq-question i,
 .faq-summary i,
+.faq-list summary i,
+.faq-list details summary i,
 .faq-icon {
   display: none !important;
 }

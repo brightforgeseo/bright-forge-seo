@@ -401,7 +401,7 @@ const platformRows = [
         <div class="faq-list">
           {aiSearchFaqs.map((faq, index) => (
             <details>
-              <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
+              <summary><span>0{index + 1}</span>{faq.question}</summary>
               <p>{faq.answer}</p>
             </details>
           ))}
@@ -788,9 +788,8 @@ const platformRows = [
   .faq-list details { border-bottom: 1px solid var(--ai-border); }
   .faq-list summary { display: grid; grid-template-columns: 42px 1fr 28px; gap: 16px; align-items: center; padding: 25px 0; color: white; font-family: 'Outfit', sans-serif; font-size: 1.12rem; cursor: pointer; list-style: none; }
   .faq-list summary::-webkit-details-marker { display: none; }
-  .faq-list summary span { color: var(--ai-orange); font-family: monospace; font-size: .65rem; }
-  .faq-list summary i { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--ai-border); border-radius: 50%; color: var(--ai-orange); font-style: normal; }
-  .faq-list details[open] summary i { transform: rotate(45deg); }
+  .faq-list summary span { display: inline-block; min-width: 28px; margin-right: 12px; color: var(--ai-orange); font-family: monospace; font-size: .65rem; }
+  .faq-list summary i { display: none !important; }
   .faq-list details > p { margin: -4px 38px 26px 58px; color: var(--ai-muted); line-height: 1.7; }
 
   .ai-final-cta { padding: 105px 0; background: #0d0f1a !important; color: var(--ai-white); }
