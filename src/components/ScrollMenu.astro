@@ -1,0 +1,194 @@
+---
+const groups = [
+  {
+    title: "SEO",
+    links: [
+      { href: "/seo-services-philippines/", label: "SEO services" },
+      { href: "/seo-audit-services/", label: "SEO audit" },
+      { href: "/technical-seo-services-philippines/", label: "Technical SEO" },
+      { href: "/content-seo-services-philippines/", label: "Content SEO" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { href: "/construction-seo-services/", label: "Construction" },
+      { href: "/legal-seo-services/", label: "Legal" },
+      { href: "/saas-seo-services/", label: "SaaS" },
+      { href: "/ecommerce-seo-services/", label: "Ecommerce" },
+      { href: "/home-services-seo/", label: "Home services" },
+    ],
+  },
+  {
+    title: "Work",
+    links: [
+      { href: "/case-studies/", label: "Case studies" },
+      { href: "/development/", label: "Development" },
+      { href: "/blog/", label: "Blog" },
+      { href: "/about-us/", label: "About" },
+    ],
+  },
+];
+---
+
+<div class="scroll-menu" data-scroll-menu hidden>
+  <div class="scroll-menu-panel" id="scroll-menu-panel" hidden>
+    <p class="scroll-menu-kicker">Go somewhere useful</p>
+    <div class="scroll-menu-grid">
+      {groups.map((group) => (
+        <div>
+          <h2>{group.title}</h2>
+          <ul>
+            {group.links.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <a class="scroll-menu-cta" href="/contact/">Request an SEO review</a>
+  </div>
+
+  <button type="button" class="scroll-menu-toggle" data-scroll-menu-toggle aria-expanded="false" aria-controls="scroll-menu-panel">
+    <span data-scroll-menu-label>Menu</span>
+    <span class="scroll-menu-arrow" aria-hidden="true">↑</span>
+  </button>
+</div>
+
+<style>
+.scroll-menu {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 80;
+  width: min(calc(100vw - 28px), 720px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  pointer-events: none;
+}
+.scroll-menu.is-visible { pointer-events: auto; }
+.scroll-menu[hidden] { display: none; }
+.scroll-menu-toggle {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  width: 100%;
+  padding: 0 1.4rem;
+  border: 0;
+  clip-path: polygon(18px 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
+  background: #f4f1ea;
+  color: #111;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+.scroll-menu-arrow {
+  font-size: 1.1rem;
+  transition: transform .2s ease;
+}
+.scroll-menu.is-open .scroll-menu-arrow { transform: rotate(180deg); }
+.scroll-menu-panel {
+  pointer-events: auto;
+  background: #111421;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  padding: 1.25rem 1.35rem 1.4rem;
+  box-shadow: 0 24px 60px rgba(0,0,0,.4);
+}
+.scroll-menu-panel[hidden] { display: none; }
+.scroll-menu-kicker {
+  margin: 0 0 1rem;
+  color: #f0622a;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.scroll-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+.scroll-menu-panel h2 {
+  margin: 0 0 .55rem;
+  color: #fff;
+  font-size: .92rem;
+}
+.scroll-menu-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .35rem;
+}
+.scroll-menu-panel a {
+  color: rgba(255,255,255,.78);
+  text-decoration: none;
+  font-size: .95rem;
+}
+.scroll-menu-panel a:hover { color: #f0622a; }
+.scroll-menu-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 1.1rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  background: #f0622a;
+  color: #0d0f1a !important;
+  font-weight: 800;
+}
+@media (max-width: 700px) {
+  .scroll-menu-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-menu-arrow { transition: none; }
+}
+</style>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector("[data-scroll-menu]");
+    if (!root) return;
+    var toggle = root.querySelector("[data-scroll-menu-toggle]");
+    var panel = document.getElementById("scroll-menu-panel");
+    var label = root.querySelector("[data-scroll-menu-label]");
+    if (!toggle || !panel || !label) return;
+
+    function setOpen(open) {
+      root.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      label.textContent = open ? "Close" : "Menu";
+      if (open) panel.removeAttribute("hidden");
+      else panel.setAttribute("hidden", "");
+    }
+
+    function onScroll() {
+      var show = window.scrollY > 420;
+      root.classList.toggle("is-visible", show);
+      if (show) root.removeAttribute("hidden");
+      else {
+        root.setAttribute("hidden", "");
+        setOpen(false);
+      }
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(!root.classList.contains("is-open"));
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
