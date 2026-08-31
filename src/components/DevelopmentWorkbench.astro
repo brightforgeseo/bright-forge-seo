@@ -1,45 +1,49 @@
 ---
 /**
- * Development showcase. Motion is a crawler + build log, not fade-in cards.
- * Proof is this site. No client domains. No invented results.
+ * Development showcase. Proof is Shinobi, the child-brand video site.
+ * No client domains. No invented results.
  */
+const shinobi = "https://shinobiseo.netlify.app";
+const heroVideo = `${shinobi}/video/hero.mp4`;
+const heroPoster = `${shinobi}/og.jpg`;
 ---
 
 <section class="studio" id="workbench" data-studio>
   <div class="page-container studio-intro">
     <p class="eyebrow">Working sample</p>
-    <h2>This website is the <span>development brief</span>, not a mood board</h2>
+    <h2>Shinobi is the <span>build we actually shipped</span></h2>
     <p>
-      This site is Astro with a Contentful blog, named authors, a generated sitemap and launch checks that the same team runs on client builds. If a section cannot survive a crawl, a form test and a metadata pass, it does not ship.
+      Shinobi is our Philippines creative-industry SEO studio. Full-bleed hero video, manga paper and ink UI, TanStack routes, a painted lockup in the header, and a separate Facebook card. Bright Forge is the parent. If it is not on the live site, it is not in this story.
     </p>
+    <p><a href={shinobi}>Open Shinobi</a></p>
   </div>
 
   <div class="hud-marquee" aria-hidden="true">
     <div class="hud-track">
-      <span>CRAWL</span><span>RENDER</span><span>REDIRECT</span><span>SCHEMA</span><span>FORM</span><span>SITEMAP</span><span>GSC</span><span>CRAWL</span><span>RENDER</span><span>REDIRECT</span><span>SCHEMA</span><span>FORM</span><span>SITEMAP</span><span>GSC</span>
+      <span>HERO VIDEO</span><span>MANGA UI</span><span>TANSTACK</span><span>CASES</span><span>STUDIO</span><span>PARENT</span><span>OG CARD</span><span>HERO VIDEO</span><span>MANGA UI</span><span>TANSTACK</span><span>CASES</span><span>STUDIO</span><span>PARENT</span><span>OG CARD</span>
     </div>
   </div>
 
   <div class="page-container crawl-wrap">
     <div class="hud-corners" aria-hidden="true"></div>
     <div class="crawl-head">
-      <p class="crawl-kicker">How a build gets seen</p>
-      <p class="hud-status">PATH.ESTABLISHED · INDEX.READY</p>
+      <p class="crawl-kicker">Shinobi routes a crawler can follow</p>
+      <p class="hud-status">VIDEO.LIVE · PATH.ESTABLISHED</p>
       <div class="radar" aria-hidden="true"><i></i></div>
     </div>
-    <svg class="crawl-map" viewBox="0 0 720 210" role="img" aria-label="Crawler moving through Home, Development, Blog, About and Contact">
+    <svg class="crawl-map" viewBox="0 0 720 210" role="img" aria-label="Crawler moving through Shinobi Home, Cases, Studio, Services and Contact">
       <path class="crawl-track" d="M80 110 C 180 40, 250 40, 360 110 S 540 180, 640 110" fill="none" />
       <g class="crawl-node" transform="translate(80 110)">
         <circle r="7" /><text y="28">Home</text>
       </g>
       <g class="crawl-node" transform="translate(220 62)">
-        <circle r="7" /><text y="28">Development</text>
+        <circle r="7" /><text y="28">Cases</text>
       </g>
       <g class="crawl-node" transform="translate(360 110)">
-        <circle r="7" /><text y="28">Blog</text>
+        <circle r="7" /><text y="28">Studio</text>
       </g>
       <g class="crawl-node" transform="translate(500 158)">
-        <circle r="7" /><text y="28">About</text>
+        <circle r="7" /><text y="28">Services</text>
       </g>
       <g class="crawl-node" transform="translate(640 110)">
         <circle r="7" /><text y="28">Contact</text>
@@ -49,70 +53,73 @@
   </div>
 
   <div class="page-container studio-grid">
-    <article class="workbench" aria-label="Live Bright Forge build log">
+    <article class="reel" aria-label="Shinobi hero video">
       <header class="workbench-bar">
         <span class="dots" aria-hidden="true"></span>
-        <span class="workbench-title">astro build · brightforge.com.ph</span>
+        <span class="workbench-title">hero.mp4 · shinobiseo.netlify.app</span>
         <span class="live-pill">live</span>
       </header>
-      <ol class="build-log">
-        <li><code>ok</code> templates render HTML, not an empty shell</li>
-        <li><code>ok</code> Contentful posts land as static routes</li>
-        <li><code>ok</code> sitemap built from pages plus published entries</li>
-        <li><code>ok</code> authors, About, editorial standards linked</li>
-        <li><code>ok</code> titles, H1s, schema and forms sit in the template</li>
-        <li><code>hold</code> no public prices, no invented rankings, no client websites named</li>
-      </ol>
+      <video
+        class="reel-video"
+        poster={heroPoster}
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
     </article>
 
-    <article class="page-frame" aria-label="Service page assembling">
-      <p class="frame-label">Page coming together</p>
+    <article class="page-frame" aria-label="Shinobi homepage anatomy">
+      <p class="frame-label">What shipped on the first screen</p>
       <div class="frame-meta">
         <span>Title</span>
-        <b class="type-line">Web Design &amp; Development Philippines | Bright Forge</b>
+        <b class="type-line">Creative Industry SEO Philippines | Shinobi</b>
       </div>
-      <div class="frame-h1">SEO-First Web Development</div>
+      <div class="frame-h1">The phone has to ring. Not just the report.</div>
       <div class="frame-body">
-        <p>First screen states the job. Not a slogan.</p>
+        <p>Video is the scene. The H1 still has to do the commercial job.</p>
         <ul>
-          <li>H1 and title do different work</li>
-          <li>Internal links to real URLs</li>
-          <li>FAQ visible on the page</li>
-          <li>Contact form on the same domain</li>
+          <li>Hero video with poster, muted, looping</li>
+          <li>Manga paper overlay so the line stays readable</li>
+          <li>Parent named: Bright Forge SEO</li>
+          <li>Review and cases on the same first screen</li>
         </ul>
       </div>
       <div class="frame-chips">
-        <span>schema</span>
-        <span>canonical</span>
-        <span>sitemap</span>
-        <span>GSC after launch</span>
+        <span>hero.mp4</span>
+        <span>TanStack</span>
+        <span>manga UI</span>
+        <span>parent link</span>
       </div>
     </article>
   </div>
 
   <div class="page-container jobs-block">
-    <p class="eyebrow">What we actually build</p>
-    <h2>The work is <span>templates, launches and CMS control</span></h2>
+    <p class="eyebrow">What we actually built on Shinobi</p>
+    <h2>Not a theme. A <span>full studio site</span></h2>
     <div class="jobs">
       <article class="job job-wide">
-        <h3>Service templates that can rank</h3>
-        <p>One H1, a commercial first screen, FAQs that match schema, and internal links that point at pages that exist. We do not spin thin city pages for offices we do not have.</p>
+        <h3>Hero video that still ranks as a document</h3>
+        <p>Full-bleed <code>hero.mp4</code>, poster, and a paper wash so the H1 stays readable on a phone. Motion is costume. The commercial line is still “the phone has to ring”.</p>
       </article>
       <article class="job">
-        <h3>Blog that rebuilds itself</h3>
-        <p>Contentful or WordPress in, static routes out. New posts do not wait on a designer to put them live by hand.</p>
+        <h3>Manga system, not a template</h3>
+        <p>Ink borders, speech panels, 参上 stamp, painted lockup. Header logo is the lockup without sunburst rays. Facebook keeps the painted OG card.</p>
       </article>
       <article class="job">
-        <h3>Migrations without silent 404s</h3>
-        <p>URL map first. Redirects, canonicals and Search Console after launch. Pretty homepage last.</p>
+        <h3>TanStack routes</h3>
+        <p>Home, cases, studio, SEO services, industries, development, blog, work, about, contact. Real URLs, not a one-page scroll.</p>
       </article>
       <article class="job">
-        <h3>WordPress without plugin soup</h3>
-        <p>Template-level titles, headings and schema. Editors keep control. Theme bloat is not the strategy.</p>
+        <h3>Parent proof, labelled</h3>
+        <p>Bright Forge is named as the parent. Reused case metrics stay labelled as parent work. No invented percentages.</p>
       </article>
       <article class="job">
-        <h3>App stacks when the product needs them</h3>
-        <p>Next, React or SvelteKit only when the interface needs it. Marketing pages stay crawlable.</p>
+        <h3>Share card that Facebook can scrape</h3>
+        <p>Hardcoded absolute <code>og.jpg</code>. Nav does not use that file. Two jobs, two assets.</p>
       </article>
     </div>
   </div>
@@ -120,17 +127,17 @@
   <div class="page-container launch-grid">
     <div>
       <p class="eyebrow">Launch sheet</p>
-      <h2>If it is not on this list, <span>it is not launched</span></h2>
-      <p>Same pass we run on our own site. Boring on purpose.</p>
+      <h2>Shinobi does not ship until <span>this list is true</span></h2>
+      <p>Same pass we run on a client build. This one is ours, so we can show it.</p>
     </div>
     <ol class="launch-sheet">
-      <li><span>01</span> Rendered HTML, not an empty shell</li>
-      <li><span>02</span> Title, H1, canonical, indexation</li>
-      <li><span>03</span> Internal links hit 200s</li>
-      <li><span>04</span> Forms submit on the live domain</li>
-      <li><span>05</span> Sitemap includes the new URLs</li>
-      <li><span>06</span> Redirects from the old map</li>
-      <li><span>07</span> Search Console after deploy</li>
+      <li><span>01</span> Hero video and poster on the live host</li>
+      <li><span>02</span> Title and H1 do different work</li>
+      <li><span>03</span> Routes return 200: cases, studio, services, contact</li>
+      <li><span>04</span> Parent company named and linked</li>
+      <li><span>05</span> Header lockup is not the Facebook card</li>
+      <li><span>06</span> OG image is an absolute URL</li>
+      <li><span>07</span> Contact form on the same domain</li>
     </ol>
   </div>
 </section>
@@ -149,6 +156,10 @@
     io.observe(studio);
   } else if (studio) {
     studio.classList.add('is-live');
+    studio.querySelectorAll('video').forEach((v) => v.pause());
+  }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-studio] video').forEach((v) => v.removeAttribute('autoplay'));
   }
 </script>
 
@@ -285,7 +296,21 @@
     background: #14182a;
     box-shadow: 0 18px 48px rgba(0,0,0,.18);
   }
-  .workbench { border-radius: 8px; overflow: hidden; }
+  .workbench, .reel { border-radius: 8px; overflow: hidden; }
+  .reel {
+    border: 1px solid rgba(255,255,255,.1);
+    background: #14182a;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .reel-video {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background: #0a0c16;
+  }
   .page-frame { border-radius: 16px; padding: 22px; }
   .workbench-bar {
     display: flex;
