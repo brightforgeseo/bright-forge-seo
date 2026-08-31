@@ -166,6 +166,16 @@ def test_final_cta_keeps_the_page_dark_background_and_readable_type():
     assert ".ai-final-cta div > p { margin: 8px 0 24px; color: var(--ai-muted);" in SOURCE
 
 
+def test_faq_uses_one_plus_control_instead_of_a_duplicate_icon():
+    assert "<summary><span>0{index + 1}</span>{faq.question}</summary>" in SOURCE
+    assert "<i aria-hidden=\"true\">+</i>" not in SOURCE
+    assert re.search(r"\.faq-list summary i \{[^}]*display:\s*none\s*!important", SOURCE) or re.search(
+        r"\.faq-list details summary i \{[^}]*display:\s*none\s*!important",
+        (ROOT / "src/styles/global.css").read_text(encoding="utf-8"),
+        flags=re.S,
+    )
+
+
 def test_metadata_targets_broad_buyer_intent_without_stuffing():
     title_match = re.search(r'title="([^"]+)"', SOURCE)
     description_match = re.search(r'description="([^"]+)"', SOURCE)
