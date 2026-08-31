@@ -1,0 +1,20 @@
+[
+  {"cluster":"seo_strategy_consulting","owner":"index.astro","action":"expand","evidence_rows":13},
+  {"cluster":"wordpress_seo","owner":"development/wordpress.astro","action":"expand","evidence_rows":3},
+  {"cluster":"shopify_seo","owner":"ecommerce-seo-services.astro","action":"expand","evidence_rows":8},
+  {"cluster":"ecommerce_seo","owner":"ecommerce-seo-services.astro","action":"covered","evidence_rows":8},
+  {"cluster":"multi_location_local_seo","owner":"local-seo-services-philippines.astro","action":"covered","evidence_rows":7},
+  {"cluster":"new_website_seo","owner":"development/index.astro","action":"expand","evidence_rows":1},
+  {"cluster":"seo_audit_checklist","owner":"seo-audit-services.astro","action":"expand","evidence_rows":3},
+  {"cluster":"meta_tag_optimisation","owner":"on-page-seo-services-philippines.astro","action":"covered","evidence_rows":6},
+  {"cluster":"seo_reporting_measurement","owner":"seo-command-centre.astro","action":"covered","evidence_rows":1},
+  {"cluster":"seo_competitor_analysis","owner":"keyword-research-services.astro","action":"covered","evidence_rows":3},
+  {"cluster":"international_seo","owner":"index.astro","action":"covered","evidence_rows":2},
+  {"cluster":"ai_search_seo","owner":"ai-search-optimization-services-philippines.astro","action":"covered","evidence_rows":1},
+  {"cluster":"web_development_philippines","owner":"development/index.astro","action":"expand","evidence_rows":18},
+  {"cluster":"web_design_philippines","owner":"development/index.astro","action":"expand","evidence_rows":26},
+  {"cluster":"wordpress_development_philippines","owner":"development/wordpress.astro","action":"expand","evidence_rows":3},
+  {"cluster":"development_outsourcing","owner":"development/index.astro","action":"expand","evidence_rows":20},
+  {"cluster":"development_pricing_factors","owner":"development/index.astro","action":"expand-private-no-amounts","evidence_rows":11},
+  {"cluster":"responsive_web_design","owner":"development/index.astro","action":"expand","evidence_rows":1}
+]
