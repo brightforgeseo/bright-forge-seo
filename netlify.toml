@@ -54,7 +54,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation()"
     # GA4 is intentionally allowed. Third-party analytics injection remains stripped by the edge function for CWV.
-    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; worker-src 'self' blob:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; frame-src https://www.google.com https://*.google.com https://maps.gstatic.com https://*.gstatic.com;"
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; worker-src 'self' blob:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; frame-src https://www.google.com https://*.google.com https://maps.gstatic.com https://*.gstatic.com https://shinobiseo.netlify.app;"
 
     # SEO and crawling
     Access-Control-Allow-Origin = "*"
