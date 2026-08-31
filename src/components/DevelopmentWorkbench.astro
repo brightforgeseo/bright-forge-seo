@@ -275,18 +275,18 @@ const shinobi = "https://shinobiseo.netlify.app";
     filter: drop-shadow(0 0 8px #f0622a);
   }
   .studio.is-live .crawler { animation: crawl 7.5s ease-in-out infinite; }
-  .studio-grid {
+  .studio .page-container.studio-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 28px;
-    margin-bottom: 48px;
+    margin: 0 auto 64px;
   }
   .reel { grid-column: 1 / -1; }
-  .launch-grid {
+  .studio .page-container.launch-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 28px;
-    margin: 8px auto 64px;
+    gap: 22px;
+    margin: 0 auto 72px;
   }
   .launch-grid h2 {
     margin: 0 0 14px;
@@ -294,7 +294,7 @@ const shinobi = "https://shinobiseo.netlify.app";
   }
   .launch-grid p:not(.eyebrow) {
     margin: 0;
-    max-width: 52ch;
+    max-width: 72ch;
     color: rgba(255,255,255,.7);
     line-height: 1.65;
   }
@@ -438,7 +438,7 @@ const shinobi = "https://shinobiseo.netlify.app";
   .studio.is-live .frame-chips span:nth-child(2) { animation-delay: 1.3s; }
   .studio.is-live .frame-chips span:nth-child(3) { animation-delay: 1.5s; }
   .studio.is-live .frame-chips span:nth-child(4) { animation-delay: 1.7s; }
-  .jobs-block { margin-bottom: 64px; }
+  .studio .page-container.jobs-block { margin: 0 auto 88px; }
   .jobs-block h2 { margin: 0 0 28px; }
   .jobs {
     display: grid;
