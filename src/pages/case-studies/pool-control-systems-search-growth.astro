@@ -1,0 +1,47 @@
+---
+import GscCaseStudyPage from "../../components/GscCaseStudyPage.astro";
+
+const data = {
+  slug: "pool-control-systems-search-growth",
+  metaTitle: "Pool Control Systems SEO Case Study: 80% More Clicks | Bright Forge",
+  description: "An anonymised Google Search Console case study showing a pool-control systems company growing organic clicks by 79.8% as search coverage expanded.",
+  title: "How a pool-control systems company grew clicks 80% while search coverage more than doubled",
+  breadcrumb: "Pool Control Systems Growth",
+  industry: "Pool control systems",
+  period: "31 May to 28 August 2026, compared with 2 March to 30 May 2026",
+  lede: "Organic clicks rose from 168 to 302. Impressions rose from 10,477 to 26,445. Average position and click-through rate both softened. This is a small-base coverage case: more discovery, with ranking and snippet work still sitting in front of it.",
+  evidenceImage: "/images/case-studies/pool-control-systems-search-growth-gsc-evidence.png",
+  evidenceAlt: "Redacted Search Console totals chart showing 302 clicks for an anonymised pool-control systems company.",
+  metrics: [
+    { value: "+79.8%", label: "Organic clicks", note: "168 to 302" },
+    { value: "+134", label: "Additional clicks", note: "Latest 90 days" },
+    { value: "+152%", label: "Impressions", note: "10,477 to 26,445" },
+    { value: "90 days", label: "Comparison window", note: "Two like-for-like periods" }
+  ],
+  evidenceHeading: "Coverage expanded faster than click efficiency",
+  evidenceIntro: "The chart uses redacted Search Console totals. Impressions more than doubled. Clicks rose, but CTR fell from 1.60% to 1.14% and average position moved from 29.8 to 34.5. The extra visits came with a weaker blended result.",
+  problemHeading: "Specialist pool equipment is searched by system, not by a generic pool shop term",
+  problem: [
+    "Buyers look for pumps, automation, variable-speed control and replacement parts with manufacturer and fault language. A thin distributor site will not meet that mix.",
+    "The public case withholds the company, the catalogue and the URLs. Search Console only shows whether discovery and clicks increased."
+  ],
+  readingHeading: "Treat the percentage as a small-base coverage win, then fix efficiency",
+  reading: [
+    "Clicks rose by 134 from a base of 168. Impressions rose by 15,968. CTR moved from 1.60% to 1.14%. Average position moved from 29.8 to 34.5.",
+    "That is evidence of a wider search footprint, not proof that the listing got stronger. The next job is query groups where impressions arrived without a clickable result."
+  ],
+  takeaways: [
+    "Niche B2B equipment sites can grow clicks from a small base once product language is indexed.",
+    "Impression growth with a weaker position is a map, not a finished result.",
+    "Connect Search Console to quote requests before calling the extra clicks commercial."
+  ],
+  results: [
+    { metric: "Organic clicks", before: "168", after: "302", note: "+79.8%, or 134 additional clicks" },
+    { metric: "Impressions", before: "10,477", after: "26,445", note: "+152%, or 15,968 additional impressions" },
+    { metric: "Average position", before: "29.8", after: "34.5", note: "Weaker blended rank as coverage widened" },
+    { metric: "Click-through rate", before: "1.60%", after: "1.14%", note: "Lower as new queries entered the mix" }
+  ],
+  boundary: "This anonymised case study reports Google Search Console organic-search data for two equal 90-day periods. The client, property, pages and queries are withheld. It records visibility and clicks, not quotes, installs or revenue. Search Console cannot attribute the movement to a single action, and this result is not a guarantee."
+};
+---
+<GscCaseStudyPage data={data} />

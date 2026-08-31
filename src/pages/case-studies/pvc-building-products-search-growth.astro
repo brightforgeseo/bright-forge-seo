@@ -1,0 +1,47 @@
+---
+import GscCaseStudyPage from "../../components/GscCaseStudyPage.astro";
+
+const data = {
+  slug: "pvc-building-products-search-growth",
+  metaTitle: "Building Products SEO Case Study: 671% More Clicks | Bright Forge",
+  description: "An anonymised Google Search Console case study showing a PVC building-products supplier growing organic clicks from 170 to 1,311 in 90 days.",
+  title: "How a building-products supplier moved from 170 to 1,311 organic clicks",
+  breadcrumb: "Building Products Growth",
+  industry: "PVC and building products",
+  period: "31 May to 28 August 2026, compared with 2 March to 30 May 2026",
+  lede: "Organic clicks rose from 170 to 1,311. Impressions rose from 10,660 to 85,190 and average position improved from 21.7 to 11.2. Click-through rate stayed almost flat. This is a coverage-and-rank case, not a snippet-only win.",
+  evidenceImage: "/images/case-studies/pvc-building-products-search-growth-gsc-evidence.png",
+  evidenceAlt: "Redacted Search Console totals chart showing 1,311 clicks for an anonymised building-products supplier.",
+  metrics: [
+    { value: "+671%", label: "Organic clicks", note: "170 to 1,311" },
+    { value: "+1,141", label: "Additional clicks", note: "Latest 90 days" },
+    { value: "21.7 → 11.2", label: "Average position", note: "Into a stronger first-page mix" },
+    { value: "90 days", label: "Comparison window", note: "Two like-for-like periods" }
+  ],
+  evidenceHeading: "Search coverage expanded and rankings moved with it",
+  evidenceIntro: "The chart uses redacted Search Console totals. Clicks and impressions both jumped. Average position improved by 10.5 positions while click-through rate held near 1.5%.",
+  problemHeading: "Trade buyers search by product, spec and job, not by a single brand term",
+  problem: [
+    "PVC and related building products are bought against a job: fencing, windows, plumbing, cladding or a named specification. Thin category pages miss that language.",
+    "The public case does not list products, the supplier or the URLs. It only records whether organic discovery and clicks increased across the property."
+  ],
+  readingHeading: "The percentage looks dramatic because the starting base was small",
+  reading: [
+    "Clicks rose by 1,141 from a base of 170. Impressions rose by 74,530. Average position moved from 21.7 to 11.2. CTR moved from 1.59% to 1.54%.",
+    "Treat the 671% figure as a small-base warning as well as a win. The useful proof is the extra 1,141 clicks and the rank shift, not the percentage on its own."
+  ],
+  takeaways: [
+    "Trade SEO needs product and job-of-work pages, not a brochure homepage.",
+    "A large percentage from a small base still needs a click count next to it.",
+    "Once coverage jumps, the next job is converting those extra visits into quotes."
+  ],
+  results: [
+    { metric: "Organic clicks", before: "170", after: "1,311", note: "+671%, or 1,141 additional clicks" },
+    { metric: "Impressions", before: "10,660", after: "85,190", note: "+699%, or 74,530 additional impressions" },
+    { metric: "Average position", before: "21.7", after: "11.2", note: "Improved by 10.5 positions" },
+    { metric: "Click-through rate", before: "1.59%", after: "1.54%", note: "Broadly stable as reach expanded" }
+  ],
+  boundary: "This anonymised case study reports Google Search Console organic-search data for two equal 90-day periods. The client, property, pages and queries are withheld. It records visibility and clicks, not quotes, orders or revenue. Search Console cannot attribute the movement to a single action, and this result is not a guarantee."
+};
+---
+<GscCaseStudyPage data={data} />

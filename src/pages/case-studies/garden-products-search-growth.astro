@@ -1,0 +1,47 @@
+---
+import GscCaseStudyPage from "../../components/GscCaseStudyPage.astro";
+
+const data = {
+  slug: "garden-products-search-growth",
+  metaTitle: "Garden Products SEO Case Study: 49% More Clicks | Bright Forge",
+  description: "An anonymised Google Search Console case study showing a garden-products supplier growing organic clicks by 48.9% with a stronger click-through rate.",
+  title: "How a garden-products supplier added 921 organic clicks from almost the same impression base",
+  breadcrumb: "Garden Products Growth",
+  industry: "Garden products and mulch",
+  period: "31 May to 28 August 2026, compared with 2 March to 30 May 2026",
+  lede: "Organic clicks rose from 1,883 to 2,804. Impressions barely moved. Click-through rate rose from 3.29% to 4.83% and average position held. This is an efficiency case: more clicks from demand the site already reached.",
+  evidenceImage: "/images/case-studies/garden-products-search-growth-gsc-evidence.png",
+  evidenceAlt: "Redacted Search Console totals chart showing 2,804 clicks for an anonymised garden-products supplier.",
+  metrics: [
+    { value: "+48.9%", label: "Organic clicks", note: "1,883 to 2,804" },
+    { value: "+921", label: "Additional clicks", note: "Latest 90 days" },
+    { value: "3.29% → 4.83%", label: "Click-through rate", note: "Stronger result selection" },
+    { value: "90 days", label: "Comparison window", note: "Two like-for-like periods" }
+  ],
+  evidenceHeading: "Almost the same exposure, a much stronger click rate",
+  evidenceIntro: "The chart uses redacted Search Console totals. Impressions rose by only 827. Clicks rose by 921. That is why CTR is the headline, not a claim that the whole market grew.",
+  problemHeading: "Seasonal garden search rewards the listing people actually choose",
+  problem: [
+    "Mulch, soil and garden-product searches cluster around planting seasons and delivery questions. If the snippet is weak, the click goes to a merchant or a garden centre even when the site already ranks.",
+    "The public case does not name the supplier, the products or the URLs. It only shows the aggregate Search Console movement."
+  ],
+  readingHeading: "Position held while CTR did the commercial work",
+  reading: [
+    "Clicks rose by 921. Impressions rose from 57,221 to 58,048. Average position moved from 9.6 to 9.4. CTR moved from 3.29% to 4.83%.",
+    "That pattern is consistent with a clearer search result, not a huge new query set. The next measure is whether those extra visits became orders."
+  ],
+  takeaways: [
+    "When impressions are flat, CTR and position tell you if the result itself got stronger.",
+    "Seasonal product sites should not wait for market growth to explain a click lift.",
+    "Search Console still cannot prove sales. Connect it to order and delivery data."
+  ],
+  results: [
+    { metric: "Organic clicks", before: "1,883", after: "2,804", note: "+48.9%, or 921 additional clicks" },
+    { metric: "Impressions", before: "57,221", after: "58,048", note: "+1.4%, almost unchanged exposure" },
+    { metric: "Average position", before: "9.6", after: "9.4", note: "Held, with a slight improvement" },
+    { metric: "Click-through rate", before: "3.29%", after: "4.83%", note: "The main efficiency gain" }
+  ],
+  boundary: "This anonymised case study reports Google Search Console organic-search data for two equal 90-day periods. The client, property, pages and queries are withheld. It records visibility and clicks, not orders, delivery volume or revenue. Search Console cannot attribute the movement to a single action, and this result is not a guarantee."
+};
+---
+<GscCaseStudyPage data={data} />

@@ -1,0 +1,47 @@
+---
+import GscCaseStudyPage from "../../components/GscCaseStudyPage.astro";
+
+const data = {
+  slug: "custom-home-builder-search-growth",
+  metaTitle: "Custom Home Builder SEO Case Study: 34% More Clicks | Bright Forge",
+  description: "An anonymised Google Search Console case study showing a custom home builder growing organic clicks by 33.8% across two 90-day periods.",
+  title: "How a custom home builder added 2,433 organic clicks as search coverage and CTR both moved",
+  breadcrumb: "Custom Home Builder Growth",
+  industry: "Custom home building",
+  period: "31 May to 28 August 2026, compared with 2 March to 30 May 2026",
+  lede: "Organic clicks rose from 7,201 to 9,634. Impressions grew more modestly, click-through rate improved, and average position weakened. That is a useful home-builder story: more visits from a slightly larger footprint, with ranking work still to do on the new queries.",
+  evidenceImage: "/images/case-studies/custom-home-builder-search-growth-gsc-evidence.png",
+  evidenceAlt: "Redacted Search Console totals chart showing 9,634 clicks for an anonymised custom home builder.",
+  metrics: [
+    { value: "+33.8%", label: "Organic clicks", note: "7,201 to 9,634" },
+    { value: "+2,433", label: "Additional clicks", note: "Latest 90 days" },
+    { value: "1.67% → 2.05%", label: "Click-through rate", note: "Stronger click capture" },
+    { value: "90 days", label: "Comparison window", note: "Two like-for-like periods" }
+  ],
+  evidenceHeading: "More clicks from a larger, slightly less efficient ranking mix",
+  evidenceIntro: "The chart uses redacted Search Console totals. Clicks and impressions both rose. Average position moved from 18.0 to 24.0, so the extra visits came with a broader, weaker blended rank that still needs page-level work.",
+  problemHeading: "Home-builder search splits across design, location, cost and build-stage language",
+  problem: [
+    "People looking for a custom builder do not use one commercial phrase. They search by suburb, house style, rebuild, extension and cost language. A useful footprint needs enough real pages to meet that mix.",
+    "Search Console shows the aggregate movement. It does not name the builder, the site or the queries, and it cannot prove which page created each extra click."
+  ],
+  readingHeading: "CTR improved even as blended position softened",
+  reading: [
+    "Clicks rose by 2,433 and impressions rose by 37,993. Click-through rate moved from 1.67% to 2.05%. Average position moved from 18.0 to 24.0.",
+    "That combination is consistent with more demand coverage, not a claim that every ranking improved. The next job is to isolate the new query groups where impressions outpaced position."
+  ],
+  takeaways: [
+    "Builder SEO should be judged on clicks and enquiry quality, not a single average-position headline.",
+    "A weaker blended rank can sit next to more clicks when the site reaches a wider set of local and design searches.",
+    "Search Console is a starting map. Page-level query work still has to follow."
+  ],
+  results: [
+    { metric: "Organic clicks", before: "7,201", after: "9,634", note: "+33.8%, or 2,433 additional clicks" },
+    { metric: "Impressions", before: "431,104", after: "469,097", note: "+8.8%, or 37,993 additional impressions" },
+    { metric: "Average position", before: "18.0", after: "24.0", note: "Weaker blended rank as coverage widened" },
+    { metric: "Click-through rate", before: "1.67%", after: "2.05%", note: "Better click capture on the larger footprint" }
+  ],
+  boundary: "This anonymised case study reports Google Search Console organic-search data for two equal 90-day periods. The client, property, pages and queries are withheld. It records visibility and clicks, not quotes, deposits or completed builds. Search Console cannot attribute the movement to a single action, and this result is not a guarantee."
+};
+---
+<GscCaseStudyPage data={data} />
