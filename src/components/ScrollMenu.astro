@@ -49,9 +49,8 @@ const groups = [
     <a class="scroll-menu-cta" href="/contact/">Request an SEO review</a>
   </div>
 
-  <button type="button" class="scroll-menu-toggle" data-scroll-menu-toggle aria-expanded="false" aria-controls="scroll-menu-panel">
-    <img src="/images/menu-paint-splash.webp?v=b28bde8e" alt="" width="1100" height="266" />
-    <span class="scroll-menu-copy" data-scroll-menu-label>MENU</span>
+  <button type="button" class="scroll-menu-toggle" data-scroll-menu-toggle aria-expanded="false" aria-controls="scroll-menu-panel" aria-label="Menu">
+    <img src="/images/menu-paint-splash.webp?v=graffiti" alt="" width="1100" height="266" />
   </button>
 </div>
 
@@ -89,20 +88,6 @@ const groups = [
   height: auto;
   pointer-events: none;
   filter: drop-shadow(0 16px 28px rgba(0,0,0,.45));
-}
-.scroll-menu-copy {
-  position: absolute;
-  left: 7%;
-  top: 36%;
-  transform: translateY(-50%);
-  font-family: Outfit, sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.1rem, 7.2vw, 3.35rem);
-  font-style: normal;
-  letter-spacing: 0.01em;
-  line-height: 0.85;
-  color: #fff;
-  pointer-events: none;
 }
 .scroll-menu-panel {
   pointer-events: auto;
@@ -171,13 +156,11 @@ const groups = [
     if (!root) return;
     var toggle = root.querySelector("[data-scroll-menu-toggle]");
     var panel = document.getElementById("scroll-menu-panel");
-    var label = root.querySelector("[data-scroll-menu-label]");
-    if (!toggle || !panel || !label) return;
+    if (!toggle || !panel) return;
 
     function setOpen(open) {
       root.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      label.textContent = open ? "CLOSE" : "MENU";
       if (open) panel.removeAttribute("hidden");
       else panel.setAttribute("hidden", "");
     }
