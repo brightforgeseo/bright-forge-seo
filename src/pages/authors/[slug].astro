@@ -30,8 +30,8 @@ const formatDate = (d) =>
     ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(d)
     : '';
 
-const pageTitle = `${author.name} - ${author.role} | Bright Forge SEO`;
-const pageDescription = author.shortBio;
+const pageTitle = `${author.name} | Bright Forge SEO`;
+const pageDescription = `${author.name} is ${author.role} at Bright Forge. Read the work, then talk to us if you want that on your site.`;
 
 // Person schema for richer search results
 const personSchema = {
