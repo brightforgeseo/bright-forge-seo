@@ -10,12 +10,12 @@ export const authors = {
       'CEO and Co-Founder of Bright Forge SEO Agency with over 15 years of experience in digital marketing. Ben specializes in on-page and off-page SEO strategies, AI-driven search optimization, and delivering personalized, results-oriented solutions that drive real growth for businesses across diverse industries.',
     longBio: [
       "As the founder of Bright Forge SEO Agency, Ben brings a wealth of experience and passion for digital marketing. Over the years, he has honed his expertise in all facets of SEO, from on-page and off-page strategies to cutting-edge AI SEO optimization.",
-      "With certifications from industry leaders and a marketing degree from Metro London University, Ben is committed to delivering personalized, results-oriented solutions that drive real growth for businesses. He founded Bright Forge SEO Agency after years of working with e-commerce startups, SaaS companies, local businesses, and major corporations across the UK and United States.",
+      "With certifications from industry leaders and a marketing degree from London Metropolitan University, Ben is committed to delivering personalized, results-oriented solutions that drive real growth for businesses. He founded Bright Forge SEO Agency after years of working with e-commerce startups, SaaS companies, local businesses, and major corporations across the UK and United States.",
       "Based in the dynamic heart of Quezon City, Metro Manila, Ben leads a team that combines a global perspective with a deep understanding of local markets. His approach is data-driven, adaptable to the evolving search landscape, and laser-focused on measurable outcomes for every client."
     ],
     avatar: '/images/About us/ben-lowe-owner.webp',
     location: 'Quezon City, Philippines',
-    education: 'Marketing Degree, Metro London University',
+    education: 'Marketing Degree, London Metropolitan University',
     yearsExperience: '15+',
     expertise: [
       'On-Page SEO',
@@ -25,7 +25,7 @@ export const authors = {
       'E-commerce SEO',
       'Local SEO',
       'Content Strategy',
-      'Search Generative Experience (SGE)'
+      'AI search readiness'
     ],
     industries: [
       'E-commerce',
