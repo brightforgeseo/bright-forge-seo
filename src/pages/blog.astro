@@ -869,6 +869,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchButton = document.querySelector('.search-button');
   const articleCards = document.querySelectorAll('.article-card');
   const topicLinks = document.querySelectorAll('.topic-item');
+  const filterButtons = document.querySelectorAll('.filter-btn');
   const featuredArticle = document.querySelector('.featured-article');
   const newsletterForm = document.querySelector('.newsletter-form');
   
@@ -909,13 +910,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Function to filter articles by topic category
   function filterByTopic(category) {
-    // Remove active class from all topic links
     topicLinks.forEach(link => link.classList.remove('active'));
-    
-    // Add active class to clicked link
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+
     const activeLink = document.querySelector(`.topic-item[data-category="${category}"]`);
     if (activeLink) {
       activeLink.classList.add('active');
+    }
+    const activeButton = document.querySelector(`.filter-btn[data-category="${category}"]`);
+    if (activeButton) {
+      activeButton.classList.add('active');
     }
     
     // Reset articles display if 'all' is selected
@@ -974,6 +978,13 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const category = this.getAttribute('data-category');
       filterByTopic(category);
+    });
+  });
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      filterByTopic(this.getAttribute('data-category'));
     });
   });
   
