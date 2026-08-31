@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import Hero from "../../components/Hero.astro";
 import ButtonPrimary from "../../components/ButtonPrimary.astro";
 import ButtonSecondary from "../../components/ButtonSecondary.astro";
+import DevelopmentStackJobs from "../../components/DevelopmentStackJobs.astro";
 const canonical="https://brightforge.com.ph/development/astro/";
 const proof=[
   {
@@ -107,8 +108,16 @@ const faqs=[
 </Hero>
 <main class="dev-page">
 <section><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Astro is useful when the site needs <span>speed, control</span> and clean content delivery</h2><p>Astro can be a strong fit for content-led and service-led websites because it keeps pages fast and limits unnecessary JavaScript. That only helps SEO when the page structure, internal links, schema and launch checks are handled properly.</p><p>We use Astro where it fits the business case, then build around crawlability, performance, editable content needs and safe migration planning.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
-<section id="checks"><div class="page-container"><p class="eyebrow">SEO-first development</p><h2><span>Astro development</span> should be sold as a fit-for-purpose build, not a magic ranking factor</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-<section><div class="page-container"><p class="eyebrow">Process</p><h2>How we build without creating <span>SEO debt</span></h2><div class="grid process">{process.map((item,index)=>(<article class="card"><span>{String(index+1).padStart(2,"0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<DevelopmentStackJobs
+  title="What we actually ship in <span>Astro</span>"
+  intro="This marketing site is Astro. Marketing pages stay HTML. JavaScript only where a control needs it."
+  jobs={[
+    {title:'Static routes', text:'Service pages and blog posts render as HTML. No empty app shell.'},
+    {title:'CMS in, pages out', text:'Contentful (or another CMS) feeds the build. New posts do not wait on a designer.'},
+    {title:'Sitemap from the build', text:'Routes and published entries write the sitemap. No stale XML file.'},
+    {title:'Hydrate on purpose', text:'Interactive bits load where they earn it. The rest stays quiet.'}
+  ]}
+/>
 <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>Astro has a clear role</span></h2><p>This suits service businesses, content sites, lean marketing sites and rebuilds where speed, maintainability and crawlable content are priorities.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
 <section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the <span>stack around the job</span>, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Astro development</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>

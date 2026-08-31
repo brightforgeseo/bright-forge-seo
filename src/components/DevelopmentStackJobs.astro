@@ -1,0 +1,45 @@
+---
+const { eyebrow = 'In this stack', title, intro, jobs } = Astro.props;
+---
+
+<section class="stack-work">
+  <div class="page-container">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2 set:html={title} />
+    {intro && <p class="stack-intro">{intro}</p>}
+    <div class="stack-jobs">
+      {jobs.map((job) => (
+        <article>
+          <h3>{job.title}</h3>
+          <p>{job.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack-work { padding: 78px 0; background: #111421; }
+  .stack-intro { max-width: 46rem; margin: 0 0 28px; }
+  .stack-jobs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #14182a;
+  }
+  .stack-jobs article {
+    padding: 22px 24px;
+    border-right: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .stack-jobs article:nth-child(2n) { border-right: 0; }
+  .stack-jobs h3 { margin: 0 0 8px; font-size: 1.05rem; color: #fff; }
+  .stack-jobs p { margin: 0; color: rgba(255,255,255,.72); line-height: 1.6; }
+  @media (max-width: 800px) {
+    .stack-jobs { grid-template-columns: 1fr; }
+    .stack-jobs article { border-right: 0; }
+  }
+</style>
