@@ -1,149 +1,117 @@
 ---
 /**
  * Ranking as a material. Pointer height sets the position.
+ * Four states sit in the DOM. JS only flips data-on.
  * Copy is Bright Forge homepage language, not a live rank claim.
  */
 ---
 
-<section class="rank-stage" id="ranking-stage" data-rank-stage aria-label="How a search result earns an enquiry">
+<section class="rank-stage" id="ranking-stage" data-rank-stage data-on="0" aria-label="How a search result earns an enquiry">
   <div class="rank-beam" data-rank-beam hidden></div>
   <div class="rank-inner">
     <div class="rank-top">
       <p class="rank-kicker">Move to rank</p>
-      <p class="rank-word" data-rank-word>Position 08</p>
+      <p class="rank-word">
+        <span>Position 08</span>
+        <span>Position 06</span>
+        <span>Position 03</span>
+        <span>Position 01</span>
+      </p>
     </div>
 
     <div class="rank-grid">
       <div class="rank-copy">
-        <p class="rank-eyebrow">A stranger is searching for an SEO agency in the Philippines.</p>
-        <p class="rank-num" data-rank-num>08</p>
-        <h2 class="rank-line"><span data-rank-line>Page eight. The enquiry never starts.</span></h2>
-        <p class="rank-note">Not a live ranking. Move up the page. Vague copy loses. Named work and a next step win the enquiry.</p>
+        <p class="rank-eyebrow">Someone searching for an SEO agency in the Philippines has the results page open.</p>
+        <p class="rank-num" aria-hidden="true">
+          <span>08</span>
+          <span>06</span>
+          <span>03</span>
+          <span>01</span>
+        </p>
+        <h2 class="rank-line">
+          <span>Eighth result. The call never starts.</span>
+          <span>They saw the listing. They chose a clearer title.</span>
+          <span>The job is named: enquiries, not vanity traffic.</span>
+          <span>Position one. The first screen still has to take the enquiry.</span>
+        </h2>
+        <p class="rank-note">Not a live ranking. Drag the number. Vague copy loses. Named work and a next step win the click.</p>
       </div>
 
-      <article class="rank-card" data-rank-card>
-        <p class="rank-url" data-rank-url>example.com/seo</p>
-        <h3 class="rank-title" data-rank-title>Quality Solutions for Your Business</h3>
-        <p class="rank-meta" data-rank-meta>We help brands unlock growth with digital strategies and dedicated support.</p>
-        <a class="rank-cta" data-rank-cta href="/contact/" hidden>Request an SEO Review</a>
-      </article>
+      <div class="rank-cards">
+        <article class="rank-card">
+          <p class="rank-url">example.com/seo</p>
+          <h3 class="rank-title">Quality Solutions for Your Business</h3>
+          <p class="rank-meta">We help brands grow with digital strategies and a dedicated support team.</p>
+        </article>
+        <article class="rank-card">
+          <p class="rank-url">example.com/seo-agency</p>
+          <h3 class="rank-title">SEO Services | Trusted Agency</h3>
+          <p class="rank-meta">Full-service SEO, content and reporting for growing companies.</p>
+        </article>
+        <article class="rank-card">
+          <p class="rank-url">brightforge.com.ph</p>
+          <h3 class="rank-title">SEO Agency Philippines | Bright Forge</h3>
+          <p class="rank-meta">Philippine SEO agency for businesses that need enquiries from search. Technical SEO, content and conversion work. Named team.</p>
+        </article>
+        <article class="rank-card is-lead">
+          <p class="rank-url">brightforge.com.ph</p>
+          <h3 class="rank-title">SEO Agency Philippines for Enquiries, Not Vanity Traffic</h3>
+          <p class="rank-meta">British-led SEO, based in the Philippines. Request an SEO review. We will say if there is a fit.</p>
+          <a class="rank-cta" href="/contact/">Request an SEO Review</a>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
-<script>
-  const root = document.querySelector('[data-rank-stage]');
-  if (root) {
-    const stages = [
-      {
-        n: '08',
-        word: 'Position 08',
-        line: 'Page eight. The enquiry never starts.',
-        url: 'example.com/seo',
-        title: 'Quality Solutions for Your Business',
-        meta: 'We help brands unlock growth with digital strategies and dedicated support.',
-        lead: false
-      },
-      {
-        n: '06',
-        word: 'Position 06',
-        line: 'People see you. They pick someone else.',
-        url: 'example.com/seo-agency',
-        title: 'SEO Services | Trusted Agency',
-        meta: 'Full-service SEO, content and reporting for growing companies.',
-        lead: false
-      },
-      {
-        n: '03',
-        word: 'Position 03',
-        line: 'The job is named. Rankings are the means.',
-        url: 'brightforge.com.ph',
-        title: 'SEO Agency Philippines | Bright Forge',
-        meta: 'Philippine SEO agency for businesses that need enquiries from search. Technical SEO, content and conversion work. Named team. Private proposal.',
-        lead: false
-      },
-      {
-        n: '01',
-        word: 'Position 01',
-        line: 'Enquiries are the job. The first screen has to take the click.',
-        url: 'brightforge.com.ph',
-        title: 'SEO Agency Philippines for Enquiries, Not Vanity Traffic',
-        meta: 'British-led SEO, based in the Philippines. Request an SEO review. We will say if there is a fit.',
-        lead: true
-      }
-    ];
-
-    const num = root.querySelector('[data-rank-num]');
-    const word = root.querySelector('[data-rank-word]');
-    const line = root.querySelector('[data-rank-line]');
-    const card = root.querySelector('[data-rank-card]');
-    const title = root.querySelector('[data-rank-title]');
-    const meta = root.querySelector('[data-rank-meta]');
-    const url = root.querySelector('[data-rank-url]');
-    const cta = root.querySelector('[data-rank-cta]');
-    const beam = root.querySelector('[data-rank-beam]');
-    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    let cur = -1;
-    let box = null;
-    let pendingY = null;
-    let raf = 0;
-    let live = fine;
+<script is:inline>
+  (function () {
+    var root = document.querySelector('[data-rank-stage]');
+    if (!root) return;
+    var beam = root.querySelector('[data-rank-beam]');
+    var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var cur = 0;
+    var box = null;
+    var y = null;
+    var raf = 0;
+    var live = fine;
 
     function measure() {
       box = root.getBoundingClientRect();
     }
 
-    function apply(i) {
-      if (i === cur) return;
-      cur = i;
-      const s = stages[i];
-      if (num) num.textContent = s.n;
-      if (word) word.textContent = s.word;
-      if (line) line.textContent = s.line;
-      if (title) title.textContent = s.title;
-      if (meta) meta.textContent = s.meta;
-      if (url) url.textContent = s.url;
-      if (cta) cta.hidden = !s.lead;
-      if (card) {
-        card.style.transform = 'translate3d(0,' + (-i * 8) + 'px,0)';
-        card.classList.toggle('is-lead', s.lead);
-      }
-    }
-
     function tick() {
       raf = 0;
-      if (pendingY == null) return;
+      if (y == null) return;
       if (!box) measure();
-      const y = pendingY;
-      pendingY = null;
-      const top = y - box.top;
+      var top = y - box.top;
       if (beam) {
         beam.hidden = false;
         beam.style.transform = 'translate3d(0,' + top + 'px,0)';
       }
-      const t = top / Math.max(1, box.height);
-      apply(t > 0.72 ? 0 : t > 0.5 ? 1 : t > 0.28 ? 2 : 3);
+      var t = top / Math.max(1, box.height);
+      var i = t > 0.72 ? 0 : t > 0.5 ? 1 : t > 0.28 ? 2 : 3;
+      if (i === cur) return;
+      cur = i;
+      root.setAttribute('data-on', String(i));
     }
 
     function move(e) {
       if (!live) return;
       if (e.target && e.target.closest && e.target.closest('a')) return;
-      pendingY = e.clientY;
+      y = e.clientY;
       if (!raf) raf = requestAnimationFrame(tick);
     }
 
-    root.addEventListener('pointerdown', (e) => {
+    root.addEventListener('pointerdown', function (e) {
       live = true;
       measure();
       move(e);
     });
-    root.addEventListener('pointerup', () => { if (!fine) live = false; });
-    root.addEventListener('pointercancel', () => { if (!fine) live = false; });
+    root.addEventListener('pointerup', function () { if (!fine) live = false; });
+    root.addEventListener('pointercancel', function () { if (!fine) live = false; });
     root.addEventListener('pointermove', move, { passive: true });
-    window.addEventListener('scroll', () => { box = null; }, { passive: true });
-    window.addEventListener('resize', () => { box = null; }, { passive: true });
-    apply(0);
-  }
+  })();
 </script>
 
 <style>
@@ -173,7 +141,7 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     max-width: 80rem;
     margin: 0 auto;
     padding: 0 1.5rem;
@@ -187,7 +155,19 @@
     text-transform: uppercase;
   }
   .rank-kicker { color: #9aa3b5; }
-  .rank-word { color: #f0622a; }
+  .rank-word {
+    position: relative;
+    color: #f0622a;
+    min-width: 12ch;
+    min-height: 1.2em;
+  }
+  .rank-word span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
   .rank-grid {
     display: grid;
     gap: 1.5rem;
@@ -202,20 +182,39 @@
     font-size: 0.95rem;
   }
   .rank-num {
+    display: grid;
     margin: 0.2rem 0 0;
     font-size: clamp(5.5rem, 16vw, 11rem);
     line-height: 0.85;
     font-weight: 800;
     letter-spacing: -0.04em;
+    touch-action: none;
+    cursor: ns-resize;
+    user-select: none;
+  }
+  .rank-num span {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
   }
   .rank-line {
+    position: relative;
     margin: 1.1rem 0 0;
-    max-width: 22rem;
+    min-height: 3.4em;
+    max-width: 24rem;
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.35;
   }
-  .rank-line span { color: #f0622a; }
+  .rank-line span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    color: #f0622a;
+    opacity: 0;
+    visibility: hidden;
+  }
   .rank-note {
     margin: 1rem 0 0;
     max-width: 28rem;
@@ -223,12 +222,19 @@
     font-size: 0.9rem;
     line-height: 1.55;
   }
+  .rank-cards {
+    display: grid;
+    touch-action: none;
+  }
   .rank-card {
+    grid-area: 1 / 1;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 1.25rem;
     background: #121526;
     padding: 1.35rem 1.4rem 1.5rem;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
   .rank-card.is-lead { border-color: rgba(240,98,42,0.55); }
   .rank-url {
@@ -257,5 +263,26 @@
     font-weight: 700;
     font-size: 0.92rem;
   }
-  .rank-cta[hidden] { display: none; }
+  .rank-stage[data-on="0"] .rank-word span:nth-child(1),
+  .rank-stage[data-on="0"] .rank-num span:nth-child(1),
+  .rank-stage[data-on="0"] .rank-line span:nth-child(1),
+  .rank-stage[data-on="0"] .rank-card:nth-child(1),
+  .rank-stage[data-on="1"] .rank-word span:nth-child(2),
+  .rank-stage[data-on="1"] .rank-num span:nth-child(2),
+  .rank-stage[data-on="1"] .rank-line span:nth-child(2),
+  .rank-stage[data-on="1"] .rank-card:nth-child(2),
+  .rank-stage[data-on="2"] .rank-word span:nth-child(3),
+  .rank-stage[data-on="2"] .rank-num span:nth-child(3),
+  .rank-stage[data-on="2"] .rank-line span:nth-child(3),
+  .rank-stage[data-on="2"] .rank-card:nth-child(3),
+  .rank-stage[data-on="3"] .rank-word span:nth-child(4),
+  .rank-stage[data-on="3"] .rank-num span:nth-child(4),
+  .rank-stage[data-on="3"] .rank-line span:nth-child(4),
+  .rank-stage[data-on="3"] .rank-card:nth-child(4) {
+    opacity: 1;
+    visibility: visible;
+  }
+  .rank-stage[data-on="3"] .rank-card:nth-child(4) {
+    pointer-events: auto;
+  }
 </style>
