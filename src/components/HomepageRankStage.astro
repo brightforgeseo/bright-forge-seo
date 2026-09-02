@@ -1,0 +1,281 @@
+---
+/**
+ * Ranking as a material. Pointer height sets the position.
+ * Copy is Bright Forge homepage language, not a live rank claim.
+ */
+const stages = [
+  {
+    n: '08',
+    word: 'Position 08',
+    line: 'Page eight. The enquiry never starts.',
+    url: 'example.com/seo',
+    title: 'Quality Solutions for Your Business',
+    meta: 'We help brands unlock growth with digital strategies and dedicated support.',
+    lead: false
+  },
+  {
+    n: '06',
+    word: 'Position 06',
+    line: 'People see you. They pick someone else.',
+    url: 'example.com/seo-agency',
+    title: 'SEO Services | Trusted Agency',
+    meta: 'Full-service SEO, content and reporting for growing companies.',
+    lead: false
+  },
+  {
+    n: '03',
+    word: 'Position 03',
+    line: 'The job is named. Rankings are the means.',
+    url: 'brightforge.com.ph',
+    title: 'SEO Agency Philippines | Bright Forge',
+    meta: 'Philippine SEO agency for businesses that need enquiries from search. Technical SEO, content and conversion work. Named team. Private proposal.',
+    lead: false
+  },
+  {
+    n: '01',
+    word: 'Position 01',
+    line: 'Enquiries are the job. The first screen has to take the click.',
+    url: 'brightforge.com.ph',
+    title: 'SEO Agency Philippines for Enquiries, Not Vanity Traffic',
+    meta: 'British-led SEO, based in the Philippines. Request an SEO review. We will say if there is a fit.',
+    lead: true
+  }
+];
+---
+
+<section class="rank-stage" id="ranking-stage" data-rank-stage aria-label="How a search result earns an enquiry">
+  <div class="rank-beam" data-rank-beam hidden></div>
+  <div class="rank-inner">
+    <div class="rank-top">
+      <p class="rank-kicker">Move to rank · tap to lock</p>
+      <p class="rank-word" data-rank-word>Position 08</p>
+    </div>
+
+    <div class="rank-grid">
+      <div class="rank-copy">
+        <p class="rank-eyebrow">A stranger is searching for an SEO agency in the Philippines.</p>
+        <p class="rank-num" data-rank-num>08</p>
+        <h2 class="rank-line"><span data-rank-line>Page eight. The enquiry never starts.</span></h2>
+        <p class="rank-note">Not a live ranking. This is how title, proof and a next step change whether the click becomes an enquiry.</p>
+      </div>
+
+      <article class="rank-card" data-rank-card>
+        <p class="rank-url" data-rank-url>example.com/seo</p>
+        <h3 class="rank-title" data-rank-title>Quality Solutions for Your Business</h3>
+        <p class="rank-meta" data-rank-meta>We help brands unlock growth with digital strategies and dedicated support.</p>
+        <a class="rank-cta" data-rank-cta href="/contact/" hidden>Request an SEO Review</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector('[data-rank-stage]');
+  if (root) {
+    const stages = [
+      {
+        n: '08',
+        word: 'Position 08',
+        line: 'Page eight. The enquiry never starts.',
+        url: 'example.com/seo',
+        title: 'Quality Solutions for Your Business',
+        meta: 'We help brands unlock growth with digital strategies and dedicated support.',
+        lead: false
+      },
+      {
+        n: '06',
+        word: 'Position 06',
+        line: 'People see you. They pick someone else.',
+        url: 'example.com/seo-agency',
+        title: 'SEO Services | Trusted Agency',
+        meta: 'Full-service SEO, content and reporting for growing companies.',
+        lead: false
+      },
+      {
+        n: '03',
+        word: 'Position 03',
+        line: 'The job is named. Rankings are the means.',
+        url: 'brightforge.com.ph',
+        title: 'SEO Agency Philippines | Bright Forge',
+        meta: 'Philippine SEO agency for businesses that need enquiries from search. Technical SEO, content and conversion work. Named team. Private proposal.',
+        lead: false
+      },
+      {
+        n: '01',
+        word: 'Position 01',
+        line: 'Enquiries are the job. The first screen has to take the click.',
+        url: 'brightforge.com.ph',
+        title: 'SEO Agency Philippines for Enquiries, Not Vanity Traffic',
+        meta: 'British-led SEO, based in the Philippines. Request an SEO review. We will say if there is a fit.',
+        lead: true
+      }
+    ];
+
+    const num = root.querySelector('[data-rank-num]');
+    const word = root.querySelector('[data-rank-word]');
+    const line = root.querySelector('[data-rank-line]');
+    const card = root.querySelector('[data-rank-card]');
+    const title = root.querySelector('[data-rank-title]');
+    const meta = root.querySelector('[data-rank-meta]');
+    const url = root.querySelector('[data-rank-url]');
+    const cta = root.querySelector('[data-rank-cta]');
+    const beam = root.querySelector('[data-rank-beam]');
+    let locked = false;
+    let cur = 0;
+
+    function apply(i) {
+      cur = i;
+      const s = stages[i];
+      if (num) num.textContent = s.n;
+      if (word) word.textContent = locked ? s.word + ' · locked' : s.word;
+      if (line) line.textContent = s.line;
+      if (title) title.textContent = s.title;
+      if (meta) meta.textContent = s.meta;
+      if (url) url.textContent = s.url;
+      if (cta) cta.hidden = !s.lead;
+      if (card) {
+        card.style.transform = 'translateY(' + (-i * 8) + 'px)';
+        card.classList.toggle('is-lead', s.lead);
+      }
+    }
+
+    function fromY(clientY) {
+      const r = root.getBoundingClientRect();
+      const t = (clientY - r.top) / r.height;
+      if (t > 0.72) return 0;
+      if (t > 0.5) return 1;
+      if (t > 0.28) return 2;
+      return 3;
+    }
+
+    function move(e) {
+      const pt = e.touches ? e.touches[0] : e;
+      const r = root.getBoundingClientRect();
+      if (beam) {
+        beam.hidden = false;
+        beam.style.top = (pt.clientY - r.top) + 'px';
+      }
+      if (!locked) apply(fromY(pt.clientY));
+    }
+
+    root.addEventListener('pointermove', move);
+    root.addEventListener('touchmove', (e) => { e.preventDefault(); move(e); }, { passive: false });
+    root.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      locked = !locked;
+      apply(cur);
+    });
+    apply(0);
+  }
+</script>
+
+<style>
+  .rank-stage {
+    position: relative;
+    overflow: hidden;
+    min-height: 100svh;
+    color: #f4f1ea;
+    background: #0d0f1a;
+  }
+  .rank-beam {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #f0622a;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .rank-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100svh;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+  .rank-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .rank-kicker { color: #9aa3b5; }
+  .rank-word { color: #f0622a; }
+  .rank-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .rank-grid { grid-template-columns: 1.15fr 0.85fr; }
+  }
+  .rank-eyebrow {
+    margin: 0;
+    color: #9aa3b5;
+    font-size: 0.95rem;
+  }
+  .rank-num {
+    margin: 0.2rem 0 0;
+    font-size: clamp(5.5rem, 16vw, 11rem);
+    line-height: 0.85;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+  .rank-line {
+    margin: 1.1rem 0 0;
+    max-width: 22rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .rank-line span { color: #f0622a; }
+  .rank-note {
+    margin: 1rem 0 0;
+    max-width: 28rem;
+    color: #9aa3b5;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .rank-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1.25rem;
+    background: #121526;
+    padding: 1.35rem 1.4rem 1.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .rank-card.is-lead { border-color: rgba(240,98,42,0.55); }
+  .rank-url {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: #9aa3b5;
+  }
+  .rank-title {
+    margin: 0.55rem 0 0;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    color: #8ab4f8;
+    font-weight: 600;
+  }
+  .rank-meta {
+    margin: 0.55rem 0 0;
+    color: #c5c9d4;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .rank-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #f0622a;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+  .rank-cta[hidden] { display: none; }
+</style>

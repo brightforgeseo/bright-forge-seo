@@ -598,7 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style>
 /* MOBILE MENU OVERRIDES - HIGHEST SPECIFICITY */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px), screen and (hover: none) and (pointer: coarse) {
   /* Hide desktop navigation */
   .nav-menu-professional,
   .cta-button-professional {
@@ -847,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 /* Desktop - Hide mobile menu completely */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1201px) and (hover: hover) {
   .mobile-menu-btn {
     display: none !important;
     visibility: hidden !important;

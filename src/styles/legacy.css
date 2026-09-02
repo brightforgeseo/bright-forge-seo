@@ -120,14 +120,15 @@ body {
 }
 
 .nav-logo {
-  flex: 0 0 261px;
-  width: 261px;
+  flex: 0 1 auto;
+  width: min(261px, 42vw);
+  max-width: 261px;
   height: 54px;
 }
 
 .nav-logo a {
   display: block;
-  width: 261px;
+  width: 100%;
   height: 54px;
 }
 
@@ -798,7 +799,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px), (hover: none) and (pointer: coarse) {
   .top-bar-professional {
     padding: 6px 0;
   }

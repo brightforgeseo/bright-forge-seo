@@ -17,6 +17,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
   }
 
   body {
@@ -24,6 +25,8 @@
     line-height: 1.6;
     color: #e8eaf2;
     letter-spacing: -0.011em;
+    overflow-x: clip;
+    max-width: 100%;
   }
 
   /* Modern typography scale */
