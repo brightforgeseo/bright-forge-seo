@@ -1,103 +1,125 @@
 ---
-// Props with defaults
 const {
-  badge = "TRUSTED BY",
-  title = "Companies We've",
-  titleHighlight = "Worked With",
-  description = "See how we've helped businesses achieve remarkable growth through tailored SEO strategies"
+  badge = 'Trusted by',
+  title = "Companies we have",
+  titleHighlight = 'worked with',
+  description = 'Named clients. Public case studies. Not a vanity logo wall.'
 } = Astro.props;
 
-// Client logos
 const clients = [
-  { name: "ThermoPest", logo: "/images/clients/Ai-1.webp" },
-  { name: "EcoSpa", logo: "/images/clients/EcoSpa1080x700px6-640w.webp" },
-  { name: "Matthew Jeffery", logo: "/images/clients/Logo-Matthew-Jeffery-1.svg" },
-  { name: "WeForest", logo: "/images/clients/WF_Logo-color .webp" },
-  { name: "SO ECO", logo: "/images/clients/cropped-apple-touch-icon (1).webp" }
+  { name: 'ThermoPest', logo: '/images/clients/Ai-1.webp' },
+  { name: 'Phoenix Eco Spa', logo: '/images/clients/EcoSpa1080x700px6-640w.webp' },
+  { name: 'Matthew Jeffery', logo: '/images/clients/Logo-Matthew-Jeffery-1.svg' },
+  { name: 'WeForest', logo: '/images/clients/WF_Logo-color .webp' },
+  { name: 'SO ECO', logo: '/images/clients/cropped-apple-touch-icon (1).webp' }
 ];
 ---
 
-<section class="trusted-by-section py-16 bg-[#0d0f1a]">
-  <div class="max-w-7xl mx-auto px-4">
-
-    <!-- Header -->
-    <div class="text-center mb-12">
-      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4 text-[#f0622a] border border-[rgba(240,98,42,0.15)]" style="background:linear-gradient(135deg,rgba(240,98,42,0.1),rgba(240,98,42,0.05))">
-        {badge}
-      </span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4" style="font-family: 'Outfit', sans-serif; font-weight: 800;">
-        {title} <span class="text-[#f0622a]">{titleHighlight}</span>
-      </h2>
-      <p class="text-lg text-[#d0d4e8] max-w-2xl mx-auto">
-        {description}
-      </p>
+<section class="trusted-by-section" aria-label="Companies we have worked with">
+  <div class="trusted-inner">
+    <div class="trusted-copy">
+      <p class="trusted-badge">{badge}</p>
+      <h2>{title} <span>{titleHighlight}</span></h2>
+      <p class="trusted-lead">{description}</p>
     </div>
 
-    <!-- Logo Grid -->
-    <div class="logo-grid">
+    <ul class="logo-grid">
       {clients.map((client) => (
-        <div class="logo-item">
+        <li class="logo-item">
           <img
             src={client.logo}
             alt={client.name}
-            width="140"
-            height="80"
+            width="160"
+            height="64"
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </li>
       ))}
-    </div>
-
+    </ul>
   </div>
 </section>
 
 <style>
   .trusted-by-section {
     background: #0d0f1a;
+    padding: 4rem 1.25rem 4.5rem;
   }
-
-  .logo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem 3rem;
-    max-width: 900px;
+  .trusted-inner {
+    max-width: 72rem;
     margin: 0 auto;
   }
-
+  .trusted-copy {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .trusted-badge {
+    display: inline-flex;
+    margin: 0 0 1rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(240, 98, 42, 0.22);
+    background: rgba(240, 98, 42, 0.08);
+    color: #f0622a;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .trusted-copy h2 {
+    margin: 0;
+    color: #f4f1ea;
+    font-size: clamp(1.85rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+  .trusted-copy h2 span {
+    color: #f0622a;
+  }
+  .trusted-lead {
+    margin: 0.85rem auto 0;
+    max-width: 36rem;
+    color: #9aa3b5;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  .logo-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
   .logo-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px;
-    height: 80px;
-    transition: all 0.3s ease;
+    min-height: 5.5rem;
+    padding: 0.85rem 1rem;
+    border-radius: 1rem;
+    background: #f4f1ea;
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
-
   .logo-item img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 3.25rem;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    opacity: 0.7;
-    filter: brightness(0) invert(1);
-    transition: all 0.3s ease;
   }
-
-  .logo-item:hover img {
-    opacity: 1;
-    filter: brightness(0) invert(1);
-  }
-
-  @media (max-width: 640px) {
+  @media (max-width: 900px) {
     .logo-grid {
-      gap: 1.5rem 2rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
+  }
+  @media (max-width: 560px) {
+    .logo-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
     .logo-item {
-      width: 110px;
-      height: 60px;
+      min-height: 4.75rem;
     }
   }
 </style>
