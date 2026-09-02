@@ -188,7 +188,12 @@
     var animId;
     var time = 0;
 
+    var visible = true;
     function animate() {
+      if (!visible) {
+        animId = 0;
+        return;
+      }
       animId = requestAnimationFrame(animate);
       time += 0.001;
       globe.position.x = Math.sin(time * 0.7) * 1.2;
@@ -198,6 +203,12 @@
       renderer.render(scene, camera);
     }
 
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        visible = !!(entries[0] && entries[0].isIntersecting);
+        if (visible && !animId) animate();
+      }, { rootMargin: '80px' }).observe(canvas);
+    }
     animate();
 
     function onResize() {
@@ -211,7 +222,7 @@
   }
 
   function init() {
-    if (!window.matchMedia('(min-width: 1025px)').matches) return;
+    if (!window.matchMedia('(min-width: 1201px) and (hover: hover) and (pointer: fine)').matches) return;
     ensureThree(function() {
       var canvases = document.querySelectorAll('.hero-globe-canvas');
       canvases.forEach(function(canvas) {

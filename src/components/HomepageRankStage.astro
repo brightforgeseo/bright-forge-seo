@@ -82,9 +82,19 @@
     const url = root.querySelector('[data-rank-url]');
     const cta = root.querySelector('[data-rank-cta]');
     const beam = root.querySelector('[data-rank-beam]');
-    let cur = 0;
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let cur = -1;
+    let box = null;
+    let pendingY = null;
+    let raf = 0;
+    let live = fine;
+
+    function measure() {
+      box = root.getBoundingClientRect();
+    }
 
     function apply(i) {
+      if (i === cur) return;
       cur = i;
       const s = stages[i];
       if (num) num.textContent = s.n;
@@ -95,33 +105,43 @@
       if (url) url.textContent = s.url;
       if (cta) cta.hidden = !s.lead;
       if (card) {
-        card.style.transform = 'translateY(' + (-i * 8) + 'px)';
+        card.style.transform = 'translate3d(0,' + (-i * 8) + 'px,0)';
         card.classList.toggle('is-lead', s.lead);
       }
     }
 
-    function fromY(clientY) {
-      const r = root.getBoundingClientRect();
-      const t = (clientY - r.top) / r.height;
-      if (t > 0.72) return 0;
-      if (t > 0.5) return 1;
-      if (t > 0.28) return 2;
-      return 3;
+    function tick() {
+      raf = 0;
+      if (pendingY == null) return;
+      if (!box) measure();
+      const y = pendingY;
+      pendingY = null;
+      const top = y - box.top;
+      if (beam) {
+        beam.hidden = false;
+        beam.style.transform = 'translate3d(0,' + top + 'px,0)';
+      }
+      const t = top / Math.max(1, box.height);
+      apply(t > 0.72 ? 0 : t > 0.5 ? 1 : t > 0.28 ? 2 : 3);
     }
 
     function move(e) {
+      if (!live) return;
       if (e.target && e.target.closest && e.target.closest('a')) return;
-      const pt = e.touches ? e.touches[0] : e;
-      const r = root.getBoundingClientRect();
-      if (beam) {
-        beam.hidden = false;
-        beam.style.top = (pt.clientY - r.top) + 'px';
-      }
-      apply(fromY(pt.clientY));
+      pendingY = e.clientY;
+      if (!raf) raf = requestAnimationFrame(tick);
     }
 
-    root.addEventListener('pointermove', move);
-    root.addEventListener('pointerdown', move);
+    root.addEventListener('pointerdown', (e) => {
+      live = true;
+      measure();
+      move(e);
+    });
+    root.addEventListener('pointerup', () => { if (!fine) live = false; });
+    root.addEventListener('pointercancel', () => { if (!fine) live = false; });
+    root.addEventListener('pointermove', move, { passive: true });
+    window.addEventListener('scroll', () => { box = null; }, { passive: true });
+    window.addEventListener('resize', () => { box = null; }, { passive: true });
     apply(0);
   }
 </script>
@@ -130,6 +150,7 @@
   .rank-stage {
     position: relative;
     overflow: clip;
+    contain: layout style;
     color: #f4f1ea;
     background: #0d0f1a;
     touch-action: pan-y;
@@ -139,11 +160,13 @@
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
     height: 1px;
     background: #f0622a;
     opacity: 0.7;
     pointer-events: none;
     z-index: 2;
+    will-change: transform;
   }
   .rank-inner {
     position: relative;
