@@ -129,11 +129,11 @@
 <style>
   .rank-stage {
     position: relative;
-    overflow: hidden;
-    min-height: 100svh;
+    overflow: clip;
     color: #f4f1ea;
     background: #0d0f1a;
     touch-action: pan-y;
+    padding: 2.5rem 0 3rem;
   }
   .rank-beam {
     position: absolute;
@@ -150,11 +150,10 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 100svh;
+    gap: 1.5rem;
     max-width: 80rem;
     margin: 0 auto;
-    padding: 2rem 1.5rem 2.5rem;
+    padding: 0 1.5rem;
   }
   .rank-top {
     display: flex;
@@ -168,11 +167,11 @@
   .rank-word { color: #f0622a; }
   .rank-grid {
     display: grid;
-    gap: 2.5rem;
-    align-items: end;
+    gap: 1.5rem;
+    align-items: start;
   }
-  @media (min-width: 900px) {
-    .rank-grid { grid-template-columns: 1.15fr 0.85fr; }
+  @media (min-width: 1201px) and (hover: hover) and (pointer: fine) {
+    .rank-grid { grid-template-columns: 1.15fr 0.85fr; align-items: end; }
   }
   .rank-eyebrow {
     margin: 0;
