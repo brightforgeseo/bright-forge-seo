@@ -1,14 +1,15 @@
 ---
 /**
- * Ranking as a material. Drag the rail: 08 at the bottom, 01 at the top.
- * Page scroll stays free. No sticky hole. Copy is Bright Forge homepage language.
+ * Ranking as a material. Pointer height sets the position.
+ * Copy is Bright Forge homepage language, not a live rank claim.
  */
 ---
 
 <section class="rank-stage" id="ranking-stage" data-rank-stage aria-label="How a search result earns an enquiry">
+  <div class="rank-beam" data-rank-beam hidden></div>
   <div class="rank-inner">
     <div class="rank-top">
-      <p class="rank-kicker">Drag to rank</p>
+      <p class="rank-kicker">Move to rank</p>
       <p class="rank-word" data-rank-word>Position 08</p>
     </div>
 
@@ -17,34 +18,15 @@
         <p class="rank-eyebrow">A stranger is searching for an SEO agency in the Philippines.</p>
         <p class="rank-num" data-rank-num>08</p>
         <h2 class="rank-line"><span data-rank-line>Page eight. The enquiry never starts.</span></h2>
-        <p class="rank-note">Not a live ranking. Drag the bar up. Vague copy loses. Named work and a next step win the enquiry.</p>
+        <p class="rank-note">Not a live ranking. Move up the page. Vague copy loses. Named work and a next step win the enquiry.</p>
       </div>
 
-      <div class="rank-play">
-        <div
-          class="rank-rail"
-          data-rank-rail
-          role="slider"
-          aria-label="Search position"
-          aria-valuemin="1"
-          aria-valuemax="8"
-          aria-valuenow="8"
-          aria-valuetext="Position 08"
-          tabindex="0"
-        >
-          <span class="rank-rail-mark rank-rail-mark--top">01</span>
-          <span class="rank-rail-mark rank-rail-mark--bot">08</span>
-          <div class="rank-track"></div>
-          <div class="rank-thumb" data-rank-thumb></div>
-        </div>
-
-        <article class="rank-card" data-rank-card>
-          <p class="rank-url" data-rank-url>example.com/seo</p>
-          <h3 class="rank-title" data-rank-title>Quality Solutions for Your Business</h3>
-          <p class="rank-meta" data-rank-meta>We help brands unlock growth with digital strategies and dedicated support.</p>
-          <a class="rank-cta" data-rank-cta href="/contact/" hidden>Request an SEO Review</a>
-        </article>
-      </div>
+      <article class="rank-card" data-rank-card>
+        <p class="rank-url" data-rank-url>example.com/seo</p>
+        <h3 class="rank-title" data-rank-title>Quality Solutions for Your Business</h3>
+        <p class="rank-meta" data-rank-meta>We help brands unlock growth with digital strategies and dedicated support.</p>
+        <a class="rank-cta" data-rank-cta href="/contact/" hidden>Request an SEO Review</a>
+      </article>
     </div>
   </div>
 </section>
@@ -60,8 +42,7 @@
         url: 'example.com/seo',
         title: 'Quality Solutions for Your Business',
         meta: 'We help brands unlock growth with digital strategies and dedicated support.',
-        lead: false,
-        pos: 8
+        lead: false
       },
       {
         n: '06',
@@ -70,8 +51,7 @@
         url: 'example.com/seo-agency',
         title: 'SEO Services | Trusted Agency',
         meta: 'Full-service SEO, content and reporting for growing companies.',
-        lead: false,
-        pos: 6
+        lead: false
       },
       {
         n: '03',
@@ -80,8 +60,7 @@
         url: 'brightforge.com.ph',
         title: 'SEO Agency Philippines | Bright Forge',
         meta: 'Philippine SEO agency for businesses that need enquiries from search. Technical SEO, content and conversion work. Named team. Private proposal.',
-        lead: false,
-        pos: 3
+        lead: false
       },
       {
         n: '01',
@@ -90,8 +69,7 @@
         url: 'brightforge.com.ph',
         title: 'SEO Agency Philippines for Enquiries, Not Vanity Traffic',
         meta: 'British-led SEO, based in the Philippines. Request an SEO review. We will say if there is a fit.',
-        lead: true,
-        pos: 1
+        lead: true
       }
     ];
 
@@ -103,81 +81,47 @@
     const meta = root.querySelector('[data-rank-meta]');
     const url = root.querySelector('[data-rank-url]');
     const cta = root.querySelector('[data-rank-cta]');
-    const rail = root.querySelector('[data-rank-rail]');
-    const thumb = root.querySelector('[data-rank-thumb]');
-    let cur = -1;
-    let dragging = false;
+    const beam = root.querySelector('[data-rank-beam]');
+    let cur = 0;
 
     function apply(i) {
-      if (i < 0) i = 0;
-      if (i > 3) i = 3;
+      cur = i;
       const s = stages[i];
-      if (i !== cur) {
-        cur = i;
-        if (num) num.textContent = s.n;
-        if (word) word.textContent = s.word;
-        if (line) line.textContent = s.line;
-        if (title) title.textContent = s.title;
-        if (meta) meta.textContent = s.meta;
-        if (url) url.textContent = s.url;
-        if (cta) cta.hidden = !s.lead;
-        if (card) {
-          card.style.transform = 'translateY(' + (-i * 8) + 'px)';
-          card.classList.toggle('is-lead', s.lead);
-        }
-        if (rail) {
-          rail.setAttribute('aria-valuenow', String(s.pos));
-          rail.setAttribute('aria-valuetext', s.word);
-        }
+      if (num) num.textContent = s.n;
+      if (word) word.textContent = s.word;
+      if (line) line.textContent = s.line;
+      if (title) title.textContent = s.title;
+      if (meta) meta.textContent = s.meta;
+      if (url) url.textContent = s.url;
+      if (cta) cta.hidden = !s.lead;
+      if (card) {
+        card.style.transform = 'translateY(' + (-i * 8) + 'px)';
+        card.classList.toggle('is-lead', s.lead);
       }
-      if (thumb) thumb.style.top = (3 - i) * (100 / 3) + '%';
     }
 
-    function fromRailY(clientY) {
-      if (!rail) return 0;
-      const r = rail.getBoundingClientRect();
+    function fromY(clientY) {
+      const r = root.getBoundingClientRect();
       const t = (clientY - r.top) / r.height;
-      if (t > 0.75) return 0;
+      if (t > 0.72) return 0;
       if (t > 0.5) return 1;
-      if (t > 0.25) return 2;
+      if (t > 0.28) return 2;
       return 3;
     }
 
-    function onPointerDown(e) {
-      if (e.target.closest('a')) return;
-      dragging = true;
-      if (rail && e.pointerId != null && rail.setPointerCapture) {
-        try { rail.setPointerCapture(e.pointerId); } catch (err) {}
+    function move(e) {
+      if (e.target && e.target.closest && e.target.closest('a')) return;
+      const pt = e.touches ? e.touches[0] : e;
+      const r = root.getBoundingClientRect();
+      if (beam) {
+        beam.hidden = false;
+        beam.style.top = (pt.clientY - r.top) + 'px';
       }
-      apply(fromRailY(e.clientY));
+      apply(fromY(pt.clientY));
     }
 
-    function onPointerMove(e) {
-      if (!dragging) return;
-      apply(fromRailY(e.clientY));
-    }
-
-    function onPointerUp() {
-      dragging = false;
-    }
-
-    if (rail) {
-      rail.addEventListener('pointerdown', onPointerDown);
-      rail.addEventListener('pointermove', onPointerMove);
-      rail.addEventListener('pointerup', onPointerUp);
-      rail.addEventListener('pointercancel', onPointerUp);
-      rail.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowUp' || e.key === 'ArrowRight') {
-          e.preventDefault();
-          apply(cur + 1);
-        }
-        if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') {
-          e.preventDefault();
-          apply(cur - 1);
-        }
-      });
-    }
-
+    root.addEventListener('pointermove', move);
+    root.addEventListener('pointerdown', move);
     apply(0);
   }
 </script>
@@ -185,15 +129,32 @@
 <style>
   .rank-stage {
     position: relative;
-    overflow: clip;
+    overflow: hidden;
+    min-height: 100svh;
     color: #f4f1ea;
     background: #0d0f1a;
-    padding: 3.5rem 0 4rem;
+    touch-action: pan-y;
+  }
+  .rank-beam {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #f0622a;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 2;
   }
   .rank-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100svh;
     max-width: 80rem;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 2rem 1.5rem 2.5rem;
   }
   .rank-top {
     display: flex;
@@ -207,12 +168,11 @@
   .rank-word { color: #f0622a; }
   .rank-grid {
     display: grid;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: end;
-    margin-top: 1.75rem;
   }
   @media (min-width: 900px) {
-    .rank-grid { grid-template-columns: 1.05fr 0.95fr; }
+    .rank-grid { grid-template-columns: 1.15fr 0.85fr; }
   }
   .rank-eyebrow {
     margin: 0;
@@ -221,7 +181,7 @@
   }
   .rank-num {
     margin: 0.2rem 0 0;
-    font-size: clamp(5rem, 16vw, 10rem);
+    font-size: clamp(5.5rem, 16vw, 11rem);
     line-height: 0.85;
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -241,62 +201,12 @@
     font-size: 0.9rem;
     line-height: 1.55;
   }
-  .rank-play {
-    display: grid;
-    grid-template-columns: 3.25rem 1fr;
-    gap: 1rem;
-    align-items: stretch;
-    min-height: 16rem;
-  }
-  .rank-rail {
-    position: relative;
-    touch-action: none;
-    cursor: ns-resize;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-  .rank-track {
-    position: absolute;
-    left: 50%;
-    top: 0.7rem;
-    bottom: 0.7rem;
-    width: 3px;
-    margin-left: -1.5px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.14);
-  }
-  .rank-thumb {
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    width: 1.35rem;
-    height: 1.35rem;
-    margin-left: -0.675rem;
-    margin-top: -0.675rem;
-    border-radius: 999px;
-    background: #f0622a;
-    box-shadow: 0 0 0 6px rgba(240,98,42,0.18);
-    pointer-events: none;
-  }
-  .rank-rail-mark {
-    position: absolute;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
-    color: #9aa3b5;
-    pointer-events: none;
-  }
-  .rank-rail-mark--top { top: 0; }
-  .rank-rail-mark--bot { bottom: 0; }
   .rank-card {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 1.25rem;
     background: #121526;
     padding: 1.35rem 1.4rem 1.5rem;
     transition: transform 0.2s ease, border-color 0.2s ease;
-    align-self: end;
   }
   .rank-card.is-lead { border-color: rgba(240,98,42,0.55); }
   .rank-url {
