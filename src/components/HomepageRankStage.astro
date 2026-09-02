@@ -1,70 +1,33 @@
 ---
 /**
- * Ranking as a material. Pointer height sets the position.
+ * Ranking as a material. Scroll through the section to climb the result.
  * Copy is Bright Forge homepage language, not a live rank claim.
  */
-const stages = [
-  {
-    n: '08',
-    word: 'Position 08',
-    line: 'Page eight. The enquiry never starts.',
-    url: 'example.com/seo',
-    title: 'Quality Solutions for Your Business',
-    meta: 'We help brands unlock growth with digital strategies and dedicated support.',
-    lead: false
-  },
-  {
-    n: '06',
-    word: 'Position 06',
-    line: 'People see you. They pick someone else.',
-    url: 'example.com/seo-agency',
-    title: 'SEO Services | Trusted Agency',
-    meta: 'Full-service SEO, content and reporting for growing companies.',
-    lead: false
-  },
-  {
-    n: '03',
-    word: 'Position 03',
-    line: 'The job is named. Rankings are the means.',
-    url: 'brightforge.com.ph',
-    title: 'SEO Agency Philippines | Bright Forge',
-    meta: 'Philippine SEO agency for businesses that need enquiries from search. Technical SEO, content and conversion work. Named team. Private proposal.',
-    lead: false
-  },
-  {
-    n: '01',
-    word: 'Position 01',
-    line: 'Enquiries are the job. The first screen has to take the click.',
-    url: 'brightforge.com.ph',
-    title: 'SEO Agency Philippines for Enquiries, Not Vanity Traffic',
-    meta: 'British-led SEO, based in the Philippines. Request an SEO review. We will say if there is a fit.',
-    lead: true
-  }
-];
 ---
 
 <section class="rank-stage" id="ranking-stage" data-rank-stage aria-label="How a search result earns an enquiry">
-  <div class="rank-beam" data-rank-beam hidden></div>
-  <div class="rank-inner">
-    <div class="rank-top">
-      <p class="rank-kicker">Move to rank · tap to lock</p>
-      <p class="rank-word" data-rank-word>Position 08</p>
-    </div>
-
-    <div class="rank-grid">
-      <div class="rank-copy">
-        <p class="rank-eyebrow">A stranger is searching for an SEO agency in the Philippines.</p>
-        <p class="rank-num" data-rank-num>08</p>
-        <h2 class="rank-line"><span data-rank-line>Page eight. The enquiry never starts.</span></h2>
-        <p class="rank-note">Not a live ranking. This is how title, proof and a next step change whether the click becomes an enquiry.</p>
+  <div class="rank-sticky">
+    <div class="rank-inner">
+      <div class="rank-top">
+        <p class="rank-kicker">Scroll to rank</p>
+        <p class="rank-word" data-rank-word>Position 08</p>
       </div>
 
-      <article class="rank-card" data-rank-card>
-        <p class="rank-url" data-rank-url>example.com/seo</p>
-        <h3 class="rank-title" data-rank-title>Quality Solutions for Your Business</h3>
-        <p class="rank-meta" data-rank-meta>We help brands unlock growth with digital strategies and dedicated support.</p>
-        <a class="rank-cta" data-rank-cta href="/contact/" hidden>Request an SEO Review</a>
-      </article>
+      <div class="rank-grid">
+        <div class="rank-copy">
+          <p class="rank-eyebrow">A stranger is searching for an SEO agency in the Philippines.</p>
+          <p class="rank-num" data-rank-num>08</p>
+          <h2 class="rank-line"><span data-rank-line>Page eight. The enquiry never starts.</span></h2>
+          <p class="rank-note">Not a live ranking. Keep scrolling. Title, proof and a next step change whether the click becomes an enquiry.</p>
+        </div>
+
+        <article class="rank-card" data-rank-card>
+          <p class="rank-url" data-rank-url>example.com/seo</p>
+          <h3 class="rank-title" data-rank-title>Quality Solutions for Your Business</h3>
+          <p class="rank-meta" data-rank-meta>We help brands unlock growth with digital strategies and dedicated support.</p>
+          <a class="rank-cta" data-rank-cta href="/contact/" hidden>Request an SEO Review</a>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -119,81 +82,53 @@ const stages = [
     const meta = root.querySelector('[data-rank-meta]');
     const url = root.querySelector('[data-rank-url]');
     const cta = root.querySelector('[data-rank-cta]');
-    const beam = root.querySelector('[data-rank-beam]');
-    let locked = false;
-    let cur = 0;
+    let cur = -1;
 
     function apply(i) {
+      if (i === cur) return;
       cur = i;
       const s = stages[i];
       if (num) num.textContent = s.n;
-      if (word) word.textContent = locked ? s.word + ' · locked' : s.word;
+      if (word) word.textContent = s.word;
       if (line) line.textContent = s.line;
       if (title) title.textContent = s.title;
       if (meta) meta.textContent = s.meta;
       if (url) url.textContent = s.url;
       if (cta) cta.hidden = !s.lead;
-      if (card) {
-        card.style.transform = 'translateY(' + (-i * 8) + 'px)';
-        card.classList.toggle('is-lead', s.lead);
-      }
+      if (card) card.classList.toggle('is-lead', s.lead);
     }
 
-    function fromY(clientY) {
+    function onScroll() {
       const r = root.getBoundingClientRect();
-      const t = (clientY - r.top) / r.height;
-      if (t > 0.72) return 0;
-      if (t > 0.5) return 1;
-      if (t > 0.28) return 2;
-      return 3;
+      const total = Math.max(1, root.offsetHeight - window.innerHeight);
+      const p = Math.min(1, Math.max(0, -r.top / total));
+      apply(p < 0.25 ? 0 : p < 0.5 ? 1 : p < 0.75 ? 2 : 3);
     }
 
-    function move(e) {
-      const pt = e.touches ? e.touches[0] : e;
-      const r = root.getBoundingClientRect();
-      if (beam) {
-        beam.hidden = false;
-        beam.style.top = (pt.clientY - r.top) + 'px';
-      }
-      if (!locked) apply(fromY(pt.clientY));
-    }
-
-    root.addEventListener('pointermove', move);
-    root.addEventListener('touchmove', (e) => { e.preventDefault(); move(e); }, { passive: false });
-    root.addEventListener('click', (e) => {
-      if (e.target.closest('a')) return;
-      locked = !locked;
-      apply(cur);
-    });
-    apply(0);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
   }
 </script>
 
 <style>
   .rank-stage {
     position: relative;
-    overflow: hidden;
-    min-height: 100svh;
+    height: 180vh;
     color: #f4f1ea;
     background: #0d0f1a;
   }
-  .rank-beam {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: #f0622a;
-    opacity: 0.7;
-    pointer-events: none;
-    z-index: 2;
+  .rank-sticky {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    overflow: hidden;
   }
   .rank-inner {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100svh;
+    height: 100%;
     max-width: 80rem;
     margin: 0 auto;
     padding: 2rem 1.5rem 2.5rem;
@@ -212,6 +147,7 @@ const stages = [
     display: grid;
     gap: 2.5rem;
     align-items: end;
+    padding-bottom: 1rem;
   }
   @media (min-width: 900px) {
     .rank-grid { grid-template-columns: 1.15fr 0.85fr; }
@@ -223,7 +159,7 @@ const stages = [
   }
   .rank-num {
     margin: 0.2rem 0 0;
-    font-size: clamp(5.5rem, 16vw, 11rem);
+    font-size: clamp(5rem, 14vw, 10rem);
     line-height: 0.85;
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -248,7 +184,7 @@ const stages = [
     border-radius: 1.25rem;
     background: #121526;
     padding: 1.35rem 1.4rem 1.5rem;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: border-color 0.2s ease;
   }
   .rank-card.is-lead { border-color: rgba(240,98,42,0.55); }
   .rank-url {
