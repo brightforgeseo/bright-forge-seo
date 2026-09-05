@@ -94,8 +94,8 @@ import "../styles/legacy.css";
               <div class="mega-column">
                 <h3 class="column-title">Strategy & Growth</h3>
                 <div class="service-links">
-                  <a href="/international-seo-services/" class="service-link"><i class="fas fa-globe"></i><div class="service-info"><strong>International SEO</strong><span>Country research and regional page ownership</span></div></a>
-                  <a href="/b2b-seo-services/" class="service-link"><i class="fas fa-briefcase"></i><div class="service-info"><strong>B2B SEO</strong><span>Consultancy and professional-service search</span></div></a>
+                  <a href="/international-seo-services/" class="service-link"><span class="menu-emoji" aria-hidden="true">🌍</span><div class="service-info"><strong>International SEO</strong><span>Country research and regional page ownership</span></div></a>
+                  <a href="/b2b-seo-services/" class="service-link"><span class="menu-emoji" aria-hidden="true">💼</span><div class="service-info"><strong>B2B SEO</strong><span>Consultancy and professional-service search</span></div></a>
                   <a href="/seo-audit-services/" class="service-link">
                     <i class="fas fa-search"></i>
                     <div class="service-info">
@@ -131,10 +131,10 @@ import "../styles/legacy.css";
               <div class="mega-column">
                 <h3 class="column-title">Partnerships & Other Services</h3>
                 <div class="service-links">
-                  <a href="/seo-services-new-zealand/" class="service-link">
-                    <i class="fas fa-globe"></i>
-                    <div class="service-info"><strong>SEO for New Zealand</strong><span>NZ market campaigns and published work</span></div>
-                  </a>
+                  <a href="/seo-services-uk/" class="service-link"><span class="menu-emoji" aria-hidden="true">🇬🇧</span><div class="service-info"><strong>SEO for UK</strong><span>UK campaigns and agency delivery</span></div></a>
+                  <a href="/seo-services-usa/" class="service-link"><span class="menu-emoji" aria-hidden="true">🇺🇸</span><div class="service-info"><strong>SEO for USA</strong><span>US search and service-page campaigns</span></div></a>
+                  <a href="/seo-services-australia/" class="service-link"><span class="menu-emoji" aria-hidden="true">🇦🇺</span><div class="service-info"><strong>SEO for Australia</strong><span>Australian search and specialist work</span></div></a>
+                  <a href="/seo-services-new-zealand/" class="service-link"><span class="menu-emoji" aria-hidden="true">🇳🇿</span><div class="service-info"><strong>SEO for New Zealand</strong><span>NZ market campaigns and published work</span></div></a>
                   <a href="/website-migration-services/" class="service-link">
                     <i class="fas fa-rocket"></i>
                     <div class="service-info">
@@ -408,9 +408,12 @@ import "../styles/legacy.css";
         </button>
         <div class="mobile-dropdown-content">
           <a href="/seo-services-philippines/" class="mobile-nav-link"><span>All SEO Services</span></a>
-          <a href="/international-seo-services/" class="mobile-nav-link"><span>International SEO</span></a>
-          <a href="/b2b-seo-services/" class="mobile-nav-link"><span>B2B SEO</span></a>
-          <a href="/seo-services-new-zealand/" class="mobile-nav-link"><span>SEO for New Zealand</span></a>
+          <a href="/international-seo-services/" class="mobile-nav-link"><span><span aria-hidden="true">🌍</span> International SEO</span></a>
+          <a href="/b2b-seo-services/" class="mobile-nav-link"><span><span aria-hidden="true">💼</span> B2B SEO</span></a>
+          <a href="/seo-services-uk/" class="mobile-nav-link"><span><span aria-hidden="true">🇬🇧</span> SEO for UK</span></a>
+          <a href="/seo-services-usa/" class="mobile-nav-link"><span><span aria-hidden="true">🇺🇸</span> SEO for USA</span></a>
+          <a href="/seo-services-australia/" class="mobile-nav-link"><span><span aria-hidden="true">🇦🇺</span> SEO for Australia</span></a>
+          <a href="/seo-services-new-zealand/" class="mobile-nav-link"><span><span aria-hidden="true">🇳🇿</span> SEO for New Zealand</span></a>
           <a href="/technical-seo-services-philippines/" class="mobile-nav-link"><span><i class="fas fa-cog"></i> Technical SEO</span></a>
           <a href="/on-page-seo-services-philippines/" class="mobile-nav-link"><span><i class="fas fa-file-alt"></i> On-Page SEO</span></a>
           <a href="/content-seo-services-philippines/" class="mobile-nav-link"><span><i class="fas fa-pen"></i> Content SEO</span></a>
@@ -606,6 +609,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style>
+  .service-link > .menu-emoji { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 32px; font-size: 24px; line-height: 1.25; }
 /* MOBILE MENU OVERRIDES - HIGHEST SPECIFICITY */
 @media screen and (max-width: 1200px), screen and (hover: none) and (pointer: coarse) {
   /* Hide desktop navigation */
