@@ -1,0 +1,14 @@
+---
+interface PanelRow { title:string; body:string; href:string; label:string; }
+interface Props { panel:{id:string;title:string;highlight:string;intro:string;rows:PanelRow[]}; }
+const {panel}=Astro.props;
+---
+<section class="service-evidence" id={panel.id} aria-labelledby={`${panel.id}-heading`}>
+  <div class="evidence-wrap">
+    <div class="evidence-intro"><p class="evidence-eyebrow">Scope, Evidence and Delivery</p><h2 id={`${panel.id}-heading`}>{panel.title} <span>{panel.highlight}</span></h2><p>{panel.intro}</p></div>
+    <div class="evidence-rows">{panel.rows.map(row=><article class="evidence-row"><h3>{row.title}</h3><div><p>{row.body}</p><a href={row.href}>{row.label}</a></div></article>)}</div>
+  </div>
+</section>
+<style>
+.service-evidence{background:#111422;color:#d0d3de;padding:clamp(3rem,6vw,5.5rem) 0}.evidence-wrap{width:min(1120px,calc(100% - 2.5rem));margin-inline:auto;display:grid;grid-template-columns:1fr 1.65fr;gap:3rem;align-items:start}.evidence-eyebrow{color:#f0622a;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}.service-evidence h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.15;font-weight:800;color:white;margin:0 0 1.3rem}.service-evidence h2 span{color:#f0622a}.service-evidence p{line-height:1.8;margin:0 0 1rem}.evidence-row{padding:1.6rem 0;border-top:1px solid #ffffff25}.evidence-row h3{font-size:1.15rem;line-height:1.4;color:white;font-weight:700;margin:0 0 .8rem}.evidence-row a{color:#ff956c;text-decoration:underline;text-underline-offset:.2em;line-height:1.6}.evidence-row a:focus-visible{outline:2px solid #f0622a;outline-offset:4px}@media(max-width:800px){.evidence-wrap{grid-template-columns:1fr;gap:1.5rem;width:calc(100% - 2rem)}}
+</style>

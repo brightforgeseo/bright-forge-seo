@@ -1,0 +1,74 @@
+{
+  "seo-services-uk": {
+    "id": "uk-campaign-decisions", "title": "Choose the Right UK Campaign", "highlight": "Before Expanding the Scope", "intro": "A UK campaign needs more than British spelling. We agree the commercial pages, buyers and evidence that should drive the work before turning a broad keyword list into new pages.",
+    "rows": [
+      {"title": "For an Agency", "body": "Start with the client work your team cannot reliably cover: a technical backlog, an audit, implementation or reporting. We agree the handover format and your approval point. Your agency owns client communication; delivery dates reflect the actual scope.", "href": "/white-label-seo-services-philippines/", "label": "Review the white-label delivery model"},
+      {"title": "For a Store or Software Business", "body": "We compare the pages UK buyers use to evaluate the offer, not just the queries with the largest volume. Collection pages, product comparisons and use cases need different proof. Our published Speediance UK work is one example to assess, not a promise that another campaign will repeat its growth.", "href": "/case-studies/speediance-uk-fitness-seo/", "label": "Read the published UK store work"},
+      {"title": "For Reporting and Review", "body": "We separate searches made in the UK from queries that merely mention the UK. The report identifies the landing pages receiving that visibility and completed changes. GBP scope and review windows are agreed before delivery; we do not present our Philippine team as a British office.", "href": "/seo-audit-services/", "label": "Start with an evidence-led audit"}
+    ]
+  },
+  "seo-services-usa": {
+    "id": "us-campaign-decisions", "title": "Define the US Market", "highlight": "Before Buying a National Campaign", "intro": "A business selling nationally, a consultancy serving a specialist industry and a contractor working in one state do not need the same search plan.",
+    "rows": [
+      {"title": "National Store or Product", "body": "We prioritise the categories, products and comparison journeys you can genuinely fulfil across the country. State and city names belong on a page only where they change the offer. They are not a substitute for catalogue quality, technical access or useful buying information.", "href": "/ecommerce-seo-services/", "label": "Review ecommerce SEO coverage"},
+      {"title": "A Specific Service Area", "body": "For a local business, we map actual service boundaries and eligibility before working on location pages or Business Profile information. A remotely delivered campaign cannot create proximity. We distinguish organic service-page work from map visibility tied to your real location.", "href": "/local-seo-services-philippines/", "label": "See how local SEO is scoped"},
+      {"title": "A Checkable Delivery Agreement", "body": "We agree the USD scope, access, review contact and deadlines. The handover identifies changed URLs, checks performed and decisions still needed. Search Console country data and agreed US queries are reported separately from other markets; overnight handovers do not promise overnight results.", "href": "/technical-seo-services-philippines/", "label": "Review technical implementation support"}
+    ]
+  },
+  "seo-services-australia": {
+    "id": "australian-campaign-decisions", "title": "Build Around Australian Buyers", "highlight": "Not a Country-Name Template", "intro": "We start with the Australian offer, its search competition and the pages that should earn the next enquiry or sale. Shared products do not make Australian and New Zealand campaigns interchangeable.",
+    "rows": [
+      {"title": "An Australian Ecommerce Offer", "body": "We check product availability, catalogue structure and local buying information before planning more content. Published Speediance Australia work provides an example of an Australian storefront campaign. It does not establish that every platform change caused the reported result.", "href": "/case-studies/speediance-au-fitness-seo/", "label": "Read the Australian case study"},
+      {"title": "A Technical or Specialist Buying Journey", "body": "A service buyer may need scope, specifications, credentials or a clear quote path more than another introductory article. We identify which existing pages can answer those questions and which technical issues prevent those pages being found.", "href": "/technical-seo-services-philippines/", "label": "Review technical SEO delivery"},
+      {"title": "Separate Regional Measurement", "body": "We agree AUD scope and meeting windows for your Australian location. Country-filtered search data keeps Australian demand separate from NZ exposure. If both countries matter, their page ownership and offer differences are planned together without combining their performance into one success claim.", "href": "/seo-services-new-zealand/", "label": "See the New Zealand campaign approach"}
+    ]
+  },
+  "white-label-seo-services-philippines": {
+    "id": "agency-acceptance-checks", "title": "Agree What Your Agency", "highlight": "Can Sign Off", "intro": "An outsourced deliverable should be easy for your account lead to review and explain. We define the approval boundary before your client is waiting for it.",
+    "rows": [
+      {"title": "The Brief and Access Boundary", "body": "Name the client website, market, deliverable and decision-maker. State whether we are diagnosing, preparing an implementation pack or making approved changes. Access should match that responsibility. Client contact remains with your agency unless a different arrangement is explicitly agreed.", "href": "/seo-audit-services/", "label": "See the audit scope"},
+      {"title": "The Reviewable Handover", "body": "For an implementation pack, the handover identifies the target URL, recommended action, reason and acceptance check. For completed work, it distinguishes what changed from what remains awaiting access or approval. A prepared recommendation is not described as a live fix.", "href": "/technical-seo-services-philippines/", "label": "Review technical delivery boundaries"},
+      {"title": "The Market and Reporting Rules", "body": "We confirm spelling, currency, market targeting and your reporting format before delivery. UK, US, Australian and New Zealand results remain distinct where that is the campaign scope. We agree escalation and review windows rather than promise every task will be finished by the next morning.", "href": "/seo-services-new-zealand/", "label": "Explore NZ market delivery"}
+    ]
+  },
+  "technical-seo-services-philippines": {
+    "id": "technical-acceptance-checks", "title": "A Technical Fix Needs", "highlight": "A Testable Outcome", "intro": "A crawl finding is the beginning of the diagnosis, not permission to change every affected template. We tie the work to important pages and a clear verification method.",
+    "rows": [
+      {"title": "The Page and the Fault", "body": "We identify the affected URL or template, the observed behaviour and why it matters. A blocked page, conflicting canonical and slow template are different problems. If a tool cannot fetch a page, we check another access path before calling the destination broken.", "href": "/seo-audit-services/", "label": "Review the audit process"},
+      {"title": "The Approved Change", "body": "The implementation notes specify what should change, dependencies and what must be preserved. For country versions, we check reciprocal regional tags and canonical ownership together. A tag added to one page does not prove the intended version will be selected in search.", "href": "/website-migration-services/", "label": "See migration controls"},
+      {"title": "The Live Check", "body": "We check the released URL and relevant rendered behaviour, not only the CMS field or a successful build. Search processing may take longer than deployment. Reporting separates the technical change from subsequent clicks, enquiries or ranking movement.", "href": "/seo-services-new-zealand/", "label": "See country-specific campaign measurement"}
+    ]
+  },
+  "seo-audit-services": {
+    "id": "audit-decision-handover", "title": "An Audit Should Make", "highlight": "The Next Decision Easier", "intro": "The useful output is a prioritised decision, not the largest possible issue count. We distinguish missing pages, weak existing owners and technical problems before recommending a build.",
+    "rows": [
+      {"title": "Separate Evidence From Assumptions", "body": "We record the source, date, market and exact page behind a finding. An absent keyword in a third-party database is not proof that the site has never appeared for it. Search Console queries and existing pages help decide whether the right action is an improvement or a genuinely new owner.", "href": "/keyword-research-services/", "label": "Review keyword and competitor research"},
+      {"title": "Give Each Action an Owner", "body": "Recommendations identify the URL, proposed change, commercial reason and dependency. We distinguish work your team can implement from decisions needing access, budget or approval. Similar findings are grouped when one template repair will address them safely.", "href": "/technical-seo-services-philippines/", "label": "See implementation support"},
+      {"title": "Measure the Relevant Market", "body": "For an international audit, searcher country, query wording and landing page are reviewed separately. A searcher located abroad may still be looking for your home-market offer. The measurement plan reflects the actual market and the data available.", "href": "/international-seo-services/", "label": "See international campaign planning"}
+    ]
+  },
+  "website-migration-services": {
+    "id": "migration-release-decisions", "title": "Separate Launch Approval", "highlight": "From Search Recovery", "intro": "A migration needs an agreed release decision and a way to handle defects afterwards. Neither a clean build nor a working homepage proves the important old URLs have survived.",
+    "rows": [
+      {"title": "Before the Release", "body": "We retain the old-to-new URL map and priority-page baseline. Each important destination needs an appropriate response, relevant content and consistent canonical and indexing controls. A domain move also needs a distinct risk decision; changing the name is not an SEO strategy by itself.", "href": "/seo-audit-services/", "label": "Review the pre-migration audit scope"},
+      {"title": "At the Release", "body": "We check live redirects, destination pages, navigation and key enquiry paths against the agreed plan. Where an issue appears, the handover states the affected surface, impact and responsible team. Unrelated redesign changes should not be bundled into emergency migration repairs.", "href": "/development/", "label": "See development and launch support"},
+      {"title": "After the Release", "body": "We compare important query and page groups over suitable periods, including each country where relevant. Search Console can continue reporting an old URL while changes are processed. That must be distinguished from a redirect that is genuinely wrong or a new destination that cannot be indexed.", "href": "/technical-seo-services-philippines/", "label": "Review technical follow-through"}
+    ]
+  },
+  "ecommerce-seo-services": {
+    "id": "platform-implementation-detail", "title": "Platform-Specific SEO", "highlight": "Without Losing the Buyer Journey", "intro": "Shopify, WooCommerce and WordPress can expose different technical problems. We connect the platform work to the categories and products shoppers actually need rather than treat a plugin setting as the whole campaign.",
+    "rows": [
+      {"title": "Shopify Collections and Product Paths", "body": "We review collection ownership, product variants, internal links and the canonical version of duplicate product paths. Theme changes and apps need checks on the rendered page. An unavailable or discontinued item needs a commercially sensible destination, not an automatic redirect to the homepage.", "href": "/website-migration-services/", "label": "Plan a store migration safely"},
+      {"title": "WooCommerce Categories and Filters", "body": "We distinguish useful category, brand and product pages from filter combinations and internal search results. Plugin configuration should be checked against the HTML shoppers and crawlers receive. Indexing every variation can create competing pages without adding a useful buying destination.", "href": "/technical-seo-services-philippines/", "label": "Review technical catalogue checks"},
+      {"title": "WordPress Content and Regional Stores", "body": "We check how editorial pages support the catalogue and whether headings, canonicals and structured data remain consistent after template changes. For regional stores, stock, currency, delivery information and country ownership need separate checks. We distinguish market differences from platform faults before changing templates across every store.", "href": "/international-seo-services/", "label": "Plan regional page ownership"}
+    ]
+  },
+  "saas-seo-services": {
+    "id": "saas-measurement-boundaries", "title": "Connect Software Searches", "highlight": "to the Right Next Step", "intro": "More impressions can reflect a wider query mix rather than stronger buying intent. We separate discovery content, product evaluation and signup journeys before judging the campaign.",
+    "rows": [
+      {"title": "Choose the Conversion That Exists", "body": "A self-serve trial, sales-led demo and free app install are different outcomes. We agree which event can be measured reliably and which team owns that measurement. Search clicks are not labelled pipeline or revenue when the connection has not been established.", "href": "/case-studies/football-app-seo/", "label": "Review published software search work"},
+      {"title": "Give Product Pages a Clear Job", "body": "Feature, use-case and comparison pages should resolve different buyer questions. We compare existing coverage before commissioning another page, and avoid competitor-alternative claims that the actual product cannot support. Implementation priorities depend on the product and its route to purchase.", "href": "/keyword-research-services/", "label": "See intent and competitor research"},
+      {"title": "Keep Country and Channel Results Separate", "body": "Country-filtered organic search, AI referrals and paid activity are not interchangeable. We report the source and period, then explain what changed in the pages and campaign. The published SaaS examples illustrate specific work, not a guaranteed conversion rate for another product.", "href": "/seo-services-usa/", "label": "Discuss a US software campaign"}
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
+import serviceEvidence from '../data/serviceEvidence.json';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
@@ -43,7 +45,7 @@ const faqs = [
   },
   {
     question: 'How do the time zones between the US and the Philippines work?',
-    answer: "Manila is 12 to 13 hours ahead of US Eastern time and 15 to 16 ahead of Pacific, which turns the difference into an overnight turnaround: brief us before you log off, and finished work is waiting when you start your next day. For calls, our morning overlaps with US evenings and our evening with US mornings — we schedule around your calendar, not ours."
+    answer: "We agree a call window and handover schedule for your US time zone before work starts. The time difference can support asynchronous reviews, but it does not make every audit, fix or content assignment a next-day job. Delivery dates depend on scope, access and review requirements; ranking improvements follow their own timeline."
   },
   {
     question: 'Will my content be written in American English?',
@@ -67,7 +69,7 @@ const schema = JSON.stringify({
       name: 'SEO Services USA',
       serviceType: 'Search engine optimization',
       description:
-        'Senior SEO services for United States businesses: technical SEO, American-English content, US-relevant link building, local SEO and AI search optimization, delivered overnight from the Philippines.',
+        'SEO services for United States businesses: technical SEO, American English content, relevant authority building and search measurement, delivered from the Philippines to an agreed scope.',
       url: 'https://brightforge.com.ph/seo-services-usa/',
       areaServed: { '@type': 'Country', name: 'United States' },
       provider: {
@@ -88,8 +90,8 @@ const schema = JSON.stringify({
 ---
 
 <MainLayout
-  title="SEO Services USA | Senior SEO Team at Offshore Rates"
-  description="SEO services for US businesses from a senior Philippines team. Real case-study results, American-English content, US links — brief at 5pm ET, done by 8am."
+  title="SEO Services for US Businesses | Bright Forge"
+  description="SEO for US businesses from our Philippines team. Technical audits, ecommerce and SaaS work with clear scope and reporting. Discuss your search priorities."
   canonical="https://brightforge.com.ph/seo-services-usa/"
   type="service"
   faqs={faqs}
@@ -110,7 +112,7 @@ const schema = JSON.stringify({
   >
     <Fragment slot="story">
       <p>Bright Forge SEO helps US ecommerce brands, SaaS companies and service businesses compete on google.com with senior technical SEO, American-English content, US-relevant link building and reporting that answers the only question that matters: is this making us money?</p>
-      <p>We are based in the Philippines, which gives US clients two structural advantages: your budget buys execution instead of agency overhead, and the 12-hour time difference means you brief us at the end of your day and finished work is in your inbox the next morning.</p>
+      <p>We are based in the Philippines. We agree the US market, delivery scope, access and review schedule before work starts. A national ecommerce campaign needs a different plan from a service business targeting one state.</p>
       <p>The proof is published, not promised: case studies with real Search Console numbers — including a 137.5% organic click increase in three months — and a 5.0 rating on Google from 12 reviews.</p>
     </Fragment>
 
@@ -259,8 +261,8 @@ const schema = JSON.stringify({
     <div class="container">
       <div class="section-head centered">
         <p class="eyebrow">How campaigns run</p>
-        <h2>Your first 90 days, <span>delivered overnight</span></h2>
-        <p>The overnight cycle is not a slogan — it is the delivery schedule. Everything below lands in your inbox by your morning, and we are still online for questions when you read it.</p>
+        <h2>Your First 90 Days, <span>With Clear Review Points</span></h2>
+        <p>We agree priorities and delivery dates around access, implementation effort and your review process. This is a campaign sequence, not a promise of overnight completion or a fixed ranking result.</p>
       </div>
 
       <div class="process-grid">
@@ -367,14 +369,14 @@ const schema = JSON.stringify({
         <p class="eyebrow">The practical stuff</p>
         <h2>The 12-hour difference is <span>a delivery superpower</span></h2>
         <p class="lead">Manila is roughly 12 hours ahead of New York and 15 ahead of Los Angeles. Our entire workday fits inside your night.</p>
-        <p>Send requirements at 5pm Eastern and we are just starting our day. By your next morning the audit is done, the fixes are documented, the content is drafted. US agencies charge rush rates for that turnaround; for us it is just the clock. And because our morning overlaps your evening (and vice versa), same-day calls are never a problem.</p>
+        <p>Asynchronous handovers let your team review work during its own day. We confirm meeting windows, deadlines and escalation contacts in advance rather than promise round-the-clock availability. Complex fixes and audits still need the time and access their scope requires.</p>
       </div>
       <div class="timezone-card">
         <h3>A typical working day</h3>
         <ul>
-          <li><strong>5:00pm ET / 5:00am PH</strong> — you send briefs and feedback before logging off</li>
-          <li><strong>Your overnight</strong> — audits, fixes, content and reporting completed during our business hours</li>
-          <li><strong>8:00am ET / 8:00pm PH</strong> — deliverables in your inbox; we are still online for questions</li>
+          <li><strong>Your Brief</strong>: agree priorities, access and the decision needed from your team.</li>
+          <li><strong>Our Delivery Window</strong>: research, implementation and QA follow the agreed scope.</li>
+          <li><strong>Your Review</strong>: receive completed work, open questions and the next agreed checkpoint.</li>
         </ul>
       </div>
     </div>
@@ -450,6 +452,8 @@ const schema = JSON.stringify({
       </div>
     </div>
   </section>
+
+  <ServiceEvidencePanel panel={serviceEvidence['seo-services-usa']} />
 
   <ContactSection slot="contact" />
   <Footer slot="footer" />

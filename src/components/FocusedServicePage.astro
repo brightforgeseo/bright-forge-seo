@@ -1,0 +1,27 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from './LegacyHeader.astro';
+import Footer from './Footer.astro';
+import ContactSection from './ContactSection.astro';
+import Hero from './Hero.astro';
+import ButtonPrimary from './ButtonPrimary.astro';
+import ButtonSecondary from './ButtonSecondary.astro';
+const {data}=Astro.props;
+const canonical=`https://brightforge.com.ph/${data.slug}/`;
+const schema={'@context':'https://schema.org','@type':'Service',name:data.name,serviceType:data.name,url:canonical,provider:{'@type':'Organization',name:'Bright Forge SEO',url:'https://brightforge.com.ph/'},description:data.description};
+---
+<MainLayout title={data.metaTitle} description={data.description} canonical={canonical} type="service" faqs={data.faqs}>
+  <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(schema)} /></Fragment>
+  <LegacyHeader slot="header" />
+  <Hero badgeIcon="fas fa-search" badgeText={data.name} title={data.heroTitle} breadcrumbCurrent={data.name}>
+    <Fragment slot="story">{data.intro.map(p=><p>{p}</p>)}</Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="/contact/" text={data.cta} /><ButtonSecondary href="#published-work" text="Review Published Work" /></Fragment>
+  </Hero>
+  <section class="focused-section" id="published-work"><div class="focused-wrap focused-proof"><div><p class="focused-eyebrow">Relevant Experience</p><h2>{data.proofTitle} <span>{data.proofHighlight}</span></h2>{data.proofBody.map(p=><p>{p}</p>)}</div><aside><h3>Read the Evidence</h3>{data.proofLinks.map(a=><p><a href={a.href}>{a.label}</a></p>)}<p class="focused-note">Published results describe individual campaigns and periods. They do not guarantee the outcome of another engagement.</p></aside></div></section>
+  {data.sections.map((section,i)=><section class:list={['focused-section',{'focused-muted':i%2===0}]} id={section.id}><div class="focused-wrap"><p class="focused-eyebrow">{section.eyebrow}</p><h2>{section.title} <span>{section.highlight}</span></h2>{section.body.map(p=><p>{p}</p>)}{section.rows&&<div class="focused-rows">{section.rows.map(row=><article><h3>{row.title}</h3><p>{row.body}</p></article>)}</div>}{section.links&&<div class="focused-links">{section.links.map(a=><a href={a.href}>{a.label}</a>)}</div>}</div></section>)}
+  <section class="focused-section"><div class="focused-wrap"><h2>Your Questions, <span>Before Work Starts</span></h2>{data.faqs.map(f=><details><summary>{f.question}</summary><p>{f.answer}</p></details>)}<div class="focused-actions"><ButtonPrimary href="/contact/" text={data.cta} /></div></div></section>
+  <ContactSection slot="contact" /><Footer slot="footer" />
+</MainLayout>
+<style>
+.focused-section{padding:clamp(3rem,6vw,5.5rem) 0;background:#0d0f1a;color:#d0d3de}.focused-muted{background:#111422}.focused-wrap{width:min(1100px,calc(100% - 2.5rem));margin:auto}.focused-section h2{font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:800;line-height:1.15;color:#fff;margin:.7rem 0 1.5rem}.focused-section h2 span{color:#f0622a}.focused-section h3{font-size:1.2rem;font-weight:700;color:#fff;margin:0 0 .8rem}.focused-section p{line-height:1.8;max-width:82ch;margin:1rem 0}.focused-eyebrow{color:#f0622a;letter-spacing:.1em;text-transform:uppercase;font-weight:700;font-size:.75rem}.focused-proof{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem}.focused-proof aside{padding:2rem;border:1px solid #ffffff22;background:linear-gradient(135deg,#1b2033,#131627);border-radius:14px;align-self:start}.focused-section a{color:#ff956c;text-decoration:underline;text-underline-offset:.2em;line-height:1.6}.focused-note{font-size:.9rem}.focused-rows article{display:grid;grid-template-columns:1fr 2fr;gap:2rem;border-top:1px solid #ffffff22;padding:1.5rem 0}.focused-rows p{margin:0}.focused-links{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1.5rem}.focused-section details{padding:1.2rem 0;border-bottom:1px solid #ffffff25}.focused-section summary{color:#fff;font-weight:700;cursor:pointer;line-height:1.5}.focused-actions{margin-top:2rem}@media(max-width:760px){.focused-proof,.focused-rows article{grid-template-columns:1fr;gap:1.2rem}.focused-wrap{width:calc(100% - 2rem)}.focused-proof aside{padding:1.4rem}}
+</style>

@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
+import serviceEvidence from '../data/serviceEvidence.json';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
@@ -61,8 +63,8 @@ const faqs = [
 ---
 
 <MainLayout
-  title="SEO Services UK | Trusted UK SEO Agency | Bright Forge"
-  description="SEO services for UK businesses with published results — +119% organic traffic in 3 months. Senior technical SEO, content and links, minus London prices."
+  title="SEO Services for UK Businesses | Bright Forge"
+  description="SEO for UK businesses from our Philippines team. Technical work, British English content and published case studies. Discuss your site and priorities."
   canonical="https://brightforge.com.ph/seo-services-uk/"
   type="service"
   faqs={faqs}
@@ -115,7 +117,7 @@ const faqs = [
   <Hero
     badgeIcon="fas fa-globe-europe"
     badgeText="SEO for UK Businesses"
-    title="SEO Services for UK Businesses That Want <span>Proven Results, Not London Retainer Prices</span>"
+    title="SEO Services for UK Businesses With <span>Work You Can Verify</span>"
     breadcrumbCurrent="SEO Services UK"
   >
     <Fragment slot="story">
@@ -482,6 +484,8 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <ServiceEvidencePanel panel={serviceEvidence['seo-services-uk']} />
 
   <ContactSection slot="contact" />
   <Footer slot="footer" />

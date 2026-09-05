@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
+import serviceEvidence from '../data/serviceEvidence.json';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
@@ -61,8 +63,8 @@ const faqs = [
 ---
 
 <MainLayout
-  title="SEO Services Australia | Same-Timezone Specialist Agency"
-  description="Senior SEO for Australian businesses from a team 2–3 hours behind Sydney. Published AU results (+66% organic clicks) and honest AUD pricing guidance."
+  title="SEO Services for Australian Businesses | Bright Forge"
+  description="SEO for Australian businesses from our Philippines team. Ecommerce, technical SEO and published Australian work. Discuss your site and next priorities."
   canonical="https://brightforge.com.ph/seo-services-australia/"
   type="service"
   faqs={faqs}
@@ -413,6 +415,8 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <ServiceEvidencePanel panel={serviceEvidence['seo-services-australia']} />
 
   <ContactSection slot="contact" />
   <Footer slot="footer" />

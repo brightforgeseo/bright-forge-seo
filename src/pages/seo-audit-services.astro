@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
+import serviceEvidence from '../data/serviceEvidence.json';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
@@ -516,6 +518,8 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <ServiceEvidencePanel panel={serviceEvidence['seo-audit-services']} />
 
   <ContactSection />
   <Footer slot="footer" />

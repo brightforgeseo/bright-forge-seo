@@ -6,5 +6,6 @@ export const seoServicesHreflangs = [
   { hreflang: 'en-GB', href: 'https://brightforge.com.ph/seo-services-uk/' },
   { hreflang: 'en-AU', href: 'https://brightforge.com.ph/seo-services-australia/' },
   { hreflang: 'en-US', href: 'https://brightforge.com.ph/seo-services-usa/' },
+  { hreflang: 'en-NZ', href: 'https://brightforge.com.ph/seo-services-new-zealand/' },
   { hreflang: 'x-default', href: 'https://brightforge.com.ph/seo-services-philippines/' },
 ];
