@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import BuyerDecisionSection from "../components/BuyerDecisionSection.astro";
 import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
 import serviceEvidence from '../data/serviceEvidence.json';
 import LegacyHeader from '../components/LegacyHeader.astro';
@@ -211,6 +212,16 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <BuyerDecisionSection id="store-page-roles" eyebrow="Give each page a commercial job" title="The homepage cannot target" emphasis="the whole catalogue.">
+    <p>Ecommerce homepage SEO should explain what the store sells, establish trust and guide shoppers towards the main ranges. Trying to make it rank for every product category weakens that route into the catalogue.</p>
+    <dl>
+      <dt>Homepage: brand and range</dt><dd>Show the core offer, buying conditions and useful paths into priority categories. Internal links should help shoppers choose a range rather than repeat every keyword the business wants to rank for.</dd>
+      <dt>Categories: selection and comparison</dt><dd>Give each commercially distinct range a clear owner. Review filters, product availability and supporting information so the page can answer a category search without creating an indexable URL for every possible combination.</dd>
+      <dt>Products: the purchase decision</dt><dd>Match the page to the actual item, variant and specification. Explain stock and discontinued-product handling, preserve useful URLs and avoid repeating category copy where a buyer needs product detail.</dd>
+    </dl>
+    <p>We map those roles before changing titles or expanding content. When the constraint is the store itself rather than search visibility, <a href="/development/#store-build-scope">review the ecommerce development scope</a> before committing to more SEO activity.</p>
+  </BuyerDecisionSection>
 
   <section class="section darker" id="platforms">
     <div class="container two-col">
