@@ -10,8 +10,6 @@ metaTitle: How UK Firms Should Scope a Philippines SEO Partner
 metaDescription: Scope a Philippines SEO partner with a UK market brief, access list, deliverables and ownership rules so you buy a campaign, not unowned hours.
 ---
 
-# How UK Firms Should Scope a Philippines SEO Partner
-
 UK firms often start the search for a Philippines SEO partner with a rate card. That is the wrong first document. Rate cards tell you what an hour costs. They do not tell you who owns google.co.uk performance, who writes British English, who can change robots.txt, or what happens when Search Console shows a collapse after a redesign. Scope those things before you talk about retainers, or you will buy activity and still have no owner for the ranking problem.
 
 We work with UK companies from Quezon City. The useful part of that arrangement is not the timezone story. It is whether the brief forces the work onto the UK market, the UK site, and the UK buyer. A vague "do SEO" order produces generic English content, US SERP assumptions, and reports that look busy. A tight scope produces pages, links, and technical fixes that can actually compete in the United Kingdom.

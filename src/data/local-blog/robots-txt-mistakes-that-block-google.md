@@ -10,8 +10,6 @@ metaTitle: robots.txt Mistakes That Block Google
 metaDescription: Fix robots.txt mistakes that block Googlebot: leftover Disallow, blocked CSS and JS, wildcards, and using crawl rules when you needed noindex.
 ---
 
-# robots.txt Mistakes That Block Google
-
 robots.txt looks like a small text file, so teams treat it like a comment. Googlebot treats it as the first permission check on the host. A leftover Disallow from staging, a wildcard that matches more than you think, or a rule that blocks the CSS Google needs to render the page will do more damage than a missing meta description. We still find these on otherwise expensive rebuilds.
 
 Google Search Central is blunt about what the file is for. It tells crawlers which URLs they may access. It is mainly a way to manage crawl traffic. It is not the mechanism for keeping a page out of Google Search. If you want a URL out of results, you need noindex (and Google has to be allowed to crawl the page to see it), or you need to password-protect or remove the page. Mixing those jobs up is the most expensive robots.txt mistake we see.

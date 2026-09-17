@@ -10,8 +10,6 @@ metaTitle: Australian Local SEO Run from the Philippines
 metaDescription: Run Australian local SEO from the Philippines without faking an AU office. GBP still needs a real Australian presence, NAP, and service-area rules.
 ---
 
-# Australian Local SEO Run from the Philippines
-
 Australian local SEO can be run from Manila. Google Business Profile cannot be invented from Manila. That distinction is the whole job. A Philippines team can audit listings, clean NAP, write suburb pages that match how people actually search, build review processes, and keep google.com.au landing pages honest. We cannot, and will not, create a fake Australian office so a profile looks local.
 
 We are a Quezon City team. Timezones with Sydney and Melbourne are usable. Language for Australian English is something we already produce. None of that substitutes for Google's rule that a Business Profile has to represent a business that customers can visit, or a business that travels to customers from a real operating location. If you do not have that presence in Australia, you do not have a GBP problem to "optimise". You have an eligibility problem.

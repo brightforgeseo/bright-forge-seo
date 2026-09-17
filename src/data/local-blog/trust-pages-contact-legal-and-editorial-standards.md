@@ -1,5 +1,5 @@
 ---
-title: "Trust Pages: Contact, Legal and Editorial Standards"
+title: Trust Pages: Contact, Legal and Editorial Standards
 slug: trust-pages-contact-legal-and-editorial-standards
 excerpt: Contact details, privacy and editorial rules are how a service site proves it is a real firm. Missing trust pages make every other claim cheaper.
 date: 2026-09-17

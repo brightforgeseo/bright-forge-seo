@@ -10,8 +10,6 @@ metaTitle: Accidental noindex After a Redesign
 metaDescription: Find accidental noindex after a redesign: staging flags, X-Robots-Tag, plugin defaults, and the Search Console checks that prove money pages can return.
 ---
 
-# Accidental noindex After a Redesign
-
 The most common ranking outage we see after a redesign is not a mysterious algorithm. It is a noindex that someone left on. Staging sites need noindex. Production sites that still carry the staging robots meta, the HTTP X-Robots-Tag, or a CMS "discourage search engines" tick do not. Google then does what you asked: it drops or refuses the pages. Traffic falls. The new theme gets the blame.
 
 We treat this as a go-live defect, not as a content problem. If Search Console says Excluded by noindex on URLs that used to earn, stop writing blog consolation and fetch the live HTML and response headers. The instruction is either in the page, in the header, in a plugin default, or in a CDN rule that the new host inherited.

@@ -1,16 +1,14 @@
 ---
 title: Duplicate Title Tags at Scale
 slug: duplicate-title-tags-at-scale
-excerpt: "Duplicate titles are a template problem, not a copywriting problem. Find the pattern, fix the generator, then check Search Console until the copies stop landing in the index."
+excerpt: Duplicate titles are a template problem, not a copywriting problem. Find the pattern, fix the generator, then check Search Console until the copies stop landing in the index.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
 image: /images/blog/duplicate-title-tags-at-scale.webp
-metaTitle: "Duplicate Title Tags at Scale: Fix the Template | Bright Forge"
-metaDescription: "How duplicate titles appear across products, filters and pagination, and how we fix them at template level. Send a crawl if titles are colliding."
+metaTitle: Duplicate Title Tags at Scale: Fix the Template | Bright Forge
+metaDescription: How duplicate titles appear across products, filters and pagination, and how we fix them at template level. Send a crawl if titles are colliding.
 ---
-
-# Duplicate Title Tags at Scale
 
 One duplicate title is an edit. A thousand duplicate titles is a generator. Search Console and every decent crawler will list the collision. The list is not the work. The work is finding which template, parameter, or fallback rule is minting the same string for URLs that are supposed to be different pages.
 

@@ -1,16 +1,14 @@
 ---
-title: "Time Zones, Overlap and Who Owns SEO Strategy"
-slug: "time-zones-overlap-and-who-owns-seo-strategy"
-excerpt: "Overlap hours are a calendar problem. Strategy ownership is a management problem. Mixing them up is how UK and US companies get overnight activity without a decision maker."
+title: Time Zones, Overlap and Who Owns SEO Strategy
+slug: time-zones-overlap-and-who-owns-seo-strategy
+excerpt: Overlap hours are a calendar problem. Strategy ownership is a management problem. Mixing them up is how UK and US companies get overnight activity without a decision maker.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"time-zones-overlap-and-who-owns-seo-strategy".webp
-metaTitle: "Time Zones, Overlap and Who Owns SEO Strategy"
-metaDescription: "How UK and US time zones overlap with a Philippine SEO team, what can run overnight, and why strategy still needs a named owner on both sides."
+image: /images/blog/time-zones-overlap-and-who-owns-seo-strategy.webp
+metaTitle: Time Zones, Overlap and Who Owns SEO Strategy
+metaDescription: How UK and US time zones overlap with a Philippine SEO team, what can run overnight, and why strategy still needs a named owner on both sides.
 ---
-
-# Time Zones, Overlap and Who Owns SEO Strategy
 
 A Philippine team can move tickets while London sleeps and have a written update waiting in New York's morning. That is a real operating advantage. It is also the sentence that gets abused. Overnight production is not overnight strategy. If nobody on the client side owns the bets, the extra hours just produce more pages that should not have been written.
 

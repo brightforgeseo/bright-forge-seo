@@ -1,13 +1,13 @@
 ---
-title: "NAP Consistency for Philippine Businesses"
-slug: "nap-consistency-for-philippine-businesses"
-excerpt: "How name, address, and phone drift across Philippine websites, Facebook, and directories, and how we lock one version before local pack and citation work."
+title: NAP Consistency for Philippine Businesses
+slug: nap-consistency-for-philippine-businesses
+excerpt: How name, address, and phone drift across Philippine websites, Facebook, and directories, and how we lock one version before local pack and citation work.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"nap-consistency-for-philippine-businesses".webp
-metaTitle: "NAP Consistency for Philippine Businesses | Bright Forge"
-metaDescription: "Lock one name, address, and phone across your Philippine site, Google profile, and directories. Inconsistent NAP weakens local trust."
+image: /images/blog/nap-consistency-for-philippine-businesses.webp
+metaTitle: NAP Consistency for Philippine Businesses | Bright Forge
+metaDescription: Lock one name, address, and phone across your Philippine site, Google profile, and directories. Inconsistent NAP weakens local trust.
 ---
 
 NAP is name, address, and phone. It is the dullest part of local SEO and the one Philippine businesses break most often. The Google profile says one string, the website footer says another, Facebook has a third, and the Facebook ads use a mobile number that is not on any of them. Customers still find you. Google has a harder time deciding which record is the business.

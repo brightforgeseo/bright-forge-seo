@@ -1,16 +1,14 @@
 ---
-title: "Brand SERP: What Shows When Someone Googles Your Company"
-slug: "brand-serp-what-shows-when-someone-googles-your-company"
-excerpt: "A brand search is a trust check. Here is what Google actually shows, what you can influence, and what a messy result costs you before a sales call starts."
+title: Brand SERP: What Shows When Someone Googles Your Company
+slug: brand-serp-what-shows-when-someone-googles-your-company
+excerpt: A brand search is a trust check. Here is what Google actually shows, what you can influence, and what a messy result costs you before a sales call starts.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"brand-serp-what-shows-when-someone-googles-your-company".webp
-metaTitle: "Brand SERP: What Shows When Someone Googles Your Company"
-metaDescription: "What appears when someone googles your company name, which blocks you can influence, and how we treat brand SERPs as a trust surface rather than a vanity ranking."
+image: /images/blog/brand-serp-what-shows-when-someone-googles-your-company.webp
+metaTitle: Brand SERP: What Shows When Someone Googles Your Company
+metaDescription: What appears when someone googles your company name, which blocks you can influence, and how we treat brand SERPs as a trust surface rather than a vanity ranking.
 ---
-
-# Brand SERP: What Shows When Someone Googles Your Company
 
 A brand search is rarely idle curiosity. A buyer types your company name after a referral, a sales call, a LinkedIn message, or an ad. A journalist checks you before quoting you. A hire googles you after an offer. What they see is not "position one for your own name." It is a trust page assembled from your site, other people's sites, reviews, news, maps, social profiles, and whatever Google decides belongs in the knowledge panel.
 

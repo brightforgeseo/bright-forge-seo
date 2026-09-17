@@ -1,13 +1,13 @@
 ---
-title: "How Long Local Pack Rankings Take"
-slug: "how-long-local-pack-rankings-take"
-excerpt: "Why local pack timing cannot be sold as a date, what usually has to be true first, and how we talk about wait time for Philippine businesses without ranking promises."
+title: How Long Local Pack Rankings Take
+slug: how-long-local-pack-rankings-take
+excerpt: Why local pack timing cannot be sold as a date, what usually has to be true first, and how we talk about wait time for Philippine businesses without ranking promises.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"how-long-local-pack-rankings-take".webp
-metaTitle: "How Long Local Pack Rankings Take | Bright Forge"
-metaDescription: "Local pack timing depends on the market, the pin, and the site. We will not promise a date. Here is what the wait is actually made of."
+image: /images/blog/how-long-local-pack-rankings-take.webp
+metaTitle: How Long Local Pack Rankings Take | Bright Forge
+metaDescription: Local pack timing depends on the market, the pin, and the site. We will not promise a date. Here is what the wait is actually made of.
 ---
 
 Nobody honest can tell you the week your business will enter the Google local pack. We will not sell a date, a guaranteed slot, or a “page one in 30 days” package. The pack is a competitive result that changes with the searcher’s location, the query, and the other businesses Google already trusts. What we can do is explain the work that has to happen, the waits that are mechanical, and the reasons two shops on the same street move at different speeds.

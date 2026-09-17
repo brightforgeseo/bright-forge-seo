@@ -1,16 +1,14 @@
 ---
-title: "White Label SEO vs Selling Your Own Retainer"
-slug: "white-label-seo-vs-selling-your-own-retainer"
-excerpt: "White label buys you delivery behind your brand. Selling your own retainer means you own the method, the margin, and the awkward client conversations. Most agencies need to pick one on purpose."
+title: White Label SEO vs Selling Your Own Retainer
+slug: white-label-seo-vs-selling-your-own-retainer
+excerpt: White label buys you delivery behind your brand. Selling your own retainer means you own the method, the margin, and the awkward client conversations. Most agencies need to pick one on purpose.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"white-label-seo-vs-selling-your-own-retainer".webp
-metaTitle: "White Label SEO vs Selling Your Own Retainer"
-metaDescription: "When agencies should white label SEO fulfilment versus selling their own retainer, including margin, client ownership, quality risk, and web design shop realities."
+image: /images/blog/white-label-seo-vs-selling-your-own-retainer.webp
+metaTitle: White Label SEO vs Selling Your Own Retainer
+metaDescription: When agencies should white label SEO fulfilment versus selling their own retainer, including margin, client ownership, quality risk, and web design shop realities.
 ---
-
-# White Label SEO vs Selling Your Own Retainer
 
 A web design agency sells a site, then the client asks who will do SEO. A PPC shop is asked for "organic too." A branding studio is asked for content. At that moment you either productise a retainer you can actually deliver, or you partner with a fulfilment team and keep your name on the invoice.
 

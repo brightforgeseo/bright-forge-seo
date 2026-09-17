@@ -1,5 +1,5 @@
 ---
-title: "Ecommerce SEO in the Philippines: Category vs Product"
+title: Ecommerce SEO in the Philippines: Category vs Product
 slug: ecommerce-seo-in-the-philippines-category-vs-product
 excerpt: Philippine ecommerce SEO is a category-versus-product decision. Head commercial terms live on categories. SKUs take the long tail. Facets should not steal the index.
 date: 2026-09-17

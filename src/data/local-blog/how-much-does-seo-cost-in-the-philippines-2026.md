@@ -14,8 +14,6 @@ A peso figure without a workload is not a price. It is a guess. Philippine busin
 
 Market rates in 2026 still cluster. Freelancers and very cheap retainers often sit around 5,000 to 20,000 PHP a month. Entry-level agencies commonly quote 20,000 to 50,000 PHP. Mid-market retainers usually fall between 50,000 and 120,000 PHP. Enterprise or highly competitive programmes start around 150,000 PHP and climb with site size, markets and implementation load. Those are market bands, not a public rate card and not a promise that any one firm belongs in a particular row.
 
-The rest of this note explains what those bands typically buy, why two quotes for the same URL can differ by a factor of three, and which sales lines should end the conversation.
-
 ## What The Four Market Bands Usually Cover
 
 The 5,000 to 20,000 PHP band is almost always a single person with limited hours. You might get basic metadata edits, a handful of blog posts, directory listings, or a report copied from a rank tracker. You will rarely get a proper technical crawl, conversion review, or anyone who can argue with a developer about canonicals. That band can be enough for a brand-new local site with almost no competition, if the owner already writes the copy and can implement changes the same week. It is not enough for a national ecommerce catalogue, a multi-location service business, or a site that has already been damaged by spam links.

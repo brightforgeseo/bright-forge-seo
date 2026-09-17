@@ -1,16 +1,14 @@
 ---
 title: Faceted Navigation SEO Without Index Bloat
 slug: faceted-navigation-seo-without-index-bloat
-excerpt: "Most filter URLs should never enter the index. Keep the facets people search for, block the combinatorial rest, and do not mix robots.txt with noindex on the same URL."
+excerpt: Most filter URLs should never enter the index. Keep the facets people search for, block the combinatorial rest, and do not mix robots.txt with noindex on the same URL.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
 image: /images/blog/faceted-navigation-seo-without-index-bloat.webp
-metaTitle: "Faceted Navigation SEO Without Index Bloat | Bright Forge"
-metaDescription: "How we decide which filter URLs may rank, and which must stay out of the index. Send the category tree if crawl is stuck on facets."
+metaTitle: Faceted Navigation SEO Without Index Bloat | Bright Forge
+metaDescription: How we decide which filter URLs may rank, and which must stay out of the index. Send the category tree if crawl is stuck on facets.
 ---
-
-# Faceted Navigation SEO Without Index Bloat
 
 Faceted navigation is how a shopper narrows a catalogue. It is also, according to Google, the most common source of overcrawl that site owners report. Each extra filter is not one URL. It is every previous combination multiplied by the new value. Colour times size times brand times sort times page number is how a 400-product storefront presents as a million-URL site.
 

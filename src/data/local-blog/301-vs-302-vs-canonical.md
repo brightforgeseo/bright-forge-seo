@@ -1,16 +1,14 @@
 ---
 title: 301 vs 302 vs Canonical
 slug: 301-vs-302-vs-canonical
-excerpt: "A 301 moves the URL, a 302 keeps the original, and a canonical is a hint. Pick the signal that matches whether the old address should still exist."
+excerpt: A 301 moves the URL, a 302 keeps the original, and a canonical is a hint. Pick the signal that matches whether the old address should still exist.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
 image: /images/blog/301-vs-302-vs-canonical.webp
-metaTitle: "301 vs 302 vs Canonical: Which Signal to Use | Bright Forge"
-metaDescription: "When to 301, when to 302, and when a canonical is enough. Send the URL if mixed redirects are splitting your index."
+metaTitle: 301 vs 302 vs Canonical: Which Signal to Use | Bright Forge
+metaDescription: When to 301, when to 302, and when a canonical is enough. Send the URL if mixed redirects are splitting your index.
 ---
-
-# 301 vs 302 vs Canonical
 
 The choice is not a style preference. It is a statement about whether the old URL should still exist, and which address Google should treat as the one that belongs in search. Get that statement wrong and you split rankings, waste crawl time, or leave shoppers on a URL you thought you had retired.
 

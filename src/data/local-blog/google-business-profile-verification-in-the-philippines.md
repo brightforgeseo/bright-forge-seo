@@ -1,13 +1,13 @@
 ---
-title: "Google Business Profile Verification in the Philippines"
-slug: "google-business-profile-verification-in-the-philippines"
-excerpt: "How postcard, email, and video verification actually work for Philippine businesses, including the address and mail problems that stall a listing before local pack work can start."
+title: Google Business Profile Verification in the Philippines
+slug: google-business-profile-verification-in-the-philippines
+excerpt: How postcard, email, and video verification actually work for Philippine businesses, including the address and mail problems that stall a listing before local pack work can start.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"google-business-profile-verification-in-the-philippines".webp
-metaTitle: "GBP Verification in the Philippines | Bright Forge"
-metaDescription: "Postcard, email, and video verification for Philippine Google Business Profiles. We work from Google Help, not invented local rules."
+image: /images/blog/google-business-profile-verification-in-the-philippines.webp
+metaTitle: GBP Verification in the Philippines | Bright Forge
+metaDescription: Postcard, email, and video verification for Philippine Google Business Profiles. We work from Google Help, not invented local rules.
 ---
 
 An unverified Google Business Profile is not a local SEO campaign. You cannot reliably edit the public details, answer reviews, or treat the listing as a commercial asset until Google accepts that you manage the business. In the Philippines that step often fails for boring reasons: the postcard never reaches the unit, the email in the prompt is an unused Gmail, or the video was filmed on the wrong kind of premises. We treat verification as operations, not as a ranking trick.

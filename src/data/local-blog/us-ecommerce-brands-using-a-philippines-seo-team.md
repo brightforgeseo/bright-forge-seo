@@ -10,8 +10,6 @@ metaTitle: US Ecommerce Brands Using a Philippines SEO Team
 metaDescription: Use a Philippines SEO team on US ecommerce catalogs by owning templates, crawl budget, merchandising, and google.com demand instead of blog volume.
 ---
 
-# US Ecommerce Brands Using a Philippines SEO Team
-
 US ecommerce brands usually hire a Philippines SEO team for the same reason they hire overseas developers: catalog work does not sleep, and the site has more URLs than an in-house marketer can inspect. That hire fails when the brief is "write blogs and build links" while the real ranking surface is collection templates, product variants, faceted search, and a crawl budget that Google already spends on filtered junk.
 
 We run SEO for US storefronts from the Philippines. The work is not a cheaper copy of a US agency blog calendar. It is template-level diagnosis, merchandising language that matches how Americans search, and a production loop that your developers and ecommerce manager can actually ship. If your catalog is the business, treat the SEO team as catalog infrastructure, not as a content vendor parked next to it.

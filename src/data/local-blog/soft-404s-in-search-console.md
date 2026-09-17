@@ -1,16 +1,14 @@
 ---
 title: Soft 404s in Search Console
 slug: soft-404s-in-search-console
-excerpt: "A soft 404 is a page that looks empty or missing while the server still returns 200. Search Console lists it because Google will not treat that URL as a real result."
+excerpt: A soft 404 is a page that looks empty or missing while the server still returns 200. Search Console lists it because Google will not treat that URL as a real result.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
 image: /images/blog/soft-404s-in-search-console.webp
-metaTitle: "Soft 404s in Search Console: What They Mean | Bright Forge"
-metaDescription: "Why Google flags soft 404s, how to tell empty templates from real pages, and which status code to return. Send the URL if the report is growing."
+metaTitle: Soft 404s in Search Console: What They Mean | Bright Forge
+metaDescription: Why Google flags soft 404s, how to tell empty templates from real pages, and which status code to return. Send the URL if the report is growing.
 ---
-
-# Soft 404s in Search Console
 
 A soft 404 is not a broken server. It is a URL that tells a person the page is missing, empty, or useless, while the HTTP status still says success. Google's indexing pipeline then treats the document as an error page even though the response code was 200. Search Console surfaces that judgement in the Page Indexing report so you stop arguing with a green status code.
 

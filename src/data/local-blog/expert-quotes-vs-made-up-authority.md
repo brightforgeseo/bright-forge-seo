@@ -1,16 +1,14 @@
 ---
-title: "Expert Quotes vs Made-Up Authority"
-slug: "expert-quotes-vs-made-up-authority"
-excerpt: "Named experts and invented ones look similar in a draft. They do not look similar after a buyer, a journalist, or a search system checks the name."
+title: Expert Quotes vs Made-Up Authority
+slug: expert-quotes-vs-made-up-authority
+excerpt: Named experts and invented ones look similar in a draft. They do not look similar after a buyer, a journalist, or a search system checks the name.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"expert-quotes-vs-made-up-authority".webp
-metaTitle: "Expert Quotes vs Made-Up Authority"
-metaDescription: "Why invented expert quotes fail SEO and sales, how we source real commentary, and the editorial checks we use before a name appears on a page."
+image: /images/blog/expert-quotes-vs-made-up-authority.webp
+metaTitle: Expert Quotes vs Made-Up Authority
+metaDescription: Why invented expert quotes fail SEO and sales, how we source real commentary, and the editorial checks we use before a name appears on a page.
 ---
-
-# Expert Quotes vs Made-Up Authority
 
 A quote with a job title attached is one of the cheapest ways to make a page look senior. It is also one of the fastest ways to poison a site. Buyers now search the name. Journalists search the name. Search systems look for the same name on other URLs. If the person does not exist, or the sentence was never said, the page is not "thought leadership." It is a fabricated source.
 

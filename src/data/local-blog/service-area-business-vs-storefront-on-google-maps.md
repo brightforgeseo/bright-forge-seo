@@ -1,13 +1,13 @@
 ---
-title: "Service-Area Business vs Storefront on Google Maps"
-slug: "service-area-business-vs-storefront-on-google-maps"
-excerpt: "How Google distinguishes storefront, service-area, and hybrid listings, and how Philippine trades, clinics, and shops should set the type before chasing the local pack."
+title: Service-Area Business vs Storefront on Google Maps
+slug: service-area-business-vs-storefront-on-google-maps
+excerpt: How Google distinguishes storefront, service-area, and hybrid listings, and how Philippine trades, clinics, and shops should set the type before chasing the local pack.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/"service-area-business-vs-storefront-on-google-maps".webp
-metaTitle: "Service-Area vs Storefront on Google Maps | Bright Forge"
-metaDescription: "Set storefront, service-area, or hybrid on Google Maps from how you actually serve customers. Wrong type wastes verification and local SEO."
+image: /images/blog/service-area-business-vs-storefront-on-google-maps.webp
+metaTitle: Service-Area vs Storefront on Google Maps | Bright Forge
+metaDescription: Set storefront, service-area, or hybrid on Google Maps from how you actually serve customers. Wrong type wastes verification and local SEO.
 ---
 
 Google Maps does not have a single “local business” setting that fits every Philippine operator. A bakery with a door on the street, a plumber who only works in customer homes, and a dental clinic that also sends a hygienist out are three different listing types. If you pick the wrong one, verification videos fail, the address shows when it should be hidden, or the pin pretends people can walk in when they cannot.
