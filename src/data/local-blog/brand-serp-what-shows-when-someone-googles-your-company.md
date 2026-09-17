@@ -5,6 +5,7 @@ excerpt: "A brand search is a trust check. Here is what Google actually shows, w
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/"brand-serp-what-shows-when-someone-googles-your-company".webp
 metaTitle: "Brand SERP: What Shows When Someone Googles Your Company"
 metaDescription: "What appears when someone googles your company name, which blocks you can influence, and how we treat brand SERPs as a trust surface rather than a vanity ranking."
 ---

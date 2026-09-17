@@ -5,6 +5,7 @@ excerpt: "A 301 moves the URL, a 302 keeps the original, and a canonical is a hi
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/301-vs-302-vs-canonical.webp
 metaTitle: "301 vs 302 vs Canonical: Which Signal to Use | Bright Forge"
 metaDescription: "When to 301, when to 302, and when a canonical is enough. Send the URL if mixed redirects are splitting your index."
 ---

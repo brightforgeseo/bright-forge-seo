@@ -5,6 +5,7 @@ excerpt: "Overlap hours are a calendar problem. Strategy ownership is a manageme
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/"time-zones-overlap-and-who-owns-seo-strategy".webp
 metaTitle: "Time Zones, Overlap and Who Owns SEO Strategy"
 metaDescription: "How UK and US time zones overlap with a Philippine SEO team, what can run overnight, and why strategy still needs a named owner on both sides."
 ---

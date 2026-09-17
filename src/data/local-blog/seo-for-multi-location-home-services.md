@@ -5,6 +5,7 @@ excerpt: Multi-location home services SEO is one Google Business Profile per rea
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/seo-for-multi-location-home-services.webp
 metaTitle: SEO for Multi-Location Home Services
 metaDescription: SEO for multi-location plumbers, HVAC, roofing and cleaning firms. Real branches, unique location URLs, no doorway pages.
 ---

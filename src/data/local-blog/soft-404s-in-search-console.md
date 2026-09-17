@@ -5,6 +5,7 @@ excerpt: "A soft 404 is a page that looks empty or missing while the server stil
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/soft-404s-in-search-console.webp
 metaTitle: "Soft 404s in Search Console: What They Mean | Bright Forge"
 metaDescription: "Why Google flags soft 404s, how to tell empty templates from real pages, and which status code to return. Send the URL if the report is growing."
 ---

@@ -5,6 +5,7 @@ excerpt: "How name, address, and phone drift across Philippine websites, Faceboo
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/"nap-consistency-for-philippine-businesses".webp
 metaTitle: "NAP Consistency for Philippine Businesses | Bright Forge"
 metaDescription: "Lock one name, address, and phone across your Philippine site, Google profile, and directories. Inconsistent NAP weakens local trust."
 ---

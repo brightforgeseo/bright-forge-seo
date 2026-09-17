@@ -5,6 +5,7 @@ excerpt: "Most filter URLs should never enter the index. Keep the facets people 
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/faceted-navigation-seo-without-index-bloat.webp
 metaTitle: "Faceted Navigation SEO Without Index Bloat | Bright Forge"
 metaDescription: "How we decide which filter URLs may rank, and which must stay out of the index. Send the category tree if crawl is stuck on facets."
 ---

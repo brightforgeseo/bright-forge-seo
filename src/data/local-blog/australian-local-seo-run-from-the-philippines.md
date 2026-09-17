@@ -5,6 +5,7 @@ excerpt: A Philippines team can run Australian local SEO when the client has a r
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/australian-local-seo-run-from-the-philippines.webp
 metaTitle: Australian Local SEO Run from the Philippines
 metaDescription: Run Australian local SEO from the Philippines without faking an AU office. GBP still needs a real Australian presence, NAP, and service-area rules.
 ---

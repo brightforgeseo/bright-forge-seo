@@ -5,6 +5,7 @@ excerpt: A serious SEO retainer is a monthly rhythm of diagnosis, technical repa
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/what-an-seo-agency-does-month-to-month.webp
 metaTitle: What an SEO Agency Does Monthly | Bright Forge
 metaDescription: A useful SEO retainer is diagnosis, technical work, content, authority and reporting in a monthly rhythm, not a vague task list or ranking screenshot.
 ---

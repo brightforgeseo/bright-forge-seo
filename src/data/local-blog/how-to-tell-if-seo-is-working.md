@@ -5,6 +5,7 @@ excerpt: SEO is working when organic search produces better enquiries over a fai
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/how-to-tell-if-seo-is-working.webp
 metaTitle: How to Tell if SEO Is Working | Bright Forge
 metaDescription: Judge SEO by qualified enquiries, the right pages moving, and leading Search Console signs. Traffic alone is a weak test for Philippine service businesses.
 ---

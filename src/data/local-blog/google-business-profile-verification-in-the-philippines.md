@@ -5,6 +5,7 @@ excerpt: "How postcard, email, and video verification actually work for Philippi
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/"google-business-profile-verification-in-the-philippines".webp
 metaTitle: "GBP Verification in the Philippines | Bright Forge"
 metaDescription: "Postcard, email, and video verification for Philippine Google Business Profiles. We work from Google Help, not invented local rules."
 ---

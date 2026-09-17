@@ -5,6 +5,7 @@ excerpt: A UK-side brief that names market, access, deliverables and ownership b
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/how-uk-firms-should-scope-a-philippines-seo-partner.webp
 metaTitle: How UK Firms Should Scope a Philippines SEO Partner
 metaDescription: Scope a Philippines SEO partner with a UK market brief, access list, deliverables and ownership rules so you buy a campaign, not unowned hours.
 ---

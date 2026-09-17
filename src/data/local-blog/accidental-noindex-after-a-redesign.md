@@ -5,6 +5,7 @@ excerpt: Redesigns still ship with staging noindex, theme defaults, and X-Robots
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/accidental-noindex-after-a-redesign.webp
 metaTitle: Accidental noindex After a Redesign
 metaDescription: Find accidental noindex after a redesign: staging flags, X-Robots-Tag, plugin defaults, and the Search Console checks that prove money pages can return.
 ---

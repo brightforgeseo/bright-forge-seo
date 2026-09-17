@@ -5,6 +5,7 @@ excerpt: How US ecommerce brands brief a Philippines SEO team on catalog templat
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/us-ecommerce-brands-using-a-philippines-seo-team.webp
 metaTitle: US Ecommerce Brands Using a Philippines SEO Team
 metaDescription: Use a Philippines SEO team on US ecommerce catalogs by owning templates, crawl budget, merchandising, and google.com demand instead of blog volume.
 ---

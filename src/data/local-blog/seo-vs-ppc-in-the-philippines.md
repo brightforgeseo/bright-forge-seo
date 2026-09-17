@@ -5,6 +5,7 @@ excerpt: SEO and paid search buy different things for Philippine businesses: com
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/seo-vs-ppc-in-the-philippines.webp
 metaTitle: SEO vs PPC in the Philippines | Bright Forge
 metaDescription: SEO and PPC solve different jobs for Philippine businesses. Compare cost shape, speed, measurement and when each channel should lead the enquiry plan.
 ---

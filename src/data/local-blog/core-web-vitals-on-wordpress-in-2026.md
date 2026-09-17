@@ -5,6 +5,7 @@ excerpt: "LCP, INP and CLS are field metrics at the 75th percentile. On WordPres
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/core-web-vitals-on-wordpress-in-2026.webp
 metaTitle: "Core Web Vitals on WordPress in 2026 | Bright Forge"
 metaDescription: "LCP, INP and CLS on WordPress: field thresholds, common theme and plugin causes, and how we measure without inventing scores. Send the URL to check field data."
 ---

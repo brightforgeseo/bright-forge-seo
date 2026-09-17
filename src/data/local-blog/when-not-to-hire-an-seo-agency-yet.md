@@ -5,6 +5,7 @@ excerpt: Do not hire an SEO agency until the offer is clear, the site can be cha
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/when-not-to-hire-an-seo-agency-yet.webp
 metaTitle: When Not to Hire an SEO Agency | Bright Forge
 metaDescription: Wait on an SEO retainer if the offer, website, or enquiry path is not ready. Start with a proper audit and implementation access before paying for ongoing work.
 ---

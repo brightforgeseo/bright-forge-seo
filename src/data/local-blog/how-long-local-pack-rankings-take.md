@@ -5,6 +5,7 @@ excerpt: "Why local pack timing cannot be sold as a date, what usually has to be
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/"how-long-local-pack-rankings-take".webp
 metaTitle: "How Long Local Pack Rankings Take | Bright Forge"
 metaDescription: "Local pack timing depends on the market, the pin, and the site. We will not promise a date. Here is what the wait is actually made of."
 ---

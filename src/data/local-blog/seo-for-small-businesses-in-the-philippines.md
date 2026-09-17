@@ -5,6 +5,7 @@ excerpt: Small Philippine businesses usually win search by tightening local list
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/seo-for-small-businesses-in-the-philippines.webp
 metaTitle: Small Business SEO Philippines | Bright Forge
 metaDescription: Small Philippine businesses win search by tightening local visibility, service pages and enquiry paths before chasing national keywords they cannot convert.
 ---

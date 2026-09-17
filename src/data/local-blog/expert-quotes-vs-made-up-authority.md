@@ -5,6 +5,7 @@ excerpt: "Named experts and invented ones look similar in a draft. They do not l
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/"expert-quotes-vs-made-up-authority".webp
 metaTitle: "Expert Quotes vs Made-Up Authority"
 metaDescription: "Why invented expert quotes fail SEO and sales, how we source real commentary, and the editorial checks we use before a name appears on a page."
 ---

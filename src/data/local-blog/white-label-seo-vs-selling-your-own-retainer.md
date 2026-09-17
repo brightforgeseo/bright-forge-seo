@@ -5,6 +5,7 @@ excerpt: "White label buys you delivery behind your brand. Selling your own reta
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/"white-label-seo-vs-selling-your-own-retainer".webp
 metaTitle: "White Label SEO vs Selling Your Own Retainer"
 metaDescription: "When agencies should white label SEO fulfilment versus selling their own retainer, including margin, client ownership, quality risk, and web design shop realities."
 ---

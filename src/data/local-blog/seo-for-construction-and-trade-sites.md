@@ -5,6 +5,7 @@ excerpt: Construction and trade SEO is quote work, not brochure polish. One URL 
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
+image: /images/blog/seo-for-construction-and-trade-sites.webp
 metaTitle: SEO for Construction and Trade Sites
 metaDescription: SEO for builders, contractors and trade suppliers. Separate trades, put proof on quote URLs, and measure clicks we can already publish.
 ---
