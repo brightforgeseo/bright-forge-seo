@@ -19,7 +19,7 @@ const { eyebrow = 'In this stack', title, intro, jobs } = Astro.props;
 </section>
 
 <style>
-  .stack-work { padding: 78px 0; background: #111421; }
+  .stack-work { padding: 78px 0; background: #0d0f1a; }
   .stack-work .page-container {
     width: min(100% - 40px, 1120px);
     margin: 0 auto;
@@ -29,15 +29,11 @@ const { eyebrow = 'In this stack', title, intro, jobs } = Astro.props;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background: #14182a;
   }
   .stack-jobs article {
-    padding: 22px 24px;
-    border-right: 1px solid rgba(255,255,255,.08);
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding: 1.4rem 1.2rem 1.4rem 0;
+    border-top: 1px solid rgba(255,255,255,.12);
+    background: transparent;
   }
   .stack-jobs article:nth-child(2n) { border-right: 0; }
   .stack-jobs h3 { margin: 0 0 8px; font-size: 1.05rem; color: #fff; }
