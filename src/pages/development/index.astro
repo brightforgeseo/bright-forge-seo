@@ -10,16 +10,16 @@ import DevelopmentWorkbench from "../../components/DevelopmentWorkbench.astro";
 const canonical="https://brightforge.com.ph/development/";
 const proof=[
   {
-    "title": "Outsource the build",
-    "text": "Philippine web design and development with a named brief, review points and handover. You keep the decisions."
+    "title": "Design that can sell",
+    "text": "First screen, type, and the enquiry path are the product. A Figma file that dies on a phone is not web design."
   },
   {
-    "title": "Performance matters",
-    "text": "Fast pages help users and reduce technical drag before SEO work even starts."
+    "title": "We ship the sites",
+    "text": "This marketing site is Astro. Shinobi is the heavier front-end. WordPress when editors need a CMS. The stack follows the job."
   },
   {
-    "title": "Human QA",
-    "text": "Every build still needs manual checks for forms, schema, indexing and conversion paths."
+    "title": "Launch without a drop",
+    "text": "Redirects, titles, tracking and Search Console are part of the build, not a week of panic after go-live."
   }
 ];
 const checks=[
@@ -76,28 +76,20 @@ const process=[
 ];
 const faqs=[
   {
-    "question": "Is Development good for SEO?",
-    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+    "question": "Do you design and develop, or only advise?",
+    "answer": "Both. We design and build the site when that is the brief, and we can sit with your developer when you already have one. Outsource the whole build or a defined stage. The brief, reviews and what goes live stay yours."
   },
   {
-    "question": "Do we need to rebuild our whole website?",
-    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+    "question": "Is a new website enough for SEO?",
+    "answer": "No. A better build can remove technical drag and make pages easier to rank and convert. Rankings still depend on content, authority and competition. New website SEO is the structure, metadata, internal links and launch QA, not a promise."
   },
   {
     "question": "How do you protect rankings during a rebuild?",
     "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
   },
   {
-    "question": "Can your team work with our existing developer?",
-    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
-  },
-  {
-    "question": "Which framework should we choose?",
-    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
-  },
-  {
-    "question": "Do you guarantee better rankings after a new website?",
-    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+    "question": "WordPress or a modern stack?",
+    "answer": "WordPress when the team needs to edit pages without a deploy. Astro or similar when the site is mostly content and speed matters. Next.js or React when the product is an application. We choose the stack around the job, not around fashion."
   },
   {
     "question": "Can we outsource web design and development to your team?",
@@ -108,24 +100,26 @@ const faqs=[
     "answer": "The scope depends on the site size, design requirements, content readiness, CMS or framework, integrations, migration risk and testing needs. We review those factors first and provide a private proposal rather than publishing a package that may not fit the job."
   },
   {
-    "question": "How do you handle SEO for a new website?",
-    "answer": "New website SEO starts before launch. We map the page structure, content, metadata, internal links, schema, analytics and indexation controls during planning, then test the rendered site and monitor it after launch."
+    "question": "Will the site be responsive?",
+    "answer": "Yes. Phone, tablet and desktop are part of the design, not a leftover stylesheet. We test the enquiry path on a phone before we call a layout done."
   }
 ];
 ---
-<MainLayout title="Web Design & Development Philippines | Bright Forge" description="Outsource web design and web development in the Philippines. SEO-safe builds, WordPress or modern stacks, private proposal, no public rate card." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Development",url:canonical}]} faqs={faqs}>
+<MainLayout title="Web Design & Development Philippines | Bright Forge" description="Web design and web development in the Philippines. SEO-safe builds, WordPress or modern stacks, private proposal, no public rate card." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Development",url:canonical}]} faqs={faqs}>
 <Fragment slot="head">
-  <link rel="dns-prefetch" href="//shinobiseo.netlify.app" />
-  <link rel="preconnect" href="https://shinobiseo.netlify.app" crossorigin="anonymous" />
+  <link rel="dns-prefetch" href="//shinobiseo.com" />
+  <link rel="preconnect" href="https://shinobiseo.com" crossorigin="anonymous" />
 </Fragment>
 <LegacyHeader slot="header" />
-<Hero title="Outsource <span>Web Design</span>" breadcrumbCurrent="Development">
-<Fragment slot="story"><p class="hero-subtitle">Web design and web development in the Philippines that you can outsource without handing the rankings to chance.</p><p>We design and build for Philippine and international businesses that need a site with a commercial job: crawlable pages, clean URLs, redirects, schema and tracking before launch. Outsource the build. Keep control of the brief, the reviews and what goes live.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Hero title="Web Design and <span>Development</span>" breadcrumbCurrent="Development">
+<Fragment slot="story"><p class="hero-subtitle">Web design and web development for Philippine and international businesses. Outsource the build. Keep the brief.</p><p>We design the first screen, the type, and the enquiry path, then we build it. New website SEO sits in the templates: crawlable pages, clean URLs, redirects, schema and tracking before launch. Layouts are responsive. A mockup that dies on a phone is not the job.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#workbench" text="See the live build" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2><span>Web design Philippines</span> should survive a crawl, not just a mockup</h2><p>Outsource web design when the current site is slow, hard to edit, or about to be rebuilt. The job is still a website development decision: templates, content, redirects and how people enquire.</p><p>We plan Philippine web development around that commercial job first, then pick WordPress or a modern stack. Fashion frameworks come second.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2><span>Web design</span> has to survive a crawl and a phone</h2><p>Outsource web design when the current site is slow, hard to edit, or about to be rebuilt. The job is still a website development decision: templates, content, redirects and how people enquire.</p><p>We plan Philippine web development around that commercial job first, then pick WordPress or a modern stack. Fashion frameworks come second.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
 <DevelopmentWorkbench />
+<section id="checks"><div class="page-container"><p class="eyebrow">What the build must do</p><h2>A site Google can read, on a <span>responsive</span> layout</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
+<section><div class="page-container"><p class="eyebrow">How we work</p><h2>Audit, build, launch, then <span>prove it</span></h2><div class="grid">{process.map((item, i)=>(<article class="card"><span>{String(i+1).padStart(2,'0')}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
 <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>development has a clear role</span></h2><p>This suits businesses replacing an old website, rebuilding a slow WordPress site, launching a new service site, or trying to protect rankings during a design refresh.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
 <section><div class="page-container two-column"><div><p class="eyebrow">Outsourced delivery</p><h2>Use a Philippine development team without <span>losing control of the build</span></h2><p>Businesses and agencies can outsource web design, development or a defined implementation stage to us. We agree responsibilities, technical decisions, review points and handover requirements before work starts.</p><p>For Manila businesses comparing web design agencies, agree how the work will run before choosing a supplier: remote briefing, a record of design approvals and a documented launch handover. Any requirement for on-site meetings needs to be agreed separately, not inferred from a Philippines service page.</p><p>The result should be easy to own after launch. That means documented routes, sensible components, editorial control, analytics and a clear record of what was built.</p></div><aside class="panel"><h3>New website SEO is part of the build</h3><p>Page mapping, crawlability, content structure, metadata, schema, internal links and indexation controls are planned before launch rather than repaired afterwards.</p></aside></div></section>
 <BuyerDecisionSection id="choose-design-team" eyebrow="Compare the work, not the pitch" title="Choosing a web design agency?" emphasis="Test a site they have shipped.">
