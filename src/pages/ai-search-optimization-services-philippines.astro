@@ -153,34 +153,6 @@ const geoCases = [
               <li>No citation guarantees</li>
             </ul>
           </div>
-
-          <div class="citation-observatory" aria-label="Illustration of a brand becoming a cited source in AI search">
-            <div class="observatory-bar">
-              <span><i></i><i></i><i></i></span>
-              <small>ILLUSTRATIVE CITATION PATH</small>
-            </div>
-            <div class="observatory-query">
-              <span>Buyer question</span>
-              <strong>Which provider can solve this with credible evidence?</strong>
-            </div>
-            <div class="answer-surface">
-              <div class="answer-label"><span>Generated answer</span><small>Sources checked</small></div>
-              <p>A credible recommendation needs a clear service fit, verifiable proof and sources that agree on the business.</p>
-              <div class="answer-lines" aria-hidden="true"><i></i><i></i><i></i></div>
-              <div class="source-stack">
-                <div><span>01</span><p><strong>Your service page</strong><small>Specific offer and market fit</small></p><b>READY</b></div>
-                <div><span>02</span><p><strong>Your evidence</strong><small>Cases, reviews and named expertise</small></p><b>PROOF</b></div>
-                <div><span>03</span><p><strong>Independent sources</strong><small>Relevant third-party corroboration</small></p><b>TRUST</b></div>
-              </div>
-            </div>
-            <svg class="signal-path" viewBox="0 0 560 480" aria-hidden="true" preserveAspectRatio="none">
-              <path d="M42 405 C150 350 155 250 267 233 S407 160 520 74" />
-              <circle cx="42" cy="405" r="5" />
-              <circle cx="267" cy="233" r="5" />
-              <circle cx="520" cy="74" r="5" />
-            </svg>
-            <p class="observatory-caption"><span>Signal, not theatre.</span> No live client data is shown in this illustration.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -322,13 +294,12 @@ const geoCases = [
           <h2>An answer engine needs more than a well-written paragraph.</h2>
           <p>We connect the page to a wider source system. That means the technical route into the content, the facts on the page, the evidence behind those facts and the independent signals that help verify them.</p>
           <p>This is where our <a href="/technical-seo-services-philippines/">technical SEO</a>, <a href="/content-seo-services-philippines/">content SEO</a>, <a href="/backlink-seo-services-philippines/">authority work</a> and <a href="/seo-command-centre/">measurement layer</a> work together.</p>
-        </div>
-        <div class="source-orbit" aria-label="Four connected layers of citation readiness">
-          <div class="orbit-core"><small>USEFUL</small><strong>SOURCE</strong><span>for a real buyer question</span></div>
-          <div class="orbit-ring orbit-ring-one"><span>Technical access</span></div>
-          <div class="orbit-ring orbit-ring-two"><span>Entity clarity</span></div>
-          <div class="orbit-ring orbit-ring-three"><span>Evidence</span></div>
-          <div class="orbit-ring orbit-ring-four"><span>Authority</span></div>
+          <ul class="source-layers">
+            <li>Technical access</li>
+            <li>Entity clarity</li>
+            <li>Evidence</li>
+            <li>Authority</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -532,24 +503,9 @@ const geoCases = [
 
   .ai-hero {
     position: relative;
-    padding: 42px 0 112px;
-    background:
-      radial-gradient(circle at 82% 17%, rgba(240, 98, 42, 0.14), transparent 25%),
-      linear-gradient(115deg, #0f1222 0%, #090b14 60%, #0b0d18 100%) !important;
+    padding: 36px 0 72px;
+    background: #0d0f1a;
     border-bottom: 1px solid var(--ai-border);
-  }
-
-  .ai-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: .22;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
   }
 
   .ai-breadcrumb {
@@ -569,10 +525,7 @@ const geoCases = [
   .ai-hero-layout {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: minmax(0, .92fr) minmax(480px, .78fr);
-    align-items: center;
-    gap: clamp(48px, 7vw, 108px);
+    max-width: 760px;
   }
 
   .ai-kicker {
@@ -583,15 +536,14 @@ const geoCases = [
     color: #c6cad7;
     font-size: .73rem;
     font-weight: 700;
-    letter-spacing: .13em;
+    letter-spacing: .08em;
     text-transform: uppercase;
   }
 
   .ai-kicker > span {
-    width: 26px;
+    width: 18px;
     height: 1px;
     background: var(--ai-orange);
-    box-shadow: 10px 0 20px var(--ai-orange);
   }
 
   .ai-hero h1 {
@@ -637,18 +589,16 @@ const geoCases = [
     min-height: 52px;
     padding: 0 22px;
     border: 1px solid transparent;
-    border-radius: 5px;
+    border-radius: 2px;
     color: white;
     font-weight: 700;
     text-decoration: none;
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
   }
 
-  .ai-button:hover { transform: translateY(-2px); }
-  .ai-button-primary { background: var(--ai-orange); box-shadow: 0 16px 38px rgba(240,98,42,.2); }
+  .ai-button-primary { background: var(--ai-orange); }
   .ai-button-primary:hover { background: var(--ai-orange-bright); }
-  .ai-button-secondary { border-color: rgba(255,255,255,.19); background: rgba(255,255,255,.04); }
-  .ai-button-secondary:hover { border-color: rgba(240,98,42,.58); }
+  .ai-button-secondary { border-color: rgba(255, 255, 255, .22); background: transparent; }
+  .ai-button-secondary:hover { border-color: var(--ai-orange); }
 
   .ai-trust-line {
     display: flex;
@@ -737,72 +687,89 @@ const geoCases = [
   .ai-section-heading { max-width: 880px; }
   .ai-section-heading h2 span { color: var(--ai-orange); }
 
-  .ai-proof { padding-top: 28px; border-bottom: 1px solid var(--ai-border); background: #0b0d18; }
+  .ai-proof { padding-top: 0; border-bottom: 1px solid var(--ai-border); background: #0d0f1a; }
   .proof-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap: 0;
+    border-top: 1px solid var(--ai-border);
   }
   .proof-card {
-    padding: 22px 20px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(20,24,42,.9));
-    box-shadow: 0 18px 40px rgba(0,0,0,.25);
+    padding: 22px 20px 22px 0;
+    border: 0;
+    border-right: 1px solid var(--ai-border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
+  .proof-card:last-child { border-right: 0; }
   .proof-card strong {
     display: block;
     color: #fff;
     font-family: 'Outfit', sans-serif;
-    font-size: 1.7rem;
-    letter-spacing: -.03em;
+    font-size: 1.45rem;
+    letter-spacing: -.02em;
   }
   .proof-card span { display: block; margin-top: 6px; color: var(--ai-muted); font-size: .86rem; }
-  .proof-people { margin: 22px 0 0; color: #c6cad7; }
+  .proof-people { margin: 18px 0 0; color: #c6cad7; }
   .proof-people a { color: #fff; text-decoration: none; border-bottom: 1px solid var(--ai-orange); }
   .proof-people a:hover { color: var(--ai-orange-bright); }
 
-  .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 36px; }
+  .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 36px; border-top: 1px solid var(--ai-border); }
   .contrast-card {
-    padding: 28px 26px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 8px;
-    background: linear-gradient(180deg, #161b30, #101426);
+    padding: 28px 32px 8px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
-  .contrast-us { border-color: rgba(240,98,42,.45); box-shadow: 0 0 40px rgba(240,98,42,.08); }
+  .contrast-us { padding-left: 32px; border-left: 1px solid var(--ai-border); box-shadow: none; }
   .contrast-card > p {
     margin: 0 0 16px;
     color: var(--ai-orange);
     font-size: .72rem;
     font-weight: 800;
-    letter-spacing: .12em;
+    letter-spacing: .08em;
   }
   .contrast-card ul { margin: 0; padding: 0; list-style: none; }
   .contrast-card li {
     position: relative;
-    padding: 10px 0 10px 18px;
+    padding: 12px 0;
     border-top: 1px solid rgba(255,255,255,.08);
     color: #d7dbe8;
     line-height: 1.5;
   }
-  .contrast-card li::before { content: ''; position: absolute; left: 0; top: 18px; width: 7px; height: 7px; border-radius: 50%; background: #6b7288; }
-  .contrast-us li::before { background: var(--ai-orange); }
+  .contrast-card li::before { content: none; }
+  .contrast-us li::before { content: none; }
 
-  .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 28px; border-top: 1px solid var(--ai-border); }
   .case-card {
     display: block;
-    padding: 24px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 8px;
-    background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(13,16,32,.94));
+    padding: 22px 28px 22px 0;
+    border: 0;
+    border-bottom: 1px solid var(--ai-border);
+    border-radius: 0;
+    background: transparent;
     color: inherit;
     text-decoration: none;
-    transition: transform .2s ease, border-color .2s ease;
   }
-  .case-card:hover { transform: translateY(-2px); border-color: rgba(240,98,42,.5); }
-  .case-card strong { display: block; color: #fff; font-size: 1.15rem; }
-  .case-card p { margin: 10px 0 16px; color: var(--ai-muted); line-height: 1.55; }
+  .case-card:nth-child(odd) { padding-right: 28px; border-right: 1px solid var(--ai-border); }
+  .case-card:nth-child(even) { padding-left: 28px; }
+  .case-card:hover { transform: none; border-color: var(--ai-border); }
+  .case-card strong { display: block; color: #fff; font-size: 1.08rem; }
+  .case-card p { margin: 10px 0 12px; color: var(--ai-muted); line-height: 1.55; }
   .case-card span { color: var(--ai-orange); font-size: .82rem; font-weight: 700; }
+
+  .source-layers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 22px 0 0;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--ai-border);
+    list-style: none;
+    color: #e8eaf1;
+  }
+  .source-layers li { font-size: .95rem; }
   .ai-section-heading h2,
   .method-intro h2,
   .source-copy h2,
@@ -845,7 +812,7 @@ const geoCases = [
   .method-row > strong { color: #f2a482; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 
   .ai-source-system { padding: 125px 0; background: #0d0f1a !important; color: var(--ai-white); }
-  .source-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 110px; align-items: center; }
+  .source-layout { display: block; max-width: 760px; }
   .ai-source-system .ai-kicker { color: var(--ai-muted); }
   .source-copy h2 { color: white; }
   .source-copy > p:not(.ai-kicker) { max-width: 570px; color: var(--ai-muted); font-size: 1.03rem; line-height: 1.75; }
@@ -1022,6 +989,16 @@ const geoCases = [
     .proof-grid,
     .contrast-grid,
     .case-grid { grid-template-columns: 1fr; }
+    .proof-card,
+    .contrast-us,
+    .case-card:nth-child(odd),
+    .case-card:nth-child(even) {
+      padding-left: 0;
+      padding-right: 0;
+      border-right: 0;
+      border-left: 0;
+    }
+    .proof-card { border-bottom: 1px solid var(--ai-border); }
   }
 
   @media (max-width: 520px) {
