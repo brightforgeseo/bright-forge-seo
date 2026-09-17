@@ -1,11 +1,11 @@
 ---
-title: Google Ads vs SEO Philippines
-slug: google-ads-vs-seo-philippines
+title: Google Ads vs SEO in the Philippines
+slug: google-ads-vs-seo-in-the-philippines
 excerpt: Google Ads and SEO in the Philippines buy different things: rented auctions you can turn on this week, against pages and listings you keep working after the spend pauses.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/google-ads-vs-seo-philippines.webp
+image: /images/blog/google-ads-vs-seo-in-the-philippines.webp
 metaTitle: Google Ads vs SEO Philippines | Bright Forge
 metaDescription: Google Ads vs SEO in the Philippines is a job choice, not a religion. Compare speed, cost shape, Maps, measurement and when each channel should lead.
 ---

@@ -1,11 +1,11 @@
 ---
-title: Outsource Web Design Cost Philippines
-slug: outsource-web-design-cost-philippines
+title: What Outsourced Web Design Costs in the Philippines
+slug: what-outsourced-web-design-costs-in-the-philippines
 excerpt: Philippine web design quotes in 2026 still cluster in market bands. The useful question is which pages, CMS, and implementation load the fee actually covers.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/outsource-web-design-cost-philippines.webp
+image: /images/blog/what-outsourced-web-design-costs-in-the-philippines.webp
 metaTitle: Outsource Web Design Cost Philippines | Bright Forge
 metaDescription: Market bands for outsourcing web design in the Philippines in 2026, from brochure sites to custom builds, and what a quote should name besides a peso figure.
 ---

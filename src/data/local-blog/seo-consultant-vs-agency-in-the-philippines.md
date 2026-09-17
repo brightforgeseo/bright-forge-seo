@@ -1,11 +1,11 @@
 ---
-title: SEO Consultant Philippines vs Agency
-slug: seo-consultant-philippines-vs-agency
+title: SEO Consultant vs Agency in the Philippines
+slug: seo-consultant-vs-agency-in-the-philippines
 excerpt: A Philippine SEO consultant is the right hire for diagnosis and a bounded plan. An agency is the right hire when you need that plan implemented without you assembling the rest of the team.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/seo-consultant-philippines-vs-agency.webp
+image: /images/blog/seo-consultant-vs-agency-in-the-philippines.webp
 metaTitle: SEO Consultant vs Agency in PH | Bright Forge
 metaDescription: Hire a Philippine SEO consultant for diagnosis and a bounded plan. Hire an agency when you need delivery, review, and coverage across more than one skill.
 ---

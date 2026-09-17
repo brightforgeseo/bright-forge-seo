@@ -1,11 +1,11 @@
 ---
-title: Cheap SEO Philippines
-slug: cheap-seo-philippines
+title: Why Cheap SEO in the Philippines Usually Fails
+slug: why-cheap-seo-in-the-philippines-usually-fails
 excerpt: Cheap SEO in the Philippines fails when the fee cannot cover diagnosis, implementation and honest reporting, and the shortfall is taken from the site.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/cheap-seo-philippines.webp
+image: /images/blog/why-cheap-seo-in-the-philippines-usually-fails.webp
 metaTitle: Why Cheap SEO Fails in the PH | Bright Forge
 metaDescription: Cheap SEO in the Philippines fails when hours are missing. See the usual failure modes, what they cost to unwind, and when a low fee is an honest small scope.
 ---

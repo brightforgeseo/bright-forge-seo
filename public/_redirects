@@ -54,5 +54,55 @@ http://brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
 # Specific double slash fixes for known issues
 /blog//blog/importance-of-local-seo-for-small-businesses/  /blog/importance-of-local-seo-for-small-businesses/  301
 
+
+# New 2026-09-17 blog slug retitles
+/blog/cheap-seo-philippines  /blog/why-cheap-seo-in-the-philippines-usually-fails/  301
+/blog/cheap-seo-philippines/  /blog/why-cheap-seo-in-the-philippines-usually-fails/  301
+/blog/digital-marketing-cost-philippines  /blog/what-digital-marketing-costs-in-the-philippines/  301
+/blog/digital-marketing-cost-philippines/  /blog/what-digital-marketing-costs-in-the-philippines/  301
+/blog/google-ads-vs-seo-philippines  /blog/google-ads-vs-seo-in-the-philippines/  301
+/blog/google-ads-vs-seo-philippines/  /blog/google-ads-vs-seo-in-the-philippines/  301
+/blog/how-to-judge-seo-companies-philippines  /blog/how-to-judge-seo-companies-in-the-philippines/  301
+/blog/how-to-judge-seo-companies-philippines/  /blog/how-to-judge-seo-companies-in-the-philippines/  301
+/blog/how-to-rank-on-google-philippines  /blog/how-to-rank-on-google-in-the-philippines/  301
+/blog/how-to-rank-on-google-philippines/  /blog/how-to-rank-on-google-in-the-philippines/  301
+/blog/link-building-philippines  /blog/why-cheap-link-building-in-the-philippines-fails/  301
+/blog/link-building-philippines/  /blog/why-cheap-link-building-in-the-philippines-fails/  301
+/blog/local-seo-cost-philippines  /blog/what-local-seo-costs-in-the-philippines/  301
+/blog/local-seo-cost-philippines/  /blog/what-local-seo-costs-in-the-philippines/  301
+/blog/local-seo-for-restaurants-and-clinics-philippines  /blog/local-seo-for-restaurants-and-clinics-in-the-philippines/  301
+/blog/local-seo-for-restaurants-and-clinics-philippines/  /blog/local-seo-for-restaurants-and-clinics-in-the-philippines/  301
+/blog/on-page-seo-philippines  /blog/on-page-seo-for-philippine-service-pages/  301
+/blog/on-page-seo-philippines/  /blog/on-page-seo-for-philippine-service-pages/  301
+/blog/outsource-web-design-cost-philippines  /blog/what-outsourced-web-design-costs-in-the-philippines/  301
+/blog/outsource-web-design-cost-philippines/  /blog/what-outsourced-web-design-costs-in-the-philippines/  301
+/blog/seo-agency-cebu  /blog/seo-for-cebu-businesses-without-a-fake-office/  301
+/blog/seo-agency-cebu/  /blog/seo-for-cebu-businesses-without-a-fake-office/  301
+/blog/seo-agency-davao  /blog/seo-for-davao-businesses-without-a-fake-branch/  301
+/blog/seo-agency-davao/  /blog/seo-for-davao-businesses-without-a-fake-branch/  301
+/blog/seo-agency-quezon-city  /blog/an-seo-agency-based-in-quezon-city/  301
+/blog/seo-agency-quezon-city/  /blog/an-seo-agency-based-in-quezon-city/  301
+/blog/seo-audit-cost-philippines  /blog/what-an-seo-audit-should-cost-in-the-philippines/  301
+/blog/seo-audit-cost-philippines/  /blog/what-an-seo-audit-should-cost-in-the-philippines/  301
+/blog/seo-consultant-philippines-vs-agency  /blog/seo-consultant-vs-agency-in-the-philippines/  301
+/blog/seo-consultant-philippines-vs-agency/  /blog/seo-consultant-vs-agency-in-the-philippines/  301
+/blog/seo-for-bpo-philippines  /blog/seo-for-bpo-firms-in-the-philippines/  301
+/blog/seo-for-bpo-philippines/  /blog/seo-for-bpo-firms-in-the-philippines/  301
+/blog/seo-for-startups-philippines  /blog/when-a-philippine-startup-should-hire-seo/  301
+/blog/seo-for-startups-philippines/  /blog/when-a-philippine-startup-should-hire-seo/  301
+/blog/seo-packages-philippines  /blog/what-seo-packages-in-the-philippines-actually-cover/  301
+/blog/seo-packages-philippines/  /blog/what-seo-packages-in-the-philippines-actually-cover/  301
+/blog/seo-rates-philippines-2026  /blog/how-seo-rates-in-the-philippines-are-quoted-in-2026/  301
+/blog/seo-rates-philippines-2026/  /blog/how-seo-rates-in-the-philippines-are-quoted-in-2026/  301
+/blog/technical-seo-checklist-philippines  /blog/a-technical-seo-checklist-for-philippine-sites/  301
+/blog/technical-seo-checklist-philippines/  /blog/a-technical-seo-checklist-for-philippine-sites/  301
+/blog/website-cost-philippines  /blog/what-a-website-costs-in-the-philippines/  301
+/blog/website-cost-philippines/  /blog/what-a-website-costs-in-the-philippines/  301
+/blog/what-is-seo  /blog/what-seo-is-when-the-phone-has-to-ring/  301
+/blog/what-is-seo/  /blog/what-seo-is-when-the-phone-has-to-ring/  301
+/blog/white-label-seo-cost  /blog/what-white-label-seo-costs-without-a-public-menu/  301
+/blog/white-label-seo-cost/  /blog/what-white-label-seo-costs-without-a-public-menu/  301
+/blog/wordpress-seo-philippines  /blog/wordpress-seo-for-philippine-business-sites/  301
+/blog/wordpress-seo-philippines/  /blog/wordpress-seo-for-philippine-business-sites/  301
 # Fallback to 404 page for unmatched routes
 /* /404.html 404

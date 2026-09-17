@@ -1,11 +1,11 @@
 ---
-title: SEO Audit Cost Philippines
-slug: seo-audit-cost-philippines
+title: What an SEO Audit Should Cost in the Philippines
+slug: what-an-seo-audit-should-cost-in-the-philippines
 excerpt: One-off SEO audits in the Philippine public market often sit between 20,000 and 60,000 PHP, and the fee should buy named blockers rather than a generic PDF.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/seo-audit-cost-philippines.webp
+image: /images/blog/what-an-seo-audit-should-cost-in-the-philippines.webp
 metaTitle: SEO Audit Cost in the Philippines | Bright Forge
 metaDescription: Philippine SEO audits often cost 20,000 to 60,000 PHP in the public market. See what that fee should include, what cheap audits skip, and when to pay more.
 ---

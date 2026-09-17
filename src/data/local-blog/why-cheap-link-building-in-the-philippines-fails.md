@@ -1,11 +1,11 @@
 ---
-title: Link Building Philippines
-slug: link-building-philippines
+title: Why Cheap Link Building in the Philippines Fails
+slug: why-cheap-link-building-in-the-philippines-fails
 excerpt: Link building in the Philippines works when mentions come from real related sites. Cheap packages fail because they sell inventory Google has already learned to discount.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/link-building-philippines.webp
+image: /images/blog/why-cheap-link-building-in-the-philippines-fails.webp
 metaTitle: Link Building in the Philippines | Bright Forge
 metaDescription: Philippine link building is relevant mentions from real sites, not bulk packages. See what to buy, what to refuse, and how to brief without shopping on link count.
 ---

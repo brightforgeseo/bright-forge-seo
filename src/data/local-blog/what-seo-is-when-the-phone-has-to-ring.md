@@ -1,11 +1,11 @@
 ---
-title: What Is SEO
-slug: what-is-seo
+title: What SEO Is When the Phone Has to Ring
+slug: what-seo-is-when-the-phone-has-to-ring
 excerpt: SEO is the work that helps the right people find, understand and choose your site in search. It is technical access, on-page clarity and content that matches demand, not a ranking slogan.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/what-is-seo.webp
+image: /images/blog/what-seo-is-when-the-phone-has-to-ring.webp
 metaTitle: What Is SEO | Bright Forge
 metaDescription: SEO means making your site findable, understandable and worth choosing in search. Technical access, on-page clarity and useful content, without ranking slogans.
 ---

@@ -1,11 +1,11 @@
 ---
 title: Local SEO for Restaurants and Clinics in the Philippines
-slug: local-seo-for-restaurants-and-clinics-philippines
+slug: local-seo-for-restaurants-and-clinics-in-the-philippines
 excerpt: Restaurants and clinics in the Philippines win local search on Maps, Google Business Profile, and reviews. The work is operational, not a blog calendar.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/local-seo-for-restaurants-and-clinics-philippines.webp
+image: /images/blog/local-seo-for-restaurants-and-clinics-in-the-philippines.webp
 metaTitle: Local SEO for Restaurants and Clinics in the Philippines
 metaDescription: Local SEO for Philippine restaurants and clinics: Google Business Profile, Maps, reviews, NAP, and pages that match how people actually book a table or a visit.
 ---

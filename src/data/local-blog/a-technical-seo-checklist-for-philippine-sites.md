@@ -1,11 +1,11 @@
 ---
-title: Technical SEO Checklist Philippines
-slug: technical-seo-checklist-philippines
+title: A Technical SEO Checklist for Philippine Sites
+slug: a-technical-seo-checklist-for-philippine-sites
 excerpt: A practical technical SEO checklist for Philippine sites: crawl access, indexation, templates, speed, and Search Console. Use it to find blockers before you publish more pages.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/technical-seo-checklist-philippines.webp
+image: /images/blog/a-technical-seo-checklist-for-philippine-sites.webp
 metaTitle: Technical SEO Checklist Philippines | Bright Forge
 metaDescription: Technical SEO checklist for Philippine sites covering crawl, indexation, templates, speed and Search Console. Find blockers before you publish more pages.
 ---

@@ -1,11 +1,11 @@
 ---
-title: Digital Marketing Cost Philippines
-slug: digital-marketing-cost-philippines
+title: What Digital Marketing Costs in the Philippines
+slug: what-digital-marketing-costs-in-the-philippines
 excerpt: Digital marketing cost in the Philippines is a set of market bands for SEO, PPC, social, and web work, plus media spend that never belongs inside the fee.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/digital-marketing-cost-philippines.webp
+image: /images/blog/what-digital-marketing-costs-in-the-philippines.webp
 metaTitle: Digital Marketing Cost in the PH | Bright Forge
 metaDescription: Philippine digital marketing cost is SEO, PPC, social and web bands plus media spend. Compare workload, not a single monthly number sold as “full digital”.
 ---

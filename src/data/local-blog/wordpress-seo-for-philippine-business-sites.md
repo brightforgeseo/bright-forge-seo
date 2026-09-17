@@ -1,11 +1,11 @@
 ---
-title: WordPress SEO Philippines
-slug: wordpress-seo-philippines
+title: WordPress SEO for Philippine Business Sites
+slug: wordpress-seo-for-philippine-business-sites
 excerpt: WordPress SEO in the Philippines fails less from missing plugins than from themes, indexation, WooCommerce templates, and launch settings that quietly block Google.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/wordpress-seo-philippines.webp
+image: /images/blog/wordpress-seo-for-philippine-business-sites.webp
 metaTitle: WordPress SEO in the Philippines | Bright Forge
 metaDescription: WordPress SEO in the Philippines is theme, indexation, WooCommerce and launch hygiene. Plugins help. They do not replace a crawlable commercial site.
 ---

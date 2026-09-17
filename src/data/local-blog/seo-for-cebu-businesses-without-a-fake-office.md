@@ -1,11 +1,11 @@
 ---
-title: SEO Agency Cebu
-slug: seo-agency-cebu
+title: SEO for Cebu Businesses Without a Fake Office
+slug: seo-for-cebu-businesses-without-a-fake-office
 excerpt: We do not have a Cebu office. A Philippines team based in Quezon City can still run local SEO for real Cebu businesses when the listing, pages and coverage are true.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/seo-agency-cebu.webp
+image: /images/blog/seo-for-cebu-businesses-without-a-fake-office.webp
 metaTitle: SEO Agency Cebu | Bright Forge
 metaDescription: No Cebu branch. Bright Forge runs Cebu local SEO from our Philippines team for real Cebu businesses: Maps, pages, citations and reviews without a fake office.
 ---

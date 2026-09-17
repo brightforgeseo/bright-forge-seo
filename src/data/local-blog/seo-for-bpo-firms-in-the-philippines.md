@@ -1,11 +1,11 @@
 ---
-title: SEO for BPO Philippines
-slug: seo-for-bpo-philippines
+title: SEO for BPO Firms in the Philippines
+slug: seo-for-bpo-firms-in-the-philippines
 excerpt: SEO for Philippine BPO firms is B2B demand generation, not a jobs board. Capability pages, proof a procurement team can check, and queries buyers actually type.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo]
-image: /images/blog/seo-for-bpo-philippines.webp
+image: /images/blog/seo-for-bpo-firms-in-the-philippines.webp
 metaTitle: SEO for BPO Philippines | Bright Forge
 metaDescription: SEO for Philippine BPO and IT-BPM firms: buyer queries, capability pages, compliance proof, and the difference between hiring traffic and client demand.
 ---
