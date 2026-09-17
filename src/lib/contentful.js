@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+import { getLocalBlogPosts, getLocalBlogPostBySlug } from './localBlog.js';
 
 // Initialize the Contentful client with hardcoded credentials to ensure it works
 export const contentfulClient = createClient({
@@ -55,9 +56,9 @@ export async function getAllBlogPosts() {
       if (!entries.items.length || skip >= entries.total) break;
     }
 
-    return raw
-      .filter((item) => item.fields?.slug)
-      .map((item) => ({
+    const remote = raw
+    .filter((item) => item.fields?.slug)
+    .map((item) => ({
       id: item.sys.id,
       title: item.fields.title,
       slug: item.fields.slug,
@@ -70,14 +71,25 @@ export async function getAllBlogPosts() {
       tags: item.fields.tags || [],
       showInfographic: item.fields.showInfographic === true
     }));
+    const local = getLocalBlogPosts();
+    const remoteSlugs = new Set(remote.map((p) => p.slug));
+    return [...local.filter((p) => !remoteSlugs.has(p.slug)), ...remote];
   } catch (error) {
     console.error('Error fetching blog posts:', error);
-    return [];
+    return getLocalBlogPosts();
   }
 }
 
 // Fetch a single blog post by slug
 export async function getBlogPostBySlug(slug) {
+  const local = getLocalBlogPostBySlug(slug);
+  if (local) {
+    return {
+      ...local,
+      content: null,
+      contentHtml: local.contentHtml
+    };
+  }
   try {
     const entries = await contentfulClient.getEntries({
       content_type: 'blogPost',
