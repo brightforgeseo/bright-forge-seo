@@ -73,7 +73,9 @@ export async function getAllBlogPosts() {
     }));
     const local = getLocalBlogPosts();
     const remoteSlugs = new Set(remote.map((p) => p.slug));
-    return [...local.filter((p) => !remoteSlugs.has(p.slug)), ...remote];
+    return [...local.filter((p) => !remoteSlugs.has(p.slug)), ...remote].sort(
+      (a, b) => b.publishDate - a.publishDate
+    );
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     return getLocalBlogPosts();
