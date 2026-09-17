@@ -36,6 +36,10 @@ const aiSearchFaqs = [
   {
     question: 'How much do GEO and AI SEO services cost?',
     answer: 'We price through a private proposal after reviewing the number of markets, platforms, priority topics, pages, technical issues, authority gaps and reporting requirements. We do not publish a generic rate because a focused service-site audit and an international ecommerce programme are not the same job.'
+  },
+  {
+    question: 'Why hire Bright Forge instead of a GEO-only shop?',
+    answer: 'Most Philippine GEO pages sell first-mover slogans, citation quotas or a cheap AEO product. We already do the SEO that Google says still sits under AI Overviews and AI Mode, we publish AI search case studies with sessions and conversions, and we refuse guarantees the platforms do not sell. Named specialists. British-led. Philippines delivery. UK, US and Australian work.'
   }
 ];
 
@@ -98,11 +102,25 @@ const platformRows = [
     check: 'AI Performance, Bing indexation, cited URLs, grounding-query themes and IndexNow suitability.'
   }
 ];
+
+const proofPoints = [
+  { value: '17', label: 'Published case studies' },
+  { value: '15+', label: 'Years of SEO practice' },
+  { value: 'UK US AU', label: 'Western search work' },
+  { value: 'GBP / USD', label: 'Billed in buyer currency' }
+];
+
+const geoCases = [
+  { href: '/case-studies/ai-sports-saas-geo/', name: 'TeamStats', line: '4,549 LLM sessions, 162 AI mentions, 239 AI link citations.' },
+  { href: '/case-studies/ai-self-storage-geo/', name: 'Newbury Self Store', line: 'LLM referral sessions up 662.5%, with measurable enquiries.' },
+  { href: '/case-studies/ai-leather-goods-ecommerce-geo/', name: 'Lost Dutchman Leather', line: '893 AI-referred sessions and 66 tracked conversion events.' },
+  { href: '/case-studies/ai-fintech-saas-geo/', name: 'FinTech SaaS', line: '1,322 LLM referral sessions with 7:11 average engagement.' }
+];
 ---
 
 <MainLayout
   title="AI Search Agency Philippines | Bright Forge"
-  description="AI search agency in the Philippines for Google AI Overviews, ChatGPT and answer engines. SEO first. No citation promises. Talk to us."
+  description="British-led AI search agency in the Philippines. SEO, GEO and AEO. Google AI Overviews, ChatGPT, enquiries. No citation promises."
   canonical="https://brightforge.com.ph/ai-search-optimization-services-philippines/"
   type="service"
   faqs={aiSearchFaqs}
@@ -122,8 +140,8 @@ const platformRows = [
           <div class="ai-hero-copy">
             <p class="ai-kicker"><span></span> AI SEO, GEO and AEO</p>
             <h1>AI search agency services for <span>Philippine businesses</span></h1>
-            <p class="ai-lede">We are an AI search agency in the Philippines. We make your business easier to find, understand and verify across Google AI Overviews, ChatGPT, Perplexity, Microsoft Copilot and the search journeys around them.</p>
-            <p class="ai-hero-note">SEO stays underneath it. Clear entities, strong source pages, technical access, useful evidence and external authority do the real work.</p>
+            <p class="ai-lede">British-led AI search agency in the Philippines. SEO, GEO and AEO as one job: get found in Google, get understood in AI answers, turn that into enquiries. UK, US and Australian work. Billed in GBP or USD.</p>
+            <p class="ai-hero-note">17 published case studies. Named specialists. No citation quotas. Google still says ordinary SEO foundations sit under AI Overviews and AI Mode.</p>
             <div class="ai-actions">
               <a class="ai-button ai-button-primary" href="/contact/">Request an AI visibility audit <span aria-hidden="true">→</span></a>
               <a class="ai-button ai-button-secondary" href="#method">See the method</a>
@@ -163,6 +181,67 @@ const platformRows = [
             </svg>
             <p class="observatory-caption"><span>Signal, not theatre.</span> No live client data is shown in this illustration.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-proof" id="proof">
+      <div class="ai-shell">
+        <div class="proof-grid">
+          {proofPoints.map((item) => (
+            <article class="proof-card">
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </article>
+          ))}
+        </div>
+        <p class="proof-people">Work led by <a href="/authors/ben-lowe/">Ben Lowe</a> and <a href="/authors/sassin-lowe/">Sassin Lowe</a>. Named specialists. Not a rented GEO bench.</p>
+      </div>
+    </section>
+
+    <section class="ai-contrast" id="why-us">
+      <div class="ai-shell">
+        <div class="ai-section-heading">
+          <p class="ai-kicker"><span></span> After looking at the Philippine GEO market</p>
+          <h2>Brochure GEO sells slogans. We publish the <span>work</span>.</h2>
+        </div>
+        <div class="contrast-grid">
+          <article class="contrast-card contrast-them">
+            <p>TYPICAL PH GEO PITCH</p>
+            <ul>
+              <li>First, only, or category leader with no method</li>
+              <li>Citation quotas in ChatGPT or AI Overviews</li>
+              <li>llms.txt or special schema as ranking magic</li>
+              <li>Cheap AEO product, leftover SGE copy, SEO replaced</li>
+            </ul>
+          </article>
+          <article class="contrast-card contrast-us">
+            <p>BRIGHT FORGE</p>
+            <ul>
+              <li>SEO first. Google says the same foundations still apply</li>
+              <li>GEO and AEO on this one owner page, not twin URLs</li>
+              <li>Published AI search cases with sessions and conversions</li>
+              <li>UK, US and Australian delivery. No citation guarantees</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-cases" id="cases">
+      <div class="ai-shell">
+        <div class="ai-section-heading">
+          <p class="ai-kicker"><span></span> Evidence, not a roundup list</p>
+          <h2>AI search case studies with <span>numbers</span></h2>
+        </div>
+        <div class="case-grid">
+          {geoCases.map((item) => (
+            <a class="case-card" href={item.href}>
+              <strong>{item.name}</strong>
+              <p>{item.line}</p>
+              <span>Read the case</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
@@ -650,9 +729,80 @@ const platformRows = [
   .ai-method,
   .ai-platforms,
   .ai-deliverables,
-  .ai-faq { padding: 112px 0; }
+  .ai-faq,
+  .ai-proof,
+  .ai-contrast,
+  .ai-cases { padding: 112px 0; }
 
   .ai-section-heading { max-width: 880px; }
+  .ai-section-heading h2 span { color: var(--ai-orange); }
+
+  .ai-proof { padding-top: 28px; border-bottom: 1px solid var(--ai-border); background: #0b0d18; }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .proof-card {
+    padding: 22px 20px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(20,24,42,.9));
+    box-shadow: 0 18px 40px rgba(0,0,0,.25);
+  }
+  .proof-card strong {
+    display: block;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: -.03em;
+  }
+  .proof-card span { display: block; margin-top: 6px; color: var(--ai-muted); font-size: .86rem; }
+  .proof-people { margin: 22px 0 0; color: #c6cad7; }
+  .proof-people a { color: #fff; text-decoration: none; border-bottom: 1px solid var(--ai-orange); }
+  .proof-people a:hover { color: var(--ai-orange-bright); }
+
+  .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 36px; }
+  .contrast-card {
+    padding: 28px 26px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    background: linear-gradient(180deg, #161b30, #101426);
+  }
+  .contrast-us { border-color: rgba(240,98,42,.45); box-shadow: 0 0 40px rgba(240,98,42,.08); }
+  .contrast-card > p {
+    margin: 0 0 16px;
+    color: var(--ai-orange);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+  }
+  .contrast-card ul { margin: 0; padding: 0; list-style: none; }
+  .contrast-card li {
+    position: relative;
+    padding: 10px 0 10px 18px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    color: #d7dbe8;
+    line-height: 1.5;
+  }
+  .contrast-card li::before { content: ''; position: absolute; left: 0; top: 18px; width: 7px; height: 7px; border-radius: 50%; background: #6b7288; }
+  .contrast-us li::before { background: var(--ai-orange); }
+
+  .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+  .case-card {
+    display: block;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(13,16,32,.94));
+    color: inherit;
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .case-card:hover { transform: translateY(-2px); border-color: rgba(240,98,42,.5); }
+  .case-card strong { display: block; color: #fff; font-size: 1.15rem; }
+  .case-card p { margin: 10px 0 16px; color: var(--ai-muted); line-height: 1.55; }
+  .case-card span { color: var(--ai-orange); font-size: .82rem; font-weight: 700; }
   .ai-section-heading h2,
   .method-intro h2,
   .source-copy h2,
@@ -869,6 +1019,9 @@ const platformRows = [
     .commercial-factors { padding: 36px 0 0; border-top: 1px solid var(--ai-border); border-left: 0; }
     .source-links a { grid-template-columns: 1fr; gap: 9px; }
     .final-cta-layout > div { grid-column: auto; }
+    .proof-grid,
+    .contrast-grid,
+    .case-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 520px) {
