@@ -9,7 +9,7 @@
   {"cluster":"meta_tag_optimisation","owner":"on-page-seo-services-philippines.astro","action":"covered","evidence_rows":6},
   {"cluster":"seo_reporting_measurement","owner":"seo-command-centre.astro","action":"covered","evidence_rows":1},
   {"cluster":"seo_competitor_analysis","owner":"keyword-research-services.astro","action":"covered","evidence_rows":3},
-  {"cluster":"international_seo","owner":"index.astro","action":"covered","evidence_rows":2},
+  {"cluster":"international_seo","owner":"international-seo-services.astro","action":"covered","evidence_rows":2},
   {"cluster":"ai_search_seo","owner":"ai-search-optimization-services-philippines.astro","action":"covered","evidence_rows":1},
   {"cluster":"web_development_philippines","owner":"development/index.astro","action":"expand","evidence_rows":18},
   {"cluster":"web_design_philippines","owner":"development/index.astro","action":"expand","evidence_rows":26},
