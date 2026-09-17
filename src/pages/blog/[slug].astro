@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
 import { getBlogMetadata } from '../../lib/blogMetadata';
 import { getAuthorSlug } from '../../lib/authors';
+import { pickRelatedPosts } from '../../lib/relatedPosts';
 
 export async function getStaticPaths() {
   const posts = await getAllBlogPosts();
@@ -879,7 +880,8 @@ const templateProps = {
   featuredImage: post.featuredImage,
   content: htmlContent,
   tableOfContents: tableOfContents,
-  showInfographic: false
+  showInfographic: false,
+  relatedArticles: pickRelatedPosts(await getAllBlogPosts(), post, 4)
 };
 ---
 

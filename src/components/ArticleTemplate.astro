@@ -409,9 +409,9 @@ const formatDate = (dateString: string) => {
               )}
               <div class="related-content">
                 <div class="related-date">{formatDate(article.publishDate)}</div>
-                <h3><a href={`/blog/${article.slug}`}>{article.title}</a></h3>
+                <h3><a href={`/blog/${article.slug}/`}>{article.title}</a></h3>
                 <p>{article.excerpt}</p>
-                <a href={`/blog/${article.slug}`} class="read-more">Read More →</a>
+                <a href={`/blog/${article.slug}/`} class="read-more">Read More →</a>
               </div>
             </article>
           ))}

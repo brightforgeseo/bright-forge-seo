@@ -1,0 +1,137 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import { getAllBlogPosts } from '../lib/contentful.js';
+
+const posts = await getAllBlogPosts();
+
+const services = [
+  { href: '/seo-services-philippines/', label: 'SEO services' },
+  { href: '/local-seo-for-google-maps-and-gbp/', label: 'Local SEO for Google Maps and GBP' },
+  { href: '/technical-seo-services-philippines/', label: 'Technical SEO' },
+  { href: '/content-seo-services-philippines/', label: 'Content SEO' },
+  { href: '/on-page-seo-services-philippines/', label: 'On-page SEO' },
+  { href: '/backlink-seo-services-philippines/', label: 'Link building' },
+  { href: '/seo-audit-services/', label: 'SEO audits' },
+  { href: '/keyword-research-services/', label: 'Keyword research' },
+  { href: '/ai-search-optimization-services-philippines/', label: 'AI search' },
+  { href: '/white-label-seo-services-philippines/', label: 'White label SEO' },
+  { href: '/seo-command-centre/', label: 'SEO Command Centre' },
+  { href: '/ecommerce-seo-services/', label: 'Ecommerce SEO' },
+  { href: '/saas-seo-services/', label: 'SaaS SEO' },
+  { href: '/legal-seo-services/', label: 'Legal SEO' },
+  { href: '/construction-seo-services/', label: 'Construction SEO' },
+  { href: '/home-services-seo/', label: 'Home services SEO' },
+  { href: '/website-migration-services/', label: 'Website migration' },
+  { href: '/development/', label: 'Web development' }
+];
+
+const markets = [
+  { href: '/seo-services-uk/', label: 'UK' },
+  { href: '/seo-services-usa/', label: 'USA' },
+  { href: '/seo-services-australia/', label: 'Australia' },
+  { href: '/seo-services-new-zealand/', label: 'New Zealand' },
+  { href: '/international-seo-services/', label: 'International SEO' },
+  { href: '/b2b-seo-services/', label: 'B2B SEO' }
+];
+
+const company = [
+  { href: '/', label: 'Home' },
+  { href: '/about-us/', label: 'About' },
+  { href: '/authors/ben-lowe/', label: 'Ben Lowe' },
+  { href: '/authors/sassin-lowe/', label: 'Sassin Lowe' },
+  { href: '/authors/janin-a-canonero/', label: 'Janin A. Canonero' },
+  { href: '/authors/jewe-o-manalo/', label: 'Jewe O. Manalo' },
+  { href: '/editorial-standards/', label: 'Editorial standards' },
+  { href: '/case-studies/', label: 'Case studies' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/contact/', label: 'Contact' }
+];
+---
+
+<MainLayout
+  title="Site Index | Bright Forge"
+  description="A plain list of Bright Forge service pages, markets, people and articles. Use it to reach a page without hunting the menu."
+>
+  <LegacyHeader slot="header" />
+  <main class="index-main">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="eyebrow">Site index</p>
+      <h1>Every public page, in one list</h1>
+      <p class="lede">Service pages, markets, people and the full blog. XML sitemap stays at <a href="/sitemap.xml">/sitemap.xml</a>.</p>
+
+      <section>
+        <h2>Company</h2>
+        <ul>{company.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul>
+      </section>
+      <section>
+        <h2>Services</h2>
+        <ul>{services.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul>
+      </section>
+      <section>
+        <h2>Markets</h2>
+        <ul>{markets.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul>
+      </section>
+      <section>
+        <h2>Articles</h2>
+        <ul>
+          {posts.map((post) => (
+            <li><a href={`/blog/${post.slug}/`}>{post.title}</a></li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>
+
+<style>
+  .index-main {
+    background: #0d0f1a;
+    color: #fff;
+    padding: 5rem 0 6rem;
+  }
+  .eyebrow {
+    color: #f0622a;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 0.8rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+  .lede {
+    color: #d0d4e8;
+    max-width: 42rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  .lede a { color: #f0622a; }
+  h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 2.2rem 0 1rem;
+  }
+  ul {
+    columns: 2;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  li { break-inside: avoid; margin: 0 0 0.55rem; }
+  a {
+    color: #d0d4e8;
+    text-decoration: none;
+  }
+  a:hover { color: #fff; }
+  @media (max-width: 700px) {
+    ul { columns: 1; }
+  }
+</style>

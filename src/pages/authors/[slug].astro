@@ -19,11 +19,10 @@ if (!author) {
   return Astro.redirect('/404');
 }
 
-// Fetch all posts and filter to this author's articles (newest first, max 6)
+// Fetch all posts and filter to this author's articles (newest first)
 const allPosts = await getAllBlogPosts();
 const authorPosts = allPosts
-  .filter((p) => (p.author || '').trim().toLowerCase() === author.name.toLowerCase())
-  .slice(0, 6);
+  .filter((p) => (p.author || '').trim().toLowerCase() === author.name.toLowerCase());
 
 const formatDate = (d) =>
   d

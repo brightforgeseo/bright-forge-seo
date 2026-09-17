@@ -29,7 +29,10 @@ function optimizeContentfulImage(url, options = {}) {
 }
 
 // Fetch all blog posts with selected fields
+let allPostsCache;
+
 export async function getAllBlogPosts() {
+  if (allPostsCache) return allPostsCache;
   try {
     const raw = [];
     let skip = 0;
@@ -73,12 +76,14 @@ export async function getAllBlogPosts() {
     }));
     const local = getLocalBlogPosts();
     const remoteSlugs = new Set(remote.map((p) => p.slug));
-    return [...local.filter((p) => !remoteSlugs.has(p.slug)), ...remote].sort(
+    allPostsCache = [...local.filter((p) => !remoteSlugs.has(p.slug)), ...remote].sort(
       (a, b) => b.publishDate - a.publishDate
     );
+    return allPostsCache;
   } catch (error) {
     console.error('Error fetching blog posts:', error);
-    return getLocalBlogPosts();
+    allPostsCache = getLocalBlogPosts();
+    return allPostsCache;
   }
 }
 

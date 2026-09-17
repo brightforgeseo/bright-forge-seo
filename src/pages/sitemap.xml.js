@@ -21,6 +21,18 @@ function pagePathToUrl(file) {
   return `${SITE}/${rel}/`;
 }
 
+function isoDate(value) {
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().slice(0, 10);
+}
+
+function urlXml(loc, lastmod) {
+  return lastmod
+    ? `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`
+    : `  <url>\n    <loc>${loc}</loc>\n  </url>`;
+}
+
 export async function GET() {
   const pageFiles = Object.keys(import.meta.glob('./**/*.astro'));
   const staticUrls = [];
@@ -30,27 +42,24 @@ export async function GET() {
   }
 
   const posts = await getAllBlogPosts();
-  const blogUrls = posts
-    .filter((p) => p.slug)
-    .map((p) => `${SITE}/blog/${p.slug}/`);
+  const blogLastmod = new Map();
+  const blogUrls = [];
+  for (const post of posts) {
+    if (!post.slug) continue;
+    const loc = `${SITE}/blog/${post.slug}/`;
+    blogUrls.push(loc);
+    const lastmod = isoDate(post.publishDate);
+    if (lastmod) blogLastmod.set(loc, lastmod);
+  }
 
   const authorUrls = Object.keys(authors).map((slug) => `${SITE}/authors/${slug}/`);
-
   const urls = [...new Set([...staticUrls, ...blogUrls, ...authorUrls, `${SITE}/editorial-standards/`, ...REQUIRED])];
   urls.sort((a, b) => a.localeCompare(b));
 
-  const today = new Date().toISOString().slice(0, 10);
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (loc) => `  <url>
-    <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
-  </url>`
-  )
-  .join('\n')}
+${urls.map((loc) => urlXml(loc, blogLastmod.get(loc) || null)).join('\n')}
 </urlset>
 `;
 
