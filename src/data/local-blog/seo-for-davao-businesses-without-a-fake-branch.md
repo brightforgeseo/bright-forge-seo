@@ -4,7 +4,7 @@ slug: seo-for-davao-businesses-without-a-fake-branch
 excerpt: We help Davao businesses with SEO from our Quezon City base. No invented Davao branch. Local visibility still depends on your real listing, pages and service area.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, local]
 image: /images/blog/seo-for-davao-businesses-without-a-fake-branch.webp
 metaTitle: SEO Agency Davao | Bright Forge
 metaDescription: SEO for Davao businesses without a fake local branch. We work from Quezon City and treat your listing, pages and service area as the real local assets.

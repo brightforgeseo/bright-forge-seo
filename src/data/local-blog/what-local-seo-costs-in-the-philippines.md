@@ -4,7 +4,7 @@ slug: what-local-seo-costs-in-the-philippines
 excerpt: Local SEO cost in the Philippines follows the number of locations, the state of the Maps listing, and the hours needed to make pages and reviews match the real business, not a national blog package.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, local]
 image: /images/blog/what-local-seo-costs-in-the-philippines.webp
 metaTitle: Local SEO Cost Philippines | Bright Forge
 metaDescription: Local SEO cost in the Philippines is driven by locations, Maps work, citations, pages and reviews. See what hours actually buy before you compare retainers.

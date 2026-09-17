@@ -4,7 +4,7 @@ slug: service-area-business-vs-storefront-on-google-maps
 excerpt: How Google distinguishes storefront, service-area, and hybrid listings, and how Philippine trades, clinics, and shops should set the type before chasing the local pack.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, local]
 image: /images/blog/service-area-business-vs-storefront-on-google-maps.webp
 metaTitle: Service-Area vs Storefront on Google Maps | Bright Forge
 metaDescription: Set storefront, service-area, or hybrid on Google Maps from how you actually serve customers. Wrong type wastes verification and local SEO.

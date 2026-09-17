@@ -3,8 +3,10 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import { getAllBlogPosts } from '../lib/contentful.js';
+import { groupPostsByTopic } from '../lib/blogDisplay.js';
 
 const posts = await getAllBlogPosts();
+const topics = groupPostsByTopic(posts, 3);
 
 const services = [
   { href: '/seo-services-philippines/', label: 'SEO services' },
@@ -46,6 +48,7 @@ const company = [
   { href: '/editorial-standards/', label: 'Editorial standards' },
   { href: '/case-studies/', label: 'Case studies' },
   { href: '/blog/', label: 'Blog' },
+  { href: '/blog/topics/', label: 'Blog topics' },
   { href: '/contact/', label: 'Contact' }
 ];
 ---
@@ -72,6 +75,10 @@ const company = [
       <section>
         <h2>Markets</h2>
         <ul>{markets.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul>
+      </section>
+      <section>
+        <h2>Topics</h2>
+        <ul>{topics.map((topic) => <li><a href={`/blog/topics/${topic.slug}/`}>{topic.label}</a></li>)}</ul>
       </section>
       <section>
         <h2>Articles</h2>

@@ -1,0 +1,49 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import LegacyHeader from '../../../components/LegacyHeader.astro';
+import Footer from '../../../components/Footer.astro';
+import { getAllBlogPosts } from '../../../lib/contentful.js';
+import { groupPostsByTopic } from '../../../lib/blogDisplay.js';
+
+const topics = groupPostsByTopic(await getAllBlogPosts(), 3);
+---
+
+<MainLayout
+  title="Blog topics | Bright Forge"
+  description="Crawlable topic lists for Bright Forge articles. Each topic is a real page, not a JavaScript filter."
+>
+  <LegacyHeader slot="header" />
+  <main class="topic-main">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="eyebrow"><a href="/blog/">Blog</a></p>
+      <h1>Blog topics</h1>
+      <p class="lede">Each topic lists the articles in HTML. Use this when the blog filter buttons are not enough for Google.</p>
+      <ul>
+        {topics.map((topic) => (
+          <li>
+            <a href={`/blog/topics/${topic.slug}/`}>{topic.label}</a>
+            <span> {topic.posts.length}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>
+
+<style>
+  .topic-main {
+    background: #0d0f1a;
+    color: #fff;
+    padding: 5rem 0 6rem;
+  }
+  .eyebrow, .lede, span { color: #d0d4e8; }
+  .eyebrow a, ul a { color: #f0622a; text-decoration: none; }
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin: 0.8rem 0 1rem;
+  }
+  ul { list-style: none; padding: 0; }
+  li { margin: 0 0 0.7rem; }
+</style>

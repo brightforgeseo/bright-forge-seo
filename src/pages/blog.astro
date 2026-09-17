@@ -7,6 +7,7 @@ import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 import { getAllBlogPosts } from '../lib/contentful';
+import { groupPostsByTopic } from '../lib/blogDisplay.js';
 
 // Fetch blog posts from Contentful
 const contentfulPosts = await getAllBlogPosts();
@@ -60,16 +61,13 @@ if (blogPosts.length === 0) {
   );
 }
 
-// Extract unique categories from all posts
-const allCategories = blogPosts.flatMap(post => post.categories);
-const uniqueCategories = [...new Set(allCategories)];
-
-// Capitalize categories and replace hyphens with spaces
-const categories = uniqueCategories.map(cat => {
-  return cat.split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-});
+const topics = groupPostsByTopic(contentfulPosts, 3);
+const navTopics = [
+  { slug: 'seo', label: 'SEO' },
+  { slug: 'ai', label: 'AI' },
+  { slug: 'local', label: 'Local SEO' },
+  { slug: 'business', label: 'Small Business' }
+];
 
 // Popular posts - use the first 3 or all if fewer
 const popularPosts = blogPosts.slice(0, Math.min(3, blogPosts.length));
@@ -145,11 +143,10 @@ const recentPosts = [...blogPosts]
             
             <!-- Filter Buttons -->
             <div class="filter-container">
-              <button class="filter-btn active" data-category="all">All Topics</button>
-              <button class="filter-btn" data-category="seo">SEO</button>
-              <button class="filter-btn" data-category="ai">AI & Technology</button>
-              <button class="filter-btn" data-category="local">Local SEO</button>
-              <button class="filter-btn" data-category="business">Small Business</button>
+              <a class="filter-btn active" href="/blog/">All Topics</a>
+              {navTopics.map((topic) => (
+                <a class="filter-btn" href={`/blog/topics/${topic.slug}/`}>{topic.label}</a>
+              ))}
             </div>
             
             <!-- Articles Grid -->
@@ -191,12 +188,12 @@ const recentPosts = [...blogPosts]
             <h3>Topics</h3>
             <ul class="categories-list">
               <li>
-                <a href="#" class="category-link topic-item active" data-category="all">All Topics</a>
+                <a href="/blog/" class="category-link topic-item active">All Topics</a>
               </li>
-              {categories.map((category) => (
+              {topics.map((topic) => (
                 <li>
-                  <a href="#" class="category-link topic-item" data-category={category.toLowerCase().replace(' & ', '-').replace(' ', '-')}>
-                    {category}
+                  <a href={`/blog/topics/${topic.slug}/`} class="category-link topic-item">
+                    {topic.label}
                   </a>
                 </li>
               ))}
@@ -424,6 +421,8 @@ const recentPosts = [...blogPosts]
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .filter-btn.active,
@@ -868,8 +867,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('blogSearch');
   const searchButton = document.querySelector('.search-button');
   const articleCards = document.querySelectorAll('.article-card');
-  const topicLinks = document.querySelectorAll('.topic-item');
-  const filterButtons = document.querySelectorAll('.filter-btn');
   const featuredArticle = document.querySelector('.featured-article');
   const newsletterForm = document.querySelector('.newsletter-form');
   
@@ -908,47 +905,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Function to filter articles by topic category
-  function filterByTopic(category) {
-    topicLinks.forEach(link => link.classList.remove('active'));
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-
-    const activeLink = document.querySelector(`.topic-item[data-category="${category}"]`);
-    if (activeLink) {
-      activeLink.classList.add('active');
-    }
-    const activeButton = document.querySelector(`.filter-btn[data-category="${category}"]`);
-    if (activeButton) {
-      activeButton.classList.add('active');
-    }
-    
-    // Reset articles display if 'all' is selected
-    if (category === 'all') {
-      articleCards.forEach(card => card.style.display = '');
-      featuredArticle.style.display = '';
-      return;
-    }
-    
-    // Check featured article
-    const featuredCategories = featuredArticle?.getAttribute('data-categories')?.split(' ') || [];
-    if (featuredCategories.includes(category)) {
-      featuredArticle.style.display = '';
-    } else {
-      featuredArticle.style.display = 'none';
-    }
-    
-    // Filter regular articles
-    articleCards.forEach(card => {
-      const categories = card.getAttribute('data-categories')?.split(' ') || [];
-      if (categories.includes(category)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-  
-  // Add event listeners for search
   if (searchInput && searchButton) {
     // Search on button click
     searchButton.addEventListener('click', function(e) {
@@ -971,23 +927,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
-  // Add event listeners for topic filtering
-  topicLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const category = this.getAttribute('data-category');
-      filterByTopic(category);
-    });
-  });
 
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      filterByTopic(this.getAttribute('data-category'));
-    });
-  });
-  
   // Newsletter form
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {

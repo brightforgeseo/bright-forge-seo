@@ -4,7 +4,7 @@ slug: google-business-profile-verification-in-the-philippines
 excerpt: How postcard, email, and video verification actually work for Philippine businesses, including the address and mail problems that stall a listing before local pack work can start.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, local]
 image: /images/blog/google-business-profile-verification-in-the-philippines.webp
 metaTitle: GBP Verification in the Philippines | Bright Forge
 metaDescription: Postcard, email, and video verification for Philippine Google Business Profiles. We work from Google Help, not invented local rules.

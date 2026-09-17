@@ -1,0 +1,62 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import LegacyHeader from '../../../components/LegacyHeader.astro';
+import Footer from '../../../components/Footer.astro';
+import { getAllBlogPosts } from '../../../lib/contentful.js';
+import { groupPostsByTopic, topicLabel } from '../../../lib/blogDisplay.js';
+
+export async function getStaticPaths() {
+  const posts = await getAllBlogPosts();
+  const grouped = groupPostsByTopic(posts, 1);
+  const forced = new Set(['seo', 'ai', 'local', 'business']);
+  return grouped
+    .filter((topic) => topic.posts.length >= 3 || forced.has(topic.slug))
+    .map((topic) => ({
+      params: { topic: topic.slug },
+      props: { topic }
+    }));
+}
+
+const { topic } = Astro.props;
+const label = topic.label || topicLabel(topic.slug);
+---
+
+<MainLayout
+  title={`${label} articles | Bright Forge`}
+  description={`Bright Forge articles on ${label}.`}
+>
+  <LegacyHeader slot="header" />
+  <main class="topic-main">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="eyebrow"><a href="/blog/">Blog</a> / <a href="/blog/topics/">Topics</a></p>
+      <h1>{label}</h1>
+      <p class="lede">{topic.posts.length} articles. Full list, no JavaScript filter.</p>
+      <ul>
+        {topic.posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}/`}>{post.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>
+
+<style>
+  .topic-main {
+    background: #0d0f1a;
+    color: #fff;
+    padding: 5rem 0 6rem;
+  }
+  .eyebrow, .lede { color: #d0d4e8; margin-bottom: 1rem; }
+  .eyebrow a, ul a { color: #f0622a; text-decoration: none; }
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  ul { list-style: none; padding: 0; columns: 2; gap: 2rem; }
+  li { break-inside: avoid; margin: 0 0 0.6rem; }
+  @media (max-width: 700px) { ul { columns: 1; } }
+</style>

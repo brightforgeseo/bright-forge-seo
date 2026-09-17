@@ -1,5 +1,6 @@
 import { getAllBlogPosts } from '../lib/contentful.js';
 import { authors } from '../lib/authors.js';
+import { groupPostsByTopic } from '../lib/blogDisplay.js';
 
 const SITE = 'https://brightforge.com.ph';
 const SKIP = new Set(['404', 'thanks', 'sitemap.xml']);
@@ -53,7 +54,11 @@ export async function GET() {
   }
 
   const authorUrls = Object.keys(authors).map((slug) => `${SITE}/authors/${slug}/`);
-  const urls = [...new Set([...staticUrls, ...blogUrls, ...authorUrls, `${SITE}/editorial-standards/`, ...REQUIRED])];
+  const topicUrls = [
+    `${SITE}/blog/topics/`,
+    ...groupPostsByTopic(posts, 3).map((topic) => `${SITE}/blog/topics/${topic.slug}/`)
+  ];
+  const urls = [...new Set([...staticUrls, ...blogUrls, ...authorUrls, ...topicUrls, `${SITE}/editorial-standards/`, ...REQUIRED])];
   urls.sort((a, b) => a.localeCompare(b));
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>

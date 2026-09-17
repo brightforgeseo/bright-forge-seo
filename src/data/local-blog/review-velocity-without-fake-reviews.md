@@ -4,7 +4,7 @@ slug: review-velocity-without-fake-reviews
 excerpt: How to earn a steady flow of genuine Google reviews in the Philippines without incentives, star-gating, or fake accounts, and what Google actually forbids.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, local]
 image: /images/blog/review-velocity-without-fake-reviews.webp
 metaTitle: Review Velocity Without Fake Reviews | Bright Forge
 metaDescription: Earn genuine Google review flow without fake reviews, paid stars, or gating. We follow Google’s Fake Engagement rules and still ask.
