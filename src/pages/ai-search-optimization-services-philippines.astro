@@ -3,6 +3,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 const aiSearchFaqs = [
   {
@@ -96,18 +99,11 @@ const platformRows = [
     check: 'Citation patterns, competing sources, source-page depth, evidence and freshness.'
   },
   {
-    platform: 'Microsoft',
+    platform: 'Microsoft Copilot',
     surface: 'Copilot and Bing AI answers',
     reality: 'Bing Webmaster Tools now reports citations, cited URLs and sampled grounding queries through AI Performance.',
     check: 'AI Performance, Bing indexation, cited URLs, grounding-query themes and IndexNow suitability.'
   }
-];
-
-const proofPoints = [
-  { value: '17', label: 'Published case studies' },
-  { value: '15+', label: 'Years of SEO practice' },
-  { value: 'UK US AU', label: 'Western search work' },
-  { value: 'GBP / USD', label: 'Billed in buyer currency' }
 ];
 
 const geoCases = [
@@ -119,54 +115,41 @@ const geoCases = [
 ---
 
 <MainLayout
-  title="AI Search Agency Philippines | Bright Forge"
-  description="British-led AI search agency in the Philippines. SEO, GEO and AEO. Google AI Overviews, ChatGPT, enquiries. No citation promises."
+  title="AI SEO, GEO and AEO Philippines | Bright Forge"
+  description="British-led AI search agency in the Philippines. GEO, AEO and AI search: Google AI Overviews, ChatGPT, enquiries. No citation promises."
   canonical="https://brightforge.com.ph/ai-search-optimization-services-philippines/"
   type="service"
   faqs={aiSearchFaqs}
 >
   <LegacyHeader slot="header" />
 
-  <main class="ai-page">
-    <section class="ai-hero">
-      <div class="ai-shell">
-        <nav class="ai-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span aria-hidden="true">/</span>
-          <span>AI Search Agency</span>
-        </nav>
-
-        <div class="ai-hero-layout">
-          <div class="ai-hero-copy">
-            <p class="ai-kicker"><span></span> AI SEO, GEO and AEO</p>
-            <h1>AI search agency services for <span>Philippine businesses</span></h1>
-            <p class="ai-lede">British-led AI search agency in the Philippines. SEO, GEO and AEO as one job: get found in Google, get understood in AI answers, turn that into enquiries. UK, US and Australian work. Billed in GBP or USD.</p>
-            <p class="ai-hero-note">17 published case studies. Named specialists. No citation quotas. Google still says ordinary SEO foundations sit under AI Overviews and AI Mode.</p>
-            <div class="ai-actions">
-              <a class="ai-button ai-button-primary" href="/contact/">Request an AI visibility audit <span aria-hidden="true">→</span></a>
-              <a class="ai-button ai-button-secondary" href="#method">See the method</a>
-            </div>
-            <ul class="ai-trust-line" aria-label="Service positioning">
-              <li>British-led</li>
-              <li>Philippines-based</li>
-              <li>International delivery</li>
-              <li>No citation guarantees</li>
-            </ul>
-          </div>
-        </div>
+  <Hero
+    badgeIcon="fas fa-comments"
+    badgeText="AI SEO, GEO and AEO"
+    title="AI search agency services for <span>Philippine businesses</span>"
+    breadcrumbCurrent="AI Search Agency"
+  >
+    <Fragment slot="story">
+      <p>This is the GEO, AEO and AI search page. Get found in Google, get understood in AI answers, turn that into enquiries. It is not the automated SEO team.</p>
+      <p>British-led AI search agency in the Philippines. UK, US and Australian work. Billed in GBP or USD. Named specialists. No citation quotas. Google still says ordinary SEO foundations sit under AI Overviews and AI Mode.</p>
+    </Fragment>
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Request an AI visibility audit" />
+      <ButtonSecondary href="#method" text="See the method" />
+    </Fragment>
+    <Fragment slot="stats">
+      <div class="hero-stats">
+        <div class="stat"><strong>17</strong><span>Published case studies</span></div>
+        <div class="stat"><strong>15+</strong><span>Years of SEO practice</span></div>
+        <div class="stat"><strong>UK US AU</strong><span>Western search work</span></div>
+        <div class="stat"><strong>GBP / USD</strong><span>Billed in buyer currency</span></div>
       </div>
-    </section>
+    </Fragment>
+  </Hero>
 
+  <main class="ai-page">
     <section class="ai-proof" id="proof">
       <div class="ai-shell">
-        <div class="proof-grid">
-          {proofPoints.map((item) => (
-            <article class="proof-card">
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </article>
-          ))}
-        </div>
         <p class="proof-people">Work led by <a href="/authors/ben-lowe/">Ben Lowe</a> and <a href="/authors/sassin-lowe/">Sassin Lowe</a>. Named specialists. Not a rented GEO bench.</p>
       </div>
     </section>
@@ -293,7 +276,7 @@ const geoCases = [
           <p class="ai-kicker"><span></span> Citation readiness</p>
           <h2>An answer engine needs more than a well-written paragraph.</h2>
           <p>We connect the page to a wider source system. That means the technical route into the content, the facts on the page, the evidence behind those facts and the independent signals that help verify them.</p>
-          <p>This is where our <a href="/technical-seo-services-philippines/">technical SEO</a>, <a href="/content-seo-services-philippines/">content SEO</a>, <a href="/backlink-seo-services-philippines/">authority work</a> and <a href="/seo-command-centre/">measurement layer</a> work together.</p>
+          <p>This is where our <a href="/technical-seo-services-philippines/">technical SEO</a>, <a href="/content-seo-services-philippines/">content SEO</a> and <a href="/backlink-seo-services-philippines/">authority work</a> sit under GEO, AEO and AI search. The <a href="/seo-command-centre/">SEO Command Centre</a> is a separate product: the automated SEO team for monitoring and delivery QA.</p>
           <ul class="source-layers">
             <li>Technical access</li>
             <li>Entity clarity</li>
@@ -339,7 +322,7 @@ const geoCases = [
           <p class="ai-kicker"><span></span> Measurement without make-believe</p>
           <h2>We separate visibility from visits, and visits from leads.</h2>
           <p>AI search reporting is still uneven. We build a defensible view from the strongest available evidence instead of inventing a single visibility score.</p>
-          <a href="/seo-command-centre/">See our wider SEO measurement approach <span aria-hidden="true">→</span></a>
+          <p>Need an automated SEO team watching Search Console and delivery? That is the <a href="/seo-command-centre/">SEO Command Centre</a>, not this GEO and AEO engagement.</p>
         </div>
         <ol class="measurement-chain">
           <li><span>01</span><p><strong>Observed citation</strong><small>A brand or page appears for a recorded prompt at a recorded time.</small></p></li>
@@ -381,7 +364,7 @@ const geoCases = [
           </div>
           <div>
             <h3>Usually needs foundations first</h3>
-            <p>Sites with blocked crawling, weak service pages, no useful proof, unclear positioning or little conventional search visibility. We repair the source before selling monitoring theatre.</p>
+            <p>Sites with blocked crawling, weak service pages, no useful proof, unclear positioning or little conventional search visibility. We repair the source before selling AI-answer theatre.</p>
           </div>
           <div>
             <h3>Not a fit</h3>
