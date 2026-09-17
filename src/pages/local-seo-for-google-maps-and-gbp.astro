@@ -106,21 +106,20 @@ const signals = [
 ];
 
 const faqs = [
-  { question: 'What are local SEO services?', answer: 'Local SEO services improve how a business appears in Google Maps, Google Business Profile, local pack results and location-based organic searches. The work includes GBP optimisation, local landing pages, citation cleanup, review strategy, local content, tracking and ongoing performance improvements.' },
-  { question: 'Is local SEO only for businesses with a physical shop?', answer: 'No. Local SEO also matters for service-area businesses such as trades, clinics, legal services, repair companies, consultants and home service providers. The strategy changes depending on whether customers visit you, you visit them, or both.' },
-  { question: 'How long does local SEO take?', answer: 'Some Google Business Profile improvements can show within weeks, especially if the listing is incomplete or inconsistent. Competitive local rankings usually take two to six months depending on the market, location, reviews, website strength and competitor activity.' },
-  { question: 'What is included in Google Business Profile optimisation?', answer: 'GBP optimisation can include category review, service setup, business description improvements, service-area checks, photo guidance, posts, Q&A, review response standards, tracking links, duplicate listing checks and alignment between the profile and website.' },
-  { question: 'Can local SEO help us appear in Google Maps?', answer: 'Yes, that is one of the main goals. Google Maps visibility depends on relevance, proximity and prominence, so we improve the profile, reviews, citations, landing pages and local signals that help Google understand when your business is a strong result.' },
-  { question: 'Do reviews affect local SEO?', answer: 'Reviews influence trust, conversion and local visibility. We do not recommend fake reviews or risky shortcuts. The right approach is a consistent review request process, professional responses and clear internal ownership so real customers are encouraged to leave useful feedback.' },
-  { question: 'Do we need separate location pages?', answer: 'Usually, yes, if you serve multiple important areas or have more than one branch. Location pages should be useful, specific and connected to real services, not doorway pages created only to stuff city names into the site.' },
-  { question: 'How do you measure local SEO performance?', answer: 'We measure local rankings, Google Business Profile actions, calls, website clicks, direction requests, form enquiries, Search Console visibility and landing-page performance. The goal is not just map visibility; it is more qualified local enquiries.' }
+  { question: 'What does local SEO actually change?', answer: 'The Google Business Profile, the map pin, categories, hours, service area, photos, reviews, the page the listing opens, and whether a person can call or visit without hunting. Directories only help if the name, address and phone number already match.' },
+  { question: 'Is this only for shops with a front door?', answer: 'No. Trades, clinics, legal work, repair and home services still need a listing that matches how they actually operate. A service-area business is not a fake branch. We will not invent a pin in a city we cannot defend.' },
+  { question: 'How long does local SEO take?', answer: 'Incomplete listings can look better within weeks once categories, hours and the phone number are right. Competitive map packs usually take two to six months. Reviews, proximity and the landing page set the ceiling, not a posting calendar.' },
+  { question: 'What do you do on Google Business Profile?', answer: 'Categories, services, the description, hours, service area, photos of real work, posts, Q&A, review replies, tracking links, duplicate listing checks, and making the website agree with the profile. Completeness is the start. Accuracy is the job.' },
+  { question: 'Will this put us in Google Maps?', answer: 'That is the commercial test. Maps uses relevance, proximity and prominence. We fix the profile, reviews, citations and landing pages so Google can tell when you are a real answer. We cannot move your premises closer to the searcher.' },
+  { question: 'Do reviews matter?', answer: 'Yes, for trust, calls and map visibility. We do not buy reviews or script customers. The work is a request process someone on the floor will actually use, plus replies that sound like the business.' },
+  { question: 'Do we need a page per city?', answer: 'Only for places you truly serve or a branch that exists. A page that only swaps the city name is a doorway. Multi-location work starts with a branch inventory and profile eligibility, not a suburb template.' },
+  { question: 'How do you measure it?', answer: 'Map visibility, GBP calls, website clicks, direction requests, forms, Search Console, and whether the landing page wastes the click. Rankings without calls are not the report.' }
 ];
 ---
 
 <MainLayout
-  title="Local SEO Services Philippines | Google Maps & GBP"
-  description="Local SEO services in the Philippines for Google Business Profile, Google Maps visibility, reviews, citations, local pages and enquiry growth."
-  keywords="local SEO services Philippines, local SEO Philippines, Google Business Profile optimization Philippines, Google Maps SEO Philippines, local SEO agency Philippines"
+  title="Local SEO for Google Maps and GBP | Bright Forge"
+  description="Google Maps and Google Business Profile work for businesses that need calls and visits from a real service area. Quezon City based. No fake branches."
   faqs={faqs}
 >
   <Fragment slot="head">
@@ -137,18 +136,18 @@ const faqs = [
         {
           '@type': 'ListItem',
           position: 2,
-          name: 'Local SEO Services Philippines',
-          item: 'https://brightforge.com.ph/local-seo-services-philippines/'
+          name: 'Local SEO for Google Maps and GBP',
+          item: 'https://brightforge.com.ph/local-seo-for-google-maps-and-gbp/'
         }
       ]
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Local SEO Services Philippines',
-      url: 'https://brightforge.com.ph/local-seo-services-philippines/',
+      name: 'Local SEO for Google Maps and GBP',
+      url: 'https://brightforge.com.ph/local-seo-for-google-maps-and-gbp/',
       inLanguage: 'en',
-      description: 'Local SEO services for Google Business Profile, Google Maps visibility, reviews, citations, local landing pages and enquiry growth.',
+      description: 'Google Maps and Google Business Profile work for a real service area. Quezon City based. No fake branches.',
       publisher: {
         '@type': 'Organization',
         name: 'Bright Forge SEO',
@@ -170,14 +169,14 @@ const faqs = [
 
   <Hero
     badgeIcon="fas fa-map-marker-alt"
-    badgeText="Local SEO Services"
-    title="Local SEO Services Philippines for <span>Google Maps, GBP and Local Leads</span>"
-    breadcrumbCurrent="Local SEO Services Philippines"
+    badgeText="Local SEO"
+    title="Local SEO for <span>Google Maps and GBP</span>"
+    breadcrumbCurrent="Local SEO for Google Maps and GBP"
   >
     <Fragment slot="story">
-      <p>Local SEO is not just about showing up on a map. It is about helping nearby customers find the right business, trust it quickly and take the next step, whether that means calling, booking, visiting, asking for directions or sending an enquiry.</p>
-      <p>Bright Forge provides local SEO services in the Philippines for businesses that need stronger Google Business Profile performance, cleaner local signals, better location pages and more qualified enquiries from the areas they actually serve.</p>
-      <p>We act as a local search partner for Philippine businesses and Manila-focused campaigns that need Maps visibility connected to real calls, bookings and enquiries, not a report full of disconnected listing metrics.</p>
+      <p>If the job starts with someone searching nearby, the Google Business Profile and the page it lands on have to agree. Categories, hours, the pin, the phone number and the service area are the product. A city page that only swaps the place name is not.</p>
+      <p>We work this from Quezon City. If you trade in Cebu or Davao, that is a service area or a real branch, not a Bright Forge office. We will not invent a pin to win a pack we cannot defend.</p>
+      <p>The test is simple. Can a person on a phone find you, trust the listing, and call or visit without hunting. Rankings on a spreadsheet are not that test.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -200,8 +199,8 @@ const faqs = [
         <div class="intro-copy">
           <span class="eyebrow">Why local SEO matters</span>
           <h2>Local customers make quick decisions from search <span>results</span></h2>
-          <p>When someone searches for a nearby service, they usually compare a small set of businesses. The Google Business Profile, review quality, map position, photos, services, website and call path all influence that decision before the visitor reads a long sales page.</p>
-          <p>That is why local SEO needs more than citation submissions. The business information must be accurate, the profile must be active, the website must support the same services and locations, and the enquiry path must be clear.</p>
+          <p>We are a local search partner for Philippine businesses that live or die on nearby searches. When someone looks for a nearby service, they compare a small set of listings. The Google Business Profile, the pin, reviews, photos, the landing page and the call button decide it before anyone reads a long sales page.</p>
+          <p>That is why local SEO needs more than citation submissions. We do not sell Manila-focused campaigns from a fake office. The listing has to match a real service area or a real branch, the profile has to stay accurate, and the enquiry path has to work on a phone.</p>
         </div>
         <aside class="local-panel" aria-label="Local SEO commercial outcomes">
           <h3>Local SEO should support real actions</h3>

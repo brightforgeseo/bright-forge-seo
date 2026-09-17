@@ -58,7 +58,7 @@ class BroadCompetitorGapCoverageTest(unittest.TestCase):
     def test_existing_specialist_pages_keep_their_distinct_clusters(self):
         expected = {
             "ecommerce-seo-services.astro": ("shopify seo", "woocommerce seo"),
-            "local-seo-services-philippines.astro": ("multi-location brands", "location-page structure"),
+            "local-seo-for-google-maps-and-gbp.astro": ("multi-location brands", "location-page structure"),
             "seo-audit-services.astro": ("seo audit checklist", "prioritised roadmap"),
             "on-page-seo-services-philippines.astro": ("title tags and meta descriptions",),
             "keyword-research-services.astro": ("competitor gap analysis",),

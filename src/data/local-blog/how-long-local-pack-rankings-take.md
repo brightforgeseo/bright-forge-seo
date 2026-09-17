@@ -62,7 +62,7 @@ Staff changes delay things too. The only person who could reply to reviews left.
 
 While you are not in the pack you want, the useful work is still the useful work. Finish verification. Set storefront, hybrid, or service-area correctly. Lock NAP. Put the primary category and services in language customers use. Photograph the real premises or the real crew and vehicles. Ask real customers for genuine reviews without incentives or star-gating. Build or repair the landing pages the profile points at. Track calls, messages, and direction requests so you can see movement that is not a pack screenshot.
 
-That list is [local SEO services](/local-seo-services-philippines/), not a secret acceleration hack. Doing it in week one does not entitle you to a pack slot in week four. Skipping it guarantees you are arguing about rankings on a broken listing.
+That list is [local SEO services](/local-seo-for-google-maps-and-gbp/), not a secret acceleration hack. Doing it in week one does not entitle you to a pack slot in week four. Skipping it guarantees you are arguing about rankings on a broken listing.
 
 We also clean duplicates. An old listing for the previous tenant, or a second profile a staff member created, splits reviews and confuse Maps. Removing or merging that is another wait with no promised prize, and it is still mandatory when we find it.
 

@@ -104,5 +104,11 @@ http://brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
 /blog/white-label-seo-cost/  /blog/what-white-label-seo-costs-without-a-public-menu/  301
 /blog/wordpress-seo-philippines  /blog/wordpress-seo-for-philippine-business-sites/  301
 /blog/wordpress-seo-philippines/  /blog/wordpress-seo-for-philippine-business-sites/  301
+# Local SEO money page H1/URL
+/local-seo-services-philippines  /local-seo-for-google-maps-and-gbp/  301
+/local-seo-services-philippines/  /local-seo-for-google-maps-and-gbp/  301
+/blog/how-much-does-seo-cost-in-the-philippines-2026  /blog/how-much-does-seo-cost-in-the-philippines-in-2026/  301
+/blog/how-much-does-seo-cost-in-the-philippines-2026/  /blog/how-much-does-seo-cost-in-the-philippines-in-2026/  301
+
 # Fallback to 404 page for unmatched routes
 /* /404.html 404

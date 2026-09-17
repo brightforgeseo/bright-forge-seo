@@ -3,7 +3,7 @@
   {"cluster":"wordpress_seo","owner":"development/wordpress.astro","action":"expand","evidence_rows":3},
   {"cluster":"shopify_seo","owner":"ecommerce-seo-services.astro","action":"expand","evidence_rows":8},
   {"cluster":"ecommerce_seo","owner":"ecommerce-seo-services.astro","action":"covered","evidence_rows":8},
-  {"cluster":"multi_location_local_seo","owner":"local-seo-services-philippines.astro","action":"covered","evidence_rows":7},
+  {"cluster":"multi_location_local_seo","owner":"local-seo-for-google-maps-and-gbp.astro","action":"covered","evidence_rows":7},
   {"cluster":"new_website_seo","owner":"development/index.astro","action":"expand","evidence_rows":1},
   {"cluster":"seo_audit_checklist","owner":"seo-audit-services.astro","action":"expand","evidence_rows":3},
   {"cluster":"meta_tag_optimisation","owner":"on-page-seo-services-philippines.astro","action":"covered","evidence_rows":6},

@@ -63,7 +63,7 @@ Next recommendation:
 Pages already improved during this audit programme:
 
 - `/technical-seo-services-philippines/`
-- `/local-seo-services-philippines/`
+- `/local-seo-for-google-maps-and-gbp/`
 - `/content-seo-services-philippines/`
 - `/gaming-seo-services/`
 - `/home-services-seo/`

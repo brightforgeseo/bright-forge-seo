@@ -44,7 +44,7 @@ Internal links tell Google which URLs matter. If the blog, the header, and the h
 
 Language should match the buyer. Some categories hire in English. Some mix Filipino in queries and English on the site. Do not auto-translate a whole tree as a ranking trick. A thin Filipino copy of a thin English page is two weak URLs.
 
-For local intent, [local SEO in the Philippines](/local-seo-services-philippines/) is not optional garnish. The profile, the NAP, the photos, and the service-area settings are ranking inputs for near-me and city queries. A beautiful service page with a dead listing is half a plan.
+For local intent, [local SEO in the Philippines](/local-seo-for-google-maps-and-gbp/) is not optional garnish. The profile, the NAP, the photos, and the service-area settings are ranking inputs for near-me and city queries. A beautiful service page with a dead listing is half a plan.
 
 ## Local Ranking Without Invented Proximity
 

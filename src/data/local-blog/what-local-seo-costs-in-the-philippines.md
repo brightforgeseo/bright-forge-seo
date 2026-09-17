@@ -50,7 +50,7 @@ Bulk citation packages look like progress because a spreadsheet fills up. Most o
 
 Guaranteed pack rankings belong in the same bin as guaranteed national position one. Distance, relevance, and prominence are not items a vendor can purchase. A forecast based on current profile strength and competitor gaps is different. A contract that refunds you unless you appear in the three-pack for a head term is selling a result nobody controls.
 
-If you want the wider market context for retainers that mix technical work, content, and links, [how much SEO costs in the Philippines in 2026](/blog/how-much-does-seo-cost-in-the-philippines-2026/) sets out the usual bands for full campaigns. Local work can sit inside those bands or below them when the site is small and the listing is healthy. It sits above them when you have many locations or a damaged profile. The local line item should still name Maps, pages, citations, and reviews. If it does not, you are buying generic SEO with a city word attached.
+If you want the wider market context for retainers that mix technical work, content, and links, [how much SEO costs in the Philippines in 2026](/blog/how-much-does-seo-cost-in-the-philippines-in-2026/) sets out the usual bands for full campaigns. Local work can sit inside those bands or below them when the site is small and the listing is healthy. It sits above them when you have many locations or a damaged profile. The local line item should still name Maps, pages, citations, and reviews. If it does not, you are buying generic SEO with a city word attached.
 
 ## How Location Count And Service Area Change The Fee
 
@@ -78,7 +78,7 @@ Write down the commercial job before you request quotes. Which services should p
 
 Then ask every vendor the same questions. What will you inspect in month one. How will you handle duplicate listings. Will you change the business name. What will you refuse to do (fake reviews, virtual offices, doorway city pages). How will you measure calls and direction requests rather than only rankings. What do you need from us each week.
 
-Compare the answers. A mid-market quote that names the wrong category, a duplicate listing, and a thin location URL is more expensive in a useful way than a cheap quote that promises 50 citations and first-page Maps in 30 days. [Local SEO services in the Philippines](/local-seo-services-philippines/) should read like that operational work: profile, pages, citations, reviews, and tracking around a real coverage map.
+Compare the answers. A mid-market quote that names the wrong category, a duplicate listing, and a thin location URL is more expensive in a useful way than a cheap quote that promises 50 citations and first-page Maps in 30 days. [Local SEO services in the Philippines](/local-seo-for-google-maps-and-gbp/) should read like that operational work: profile, pages, citations, reviews, and tracking around a real coverage map.
 
 Give the work time once you have chosen. Verification and edits have mechanical waits. Reviews accumulate with completed jobs, not with a calendar invite. Pack visibility moves at the speed of prominence and proximity, not at the speed of your invoice cycle. Three months is a fair window to judge whether the work is real. It is not always a fair window to judge whether you “own” a head term in a dense city.
 

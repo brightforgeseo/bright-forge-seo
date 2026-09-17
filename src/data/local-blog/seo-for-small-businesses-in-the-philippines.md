@@ -32,7 +32,7 @@ Reviews are part of the listing, not a side project. Ask after completed jobs. R
 
 Citations still help when they are accurate. A few consistent mentions in real directories, associations, and supplier lists beat dozens of junk profiles with the old landline. When you move office, update the lot in one pass. Split NAPs are how small businesses look like two weaker companies.
 
-[Local SEO work in the Philippines](/local-seo-services-philippines/) is this operational layer plus the location pages that support it. A location page is useful when it is true: a real address or a real service area, real staff or process notes, real photos, and a unique reason that page exists. A city page that only swaps the city name in a template is a trap. Google has seen that pattern for years. So have users.
+[Local SEO work in the Philippines](/local-seo-for-google-maps-and-gbp/) is this operational layer plus the location pages that support it. A location page is useful when it is true: a real address or a real service area, real staff or process notes, real photos, and a unique reason that page exists. A city page that only swaps the city name in a template is a trap. Google has seen that pattern for years. So have users.
 
 Service-area businesses without a public shopfront need extra care. You can still rank locally, but inventing addresses or using virtual offices to game proximity is a policy problem waiting to happen. Describe the areas you actually cover and make it easy to request a visit.
 

@@ -22,7 +22,7 @@ A profile that gains a few genuine reviews each month, in the mix of languages y
 
 Old reviews still help social proof, but recency matters to readers. A 4.8 from 2019 with nothing this year reads abandoned. Asking today’s customers is how the date on the most recent review stays current. That is the only velocity we care about.
 
-Reviews also feed [Google Business Profile and local pack work](/blog/google-business-profile-and-local-pack-work-in-the-philippines/). They are not the whole prominence story, and they are not a reason to break policy.
+Reviews also feed [Google Business Profile and local pack work](/blog/google-business-profile-verification-in-the-philippines/). They are not the whole prominence story, and they are not a reason to break policy.
 
 ## What Google Does Not Allow
 
@@ -84,7 +84,7 @@ Extortion scams that threaten negative reviews have a separate reporting path in
 
 ## How We Run This Without Theatre
 
-We set a simple process: after a completed job, send a neutral Google review invitation, no reward, no star mention, no required phrases. We train who is allowed to send it. We watch the live review feed for genuine new posts, not for a quota chart. We reply. We report only policy violations. We align the rest of [local SEO services](/local-seo-services-philippines/) so the profile, NAP, and landing pages match the business those reviews describe.
+We set a simple process: after a completed job, send a neutral Google review invitation, no reward, no star mention, no required phrases. We train who is allowed to send it. We watch the live review feed for genuine new posts, not for a quota chart. We reply. We report only policy violations. We align the rest of [local SEO services](/local-seo-for-google-maps-and-gbp/) so the profile, NAP, and landing pages match the business those reviews describe.
 
 We will not install a tablet at the counter that routes unhappy people to a private form and happy people to Google. That is selective solicitation, even when the software vendor calls it “feedback management.”
 

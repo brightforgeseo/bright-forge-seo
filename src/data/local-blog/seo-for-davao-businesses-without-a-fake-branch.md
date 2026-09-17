@@ -36,7 +36,7 @@ If you are a Manila or Cebu company that occasionally takes Davao jobs, say that
 
 ## Local SEO For A Real Davao Business
 
-[Local SEO in the Philippines](/local-seo-services-philippines/) for a Davao operator starts with the listing that already exists, or the listing that should exist. The name should match how you trade on invoices and the shopfront, not a keyword stuffed with every service. Primary and additional categories should be true. Services should be written in the language customers use when they call. Hours should match the door. The description should say who you serve without turning into an advertorial.
+[Local SEO in the Philippines](/local-seo-for-google-maps-and-gbp/) for a Davao operator starts with the listing that already exists, or the listing that should exist. The name should match how you trade on invoices and the shopfront, not a keyword stuffed with every service. Primary and additional categories should be true. Services should be written in the language customers use when they call. Hours should match the door. The description should say who you serve without turning into an advertorial.
 
 Photos should be the premises, the people, and the work. Downloaded interiors of a Singapore clinic do not help a Davao practice. Street-view mismatch is a trust problem for the searcher and a policy problem for the profile. If you are a service-area trade working from a house or a warehouse with no customer-facing sign, list as a service-area business. Do not film a blank gate and call it a storefront.
 

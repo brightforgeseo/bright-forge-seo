@@ -30,7 +30,7 @@ SEO cannot replace a weak offer. If the service is unclear, the price conversati
 
 SEO cannot replace a site that cannot convert. Rankings onto a homepage with no proof, no service detail, and a buried contact method will waste the work. Ads would waste spend on the same page. The channel is not the first problem. The landing experience is.
 
-SEO cannot replace local trust for a service-area business. If buyers choose from Maps, reviews, and a Google Business Profile, [local SEO in the Philippines](/local-seo-services-philippines/) is part of the work. A blog programme without a complete profile is the wrong instrument.
+SEO cannot replace local trust for a service-area business. If buyers choose from Maps, reviews, and a Google Business Profile, [local SEO in the Philippines](/local-seo-for-google-maps-and-gbp/) is part of the work. A blog programme without a complete profile is the wrong instrument.
 
 SEO can replace some paid demand over time when the queries are stable and the pages deserve to rank. A business that has paid for the same service terms for years, and still has thin pages for those terms, is renting traffic it could earn. That is a reason to invest in the pages, not a reason to switch the ads off tomorrow.
 

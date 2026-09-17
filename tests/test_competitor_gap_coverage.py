@@ -15,11 +15,11 @@ class CompetitorGapCoverageTest(unittest.TestCase):
         page = source("index.astro")
 
         for phrase in (
-            "Philippine SEO agencies",
-            "established companies",
-            "independent consultants",
-            "Filipino SEO specialists",
-            "accountable for the work",
+            "phone to ring",
+            "British-led",
+            "17 published case studies",
+            "Philippine SEO services",
+            "local SEO for Maps",
         ):
             self.assertIn(phrase, page)
 
@@ -61,7 +61,7 @@ class CompetitorGapCoverageTest(unittest.TestCase):
 
     def test_specialist_pages_own_every_remaining_qualified_service_cluster(self):
         expected = {
-            "local-seo-services-philippines.astro": (
+            "local-seo-for-google-maps-and-gbp.astro": (
                 "local search partner",
                 "Philippine businesses",
                 "Manila-focused campaigns",
@@ -102,7 +102,7 @@ class CompetitorGapCoverageTest(unittest.TestCase):
                 "index.astro",
                 "seo-services-philippines.astro",
                 "white-label-seo-services-philippines.astro",
-                "local-seo-services-philippines.astro",
+                "local-seo-for-google-maps-and-gbp.astro",
                 "technical-seo-services-philippines.astro",
                 "content-seo-services-philippines.astro",
                 "on-page-seo-services-philippines.astro",

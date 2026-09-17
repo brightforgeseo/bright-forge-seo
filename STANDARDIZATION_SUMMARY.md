@@ -27,7 +27,7 @@
 ### Service Pages (9)
 - on-page-seo-services-philippines.astro
 - content-seo-services-philippines.astro
-- local-seo-services-philippines.astro
+- local-seo-for-google-maps-and-gbp.astro
 - backlink-seo-services-philippines.astro
 - white-label-seo-services-philippines.astro
 - keyword-research-services.astro

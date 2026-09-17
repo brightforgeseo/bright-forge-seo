@@ -50,7 +50,7 @@ Mid market retainers usually fall between 50,000 and 120,000 PHP. That is the fi
 
 From 150,000 PHP upwards the market is pricing complexity. Larger sites, several markets or languages, heavier production, developer coordination, and reporting a board can read. That is not a prestige surcharge by default. It is specialist time and the cost of being wrong on a property that already has traffic to lose.
 
-If a quote sits far below the band that matches the site, the missing hours come from somewhere. They come from skipped diagnosis, spun copy, bulk links, or reports about keywords nobody searches. How [much SEO costs in the Philippines in 2026](/blog/how-much-does-seo-cost-in-the-philippines-2026/) is the same map from the fee side. A package is that map written as work.
+If a quote sits far below the band that matches the site, the missing hours come from somewhere. They come from skipped diagnosis, spun copy, bulk links, or reports about keywords nobody searches. How [much SEO costs in the Philippines in 2026](/blog/how-much-does-seo-cost-in-the-philippines-in-2026/) is the same map from the fee side. A package is that map written as work.
 
 ## What A Usable Scope Names
 

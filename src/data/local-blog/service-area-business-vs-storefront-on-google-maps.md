@@ -12,7 +12,7 @@ metaDescription: Set storefront, service-area, or hybrid on Google Maps from how
 
 Google Maps does not have a single “local business” setting that fits every Philippine operator. A bakery with a door on the street, a plumber who only works in customer homes, and a dental clinic that also sends a hygienist out are three different listing types. If you pick the wrong one, verification videos fail, the address shows when it should be hidden, or the pin pretends people can walk in when they cannot.
 
-Google’s Help on service-area and hybrid businesses is the official split. We apply it to how you actually serve people, not to how you wish the map looked. Getting the type right is the first job in [local SEO services](/local-seo-services-philippines/), before categories, photos, or review requests.
+Google’s Help on service-area and hybrid businesses is the official split. We apply it to how you actually serve people, not to how you wish the map looked. Getting the type right is the first job in [local SEO services](/local-seo-for-google-maps-and-gbp/), before categories, photos, or review requests.
 
 ## The Three Types Google Describes
 

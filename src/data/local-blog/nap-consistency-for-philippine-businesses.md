@@ -12,7 +12,7 @@ metaDescription: Lock one name, address, and phone across your Philippine site, 
 
 NAP is name, address, and phone. It is the dullest part of local SEO and the one Philippine businesses break most often. The Google profile says one string, the website footer says another, Facebook has a third, and the Facebook ads use a mobile number that is not on any of them. Customers still find you. Google has a harder time deciding which record is the business.
 
-We do not treat NAP as a superstition that “citations rank you.” We treat it as identity. If the public facts disagree, every later local task is noisier: verification, [Google Business Profile and local pack work](/blog/google-business-profile-and-local-pack-work-in-the-philippines/), directory cleanup, and even call tracking. One canonical version has to win, then everything else copies it.
+We do not treat NAP as a superstition that “citations rank you.” We treat it as identity. If the public facts disagree, every later local task is noisier: verification, [Google Business Profile and local pack work](/blog/google-business-profile-verification-in-the-philippines/), directory cleanup, and even call tracking. One canonical version has to win, then everything else copies it.
 
 ## What Has To Match, And What Does Not
 
@@ -88,4 +88,4 @@ NAP work does not replace categories, photos, or reviews. It stops those things 
 
 We keep a short internal record of the canonical string so later designers and media buyers cannot “improve” it. If the business moves, we change the record once and roll it out again. That is the whole system.
 
-If you want that audit done on the live properties, [send the website and the Maps listing](/contact/). We will line the public name, address, and phone up with [local SEO services](/local-seo-services-philippines/) rather than spraying new citations on top of three versions of the same shop.
+If you want that audit done on the live properties, [send the website and the Maps listing](/contact/). We will line the public name, address, and phone up with [local SEO services](/local-seo-for-google-maps-and-gbp/) rather than spraying new citations on top of three versions of the same shop.

@@ -48,7 +48,7 @@ We can measure calls, direction requests, Search Console clicks on the Cebu URLs
 
 We can coordinate with a Cebu staff member or photographer you already have. That is often the highest-leverage local input: current photos, hours that match the door, a list of areas you will actually drive to. The SEO work is making those facts public and consistent.
 
-[Local SEO services in the Philippines](/local-seo-services-philippines/) are that operational layer. They assume your Cebu location is real. They do not assume we sit in Kasambagan.
+[Local SEO services in the Philippines](/local-seo-for-google-maps-and-gbp/) are that operational layer. They assume your Cebu location is real. They do not assume we sit in Kasambagan.
 
 ## What A Cebu Campaign Should Not Include
 

@@ -30,7 +30,7 @@ Photos should be the premises, the people, the plates, and the rooms as they are
 
 The description should say who you serve and how to arrive. It should not be an advertorial stuffed with city names. Attributes that are true (wheelchair access, delivery, walk-ins, parking, female doctor on staff if you wish to say so) belong there. Attributes you cannot defend do not.
 
-[Local SEO work in the Philippines](/local-seo-services-philippines/) is this operational layer plus the pages that support it. For a restaurant or clinic, the profile is usually the highest-traffic commercial asset you have. Treat it that way in the weekly routine, not as a one-time setup.
+[Local SEO work in the Philippines](/local-seo-for-google-maps-and-gbp/) is this operational layer plus the pages that support it. For a restaurant or clinic, the profile is usually the highest-traffic commercial asset you have. Treat it that way in the weekly routine, not as a one-time setup.
 
 ## Reviews Without Theatre
 

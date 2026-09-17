@@ -34,7 +34,7 @@ We can own landing pages. A GBP that sends people to a homepage with a national 
 
 We can own reviews as a process, not as a purchase. Ask customers who had a real job. Reply like a human. Never buy reviews. Never seed them from the agency. A Philippines team handling review replies needs your tone and your permission to speak as the business. We will not invent local colour we do not have.
 
-Our [local SEO services](/local-seo-services-philippines/) are built around those surfaces: profile, citations, pages, reviews, and tracking. They assume your location is real. They do not assume we sit in that suburb.
+Our [local SEO services](/local-seo-for-google-maps-and-gbp/) are built around those surfaces: profile, citations, pages, reviews, and tracking. They assume your location is real. They do not assume we sit in that suburb.
 
 ## How The Distance Is Managed In Practice
 
