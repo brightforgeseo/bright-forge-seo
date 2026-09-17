@@ -19,12 +19,16 @@ const systemLayers = [
     copy: 'We look for high-impression pages, weak CTR, query gaps, competitor pressure, internal link gaps and content opportunities that should be acted on.'
   },
   {
+    title: 'Content writing',
+    copy: 'Service pages and articles are drafted to the same evidence bar as the writing team: reader-first copy, real sources, internal links, then QA. Publishing stays gated.'
+  },
+  {
     title: 'Delivery QA',
     copy: 'Work is checked against evidence, implementation quality and realistic next steps so tasks do not become vague busywork.'
   },
   {
-    title: 'Reporting intelligence',
-    copy: 'Performance data is turned into a clear commercial narrative: what changed, why it matters and what should happen next.'
+    title: 'Reporting',
+    copy: 'GSC, ranks and delivery are turned into a client-readable report: what changed, why it matters, and the next work. Not a CSV dump.'
   },
   {
     title: 'AI search readiness',
@@ -44,6 +48,10 @@ const swarmRoles = [
   {
     title: 'Technical SEO reviewer',
     copy: 'Checks crawl, indexation, rendering, schema, internal links, performance and release risks.'
+  },
+  {
+    title: 'Content writer',
+    copy: 'Drafts pages and articles against the keyword, the live site and source evidence. Same editorial QA as the human writing lane.'
   },
   {
     title: 'Content strategist',
@@ -86,7 +94,7 @@ const processSteps = [
   {
     label: '03',
     title: 'Run evidence-led reviews',
-    copy: 'The system reviews search data, technical issues, content gaps, AI readiness signals, page quality and delivery status, then turns findings into prioritised actions.'
+    copy: 'The system reviews search data, technical issues, content gaps, AI readiness signals and page quality, then drafts the next copy, the report and the prioritised actions.'
   },
   {
     label: '04',
@@ -98,7 +106,15 @@ const processSteps = [
 const faqs = [
   {
     question: 'What is an automated SEO team?',
-    answer: 'It is Bright Forge’s SEO Command Centre. SEO monitoring, rank tracking, Search Console flags, delivery QA and reporting, running more often than a monthly pack. It is not a Semrush clone and it is not unsupervised publishing.'
+    answer: 'It is Bright Forge’s SEO Command Centre. SEO monitoring, rank tracking, Search Console flags, content drafts, delivery QA and reporting, running more often than a monthly pack. Built to Ben Lowe’s SEO standards. It is not a Semrush clone and it is not unsupervised publishing.'
+  },
+  {
+    question: 'Does it write content and reports?',
+    answer: 'Yes. It drafts articles and page copy to the same QA bar we use on client work, and it writes reports that say what changed and what is next. Live publishing and client sends stay gated. Named experts are extra when you want Ben Lowe or Sassin Lowe on the decision.'
+  },
+  {
+    question: 'Who sets the standard?',
+    answer: 'Ben Lowe. 15+ years of SEO, 17 published case studies, UK, US and Australian work. The automated team is directed to that bar: evidence before Done, no fake auto-fix, no unsupervised CMS changes.'
   },
   {
     question: 'Is this the same as an AI SEO tool?',
@@ -106,7 +122,7 @@ const faqs = [
   },
   {
     question: 'What is included, and what costs extra?',
-    answer: 'Included is the automated SEO team: SEO monitoring, opportunity flags, delivery QA and reporting. Named experts are extra. Senior strategy, implementation and review are scoped on a private proposal when you want a person on the work, not only the system.'
+    answer: 'Included is the automated SEO team: SEO monitoring, content drafts, reports, opportunity flags and delivery QA. Named experts are extra. Senior strategy, CMS implementation and review are scoped on a private proposal when you want Ben Lowe, Sassin Lowe or another named person on the work, not only the system.'
   },
   {
     question: 'Who is this service for?',
@@ -114,7 +130,7 @@ const faqs = [
   },
   {
     question: 'Does the command centre replace monthly SEO work?',
-    answer: 'No. It improves how monthly SEO work is diagnosed, prioritised, reviewed and reported. Technical SEO, content, links, CRO and AI readiness still need implementation. The system helps make that work more focused and accountable.'
+    answer: 'No. It improves how monthly SEO work is diagnosed, written, prioritised, reviewed and reported. Live CMS changes, links and expensive commercial calls still need a person when you buy that lane. The system makes the work more focused and accountable.'
   },
   {
     question: 'Can it send messages or publish changes automatically?',
@@ -129,7 +145,7 @@ const faqs = [
 
 <MainLayout
   title="Automated SEO Team | SEO Monitoring and QA | Bright Forge"
-  description="Automated SEO team for SEO monitoring, rank tracking, Search Console flags and delivery QA. Named Bright Forge experts extra. No unsupervised publishing."
+  description="Automated SEO team for SEO monitoring, reports, content writing and delivery QA. Directed to Ben Lowe’s SEO standards. Named experts extra. No unsupervised publishing."
   canonical={commandCentreUrl}
   type="service"
   faqs={faqs}
@@ -165,7 +181,7 @@ const faqs = [
         url: 'https://brightforge.com.ph/'
       },
       areaServed: ['Philippines', 'Australia', 'United Kingdom', 'United States'],
-      description: 'Automated SEO team for SEO monitoring, rank tracking, Search Console flags, delivery QA and reporting. Named experts extra. No unsupervised publishing.',
+      description: 'Automated SEO team for SEO monitoring, reports, content writing and delivery QA. Directed to Ben Lowe’s SEO standards. Named experts extra. No unsupervised publishing.',
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'SEO Command Centre Layers',
@@ -191,9 +207,9 @@ const faqs = [
     breadcrumbCurrent="SEO Command Centre"
   >
     <Fragment slot="story">
-      <p>The SEO Command Centre is the automated SEO team. It does SEO monitoring, rank tracking and Search Console review, flags the next work, and will not mark a task Done without evidence.</p>
-      <p>It is not Semrush. It is not an unsupervised auto-fix bot. Client-facing changes stay gated.</p>
-      <p>Named experts cost extra. Senior strategy and implementation from people such as Ben Lowe and Sassin Lowe, 15+ years of SEO, 17 published case studies, UK, US and Australian work. Private proposal.</p>
+      <p>The SEO Command Centre is the automated SEO team. It monitors Search Console and ranks, writes reports, drafts content, flags the next work, and will not mark a task Done without evidence.</p>
+      <p>It is directed to Ben Lowe’s SEO standards: 15+ years, 17 published case studies, UK, US and Australian work. Not Semrush. Not an unsupervised auto-fix bot. Live publishing stays gated.</p>
+      <p>Named experts cost extra when you want Ben Lowe or Sassin Lowe on the decision, not only the system. Private proposal.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -227,26 +243,26 @@ const faqs = [
         <div class="section-header left-header">
           <p class="eyebrow">How it is sold</p>
           <h2>Automated team included. <span>Experts extra.</span></h2>
-          <p>No public rate card. The split is the offer: the system does the watching. Named people do the expensive judgement.</p>
+          <p>No public rate card. The split is the offer: the system does the watching, writing, reporting and QA. Named people take the expensive judgement and the live CMS.</p>
         </div>
         <div class="split-layout">
           <div class="issue-panel">
             <h3>Automated SEO team</h3>
             <ul>
               <li>GSC, rankings and page signals watched</li>
+              <li>Reports: what changed, why it matters, what is next</li>
+              <li>Content drafts to the same QA bar as the writing team</li>
               <li>Work flagged before it becomes a messy email</li>
               <li>Delivery QA: Done needs evidence</li>
-              <li>Reporting that says what changed and what is next</li>
               <li>No unsupervised publishing</li>
             </ul>
           </div>
           <div class="issue-panel">
             <h3>Named experts, extra</h3>
             <ul>
-              <li>Senior strategy and implementation</li>
-              <li>People such as Ben Lowe and Sassin Lowe</li>
-              <li>Client-facing review when the decision is expensive</li>
-              <li>Content, technical and AI search work that needs a human</li>
+              <li>Ben Lowe or Sassin Lowe on the decision</li>
+              <li>Senior strategy and live CMS implementation</li>
+              <li>Client-facing review when the call is expensive</li>
               <li>Private proposal. Not a cheap AI seat.</li>
             </ul>
           </div>
@@ -265,8 +281,8 @@ const faqs = [
         <div class="split-layout">
           <div class="copy-block">
             <p>Good SEO needs technical checks, content decisions, internal links, reporting, CRO, competitor awareness and follow-through. When those pieces live in separate tools and conversations, opportunities get delayed and weak work can look complete.</p>
-            <p>The command centre connects the signals. It helps identify what changed, what needs action, what needs evidence and what should be watched before it becomes a client problem.</p>
-            <p><strong>The base layer is the automated team. Named experts are what you pay extra for.</strong></p>
+            <p>The command centre connects the signals. It writes the report, drafts the page, QAs the work and flags what still needs a person.</p>
+            <p><strong>The base layer is an advanced automated team, directed to Ben Lowe’s SEO standards. Named experts are extra when you want a named person on the call.</strong></p>
           </div>
 
           <div class="issue-panel">
@@ -308,7 +324,7 @@ const faqs = [
         <div class="section-header left-header">
           <p class="eyebrow">What the automated team checks</p>
           <h2>Specialist review, <span>then a person if you pay for one</span></h2>
-          <p>The system can split a problem into specialist checks, then merge that into one brief. Senior named review is the extra.</p>
+          <p>The system splits a problem into specialist checks, writes and QAs the work, then merges that into one brief. Senior named review is the extra.</p>
         </div>
 
         <div class="role-grid">
@@ -410,7 +426,7 @@ const faqs = [
         <div class="cta-card">
           <p class="eyebrow">Build control into SEO</p>
           <h2>Want a clearer <span>operating layer</span> for SEO growth?</h2>
-          <p>We can review your current SEO reporting, task flow, priority pages and monitoring setup, then identify where a command centre would reduce missed actions and improve decision quality.</p>
+          <p>We can review your current SEO reporting, content, task flow and monitoring, then show where the automated team would write, report and QA to Ben Lowe’s standard.</p>
           <div class="cta-actions">
             <ButtonPrimary href="/contact/" text="Request a Command Centre Review" />
             <ButtonSecondary href="/ai-search-optimization-services-philippines/" text="View AI Search SEO" />
