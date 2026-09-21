@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/ecommerce-seo-in-the-philippines-category-vs-product.webp
 metaTitle: Ecommerce SEO in the Philippines: Category vs Product
-metaDescription: Category pages win head terms in Philippine ecommerce. Product pages win the long tail. Facets, canonicals and Taglish queries decide which URL owns the click.
+metaDescription: Category pages win head terms in Philippine ecommerce. Product pages win the long tail. Facets, canonicals and Taglish queries decide which URL wins.
 ---
 
 Philippine online retail does not fail SEO because the products are bad. It fails because the catalogue cannot decide which URL owns the query. Head terms such as "running shoes", "office chair" or "air fryer" belong on a category. A specific SKU belongs on a product URL. Faceted filters, tags and search-result URLs belong out of the index unless they are a real, demand-backed category. Mix those roles and Google will pick a random variant, a page-2 filter, or a competitor who made the choice on purpose.

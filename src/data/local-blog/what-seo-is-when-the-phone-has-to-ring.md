@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/what-seo-is-when-the-phone-has-to-ring.webp
 metaTitle: What Is SEO | Bright Forge
-metaDescription: SEO means making your site findable, understandable and worth choosing in search. Technical access, on-page clarity and useful content, without ranking slogans.
+metaDescription: SEO makes your site findable, understandable and worth choosing through technical access, on-page clarity and useful content, without ranking slogans.
 ---
 
 SEO is search engine optimisation: the work that helps people find your business in search results when they already have a problem you can solve. In practice it is not a slogan, a plugin, or a monthly PDF. It is a set of decisions about how the site is built, what the pages say, how they connect, and how search engines are allowed to crawl and trust them.

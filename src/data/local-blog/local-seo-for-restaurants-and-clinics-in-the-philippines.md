@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo, local]
 image: /images/blog/local-seo-for-restaurants-and-clinics-in-the-philippines.webp
 metaTitle: Local SEO for Restaurants and Clinics in the Philippines
-metaDescription: Local SEO for Philippine restaurants and clinics: Google Business Profile, Maps, reviews, NAP, and pages that match how people actually book a table or a visit.
+metaDescription: Local SEO for Philippine restaurants and clinics: Google Business Profile, Maps, reviews, NAP and pages matching how people book a table or visit.
 ---
 
 A diner looking for lunch in Makati and a parent looking for a paediatric clinic in Cebu are doing the same kind of search. They open Maps or they type a job plus a place. They look at who is open, who is nearby, who has recent photos, and who has reviews that sound like people. Local SEO for restaurants and clinics in the Philippines is that surface, plus a website that does not contradict it. It is not a national blog programme.

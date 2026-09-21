@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/why-cheap-link-building-in-the-philippines-fails.webp
 metaTitle: Link Building in the Philippines | Bright Forge
-metaDescription: Philippine link building is relevant mentions from real sites, not bulk packages. See what to buy, what to refuse, and how to brief without shopping on link count.
+metaDescription: Philippine link building means relevant mentions from real sites, not bulk packages. See what to buy, refuse and brief without shopping on link count.
 ---
 
 Link building in the Philippines is sold as a volume product more often than it is practised as a trust product. The pitch is a number: 50 links, 100 links, 500 links, DA screenshots, and a spreadsheet of domains you have never heard of. The work that actually supports a page is slower and more boring. Someone has to earn or place a mention on a site that a human would read, on a topic adjacent to yours, pointing at a URL that already deserves to rank.

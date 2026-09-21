@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/when-not-to-hire-an-seo-agency-yet.webp
 metaTitle: When Not to Hire an SEO Agency | Bright Forge
-metaDescription: Wait on an SEO retainer if the offer, website, or enquiry path is not ready. Start with a proper audit and implementation access before paying for ongoing work.
+metaDescription: Wait on an SEO retainer if the offer, website or enquiry path is not ready. Start with an audit and implementation access before paying for ongoing work.
 ---
 
 An SEO retainer is a poor first purchase when the business is not ready to use it. Agencies get hired to “do SEO” while the offer is still vague, the website cannot be edited, or nobody is available to answer the phone. The monthly fee then buys activity that cannot compound. Waiting is not a lack of ambition. It is a way to avoid paying for work the site cannot absorb.

@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo, reporting]
 image: /images/blog/how-to-keep-an-seo-change-log-for-ranking-changes.webp
 metaTitle: "How to Keep an SEO Change Log | Bright Forge"
-metaDescription: "Build an SEO change log with live dates, URLs, before and after evidence, review points and rollbacks to investigate ranking changes without assuming causation."
+metaDescription: "Build an SEO change log with dates, URLs, before and after evidence, review points and rollbacks to investigate ranking changes without assuming causation."
 ---
 
 When rankings move after a website update, the first useful question is not whether the update worked. It is what actually went live, where and when. An approved rewrite, a completed development ticket and a verified change on a public URL can represent different moments. Your ranking review needs the last of those, with enough detail to reconstruct the others.

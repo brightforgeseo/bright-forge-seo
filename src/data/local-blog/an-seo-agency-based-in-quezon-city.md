@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo, local]
 image: /images/blog/an-seo-agency-based-in-quezon-city.webp
 metaTitle: SEO Agency Quezon City | Bright Forge
-metaDescription: Bright Forge is a Quezon City SEO agency led by Ben Lowe and Sassin Lowe. 15+ years, 17 case studies, and search work aimed at enquiries, not a street-by-street office story.
+metaDescription: Bright Forge is a Quezon City SEO agency led by Ben Lowe and Sassin Lowe. 15+ years, 17 case studies, and search work aimed at enquiries.
 ---
 
 An SEO agency in Quezon City should be easy to pin down as a company, not as a walking tour. We are based in Quezon City. Ben Lowe and Sassin Lowe run Bright Forge from here. The work is technical SEO, content, local search, and reporting aimed at enquiries. Fifteen-plus years in search and 17 case studies are the public proof. A street-by-street description of desks is not. If you are hiring because you want someone who understands Metro Manila search behaviour and can be in the same country and time zone as a Philippine team, that is the useful reason. If you are hiring because you want a café photo in the proposal, that is a different product.

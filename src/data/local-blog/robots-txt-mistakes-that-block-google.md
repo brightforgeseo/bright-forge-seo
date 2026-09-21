@@ -63,7 +63,7 @@ User-agent groups are matched by longest bot name, not by stacking every mythic 
 
 ## Sitemap Lines That Point At The Wrong World
 
-Sitemap: lines in robots.txt must be absolute URLs. Google does not guess www versus non-www or http versus https. Pointing sitemap at http://staging.example.com/sitemap.xml on a production robots file is a gift to confusion. Pointing at a sitemap that lists URLs you also Disallow is a mixed instruction: you invited crawl of URLs you forbade.
+Sitemap: lines in robots.txt must be absolute URLs. Google does not guess www versus non-www or http versus https. Pointing sitemap at `http://staging.example.com/sitemap.xml` on a production robots file is a gift to confusion. Pointing at a sitemap that lists URLs you also Disallow is a mixed instruction: you invited crawl of URLs you forbade.
 
 Sitemaps are a hint about what you want crawled. robots.txt is a constraint on what may be crawled. They should agree. After a migration, update both, on the host Google uses.
 

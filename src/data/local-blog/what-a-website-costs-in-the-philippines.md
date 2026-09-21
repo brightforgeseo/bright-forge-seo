@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/what-a-website-costs-in-the-philippines.webp
 metaTitle: Website Cost in the Philippines | Bright Forge
-metaDescription: Philippine website cost runs from freelancer templates to agency builds. Compare scope, CMS ownership and conversion, not a single peso number for “a website”.
+metaDescription: Philippine website costs run from freelancer templates to agency builds. Compare scope, CMS ownership and conversion, not one price for “a website”.
 ---
 
 Quotes for “a website” in the Philippines can be 15,000 PHP or 400,000 PHP and still sound like the same brief on the phone. They are not the same product. One is often a theme, five pages, and a handover PDF. The other is templates, content models, QA, redirects, and a site that can take an enquiry on a mid-range phone. Comparing those numbers without naming the scope is how businesses buy a brochure and then wonder why ads and SEO feel expensive.

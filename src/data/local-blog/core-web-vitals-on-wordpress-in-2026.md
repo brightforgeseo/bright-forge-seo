@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/core-web-vitals-on-wordpress-in-2026.webp
 metaTitle: Core Web Vitals on WordPress in 2026 | Bright Forge
-metaDescription: LCP, INP and CLS on WordPress: field thresholds, common theme and plugin causes, and how we measure without inventing scores. Send the URL to check field data.
+metaDescription: LCP, INP and CLS on WordPress: field thresholds, theme and plugin causes, and how we measure without inventing scores. Send the URL to check field data.
 ---
 
 Core Web Vitals in 2026 are still three field metrics: Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift. Google Search uses the Chrome User Experience Report, at the 75th percentile of real visits over a roughly 28-day window. A lab Lighthouse run is a debugger. It is not the ranking dataset.

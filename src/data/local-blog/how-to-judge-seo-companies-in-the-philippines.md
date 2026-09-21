@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/how-to-judge-seo-companies-in-the-philippines.webp
 metaTitle: How to Judge SEO Companies in the Philippines | Bright Forge
-metaDescription: A practical way to judge SEO companies in the Philippines: live-site diagnosis, named owners, verifiable reporting, and questions that expose a recycled package.
+metaDescription: Judge SEO companies in the Philippines by live-site diagnosis, named owners, verifiable reporting and questions that expose a recycled package.
 ---
 
 Judging SEO companies in the Philippines is a buying skill, not a search for a slogan. The market has operators who will look at your URLs, name what is blocking enquiries, and refuse work that would waste a quarter. It also has decks that could be pasted onto any domain. Your job is to tell those two apart before a retainer starts compounding the wrong activity.

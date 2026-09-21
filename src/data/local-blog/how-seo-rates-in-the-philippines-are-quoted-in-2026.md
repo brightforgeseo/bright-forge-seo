@@ -7,7 +7,7 @@ author: Ben Lowe
 tags: [seo]
 image: /images/blog/how-seo-rates-in-the-philippines-are-quoted-in-2026.webp
 metaTitle: SEO Rates Philippines 2026 | Bright Forge
-metaDescription: SEO rates in the Philippines in 2026 cluster by hours and risk. Compare retainers, project fees and day rates as different products, not as one monthly number.
+metaDescription: SEO rates in the Philippines in 2026 cluster by hours and risk. Compare retainers, project fees and day rates as different products, not one monthly number.
 ---
 
 A rate is a way of selling time and judgement. In 2026 the Philippine market still quotes that time as a monthly retainer, a project fee, or a day rate, and buyers still smash those three together as if they were the same unit. They are not. A 40,000 PHP month, a 40,000 PHP audit, and a 40,000 PHP week of senior time buy different things, even when the invoice uses the same currency.
