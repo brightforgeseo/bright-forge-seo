@@ -35,7 +35,9 @@ function optimizeContentfulImage(url, options = {}) {
 function getLocalFeaturedImage(slug) {
   if (!slug) return null;
   const relative = `/images/blog/${slug}.webp`;
-  return existsSync(join(process.cwd(), 'public', relative)) ? relative : null;
+  return existsSync(join(process.cwd(), 'public', relative))
+    ? `${relative}?v=real-photo-bacf9da`
+    : null;
 }
 
 // Fetch all blog posts with selected fields

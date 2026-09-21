@@ -3,6 +3,12 @@ import path from 'node:path';
 import { marked } from 'marked';
 
 const DIR = path.join(process.cwd(), 'src/data/local-blog');
+const BLOG_IMAGE_VERSION = 'real-photo-bacf9da';
+
+function versionBlogImage(image) {
+  if (!image || !image.startsWith('/images/blog/')) return image || null;
+  return `${image}?v=${BLOG_IMAGE_VERSION}`;
+}
 
 function parseFrontmatter(raw) {
   if (!raw.startsWith('---')) return { data: {}, body: raw };
@@ -48,7 +54,7 @@ export function getLocalBlogPosts() {
         excerpt: data.excerpt || '',
         publishDate: data.date ? new Date(data.date) : new Date(),
         author: data.author || 'Ben Lowe',
-        featuredImage: data.image || null,
+        featuredImage: versionBlogImage(data.image),
         tags: data.tags || ['seo'],
         showInfographic: false,
         local: true,
