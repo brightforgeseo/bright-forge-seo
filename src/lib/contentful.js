@@ -1,4 +1,6 @@
 import { createClient } from 'contentful';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { getLocalBlogPosts, getLocalBlogPostBySlug } from './localBlog.js';
 
 // Initialize the Contentful client with hardcoded credentials to ensure it works
@@ -26,6 +28,14 @@ function optimizeContentfulImage(url, options = {}) {
   });
 
   return `${url}?${params.toString()}`;
+}
+
+// Keep featured imagery version-controlled. Contentful owns the article body,
+// while a matching local WebP replaces its historical generated asset.
+function getLocalFeaturedImage(slug) {
+  if (!slug) return null;
+  const relative = `/images/blog/${slug}.webp`;
+  return existsSync(join(process.cwd(), 'public', relative)) ? relative : null;
 }
 
 // Fetch all blog posts with selected fields
@@ -68,9 +78,11 @@ export async function getAllBlogPosts() {
       excerpt: item.fields.excerpt,
       publishDate: new Date(item.fields.dateTime),
       author: item.fields.author,
-      featuredImage: item.fields?.featuredImage?.fields?.file?.url
-        ? optimizeContentfulImage(`https:${item.fields.featuredImage.fields.file.url}`)
-        : null,
+      featuredImage: getLocalFeaturedImage(item.fields.slug) || (
+        item.fields?.featuredImage?.fields?.file?.url
+          ? optimizeContentfulImage(`https:${item.fields.featuredImage.fields.file.url}`)
+          : null
+      ),
       tags: item.fields.tags || [],
       showInfographic: item.fields.showInfographic === true
     }));
@@ -118,9 +130,11 @@ export async function getBlogPostBySlug(slug) {
       content: item.fields.content,
       publishDate: new Date(item.fields.dateTime),  // Use dateTime field but map to publishDate in our app
       author: item.fields.author,
-      featuredImage: item.fields?.featuredImage?.fields?.file?.url
-        ? optimizeContentfulImage(`https:${item.fields.featuredImage.fields.file.url}`)
-        : null,
+      featuredImage: getLocalFeaturedImage(item.fields.slug) || (
+        item.fields?.featuredImage?.fields?.file?.url
+          ? optimizeContentfulImage(`https:${item.fields.featuredImage.fields.file.url}`)
+          : null
+      ),
       tags: item.fields.tags || [],
       showInfographic: item.fields.showInfographic === true
     };
