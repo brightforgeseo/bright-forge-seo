@@ -40,7 +40,7 @@ Use the longer history as context. Search Console’s last 16 months view can he
 
 Keep the search type consistent. A decline in image search should not automatically trigger changes intended to address web search rankings. Review those search types separately.
 
-Record the filters you use, including country and device. A country filter matters when your business serves a particular market: an international traffic decline may not describe what happened to your commercially important searches in the Philippines. Likewise, a mobile-only change needs a different investigation from a decline visible across devices.
+[Record the filters you use, including country and device](https://brightforge.com.ph/blog/how-to-compare-search-console-with-a-rank-tracker/). A country filter matters when your business serves a particular market: an international traffic decline may not describe what happened to your commercially important searches in the Philippines. Likewise, a mobile-only change needs a different investigation from a decline visible across devices.
 
 Your first working note should identify the affected dates, search type, filters and metrics. This makes later comparisons meaningful and stops the investigation shifting between incompatible views.
 
@@ -83,7 +83,7 @@ Then reverse the view: filter for an important affected query and inspect the pa
 
 Where the pattern follows a topic, compare search interest using Google Trends. Google recommends this to help distinguish a website-specific decline from wider changes in demand. Use the relevant region so that international interest does not obscure the market you serve.
 
-Keep the conclusion specific. “Our advice articles about this topic lost impressions” directs a useful investigation. “Google has dropped the site” hides the very distinctions needed to choose the next action.
+Keep the conclusion specific. “Our advice articles about this topic [lost impressions](https://brightforge.com.ph/blog/why-search-impressions-rise-before-clicks-and-leads/)” directs a useful investigation. “Google has dropped the site” hides the very distinctions needed to choose the next action.
 
 ## Investigate Shared Causes When Losses Are Broad
 

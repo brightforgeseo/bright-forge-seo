@@ -90,7 +90,7 @@ Prioritise according to customer impact and how widely the cause is shared. A te
 
 After implementation, repeat the relevant performance tests under comparable conditions. Then exercise the live journey: open the navigation, follow the enquiry call to action, complete a test enquiry and check the confirmation behaviour. Where tracking was affected, check that the intended measurement still works.
 
-Our technical process includes implementation, testing across devices and browsers, and continued monitoring. Live verification matters because deployment is not the finish line. The intended change must be present on the published page, and that page must still do its job.
+Our technical process includes implementation, testing across devices and browsers, and continued monitoring. [Live verification](https://brightforge.com.ph/blog/how-to-verify-an-seo-fix-on-a-live-website/) matters because deployment is not the finish line. The intended change must be present on the published page, and that page must still do its job.
 
 Field performance should also be reviewed as updated evidence becomes available. Keep an immediate lab improvement distinct from subsequent evidence about visitor experience rather than presenting both as already established.
 

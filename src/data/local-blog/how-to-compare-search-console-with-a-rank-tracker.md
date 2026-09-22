@@ -62,7 +62,7 @@ A stronger case for genuine movement exists when repeated tracker observations c
 
 Even then, separate a ranking observation from its explanation. A decline does not identify the cause. It tells you where to investigate, not whether to rewrite content, change internal links or begin technical repairs.
 
-Intermittent visibility looks different. A tracker may find the page in some checks but not others, while Search Console records impressions during the broader period. That pattern supports saying that visibility occurred and was not consistently captured in the selected snapshots. It does not support calling the best observed position the page’s established rank.
+[Intermittent visibility](https://brightforge.com.ph/blog/why-search-impressions-rise-before-clicks-and-leads/) looks different. A tracker may find the page in some checks but not others, while Search Console records impressions during the broader period. That pattern supports saying that visibility occurred and was not consistently captured in the selected snapshots. It does not support calling the best observed position the page’s established rank.
 
 Sparse query activity also limits what you can conclude. A small amount of Search Console evidence gives you less basis for judging a trend. Rather than escalating every fluctuation, keep the query under observation and review related page performance for context.
 
@@ -86,7 +86,7 @@ If repeated snapshots remain missing and Search Console performance also weakens
 
 Sometimes the apparent discrepancy concerns the URL rather than the position.
 
-Suppose you are monitoring a service description, but another page on your site appears for the phrase. A domain-level tracker may count that as visibility, while a URL-specific check may not. Search Console’s query-filtered Pages view helps you identify which page received the recorded impressions and clicks.
+Suppose you are monitoring a service description, but another page on your site appears for the phrase. A domain-level tracker may count that as visibility, while a URL-specific check may not. Search Console’s query-filtered Pages view helps you identify [which page received the recorded impressions and clicks](https://brightforge.com.ph/blog/how-to-check-whether-a-ranking-drop-is-sitewide-or-page-specific/).
 
 This changes the next action. If the intended page has lost visibility while another relevant page has gained it, review which page best answers the searcher’s need. A query with research intent may lead to an article rather than a service description. That is not automatically a defect.
 

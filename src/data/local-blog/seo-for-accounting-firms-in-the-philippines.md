@@ -93,7 +93,7 @@ Make the next step accurate. If the team reviews the outline before arranging a 
 
 ## Measure Which Pages Bring Suitable Enquiries
 
-Search impressions, rankings and visits show parts of the journey, but they do not establish whether the practice is attracting suitable work. A bookkeeping guide may earn readership without bringing enquiries for the ongoing service the firm wants to grow.
+[Search impressions, rankings and visits](https://brightforge.com.ph/blog/why-search-impressions-rise-before-clicks-and-leads/) show parts of the journey, but they do not establish whether the practice is attracting suitable work. A bookkeeping guide may earn readership without bringing enquiries for the ongoing service the firm wants to grow.
 
 Connect reporting to the service descriptions and enquiries where tracking allows. Look at which pages visitors reach, whether they take a contact action and what the resulting enquiries concern. Ask the team handling new business to distinguish relevant requests from job applications, student questions and work outside the firm’s scope.
 

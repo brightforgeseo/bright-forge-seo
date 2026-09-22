@@ -26,7 +26,7 @@ The scope matters as much as the replacement value. A change to one article is d
 
 Our [SEO audit](https://brightforge.com.ph/seo-audit-services/) work turns technical and on-page findings into prioritised actions. Those actions become easier to verify when the recommendation states what a successful live result should look like. Without that condition, the developer and reviewer may be answering different questions.
 
-Before implementation, retain evidence of the original problem where possible. A saved response, screenshot or crawl finding gives the later review a concrete comparison. If the fix has already been deployed without a baseline, verify the present condition, but do not describe an undocumented before-and-after result as established.
+Before implementation, [retain evidence of the original problem](https://brightforge.com.ph/blog/how-to-keep-an-seo-change-log-for-ranking-changes/) where possible. A saved response, screenshot or crawl finding gives the later review a concrete comparison. If the fix has already been deployed without a baseline, verify the present condition, but do not describe an undocumented before-and-after result as established.
 
 ## Read Back The Exact Public URL
 

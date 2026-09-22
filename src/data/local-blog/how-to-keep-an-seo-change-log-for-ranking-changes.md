@@ -61,7 +61,7 @@ Verification also needs a result. “Checked” is less useful than “new title
 
 ## Capture a Baseline You Can Compare Later
 
-Before a planned change, save the relevant Search Console view or export. Record the date range, page and query filters, country, device and search type where applicable. Those settings are part of the evidence, not optional background.
+Before a planned change, save the relevant Search Console view or export. [Record the date range, page and query filters, country, device and search type](https://brightforge.com.ph/blog/how-to-compare-search-console-with-a-rank-tracker/) where applicable. Those settings are part of the evidence, not optional background.
 
 A site-wide average can conceal a local problem. If the work concerns one landing page, begin with that URL and the queries relevant to it. If it concerns a section, retain a view of that group as well as the broader site context. This lets you see whether movement is concentrated around the change or appears elsewhere too.
 
@@ -87,7 +87,7 @@ For a low-traffic page, a short period may offer little useful information. For 
 
 Small fluctuations in position can happen at any time. [Google’s search-traffic debugging guide](https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops) makes this distinction and advises against radical changes to a page that is already performing well because of a small shift.
 
-Start your review by describing the movement before explaining it. Identify which URLs and queries changed, when the movement began, whether it persisted, and what happened to clicks and impressions. Then compare that pattern with the scope and timing of your logged changes.
+Start your review by describing the movement before explaining it. [Identify which URLs and queries changed](https://brightforge.com.ph/blog/how-to-check-whether-a-ranking-drop-is-sitewide-or-page-specific/), when the movement began, whether it persisted, and what happened to clicks and impressions. Then compare that pattern with the scope and timing of your logged changes.
 
 If the decline started before the deployment, the deployment does not explain its onset. If untouched sections also declined, the investigation needs to extend beyond the edited pages. Neither observation resolves the whole case, but both narrow the questions worth asking.
 
