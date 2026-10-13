@@ -22,6 +22,7 @@ const addHeroHighlight = (value: string) => {
 };
 
 const highlightedTitle = addHeroHighlight(title);
+const hasIntro = Astro.slots.has('intro');
 
 import HeroGlobe from './HeroGlobe.astro';
 ---
@@ -54,15 +55,22 @@ import HeroGlobe from './HeroGlobe.astro';
         <!-- Title -->
         <h1 set:html={highlightedTitle} />
 
+        {hasIntro && (
+          <>
+            <div class="hero-intro"><slot name="intro" /></div>
+            <div class="hero-actions"><slot name="actions" /></div>
+          </>
+        )}
+
         <!-- Story Slot -->
         <div class="hero-story">
           <slot name="story" />
         </div>
 
         <!-- Actions Slot -->
-        <div class="hero-actions">
-          <slot name="actions" />
-        </div>
+        {!hasIntro && (
+          <div class="hero-actions"><slot name="actions" /></div>
+        )}
 
         <!-- Stats Slot -->
         <div class="hero-stats-wrapper">
@@ -184,12 +192,14 @@ import HeroGlobe from './HeroGlobe.astro';
   }
 
   /* Story */
-  .hero-story {
+  .hero-story,
+  .hero-intro {
     margin-bottom: 2rem;
   }
 
   .hero-story :global(p) {
     font-size: 1.0625rem;
+    /* Shared paragraph treatment; intro slot uses the same readable offer. */
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1rem;
@@ -197,6 +207,13 @@ import HeroGlobe from './HeroGlobe.astro';
 
   .hero-story :global(p:last-child) {
     margin-bottom: 0;
+  }
+
+  .hero-intro :global(p) {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
   }
 
   /* Actions */

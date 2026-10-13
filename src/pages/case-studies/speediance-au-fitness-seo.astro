@@ -8,7 +8,7 @@ import ButtonPrimary from "../../components/ButtonPrimary.astro";
 import ButtonSecondary from "../../components/ButtonSecondary.astro";
 
 const caseStudyData = {
-  title: "How We Achieved 66% Organic Traffic Growth for Speediance AU",
+  title: "Speediance AU Search Console Organic Click Growth",
   client: "Speediance AU",
   website: "https://speediance.com.au/",
   industry: "Fitness Equipment",
@@ -17,7 +17,7 @@ const caseStudyData = {
   challenge: "Speediance AU faced significant challenges in a highly competitive Australian fitness equipment market with numerous established suppliers. Additionally, they needed to effectively target both commercial and retail fitness buyers with tailored SEO strategies while navigating seasonal variations that impact search demand and buying behavior.",
   solution: "We developed a comprehensive SEO strategy tailored specifically for the Australian fitness equipment market. This included thorough keyword research targeting Australian-specific fitness equipment search terms, optimizing website content and meta tags to better match user intent and regional preferences, improving technical SEO elements, developing high-quality backlinks from local fitness communities, and continuously analyzing Google Search Console data to fine-tune our tactics.",
   keyMetrics: [
-    { label: "Organic Traffic", value: "+66%", description: "Increase in total organic clicks" },
+    { label: "Organic Clicks", value: "+66%", description: "Increase in Search Console clicks" },
     { label: "Search Visibility", value: "+22%", description: "Growth in total impressions" },
     { label: "CTR", value: "+33%", description: "Improvement in click-through rate" }
   ],
@@ -31,7 +31,8 @@ const caseStudyData = {
   results: [
     { metric: "Total Clicks", before: "6,550", after: "10,900", improvement: "+66%" },
     { metric: "Total Impressions", before: "279,000", after: "339,000", improvement: "+22%" },
-    { metric: "Click-Through Rate", before: "2.4%", after: "3.2%", improvement: "+33%" }
+    { metric: "Click-Through Rate", before: "2.4%", after: "3.2%", improvement: "+33%" },
+    { metric: "Average Position", before: "24.9", after: "28.1", improvement: "Worse aggregate position" }
   ],
   keyTakeaways: [
     "Market-specific keyword research is essential for regional SEO success",
@@ -43,7 +44,7 @@ const caseStudyData = {
 };
 ---
 
-<MainLayout title="Case Study: Speediance AU Fitness SEO Success | Bright Forge SEO" description="Speediance AU didn't just grow they ranked. Discover how targeted fitness SEO delivered massive gains in traffic, leads, and local visibility.">
+<MainLayout title="Speediance AU Fitness SEO Case Study | Bright Forge" description="Speediance Australia's archived Search Console comparison shows increased clicks and impressions. Review the campaign work, screenshot and metric scope.">
   <LegacyHeader slot="header" />
 
   <Hero
@@ -128,6 +129,7 @@ const caseStudyData = {
   <section class="content-section gray" id="results">
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title"><span>Results</span></h2>
+      <p class="section-text comparison-scope-note">Source: the published Search Console comparison image. Its selectors show Last 6 months and Previous 6 months. Exact calendar dates and country/search filters are not visible, so these figures are not presented as a country-filtered series or a conversion result.</p>
 
       <div class="results-table">
         <table>
@@ -145,7 +147,7 @@ const caseStudyData = {
                 <td class="metric-name">{result.metric}</td>
                 <td>{result.before}</td>
                 <td>{result.after}</td>
-                <td class="improvement">{result.improvement}</td>
+                <td class:list={["improvement", { "metric-decline": /Worse|decreased/.test(result.improvement) }]}>{result.improvement}</td>
               </tr>
             ))}
           </tbody>
@@ -172,6 +174,8 @@ const caseStudyData = {
 </MainLayout>
 
 <style>
+.results-table .improvement.metric-decline { color: #cbd5e1; }
+
 /* Case Study Meta */
 .case-meta {
   display: flex;

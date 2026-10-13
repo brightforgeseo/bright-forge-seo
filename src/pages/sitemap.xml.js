@@ -3,7 +3,7 @@ import { authors } from '../lib/authors.js';
 import { groupPostsByTopic } from '../lib/blogDisplay.js';
 
 const SITE = 'https://brightforge.com.ph';
-const SKIP = new Set(['404', 'thanks', 'sitemap.xml']);
+const SKIP = new Set(['404', 'thanks', 'sitemap.xml', 'terms-of-service']);
 const REQUIRED = [
   'https://brightforge.com.ph/construction-seo-services/',
   'https://brightforge.com.ph/legal-seo-services/',

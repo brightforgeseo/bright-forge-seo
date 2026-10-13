@@ -7,13 +7,16 @@ import Hero from '../../components/Hero.astro';
 import ButtonPrimary from '../../components/ButtonPrimary.astro';
 import ButtonSecondary from '../../components/ButtonSecondary.astro';
 
+// Keep archived figures out of the published result surface until their
+// original UK source and exact comparison windows are authenticated.
+const caseMetricsVerified = false;
 const caseStudyData = {
-  title: "119% Increase in Organic Traffic for Speediance UK Fitness",
+  title: "Speediance UK Fitness Ecommerce SEO Campaign",
   client: "Speediance UK",
   website: "https://speediance.co.uk/",
   industry: "Fitness",
   duration: "3 months",
-  heroImage: "/images/case-studies/SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp",
+  heroImage: "/images/case-studies/speediance-uk-storefront-20261013.webp",
   challenge: "Speediance UK operates in a highly competitive fitness market. In order to stand out, our primary goal was to bolster its organic visibility, drive higher-quality traffic, and improve overall SEO performance in the crowded fitness equipment space.",
   solution: "We implemented a comprehensive SEO strategy combining technical excellence, compelling content, and strategic off-page efforts to establish a solid foundation for both immediate and long-term growth.",
   keyMetrics: [
@@ -107,15 +110,15 @@ const caseStudyData = {
   keyTakeaways: [
     "Technical SEO improvements provided a solid foundation for sustainable growth",
     "Strategic keyword targeting expanded the brand's reach to new potential customers",
-    "High-quality content aligned with user search intent improved engagement metrics",
+    "Content work connected product information with relevant search intent",
     "Authority-building through targeted link acquisition strengthened domain reputation",
-    "User experience enhancements made crucial information more accessible and improved conversions"
+    "User experience work focused on making product information more accessible"
   ],
   nextSteps: "Ready to achieve similar results for your fitness business? Our proven SEO strategies can help you stand out in the competitive fitness industry and drive sustainable growth."
 };
 ---
 
-<MainLayout title="Case Study: Speediance UK Fitness SEO Success | Bright Forge SEO" description="Speediance UK climbed the rankings fast. See how structured content, local intent, and smart SEO strategy helped them dominate UK fitness search.">
+<MainLayout title="Speediance UK Fitness SEO Campaign | Bright Forge" description="UK fitness ecommerce SEO work for Speediance: technical review, product search intent, content and campaign approach. Explore the project scope.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -127,17 +130,18 @@ const caseStudyData = {
       <div class="case-meta">
         <span class="meta-item">{caseStudyData.industry}</span>
         <span class="meta-divider">•</span>
-        <span class="meta-item">{caseStudyData.duration}</span>
+        <span class="meta-item">UK storefront</span>
       </div>
       <p>We worked on <a href="https://speediance.co.uk/" rel="noopener">speediance.co.uk</a>. UK buyers searching for Gym Monster and compact home gyms, not a generic fitness blog.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="#results" text="View Full Results" />
+      <ButtonPrimary href="#campaign-measurement" text="Review the Campaign Approach" />
       <ButtonSecondary href="/contact/" text="Discuss Your Project" />
     </Fragment>
   </Hero>
 
+  {caseMetricsVerified && (
   <!-- Key Metrics Section -->
   <section class="metrics-section">
     <div class="max-w-6xl mx-auto px-6 py-20">
@@ -153,11 +157,14 @@ const caseStudyData = {
     </div>
   </section>
 
+  )}
+
   <!-- Hero Image Section -->
   <section class="image-section">
     <div class="max-w-6xl mx-auto px-6 py-12">
       <div class="case-image-container">
-        <img src={caseStudyData.heroImage} alt={`${caseStudyData.client} Performance Dashboard`} />
+        <img src={caseStudyData.heroImage} alt="Speediance UK public storefront, captured 13 October 2026" width="970" height="525" loading="lazy" decoding="async" />
+        <p class="section-text">Current UK storefront, captured 13 October 2026. This image shows the business website, not a campaign performance chart.</p>
       </div>
     </div>
   </section>
@@ -197,6 +204,7 @@ const caseStudyData = {
     </div>
   </section>
 
+  {caseMetricsVerified && (
   <!-- Results Section -->
   <section class="content-section gray" id="results">
     <div class="max-w-4xl mx-auto px-6 py-20">
@@ -224,6 +232,15 @@ const caseStudyData = {
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+  )}
+
+  <section class="content-section gray" id="campaign-measurement">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="section-title">How We Review <span>Campaign Performance</span></h2>
+      <p class="section-text">We compare Search Console clicks and impressions across dated windows, then review priority queries against the pages intended to serve them. Store conversion data is assessed separately. A gain in search exposure does not by itself establish more orders or enquiries.</p>
     </div>
   </section>
 

@@ -82,6 +82,12 @@ import HeroGlobe from './HeroGlobe.astro';
           )}
         </div>
 
+        {Astro.slots.has('support') && (
+          <div class="hero-description hero-support">
+            <slot name="support" />
+          </div>
+        )}
+
         <!-- Stats row -->
         <div class="hero-stats">
           <div class="stat-item">

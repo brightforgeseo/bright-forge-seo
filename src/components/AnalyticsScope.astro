@@ -1,0 +1,12 @@
+---
+// The hosting-injected Google tag remains authoritative. Set Google's opt-out
+// flag before that tag runs so this site's previews do not pollute production.
+---
+<script is:inline data-analytics-scope>
+  (() => {
+    const host = window.location.hostname.toLowerCase();
+    const production = host === 'brightforge.com.ph';
+    window['ga-disable-G-B8RRWP6CBD'] = !production;
+    window.BFAnalyticsScope = { production, host };
+  })();
+</script>

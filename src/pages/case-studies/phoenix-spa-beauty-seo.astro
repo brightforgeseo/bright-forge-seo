@@ -19,8 +19,8 @@ const caseStudyData = {
   keyMetrics: [
     { label: "Total Clicks", value: "+70%", description: "5,570 → 9,480" },
     { label: "Total Impressions", value: "+188%", description: "145k → 418k" },
-    { label: "Avg. Position", value: "17.8 → 21.5", description: "Maintained visibility" },
-    { label: "CTR", value: "3.8% → 2.3%", description: "Broader keyword spread" }
+    { label: "Avg. Position", value: "17.8 → 21.5", description: "Worse aggregate position" },
+    { label: "CTR", value: "3.8% → 2.3%", description: "CTR decreased" }
   ],
   strategySteps: [
     { title: "Local Keyword Research", description: "Focused on geo-targeted spa & beauty service terms." },
@@ -32,8 +32,8 @@ const caseStudyData = {
   results: [
     { metric: "Total Clicks", before: "5,570", after: "9,480", improvement: "+70%" },
     { metric: "Total Impressions", before: "145,000", after: "418,000", improvement: "+188%" },
-    { metric: "Average Position", before: "17.8", after: "21.5", improvement: "Stable" },
-    { metric: "Click-Through Rate", before: "3.8%", after: "2.3%", improvement: "Broader visibility" }
+    { metric: "Average Position", before: "17.8", after: "21.5", improvement: "Worse aggregate position" },
+    { metric: "Click-Through Rate", before: "3.8%", after: "2.3%", improvement: "CTR decreased" }
   ],
   keyTakeaways: [
     "Local SEO focus drives foot-traffic oriented businesses.",
@@ -43,7 +43,7 @@ const caseStudyData = {
 };
 ---
 
-<MainLayout title="Organic Gains for Phoenix Eco Spa | Bright Forge SEO" description="Phoenix Eco Spa gained 70% more organic traffic. Learn how local SEO, Google profile fixes, and content tuning brought search visibility to life.">
+<MainLayout title="Phoenix Brighton Spa SEO Case Study | Bright Forge" description="Phoenix Brighton Spa's archived Search Console comparison shows higher clicks and impressions alongside lower CTR. Review the source and campaign scope.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -129,6 +129,7 @@ const caseStudyData = {
   <section class="content-section gray" id="results">
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title"><span>Results</span></h2>
+      <p class="section-text comparison-scope-note">Source: the published Search Console comparison image. Its selectors show Last 6 months and Previous 6 months. Exact calendar dates and country/search filters are not visible, so these figures are not presented as a country-filtered series or a booking result.</p>
 
       <div class="results-table">
         <table>
@@ -146,7 +147,7 @@ const caseStudyData = {
                 <td class="metric-name">{result.metric}</td>
                 <td>{result.before}</td>
                 <td>{result.after}</td>
-                <td class="improvement">{result.improvement}</td>
+                <td class:list={["improvement", { "metric-decline": /Worse|decreased/.test(result.improvement) }]}>{result.improvement}</td>
               </tr>
             ))}
           </tbody>
@@ -173,6 +174,8 @@ const caseStudyData = {
 </MainLayout>
 
 <style>
+.results-table .improvement.metric-decline { color: #cbd5e1; }
+
 /* Case Study Meta */
 .case-meta {
   display: flex;

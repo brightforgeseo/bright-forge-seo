@@ -3,6 +3,7 @@
 import SEO from '../components/SEO.astro';
 import ContactPopup from '../components/ContactPopup.astro';
 import LeadTracking from '../components/LeadTracking.astro';
+import AnalyticsScope from '../components/AnalyticsScope.astro';
 
 // Standard Astro CSS imports - these should automatically generate link tags
 import '../styles/global.css';
@@ -51,6 +52,7 @@ interface Props {
   geoRegion?: string;
   geoPlacename?: string;
   contentLanguage?: string;
+  includeServiceSchema?: boolean;
 }
 
 const { 
@@ -71,7 +73,8 @@ const {
   hreflangs,
   geoRegion = 'PH-00',
   geoPlacename = 'Quezon City, Philippines',
-  contentLanguage = 'en-PH'
+  contentLanguage = 'en-PH',
+  includeServiceSchema = true
 } = Astro.props;
 
 // Office coordinates only make sense on Philippines-targeted pages.
@@ -87,6 +90,7 @@ const isHome = Astro.url.pathname === '/';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <AnalyticsScope />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <!-- Mobile-specific optimization -->
     <meta name="mobile-web-app-capable" content="yes" />
@@ -118,6 +122,8 @@ const isHome = Astro.url.pathname === '/';
       includeGenericFAQ={false}
       faqs={faqs}
       includeReviews={false}
+      includeServiceSchema={includeServiceSchema}
+      serviceArea={geoRegion === 'AU' ? ['Australia'] : geoRegion === 'US' ? ['United States'] : geoRegion === 'GB' ? ['United Kingdom'] : undefined}
     />
     
     <slot name="head" />

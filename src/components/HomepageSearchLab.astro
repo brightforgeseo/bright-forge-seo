@@ -93,6 +93,9 @@ const problems = [
     {fits.map((fit, i) => (
       <div class:list={["fit-panel", i === 0 && "is-on"]} data-fit-panel={fit.id} hidden={i !== 0}>
         <p class="fit-blurb">{fit.blurb}</p>
+        {fit.id === 'intl' && (
+          <p class="fit-market-links">Explore SEO for <a href="/seo-services-uk/">UK businesses</a>, <a href="/seo-services-usa/">US businesses</a> and <a href="/seo-services-australia/">Australian businesses</a>.</p>
+        )}
         <ol class="fit-steps">
           {fit.next.map((step) => (
             <li><span>{step.n}</span><div><strong>{step.t}</strong><p>{step.d}</p></div></li>
@@ -171,6 +174,13 @@ const problems = [
 </section>
 
 <style>
+.fit-market-links a {
+  color: #f0622a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.fit-market-links a:hover { color: #fff; }
+
 .lab {
   background: #0d0f1a;
   color: #f4f1ea;

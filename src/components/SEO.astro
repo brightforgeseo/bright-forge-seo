@@ -39,6 +39,8 @@ export interface Props {
   }>;
   // Review and AggregateRating schema support
   includeReviews?: boolean;
+  includeServiceSchema?: boolean;
+  serviceArea?: string[];
 }
 
 const {
@@ -70,7 +72,9 @@ const {
   includeLocalBusiness = false,
   includeGenericFAQ = false,
   faqs,
-  includeReviews = false
+  includeReviews = false,
+  includeServiceSchema = true,
+  serviceArea = ['Philippines', 'United States', 'Australia', 'United Kingdom']
 } = Astro.props;
 
 // Determine final page type (allow inference from URL when not explicitly set)
@@ -354,7 +358,7 @@ if (resolvedType === 'article' || resolvedType === 'blog') {
   if (article?.section) {
     schema.articleSection = article.section;
   }
-} else if (resolvedType === 'service') {
+} else if (resolvedType === 'service' && includeServiceSchema) {
   schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -377,52 +381,8 @@ if (resolvedType === 'article' || resolvedType === 'blog') {
     },
     "serviceType": title,
     "url": canonical,
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Philippines"
-      },
-      {
-        "@type": "Country",
-        "name": "United States"
-      },
-      {
-        "@type": "Country",
-        "name": "Australia"
-      },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
-      }
-    ],
+    "areaServed": serviceArea.map(name => ({ "@type": "Country", name })),
     "category": "SEO Services",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "SEO Service Packages",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Basic SEO Package"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Advanced SEO Package"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Enterprise SEO Package"
-          }
-        }
-      ]
-    },
 
   };
 } else if (resolvedType === 'company' || resolvedType === 'profile') {

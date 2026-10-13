@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: 'Who actually does the SEO work?',
-    answer: "The in-house team in Quezon City that we name publicly: founder Ben Lowe, who brings over 15 years of SEO experience, co-founder Sassin Lowe, SEO manager Janin A. Cañonero and SEO expert Jewe O. Manalo. Nothing is passed to anonymous subcontractors, and senior review happens on everything we ship. Ask any US agency quoting $5,000 a month the same question — the answer is often much less direct."
+    answer: "The in-house team in Quezon City that we name publicly: founder Ben Lowe, who brings over 15 years of SEO experience, co-founder Sassin Lowe, Head of Team Jani A. Cañonero and SEO expert Jewe O. Manalo. Nothing is passed to anonymous subcontractors, and senior review happens on everything we ship. Ask any US agency quoting $5,000 a month the same question — the answer is often much less direct."
   },
   {
     question: 'How do you measure and report SEO results?',
@@ -94,6 +94,7 @@ const schema = JSON.stringify({
   description="SEO for US businesses from our Philippines team. Technical audits, ecommerce and SaaS work with clear scope and reporting. Discuss your search priorities."
   canonical="https://brightforge.com.ph/seo-services-usa/"
   type="service"
+  includeServiceSchema={false}
   faqs={faqs}
   hreflangs={seoServicesHreflangs}
   geoRegion="US"
@@ -110,8 +111,10 @@ const schema = JSON.stringify({
     title="SEO Services USA: <span>Senior SEO Done While You Sleep</span>"
     breadcrumbCurrent="SEO Services USA"
   >
-    <Fragment slot="story">
+    <Fragment slot="intro">
       <p>Bright Forge SEO helps US ecommerce brands, SaaS companies and service businesses compete on google.com with senior technical SEO, American-English content, US-relevant link building and reporting that answers the only question that matters: is this making us money?</p>
+    </Fragment>
+    <Fragment slot="story">
       <p>We are based in the Philippines. We agree the US market, delivery scope, access and review schedule before work starts. A national ecommerce campaign needs a different plan from a service business targeting one state.</p>
       <p>The proof is published, not promised: case studies with real Search Console numbers — including a 137.5% organic click increase in three months — and a 5.0 rating on Google from 12 reviews.</p>
     </Fragment>
@@ -157,7 +160,7 @@ const schema = JSON.stringify({
       <div class="section-head centered">
         <p class="eyebrow">Proof, not promises</p>
         <h2>Results from <span>published, honest case studies</span></h2>
-        <p>Every number below comes from a published case study built on Google Analytics 4, Search Console and SE Ranking data. Our clients compete in Western, English-language search results — the same algorithms, the same SERP features, the same fight you face on google.com. We label results honestly, including the metrics that dipped.</p>
+        <p class="portfolio-scope-note">These examples come from several client markets, not US-only campaigns. They show the work and published metrics from those engagements. We agree the relevant US market, competitors and measurement scope for your campaign.</p>
       </div>
 
       <div class="results-grid">
@@ -351,12 +354,12 @@ const schema = JSON.stringify({
       <div class="team-strip">
         <div>
           <h3>The people behind the work</h3>
-          <p>Bright Forge SEO was founded by Ben Lowe — over 15 years in SEO, a marketing degree from Metro London University and industry certifications — alongside co-founder Sassin Lowe. Campaigns are run by SEO manager Janin A. Cañonero and SEO expert Jewe O. Manalo, with senior review on everything that ships. Meet the full team on our <a href="/about-us/">about page</a>.</p>
+          <p>Bright Forge SEO was founded by Ben Lowe, who leads strategy and senior review, alongside co-founder Sassin Lowe. Jani A. Cañonero is Head of Team and Jewe O. Manalo is an SEO specialist. Meet the team and read the public biographies on our <a href="/about-us/">about page</a>.</p>
         </div>
         <div class="team-names">
-          <span>Ben Lowe<em>CEO &amp; Co-Founder</em></span>
-          <span>Sassin Lowe<em>CEO &amp; Co-Founder</em></span>
-          <span>Janin A. Cañonero<em>SEO Manager</em></span>
+          <span>Ben Lowe<em>Founder &amp; CEO</em></span>
+          <span>Sassin Lowe<em>Co-Founder</em></span>
+          <span>Jani A. Cañonero<em>Head of Team</em></span>
           <span>Jewe O. Manalo<em>SEO Expert</em></span>
         </div>
       </div>

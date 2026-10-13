@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import AnalyticsScope from './AnalyticsScope.astro';
 
 export interface Props {
   title: string;
@@ -133,6 +134,7 @@ const formatDate = (dateString: string) => {
 <html lang="en" style="scroll-padding-top: 120px;">
 <head>
   <meta charset="UTF-8" />
+  <AnalyticsScope />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription} />
