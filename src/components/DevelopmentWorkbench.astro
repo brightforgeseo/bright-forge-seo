@@ -204,8 +204,8 @@ const shinobi = "https://shinobiseo.com";
 <style>
   .studio {
     padding: 0 0 40px;
-    background: #0d0f1a;
-    color: #fff;
+    background: #ffffff;
+    color: #19212e;
   }
   .studio .page-container {
     width: min(100% - 40px, 1120px);
@@ -215,7 +215,7 @@ const shinobi = "https://shinobiseo.com";
   .hud-marquee {
     overflow: hidden;
     border-block: 1px solid rgba(240,98,42,.25);
-    background: #0a0c16;
+    background: #ffffff;
     margin: 0 auto 28px;
     width: min(100% - 40px, 1120px);
     border-radius: 8px;
@@ -229,17 +229,17 @@ const shinobi = "https://shinobiseo.com";
     font-size: .78rem;
     font-weight: 800;
     letter-spacing: .28em;
-    color: rgba(240,98,42,.85);
+    color: #b83e12;
   }
   .hud-track span { white-space: nowrap; }
   .studio .page-container.crawl-wrap {
     position: relative;
     margin: 0 auto 44px;
-    border: 1px solid rgba(255,255,255,.1);
+    border: 1px solid rgba(25, 33, 46, 0.09);
     border-radius: 8px;
     background:
       linear-gradient(180deg, rgba(240,98,42,.08), transparent 42%),
-      #12162a;
+      #f7f8fa;
     padding: 18px 18px 8px;
     overflow: hidden;
   }
@@ -267,7 +267,7 @@ const shinobi = "https://shinobiseo.com";
   }
   .hud-status {
     margin: 0;
-    color: rgba(255,255,255,.45);
+    color: #465365;
     font-size: .68rem;
     letter-spacing: .16em;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -291,7 +291,7 @@ const shinobi = "https://shinobiseo.com";
   }
   .crawl-kicker {
     margin: 0 0 8px;
-    color: #f0622a;
+    color: #b83e12;
     font-size: .72rem;
     font-weight: 800;
     letter-spacing: .14em;
@@ -306,7 +306,7 @@ const shinobi = "https://shinobiseo.com";
   }
   .crawl-node circle { fill: #1c2136; stroke: #f0622a; stroke-width: 2; }
   .crawl-node text {
-    fill: rgba(255,255,255,.72);
+    fill: #465365;
     font-size: 12px;
     text-anchor: middle;
     font-family: Outfit, system-ui, sans-serif;
@@ -338,21 +338,21 @@ const shinobi = "https://shinobiseo.com";
   .launch-grid p:not(.eyebrow) {
     margin: 0;
     max-width: 72ch;
-    color: rgba(255,255,255,.7);
+    color: #465365;
     line-height: 1.65;
   }
   .workbench,
   .build-portfolio,
   .job,
   .launch-sheet {
-    border: 1px solid rgba(255,255,255,.1);
-    background: #14182a;
-    box-shadow: 0 18px 48px rgba(0,0,0,.18);
+    border: 1px solid rgba(25, 33, 46, 0.09);
+    background: #f7f8fa;
+    box-shadow: 0 18px 48px rgba(25, 33, 46, 0.09);
   }
   .workbench, .reel { border-radius: 8px; overflow: hidden; }
   .reel {
-    border: 1px solid rgba(255,255,255,.1);
-    background: #14182a;
+    border: 1px solid rgba(25, 33, 46, 0.09);
+    background: #f7f8fa;
     display: flex;
     flex-direction: column;
     min-height: 0;
@@ -362,7 +362,7 @@ const shinobi = "https://shinobiseo.com";
     width: 100%;
     height: clamp(560px, 72vh, 760px);
     border: 0;
-    background: #0a0c16;
+    background: #ffffff;
   }
   .build-portfolio { border-radius: 16px; padding: clamp(24px, 4vw, 40px); }
   .workbench-bar {
@@ -370,14 +370,14 @@ const shinobi = "https://shinobiseo.com";
     align-items: center;
     gap: 12px;
     padding: 10px 14px;
-    background: #1c2136;
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: #f7f8fa;
+    border-bottom: 1px solid rgba(25, 33, 46, 0.08);
     font-size: .78rem;
-    color: rgba(255,255,255,.55);
+    color: #465365;
   }
   .live-pill {
     margin-left: auto;
-    color: #7dffb3;
+    color: #b83e12;
     font-weight: 800;
     letter-spacing: .12em;
     text-transform: uppercase;
@@ -404,8 +404,8 @@ const shinobi = "https://shinobiseo.com";
     display: flex;
     gap: 12px;
     padding: 10px 18px;
-    color: rgba(255,255,255,.78);
-    border-bottom: 1px solid rgba(255,255,255,.05);
+    color: #465365;
+    border-bottom: 1px solid rgba(25, 33, 46, 0.05);
     opacity: .22;
     transform: translateX(-8px);
   }
@@ -420,12 +420,12 @@ const shinobi = "https://shinobiseo.com";
   .studio.is-live .build-log li:nth-child(6) { animation-delay: 1.65s; }
   .build-log code {
     min-width: 2.6rem;
-    color: #7dffb3;
+    color: #b83e12;
     font-weight: 700;
   }
-  .build-log li:last-child code { color: #f0622a; }
+  .build-log li:last-child code { color: #b83e12; }
   .frame-label {
-    color: #f0622a;
+    color: #b83e12;
     font-size: .72rem;
     font-weight: 800;
     letter-spacing: .12em;
@@ -433,7 +433,7 @@ const shinobi = "https://shinobiseo.com";
     margin: 0 0 16px;
   }
   .build-portfolio > h3 {
-    color: #fff;
+    color: #19212e;
     font-size: clamp(1.45rem, 3vw, 2.15rem);
     margin: 0 0 24px;
   }
@@ -446,10 +446,10 @@ const shinobi = "https://shinobiseo.com";
   .portfolio-tabs button {
     min-height: 54px;
     padding: 10px 12px;
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(25, 33, 46, 0.09);
     border-radius: 8px;
-    background: #0e1221;
-    color: rgba(255,255,255,.62);
+    background: #f7f8fa;
+    color: #465365;
     font: inherit;
     font-size: .82rem;
     font-weight: 800;
@@ -460,13 +460,13 @@ const shinobi = "https://shinobiseo.com";
   .portfolio-tabs button:hover,
   .portfolio-tabs button:focus-visible {
     border-color: rgba(240,98,42,.7);
-    color: #fff;
+    color: #19212e;
     outline: none;
   }
   .portfolio-tabs button[aria-selected="true"] {
     border-color: #f0622a;
     background: rgba(240,98,42,.14);
-    color: #fff;
+    color: #19212e;
     transform: translateY(-2px);
   }
   .portfolio-stage {
@@ -476,12 +476,12 @@ const shinobi = "https://shinobiseo.com";
     border-radius: 12px;
     background:
       radial-gradient(circle at top right, rgba(240,98,42,.12), transparent 34%),
-      #0e1221;
+      #f7f8fa;
   }
   .portfolio-stage section[hidden] { display: none; }
   .portfolio-number {
     margin: 0 0 12px;
-    color: #f0622a;
+    color: #b83e12;
     font-size: .75rem;
     font-weight: 900;
     letter-spacing: .12em;
@@ -490,14 +490,14 @@ const shinobi = "https://shinobiseo.com";
   .portfolio-stage h4 {
     max-width: 25ch;
     margin: 0 0 16px;
-    color: #fff;
+    color: #19212e;
     font-size: clamp(1.35rem, 3vw, 2rem);
     line-height: 1.15;
   }
   .portfolio-stage section > p:not(.portfolio-number) {
     max-width: 78ch;
     margin: 0;
-    color: rgba(255,255,255,.72);
+    color: #465365;
     font-size: 1rem;
     line-height: 1.72;
   }
@@ -509,7 +509,7 @@ const shinobi = "https://shinobiseo.com";
   }
   .portfolio-points span {
     border: 1px solid rgba(240,98,42,.35);
-    color: #f3c2a8;
+    color: #465365;
     font-size: .75rem;
     font-weight: 700;
     padding: 7px 10px;
@@ -524,8 +524,8 @@ const shinobi = "https://shinobiseo.com";
   }
   .job { padding: 28px 28px 32px; border-radius: 16px; }
   .job-wide { grid-column: 1 / -1; padding: 32px; }
-  .job h3 { color: #fff; font-size: 1.12rem; margin: 0 0 12px; }
-  .job p { margin: 0; color: rgba(255,255,255,.72); line-height: 1.7; }
+  .job h3 { color: #19212e; font-size: 1.12rem; margin: 0 0 12px; }
+  .job p { margin: 0; color: #465365; line-height: 1.7; }
   .launch-sheet {
     list-style: none;
     margin: 0;
@@ -536,11 +536,11 @@ const shinobi = "https://shinobiseo.com";
     display: flex;
     gap: 16px;
     padding: 16px 22px;
-    color: rgba(255,255,255,.86);
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    color: #19212e;
+    border-bottom: 1px solid rgba(25, 33, 46, 0.06);
   }
   .launch-sheet span {
-    color: #f0622a;
+    color: #b83e12;
     font-weight: 800;
     min-width: 1.6rem;
   }

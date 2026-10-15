@@ -21,17 +21,17 @@ const awards = [
 ];
 ---
 
-<section class="awards-new-section py-20 bg-[#0d0f1a]">
+<section class="awards-new-section py-20 bg-[#ffffff]">
   <div class="container max-w-7xl mx-auto px-4">
     <div class="text-center mb-12">
-      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4 text-[#f0622a] border border-[rgba(240,98,42,0.15)]" style="background:linear-gradient(135deg,rgba(240,98,42,0.1),rgba(240,98,42,0.05))">RECOGNITION</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4" style="font-family: 'Outfit', sans-serif; font-weight: 800;">Awards &amp; <span class="text-[#f0622a]">Accolades</span></h2>
-      <p class="text-lg text-[#d0d4e8] max-w-2xl mx-auto">Current Clutch agency listings with direct links to the supporting directory evidence.</p>
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4 text-[#b83e12] border border-[rgba(240,98,42,0.15)]" style="background:linear-gradient(135deg,rgba(240,98,42,0.1),rgba(240,98,42,0.05))">RECOGNITION</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4" style="font-family: 'Outfit', sans-serif; font-weight: 800;">Awards &amp; <span class="text-[#b83e12]">Accolades</span></h2>
+      <p class="text-lg text-[#465365] max-w-2xl mx-auto">Current Clutch agency listings with direct links to the supporting directory evidence.</p>
     </div>
 
     <div class="flex justify-center items-center gap-8 flex-wrap">
       {awards.map((a) => (
-        <a href={a.href} target="_blank" rel="noopener noreferrer" class="award-card group block bg-[#131627] rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-80 border border-[rgba(255,255,255,0.07)]" data-analytics-event="clutch_evidence_click">
+        <a href={a.href} target="_blank" rel="noopener noreferrer" class="award-card group block bg-[#f7f8fa] rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 w-full sm:w-80 border border-[rgba(255,255,255,0.07)]" data-analytics-event="clutch_evidence_click">
           <div class="flex items-center justify-center mb-4">
             <img
               src={a.img}
@@ -43,9 +43,9 @@ const awards = [
               decoding="async"
             />
           </div>
-          <h3 class="text-lg font-semibold text-[#e8eaf2] text-center mb-1 leading-snug">{a.title}</h3>
-          <p class="text-sm text-[#f0622a] text-center font-medium">{a.by}</p>
-          <span class="mt-4 inline-flex w-full items-center justify-center gap-2 text-sm font-semibold text-[#f0622a]">View Clutch evidence</span>
+          <h3 class="text-lg font-semibold text-[#19212e] text-center mb-1 leading-snug">{a.title}</h3>
+          <p class="text-sm text-[#b83e12] text-center font-medium">{a.by}</p>
+          <span class="mt-4 inline-flex w-full items-center justify-center gap-2 text-sm font-semibold text-[#b83e12]">View Clutch evidence</span>
         </a>
       ))}
     </div>
@@ -54,12 +54,12 @@ const awards = [
 
 <style>
   .awards-new-section {
-    background: #0d0f1a;
+    background: #ffffff;
   }
-  .award-card { background: #131627; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
-  .awards-new-section h2 { color: #ffffff; }
-  .awards-new-section h2 span { color: #f0622a; }
-  .awards-new-section p { color: #ffffff; }
-  .award-card h3 { color: #e8eaf2; }
-  .award-card p { color: #f0622a; }
+  .award-card { background: #f7f8fa; box-shadow: 0 1px 2px rgba(25, 33, 46, 0.09); }
+  .awards-new-section h2 { color: #19212e; }
+  .awards-new-section h2 span { color: #b83e12; }
+  .awards-new-section p { color: #19212e; }
+  .award-card h3 { color: #19212e; }
+  .award-card p { color: #b83e12; }
 </style>

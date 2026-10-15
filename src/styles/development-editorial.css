@@ -1,6 +1,6 @@
 .dev-page {
-  background: #0d0f1a;
-  color: #fff;
+  background: #ffffff;
+  color: #19212e;
 }
 .page-container {
   width: min(100% - 40px, 1120px);
@@ -9,11 +9,11 @@
 .dev-page section {
   padding: 4.5rem 0;
   content-visibility: visible !important;
-  background: #0d0f1a;
+  background: #ffffff;
 }
 .eyebrow {
   display: block;
-  color: #f0622a;
+  color: #b83e12;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -21,28 +21,28 @@
   margin-bottom: 10px;
 }
 .dev-page h2 {
-  color: #fff;
+  color: #19212e;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.05;
   margin: 0 0 22px;
   letter-spacing: -0.03em;
 }
 .dev-page h2 span {
-  color: #f0622a;
+  color: #b83e12;
 }
 .dev-page h3 {
-  color: #fff;
+  color: #19212e;
   font-size: 1.16rem;
   margin: 0 0 10px;
 }
 .dev-page p,
 .dev-page li {
-  color: #d0d4e8;
+  color: #465365;
   font-size: 1.02rem;
   line-height: 1.72;
 }
 .dev-page a {
-  color: #f0622a;
+  color: #b83e12;
 }
 .two-column,
 .faq-layout {
@@ -64,7 +64,7 @@
 .card,
 .link-grid a {
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
   background: transparent;
   border-radius: 0;
   box-shadow: none;
@@ -73,17 +73,17 @@
 .hero-proof strong,
 .link-grid span {
   display: block;
-  color: #fff;
+  color: #19212e;
   font-weight: 800;
   margin-bottom: 8px;
 }
 .hero-proof span {
-  color: #d0d4e8;
+  color: #465365;
   line-height: 1.5;
 }
 .card span {
   display: block;
-  color: #f0622a;
+  color: #b83e12;
   font-weight: 800;
   letter-spacing: 0.08em;
   margin-bottom: 12px;
@@ -93,7 +93,7 @@
   text-decoration: none;
 }
 .link-grid a:hover {
-  color: #fff;
+  color: #19212e;
 }
 .faq-list {
   display: grid;
@@ -101,7 +101,7 @@
 }
 .faq-item {
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
   background: transparent;
   border-radius: 0;
   overflow: visible;
@@ -109,7 +109,7 @@
 .faq-item summary {
   cursor: pointer;
   padding: 1.1rem 0;
-  color: #fff;
+  color: #19212e;
   font-weight: 800;
   list-style: none;
 }
@@ -123,7 +123,7 @@
 .cta-card {
   text-align: left;
   padding: 2.5rem 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
   background: transparent;
   border-radius: 0;
   box-shadow: none;

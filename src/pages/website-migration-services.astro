@@ -516,12 +516,12 @@ const faqs = [
 
 <style>
   :root {
-    --migration-bg: #0d0f1a;
-    --migration-panel: #131627;
-    --migration-panel-soft: #181c31;
-    --migration-border: rgba(255, 255, 255, 0.08);
-    --migration-text: #ffffff;
-    --migration-muted: rgba(255, 255, 255, 0.78);
+    --migration-bg: #ffffff;
+    --migration-panel: #f7f8fa;
+    --migration-panel-soft: #f7f8fa;
+    --migration-border: rgba(25, 33, 46, 0.08);
+    --migration-text: #19212e;
+    --migration-muted: #465365;
     --migration-accent: #f0622a;
     --migration-accent-dark: #d4510e;
   }
@@ -563,7 +563,7 @@ const faqs = [
 
   .section-kicker {
     display: inline-flex;
-    color: var(--migration-accent);
+    color: var(--bf-link, #b83e12);
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.12em;
@@ -572,7 +572,7 @@ const faqs = [
   }
 
   h2 {
-    color: #ffffff;
+    color: #19212e;
     font-size: clamp(2rem, 4vw, 3.2rem);
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -580,7 +580,7 @@ const faqs = [
   }
 
   h3 {
-    color: #ffffff;
+    color: #19212e;
     margin: 0 0 0.75rem;
     font-size: 1.18rem;
     line-height: 1.25;
@@ -616,21 +616,21 @@ const faqs = [
 
   .migration-hero-stats div {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(25, 33, 46, 0.09);
     border-radius: 16px;
     padding: 1rem;
   }
 
   .migration-hero-stats strong {
     display: block;
-    color: #ffffff;
+    color: #19212e;
     font-size: 0.95rem;
     margin-bottom: 0.35rem;
   }
 
   .migration-hero-stats span {
     display: block;
-    color: rgba(255, 255, 255, 0.75);
+    color: #465365;
     font-size: 0.82rem;
     line-height: 1.45;
   }
@@ -655,14 +655,14 @@ const faqs = [
     width: min(420px, 100%);
     min-height: 420px;
     border: 1px solid rgba(240, 98, 42, 0.25);
-    background: radial-gradient(circle at 50% 20%, rgba(240, 98, 42, 0.22), rgba(19, 22, 39, 0.7) 45%, rgba(13, 15, 26, 0.95));
+    background: radial-gradient(circle at 50% 20%, rgba(240, 98, 42, 0.22), rgba(25, 33, 46, 0.09) 45%, rgba(25, 33, 46, 0.09));
     border-radius: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 24px 70px rgba(25, 33, 46, 0.09);
   }
 
   .migration-node {
@@ -670,9 +670,9 @@ const faqs = [
     text-align: center;
     border-radius: 999px;
     padding: 0.85rem 1rem;
-    color: #ffffff;
+    color: #19212e;
     font-weight: 800;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(25, 33, 46, 0.09);
     background: rgba(255, 255, 255, 0.09);
   }
 
@@ -696,8 +696,8 @@ const faqs = [
 
   .migration-checklist span {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(25, 33, 46, 0.09);
+    color: #19212e;
     border-radius: 12px;
     padding: 0.7rem;
     font-size: 0.82rem;
@@ -705,7 +705,7 @@ const faqs = [
   }
 
   .proof-strip {
-    background: #111424;
+    background: #f7f8fa;
     padding: 2.5rem 0;
   }
 
@@ -724,7 +724,7 @@ const faqs = [
     background: var(--migration-panel);
     border: 1px solid var(--migration-border);
     border-radius: 20px;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 18px 45px rgba(25, 33, 46, 0.09);
   }
 
   .proof-card {
@@ -747,18 +747,18 @@ const faqs = [
   .deliverables-section,
   .connected-section,
   .final-cta {
-    background: #0d0f1a;
+    background: #ffffff;
   }
 
   .risk-section,
   .process-section,
   .faq-section,
   .honest-section {
-    background: #111424;
+    background: #f7f8fa;
   }
 
   .checklist-section {
-    background: linear-gradient(135deg, #0d0f1a 0%, #131627 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f7f8fa 100%);
   }
 
   .card-grid {
@@ -820,8 +820,8 @@ const faqs = [
     gap: 0.8rem;
     align-items: center;
     padding: 0.85rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(25, 33, 46, 0.07);
+    color: #19212e;
   }
 
   .check-row:last-child {
@@ -836,7 +836,7 @@ const faqs = [
     align-items: center;
     justify-content: center;
     background: rgba(240, 98, 42, 0.16);
-    color: var(--migration-accent);
+    color: var(--bf-link, #b83e12);
     font-weight: 900;
   }
 
@@ -858,7 +858,7 @@ const faqs = [
     height: 44px;
     border-radius: 14px;
     background: linear-gradient(135deg, var(--migration-accent), var(--migration-accent-dark));
-    color: #ffffff;
+    color: #19212e;
     font-weight: 900;
     margin-bottom: 1rem;
   }
@@ -890,7 +890,7 @@ const faqs = [
   .connected-card span {
     display: inline-flex;
     margin-top: 1rem;
-    color: var(--migration-accent);
+    color: var(--bf-link, #b83e12);
     font-weight: 800;
   }
 
@@ -906,7 +906,7 @@ const faqs = [
   }
 
   .faq-item summary {
-    color: #ffffff;
+    color: #19212e;
     cursor: pointer;
     font-weight: 800;
     list-style: none;
@@ -920,7 +920,7 @@ const faqs = [
   .faq-item summary::after {
     content: '+';
     float: right;
-    color: var(--migration-accent);
+    color: var(--bf-link, #b83e12);
     font-size: 1.2rem;
   }
 

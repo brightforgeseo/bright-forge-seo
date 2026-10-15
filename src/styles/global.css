@@ -23,7 +23,7 @@
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
-    color: #e8eaf2;
+    color: #19212e;
     letter-spacing: -0.011em;
     overflow-x: clip;
     max-width: 100%;
@@ -35,7 +35,7 @@
     letter-spacing: -0.02em;
     font-weight: 800;
     line-height: 1.15;
-    color: #ffffff;
+    color: #19212e;
   }
 
   /* Ensure all FAQ/accordion answers use readable white text */
@@ -45,7 +45,7 @@
   .faq-content p,
   .faq-content ul li,
   .faq-content ol li {
-    color: #ffffff;
+    color: #19212e;
   }
 
   h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4rem); }
@@ -74,8 +74,8 @@
   .btn-modern-secondary {
     @apply btn-modern text-brand-text
            shadow-soft hover:shadow-soft-lg;
-    background: #131627;
-    border: 1px solid rgba(255,255,255,0.07);
+    background: #f7f8fa;
+    border: 1px solid rgba(25, 33, 46, 0.07);
   }
 
   .btn-modern-secondary:hover {
@@ -87,7 +87,7 @@
   }
 
   .btn-modern-ghost:hover {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   /* Modern card styles */
@@ -95,8 +95,8 @@
     @apply rounded-2xl p-6
            shadow-soft hover:shadow-soft-lg
            transition-all duration-300 ease-out;
-    background: #131627;
-    border: 1px solid rgba(255,255,255,0.07);
+    background: #f7f8fa;
+    border: 1px solid rgba(25, 33, 46, 0.07);
   }
 
   .card-modern-hover {
@@ -105,30 +105,30 @@
 
   /* Glass morphism effect */
   .glass {
-    background: rgba(19, 22, 39, 0.7);
+    background: rgba(25, 33, 46, 0.09);
     @apply backdrop-blur-xl shadow-soft;
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(25, 33, 46, 0.07);
   }
 
   .glass-dark {
-    background: rgba(13, 15, 26, 0.7);
+    background: rgba(25, 33, 46, 0.09);
     @apply backdrop-blur-xl;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(25, 33, 46, 0.05);
   }
 
   /* Modern gradient text */
   .gradient-text {
-    color: #f0622a;
+    color: #b83e12;
   }
 
   :where(h1, h2) :where(span, .highlight, .accent-text, .gradient-text) {
-    color: #f0622a !important;
-    -webkit-text-fill-color: #f0622a;
+    color: #b83e12 !important;
+    -webkit-text-fill-color: #b83e12;
   }
 
   /* Site-wide Bright Forge heading system */
   :where(section, article, main) h2 {
-    color: #ffffff !important;
+    color: #19212e !important;
     font-family: 'Outfit', sans-serif !important;
     font-weight: 800 !important;
     letter-spacing: -0.035em !important;
@@ -137,7 +137,7 @@
 
   :where(section, article, main) h2 + p,
   :where(.section-subtitle, .section-description, .section-copy, .section-lede, .intro-copy, .lead, .subheading) {
-    color: #d0d4e8 !important;
+    color: #465365 !important;
     font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
     font-size: clamp(1rem, 1vw + 0.75rem, 1.18rem) !important;
     line-height: 1.75 !important;
@@ -145,7 +145,7 @@
   }
 
   :where(.eyebrow, .section-label, .kicker, .proof-label) {
-    color: #f0622a !important;
+    color: #b83e12 !important;
     font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
     font-size: 0.78rem !important;
     font-weight: 900 !important;
@@ -164,7 +164,7 @@
     @apply inline-flex items-center gap-2 px-4 py-2
            rounded-full text-sm font-semibold;
     background: rgba(240, 98, 42, 0.1);
-    color: #f0622a;
+    color: #b83e12;
     border: 1px solid rgba(240, 98, 42, 0.2);
   }
 }
@@ -236,12 +236,12 @@ section:not(:first-of-type) {
 
 /* Force root background to dark navy site-wide */
 html {
-  background-color: #0d0f1a !important;
+  background-color: #ffffff !important;
   height: 100%;
-  color-scheme: dark;
+  color-scheme: light;
 }
 body {
-  background-color: #0d0f1a !important;
+  background-color: #ffffff !important;
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -299,17 +299,7 @@ section {
   width: 100%;
 }
 
-/* Ensure all sections (except hero) have consistent dark background */
-section:not(.hero-modern):not(.homepage-hero):not(.hero-section) {
-  background: #0d0f1a !important;
-  background-color: #0d0f1a !important;
-}
-
-/* Override scoped section backgrounds across all pages */
-[class*="-section"]:not(.hero-modern):not(.homepage-hero):not(.hero-section):not(.contact-cta-section) {
-  background: #0d0f1a !important;
-  background-color: #0d0f1a !important;
-}
+/* Section surfaces are assigned by their templates and the light-theme hierarchy. */
 
 /* Ensure main content area is properly structured */
 main {
@@ -349,7 +339,7 @@ main {
 /* Fix all light-theme borders to dark theme */
 [class*="-card"],
 [class*="_card"] {
-  border-color: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(25, 33, 46, 0.07) !important;
 }
 
 /* Normalize all feature/section icons to brand orange + white */
@@ -362,43 +352,43 @@ main {
 .metric-icon,
 .tool-icon {
   background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%) !important;
-  color: white !important;
+  color: #19212e !important;
 }
 
 /* Dark theme overrides for Tailwind utility bg classes used inline */
 .bg-gray-50, .bg-\[\#f8fafc\] {
-  background-color: #0d0f1a !important;
+  background-color: #ffffff !important;
 }
 
 .bg-white {
-  background-color: #131627 !important;
+  background-color: #f7f8fa !important;
 }
 
 .text-gray-900, .text-gray-800 {
-  color: #e8eaf2 !important;
+  color: #19212e !important;
 }
 
 .text-gray-700, .text-gray-600 {
-  color: #ffffff !important;
+  color: #19212e !important;
 }
 
 .text-gray-500 {
-  color: #ffffff !important;
+  color: #19212e !important;
 }
 
 .border-gray-200, .border-gray-300 {
-  border-color: rgba(255,255,255,0.07) !important;
+  border-color: rgba(25, 33, 46, 0.07) !important;
 }
 
 /* Override orange-500 to new accent */
 .text-orange-500, .text-\[\#f97316\] {
-  color: #f0622a !important;
+  color: #b83e12 !important;
 }
 
 .bg-orange-500, .bg-\[\#f97316\] {
   background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05)) !important;
   border: 1px solid rgba(240, 98, 42, 0.15) !important;
-  color: #f0622a !important;
+  color: #b83e12 !important;
 }
 
 .border-orange-500 {
@@ -407,13 +397,13 @@ main {
 
 /* Form inputs dark theme */
 input, select, textarea {
-  background-color: #1a1e32 !important;
-  border-color: rgba(255,255,255,0.1) !important;
-  color: #e8eaf2 !important;
+  background-color: #f1f3f5 !important;
+  border-color: rgba(25, 33, 46, 0.09) !important;
+  color: #19212e !important;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #ffffff !important;
+  color: #19212e !important;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -441,7 +431,7 @@ input:focus, select:focus, textarea:focus {
 /* Site-wide FAQ standard
    Match the on-page SEO FAQ treatment: simple dark accordions with plain orange +/- controls. */
 :where(.faq-section, .author-faq-section) {
-  background: #0d0f1a !important;
+  background: #ffffff !important;
   padding-top: 5.5rem !important;
   padding-bottom: 5.5rem !important;
 }
@@ -462,8 +452,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 :where(.faq-item, .faq-list details, .faq-details) {
-  background: #131627 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #f7f8fa !important;
+  border: 1px solid rgba(25, 33, 46, 0.08) !important;
   border-radius: 16px !important;
   box-shadow: none !important;
   overflow: hidden !important;
@@ -478,8 +468,8 @@ body .faq-layout .faq-item,
 body .faq-list details,
 body .faq-container details,
 body .faq-layout details {
-  background: #131627 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #f7f8fa !important;
+  border: 1px solid rgba(25, 33, 46, 0.08) !important;
   border-radius: 16px !important;
   box-shadow: none !important;
   overflow: hidden !important;
@@ -496,8 +486,8 @@ html body .faq-section .faq-grid details.faq-item.faq-item.faq-item,
 html body .faq-section .faq-container details.faq-item.faq-item.faq-item,
 html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item,
 html body .ben-faq .faq-list details.faq-item.faq-item.faq-item {
-  background: #131627 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #f7f8fa !important;
+  border: 1px solid rgba(25, 33, 46, 0.08) !important;
   border-radius: 16px !important;
   box-shadow: none !important;
   overflow: hidden !important;
@@ -516,7 +506,7 @@ html body .faq-section .faq-grid details.faq-item.faq-item.faq-item[open] summar
 html body .faq-section .faq-container details.faq-item.faq-item.faq-item[open] summary,
 html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item[open] summary,
 html body .ben-faq .faq-list details.faq-item.faq-item.faq-item[open] summary {
-  color: #ffffff !important;
+  color: #19212e !important;
   cursor: pointer !important;
   display: block !important;
   font-family: 'Outfit', sans-serif !important;
@@ -542,7 +532,7 @@ html body .faq-section .faq-grid details.faq-item.faq-item.faq-item > p,
 html body .faq-section .faq-container details.faq-item.faq-item.faq-item > p,
 html body .author-faq-section .faq-list details.faq-item.faq-item.faq-item > p,
 html body .ben-faq .faq-list details.faq-item.faq-item.faq-item > p {
-  color: #dfe3f3 !important;
+  color: #465365 !important;
   font-size: 1rem !important;
   line-height: 1.7 !important;
   margin: 0 !important;
@@ -554,7 +544,7 @@ body .faq-list .faq-item:hover,
 body .faq-grid .faq-item:hover,
 body .faq-container .faq-item:hover,
 body .faq-layout .faq-item:hover {
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(25, 33, 46, 0.08) !important;
   box-shadow: none !important;
   transform: none !important;
 }
@@ -568,7 +558,7 @@ body .faq-layout .faq-item:hover {
   width: 100% !important;
   padding: 1.35rem 1.5rem !important;
   margin: 0 !important;
-  color: #ffffff !important;
+  color: #19212e !important;
   font-family: 'Outfit', sans-serif !important;
   font-size: clamp(1rem, 1.3vw, 1.14rem) !important;
   font-weight: 800 !important;
@@ -589,7 +579,7 @@ body .faq-layout .faq-item:hover {
   height: auto !important;
   border-radius: 0 !important;
   background: transparent !important;
-  color: #f0622a !important;
+  color: #b83e12 !important;
   font-family: Inter, system-ui, sans-serif !important;
   font-size: 1.35rem !important;
   font-weight: 800 !important;
@@ -602,7 +592,7 @@ body .faq-layout .faq-item:hover {
 }
 
 :where(.faq-item > h3, .faq-item .faq-question h4, .faq-question h4) {
-  color: #ffffff !important;
+  color: #19212e !important;
   font-family: 'Outfit', sans-serif !important;
   font-size: clamp(1rem, 1.3vw, 1.14rem) !important;
   font-weight: 800 !important;
@@ -611,7 +601,7 @@ body .faq-layout .faq-item:hover {
 }
 
 :where(.faq-item > p, .faq-list details > p, .faq-answer, .faq-answer p, .faq-content, .faq-content p, .faq-item .faq-answer, .faq-item .faq-content) {
-  color: #dfe3f3 !important;
+  color: #465365 !important;
   font-size: 1rem !important;
   line-height: 1.7 !important;
   margin: 0 !important;
@@ -630,7 +620,7 @@ body .faq-layout .faq-item:hover {
 }
 
 :where(.faq-item i, .faq-icon) {
-  color: #f0622a !important;
+  color: #b83e12 !important;
 }
 
 /* Use direct selectors for the FAQ control so pages with scoped FAQ CSS still get the on-page +/- treatment. */
@@ -646,7 +636,7 @@ body .faq-layout .faq-item:hover {
   height: auto !important;
   border-radius: 0 !important;
   background: transparent !important;
-  color: #f0622a !important;
+  color: #b83e12 !important;
   font-family: Inter, system-ui, sans-serif !important;
   font-size: 1.35rem !important;
   font-weight: 800 !important;

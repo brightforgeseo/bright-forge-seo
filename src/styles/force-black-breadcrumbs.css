@@ -9,7 +9,7 @@ section.hero-content div:first-child > div:first-child,
 section.hero-seo div:first-child > div:first-child,
 section.hero-backlink div:first-child > div:first-child,
 section > div > div[style*="display: flex"][style*="align-items: center"] {
-  color: white !important;
+  color: #19212e !important;
 }
 
 /* Target all breadcrumb links and elements */
@@ -28,6 +28,6 @@ section.hero-seo div:first-child > div:first-child a,
 section.hero-seo div:first-child > div:first-child span,
 section.hero-backlink div:first-child > div:first-child a,
 section.hero-backlink div:first-child > div:first-child span {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: #465365 !important;
   text-decoration: none !important;
 }

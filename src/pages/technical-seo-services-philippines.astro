@@ -409,15 +409,15 @@ const faqs = [
 
 <style>
 :root {
-  --bf-bg: #0d0f1a;
-  --bf-panel: #131627;
-  --bf-panel-2: #181c30;
-  --bf-text: #e8eaf2;
-  --bf-muted: #b9bed4;
-  --bf-soft: #8e94ad;
+  --bf-bg: #ffffff;
+  --bf-panel: #f7f8fa;
+  --bf-panel-2: #f7f8fa;
+  --bf-text: #19212e;
+  --bf-muted: #465365;
+  --bf-soft: #596779;
   --bf-orange: #f0622a;
   --bf-orange-dark: #b73510;
-  --bf-border: rgba(255, 255, 255, 0.1);
+  --bf-border: rgba(25, 33, 46, 0.09);
 }
 
 .hero-stats {
@@ -428,21 +428,21 @@ const faqs = [
 
 .stat {
   padding: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(25, 33, 46, 0.09);
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.06);
 }
 
 .stat strong {
   display: block;
-  color: #fff;
+  color: #19212e;
   font-size: 1.05rem;
   margin-bottom: .45rem;
 }
 
 .stat span {
   display: block;
-  color: rgba(255, 255, 255, 0.78);
+  color: #465365;
   font-size: .86rem;
   line-height: 1.45;
 }
@@ -479,7 +479,7 @@ const faqs = [
 
 .eyebrow {
   display: inline-flex;
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-size: .78rem;
   font-weight: 900;
   letter-spacing: .09em;
@@ -533,7 +533,7 @@ const faqs = [
 }
 
 .diagnosis-panel h3 {
-  color: #fff;
+  color: #19212e;
   font-size: 1.35rem;
   line-height: 1.25;
   margin: 0 0 1.25rem;
@@ -588,7 +588,7 @@ const faqs = [
 
 .check-item > span,
 .timeline-item > span {
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-weight: 900;
   letter-spacing: .08em;
 }
@@ -598,7 +598,7 @@ const faqs = [
 .timeline-item h3,
 .proof-cards h3,
 .faq-item h3 {
-  color: #fff;
+  color: #19212e;
   font-size: 1.22rem;
   font-weight: 850;
   margin: 0 0 .55rem;
@@ -653,7 +653,7 @@ const faqs = [
 }
 
 .proof-links a {
-  color: #fff;
+  color: #19212e;
   text-decoration: none;
   font-weight: 800;
   border: 1px solid rgba(240, 98, 42, 0.35);
@@ -677,7 +677,7 @@ const faqs = [
 
 .collab-panel {
   padding: clamp(2rem, 5vw, 4rem);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(25, 33, 46, 0.09);
   border-radius: 2rem;
   background: var(--bf-bg);
 }
@@ -698,7 +698,7 @@ const faqs = [
 
 .collab-grid strong {
   display: block;
-  color: #fff;
+  color: #19212e;
   margin-bottom: .45rem;
 }
 
@@ -743,7 +743,7 @@ const faqs = [
 }
 
 .delivery-notes {
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
 }
 
 .delivery-notes article {
@@ -751,11 +751,11 @@ const faqs = [
   grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr);
   gap: 1.5rem;
   padding: 2rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
 }
 
 .delivery-notes article > span {
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-size: .78rem;
   font-weight: 900;
   letter-spacing: .09em;
@@ -763,7 +763,7 @@ const faqs = [
 }
 
 .delivery-notes h3 {
-  color: #fff;
+  color: #19212e;
   font-size: 1.3rem;
   margin: 0 0 .55rem;
 }
@@ -775,7 +775,7 @@ const faqs = [
 }
 
 .delivery-notes a {
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-weight: 800;
   text-decoration: none;
 }

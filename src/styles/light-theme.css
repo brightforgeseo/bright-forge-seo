@@ -1,0 +1,71 @@
+/* White/orange brand foundation. Orange artwork is retained; body copy uses ink. */
+:root {
+  color-scheme: light;
+  --bf-paper: #ffffff;
+  --bf-surface: #f7f8fa;
+  --bf-ink: #19212e;
+  --bf-muted: #465365;
+  --bf-orange: #f0622a;
+  --bf-link: #b83e12;
+  --bf-line: #dce2e8;
+}
+html, body { background: var(--bf-paper); color: var(--bf-ink); }
+::selection { background: #ffdccb; color: #19212e; }
+:focus-visible { outline: 3px solid #b83e12; outline-offset: 4px; }
+/* Light mode needs real dividers rather than white-on-navy hairlines. */
+html body .navbar-professional { background: #ffffff !important; border-bottom: 1px solid var(--bf-line); box-shadow: 0 3px 18px rgba(25,33,46,.04); }
+html body .hamburger-line { background: #19212e !important; }
+html body .mobile-menu { background: #ffffff !important; top: 0 !important; bottom: 0 !important; height: 100dvh !important; max-height: none !important; }
+html body .mobile-menu-content { background: #ffffff; }
+html body :is(.mega-menu-professional,.dropdown-professional,.mobile-nav-link) i { color: #f0622a; }
+/* The globe now has its own bounded artwork column, rather than a faded background. */
+.homepage-hero .hero-bg-elements { mask-image: none; }
+.top-bar { background: #f7f8fa !important; color: var(--bf-muted); }
+.footer-modern { border-top: 1px solid var(--bf-line); }
+.logo-item img { filter: brightness(0) !important; opacity: .72; }
+/* Orange remains the brand accent. Smaller links use a deeper accessible orange. */
+main p a:not([class*="btn"]), main li a:not([class*="btn"]), .text-link {
+ color: var(--bf-link); text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+main p a:hover, main li a:hover { text-decoration: underline; }
+input, textarea, select { color-scheme: light; }
+/* Bright orange is reserved for large display type and brand artwork. */
+html body :is(h1,h2) :is(span,.highlight,.gradient-text,.accent-text) { color: #f0622a !important; -webkit-text-fill-color: #f0622a; }
+html body .menu-icon { color: #f0622a !important; }
+html body .ben-info h2 span { color: #b83e12 !important; -webkit-text-fill-color: #b83e12; }
+html body :is(.btn-hero-primary,.btn-primary-modern,.btn-primary,.cta-button,.btn-view-all) { background: #f0622a !important; color: #19212e !important; border-color: #f0622a; }
+html body :is(.btn-hero-primary,.btn-primary-modern,.btn-primary,.cta-button,.btn-view-all) :is(span,i,svg) { color: inherit !important; }
+html body :is(.btn-hero-primary,.btn-primary-modern,.btn-primary,.cta-button,.btn-view-all):hover { background: #e6551d; }
+html body :is(.share-button.linkedin,.share-button.facebook,.share-button.copy-link) { background: #f1f3f5 !important; color: #19212e !important; border: 1px solid #dce2e8; }
+html body :is(.share-button.linkedin,.share-button.facebook,.share-button.copy-link):hover { background: #ffdccb !important; }
+html body .text-brand-accent { color: #b83e12; }
+html body .bg-brand-accent-light { background: #fff0e8; }
+html body .workbench-bar { background: #f1f3f5; color: #19212e; }
+input::placeholder, textarea::placeholder { color: #657286; opacity: 1; }
+/* Browser autofill must stay readable on the new light forms. */
+input:-webkit-autofill { -webkit-text-fill-color: #19212e; box-shadow: 0 0 0 1000px #fff inset; }
+/* Ben's direction: white page backgrounds, light-grey element boxes. */
+html body main > section { background: #ffffff !important; background-color: #ffffff !important; }
+html body main > section:is(.homepage-hero,.hero-modern,.hero-section) {
+ background: #ffffff !important; background-color: #ffffff !important;
+ border-bottom: 1px solid #e1e5eb;
+}
+html body :is(.homepage-hero,.hero-modern) .bg-gradient { background: transparent; animation: none; }
+html body .homepage-hero > .max-w-7xl { padding-top: 64px; padding-bottom: 64px; }
+html body .homepage-hero .hero-title { font-size: clamp(2.5rem, 4.1vw, 3.75rem); line-height: 1.08; }
+html body .homepage-hero .hero-buttons { margin-bottom: 28px; }
+html body main :is(.service-card,.feature-card,.case-study-card,.benefit-card,.deliverable-card,.commercial-panel,.blog-card,.engagement-card,.pillar-card,.tm-card,.tm-featured-card,.faq-item,.bottom-feature-card) {
+ background: #f3f4f6 !important; border-color: #e1e5eb !important;
+ box-shadow: 0 4px 18px rgba(25,33,46,.025);
+}
+html body main > section:is(.contact-cta-section,.cta-section) { background: #ffffff !important; background-color: #ffffff !important; border-top: 1px solid #e1e5eb; }
+html body .footer-modern { background: #ffffff !important; border-top: 3px solid #f0622a; }
+html body :is(h1,h2) :is(span,.highlight,.gradient-text,.accent-text) { color: #cf4b1c !important; -webkit-text-fill-color: #cf4b1c; }
+html body main :is(.eyebrow,.section-label,.kicker,.proof-label) { color: #a63c15 !important; }
+@media (max-width: 767px) {
+ html body .homepage-hero > .max-w-7xl { padding-top: 40px; padding-bottom: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

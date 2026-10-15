@@ -550,18 +550,18 @@ const faqs = [
 
 <style>
   #seo-consultancy p + p { margin-top: 1rem; }
-  #seo-consultancy a { color: #f0622a; text-decoration: underline; text-underline-offset: 0.2em; }
-  #seo-consultancy a:hover { color: #ffffff; }
+  #seo-consultancy a { color: #b83e12; text-decoration: underline; text-underline-offset: 0.2em; }
+  #seo-consultancy a:hover { color: #19212e; }
   #seo-consultancy a:focus-visible { outline: 2px solid #f0622a; outline-offset: 4px; }
   #seo-consultancy aside > a { display: inline-block; margin-top: 1rem; font-weight: 700; }
 :root {
-  --bf-bg: #0d0f1a;
-  --bf-panel: #131627;
-  --bf-panel-2: #181c30;
-  --bf-text: #e8eaf2;
-  --bf-muted: #b9bed4;
+  --bf-bg: #ffffff;
+  --bf-panel: #f7f8fa;
+  --bf-panel-2: #f7f8fa;
+  --bf-text: #19212e;
+  --bf-muted: #465365;
   --bf-orange: #f0622a;
-  --bf-border: rgba(255, 255, 255, 0.1);
+  --bf-border: rgba(25, 33, 46, 0.09);
 }
 
 .audit-hero-stats {
@@ -572,7 +572,7 @@ const faqs = [
 }
 
 .stat {
-  background: rgba(13, 15, 26, 0.74);
+  background: rgba(25, 33, 46, 0.09);
   border: 1px solid rgba(240, 98, 42, 0.24);
   border-radius: 18px;
   padding: 1rem;
@@ -580,13 +580,13 @@ const faqs = [
 
 .stat strong {
   display: block;
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-size: 1.35rem;
   margin-bottom: 0.35rem;
 }
 
 .stat span {
-  color: #dfe3f3;
+  color: #465365;
   font-size: 0.92rem;
   line-height: 1.45;
 }
@@ -640,7 +640,7 @@ const faqs = [
 
 .eyebrow {
   display: inline-flex;
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.11em;
@@ -649,7 +649,7 @@ const faqs = [
 }
 
 h2 {
-  color: #ffffff;
+  color: #19212e;
   font-size: clamp(2rem, 4vw, 3.35rem);
   line-height: 1.08;
   font-weight: 900;
@@ -657,13 +657,13 @@ h2 {
 }
 
 h3 {
-  color: #ffffff;
+  color: #19212e;
   font-weight: 800;
   margin: 0 0 0.75rem;
 }
 
 p {
-  color: #dfe3f3;
+  color: #465365;
   line-height: 1.75;
   font-size: 1rem;
 }
@@ -677,11 +677,11 @@ p {
 
 .diagnosis-panel,
 .cta-panel {
-  background: linear-gradient(135deg, rgba(240, 98, 42, 0.12), rgba(19, 22, 39, 0.95));
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.12), rgba(25, 33, 46, 0.09));
   border: 1px solid rgba(240, 98, 42, 0.26);
   border-radius: 28px;
   padding: 2rem;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 28px 70px rgba(25, 33, 46, 0.09);
 }
 
 .diagnosis-panel ul,
@@ -695,9 +695,9 @@ p {
 .trigger-list li {
   position: relative;
   padding: 0.85rem 0 0.85rem 1.8rem;
-  color: #eef1ff;
+  color: #465365;
   line-height: 1.55;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(25, 33, 46, 0.08);
 }
 
 .diagnosis-panel li::before,
@@ -785,7 +785,7 @@ p {
 
 .priority-card span {
   display: inline-flex;
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.09em;
@@ -836,7 +836,7 @@ p {
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-weight: 900;
   font-size: 1.05rem;
   border-right: 1px solid rgba(240, 98, 42, 0.34);
@@ -856,7 +856,7 @@ p {
 
 .faq-item summary {
   cursor: pointer;
-  color: #ffffff;
+  color: #19212e;
   font-weight: 800;
   padding: 1.25rem 1.5rem;
   list-style: none;
@@ -869,7 +869,7 @@ p {
 .faq-item summary::after {
   content: '+';
   float: right;
-  color: var(--bf-orange);
+  color: var(--bf-link, #b83e12);
   font-size: 1.3rem;
 }
 

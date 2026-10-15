@@ -27,7 +27,7 @@ const features = [
 ];
 ---
 
-<div class="bg-[#0d0f1a] py-16 px-4">
+<div class="bg-[#ffffff] py-16 px-4">
   <div class="max-w-7xl mx-auto">
 
     <!-- Decorative dots -->
@@ -39,16 +39,16 @@ const features = [
 
     <!-- Main heading -->
     <div class="mb-8">
-      <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4" style="font-family: 'Outfit', sans-serif; font-weight: 800;">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-4" style="font-family: 'Outfit', sans-serif; font-weight: 800;">
         {title}
       </h2>
-      <h3 class="text-3xl md:text-4xl font-bold text-white mb-6" style="font-family: 'Outfit', sans-serif; font-weight: 800;">
+      <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6" style="font-family: 'Outfit', sans-serif; font-weight: 800;">
         {subtitle}
       </h3>
     </div>
 
     <!-- Description -->
-    <p class="text-lg text-[#c5c9de] leading-relaxed mb-12 max-w-4xl">
+    <p class="text-lg text-[#465365] leading-relaxed mb-12 max-w-4xl">
       {description}
     </p>
 
@@ -56,10 +56,10 @@ const features = [
     <div class="revenue-grid">
       {features.map((feature) => (
         <div class="revenue-card">
-          <h4 class="text-xl font-bold text-white mb-3">
+          <h4 class="text-xl font-bold text-slate-900 mb-3">
             {feature.title}
           </h4>
-          <p class="text-[#c5c9de] leading-relaxed">
+          <p class="text-[#465365] leading-relaxed">
             {feature.description}
           </p>
         </div>
@@ -77,8 +77,8 @@ const features = [
   }
 
   .revenue-card {
-    background: #131627;
-    border: 1px solid rgba(255,255,255,0.07);
+    background: #f7f8fa;
+    border: 1px solid rgba(25, 33, 46, 0.07);
     border-left: 4px solid #f0622a;
     border-radius: 12px;
     padding: 1.5rem 1.5rem 1.5rem 1.75rem;
@@ -89,7 +89,7 @@ const features = [
   .revenue-card:hover {
     background: rgba(240,98,42,0.08);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 24px rgba(25, 33, 46, 0.09);
   }
 
   @media (max-width: 768px) {

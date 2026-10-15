@@ -165,12 +165,12 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 .digit {
   font-size: clamp(80px, 15vw, 200px);
   font-weight: 900;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 10px 30px rgba(25, 33, 46, 0.09);
   animation: bounce 2s ease-in-out infinite;
 }
 
 .digit-4 {
-  color: #f0622a;
+  color: #b83e12;
   animation-delay: 0s;
 }
 
@@ -182,15 +182,15 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .digit-4-2 {
-  color: #4285F4;
+  color: #b83e12;
   animation-delay: 0.4s;
 }
 
 .zero {
   font-size: clamp(80px, 15vw, 200px);
   font-weight: 900;
-  color: #ffffff;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #19212e;
+  text-shadow: 0 10px 30px rgba(25, 33, 46, 0.09);
 }
 
 /* SEO Orbit Animation */
@@ -204,7 +204,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 .planet {
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(25, 33, 46, 0.09);
 }
 
 .planet-1 {
@@ -245,11 +245,11 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 .search-form {
   display: flex;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.09);
   border-radius: 50px;
   padding: 5px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(25, 33, 46, 0.09);
 }
 
 .search-input {
@@ -257,23 +257,23 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   background: transparent;
   border: none;
   padding: 15px 25px;
-  color: white;
+  color: #19212e;
   font-size: 16px;
   outline: none;
 }
 
 .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: #465365;
 }
 
 .search-btn {
   background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05));
   border: 1px solid rgba(240, 98, 42, 0.15);
-  color: #f0622a;
+  color: #b83e12;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  color: white;
+  color: #19212e;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -289,7 +289,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 /* Helpful Links Section */
 .helpful-links {
   padding: 100px 0;
-  background: #131627;
+  background: #f7f8fa;
 }
 
 .links-grid {
@@ -327,14 +327,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #19212e;
   font-size: 20px;
 }
 
 .category-header h3 {
   font-size: 22px;
   font-weight: 700;
-  color: var(--brand-text, #e8eaf2);
+  color: var(--brand-text, #19212e);
   margin: 0;
 }
 
@@ -349,7 +349,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .link-list a {
-  color: #ffffff;
+  color: #19212e;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -362,14 +362,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 .link-list a::before {
   content: '→';
   margin-right: 10px;
-  color: var(--brand-primary);
+  color: var(--bf-link, #b83e12);
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
 }
 
 .link-list a:hover {
-  color: var(--brand-primary);
+  color: var(--bf-link, #b83e12);
   padding-left: 15px;
 }
 
@@ -382,7 +382,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 .error-cta {
   padding: 80px 0;
   background: var(--gradient-primary);
-  color: white;
+  color: #19212e;
 }
 
 .cta-content {
@@ -407,8 +407,8 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 }
 
 .cta-button {
-  background: #131627;
-  color: var(--brand-primary);
+  background: #f7f8fa;
+  color: var(--bf-link, #b83e12);
   padding: 18px 35px;
   border-radius: 50px;
   text-decoration: none;

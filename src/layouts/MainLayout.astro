@@ -10,6 +10,7 @@ import '../styles/global.css';
 import '../styles/case-study-fix.css';
 import '../styles/bundled.css';
 import '../styles/fontawesome-subset.css';
+import '../styles/light-theme.css';
 // Removed breadcrumbs.css - now using inline styles to prevent conflicts
 import '../styles/force-black-breadcrumbs.css'; // Global CSS override for black breadcrumb text
 // REMOVED critical.css and red-theme.css - they were overriding hero gradients
@@ -97,8 +98,8 @@ const isHome = Astro.url.pathname === '/';
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <!-- Force consistent light color scheme across browsers -->
-    <meta name="color-scheme" content="dark" />
-    <meta name="supported-color-schemes" content="dark" />
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
     <meta name="google-site-verification" content="ChxTytE2xXPqUiIN7QDHvdQD0Z3JKf6vpa1DcVKTRR4" />
     <!-- Title tag handled by SEO component to prevent duplicates -->
     
@@ -185,7 +186,7 @@ const isHome = Astro.url.pathname === '/';
     <!-- Preload LCP image: header logo for mobile. (The desktop homepage hero
          image is hidden by the global .hero-visual rule, so preloading it
          would waste bandwidth on every page.) -->
-    <link rel="preload" as="image" href="/images/header-logo-cropped.webp" fetchpriority="high" media="(max-width: 1024px)">
+    <link rel="preload" as="image" href="/images/header-logo-light.webp" fetchpriority="high" media="(max-width: 1024px)">
 
     <!-- Defer non-critical JavaScript -->
     <script is:inline>
@@ -262,7 +263,7 @@ const isHome = Astro.url.pathname === '/';
     
     <!-- CSS is already imported above and will be processed by Astro -->
   </head>
-  <body class="text-brand-text bg-[#0d0f1a] min-h-screen flex flex-col">
+  <body class="text-brand-text bg-[#ffffff] min-h-screen flex flex-col">
     <slot name="header" />
     <main class="flex-1">
       <slot />
@@ -277,11 +278,11 @@ const isHome = Astro.url.pathname === '/';
 <style is:global>
   /* Force dark background site-wide */
   html {
-    background-color: #0d0f1a;
+    background-color: #ffffff;
   }
 
   body {
-    background-color: #0d0f1a !important;
+    background-color: #ffffff !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
