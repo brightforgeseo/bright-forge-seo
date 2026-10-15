@@ -1,6 +1,7 @@
 ---
 // LegacyHeader.astro – Professional mega-menu for SEO agency
 import "../styles/legacy.css";
+import "../styles/mega-menu.css";
 ---
 
 <!-- Top Contact Bar -->
@@ -158,12 +159,12 @@ import "../styles/legacy.css";
                   </a>
                 </div>
                 
-                <div class="mega-highlight">
-                  <h4>Ready to Get Started?</h4>
-                  <p>Get a free SEO consultation and discover how we can help your business grow.</p>
-                  <a href="/contact/" class="cta-button-mega">Free Consultation</a>
-                </div>
               </div>
+            </div>
+            <div class="mega-highlight">
+              <h4>Ready to Get Started?</h4>
+              <p>Get a free SEO consultation and discover how we can help your business grow.</p>
+              <a href="/contact/" class="cta-button-mega">Free Consultation</a>
             </div>
           </div>
         </div>
@@ -236,12 +237,12 @@ import "../styles/legacy.css";
                   </a>
                 </div>
 
-                <div class="mega-highlight">
-                  <h4>Need a Custom Build?</h4>
-                  <p>Let us build a fast, SEO-optimized website tailored to your business.</p>
-                  <a href="/contact/" class="cta-button-mega">Free Consultation</a>
-                </div>
               </div>
+            </div>
+            <div class="mega-highlight">
+              <h4>Need a Custom Build?</h4>
+              <p>Let us build a fast, SEO-optimized website tailored to your business.</p>
+              <a href="/contact/" class="cta-button-mega">Free Consultation</a>
             </div>
           </div>
         </div>
@@ -602,9 +603,64 @@ class MobileMenu {
   }
 }
 
-// Initialize when DOM is loaded
+// Preserve link navigation while supporting keyboard entry and dismissal.
+function initialiseDesktopMenus() {
+  document.querySelectorAll('.nav-menu-professional > .has-dropdown').forEach((item, index) => {
+    const trigger = item.querySelector(':scope > a');
+    const panel = item.querySelector(':scope > .mega-menu-professional, :scope > .dropdown-professional');
+    if (!(trigger instanceof HTMLElement) || !(panel instanceof HTMLElement)) return;
+    panel.id = `desktop-navigation-panel-${index}`;
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-controls', panel.id);
+    trigger.setAttribute('aria-expanded', 'false');
+    const open = () => {
+      item.classList.remove('is-dismissed');
+      trigger.setAttribute('aria-expanded', 'true');
+    };
+    item.addEventListener('mouseenter', open);
+    item.addEventListener('focusin', open);
+    item.addEventListener('mouseleave', () => {
+      if (!item.contains(document.activeElement)) trigger.setAttribute('aria-expanded', 'false');
+    });
+    item.addEventListener('focusout', (event) => {
+      if (!(event.relatedTarget instanceof Node) || !item.contains(event.relatedTarget)) {
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    item.addEventListener('keydown', (event) => {
+      if (!(event instanceof KeyboardEvent)) return;
+      if (event.key === 'ArrowDown' && event.target === trigger) {
+        event.preventDefault();
+        open();
+        panel.querySelector('a')?.focus();
+      }
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        trigger.focus();
+        item.classList.add('is-dismissed');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
+// Initialize when DOM is loaded.
 document.addEventListener('DOMContentLoaded', () => {
-  new MobileMenu();
+  const mobileMenu = new MobileMenu();
+  initialiseDesktopMenus();
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      if (mobileMenu.isOpen) {
+        mobileMenu.closeMenu();
+        mobileMenu.menuBtn?.focus();
+      }
+      document.querySelectorAll('.nav-menu-professional > .has-dropdown').forEach((item) => {
+        item.classList.add('is-dismissed');
+        item.querySelector(':scope > a')?.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
 });
 </script>
 
