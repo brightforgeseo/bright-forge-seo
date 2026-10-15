@@ -1,0 +1,65 @@
+---
+import ForgeProofCards from './ForgeProofCards.astro';
+interface Props { title: string; eyebrow?: string; breadcrumb?: string; compact?: boolean; context?: string; }
+const {title, eyebrow = 'Bright Forge SEO', breadcrumb, compact = false, context = ''} = Astro.props;
+const highlighted = title.includes('<span') ? title : title.replace(/(\S+(?:\s+\S+)?)$/, '<span>$1</span>');
+const longTitle = title.replace(/<[^>]*>/g,'').length > 65 || Astro.url.pathname.startsWith('/development');
+---
+<section class="forge-hero-section" data-hero-design="sculptural">
+ <forge-hero class:list={['forge-scene', {'forge-scene--long':longTitle, 'forge-scene--compact':compact}]} aria-labelledby="forge-hero-title">
+  <div class="forge-atmosphere" aria-hidden="true"></div>
+  <div class="forge-intro">
+   {breadcrumb && <nav class="forge-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">{breadcrumb}</span></nav>}
+   <p class="forge-eyebrow">{eyebrow}</p>
+   <h1 id="forge-hero-title" set:html={highlighted} />
+   <div class="forge-note"><span class="forge-spark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 17 10 12l4 3 5-8M14 7h5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></span><div class="forge-note-copy"><slot /></div></div>
+   {Astro.slots.has('actions') && <div class="forge-actions"><slot name="actions" /></div>}
+  </div>
+  <div class="forge-art" aria-hidden="true"><div class="forge-art-position"><img class="forge-sculpture" src="/assets/forge-sculpture-brand.webp" width="1254" height="1254" alt="" fetchpriority="high" decoding="async" /></div></div>
+  <div class="forge-market"><span>Based in the Philippines.</span><span>Working across the world.</span><p>UK <span>/</span> US <span>/</span> AU</p></div>
+  <div class="forge-outro"><p>{Astro.url.pathname.startsWith('/development') ? 'British-led design and development. Clear scope, considered builds and work you can test.' : 'British-led SEO. Clear priorities, experienced people and work you can see.'}</p><a href={Astro.url.pathname.startsWith('/development') ? '/development/#workbench' : '/case-studies/'} class="forge-work-link">Explore our work <span aria-hidden="true">↗</span></a></div>
+ </forge-hero>
+ <ForgeProofCards context={`${title.replace(/<[^>]*>/g,'')} ${context}`} />
+ {Astro.slots.has('details') && <div class="forge-details"><slot name="details" /></div>}
+</section>
+<style>
+@font-face { font-family:'Outfit'; src:url('/fonts/outfit-latin.woff2') format('woff2'); font-style:normal; font-weight:600 800; font-display:swap; }
+@font-face { font-family:'Inter'; src:url('/fonts/inter-latin.woff2') format('woff2'); font-style:normal; font-weight:300 700; font-display:swap; }
+:global(.forge-read-link) { display:inline-flex; align-items:center; gap:18px; color:#18202b; background:#fff; border:1px solid #d9dce0; font-weight:600; text-decoration:none; }
+.forge-hero-section { background:#fff; color:#18202b; width:100%; }
+.forge-scene { --font-display:'Outfit','Inter',sans-serif; position:relative; isolation:isolate; display:block; min-height:620px; max-width:1380px; margin-inline:auto; color:#18202b; background:#fff; font-family:'Inter',sans-serif; }
+.forge-atmosphere { position:absolute; z-index:-1; inset:0; overflow:hidden; background:radial-gradient(ellipse at 59% 58%,#fff0e6 0%,#fff9f4 23%,transparent 53%); }
+.forge-intro { position:relative; z-index:3; padding:48px 0 40px 36px; width:55%; pointer-events:none; }
+.forge-breadcrumb { display:flex; flex-wrap:wrap; gap:9px; margin:0 0 18px; color:#59616a; font-size:12px; line-height:1.5; pointer-events:auto; }.forge-breadcrumb a { color:#59616a; text-decoration:none; }
+.forge-eyebrow { margin:0 0 24px; color:#59616a; font-size:12px; font-weight:500; line-height:1.4; }
+.forge-scene h1 { margin:0; font-family:var(--font-display); font-size:clamp(3.4rem,5.8vw,5.5rem); line-height:.99; font-weight:800; letter-spacing:-.055em; color:#18202b; max-width:540px; overflow-wrap:break-word; }
+.forge-scene h1 :global(span) { color:#f56327; }
+.forge-scene--long h1 { font-size:clamp(3rem,4.6vw,4.5rem); line-height:1.02; }
+.forge-note { display:flex; align-items:flex-start; gap:12px; margin-top:24px; max-width:470px; pointer-events:auto; }
+.forge-note-copy { min-width:0; }.forge-note-copy :global(p) { margin:0 0 12px; font-size:14px; line-height:1.65; color:#59616a; }.forge-note-copy :global(p:last-child) { margin-bottom:0; }.forge-note-copy :global(a) { color:#a63c15; }.forge-note-copy :global(.hero-subtitle) { font-size:15px; font-weight:600; }
+.forge-spark { display:grid; place-items:center; flex-shrink:0; width:36px; height:36px; border-radius:10px; background:#fff0e6; color:#bb4110; }
+.forge-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:22px; pointer-events:auto; }.forge-actions :global(a),.forge-actions :global(button) { max-width:100%; min-height:44px; font-size:13px; padding:12px 18px; border-radius:12px; }.forge-actions :global(svg) { flex-shrink:0; }
+.forge-art { position:absolute; z-index:2; left:62%; top:50%; width:43%; max-width:560px; aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:none; }
+.forge-art-position { height:100%; perspective:1100px; }.forge-sculpture { display:block; width:100%; height:100%; object-fit:contain; transform:translate3d(var(--art-x,0px),var(--art-y,0px),0) rotateX(var(--art-rx,0deg)) rotateY(var(--art-ry,0deg)) rotate(-9deg); transition:transform 700ms cubic-bezier(.18,.7,.2,1); filter:drop-shadow(0 28px 30px #40200d18); }
+.forge-market { position:absolute; top:76px; right:36px; z-index:4; width:160px; font-size:11px; line-height:1.7; color:#59616a; }.forge-market>span { display:block; }.forge-market p { margin:18px 0 0; font-family:var(--font-display); font-size:21px; font-weight:600; letter-spacing:-.03em; color:#18202b; }.forge-market p span { padding:0 6px; color:#b37c60; }
+.forge-outro { position:absolute; z-index:4; right:36px; bottom:46px; width:160px; }.forge-outro>p { margin:0 0 20px; font-size:12px; line-height:1.6; color:#59616a; }.forge-work-link { display:inline-flex; align-items:center; gap:14px; min-height:44px; padding:8px 13px; border:1px solid #d9dce0; border-radius:12px; color:#18202b; background:white; font-size:12px; font-weight:500; text-decoration:none; }.forge-work-link:hover { border-color:#f56327; }.forge-work-link span { font-size:18px; }
+.forge-details { width:min(100%,1380px); margin:0 auto; padding:0 36px 36px; }.forge-details :global(.forge-retained-details) { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }.forge-details :global(.forge-retained-details>div:empty) { display:none; }.forge-details :global(p) { font-size:14px; line-height:1.65; color:#465365; }
+@media(min-width:769px) and (max-width:1200px) { .forge-scene { min-height:520px; }.forge-intro { width:60%; padding-top:40px; padding-bottom:50px; }.forge-scene h1 { font-size:clamp(3rem,6.2vw,4.8rem); }.forge-scene--long h1 { font-size:clamp(2.75rem,4.8vw,4rem); }.forge-art { left:78%; top:50%; width:45%; max-width:460px; }.forge-market,.forge-outro { display:none; } }
+@media(max-width:768px) { .forge-scene { min-height:0; display:flex; flex-direction:column; padding:0 24px 30px; }.forge-intro { width:100%; padding:32px 0 0; }.forge-eyebrow { margin-bottom:20px; font-size:11px; }.forge-scene h1,.forge-scene--long h1 { font-size:clamp(2.6rem,8.8vw,4.8rem); line-height:1.03; }.forge-note { margin-top:23px; max-width:100%; }.forge-note-copy :global(p) { font-size:14px; }.forge-art { position:relative; left:auto; top:auto; align-self:center; width:min(100%,440px); max-width:none; transform:none; margin:0 0 -8px; }.forge-market { display:none; }.forge-outro { position:relative; right:auto; bottom:auto; width:100%; display:flex; align-items:center; justify-content:space-between; gap:20px; }.forge-outro>p { margin:0; max-width:260px; }.forge-work-link { flex-shrink:0; }.forge-details { padding:0 24px 30px; }.forge-details :global(.forge-retained-details) { grid-template-columns:1fr; } }
+@media(max-width:480px) { .forge-outro { align-items:flex-start; flex-direction:column; gap:17px; }.forge-actions { align-items:stretch; }.forge-actions :global(a) { justify-content:center; } }
+@media(prefers-reduced-motion:reduce) { .forge-sculpture { transform:rotate(-9deg); transition:none; } }
+</style>
+<script>
+class ForgeHero extends HTMLElement {
+ private controller?: AbortController;
+ connectedCallback() {
+  this.controller?.abort(); this.controller = new AbortController(); const {signal} = this.controller;
+  const art = this.querySelector<HTMLElement>('.forge-sculpture'), reduced = matchMedia('(prefers-reduced-motion:reduce)'), fine = matchMedia('(hover:hover) and (pointer:fine)');
+  const reset = () => ['--art-x','--art-y','--art-rx','--art-ry'].forEach(v => art?.style.removeProperty(v));
+  this.addEventListener('pointermove', e => { if (!art || reduced.matches || !fine.matches || e.pointerType === 'touch') return; const b=this.getBoundingClientRect(), x=Math.max(-1,Math.min(1,(e.clientX-b.left)/b.width*2-1)), y=Math.max(-1,Math.min(1,(e.clientY-b.top)/b.height*2-1)); art.style.setProperty('--art-x',`${x*15}px`); art.style.setProperty('--art-y',`${y*11}px`); art.style.setProperty('--art-rx',`${y*-5}deg`); art.style.setProperty('--art-ry',`${x*7}deg`); },{signal});
+  this.addEventListener('pointerleave',reset,{signal}); reduced.addEventListener('change',reset,{signal}); fine.addEventListener('change',reset,{signal});
+ }
+ disconnectedCallback() { this.controller?.abort(); }
+}
+if (!customElements.get('forge-hero')) customElements.define('forge-hero',ForgeHero);
+</script>

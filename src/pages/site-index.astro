@@ -1,4 +1,5 @@
 ---
+import ForgeHero from '../components/ForgeHero.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
@@ -58,11 +59,10 @@ const company = [
   description="A plain list of Bright Forge service pages, markets, people and articles. Use it to reach a page without hunting the menu."
 >
   <LegacyHeader slot="header" />
+<ForgeHero title='Every public page, <span>in one list</span>' eyebrow="Site index" breadcrumb="Site index"><p>Service pages, markets, people and the full blog. XML sitemap stays at <a href="/sitemap.xml">/sitemap.xml</a>.</p></ForgeHero>
   <main class="index-main">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="eyebrow">Site index</p>
-      <h1>Every public page, <span>in one list</span></h1>
-      <p class="lede">Service pages, markets, people and the full blog. XML sitemap stays at <a href="/sitemap.xml">/sitemap.xml</a>.</p>
+
 
       <section>
         <h2>Company</h2>

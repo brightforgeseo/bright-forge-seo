@@ -1,4 +1,5 @@
 ---
+import ForgeHero from '../../components/ForgeHero.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
@@ -70,25 +71,11 @@ const personSchema = {
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(personSchema)} />
 
   <!-- Author Hero -->
-  <section class="author-hero">
-    <div class="author-hero-bg"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <nav class="hero-breadcrumbs" aria-label="Breadcrumb">
-        <a href="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-sep">›</span>
-        <a href="/blog/" class="breadcrumb-link">Blog</a>
-        <span class="breadcrumb-sep">›</span>
-        <span class="breadcrumb-current">{author.name}</span>
-      </nav>
-
-      <div class="author-hero-grid">
-        <div class="author-hero-text">
-          <span class="author-eyebrow">Author</span>
-          <h1>{author.name}</h1>
-          <p class="author-role">{author.role} · Bright Forge SEO Agency</p>
-          <p class="author-lede">{author.shortBio}</p>
-
-          <div class="author-meta-row">
+  <ForgeHero title={author.name} eyebrow="Author" breadcrumb={author.name}>
+    <p class="author-role">{author.role} · Bright Forge SEO Agency</p>
+    <p>{author.shortBio}</p>
+    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Work With Ben" icon="fas fa-arrow-right" /><ButtonSecondary href="/blog/" text="Read Articles" icon="fas fa-book-open" /></Fragment>
+    <div slot="details" class="forge-retained-details"><div>          <div class="author-meta-row">
             {author.yearsExperience && (
               <div class="meta-pill">
                 <i class="fas fa-award"></i>
@@ -109,14 +96,7 @@ const personSchema = {
             )}
           </div>
 
-          <div class="author-actions">
-            <ButtonPrimary href="/contact/" text="Work With Ben" icon="fas fa-arrow-right" />
-            <ButtonSecondary href="/blog/" text="Read Articles" icon="fas fa-book-open" />
-          </div>
-        </div>
-
-        <div class="author-hero-visual">
-          <div class="author-photo">
+</div><div>          <div class="author-photo">
             <img
               src={author.avatar}
               alt={`${author.name}, ${author.role} at Bright Forge SEO`}
@@ -126,10 +106,8 @@ const personSchema = {
               decoding="async"
             />
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</div></div>
+  </ForgeHero>
 
   <!-- About / Long Bio -->
   <section class="about-author">

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/light-theme.css';
 import AnalyticsScope from './AnalyticsScope.astro';
+import ForgeHero from './ForgeHero.astro';
 
 export interface Props {
   title: string;
@@ -199,43 +200,15 @@ const formatDate = (dateString: string) => {
 
   <article class="blog-article">
   <!-- Hero Section -->
-  <section class="article-hero">
+  <ForgeHero title={title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')} eyebrow={category} breadcrumb="Blog" context={category}>
+    <p>{excerpt}</p>
+    <div class="article-meta"><span class="category-badge">{category}</span><div class="meta-info"><span class="publish-date">{formatDate(publishDate)}</span><span class="read-time">{readTime}</span></div></div>
+    <Fragment slot="actions"><a href="#article-reading" class="forge-read-link">Read the article <span aria-hidden="true">↗</span></a><a href="/blog/" class="forge-read-link">All articles</a></Fragment>
+  </ForgeHero>
+  <section class="article-featured" id="article-reading">
     <div class="max-w-6xl mx-auto px-4">
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs">
-        <a href="/">Home</a>
-        <span class="separator">›</span>
-        <a href="/blog">Blog</a>
-        <span class="separator">›</span>
-        <span class="current">{category}</span>
-      </nav>
-      
-      <!-- Article Meta -->
-      <div class="article-meta">
-        <span class="category-badge">{category}</span>
-        <div class="meta-info">
-          <span class="publish-date">{formatDate(publishDate)}</span>
-          <span class="read-time">{readTime}</span>
-        </div>
-      </div>
-      
-      <!-- Title and Excerpt -->
-      <h1 class="article-title">{title}</h1>
-      <p class="article-excerpt">{excerpt}</p>
-      
-      <!-- Featured Image -->
-      {featuredImage && (
-        <div class="featured-image">
-          <img 
-            src={featuredImage} 
-            alt={title} 
-            width="800"
-            height="450"
-            loading="eager"
-            decoding="sync"
-          />
-        </div>
-      )}
+      <nav class="breadcrumbs" aria-label="Article breadcrumb"><a href="/">Home</a><span class="separator">›</span><a href="/blog">Blog</a><span class="separator">›</span><span class="current">{category}</span></nav>
+      {featuredImage && <div class="featured-image"><img src={featuredImage} alt={title} width="800" height="450" loading="lazy" decoding="async" /></div>}
     </div>
   </section>
 
