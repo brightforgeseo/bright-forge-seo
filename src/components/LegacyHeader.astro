@@ -1,8 +1,26 @@
 ---
 // LegacyHeader.astro – Professional mega-menu for SEO agency
+import { currentLogo, regularLogo, halloweenLogo, halloweenStarts, halloweenEnds } from '../utils/seasonalLogo';
 import "../styles/legacy.css";
 import "../styles/mega-menu.css";
 ---
+
+<!-- Seasonal logos also expire in cached pages and tabs left open overnight. -->
+<script>
+  import { logoForDate, halloweenEnds } from '../utils/seasonalLogo';
+  let logoTimer: ReturnType<typeof setTimeout> | undefined;
+  const refreshSeasonalLogos = () => {
+    const now = Date.now(), src = logoForDate(now);
+    document.querySelectorAll<HTMLImageElement>('img[data-seasonal-logo]').forEach(img => {
+      if (img.getAttribute('src') !== src) img.src = src;
+    });
+    if (logoTimer) clearTimeout(logoTimer);
+    if (now < halloweenEnds) logoTimer = setTimeout(refreshSeasonalLogos, Math.min(halloweenEnds - now + 50, 2147483647));
+  };
+  refreshSeasonalLogos();
+  window.addEventListener('pageshow', refreshSeasonalLogos);
+  document.addEventListener('visibilitychange', refreshSeasonalLogos);
+</script>
 
 <!-- Top Contact Bar -->
 <div class="top-bar-professional">
@@ -36,7 +54,7 @@ import "../styles/mega-menu.css";
     <!-- Logo -->
     <div class="nav-logo">
       <a href="/">
-        <img src="/images/header-logo-light.webp" alt="Bright Forge SEO" width="261" height="54" loading="eager" fetchpriority="high" decoding="async">
+        <img src={currentLogo} data-seasonal-logo data-regular-logo={regularLogo} data-halloween-logo={halloweenLogo} data-season-start={halloweenStarts} data-season-end={halloweenEnds} alt="Bright Forge SEO" width="261" height="54" loading="eager" fetchpriority="high" decoding="async">
       </a>
     </div>
 

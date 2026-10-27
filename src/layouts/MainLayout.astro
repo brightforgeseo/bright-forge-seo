@@ -1,6 +1,7 @@
 ---
 // MainLayout.astro
 import SEO from '../components/SEO.astro';
+import { currentLogo } from '../utils/seasonalLogo';
 import ContactPopup from '../components/ContactPopup.astro';
 import LeadTracking from '../components/LeadTracking.astro';
 import AnalyticsScope from '../components/AnalyticsScope.astro';
@@ -186,7 +187,7 @@ const isHome = Astro.url.pathname === '/';
     <!-- Preload LCP image: header logo for mobile. (The desktop homepage hero
          image is hidden by the global .hero-visual rule, so preloading it
          would waste bandwidth on every page.) -->
-    <link rel="preload" as="image" href="/images/header-logo-light.webp" fetchpriority="high" media="(max-width: 1024px)">
+    <link rel="preload" as="image" href={currentLogo} fetchpriority="high" media="(max-width: 1024px)">
 
     <!-- Defer non-critical JavaScript -->
     <script is:inline>
