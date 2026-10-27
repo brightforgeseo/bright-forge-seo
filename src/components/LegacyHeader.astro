@@ -7,7 +7,7 @@ import "../styles/mega-menu.css";
 
 <!-- Seasonal logos also expire in cached pages and tabs left open overnight. -->
 <script>
-  import { logoForDate, halloweenEnds } from '../utils/seasonalLogo';
+  import { logoForDate, nextLogoChange } from '../utils/seasonalLogo';
   let logoTimer: ReturnType<typeof setTimeout> | undefined;
   const refreshSeasonalLogos = () => {
     const now = Date.now(), src = logoForDate(now);
@@ -15,7 +15,8 @@ import "../styles/mega-menu.css";
       if (img.getAttribute('src') !== src) img.src = src;
     });
     if (logoTimer) clearTimeout(logoTimer);
-    if (now < halloweenEnds) logoTimer = setTimeout(refreshSeasonalLogos, Math.min(halloweenEnds - now + 50, 2147483647));
+    const next = nextLogoChange(now);
+    if (next !== undefined) logoTimer = setTimeout(refreshSeasonalLogos, Math.min(next - now + 50, 2147483647));
   };
   refreshSeasonalLogos();
   window.addEventListener('pageshow', refreshSeasonalLogos);
