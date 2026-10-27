@@ -9,15 +9,16 @@ const story = await Astro.slots.render('story') || '';
 const featurePattern = /<div class="hero-proof"[^>]*>[\s\S]*?<\/div>/g;
 const features = (story.match(featurePattern) || []).join('');
 const mainStory = story.replace(featurePattern, '');
-const hasDetails = Astro.slots.has('stats') || Astro.slots.has('visual') || !!features || (hasIntro && !!mainStory);
+const hasDetails = Astro.slots.has('stats') || Astro.slots.has('visual') || !!features;
 ---
 <ForgeHero title={title} eyebrow={badgeText || breadcrumbCurrent} breadcrumb={breadcrumbCurrent}>
- {hasIntro ? <slot name="intro" /> : <Fragment set:html={mainStory} />}
+ {hasIntro && <slot name="intro" />}
+ <Fragment set:html={mainStory} />
  <Fragment slot="actions"><slot name="actions" /></Fragment>
  {hasDetails && <Fragment slot="details">
   <Fragment set:html={features} />
   <div class="forge-retained-details">
-   <div>{hasIntro && <Fragment set:html={mainStory} />}<slot name="stats" /></div>
+   <div><slot name="stats" /></div>
    <div><slot name="visual" /></div>
   </div>
  </Fragment>}

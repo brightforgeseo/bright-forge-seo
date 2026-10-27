@@ -9,11 +9,11 @@ const {badge = 'British-led SEO, based in the Philippines', title, buttonText = 
 ---
 <ForgeHero title={title} eyebrow={badge}>
  <slot name="description" />
+ <slot name="support" />
  <Fragment slot="actions">
   <a class="forge-primary" href={buttonHref} data-analytics-event="hero_primary_cta">{buttonText}<span aria-hidden="true">↗</span></a>
   {secondaryButtonText && secondaryButtonHref && <a class="forge-secondary" href={secondaryButtonHref} data-analytics-event="hero_secondary_cta">{secondaryButtonText}<span aria-hidden="true">↗</span></a>}
  </Fragment>
- {Astro.slots.has('support') && <div slot="details" class="forge-home-support"><slot name="support" /></div>}
 </ForgeHero>
 <style>
 .forge-primary,.forge-secondary { display:inline-flex; align-items:center; justify-content:center; gap:18px; min-height:44px; border-radius:12px; font-weight:600; text-decoration:none; color:#18202b; }
