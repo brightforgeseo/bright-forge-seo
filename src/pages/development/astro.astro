@@ -8,18 +8,18 @@ import ButtonPrimary from "../../components/ButtonPrimary.astro";
 import ButtonSecondary from "../../components/ButtonSecondary.astro";
 import DevelopmentStackJobs from "../../components/DevelopmentStackJobs.astro";
 const canonical="https://brightforge.com.ph/development/astro/";
-const proof=[
+const proof = [
   {
-    "title": "SEO before design polish",
-    "text": "We protect crawlability, metadata, content structure and redirects before visual extras."
+    "title": "HTML page delivery",
+    "text": "This site uses Astro to generate public marketing pages as HTML, with scripts for the interactions that need them."
   },
   {
-    "title": "Performance matters",
-    "text": "Fast pages help users and reduce technical drag before SEO work even starts."
+    "title": "Editing has a workflow",
+    "text": "CMS content and code-managed templates have different review and deployment requirements."
   },
   {
-    "title": "Human QA",
-    "text": "Every build still needs manual checks for forms, schema, indexing and conversion paths."
+    "title": "Check the release",
+    "text": "Validate the built pages, then check the version served by the public host."
   }
 ];
 const checks=[
@@ -74,53 +74,54 @@ const process=[
     "text": "Use ranking, crawl and conversion data to refine pages after launch."
   }
 ];
-const faqs=[
+const faqs = [
   {
-    "question": "Is Astro good for SEO?",
-    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+    "question": "Can our team edit an Astro website?",
+    "answer": "Yes, with an agreed content model and editing route. A headless CMS can manage fields and entries; a new layout or feature may still require code changes. We establish which edits your team needs to make before recommending the setup."
   },
   {
-    "question": "Do we need to rebuild our whole website?",
-    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+    "question": "Does a CMS edit appear live immediately?",
+    "answer": "Not necessarily. For a static build, the content must be fetched in a successful build and deployed. Agree the preview, approval and build trigger, then verify the published URL. A CMS publish button alone does not prove the live page changed."
   },
   {
-    "question": "How do you protect rankings during a rebuild?",
-    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+    "question": "What happens if the build fails?",
+    "answer": "The release process should identify who checks the build log, restores the last working release if needed and corrects the failed content or code change. Hosting behaviour and rollback access are checked for the chosen platform rather than assumed."
   },
   {
-    "question": "Can your team work with our existing developer?",
-    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+    "question": "Can Astro handle forms and interactive features?",
+    "answer": "Yes, but those features need an implementation beyond static text. Agree the form endpoint, validation, success and error states, spam handling and any interactive components. Server-rendered features may need a hosting-specific adapter."
   },
   {
-    "question": "Which framework should we choose?",
-    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+    "question": "What maintenance does an Astro site need?",
+    "answer": "Assign responsibility for framework and package updates, CMS changes, hosting configuration and integration tests. A static site still has build dependencies and accounts to maintain. Ongoing support and response times belong in the agreed scope."
   },
   {
-    "question": "Do you guarantee better rankings after a new website?",
-    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+    "question": "Does Astro guarantee better rankings?",
+    "answer": "No. HTML delivery and selective JavaScript can support a usable, crawlable site, but content, competition, links and implementation still matter. We check the actual pages and performance rather than treating the framework name as an SEO result."
   }
 ];
 ---
 <MainLayout title="Astro Development Philippines | Bright Forge" description="Astro website development for fast, content-led and SEO-ready websites with clean structure, low JavaScript and safer launch QA." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Astro",url:canonical}]} faqs={faqs}>
 <LegacyHeader slot="header" />
 <Hero title="Astro <span>Development</span>" breadcrumbCurrent="Astro">
-<Fragment slot="story"><p class="hero-subtitle">Astro for content-led sites that need HTML first and JavaScript only where it earns a place.</p><p>This Bright Forge site is Astro. Marketing pages ship as HTML. We use it when the business is mostly pages, not an app. Speed is a side effect of that choice, not a slogan.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="story"><p class="hero-subtitle">Astro for content-led sites that need HTML first and JavaScript only where it earns a place.</p><p>This Bright Forge site is Astro. Marketing pages ship as HTML. We use it when the business is mostly pages, not an app. The editing and release workflow matters as much as the framework choice.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Astro is useful when the site needs <span>speed, control</span> and clean content delivery</h2><p>Astro can be a strong fit for content-led and service-led websites because it keeps pages fast and limits unnecessary JavaScript. That only helps SEO when the page structure, internal links, schema and launch checks are handled properly.</p><p>We use Astro where it fits the business case, then build around crawlability, performance, editable content needs and safe migration planning.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
+<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Astro is useful when the site needs <span>speed, control</span> and clean content delivery</h2><p>Astro can be a strong fit for content-led and service-led websites because pages can be generated as HTML and interactive components added selectively. That only helps SEO when the page structure, internal links, schema and launch checks are handled properly.</p><p>We use Astro where it fits the business case, then build around crawlability, performance, editable content needs and safe migration planning.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
 <DevelopmentStackJobs
   title="What we actually ship in <span>Astro</span>"
   intro="This marketing site is Astro. Marketing pages stay HTML. JavaScript only where a control needs it."
   jobs={[
-    {title:'Static routes', text:'Service pages and blog posts render as HTML. No empty app shell.'},
-    {title:'CMS in, pages out', text:'Contentful (or another CMS) feeds the build. New posts do not wait on a designer.'},
-    {title:'Sitemap from the build', text:'Routes and published entries write the sitemap. No stale XML file.'},
-    {title:'Hydrate on purpose', text:'Interactive bits load where they earn it. The rest stays quiet.'}
+    {title:'Static routes', text:'Service pages and blog posts render as HTML. We check that key content and links are present in the generated document.'},
+    {title:'CMS in, pages out', text:'This site uses Contentful for blog content. Published entries feed a build; editors and developers still need an agreed preview and release process.'},
+    {title:'Sitemap from the build', text:'Routes and published entries feed the sitemap generation. We check the generated sitemap against the intended public URLs after each release.'},
+    {title:'Hydrate on purpose', text:'Load JavaScript for the controls that need it. Check keyboard use, loading and error states alongside the static page.'}
   ]}
 />
-<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>Astro has a clear role</span></h2><p>This suits service businesses, content sites, lean marketing sites and rebuilds where speed, maintainability and crawlable content are priorities.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
-<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the <span>stack around the job</span>, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section id="publishing-workflow"><div class="page-container two-column"><div><p class="eyebrow">From edit to release</p><h2>Test one real <span>content change</span> before handover</h2><p>Use an ordinary edit as the acceptance test: update a heading, replace an image and publish a new entry in a preview environment. Check the required fields, image alternative text, URL and metadata before approval.</p><p>For a static site, run the build with the approved content, inspect the generated page and deploy it. Then read the public URL, follow its links and confirm the sitemap contains the intended canonical address. Record the build and release owner so a failed deployment does not leave editors guessing.</p></div><aside class="panel"><h3>Agree what your team can change</h3><p>List CMS-managed fields separately from code-managed templates. The handover should identify repository, CMS and hosting access; preview and deployment instructions; and responsibility for updates, integrations and rollback. Third-party subscriptions and ongoing maintenance need an explicit scope.</p></aside></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>Astro has a clear role</span></h2><p>This suits service businesses, content sites, lean marketing sites and rebuilds where speed, maintainability and crawlable content are priorities.</p></div><div class="panel"><h3>When another approach may fit</h3><p>If editors need unrestricted page building or the product centres on authenticated application state, compare the alternatives before migrating. Existing integrations, preview needs and the maintenance team can outweigh a smaller front-end payload.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare <span>editing and application needs</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Astro development</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
 <section><div class="page-container"><div class="cta-card"><h2>Thinking about an <span>Astro rebuild</span>?</h2><p>We can review your current site and confirm whether Astro is the right option before planning templates or migration work.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
 </main><Footer slot="footer"/>

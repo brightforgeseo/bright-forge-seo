@@ -12,15 +12,15 @@ const canonical="https://brightforge.com.ph/development/";
 const proof=[
   {
     "title": "Design that can sell",
-    "text": "First screen, type, and the enquiry path are the product. A Figma file that dies on a phone is not web design."
+    "text": "Review the first screen, service navigation and enquiry path on a working phone layout, not only a desktop mockup."
   },
   {
     "title": "We ship the sites",
     "text": "This marketing site is Astro. Shinobi is the heavier front-end. WordPress when editors need a CMS. The stack follows the job."
   },
   {
-    "title": "Launch without a drop",
-    "text": "Redirects, titles, tracking and Search Console are part of the build, not a week of panic after go-live."
+    "title": "Plan for launch risk",
+    "text": "Map redirects, titles and tracking before launch, then check the live release. These checks reduce avoidable errors; they do not guarantee unchanged rankings."
   }
 ];
 const checks=[
@@ -49,30 +49,30 @@ const checks=[
     "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
   }
 ];
-const process=[
+const process = [
   {
-    "title": "Audit",
-    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+    "title": "Establish what to retain",
+    "text": "Inventory important URLs, content, forms and integrations. Compare a repair with a rebuild before approving changes to the site architecture."
   },
   {
-    "title": "Plan",
-    "text": "Map templates, URLs, content sections, redirects, schema and development priorities."
+    "title": "Agree the review stages",
+    "text": "Record templates, content ownership, design review rounds and acceptance criteria. Name who approves the brief, copy and release."
   },
   {
-    "title": "Build",
-    "text": "Develop the site around speed, accessibility, crawlability and editorial control."
+    "title": "Build a testable preview",
+    "text": "Review working pages with real content at phone and desktop sizes. Test the navigation and enquiry path while there is still time to change the implementation."
   },
   {
-    "title": "QA",
-    "text": "Test pages, metadata, forms, mobile layouts, redirects, schema and indexation settings."
+    "title": "Record release checks",
+    "text": "Check redirects, titles, canonicals, indexability, schema and form behaviour. Keep a list of unresolved issues with an owner and a launch decision."
   },
   {
-    "title": "Launch",
-    "text": "Deploy with a launch checklist, Search Console monitoring and post-launch crawl checks."
+    "title": "Verify the public site",
+    "text": "After deployment, read the public pages and test the agreed links and forms. A successful build does not establish that the host is serving the intended release."
   },
   {
-    "title": "Improve",
-    "text": "Use ranking, crawl and conversion data to refine pages after launch."
+    "title": "Hand over maintenance",
+    "text": "Agree who owns dependency updates, backups, CMS access, hosting accounts and support requests. Set the monitoring period and any ongoing work in the proposal rather than assuming indefinite support."
   }
 ];
 const faqs=[
@@ -90,7 +90,7 @@ const faqs=[
   },
   {
     "question": "WordPress or a modern stack?",
-    "answer": "WordPress when the team needs to edit pages without a deploy. Astro or similar when the site is mostly content and speed matters. Next.js or React when the product is an application. We choose the stack around the job, not around fashion."
+    "answer": "WordPress when the team needs to edit pages without a deploy. Astro or similar when the site is mostly content and speed matters. Next.js or React when the product is an application. The choice also depends on integrations, hosting and who will maintain it."
   },
   {
     "question": "Can we outsource web design and development to your team?",
@@ -106,27 +106,27 @@ const faqs=[
   }
 ];
 ---
-<MainLayout title="Web Design & Development Philippines | Bright Forge" description="Web design and web development in the Philippines. SEO-safe builds, WordPress or modern stacks, private proposal, no public rate card." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Development",url:canonical}]} faqs={faqs}>
+<MainLayout title="Web Design & Development Philippines | Bright Forge" description="Web design and web development in the Philippines. WordPress or modern frameworks, content and URL planning, launch checks and a scoped handover." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Development",url:canonical}]} faqs={faqs}>
 <Fragment slot="head">
   <link rel="dns-prefetch" href="//shinobiseo.com" />
   <link rel="preconnect" href="https://shinobiseo.com" crossorigin="anonymous" />
 </Fragment>
 <LegacyHeader slot="header" />
 <Hero title="Web Design and <span>Development</span>" breadcrumbCurrent="Development">
-<Fragment slot="story"><p class="hero-subtitle">Web design and web development for Philippine and international businesses. Outsource the build. Keep the brief.</p><p>We design the first screen, the type, and the enquiry path, then we build it. New website SEO sits in the templates: crawlable pages, clean URLs, redirects, schema and tracking before launch. Layouts are responsive. A mockup that dies on a phone is not the job.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="story"><p class="hero-subtitle">Web design and web development for Philippine and international businesses. Outsource the build. Keep the brief.</p><p>We design the first screen, the type, and the enquiry path, then we build it. New website SEO sits in the templates: crawlable pages, clean URLs, redirects, schema and tracking before launch. The review includes responsive layouts and the steps a visitor takes to enquire.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#workbench" text="See the live build" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2><span>Web design</span> has to survive a crawl and a phone</h2><p>Outsource web design when the current site is slow, hard to edit, or about to be rebuilt. The job is still a website development decision: templates, content, redirects and how people enquire.</p><p>We plan Philippine web development around that commercial job first, then pick WordPress or a modern stack. Fashion frameworks come second.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2><span>Web design</span> has to survive a crawl and a phone</h2><p>Outsource web design when the current site is slow, hard to edit, or about to be rebuilt. The job is still a website development decision: templates, content, redirects and how people enquire.</p><p>We compare the editing workflow, integrations and hosting requirements before choosing WordPress or a modern framework. An existing site may need a targeted repair rather than a rebuild.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
 <DevelopmentWorkbench />
 <section id="checks"><div class="page-container"><p class="eyebrow">What the build must do</p><h2>A site Google can read, on a <span>responsive</span> layout</h2><div class="grid">{checks.map((item)=>(<article class="card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
 <section><div class="page-container"><p class="eyebrow">How we work</p><h2>Audit, build, launch, then <span>prove it</span></h2><div class="grid">{process.map((item, i)=>(<article class="card"><span>{String(i+1).padStart(2,'0')}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>development has a clear role</span></h2><p>This suits businesses replacing an old website, rebuilding a slow WordPress site, launching a new service site, or trying to protect rankings during a design refresh. This hub is web design and development. WordPress, Astro, Next, React and SvelteKit have their own pages. A domain or CMS cutover belongs on <a href="/website-migration-services/">website migration</a>.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
-<section><div class="page-container two-column"><div><p class="eyebrow">Outsourced delivery</p><h2>Use a Philippine development team without <span>losing control of the build</span></h2><p>Businesses and agencies can outsource web design, development or a defined implementation stage to us. We agree responsibilities, technical decisions, review points and handover requirements before work starts.</p><p>For Manila businesses comparing web design agencies, agree how the work will run before choosing a supplier: remote briefing, a record of design approvals and a documented launch handover. Any requirement for on-site meetings needs to be agreed separately, not inferred from a Philippines service page.</p><p>The result should be easy to own after launch. That means documented routes, sensible components, editorial control, analytics and a clear record of what was built.</p></div><aside class="panel"><h3>New website SEO is part of the build</h3><p>Page mapping, crawlability, content structure, metadata, schema, internal links and indexation controls are planned before launch rather than repaired afterwards.</p></aside></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>development has a clear role</span></h2><p>This suits businesses replacing an old website, rebuilding a slow WordPress site, launching a new service site, or trying to protect rankings during a design refresh. Compare the framework options below when editing or application requirements affect the build. For a domain or CMS cutover, review our <a href="/website-migration-services/">website migration</a>.</p></div><div class="panel"><h3>What the brief must settle</h3><p>Agree the important URLs and content to retain, who approves changes and how launch checks will be recorded. Ranking movement can still occur after a carefully tested rebuild.</p></div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Outsourced delivery</p><h2>Use a Philippine development team without <span>losing control of the build</span></h2><p>Businesses and agencies can outsource web design, development or a defined implementation stage to us. We agree responsibilities, technical decisions, review points and handover requirements before work starts.</p><p>For Manila businesses comparing web design agencies, agree how the work will run before choosing a supplier: remote briefing, a record of design approvals and a documented launch handover. Any requirement for on-site meetings needs to be agreed separately, not inferred from a Philippines service page.</p><p>The result should be easy to own after launch. That means documented routes, sensible components, editorial control, analytics and a clear record of what was built. Agree a release owner and rollback decision before launch, and record who responds if a form, integration or deployment fails. Response times and ongoing maintenance are scope decisions, not automatic inclusions.</p></div><aside class="panel"><h3>New website SEO is part of the build</h3><p>Page mapping, crawlability, content structure, metadata, schema, internal links and indexation controls are planned before launch rather than repaired afterwards.</p></aside></div></section>
 <BuyerDecisionSection id="choose-design-team" eyebrow="Compare the work, not the pitch" title="Choosing a web design agency?" emphasis="Test a site they have shipped.">
   <p>Open a real project on your phone, test an enquiry path and check whether the main services are easy to find. Ask the agency to explain the design decisions and the launch checks behind that work. A gallery of desktop mockups cannot answer those questions.</p>
   <p>Then compare the proposals on the same basis: who writes and migrates content, how many design reviews are included, who owns the CMS and accounts, and what handover and post-launch support cover. A lower quote with those items excluded is a different scope, not necessarily better value.</p>
-  <p>The Shinobi build shown on this page is a concrete starting point for discussing our approach. Bring your requirements and we can explain which parts of that approach fit your site, rather than promise the same build to every business.</p>
+  <p>The Shinobi build shown on this page is our own-brand demonstration, not a client revenue case study. It is a concrete starting point for discussing our approach. Bring your requirements and we can explain which parts of that approach fit your site, rather than promise the same build to every business.</p>
 </BuyerDecisionSection>
 <BuyerDecisionSection id="store-build-scope" eyebrow="Selling through the site" title="Ecommerce web design" emphasis="starts with the catalogue.">
   <p>A store brief needs more than a page count. Product variants, category navigation, stock rules, delivery information and checkout all affect what the build must do. We establish those requirements before recommending a design or platform.</p>
@@ -139,9 +139,9 @@ const faqs=[
 </BuyerDecisionSection>
 
 <section id="pricing-and-scope"><div class="page-container two-column"><div><p class="eyebrow">Pricing and scope</p><h2>Website pricing should reflect <span>the real build</span>, not a generic package</h2><p>Website development cost in the Philippines varies because the work varies. Site size, design complexity, content readiness, integrations, CMS or framework choice, migration risk and testing requirements all affect the scope.</p><p>We review those factors and provide a private proposal. No public rate card, invented package or fixed figure that hides the work needed to deliver the site properly.</p></div><aside class="panel"><h3>What shapes the private proposal</h3><p>Site size, design, content, integrations, framework, migration requirements, analytics, launch QA and post-launch support.</p></aside></div></section>
-<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the <span>stack around the job</span>, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a><a href="/development/react/"><span>React development</span>Interactive tools without turning the brochure into an app shell.</a><a href="/development/sveltekit/"><span>SvelteKit development</span>Fast routes that still render as real pages.</a></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the <span>editing and application workflow</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a><a href="/development/react/"><span>React development</span>Interactive tools without turning the brochure into an app shell.</a><a href="/development/sveltekit/"><span>SvelteKit development</span>Fast routes that still render as real pages.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Development questions</span> worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
-<section><div class="page-container"><div class="cta-card"><h2>Need a site that does not <span>break your SEO</span> on launch?</h2><p>We can audit the current site, map the risks and recommend the right build path before anyone starts redesigning pages.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Planning a rebuild? Start with the <span>launch risks</span>.</h2><p>We can audit the current site, map the risks and recommend the right build path before anyone starts redesigning pages.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
 </main><Footer slot="footer"/>
 </MainLayout>
 
