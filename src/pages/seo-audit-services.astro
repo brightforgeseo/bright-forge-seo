@@ -81,7 +81,7 @@ const toolLimits = [
   },
   {
     title: 'SEO judgement matters',
-    copy: 'The value of an audit is not the number of warnings found. It is knowing which fixes will move the campaign and which ones are only report padding.'
+    copy: 'We explain why a finding matters, which pages it affects and what evidence would justify acting on it. Where the cause remains uncertain, the roadmap names the next check instead of presenting a guess as a fix.'
   }
 ];
 
@@ -157,20 +157,20 @@ const deliverables = [
 
 const avoidItems = [
   {
-    title: 'No fake scores',
-    copy: 'We do not pretend a random website score explains SEO performance. Scores can help with triage, but they are not strategy.'
+    title: 'Evidence to collect',
+    copy: 'We would compare the release date with complete Search Console periods, inspect the affected URL and check its returned HTML. A site-wide average alone cannot explain what happened to this page.'
   },
   {
-    title: 'No issue dumping',
-    copy: 'A 200-item export is not useful if nobody knows what matters. We cut through the noise and focus on the work that deserves attention.'
+    title: 'Decision and owner',
+    copy: 'If the live template emits an unintended noindex directive, we would ask the developer to remove it from the affected public pages. The marketing owner confirms which pages should be searchable before the change.'
   },
   {
-    title: 'No guaranteed ranking claims',
-    copy: 'An audit can uncover blockers and opportunities. It cannot honestly guarantee rankings, traffic or leads without implementation and measurement.'
+    title: 'Limits of the finding',
+    copy: 'An audit identifies supported findings and unresolved questions. Implementation and measurement are needed to assess the recommendations, and neither guarantees rankings, traffic or leads.'
   },
   {
-    title: 'No one-size-fits-all checklist',
-    copy: 'An ecommerce site, a local service site and a national B2B site need different audit priorities. The diagnosis should fit the business.'
+    title: 'Acceptance check',
+    copy: 'We would test the live response and rendered page after release, confirm the directive is gone and check that private pages remain excluded. Search Console recrawl and performance observations follow separately; a passed code check is not recovered traffic.'
   }
 ];
 
@@ -212,7 +212,7 @@ const faqs = [
   { question: 'Is this different from an automated website scan?', answer: 'Yes. Automated scans are useful for finding surface-level warnings, but they do not understand commercial priority. We use tools as evidence, then apply SEO judgement to decide which issues matter and which ones can wait.' },
   { question: 'Do you need access to Google Search Console and GA4?', answer: 'Read-only access is strongly recommended because it lets us connect findings to impressions, clicks, traffic, engagement and conversion data. We can still perform a crawl-led audit without access, but the recommendations will be less complete.' },
   { question: 'Can you audit a site before a redesign or migration?', answer: 'Yes. Pre-migration audits are often the best time to prevent ranking loss. We review URL structure, redirects, templates, content risk, tracking, internal links and launch QA before major site changes go live.' },
-  { question: 'Will you help implement the recommendations?', answer: 'The audit makes the implementation order clear. Technical fixes belong on our technical SEO service, page work on on-page SEO, copy on content SEO, and a wider campaign on SEO services. We can support those lanes after the diagnosis, or work with your developer.' },
+  { question: 'Will you help implement the recommendations?', answer: 'You can give the findings to your own team or ask us to scope implementation. Coding, copy revisions, staging checks and post-release monitoring are separately agreed; the audit fee does not imply an unlimited fix programme.' },
   { question: 'How long does an SEO audit take?', answer: 'Most small to mid-sized business audits take one to two weeks depending on site size, data access and complexity. Larger ecommerce, marketplace or multi-location sites may need a longer audit window.' },
   { question: 'Do you audit content and backlinks as well as technical SEO?', answer: 'Yes. Technical issues are only part of SEO performance. We also review content quality, search intent, keyword mapping, internal links, authority signals, backlink quality and competitor gaps.' },
   { question: 'What happens after the audit?', answer: 'You receive a prioritised roadmap. From there, the next step may be technical fixes, page rewrites, internal linking, content planning, link building, migration support or a wider SEO campaign.' },
@@ -222,7 +222,7 @@ const faqs = [
 
 <MainLayout
   title="SEO Audit Philippines | Bright Forge"
-  description="SEO audits in the Philippines. Diagnose ranking problems, then give an implementation order. Fixes live on technical, on-page, content or campaign pages."
+  description="SEO audits from the Philippines with page-level evidence, prioritised recommendations and a clear implementation handover for your marketing and development teams."
   faqs={faqs}
 >
   <Fragment slot="head">
@@ -277,9 +277,9 @@ const faqs = [
     breadcrumbCurrent="SEO Audit Services Philippines"
   >
     <Fragment slot="story">
-      <p>An SEO audit should do more than list warnings from a tool. It should explain what is blocking rankings, traffic and enquiries, then show which fixes deserve attention first. This page is the diagnosis. The build, the on-page work and the content sit on their own services.</p>
-      <p>We provide SEO audit services from the Philippines for businesses deciding what to fix, which markets to pursue and where their next SEO investment belongs.</p>
-      <p>Our Philippine audit team combines crawl evidence, search performance, competitor coverage, authority and conversion checks, then turns the findings into an implementation order rather than another unused report.</p>
+      <p>Before you commission a rebuild or another content campaign, we check what the existing site is doing. We trace a traffic drop, an underperforming service page or a missed market back to the pages, search data and technical behaviour behind it.</p>
+      <p>We provide SEO audits from the Philippines for businesses here and in Australia, the UK and the USA. You receive a prioritised findings register, evidence for each recommendation and a handover explaining what your developer, writer or marketing team should do next.</p>
+      <p>Send us the domain, the decision you need to make and any relevant release dates. We agree which markets, templates and page groups the audit covers before quoting. Read-only Search Console and analytics access lets us distinguish a search visibility problem from a tracking change.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -378,7 +378,7 @@ const faqs = [
           <span class="eyebrow">What we audit</span>
           <h2><span>Technical, content, authority and conversion</span> issues in one SEO diagnosis</h2>
         </div>
-        <p>SEO problems rarely sit in one neat bucket. A ranking issue can be caused by crawl waste, weak content, poor internal linking, thin authority, poor intent match or a landing page that fails to convert.</p>
+        <p>We review crawl access, content relevance, internal links and competing search results to investigate visibility problems. A page can also rank well but fail to generate enquiries. We examine its offer and contact path separately rather than assuming every commercial problem is a ranking problem.</p>
       </div>
       <div class="coverage-grid">
         {auditAreas.map((item) => (
@@ -475,9 +475,9 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="avoid-layout">
         <div class="avoid-copy">
-          <span class="eyebrow">What we do not do</span>
-          <h2>An <span>SEO audit</span> should build trust, not inflate a report</h2>
-          <p>Poor audits make the issue list longer so the service feels bigger. Better audits make the decision clearer, even if that means telling you some warnings are not worth acting on.</p>
+          <span class="eyebrow">Illustrative audit decision</span>
+          <h2>Should we rewrite this page or <span>repair its template</span>?</h2>
+          <p>Example, not a client result: a service page lost impressions after a template release. Rewriting the page immediately could spend the budget without addressing the fault. We would investigate the release and indexing evidence first.</p>
         </div>
         <div class="avoid-grid">
           {avoidItems.map((item) => (

@@ -32,7 +32,7 @@ const technicalChecks = [
   },
   {
     title: 'Migration and release QA',
-    copy: 'We support template releases and URL changes on a live site so rankings are protected. A full domain, host or CMS move belongs on our website migration service, then we handle the technical checks around it.'
+    copy: 'We compare affected templates before and after a release: responses, canonicals, crawl controls, rendered content and internal links. For a full domain or CMS move, we also scope URL mapping and post-launch checks.'
   }
 ];
 
@@ -40,8 +40,8 @@ const issueTypes = [
   'Important pages missing from the index',
   'Duplicate URLs splitting ranking signals',
   'Slow templates weakening rankings and conversions',
-  'Redirect chains wasting crawl equity',
-  'Thin or conflicting canonical signals',
+  'Redirect chains adding unnecessary requests',
+  'Missing or conflicting canonical signals',
   'Weak internal links to commercial pages',
   'Broken schema or unsupported review markup',
   'Mobile usability and layout problems',
@@ -87,14 +87,14 @@ const fitBlocks = [
   },
   {
     title: 'Service businesses with weak lead flow',
-    copy: 'Slow pages, broken tracking, poor mobile layouts, buried service pages and unclear internal links can reduce both rankings and enquiry conversion.'
+    copy: 'Slow pages and poor mobile layouts can make enquiries harder. Buried service pages may be difficult to discover, while broken tracking can hide enquiries that are already happening.'
   }
 ];
 
 const proofItems = [
   {
     title: 'Migration safety',
-    copy: 'Technical SEO prevents avoidable traffic loss during redesigns, URL changes, CMS moves and domain changes.'
+    copy: 'We check old URLs, redirect destinations and crawl controls to reduce avoidable migration risk. These checks do not promise unchanged traffic.'
   },
   {
     title: 'Cleaner crawl signals',
@@ -111,10 +111,10 @@ const faqs = [
   { question: 'Is technical SEO different from an SEO audit?', answer: 'A technical SEO audit diagnoses problems. Technical SEO services go further by prioritising the issues, writing implementation briefs, helping developers fix them, checking the release and monitoring results after Google recrawls the site.' },
   { question: 'What technical SEO issues usually matter most?', answer: 'The highest-impact issues are usually indexation problems, blocked pages, duplicate URLs, broken canonicals, slow templates, redirect chains, weak internal links, mobile usability issues, JavaScript rendering problems and unsupported schema.' },
   { question: 'Can you work with our developer?', answer: 'Yes. We can provide developer-ready tickets, explain the SEO risk, review staging changes, test the release and monitor Search Console after deployment. We can also implement fixes directly when the access and platform allow it.' },
-  { question: 'How quickly does technical SEO improve rankings?', answer: 'Critical crawl and indexation fixes can show movement within weeks. Speed, architecture, internal linking and template improvements usually compound over one to three months as Google recrawls the site and users get a better experience.' },
+  { question: 'How quickly does technical SEO improve rankings?', answer: 'We can verify a deployed response, canonical or template change immediately. Google still needs to recrawl and process it, and a technically correct page is not guaranteed to rank. We report released fixes separately from subsequent indexation, clicks and enquiries.' },
   { question: 'Do small websites need technical SEO?', answer: 'Yes, but the scope is usually lighter. A small business site may only need crawl checks, indexation cleanup, speed fixes, schema validation, mobile checks and stronger internal links to service pages.' },
   { question: 'Do ecommerce websites need more technical SEO?', answer: 'Usually, yes. Ecommerce sites often have filters, variants, category duplication, product churn, pagination, internal search URLs, faceted navigation and performance issues that can waste crawl budget and weaken category rankings.' },
-  { question: 'Can technical SEO help AI search visibility?', answer: 'Yes, indirectly. AI search systems still rely on clear, crawlable and trustworthy source material. Clean structure, schema, entity clarity, fast pages and accessible content make the site easier to understand in normal search and AI-assisted search.' },
+  { question: 'Can technical SEO help AI search visibility?', answer: 'Technical work can make content accessible to search crawlers and keep structured data consistent with the page. Access requirements differ between AI search systems; crawlability or schema alone does not secure a citation. We check the relevant access controls when AI search is part of the brief.' },
   { question: 'Can you provide technical SEO for overseas businesses and agencies?', answer: 'Yes. We support direct businesses and white label agency partners in Australia, the UK and other English-language markets. The technical standards stay consistent, while implementation notes, reporting, time-zone handovers and market-specific page architecture are adapted to the client and country.' }
 ];
 ---
@@ -176,9 +176,9 @@ const faqs = [
     breadcrumbCurrent="Technical SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>A website can look polished and still be difficult for search engines to crawl, render, index or trust. This page is the fix work: crawl, indexation, speed, rendering, schema and release QA.</p>
-      <p>Bright Forge provides technical SEO services in the Philippines for businesses that need clean foundations, safer releases and stronger organic growth. We turn the audit into practical fixes, not a spreadsheet graveyard. If you only need the diagnosis, start with <a href="/seo-audit-services/">SEO audits</a>.</p>
-      <p>Our Philippine technical team can run a one-off audit, advise developers on a difficult platform problem or stay through implementation and release QA. The output is prioritised around risk and organic impact rather than the number of warnings a crawler exports.</p>
+      <p>A service page has disappeared from search after a release. Product filters keep generating new URLs. The mobile page loads, but its enquiry button shifts while someone is trying to tap it. We investigate the affected pages and turn a reproducible fault into a change your developer can test.</p>
+      <p>We provide technical SEO from the Philippines for local businesses and teams in Australia, the UK and the USA. You receive the affected URLs, supporting evidence, proposed fix and acceptance checks. If you need a wider diagnosis before choosing the work, start with <a href="/seo-audit-services/">SEO audits</a>.</p>
+      <p>Before work starts, we agree whether we are advising your developer or implementing changes with authorised access. We also name the release owner, the staging environment and who can approve or reverse a change.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -190,7 +190,7 @@ const faqs = [
       <div class="hero-stats">
         <div class="stat"><strong>Indexation</strong><span>Find the pages Google should and should not index.</span></div>
         <div class="stat"><strong>Performance</strong><span>Improve speed, Core Web Vitals and mobile experience.</span></div>
-        <div class="stat"><strong>Release safety</strong><span>Protect rankings during migrations, redesigns and CMS changes.</span></div>
+        <div class="stat"><strong>Release safety</strong><span>Check redirects, crawl controls and templates during releases.</span></div>
       </div>
     </Fragment>
   </Hero>
@@ -260,8 +260,8 @@ const faqs = [
       <div class="process-layout">
         <div class="process-intro">
           <span class="eyebrow">How we work</span>
-          <h2>From crawl export to fixes that <span>developers can actually ship</span></h2>
-          <p>A technical SEO audit is only useful if someone can implement it. We turn findings into prioritised actions, clear tickets and measurable checks.</p>
+          <h2>Reproduce the fault, agree the change, <span>test the release</span></h2>
+          <p>For example, a category may load normally while its canonical points to a different category. We record the returned HTML and the affected template, confirm which URL should be indexed, then check the approved canonical on staging and live. We also check sibling categories so one fix does not break another.</p>
         </div>
         <div class="timeline">
           {processSteps.map((step) => (
@@ -306,7 +306,7 @@ const faqs = [
       <div class="collab-panel">
         <span class="eyebrow">Developer friendly</span>
         <h2>We can work with <span>your developer</span>, your CMS or your internal team</h2>
-        <p>Technical SEO often fails because recommendations are too vague for developers or too technical for marketing teams. We bridge that gap with clear issue explanations, affected URL examples, implementation notes, priority levels and QA checks.</p>
+        <p>A developer needs enough detail to reproduce the issue: request URL, device or rendering conditions, observed output and expected behaviour. We attach the approval dependency and a check your team can repeat. <a href="/samples/technical-review-handoff.csv">View our technical review handoff sample</a>, a pre-repair review of our own website showing findings and acceptance checks, not client results.</p>
         <div class="collab-grid">
           <div><strong>For founders</strong><span>Clear commercial priorities, not technical fog.</span></div>
           <div><strong>For marketers</strong><span>Practical SEO fixes linked to rankings, traffic and conversions.</span></div>
@@ -321,7 +321,7 @@ const faqs = [
       <div class="international-copy">
         <span class="eyebrow">International delivery</span>
         <h2>Philippines-based technical SEO for <span>overseas sites and agency teams</span></h2>
-        <p>Technical SEO does not become local just because a crawler runs in one country. The important differences are the site architecture, target markets, development stack and the people who need to act on the findings.</p>
+        <p>A multi-country site may use separate domains, regional folders or one shared catalogue. We check the intended audience of each version alongside its canonicals, regional tags and internal links, then brief the team responsible for that platform.</p>
         <p>We work directly with businesses and behind the scenes for agencies. Each engagement defines who owns implementation, how staging is reviewed, which market is affected and what evidence will prove the release worked.</p>
       </div>
       <div class="delivery-notes">
@@ -329,23 +329,23 @@ const faqs = [
           <span>Australia</span>
           <div>
             <h3>Same-day technical collaboration</h3>
-            <p>Our working day overlaps Australia, including identical hours with Perth. This suits live debugging, developer questions and release QA that cannot wait overnight.</p>
+            <p>Philippine time aligns with Perth, while eastern Australian overlap varies with daylight saving. We agree the working session and release coverage rather than assuming every Australian team keeps the same hours.</p>
             <a href="/seo-services-australia/">Technical SEO for Australian campaigns →</a>
           </div>
         </article>
         <article>
           <span>United Kingdom</span>
           <div>
-            <h3>Reviewed work ready for the UK morning</h3>
-            <p>We can audit and prepare implementation notes during the Philippine day, then hand them over as the UK team starts work.</p>
+            <h3>Written handovers for UK developers</h3>
+            <p>We agree a review window and record unresolved questions in the ticket. A UK developer can see the affected template, proposed change and test without needing to reconstruct the diagnosis on a call.</p>
             <a href="/seo-services-uk/">Technical SEO for UK campaigns →</a>
           </div>
         </article>
         <article>
           <span>United States</span>
           <div>
-            <h3>Overnight technical delivery for US teams</h3>
-            <p>US teams can hand over crawl findings, staging questions or release checks at the end of their day. We work through the Philippine day and return reviewed notes for the next US morning.</p>
+            <h3>Release checks across US time zones</h3>
+            <p>We agree the US time zone, release window and escalation contact before booking QA. Overnight coverage and turnaround depend on the scope; a launch should not rely on an assumed next-day handover.</p>
             <a href="/seo-services-usa/">Technical SEO for US campaigns →</a>
           </div>
         </article>

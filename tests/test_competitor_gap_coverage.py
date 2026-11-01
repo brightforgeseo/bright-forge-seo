@@ -68,25 +68,25 @@ class CompetitorGapCoverageTest(unittest.TestCase):
                 "Manila-focused campaigns",
             ),
             "technical-seo-services-philippines.astro": (
-                "Philippine technical team",
-                "one-off audit",
-                "advise developers",
+                "technical SEO from the Philippines",
+                "SEO audits",
+                "advising your developer",
             ),
             "content-seo-services-philippines.astro": (
-                "Philippine content team",
-                "white-label agency partners",
+                "Our Philippine team",
+                "white label SEO service",
             ),
             "on-page-seo-services-philippines.astro": (
-                "on-page team",
-                "Philippine and overseas campaigns",
+                "on-page SEO from the Philippines",
+                "Philippine, Australian, UK and US campaigns",
             ),
             "backlink-seo-services-philippines.astro": (
                 "Philippine link team",
                 "client-safe prospect review",
             ),
             "seo-audit-services.astro": (
-                "Philippine audit team",
-                "implementation order",
+                "SEO audits from the Philippines",
+                "prioritised findings register",
             ),
         }
 

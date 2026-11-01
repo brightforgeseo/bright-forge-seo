@@ -117,20 +117,20 @@ const processSteps = [
 
 const avoidItems = [
   {
-    title: 'No keyword stuffing',
-    copy: 'Repeating a phrase until the page reads badly is not strategy. Relevance should come from structure, coverage, entities and useful answers.'
+    title: 'Title and missing buyer facts',
+    copy: 'We would replace a title such as Our Cleaning Solutions with Commercial Office Cleaning plus the confirmed service area. A new scope section would state supported premises, cleaning frequency, access arrangements and exclusions, using facts supplied by the operator.'
   },
   {
-    title: 'No metadata-only SEO',
-    copy: 'Changing title tags and meta descriptions can help, but it is not enough when the actual page fails to explain the offer or earn trust.'
+    title: 'Links and enquiry instructions',
+    copy: 'We would link a relevant office-cleaning case study beside the scope, if approved evidence exists. The quote prompt would ask for premises size, location, required frequency and suitable access times. We would not add an emergency-response promise without confirmation.'
   },
   {
-    title: 'No thin AI padding',
-    copy: 'Adding generic paragraphs just to increase word count makes the page weaker. Extra copy has to answer a real buyer or search-intent need.'
+    title: 'Client approval',
+    copy: 'The service owner checks coverage, inclusions and operational claims. We show the proposed title, copy and link destinations together, flag unresolved facts and agree revision rounds before the page is approved.'
   },
   {
-    title: 'No pointless FAQ spam',
-    copy: 'FAQs should handle real objections and long-tail questions. They should not exist only to stuff schema or create fake depth.'
+    title: 'Publishing responsibility',
+    copy: 'Your publisher applies the approved changes, or we implement them where access and scope allow. We then check the live title, headings, links, mobile layout and form route, record the release date and keep the previous copy available for rollback.'
   }
 ];
 
@@ -140,7 +140,7 @@ const measurementItems = [
   'Organic landing page sessions and engagement quality',
   'Enquiries, form submissions, call clicks and tracked conversion actions',
   'Internal link flow to and from related priority pages',
-  'Changes in SERP appearance, snippets and AI-search extractability signals'
+  'Changes in search appearance and snippets; separately scoped AI-answer observations'
 ];
 
 const connectedServices = [
@@ -183,8 +183,8 @@ const faqs = [
   { question: 'How does on-page SEO help conversions?', answer: 'Better page structure, clearer copy, stronger proof, useful FAQs, internal links and better CTAs help visitors understand the offer faster. That gives organic traffic a better chance of turning into leads.' },
   { question: 'How do you choose which pages to optimise first?', answer: 'We prioritise pages by search demand, current rankings, impressions, traffic, commercial value, conversion potential, internal-link importance and how much upside the page has compared with competing pages.' },
   { question: 'Will you rewrite all the copy on a page?', answer: 'Only if the page needs it. Some pages need a full rewrite. Others need a better title, stronger intro, clearer sections, improved FAQs, better internal links or more proof around the existing offer.' },
-  { question: 'How long does on-page SEO take to work?', answer: 'Some metadata and internal-link changes can show movement within weeks. Larger page rewrites usually need time for crawling, ranking adjustment and enough conversion data to judge properly. Competitive pages often need continued refinement.' },
-  { question: 'Does on-page SEO help AI search visibility?', answer: 'Yes, when it makes the page clearer and more extractable. AI answers rely on well-structured, trustworthy source material, so clear service definitions, FAQs, schema, proof and entity clarity all help.' }
+  { question: 'How long does on-page SEO take to work?', answer: 'We can check the published edits as soon as they are live. Search engines need time to process changes, and enquiries need enough data to assess. We agree the observation window around traffic levels and the scope rather than promising a fixed ranking date.' },
+  { question: 'Does on-page SEO help AI search visibility?', answer: 'Clear service information, accessible text and accurate proof can make a page easier to interpret. They do not guarantee inclusion in an AI answer. If AI visibility is part of the scope, we agree a separate measurement method rather than treating added FAQs as a result.' }
 ];
 ---
 
@@ -246,9 +246,9 @@ const faqs = [
     breadcrumbCurrent="On-Page SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>Some pages do not need another blog supporting them. They need better structure, clearer intent, stronger proof, cleaner internal links and a reason for the visitor to act.</p>
-      <p>Bright Forge provides on-page SEO services in the Philippines for businesses that need their service pages, local pages, category pages and landing pages to become clearer for Google and more convincing for buyers.</p>
-      <p>Our on-page team connects search intent, page structure and conversion evidence for Philippine and overseas campaigns rather than treating optimisation as a metadata checklist.</p>
+      <p>A buyer lands on your service page but cannot tell what is included, whether you cover their location or what to send for a quote. We revise the page around those missing decisions while checking the searches it should answer.</p>
+      <p>We provide on-page SEO from the Philippines for service, location, category and landing pages. The handover shows the existing copy beside proposed titles, headings, sections, internal links and calls to action, so you can approve the actual changes.</p>
+      <p>We work on Philippine, Australian, UK and US campaigns. Before editing, we agree the URLs, target market, revision rounds and whether your team or ours will publish. A page refresh is not permission to change your offer, prices or service coverage.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -272,7 +272,7 @@ const faqs = [
           <span class="eyebrow">Why on-page SEO matters</span>
           <h2>A <span>page can rank</span> and still fail commercially</h2>
           <p>Ranking is only one job. A commercial page also has to explain the offer, match the searcher’s intent, show enough trust, answer objections and give the visitor a clear next step.</p>
-          <p>On-page SEO is where relevance, copy, structure and conversion judgement meet. If a page gets impressions but few clicks, ranks but attracts the wrong traffic, or gets visits without enquiries, the page itself usually needs work.</p>
+          <p>If a page gets impressions but few clicks, attracts the wrong visitors or receives visits without enquiries, we check query fit, tracking and the enquiry route before choosing edits. The answer may be clearer copy, a repaired form or a different page target.</p>
         </div>
         <aside class="diagnosis-panel" aria-label="On-page SEO diagnosis questions">
           <h3>We start with the questions that matter</h3>
@@ -346,7 +346,7 @@ const faqs = [
           <span class="eyebrow">Page prioritisation</span>
           <h2>We optimise the pages with the <span>clearest upside</span> first</h2>
           <p>Not every page deserves the same attention. A thin old article and a high-value service page should not receive the same level of effort. We use search demand, performance data and commercial value to decide where on-page SEO can make the biggest difference.</p>
-          <p>This keeps the work focused on rankings, clicks and enquiries, not cosmetic edits that make a report look busy.</p>
+          <p>The agreed page list records the reason for each revision, so your team can review priority and budget before work starts.</p>
         </div>
         <ul class="priority-list">
           {prioritySignals.map((item) => <li>{item}</li>)}
@@ -382,9 +382,9 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="avoid-layout">
         <div class="avoid-copy">
-          <span class="eyebrow">What we avoid</span>
-          <h2><span>On-page SEO</span> should make the page better, not just busier</h2>
-          <p>There is a lot of poor on-page SEO that looks active but adds very little. We avoid edits that make pages longer, clumsier or more robotic without improving intent match, clarity or conversion value.</p>
+          <span class="eyebrow">Illustrative page revision</span>
+          <h2>From a general service pitch to <span>a usable quote request</span></h2>
+          <p>Example, not a client result: a commercial cleaning page says “quality cleaning for every business” but leaves the buyer unsure about premises, hours and site access. We would ask for those facts before revising the page. The changes below illustrate the deliverable, not a measured ranking lift.</p>
         </div>
         <div class="avoid-grid">
           {avoidItems.map((item) => (
@@ -404,7 +404,7 @@ const faqs = [
         <div class="measurement-panel">
           <span class="eyebrow">Measurement</span>
           <h2>We judge page improvements by <span>visibility</span> and behaviour</h2>
-          <p>On-page SEO should show up in more than a changed title tag. The right measures depend on the page, but the aim is clearer search visibility, better click-through and stronger enquiry performance.</p>
+          <p>We retain the release date and compare the affected page and mapped queries over complete periods. Country and device splits help explain changes in click-through. Call clicks and form events are reported separately from qualified enquiries; we need your sales feedback to assess lead quality.</p>
         </div>
         <ul class="measurement-list">
           {measurementItems.map((item) => <li>{item}</li>)}

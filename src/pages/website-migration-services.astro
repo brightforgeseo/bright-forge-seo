@@ -74,21 +74,21 @@ const migrationTypes = [
   },
   {
     title: 'Site consolidation',
-    copy: 'For merging multiple websites, old microsites, subdomains or duplicate brands into one stronger structure without losing useful equity.'
+    copy: 'For merging websites, old microsites, subdomains or duplicate brands, with a plan for useful content, externally linked URLs and overlapping offers.'
   }
 ];
 
 const preMigrationChecks = [
-  'Organic traffic and landing-page baseline',
-  'Keyword rankings and priority URL list',
-  'Backlink URLs and externally linked pages',
-  'Full crawl of the existing website',
-  'Indexable URL inventory',
-  'Title, meta, H1 and content template review',
-  'Canonical, robots and sitemap checks',
-  'Internal-link and navigation review',
-  'Analytics, events and form tracking review',
-  'Known technical issues that should not be carried forward'
+  'Old URL: /services/office-fitout/; proposed destination: /commercial-fitouts/offices/.',
+  'Reason: the replacement serves the same office fit-out offer, rather than sending the visitor to a general homepage.',
+  'Evidence: compare old copy, search landing-page data and externally linked URLs before approving removal or redirection.',
+  'Implementation owner: the developer applies a permanent server-side redirect; the service owner approves destination relevance.',
+  'Acceptance test: the old URL redirects directly to the approved destination, which returns 200 and has no unintended noindex directive.',
+  'Destination check: confirm office fit-out content, enquiry route and canonical remain correct on desktop and mobile.',
+  'Internal references: update navigation, contextual links and the sitemap to the new URL rather than relying on redirects.',
+  'Exception decision: if no relevant replacement exists, review retention or a genuine 404/410 response instead of forcing a homepage redirect.',
+  'Rollback decision: if the new template blocks priority pages, the release owner decides whether to restore the prior version or apply a verified fix.',
+  'After launch: record the live test, monitor the affected page group and distinguish search processing from an actual redirect defect.'
 ];
 
 const launchChecks = [
@@ -110,12 +110,12 @@ const launchChecks = [
   {
     label: '04',
     title: 'Launch checklist and sign-off',
-    copy: 'We confirm that the site is ready from an SEO risk perspective, with launch-day checks for redirects, tracking, robots rules, sitemaps and core page templates.'
+    copy: 'We report passed checks, unresolved defects and their impact to the release owner. Your team makes the go-live decision against agreed acceptance criteria; an SEO sign-off is not a promise that rankings will stay unchanged.'
   },
   {
     label: '05',
     title: 'Post-launch crawl and monitoring',
-    copy: 'We crawl the live site, test redirects, check important pages, review Search Console signals and monitor organic movement after the release.'
+    copy: 'We test old URLs and new destinations on the public site, then compare crawl and search data during the agreed monitoring period. The scope names the review cadence, escalation contact and end date, so support does not silently end at deployment.'
   },
   {
     label: '06',
@@ -153,20 +153,20 @@ const deliverables = [
 
 const noPromiseItems = [
   {
-    title: 'No promise of zero movement',
-    copy: 'Any meaningful migration can cause short-term movement. Honest migration SEO is about reducing avoidable risk, spotting problems early and protecting the strongest pages.'
+    title: 'Search changes after launch',
+    copy: 'Rankings can change while search engines process the move. We compare the affected pages with the pre-launch baseline and investigate losses alongside redirect, indexing and content checks.'
   },
   {
-    title: 'No bulk homepage redirects',
-    copy: 'Redirecting everything to one generic page is usually lazy and risky. We map URLs by relevance and business value.'
+    title: 'Redirect exceptions',
+    copy: 'Some old URLs have no suitable replacement. We flag these for an explicit retain, remove or consolidate decision, with the relevant content and link evidence attached.'
   },
   {
-    title: 'No launch without measurement',
-    copy: 'A migration cannot be judged properly if analytics, forms, events and Search Console are not checked. Tracking is part of the migration plan.'
+    title: 'Tracking acceptance',
+    copy: 'We agree which form, call and purchase events need testing and who will verify receipt. A tracking event must be distinguished from a completed enquiry or order when comparing performance.'
   },
   {
-    title: 'No checklist theatre',
-    copy: 'A migration checklist only helps if it is tied to the actual site, its rankings, its CMS and its launch constraints. We focus on what can affect performance.'
+    title: 'A named release owner',
+    copy: 'We agree who can deploy, pause or roll back the release. A critical defect goes to that person with the affected URLs and evidence. The rollback plan must account for orders, enquiries and content changes made since launch.'
   }
 ];
 
@@ -264,10 +264,7 @@ const faqs = [
         telephone: '+63-969-620-6182',
         email: 'seo@brightforgeseo.com'
       },
-      areaServed: {
-        '@type': 'Country',
-        name: 'Philippines'
-      },
+      areaServed: ['Philippines', 'Australia', 'United Kingdom', 'United States'],
       url: 'https://brightforge.com.ph/website-migration-services/',
       description: 'SEO support for website migrations, including pre-migration audits, redirect mapping, staging QA, launch checks and post-launch monitoring.'
     })} />
@@ -283,8 +280,8 @@ const faqs = [
   >
     <Fragment slot="story">
       <p>A redesign, CMS move or domain change can improve the business, but it can also damage organic traffic if URLs, redirects, templates, tracking and indexation controls are handled late.</p>
-      <p>We help businesses plan and QA migrations with SEO involved before launch, not after rankings have already moved.</p>
-      <p>The aim is simple: protect the pages that matter, reduce avoidable risk and give your development team clear checks before and after go-live.</p>
+      <p>We work with businesses in the Philippines, Australia, the UK and the USA to review the old site, map its URLs to the new structure and test the pages that must survive the move. Bring us in before navigation, templates and redirect rules are locked.</p>
+      <p>Send the current domain, staging access if available, the proposed launch date and the name of your development lead. We agree the release window, sign-off owner, rollback options and post-launch monitoring period before work starts.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -341,7 +338,7 @@ const faqs = [
     <div class="container-grid two-col">
       <div>
         <span class="section-kicker">Why migration SEO matters</span>
-        <h2>Most <span>migration losses</span> are preventable</h2>
+        <h2>Reduce avoidable risk before <span>the site moves</span></h2>
       </div>
       <div class="rich-copy">
         <p>Search engines do not understand your project plan. They see changed URLs, new templates, different internal links, altered content, new status codes and different indexation signals.</p>
@@ -389,9 +386,9 @@ const faqs = [
   <section class="checklist-section" style="content-visibility: visible !important;">
     <div class="container-grid two-col align-start">
       <div>
-        <span class="section-kicker">Before the move</span>
-        <h2>What we audit before <span>URLs and templates</span> are locked in</h2>
-        <p class="section-lede">A migration plan should start with evidence. We identify which pages, signals and conversion paths need protection before design or development decisions make SEO harder to fix.</p>
+        <span class="section-kicker">Illustrative redirect-map entry</span>
+        <h2>Map the old page to <span>a relevant replacement</span></h2>
+        <p class="section-lede">Example, not a completed client migration: an old /services/office-fitout/ page becomes /commercial-fitouts/offices/. We would confirm that the new page still covers office fit-outs, then record the redirect, approval and test below. These illustrative paths are not links on this site.</p>
       </div>
       <div class="checklist-panel">
         {preMigrationChecks.map((check) => (
@@ -444,9 +441,9 @@ const faqs = [
   <section class="honest-section" style="content-visibility: visible !important;">
     <div class="container-grid two-col align-start">
       <div>
-        <span class="section-kicker">Honest migration SEO</span>
-        <h2>What we will not <span>promise</span></h2>
-        <p class="section-lede">Migration SEO should be careful, specific and honest. Overpromising is dangerous because every site, CMS, dev team and launch constraint is different.</p>
+        <span class="section-kicker">Launch decisions</span>
+        <h2>Agree the controls before <span>go-live</span></h2>
+        <p class="section-lede">Before launch, your development and marketing teams need agreed answers on URL exceptions, tracking tests and release authority. We record these decisions alongside the redirect map and QA notes.</p>
       </div>
       <div class="honest-grid">
         {noPromiseItems.map((item) => (

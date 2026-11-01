@@ -37,7 +37,7 @@ const researchDeliverables = [
   },
   {
     title: 'Search intent and SERP notes',
-    copy: 'SERP checks that identify whether Google wants a service page, collection page, guide, comparison, local result, video, FAQ or another page type.'
+    copy: 'Search-result checks showing which page types appear for the query: service pages, collections, guides, comparisons, local results or videos. Mixed results are recorded rather than forced into one page type.'
   },
   {
     title: 'Quick-win targets',
@@ -64,39 +64,39 @@ const mappingFields = [
 
 const siteTypes = [
   {
-    title: 'Service businesses',
-    copy: 'We map core services, location modifiers, comparison queries, pricing questions, problem-led searches and supporting articles around the pages most likely to generate enquiries.'
+    title: 'Philippines: coverage and buyer language',
+    copy: 'We start with the actual service area, customer enquiries and the language used by buyers. We compare those with Philippine search data rather than assuming an English-only national keyword list represents every local audience.'
   },
   {
-    title: 'Ecommerce and catalogue sites',
-    copy: 'We separate category, subcategory, product, buying-guide and comparison intent so the site is not trying to rank the wrong type of page.'
+    title: 'Australia: delivery areas and local terms',
+    copy: 'We check Australian search results alongside the states, suburbs or delivery zones you serve. Catalogue research also needs stock and shipping restrictions, so a high-demand product is not prioritised where it cannot be supplied.'
   },
   {
-    title: 'Local SEO campaigns',
-    copy: 'We identify service-area, suburb, city, Google Business Profile, review and local-intent opportunities without creating doorway-style location pages.'
+    title: 'United Kingdom: service scope and terminology',
+    copy: 'We use UK query data and locally relevant results, then check whether searches imply a national supplier, a nearby provider or information. Your sales team confirms the terms buyers use and the areas in which the offer is available.'
   },
   {
-    title: 'Agencies and white-label teams',
-    copy: 'We build keyword maps that give content teams, developers and account managers a clear brief without exposing clients to messy research exports.'
+    title: 'United States: national versus state-level intent',
+    copy: 'We distinguish national research from city or state targeting. Product eligibility, service boundaries and American terminology can change the useful query set; a national volume figure cannot answer those questions.'
   }
 ];
 
 const avoidItems = [
   {
-    title: 'No raw keyword dumps',
-    copy: 'A long spreadsheet is not a strategy. We remove duplicates, irrelevant variants, weak-fit topics and terms that do not justify a page or content action.'
+    title: 'Market, query and existing page',
+    copy: 'Illustrative example: Australia. Query: commercial roof replacement cost. Existing page: /commercial-roof-replacement/. Buyer decision: whether the contractor handles this building type and what information is needed for a quote.'
   },
   {
-    title: 'No volume chasing',
-    copy: 'High-volume keywords are not always the best target. We prioritise intent, business fit, SERP reality and the page type needed to compete.'
+    title: 'Proposed action and reason',
+    copy: 'Expand the existing service page with the factors used to scope a quote: roof area, material, access and removal requirements. Link to the enquiry form asking for those details. Publish price ranges only if the contractor supplies and approves them.'
   },
   {
-    title: 'No competitor copying',
-    copy: 'A competitor ranking for a keyword does not automatically make it a good opportunity. We check relevance, buyer fit and whether the client can actually serve that search.'
+    title: 'Rejected alternative',
+    copy: 'Do not create a second service page solely to repeat the cost phrase. It may duplicate the existing offer. A separate cost guide needs distinct buyer value and search-result evidence, not just a different title.'
   },
   {
-    title: 'No cannibalisation traps',
-    copy: 'We avoid recommending multiple pages for the same intent unless there is a clear reason. Strong mapping protects the site from competing with itself.'
+    title: 'Approval and measurement',
+    copy: 'The contractor confirms service coverage and quote requirements; the editor revises the mapped page. We would record its release date and monitor the relevant query group and landing page rather than judging the change by whole-site traffic.'
   }
 ];
 
@@ -240,9 +240,9 @@ const faqs = [
     breadcrumbCurrent="Keyword Research Services"
   >
     <Fragment slot="story">
-      <p>Keyword research should not end with a spreadsheet nobody uses.</p>
-      <p>We turn search demand into a practical SEO roadmap: which pages to build, which existing pages to improve, which keywords are worth chasing and which ones should be ignored.</p>
-      <p>Our keyword research services help businesses, agencies and content teams plan SEO work around real search intent, commercial value and page-level priorities.</p>
+      <p>Do you need a new service page, a better category page or an answer on a page you already have? We research the searches behind that decision before you spend on writing or development.</p>
+      <p>We group related queries, inspect the search results in the target market and map each useful group to an existing URL or a proposed page. You receive the reason for the recommendation, its priority and the next content or technical action.</p>
+      <p>Our Philippines-based team supports Philippine, Australian, UK and US campaigns. Tell us what you sell, where you can deliver it and which enquiries you do not want; those details help us reject attractive-looking searches that would bring the wrong customer.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -292,9 +292,9 @@ const faqs = [
       <div>
         <p class="eyebrow">Search demand into decisions</p>
         <h2>Good <span>keyword research</span> tells you what to do next</h2>
-        <p>Most keyword research fails because it treats every phrase like a content idea. That creates bloated spreadsheets, duplicate pages, weak blog plans and service pages that never get the focus they need.</p>
-        <p>We use keyword research to make decisions. Some terms need a dedicated landing page. Some belong inside an existing service page. Some are FAQ opportunities. Some should be ignored because the intent is wrong or the SERP is unrealistic.</p>
-        <p>The output is a roadmap for SEO work, not just a list of words.</p>
+        <p>A pricing question may belong on the service page where a buyer is choosing a supplier. A comparison may need its own page if it serves a different decision. We inspect the current results and your existing coverage before treating either as a new writing brief.</p>
+        <p>For each query group, we compare the current page with the information buyers need. The recommendation may be a new landing page, an expanded section or a useful FAQ. We also record terms to leave out when the business cannot serve the search.</p>
+        <p>The map records the research date, country, data source and any missing evidence. Search volumes are estimates, not forecasts of visits or sales.</p>
       </div>
       <aside class="statement-card">
         <span>Bright Forge approach</span>
@@ -343,9 +343,9 @@ const faqs = [
   <section class="site-types-section visible-section">
     <div class="content-wrap">
       <div class="section-heading narrow">
-        <p class="eyebrow">Different sites need different maps</p>
-        <h2>We do not use the <span>same keyword logic</span> for every campaign</h2>
-        <p>A local service site, ecommerce catalogue and agency client campaign need different research filters. The page type matters as much as the keyword.</p>
+        <p class="eyebrow">Market inputs</p>
+        <h2>Research the market before <span>choosing the page</span></h2>
+        <p>We keep country datasets separate and record the location used for search-result checks. A searcher abroad may still want a Philippine service; country of search alone does not settle intent.</p>
       </div>
       <div class="type-list">
         {siteTypes.map((item) => (
@@ -369,10 +369,10 @@ const faqs = [
         ))}
       </div>
       <div>
-        <p class="eyebrow">What we refuse to do</p>
-        <h2><span>Keyword research</span> should reduce waste, not create more of it</h2>
-        <p>Bad keyword research makes every term look like an opportunity. Senior SEO means knowing what not to do.</p>
-        <p>We filter aggressively so the roadmap focuses on pages and content that can support rankings, enquiries and long-term search visibility.</p>
+        <p class="eyebrow">Illustrative keyword-map row</p>
+        <h2>A service question does not always need <span>another page</span></h2>
+        <p>This example shows our decision format, not measured demand or a completed client recommendation. The URL and query are illustrative; no search volume or ranking is implied.</p>
+        <p>Before approving the action, we would inspect the market-specific search results and check Search Console for the existing page. If buyers need a separate comparison rather than a supplier quote, that evidence could change the recommendation.</p>
       </div>
     </div>
   </section>
