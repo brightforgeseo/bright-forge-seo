@@ -76,51 +76,51 @@ const process=[
 ];
 const faqs=[
   {
-    "question": "Is Next.js good for SEO?",
-    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+    "question": "Does a Next.js site need a server?",
+    "answer": "Not always. A static export can be served as HTML, CSS and JavaScript. Features such as runtime Draft Mode, on-demand revalidation and Server Actions need a compatible server deployment. We check the required features against the proposed host before choosing the deployment model."
   },
   {
-    "question": "Do we need to rebuild our whole website?",
-    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+    "question": "How will a CMS edit reach the public page?",
+    "answer": "That depends on the rendering and cache configuration. A static export needs a new build; a server deployment may use revalidation after publication. We agree the expected publishing delay and check an edit on the deployed page, including its title and canonical. Cache behaviour must be checked against the installed Next.js version and configuration."
   },
   {
-    "question": "How do you protect rankings during a rebuild?",
-    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+    "question": "Should logged-in pages appear in Google?",
+    "answer": "Private account content should stay behind authenticated access. Public product and service pages need their own accessible content and links. A loading state inside an account is not the same problem as missing content on a public landing page; noindex is not a substitute for access control."
   },
   {
-    "question": "Can your team work with our existing developer?",
-    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+    "question": "Can editors preview unpublished content?",
+    "answer": "Next.js Draft Mode can support a CMS preview, but it needs integration and a server deployment. The scope should define who can enter preview, how draft access is protected and how editors return to the published version. It is not included simply by installing Next.js."
   },
   {
-    "question": "Which framework should we choose?",
-    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+    "question": "What do you need before quoting a rebuild?",
+    "answer": "Share the repository or current website, Next.js version, hosting setup, CMS, public routes and any authentication or API dependencies. We agree who approves releases and who owns dependency updates, hosting accounts and rollback. Ongoing maintenance and backend changes need an explicit scope."
   },
   {
-    "question": "Do you guarantee better rankings after a new website?",
-    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+    "question": "Can you work alongside our developer, and will rankings improve?",
+    "answer": "We can provide SEO direction, implementation guidance and launch QA alongside your developer. Redirects, content, metadata, links and indexation are checked during a rebuild, but no framework or launch checklist guarantees rankings."
   }
 ];
 ---
 <MainLayout title="Next.js Development Philippines | Bright Forge" description="Next.js development for SEO-aware applications, dashboards and dynamic websites that need performance, structure and reliable rendering." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Next.js",url:canonical}]} faqs={faqs}>
 <LegacyHeader slot="header" />
 <Hero title="Next.js <span>Development</span>" breadcrumbCurrent="Next.js">
-<Fragment slot="story"><p class="hero-subtitle">Next.js when the product is an application, not a brochure with extra JavaScript.</p><p>We use it when server rendering, routing and a real app layer earn their keep. Metadata, crawlable HTML and a launch map still come first. A default Next install is not an SEO strategy.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="story"><p class="hero-subtitle">Next.js development for websites with public content, live data and account features to plan together.</p><p>We decide how each route is rendered, how editors publish and what the host must run. Product pages should be discoverable; private account details should not. Those decisions shape the build before interface work starts.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Next.js should solve a <span>product problem</span> without creating an SEO one</h2><p>Next.js can support complex sites, applications and scalable content systems, but the SEO value depends on rendering choices, information architecture and technical discipline.</p><p>We plan Next.js builds around crawlable pages, reliable metadata, performance budgets, structured content and launch QA so the framework supports the strategy rather than distracting from it.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
+<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Next.js should solve a <span>product problem</span> without creating an SEO one</h2><p>A product site may have a public pricing page, CMS-managed guides and a signed-in dashboard. They do not need the same caching or access rules. We map those requirements alongside the existing URLs, metadata and internal links.</p><p>Illustrative acceptance check: publish an approved CMS edit, then inspect the public page outside preview. Check that the changed copy and metadata appear within the agreed publishing window, while a signed-out visitor cannot retrieve private account data. This describes a check to scope, not a completed client project.</p></div><aside class="panel"><h3>What we check first</h3><p>Which routes are public, how often their data changes, whether editors need preview and which server features the host supports. We also review forms, analytics and the old-to-new URL map.</p></aside></div></section>
 <DevelopmentStackJobs
   title="What we actually lock down in <span>Next.js</span>"
-  intro="Use Next when the product needs it. Do not turn a brochure into a client-rendered app by accident."
+  intro="Rendering and publishing choices affect hosting costs, content freshness and what the team must maintain."
   jobs={[
-    {title:'Render choice per route', text:'Static, server, or client. Marketing URLs stay crawlable.'},
-    {title:'Metadata in the template', text:'Titles, canonicals and Open Graph are part of the route, not a later plugin.'},
-    {title:'No empty shell', text:'If Googlebot gets a spinner, the architecture is wrong.'},
-    {title:'Launch map', text:'Redirects and indexation are planned before the app goes live.'}
+    {title:'Public and private routes', text:'Choose build-time or request-time rendering around the content. Check public page HTML and links separately from authenticated screens.'},
+    {title:'Publishing and cache refresh', text:'Record what triggers revalidation or a rebuild. Test changed and deleted CMS content, not just the first successful page load.'},
+    {title:'Preview and production', text:'Keep draft access separate from public output. Verify titles, canonicals, Open Graph and schema on the deployed routes.'},
+    {title:'Release and rollback', text:'Confirm runtime support, environment settings and the release owner. Test redirects and retain a route back to the previous deployment.'}
   ]}
 />
-<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>Next.js has a clear role</span></h2><p>This suits apps, SaaS sites, dashboards, portals and dynamic marketing sites that need React architecture without sacrificing crawlability or performance.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
-<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the <span>stack around the job</span>, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>Next.js has a clear role</span></h2><p>This suits apps, SaaS sites, dashboards, portals and dynamic marketing sites that need React architecture without sacrificing crawlability or performance.</p></div><div class="panel"><h3>Before we recommend Next.js</h3><p>If editors mainly publish service pages and articles, Astro with a CMS or WordPress may meet the brief with fewer application dependencies. Next.js earns its place when the route, data and interface requirements justify maintaining that application layer.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare the <span>publishing and application needs</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Next.js development</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
 <section><div class="page-container"><div class="cta-card"><h2>Need a Next.js build that <span>search engines</span> can actually understand?</h2><p>We can review your product, pages and rendering needs before recommending a Next.js architecture.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
 </main><Footer slot="footer"/>

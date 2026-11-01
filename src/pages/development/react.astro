@@ -76,53 +76,53 @@ const process=[
 ];
 const faqs=[
   {
-    "question": "Is React good for SEO?",
-    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+    "question": "Is React a framework or a client-only way to build a site?",
+    "answer": "React is a UI library. Routing, data loading, rendering and deployment depend on the surrounding tools. A React framework can generate static HTML or render on a server; a browser-only setup is another choice, not a requirement of React."
   },
   {
-    "question": "Do we need to rebuild our whole website?",
-    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+    "question": "What separates React interface work from a full application build?",
+    "answer": "An interface can use an existing API and authentication service. Building or changing the backend, database, payment processing or permissions is a separate scoping decision. We need the API contract, test access and a named owner for those services before agreeing the interface work."
   },
   {
-    "question": "How do you protect rankings during a rebuild?",
-    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+    "question": "What should an interactive tool be tested against?",
+    "answer": "Agree the normal, loading, empty, error and successful states. Check keyboard operation, labels, validation messages and recovery after a failed request. For a calculator, the business must approve the calculation rules; a working control does not establish that its answer is commercially correct."
   },
   {
-    "question": "Can your team work with our existing developer?",
-    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+    "question": "How will our team edit content and publish changes?",
+    "answer": "React does not supply a CMS. Content may come from an existing CMS or live in the repository. The publishing workflow should state what editors can change, what needs a code release and who can deploy. We check this before recommending new tools."
   },
   {
-    "question": "Which framework should we choose?",
-    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+    "question": "Can you improve our current React site without replacing it?",
+    "answer": "Yes, where a focused repair meets the requirement. We review routes, delivered content, metadata, internal links and the slow or unreliable interactions first. Your developer can implement from our SEO direction and QA findings. A switch to Next.js or another framework needs a reason beyond the React label."
   },
   {
-    "question": "Do you guarantee better rankings after a new website?",
-    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+    "question": "Who maintains the interface after handover?",
+    "answer": "The proposal should name the owner of React and package dependencies, API changes, deployment access and regression tests. Hosting and backend support are not implied by an interface build. Better rendering can address a technical obstacle, but it does not guarantee search rankings."
   }
 ];
 ---
 <MainLayout title="React Development Philippines | Bright Forge" description="React development for interactive websites and applications that still need SEO planning, performance control and clean user journeys." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"React",url:canonical}]} faqs={faqs}>
 <LegacyHeader slot="header" />
 <Hero title="React <span>Development</span>" breadcrumbCurrent="React">
-<Fragment slot="story"><p class="hero-subtitle">React for tools and interfaces. Not for turning a service site into an empty app shell.</p><p>If the page is mostly copy, React is the wrong default. If buyers need a working interface, we plan rendering, routes and metadata so search still sees a page.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="story"><p class="hero-subtitle">React development for the parts of a website that people need to use, not just read.</p><p>A calculator, account view or dashboard needs reliable data and understandable controls. We scope the interface, its connection to your existing systems and the public pages that still need to be found in search.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>React needs <span>SEO guardrails</span> before it becomes the default answer</h2><p>React can be right for interactive products and app-like experiences, but not every marketing site needs it. Poor rendering choices, heavy JavaScript and weak routes can make organic visibility harder than it needs to be.</p><p>We use React when the functionality justifies it, with clear decisions around rendering, routes, metadata, performance and content accessibility.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
+<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Define the <span>interface and its dependencies</span></h2><p>React handles the interface. A complete website also needs routing, rendering, data access and a publishing workflow. We check which of those your current platform already provides before proposing a framework or a replacement.</p><p>Illustrative interface brief: a quote calculator should keep entered values after a validation error, explain missing inputs and offer a usable next step when the API is unavailable. The client supplies approved pricing rules; the build scope defines the controls and states to test. This is an example, not a client result.</p></div><aside class="panel"><h3>What we check first</h3><p>The user task, available API, authentication boundary and required interface states. For public routes, we also inspect delivered content, metadata and links before deciding whether rendering needs to change.</p></aside></div></section>
 <DevelopmentStackJobs
   title="When we actually use <span>React</span>"
-  intro="React is for tools, dashboards and controls. It is not the default for a service site."
+  intro="The useful distinction is between a bounded interface and responsibility for the whole application."
   jobs={[
-    {title:'Product surfaces', text:'Command boards, calculators, logged-in views. Not the homepage by default.'},
-    {title:'Render first', text:'Decide what is HTML before anyone installs another client library.'},
-    {title:'Keep marketing crawlable', text:'Service pages stay documents. React sits where interaction is the job.'},
-    {title:'QA the output', text:'Forms, titles and internal links are checked on the rendered page.'}
+    {title:'Interaction and state', text:'Map the steps, validation, loading and failure states. Check keyboard access and whether a user can recover without starting again.'},
+    {title:'API and backend boundary', text:'Identify which service supplies each value, who owns permissions and how errors reach the interface. New backend work needs its own scope.'},
+    {title:'Public route delivery', text:'Choose rendering through the host framework or build setup. Check direct URL visits, refreshes, metadata and links as well as in-app navigation.'},
+    {title:'Release and maintenance', text:'Document publishing, package dependencies and deployment access. Agree which flows must still pass when the API or interface changes.'}
   ]}
 />
-<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>React has a clear role</span></h2><p>This suits interactive tools, portals, dashboards, calculators and application interfaces where user experience needs more than static pages.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
-<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the <span>stack around the job</span>, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>React has a clear role</span></h2><p>This suits interactive tools, portals, dashboards, calculators and application interfaces where user experience needs more than static pages.</p></div><div class="panel"><h3>What your team supplies</h3><p>Bring the user journeys, approved business rules, design requirements and API documentation. Name the backend and release owners. We can then separate interface changes from new integrations, server work and ongoing support in the proposal.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare <span>interface and website options</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>React development</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
-<section><div class="page-container"><div class="cta-card"><h2>Need <span>React without making</span> SEO harder?</h2><p>We can review whether React is the right fit and where server rendering, static content or a simpler stack would be safer.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Need a <span>clear React build scope</span>?</h2><p>We can review whether React is the right fit and where server rendering, static content or a simpler stack would be safer.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
 </main><Footer slot="footer"/>
 </MainLayout>
 

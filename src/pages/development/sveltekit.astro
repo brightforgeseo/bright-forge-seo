@@ -76,51 +76,51 @@ const process=[
 ];
 const faqs=[
   {
-    "question": "Is SvelteKit good for SEO?",
-    "answer": "It can be, if the site is built with crawlable content, clean metadata, sensible routes, fast templates, internal links and proper launch QA. The technology alone is not enough."
+    "question": "Can SvelteKit mix static pages with server-rendered routes?",
+    "answer": "Yes. Page and layout options control prerendering, server rendering and client rendering. A service page can be generated at build time while a route that needs current or user-specific data runs on a server. We choose per route rather than disabling server rendering across the entire site."
   },
   {
-    "question": "Do we need to rebuild our whole website?",
-    "answer": "Not always. Sometimes a technical cleanup, template improvement or content restructure is enough. A rebuild makes sense when the current site is holding back performance, editing, crawlability or conversion."
+    "question": "Can we use SvelteKit form actions on static hosting?",
+    "answer": "Not in a fully static export. Form actions need a server to handle the POST request, and a page with actions cannot be prerendered. A static page needs a separately supported form endpoint instead. The form handling and hosting choice must be agreed together."
   },
   {
-    "question": "How do you protect rankings during a rebuild?",
-    "answer": "We map URLs, redirects, metadata, content, internal links, schema, analytics and Search Console checks before launch, then crawl and monitor the site after launch."
+    "question": "What does progressive enhancement mean for our form?",
+    "answer": "SvelteKit form actions can work through a normal HTML submission without client-side JavaScript. Enhancement can add in-page feedback and pending states. We agree checks for validation, failed requests and confirmation in both paths, including where the enquiry is actually received."
   },
   {
-    "question": "Can your team work with our existing developer?",
-    "answer": "Yes. We can handle SEO direction, QA and implementation guidance while your developer or internal team carries out the build."
+    "question": "How do the adapter and host affect the build?",
+    "answer": "The adapter creates output for the deployment target. A static adapter suits a fully prerendered site; server features need a compatible runtime and adapter. We confirm the host, environment settings and deployment process before relying on server routes or actions."
   },
   {
-    "question": "Which framework should we choose?",
-    "answer": "The right framework depends on the content, editing needs, interactivity, performance goals and SEO risk. We choose the stack around the job, not around fashion."
+    "question": "Will editors get a CMS with SvelteKit?",
+    "answer": "SvelteKit is not an editor interface. A CMS integration, preview access and the route from an approved edit to a published page must be scoped. Build-time content normally needs a rebuild; server-loaded content also depends on the chosen caching behaviour. WordPress may be simpler if familiar publishing tools are the main requirement."
   },
   {
-    "question": "Do you guarantee better rankings after a new website?",
-    "answer": "No. A better build can remove technical drag and improve conversion, but rankings still depend on content, authority, competition and implementation quality."
+    "question": "What belongs in the handover?",
+    "answer": "The agreed handover should identify the SvelteKit version, adapter, hosting accounts, CMS dependencies, build commands and rollback steps. Name who owns updates and form delivery after launch. We can work with your developer on SEO direction and QA; framework choice does not guarantee rankings."
   }
 ];
 ---
 <MainLayout title="SvelteKit Development Philippines | Bright Forge" description="SvelteKit development for fast web apps and content-led sites that need careful SEO planning, clean routing and low front-end bloat." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"SvelteKit",url:canonical}]} faqs={faqs}>
 <LegacyHeader slot="header" />
 <Hero title="SvelteKit <span>Development</span>" breadcrumbCurrent="SvelteKit">
-<Fragment slot="story"><p class="hero-subtitle">SvelteKit for fast routes that still render as real pages.</p><p>We use it when the site needs lean front-end work without a heavy client bundle. Titles, URLs and launch QA still decide whether search can use it.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="story"><p class="hero-subtitle">SvelteKit development for sites that combine published content with server-backed interactions.</p><p>We plan which pages can be built ahead of time, which need live data and how forms reach the business. The CMS and hosting choices need to support that plan, not just a successful local demo.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>SvelteKit should pair speed with <span>search clarity</span></h2><p>SvelteKit can be a strong fit for fast, modern web experiences, but speed alone does not make a site search-ready. The build still needs sensible routes, content structure, metadata, schema, tracking and migration control.</p><p>We use SvelteKit where it fits the product and SEO requirements, then protect the launch with practical technical checks.</p></div><aside class="panel"><h3>What we check first</h3><p>Rendering, crawlability, content structure, metadata, schema, internal links, performance, analytics and launch risk.</p></aside></div></section>
+<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Plan <span>routes, forms and deployment</span> together</h2><p>A content page can be prerendered, while a request form may need a server action. That difference affects hosting, publishing and failure handling. We map the routes and their dependencies before choosing an adapter.</p><p>Illustrative build decision: prerender a service guide, then send its enquiry to a server-backed form route. Test a normal submission with JavaScript disabled and the enhanced interaction with it enabled. In both cases, confirm validation feedback and receipt by the agreed destination. This example is not a published client project.</p></div><aside class="panel"><h3>What we check first</h3><p>Which routes need request-time data, where forms submit, how CMS edits become public and whether the proposed host runs the required adapter. Existing URLs, titles, canonicals and redirect rules remain part of launch planning.</p></aside></div></section>
 <DevelopmentStackJobs
   title="What we actually protect in <span>SvelteKit</span>"
-  intro="Fast is useful. Fast and uncrawlable is a rebuild waiting to happen."
+  intro="The route map should explain what runs at build time, in the browser and on the server."
   jobs={[
-    {title:'Prerender the brochure', text:'Marketing and content routes ship as HTML.'},
-    {title:'Keep routes honest', text:'URLs, titles and canonicals are part of the kit, not an afterthought.'},
-    {title:'Forms that submit', text:'A pretty control that never posts is not a launch.'},
-    {title:'Migration discipline', text:'Old URLs get a map before the new kit goes live.'}
+    {title:'Route rendering', text:'Prerender stable content where appropriate. Keep routes that require current or private data on a suitable server path, with public metadata checked separately.'},
+    {title:'Form actions', text:'Agree server-side validation, confirmation and the receiving system. Progressive enhancement should improve the submission experience, not conceal a failed request.'},
+    {title:'Adapter and deployment', text:'Match the output to the host. Check production environment settings, direct route visits and error responses, not only the development server.'},
+    {title:'Content changes', text:'Trace a CMS edit through preview, approval and publication. Record rebuild or cache requirements and who can roll back a release.'}
   ]}
 />
-<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>SvelteKit has a clear role</span></h2><p>This suits fast marketing sites, interactive content projects, lean applications and rebuilds where performance matters but SEO cannot be compromised.</p></div><div class="panel"><h3>What we will not do</h3><p>We will not sell a shiny rebuild that creates indexation problems, strips content, loses redirects or weakens the pages already supporting SEO performance.</p></div></div></section>
-<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Choose the <span>stack around the job</span>, not the fashion cycle</h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>SvelteKit has a clear role</span></h2><p>This suits fast marketing sites, interactive content projects, lean applications and rebuilds where performance matters but SEO cannot be compromised.</p></div><div class="panel"><h3>When a different stack fits</h3><p>For mostly editorial pages with a few interactive controls, compare Astro before taking on an application framework. If familiar editing, roles and publishing are the main need, compare WordPress. SvelteKit suits a team prepared to maintain its application and CMS integration.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare <span>content and application workflows</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>SvelteKit development</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
 <section><div class="page-container"><div class="cta-card"><h2>Considering <span>SvelteKit</span> for a faster site?</h2><p>We can review your goals, current SEO risk and content needs before recommending SvelteKit or a safer alternative.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
 </main><Footer slot="footer"/>
