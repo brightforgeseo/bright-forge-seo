@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import homepageFaqs from '../data/homepageFaqs.json';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 import TestimonialsMarquee from '../components/TestimonialsMarquee.astro';
@@ -30,7 +31,7 @@ const latestPosts = featured.length === 3
   : allPosts.slice(0, 3);
 
 const title = "SEO Agency Philippines | Bright Forge";
-const description = "SEO agency Philippines for UK, US and Australian businesses. British-led. Enquiries from search, billed in GBP or USD. Talk to us.";
+const description = "British-led SEO agency in the Philippines for Philippine, Australian, UK and US businesses. Technical SEO, content and search measurement. Discuss your site.";
 const type = "company";
 const image = "/images/og-image.jpg";
 const breadcrumbs = [
@@ -41,21 +42,13 @@ const breadcrumbs = [
 
 <MainLayout
   title="SEO Agency Philippines | Bright Forge"
-  description="SEO agency Philippines for UK, US and Australian businesses. British-led. Enquiries from search, billed in GBP or USD. Talk to us."
+  description="British-led SEO agency in the Philippines for Philippine, Australian, UK and US businesses. Technical SEO, content and search measurement. Discuss your site."
   type="company"
   image="/images/og-image.jpg"
   breadcrumbs={[
     { name: 'Home', url: '/' }
   ]}
-  faqs={[
-    { question: "What is SEO?", answer: "Search Engine Optimisation (SEO) improves your website so it can rank, earn trust and convert more of the people already searching for your products or services. For Bright Forge, that means technical fixes, useful content, authority building, local visibility and conversion-focused landing page improvements." },
-    { question: "How long does it take to see SEO results?", answer: "SEO is a long-term strategy that typically shows meaningful results within 3-6 months. Technical improvements may show impact within weeks, while content and link building efforts often take longer to fully mature." },
-    { question: "How do you approach keyword research?", answer: "We build keyword strategies around search intent, not just volume. Our approach includes analyzing what your target audience searches at different stages of their journey, identifying gaps where you can outrank competitors, and balancing high-volume terms with achievable long-tail keywords." },
-    { question: "Do you guarantee first-page rankings?", answer: "No ethical SEO agency can guarantee specific rankings, as search algorithms consider hundreds of factors outside any agency's control. What we do guarantee is transparent, ethical SEO practices that follow Google's guidelines, data-driven strategies based on proven methodologies, and regular reporting on progress and performance." },
-    { question: "How do you handle reporting and communication?", answer: "We report on the metrics that matter commercially: rankings, GSC clicks and impressions, organic traffic, enquiries, calls, forms, GBP actions and the work completed. We also explain what should happen next, so SEO is connected to leads and revenue rather than vanity traffic." },
-    { question: "Do you help with AI search and Google AI Overviews?", answer: "Yes. We work as an AI search agency on top of SEO: crawlable pages, clear entities, useful answers, proof and authority. No citation guarantees. See our AI search services if that is the brief." },
-    { question: "How do I get started with Bright Forge SEO?", answer: "Request a free SEO growth audit. We review your website, rankings, competitors and conversion path, then show the highest-impact opportunities. If there is a fit, we build a clear roadmap for technical SEO, content, authority, reporting and lead generation." },
-  ]}
+  faqs={homepageFaqs}
 >
   <LegacyHeader slot="header" />
   
@@ -69,14 +62,13 @@ const breadcrumbs = [
     secondaryButtonHref="/case-studies/"
     imageSrc="/images/Hero-SEO-Agency-In-The-Philippines.webp"
     imageAlt="Sassin Lowe - Bright Forge SEO Expert Philippines"
-    trustBadgeCount="17"
     trustBadgeText="Published Case Studies"
   >
     <Fragment slot="description">
-      <p>Bright Forge is an SEO agency in the Philippines for UK, US and Australian businesses that need the phone to ring. Rankings are the means. Enquiries are the job.</p>
+      <p>Bright Forge is an SEO agency in the Philippines for Philippine, Australian, UK and US businesses that need the phone to ring. Rankings are the means. Enquiries are the job.</p>
     </Fragment>
     <Fragment slot="support">
-      <p>British-led delivery from the Philippines. We bill in GBP or USD. 17 published case studies. Listed on Clutch. Named specialists, not a faceless bench.</p>
+      <p>British-led delivery from the Philippines, with named specialists and published case studies. We agree the scope, reporting and billing currency in your proposal.</p>
       <p>We combine technical SEO, content, local search, authority, AI search readiness and conversion work so the people who already search for you actually enquire.</p>
     </Fragment>
   </HomepageHero>
@@ -153,11 +145,11 @@ const breadcrumbs = [
             <span class="card-badge">Bridal Fashion</span>
           </div>
           <div class="card-content">
-            <h3 class="card-title">137.5% Organic Traffic Growth for Bridal Dress Designer</h3>
+            <h3 class="card-title">137.5% Organic Click Growth for Bridal Dress Designer</h3>
             <div class="card-stats">
               <div class="stat">
                 <span class="stat-value">+137.5%</span>
-                <span class="stat-label">Organic Traffic</span>
+                <span class="stat-label">Organic Clicks</span>
               </div>
               <div class="stat">
                 <span class="stat-value">+118.1%</span>
@@ -211,11 +203,11 @@ const breadcrumbs = [
             <span class="card-badge">Sports</span>
           </div>
           <div class="card-content">
-            <h3 class="card-title">34% Organic Traffic Growth for Football App</h3>
+            <h3 class="card-title">34% Organic Click Growth for Football App</h3>
             <div class="card-stats">
               <div class="stat">
                 <span class="stat-value">+34%</span>
-                <span class="stat-label">Organic Traffic</span>
+                <span class="stat-label">Organic Clicks</span>
               </div>
               <div class="stat">
                 <span class="stat-value">+29.3%</span>
@@ -942,34 +934,12 @@ const breadcrumbs = [
       </div>
       
       <div class="faq-container max-w-4xl mx-auto">
-        <details class="faq-item">
-          <summary>How long does SEO take in the Philippines?</summary>
-          <p>Most campaigns need 3-6 months before meaningful movement is clear, although technical fixes and page improvements can show earlier signals. The timeline depends on your current site health, competition, authority, content quality and how quickly recommendations are implemented.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do you only work with Philippine businesses?</summary>
-          <p>No. We work with Philippine businesses, international companies targeting the Philippines, and agencies that need white-label SEO support. The strategy is scoped around market, language, competition and commercial goals.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Can you improve leads without just chasing more traffic?</summary>
-          <p>Yes. That is where SEO and CRO meet. We review service pages, CTAs, trust signals, forms, mobile UX, internal links and conversion tracking so the traffic you already have has a better chance of becoming calls, quote requests and enquiries.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How do you measure SEO success?</summary>
-          <p>We track rankings, GSC clicks and impressions, organic traffic, landing page performance, calls, forms, GBP actions and revenue indicators where available. Rankings matter, but they are only useful when they support commercial growth.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do you help with AI search and Google AI Overviews?</summary>
-          <p>Yes. We work as an AI search agency on top of SEO: crawlable pages, clear entities, useful answers, proof and authority. No citation guarantees. See our <a href="/ai-search-optimization-services-philippines/">AI search services</a> if that is the brief.</p>
-        </details>
-        <details class="faq-item">
-          <summary>What happens after I request an audit?</summary>
-          <p>We review your website, rankings, competitors, technical setup and conversion path. Then we identify the highest-impact SEO and CRO opportunities. If there is a fit, we scope a practical roadmap rather than forcing you into a generic package.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do you offer white-label SEO?</summary>
-          <p>Yes. We support agencies with confidential white-label SEO delivery, audits, content, technical SEO, reporting and campaign execution. Client communication and branding are agreed before work begins.</p>
-        </details>
+        {homepageFaqs.map((faq) => (
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
+            <p set:html={faq.answer} />
+          </details>
+        ))}
       </div>
     </div>
   </section>

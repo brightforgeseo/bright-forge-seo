@@ -17,7 +17,8 @@ class CompetitorGapCoverageTest(unittest.TestCase):
         for phrase in (
             "phone to ring",
             "British-led",
-            "17 published case studies",
+            "published case studies",
+            "Philippine, Australian, UK and US businesses",
             "Philippine SEO services",
             "local SEO for Maps",
         ):

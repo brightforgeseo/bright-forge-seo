@@ -9,7 +9,7 @@ const builder = caseCard('custom-home-builder-search-growth', 'Custom home build
 const industrial = caseCard('industrial-parts-washing-search-growth', 'Industrial manufacturer', '+49.7%', '704 to 1,054 organic clicks · 90-day comparison');
 const sports = caseCard('football-app-seo', 'TeamStats', '+34%', 'Organic clicks · published sports SaaS case');
 const au = caseCard('speediance-au-fitness-seo', 'Speediance AU', '+66%', 'Site-wide organic clicks · 6-month comparison');
-const nz = caseCard('speediance-nz-fitness-seo', 'Speediance NZ', '+177%', 'Site-wide organic clicks · 3-month comparison');
+const nz = caseCard('speediance-nz-fitness-seo', 'Speediance NZ', '+177%', 'Site-wide organic clicks · 6-month comparison');
 const uk = caseCard('speediance-uk-fitness-seo', 'Speediance UK', '+119%', 'Site-wide organic clicks · 3-month comparison');
 const library: HeroCard = { label: 'The work, documented', value: 'See the evidence.', detail: 'Published case studies, comparisons and limitations', href: '/case-studies/' };
 export function heroCards(path: string, context = ''): HeroCard[] {
@@ -18,7 +18,8 @@ export function heroCards(path: string, context = ''): HeroCard[] {
   let first: HeroCard = library;
   // A case-study page points to its own evidence rather than advertising an unrelated client.
   if (p.startsWith('/case-studies/')) {
-    const known = [bridal, leather, pest, legal, builder, industrial, sports, au, nz, uk].find(c => c.href.replace(/\/$/, '') === p);
+    const ukCase = { ...uk, value: 'Campaign scope.', detail: 'UK storefront · project work and measurement limits' };
+    const known = [bridal, leather, pest, legal, builder, industrial, sports, au, nz, ukCase].find(c => c.href.replace(/\/$/, '') === p);
     first = known ? { ...known, href: p.endsWith('/speediance-uk-fitness-seo') ? '#campaign-measurement' : '#results' } : { label: 'This case study', value: 'Read the evidence.', detail: 'Scope, observations and limitations in the case below', href: '#results' };
   } else if (p === '/') first = bridal;
   else if (/legal|law-firm/.test(topic)) first = legal;

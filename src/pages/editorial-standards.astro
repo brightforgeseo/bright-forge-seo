@@ -7,26 +7,11 @@ import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 
-const faqs = [
-  {
-    question: 'Do you publish client websites in case studies?',
-    answer: 'Not by default. Most businesses do not want their site named in public marketing. We describe the work by problem, market and method, and we only name a business when that business has given written permission.'
-  },
-  {
-    question: 'What counts as proof in SEO reporting?',
-    answer: 'Search Console, ranking tools, crawl data, analytics events and enquiry paths. Traffic on its own is not treated as a win if the page is not generating the action the business actually wants.'
-  },
-  {
-    question: 'Will you invent rankings, leads or AI citations?',
-    answer: 'No. We do not invent clients, traffic, rankings, AI citations or revenue. If a number is shown, it comes from a named data source for that account.'
-  }
-];
 ---
 
 <MainLayout
   title="Editorial Standards | How We Prove SEO Work"
-  description="How Bright Forge checks SEO work, what we will and will not claim, and how we report rankings, crawl data and enquiries without naming client websites."
-  faqs={faqs}
+  description="How Bright Forge checks SEO work and distinguishes search metrics, tracked actions and confirmed enquiries, with sources and measurement limits."
 >
   <LegacyHeader slot="header" />
 
@@ -36,7 +21,7 @@ const faqs = [
   >
     <Fragment slot="story">
       <p class="hero-subtitle">Search advice is easy to fake. This page is the public rule for how we write, check and report work.</p>
-      <p>We do not name client websites here. Proof is the method, the data source and the change we can show in the account, not a screenshot of someone else's domain.</p>
+      <p>A business name or domain does not prove a result. Assess the method, data source, comparison period and measurement limits alongside the work described.</p>
     </Fragment>
     <Fragment slot="actions">
       <ButtonPrimary href="/about-us/" text="Meet the team" icon="fas fa-users" />
@@ -65,7 +50,7 @@ const faqs = [
 
       <div class="block">
         <h2>How we talk about results</h2>
-        <p>We describe the problem, the diagnosis and the work. We do not publish another company's URL to win a pitch. Where a public case study exists, it is written around the job and the market, not the domain, unless the business has agreed in writing that the name can appear.</p>
+        <p>Our case studies include named businesses and anonymised examples. Read each case for the problem, work described, source and comparison limits. Search clicks, tracked events and confirmed enquiries are different measures; a published name or domain does not validate the numbers.</p>
         <p>We do not claim guaranteed rankings, guaranteed AI Overview inclusion, or guaranteed citations in ChatGPT, Gemini, Perplexity or Copilot. Those systems choose sources. We can improve eligibility. We cannot sell inclusion.</p>
       </div>
 
@@ -74,7 +59,7 @@ const faqs = [
         <ul>
           <li>Invented clients, quotes, rankings, traffic, leads or revenue.</li>
           <li>Public rate cards or package prices.</li>
-          <li>Thin location pages for cities or countries where we do not operate an office.</li>
+          <li>Fabricated local offices or location pages that add no useful market-specific information. Remote service coverage must be described as remote.</li>
           <li>Separate thin URLs for GEO, AEO or ChatGPT SEO when the work belongs on the existing AI search service.</li>
           <li>Corrections hidden. If we get a fact wrong on this site, we fix the page rather than leaving the error live.</li>
         </ul>
