@@ -112,7 +112,7 @@ def test_public_copy_uses_we_voice_and_no_em_dashes():
     assert not re.search(r"(?:^|[.!?]\s+)I\s+(?:help|audit|build|check|create|deliver|optimise|optimize|measure)", visible)
 
 
-def test_sections_follow_established_bright_forge_dark_background():
+def test_sections_preserve_current_bright_forge_light_background():
     section_names = [
         "ai-hero",
         "ai-shift",
@@ -130,39 +130,39 @@ def test_sections_follow_established_bright_forge_dark_background():
     ]
     selector = ",\n  ".join(f".ai-page.ai-page .{name}.{name}" for name in section_names)
     start = SOURCE.find(selector)
-    assert start >= 0, "All AI service-page sections must share the established dark background rule"
+    assert start >= 0, "All AI service-page sections must retain the current shared surface rule"
     block = SOURCE[start:SOURCE.find("}", start) + 1]
-    assert "background: #0d0f1a !important" in block
+    assert "background: #ffffff !important" in block
     assert "color: var(--ai-white) !important" in block
 
     assert "background: var(--ai-cream) !important" not in SOURCE
     assert "background: linear-gradient(118deg" not in SOURCE
 
 
-def test_former_light_sections_keep_readable_dark_surface_type():
+def test_current_light_sections_keep_readable_ink_type():
     required_rules = [
         ".ai-shift .ai-kicker { color: var(--ai-muted); }",
         ".shift-copy p { margin: 0 0 22px; color: var(--ai-muted);",
-        ".shift-copy strong { color: white; }",
-        ".source-copy h2 { color: white; }",
+        ".shift-copy strong { color: #19212e; }",
+        ".source-copy h2 { color: #19212e; }",
         ".source-copy > p:not(.ai-kicker) { max-width: 570px; color: var(--ai-muted);",
-        ".orbit-ring span { position: absolute; padding: 6px 10px; background: #0d0f1a; color: #d7dae4;",
-        ".fit-heading h2 { color: white; }",
+        ".orbit-ring span { position: absolute; padding: 6px 10px; background: #ffffff; color: #465365;",
+        ".fit-heading h2 { color: #19212e; }",
         ".fit-editorial p { margin: 0; color: var(--ai-muted);",
     ]
     for rule in required_rules:
         assert rule in SOURCE
 
 
-def test_final_cta_keeps_the_page_dark_background_and_readable_type():
+def test_final_cta_keeps_current_surface_and_readable_type():
     selector = ".ai-page.ai-page .ai-final-cta.ai-final-cta"
     start = SOURCE.find(selector)
     assert start >= 0
     block = SOURCE[start:SOURCE.find("}", start) + 1]
-    assert "#0d0f1a !important" in block
+    assert "#ffffff !important" in block
     assert "var(--ai-cream) !important" not in block
     assert re.search(r"color\s*:\s*(?:white|var\(--ai-white\))\s*!important", block)
-    assert ".ai-final-cta h2 { color: white; }" in SOURCE
+    assert ".ai-final-cta h2 { color: #19212e; }" in SOURCE
     assert ".ai-final-cta div > p { margin: 8px 0 24px; color: var(--ai-muted);" in SOURCE
 
 

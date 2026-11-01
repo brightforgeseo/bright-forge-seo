@@ -10,15 +10,15 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 const aiSearchFaqs = [
   {
     question: 'What is the difference between AI SEO, GEO and AEO?',
-    answer: 'AI SEO is the broad practice of improving visibility across AI-assisted discovery. An AI search agency uses that alongside generative engine optimisation, or GEO, which focuses on how brands appear in generated answers, and answer engine optimisation, or AEO, which focuses on direct answers and citation-ready information. We treat them as connected layers of SEO, not separate magic tricks.'
+    answer: 'AI SEO covers work to help people find a business through AI search. GEO focuses on generated answers; AEO focuses on direct answers, including search features such as featured snippets. The terms overlap. We agree the platforms, pages and work you need rather than sell a separate service for each label.'
   },
   {
     question: 'Does AI search optimisation replace traditional SEO?',
-    answer: 'No. Google states that the same SEO fundamentals still apply to AI Overviews and AI Mode. Crawlability, indexation, useful content, internal links, page experience, entity clarity and authority remain the foundation. AI search work makes those foundations clearer and more useful across answer-led experiences.'
+    answer: 'No. Google says the same SEO fundamentals apply to AI Overviews and AI Mode. Your pages still need to be accessible, indexed and useful. We build on that work by checking AI answers and improving the pages buyers use to compare you.'
   },
   {
     question: 'Can you guarantee citations in ChatGPT, Perplexity or Google AI Overviews?',
-    answer: 'No agency can guarantee inclusion, citations or a fixed position in generated answers. The systems, sources and responses change. We improve the conditions that support visibility, then measure what can be observed without presenting sampled prompts as guaranteed market coverage.'
+    answer: 'No agency can guarantee a citation or recommendation. Platforms choose their sources, and answers change with the question, location and model. We improve your pages and track an agreed set of questions, but those checks cannot cover every answer a buyer might see.'
   },
   {
     question: 'Do we need an llms.txt file or special AI schema?',
@@ -26,7 +26,7 @@ const aiSearchFaqs = [
   },
   {
     question: 'What does an AI search visibility audit include?',
-    answer: 'We review priority prompt and query families, current citations, competing sources, crawler access, indexation, entity clarity, content structure, evidence, third-party authority, internal links and measurement. The result is a prioritised programme tied to pages and commercial journeys.'
+    answer: 'We check how your business and competitors appear for agreed buyer questions, which pages get cited and whether search crawlers can reach your content. You receive a prioritised page plan with missing information, technical fixes and tracking requirements. We agree implementation separately.'
   },
   {
     question: 'How do you measure AI search visibility?',
@@ -34,15 +34,15 @@ const aiSearchFaqs = [
   },
   {
     question: 'How long does AI SEO take?',
-    answer: 'Timing depends on crawl health, authority, competition, content quality and how much of the site needs repair. Some technical and content changes can be implemented quickly, but discovery, recrawling, citation changes and commercial results develop over time. We scope the work before setting expectations.'
+    answer: 'We set delivery dates after reviewing the site and agreeing approvals. Search platforms then need to recrawl and reassess changed pages, on schedules we do not control. We report completed work and observed results separately; a page going live is not a promise of immediate citations.'
   },
   {
     question: 'How much do GEO and AI SEO services cost?',
-    answer: 'We price through a private proposal after reviewing the number of markets, platforms, priority topics, pages, technical issues, authority gaps and reporting requirements. We do not publish a generic rate because a focused service-site audit and an international ecommerce programme are not the same job.'
+    answer: 'We provide a private proposal based on the pages, markets and technical work involved. It sets out the audit, page edits, implementation responsibilities and reporting included, so you can compare the scope with your budget and existing SEO work.'
   },
   {
-    question: 'Why hire Bright Forge instead of a GEO-only shop?',
-    answer: 'Most Philippine GEO pages sell first-mover slogans, citation quotas or a cheap AEO product. We already do the SEO that Google says still sits under AI Overviews and AI Mode, we publish AI search case studies with sessions and conversions, and we refuse guarantees the platforms do not sell. Named specialists. British-led. Philippines delivery. UK, US and Australian work.'
+    question: 'Can you work alongside our existing SEO team?',
+    answer: 'Yes. We agree which pages we will work on, who makes the site changes and who approves them. Your team can retain implementation, or we can scope that work with you. Your subject experts review technical or regulated claims before publication.'
   }
 ];
 
@@ -50,32 +50,32 @@ const methodSteps = [
   {
     number: '01',
     title: 'Map the questions that shape a buying decision',
-    copy: 'We group real commercial queries and prompts around discovery, comparison, proof, objections and selection. This creates a useful test set, not a random list of vanity prompts.',
+    copy: 'We combine search evidence with your sales questions, product knowledge and customer objections. We group these into discovery, comparison and selection questions, keeping observed searches separate from prompts we propose to test.',
     output: 'Prompt and query map'
   },
   {
     number: '02',
-    title: 'Establish where the brand is present, absent or misrepresented',
-    copy: 'We record cited domains, landing pages, answer themes and competitor appearances across the agreed surfaces. Each observation keeps its date, market and prompt context.',
+    title: 'Check what AI answers say about you',
+    copy: 'We run the agreed questions on the chosen platforms and record which businesses appear, which pages are cited and any inaccurate descriptions of your services. Each record includes the question, date and market.',
     output: 'Visibility baseline'
   },
   {
     number: '03',
-    title: 'Repair the source material',
-    copy: 'We strengthen crawl access, service clarity, entity relationships, evidence, internal links and the sections answer systems can quote without losing the original meaning.',
+    title: 'Update the pages buyers need',
+    copy: 'We identify the exact pages and passages that need work: missing product specifications, unclear service scope, unsupported claims or inaccessible content. We agree who writes, verifies and implements each change.',
     output: 'Prioritised page work'
   },
   {
     number: '04',
     title: 'Build authority beyond the page',
-    copy: 'Your own claims are only one source. We identify relevant reviews, profiles, publications, citations and digital PR opportunities that can corroborate the business honestly.',
+    copy: 'We check the business profiles, reviews and industry publications buyers and search systems can consult. The plan identifies inaccurate listings to correct and relevant opportunities for coverage, with outreach scoped before work begins.',
     output: 'Authority plan'
   },
   {
     number: '05',
-    title: 'Measure citations and commercial movement separately',
+    title: 'Review answers, visits and enquiries',
     copy: 'We track the signals each platform exposes, then connect referral visits and conversion events where possible. A citation is visibility. It is not automatically a lead or sale.',
-    output: 'Decision-ready reporting'
+    output: 'Progress report'
   }
 ];
 
@@ -95,28 +95,28 @@ const platformRows = [
   {
     platform: 'Perplexity',
     surface: 'Cited research answers',
-    reality: 'Answers can cite multiple web sources and change as retrieval changes. Clear, current source pages and corroborating authority matter more than keyword repetition.',
+    reality: 'Answers can cite multiple web sources and change between checks. We inspect the cited pages to understand which information supports the answer.',
     check: 'Citation patterns, competing sources, source-page depth, evidence and freshness.'
   },
   {
     platform: 'Microsoft Copilot',
     surface: 'Copilot and Bing AI answers',
-    reality: 'Bing Webmaster Tools now reports citations, cited URLs and sampled grounding queries through AI Performance.',
+    reality: 'Bing Webmaster Tools reports citations, cited URLs and sampled grounding queries through AI Performance. These are citation records, not ranking positions.',
     check: 'AI Performance, Bing indexation, cited URLs, grounding-query themes and IndexNow suitability.'
   }
 ];
 
 const geoCases = [
-  { href: '/case-studies/ai-sports-saas-geo/', name: 'TeamStats', line: '4,549 LLM sessions, 162 AI mentions, 239 AI link citations.' },
-  { href: '/case-studies/ai-self-storage-geo/', name: 'Newbury Self Store', line: 'LLM referral sessions up 662.5%, with measurable enquiries.' },
-  { href: '/case-studies/ai-leather-goods-ecommerce-geo/', name: 'Lost Dutchman Leather', line: '893 AI-referred sessions and 66 tracked conversion events.' },
-  { href: '/case-studies/ai-fintech-saas-geo/', name: 'FinTech SaaS', line: '1,322 LLM referral sessions with 7:11 average engagement.' }
+  { href: '/case-studies/ai-sports-saas-geo/', name: 'TeamStats', line: '4,549 LLM referral sessions, alongside 162 AI mentions and 239 AI link citations. Traffic and visibility are separate measurements.' },
+  { href: '/case-studies/ai-self-storage-geo/', name: 'Newbury Self Store', line: 'LLM referral sessions rose from 8 to 61, with 13 tracked key events. Useful early evidence from a small starting base, not 13 confirmed leads.' },
+  { href: '/case-studies/ai-leather-goods-ecommerce-geo/', name: 'Lost Dutchman Leather', line: '893 AI-referred sessions and 66 tracked key events. Product-detail pages were important entry points; events are not a count of sales.' },
+  { href: '/case-studies/ai-fintech-saas-geo/', name: 'FinTech SaaS', line: '1,322 LLM referral sessions and 758 engaged sessions. Educational and support content helped explain the research journey.' }
 ];
 ---
 
 <MainLayout
-  title="AI SEO, GEO and AEO Philippines | Bright Forge"
-  description="British-led AI search agency in the Philippines. GEO, AEO and AI search: Google AI Overviews, ChatGPT, enquiries. No citation promises."
+  title="AI SEO Services Philippines | GEO & AEO | Bright Forge"
+  description="AI search optimisation from the Philippines for businesses buyers research before choosing. SEO, GEO and AEO with clear page improvements. Discuss your site."
   canonical="https://brightforge.com.ph/ai-search-optimization-services-philippines/"
   type="service"
   faqs={aiSearchFaqs}
@@ -126,12 +126,12 @@ const geoCases = [
   <Hero
     badgeIcon="fas fa-comments"
     badgeText="AI SEO, GEO and AEO"
-    title="AI search agency services for <span>Philippine businesses</span>"
-    breadcrumbCurrent="AI Search Agency"
+    title="AI search optimisation <span>services</span>"
+    breadcrumbCurrent="AI Search Optimisation"
   >
     <Fragment slot="story">
-      <p>This is the GEO, AEO and AI search page. Get found in Google, get understood in AI answers, turn that into enquiries. It is not the automated SEO team.</p>
-      <p>British-led AI search agency in the Philippines. UK, US and Australian work. Billed in GBP or USD. Named specialists. No citation quotas. Google still says ordinary SEO foundations sit under AI Overviews and AI Mode.</p>
+      <p>We work with businesses buyers research before choosing. If your website leaves out the specifications, experience or service details they need, you can be hard to assess. We improve those pages and check how your business appears in Google, ChatGPT and other AI search tools.</p>
+      <p>British-led and based in the Philippines, with UK, US and Australian work. We combine technical SEO, page editing and AI search monitoring, with a clear route for interested buyers to enquire.</p>
     </Fragment>
     <Fragment slot="actions">
       <ButtonPrimary href="/contact/" text="Request an AI visibility audit" />
@@ -150,34 +150,41 @@ const geoCases = [
   <main class="ai-page">
     <section class="ai-proof" id="proof">
       <div class="ai-shell">
-        <p class="proof-people">Work led by <a href="/authors/ben-lowe/">Ben Lowe</a> and <a href="/authors/sassin-lowe/">Sassin Lowe</a>. Named specialists. Not a rented GEO bench.</p>
+        <p class="proof-people">Work led by <a href="/authors/ben-lowe/">Ben Lowe</a> and <a href="/authors/sassin-lowe/">Sassin Lowe</a>. We review the pages that explain your offer and the evidence buyers need before contacting you.</p>
       </div>
     </section>
 
-    <section class="ai-contrast" id="why-us">
+    <section class="ai-contrast" id="buying-situations">
       <div class="ai-shell">
         <div class="ai-section-heading">
-          <p class="ai-kicker"><span></span> After looking at the Philippine GEO market</p>
-          <h2>Brochure GEO sells slogans. We publish the <span>work</span>.</h2>
+          <p class="ai-kicker"><span></span> From research to a relevant enquiry</p>
+          <h2>AI search work starts with <span>what your buyer needs to know</span>.</h2>
+          <p>Examples of buying decisions we can help your website answer. We research your market and speak with your team before choosing the questions to test.</p>
         </div>
-        <div class="contrast-grid">
-          <article class="contrast-card contrast-them">
-            <p>TYPICAL PH GEO PITCH</p>
-            <ul>
-              <li>First, only, or category leader with no method</li>
-              <li>Citation quotas in ChatGPT or AI Overviews</li>
-              <li>llms.txt or special schema as ranking magic</li>
-              <li>Cheap AEO product, leftover SGE copy, SEO replaced</li>
-            </ul>
+        <div class="case-grid">
+          <article class="case-card">
+            <h3>Industrial suppliers</h3>
+            <p>A workshop choosing an industrial parts washer needs to check load capacity, material compatibility and the cleaning process. The purchasing team also needs to know what installation and local support involve.</p>
+            <p>We put verified specifications and application limits on the product page, link to supporting documents and explain what details to send for a quote. Your technical team approves the claims.</p>
+            <a href="/construction-seo-services/">Construction and industrial SEO <span aria-hidden="true">→</span></a>
           </article>
-          <article class="contrast-card contrast-us">
-            <p>BRIGHT FORGE</p>
-            <ul>
-              <li>SEO first. Google says the same foundations still apply</li>
-              <li>GEO and AEO on this one owner page, not twin URLs</li>
-              <li>Published AI search cases with sessions and conversions</li>
-              <li>UK, US and Australian delivery. No citation guarantees</li>
-            </ul>
+          <article class="case-card">
+            <h3>Local and trade services</h3>
+            <p>A homeowner needs someone to repair a leaking roof, but a contractor page only talks about new installations. They cannot tell whether the firm handles repairs or covers their suburb.</p>
+            <p>We clarify the repair services, service area and inspection process, add relevant completed projects and check the call or quote link. This work sits alongside Maps and Google Business Profile optimisation.</p>
+            <a href="/home-services-seo/">Home services SEO <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="case-card">
+            <h3>Professional services</h3>
+            <p>A finance director considering outsourcing payroll needs to know who handles filings, which systems the firm supports and what happens during the handover. They need enough detail to discuss the options with colleagues before booking a consultation.</p>
+            <p>We spell out the service scope and client responsibilities, add relevant credentials and approved examples, and explain what to bring to the first consultation. A qualified reviewer checks any regulated advice.</p>
+            <a href="/b2b-seo-services/">B2B and professional-services SEO <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="case-card">
+            <h3>Ecommerce</h3>
+            <p>A shopper comparing a laptop bag needs to know whether their device fits, how much the bag weighs and whether the material suits a wet commute. Delivery dates and returns may decide between otherwise similar bags.</p>
+            <p>We add verified internal dimensions, weight and material details, make delivery and returns easy to find, and help buyers compare suitable models. We also check that structured product data matches the page.</p>
+            <a href="/ecommerce-seo-services/">Ecommerce SEO <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
@@ -186,8 +193,9 @@ const geoCases = [
     <section class="ai-cases" id="cases">
       <div class="ai-shell">
         <div class="ai-section-heading">
-          <p class="ai-kicker"><span></span> Evidence, not a roundup list</p>
-          <h2>AI search case studies with <span>numbers</span></h2>
+          <p class="ai-kicker"><span></span> Published evidence</p>
+          <h2>What our AI search case studies <span>actually measured</span></h2>
+          <p>These published cases cover August 2025 to January 2026. They document observed traffic, visibility and tracked activity, not a causal test of a single GEO change or a promise of your results. Each case explains its sources and comparison limits.</p>
         </div>
         <div class="case-grid">
           {geoCases.map((item) => (
@@ -208,9 +216,9 @@ const geoCases = [
           <h2>Your next customer may meet the <em>answer</em> before they meet your website.</h2>
         </div>
         <div class="shift-copy">
-          <p>Buyers now ask systems to compare providers, shortlist options, explain trade-offs and recommend next steps. A classic ranking can still matter while the click happens later, lands on a different page or never happens at all.</p>
-          <p>That creates a new visibility problem. Your brand must be retrievable, accurately described and supported by sources an answer system can use. The work is often called <strong>AI SEO</strong>, <strong>generative engine optimisation</strong> or <strong>GEO</strong>, <strong>answer engine optimisation</strong> or <strong>AEO</strong>, and <strong>LLM SEO</strong>.</p>
-          <p>We keep those labels on one existing owner page because the buyer problem is the same: become a credible source and turn the visibility into qualified demand.</p>
+          <p>A buyer can ask ChatGPT to compare suppliers before visiting any of their websites. The answer may name a business, cite a product page or describe a service incorrectly. Checking rankings alone will not show you that.</p>
+          <p>The work is often called <strong>AI SEO</strong> or <strong>generative engine optimisation (GEO)</strong>. You may also see <strong>answer engine optimisation (AEO)</strong> and <strong>LLM SEO</strong>. These labels overlap; the useful distinction is which platforms we check and what we change on your site.</p>
+          <p>We start with the service and product pages closest to an enquiry or purchase. Missing specifications, outdated service details and unsupported claims give us specific work to do. We then repeat the agreed checks to see whether the answers and cited pages change.</p>
         </div>
       </div>
     </section>
@@ -218,29 +226,29 @@ const geoCases = [
     <section class="ai-reality" id="reality">
       <div class="ai-shell">
         <div class="ai-section-heading">
-          <p class="ai-kicker"><span></span> The no-nonsense version</p>
-          <h2>What AI search optimisation can change, and what it cannot</h2>
+          <p class="ai-kicker"><span></span> Scope and limits</p>
+          <h2>What AI search optimisation <span>can change</span>, and what it cannot</h2>
         </div>
         <div class="reality-rule"></div>
         <div class="reality-columns">
           <div class="reality-side reality-side-positive">
             <p class="reality-label">WE CAN IMPROVE</p>
             <ul>
-              <li><span>01</span><p><strong>Retrievability</strong>Your important pages can be crawled, indexed and discovered through strong internal architecture.</p></li>
-              <li><span>02</span><p><strong>Clarity</strong>Your brand, services, markets, expertise and proof can be understood without guesswork.</p></li>
-              <li><span>03</span><p><strong>Source quality</strong>Your pages can answer useful questions with specific evidence and current information.</p></li>
-              <li><span>04</span><p><strong>Corroboration</strong>Relevant third-party signals can support what your own site says about the business.</p></li>
-              <li><span>05</span><p><strong>Measurement</strong>Observed citations, cited URLs, referrals and tracked actions can inform the next decision.</p></li>
+              <li><span>01</span><p><strong>Page access</strong>We fix crawl barriers and internal links that make important pages difficult to find.</p></li>
+              <li><span>02</span><p><strong>Service information</strong>We explain what you offer, where you work and which customers you can help.</p></li>
+              <li><span>03</span><p><strong>Product and project detail</strong>We add verified specifications, relevant examples and current information to the pages that need them.</p></li>
+              <li><span>04</span><p><strong>Business listings and reviews</strong>We check for conflicting details and identify relevant places to build your reputation.</p></li>
+              <li><span>05</span><p><strong>Reporting</strong>We show what changed on the site, what appeared in our checks and which visits led to tracked actions.</p></li>
             </ul>
           </div>
           <div class="reality-side reality-side-limit">
-            <p class="reality-label">WE WILL NOT PRETEND</p>
+            <p class="reality-label">WHAT REMAINS OUTSIDE OUR CONTROL</p>
             <ul>
-              <li><span>×</span><p><strong>There is a secret GEO switch</strong>Google says normal SEO fundamentals still underpin its AI features.</p></li>
-              <li><span>×</span><p><strong>Special markup guarantees inclusion</strong>There is no special schema that forces a brand into Google AI Overviews or AI Mode.</p></li>
-              <li><span>×</span><p><strong>A prompt sample is market share</strong>Generated answers vary by model, time, location, retrieval and wording.</p></li>
-              <li><span>×</span><p><strong>A mention is a sale</strong>A citation, referral visit, tracked action and confirmed lead are different commercial signals.</p></li>
-              <li><span>×</span><p><strong>No agency can guarantee citations</strong>We improve eligibility and source strength. Platforms decide what they retrieve and present.</p></li>
+              <li><span>×</span><p><strong>When a platform updates</strong>Publishing an edit does not mean a platform will immediately recrawl or use it.</p></li>
+              <li><span>×</span><p><strong>Inclusion in an answer</strong>Structured data can describe your pages, but it cannot secure a citation or recommendation.</p></li>
+              <li><span>×</span><p><strong>Every answer a buyer sees</strong>Our question set is a sample. Answers vary by model, time, location and wording.</p></li>
+              <li><span>×</span><p><strong>Untracked buying decisions</strong>A buyer may read an answer and contact you later without an identifiable referral.</p></li>
+              <li><span>×</span><p><strong>How your business is described</strong>We can correct your published information and monitor answers. The platform still chooses its wording and sources.</p></li>
             </ul>
           </div>
         </div>
@@ -252,9 +260,9 @@ const geoCases = [
         <div class="method-intro">
           <div>
             <p class="ai-kicker"><span></span> The Bright Forge method</p>
-            <h2>From invisible brand to usable source</h2>
+            <h2>From buyer questions to <span>specific page improvements</span></h2>
           </div>
-          <p>Not a checklist sold as strategy. Each stage produces an evidence-backed output that tells us what to fix, why it matters and how we will judge movement.</p>
+          <p>You get an agreed question set, a dated baseline and a prioritised page plan. We identify the work, the person responsible for approval and the evidence we will use to review progress.</p>
         </div>
 
         <div class="method-ledger">
@@ -274,12 +282,12 @@ const geoCases = [
       <div class="ai-shell source-layout">
         <div class="source-copy">
           <p class="ai-kicker"><span></span> Citation readiness</p>
-          <h2>An answer engine needs more than a well-written paragraph.</h2>
-          <p>We connect the page to a wider source system. That means the technical route into the content, the facts on the page, the evidence behind those facts and the independent signals that help verify them.</p>
-          <p>This is where our <a href="/technical-seo-services-philippines/">technical SEO</a>, <a href="/content-seo-services-philippines/">content SEO</a> and <a href="/backlink-seo-services-philippines/">authority work</a> sit under GEO, AEO and AI search. The <a href="/seo-command-centre/">SEO Command Centre</a> is a separate product: the automated SEO team for monitoring and delivery QA.</p>
+          <h2>Make your expertise <span>easy to find and verify</span>.</h2>
+          <p>A supplier specification, a named specialist, a clear returns policy or a documented project gives a buyer something to check. We make that information accessible on the relevant page and support it with accurate business profiles, reviews and credible third-party sources.</p>
+          <p>Our <a href="/technical-seo-services-philippines/">technical SEO</a> work checks whether important pages can be reached and indexed. <a href="/content-seo-services-philippines/">Content SEO</a> makes the answers useful, while <a href="/backlink-seo-services-philippines/">authority work</a> supports claims beyond your own website. Structured data describes those visible facts; it does not replace them.</p>
           <ul class="source-layers">
             <li>Technical access</li>
-            <li>Entity clarity</li>
+            <li>Clear business information</li>
             <li>Evidence</li>
             <li>Authority</li>
           </ul>
@@ -291,8 +299,8 @@ const geoCases = [
       <div class="ai-shell">
         <div class="platform-heading">
           <div>
-            <p class="ai-kicker"><span></span> Different surfaces, one strategy</p>
-            <h2>We optimise for the search ecosystem, not one screenshot.</h2>
+            <p class="ai-kicker"><span></span> Platform-specific checks</p>
+            <h2>Different platforms need <span>different checks</span>.</h2>
           </div>
           <p>Every platform exposes different controls and reporting. We use what the platforms document, then apply experienced SEO judgement where the data remains incomplete.</p>
         </div>
@@ -319,14 +327,15 @@ const geoCases = [
     <section class="ai-measurement">
       <div class="ai-shell measurement-layout">
         <div class="measurement-copy">
-          <p class="ai-kicker"><span></span> Measurement without make-believe</p>
-          <h2>We separate visibility from visits, and visits from leads.</h2>
-          <p>AI search reporting is still uneven. We build a defensible view from the strongest available evidence instead of inventing a single visibility score.</p>
-          <p>Need an automated SEO team watching Search Console and delivery? That is the <a href="/seo-command-centre/">SEO Command Centre</a>, not this GEO and AEO engagement.</p>
+          <p class="ai-kicker"><span></span> Reporting and attribution</p>
+          <h2>We separate visibility from visits, and <span>visits from leads</span>.</h2>
+          <p>We report which answers cite you, which pages receive identifiable AI referrals and what those visitors do next. Each tells you something different about whether the work is helping.</p>
+          <p>A brand mention is not necessarily a linked citation. A citation does not prove a visit, and a conversion event does not prove a qualified enquiry. We agree what each event means and compare it with your enquiry or order records where available.</p>
+          <p>Google AI-feature traffic is included within Search Console web-search reporting, not a complete standalone AI attribution report. Unidentified referrals and later direct visits leave gaps. For ongoing monitoring and delivery QA, see our <a href="/seo-command-centre/">SEO Command Centre</a>.</p>
         </div>
         <ol class="measurement-chain">
-          <li><span>01</span><p><strong>Observed citation</strong><small>A brand or page appears for a recorded prompt at a recorded time.</small></p></li>
-          <li><span>02</span><p><strong>Cited URL or grounding query</strong><small>A platform exposes the source page or retrieval theme.</small></p></li>
+          <li><span>01</span><p><strong>Observed mention or citation</strong><small>We record whether an answer names the brand, links a source page or both, with the prompt, platform, market and date.</small></p></li>
+          <li><span>02</span><p><strong>Cited URL or grounding query</strong><small>Where available, platform reporting shows the cited page and queries used to find sources.</small></p></li>
           <li><span>03</span><p><strong>Referral visit</strong><small>Analytics records traffic from an identifiable AI or search surface.</small></p></li>
           <li><span>04</span><p><strong>Tracked action</strong><small>A visitor submits, calls, books or completes another configured conversion event.</small></p></li>
           <li><span>05</span><p><strong>Confirmed lead or sale</strong><small>Your commercial process confirms the outcome. Analytics alone does not.</small></p></li>
@@ -337,15 +346,15 @@ const geoCases = [
     <section class="ai-deliverables">
       <div class="ai-shell deliverables-layout">
         <div class="deliverables-title">
-          <p class="ai-kicker"><span></span> What the engagement can include</p>
-          <h2>Senior SEO work, adapted for AI-assisted discovery.</h2>
+          <p class="ai-kicker"><span></span> Audit and implementation</p>
+          <h2>What your <span>AI SEO engagement</span> can include</h2>
         </div>
         <div class="deliverables-list">
-          <article><span>DIAGNOSE</span><h3>AI visibility and citation audit</h3><p>Priority prompts, answer surfaces, cited competitors, source pages, crawler access, indexation and commercial gaps.</p></article>
-          <article><span>CLARIFY</span><h3>Entity and service architecture</h3><p>Clear relationships between the brand, people, services, locations, products, proof assets and authoritative profiles.</p></article>
-          <article><span>STRENGTHEN</span><h3>Citation-ready page improvements</h3><p>Direct answers, original evidence, comparison detail, scannable structure, internal links and useful supporting media.</p></article>
+          <article><span>DIAGNOSE</span><h3>AI visibility and citation audit</h3><p>A record of answers to agreed buyer questions, the pages they cite and access problems that need fixing.</p></article>
+          <article><span>CLARIFY</span><h3>Page-by-page work plan</h3><p>Which page should answer each buying question, which facts are missing and which credentials, specifications or examples need expert approval.</p></article>
+          <article><span>STRENGTHEN</span><h3>Revised service and product pages</h3><p>Page edits that answer missing questions, explain comparisons and put approved evidence beside the claims it supports. We agree who publishes each change.</p></article>
           <article><span>VALIDATE</span><h3>Technical access and structured data</h3><p>Robots rules, rendering, indexability, snippet controls and valid schema that reflects visible page content.</p></article>
-          <article><span>CORROBORATE</span><h3>Authority and digital PR direction</h3><p>Relevant reviews, publications, profiles and third-party sources that can substantiate the business without fake mentions.</p></article>
+          <article><span>CORROBORATE</span><h3>Authority and digital PR direction</h3><p>A review of business listings and relevant publications, with recommended corrections and outreach opportunities. Any outreach work is defined in the proposal.</p></article>
           <article><span>MEASURE</span><h3>AI and organic visibility reporting</h3><p>Prompt observations, platform data, referrals and conversion signals presented with the limits clearly stated.</p></article>
         </div>
       </div>
@@ -355,20 +364,20 @@ const geoCases = [
       <div class="ai-shell fit-layout">
         <div class="fit-heading">
           <p class="ai-kicker"><span></span> Commercial fit</p>
-          <h2>This work is valuable when the decision is valuable.</h2>
+          <h2>Is AI search work <span>the right next investment</span>?</h2>
         </div>
         <div class="fit-editorial">
           <div>
             <h3>Strong fit</h3>
-            <p>B2B, professional services, considered ecommerce, SaaS, healthcare, education, property, industrial and multi-market brands where buyers research before choosing.</p>
+            <p>Your buyers compare technical details, service scope or specialist experience before they contact you. You have useful expertise or product information, but your website does not yet explain it well enough.</p>
           </div>
           <div>
             <h3>Usually needs foundations first</h3>
-            <p>Sites with blocked crawling, weak service pages, no useful proof, unclear positioning or little conventional search visibility. We repair the source before selling AI-answer theatre.</p>
+            <p>Sites with blocked crawling, weak service pages, no useful proof or unclear positioning. We identify those gaps first and recommend foundational SEO work where it is the more useful investment.</p>
           </div>
           <div>
-            <h3>Not a fit</h3>
-            <p>Businesses asking for guaranteed ChatGPT recommendations, fabricated mentions, mass AI pages or a shortcut around earning trust.</p>
+            <h3>A different priority may come first</h3>
+            <p>If buyers mainly need directions, opening hours or an urgent local callout, local SEO and a working enquiry route may deserve the budget first. We discuss that before recommending an AI search engagement.</p>
           </div>
         </div>
       </div>
@@ -379,17 +388,17 @@ const geoCases = [
         <div class="commercial-brief">
           <div class="commercial-copy">
             <p class="ai-kicker"><span></span> Private scope and proposal</p>
-            <h2>No mystery package. No public rate pretending every site is the same.</h2>
-            <p>We scope AI SEO services around the work required, the markets that matter and the commercial value of the decisions being influenced.</p>
+            <h2>A scope built around <span>your market and website</span>.</h2>
+            <p>We agree whether you need an audit, help improving specific pages or an ongoing programme. Your proposal names the deliverables, who implements them and how we will review progress.</p>
             <a class="ai-button ai-button-primary" href="/contact/">Discuss your AI search opportunity <span aria-hidden="true">→</span></a>
           </div>
           <div class="commercial-factors">
             <p>YOUR PRIVATE PROPOSAL CONSIDERS</p>
             <ul>
               <li>Markets, languages and priority platforms</li>
-              <li>Number of services, products and source pages</li>
-              <li>Technical, content and entity repair required</li>
-              <li>Prompt-set depth and competitor monitoring</li>
+              <li>Number of service and product pages</li>
+              <li>Technical fixes and missing or conflicting business information</li>
+              <li>Buyer questions and competitors to monitor</li>
               <li>Authority, evidence and digital PR gaps</li>
               <li>Reporting and conversion-measurement needs</li>
             </ul>
@@ -401,8 +410,8 @@ const geoCases = [
     <section class="ai-sources">
       <div class="ai-shell sources-layout">
         <div>
-          <p class="ai-kicker"><span></span> Primary-source reality check</p>
-          <h2>What the platforms actually say</h2>
+          <p class="ai-kicker"><span></span> Platform guidance</p>
+          <h2>Guidance from <span>the platforms</span></h2>
         </div>
         <div class="source-links">
           <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">
@@ -428,8 +437,8 @@ const geoCases = [
       <div class="ai-shell faq-layout">
         <div class="faq-heading">
           <p class="ai-kicker"><span></span> Straight answers</p>
-          <h2>AI SEO, GEO and AEO FAQs</h2>
-          <p>Enough acronyms. Here is what matters before you invest.</p>
+          <h2>AI SEO, GEO and AEO <span>FAQs</span></h2>
+          <p>What to know about scope, measurement and working with us.</p>
         </div>
         <div class="faq-list">
           {aiSearchFaqs.map((faq, index) => (
@@ -444,10 +453,10 @@ const geoCases = [
 
     <section class="ai-final-cta">
       <div class="ai-shell final-cta-layout">
-        <p>READY TO BECOME A BETTER SOURCE?</p>
-        <h2>Find out where your brand disappears from the answer.</h2>
+        <p>START WITH YOUR BUYING JOURNEY</p>
+        <h2>Show us the work <span>you want to win</span>.</h2>
         <div>
-          <p>We will assess the search foundations, source pages, authority and measurable AI visibility behind your priority commercial topics.</p>
+          <p>Send your website, priority services or products, target markets and the questions buyers ask before contacting you. We will review the fit, discuss the evidence and access needed, and scope an audit or implementation programme through a private proposal.</p>
           <a class="ai-button ai-button-primary" href="/contact/">Request an AI visibility audit <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -475,9 +484,12 @@ const geoCases = [
 
   .ai-page {
     background: #ffffff;
-    color: var(--ai-#19212e);
+    color: var(--ai-white);
     overflow: hidden;
   }
+
+  /* Stable section geometry keeps smooth anchor navigation accurate. */
+  .ai-page > section { content-visibility: visible; }
 
   .ai-shell {
     width: min(1240px, calc(100% - 48px));
@@ -650,7 +662,7 @@ const geoCases = [
   .observatory-caption { position: absolute; z-index: 2; right: 26px; bottom: 20px; left: 26px; margin: 0; color: #727a90; font-size: .68rem; }
   .observatory-caption span { color: #465365; }
 
-  .ai-shift { padding: 112px 0; background: #ffffff !important; color: var(--ai-#19212e); }
+  .ai-shift { padding: 112px 0; background: #ffffff !important; color: var(--ai-white); }
   .ai-shift-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(64px, 10vw, 150px); }
   .ai-shift .ai-kicker { color: var(--ai-muted); }
   .shift-statement h2 { margin: 0; font-family: 'Outfit', sans-serif; font-size: clamp(2.65rem, 4.5vw, 4.9rem); line-height: 1.02; letter-spacing: -.05em; }
@@ -668,7 +680,7 @@ const geoCases = [
   .ai-cases { padding: 112px 0; }
 
   .ai-section-heading { max-width: 880px; }
-  .ai-section-heading h2 span { color: var(--bf-link, #b83e12); }
+  .ai-page h2 span { color: var(--bf-link, #b83e12); }
 
   .ai-proof { padding-top: 0; border-bottom: 1px solid var(--ai-border); background: #ffffff; }
   .proof-grid {
@@ -794,7 +806,7 @@ const geoCases = [
   .method-row p { margin: 0; color: var(--ai-muted); line-height: 1.65; }
   .method-row > strong { color: #b83e12; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 
-  .ai-source-system { padding: 125px 0; background: #ffffff !important; color: var(--ai-#19212e); }
+  .ai-source-system { padding: 125px 0; background: #ffffff !important; color: var(--ai-white); }
   .source-layout { display: block; max-width: 760px; }
   .ai-source-system .ai-kicker { color: var(--ai-muted); }
   .source-copy h2 { color: #19212e; }
@@ -851,7 +863,7 @@ const geoCases = [
   .deliverables-list h3 { margin: 8px 0 8px; color: #19212e; font-family: 'Outfit', sans-serif; font-size: 1.5rem; }
   .deliverables-list p { max-width: 650px; margin: 0; color: var(--ai-muted); line-height: 1.65; }
 
-  .ai-fit { padding: 112px 0; background: #ffffff !important; color: var(--ai-#19212e); }
+  .ai-fit { padding: 112px 0; background: #ffffff !important; color: var(--ai-white); }
   .fit-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 100px; }
   .ai-fit .ai-kicker { color: var(--ai-muted); }
   .fit-heading h2 { color: #19212e; }
@@ -892,14 +904,13 @@ const geoCases = [
   .faq-list summary i { display: none !important; }
   .faq-list details > p { margin: -4px 38px 26px 58px; color: var(--ai-muted); line-height: 1.7; }
 
-  .ai-final-cta { padding: 105px 0; background: #ffffff !important; color: var(--ai-#19212e); }
+  .ai-final-cta { padding: 105px 0; background: #ffffff !important; color: var(--ai-white); }
   .final-cta-layout { display: grid; grid-template-columns: .4fr 1.05fr .65fr; gap: 70px; align-items: start; }
   .ai-final-cta > .ai-shell > p { margin: 8px 0 0; color: var(--bf-link, #b83e12); font-size: .65rem; font-weight: 700; letter-spacing: .15em; }
   .ai-final-cta h2 { color: #19212e; }
   .ai-final-cta div > p { margin: 8px 0 24px; color: var(--ai-muted); line-height: 1.7; }
 
-  /* Match Bright Forge's established service-page surface: every top-level
-     section stays on the same dark background, with orange used as an accent. */
+  /* Preserve the current service-page surface and orange accents. */
   .ai-page.ai-page .ai-hero.ai-hero,
   .ai-page.ai-page .ai-shift.ai-shift,
   .ai-page.ai-page .ai-reality.ai-reality,
@@ -914,7 +925,7 @@ const geoCases = [
   .ai-page.ai-page .ai-faq.ai-faq,
   .ai-page.ai-page .ai-final-cta.ai-final-cta {
     background: #ffffff !important;
-    color: var(--ai-#19212e) !important;
+    color: var(--ai-white) !important;
   }
 
   @media (max-width: 1080px) {
