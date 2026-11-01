@@ -63,9 +63,10 @@ class CompetitorGapCoverageTest(unittest.TestCase):
     def test_specialist_pages_own_every_remaining_qualified_service_cluster(self):
         expected = {
             "local-seo-for-google-maps-and-gbp.astro": (
-                "local search partner",
-                "Philippine businesses",
-                "Manila-focused campaigns",
+                "Our team is based in Quezon City",
+                "Philippine campaigns start with your actual premises and coverage",
+                "Australia, the UK and the USA",
+                "Google Business Profile",
             ),
             "technical-seo-services-philippines.astro": (
                 "technical SEO from the Philippines",
@@ -81,8 +82,10 @@ class CompetitorGapCoverageTest(unittest.TestCase):
                 "Philippine, Australian, UK and US campaigns",
             ),
             "backlink-seo-services-philippines.astro": (
-                "Philippine link team",
-                "client-safe prospect review",
+                "link building services in the Philippines",
+                "Philippine businesses and teams targeting Australia, the UK or the USA",
+                "prospect research, outreach",
+                "publisher decides",
             ),
             "seo-audit-services.astro": (
                 "SEO audits from the Philippines",
