@@ -210,7 +210,7 @@ export const blogMetadata = {
   },
   'google-search-console-geotargeting-configuration-and-regional-performance': {
     title: "Google Search Console Geotargeting | Bright Forge",
-    description: "Country targeting that matches how you sell. Ask us if one property is mixing markets and wasting clicks."
+    description: "Search Console no longer supports country targeting. Compare regional performance and investigate hreflang, canonical and crawl-access issues on locale pages."
   },
   'schema-markup-implementation-beyond-basic-structured-data': {
     title: "Schema Markup Beyond Basic Structured Data | Bright Forge",
