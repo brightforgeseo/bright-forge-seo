@@ -8,17 +8,17 @@ import ButtonPrimary from '../../components/ButtonPrimary.astro';
 import ButtonSecondary from '../../components/ButtonSecondary.astro';
 
 const caseStudyData = {
-  title: "How We Boosted Organic Traffic by 19% for Conscient",
+  title: "Conscient SEO: 19% More Organic Clicks",
   client: "Conscient",
   website: "https://www.conscient.co.uk/",
   industry: "Business Consulting",
-  duration: "6 months",
+  duration: "6-month comparison",
   heroImage: "/images/case-studies/SEO Case Study- Increasing Organic Traffic for a Consulting Firm .webp",
-  challenge: "Conscient is a UK B2B marketing consultancy for telecoms, technology and data-centre buyers. The site had to rank for consultancy work without looking like a generic agency brochure.",
-  solution: "We developed a comprehensive SEO strategy focused on content optimization, technical improvements, and authority building to increase organic search visibility and attract more qualified leads.",
+  challenge: "Conscient is a B2B tech marketing and strategy agency offering services including brand and messaging, content creation and consultancy. The commercial question is whether the extra search appearances reached businesses looking for that support. The aggregate comparison does not identify those buyers.",
+  solution: "The published Google Search Console screenshot compares Last 6 months / Previous 6 months. Clicks increased from 13.2K to 15.7K and impressions from 398K to 742K, while CTR fell from 3.3% to 2.1%. It records search performance, not a sequence of implemented changes or a lead result.",
   keyMetrics: [
     {
-      label: "Organic Traffic",
+      label: "Organic Clicks",
       value: "+19%",
       description: "Increase in total clicks from search"
     },
@@ -28,35 +28,35 @@ const caseStudyData = {
       description: "Growth in total impressions"
     },
     {
-      label: "Keyword Rankings",
+      label: "Average Position",
       value: "Improved",
       description: "Average position from 23.3 to 21.7"
     }
   ],
   strategySteps: [
     {
-      title: "In-depth Keyword Research",
-      description: "Conducted comprehensive keyword research focused on consulting services and industry-specific queries to identify high-value opportunities.",
+      title: "Separate buyer queries",
+      description: "Review queries by service and buyer need. Brand searches, research questions and consultancy enquiries should not be treated as equally valuable.",
       icon: "fa-search"
     },
     {
-      title: "Content Optimization",
-      description: "Optimized website content, meta tags, and service pages to match search intent and improve relevancy for target keywords.",
+      title: "Review service-page entry points",
+      description: "Identify the pages receiving the additional impressions, then check whether their titles and descriptions accurately explain the service offered.",
       icon: "fa-file-alt"
     },
     {
-      title: "Site Architecture Improvements",
-      description: "Enhanced site architecture and internal linking structure for better crawlability and improved user experience.",
+      title: "Check navigation and internal links",
+      description: "Check whether a visitor can move from an informational page to the relevant consulting service and an appropriate enquiry route.",
       icon: "fa-sitemap"
     },
     {
-      title: "Authority Building",
-      description: "Built authoritative backlinks from industry publications and relevant websites to strengthen domain authority.",
+      title: "Assess supporting evidence",
+      description: "Review the experience and supporting examples on service pages. The performance screenshot does not establish that backlinks were acquired.",
       icon: "fa-link"
     },
     {
-      title: "Performance Monitoring",
-      description: "Continuously monitored Google Search Console data for performance insights and ongoing optimization opportunities.",
+      title: "Measure enquiries separately",
+      description: "Match landing-page visits with recorded enquiries over the same period before assessing whether search growth brought suitable prospects.",
       icon: "fa-chart-line"
     }
   ],
@@ -77,34 +77,26 @@ const caseStudyData = {
       metric: "Average Position",
       before: "23.3",
       after: "21.7",
-      improvement: "+1.6"
+      improvement: "1.6 positions better"
     },
     {
       metric: "Click-Through Rate",
       before: "3.3%",
       after: "2.1%",
-      improvement: "-1.2%"
+      improvement: "-1.2 percentage points"
     }
   ],
-  testimonial: {
-    quote: "The SEO strategy implemented by Bright Forge has significantly improved our online visibility. We're seeing more qualified leads coming through our website, and our consultants are spending less time prospecting and more time delivering value to clients.",
-    author: "Sarah Thompson",
-    position: "Marketing Director",
-    company: "Professional Consulting Firm",
-    avatar: "/images/testimonials/sarah-thompson.jpg"
-  },
   keyTakeaways: [
-    "Strategic keyword targeting across different consulting services drove significant impression growth",
-    "Content optimization focused on search intent improved relevancy and organic traffic",
-    "Technical SEO improvements enhanced crawlability and indexation of important service pages",
-    "Authority-building efforts strengthened domain reputation in the competitive consulting space",
-    "Ongoing performance monitoring allowed for continuous optimization and improvement"
-  ],
-  nextSteps: "Moving forward, our strategy will focus on improving click-through rates for high-impression keywords and enhancing conversion pathways to turn more visitors into qualified leads."
+    "Impressions rose faster than clicks: +86% versus +19%, using the rounded displayed totals.",
+    "CTR fell from 3.3% to 2.1%. More search appearances did not translate into a proportionate rise in clicks.",
+    "Average position improved from 23.3 to 21.7, but the screenshot does not show individual service-query rankings.",
+    "Two period totals do not establish whether impressions increased before clicks or whether visitors were suitable buyers.",
+    "The next useful check is which pages gained impressions and which generated enquiries, rather than assuming all additional visibility had equal value."
+  ]
 };
 ---
 
-<MainLayout title="Organic Gains for Consultant Firm | Bright Forge SEO" description="A 19% organic traffic increase for this consulting firm started with structure, keyword clarity, and fixes that made their SEO finally work.">
+<MainLayout title="Organic Gains for Consultant Firm | Bright Forge SEO" description="Conscient recorded 19% more organic clicks and 86% more impressions in a six-month Search Console comparison, with CTR falling from 3.3% to 2.1%.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -118,7 +110,7 @@ const caseStudyData = {
         <span class="meta-divider">•</span>
         <span class="meta-item">{caseStudyData.duration}</span>
       </div>
-      <p>We worked on <a href="https://www.conscient.co.uk/" rel="noopener">conscient.co.uk</a>. Organic clicks rose 19% as impressions widened first. That is the usual B2B pattern: visibility, then qualified visits.</p>
+      <p>We worked on <a href="https://www.conscient.co.uk/" rel="noopener">conscient.co.uk</a>. The published comparison shows 19% more organic clicks and 86% more impressions. CTR fell from 3.3% to 2.1%; the figures do not measure enquiry quality.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -154,7 +146,7 @@ const caseStudyData = {
   <!-- Challenge Section -->
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">The <span>Challenge</span></h2>
+      <h2 class="section-title">The <span>business question</span></h2>
       <p class="section-text">{caseStudyData.challenge}</p>
     </div>
   </section>
@@ -162,7 +154,7 @@ const caseStudyData = {
   <!-- Solution Section -->
   <section class="content-section gray">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Our <span>Approach</span></h2>
+      <h2 class="section-title">What the <span>comparison shows</span></h2>
       <p class="section-text">{caseStudyData.solution}</p>
     </div>
   </section>
@@ -170,7 +162,8 @@ const caseStudyData = {
   <!-- Strategy Section -->
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title"><span>Strategy</span></h2>
+      <h2 class="section-title"><span>Recommended follow-up checks</span></h2>
+      <p class="section-text">These are review priorities, not a verified log of work delivered for Conscient. Exact calendar dates and query filters are not displayed in the screenshot.</p>
 
       <div class="strategy-list">
         {caseStudyData.strategySteps.map((step, index) => (
@@ -196,8 +189,8 @@ const caseStudyData = {
           <thead>
             <tr>
               <th>Metric</th>
-              <th>Before</th>
-              <th>After</th>
+              <th>Previous 6 months</th>
+              <th>Last 6 months</th>
               <th>Change</th>
             </tr>
           </thead>

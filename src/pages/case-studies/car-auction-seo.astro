@@ -11,38 +11,38 @@ const caseStudyData = {
   title: "SEO Case Study: Expanding Organic Reach for a Car Auction Platform",
   client: "Car Auction Platform",
   industry: "Automotive",
-  duration: "6 Months",
+  duration: "6-month comparison",
   heroImage: "/images/case-studies/SEO Case Study- Expanding Organic Reach for a Car Auction Platform .webp",
-  challenge: "Highly competitive automotive auction market with diverse keyword requirements and the need to maintain visibility while scaling inventory.",
-  solution: "Implemented a holistic SEO strategy encompassing keyword research, on-page optimisation, technical fixes and authoritative backlink acquisition to boost impressions and clicks.",
+  challenge: "Search impressions grew faster than clicks for this anonymous car auction platform. The commercial question is whether the additional appearances reached prospective bidders; the screenshot does not include registrations, bids or sales.",
+  solution: "The Search Console screenshot compares Last 6 months / Previous 6 months. Clicks rose from 398K to 419K and impressions from 7.96M to 10.5M. Average position worsened from 31.7 to 39.7 and CTR fell from 5% to 4%, so this is a mixed search result rather than an across-the-board improvement.",
   keyMetrics: [
     { label: "Total Impressions", value: "+32%", description: "7.96M → 10.5M" },
     { label: "Organic Clicks", value: "+5%", description: "398k → 419k" },
-    { label: "Avg. Position", value: "-20%", description: "31.7 → 39.7" },
+    { label: "Avg. Position", value: "8.0 positions worse", description: "31.7 → 39.7" },
     { label: "CTR", value: "-20%", description: "5% → 4%" }
   ],
   strategySteps: [
-    { title: "Keyword Research", description: "Identified high-intent auction and vehicle terms." },
-    { title: "On-Page Optimisation", description: "Optimised titles, meta and listing content." },
-    { title: "Technical SEO", description: "Improved speed, mobile UX & crawlability." },
-    { title: "Backlink Building", description: "Secured links from automotive blogs and forums." },
-    { title: "Performance Monitoring", description: "Iterative improvements via GSC insights." }
+    { title: "Keyword Research", description: "Separate auction-buyer queries from general vehicle research before judging the value of additional impressions." },
+    { title: "On-Page Optimisation", description: "Check which listing pages gained impressions and whether their titles accurately describe the vehicles and auction information." },
+    { title: "Technical SEO", description: "Review crawlability and mobile usability of current listings, and check how ended listings are handled." },
+    { title: "Landing-page comparison", description: "Compare the same pages and queries across both periods before attributing the weaker average position to a particular cause." },
+    { title: "Performance Monitoring", description: "Connect search landing pages to bidder registrations and auction activity if those records are available." }
   ],
   results: [
     { metric: "Total Clicks", before: "398,000", after: "419,000", improvement: "+5%" },
     { metric: "Total Impressions", before: "7.96M", after: "10.5M", improvement: "+32%" },
-    { metric: "Average Position", before: "31.7", after: "39.7", improvement: "-20%" },
+    { metric: "Average Position", before: "31.7", after: "39.7", improvement: "8.0 positions worse" },
     { metric: "Click-Through Rate", before: "5%", after: "4%", improvement: "-20%" }
   ],
   keyTakeaways: [
-    "Comprehensive keyword targeting drives wider auction visibility.",
-    "Technical enhancements sustain performance as inventory scales.",
-    "Continuous data-driven iteration supports steady growth."
+    "Impressions rose by about 32%, but clicks increased by about 5%. More appearances did not produce proportional click growth.",
+    "Average position was 8.0 positions worse. The aggregate does not identify whether existing rankings fell or the query mix changed.",
+    "CTR declined from 5% to 4%. Query and landing-page comparisons are needed before choosing a corrective action."
   ]
 };
 ---
 
-<MainLayout title="Car Auction Platform SEO Results | Bright Forge SEO" description="We helped a car auction platform lift impressions by 32%. See how search targeting and content clean-up drove better visibility across Google.">
+<MainLayout title="Car Auction Platform SEO Results | Bright Forge SEO" description="A car auction platform recorded 32% more impressions and 5% more clicks, but worse average position and lower CTR. Read the six-month comparison.">
   <LegacyHeader slot="header" />
 
   <Hero
@@ -55,7 +55,7 @@ const caseStudyData = {
         <span class="meta-divider">•</span>
         <span class="meta-item">{caseStudyData.duration}</span>
       </div>
-      <p>Discover how we helped {caseStudyData.client} transform their digital presence and achieve exceptional growth through data-driven SEO strategies in the highly competitive automotive auction market.</p>
+      <p>This car auction platform recorded more search appearances and a modest increase in clicks. Average position worsened by 8.0 positions and CTR declined, making the result more mixed than the impression growth alone suggests.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -91,7 +91,7 @@ const caseStudyData = {
   <!-- Challenge Section -->
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">The <span>Challenge</span></h2>
+      <h2 class="section-title">The <span>business question</span></h2>
       <p class="section-text">{caseStudyData.challenge}</p>
     </div>
   </section>
@@ -99,7 +99,7 @@ const caseStudyData = {
   <!-- Solution Section -->
   <section class="content-section gray">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Our <span>Approach</span></h2>
+      <h2 class="section-title">Reading the <span>comparison</span></h2>
       <p class="section-text">{caseStudyData.solution}</p>
     </div>
   </section>
@@ -107,7 +107,8 @@ const caseStudyData = {
   <!-- Strategy Section -->
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title"><span>Strategy</span></h2>
+      <h2 class="section-title"><span>Recommended follow-up checks</span></h2>
+      <p class="section-text">These are review priorities, not verified campaign actions. The screenshot supplies rounded totals and comparison selectors, but no exact calendar dates or implementation history.</p>
 
       <div class="strategy-list">
         {caseStudyData.strategySteps.map((step, index) => (
@@ -133,8 +134,8 @@ const caseStudyData = {
           <thead>
             <tr>
               <th>Metric</th>
-              <th>Before</th>
-              <th>After</th>
+              <th>Previous 6 months</th>
+              <th>Last 6 months</th>
               <th>Change</th>
             </tr>
           </thead>
