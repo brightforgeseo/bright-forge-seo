@@ -17,20 +17,14 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   <main class="error-page">
     <!-- Hero Section -->
     <Hero
-      title="Oops! This Page Got Lost in the <span>Digital Space</span>"
+      title="Page <span>not found</span>"
       breadcrumbCurrent="404 - Page Not Found"
     >
       <Fragment slot="story">
-        <p>Don't worry, even the best SEO strategies sometimes encounter broken links. Let's get you back on track to ranking success!</p>
+        <p>We could not find the page at this address. It may have moved, or the link may be incorrect. Use the links below to find a service, article or contact details.</p>
 
-        <!-- Search Box -->
         <div class="search-container">
-          <form class="search-form" action="/search" method="get">
-            <input type="text" name="q" placeholder="Search our resources..." class="search-input">
-            <button type="submit" class="search-btn">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
+          <a href="/site-index/" class="forge-read-link">Browse the site index</a>
         </div>
       </Fragment>
 
@@ -536,20 +530,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Enhanced search functionality
-  const searchForm = document.querySelector('.search-form');
-  const searchInput = document.querySelector('.search-input');
-  
-  if (searchForm) {
-    searchForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const query = searchInput.value.trim();
-      if (query) {
-        // Simple redirect to blog for now - can be enhanced later
-        window.location.href = `/blog?search=${encodeURIComponent(query)}`;
-      }
-    });
-  }
 
   // Add loading states to buttons
   const buttons = document.querySelectorAll('.cta-primary, .cta-secondary, .cta-button');

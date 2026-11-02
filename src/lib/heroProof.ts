@@ -40,7 +40,7 @@ export function heroCards(path: string, context = ''): HeroCard[] {
     ? { label: 'Your next build', value: 'Define it. Build it.', detail: 'Discuss your website, platform and project scope', href: '/contact/' }
     : { label: 'Your next move', value: 'Find the gaps. Make a plan.', detail: 'Request an SEO review', href: p === '/contact' ? '#contact-form' : '/contact/' };
   if (/privacy-policy|terms-of-service|site-index|thanks|404/.test(p)) return [
-    { label: 'Find your way', value: 'Every page.', detail: 'Services, markets, people and articles', href: '/site-index/' },
+    { label: 'Find your way', value: ['/404', '/thanks', '/site-index'].includes(p) ? 'Browse the directory.' : 'Every page.', detail: 'Services, markets, people and articles', href: '/site-index/' },
     { label: 'Useful reading', value: 'Clear answers.', detail: 'SEO and search guidance from our team', href: '/blog/' },
     { label: 'Need a hand?', value: 'Talk to us.', detail: 'Send your question to the team', href: '/contact/' }
   ];

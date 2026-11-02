@@ -4,14 +4,14 @@ import Layout from '../layouts/MainLayout.astro';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
 const title = "Thank You | Bright Forge SEO";
-const description = "Thank you for contacting Bright Forge SEO. We'll get back to you shortly.";
+const description = "Contact-form next steps and links to continue browsing Bright Forge SEO.";
 ---
 
 <Layout title={title} description={description} noindex={true}>
   <LegacyHeader slot="header" />
 
-  <ForgeHero title="Message Sent Successfully" eyebrow="Thank you" breadcrumb="Message sent">
-    <p>Thank you for the useful context. We will review the website, market and main SEO problem, then reply within one business day with the most sensible next step.</p>
+  <ForgeHero title="Thank you for <span>getting in touch</span>" eyebrow="Thank you" breadcrumb="Thank you">
+    <p>If you have just submitted our contact form, thank you for sharing the details. We review your website, market and main SEO problem, and usually reply within one business day with a suggested next step.</p>
     <Fragment slot="actions"><a href="/" class="forge-read-link">Back to Home</a></Fragment>
   </ForgeHero>
 
