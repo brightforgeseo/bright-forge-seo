@@ -62,12 +62,6 @@ if (blogPosts.length === 0) {
 }
 
 const topics = groupPostsByTopic(contentfulPosts, 3);
-const navTopics = [
-  { slug: 'seo', label: 'SEO' },
-  { slug: 'ai', label: 'AI' },
-  { slug: 'local', label: 'Local SEO' },
-  { slug: 'business', label: 'Small Business' }
-];
 
 // Popular posts - use the first 3 or all if fewer
 const popularPosts = blogPosts.slice(0, Math.min(3, blogPosts.length));
@@ -80,7 +74,7 @@ const recentPosts = [...blogPosts]
 
 <MainLayout 
   title="SEO & Digital Marketing Blog Insights | Bright Forge SEO"
-  description="Explore SEO insights, strategies, and results. Our blog shares real growth stories, expert advice, and data-backed tips to keep you ranking stronger."
+  description="Browse Bright Forge articles on SEO, AI search, reporting and hiring an SEO team. Choose a topic or explore the complete article archive."
   breadcrumbs={[
     { name: "Home", url: "/" },
     { name: "Blog", url: "/blog" }
@@ -94,8 +88,8 @@ const recentPosts = [...blogPosts]
     breadcrumbCurrent="Blog"
   >
     <Fragment slot="story">
-      <p>Expert analysis, case studies, and actionable strategies to help your business dominate search results and grow online.</p>
-      <p>Stay ahead of the curve with our latest insights on SEO, digital marketing trends, and proven strategies that deliver real results for businesses across the Philippines and beyond.</p>
+      <p>Investigating a ranking change, comparing SEO providers or planning work on your website? Browse articles on diagnosis, implementation, reporting and hiring.</p>
+      <p>Choose a topic below, or explore the full archive with article summaries and publication dates.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -138,16 +132,17 @@ const recentPosts = [...blogPosts]
           <div class="articles-section">
             <div class="section-header">
               <h2><span>All Articles</span></h2>
-              <p>Deep insights into SEO, AI technology, and digital marketing strategies</p>
+              <p>The full archive, including the featured article above. Topic lists group articles by their existing tags; they may not include every related article.</p>
             </div>
             
             <!-- Filter Buttons -->
-            <div class="filter-container">
-              <a class="filter-btn active" href="/blog/">All Topics</a>
-              {navTopics.map((topic) => (
+            <nav class="filter-container" aria-label="Article topics">
+              <a class="filter-btn active" href="/blog/" aria-current="page">All Articles</a>
+              {topics.map((topic) => (
                 <a class="filter-btn" href={`/blog/topics/${topic.slug}/`}>{topic.label}</a>
               ))}
-            </div>
+              <a class="filter-btn" href="/blog/topics/">Topic index</a>
+            </nav>
             
             <!-- Articles Grid -->
             <div class="articles-grid">
@@ -179,7 +174,7 @@ const recentPosts = [...blogPosts]
           <!-- About Section -->
           <div class="sidebar-widget">
             <h3>About Our Blog</h3>
-            <p>Get expert SEO insights, AI technology updates, and proven strategies from the Bright Forge SEO team. We share practical tips that actually work for growing your business online.</p>
+            <p>Use the topic index to find a smaller reading list, or browse all articles here. Recent Articles links to four of the latest posts by publication date.</p>
             <a href="/contact/" class="cta-button">Get SEO Consultation</a>
           </div>
           
@@ -188,7 +183,7 @@ const recentPosts = [...blogPosts]
             <h3>Topics</h3>
             <ul class="categories-list">
               <li>
-                <a href="/blog/" class="category-link topic-item active">All Topics</a>
+                <a href="/blog/" class="category-link topic-item active" aria-current="page">All Articles</a>
               </li>
               {topics.map((topic) => (
                 <li>
@@ -197,6 +192,7 @@ const recentPosts = [...blogPosts]
                   </a>
                 </li>
               ))}
+              <li><a href="/blog/topics/" class="category-link topic-item">Topic index</a></li>
             </ul>
           </div>
           
@@ -204,7 +200,7 @@ const recentPosts = [...blogPosts]
           <div class="sidebar-widget">
             <h3>Recent Articles</h3>
             <div class="recent-articles">
-              {blogPosts.map((post) => (
+              {recentPosts.map((post) => (
                 <div class="recent-article">
                   <div class="recent-image">
                     <img src={post.image} alt={post.title} width="80" height="60" loading="lazy" decoding="async">
@@ -216,16 +212,14 @@ const recentPosts = [...blogPosts]
                 </div>
               ))}
             </div>
+            <a href="#blog-posts" class="category-link">Browse the full archive</a>
           </div>
           
           <!-- Newsletter Widget -->
           <div class="sidebar-widget newsletter-widget">
             <h3>Stay Updated</h3>
-            <p>Get the latest SEO insights delivered to your inbox</p>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Your email address" required>
-              <button type="submit">Subscribe</button>
-            </form>
+            <p>Email subscriptions are currently unavailable. You can read the latest articles in the archive.</p>
+            <a href="#blog-posts" class="category-link">Browse articles</a>
           </div>
         </aside>
       </div>
@@ -559,8 +553,7 @@ const recentPosts = [...blogPosts]
 
 /* Sidebar */
 .blog-sidebar {
-  position: sticky;
-  top: 100px;
+  position: static;
   height: fit-content;
 }
 
@@ -868,7 +861,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchButton = document.querySelector('.search-button');
   const articleCards = document.querySelectorAll('.article-card');
   const featuredArticle = document.querySelector('.featured-article');
-  const newsletterForm = document.querySelector('.newsletter-form');
+
   
   // Function to filter articles by search term
   function filterBySearch() {
@@ -928,17 +921,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Newsletter form
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      
-      if (email) {
-        alert('Thank you for subscribing! We\'ll keep you updated with the latest SEO insights.');
-        this.querySelector('input[type="email"]').value = '';
-      }
-    });
-  }
 });
 </script>
