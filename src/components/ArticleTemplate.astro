@@ -63,6 +63,9 @@ const {
 const pageTitle = metaTitle || title;
 const pageDescription = metaDescription || excerpt;
 
+// Preserve inherited templates; the engine-cleared investment article uses team authorship.
+const isSearchInvestment = Astro.url.pathname === '/blog/why-invest-in-seo-and-ai-search/';
+
 // Generate article schema
 const articleSchema = {
   "@context": "https://schema.org",
@@ -71,7 +74,7 @@ const articleSchema = {
   "description": excerpt,
   "image": featuredImage ? (featuredImage.startsWith('http') ? featuredImage : `https://brightforge.com.ph${featuredImage}`) : undefined,
   "author": {
-    "@type": "Person",
+    "@type": isSearchInvestment ? "Organization" : "Person",
     "name": author.name,
     "url": author.linkedin
   },
@@ -83,8 +86,8 @@ const articleSchema = {
       "url": "https://brightforge.com.ph/images/logo.png"
     }
   },
-  "datePublished": publishDate,
-  "dateModified": modifiedDate || publishDate,
+  "datePublished": isSearchInvestment ? new Date(publishDate).toISOString() : publishDate,
+  "dateModified": isSearchInvestment ? new Date(modifiedDate || publishDate).toISOString() : modifiedDate || publishDate,
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": Astro.url.href
@@ -208,7 +211,7 @@ const formatDate = (dateString: string) => {
   <section class="article-featured" id="article-reading">
     <div class="max-w-6xl mx-auto px-4">
       <nav class="breadcrumbs" aria-label="Article breadcrumb"><a href="/">Home</a><span class="separator">›</span><a href="/blog">Blog</a><span class="separator">›</span><span class="current">{category}</span></nav>
-      {featuredImage && <div class="featured-image"><img src={featuredImage} alt={title} width="800" height="450" loading="lazy" decoding="async" /></div>}
+      {featuredImage && <div class="featured-image"><img src={featuredImage} alt={title} width="800" height="450" loading="lazy" decoding="async" style={isSearchInvestment ? "object-fit: contain" : undefined} /></div>}
     </div>
   </section>
 

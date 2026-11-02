@@ -1,5 +1,9 @@
 // SEO title and description overrides. On-page H1 stays the article title.
 export const blogMetadata = {
+  'why-invest-in-seo-and-ai-search': {
+    title: 'SEO and AI Search Investment | Bright Forge',
+    description: 'Decide whether to fund SEO and AI search, what to fix first and how to measure commercial value. Set practical investment priorities with Bright Forge.'
+  },
   'getting-cited-in-google-ai-overviews-eligibility-vs-control': {
     title: "Get Cited in Google AI Overviews | Bright Forge",
     description: "What a page needs before it can show in AI Overviews. No citation guarantee. Send the URL if you want that checked."
