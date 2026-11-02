@@ -74,7 +74,7 @@ const personSchema = {
   <ForgeHero title={author.name} eyebrow="Author" breadcrumb={author.name}>
     <p class="author-role">{author.role} · Bright Forge SEO Agency</p>
     <p>{author.shortBio}</p>
-    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Work With Ben" icon="fas fa-arrow-right" /><ButtonSecondary href="/blog/" text="Read Articles" icon="fas fa-book-open" /></Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Contact the team" icon="fas fa-arrow-right" /><ButtonSecondary href="/blog/" text="Read Articles" icon="fas fa-book-open" /></Fragment>
     <div slot="details" class="forge-retained-details"><div>          <div class="author-meta-row">
             {author.yearsExperience && (
               <div class="meta-pill">
@@ -126,18 +126,22 @@ const personSchema = {
               <dt>Role</dt>
               <dd>{author.role}</dd>
             </div>
-            <div>
-              <dt>Experience</dt>
-              <dd>{author.yearsExperience} years in digital marketing</dd>
-            </div>
+            {author.yearsExperience && (
+              <div>
+                <dt>Experience</dt>
+                <dd>{author.yearsExperience} years in digital marketing</dd>
+              </div>
+            )}
             <div>
               <dt>Based in</dt>
               <dd>{author.location}</dd>
             </div>
-            <div>
-              <dt>Education</dt>
-              <dd>{author.education}</dd>
-            </div>
+            {author.education && (
+              <div>
+                <dt>Education</dt>
+                <dd>{author.education}</dd>
+              </div>
+            )}
           </dl>
         </aside>
       </div>
@@ -210,11 +214,12 @@ const personSchema = {
   )}
 
   <!-- FAQ -->
+  {author.faqs.length > 0 && (
   <section class="author-faq-section">
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-header">
         <h2>Frequently Asked <span>Questions</span></h2>
-        <p>Common questions about {author.name.split(' ')[0]} and how he works.</p>
+        <p>Common questions about {author.name.split(' ')[0]}'s work.</p>
       </div>
       <div class="faq-list">
         {author.faqs.map((faq) => (
@@ -227,6 +232,7 @@ const personSchema = {
     </div>
   </section>
 
+  )}
   <ContactSection />
   <Footer slot="footer" />
 </MainLayout>
