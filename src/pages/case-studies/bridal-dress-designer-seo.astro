@@ -13,76 +13,76 @@ const image = "/images/case-studies/bridal-dress-seo.webp";
 const metrics = [
   {
     label: "Organic clicks",
-    before: "7.4k",
+    before: "7.41k",
     after: "17.6k",
     change: "+137.5%",
-    note: "More visits from people searching during the bridal research and dress selection journey."
+    note: "Organic clicks in the last three months compared with the same period a year earlier. The figures are rounded."
   },
   {
     label: "Impressions",
     before: "342k",
     after: "746k",
     change: "+118.1%",
-    note: "The site appeared across a much wider set of dress style, designer and buying-intent searches."
+    note: "Recorded search impressions more than doubled. The screenshot does not show which queries gained visibility."
   },
   {
     label: "Average position",
     before: "24.8",
     after: "14.9",
-    change: "10 place lift",
-    note: "A meaningful move from weak page-three visibility toward stronger page-two coverage, not a first-page claim."
+    change: "9.9 positions",
+    note: "The blended average improved from 24.8 to 14.9. It does not show how many queries ranked on any particular results page."
   },
   {
     label: "CTR",
     before: "2.2%",
     after: "2.4%",
     change: "+0.2pp",
-    note: "CTR improved slightly while impressions more than doubled, so the click growth came mainly from wider visibility."
+    note: "The displayed CTR rose by 0.2 percentage points alongside the higher impression total."
   }
 ];
 
 const workstreams = [
   {
     title: "Commercial intent mapping",
-    text: "We separated broad inspiration searches from stronger buying-intent phrases around bridal dress styles, designer language, custom options and retailer comparison intent."
+    text: "Separate dress inspiration, designer comparisons and local appointment searches in the query report. Each may need a different destination."
   },
   {
     title: "Page relevance improvements",
-    text: "Priority pages needed clearer titles, headings, copy and internal links so Google could understand which pages matched dress style, designer and purchase-stage searches."
+    text: "Check that collection pages identify the designers and dress styles available, and link to the information a customer needs before booking."
   },
   {
     title: "Gallery and image SEO checks",
-    text: "Bridal sites are image heavy. We reviewed how dress imagery, filenames, alt text, speed and page presentation supported search visibility without turning the pages into thin image galleries."
+    text: "Keep dress photography, but check loading speed, descriptive alt text and crawlable collection details. A gallery should help customers identify the dress and the next step."
   },
   {
     title: "Structured data and page trust signals",
-    text: "The campaign strengthened page-level signals around products, collections and brand credibility so the site gave search engines more useful context about the dresses and business."
+    text: "Match structured data to the visible business and dress information. Check location, opening details and appointment links for consistency."
   },
   {
     title: "Long-tail content and internal linking",
-    text: "We used Search Console and keyword data to guide supporting content and internal links around dress styles, buyer questions and collection pages rather than publishing generic wedding content."
+    text: "Use actual customer questions and query data to decide whether dress-style guidance is needed. Link relevant guidance to the collections and appointment information it supports."
   }
 ];
 
 const lessons = [
   "Bridal SEO needs to separate inspiration traffic from commercial research. Both can matter, but they do not deserve the same pages or the same success metrics.",
-  "A move from average position 24.8 to 14.9 is commercially useful, but it is not a first-page win. The stronger story is improved reach and a better base for the next phase.",
-  "Click growth can outpace CTR movement when a site starts appearing across many more relevant searches. That is still valuable if the new visibility fits real dress research and buying behaviour.",
+  "An average-position improvement does not identify which collections or queries improved. Review those rows before choosing the next page to work on.",
+  "More clicks only become a commercial result when they lead to useful enquiries, appointments or sales. Measure those separately from search visibility.",
   "Image-led ecommerce pages need more than attractive photography. Search engines still need crawlable context, useful copy, internal links and clear page purpose."
 ];
 
 const faqs = [
   {
-    question: "What changed in this bridal dress SEO campaign?",
-    answer: "The work focused on improving page relevance, query coverage, image-led page quality, internal linking and structured signals around bridal dress searches. The result was stronger visibility across commercial research terms, with clicks rising from 7.4k to 17.6k."
+    question: "What does the bridal Search Console comparison show?",
+    answer: "Clicks rose from 7.41k to 17.6k and impressions from 342k to 746k. The screenshot compares the last three months with the same period last year. It does not document the implementation history."
   },
   {
-    question: "Why did clicks grow so much in three months?",
-    answer: "Clicks grew because impressions more than doubled and average position improved by almost ten places. CTR only moved from 2.2% to 2.4%, so the main gain came from broader visibility and better rankings across more relevant searches."
+    question: "Does this show growth over three consecutive months?",
+    answer: "No. It compares a three-month total with the same period a year earlier, not with the immediately preceding three months. Impressions, displayed CTR and average position all improved, but the totals do not isolate the cause."
   },
   {
     question: "Is moving from position 24.8 to 14.9 enough to matter?",
-    answer: "Yes, when the query set is commercially relevant. It moved the site from weak page-three visibility toward stronger page-two coverage. That is not the same as owning first page rankings, but it creates more search exposure and a better platform for future gains."
+    answer: "It is a 9.9-position improvement in the blended average. That does not mean every query moved by 9.9 positions, or establish how many terms reached the first page. The query and page reports are needed for that assessment."
   },
   {
     question: "What SEO work matters most for bridal retailers and designers?",
@@ -102,7 +102,7 @@ const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Bridal Dress SEO Case Study",
-  description: "How SEO work helped a bridal dress designer grow organic clicks, impressions and average position by improving page relevance and commercial search coverage.",
+  description: "Emily Bridalwear Search Console comparison: higher clicks and impressions and improved average position versus the same three-month period a year earlier.",
   image: `https://brightforge.com.ph${image}`,
   author: {
     "@type": "Organization",
@@ -125,7 +125,7 @@ const caseStudySchema = {
 
 <MainLayout
   title="Bridal Dress SEO Case Study | Bright Forge"
-  description="How SEO helped a bridal dress designer grow organic clicks by 137.5%, impressions by 118.1% and move from page three toward page two visibility."
+  description="Emily Bridalwear recorded 7.41k to 17.6k organic clicks in a year-on-year three-month comparison. See the search figures and bridal-page review priorities."
   canonical={canonical}
   image={image}
   type="article"
@@ -152,10 +152,10 @@ const caseStudySchema = {
       <div class="case-meta">
         <span>Bridal fashion</span>
         <span>Ecommerce and appointments</span>
-        <span>3 month comparison</span>
+        <span>Last 3 months versus Same period last year</span>
       </div>
-      <p class="hero-subtitle">How Emily Bridalwear grew organic clicks by 137.5% across commercial dress-research searches.</p>
-      <p>Emily Bridalwear is a Sheffield bridal shop. Live site: <a href="https://www.emilybridalwear.co.uk/" rel="noopener">emilybridalwear.co.uk</a>. Bridal search is image-led and mixed-intent. The useful result was a move from weak page-three visibility toward stronger page-two coverage, plus broader impression growth. Not a claim of instant first-page control.</p>
+      <p class="hero-subtitle">Emily Bridalwear recorded about 137.5% more organic clicks than in the same three-month period a year earlier.</p>
+      <p>Emily Bridalwear is a Sheffield bridal shop. Live site: <a href="https://www.emilybridalwear.co.uk/" rel="noopener">emilybridalwear.co.uk</a>. The comparison shows higher clicks and impressions, alongside an improved average position. It does not identify which dress searches contributed or whether the extra clicks led to appointments.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -184,17 +184,17 @@ const caseStudySchema = {
         <div>
           <p class="eyebrow">The short version</p>
           <h2>Better <span>visibility</span> during the bridal research window</h2>
-          <p>A bridal dress designer had useful products and strong visual appeal, but organic visibility was stuck too far down the results for many valuable searches. Average position sat at 24.8, which meant the site was often appearing where searchers rarely reach.</p>
-          <p>Over the comparison period, organic clicks increased from 7.4k to 17.6k and impressions increased from 342k to 746k. Average position improved to 14.9. That is a meaningful visibility gain, but it should be read honestly: the site moved much closer to first-page competition, not all the way through it.</p>
+          <p>The earlier three-month window recorded 7.41k clicks, 342k impressions and an average position of 24.8. The screenshot supplies an aggregate comparison, not a ranking distribution or a breakdown of bridal buying intent.</p>
+          <p>In the last three months shown, clicks reached 17.6k, impressions 746k and average position 14.9. The reported 137.5% click increase is approximate; rounded screenshot totals should not be treated as exact underlying counts.</p>
         </div>
         <aside class="case-summary-card">
           <h3>Campaign snapshot</h3>
           <dl>
             <div><dt>Industry</dt><dd>Bridal fashion and dress retail</dd></div>
             <div><dt>Market type</dt><dd>Image-led ecommerce and appointments</dd></div>
-            <div><dt>Timeframe</dt><dd>3 month comparison</dd></div>
+            <div><dt>Timeframe</dt><dd>Last 3 months versus Same period last year</dd></div>
             <div><dt>Main KPI</dt><dd>Organic clicks from Google Search</dd></div>
-            <div><dt>Primary work</dt><dd>Page relevance, bridal query coverage, imagery and internal links</dd></div>
+            <div><dt>Recommended review</dt><dd>Collection information, imagery, local appointment searches and internal links</dd></div>
           </dl>
         </aside>
       </div>
@@ -205,7 +205,7 @@ const caseStudySchema = {
         <div class="case-image-card">
           <img src={image} alt="Google Search Console performance comparison for a bridal dress designer SEO campaign" loading="eager" decoding="async" />
         </div>
-        <p class="image-note">Search Console metrics used in this case study: 7.4k to 17.6k clicks, 342k to 746k impressions, average position 24.8 to 14.9 and CTR 2.2% to 2.4%.</p>
+        <p class="image-note">Search Console metrics used in this case study: 7.41k to 17.6k clicks, 342k to 746k impressions, average position 24.8 to 14.9 and CTR 2.2% to 2.4%. The selector is Last 3 months versus Same period last year. Exact calendar dates and country/device filters are not visible.</p>
       </div>
     </section>
 
@@ -213,11 +213,11 @@ const caseStudySchema = {
       <div class="case-container two-column">
         <div>
           <p class="eyebrow">Starting problem</p>
-          <h2>The <span>site had bridal</span> demand, but too much of it was being reached from weak positions</h2>
+          <h2>Bridal pages need to distinguish <span>dress research</span> from booking a visit</h2>
         </div>
         <div class="section-copy">
           <p>Bridal dress SEO has a difficult mix of intent. Some searches are early inspiration. Some are style research. Some come from shoppers comparing designers, boutiques or appointment options. Treating all of those searches as the same opportunity leads to vague pages and wasted effort.</p>
-          <p>The starting data showed a site with visibility, but not enough strength in the results. The work had to make page purpose clearer, improve coverage around bridal dress searches and support image-heavy pages with stronger crawlable context.</p>
+          <p>A review should check whether a customer can move from a dress or designer page to the shop location and appointment details. Those checks are relevant to bridal retail, but this screenshot does not prove they were implemented.</p>
         </div>
       </div>
     </section>
@@ -229,7 +229,7 @@ const caseStudySchema = {
         <div class="constraint-grid">
           <article>
             <h3>Mixed buyer intent</h3>
-            <p>Brides search across inspiration, dress styles, designers, prices, locations and appointment intent. The page strategy had to respect those differences.</p>
+            <p>Brides search across inspiration, dress styles, designers, prices, locations and appointment intent. A page review should account for those differences.</p>
           </article>
           <article>
             <h3>Image-heavy pages</h3>
@@ -237,11 +237,11 @@ const caseStudySchema = {
           </article>
           <article>
             <h3>Competitive commercial terms</h3>
-            <p>Established retailers, marketplaces and publishers compete for many bridal searches, so relevance and authority had to build together.</p>
+            <p>Compare the results for specific dress and local-shop searches before deciding whether a collection page, location page or guide is the right fit.</p>
           </article>
           <article>
             <h3>Short comparison window</h3>
-            <p>The three-month improvement was strong, but the page still needed honest framing because average position ended at 14.9, not page-one dominance.</p>
+            <p>The two three-month windows are a year apart. The comparison is useful, but it does not isolate changes in demand, competitors or the site itself.</p>
           </article>
         </div>
       </div>
@@ -250,9 +250,9 @@ const caseStudySchema = {
     <section class="work-section" id="work">
       <div class="case-container">
         <div class="section-header">
-          <p class="eyebrow">What changed</p>
-          <h2>The work focused on <span>commercial relevance</span>, visual-page quality and cleaner query coverage</h2>
-          <p>For a bridal designer, the search opportunity sits across dress styles, collections, designer language, appointment intent and research questions. The campaign aimed to make the right pages easier to understand and easier to find.</p>
+          <p class="eyebrow">Recommended bridal-page checks</p>
+          <h2>Review <span>collection information</span>, imagery and the appointment path</h2>
+          <p>The checks below are recommendations for an image-led bridal site, not a verified list of changes delivered during this comparison. Start with the actual collections, customer questions and appointment process.</p>
         </div>
         <div class="work-list">
           {workstreams.map((item, index) => (
@@ -272,8 +272,8 @@ const caseStudySchema = {
       <div class="case-container">
         <div class="section-header compact">
           <p class="eyebrow">What moved</p>
-          <h2>Clicks and impressions grew sharply while <span>average position</span> moved from page three toward page two</h2>
-          <p>The strongest movement was the almost ten-place average position improvement. That helped the site appear in more useful places across more searches, which explains why clicks rose faster than CTR.</p>
+          <h2>Clicks and impressions grew while <span>average position</span> improved by 9.9 positions</h2>
+          <p>Clicks and impressions more than doubled, and the blended average position improved. A fixed set of pages and queries would be needed to separate ranking changes from changes in the search mix.</p>
         </div>
         <div class="result-grid">
           {metrics.map((metric) => (
@@ -297,14 +297,14 @@ const caseStudySchema = {
       <div class="case-container commercial-card">
         <div>
           <p class="eyebrow">Commercial meaning</p>
-          <h2>The result gave the brand <span>more chances</span> to be found during dress research</h2>
-          <p>Bridal purchases are high-consideration decisions. Searchers compare styles, designers, locations, galleries and appointment options before they commit. More visibility during that research window gives the brand more chances to be shortlisted.</p>
-          <p>The data does not prove revenue and it should not be dressed up as if it does. What it does show is stronger organic reach, more visits and a better position from which to compete for first-page terms in the next phase.</p>
+          <h2>The next question is whether <span>search clicks</span> led to appointments</h2>
+          <p>Bridal purchases are high-consideration decisions. Searchers compare styles, designers, locations, galleries and appointment options before they commit. Collection details and a clear appointment route can help them decide whether to visit.</p>
+          <p>The search totals do not prove appointments, sales or revenue. To assess commercial value, review which landing pages received the additional clicks and compare them with measured appointment enquiries.</p>
         </div>
         <div class="meaning-points">
-          <article><strong>More research-stage reach</strong><span>The site appeared across a wider set of relevant bridal dress searches.</span></article>
-          <article><strong>Stronger commercial foundation</strong><span>Average position improved enough to create a more realistic path toward page-one competition.</span></article>
-          <article><strong>Clearer next actions</strong><span>The campaign could now focus on the terms and pages closest to first-page opportunity.</span></article>
+          <article><strong>Higher search exposure</strong><span>Recorded impressions increased from 342k to 746k.</span></article>
+          <article><strong>Improved blended position</strong><span>The aggregate average moved from 24.8 to 14.9.</span></article>
+          <article><strong>Appointment measurement</strong><span>Check whether collection-page visits lead to useful enquiries.</span></article>
         </div>
       </div>
     </section>

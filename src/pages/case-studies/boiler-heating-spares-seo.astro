@@ -16,73 +16,73 @@ const metrics = [
     before: "14.1k",
     after: "16.6k",
     change: "+18%",
-    note: "More visits from people already searching for boiler and heating spare parts."
+    note: "More organic clicks in the later six-month window; the screenshot does not identify the queries or buyers."
   },
   {
     label: "Impressions",
     before: "1.06M",
     after: "1.17M",
     change: "+10%",
-    note: "Broader visibility across product, category and long-tail spare-part searches."
+    note: "More recorded search appearances. The totals do not show which products or query groups gained visibility."
   },
   {
     label: "Average position",
     before: "18.5",
     after: "18.0",
     change: "Small lift",
-    note: "The commercial story was not a dramatic ranking jump. It was steadier coverage and better click capture."
+    note: "Average position improved by 0.5 positions across the reported impressions."
   },
   {
     label: "CTR",
     before: "1.3%",
     after: "1.4%",
     change: "+0.1pp",
-    note: "A modest snippet improvement matters when the site is already showing across more than a million impressions."
+    note: "The displayed CTR rose by 0.1 percentage points. This comparison does not establish snippet causation."
   }
 ];
 
 const workstreams = [
   {
     title: "Search demand mapping",
-    text: "We separated boiler model searches, spare-part names, compatibility queries and broader heating repair intent so the site was not treating every keyword like the same product search."
+    text: "Group model numbers, spare-part names and compatibility questions separately. A buyer searching for a specific replacement needs a matching product page, not a general heating guide."
   },
   {
     title: "Category and product relevance",
-    text: "Priority pages needed clearer titles, headings, copy and internal links so search engines could understand which pages deserved to rank for specific parts and categories."
+    text: "Check that titles, headings and product copy identify the part, its compatible models and the relevant category. Keep compatibility statements tied to manufacturer information."
   },
   {
     title: "Crawl and architecture checks",
-    text: "Large ecommerce sites can bury useful pages. We reviewed how important categories, product groups and support pages were linked so crawl attention was not wasted."
+    text: "Trace links from categories to in-stock parts and useful support pages. Review duplicate filters and discontinued products before deciding what should remain indexed."
   },
   {
     title: "Authority and trust signals",
-    text: "We supported the stronger page structure with relevant authority work, avoiding generic link activity that would not help specialist spare-part searches."
+    text: "Make supplier details and product documentation easy to check. Review existing referring sites before recommending any link work; the chart cannot establish a backlink contribution."
   },
   {
     title: "Monthly Search Console review",
-    text: "The campaign was adjusted from actual query, page and click data, not from a fixed list of SEO tasks that stayed the same for six months."
+    text: "Compare the same pages and queries over time, separating model-number searches from broader repair questions. Use that breakdown to choose the next catalogue change."
   }
 ];
 
 const lessons = [
-  "Specialist ecommerce SEO is usually won through detail, not slogans. Model numbers, product naming, category clarity and compatibility language all matter.",
-  "A small average-position improvement can still produce useful growth when the site has large impression volume and better coverage across long-tail searches.",
-  "Clicks and impressions need context. The meaningful point here is steadier demand capture across a technical catalogue, not a miracle ranking graph.",
+  "Model numbers and compatibility information help buyers distinguish a suitable replacement from a similar-looking part.",
+  "Check click movement alongside impressions and CTR. A small change in aggregate position does not describe every product page.",
+  "Keep orders, returns and part-fit questions separate from search metrics when assessing the commercial value of catalogue traffic.",
   "Search Console should shape the next month of work. For parts suppliers, the data often reveals query variations that the catalogue structure has not caught yet."
 ];
 
 const faqs = [
   {
-    question: "What made this boiler spares SEO campaign difficult?",
-    answer: "The site was competing in a technical ecommerce market where buyers search by boiler model, part name, compatibility issue and repair symptom. That creates a large long-tail SEO problem rather than one simple keyword target."
+    question: "What makes boiler spares search different from general retail?",
+    answer: "Buyers can search by boiler model, part name, compatibility issue or repair symptom. Those are different information needs: a product page should confirm fit, while a support page may explain how to identify a part."
   },
   {
     question: "Were the results mainly from rankings or click-through improvements?",
-    answer: "Both played a part, but the data shows a practical mix: impressions increased, clicks increased and CTR improved slightly. Average position only moved from 18.5 to 18.0, so the strongest story is broader and cleaner demand capture rather than one big ranking jump."
+    answer: "Clicks, impressions and displayed CTR increased, while average position improved from 18.5 to 18.0. These aggregate changes do not isolate the effect of rankings, snippets or a changing query mix."
   },
   {
     question: "Why does a 0.1 percentage point CTR lift matter?",
-    answer: "At more than one million impressions, even a small CTR improvement can create extra traffic. It is not a dramatic metric on its own, but it matters when paired with stronger visibility and better page targeting."
+    answer: "It means the reported share of impressions producing clicks increased from 1.3% to 1.4%. Both values are rounded. Compare a fixed set of queries and pages before attributing that change to titles or descriptions."
   },
   {
     question: "What SEO work matters most for spare parts ecommerce sites?",
@@ -102,7 +102,7 @@ const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Boiler and Heating Spares SEO Case Study",
-  description: "How SEO work helped a specialist boiler and heating spares supplier improve organic clicks, impressions and search coverage across a technical ecommerce catalogue.",
+  description: "A six-month Search Console comparison for a boiler and heating spares supplier: higher organic clicks and impressions, with catalogue checks for similar businesses.",
   image: `https://brightforge.com.ph${image}`,
   author: {
     "@type": "Organization",
@@ -125,7 +125,7 @@ const caseStudySchema = {
 
 <MainLayout
   title="Boiler Spares SEO Case Study | Bright Forge"
-  description="How SEO helped a boiler and heating spares supplier grow organic clicks by 18% and improve search coverage across a technical ecommerce catalogue."
+  description="Boiler spares Search Console comparison: organic clicks rose from 14.1k to 16.6k across successive six-month periods. See the figures and their limits."
   canonical={canonical}
   image={image}
   type="article"
@@ -152,10 +152,10 @@ const caseStudySchema = {
       <div class="case-meta">
         <span>Specialist ecommerce</span>
         <span>Home and DIY</span>
-        <span>6 month comparison</span>
+        <span>Last 6 months versus Previous 6 months</span>
       </div>
-      <p class="hero-subtitle">How a technical parts supplier increased organic clicks by 18% without pretending the work was a magic ranking trick.</p>
-      <p>Boiler and heating spares SEO is not glamorous. That is exactly why it is valuable. Buyers search with model numbers, symptoms, compatibility questions and urgent replacement intent. The work was about helping the right pages catch that demand more consistently.</p>
+      <p class="hero-subtitle">A boiler and heating spares supplier recorded about 18% more organic clicks across successive six-month periods.</p>
+      <p>A replacement part has to fit the boiler. Model numbers, compatibility details and clear product categories matter to buyers who need the right item. This case shows the search comparison, followed by catalogue checks relevant to that buying process.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -183,18 +183,18 @@ const caseStudySchema = {
       <div class="case-container overview-grid">
         <div>
           <p class="eyebrow">The short version</p>
-          <h2>Steadier <span>search demand</span> capture for a specialist parts catalogue</h2>
-          <p>A boiler spares supplier had useful products in a market with clear search demand, but the SEO opportunity was spread across hundreds of technical queries. The goal was not to chase one vanity keyword. It was to make the catalogue easier to understand, easier to crawl and more relevant to the searches buyers actually use.</p>
-          <p>The result was a practical lift in organic clicks and impressions over the comparison period, with a modest improvement in average position and CTR. That matters because technical ecommerce sites often win through cumulative long-tail gains rather than one headline ranking.</p>
+          <h2>More <span>organic clicks</span> for a specialist parts catalogue</h2>
+          <p>The comparison records 14.1k clicks in the previous six months and 16.6k in the last six months. Impressions increased from 1.06M to 1.17M. These are the rounded totals displayed in Search Console.</p>
+          <p>Average position improved from 18.5 to 18.0 and CTR from 1.3% to 1.4%. The image does not reveal exact calendar dates, country or device filters, or which pages and queries changed. It is an observed comparison, not a record of completed SEO changes.</p>
         </div>
         <aside class="case-summary-card">
           <h3>Campaign snapshot</h3>
           <dl>
             <div><dt>Industry</dt><dd>Boiler and heating spare parts</dd></div>
             <div><dt>Market type</dt><dd>Technical ecommerce</dd></div>
-            <div><dt>Timeframe</dt><dd>6 month comparison</dd></div>
+            <div><dt>Timeframe</dt><dd>Last 6 months versus Previous 6 months</dd></div>
             <div><dt>Main KPI</dt><dd>Organic clicks from Google Search</dd></div>
-            <div><dt>Primary work</dt><dd>Keyword mapping, page relevance, internal links and monitoring</dd></div>
+            <div><dt>Recommended review</dt><dd>Part identification, compatibility information, category links and query analysis</dd></div>
           </dl>
         </aside>
       </div>
@@ -213,11 +213,11 @@ const caseStudySchema = {
       <div class="case-container two-column">
         <div>
           <p class="eyebrow">Starting problem</p>
-          <h2>The site needed clearer coverage across <span>technical, high-intent searches</span></h2>
+          <h2>Parts buyers need answers to <span>technical, high-intent searches</span></h2>
         </div>
         <div class="section-copy">
           <p>Boiler spare parts are searched for in messy ways. Some buyers know the exact part. Others search by boiler model, fault, compatibility or a category phrase. A useful SEO plan has to account for all of that without creating duplicate, thin or confusing pages.</p>
-          <p>The challenge was to improve visibility across a specialist catalogue while keeping the work grounded in commercial intent. Traffic was only useful if it brought people closer to finding the correct part or category.</p>
+          <p>For a catalogue review, the practical question is whether each search leads to the correct part or category. Search clicks alone cannot tell us whether the part was suitable or an order followed.</p>
         </div>
       </div>
     </section>
@@ -225,7 +225,7 @@ const caseStudySchema = {
     <section class="constraints-section">
       <div class="case-container">
         <p class="eyebrow">Constraints</p>
-        <h2>Why this was not a <span>simple content campaign</span></h2>
+        <h2>What a <span>parts catalogue review</span> needs to address</h2>
         <div class="constraint-grid">
           <article>
             <h3>Technical product language</h3>
@@ -233,15 +233,15 @@ const caseStudySchema = {
           </article>
           <article>
             <h3>Large long-tail spread</h3>
-            <p>The value was distributed across many searches, not concentrated in one obvious keyword.</p>
+            <p>Model and part variants can create many distinct searches. Check the actual query list before choosing which pages to expand.</p>
           </article>
           <article>
-            <h3>Crawl attention mattered</h3>
-            <p>Important categories and products had to be easier for search engines to find, prioritise and connect.</p>
+            <h3>Category access</h3>
+            <p>Check whether category links let buyers and crawlers reach the parts that are available to order.</p>
           </article>
           <article>
-            <h3>Proof had to stay honest</h3>
-            <p>The average position moved only slightly, so the case study should explain the real win rather than exaggerate it.</p>
+            <h3>Search metrics and orders</h3>
+            <p>The image records search activity, not orders, revenue or the effect of a particular change.</p>
           </article>
         </div>
       </div>
@@ -250,9 +250,9 @@ const caseStudySchema = {
     <section class="work-section" id="work">
       <div class="case-container">
         <div class="section-header">
-          <p class="eyebrow">What changed</p>
-          <h2>The work focused on <span>page relevance</span>, catalogue structure and iteration from real data</h2>
-          <p>For a specialist parts supplier, SEO needs to help search engines and buyers understand what each page is for. The workstreams below are the parts that mattered most.</p>
+          <p class="eyebrow">Recommended catalogue checks</p>
+          <h2>Review <span>part identification</span>, catalogue structure and search demand</h2>
+          <p>These are recommendations for a specialist parts catalogue, not a verified change log for this supplier. The available comparison does not establish which actions were implemented.</p>
         </div>
         <div class="work-list">
           {workstreams.map((item, index) => (
@@ -273,7 +273,7 @@ const caseStudySchema = {
         <div class="section-header compact">
           <p class="eyebrow">What moved</p>
           <h2><span>Organic clicks</span> and visibility improved, with the caveat that average position only moved slightly</h2>
-          <p>This is a stronger case study when it is read honestly. The site did not leap from page two to position one. It captured more demand across a technical catalogue and turned a broader set of impressions into more clicks.</p>
+          <p>The later six-month window recorded more clicks and impressions. Average position and CTR also improved, but the totals cannot establish whether the same queries improved or the search mix changed.</p>
         </div>
         <div class="result-grid">
           {metrics.map((metric) => (
@@ -297,14 +297,14 @@ const caseStudySchema = {
       <div class="case-container commercial-card">
         <div>
           <p class="eyebrow">Commercial meaning</p>
-          <h2>The <span>win was better</span> capture of existing buyer demand</h2>
+          <h2>More clicks need to be connected to <span>correct-part orders</span></h2>
           <p>For ecommerce spare parts, the commercial value is rarely about making people interested in boilers. They already have a need. SEO has to help the right category or product appear when that need becomes a search.</p>
-          <p>The +18% click lift suggests the site became better at collecting demand that already existed. The impression growth shows broader search coverage, while the small CTR lift suggests search snippets and relevance improved enough to convert slightly more visibility into traffic.</p>
+          <p>The click increase gives the supplier more search activity to investigate. To assess its value, compare landing pages with completed orders and returns caused by part mismatch. No order or revenue result is established here.</p>
         </div>
         <div class="meaning-points">
-          <article><strong>More qualified entry points</strong><span>Useful pages could be found across more product and category searches.</span></article>
-          <article><strong>Better catalogue signals</strong><span>Page purpose, internal links and query alignment became clearer.</span></article>
-          <article><strong>More useful reporting</strong><span>The campaign could be judged by page and query movement, not vague traffic charts.</span></article>
+          <article><strong>Landing-page fit</strong><span>Check whether searches reach the correct part, model or category.</span></article>
+          <article><strong>Compatibility details</strong><span>Confirm fit information against the product documentation.</span></article>
+          <article><strong>Commercial measurement</strong><span>Connect search activity to orders and correct-part fulfilment.</span></article>
         </div>
       </div>
     </section>
