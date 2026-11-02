@@ -56,12 +56,13 @@ const articleSchema = {
       <p class="hero-subtitle">{data.heroSubtitle}</p>
       <p>{data.heroCopy}</p>
     </Fragment>
-    <Fragment slot="actions"><ButtonPrimary href="#results" text="View AI Results" /><ButtonSecondary href="/ai-search-optimization-services-philippines/" text="AI Search SEO" /></Fragment>
+    <Fragment slot="actions"><ButtonPrimary href="#results" text="Read the Report Findings" /><ButtonSecondary href="/ai-search-optimization-services-philippines/" text="AI Search SEO" /></Fragment>
   </Hero>
 
   <main class="case-study-page ai-case-study-page">
     <section class="proof-strip">
       <div class="case-container">
+        <p class="measurement-note">{data.measurementNote}</p>
         <div class="proof-grid">{data.metrics.map((metric) => (<article class="proof-card"><span class="proof-label">{metric.label}</span><strong>{metric.change}</strong><span>{metric.context}</span></article>))}</div>
       </div>
     </section>
@@ -73,14 +74,14 @@ const articleSchema = {
           <h2>{data.shortTitle}</h2>
           {data.overview.map((paragraph) => <p>{paragraph}</p>)}
         </div>
-        <aside class="case-summary-card"><h3>Campaign snapshot</h3><dl>{data.snapshot.map((item) => (<div><dt>{item.label}</dt><dd>{item.value}</dd></div>))}</dl></aside>
+        <aside class="case-summary-card"><h3>Review snapshot</h3><dl>{data.snapshot.map((item) => (<div><dt>{item.label}</dt><dd>{item.value}</dd></div>))}</dl></aside>
       </div>
     </section>
 
     <section class="visual-proof-section">
       <div class="case-container ai-proof-panel">
         <div>
-          <p class="eyebrow">AI search evidence</p>
+          <p class="eyebrow">Reported observations</p>
           <h2>{data.evidenceTitle}</h2>
           <p>{data.evidenceCopy}</p>
         </div>
@@ -96,15 +97,15 @@ const articleSchema = {
     </section>
 
     <section class="constraints-section">
-      <div class="case-container"><p class="eyebrow">Constraints</p><h2>Why this was not a simple <span>AI traffic story</span></h2><div class="constraint-grid">{data.constraints.map((item) => (<article><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
+      <div class="case-container"><p class="eyebrow">Constraints</p><h2>How to interpret <span>this report</span></h2><div class="constraint-grid">{data.constraints.map((item) => (<article><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
     </section>
 
     <section class="work-section" id="work">
-      <div class="case-container"><p class="eyebrow">What changed</p><h2>{data.workTitle}</h2><div class="work-grid">{data.workstreams.map((item, index) => (<article class="work-item"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
+      <div class="case-container"><p class="eyebrow">{data.workLabel}</p><h2>{data.workTitle}</h2><div class="work-grid">{data.workstreams.map((item, index) => (<article class="work-item"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
     </section>
 
     <section class="results-section" id="results">
-      <div class="case-container"><p class="eyebrow">What moved</p><h2>{data.resultsTitle}</h2><div class="result-grid">{data.results.map((result) => (<article class="result-card"><div><span class="proof-label">{result.metric}</span><strong>{result.change}</strong></div><div class="before-after"><div><span>Before</span><strong>{result.before}</strong></div><div><span>After</span><strong>{result.after}</strong></div></div><p>{result.note}</p></article>))}</div></div>
+      <div class="case-container"><p class="eyebrow">Report findings</p><h2>{data.resultsTitle}</h2><div class="result-grid">{data.results.map((result) => (<article class="result-card"><div><span class="proof-label">{result.metric}</span><strong>{result.change}</strong></div><div class="before-after"><div><span>{data.beforeLabel || "Comparison"}</span><strong>{result.before}</strong></div><div><span>{data.afterLabel || "Reported total"}</span><strong>{result.after}</strong></div></div><p>{result.note}</p></article>))}</div></div>
     </section>
 
     <section class="commercial-section">
@@ -126,7 +127,7 @@ const articleSchema = {
       <div class="case-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Questions this <span>AI case study</span> should answer</h2></div><div class="faq-list">{data.faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div>
     </section>
 
-    <section class="case-cta-section"><div class="case-container"><div class="case-cta-card"><h2>Want to see how visible your business is in <span>AI search</span>?</h2><p>We can review the pages, schema, entity signals and content patterns that decide whether AI systems can understand and recommend your brand.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an AI Search Review" /><ButtonSecondary href="/case-studies/" text="View More Case Studies" /></div></div></div></section>
+    <section class="case-cta-section"><div class="case-container"><div class="case-cta-card"><h2>Want to see how visible your business is in <span>AI search</span>?</h2><p>We can review the pages buyers use to assess your offer, check technical access and agree how to measure AI referrals and enquiries.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an AI Search Review" /><ButtonSecondary href="/case-studies/" text="View More Case Studies" /></div></div></div></section>
   </main>
   <Footer slot="footer" />
 </MainLayout>

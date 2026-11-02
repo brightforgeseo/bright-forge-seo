@@ -44,9 +44,12 @@ def test_editorial_copy_explains_work_without_agency_posturing():
 
 
 def test_proof_and_measurement_do_not_turn_events_into_leads():
-    assert '8 to 61' in SOURCE and '13 tracked key events' in SOURCE
+    # Proof cards now lead to source-report reviews, not unsupported metric promos.
+    assert '13 tracked key events' not in SOURCE and '4,549' not in SOURCE
+    assert 'original GEO reports' in SOURCE
     assert 'August 2025 to January 2026' in SOURCE
-    assert 'not a causal test' in SOURCE
+    assert 'not proof that a particular edit caused growth' in SOURCE
+    assert 'without treating tracked events as enquiries' in SOURCE
     assert 'A brand mention is not necessarily a linked citation' in SOURCE
     assert 'confirmed lead' in SOURCE.lower()
     assert 'automated SEO team' not in SOURCE

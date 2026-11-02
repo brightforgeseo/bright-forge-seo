@@ -107,10 +107,10 @@ const platformRows = [
 ];
 
 const geoCases = [
-  { href: '/case-studies/ai-sports-saas-geo/', name: 'TeamStats', line: '4,549 LLM referral sessions, alongside 162 AI mentions and 239 AI link citations. Traffic and visibility are separate measurements.' },
-  { href: '/case-studies/ai-self-storage-geo/', name: 'Newbury Self Store', line: 'LLM referral sessions rose from 8 to 61, with 13 tracked key events. Useful early evidence from a small starting base, not 13 confirmed leads.' },
-  { href: '/case-studies/ai-leather-goods-ecommerce-geo/', name: 'Lost Dutchman Leather', line: '893 AI-referred sessions and 66 tracked key events. Product-detail pages were important entry points; events are not a count of sales.' },
-  { href: '/case-studies/ai-fintech-saas-geo/', name: 'FinTech SaaS', line: '1,322 LLM referral sessions and 758 engaged sessions. Educational and support content helped explain the research journey.' }
+  { href: '/case-studies/ai-sports-saas-geo/', name: 'TeamStats', line: 'Why a team-management product page deserves a different review from football resources, and why an AI-answer sample cannot be joined to referral visits.' },
+  { href: '/case-studies/ai-self-storage-geo/', name: 'Newbury Self Store', line: 'Connecting practical storage guides to accurate facility details, unit choices and a quote route without treating tracked events as enquiries.' },
+  { href: '/case-studies/ai-leather-goods-ecommerce-geo/', name: 'Lost Dutchman Leather', line: 'Reading product and collection entries together, then helping shoppers compare wallet capacity, dimensions, delivery and returns.' },
+  { href: '/case-studies/ai-fintech-saas-geo/', name: 'FinTech SaaS', line: 'Separating educational research, existing-user support and software evaluation before assigning commercial value to referrals.' }
 ];
 ---
 
@@ -139,7 +139,7 @@ const geoCases = [
     </Fragment>
     <Fragment slot="stats">
       <div class="hero-stats">
-        <div class="stat"><strong>17</strong><span>Published case studies</span></div>
+        <div class="stat"><strong>Report reviews</strong><span>Published evidence and limitations</span></div>
         <div class="stat"><strong>15+</strong><span>Years of SEO practice</span></div>
         <div class="stat"><strong>UK US AU</strong><span>Western search work</span></div>
         <div class="stat"><strong>GBP / USD</strong><span>Billed in buyer currency</span></div>
@@ -193,16 +193,16 @@ const geoCases = [
     <section class="ai-cases" id="cases">
       <div class="ai-shell">
         <div class="ai-section-heading">
-          <p class="ai-kicker"><span></span> Published evidence</p>
-          <h2>What our AI search case studies <span>actually measured</span></h2>
-          <p>These published cases cover August 2025 to January 2026. They document observed traffic, visibility and tracked activity, not a causal test of a single GEO change or a promise of your results. Each case explains its sources and comparison limits.</p>
+          <p class="ai-kicker"><span></span> Report reviews</p>
+          <h2>What the referral reports <span>help us review</span></h2>
+          <p>These case reviews use the original GEO reports for August 2025 to January 2026. They show which pages deserve attention and how we distinguish referrals from commercial outcomes. Report observations and recommendations are not proof that a particular edit caused growth.</p>
         </div>
         <div class="case-grid">
           {geoCases.map((item) => (
             <a class="case-card" href={item.href}>
               <strong>{item.name}</strong>
               <p>{item.line}</p>
-              <span>Read the case</span>
+              <span>Read the report review</span>
             </a>
           ))}
         </div>
