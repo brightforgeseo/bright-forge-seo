@@ -12,10 +12,10 @@ const caseStudyData = {
   client: "Phoenix Brighton Spa",
   website: "https://www.phoenixbrighton.co.uk/",
   industry: "Beauty & Wellness",
-  duration: "6 Months",
+  duration: "Last six months versus previous six months",
   heroImage: "/images/case-studies/SEO Case Study- Growing Organic Traffic for Phoenix Spa and Beauty – Beauty Salon and Spa .webp",
-  challenge: "Breaking through a competitive local spa & beauty market while targeting location-based service keywords and building online trust.",
-  solution: "Local keyword research, content optimisation, Google Business Profile improvements, on-page technical fixes and authority link building drove significant traffic growth.",
+  challenge: "A spa visitor needs to choose a treatment, a location and an available appointment. The current Phoenix site lists massages, facials and vegan treatments in Brighton and Hove. Those details inform the recommendations below, but the undated screenshot does not establish which locations or treatment pages contributed the historical clicks.",
+  solution: "The screenshot shows approximately 70% more clicks and 188% more impressions, alongside worse average position and lower CTR. It does not identify the changes behind the increase. The checks below are recommendations for this type of spa website, not a record of completed campaign work.",
   keyMetrics: [
     { label: "Total Clicks", value: "+70%", description: "5,570 → 9,480" },
     { label: "Total Impressions", value: "+188%", description: "145k → 418k" },
@@ -23,11 +23,11 @@ const caseStudyData = {
     { label: "CTR", value: "3.8% → 2.3%", description: "CTR decreased" }
   ],
   strategySteps: [
-    { title: "Local Keyword Research", description: "Focused on geo-targeted spa & beauty service terms." },
-    { title: "Content Optimisation", description: "Optimised service pages & blog content for local intent." },
-    { title: "Technical SEO", description: "Improved site speed & mobile UX for appointment bookings." },
-    { title: "GBP & Schema", description: "Enhanced Google Business Profile & added structured data." },
-    { title: "Authority Backlinks", description: "Earned links from wellness blogs and local directories." }
+    { title: "Treatment selection", description: "Check whether massage and facial pages explain the treatment, duration and price before a visitor enters the booking system." },
+    { title: "Branch selection", description: "Review whether the customer can distinguish Brighton from Hove and reach the correct branch booking link. Do not assume that the historical comparison included both branches." },
+    { title: "Mobile booking", description: "Test the treatment-to-calendar journey on a phone, including branch choice, available times and the return path if no appointment is suitable." },
+    { title: "Location details", description: "Check branch addresses, opening hours and booking destinations across the website and business profiles. Structured data should describe the information actually visible on the relevant page." },
+    { title: "Booking measurement", description: "Measure completed appointments separately from booking-link clicks. Where the calendar is external, confirm whether source attribution survives the handoff." }
   ],
   results: [
     { metric: "Total Clicks", before: "5,570", after: "9,480", improvement: "+70%" },
@@ -36,14 +36,14 @@ const caseStudyData = {
     { metric: "Click-Through Rate", before: "3.8%", after: "2.3%", improvement: "CTR decreased" }
   ],
   keyTakeaways: [
-    "Local SEO focus drives foot-traffic oriented businesses.",
-    "GBP enhancements complement on-site optimisation.",
-    "Authority citations build consumer trust in service niches."
+    "More search clicks do not establish more appointments, treatment revenue or walk-in customers.",
+    "Compare treatment and branch pages separately before interpreting a rise in total impressions.",
+    "Keep the treatment, branch and available appointment connected through the booking journey."
   ]
 };
 ---
 
-<MainLayout title="Phoenix Brighton Spa SEO Case Study | Bright Forge" description="Phoenix Brighton Spa's archived Search Console comparison shows higher clicks and impressions alongside lower CTR. Review the source and campaign scope.">
+<MainLayout title="Phoenix Brighton Spa SEO Case Study | Bright Forge" description="Phoenix Brighton Spa's archived Search Console comparison shows higher clicks and impressions alongside lower CTR. Review the source and recommended booking-path checks.">
   <LegacyHeader slot="header" />
 
   <!-- Hero Section -->
@@ -57,7 +57,7 @@ const caseStudyData = {
         <span class="meta-divider">•</span>
         <span class="meta-item">{caseStudyData.duration}</span>
       </div>
-      <p>We worked on <a href="https://www.phoenixbrighton.co.uk/" rel="noopener">phoenixbrighton.co.uk</a>. Local spa and beauty search in Brighton is crowded. The job was service pages, GBP and location relevance, not a national brand campaign.</p>
+      <p>This case presents the published search comparison for <a href="https://www.phoenixbrighton.co.uk/" rel="noopener">phoenixbrighton.co.uk</a>. Clicks increased from approximately 5,570 to 9,480 across two six-month windows. The image records search performance, not completed appointments.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -93,7 +93,7 @@ const caseStudyData = {
   <!-- Challenge Section -->
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">The <span>Challenge</span></h2>
+      <h2 class="section-title">The <span>booking decision</span></h2>
       <p class="section-text">{caseStudyData.challenge}</p>
     </div>
   </section>
@@ -101,7 +101,7 @@ const caseStudyData = {
   <!-- Solution Section -->
   <section class="content-section gray">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title">Our <span>Approach</span></h2>
+      <h2 class="section-title">Reading the <span>comparison</span></h2>
       <p class="section-text">{caseStudyData.solution}</p>
     </div>
   </section>
@@ -109,7 +109,7 @@ const caseStudyData = {
   <!-- Strategy Section -->
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="section-title"><span>Strategy</span></h2>
+      <h2 class="section-title">Recommended <span>booking-path checks</span></h2>
 
       <div class="strategy-list">
         {caseStudyData.strategySteps.map((step, index) => (

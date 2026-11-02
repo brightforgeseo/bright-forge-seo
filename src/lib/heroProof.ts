@@ -3,7 +3,7 @@ export interface HeroCard { label: string; value: string; detail: string; href: 
 const caseCard = (slug: string, label: string, value: string, detail: string): HeroCard => ({ label, value, detail, href: `/case-studies/${slug}/`, source: `/case-studies/${slug}/` });
 const bridal = caseCard('bridal-dress-designer-seo', 'Emily Bridalwear', '+137.5%', 'Organic clicks · 3-month comparison');
 const leather = caseCard('leather-wallet-ecommerce-seo', 'Lost Dutchman Leather', '+49.3%', 'Organic clicks · published case study');
-const pest = caseCard('pest-control-core-update-seo', 'Pest control recovery', '+128%', 'Organic clicks · 6-month comparison');
+const pest = caseCard('pest-control-core-update-seo', 'ThermoPest search comparison', '+128%', 'Organic clicks · 6-month comparison');
 const legal = caseCard('injury-law-organic-growth', 'Personal-injury law firm', '+106.5%', 'Organic clicks · two 90-day periods · anonymised');
 const builder = caseCard('custom-home-builder-search-growth', 'Custom home builder', '+33.8%', 'Organic clicks · two 90-day periods · anonymised');
 const industrial = caseCard('industrial-parts-washing-search-growth', 'Industrial manufacturer', '+49.7%', '704 to 1,054 organic clicks · 90-day comparison');
