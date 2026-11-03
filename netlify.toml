@@ -7,7 +7,7 @@
 
 # Serve the static site directly. The former global analytics-stripping edge
 # function caused HTTP 500 invocation failures on pages and static assets.
-# Keep its source recoverable, but do not put it on the request critical path.
+# Its source is archived outside the deployment directory so it is not bundled.
 
 # Build processing and optimization
 # Content-Security-Policy header added for security
