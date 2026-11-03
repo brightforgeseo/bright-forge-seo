@@ -325,6 +325,10 @@ const serviceOptions = [
 </script>
 
 <style>
+  /* Native fragment scrolling must not race the load-time form alignment.
+     A pending smooth-scroll frame can otherwise move the focused form above
+     the header after scrollIntoView({ behavior: 'instant' }) has completed. */
+  :global(html) { scroll-behavior: auto; }
   #contactForm { scroll-margin-top: 110px; }
   #contactForm:focus-visible { outline: 2px solid #f0622a; outline-offset: 6px; }
   #enquiry-context, #enquiry-market { color: #465365; line-height: 1.6; margin: 0 0 1rem; }
