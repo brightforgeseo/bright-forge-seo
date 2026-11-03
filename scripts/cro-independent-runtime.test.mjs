@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {createRequire} from 'node:module';
+const require=createRequire(process.cwd()+'/package.json');
+const {JSDOM}=require('jsdom');
+const source=n=>fs.readFileSync(`src/components/${n}.astro`,'utf8');
+const script=s=>s.match(/<script[^>]*>([\s\S]*?)<\/script>/)[1];
+for(const store of ['sessionStorage','localStorage']) test(`CRO blocked ${store} getter must not break accepted-only form tracking`,async()=>{
+ const d=new JSDOM('<form name="contact" data-lead-form="contact-page"><input type="hidden" name="form-name" value="contact"><button type="submit">Send</button></form>',{url:'https://brightforge.com.ph/contact/',runScripts:'outside-only',pretendToBeVisual:true});
+ const w=d.window;
+ Object.defineProperty(w,store,{get(){throw new w.DOMException('Storage denied','SecurityError');}});
+ w.BFAttributionPrivacy={safeUrl:()=> 'https://brightforge.com.ph/contact/',safePath:()=>'/contact/',safeUtm:()=>''};
+ const events=[];w.gtag=(...x)=>events.push(x);w.fetch=async()=>({ok:false});
+ assert.doesNotThrow(()=>w.eval(script(source('LeadTracking'))));
+ assert.ok(w.BFLeadTracking);
+ w.document.querySelector('form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));
+ await new Promise(r=>setImmediate(r));
+ assert.equal(events.filter(e=>e[1]==='generate_lead').length,0);
+ assert.match(w.document.querySelector('[role=alert]').textContent,/try again/);w.close();
+});
+test('CRO automatic popup restores body focus when reader had no focused control',()=>{
+ const s=source('ContactPopup');const d=new JSDOM(s.replace(/^---[\s\S]*?---/,''),{url:'https://brightforge.com.ph/',runScripts:'outside-only'});const w=d.window;
+ let open;w.setTimeout=fn=>{open=fn;};
+ assert.equal(w.document.activeElement,w.document.body);
+ w.eval(script(s));w.document.dispatchEvent(new w.Event('DOMContentLoaded'));open();
+ assert.equal(w.document.activeElement.id,'popup-close');
+ w.document.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+ assert.equal(w.document.activeElement,w.document.body);
+ assert.equal(w.document.body.hasAttribute('tabindex'),false);w.close();
+});

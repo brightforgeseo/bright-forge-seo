@@ -26,45 +26,43 @@
 
     const safeStorage = {
       get(store, key) {
-        try { return store.getItem(key); } catch { return null; }
+        try { return window[store].getItem(key); } catch { return null; }
       },
       set(store, key, value) {
-        try { store.setItem(key, value); } catch { /* Storage may be blocked. */ }
+        try { window[store].setItem(key, value); } catch { /* Storage may be blocked. */ }
       },
       remove(store, key) {
-        try { store.removeItem(key); } catch { /* Storage may be blocked. */ }
+        try { window[store].removeItem(key); } catch { /* Storage may be blocked. */ }
       }
     };
 
+    // Retire the old native-submit marker. It never proved server acceptance.
+    safeStorage.remove('sessionStorage', PENDING_LEAD_KEY);
     const query = new URLSearchParams(window.location.search);
-    const sanitiseUrl = (value) => {
-      if (!value) return '';
-      try {
-        const url = new URL(value, window.location.origin);
-        return `${url.origin}${url.pathname}`;
-      } catch {
-        return '';
-      }
-    };
+    const privacy = window.BFAttributionPrivacy;
+    // If the early privacy guard fails, retain native forms without collecting.
+    if (!privacy) return;
+    const sanitiseUrl = privacy.safeUrl;
+    const sanitiseUtm = privacy.safeUtm;
     const currentTouch = {
       landing_page: sanitiseUrl(window.location.href),
-      page_path: window.location.pathname,
-      referrer: sanitiseUrl(document.referrer),
-      utm_source: query.get('utm_source') || '',
-      utm_medium: query.get('utm_medium') || '',
-      utm_campaign: query.get('utm_campaign') || '',
-      utm_term: query.get('utm_term') || '',
-      utm_content: query.get('utm_content') || ''
+      page_path: privacy.safePath(window.location.pathname),
+      referrer: sanitiseUrl(document.referrer, true),
+      utm_source: sanitiseUtm('utm_source', query.get('utm_source')),
+      utm_medium: sanitiseUtm('utm_medium', query.get('utm_medium')),
+      utm_campaign: sanitiseUtm('utm_campaign', query.get('utm_campaign')),
+      utm_term: sanitiseUtm('utm_term', query.get('utm_term')),
+      utm_content: sanitiseUtm('utm_content', query.get('utm_content'))
     };
 
     let firstTouch;
     try {
-      firstTouch = JSON.parse(safeStorage.get(window.localStorage, FIRST_TOUCH_KEY) || 'null');
+      firstTouch = JSON.parse(safeStorage.get('localStorage', FIRST_TOUCH_KEY) || 'null');
     } catch {
       firstTouch = null;
     }
 
-    const firstTouchExpired = !firstTouch?.captured_at || (Date.now() - firstTouch.captured_at) > FIRST_TOUCH_TTL_MS;
+    const firstTouchExpired = !Number.isFinite(firstTouch?.captured_at) || firstTouch.captured_at > Date.now() || (Date.now() - firstTouch.captured_at) > FIRST_TOUCH_TTL_MS;
     if (!firstTouch || firstTouchExpired) {
       firstTouch = {
         landing_page: currentTouch.landing_page,
@@ -74,8 +72,18 @@
         utm_campaign: currentTouch.utm_campaign,
         captured_at: Date.now()
       };
-      safeStorage.set(window.localStorage, FIRST_TOUCH_KEY, JSON.stringify(firstTouch));
     }
+
+    // Revalidate previously stored values as well as the incoming URL.
+    firstTouch = {
+      landing_page: sanitiseUrl(firstTouch.landing_page),
+      referrer: sanitiseUrl(firstTouch.referrer, true),
+      utm_source: sanitiseUtm('utm_source', firstTouch.utm_source),
+      utm_medium: sanitiseUtm('utm_medium', firstTouch.utm_medium),
+      utm_campaign: sanitiseUtm('utm_campaign', firstTouch.utm_campaign),
+      captured_at: firstTouch.captured_at
+    };
+    safeStorage.set('localStorage', FIRST_TOUCH_KEY, JSON.stringify(firstTouch));
 
     const attribution = {
       ...currentTouch,
@@ -88,7 +96,7 @@
 
     const track = (eventName, eventParams = {}) => {
       const payload = {
-        page_path: window.location.pathname,
+        page_path: privacy.safePath(window.location.pathname),
         ...eventParams
       };
 
@@ -123,6 +131,8 @@
     forms.forEach((form) => {
       populateAttribution(form);
       let started = false;
+      let submitting = false;
+      let accepted = false;
       const formName = form.getAttribute('name') || form.id || 'website-form';
 
       form.addEventListener('focusin', (event) => {
@@ -133,18 +143,55 @@
         track('lead_form_start', { form_name: formName });
       });
 
-      form.addEventListener('submit', () => {
+      form.addEventListener('submit', async (event) => {
+        // With no JavaScript/fetch, the original Netlify POST/action stays usable.
+        if (typeof window.fetch !== 'function') return;
+        event.preventDefault();
+        if (submitting || accepted) return;
+        if (!form.reportValidity()) return;
         populateAttribution(form);
-        const pending = {
-          form_name: formName,
-          landing_page: attribution.landing_page,
-          first_touch_landing_page: attribution.first_touch_landing_page,
-          utm_source: attribution.utm_source || attribution.first_touch_utm_source,
-          utm_medium: attribution.utm_medium || attribution.first_touch_utm_medium,
-          utm_campaign: attribution.utm_campaign || attribution.first_touch_utm_campaign
-        };
-        safeStorage.set(window.sessionStorage, PENDING_LEAD_KEY, JSON.stringify(pending));
+        safeStorage.remove('sessionStorage', PENDING_LEAD_KEY);
+        submitting = true;
+        const buttons = [...form.querySelectorAll('button[type="submit"],input[type="submit"]')];
+        const previousDisabled = buttons.map(button => button.disabled);
+        buttons.forEach(button => { button.disabled = true; });
+        form.setAttribute('aria-busy', 'true');
+        let error = form.querySelector('[data-submit-error]');
+        if (!error) {
+          error = document.createElement('p');
+          error.dataset.submitError = '';
+          error.setAttribute('role', 'alert');
+          error.tabIndex = -1;
+          form.appendChild(error);
+        }
+        error.hidden = true;
+        error.textContent = '';
         track('lead_form_submit', { form_name: formName });
+        try {
+          const body = new URLSearchParams();
+          new FormData(form).forEach((value, name) => {
+            if (typeof value === 'string') body.append(name, value);
+          });
+          const response = await window.fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString(),
+            credentials: 'same-origin'
+          });
+          if (!response.ok) throw new Error('Form was not accepted');
+          accepted = true;
+          track('generate_lead', { form_name: formName, transport_type: 'beacon' });
+          window.location.assign('/thanks/');
+        } catch {
+          safeStorage.remove('sessionStorage', PENDING_LEAD_KEY);
+          error.textContent = 'Your enquiry could not be sent. Your details are still here. Please try again, or use the contact details on this page.';
+          error.hidden = false;
+          error.focus();
+        } finally {
+          submitting = false;
+          if (!accepted) buttons.forEach((button, index) => { button.disabled = previousDisabled[index]; });
+          form.removeAttribute('aria-busy');
+        }
       });
     });
 
@@ -164,31 +211,18 @@
       if (!link) return;
 
       const href = link instanceof HTMLAnchorElement ? link.getAttribute('href') || '' : '';
-      const label = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120);
       const explicitEvent = link.getAttribute('data-analytics-event');
 
       if (explicitEvent) {
-        track(explicitEvent, { link_text: label, destination: href });
+        if (/^[a-z_]{1,64}$/.test(explicitEvent)) track(explicitEvent, { destination: sanitiseUrl(href) });
       } else if (href.startsWith('tel:')) {
-        track('phone_click', { link_text: label, destination: href });
+        track('phone_click');
       } else if (href.startsWith('mailto:')) {
-        track('email_click', { link_text: label, destination: href });
+        track('email_click');
       }
     });
 
-    if (window.location.pathname === '/thanks/' || window.location.pathname === '/thanks') {
-      let pending;
-      try {
-        pending = JSON.parse(safeStorage.get(window.sessionStorage, PENDING_LEAD_KEY) || 'null');
-      } catch {
-        pending = null;
-      }
-
-      if (pending) {
-        track('generate_lead', pending);
-        safeStorage.remove(window.sessionStorage, PENDING_LEAD_KEY);
-      }
-    }
+    // A visit to /thanks/ is presentation only, never conversion evidence.
 
     window.BFLeadTracking = { track, attribution, refreshAttribution };
   })();

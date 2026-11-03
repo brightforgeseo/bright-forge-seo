@@ -130,7 +130,7 @@ const faqs = [
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Get a UK SEO Proposal" />
+      <ButtonPrimary href="/contact/?service=seo-services&market=UK#contactForm" text="Get a UK SEO Proposal" />
       <ButtonSecondary href="#uk-results" text="See UK Client Results" />
     </Fragment>
 
@@ -476,7 +476,7 @@ const faqs = [
       <h2>Get a straight answer about <span>SEO for your UK business</span></h2>
       <p>Send your website, priority services or ranges, and the UK locations you can serve. We can then discuss the work, access and review responsibilities needed for a GBP proposal.</p>
       <div class="cta-actions">
-        <a href="/contact/" class="cta-primary">Get a UK SEO Proposal</a>
+        <a href="/contact/?service=seo-services&market=UK#contactForm" class="cta-primary">Get a UK SEO Proposal</a>
         <a href="/case-studies/" class="cta-secondary">View All Case Studies</a>
       </div>
     </div>
@@ -484,7 +484,7 @@ const faqs = [
 
   <ServiceEvidencePanel panel={serviceEvidence['seo-services-uk']} />
 
-  <ContactSection slot="contact" />
+  <ContactSection href="/contact/?service=seo-services&market=UK#contactForm" slot="contact" />
   <Footer slot="footer" />
 </MainLayout>
 

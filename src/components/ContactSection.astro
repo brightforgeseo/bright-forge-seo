@@ -1,5 +1,6 @@
 ---
 // Contact Section Component - Used on multiple pages
+const { href = '/contact/' } = Astro.props;
 ---
 
 <section class="contact-cta-section">
@@ -10,7 +11,7 @@
         <h2>Ready to Grow <span>Your Business</span>?</h2>
         <p>Tell us about your website, target market and the search problems you want to address.</p>
         <div class="contact-cta-actions">
-          <a href="/contact/" class="cta-btn-primary">
+          <a href={href} class="cta-btn-primary">
             <span>Discuss Your Website</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

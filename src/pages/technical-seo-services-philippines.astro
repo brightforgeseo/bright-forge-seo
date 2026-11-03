@@ -176,13 +176,11 @@ const faqs = [
     breadcrumbCurrent="Technical SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>A service page has disappeared from search after a release. Product filters keep generating new URLs. The mobile page loads, but its enquiry button shifts while someone is trying to tap it. We investigate the affected pages and turn a reproducible fault into a change your developer can test.</p>
-      <p>We provide technical SEO from the Philippines for local businesses and teams in Australia, the UK and the USA. You receive the affected URLs, supporting evidence, proposed fix and acceptance checks. If you need a wider diagnosis before choosing the work, start with <a href="/seo-audit-services/">SEO audits</a>.</p>
-      <p>Before work starts, we agree whether we are advising your developer or implementing changes with authorised access. We also name the release owner, the staging environment and who can approve or reverse a change.</p>
+      <p>We investigate crawl, indexing and performance faults, then give your developer affected URLs, evidence and testable fixes. Our Philippines-based team supports local and international websites.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Request Technical SEO Work" />
+      <ButtonPrimary href="/contact/?service=technical-seo#contactForm" text="Request Technical SEO Work" />
       <ButtonSecondary href="#checks" text="See What We Check" />
     </Fragment>
 
@@ -201,6 +199,9 @@ const faqs = [
         <div class="diagnosis-copy">
           <span class="eyebrow">Why technical SEO matters</span>
           <h2>Technical problems usually hide behind <span>normal-looking pages</span></h2>
+          <p>A service page has disappeared from search after a release. Product filters keep generating new URLs. The mobile page loads, but its enquiry button shifts while someone is trying to tap it. We investigate the affected pages and turn a reproducible fault into a change your developer can test.</p>
+          <p>We provide technical SEO from the Philippines for local businesses and teams in Australia, the UK and the USA. You receive the affected URLs, supporting evidence, proposed fix and acceptance checks. If you need a wider diagnosis before choosing the work, start with <a href="/seo-audit-services/">SEO audits</a>.</p>
+          <p>Before work starts, we agree whether we are advising your developer or implementing changes with authorised access. We also name the release owner, the staging environment and who can approve or reverse a change.</p>
           <p>Most businesses do not discover technical SEO problems because the homepage looks broken. They discover them when rankings stall, important pages refuse to index, traffic drops after a redesign or a site becomes slower every time another plugin, script or template change is added.</p>
           <p>Technical SEO connects the website build to commercial performance. If Google wastes time on duplicates, misses key pages, struggles to render content or finds inconsistent signals, content and links have to work harder than they should.</p>
         </div>
@@ -394,7 +395,7 @@ const faqs = [
         <h2>Get <span>technical SEO</span> work before the next SEO push, redesign or migration</h2>
         <p>We will review the technical layer, identify the highest-risk blockers and show what needs fixing first.</p>
         <div class="final-actions">
-          <ButtonPrimary href="/contact/" text="Request Technical SEO Work" />
+          <ButtonPrimary href="/contact/?service=technical-seo#contactForm" text="Request Technical SEO Work" />
           <ButtonSecondary href="/case-studies/" text="View SEO Case Studies" />
         </div>
       </div>
@@ -403,7 +404,7 @@ const faqs = [
 
   <ServiceEvidencePanel panel={serviceEvidence['technical-seo-services-philippines']} />
 
-  <ContactSection />
+  <ContactSection href="/contact/?service=technical-seo#contactForm" />
   <Footer slot="footer" />
 </MainLayout>
 

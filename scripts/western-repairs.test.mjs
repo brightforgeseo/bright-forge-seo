@@ -72,10 +72,13 @@ test('production analytics guard disables staging without disabling the canonica
   const script = document.querySelector('head script[data-analytics-scope]');
   assert(script, 'Early analytics scope guard must precede injected Google config');
   for (const host of ['brightforge.com.ph', 'localhost', '127.0.0.1', 'preview.netlify.app', 'ninjaseomarketing.com']) {
-    const context = { window: { location: { hostname: host } } };
-    vm.runInNewContext(script.textContent, context);
+    // The guard now also uses real URL/history APIs for privacy-safe defaults.
+    const context = new JSDOM('', { url: `https://${host}/`, runScripts: 'outside-only' });
+    context.window.eval(script.textContent);
     assert.equal(context.window['ga-disable-G-B8RRWP6CBD'], host !== 'brightforge.com.ph', host);
     assert.equal(context.window.BFAnalyticsScope.production, host === 'brightforge.com.ph', host);
+    assert.equal(context.window.BFAttributionPrivacy.safeUrl('https://'+host+'/?email=private@example.invalid'), 'https://'+host+'/');
+    context.window.close();
   }
 });
 

@@ -42,7 +42,7 @@ const serviceOptions = [
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="#contact-form" text="Request an SEO Review" />
+      <ButtonPrimary href="#contactForm" text="Request an SEO Review" />
       <ButtonSecondary href="tel:+639696206182" text="Call +63 969 620 6182" />
     </Fragment>
 
@@ -83,7 +83,9 @@ const serviceOptions = [
             <p>Include the site URL, target market and what success should look like. Rankings are useful, but leads, enquiries and sales context matter too.</p>
           </div>
 
-          <form name="contact" method="POST" data-netlify="true" data-lead-form="contact-page" netlify-honeypot="bot-field" action="/thanks/" id="contactForm">
+          <form name="contact" method="POST" data-netlify="true" data-lead-form="contact-page" netlify-honeypot="bot-field" action="/thanks/" id="contactForm" tabindex="-1" aria-label="SEO enquiry" aria-describedby="enquiry-context enquiry-market">
+            <p id="enquiry-context">Tell us the site URL, target market and what you need help with.</p>
+            <p id="enquiry-market"></p>
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="landing_page" value="" />
             <input type="hidden" name="page_path" value="" />
@@ -130,6 +132,19 @@ const serviceOptions = [
             </div>
 
             <div class="form-group">
+              <label for="market">Target market (optional)</label>
+              <select id="market" name="market">
+                <option value="">Select a market</option>
+                <option value="PH">Philippines</option>
+                <option value="AU">Australia</option>
+                <option value="UK">United Kingdom</option>
+                <option value="US">United States</option>
+                <option value="other">Other markets</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
               <label for="website">Website URL</label>
               <input type="url" id="website" name="website" placeholder="https://example.com" />
             </div>
@@ -151,6 +166,8 @@ const serviceOptions = [
                 <path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
+
+            <p class="form-footnote">Read our <a href="/privacy-policy/">privacy policy</a> before sending your enquiry.</p>
 
             <p class="form-footnote">We usually reply within one business day. If the enquiry needs a quick site check first, we will review the obvious signals before responding.</p>
           </form>
@@ -270,7 +287,48 @@ const serviceOptions = [
   </section>
 </Layout>
 
+<script is:inline data-contact-context>
+  (() => {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const service = document.getElementById('service');
+    const market = document.getElementById('market');
+    const prompt = document.getElementById('enquiry-context');
+    const marketNote = document.getElementById('enquiry-market');
+    const submitLabel = form.querySelector('button[type="submit"] span');
+    const query = new URLSearchParams(window.location.search);
+    const known = (select, value) => value && [...select.options].some(option => option.value === value);
+    if (known(service, query.get('service'))) service.value = query.get('service');
+    if (known(market, query.get('market'))) market.value = query.get('market');
+    const prompts = {
+      'white-label-seo': 'Tell us which SEO work your agency needs help delivering, your target markets and whether this is a one-off project or ongoing support.',
+      'technical-seo': 'Send the affected URL and describe the issue or recent release.',
+      'keyword-research': 'Tell us what you sell, where you serve customers and which pages need a search plan.'
+    };
+    const update = () => {
+      prompt.textContent = Object.hasOwn(prompts, service.value) ? prompts[service.value] : 'Tell us the site URL, target market and what you need help with.';
+      if (submitLabel) submitLabel.textContent = service.value === 'white-label-seo' ? 'Discuss White Label Delivery' : 'Send SEO Review Request';
+      marketNote.textContent = ['PH', 'AU', 'UK', 'US'].includes(market.value)
+        ? `Target market: ${market.selectedOptions[0].textContent}. Delivery is from our Philippines-based team.` : '';
+    };
+    service.addEventListener('change', update);
+    market.addEventListener('change', update);
+    update();
+    const focusForm = () => {
+      if (!['#contactForm', '#contact-form'].includes(window.location.hash)) return;
+      form.focus({ preventScroll: true });
+      form.scrollIntoView({ block: 'start', behavior: 'instant' });
+    };
+    window.addEventListener('hashchange', focusForm);
+    window.addEventListener('load', focusForm, { once: true });
+  })();
+</script>
+
 <style>
+  #contactForm { scroll-margin-top: 110px; }
+  #contactForm:focus-visible { outline: 2px solid #f0622a; outline-offset: 6px; }
+  #enquiry-context, #enquiry-market { color: #465365; line-height: 1.6; margin: 0 0 1rem; }
+  #enquiry-market:empty { display: none; }
   :global(body .hero-visual) {
     display: flex !important;
     visibility: visible !important;

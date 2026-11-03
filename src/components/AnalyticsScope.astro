@@ -1,12 +1,67 @@
 ---
-// The hosting-injected Google tag remains authoritative. Set Google's opt-out
-// flag before that tag runs so this site's previews do not pollute production.
+// Set preview opt-out and privacy-safe collection defaults before the hosting tag.
+// This does not set or change consent.
+import { getAllBlogPosts } from '../lib/contentful.js';
+import { authors } from '../lib/authors.js';
+import { groupPostsByTopic } from '../lib/blogDisplay.js';
+const staticPaths = Object.keys(import.meta.glob('../pages/**/*.astro')).filter(file => !file.includes('[')).map(file => {
+  let path = file.replace('../pages/', '').replace(/\.astro$/, '');
+  if (path === 'index') return '/';
+  path = path.replace(/\/index$/, '');
+  return `/${path}/`;
+});
+const posts = await getAllBlogPosts();
+const knownAnalyticsPaths = [...new Set([
+  ...staticPaths,
+  ...posts.filter(post => post.slug).map(post => `/blog/${post.slug}/`),
+  ...Object.keys(authors).map(slug => `/authors/${slug}/`),
+  '/blog/topics/', ...groupPostsByTopic(posts, 3).map(topic => `/blog/topics/${topic.slug}/`)
+])];
 ---
-<script is:inline data-analytics-scope>
+<script is:inline data-analytics-scope define:vars={{ knownAnalyticsPaths }}>
   (() => {
     const host = window.location.hostname.toLowerCase();
     const production = host === 'brightforge.com.ph';
     window['ga-disable-G-B8RRWP6CBD'] = !production;
     window.BFAnalyticsScope = { production, host };
+    const paths = new Set(knownAnalyticsPaths);
+    const normalisePath = path => path.endsWith('/') ? path : `${path}/`;
+    const safePath = path => paths.has(normalisePath(path)) ? normalisePath(path) : '/';
+    const safeUrl = (value, referrer = false) => {
+      if (!value) return '';
+      try {
+        const url = new URL(value, window.location.origin);
+        if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) return '';
+        if (referrer || url.origin !== window.location.origin) return url.origin;
+        return `${url.origin}${safePath(url.pathname)}`;
+      } catch { return ''; }
+    };
+    // Without an authorised campaign vocabulary, do not allow arbitrary text.
+    const utmValues = {
+      utm_source: ['google', 'bing', 'duckduckgo', 'yahoo', 'linkedin', 'facebook', 'instagram', 'newsletter', 'chatgpt', 'perplexity'],
+      utm_medium: ['organic', 'cpc', 'ppc', 'email', 'social', 'paid_social', 'referral', 'display'],
+      utm_campaign: [], utm_term: [], utm_content: []
+    };
+    const safeUtm = (key, value) => (utmValues[key] || []).includes(value) ? value : '';
+    const query = new URLSearchParams(window.location.search);
+    const clean = new URLSearchParams();
+    const services = ['seo-services','seo-audit','technical-seo','content-seo','on-page-seo','local-seo','backlink-seo','keyword-research','website-migration','ai-search-readiness','white-label-seo','cro','not-sure'];
+    if (services.includes(query.get('service'))) clean.set('service', query.get('service'));
+    if (['PH', 'AU', 'UK', 'US', 'other', 'not-sure'].includes(query.get('market'))) clean.set('market', query.get('market'));
+    for (const key of Object.keys(utmValues)) {
+      const value = safeUtm(key, query.get(key));
+      if (value) clean.set(key, value);
+    }
+    // Remove unknown/personal query fields before automatic hosting analytics run.
+    if (query.toString() !== clean.toString()) {
+      try { history.replaceState(history.state, '', `${window.location.pathname}${clean.size ? '?'+clean.toString() : ''}${window.location.hash}`); } catch { /* Read-only contexts. */ }
+    }
+    window.BFAttributionPrivacy = { safeUrl, safeUtm, safePath };
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+    window.gtag('set', {
+      page_location: safeUrl(window.location.href),
+      page_referrer: safeUrl(document.referrer, true)
+    });
   })();
 </script>

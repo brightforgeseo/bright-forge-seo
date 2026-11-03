@@ -3,7 +3,7 @@
 ---
 
 <div id="contact-popup-overlay" class="popup-overlay" aria-hidden="true">
-  <div class="popup-card" role="dialog" aria-label="Contact us for SEO services">
+  <div class="popup-card" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-description" tabindex="-1">
     <button type="button" class="popup-close" id="popup-close" aria-label="Close popup">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -13,10 +13,10 @@
     <div class="popup-header">
       <div class="popup-badge">
         <span class="badge-dot"></span>
-        <span>Free Consultation</span>
+        <span>Preliminary SEO Review</span>
       </div>
-      <h2>Get Your Free <span>SEO Consultation</span></h2>
-      <p>Tell us about your business and we'll show where SEO and CRO can turn more visibility into enquiries.</p>
+      <h2 id="popup-title">Request an <span>SEO Review</span></h2>
+      <p id="popup-description">Tell us about your website and priorities. We start with a preliminary SEO review of the obvious search and conversion signals before recommending work.</p>
     </div>
 
     <form name="popup-contact" method="POST" data-netlify="true" data-lead-form="popup-contact" netlify-honeypot="bot-field" action="/thanks/">
@@ -38,91 +38,117 @@
 
       <div class="form-row">
         <div class="form-group">
-          <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+          <label for="popup-name">Your name *</label>
+          <input id="popup-name" type="text" name="name" placeholder="Your Name" required autocomplete="name" />
         </div>
         <div class="form-group">
-          <input type="email" name="email" placeholder="Email Address" required autocomplete="email" />
+          <label for="popup-email">Email address *</label>
+          <input id="popup-email" type="email" name="email" placeholder="Email Address" required autocomplete="email" />
         </div>
       </div>
 
       <div class="form-group">
-        <input type="tel" name="phone" placeholder="Phone Number (optional)" autocomplete="tel" />
+        <label for="popup-phone">Phone number (optional)</label>
+        <input id="popup-phone" type="tel" name="phone" placeholder="Phone Number (optional)" autocomplete="tel" />
       </div>
 
       <div class="form-group">
-        <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
+        <label for="popup-message">Tell us about your project</label>
+        <textarea id="popup-message" name="message" rows="3" placeholder="Tell us about your project..."></textarea>
       </div>
 
       <button type="submit" class="popup-submit">
-        <span>Get Free Consultation</span>
+        <span>Request an SEO Review</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+      <p class="popup-privacy">Read our <a href="/privacy-policy/">privacy policy</a> before sending your enquiry.</p>
     </form>
   </div>
 </div>
 
-<script>
+<script is:inline>
 (function() {
   const POPUP_DELAY = 45000;
   const STORAGE_KEY = 'popupShown';
+  const overlay = document.getElementById('contact-popup-overlay');
+  const dialog = overlay?.querySelector('[role="dialog"]');
+  if (!overlay || !dialog) return;
+  let previousFocus;
+  let previousOverflow = '';
+  const inerted = [];
+  const focusable = () => [...dialog.querySelectorAll('a[href],button:not([disabled]),input:not([type="hidden"]),textarea,select')]
+    .filter(el => !el.closest('.hidden-field') && !el.disabled);
 
   function shouldShow() {
     if (window.location.pathname.startsWith('/contact')) return false;
     if (window.location.hash === '#contact') return false;
-    try {
-      return !sessionStorage.getItem(STORAGE_KEY);
-    } catch (e) {
-      return true;
-    }
+    try { return !sessionStorage.getItem(STORAGE_KEY); } catch { return true; }
   }
-
   function markSuppressed() {
-    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch { /* Optional storage. */ }
   }
-
   function showPopup() {
-    const overlay = document.getElementById('contact-popup-overlay');
-    if (!overlay) return;
+    // A contact CTA can suppress an already-scheduled popup.
+    if (!shouldShow()) return;
+    previousFocus = document.activeElement;
+    previousOverflow = document.body.style.overflow;
+    let branch = overlay;
+    while (branch.parentElement && branch.parentElement !== document.documentElement) {
+      [...branch.parentElement.children].forEach(el => {
+        if (el !== branch && !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName)) {
+          inerted.push([el, el.inert]); el.inert = true;
+        }
+      });
+      branch = branch.parentElement;
+    }
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+    document.getElementById('popup-close').focus({ preventScroll: true });
+    // Inert/visibility updates need a rendered frame before Chromium can focus.
+    window.requestAnimationFrame?.(() => {
+      if (overlay.classList.contains('active')) document.getElementById('popup-close').focus({ preventScroll: true });
+    });
+    markSuppressed();
   }
-
   function closePopup() {
-    const overlay = document.getElementById('contact-popup-overlay');
-    if (!overlay) return;
+    if (!overlay.classList.contains('active')) return;
     overlay.classList.remove('active');
     overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.body.style.overflow = previousOverflow;
+    inerted.splice(0).forEach(([el, value]) => { el.inert = value; });
+    const restoreTarget = previousFocus?.isConnected ? previousFocus : document.body;
+    const needsTabindex = restoreTarget === document.body && !restoreTarget.hasAttribute('tabindex');
+    if (needsTabindex) restoreTarget.setAttribute('tabindex', '-1');
+    restoreTarget.focus({ preventScroll: true });
+    if (needsTabindex) restoreTarget.removeAttribute('tabindex');
   }
+  if (shouldShow()) setTimeout(showPopup, POPUP_DELAY);
 
-  if (shouldShow()) {
-    setTimeout(showPopup, POPUP_DELAY);
+  function initialise() {
+    document.getElementById('popup-close').addEventListener('click', closePopup);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closePopup(); });
+    document.querySelectorAll('a[href^="/contact"], a[href="#contact"]').forEach(link => link.addEventListener('click', markSuppressed));
+    document.addEventListener('keydown', e => {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closePopup(); }
+      if (e.key === 'Tab') {
+        const items = focusable(), first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    });
+    document.addEventListener('focusin', e => {
+      if (overlay.classList.contains('active') && !dialog.contains(e.target)) focusable()[0].focus();
+    });
   }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var closeBtn = document.getElementById('popup-close');
-    var overlay = document.getElementById('contact-popup-overlay');
-
-    if (closeBtn) closeBtn.addEventListener('click', closePopup);
-
-    if (overlay) {
-      overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) closePopup();
-      });
-    }
-
-    document.querySelectorAll('a[href^="/contact"], a[href="#contact"]').forEach(function(link) {
-      link.addEventListener('click', markSuppressed);
-    });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closePopup();
-    });
-  });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialise, { once: true });
+  else initialise();
 })();
 </script>
 
@@ -139,7 +165,7 @@
     padding: 20px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease;
   }
 
   .popup-overlay.active {
@@ -149,6 +175,9 @@
 
   .popup-card {
     background: #f7f8fa;
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border: 1px solid rgba(25, 33, 46, 0.07);
     border-radius: 20px;
     padding: 40px;
@@ -178,7 +207,7 @@
     border-radius: 10px;
     color: #465365;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
 
   .popup-close:hover {
@@ -247,6 +276,10 @@
   .form-group {
     margin-bottom: 12px;
   }
+
+  .form-group label { display: block; font-weight: 600; font-size: .875rem; color: #19212e; margin-bottom: 6px; }
+  .popup-privacy { font-size: .8rem; line-height: 1.5; margin-top: 12px; color: #465365; }
+  .popup-privacy a { color: #b83e12; text-decoration: underline; }
 
   .form-group input,
   .form-group textarea {

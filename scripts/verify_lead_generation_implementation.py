@@ -145,9 +145,9 @@ for page_name, soup in [("homepage", home), ("contact", contact), ("thanks", tha
 
 for event_name in ["lead_form_start", "lead_form_submit", "generate_lead", "phone_click", "email_click"]:
     expect(event_name in tracking_source, f"Lead tracking defines {event_name}")
-expect("bf_first_touch_v1" in tracking_source and "bf_pending_lead_v1" in tracking_source and "FIRST_TOUCH_TTL_MS" in tracking_source, "Tracking stores time-limited campaign context and pending lead state")
+expect("bf_first_touch_v1" in tracking_source and "safeStorage.remove('sessionStorage', PENDING_LEAD_KEY)" in tracking_source and "FIRST_TOUCH_TTL_MS" in tracking_source, "Tracking retains time-limited campaign context and removes unsafe legacy pending state")
 expect("landing_page: sanitiseUrl(window.location.href)" in tracking_source, "Landing URLs are stripped to origin and path before storage")
-expect("referrer: sanitiseUrl(document.referrer)" in tracking_source, "Referrer URLs are stripped to origin and path before storage")
+expect("referrer: sanitiseUrl(document.referrer, true)" in tracking_source, "Referrer URLs use the privacy guard and retain origin only, never search/customer paths")
 expect("scheduleAttributionRefresh" in tracking_source and "pageshow" in tracking_source and "refreshAttribution" in tracking_source, "Attribution is restored after load, pageshow and production form-runtime resets")
 expect("form[data-lead-form]" in tracking_source and 'form[data-netlify="true"]' not in tracking_source, "Lead tracking uses an attribute Netlify preserves in production")
 expect("lead_form_start" in home_html and "generate_lead" in thanks_html, "Tracking script is rendered on homepage and thank-you page")

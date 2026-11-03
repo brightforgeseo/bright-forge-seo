@@ -8,7 +8,10 @@ for(const route of ['seo-services-uk','seo-services-usa','ecommerce-seo-services
   assert.equal(d.querySelectorAll('h1').length,1);
   assert.ok(d.querySelector('h1 span').textContent.trim());
   assert.equal(d.querySelector('link[rel="canonical"]').href,`https://brightforge.com.ph/${route}/`);
-  assert.ok(d.querySelector('.forge-actions a[href="/contact/"]'));
+  // CRO now carries the buyer context instead of dropping it at generic contact.
+  const contact = route === 'seo-services-uk' ? '/contact/?service=seo-services&market=UK#contactForm'
+    : route === 'seo-services-usa' ? '/contact/?service=seo-services&market=US#contactForm' : '/contact/';
+  assert.ok([...d.querySelectorAll('.forge-actions a')].some(a => a.getAttribute('href') === contact));
   assert.equal(d.querySelector('.forge-sculpture').getAttribute('src'),'/assets/forge-conversions-corrected-960.webp');
   const nodes=[...d.querySelectorAll('script[type="application/ld+json"]')].flatMap(n=>{const j=JSON.parse(n.textContent);return j['@graph']||[j];});
   const faqs=nodes.filter(n=>n['@type']==='FAQPage').flatMap(n=>n.mainEntity);

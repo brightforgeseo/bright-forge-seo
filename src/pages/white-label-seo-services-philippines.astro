@@ -61,21 +61,19 @@ const faqs = [
   <Hero
     badgeIcon="fas fa-handshake"
     badgeText="White Label SEO Partners"
-    title="SEO Outsourcing Philippines for Agencies That Need <span>Reliable White Label Delivery</span>"
+    title="White Label <span>SEO Delivery for Agencies</span>"
     breadcrumbCurrent="White Label SEO Services Philippines"
   >
     <Fragment slot="intro">
-      <p>We support agencies, consultants, web teams, and marketing providers with behind-the-scenes SEO strategy, fulfilment, quality control, and client-ready reporting.</p>
+      <p>Keep the client relationship. We handle SEO audits, technical work, content and reporting under your brand, with agreed scope and senior review.</p>
     </Fragment>
     <Fragment slot="story">
-      <p>You keep the client relationship. We help make the SEO work accurate, explainable, commercially useful, and safe to put your name on.</p>
-      <p>Our white label SEO outsourcing from the Philippines is built for agencies that need senior SEO judgement, practical delivery, and clear communication without hiring a full in-house team.</p>
-      <p>Agencies can outsource delivery to our Philippines-based white-label team without handing over the client relationship. We work to an agreed scope, apply senior QA and prepare fulfilment that consultants, web teams and reseller programmes can present under their own brand.</p>
+      <p>Delivered by our Philippines-based team.</p>
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Discuss a White Label Partnership" />
-      <ButtonSecondary href="#what-we-handle" text="See What We Can Handle" />
+      <ButtonPrimary href="/contact/?service=white-label-seo#contactForm" text="Discuss Your Delivery Needs" />
+      <ButtonSecondary href="#delivery-sample" text="View a Sample Handoff" />
     </Fragment>
 
     <Fragment slot="visual">
@@ -129,6 +127,9 @@ const faqs = [
       <div>
         <p class="eyebrow">Who this is for</p>
         <h2><span>SEO outsourcing</span> for agencies that need depth without payroll drag</h2>
+        <p>Agencies can outsource delivery to our Philippines-based white-label team without handing over the client relationship. We work to an agreed scope, apply senior QA and prepare fulfilment that consultants, web teams and reseller programmes can present under their own brand.</p>
+        <p>We support agencies, consultants, web teams, and marketing providers with behind-the-scenes SEO strategy, fulfilment, quality control, and client-ready reporting.</p>
+        <p>Our white label SEO outsourcing from the Philippines is built for agencies that need senior SEO judgement, practical delivery, and clear communication without hiring a full in-house team.</p>
         <p class="lead">This page is not for businesses looking for a cheap SEO package. It is for agency teams that already own client trust and need a reliable SEO partner behind them.</p>
       </div>
       <div class="card-grid small">
@@ -238,7 +239,7 @@ const faqs = [
         <h2>One delivery team, <span>adapted to the market your client sells in</span></h2>
         <p class="lead">White label SEO is not location swapping. Search language, commercial proof, reporting expectations and the working rhythm all change between markets.</p>
         <p>We agree the market, scope and QA standard before assigning work. Defined projects, overflow capacity and monthly per-client fulfilment can be quoted in AUD, GBP or USD, with the deliverables written down before the first task starts.</p>
-        <a class="text-link" href="/contact/">Ask for a scoped agency proposal →</a>
+        <a class="text-link" href="/contact/?service=white-label-seo#contactForm">Ask for a scoped agency proposal →</a>
       </div>
 
       <div class="market-ledger" aria-label="White label SEO delivery by market">
@@ -344,7 +345,7 @@ const faqs = [
       <h2>Discuss white label <span>SEO outsourcing</span> for your agency</h2>
       <p>Tell us what your agency needs to deliver, where the pressure points are, and what level of behind-the-scenes SEO support would make client work easier.</p>
       <div class="cta-actions">
-        <a href="/contact/" class="cta-primary">Discuss a White Label Partnership</a>
+        <a href="/contact/?service=white-label-seo#contactForm" class="cta-primary">Discuss a White Label Partnership</a>
         <a href="/seo-services-philippines/" class="cta-secondary">View SEO Services</a>
       </div>
     </div>
@@ -352,7 +353,7 @@ const faqs = [
 
   <ServiceEvidencePanel panel={serviceEvidence['white-label-seo-services-philippines']} />
 
-  <ContactSection slot="contact" />
+  <ContactSection href="/contact/?service=white-label-seo#contactForm" slot="contact" />
   <Footer slot="footer" />
 </MainLayout>
 

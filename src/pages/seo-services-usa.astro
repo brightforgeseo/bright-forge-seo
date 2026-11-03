@@ -120,7 +120,7 @@ const schema = JSON.stringify({
     </Fragment>
 
     <Fragment slot="actions">
-      <ButtonPrimary href="/contact/" text="Get a US SEO Proposal" />
+      <ButtonPrimary href="/contact/?service=seo-services&market=US#contactForm" text="Get a US SEO Proposal" />
       <ButtonSecondary href="#results" text="See Real Results" />
     </Fragment>
 
@@ -438,7 +438,7 @@ const schema = JSON.stringify({
       <h2>Get a straight answer about <span>SEO for your US business</span></h2>
       <p>Send your website, US target audience, products or service area, and the team available to implement changes. We will use those details to discuss a written USD scope.</p>
       <div class="cta-actions">
-        <a href="/contact/" class="cta-primary">Get a US SEO Proposal</a>
+        <a href="/contact/?service=seo-services&market=US#contactForm" class="cta-primary">Get a US SEO Proposal</a>
         <a href="/case-studies/" class="cta-secondary">View All Case Studies</a>
       </div>
     </div>
@@ -446,7 +446,7 @@ const schema = JSON.stringify({
 
   <ServiceEvidencePanel panel={serviceEvidence['seo-services-usa']} />
 
-  <ContactSection slot="contact" />
+  <ContactSection href="/contact/?service=seo-services&market=US#contactForm" slot="contact" />
   <Footer slot="footer" />
 </MainLayout>
 
