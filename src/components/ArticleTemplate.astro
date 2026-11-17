@@ -407,19 +407,12 @@ const formatDate = (dateString: string) => {
           <span class="bf-inline-icon bf-icon-large" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
         </div>
         <div class="newsletter-content">
-          <h3>Stay Updated with SEO Insights</h3>
-          <p>Get the latest SEO strategies, case studies, and industry updates delivered to your inbox.</p>
-          <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
-            <input type="hidden" name="form-name" value="newsletter" />
-            <p class="hidden" style="display:none;">
-              <label>Don't fill this out: <input name="bot-field" /></label>
-            </p>
-            <div class="newsletter-input-group">
-              <input type="email" name="email" placeholder="Enter your email address" required class="newsletter-email" />
-              <button type="submit" class="cta-button newsletter-btn">Subscribe</button>
-            </div>
-            <p class="newsletter-success" style="display:none;">Thanks for subscribing!</p>
-          </form>
+          <h3>Keep Reading</h3>
+          <p>We do not run an email list. New articles are published in the blog archive, grouped by topic.</p>
+          <div class="newsletter-input-group">
+            <a href="/blog/" class="cta-button newsletter-btn">Browse all articles</a>
+            <a href="/blog/topics/" class="cta-button newsletter-btn">Browse by topic</a>
+          </div>
         </div>
       </div>
     </div>

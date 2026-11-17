@@ -7,6 +7,7 @@ import { getBlogMetadata } from '../../lib/blogMetadata';
 import { getAuthorSlug } from '../../lib/authors';
 import { pickRelatedPosts } from '../../lib/relatedPosts';
 import { displayH1 } from '../../lib/blogDisplay';
+import cmsPostFixes from '../../data/cmsPostFixes.json';
 
 export async function getStaticPaths() {
   const posts = await getAllBlogPosts();
@@ -257,6 +258,17 @@ if (post.content || post.contentHtml) {
   
   // Convert rich text to HTML with custom renderer
   htmlContent = post.contentHtml || documentToHtmlString(post.content, renderOptions);
+
+  // Corrections for articles whose source lives in the CMS. Each entry in
+  // src/data/cmsPostFixes.json replaces an exact string in the rendered HTML,
+  // so a fix can ship from the repo without CMS write access. A string that no
+  // longer matches (because the CMS copy changed) is reported at build time.
+  if (!post.contentHtml) {
+    for (const [from, to] of cmsPostFixes[slug]?.replace || []) {
+      if (htmlContent.includes(from)) htmlContent = htmlContent.split(from).join(to);
+      else console.warn(`[cmsPostFixes] ${slug}: text not found: ${String(from).slice(0, 70)}`);
+    }
+  }
   
   // Replace inline shortcodes like [[INFOGRAPHIC type=...]] with interactive HTML we control
   // Force rebuild: timestamp 13:45

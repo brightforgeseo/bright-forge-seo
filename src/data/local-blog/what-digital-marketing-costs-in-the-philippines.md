@@ -64,7 +64,7 @@ Influencer and creator fees are a different market again, quoted per post or per
 
 ## Website Cost As Part Of The Digital Budget
 
-Web design in the Philippines is usually a project, not a monthly channel, though maintenance packages exist. Simple brochure sites from freelancers and small shops often land between 15,000 and 60,000 PHP for a handful of template pages. Professional business sites more often sit between 50,000 and 150,000 PHP. Agency builds with custom design, more templates, and actual QA commonly run 80,000 to 300,000 PHP and up. Ecommerce and custom applications climb from there, often 120,000 to 400,000 PHP for a real catalogue, and 250,000 PHP plus for custom logic.
+Web design in the Philippines is usually a project, not a monthly channel, though maintenance packages exist. Simple brochure sites from freelancers and small shops often land between 15,000 and 60,000 PHP for a handful of template pages. Professional business sites more often sit between 50,000 and 150,000 PHP. Agency builds with custom design, more templates, and actual QA commonly run 80,000 to 300,000 PHP and up. Ecommerce and custom applications climb from there, often 70,000 to 400,000 PHP for a real catalogue, and 250,000 PHP plus for custom logic.
 
 Hosting, domains, licences, and SSL are extra. So is copywriting if you did not supply it. A cheap site that cannot take an enquiry on mobile will tax every peso you later spend on ads and SEO.
 

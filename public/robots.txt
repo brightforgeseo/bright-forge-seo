@@ -18,7 +18,6 @@ Crawl-delay: 5
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /_astro/
 Disallow: /dist/
 Disallow: /*.json$
 
