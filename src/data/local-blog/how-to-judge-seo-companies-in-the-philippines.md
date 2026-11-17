@@ -4,7 +4,7 @@ slug: how-to-judge-seo-companies-in-the-philippines
 excerpt: Judge a Philippine SEO company by how it diagnoses your live site, names owners, and lets you verify work, not by package volume or rank promises.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/how-to-judge-seo-companies-in-the-philippines.webp
 metaTitle: How to Judge SEO Companies in the Philippines | Bright Forge
 metaDescription: Judge SEO companies in the Philippines by live-site diagnosis, named owners, verifiable reporting and questions that expose a recycled package.
@@ -50,11 +50,9 @@ Ask who implements. If every title needs a ticket to your web vendor, the plan m
 
 Reporting should answer three questions without a glossary. What changed on the site. What Search Console, maps, and the enquiry trail did. What happens next month and why. Rankings can sit in an appendix. They should not be the whole story, because vanity terms can rise while revenue pages stall.
 
-If you cannot see Search Console, you cannot verify the story. A company that refuses to add you as an owner, or that only reports from a private tracker, is asking you to trust a tool they can tune. Trackers have a place. They are not a substitute for the data Google shows the site owner.
+Insist on owner access to Search Console. A company that only reports from a private tracker is asking you to trust a tool they can tune.
 
 Ask for a redacted monthly report and a redacted technical note. You are looking for URLs and decisions. A collage of logos with no dates and no description of what was done is advertising, not proof.
-
-Watch language. Proprietary scores, secret sauce, and dashboards with no export often hide a thin method. Ordinary language about crawl waste, snippet click-through, and enquiry quality is harder to fake because you can check it.
 
 Lock-in through reporting is a variant of the same problem. Analytics in the vendor’s account, a proprietary CMS, or a domain they registered means you do not have a supplier. You have a landlord. Credentials should live in the business’s name from day one.
 
@@ -62,9 +60,7 @@ Lock-in through reporting is a variant of the same problem. Analytics in the ven
 
 Link packages priced by the hundred are a fulfilment product. Real mentions are earned or negotiated one property at a time. Ask for live placement URLs on businesses like yours, whether you approve targets, and who owns the risk if the network is later discounted. If the salesperson talks only about domain metrics, you are buying a metric.
 
-Content volume is the sibling. Forty articles a month from writers who have never spoken to you will not make a thin service URL trustworthy. Ask who briefs the writer, who checks facts, and what happens when a page needs an expert to sign off. If the answer is a generator and a junior editor, you are funding bulk text.
-
-Directory bundles still appear in decks. A handful of accurate, relevant listings can help a local firm. A spreadsheet of 200 profiles with the wrong address will not. Volume is not ambition. It is a way to make the month look full.
+Article quotas and directory bundles are the same product in different packaging: volume that makes the month look full. Ask who briefs the writer, who checks the facts, and which listings were chosen on purpose.
 
 A useful proposal names blockers, sequence, and what is out of scope. If audit is missing, the plan is guessed. If the first month is already a blog quota, they skipped the only part that makes the rest of the fee rational.
 

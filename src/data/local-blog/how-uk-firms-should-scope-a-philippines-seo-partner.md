@@ -4,7 +4,7 @@ slug: how-uk-firms-should-scope-a-philippines-seo-partner
 excerpt: A UK-side brief that names market, access, deliverables and ownership before you hire a Philippines SEO partner, so hours do not replace a campaign.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/how-uk-firms-should-scope-a-philippines-seo-partner.webp
 metaTitle: How UK Firms Should Scope a Philippines SEO Partner
 metaDescription: Scope a Philippines SEO partner with a UK market brief, access list, deliverables and ownership rules so you buy a campaign, not unowned hours.

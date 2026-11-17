@@ -4,7 +4,7 @@ slug: brand-serp-what-shows-when-someone-googles-your-company
 excerpt: A brand search is a trust check. Here is what Google actually shows, what you can influence, and what a messy result costs you before a sales call starts.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/brand-serp-what-shows-when-someone-googles-your-company.webp
 metaTitle: Brand SERP: What Shows When Someone Googles Your Company
 metaDescription: See what appears when someone googles your company, what you can influence, and how we treat brand SERPs as a trust surface, not a vanity ranking.

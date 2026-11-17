@@ -1,13 +1,13 @@
 ---
-title: SEO Consultant vs Agency in the Philippines
+title: SEO Consultant or Freelancer vs Agency in the Philippines
 slug: seo-consultant-vs-agency-in-the-philippines
 excerpt: A Philippine SEO consultant is the right hire for diagnosis and a bounded plan. An agency is the right hire when you need that plan implemented without you assembling the rest of the team.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/seo-consultant-vs-agency-in-the-philippines.webp
-metaTitle: SEO Consultant vs Agency in PH | Bright Forge
-metaDescription: Hire a Philippine SEO consultant for diagnosis and a bounded plan. Hire an agency when you need delivery, review, and coverage across more than one skill.
+metaTitle: SEO Consultant or Freelancer vs Agency in the Philippines
+metaDescription: Hire a consultant for diagnosis, a freelancer for one bounded task, and an agency when you need delivery, review and cover across more than one skill.
 ---
 
 The job title is a poor buying signal. In the Philippine market, “consultant” can mean a senior specialist who will tell you what to do, a freelancer who will also implement, or a junior seller with a slide deck. “Agency” can mean a delivery team with review, or one person with a company name and a PDF. The useful comparison is coverage: who diagnoses, who writes, who changes the site, who checks the live result, and who is still accountable when one person is unavailable.
@@ -33,6 +33,16 @@ It also fits when the decision is larger than a monthly task list. A rebuild, a 
 The consultant model breaks when you expect them to also be the writer, the developer, the local specialist, and the reporter, at a consulting day rate, every week. That is an agency workload priced as advice. Either the advice gets thinner or the implementation never happens. Both look like “SEO did not work”.
 
 Senior consultants in the Philippines often work across a few clients at a time. That can be a benefit if you want scarce attention on the hard problems. It is a risk if you thought you were buying five days a week of production. Ask how many days you actually have, what happens between those days, and who implements when they are not on the account.
+
+## Where A Freelancer Fits
+
+A freelancer is not the same hire as a consultant, although the Philippine market uses the words loosely. A consultant sells the judgement. A freelancer usually sells the hands: one craft, on one bounded task. A good freelance specialist can be faster to start, easier to talk to, and sharper on that craft than a team.
+
+Typical fits include a technical cleanup on a site that already converts, a rewrite of a small set of service pages, a Google Business Profile rebuild when the rest of the site is sound, or a keyword map for a team that will implement in house. In those cases you are buying a specialist hour, not a delivery system.
+
+Freelance work also suits experiments. If you want one location page written properly, or one category cleaned up, a specialist can do that without a long contract. Keep the brief tight. Name the page, the audience, the proof you can supply, and the conversion action. Then judge the live page, not a ranking claim.
+
+The freelancer model needs an internal owner. Someone on your side has to take recommendations, get them implemented, check the live result, and keep the work moving when a developer, a copywriter, or a designer is needed. It breaks the same way the consultant model does: when one person is expected to be researcher, writer, developer, local specialist, reporter, and account manager. Even a strong person will start reporting activity because the real work is blocked.
 
 ## What An Agency Is For
 

@@ -6,7 +6,7 @@ date: 2026-09-17
 author: Ben Lowe
 tags: [seo, local]
 image: /images/blog/seo-for-cebu-businesses-without-a-fake-office.webp
-metaTitle: SEO Agency Cebu | Bright Forge
+metaTitle: SEO for Cebu Businesses Without a Fake Office | Bright Forge
 metaDescription: No Cebu branch. Bright Forge runs Cebu local SEO from our Philippines team for real Cebu businesses: Maps, pages, citations and reviews without a fake office.
 ---
 

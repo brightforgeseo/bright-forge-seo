@@ -4,9 +4,9 @@ slug: how-much-does-seo-cost-in-the-philippines-in-2026
 excerpt: Philippine SEO retainers in 2026 usually sit in four market bands, and the useful question is what audit, content, links and reporting the fee actually covers.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/how-much-does-seo-cost-in-the-philippines-in-2026.webp
-metaTitle: SEO Cost in the Philippines 2026 | Bright Forge
+metaTitle: How Much Does SEO Cost in the Philippines in 2026
 metaDescription: Philippine SEO fees in 2026 sit in four market bands. See what audit, content, links and reporting usually buy, and which promises to treat as warning signs.
 ---
 

@@ -4,7 +4,7 @@ slug: how-to-read-a-ranking-drop-in-search-console
 excerpt: A ranking drop in Search Console is a chart, not a diagnosis. Separate tracking, seasonality, core updates, technical faults and page quality before you rewrite anything.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, reporting]
 image: /images/blog/how-to-read-a-ranking-drop-in-search-console.webp
 metaTitle: How to Read a Ranking Drop in Search Console
 metaDescription: Read a Search Console ranking drop without a panic rewrite. Separate tracking, seasonality, core updates, technical faults and page quality first.

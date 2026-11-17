@@ -4,7 +4,7 @@ slug: seo-for-construction-and-trade-sites
 excerpt: Construction and trade SEO is quote work, not brochure polish. One URL per trade, project proof on the commercial pages, and Search Console numbers we can already show.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, industries]
 image: /images/blog/seo-for-construction-and-trade-sites.webp
 metaTitle: SEO for Construction and Trade Sites
 metaDescription: SEO for builders, contractors and trade suppliers. Separate trades, put proof on quote URLs, and measure clicks we can already publish.

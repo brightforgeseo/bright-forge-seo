@@ -4,7 +4,7 @@ slug: ecommerce-seo-in-the-philippines-category-vs-product
 excerpt: Philippine ecommerce SEO is a category-versus-product decision. Head commercial terms live on categories. SKUs take the long tail. Facets should not steal the index.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, industries]
 image: /images/blog/ecommerce-seo-in-the-philippines-category-vs-product.webp
 metaTitle: Ecommerce SEO in the Philippines: Category vs Product
 metaDescription: Category pages win head terms in Philippine ecommerce. Product pages win the long tail. Facets, canonicals and Taglish queries decide which URL wins.

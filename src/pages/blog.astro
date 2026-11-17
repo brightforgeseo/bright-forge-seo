@@ -15,7 +15,8 @@ const contentfulPosts = await getAllBlogPosts();
 // Format posts for display
 const blogPosts = contentfulPosts.map(post => {
   // Calculate approximate read time (1 min per 200 words)
-  const readTime = post.excerpt ? `${Math.max(5, Math.ceil(post.excerpt.split(' ').length / 200))} min read` : "5 min read";
+  const bodyWords = post.contentHtml ? post.contentHtml.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length : 0;
+  const readTime = bodyWords ? `${Math.max(1, Math.round(bodyWords / 220))} min read` : "5 min read";
   
   return {
     title: post.title,

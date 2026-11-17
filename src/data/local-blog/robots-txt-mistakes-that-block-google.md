@@ -4,7 +4,7 @@ slug: robots-txt-mistakes-that-block-google
 excerpt: The robots.txt mistakes that hide money pages from Googlebot, including sitewide Disallow leftovers, blocked CSS, and using crawl rules as a substitute for noindex.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, technical-seo]
 image: /images/blog/robots-txt-mistakes-that-block-google.webp
 metaTitle: robots.txt Mistakes That Block Google
 metaDescription: Fix robots.txt mistakes that block Googlebot: leftover Disallow, blocked CSS and JS, wildcards, and using crawl rules when you needed noindex.

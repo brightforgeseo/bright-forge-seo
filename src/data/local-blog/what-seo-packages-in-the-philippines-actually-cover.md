@@ -4,7 +4,7 @@ slug: what-seo-packages-in-the-philippines-actually-cover
 excerpt: Philippine SEO packages are scopes of work, not menus. Read the hours, pages and reporting inside each band before you compare monthly fees.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/what-seo-packages-in-the-philippines-actually-cover.webp
 metaTitle: Philippine SEO Packages by Scope | Bright Forge
 metaDescription: SEO packages in the Philippines are scopes, not menus. See what each market band usually covers, which extras are theatre, and how to compare two proposals.

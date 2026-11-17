@@ -4,7 +4,7 @@ slug: faceted-navigation-seo-without-index-bloat
 excerpt: Most filter URLs should never enter the index. Keep the facets people search for, block the combinatorial rest, and do not mix robots.txt with noindex on the same URL.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, technical-seo]
 image: /images/blog/faceted-navigation-seo-without-index-bloat.webp
 metaTitle: Faceted Navigation SEO Without Index Bloat | Bright Forge
 metaDescription: How we decide which filter URLs may rank, and which must stay out of the index. Send the category tree if crawl is stuck on facets.

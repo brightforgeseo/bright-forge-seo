@@ -4,7 +4,7 @@ slug: how-to-verify-an-seo-fix-on-a-live-website
 excerpt: "An SEO fix is not finished when a CMS field changes or a deployment succeeds. Verify the live output, crawler access, user action and non-target parity."
 date: 2026-09-21
 author: Ben Lowe
-tags: [seo, technical-seo]
+tags: [seo, technical-seo, reporting]
 image: /images/blog/how-to-verify-an-seo-fix-on-a-live-website.webp
 metaTitle: "How to Verify an SEO Fix on a Live Website | Bright Forge"
 metaDescription: "Verify an SEO fix with live URL checks, rendered HTML, Search Console and regression testing. Know what to sign off and what still needs follow-up."

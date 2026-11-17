@@ -4,7 +4,7 @@ slug: digital-marketing-vs-seo-for-philippine-smes
 excerpt: Philippine SMEs should treat SEO as the part of digital marketing that earns demand from search, not as a substitute for ads, social, or a working enquiry path.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, strategy]
 image: /images/blog/digital-marketing-vs-seo-for-philippine-smes.webp
 metaTitle: Digital Marketing vs SEO for SMEs | Bright Forge
 metaDescription: For Philippine SMEs, SEO earns search demand over time. Ads buy attention now. Choose by enquiry quality, sales cycle and whether the site can convert.

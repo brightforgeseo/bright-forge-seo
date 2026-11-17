@@ -4,9 +4,9 @@ slug: what-white-label-seo-costs-without-a-public-menu
 excerpt: White label SEO cost is a wholesale workload plus the hours you still spend on the client. Market bands in 2026 cluster by scope, not by a public rate card.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/what-white-label-seo-costs-without-a-public-menu.webp
-metaTitle: White Label SEO Cost | Bright Forge
+metaTitle: What White Label SEO Costs Without a Public Menu
 metaDescription: Commonly reported 2026 white label SEO wholesale bands, what markup has to cover, and how agencies should judge cost without a public fulfilment rate card.
 ---
 

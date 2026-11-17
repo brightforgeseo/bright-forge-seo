@@ -4,7 +4,7 @@ slug: duplicate-title-tags-at-scale
 excerpt: Duplicate titles are a template problem, not a copywriting problem. Find the pattern, fix the generator, then check Search Console until the copies stop landing in the index.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, technical-seo]
 image: /images/blog/duplicate-title-tags-at-scale.webp
 metaTitle: Duplicate Title Tags at Scale: Fix the Template | Bright Forge
 metaDescription: How duplicate titles appear across products, filters and pagination, and how we fix them at template level. Send a crawl if titles are colliding.

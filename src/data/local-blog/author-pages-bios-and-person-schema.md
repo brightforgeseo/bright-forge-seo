@@ -4,7 +4,7 @@ slug: author-pages-bios-and-person-schema
 excerpt: Author pages only help when the bio, the byline and the Person markup describe the same human. No fake credentials. No ghost names on work they did not check.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/author-pages-bios-and-person-schema.webp
 metaTitle: Author Pages, Bios and Person Schema | Bright Forge
 metaDescription: Build author pages search systems can trust. Bios, bylines and Person schema must match the visible page, with real people and no invented credentials.

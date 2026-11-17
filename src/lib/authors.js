@@ -7,7 +7,7 @@ export const authors = {
     name: 'Ben Lowe',
     role: 'CEO & Co-Founder',
     shortBio:
-      'CEO and Co-Founder of Bright Forge SEO Agency with over 15 years of experience in digital marketing. Ben specializes in on-page and off-page SEO strategies, AI-driven search optimization, and delivering personalized, results-oriented solutions that drive real growth for businesses across diverse industries.',
+      'CEO and co-founder of Bright Forge SEO. Ben has worked in SEO for more than 15 years with ecommerce, SaaS and local service businesses in the UK and United States, holds a marketing degree from London Metropolitan University, and leads the team from Quezon City.',
     longBio: [
       "As the founder of Bright Forge SEO Agency, Ben brings a wealth of experience and passion for digital marketing. Over the years, he has honed his expertise in all facets of SEO, from on-page and off-page strategies to cutting-edge AI SEO optimization.",
       "With certifications from industry leaders and a marketing degree from London Metropolitan University, Ben is committed to delivering personalized, results-oriented solutions that drive real growth for businesses. He founded Bright Forge SEO Agency after years of working with e-commerce startups, SaaS companies, local businesses, and major corporations across the UK and United States.",

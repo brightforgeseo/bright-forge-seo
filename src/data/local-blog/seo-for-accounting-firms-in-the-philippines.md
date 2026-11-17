@@ -4,7 +4,7 @@ slug: seo-for-accounting-firms-in-the-philippines
 excerpt: "Accounting firm SEO should explain exact services, qualifications, location and enquiry fit without making financial or regulatory promises the practice cannot support."
 date: 2026-09-21
 author: Ben Lowe
-tags: [seo, philippines]
+tags: [seo, philippines, industries]
 image: /images/blog/seo-for-accounting-firms-in-the-philippines.webp
 metaTitle: "SEO for Accounting Firms in the Philippines | Bright Forge"
 metaDescription: "Plan accounting service descriptions, qualifications, local visibility and enquiry paths that help Philippine firms attract better-fit prospects."

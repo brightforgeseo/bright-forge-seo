@@ -4,9 +4,9 @@ slug: how-to-rank-on-google-in-the-philippines
 excerpt: Ranking on Google in the Philippines is a sequence of crawl access, the right pages, local truth and measurement. We do not sell position guarantees or dates.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, strategy]
 image: /images/blog/how-to-rank-on-google-in-the-philippines.webp
-metaTitle: How to Rank on Google Philippines | Bright Forge
+metaTitle: How to Rank on Google in the Philippines | Bright Forge
 metaDescription: How Philippine sites earn Google visibility through crawl access, useful pages and local truth. A working sequence, not ranking guarantees or dates.
 ---
 

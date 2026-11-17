@@ -4,7 +4,7 @@ slug: how-to-write-an-about-page-google-can-trust
 excerpt: A trustworthy about page names the people, the location, the work and the limits. Google does not need a slogan. It needs a record a human can check.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/how-to-write-an-about-page-google-can-trust.webp
 metaTitle: How to Write an About Page Google Can Trust | Bright Forge
 metaDescription: Write an about page search systems and buyers can verify: named people, real location, honest history, matching schema and a way to reach the firm.

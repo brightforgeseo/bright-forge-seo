@@ -4,7 +4,7 @@ slug: seo-red-flags-when-hiring-in-the-philippines
 excerpt: Rank guarantees, bulk link packages and reports you cannot verify are still common hiring traps for Philippine businesses comparing SEO agencies.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/seo-red-flags-when-hiring-in-the-philippines.webp
 metaTitle: SEO Red Flags When Hiring | Bright Forge
 metaDescription: Rank guarantees, bulk link packages and locked-in reporting are common hiring traps. Learn the questions that expose weak SEO proposals before you sign.

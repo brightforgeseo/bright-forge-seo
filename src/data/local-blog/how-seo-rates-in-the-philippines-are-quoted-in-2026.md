@@ -4,9 +4,9 @@ slug: how-seo-rates-in-the-philippines-are-quoted-in-2026
 excerpt: Philippine SEO rates in 2026 still cluster by hours and risk, not by a public card. Read retainers, project fees and day rates as different products.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/how-seo-rates-in-the-philippines-are-quoted-in-2026.webp
-metaTitle: SEO Rates Philippines 2026 | Bright Forge
+metaTitle: How SEO Rates in the Philippines Are Quoted in 2026
 metaDescription: SEO rates in the Philippines in 2026 cluster by hours and risk. Compare retainers, project fees and day rates as different products, not one monthly number.
 ---
 

@@ -4,7 +4,7 @@ slug: seo-for-law-firms-without-legal-promises
 excerpt: Legal SEO is practice-area URLs, holdable claims and a consultation path. We will not invent case results, rankings or recoveries to win the click.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, industries]
 image: /images/blog/seo-for-law-firms-without-legal-promises.webp
 metaTitle: SEO for Law Firms Without Legal Promises
 metaDescription: SEO for law firms without outcome guarantees. Practice-area pages, holdable claims, intake tracking, and no invented recoveries.

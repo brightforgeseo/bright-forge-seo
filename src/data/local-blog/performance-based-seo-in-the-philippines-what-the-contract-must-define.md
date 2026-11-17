@@ -4,7 +4,7 @@ slug: performance-based-seo-in-the-philippines-what-the-contract-must-define
 excerpt: "Performance-based SEO needs written definitions for success, baseline, attribution, control, exclusions and payment before either party can judge the result fairly."
 date: 2026-09-21
 author: Ben Lowe
-tags: [seo, philippines]
+tags: [seo, philippines, pricing, hiring]
 image: /images/blog/performance-based-seo-in-the-philippines-what-the-contract-must-define.webp
 metaTitle: "Performance-Based SEO Philippines: Contract Essentials"
 metaDescription: "Before accepting performance-based SEO in the Philippines, define success, baselines, attribution, responsibilities, exclusions and payment triggers."

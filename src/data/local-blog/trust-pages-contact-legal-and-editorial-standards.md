@@ -4,7 +4,7 @@ slug: trust-pages-contact-legal-and-editorial-standards
 excerpt: Contact details, privacy and editorial rules are how a service site proves it is a real firm. Missing trust pages make every other claim cheaper.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/trust-pages-contact-legal-and-editorial-standards.webp
 metaTitle: Trust Pages for Contact, Legal and Editorial Standards
 metaDescription: Why contact, privacy and editorial standards pages matter for trust. Keep identity, claims and legal copy consistent and actually usable.

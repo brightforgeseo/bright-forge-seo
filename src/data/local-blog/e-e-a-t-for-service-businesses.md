@@ -4,7 +4,7 @@ slug: e-e-a-t-for-service-businesses
 excerpt: E-E-A-T is a quality rater concept, not a score you can game. Service businesses earn trust with first-hand proof, named authors, real contact details and honest case studies.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/e-e-a-t-for-service-businesses.webp
 metaTitle: E-E-A-T for Service Businesses | Bright Forge
 metaDescription: E-E-A-T is not a ranking score. How service businesses show experience, expertise, authority and trust with proof Google quality raters can actually check.

@@ -4,9 +4,9 @@ slug: what-seo-is-when-the-phone-has-to-ring
 excerpt: SEO is the work that helps the right people find, understand and choose your site in search. It is technical access, on-page clarity and content that matches demand, not a ranking slogan.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, strategy]
 image: /images/blog/what-seo-is-when-the-phone-has-to-ring.webp
-metaTitle: What Is SEO | Bright Forge
+metaTitle: What SEO Is When the Phone Has to Ring | Bright Forge
 metaDescription: SEO makes your site findable, understandable and worth choosing through technical access, on-page clarity and useful content, without ranking slogans.
 ---
 
