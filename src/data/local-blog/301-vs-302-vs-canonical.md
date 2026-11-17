@@ -108,4 +108,4 @@ A canonical is not a robots directive. Google can ignore it. If you need the URL
 
 If the old URL should vanish, redirect it permanently and point every remaining signal at the destination. If the old URL is coming back, redirect it temporarily and keep the original in the sitemap. If both URLs must stay, canonicalise, link, and submit the one you want indexed.
 
-When those three states are mixed across templates, we would rather unwind the rules than add another plugin. [Talk to us](/contact/) with a sample of old and new URLs if you want that cluster checked before the next crawl waste another month on the wrong address.
+When those three states are mixed across templates, we would rather unwind the rules than add another plugin. [Talk to us](/contact/) with a sample of old and new URLs if you want that cluster checked before the next crawl wastes another month on the wrong address.

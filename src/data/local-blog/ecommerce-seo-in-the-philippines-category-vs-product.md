@@ -46,11 +46,11 @@ Out of stock is a policy, not an afterthought. For a SKU you will replenish, kee
 
 Product schema belongs on product URLs: name, price, currency, availability, brand, SKU, and reviews when they are visible. Putting Product markup on a category because a plugin offered it is noise. Category markup and breadcrumb markup help the path. They do not replace a clean H1.
 
-## Facets, Tags And Search Urls
+## Facets, Tags And Search URLs
 
 Faceted navigation is where ecommerce SEO in this market quietly dies. A filter for brand, size, price and colour can create thousands of URLs that look unique to a crawler and identical to a buyer. WooCommerce especially will index filtered and tagged paths if you let it. Shopify collections plus tags can do the same. Magento layered navigation is a classic crawl trap.
 
-The rule is simple. If the combination is a real search people use and you will merchandize it, make it a category and link it. If it is a convenience filter, noindex it, canonical it back, or keep it behind parameters Google is told to ignore. Search-result URLs inside the site ("/search?q=") should not compete with categories.
+The rule is simple. If the combination is a real search people use and you will merchandise it, make it a category and link it. If it is a convenience filter, noindex it, canonical it back, or keep it behind parameters Google is told to ignore. Search-result URLs inside the site ("/search?q=") should not compete with categories.
 
 Internal search logs are a gift. They tell you which filters deserve to become categories. If hundreds of people search "waterproof hiking bag" and you only have that as a filter on Bags, you are hiding a head term on a noindex URL. Promote it. If nobody searches "blue waterproof hiking bag under 1000 pesos except this one SKU", leave it as a filter.
 
@@ -72,7 +72,7 @@ Measurement has to follow the URL type. Category clicks and revenue. Product cli
 
 ## What We Need From The Catalogue
 
-If the store cannot say which categories are real, which SKUs are going away, and which filters are allowed to exist, we will spend the first month just stopping the index from rotting. Send a crawl if you have one. Send Search Console. Send the collection list you actually merchandize.
+If the store cannot say which categories are real, which SKUs are going away, and which filters are allowed to exist, we will spend the first month just stopping the index from rotting. Send a crawl if you have one. Send Search Console. Send the collection list you actually merchandise.
 
 The decision you want from us is not "do we do ecommerce SEO". It is which URL owns which query in this market. Categories for the head commercial terms. Products for the models and the long tail. Filters out of the way. When that split is clean, copy and links have somewhere to sit.
 

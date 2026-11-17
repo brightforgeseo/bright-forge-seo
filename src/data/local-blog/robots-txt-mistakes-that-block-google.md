@@ -26,8 +26,10 @@ Comments start with #. That is useful. It is also how a missing newline turns a 
 
 The classic incident is:
 
+```
 User-agent: *
 Disallow: /
+```
 
 That group tells crawlers matching * not to crawl the site. Google's own examples use it when you intend to disallow crawling of the entire site, and they note that URLs can still appear in results without a snippet if they are known from other places. For a shop or a lead-gen site, this is an outage. It usually arrives via a staging clone, a security plugin that "locks" the site, or a well-meaning developer who wanted to hide a pre-launch theme.
 
@@ -57,7 +59,7 @@ If you both Disallow and noindex, you have asked Google not to read the noindex.
 
 Google supports * and $ in ways teams forget. Disallow: /*.pdf$ is a file-type rule. Disallow: /*? is a blunt instrument that can catch every URL with a query string, including pagination, tracking, and sometimes the only URL a CMS can serve. Disallow: /en catches /enquiry and /energy if you are sloppy about path prefixes. Disallow: /http and Disallow: /https do nothing useful unless those path segments exist on the site; they do not block the protocol.
 
-Directory rules should end with a slash when you mean the directory and everything under it. A missing slash can fail to match what you intended, or match a prefix you did not intend, depending on the path. Test with Google's robots testing ideas and, more importantly, with a crawl of the live file plus a list of money URLs. Do not test only on staging if CDN rules differ.
+Directory rules should end with a slash when you mean the directory and everything under it. A missing slash can fail to match what you intended, or match a prefix you did not intend, depending on the path. Test the rules against Google's documented matching behaviour and, more importantly, with a crawl of the live file plus a list of money URLs. Do not test only on staging if CDN rules differ.
 
 User-agent groups are matched by longest bot name, not by stacking every mythic bot you found on a forum. A group for Googlebot and a group for * are different. AdsBot is not covered by * in Google's documentation the way other crawlers are; if you must address ads crawlers, name them. Copy-pasting a 200-line "block AI bots" file onto a marketing site has started to block more than the author could explain. If you block a crawler, know which one and why.
 
@@ -83,7 +85,7 @@ If you are in a redesign or host move, put this file on the same checklist as re
 
 ## What We Do When A Site Is Already Dark
 
-We take the live robots.txt, the previous version from git or hosting history if it exists, and the Search Console coverage numbers. We restore crawl permission for the templates that earn. We do not "open everything" if the catalog has infinite facets; we open what should rank and keep crawl waste fenced. We submit sitemaps that match. We inspect the money URLs rather than waiting for a blog post to age.
+We take the live robots.txt, the previous version from git or hosting history if it exists, and the Search Console coverage numbers. We restore crawl permission for the templates that earn. We do not "open everything" if the catalogue has infinite facets; we open what should rank and keep crawl waste fenced. We submit sitemaps that match. We inspect the money URLs rather than waiting for a blog post to age.
 
 Then we add a monitor: a scheduled fetch of /robots.txt and a diff against the last known good file. Most disasters are a one-line change from a plugin or a clone. A weekly ranking report will see it late. A file diff sees it the day it ships.
 

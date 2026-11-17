@@ -10,7 +10,7 @@ metaTitle: SEO for Davao Businesses Without a Fake Branch
 metaDescription: SEO for Davao businesses without a fake local branch. We work from Quezon City and treat your listing, pages and service area as the real local assets.
 ---
 
-Searching for an SEO agency in Davao usually means one of two things. You run a business that wins jobs in Davao City and nearby cities, and you want search and Maps to send you those jobs. Or you have been sold a “local office” story by a firm that treats every Philippine city as a landing page. We sit in the first camp. Bright Forge is based in Quezon City, Metro Manila. We do not operate a Davao office, and we will not pretend a coworking desk or a city URL is a branch.
+Searching for an SEO agency in Davao usually means one of two things. You run a business that wins jobs in Davao City and nearby cities, and you want search and Maps to send you those jobs. Or you have been sold a “local office” story by a firm that treats every Philippine city as a landing page. We work for the first group. Bright Forge is based in Quezon City, Metro Manila. We do not operate a Davao office, and we will not pretend a coworking desk or a city URL is a branch.
 
 That honesty is part of the work. Local search punishes invented locations. If we published a Davao address we do not staff, we would be asking you to trust a method we would refuse on your own Google Business Profile. Remote delivery is a real model. A fake pin is not.
 

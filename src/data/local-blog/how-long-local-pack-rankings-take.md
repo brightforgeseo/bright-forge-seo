@@ -64,7 +64,7 @@ While you are not in the pack you want, the useful work is still the useful work
 
 That list is [local SEO services](/local-seo-for-google-maps-and-gbp/), not a secret acceleration hack. Doing it in week one does not entitle you to a pack slot in week four. Skipping it guarantees you are arguing about rankings on a broken listing.
 
-We also clean duplicates. An old listing for the previous tenant, or a second profile a staff member created, splits reviews and confuse Maps. Removing or merging that is another wait with no promised prize, and it is still mandatory when we find it.
+We also clean duplicates. An old listing for the previous tenant, or a second profile a staff member created, splits reviews and confuses Maps. Removing or merging that is another wait with no promised prize, and it is still mandatory when we find it.
 
 Competitor watching is for diagnosis, not for copying spam. If the pack is full of listings with keyword names, we still will not keyword-stuff yours. Google’s name guidelines already forbid that. We would rather be eligible and slower than suspended and gone.
 

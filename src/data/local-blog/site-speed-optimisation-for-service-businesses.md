@@ -6,7 +6,7 @@ date: 2026-09-21
 author: Ben Lowe
 tags: [technical-seo, performance]
 image: /images/blog/site-speed-optimisation-for-service-businesses.webp
-metaTitle: "Site Speed Optimisation for Service Businesses | Bright Forge"
+metaTitle: "Site Speed Optimisation for Service Businesses"
 metaDescription: "Prioritise site speed fixes using loading, responsiveness and visual stability evidence, while preserving useful content, design and enquiry tracking."
 ---
 

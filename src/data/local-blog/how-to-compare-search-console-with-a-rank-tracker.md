@@ -62,7 +62,7 @@ A stronger case for genuine movement exists when repeated tracker observations c
 
 Even then, separate a ranking observation from its explanation. A decline does not identify the cause. It tells you where to investigate, not whether to rewrite content, change internal links or begin technical repairs.
 
-[Intermittent visibility](https://brightforge.com.ph/blog/why-search-impressions-rise-before-clicks-and-leads/) looks different. A tracker may find the page in some checks but not others, while Search Console records impressions during the broader period. That pattern supports saying that visibility occurred and was not consistently captured in the selected snapshots. It does not support calling the best observed position the page’s established rank.
+Intermittent visibility looks different. A tracker may find the page in some checks but not others, while Search Console records impressions during the broader period. That pattern supports saying that visibility occurred and was not consistently captured in the selected snapshots. It does not support calling the best observed position the page’s established rank.
 
 Sparse query activity also limits what you can conclude. A small amount of Search Console evidence gives you less basis for judging a trend. Rather than escalating every fluctuation, keep the query under observation and review related page performance for context.
 

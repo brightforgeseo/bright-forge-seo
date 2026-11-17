@@ -26,7 +26,7 @@ Password protection also keeps Google out, which is correct for true staging. Th
 
 In WordPress, Settings, Reading, "Search engine visibility" still catches people. Yoast, Rank Math, and similar plugins have environment flags, and some hosts inject a noindex on non-production URLs that then get mapped to production. Shopify themes and apps have been known to leave noindex on alternate templates. Headless stacks often put robots in the framework config: next.config headers, Nuxt, or a CDN worker that was copied from staging.
 
-X-Robots-Tag is the one developers forget because it does not show in "view source" the way people expect if they only look at the body, and some only look at the meta. Fetch the headers. A CDN rule that says noindex, nofollow on all HTML is enough to unpublish a site. We have seen it on "security" boilerplates.
+X-Robots-Tag is the one developers forget because it does not show in "view source" at all. It is sent in the HTTP response, not in the HTML. Fetch the headers. A CDN rule that says noindex, nofollow on all HTML is enough to unpublish a site. We have seen it on "security" boilerplates.
 
 Pagination, filtered collections, and parameter pages may have been noindexed on purpose. After a redesign, that rule sometimes lands on the main collection template because the new theme reused the same header partial. Check the money templates as HTML, not as a screenshot of the homepage in an incognito window. Homepages sometimes stay indexable while category templates do not.
 
@@ -44,7 +44,7 @@ None of these require malice. They require a checklist that treats indexing as a
 
 ## How To Prove It In A Morning
 
-Pick ten URLs that earned in the last 28 days of Search Console before the drop: homepage, two money services or collections, two products or location pages, a blog post that was stable, and a URL you expect to stay noindex (cart, search, thank you). For each, fetch:
+Pick ten URLs, mostly ones that earned in the last 28 days of Search Console before the drop. Include the homepage, two money services or collections, two products or location pages, a blog post that was stable, and a URL you expect to stay noindex (cart, search, thank you). For each, fetch:
 
 The HTTP status. The X-Robots-Tag header if any. The meta robots and googlebot tags in the HTML. The canonical. Whether the URL is in the live XML sitemap. What URL inspection in Search Console says Google last saw.
 
@@ -88,6 +88,6 @@ This is also where [technical SEO](/technical-seo-services-philippines/) and mig
 
 We take the date of the deploy, the Search Console coverage split, and a header/html sample of the money URLs. If noindex is live, we remove it and document the source so it cannot be redeployed from the same config. If noindex is already gone, we look at remaining blockers: robots, canonicals, 404s, soft 404s, and internal links that still point at the old excluded URL.
 
-We do not promise the previous rank positions as a date. We can promise that we will not leave the instruction that caused the exclusion in place, and that we will keep the money URLs crawlable, indexable, and in the sitemap while Google recrawls.
+We do not promise a date for the previous rank positions to return. We can promise that we will not leave the instruction that caused the exclusion in place, and that we will keep the money URLs crawlable, indexable, and in the sitemap while Google recrawls.
 
 If you launched in the last fortnight and organic fell off a cliff, do not wait for a monthly report. [Send the live URLs and the deploy date](/contact/). Include Search Console access if you can. The first question is whether you asked Google not to index the new site. It is a yes or no you can answer with a fetch, and it should be answered before anyone debates content quality.

@@ -100,7 +100,7 @@ Run the same checks after AI-assisted drafting. Models will happily emit a bibli
 
 Answer engines prefer pages that look cited. That creates a perverse incentive to sprinkle names. A citation that does not resolve is worse than a plain paragraph, because the system and the user both learn that your domain attaches names to air.
 
-We would rather be cited for a method we can show in Search Console than for a quote that cannot be found. Eligibility for AI overviews and similar surfaces still rests on ordinary quality: clear authorship, checkable facts, and pages that match the query. Fake experts do not help eligibility. They create a future correction.
+We would rather be cited for a method we can show in Search Console than for a quote that cannot be found. Eligibility for AI Overviews and similar surfaces still rests on ordinary quality: clear authorship, checkable facts, and pages that match the query. Fake experts do not help eligibility. They create a future correction.
 
 If a client asks us to "add more authority" to a draft, we ask what evidence they already have. Staff interviews, original data, process pages, and named reviewers beat a synthetic advisory board.
 

@@ -52,7 +52,7 @@ Local coverage matters. One NAP, one profile, and one service-area page is a con
 
 The authority gap matters. A domain with years of relevant mentions needs less rescue work than a new domain, or a domain that already has a toxic link profile from a previous vendor.
 
-None of those variables appear on a public rate card, which is why honest firms refuse to publish one. How [SEO scope is priced without a public rate card](/blog/how-seo-scope-is-priced-without-a-public-rate-card/) is the same logic applied to a single site: evidence first, then a private proposal, then work that matches the problem rather than a catalogue of tasks.
+None of those variables appear on a public rate card, which is why we do not publish one. How [SEO scope is priced without a public rate card](/blog/how-seo-scope-is-priced-without-a-public-rate-card/) is the same logic applied to a single site: evidence first, then a private proposal, then work that matches the problem rather than a catalogue of tasks.
 
 ## Red Flags That Make The Price Irrelevant
 
@@ -80,6 +80,6 @@ Owners sometimes try to split the difference by hiring the cheapest vendor and â
 
 A cleaner test is a defined sprint: crawl, Search Console review, conversion path on the top five URLs, and a written 90-day plan. If that document is specific, a retainer can follow. If it is generic, you have learned something before the monthly debit starts.
 
-Philippine SEO in 2026 is not mysterious. Hours, skill, and risk still set the price. The four bands above are what the market charges. The useful decision is which band matches the work your site actually needs, and which proposals should be declined even when the number looks friendly.
+Philippine SEO in 2026 is not mysterious. Hours, skill, and risk still set the price. The four bands above are roughly where market quotes cluster. The useful decision is which band matches the work your site actually needs, and which proposals should be declined even when the number looks friendly.
 
 If you want a private scope against the current site rather than a package pulled from a menu, [send the URL and the commercial target](/contact/). The reply should say what the evidence supports, including when the right next step is a smaller job than the one you asked for.

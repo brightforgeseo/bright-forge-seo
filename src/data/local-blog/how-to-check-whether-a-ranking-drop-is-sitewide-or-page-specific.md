@@ -6,7 +6,7 @@ date: 2026-09-21
 author: Ben Lowe
 tags: [seo, reporting, technical-seo]
 image: /images/blog/how-to-check-whether-a-ranking-drop-is-sitewide-or-page-specific.webp
-metaTitle: "Is Your Ranking Drop Sitewide or Page-Specific? | Bright Forge"
+metaTitle: "Is Your Ranking Drop Sitewide or Page-Specific?"
 metaDescription: "Check pages, queries and Search Console patterns to find whether a ranking drop affects your whole site, one section or a single URL before making changes."
 ---
 
@@ -83,7 +83,7 @@ Then reverse the view: filter for an important affected query and inspect the pa
 
 Where the pattern follows a topic, compare search interest using Google Trends. Google recommends this to help distinguish a website-specific decline from wider changes in demand. Use the relevant region so that international interest does not obscure the market you serve.
 
-Keep the conclusion specific. “Our advice articles about this topic [lost impressions](https://brightforge.com.ph/blog/why-search-impressions-rise-before-clicks-and-leads/)” directs a useful investigation. “Google has dropped the site” hides the very distinctions needed to choose the next action.
+Keep the conclusion specific. “Our advice articles about this topic lost impressions” directs a useful investigation. “Google has dropped the site” hides the very distinctions needed to choose the next action.
 
 ## Investigate Shared Causes When Losses Are Broad
 

@@ -36,7 +36,7 @@ New content ideas can be researched overnight. They should not be published over
 
 You can buy more overlap by shifting shifts. A Philippine team that starts later will catch more of the UK morning and a slice of US East. That costs energy and management. It is valid for accounts that need live collaboration.
 
-You can keep standard Philippine hours and design the work around a daily handoff: a ticket board, a recorded loom, a written decision log. That is how most retainers should run. Live meetings become weekly, not daily.
+You can keep standard Philippine hours and design the work around a daily handoff: a ticket board, a recorded Loom, a written decision log. That is how most retainers should run. Live meetings become weekly, not daily.
 
 You can put a local account lead in the client's timezone and keep production in Quezon City. That is more expensive. It is the right shape when the client will not read written briefs.
 
@@ -84,7 +84,7 @@ The same is true for technical work. "Fix speed" is not a ticket. "Reduce the LC
 
 ## Reporting Across Calendars
 
-Do not schedule a ranking snapshot at 9:00 UK that the team has to compile at 2:00 PHT unless there is a reason. Agree a reporting day. Pull data at a stable hour so month-on-month charts are not an artefact of when someone ran the export.
+Do not schedule a ranking snapshot for 9:00 in New York that the team has to compile at 22:00 PHT unless there is a reason. Agree a reporting day. Pull data at a stable hour so month-on-month charts are not an artefact of when someone ran the export.
 
 State the timezone on every date in the report. "Week 36" without a zone is how UK and US stakeholders argue about whether a deploy happened.
 

@@ -48,7 +48,7 @@ Management fees for a freelancer commonly sit around 10,000 to 25,000 PHP a mont
 
 Creative and landing pages are a third cost. Ad copy can live inside the management fee. Landing pages, banners, and video usually do not. A search campaign pointing at a slow homepage will burn media no matter how cheap the management line looks.
 
-Do not compare PPC on management fee alone. A 12,000 PHP manager on a 20,000 PHP media budget in a competitive city will lose to a 30,000 PHP manager on a 80,000 PHP budget with a dedicated landing page. You are buying auctions. The auction does not care what you wished to spend.
+Do not compare PPC on management fee alone. A 12,000 PHP manager on a 20,000 PHP media budget in a competitive city will lose to a 30,000 PHP manager on an 80,000 PHP budget with a dedicated landing page. You are buying auctions. The auction does not care what you wished to spend.
 
 Tracking is part of the cost. If calls, forms, and Messenger chats are not tied back to campaigns, you are buying reports of clicks. Conversion tracking, call records, and a CRM field are cheaper than another month of unattributed spend.
 

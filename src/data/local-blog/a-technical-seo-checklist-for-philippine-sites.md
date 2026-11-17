@@ -88,7 +88,7 @@ Test a sample of templates, not one URL. Category, product, service, location, a
 
 Connect the exact host. Submit the sitemap. Read Pages, not only Performance. Coverage reasons (excluded by noindex, crawled currently not indexed, duplicate, soft 404, blocked by robots) are the checklist scoring system.
 
-Performance should be filtered to commercial URLs and queries, not celebrated as a sitewide click total. Enhancement reports for HTTPS, mobile usability, and structured data tell you when a template broke.
+Performance should be filtered to commercial URLs and queries, not celebrated as a sitewide click total. The HTTPS and structured data reports tell you when a template broke.
 
 If you have no Search Console, that is item zero. Public crawls cannot show what Google chose not to index. [What a proper SEO audit should include](/blog/what-a-proper-seo-audit-should-include/) starts here for a reason: without this property, technical claims are guesses.
 

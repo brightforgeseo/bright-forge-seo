@@ -22,7 +22,7 @@ We map the live query set before we argue about blogs. Search Console already sh
 
 Trade language has to match how the buyer buys, not how the brochure committee writes. "Civil packages" may be how you invoice. "Groundworks" or "site scaffolding" may be how people search. We keep both on the page when they are true. We do not invent towns, accreditations or project types to chase volume. A page that claims national coverage and then lists three completed jobs in one city will not survive a serious buyer, and it will not survive Google for long either.
 
-## One Url Per Trade Or Product Line
+## One URL Per Trade Or Product Line
 
 The highest-leverage construction SEO change is almost always splitting the offer. New builds, scaffolding, civil, cladding, a PVC system, an equipment range: each one needs a URL with its own H1, proof and enquiry path. Competitors that rank for those queries do not hide them in a bullet list.
 
@@ -32,7 +32,7 @@ Catalogue sites have a second version of this problem. Filters, sort orders and 
 
 Location URLs only exist where the firm actually works. A regional contractor can support service-area copy for the regions on the insurance and the case photos. A national product brand usually needs category demand, not a fake map of cities. Doorway-style town copies with the same paragraph and a swapped H1 are a liability, not a strategy.
 
-## Proof Belongs On The Quote Url
+## Proof Belongs On The Quote URL
 
 Specification buyers want to see the work. Project photos, product ranges, method statements, and the kind of job you want more of should sit on the commercial URL, not in a disconnected gallery. We would rather tighten a scaffolding page with completed jobs, access constraints and a quote path than publish another "what is scaffolding" article.
 
@@ -68,7 +68,7 @@ Internal links are where most of the authority dies. A blog about "choosing a bu
 
 Schema is useful when the visible page already supports it. LocalBusiness or a product type can help a crawler parse what the page is. It will not rescue a Services dump. We recommend markup that matches the page, not a dump of every type the plugin offers.
 
-## How We Measure Construction Seo
+## How We Measure Construction SEO
 
 Rankings on a handful of head terms are a weak scoreboard. We track impressions and clicks on the trade and product URLs that should win quotes. We look at whether those URLs are the landing pages, or whether a blog is stealing the click and then failing to convert. Where enquiry tracking exists, we connect the landing URL to quote requests. Where it does not, we say the reporting is incomplete rather than inventing leads.
 

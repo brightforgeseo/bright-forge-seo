@@ -64,7 +64,7 @@ Lazy-loaded images below the fold still need dimensions. Without them, they caus
 
 ## What Usually Does Not Fix Field Vitals
 
-Installing three cache plugins. Combining CSS until the page is uncacheable to debug. A "performance" plugin that concatenates everything and breaks HTTP/2. Minifying already-minified third-party scripts. Chasing a 100 lab score by removing the features the business actually uses, then wondering why the field report barely moved.
+Installing three cache plugins. Combining CSS until the page is impossible to debug. A "performance" plugin that concatenates everything and breaks HTTP/2. Minifying already-minified third-party scripts. Chasing a 100 lab score by removing the features the business actually uses, then wondering why the field report barely moved.
 
 A CDN helps TTFB and image delivery when it is configured. It does not fix a 2 MB hero, a builder runtime, or a banner that shifts the H1. Object cache (Redis or equivalent) helps origin TTFB on dynamic WordPress. Full-page cache helps anonymous templates. Logged-in or carted WooCommerce pages will still be dynamic; measure those templates separately.
 

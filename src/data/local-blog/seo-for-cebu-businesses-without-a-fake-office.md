@@ -80,7 +80,7 @@ Pack timing still cannot be sold as a date. Distance in Cebu is real: a searcher
 
 Mechanical waits still apply. Postcard verification, category edits, service-area changes, and re-verification after a move all take time that is not ranking. If you are unverified, we do not talk about pack position.
 
-A Philippines team in Quezon City has overlapping hours with Cebu staff. That is enough for weekly implementation. It is not a substitute for a Cebu technician on site. When a task needs a person standing in front of the building, that person should be yours or a contractor you trust, not a fictional employee on our about page.
+A Philippines team in Quezon City works the same hours as Cebu staff. That is enough for weekly implementation. It is not a substitute for a Cebu technician on site. When a task needs a person standing in front of the building, that person should be yours or a contractor you trust, not a fictional employee on our about page.
 
 Ben Lowe has spent 15+ years watching local campaigns fail because the vendor sold proximity of the agency instead of accuracy of the business. Sassin Lowe’s operations job is to keep the work in the tickets: profile, pages, citations, reviews, reporting. Seventeen case studies on the site are bounded evidence from real campaigns, not a claim that every Cebu category will move on a calendar.
 

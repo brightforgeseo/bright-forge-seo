@@ -6,7 +6,7 @@ date: 2026-09-21
 author: Ben Lowe
 tags: [seo, philippines, pricing, hiring]
 image: /images/blog/performance-based-seo-in-the-philippines-what-the-contract-must-define.webp
-metaTitle: "Performance-Based SEO Philippines: Contract Essentials"
+metaTitle: "Performance-Based SEO in the Philippines: Contract Terms"
 metaDescription: "Before accepting performance-based SEO in the Philippines, define success, baselines, attribution, responsibilities, exclusions and payment triggers."
 ---
 
@@ -28,7 +28,7 @@ Also name who accepts or rejects a lead and what evidence supports that decision
 
 ## Make Ranking Targets Worth Paying For
 
-A ranking-based arrangement needs a [fixed ranking set](https://brightforge.com.ph/blog/how-to-compare-search-console-with-a-rank-tracker/): the queries being measured, their intended landing pages and the search conditions used to check them. For a Philippine business, that means stating whether the target concerns visibility across the country or in a particular service area. Specify the search engine, device type, reporting tool and whether the measure concerns ordinary organic results or local results.
+A ranking-based arrangement needs a fixed ranking set: the queries being measured, their intended landing pages and the [search conditions a rank tracker uses to check them](https://brightforge.com.ph/blog/how-to-compare-search-console-with-a-rank-tracker/). For a Philippine business, that means stating whether the target concerns visibility across the country or in a particular service area. Specify the search engine, device type, reporting tool and whether the measure concerns ordinary organic results or local results.
 
 The keyword choice deserves as much scrutiny as the target position. A narrow phrase with little relevance to your customers may be easier to rank for than a term that brings suitable enquiries. Ask why each query belongs in the agreement and what a visitor searching it would expect to find.
 

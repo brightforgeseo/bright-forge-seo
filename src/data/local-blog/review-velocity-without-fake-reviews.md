@@ -22,7 +22,7 @@ A profile that gains a few genuine reviews each month, in the mix of languages y
 
 Old reviews still help social proof, but recency matters to readers. A 4.8 from 2019 with nothing this year reads abandoned. Asking today’s customers is how the date on the most recent review stays current. That is the only velocity we care about.
 
-Reviews also feed [Google Business Profile and local pack work](/blog/google-business-profile-verification-in-the-philippines/). They are not the whole prominence story, and they are not a reason to break policy.
+Reviews also feed Google Business Profile and local pack work once [the profile is verified](/blog/google-business-profile-verification-in-the-philippines/). They are not the whole prominence story, and they are not a reason to break policy.
 
 ## What Google Does Not Allow
 
@@ -38,7 +38,7 @@ We treat those paragraphs as the brief. A “free dessert for a Google review”
 
 ## What Google Does Allow
 
-Google does allow merchants to solicit or encourage content that represents a genuine experience, without offering incentives and without trying to influence the rating or the contents of the review. That is the whole legal ask: if you actually did the job, you may invite the customer to say so on Google, with no reward and no script that demands stars or phrases.
+Google does allow merchants to solicit or encourage content that represents a genuine experience, without offering incentives and without trying to influence the rating or the contents of the review. That is the whole permitted ask: if you actually did the job, you may invite the customer to say so on Google, with no reward and no script that demands stars or phrases.
 
 A message after the visit, a link or QR that goes to the public review form, and a verbal “if you have a minute, you can review us on Google” are the allowed pattern, as long as they are not pressuring people on the spot and not filtering who gets asked based on mood. Asking only the customers who smiled, or handing a card only after a compliment, is selective solicitation. Ask from completed jobs as a process, not from a vibe.
 

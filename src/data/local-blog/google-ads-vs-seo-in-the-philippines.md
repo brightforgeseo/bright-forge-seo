@@ -18,7 +18,7 @@ The useful question is which job you need this quarter, whether the landing URL 
 
 Google Ads is a delivery system for a message you already believe in. You pick the query or the audience, write the creative, choose the landing URL, set a bid and a budget, and pay when someone clicks or, in some formats, when they call. Control is high. So is the running cost. When spend stops, that traffic stops. That is the product, not a moral failing.
 
-In the Philippines the formats that matter for most SMEs are Search ads on commercial queries, Local campaigns and map placements where Google offers them, and remarketing to people who already visited. Performance Max can look efficient in the interface and still hide which queries wasted money. Shopping and feed-based ads matter when you have a catalogue that is accurate enough to advertise. Brand search ads exist to stop competitors from sitting above your own name.
+In the Philippines the formats that matter for most SMEs are Search ads on commercial queries, local ads and map placements where Google offers them, and remarketing to people who already visited. Performance Max can look efficient in the interface and still hide which queries wasted money. Shopping and feed-based ads matter when you have a catalogue that is accurate enough to advertise. Brand search ads exist to stop competitors from sitting above your own name.
 
 Quality Score, landing page experience, and expected click-through rate are not trivia. They change what you pay. A thin homepage used as the destination for every theme will burn budget even when the bid looks conservative. Ads do not forgive a page that cannot explain the offer, the coverage, or the next step. They only show you the problem faster.
 
@@ -90,7 +90,7 @@ Share the language. If ads learn that “same-day” plus a city converts, the s
 
 Watch cannibalisation of attention. If the ad sits above your own organic result on a cheap brand term, you may still keep the ad on to block competitors, but you should know you are paying for a click you might have had. If the ad sits above a weak organic result on an expensive non-brand term, the paid click is renting time while the page is rebuilt. Neither case is a reason to shut a channel in a huff.
 
-Local listings add a fourth surface. A Local campaign can sit near the pack you are also trying to earn. That is not automatically waste. It is a reason to look at calls from ads, calls from the profile, and organic clicks as separate rows, then decide with sales which row is qualified. Turning off ads because “we already rank” without checking competitor ads on your name is how quiet months start.
+Local listings add another surface. A local ad can sit near the pack you are also trying to earn. That is not automatically waste. It is a reason to look at calls from ads, calls from the profile, and organic clicks as separate rows, then decide with sales which row is qualified. Turning off ads because “we already rank” without checking competitor ads on your name is how quiet months start.
 
 Ben Lowe has spent 15+ years watching teams pick a winner and starve the other channel until the business has no cushion. The calmer pattern is boring: Google Ads for speed and learning, SEO for ownership, one set of pages, one definition of a lead.
 

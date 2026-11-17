@@ -72,6 +72,6 @@ We will also push back on review gating that hides bad feedback, and on keyword 
 
 We do not list a Bright Forge Australian office we do not have. We do not put an AU street on our own profile to look closer to your customers. Your profile is your business. Our job is the search system around it. Clients who want an agency "down the road" should hire one. Clients who want senior local SEO operations, Australian English, and a team that will not invent a pin, can work with us from the Philippines.
 
-The useful test is simple. Could a customer visit the place on the listing, or does a technician travel from that operating point within a real radius? If yes, we can run the local program. If no, we can still work on the website for Australian search demand, but we will not dress it up as Maps SEO.
+The useful test is simple. Could a customer visit the place on the listing, or does a technician travel from that operating point within a real radius? If yes, we can run the local programme. If no, we can still work on the website for Australian search demand, but we will not dress it up as Maps SEO.
 
 If you have a real location or a real service area and you want the profile, pages, and citations handled without theatre, [tell us the address you can verify and the jobs you want](/contact/). Bring the current profile access if you have it. We will say quickly whether this is local SEO or a national site job, and we will not blur the two.

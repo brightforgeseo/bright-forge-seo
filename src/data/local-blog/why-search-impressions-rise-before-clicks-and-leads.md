@@ -12,7 +12,7 @@ metaDescription: "Search impressions up but clicks flat? Learn what to check in 
 
 An impression lift is a reason to investigate, not yet a reason to forecast more enquiries. Your pages may be appearing for more relevant searches before they earn more clicks. They may also be reaching people who are unlikely to buy. The headline graph cannot tell you which is happening.
 
-When you have search impressions up but clicks flat, the useful question is where the extra visibility came from. A service description appearing more often for relevant buying queries presents a different opportunity from an article gaining exposure for broad research questions.
+When search impressions are up but clicks are flat, the useful question is where the extra visibility came from. A service description appearing more often for relevant buying queries presents a different opportunity from an article gaining exposure for broad research questions.
 
 We judge that movement against the route to a commercial enquiry: the query, the page shown, the reason to click and the visitor’s next action. That helps separate encouraging early movement from a reporting increase that needs a different response. It also tells you what evidence to collect before calling the change a new baseline.
 

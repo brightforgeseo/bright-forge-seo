@@ -32,7 +32,7 @@ Those factories are easy to operate from anywhere. Geography does not make a lin
 
 Buyers cannot easily verify quality, so they verify quantity. “We got 80 links” feels like delivery. “We got four mentions, here are the URLs, here is why they exist” feels small. The second is often the only work worth keeping. The first is how [cheap backlink packages fail](/blog/why-cheap-backlink-packages-fail/): they optimise for the spreadsheet, not for the neighbourhood your domain will live in.
 
-Agencies that refuse packages look expensive next to a 5,000 PHP “boost”. They are expensive in the way that not buying a problem is expensive. Disavows, brand-serps full of spam, and months of recovery are the deferred invoice.
+Agencies that refuse packages look expensive next to a 5,000 PHP “boost”. They are expensive in the way that not buying a problem is expensive. Disavows, brand SERPs full of spam, and months of recovery are the deferred invoice.
 
 ## What Honest Link Work Looks Like In Practice
 

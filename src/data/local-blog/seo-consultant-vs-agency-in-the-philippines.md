@@ -72,8 +72,6 @@ Hire a consultant when the site is commercially clear and the gap is judgement. 
 
 A bounded audit with a written priority list is the classic consultant job. Pay for diagnosis, not for a retainer that pretends the diagnosis is also the delivery. If you then need production, you can hire production against a list that already exists. Mixing diagnosis and twelve months of blogging into one cheap fee is how audits sit unused.
 
-Consultant work also suits a fork in the road. Should you rebuild. Should you keep the CMS. Should you pause content until indexation is fixed. Should you fire a vendor who is still building links you cannot see. Those are decisions. You want a person who will put a recommendation in writing, with the evidence, and who is not paid extra if you choose the larger project.
-
 Do not hire a consultant as a quiet substitute for a team when the site has unresolved technical debt, thin commercial pages, weak local listings, and no owner on your side. That is not thrift. It is a delayed agency hire with extra mess.
 
 ## When The Agency Is The Better Fit

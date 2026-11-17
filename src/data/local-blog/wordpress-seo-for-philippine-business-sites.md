@@ -80,7 +80,7 @@ When [developers break WordPress SEO](/blog/wordpress-seo-what-developers-break-
 
 A new WordPress site should have a launch checklist that is not only “point the domain”. Permalinks set to a sensible post-name structure before content is written, not after. Redirects from the old URLs, including http, www, and common file extensions. Analytics and Search Console on the production host. Indexing allowed. Staging blocked. Forms tested on mobile. 404 template that points to useful pages. A crawl of the production domain before anyone runs ads against it.
 
-Migrations are where WordPress SEO is most often destroyed. Changing permalinks, moving from a page builder to another, or cloning the site to a new host without a redirect map will drop the URLs that already had impressions. Export the old URL list from Search Console and a crawler. Map every URL that earned clicks. Keep the path when you can. When you cannot, 301 to the closest equivalent, not to the homepage.
+Migrations are where WordPress SEO is most often destroyed. Changing permalinks, moving from one page builder to another, or cloning the site to a new host without a redirect map will drop the URLs that already had impressions. Export the old URL list from Search Console and a crawler. Map every URL that earned clicks. Keep the path when you can. When you cannot, 301 to the closest equivalent, not to the homepage.
 
 Handover documents should name the SEO plugin, the indexation rules, the people who can publish, and the things that must not be “cleaned up”. We still see well-meaning staff delete “old” pages that were the only ranking URLs, or install a second cache plugin because a tutorial said so. WordPress is easy to edit. That is why it needs rules.
 

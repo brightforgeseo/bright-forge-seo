@@ -78,7 +78,7 @@ Philippine search behaviour is mobile-heavy, bilingual, and often local even whe
 
 Hosting, page builders, and cheap themes create technical patterns we see constantly: mixed content, bloated sliders, duplicated theme SEO fields, and staging sites that leaked into the index. None of that is unique to the country. It is common here because many SMEs launch on a template and never revisit crawl.
 
-Competition is uneven. In a small city, a complete profile and two honest service pages can be enough to be visible. In Makati dental or Cebu aircon repair, incumbents already have years of reviews and content. The definition of SEO does not change. The amount of work and the time to see movement does.
+Competition is uneven. In a small city, a complete profile and two honest service pages can be enough to be visible. In Makati dental or Cebu aircon repair, incumbents already have years of reviews and content. The definition of SEO does not change. The amount of work and the time to see movement do.
 
 AI search summaries and chat answers sit on top of the same fundamentals. If your page is thin, duplicated, or uncrawlable, it is a poor source for those surfaces too. Chasing “AI SEO” as a separate product while the service pages are empty is a distraction.
 

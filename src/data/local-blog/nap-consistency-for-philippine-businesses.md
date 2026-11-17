@@ -12,7 +12,7 @@ metaDescription: Lock one name, address, and phone across your Philippine site, 
 
 NAP is name, address, and phone. It is the dullest part of local SEO and the one Philippine businesses break most often. The Google profile says one string, the website footer says another, Facebook has a third, and the Facebook ads use a mobile number that is not on any of them. Customers still find you. Google has a harder time deciding which record is the business.
 
-We do not treat NAP as a superstition that “citations rank you.” We treat it as identity. If the public facts disagree, every later local task is noisier: verification, [Google Business Profile and local pack work](/blog/google-business-profile-verification-in-the-philippines/), directory cleanup, and even call tracking. One canonical version has to win, then everything else copies it.
+We do not treat NAP as a superstition that “citations rank you.” We treat it as identity. If the public facts disagree, every later local task is noisier: [Google Business Profile verification](/blog/google-business-profile-verification-in-the-philippines/), local pack work, directory cleanup, and even call tracking. One canonical version has to win, then everything else copies it.
 
 ## What Has To Match, And What Does Not
 
@@ -36,7 +36,7 @@ We also see emoji, all caps, and “Official” tacked onto social names. Those 
 
 ## Address Strings That Fall Apart Locally
 
-Philippine addresses are long because they are. Building, tower, unit, street, barangay, city, province, postcode. The mistake is using a different subset everywhere. The website shows building and street. Google shows street and city. Facebook shows village name. A directory in the United States parser wants a ZIP and invents one.
+Philippine addresses are long because they are. Building, tower, unit, street, barangay, city, province, postcode. The mistake is using a different subset everywhere. The website shows building and street. Google shows street and city. Facebook shows village name. A directory with a United States parser wants a ZIP and invents one.
 
 We lock an order and stick to it. A working pattern for a visit address is unit and floor, building, street number and street, barangay if you use it everywhere, city, postcode. If the business is in a village, decide whether the public address uses the village name, the street inside it, or both, then use that same decision on the site, the profile, and printed materials.
 
