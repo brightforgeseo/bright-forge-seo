@@ -169,8 +169,8 @@ export const blogMetadata = {
     description: "Which stack fits the site you actually need to rank. Talk to us before the rebuild starts and the URLs move."
   },
   'astro-vs-wordpress-why-google-ranks-astro-sites-higher-and-faster': {
-    title: "Why Astro Sites Often Rank Faster | Bright Forge",
-    description: "Speed and HTML Googlebot can use, without a CMS tax. Send the stack if WordPress is the bottleneck."
+    title: "Astro vs WordPress: Speed, Crawling and SEO | Bright Forge",
+    description: "How site architecture affects speed, crawling and SEO on Astro and WordPress. Send the stack if you want the build reviewed."
   },
   'wordpress-setup-decisions-that-actually-move-the-needle-lessons-from-sites-weve-worked-on': {
     title: "WordPress Setup Decisions That Move SEO | Bright Forge",
@@ -245,7 +245,7 @@ export const blogMetadata = {
     description: "Stop launching with crawl debt. Talk to us before the templates ship and the first indexation round is wasted."
   },
   'the-six-month-seo-myth-when-campaigns-actually-start-working': {
-    title: "The Six-Month SEO Myth | Bright Forge",
+    title: "The Six-Month SEO Timeline | Bright Forge",
     description: "When campaigns actually move, and when they cannot. Ask us for a timeline tied to this site, not a slogan."
   },
   'keyword-density-in-2026-dead-metric-or-misunderstood-signal': {
