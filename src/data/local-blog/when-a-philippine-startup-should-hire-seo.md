@@ -4,9 +4,9 @@ slug: when-a-philippine-startup-should-hire-seo
 excerpt: SEO for startups in the Philippines should wait until the offer is specific, the site can be edited, and someone can take enquiries. Rankings will not invent product-market fit.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring, strategy]
 image: /images/blog/when-a-philippine-startup-should-hire-seo.webp
-metaTitle: SEO for Startups Philippines | Bright Forge
+metaTitle: When a Philippine Startup Should Hire SEO | Bright Forge
 metaDescription: SEO for startups in the Philippines works after the offer, site and enquiry path are real. See what to do yourself first and when a retainer wastes runway.
 ---
 
@@ -74,7 +74,7 @@ Spend on a diagnostic before a long retainer if you are unsure. A crawl, Search 
 
 International startups using a Philippine team should still write for the market they want to rank in. English copy aimed at US buyers with a .ph blog about “digital transformation” will not help either market. Pick the index you care about. Align the language, the examples, and the proof.
 
-## How A Sensible First Ninety Days Look
+## What A Sensible First Ninety Days Looks Like
 
 Days 1 to 15 are diagnosis and access. Confirm the domain, Search Console, CMS, analytics, and who can publish. List the converting queries from ads, sales notes, and customer language, not from a fantasy keyword tool export. Identify technical blockers that would waste writing.
 

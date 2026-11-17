@@ -4,15 +4,15 @@ slug: what-white-label-seo-costs-without-a-public-menu
 excerpt: White label SEO cost is a wholesale workload plus the hours you still spend on the client. Market bands in 2026 cluster by scope, not by a public rate card.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/what-white-label-seo-costs-without-a-public-menu.webp
-metaTitle: White Label SEO Cost | Bright Forge
+metaTitle: What White Label SEO Costs Without a Public Menu
 metaDescription: Commonly reported 2026 white label SEO wholesale bands, what markup has to cover, and how agencies should judge cost without a public fulfilment rate card.
 ---
 
 White label SEO cost is two numbers pretending to be one. There is the wholesale fee you pay a fulfilment partner. There is the time your account team still spends selling, translating, and sitting on calls when rankings stall. Agencies that only compare the first number hire a cheap partner and then donate the margin to Slack.
 
-The ranges below are market commentary from public 2026 wholesale and reseller write-ups. They are not Bright Forge prices, and they are not a partner quote. Commonly reported wholesale retainers often sit from a few hundred dollars a month at the local-SMB floor to several thousand at national, ecommerce, or enterprise scope. One widely circulated 2026 clustering puts local single-location work around $350 to $650 wholesale, multi-location local around $600 to $1,200, national mid-market around $1,200 to $2,500, ecommerce-shaped programmes around $1,500 to $3,500, and heavier authority or enterprise work from about $3,000 to $8,000. Other public tables describe entry work around $300 to $750, a fuller technical-plus-content band around $750 to $2,000, and complete strategy-plus-links bands from $2,000 to $5,000, with dedicated-team work above $5,000. Resale prices in those same write-ups often run roughly double, with gross markups commonly discussed in a 30 to 60 percent band if the agency actually prices for account management.
+The ranges below are market commentary from public 2026 wholesale and reseller write-ups. They are not Bright Forge prices, and they are not a partner quote. Commonly reported wholesale retainers often sit from a few hundred dollars a month at the local-SMB floor to several thousand at national, ecommerce, or enterprise scope. One widely circulated 2026 clustering puts local single-location work around $350 to $650 wholesale, multi-location local around $600 to $1,200, national mid-market around $1,200 to $2,500, ecommerce-shaped programmes around $1,500 to $3,500, and heavier authority or enterprise work from about $3,000 to $8,000. Other public tables describe entry work around $300 to $750, a fuller technical-plus-content band around $750 to $2,000, and complete strategy-plus-links bands from $2,000 to $5,000, with dedicated-team work above $5,000. Resale prices in those same write-ups often run roughly double, with gross margins commonly discussed in a 30 to 60 percent band if the agency actually prices for account management.
 
 Treat those clusters as a map of workload, not as a shopping list.
 
@@ -30,13 +30,13 @@ Per-keyword pricing still exists. It trains everyone to care about a list instea
 
 ## Markup Has To Buy Your Hours Too
 
-A 50 percent markup on a $1,000 wholesale fee looks fat until the account director spends four hours a month rewriting titles, sitting in reporting calls, and chasing the client for photos. Those hours are the product the client thinks they bought from you.
+A 50 percent margin on an account bought at $1,000 wholesale looks fat until the account director spends four hours a month rewriting titles, sitting in reporting calls, and chasing the client for photos. Those hours are the product the client thinks they bought from you.
 
-Public commentary often cites 30 to 60 percent markup over wholesale, and warns that less than about 25 percent leaves no room for the work only you can do: sales, relationship, QA of the partner, and the awkward conversation when something slips. We agree with the shape of that warning even when the exact percentage will not match your book. If your senior people are in the fulfilment Slack, you do not have white label. You have a blended team with extra latency.
+Public commentary often cites a 30 to 60 percent gross margin on the resale price, and warns that less than about 25 percent leaves no room for the work only you can do: sales, relationship, QA of the partner, and the awkward conversation when something slips. We agree with the shape of that warning even when the exact percentage will not match your book. If your senior people are in the fulfilment Slack, you do not have white label. You have a blended team with extra latency.
 
 Resale ranges in 2026 write-ups often land around $750 to $1,400 for small local retainers, a few thousand for growth-shaped work, and well into five figures for enterprise-looking programmes. Those are not recommended prices. They are what the market claims agencies charge when they are not giving SEO away to close a website project.
 
-Count churn. Cheap fulfilment that the account manager cannot explain dies in months four to seven, right when compounding would have started. Then everyone agrees SEO does not work, and you have trained a client to distrust the channel you wanted to keep.
+Count churn. Cheap fulfilment that the account manager cannot explain tends to be cancelled within the first several months, before compounding has started. Then everyone agrees SEO does not work, and you have trained a client to distrust the channel you wanted to keep.
 
 [White label SEO versus selling your own retainer](/blog/white-label-seo-vs-selling-your-own-retainer/) is the strategic version of this cost question. If SEO is occasional, wholesale capacity can be rational. If SEO is the company, you are paying a partner to build a craft you will still have to staff later.
 
@@ -68,7 +68,7 @@ Our [white label SEO services in the Philippines](/white-label-seo-services-phil
 
 ## Packaging So The Cost Survives Contact With Sales
 
-Write a scope a sceptical operations person can staff: number of URLs, technical hours, content output, reporting sources, and what happens when development is blocked. Separate website care from SEO. Retainer clients will try to spend SEO hours on banner copy. If you allow it, neither your margin nor the partner’s plan survives.
+Price against a written scope, not a tier name. How to write that scope, and how to keep website care out of the SEO hours, is covered in our comparison of white label SEO against selling your own retainer, linked above. If the scope leaks, neither your margin nor the partner’s plan survives.
 
 A setup fee plus monthly retainer is the adult pattern for most books. Setup buys access, audit, tracking, and the first queue. The monthly fee buys the queue. Agencies that skip setup and jump to posting articles create the churn they later blame on the channel.
 

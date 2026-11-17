@@ -4,7 +4,7 @@ slug: seo-red-flags-when-hiring-in-the-philippines
 excerpt: Rank guarantees, bulk link packages and reports you cannot verify are still common hiring traps for Philippine businesses comparing SEO agencies.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/seo-red-flags-when-hiring-in-the-philippines.webp
 metaTitle: SEO Red Flags When Hiring | Bright Forge
 metaDescription: Rank guarantees, bulk link packages and locked-in reporting are common hiring traps. Learn the questions that expose weak SEO proposals before you sign.
@@ -76,7 +76,7 @@ Request a sample of a monthly report with client details removed, and a sample o
 
 Keep credentials in your accounts. Keep a shared log of shipped work. Review after a quarter against the queue, not against a guarantee. If the work is real and the results are slow, you can extend. If the work is fog, you can leave before the fog becomes a link problem.
 
-Ben Lowe has spent 15+ years sitting on both sides of these conversations. The red flags do not get more sophisticated. They get better at using the words of the year. “AI SEO”, “GEO”, and “guaranteed entities” can be real work or a new wrapper on the same volume packages. Ask what will change on the site this month. If the answer cannot name a page, the wrapper does not matter.
+Ben Lowe has spent 15+ years in these conversations. The red flags do not get more sophisticated. They get better at using the words of the year. “AI SEO”, “GEO”, and “guaranteed entities” can be real work or a new wrapper on the same volume packages. Ask what will change on the site this month. If the answer cannot name a page, the wrapper does not matter.
 
 Serious [SEO services for Philippine businesses](/seo-services-philippines/) should survive that question. They should also survive you owning your data.
 

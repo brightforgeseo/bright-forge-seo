@@ -4,7 +4,7 @@ slug: white-label-seo-vs-selling-your-own-retainer
 excerpt: White label buys you delivery behind your brand. Selling your own retainer means you own the method, the margin, and the awkward client conversations. Most agencies need to pick one on purpose.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/white-label-seo-vs-selling-your-own-retainer.webp
 metaTitle: White Label SEO vs Selling Your Own Retainer
 metaDescription: When agencies should white label SEO fulfilment or sell their own retainer, including margin, client ownership, quality risk and web design shop realities.
@@ -40,7 +40,7 @@ Your own retainer looks like worse margin on paper because salaries are visible.
 
 Count the people in the conversation. Every extra coordinator eats the spread.
 
-Also count churn. White label work that the account manager cannot explain churns in months 4 to 7, right when SEO would have started to show compounding. Then everyone agrees "SEO doesn't work" and you have trained a client to distrust the channel you wanted to keep.
+Also count churn. White label work that the account manager cannot explain tends to churn within the first several months, before SEO has started to show compounding. Then everyone agrees "SEO doesn't work" and you have trained a client to distrust the channel you wanted to keep.
 
 ## Client Ownership And What Happens At Renewal
 

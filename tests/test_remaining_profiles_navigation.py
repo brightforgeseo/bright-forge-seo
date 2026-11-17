@@ -26,7 +26,8 @@ def test_contact_closing_points_to_cases_without_repeating_diagnostics():
     assert 'Browse the case studies' in source
     assert 'href="/case-studies/"' in source
     assert 'We usually reply within one business day.' in source
-    assert 'Saturday: 9:00 AM to 2:00 PM' in source
+    assert 'Monday to Friday: 9:00 AM to 6:00 PM' in source
+    assert 'Saturday' not in source
     assert 'Asia/Manila (UTC+08:00)' in source
 
 def test_quick_facts_omit_missing_values():

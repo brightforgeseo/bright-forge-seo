@@ -4,13 +4,13 @@ slug: duplicate-title-tags-at-scale
 excerpt: Duplicate titles are a template problem, not a copywriting problem. Find the pattern, fix the generator, then check Search Console until the copies stop landing in the index.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, technical-seo]
 image: /images/blog/duplicate-title-tags-at-scale.webp
-metaTitle: Duplicate Title Tags at Scale: Fix the Template | Bright Forge
+metaTitle: Duplicate Title Tags at Scale: Fix the Template
 metaDescription: How duplicate titles appear across products, filters and pagination, and how we fix them at template level. Send a crawl if titles are colliding.
 ---
 
-One duplicate title is an edit. A thousand duplicate titles is a generator. Search Console and every decent crawler will list the collision. The list is not the work. The work is finding which template, parameter, or fallback rule is minting the same string for URLs that are supposed to be different pages.
+One duplicate title is an edit. A thousand duplicate titles is a generator. Every decent crawler will list the collision. The list is not the work. The work is finding which template, parameter, or fallback rule is minting the same string for URLs that are supposed to be different pages.
 
 Google uses the title as a primary cue for what the document is. When fifty URLs share "Products | Brand", you have asked the index to distinguish them by body content and URL alone. Sometimes it will rewrite the title in results. Sometimes it will pick one URL from the cluster and ignore the rest. Sometimes it will index the lot and let them compete. None of those outcomes is a strategy.
 

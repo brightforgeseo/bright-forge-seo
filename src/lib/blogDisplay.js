@@ -29,7 +29,12 @@ export function topicLabel(slug) {
     seo: 'SEO',
     ai: 'AI',
     local: 'Local SEO',
-    business: 'Small Business'
+    business: 'Small Business',
+    pricing: 'SEO Pricing',
+    hiring: 'Hiring SEO Help',
+    trust: 'Trust and E-E-A-T',
+    industries: 'Industry SEO',
+    strategy: 'SEO Strategy'
   };
   if (named[slug]) return named[slug];
   return slug

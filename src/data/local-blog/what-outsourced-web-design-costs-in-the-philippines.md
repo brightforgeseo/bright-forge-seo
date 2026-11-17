@@ -4,15 +4,15 @@ slug: what-outsourced-web-design-costs-in-the-philippines
 excerpt: Philippine web design quotes in 2026 still cluster in market bands. The useful question is which pages, CMS, and implementation load the fee actually covers.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/what-outsourced-web-design-costs-in-the-philippines.webp
-metaTitle: Outsource Web Design Cost Philippines | Bright Forge
+metaTitle: What Outsourced Web Design Costs in the Philippines
 metaDescription: Market bands for outsourcing web design in the Philippines in 2026, from brochure sites to custom builds, and what a quote should name besides a peso figure.
 ---
 
 A peso figure without a workload is not a web design price. It is a guess. Buyers still ask what it costs to outsource web design in the Philippines because finance needs a band before anyone will open a proposal. That is fair. The mistake is treating a ₱25,000 brochure theme and a custom lead-generation build as the same product because both are “a website”.
 
-The figures below are market commentary from public Philippine and outsourcing write-ups in 2026. They are not Bright Forge prices, and they are not a quote. Local SME guides commonly put basic brochure sites around ₱15,000 to ₱45,000, professional business sites around ₱50,000 to ₱120,000, and ecommerce or heavier custom work from roughly ₱70,000 into the mid ₱200,000s and beyond. Custom applications are often quoted from about ₱300,000. Freelancer project ranges frequently sit below agency ranges. International-facing teams quote in dollars, with mid-level development labour often discussed in the $20 to $35 an hour band and senior labour higher. Treat every number as a cluster, not a rate card.
+The figures below are market commentary from public Philippine and outsourcing write-ups in 2026. They are not Bright Forge prices, and they are not a quote. Local SME guides commonly put basic brochure sites around ₱15,000 to ₱60,000, professional business sites around ₱50,000 to ₱120,000, and ecommerce or heavier custom work from roughly ₱70,000 into the mid ₱200,000s and beyond. Custom applications are often quoted from about ₱250,000 to ₱300,000. Freelancer project ranges frequently sit below agency ranges. International-facing teams quote in dollars, and those hourly bands are covered below. Treat every number as a cluster, not a rate card.
 
 ## What The Market Bands Usually Buy
 
@@ -64,7 +64,7 @@ Red flags travel with cheap and expensive quotes alike. Guaranteed first-page ra
 
 ## Budget For The Year, Not Only The Invoice
 
-The build is the visible cost. The real cost includes copy, photography, licences, hosting, a cookie and privacy baseline if you collect data, and the hours your staff will spend feeding the CMS. It includes the cost of being wrong: a theme you cannot leave, a page types that cannot rank, a form that drops enquiries on mobile.
+The build is the visible cost. The real cost includes copy, photography, licences, hosting, a cookie and privacy baseline if you collect data, and the hours your staff will spend feeding the CMS. It includes the cost of being wrong: a theme you cannot leave, a page type that cannot rank, a form that drops enquiries on mobile.
 
 If you already know the site must generate leads, put measurement in the first statement of work. Analytics, Search Console, call tracking if you use it, and a thank-you page are cheap on day one and awkward in month four. If you already know you will run SEO after launch, do not buy a builder that fights titles, headings, and crawlable HTML. Retrofit is where outsourced design earns its bad reputation.
 

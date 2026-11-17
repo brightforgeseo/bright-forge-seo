@@ -4,7 +4,7 @@ slug: trust-pages-contact-legal-and-editorial-standards
 excerpt: Contact details, privacy and editorial rules are how a service site proves it is a real firm. Missing trust pages make every other claim cheaper.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/trust-pages-contact-legal-and-editorial-standards.webp
 metaTitle: Trust Pages for Contact, Legal and Editorial Standards
 metaDescription: Why contact, privacy and editorial standards pages matter for trust. Keep identity, claims and legal copy consistent and actually usable.
@@ -58,7 +58,7 @@ Most service sites have contact and a privacy file. Almost none say how they han
 
 Our standards page states who writes and who checks, what counts as evidence, how we talk about results, and what we will not publish. Public pages and client recommendations are written by named people. Strategy sits with Ben Lowe. Campaign delivery is run by the in-house team in Quezon City, including Jani A. Cañonero and Jewe O. Manalo. Senior review happens before a recommendation is treated as ready to implement.
 
-Evidence is Search Console, ranking software with engine and location stated, crawls, and enquiry events the business already tracks. Traffic on its own is not a win. We do not invent clients, quotes, rankings, traffic, leads, revenue or AI citations. We do not name client websites by default. We do not publish public rate cards. We do not mint thin city pages for offices we do not have.
+Evidence is Search Console, ranking software with engine and location stated, crawls, and enquiry events the business already tracks. Traffic on its own is not a win. We do not invent clients, quotes, rankings, traffic, leads, revenue or AI citations. We do not publish public rate cards. We do not mint thin city pages for offices we do not have.
 
 If we get a fact wrong on this site, we fix the page. Hiding the correction is a trust failure.
 
@@ -84,25 +84,25 @@ For YMYL-adjacent services the bar is higher. Even for ordinary trades, a site w
 
 ## Build Order
 
-Ship a working contact route before you ship another service URL.
-Add privacy and terms that describe this stack.
-Publish identity: about, people, location.
-Publish standards if you make public claims about results or methods.
-Align footer, schema and off-site profiles.
-Test the form on desktop and mobile after deploy.
-Review the set when staff, office or tools change.
+1. Ship a working contact route before you ship another service URL.
+2. Add privacy and terms that describe this stack.
+3. Publish identity: about, people, location.
+4. Publish standards if you make public claims about results or methods.
+5. Align footer, schema and off-site profiles.
+6. Test the form on desktop and mobile after deploy.
+7. Review the set when staff, office or tools change.
 
 Do not wait for a redesign. A plain HTML contact URL that works beats a branded page that does not submit.
 
 ## Common Failures We See On Client Sites
 
-The only phone number is in an image.
-The form posts to a 404.
-Privacy still names a UK company after the site moved to a Philippine operator.
-Terms forbid screenshots while the marketing team publishes other people’s Search Console.
-The editorial or claims policy does not exist, so sales and delivery contradict each other.
-Cookie banners list vendors the tag manager does not contain.
-The contact URL is noindexed by accident.
+- The only phone number is in an image.
+- The form posts to a 404.
+- Privacy still names a UK company after the site moved to a Philippine operator.
+- Terms forbid screenshots while the marketing team publishes other people’s Search Console.
+- The editorial or claims policy does not exist, so sales and delivery contradict each other.
+- Cookie banners list vendors the tag manager does not contain.
+- The contact URL is noindexed by accident.
 
 Each of those is cheaper to fix than another month of content that nobody believes.
 

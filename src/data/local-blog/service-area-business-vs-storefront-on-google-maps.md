@@ -66,7 +66,7 @@ Clinics inside hospitals sometimes want a separate profile from the hospital. Th
 
 Construction and B2B suppliers often have a yard customers never enter. If sales happen on site by appointment and there is signage, it can still be a storefront. If every job is at the client site, it is service-area. The yard being full of branded trucks is evidence for a service-area video, not proof of a shopfront.
 
-## Multi Location Versus One Inflated Area
+## Multi-Location Versus One Inflated Area
 
 Google allows more than one profile when you have different locations, with separate service areas and separate staff at each. That is a real branch, not a city landing page. A second team in Cebu with its own base, staff, and phone is a second listing. A Manila company that “also covers Cebu” with no staff there is not.
 

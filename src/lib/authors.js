@@ -5,13 +5,13 @@ export const authors = {
   'ben-lowe': {
     slug: 'ben-lowe',
     name: 'Ben Lowe',
-    role: 'CEO & Co-Founder',
+    role: 'Founder & CEO',
     shortBio:
-      'CEO and Co-Founder of Bright Forge SEO Agency with over 15 years of experience in digital marketing. Ben specializes in on-page and off-page SEO strategies, AI-driven search optimization, and delivering personalized, results-oriented solutions that drive real growth for businesses across diverse industries.',
+      'Founder and CEO of Bright Forge SEO. Ben has worked in SEO for more than 15 years with ecommerce, SaaS and local service businesses in the UK and United States, holds a marketing degree from London Metropolitan University, and leads the team from Quezon City.',
     longBio: [
-      "As the founder of Bright Forge SEO Agency, Ben brings a wealth of experience and passion for digital marketing. Over the years, he has honed his expertise in all facets of SEO, from on-page and off-page strategies to cutting-edge AI SEO optimization.",
-      "With certifications from industry leaders and a marketing degree from London Metropolitan University, Ben is committed to delivering personalized, results-oriented solutions that drive real growth for businesses. He founded Bright Forge SEO Agency after years of working with e-commerce startups, SaaS companies, local businesses, and major corporations across the UK and United States.",
-      "Based in the dynamic heart of Quezon City, Metro Manila, Ben leads a team that combines a global perspective with a deep understanding of local markets. His approach is data-driven, adaptable to the evolving search landscape, and laser-focused on measurable outcomes for every client."
+      'Ben is the founder and CEO of Bright Forge SEO. He has worked in SEO for more than 15 years and holds a marketing degree from London Metropolitan University.',
+      'Before starting the agency he worked with ecommerce startups, SaaS companies, local businesses and larger corporations in the UK and the United States.',
+      'He is based in Quezon City, Metro Manila, and leads the Bright Forge team from there.'
     ],
     avatar: '/images/About us/ben-lowe-owner.webp',
     location: 'Quezon City, Philippines',
@@ -39,29 +39,9 @@ export const authors = {
     ],
     faqs: [
       {
-        question: 'What inspired Ben Lowe to start Bright Forge SEO Agency?',
-        answer:
-          "Ben's passion for digital marketing and his desire to help businesses succeed in an increasingly competitive online environment motivated him to establish Bright Forge SEO Agency. With over 15 years of experience, Ben wanted to create an agency that combines innovation, expertise, and personalized strategies to deliver outstanding results."
-      },
-      {
-        question: 'What sets Ben apart as an SEO specialist?',
-        answer:
-          "Ben's unique combination of technical expertise, a data-driven approach, and a deep understanding of AI-driven search trends sets him apart. His ability to adapt to the evolving digital landscape and deliver customized solutions ensures his clients stay ahead of the competition."
-      },
-      {
         question: 'What industries has Ben worked with?',
         answer:
-          'Ben has collaborated with a wide range of industries, including e-commerce, SaaS companies, local businesses, and major corporations in both the UK and the United States.'
-      },
-      {
-        question: 'How does Ben approach client projects?',
-        answer:
-          "Ben takes a personalized approach to every project, starting with a thorough analysis of the client's goals, audience, and competition. He then crafts a tailored SEO strategy designed to deliver measurable and sustainable results."
-      },
-      {
-        question: 'What motivates Ben in his work?',
-        answer:
-          'Ben is driven by a passion for helping businesses unlock their full potential through innovative and effective SEO strategies. Seeing his clients succeed and grow is his greatest reward.'
+          'Ben has worked with ecommerce startups, SaaS companies, local businesses and larger corporations in the UK and the United States.'
       }
     ],
     linkedin: '',
@@ -92,12 +72,12 @@ export const authors = {
   },
   'janin-a-canonero': {
     slug: 'janin-a-canonero',
-    name: 'Janin A. Cañonero',
-    role: 'SEO Manager',
+    name: 'Jani A. Cañonero',
+    role: 'Head of Team',
     shortBio:
-      'SEO Manager at Bright Forge SEO Agency. Janin runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behaviour.',
+      'Head of Team at Bright Forge SEO. Jani runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behaviour.',
     longBio: [
-      'Janin manages SEO campaigns for Bright Forge from Quezon City, including tasking, quality checks and the weekly delivery loop.',
+      'Jani manages SEO campaigns for Bright Forge from Quezon City, including tasking, quality checks and the weekly delivery loop.',
       'The work covers technical recommendations, on-page changes, content briefs and reporting that can be tied back to Search Console and ranking data.',
       'Named ownership matters: if a recommendation ships, it has been through this review rather than left as an unsigned agency note.'
     ],
@@ -140,6 +120,8 @@ export const authors = {
 export function getAuthorSlug(name) {
   if (!name) return null;
   const target = String(name).trim().toLowerCase();
+  // Earlier spellings used on older CMS posts.
+  if (['janin a. cañonero', 'janin a. canonero', 'jaine canonero'].includes(target)) return 'janin-a-canonero';
   for (const key of Object.keys(authors)) {
     if (authors[key].name.toLowerCase() === target) return key;
   }

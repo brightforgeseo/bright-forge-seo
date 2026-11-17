@@ -4,7 +4,7 @@ slug: what-a-website-costs-in-the-philippines
 excerpt: Website cost in the Philippines splits between freelancer template builds and agency projects. The useful comparison is scope, ownership, and whether the site can convert search traffic.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/what-a-website-costs-in-the-philippines.webp
 metaTitle: Website Cost in the Philippines | Bright Forge
 metaDescription: Philippine website costs run from freelancer templates to agency builds. Compare scope, CMS ownership and conversion, not one price for “a website”.

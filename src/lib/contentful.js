@@ -2,6 +2,12 @@ import { createClient } from 'contentful';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { getLocalBlogPosts, getLocalBlogPostBySlug } from './localBlog.js';
+import { readFileSync } from 'node:fs';
+
+// Title and excerpt corrections for CMS articles (see src/data/cmsPostFixes.json).
+const cmsPostFixes = JSON.parse(readFileSync(join(process.cwd(), 'src/data/cmsPostFixes.json'), 'utf8'));
+const fixedTitle = (slug, title) => cmsPostFixes[slug]?.title || title;
+const fixedExcerpt = (slug, excerpt) => cmsPostFixes[slug]?.excerpt || excerpt;
 
 // Initialize the Contentful client with hardcoded credentials to ensure it works
 export const contentfulClient = createClient({
@@ -75,9 +81,9 @@ export async function getAllBlogPosts() {
     .filter((item) => item.fields?.slug)
     .map((item) => ({
       id: item.sys.id,
-      title: item.fields.title,
+      title: fixedTitle(item.fields.slug, item.fields.title),
       slug: item.fields.slug,
-      excerpt: item.fields.excerpt,
+      excerpt: fixedExcerpt(item.fields.slug, item.fields.excerpt),
       publishDate: new Date(item.fields.dateTime),
       author: item.fields.author,
       featuredImage: getLocalFeaturedImage(item.fields.slug) || (
@@ -126,9 +132,9 @@ export async function getBlogPostBySlug(slug) {
     
     return {
       id: item.sys.id,
-      title: item.fields.title,
+      title: fixedTitle(item.fields.slug, item.fields.title),
       slug: item.fields.slug,
-      excerpt: item.fields.excerpt,
+      excerpt: fixedExcerpt(item.fields.slug, item.fields.excerpt),
       content: item.fields.content,
       publishDate: new Date(item.fields.dateTime),  // Use dateTime field but map to publishDate in our app
       author: item.fields.author,

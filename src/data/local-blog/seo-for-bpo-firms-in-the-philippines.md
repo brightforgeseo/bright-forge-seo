@@ -4,15 +4,15 @@ slug: seo-for-bpo-firms-in-the-philippines
 excerpt: SEO for Philippine BPO firms is B2B demand generation, not a jobs board. Capability pages, proof a procurement team can check, and queries buyers actually type.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, industries]
 image: /images/blog/seo-for-bpo-firms-in-the-philippines.webp
-metaTitle: SEO for BPO Philippines | Bright Forge
+metaTitle: SEO for BPO Firms in the Philippines | Bright Forge
 metaDescription: SEO for Philippine BPO and IT-BPM firms: buyer queries, capability pages, compliance proof, and the difference between hiring traffic and client demand.
 ---
 
 Philippine BPO search is two markets sharing one domain. One market is talent: people looking for shifts, sites, and salaries. The other is buyers: operations, procurement, and founders in the US, UK, Australia, and the region who need a partner for customer experience, back office, IT, healthcare information, or a specialised process. SEO that treats those as the same job will fill the careers inbox and starve the sales pipeline.
 
-We work on B2B search for service firms, including operators who sell from Manila, Cebu, Clark, Iloilo, and Davao into overseas accounts. The work is not a local pack campaign with a different logo. It is capability, proof, and an enquiry path a cautious buyer will use.
+We work on B2B search for service firms that sell into overseas accounts. The work is not a local pack campaign with a different logo. It is capability, proof, and an enquiry path a cautious buyer will use.
 
 If your site currently ranks for “call center jobs Quezon City” and almost nothing for the service you sell, you do not have an SEO problem in the abstract. You have a site that was built as a recruitment engine.
 

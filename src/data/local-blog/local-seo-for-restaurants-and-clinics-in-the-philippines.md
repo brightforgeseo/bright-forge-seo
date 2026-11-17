@@ -4,7 +4,7 @@ slug: local-seo-for-restaurants-and-clinics-in-the-philippines
 excerpt: Restaurants and clinics in the Philippines win local search on Maps, Google Business Profile, and reviews. The work is operational, not a blog calendar.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo, local]
+tags: [seo, local, industries]
 image: /images/blog/local-seo-for-restaurants-and-clinics-in-the-philippines.webp
 metaTitle: Local SEO for Restaurants and Clinics in the Philippines
 metaDescription: Local SEO for Philippine restaurants and clinics: Google Business Profile, Maps, reviews, NAP and pages matching how people book a table or visit.
@@ -26,7 +26,7 @@ Hours must match the door, including public holidays and last order. Restaurants
 
 Services and menu fields are not decoration. A clinic can list consultation types it actually offers, in language patients use, without describing outcomes. A restaurant should keep the menu current, including prices if you choose to show them, and remove dishes you no longer plate. Stale menus create angry reviews that have nothing to do with search tactics.
 
-Photos should be the premises, the people, the plates, and the rooms as they are. Downloaded interiors and stock white coats are obvious. Google and users both treat recent, original photos as a quality signal. A restaurant that last uploaded a menu board in 2021 looks closed. A clinic that only has a logo looks unfinished.
+Photos should be the premises, the people, the plates, and the rooms as they are. Downloaded interiors and stock white coats are obvious. Recent, original photos tell a customer the business is open and looked after. A restaurant that last uploaded a menu board in 2021 looks closed. A clinic that only has a logo looks unfinished.
 
 The description should say who you serve and how to arrive. It should not be an advertorial stuffed with city names. Attributes that are true (wheelchair access, delivery, walk-ins, parking, female doctor on staff if you wish to say so) belong there. Attributes you cannot defend do not.
 

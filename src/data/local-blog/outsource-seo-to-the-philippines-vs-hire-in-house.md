@@ -4,7 +4,7 @@ slug: outsource-seo-to-the-philippines-vs-hire-in-house
 excerpt: The choice is not cheap labour versus control. It is which roles you keep, which work you buy, and whether strategy still has a named owner after the first quarter.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/outsource-seo-to-the-philippines-vs-hire-in-house.webp
 metaTitle: Outsource SEO to the Philippines vs Hire In-House
 metaDescription: Compare outsourcing SEO to the Philippines with hiring in-house: market cost ranges, ownership, tools, quality control, and when each model actually holds.

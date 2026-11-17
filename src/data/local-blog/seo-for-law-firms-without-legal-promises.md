@@ -4,7 +4,7 @@ slug: seo-for-law-firms-without-legal-promises
 excerpt: Legal SEO is practice-area URLs, holdable claims and a consultation path. We will not invent case results, rankings or recoveries to win the click.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, industries]
 image: /images/blog/seo-for-law-firms-without-legal-promises.webp
 metaTitle: SEO for Law Firms Without Legal Promises
 metaDescription: SEO for law firms without outcome guarantees. Practice-area pages, holdable claims, intake tracking, and no invented recoveries.
@@ -42,7 +42,7 @@ Guaranteed first-page rankings in thirty days are a sales pitch, not a method. L
 
 This restraint is not a disclaimer paragraph bolted onto aggressive copy. It is the copy. The page should still be useful: process, documents, likely timelines in ranges the firm will stand behind, and who to contact. Usefulness does not require a verdict.
 
-## How We Measure Law Firm Seo
+## How We Measure Law Firm SEO
 
 We track rankings and clicks, then whether contact forms, calls and booked consultations are captured. A traffic lift with no intake tracking is incomplete. Where tracking is missing, we say so. We will not fill the gap with estimated case values.
 
@@ -50,7 +50,7 @@ The public proof we can show for legal work is Search Console, not recoveries. A
 
 Brand queries and non-brand practice queries should be split in the report. A television campaign that lifts the firm name is not practice-area SEO. A rise in informational clicks that never reach intake is not a hiring win. The useful scoreboard is the practice-area URLs, the queries they win, and the consultations those URLs produce.
 
-## Trust Signals That Belong On The Hiring Url
+## Trust Signals That Belong On The Hiring URL
 
 Reviews, professional listings, and clear contact details belong on the practice-area URL, not only on About. A visitor who has just searched an injury query should not have to hunt for a phone number. NAP consistency across the site, Google Business Profile, and directories still matters for local legal search. Inconsistent addresses look like two firms.
 
@@ -60,7 +60,7 @@ Technical basics still apply. Mobile forms that fail, slow templates, mixed http
 
 ## Editorial Rules, Not Theatre
 
-The public rule for how we write and report sits on our [editorial standards](/editorial-standards/). We do not invent clients, traffic, rankings or revenue. We do not name client websites by default. Proof is the method, the data source and the change in the account. Legal SEO is where those rules are least optional, because the visitor is making a high-stakes hiring decision and the firm is regulated.
+The public rule for how we write and report sits on our [editorial standards](/editorial-standards/). We do not invent clients, traffic, rankings or revenue. Proof is the method, the data source and the change in the account. Legal SEO is where those rules are least optional, because the visitor is making a high-stakes hiring decision and the firm is regulated.
 
 Senior review happens before a recommendation is treated as ready to implement. The firm fact-checks legal accuracy. We fact-check that the page structure, metadata, internal links and intake path match the offer. If the firm will not review copy, we are not the right team. If the firm wants us to invent results to compete with a noisier competitor, we are not the right team.
 

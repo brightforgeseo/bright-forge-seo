@@ -4,7 +4,7 @@ slug: brand-serp-what-shows-when-someone-googles-your-company
 excerpt: A brand search is a trust check. Here is what Google actually shows, what you can influence, and what a messy result costs you before a sales call starts.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/brand-serp-what-shows-when-someone-googles-your-company.webp
 metaTitle: Brand SERP: What Shows When Someone Googles Your Company
 metaDescription: See what appears when someone googles your company, what you can influence, and how we treat brand SERPs as a trust surface, not a vanity ranking.
@@ -58,7 +58,7 @@ We start logged out, in the country the buyer is in, on mobile and desktop. A lo
 
 Then we inventory every URL in the top ten plus the panel, ads, and map pack. For each URL we ask who owns it, whether it is current, and whether it helps or hurts a first-time visitor. Official site, careers, contact, and a current case or services page are helpful. Expired press, scraped directory pages with the wrong address, and forum threads with no staff reply are not.
 
-We check Search Console for the brand query family: exact name, name plus location, name plus "reviews," name plus "login," misspellings. Impression share on brand terms is usually high. Click-through rate tells you whether the listing looks like the company or like a leftover microsite.
+We check Search Console for the brand query family: exact name, name plus location, name plus "reviews," name plus "login," misspellings. Average position on brand terms is usually high. Click-through rate tells you whether the listing looks like the company or like a leftover microsite.
 
 We look at the knowledge panel sources. If Google is pulling a description from a stale Crunchbase row or a directory that still lists a previous trading name, that is a data problem, not a "we need more blog posts" problem.
 
@@ -106,7 +106,7 @@ We do not promise to remove negative results. Where a result is false and a plat
 
 We do not treat a number-one organic listing for the exact brand as a finished job. Sitelinks, the panel, reviews, and the second-to-fourth results still sit in the screenshot the buyer sees.
 
-We do not invent press. A "as seen in" row of logos you never earned is one of the fastest ways to make a brand SERP look worse once someone clicks through.
+We do not invent press. An "as seen in" row of logos you never earned is one of the fastest ways to make a brand SERP look worse once someone clicks through.
 
 ## How To Brief This Work
 

@@ -4,7 +4,7 @@ slug: seo-for-multi-location-home-services
 excerpt: Multi-location home services SEO is one Google Business Profile per real site, unique location URLs, and no doorway copies. The homepage cannot rank every branch.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo, local]
+tags: [seo, local, industries]
 image: /images/blog/seo-for-multi-location-home-services.webp
 metaTitle: SEO for Multi-Location Home Services
 metaDescription: SEO for multi-location plumbers, HVAC, roofing and cleaning firms. Real branches, unique location URLs, no doorway pages.
@@ -24,7 +24,7 @@ Reviews are local assets. A five-star average at head office does not move a new
 
 Service-area businesses without a public address are a different shape. They can still appear in local results, but they should not invent a shopfront. If you have both a depot and a wide service radius, say so on the location URL. Do not publish a fake suite number to game proximity.
 
-## Location Urls That Are Not Doorways
+## Location URLs That Are Not Doorways
 
 The website needs a URL for each real branch or genuine service region. That URL has to do a job the homepage cannot: name the place, name the services that branch offers, show local proof, and route the enquiry to the right phone or form. Unique hours, parking notes, the suburbs actually covered, technicians based there, and jobs completed nearby are the difference between a location URL and a doorway.
 

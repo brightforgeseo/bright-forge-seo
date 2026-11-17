@@ -4,9 +4,9 @@ slug: on-page-seo-for-philippine-service-pages
 excerpt: On-page SEO in the Philippines is making each commercial URL clearly about one job: title, heading, proof, internal links and an enquiry path a mobile buyer can finish.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, technical-seo]
 image: /images/blog/on-page-seo-for-philippine-service-pages.webp
-metaTitle: On-Page SEO Philippines | Bright Forge
+metaTitle: On-Page SEO for Philippine Service Pages | Bright Forge
 metaDescription: On-page SEO for Philippine sites: one job per URL, titles and headings that match demand, proof on the page, and an enquiry path that works on mobile.
 ---
 

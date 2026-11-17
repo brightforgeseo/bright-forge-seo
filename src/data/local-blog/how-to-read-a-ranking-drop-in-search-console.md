@@ -4,7 +4,7 @@ slug: how-to-read-a-ranking-drop-in-search-console
 excerpt: A ranking drop in Search Console is a chart, not a diagnosis. Separate tracking, seasonality, core updates, technical faults and page quality before you rewrite anything.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, reporting]
 image: /images/blog/how-to-read-a-ranking-drop-in-search-console.webp
 metaTitle: How to Read a Ranking Drop in Search Console
 metaDescription: Read a Search Console ranking drop without a panic rewrite. Separate tracking, seasonality, core updates, technical faults and page quality first.
@@ -48,15 +48,15 @@ Core updates are named, dated, and messy. They also get blamed for everything th
 
 The pattern that usually is an update looks like this. A set of informational URLs lose impressions together. Commercial URLs wobble but do not vanish. Average position drifts rather than collapsing to the 80s overnight. Competitors with thinner copy or scraped content also move. Helpful-content style losses often show as fewer impressions on blog URLs that never deserved to rank, while the money URLs stay put. That is Google cleaning the index, not an emergency.
 
-The pattern that is not an update is a single canonical change, a robots.txt edit, a noindex on a folder, or a pagination bug. Those leave fingerprints in Coverage, in crawl stats, and in the URL inspection tool. If we cannot find a technical fingerprint and the date sits inside an update window, we still do not rewrite the library. We pick the URLs that lost commercial queries and we improve those, one template at a time.
+The pattern that is not an update is a single canonical change, a robots.txt edit, a noindex on a folder, or a pagination bug. Those leave fingerprints in the Page indexing report, in crawl stats, and in the URL inspection tool. If we cannot find a technical fingerprint and the date sits inside an update window, we still do not rewrite the library. We pick the URLs that lost commercial queries and we improve those, one template at a time.
 
 That is the same discipline we use in [core update recovery](/blog/core-update-recovery-methodology-verification-based-diagnosis-and-surgical-optimisation/): verify the decline, name the affected demand, then make surgical changes. A site-wide copy refresh during an update is how you destroy the URLs that were still working.
 
 ## Technical Causes That Look Like Ranking Drops
 
-Technical faults impersonate ranking loss because Search Console will show fewer impressions when Google cannot fetch, render or index the URL it used to. The Performance chart will not label the cause. Coverage, crawl stats, HTTPS, and Core Web Vitals might.
+Technical faults impersonate ranking loss because Search Console will show fewer impressions when Google cannot fetch, render or index the URL it used to. The Performance chart will not label the cause. Page indexing, crawl stats, HTTPS, and Core Web Vitals might.
 
-We look for indexation first. Did the URL move from Submitted and indexed to Crawled currently not indexed, or to Excluded by noindex? Did a canonical suddenly point at a faceted URL or a pagination URL? Did a parameter that used to be ignored start creating thousands of thin copies? Did the XML sitemap drop the money URLs after a CMS update?
+We look for indexation first. Did the URL move from Indexed to Crawled, currently not indexed, or to Excluded by noindex? Did a canonical suddenly point at a faceted URL or a pagination URL? Did a parameter that used to be ignored start creating thousands of thin copies? Did the XML sitemap drop the money URLs after a CMS update?
 
 Then fetch. Crawl stats that fall off a cliff after a host change, a firewall rule, or a bot-management product are a crawling story. Soft 404s on templates that used to return 200. Redirect chains after a trailing-slash experiment. Hreflang that swapped country URLs. A JavaScript framework that stopped rendering primary content for Googlebot. Internal links removed from the main nav during a redesign, so the crawl path to location URLs died.
 

@@ -4,7 +4,7 @@ slug: how-uk-firms-should-scope-a-philippines-seo-partner
 excerpt: A UK-side brief that names market, access, deliverables and ownership before you hire a Philippines SEO partner, so hours do not replace a campaign.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/how-uk-firms-should-scope-a-philippines-seo-partner.webp
 metaTitle: How UK Firms Should Scope a Philippines SEO Partner
 metaDescription: Scope a Philippines SEO partner with a UK market brief, access list, deliverables and ownership rules so you buy a campaign, not unowned hours.
@@ -20,13 +20,13 @@ Write the market into the first page of the brief. Name google.co.uk as the prim
 
 List the competitors you lose to, not the agencies you admire. Include the URLs that already rank for the money terms. A Philippines team that never sees those SERPs will write against an imaginary landscape. We need the live pages, the title patterns, the review volume, and the commercial offers. If you cannot name five competitors, you are not ready to outsource execution. You are still in strategy.
 
-Spell out British English as a production rule, not a preference. Colour, organisation, tyre, metre, and enquiry are not cosmetic. They are ranking and trust signals on UK pages. The brief should say who edits for UK usage and who rejects US copy before it ships. If that editor is you, put the review window in writing. If that editor is us, give us a style sheet and examples of copy you would actually publish.
+Spell out British English as a production rule, not a preference. Colour, organisation, tyre, metre, and enquiry are not cosmetic. They are trust signals on UK pages. The brief should say who edits for UK usage and who rejects US copy before it ships. If that editor is you, put the review window in writing. If that editor is us, give us a style sheet and examples of copy you would actually publish.
 
 ## Lock Access Before You Lock Hours
 
 SEO work without access is theatre. The scope should list every login the partner needs in week one, who grants it, and what they may change without a ticket.
 
-Google Search Console must be at property level, not a PDF export. GA4 must be at the view you use for revenue, with conversion events named. The CMS needs an editor or developer role that can ship titles, canonicals, redirects, and schema. Hosting or CDN access matters when headers, staging noindex flags, or crawl delays sit outside WordPress. If your developers own those surfaces, name the internal owner and the SLA for implementing our tickets.
+Google Search Console must be at property level, not a PDF export. GA4 access must cover the property you use for revenue, with conversion events named. The CMS needs an editor or developer role that can ship titles, canonicals, redirects, and schema. Hosting or CDN access matters when headers, staging noindex flags, or crawl delays sit outside WordPress. If your developers own those surfaces, name the internal owner and the SLA for implementing our tickets.
 
 Be explicit about what the partner must not touch. Payment systems, customer data exports, and production deploys without a named approver belong on a deny list. UK firms that skip this either over-share or starve the campaign. Both fail.
 

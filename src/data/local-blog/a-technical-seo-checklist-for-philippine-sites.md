@@ -4,9 +4,9 @@ slug: a-technical-seo-checklist-for-philippine-sites
 excerpt: A practical technical SEO checklist for Philippine sites: crawl access, indexation, templates, speed, and Search Console. Use it to find blockers before you publish more pages.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, technical-seo]
 image: /images/blog/a-technical-seo-checklist-for-philippine-sites.webp
-metaTitle: Technical SEO Checklist Philippines | Bright Forge
+metaTitle: A Technical SEO Checklist for Philippine Sites
 metaDescription: Technical SEO checklist for Philippine sites covering crawl, indexation, templates, speed and Search Console. Find blockers before you publish more pages.
 ---
 
@@ -88,7 +88,7 @@ Test a sample of templates, not one URL. Category, product, service, location, a
 
 Connect the exact host. Submit the sitemap. Read Pages, not only Performance. Coverage reasons (excluded by noindex, crawled currently not indexed, duplicate, soft 404, blocked by robots) are the checklist scoring system.
 
-Performance should be filtered to commercial URLs and queries, not celebrated as a sitewide click total. Enhancement reports for HTTPS, mobile usability, and structured data tell you when a template broke.
+Performance should be filtered to commercial URLs and queries, not celebrated as a sitewide click total. The HTTPS and structured data reports tell you when a template broke.
 
 If you have no Search Console, that is item zero. Public crawls cannot show what Google chose not to index. [What a proper SEO audit should include](/blog/what-a-proper-seo-audit-should-include/) starts here for a reason: without this property, technical claims are guesses.
 

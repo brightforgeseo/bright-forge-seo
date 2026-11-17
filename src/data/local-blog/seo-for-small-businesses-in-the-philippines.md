@@ -4,9 +4,9 @@ slug: seo-for-small-businesses-in-the-philippines
 excerpt: Small Philippine businesses usually win search by tightening local listings, service pages and enquiry paths before chasing national keywords they cannot convert.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo, local]
+tags: [seo, local, strategy]
 image: /images/blog/seo-for-small-businesses-in-the-philippines.webp
-metaTitle: Small Business SEO Philippines | Bright Forge
+metaTitle: SEO for Small Businesses in the Philippines | Bright Forge
 metaDescription: Small Philippine businesses win search by tightening local visibility, service pages and enquiry paths before chasing national keywords they cannot convert.
 ---
 
@@ -76,7 +76,7 @@ Bring in help when you cannot see why a page with impressions does not get click
 
 Stay in house when the listing is incomplete, the phone number is wrong, and nobody has written a real service page. Paying a retainer to skip those basics is how small firms become cynical about SEO.
 
-Seventeen published case studies show the same pattern at different scales: pages and measurement first, theatre later. Small businesses do not need to copy the scale. They need to copy the order.
+Twenty-five published case studies show the same pattern at different scales: pages and measurement first, theatre later. Small businesses do not need to copy the scale. They need to copy the order.
 
 [Broader SEO support for Philippine sites](/seo-services-philippines/) is worth considering once the local foundation is true and the next constraint is technical, content depth, or competition that a DIY pass cannot reach. Until then, the advantage is honesty about coverage, speed to answer, and pages that read like the business.
 

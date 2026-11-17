@@ -4,7 +4,7 @@ slug: first-hand-experience-in-seo-content
 excerpt: First-hand SEO content shows the method, the screenshot and the named person who did the work. It does not invent client results or borrow someone else’s account.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/first-hand-experience-in-seo-content.webp
 metaTitle: First-Hand Experience in SEO Content | Bright Forge
 metaDescription: Write SEO content from work you actually did. Screenshots, methods and named authors beat adjectives. Do not invent client results.

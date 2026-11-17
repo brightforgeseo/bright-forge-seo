@@ -4,9 +4,9 @@ slug: why-cheap-seo-in-the-philippines-usually-fails
 excerpt: Cheap SEO in the Philippines fails when the fee cannot cover diagnosis, implementation and honest reporting, and the shortfall is taken from the site.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing, hiring]
 image: /images/blog/why-cheap-seo-in-the-philippines-usually-fails.webp
-metaTitle: Why Cheap SEO Fails in the PH | Bright Forge
+metaTitle: Why Cheap SEO in the Philippines Usually Fails
 metaDescription: Cheap SEO in the Philippines fails when hours are missing. See the usual failure modes, what they cost to unwind, and when a low fee is an honest small scope.
 ---
 
@@ -56,7 +56,7 @@ The next specialist will not start at zero. They will spend the first month mapp
 
 Technical residue includes accidental noindex, robots rules that block CSS or whole sections, canonicals pointing at the wrong templates, and parameter URLs that entered the index. Cleaning that is slower than writing a new title. It is also unglamorous, which is why the cheap vendor never priced it.
 
-Content residue includes hundreds of near duplicate posts and location pages. Some can be redirected. Some should be removed. Some need to be rewritten because they occupy URLs that should exist. Each decision is a URL-level judgement. You cannot buy that judgement in a 8,000 PHP month after the mess exists, and you could not buy it in that month before the mess existed either.
+Content residue includes hundreds of near duplicate posts and location pages. Some can be redirected. Some should be removed. Some need to be rewritten because they occupy URLs that should exist. Each decision is a URL-level judgement. You cannot buy that judgement in an 8,000 PHP month after the mess exists, and you could not buy it in that month before the mess existed either.
 
 Link residue is slower still. You need referring domain lists, a view of which placements are real, and a conservative approach to disavow. Panic disavows create their own problems. So does leaving a network in place because nobody wants to look.
 

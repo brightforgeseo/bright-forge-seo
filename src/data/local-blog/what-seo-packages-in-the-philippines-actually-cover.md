@@ -4,7 +4,7 @@ slug: what-seo-packages-in-the-philippines-actually-cover
 excerpt: Philippine SEO packages are scopes of work, not menus. Read the hours, pages and reporting inside each band before you compare monthly fees.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, pricing]
 image: /images/blog/what-seo-packages-in-the-philippines-actually-cover.webp
 metaTitle: Philippine SEO Packages by Scope | Bright Forge
 metaDescription: SEO packages in the Philippines are scopes, not menus. See what each market band usually covers, which extras are theatre, and how to compare two proposals.
@@ -32,11 +32,11 @@ Menus exist because they are easy to sell. They let a salesperson talk before an
 
 The usual extras are padding. Social posts, infographics, a fixed number of guest posts, unlimited keywords, and a weekly call that nobody uses. Those items make a table look full. They do not decide whether the contact form on the highest intent page works, or whether five location pages are cannibalising each other.
 
-Unlimited is the most common trap word. Unlimited keywords usually means a rank tracker with a high limit. Unlimited content usually means thin posts produced to a quota. Unlimited support usually means a shared inbox. None of those is a substitute for a named list of URLs and a reason each one exists.
+Unlimited is the most common trap word. Unlimited support usually means a shared inbox. Unlimited keywords, backlinks and content each hide something else, covered further down. None of those is a substitute for a named list of URLs and a reason each one exists.
 
 Guarantees sit next to menus because both sell certainty. Search placements are not inventory. A package that promises page one in 30 days is not a higher tier. It is a different product, and a worse one.
 
-A honest package can still use a name. Call it a 90 day technical cleanup, or a local profile rebuild, or a commercial page rewrite. The name should describe the work, not a rung on a ladder.
+An honest package can still use a name. Call it a 90 day technical cleanup, or a local profile rebuild, or a commercial page rewrite. The name should describe the work, not a rung on a ladder.
 
 ## Market Bands For Philippine SEO Packages
 

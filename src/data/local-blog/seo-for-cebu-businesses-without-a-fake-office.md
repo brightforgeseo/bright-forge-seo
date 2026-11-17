@@ -6,7 +6,7 @@ date: 2026-09-17
 author: Ben Lowe
 tags: [seo, local]
 image: /images/blog/seo-for-cebu-businesses-without-a-fake-office.webp
-metaTitle: SEO Agency Cebu | Bright Forge
+metaTitle: SEO for Cebu Businesses Without a Fake Office | Bright Forge
 metaDescription: No Cebu branch. Bright Forge runs Cebu local SEO from our Philippines team for real Cebu businesses: Maps, pages, citations and reviews without a fake office.
 ---
 
@@ -80,9 +80,9 @@ Pack timing still cannot be sold as a date. Distance in Cebu is real: a searcher
 
 Mechanical waits still apply. Postcard verification, category edits, service-area changes, and re-verification after a move all take time that is not ranking. If you are unverified, we do not talk about pack position.
 
-A Philippines team in Quezon City has overlapping hours with Cebu staff. That is enough for weekly implementation. It is not a substitute for a Cebu technician on site. When a task needs a person standing in front of the building, that person should be yours or a contractor you trust, not a fictional employee on our about page.
+A Philippines team in Quezon City works the same hours as Cebu staff. That is enough for weekly implementation. It is not a substitute for a Cebu technician on site. When a task needs a person standing in front of the building, that person should be yours or a contractor you trust, not a fictional employee on our about page.
 
-Ben Lowe has spent 15+ years watching local campaigns fail because the vendor sold proximity of the agency instead of accuracy of the business. Sassin Lowe’s operations job is to keep the work in the tickets: profile, pages, citations, reviews, reporting. Seventeen case studies on the site are bounded evidence from real campaigns, not a claim that every Cebu category will move on a calendar.
+Ben Lowe has spent 15+ years watching local campaigns fail because the vendor sold proximity of the agency instead of accuracy of the business. Sassin Lowe’s operations job is to keep the work in the tickets: profile, pages, citations, reviews, reporting. Twenty-five case studies on the site are bounded evidence from real campaigns, not a claim that every Cebu category will move on a calendar.
 
 Cebu businesses should hire for method and honesty. Hire a Cebu agency if they can show they exist there and they can do the work. Hire us if you want a Philippine team that will say, in print, that we do not have a Cebu office and will still operate the digital side for a business that does.
 

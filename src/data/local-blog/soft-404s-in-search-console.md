@@ -4,7 +4,7 @@ slug: soft-404s-in-search-console
 excerpt: A soft 404 is a page that looks empty or missing while the server still returns 200. Search Console lists it because Google will not treat that URL as a real result.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, technical-seo]
 image: /images/blog/soft-404s-in-search-console.webp
 metaTitle: Soft 404s in Search Console: What They Mean | Bright Forge
 metaDescription: Why Google flags soft 404s, how to tell empty templates from real pages, and which status code to return. Send the URL if the report is growing.
@@ -78,7 +78,7 @@ Those URLs need a different treatment from deleted products. Either give them a 
 
 ## Do Not Use 404 To Rate Limit Googlebot
 
-A related anti-pattern belongs here because it shows up in the same report. Google has asked site owners not to use 403 or 404 to slow the crawler. Those codes mean the client asked for something that does not exist or is not allowed. They do not mean "we are busy". If Googlebot is too heavy, use Search Console's crawl-rate control, or return 429, 500, or 503. Using 404 as a load-shedder teaches the index that live URLs are missing. Using 200 error templates as a load-shedder teaches the index that live URLs are soft 404s. Both are worse than answering honestly that the server is overloaded.
+A related anti-pattern belongs here because it shows up in the same report. Google has asked site owners not to use 403 or 404 to slow the crawler. Those codes mean the client asked for something that does not exist or is not allowed. They do not mean "we are busy". If Googlebot is too heavy, return 429, 500, or 503 for a short period. Using 404 as a load-shedder teaches the index that live URLs are missing. Using 200 error templates as a load-shedder teaches the index that live URLs are soft 404s. Both are worse than answering honestly that the server is overloaded.
 
 ## A Working Order For A Growing Report
 

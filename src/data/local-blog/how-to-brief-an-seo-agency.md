@@ -4,7 +4,7 @@ slug: how-to-brief-an-seo-agency
 excerpt: A useful SEO brief names the commercial goal, the pages that matter, the constraints, and the access you can give, so the agency diagnoses the live site instead of selling a generic package.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/how-to-brief-an-seo-agency.webp
 metaTitle: How to Brief an SEO Agency | Bright Forge
 metaDescription: Brief an SEO agency with the commercial goal, priority pages, constraints and access. A clear brief yields diagnosis and delivery, not a recycled package.

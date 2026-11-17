@@ -4,7 +4,7 @@ slug: seo-for-real-estate-businesses-in-the-philippines
 excerpt: "Real estate SEO should map developments, listings, agents, locations and buyer or seller questions without creating thin location clones or stale property pages."
 date: 2026-09-21
 author: Ben Lowe
-tags: [seo, real-estate, philippines]
+tags: [seo, real-estate, philippines, industries]
 image: /images/blog/seo-for-real-estate-businesses-in-the-philippines.webp
 metaTitle: "SEO for Real Estate Businesses in the Philippines"
 metaDescription: "Plan useful development, listing, location and agent pages for your Philippine real estate business, with keyword mapping and accurate local SEO."

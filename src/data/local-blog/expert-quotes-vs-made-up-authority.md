@@ -4,7 +4,7 @@ slug: expert-quotes-vs-made-up-authority
 excerpt: Named experts and invented ones look similar in a draft. They do not look similar after a buyer, a journalist, or a search system checks the name.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, trust]
 image: /images/blog/expert-quotes-vs-made-up-authority.webp
 metaTitle: Expert Quotes vs Made-Up Authority
 metaDescription: Why invented expert quotes fail SEO and sales, how we source real commentary, and the editorial checks we use before a name appears on a page.
@@ -100,7 +100,7 @@ Run the same checks after AI-assisted drafting. Models will happily emit a bibli
 
 Answer engines prefer pages that look cited. That creates a perverse incentive to sprinkle names. A citation that does not resolve is worse than a plain paragraph, because the system and the user both learn that your domain attaches names to air.
 
-We would rather be cited for a method we can show in Search Console than for a quote that cannot be found. Eligibility for AI overviews and similar surfaces still rests on ordinary quality: clear authorship, checkable facts, and pages that match the query. Fake experts do not help eligibility. They create a future correction.
+We would rather be cited for a method we can show in Search Console than for a quote that cannot be found. Eligibility for AI Overviews and similar surfaces still rests on ordinary quality: clear authorship, checkable facts, and pages that match the query. Fake experts do not help eligibility. They create a future correction.
 
 If a client asks us to "add more authority" to a draft, we ask what evidence they already have. Staff interviews, original data, process pages, and named reviewers beat a synthetic advisory board.
 

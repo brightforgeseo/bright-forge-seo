@@ -4,7 +4,7 @@ slug: how-to-hire-an-seo-specialist-in-the-philippines
 excerpt: Hire an SEO specialist in the Philippines by defining the work, testing diagnosis on your live URLs, and keeping every account in the business's name.
 date: 2026-09-17
 author: Ben Lowe
-tags: [seo]
+tags: [seo, hiring]
 image: /images/blog/how-to-hire-an-seo-specialist-in-the-philippines.webp
 metaTitle: How to Hire an SEO Specialist | Bright Forge
 metaDescription: Hire an SEO specialist in the Philippines by scoping the work, testing live URLs, checking account ownership, and refusing guarantees you cannot verify.
@@ -36,7 +36,7 @@ An agency is stronger when several skills have to run in sequence, when someone 
 
 In-house is a third shape. It works when there is enough work every week to fill a role, and when that person can get CMS and developer time without begging. It fails when the hire is expected to be strategist, writer, developer and reporter, then measured on rankings they do not control.
 
-[Freelance SEO versus an agency in the Philippines](/blog/freelance-seo-vs-an-agency-in-the-philippines/) is the capacity comparison. Make that choice before you fall in love with a CV. A brilliant freelancer asked to be an agency will drop workstreams. An agency asked to do a two day cleanup will still try to sell a year.
+[A consultant or freelancer versus an agency in the Philippines](/blog/seo-consultant-vs-agency-in-the-philippines/) is the capacity comparison. Make that choice before you fall in love with a CV. A brilliant freelancer asked to be an agency will drop workstreams. An agency asked to do a two day cleanup will still try to sell a year.
 
 White label sits to the side. Another firm may already be selling SEO to your customers and looking for delivery. That can be a clean specialist hire if the accounts stay with the end client and the reporting is inspectable. It is a bad hire if you never meet the people doing the work.
 

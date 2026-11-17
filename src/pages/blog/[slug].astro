@@ -7,6 +7,7 @@ import { getBlogMetadata } from '../../lib/blogMetadata';
 import { getAuthorSlug } from '../../lib/authors';
 import { pickRelatedPosts } from '../../lib/relatedPosts';
 import { displayH1 } from '../../lib/blogDisplay';
+import cmsPostFixes from '../../data/cmsPostFixes.json';
 
 export async function getStaticPaths() {
   const posts = await getAllBlogPosts();
@@ -257,6 +258,26 @@ if (post.content || post.contentHtml) {
   
   // Convert rich text to HTML with custom renderer
   htmlContent = post.contentHtml || documentToHtmlString(post.content, renderOptions);
+
+  // Corrections for articles whose source lives in the CMS. Each entry in
+  // src/data/cmsPostFixes.json replaces an exact string in the rendered HTML,
+  // so a fix can ship from the repo without CMS write access. A string that no
+  // longer matches (because the CMS copy changed) is reported at build time.
+  if (!post.contentHtml) {
+    for (const [from, to] of cmsPostFixes[slug]?.replace || []) {
+      if (htmlContent.includes(from)) htmlContent = htmlContent.split(from).join(to);
+      else console.warn(`[cmsPostFixes] ${slug}: text not found: ${String(from).slice(0, 70)}`);
+    }
+  }
+
+  // Repair links left by document imports: unwrap Google redirect URLs and
+  // point links at the previous domain straight to this site, so internal
+  // links do not pass through a redirect.
+  htmlContent = htmlContent
+    .replace(/href="https?:\/\/(?:www\.)?google\.com\/url\?q=([^"&]+)[^"]*"/g, (match, target) => {
+      try { return `href="${decodeURIComponent(target)}"`; } catch { return match; }
+    })
+    .replace(/href="https?:\/\/(?:www\.)?brightforgeseo\.com(\/[^"]*)?"/g, (match, path) => `href="${path || '/'}"`);
   
   // Replace inline shortcodes like [[INFOGRAPHIC type=...]] with interactive HTML we control
   // Force rebuild: timestamp 13:45
@@ -836,14 +857,14 @@ const metadataOverride = getBlogMetadata(slug);
 const templateProps = {
   title: displayH1(slug, post.title),
   excerpt: post.excerpt || '',  // Original excerpt for page display
-  metaTitle: metadataOverride?.title || post.metaTitle,
-  metaDescription: metadataOverride?.description || post.metaDescription,
+  metaTitle: metadataOverride?.title || cmsPostFixes[slug]?.metaTitle || post.metaTitle,
+  metaDescription: metadataOverride?.description || cmsPostFixes[slug]?.metaDescription || post.metaDescription,
   author: (() => {
     const authorName = post.author || 'BrightForge Team';
     const authors = {
       'Ben Lowe': {
         name: 'Ben Lowe',
-        bio: 'CEO and Co-Founder of Bright Forge SEO Agency with over 15 years of experience in digital marketing. Ben specializes in on-page and off-page SEO strategies, AI-driven search optimization, and delivering personalized, results-oriented solutions that drive real growth for businesses across diverse industries.',
+        bio: 'Founder and CEO of Bright Forge SEO. Ben has worked in SEO for more than 15 years with ecommerce, SaaS and local service businesses in the UK and United States, holds a marketing degree from London Metropolitan University, and leads the team from Quezon City.',
         avatar: '/images/About us/ben-lowe-owner.webp',
         linkedin: ''
       },
@@ -853,9 +874,9 @@ const templateProps = {
         avatar: '/images/About us/sassin-lowe-owner.webp',
         linkedin: ''
       },
-      'Janin A. Cañonero': {
-        name: 'Janin A. Cañonero',
-        bio: 'SEO Manager at Bright Forge SEO Agency. Janin oversees the execution of SEO campaigns, ensuring every strategy is implemented with precision and aligned with the latest search engine best practices to maximize client results.',
+      'Jani A. Cañonero': {
+        name: 'Jani A. Cañonero',
+        bio: 'Head of Team at Bright Forge SEO. Jani runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behaviour.',
         avatar: '/images/About us/Janin-seo-manager.webp',
         linkedin: ''
       },
@@ -866,7 +887,8 @@ const templateProps = {
         linkedin: ''
       }
     };
-    const base = authors[authorName] || {
+    const authorAliases = { 'Janin A. Cañonero': 'Jani A. Cañonero', 'Janin A. Canonero': 'Jani A. Cañonero', 'Jaine Canonero': 'Jani A. Cañonero' };
+    const base = authors[authorAliases[authorName] || authorName] || {
       name: authorName,
       bio: 'Digital marketing experts at Bright Forge SEO Agency specializing in SEO and content strategy.',
       avatar: '',
@@ -875,7 +897,7 @@ const templateProps = {
     return { ...base, slug: getAuthorSlug(base.name) };
   })(),
   publishDate: formattedDate,
-  readTime: '5 min read', // You could calculate this based on content length
+  readTime: `${Math.max(1, Math.round(String(htmlContent || '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length / 220))} min read`,
   category: 'SEO & Marketing',
   tags: post.tags || [],
   featuredImage: post.featuredImage,

@@ -84,7 +84,7 @@ Our [SEO audit](https://brightforge.com.ph/seo-audit-services/) brings security 
 
 An actionable handover should make responsibility clear. The person investigating a compromise needs the suspicious content and access findings. The person handling an HTTPS change needs the affected addresses and expected destinations. The SEO review needs to establish whether important pages remain accessible and indexable. Assigning these tasks precisely prevents a broad instruction to “fix security” from leaving essential checks unowned.
 
-When comparing site security optimisation services in the Philippines, ask how findings will be demonstrated and how the proposed work relates to your website. A technical SEO scope should explain the search-facing problem it will diagnose or correct. If there is an active compromise, establish who owns the security investigation rather than assuming that an SEO audit includes every incident-response task.
+When comparing providers for this work, ask how findings will be demonstrated and how the proposed work relates to your website. A technical SEO scope should explain the search-facing problem it will diagnose or correct. If there is an active compromise, establish who owns the security investigation rather than assuming that an SEO audit includes every incident-response task.
 
 ## Choose The Next Step From The Evidence
 

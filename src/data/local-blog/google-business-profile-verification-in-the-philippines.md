@@ -18,7 +18,7 @@ Google, not an agency, decides which method you see. The official [Google Busine
 
 A claimed listing that still shows Get verified is unfinished. Categories, hours, services, photos, and tracking links only matter once you can save them and keep them. If two people have been fighting over the same pin, or an old tenant left a listing in place, verification is also how ownership becomes usable.
 
-We see businesses spend weeks on posts and photo dumps while the profile is still in a half-claimed state. That work does not stick if Google later asks you to verify again after a name or address edit. Get the proof done first, then treat [Google Business Profile and local pack work](/blog/google-business-profile-verification-in-the-philippines/) as the commercial layer on top of a listing you actually control.
+We see businesses spend weeks on posts and photo dumps while the profile is still in a half-claimed state. That work does not stick if Google later asks you to verify again after a name or address edit. Get the proof done first, then treat Google Business Profile and local pack work as the commercial layer on top of a listing you actually control.
 
 Verification is also the moment to freeze the public name, address, and category. Google’s mail instructions say not to edit those fields while a postcard is in transit, because the code will not work. The same caution is useful even when the method is video: do not rename the shop mid-review because the sign in the footage will no longer match the profile.
 
@@ -46,7 +46,7 @@ Home-based and village addresses cause extra friction. Many subdivisions are kno
 
 ## Email Verification When The Prompt Appears
 
-Email looks easy and then dies on an address nobody owns. Google’s instruction is to use the email address in the verification screen. That may not be the founder’s personal Gmail, the Info@ mailbox on the website, or the agency login. If the prompt shows an old domain from a previous website, someone has to recover that inbox or the method is useless.
+Email looks easy and then dies on an address nobody owns. Google’s instruction is to use the email address in the verification screen. That may not be the founder’s personal Gmail, the info@ mailbox on the website, or the agency login. If the prompt shows an old domain from a previous website, someone has to recover that inbox or the method is useless.
 
 When email is offered, we complete it before chasing video, because it is faster when the inbox is real. Follow the steps in the message Google sends. Do not forward the link into a group chat and lose track of who clicked. After success, add the people who should manage the profile as owners or managers through the normal Google tools, rather than sharing the verification secret itself.
 
