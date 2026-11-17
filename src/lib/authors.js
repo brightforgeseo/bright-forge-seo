@@ -72,12 +72,12 @@ export const authors = {
   },
   'janin-a-canonero': {
     slug: 'janin-a-canonero',
-    name: 'Janin A. Cañonero',
-    role: 'SEO Manager',
+    name: 'Jani A. Cañonero',
+    role: 'Head of Team',
     shortBio:
-      'SEO Manager at Bright Forge SEO Agency. Janin runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behaviour.',
+      'Head of Team at Bright Forge SEO. Jani runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behaviour.',
     longBio: [
-      'Janin manages SEO campaigns for Bright Forge from Quezon City, including tasking, quality checks and the weekly delivery loop.',
+      'Jani manages SEO campaigns for Bright Forge from Quezon City, including tasking, quality checks and the weekly delivery loop.',
       'The work covers technical recommendations, on-page changes, content briefs and reporting that can be tied back to Search Console and ranking data.',
       'Named ownership matters: if a recommendation ships, it has been through this review rather than left as an unsigned agency note.'
     ],
@@ -120,6 +120,8 @@ export const authors = {
 export function getAuthorSlug(name) {
   if (!name) return null;
   const target = String(name).trim().toLowerCase();
+  // Earlier spellings used on older CMS posts.
+  if (['janin a. cañonero', 'janin a. canonero', 'jaine canonero'].includes(target)) return 'janin-a-canonero';
   for (const key of Object.keys(authors)) {
     if (authors[key].name.toLowerCase() === target) return key;
   }

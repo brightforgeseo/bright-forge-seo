@@ -853,9 +853,9 @@ const templateProps = {
         avatar: '/images/About us/sassin-lowe-owner.webp',
         linkedin: ''
       },
-      'Janin A. Cañonero': {
-        name: 'Janin A. Cañonero',
-        bio: 'SEO Manager at Bright Forge SEO Agency. Janin oversees the execution of SEO campaigns, ensuring every strategy is implemented with precision and aligned with the latest search engine best practices to maximize client results.',
+      'Jani A. Cañonero': {
+        name: 'Jani A. Cañonero',
+        bio: 'Head of Team at Bright Forge SEO. Jani runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behaviour.',
         avatar: '/images/About us/Janin-seo-manager.webp',
         linkedin: ''
       },
@@ -866,7 +866,8 @@ const templateProps = {
         linkedin: ''
       }
     };
-    const base = authors[authorName] || {
+    const authorAliases = { 'Janin A. Cañonero': 'Jani A. Cañonero', 'Janin A. Canonero': 'Jani A. Cañonero', 'Jaine Canonero': 'Jani A. Cañonero' };
+    const base = authors[authorAliases[authorName] || authorName] || {
       name: authorName,
       bio: 'Digital marketing experts at Bright Forge SEO Agency specializing in SEO and content strategy.',
       avatar: '',
