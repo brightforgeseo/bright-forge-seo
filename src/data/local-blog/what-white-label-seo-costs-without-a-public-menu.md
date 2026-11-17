@@ -68,7 +68,7 @@ Our [white label SEO services in the Philippines](/white-label-seo-services-phil
 
 ## Packaging So The Cost Survives Contact With Sales
 
-Write a scope a sceptical operations person can staff: number of URLs, technical hours, content output, reporting sources, and what happens when development is blocked. Separate website care from SEO. Retainer clients will try to spend SEO hours on banner copy. If you allow it, neither your margin nor the partner’s plan survives.
+Price against a written scope, not a tier name. How to write that scope, and how to keep website care out of the SEO hours, is covered in our comparison of white label SEO against selling your own retainer, linked above. If the scope leaks, neither your margin nor the partner’s plan survives.
 
 A setup fee plus monthly retainer is the adult pattern for most books. Setup buys access, audit, tracking, and the first queue. The monthly fee buys the queue. Agencies that skip setup and jump to posting articles create the churn they later blame on the channel.
 
