@@ -40,7 +40,7 @@ Your own retainer looks like worse margin on paper because salaries are visible.
 
 Count the people in the conversation. Every extra coordinator eats the spread.
 
-Also count churn. White label work that the account manager cannot explain churns in months 4 to 7, right when SEO would have started to show compounding. Then everyone agrees "SEO doesn't work" and you have trained a client to distrust the channel you wanted to keep.
+Also count churn. White label work that the account manager cannot explain tends to churn within the first several months, before SEO has started to show compounding. Then everyone agrees "SEO doesn't work" and you have trained a client to distrust the channel you wanted to keep.
 
 ## Client Ownership And What Happens At Renewal
 

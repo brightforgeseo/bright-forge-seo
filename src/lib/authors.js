@@ -5,11 +5,11 @@ export const authors = {
   'ben-lowe': {
     slug: 'ben-lowe',
     name: 'Ben Lowe',
-    role: 'CEO & Co-Founder',
+    role: 'Founder & CEO',
     shortBio:
-      'CEO and co-founder of Bright Forge SEO. Ben has worked in SEO for more than 15 years with ecommerce, SaaS and local service businesses in the UK and United States, holds a marketing degree from London Metropolitan University, and leads the team from Quezon City.',
+      'Founder and CEO of Bright Forge SEO. Ben has worked in SEO for more than 15 years with ecommerce, SaaS and local service businesses in the UK and United States, holds a marketing degree from London Metropolitan University, and leads the team from Quezon City.',
     longBio: [
-      'Ben is CEO and co-founder of Bright Forge SEO. He has worked in SEO for more than 15 years and holds a marketing degree from London Metropolitan University.',
+      'Ben is the founder and CEO of Bright Forge SEO. He has worked in SEO for more than 15 years and holds a marketing degree from London Metropolitan University.',
       'Before starting the agency he worked with ecommerce startups, SaaS companies, local businesses and larger corporations in the UK and the United States.',
       'He is based in Quezon City, Metro Manila, and leads the Bright Forge team from there.'
     ],

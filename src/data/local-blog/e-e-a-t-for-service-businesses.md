@@ -73,7 +73,7 @@ If someone wants to check a claim, they should be able to [get in touch](/contac
 
 Case studies are the service-business version of first-hand experience. They fail when they become a press release.
 
-Write the problem, the diagnosis, the work, and the measurement. Name the market and the job type. Use a data source the client already has. Do not publish another company’s URL to win a pitch unless that business has given written permission. We do not name client websites by default for that reason. Proof is the method and the change in the account, not a screenshot of someone else’s domain.
+Write the problem, the diagnosis, the work, and the measurement. Name the market and the job type. Use a data source the client already has. Do not publish another company’s URL to win a pitch unless that business has given written permission. We anonymise client websites by default for that reason. Proof is the method and the change in the account, not a screenshot of someone else’s domain.
 
 Never invent a client, a quote, a ranking, a traffic number, a lead count or a revenue figure. If you do not have permission or a source, leave the number out. A rater who suspects fabrication will treat the whole site as low trust. Buyers who later compare your case study with their own Search Console will not hire you twice.
 

@@ -12,7 +12,7 @@ metaDescription: SEO for Philippine BPO and IT-BPM firms: buyer queries, capabil
 
 Philippine BPO search is two markets sharing one domain. One market is talent: people looking for shifts, sites, and salaries. The other is buyers: operations, procurement, and founders in the US, UK, Australia, and the region who need a partner for customer experience, back office, IT, healthcare information, or a specialised process. SEO that treats those as the same job will fill the careers inbox and starve the sales pipeline.
 
-We work on B2B search for service firms, including operators who sell from Manila, Cebu, Clark, Iloilo, and Davao into overseas accounts. The work is not a local pack campaign with a different logo. It is capability, proof, and an enquiry path a cautious buyer will use.
+We work on B2B search for service firms that sell into overseas accounts. The work is not a local pack campaign with a different logo. It is capability, proof, and an enquiry path a cautious buyer will use.
 
 If your site currently ranks for “call center jobs Quezon City” and almost nothing for the service you sell, you do not have an SEO problem in the abstract. You have a site that was built as a recruitment engine.
 

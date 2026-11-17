@@ -83,7 +83,7 @@ Reviews on a platform you do not control.
 Case studies written around the job and the market, not a stolen domain screenshot.
 Public [editorial standards](/editorial-standards/) that say what you will and will not claim.
 
-If you cannot show a case, do not invent one. If you cannot name a client, describe the problem and the method. We do not name client websites by default. Most businesses do not want their site used as our advertising.
+If you cannot show a case, do not invent one. If you cannot name a client, describe the problem and the method. We name a client only with their agreement and anonymise the rest. Most businesses do not want their site used as our advertising.
 
 Photographs of the actual office or the actual people beat stock. If you work from a small room, photograph that room or skip the office gallery. A rater has seen the rented WeWork shot before.
 

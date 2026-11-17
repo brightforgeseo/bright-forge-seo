@@ -6,7 +6,7 @@ date: 2026-09-17
 author: Ben Lowe
 tags: [seo, technical-seo]
 image: /images/blog/duplicate-title-tags-at-scale.webp
-metaTitle: Duplicate Title Tags at Scale: Fix the Template | Bright Forge
+metaTitle: Duplicate Title Tags at Scale: Fix the Template
 metaDescription: How duplicate titles appear across products, filters and pagination, and how we fix them at template level. Send a crawl if titles are colliding.
 ---
 

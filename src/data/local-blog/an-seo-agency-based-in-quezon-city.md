@@ -1,13 +1,13 @@
 ---
 title: An SEO Agency Based in Quezon City
 slug: an-seo-agency-based-in-quezon-city
-excerpt: Bright Forge is an SEO agency based in Quezon City, led by Ben Lowe and Sassin Lowe, with 15+ years in search and 17 public case studies. We work from QC, not from a fictional office tour.
+excerpt: Bright Forge is an SEO agency based in Quezon City, led by Ben Lowe and Sassin Lowe, with 15+ years in search and 25 published case studies. We work from QC, not from a fictional office tour.
 date: 2026-09-17
 author: Ben Lowe
 tags: [seo, local]
 image: /images/blog/an-seo-agency-based-in-quezon-city.webp
 metaTitle: An SEO Agency Based in Quezon City | Bright Forge
-metaDescription: Bright Forge is a Quezon City SEO agency led by Ben Lowe and Sassin Lowe. 15+ years, 17 case studies, and search work aimed at enquiries.
+metaDescription: Bright Forge is a Quezon City SEO agency led by Ben Lowe and Sassin Lowe. 15+ years, 25 case studies, and search work aimed at enquiries.
 ---
 
 An SEO agency in Quezon City should be easy to pin down as a company, not as a walking tour. We are based in Quezon City. Ben Lowe and Sassin Lowe run Bright Forge from here. The work is technical SEO, content, local search, and reporting aimed at enquiries. Fifteen-plus years in search and 17 case studies are the public proof. A street-by-street description of desks is not. If you are hiring because you want someone who understands Metro Manila search behaviour and can be in the same country and time zone as a Philippine team, that is the useful reason. If you are hiring because you want a café photo in the proposal, that is a different product.
@@ -30,7 +30,7 @@ Sassin Lowe is co-founder and runs operations: delivery rhythm, reporting that m
 
 The rest of the team works from the same Quezon City base. Campaigns are not anonymous. When we say a crawl found a canonical problem, someone here can show the URL. When we say reviews need a process, someone here can walk your staff through a request that does not bribe stars.
 
-Seventeen case studies sit on the site as named, bounded pieces of evidence. They are not a licence to promise your category the same percentage. They are proof we publish what happened, including the limits of what a graph can claim. If a vendor will not show work, the QC address is decoration.
+Twenty-five case studies sit on the site, some naming the client and some anonymised, as bounded pieces of evidence. They are not a licence to promise your category the same percentage. They are proof we publish what happened, including the limits of what a graph can claim. If a vendor will not show work, the QC address is decoration.
 
 ## What QC Businesses Usually Need From SEO
 

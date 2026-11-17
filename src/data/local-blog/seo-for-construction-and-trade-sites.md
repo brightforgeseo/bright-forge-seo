@@ -56,7 +56,7 @@ A pool-control systems company saw clicks rise 79.8 percent as impressions rose 
 
 A metal recycling business reached 22,873 organic clicks, adding 4,621, a 25.3 percent lift, with a large impression increase. The blended ranking trade-off stays visible on the case. Expanding query coverage can make position look worse while clicks get better.
 
-An industrial equipment manufacturer reached 1,054 clicks, a 49.7 percent lift, adding 350 visits as impressions rose 68.9 percent. Wider equipment and process searches, client name off the public page.
+An industrial equipment manufacturer reached 1,054 clicks, a 49.7 percent lift, adding 350 clicks as impressions rose 68.9 percent. Wider equipment and process searches, client name off the public page.
 
 Those cases do not prove that every builder will see the same percentages. They prove we measure construction work in Search Console, we keep the trade-offs on the page, and we do not sell a guaranteed position.
 
