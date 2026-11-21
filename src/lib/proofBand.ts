@@ -31,15 +31,15 @@ const R: Record<string, BandReview> = {
 };
 const PAGES: Record<string, [string[], string]> = {
   '/seo-services-philippines': [['bridal', 'leather', 'teamstats'], 'louise'],
-  '/seo-audit-services': [['pest', 'legal', 'industrial'], 'louise'],
-  '/technical-seo-services-philippines': [['pest', 'boiler', 'builder'], 'rich'],
-  '/on-page-seo-services-philippines': [['bridal', 'garden', 'legal'], 'rj'],
-  '/keyword-research-services': [['leather', 'pvc', 'bridal'], 'auction'],
+  '/seo-audit-services': [['pest', 'bridal', 'boiler'], 'louise'],
+  '/technical-seo-services-philippines': [['pest', 'boiler', 'au'], 'rich'],
+  '/on-page-seo-services-philippines': [['bridal', 'leather', 'conscient'], 'rj'],
+  '/keyword-research-services': [['leather', 'bridal', 'nz'], 'auction'],
   '/content-seo-services-philippines': [['bridal', 'teamstats', 'conscient'], 'tom'],
-  '/backlink-seo-services-philippines': [['teamstats', 'metal', 'pest'], 'tom'],
+  '/backlink-seo-services-philippines': [['teamstats', 'pest', 'bridal'], 'tom'],
   '/website-migration-services': [['boiler', 'pest', 'au'], 'auction'],
   '/white-label-seo-services-philippines': [['conscient', 'bridal', 'teamstats'], 'auction'],
-  '/local-seo-for-google-maps-and-gbp': [['pest', 'scaffolding', 'pool'], 'rj'],
+  '/local-seo-for-google-maps-and-gbp': [['pest', 'boiler', 'conscient'], 'rj'],
   '/ai-search-optimization-services-philippines': [['teamstats', 'bridal', 'leather'], 'tom'],
   '/international-seo-services': [['au', 'nz', 'bridal'], 'auction'],
   '/seo-services-australia': [['au', 'nz'], 'louise'],
@@ -51,12 +51,12 @@ const PAGES: Record<string, [string[], string]> = {
   '/football-soccer-seo-services': [['teamstats', 'bridal', 'leather'], 'tom'],
   '/construction-seo-services': [['builder', 'pvc', 'scaffolding'], 'louise'],
   '/legal-seo-services': [['legal', 'conscient', 'pest'], 'louise'],
-  '/home-services-seo': [['pest', 'pool', 'scaffolding'], 'rj'],
+  '/home-services-seo': [['pest', 'pool', 'boiler'], 'rj'],
   '/b2b-seo-services': [['conscient', 'industrial', 'metal'], 'auction'],
-  '/real-estate-seo-services': [['builder', 'scaffolding', 'pvc'], 'rich'],
-  '/finance-crypto-seo-services': [['conscient', 'legal', 'teamstats'], 'auction'],
+  '/real-estate-seo-services': [['builder', 'pest', 'conscient'], 'rich'],
+  '/finance-crypto-seo-services': [['conscient', 'teamstats', 'leather'], 'auction'],
   '/gaming-seo-services': [['teamstats', 'leather', 'bridal'], 'tom'],
-  '/pet-seo-services': [['pest', 'leather', 'garden'], 'rj'],
+  '/pet-seo-services': [['pest', 'leather', 'bridal'], 'rj'],
 };
 export function proofBand(pathname: string): { cases: BandCase[]; review: BandReview } | null {
   const entry = PAGES[pathname.replace(/\/$/, '')];

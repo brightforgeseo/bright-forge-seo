@@ -17,13 +17,13 @@ const awards = [
         <p class="proof-band-kicker">Published evidence</p>
         <h2 id="proof-band-title">Results you can <span>check for yourself</span></h2>
       </div>
-      <p>These figures are organic search clicks from each client's Google Search Console. Every case study states its comparison period and what the data does not show. <a href="/case-studies/">See all 25 case studies</a>.</p>
+      <p>These figures are organic search clicks reported in Google Search Console. Every case study states its comparison period and what the data does not show. <a href="/case-studies/">See all 25 case studies</a>.</p>
     </header>
     <ul class:list={['proof-band-cases', { 'proof-band-cases--2': band.cases.length === 2 }]}>
       {band.cases.map((c) => (
         <li>
           <a class="proof-case" href={c.href}>
-            <span class="proof-case-shot"><img src={c.image} alt={c.alt} width="640" height="270" loading="lazy" decoding="async" /></span>
+            <span class="proof-case-shot"><img src={c.image} alt={c.alt} width="640" height="360" loading="lazy" decoding="async" /></span>
             <span class="proof-case-body">
               <span class="proof-case-sector">{c.sector}</span>
               <strong class="proof-case-name">{c.name}</strong>
@@ -66,7 +66,7 @@ const awards = [
 .proof-band-cases--2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
 .proof-case { display:flex; flex-direction:column; height:100%; overflow:hidden; border:1px solid #e3e6ea; border-radius:20px; background:#fff; color:inherit; text-decoration:none; box-shadow:0 1px 2px rgb(24 32 43 / 4%),0 10px 24px -16px rgb(24 32 43 / 22%); transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s cubic-bezier(.2,.7,.2,1),border-color .28s; }
 .proof-case-shot { display:block; padding:14px 14px 0; background:#f6f7f9; border-bottom:1px solid #eceef1; }
-.proof-case-shot img { display:block; width:100%; aspect-ratio:64/27; object-fit:cover; object-position:left top; border:1px solid #e3e6ea; border-bottom:0; border-radius:10px 10px 0 0; background:#fff; }
+.proof-case-shot img { display:block; width:100%; aspect-ratio:16/9; height:auto; object-fit:contain; object-position:center top; border:1px solid #e3e6ea; border-bottom:0; border-radius:10px 10px 0 0; background:#fff; }
 .proof-case-body { display:flex; flex-direction:column; flex:1; padding:20px 22px 22px; }
 .proof-case-sector { font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#5c6675; }
 .proof-case-name { margin-top:4px; font-family:'Outfit','Inter',sans-serif; font-size:1.25rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; }
