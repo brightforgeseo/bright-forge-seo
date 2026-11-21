@@ -10,38 +10,46 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 const contentFaqs = [
   {
     question: "What is included in SEO content writing services?",
-    answer: "Our SEO content writing services include keyword research, search intent mapping, content outlines, page structure, copywriting, metadata, internal linking guidance, FAQ planning and optimisation recommendations for blogs, service pages, landing pages and existing content."
+    answer: "Each page comes with keyword research, a search intent check, a written brief, the draft copy, a proposed title and meta description, internal link destinations and FAQs where buyers ask them. We write service pages, landing pages, blog articles and guides, and we revise existing pages. You also receive a list of the claims we could not confirm, addressed to the person in your business who can."
   },
   {
     question: "Do you only write new content or can you improve existing pages?",
-    answer: "We do both. New content helps build topical authority, but existing pages often have faster gains. We use ranking and Google Search Console data to identify pages that need stronger headings, clearer search intent, better internal links, fresher information or sharper conversion copy."
+    answer: "We do both, and we usually look at existing pages first. Google already knows those URLs, so refreshing a page that once ranked is often better value than writing a new one. We use ranking and Google Search Console data to find pages that need stronger headings, a clearer match to search intent, better internal links, current information or sharper conversion copy. New pages follow where the site has no page for a search worth winning."
   },
   {
     question: "Can you work with our in-house writers or marketing team?",
-    answer: "Yes. We can create SEO content outlines, review drafts, improve page structure and guide your team on keyword targeting, internal links, EEAT signals and editorial standards while your writers keep control of brand voice."
+    answer: "Yes. Many teams keep the writing and hand us the SEO layer. We supply the content outline, review the draft, tighten the page structure and advise on keyword targeting, internal links, EEAT signals and editorial standards. Your writers keep control of brand voice, and your reviewer keeps the final say."
   },
   {
     question: "Do you use AI for SEO content?",
-    answer: "AI may assist research organisation or drafting, but it is not evidence for a claim. We check source material, review the copy against the brief and send unresolved product, technical or regulated claims to your nominated specialist. Approval is required before publishing."
+    answer: "AI may assist with organising research or drafting, but it is not evidence for a claim and it does not sign anything off. A person edits every draft. We check source material, review the copy against the brief and send unresolved product, technical or regulated claims to your nominated specialist. Your approval is required before anything is published."
   },
   {
     question: "How long does content SEO take to work?",
-    answer: "It depends on the site, competition and authority behind the page. Content refreshes can sometimes move faster because Google already knows the URL. New content usually needs more time, internal links and supporting authority before it becomes a reliable source of traffic or enquiries."
+    answer: "It depends on the site, the competition and the authority behind the page. A refreshed page can move sooner because Google already knows the URL. A new page usually needs more time, internal links and supporting authority before it becomes a reliable source of traffic or enquiries. We record the release date for each page so the review afterwards compares like with like."
   },
   {
     question: "How do you measure content SEO performance?",
-    answer: "We track rankings, impressions, clicks, landing page performance, enquiries where tracking is available, internal link impact and whether the content is supporting the right commercial pages. The aim is not just more articles. It is more useful visibility that helps the business grow."
+    answer: "We track rankings, impressions, clicks and landing page performance for each page and its target queries, plus enquiries where tracking is available. We also check whether internal links are sending visitors on to the right commercial pages. A page that attracts readers but supports no service or product page goes back on the list for revision. Publishing volume is not a measure we report."
   },
   {
     question: "Can you write SEO content for Australian, UK and US audiences?",
-    answer: "Yes. We plan around the target market, not just the language setting. Australian work uses Australian English and local buyer phrasing. UK work uses British English, UK examples and the intent shown in UK-localised search results. US work uses American English, US search results and the buyer context of the target state or national market. Agencies can also use the service as white label content fulfilment under an agreed brief and QA process."
+    answer: "Yes. We plan around the target market, starting with the search results a buyer in that country sees. Australian work uses Australian English and local buyer phrasing. UK work uses British English, UK examples and the intent shown in UK-localised search results. US work uses American English, US search results and the buyer context of the target state or national market. Agencies can also use the service as white label content fulfilment under an agreed brief and QA process."
+  },
+  {
+    question: "Who writes and edits the content?",
+    answer: "Our own team. Public pages and client recommendations are written by the people named on our about page. Strategy sits with Ben Lowe, and delivery is run by the in-house team in Quezon City. AI may assist a draft, but a person edits every piece and senior review happens before it is treated as ready. Your subject specialist confirms technical, product and regulated claims."
+  },
+  {
+    question: "How much do SEO content writing services cost?",
+    answer: "We do not publish a rate card. The cost depends on the page list, the format of each page, the research and source checking involved, the number of revision rounds and whether we handle publishing. We set all of that out in a written proposal, so you can see what is included before any work starts."
   }
 ];
 ---
 
 <MainLayout
   title="SEO Content Writing Services Philippines | Bright Forge SEO"
-  description="Philippines-based SEO content writing for local and overseas brands, built around search intent, human editing, internal links and enquiries."
+  description="SEO content writing from the Philippines: service pages, guides and refreshes planned from keyword research, edited by a person and approved by you first."
   canonical="https://brightforge.com.ph/content-seo-services-philippines/"
   type="service"
   faqs={contentFaqs}
@@ -55,10 +63,9 @@ const contentFaqs = [
     breadcrumbCurrent="SEO Content Writing Services"
   >
     <Fragment slot="story">
-      <p>Your sales team answers the same questions every week, but the website still leaves buyers guessing. We turn your service knowledge, approved evidence and customer questions into pages that explain the offer and answer the searches behind it.</p>
+      <p>We plan and write the pages your website needs to be found and chosen: service pages, landing pages, buying guides and refreshes of articles that have slipped. Your sales team answers the same buyer questions every week. We put those answers, with your approved evidence, on the pages people reach from search.</p>
 
-      <p>We plan and write service pages, landing pages, guides and content refreshes. The deliverable includes a page brief, draft copy, proposed metadata and internal links, with questions for your subject specialist where facts still need confirmation.</p>
-      <p>Our Philippine team supports local businesses, Australian, UK and US brands, and in-house marketers. If you manage content for clients, our <a href="/white-label-seo-services-philippines/">white label SEO service</a> lets us agree your agency brief, branding and approval route before drafting.</p>
+      <p>For each page you receive a written brief, the draft copy, a proposed title and meta description, and the internal links. Where a fact still needs confirming, you get a question for your subject specialist. Nothing is published until you approve it.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -68,12 +75,12 @@ const contentFaqs = [
 
     <Fragment slot="visual">
       <div class="hero-image-container strategy-panel">
-        <p class="panel-kicker">Content that earns its place</p>
+        <p class="panel-kicker">How each page gets written</p>
         <div class="strategy-flow">
-          <div><span>01</span><strong>Search intent</strong><small>What the buyer actually needs</small></div>
-          <div><span>02</span><strong>Page mapping</strong><small>Where each topic should live</small></div>
-          <div><span>03</span><strong>Content outline</strong><small>Structure, links, proof and CTA</small></div>
-          <div><span>04</span><strong>Performance refresh</strong><small>Rankings, clicks and enquiries</small></div>
+          <div><span>01</span><strong>Search intent</strong><small>The question behind the search</small></div>
+          <div><span>02</span><strong>Page mapping</strong><small>One page for each topic, with no overlap</small></div>
+          <div><span>03</span><strong>Content outline</strong><small>Headings, proof, links and the next step</small></div>
+          <div><span>04</span><strong>Performance refresh</strong><small>Reviewed against rankings, clicks and enquiries</small></div>
         </div>
       </div>
     </Fragment>
@@ -83,16 +90,16 @@ const contentFaqs = [
     <div class="max-w-7xl mx-auto px-4">
       <div class="proof-strip">
         <div>
-          <strong>Built for commercial search</strong>
-          <span>Service pages, blogs, location pages, guides and refreshes mapped to buyer intent.</span>
+          <strong>Mapped to commercial searches</strong>
+          <span>Service pages, blogs, location pages, guides and refreshes, each tied to a group of searches and a business aim.</span>
         </div>
         <div>
-          <strong>SEO plus CRO</strong>
-          <span>Content planned around rankings, internal links, trust signals and enquiry paths.</span>
+          <strong>Search and enquiry in one brief</strong>
+          <span>Every brief sets the target queries, the internal links, the proof the page needs and the next step for the reader.</span>
         </div>
         <div>
           <strong>Claims checked against sources</strong>
-          <span>We check public references and flag business claims that need your approval before publication.</span>
+          <span>We check public references and flag every business claim that needs your approval before publication.</span>
         </div>
       </div>
     </div>
@@ -102,19 +109,20 @@ const contentFaqs = [
     <div class="max-w-7xl mx-auto px-4">
       <div class="editorial-layout">
         <div class="editorial-copy">
-          <p class="eyebrow">Why content SEO matters</p>
+          <p class="eyebrow">What a page has to answer</p>
           <h2>Give buyers the detail they need to <span>choose your service</span></h2>
-          <p>A facilities buyer may need to know whether installation includes commissioning, staff training and removal of old equipment. A paragraph about quality and experience will not answer that. We ask for the actual inclusions, then give them a clear place in the page.</p>
-          <p>We use keyword research, SERP review, competitor checks and page-level performance data to decide what should be written, what should be improved and what should be left alone. The resulting page list distinguishes new drafts, revisions and pages that need no change.</p>
+          <p>Our Philippine team writes from Quezon City for local businesses, for Australian, UK and US brands, and alongside in-house marketers who want the SEO layer handled. If you manage content for clients, our <a href="/white-label-seo-services-philippines/">white label SEO service</a> lets us agree your agency brief, branding and approval route before drafting.</p>
+          <p>A facilities buyer wants to know whether installation includes commissioning, staff training and removal of the old equipment. A paragraph about quality and experience tells them none of that, and it gives a search engine nothing to match to the question either. We ask you for the actual inclusions, then give each one a clear place on the page.</p>
+          <p>Before anyone writes, we use keyword research, a review of the search results, competitor checks and page-level performance data to decide what to write, what to improve and what to leave alone. You see that decision as a page list with three columns: new drafts, revisions, and pages that need no change.</p>
         </div>
         <div class="editorial-panel">
           <h3>What we look for first</h3>
           <ul>
-            <li>Pages ranking but not earning clicks</li>
-            <li>Topics with commercial search intent</li>
-            <li>Thin service pages that need supporting content</li>
-            <li>Old articles losing impressions or relevance</li>
-            <li>Internal link gaps between blogs and money pages</li>
+            <li>Pages that rank but earn few clicks</li>
+            <li>Topics where the search shows commercial intent and you have no page</li>
+            <li>Thin service pages with no supporting content behind them</li>
+            <li>Older articles losing impressions or relevance</li>
+            <li>Blogs that never link to the money pages they should support</li>
             <li>FAQs and answer blocks that can support AI search readiness</li>
           </ul>
         </div>
@@ -127,32 +135,32 @@ const contentFaqs = [
       <div class="services-layout">
         <div class="services-content">
           <p class="eyebrow">What is included</p>
-          <h2>SEO content services built around <span>search intent and revenue pages</span></h2>
+          <h2>Five SEO content services, each with <span>a deliverable you can check</span></h2>
 
           <div class="service-list">
             <div class="service-item">
               <h3>SEO Content Strategy</h3>
-              <p>We map topics to real searches, buyer stages and priority pages, so content supports the pages that need to rank and convert. That includes topic clusters, content calendars, keyword grouping and search intent review.</p>
+              <p>You receive a content plan: the pages to write or update, in order, each tied to a group of searches, a buyer stage and the priority page it supports. Behind it sit the keyword grouping, the search intent review, the topic clusters and a content calendar your team can hold us to.</p>
             </div>
 
             <div class="service-item">
               <h3>SEO Content Writing</h3>
-              <p>We write service pages, blog posts, landing pages, local pages, FAQs and supporting guides with clear structure, useful headings, natural keyword coverage and conversion-focused calls to action.</p>
+              <p>We write service pages, blog posts, landing pages, local pages, FAQs and supporting guides. Each draft arrives with its headings, proposed title and meta description, internal links and call to action in place, and with every factual claim traced to a source or marked as a question for your specialist.</p>
             </div>
 
             <div class="service-item">
               <h3>Content Optimisation</h3>
-              <p>We improve existing pages using ranking data, Google Search Console signals and on-page checks. That can include rewritten sections, metadata, H1 and H2 changes, answer blocks, internal links, freshness updates and stronger proof.</p>
+              <p>We revise existing pages using ranking data, Google Search Console signals and on-page checks. A revision can include rewritten sections, new metadata, H1 and H2 changes, answer blocks, internal links, updated facts and stronger proof. You see what changed and why, so the next review has a baseline.</p>
             </div>
 
             <div class="service-item">
               <h3>Content Outlines and Editorial QA</h3>
-              <p>If your team writes in-house, we can handle the SEO layer. We create content outlines, review drafts, check search intent, tighten headings, add internal link direction and make sure the finished page has a real job to do.</p>
+              <p>If your team writes in-house, we handle the SEO layer. We supply the outline, review the draft against search intent, tighten the headings and set the internal links. The review comes back as comments your writer can act on, including a plain statement of what the finished page is for.</p>
             </div>
 
             <div class="service-item">
               <h3>AI Search Ready Content</h3>
-              <p>We structure content so services, locations, proof, FAQs and entity signals are easy for search engines and AI answer systems to understand. This is still SEO-first, with <a href="/ai-search-optimization-services-philippines/">AI search readiness</a> handled as an extra layer rather than a replacement for fundamentals.</p>
+              <p>We state services, locations, proof and FAQs in plain, checkable terms, so search engines and AI answer systems can read what you offer without guessing. The fundamentals of SEO come first. <a href="/ai-search-optimization-services-philippines/">AI search readiness</a> is an extra layer of checks on top of them.</p>
             </div>
           </div>
         </div>
@@ -163,11 +171,30 @@ const contentFaqs = [
               <i class="fas fa-route"></i>
             </div>
             <h3>From keyword to enquiry</h3>
-            <p class="visual-description">A useful content plan does not start with article titles. It starts with the pages that need more visibility, the questions buyers ask before they enquire and the internal links needed to move authority through the site.</p>
+            <p class="visual-description">We build the content plan from three things: the pages that need more visibility, the questions buyers ask before they enquire, and the internal links that carry authority to those pages. Article titles are the last thing we decide.</p>
             <a href="/keyword-research-services/">See our keyword research approach</a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="content-formats">
+    <div class="pf-wrap">
+      <p class="eyebrow">Formats and people</p>
+      <h2>The <span>content formats we write</span>, and the ones we turn down</h2>
+      <p class="pf-lede">Every format below is written to a brief and edited by a person. Public pages and client recommendations are written by the people named on our <a href="/about-us/">about page</a>: strategy sits with <a href="/authors/ben-lowe/">Ben Lowe</a>, and delivery is run by the in-house team in Quezon City, with senior review before anything is treated as ready.</p>
+      <ul class="pf-ticks">
+        <li><strong>Service and landing pages.</strong> The pages closest to an enquiry, built from your inclusions, exclusions and approved proof.</li>
+        <li><strong>Blog articles and guides.</strong> Planned in topic clusters, each linking to the commercial page it supports.</li>
+        <li><strong>Local pages.</strong> Written only where there is useful market-specific information to give.</li>
+        <li><strong>Category copy, buying guides and comparisons.</strong> For online stores and product-led brands.</li>
+        <li><strong>FAQs and answer blocks.</strong> Drawn from the questions your customers ask.</li>
+        <li><strong>Outlines and editorial reviews.</strong> For in-house writers who keep the drafting.</li>
+        <li><strong>Refreshes of existing pages.</strong> Rewritten sections, new metadata, updated facts and internal links.</li>
+        <li><strong>White label content.</strong> Any of the above, to an agency's brief and brand guide.</li>
+      </ul>
+      <p class="pf-note">What we turn down: recycled AI content with no editor, invented quotes, clients or results, and thin location pages that add nothing specific to the place they name.</p>
     </div>
   </section>
 
@@ -179,10 +206,10 @@ const contentFaqs = [
           <h2>For teams that need <span>writing, briefs or page revisions</span></h2>
         </div>
         <div class="buyer-fit-list">
-          <p><strong>Service businesses</strong> that need stronger pages, better local visibility and more enquiry-led content.</p>
-          <p><strong>Ecommerce and product-led brands</strong> that need category, guide and comparison content to support buying decisions.</p>
-          <p><strong>In-house marketing teams</strong> that already write content but need SEO outlines, structure and quality control.</p>
-          <p><strong>Agencies and partners</strong> that need reliable white-label SEO content without generic filler.</p>
+          <p><strong>Service businesses</strong> whose pages describe the company well and the service badly, and who need local visibility and more enquiries from search.</p>
+          <p><strong>Ecommerce and product-led brands</strong> that need category copy, buying guides and comparison content to help a shopper decide.</p>
+          <p><strong>In-house marketing teams</strong> that already write and want SEO outlines, page structure and a second editor before publication.</p>
+          <p><strong>Agencies and partners</strong> that need white-label SEO content written to their client's brief, with the sources checked and no filler.</p>
         </div>
       </div>
     </div>
@@ -193,39 +220,39 @@ const contentFaqs = [
       <div class="international-content-intro">
         <p class="eyebrow">Content across markets</p>
         <h2>Written in the Philippines, <span>shaped around the buyer's market</span></h2>
-        <p>A buying guide may need different product specifications, delivery information or seasonal advice in each market. We check those differences against your offer and local search results before deciding what can be reused and what needs a separate brief.</p>
-        <p>Your brief records the target country, preferred English variant and the person who can confirm market-specific facts.</p>
+        <p>The same buying guide can need different product specifications, delivery information or seasonal advice in each country. We check those differences against your offer and the local search results, then decide what can be reused and what needs its own brief.</p>
+        <p>Your brief records the target country, the English variant and the person who can confirm market-specific facts.</p>
       </div>
 
       <div class="editorial-markets">
         <article>
           <p class="market-kicker">Australia</p>
           <h3>Australian English and local buying context</h3>
-          <p>We use Australian English, AU search results, local terminology and southern-hemisphere timing where it changes the answer. The content then supports the pages intended to rank in Australia.</p>
+          <p>We use Australian English, Australian search results, local terminology and southern-hemisphere timing where it changes the answer. The content then supports the pages you want to rank in Australia.</p>
           <a href="/seo-services-australia/">SEO delivery for Australian businesses →</a>
         </article>
         <article>
           <p class="market-kicker">United Kingdom</p>
           <h3>British English and a UK review brief</h3>
-          <p>We check UK search results and buyer questions, then use British English and the approved brand style. Your reviewer confirms UK-specific product availability, service terms and regulated claims; a spelling change cannot settle those facts.</p>
+          <p>We check UK search results and buyer questions, then write in British English and the approved brand style. Your reviewer confirms UK product availability, service terms and regulated claims, because a spelling change settles none of those.</p>
           <a href="/seo-services-uk/">SEO delivery for UK businesses →</a>
         </article>
         <article>
           <p class="market-kicker">United States</p>
           <h3>American English matched to US search intent</h3>
-          <p>US content uses American English, US search results and the commercial context of the target state or national market. We check terminology, examples and claims rather than simply changing the spelling.</p>
+          <p>US content uses American English, US search results and the commercial context of the target state or national market. We check terminology, examples and claims as well as the spelling.</p>
           <a href="/seo-services-usa/">SEO delivery for US businesses →</a>
         </article>
         <article>
           <p class="market-kicker">Agency partners</p>
           <h3>White label briefs, writing and editorial QA</h3>
-          <p>Agencies can use us for outlines, full drafts, page refreshes or a final SEO and editorial pass. The scope states whose brand guide, approval path and reporting format applies.</p>
+          <p>Agencies use us for outlines, full drafts, page refreshes or a final SEO and editorial pass. The scope states whose brand guide, approval path and reporting format applies.</p>
           <a href="/white-label-seo-services-philippines/">White label content fulfilment →</a>
         </article>
         <article>
           <p class="market-kicker">Online stores</p>
           <h3>Category, product and buying-guide content</h3>
-          <p>Ecommerce content is mapped to category architecture and buying stages so editorial work strengthens revenue pages instead of becoming a disconnected blog calendar.</p>
+          <p>We map ecommerce content to the category architecture and the stages of a purchase, so every guide links to a category or product page and strengthens it. A blog calendar with no route to a revenue page is not part of the plan.</p>
           <a href="/ecommerce-seo-services/">Ecommerce SEO and content →</a>
         </article>
       </div>
@@ -237,7 +264,7 @@ const contentFaqs = [
       <div class="section-header">
         <p class="eyebrow">Our process</p>
         <h2>From your source material to <span>approved copy</span></h2>
-        <p>We agree the page list, format, revision rounds, review owner and publishing responsibility in the scope. Your team does not need to write the page first, but we do need access to the facts that only your business can confirm.</p>
+        <p>The scope sets the page list, format, revision rounds, review owner and publishing responsibility. Your team does not need to write the page first. We do need the facts that only your business can confirm.</p>
       </div>
 
       <div class="process-grid">
@@ -246,7 +273,7 @@ const contentFaqs = [
             <i class="fas fa-search"></i>
           </div>
           <h3>What we need from you</h3>
-          <p>Send your service inclusions and exclusions, product specifications, customer questions, brand guide and approved proof. Name the person who can answer factual queries and confirm which markets the offer serves.</p>
+          <p>Send what you already have: service inclusions and exclusions, product specifications, brochures and proposals, the questions customers ask, your brand guide and approved proof. Name the person who can answer factual queries and confirm which markets the offer serves.</p>
         </div>
 
         <div class="process-box white-bg">
@@ -254,7 +281,7 @@ const contentFaqs = [
             <i class="fas fa-map-signs"></i>
           </div>
           <h3>Page brief</h3>
-          <p>We identify the reader, search intent, existing page and next action. The brief names the questions to answer, supporting sources and relevant internal links, including topics the page should not cover.</p>
+          <p>The brief names the reader, the search the page serves, the existing page if there is one and the next action. It lists the questions to answer, the supporting sources, the internal links and the topics the page should leave to another page. You approve it before drafting starts.</p>
         </div>
 
         <div class="process-box white-bg">
@@ -262,7 +289,7 @@ const contentFaqs = [
             <i class="fas fa-clipboard-list"></i>
           </div>
           <h3>Claim and source review</h3>
-          <p>We check that a source supports the exact statement, including its date and market. Your specialist confirms technical accuracy, eligibility, prices and regulated claims. Missing evidence becomes a question, not a confident sentence.</p>
+          <p>We check that a source supports the exact statement, including its date and market. Your specialist confirms technical accuracy, eligibility, prices and regulated claims. Where evidence is missing, the draft carries a question in place of a confident sentence.</p>
         </div>
 
         <div class="process-box orange-bg">
@@ -270,7 +297,7 @@ const contentFaqs = [
             <i class="fas fa-pen-fancy"></i>
           </div>
           <h3>Draft and revisions</h3>
-          <p>You receive the draft with headings, metadata, link destinations and outstanding questions. We ask for consolidated feedback from the agreed reviewer, then revise within the approved brief. A changed offer or new page needs a scope decision.</p>
+          <p>A person edits every draft before you see it. It arrives with headings, metadata, link destinations and outstanding questions. We ask the agreed reviewer for consolidated feedback, then revise within the approved brief. A changed offer or an extra page needs a scope decision first.</p>
         </div>
 
         <div class="process-box orange-bg">
@@ -278,7 +305,7 @@ const contentFaqs = [
             <i class="fas fa-link"></i>
           </div>
           <h3>Publishing responsibility</h3>
-          <p>We can hand over approved copy to your publisher. CMS entry and live-page QA are included only when agreed. Where we handle publication, we check formatting, links, metadata and mobile reading after release.</p>
+          <p>We hand approved copy to your publisher, or publish it ourselves where that is agreed. CMS entry and live-page QA are included only when the scope says so. Where we handle publication, we check formatting, links, metadata and mobile reading after release.</p>
         </div>
 
         <div class="process-box white-bg">
@@ -286,9 +313,24 @@ const contentFaqs = [
             <i class="fas fa-chart-line"></i>
           </div>
           <h3>Review after release</h3>
-          <p>Where monitoring is included, we record the release date and review the page and its target queries. We separate tracked actions from qualified enquiries and ask your team when product or service facts change.</p>
+          <p>Where monitoring is included, we record the release date and review the page against its target queries. We report tracked actions separately from qualified enquiries, and we ask your team when product or service facts change so the page stays accurate.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="content-audit-refresh">
+    <div class="pf-wrap">
+      <p class="eyebrow">Content audit and refresh</p>
+      <h2>How a <span>content audit and refresh</span> runs</h2>
+      <p class="pf-lede">A refresh is often the quickest content work to justify, because Google already knows the URL. It can be scoped on its own or as the first stage of a wider content plan.</p>
+      <ol class="pf-steps">
+        <li><strong>Audit the existing pages</strong><span>We use ranking and Google Search Console data to find pages that rank but earn few clicks, are losing impressions or carry out-of-date facts.</span></li>
+        <li><strong>Sort the page list</strong><span>Every page goes into one of three columns: new draft, revision, or no change needed. You approve the list.</span></li>
+        <li><strong>Revise and check claims</strong><span>We rewrite the sections that need it, update metadata, headings and internal links, and send unconfirmed facts to your specialist.</span></li>
+        <li><strong>Record the release</strong><span>You see what changed and why. The release date is logged so the next review compares like with like.</span></li>
+        <li><strong>Report on the page</strong><span>Where monitoring is included, we report rankings, impressions and clicks for the page and its target queries, with tracked actions kept apart from qualified enquiries.</span></li>
+      </ol>
     </div>
   </section>
 
@@ -298,13 +340,14 @@ const contentFaqs = [
         <div class="proof-panel">
           <p class="eyebrow">Why Bright Forge</p>
           <h2><span>Senior SEO thinking</span> before the first draft</h2>
-          <p>Content quality is not just grammar. It is whether the page deserves to rank, whether it answers the query better than the current SERP, whether it supports the right commercial page and whether the visitor knows what to do next.</p>
-          <p>That is why we treat content as part of the SEO system: <a href="/keyword-research-services/">keyword research</a>, <a href="/on-page-seo-services-philippines/">on-page SEO</a>, internal links, <a href="/technical-seo-services-philippines/">technical foundations</a>, proof, reporting and conversion paths all need to work together.</p>
+          <p>Good grammar is the minimum. Before we draft, we ask four harder questions of every page. Does it answer the query better than the pages ranking now? Does it support the right commercial page? Can every claim be traced? Does the visitor know what to do next?</p>
+          <p>Content only earns its keep as part of the wider SEO work, so the brief draws on <a href="/keyword-research-services/">keyword research</a>, <a href="/on-page-seo-services-philippines/">on-page SEO</a>, internal links and <a href="/technical-seo-services-philippines/">technical foundations</a>. Our <a href="/editorial-standards/">editorial standards</a> set out who writes, who checks and what we refuse to publish.</p>
+          <p>Emily Bridalwear, a Sheffield bridal shop, recorded 17.6k organic clicks in three months, against 7.41k in the same period a year earlier. The case study also says what that comparison cannot show: which dress searches contributed, or whether the extra clicks became appointments. We report our own content work with the same limits.</p>
           <div class="proof-links">
             <a href="/seo-services-philippines/">Explore SEO services</a>
             <a href="/on-page-seo-services-philippines/">View on-page SEO</a>
-            <a href="/case-studies/">See case studies</a>
-            <a href="/case-studies/bridal-dress-designer-seo/">View content-led case study</a>
+            <a href="/case-studies/">See all 25 case studies</a>
+            <a href="/case-studies/bridal-dress-designer-seo/">Read the Emily Bridalwear case study</a>
           </div>
         </div>
 
@@ -314,7 +357,7 @@ const contentFaqs = [
               <i class="fas fa-layer-group"></i>
             </div>
             <h3>Topic clusters</h3>
-            <p>Content planned around connected themes, not random articles that never support the money pages.</p>
+            <p>Articles are planned in connected groups, and each group links to the service or product page it exists to support.</p>
           </div>
 
           <div class="benefit-card">
@@ -322,7 +365,7 @@ const contentFaqs = [
               <i class="fas fa-user-check"></i>
             </div>
             <h3>Buyer-led copy</h3>
-            <p>Pages built around questions, objections, proof and decision points, not vague traffic promises.</p>
+            <p>Pages are built from the questions, objections and decision points your buyers raise, with proof placed beside the claim it supports.</p>
           </div>
 
           <div class="benefit-card">
@@ -330,7 +373,7 @@ const contentFaqs = [
               <i class="fas fa-sync-alt"></i>
             </div>
             <h3>Content refreshes</h3>
-            <p>Existing pages improved when rankings stall, clicks drop, facts age or the SERP changes.</p>
+            <p>We revise existing pages when rankings stall, clicks drop, facts age or the search results change.</p>
           </div>
 
           <div class="benefit-card">
@@ -338,7 +381,7 @@ const contentFaqs = [
               <i class="fas fa-chart-pie"></i>
             </div>
             <h3>Useful reporting</h3>
-            <p>We report on the content signals that matter: rankings, impressions, clicks, links, enquiries and next actions.</p>
+            <p>Reports cover rankings, impressions, clicks, internal links and enquiries for the pages we worked on, and end with the next actions.</p>
           </div>
         </div>
       </div>
@@ -351,13 +394,13 @@ const contentFaqs = [
         <div>
           <p class="eyebrow">What happens after you enquire</p>
           <h2>Send a page and the <span>buyer question it leaves unanswered</span></h2>
-          <p>We will check whether the missing answer belongs on that page, in a supporting guide or in the enquiry process. Include any source documents and approval constraints so we can scope the writing and review work accurately.</p>
+          <p>We will check whether the missing answer belongs on that page, in a supporting guide or in the enquiry process. Include any source documents and approval constraints, so we can scope the writing and the review work accurately.</p>
         </div>
         <ol>
-          <li>Review current rankings and page quality</li>
-          <li>Identify content gaps and underperforming pages</li>
-          <li>Map content to commercial priorities</li>
-          <li>Build a practical content SEO roadmap</li>
+          <li>We review the page's current rankings, clicks and copy</li>
+          <li>We list the content gaps and the pages underperforming around it</li>
+          <li>We map each gap to a commercial priority you confirm</li>
+          <li>You receive a written proposal with the page list and review route</li>
         </ol>
       </div>
     </div>
@@ -390,7 +433,7 @@ const contentFaqs = [
       <div class="content-cta-card">
         <p class="eyebrow">Ready to improve your content?</p>
         <h2>Get a scoped <span>content SEO proposal</span></h2>
-        <p>Tell us which market, pages and commercial goals matter. We will review the brief and recommend what should be created, improved or consolidated first.</p>
+        <p>Tell us the market, the pages and the commercial goals that matter. We will review the brief and recommend what to create, what to improve and what to consolidate first, set out in a written proposal.</p>
         <div class="cta-actions">
           <ButtonPrimary href="/contact/" text="Request a Content SEO Proposal" />
           <ButtonSecondary href="/case-studies/" text="View SEO Case Studies" />

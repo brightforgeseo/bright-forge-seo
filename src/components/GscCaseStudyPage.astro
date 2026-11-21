@@ -26,7 +26,7 @@ const schema = {
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <main>
-    <ForgeHero title={data.title} eyebrow="Anonymised organic-search case study" breadcrumb={data.breadcrumb}>
+    <ForgeHero title={data.title} eyebrow="Anonymised Search Console comparison" breadcrumb={data.breadcrumb}>
       <p class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies/">Case Studies</a><span>/</span>{data.breadcrumb}</p>
       <p class="lede">{data.lede}</p>
       <div class="hero-meta"><span>{data.industry}</span><span>Google organic search</span><span>{data.period}</span></div>
@@ -46,7 +46,7 @@ const schema = {
         <p>{data.evidenceIntro}</p>
         <figure>
           <img src={data.evidenceImage} alt={data.evidenceAlt} width="1600" height="900" loading="eager" decoding="async" />
-          <figcaption>Google Search Console performance evidence. The property, queries and client identity have been redacted.</figcaption>
+          <figcaption>Google Search Console performance evidence. The property, the queries and the client identity are redacted.</figcaption>
         </figure>
       </div>
     </section>
@@ -80,7 +80,7 @@ const schema = {
       <div class="container narrow"><p class="eyebrow">Evidence boundary</p><h2>What this case study does and does not prove</h2><p>{data.boundary}</p></div>
     </section>
 
-    <section class="cta"><div class="container"><div><p class="eyebrow">Your next move</p><h2>Find the search demand already within reach.</h2><p>We review the pages, query patterns and technical barriers that are holding useful search visibility back.</p></div><ButtonPrimary href="/contact/" text="Request an SEO review" /></div></section>
+    <section class="cta"><div class="container"><div><p class="eyebrow">Your next move</p><h2>Find the search demand already within reach.</h2><p>Send us your site and we will review the pages, query patterns and technical barriers holding useful search visibility back, then tell you which to fix first.</p></div><ButtonPrimary href="/contact/" text="Request an SEO review" /></div></section>
   </main>
   <ContactSection />
   <Footer slot="footer" />
@@ -98,7 +98,7 @@ const schema = {
   .lede { max-width:800px; min-width:0; font-size:1.22rem; line-height:1.7; color:#19212e; margin:0; overflow-wrap:anywhere; }.hero-meta { display:flex; flex-wrap:wrap; gap:10px; margin:30px 0; }.hero-meta span { border:1px solid rgba(25, 33, 46, 0.09); color:#19212e; padding:8px 12px; border-radius:99px; font-size:.9rem; }.hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
   .summary { background:#f7f8fa; padding:32px 0; }.metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }.metric { padding:8px 4px; }.metric strong { display:block; color:#b83e12; font-size:2rem; line-height:1.1; }.metric span { display:block; color:#19212e; font-weight:700; margin:8px 0 4px; }.metric small { color:#465365; line-height:1.45; }
   .evidence-section, .content-section, .boundary-section { padding:90px 0; }.evidence-section { background:#fff; }.evidence-section p, .content-section p, .boundary-section p { color:#4d5360; font-size:1.08rem; line-height:1.75; }.evidence-section figure { margin:36px 0 0; border:1px solid #dde1e8; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 16px 45px rgba(17,22,41,.09); }.evidence-section figure img { display:block; width:100%; height:auto; }.evidence-section figcaption { padding:15px 18px; color:#5f6571; font-size:.92rem; border-top:1px solid #dde1e8; }
-  .content-section { background:#fff; border-top:1px solid #edf0f4; }.content-section.muted, .boundary-section { background:#f6f7fa; }.two-col { display:grid; grid-template-columns:minmax(240px,.82fr) minmax(0,1.18fr); gap:80px; }.two-col p:first-child { margin-top:0; }.two-col ul { padding-left:22px; color:#3f4654; line-height:1.65; }.two-col li { margin:10px 0; }
+  .content-section { background:#fff; border-top:1px solid #edf0f4; }.content-section.muted, .boundary-section { background:#f6f7fa; }.two-col { display:grid; grid-template-columns:minmax(240px,.82fr) minmax(0,1.18fr); gap:80px; }.two-col p:first-child { margin-top:0; }.two-col p + p, .two-col p + ul { margin-top:1.1em; }.two-col ul { padding-left:22px; color:#3f4654; line-height:1.65; }.two-col li { margin:10px 0; }
   .result-table-wrap { overflow-x:auto; border:1px solid #dde1e8; border-radius:14px; }.result-table-wrap table { border-collapse:collapse; width:100%; min-width:700px; }.result-table-wrap th, .result-table-wrap td { padding:17px 18px; text-align:left; border-bottom:1px solid #e8ebef; color:#414754; line-height:1.45; }.result-table-wrap thead th { background:#f7f8fa; color:#19212e; font-size:.88rem; }.result-table-wrap tbody th { color:#171a2b; }.result-table-wrap tr:last-child th,.result-table-wrap tr:last-child td { border:0; }
   .cta { background:#f7f8fa; color:#19212e; padding:64px 0; }.cta .container { display:flex; gap:36px; justify-content:space-between; align-items:center; }.cta h2 { color:#19212e; max-width:650px; }.cta p:not(.eyebrow) { color:#465365; font-size:1.08rem; margin-bottom:0; max-width:680px; }
   @media(max-width:760px) { .hero { padding:72px 0 58px; }.metrics { grid-template-columns:repeat(2,1fr); gap:22px; }.evidence-section, .content-section, .boundary-section { padding:64px 0; }.two-col { grid-template-columns:1fr; gap:22px; }.cta .container { align-items:flex-start; flex-direction:column; }.cta { padding:54px 0; } }

@@ -1,5 +1,6 @@
 ---
 import ForgeHero from './ForgeHero.astro';
+import ProofBand from './ProofBand.astro';
 interface Props { badgeIcon?: string; badgeText?: string; title: string; breadcrumbCurrent?: string; }
 const { title, badgeText, breadcrumbCurrent = 'Home' } = Astro.props;
 const hasIntro = Astro.slots.has('intro');
@@ -23,3 +24,4 @@ const hasDetails = Astro.slots.has('stats') || Astro.slots.has('visual') || !!fe
   </div>
  </Fragment>}
 </ForgeHero>
+<ProofBand />

@@ -12,23 +12,23 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 const technicalChecks = [
   {
     title: 'Crawl access and indexation',
-    copy: 'We check whether Google can reach the right pages, ignore the wrong ones and understand which URLs should be indexed. That includes robots.txt, XML sitemaps, canonicals, noindex tags, redirects, crawl traps and index bloat.'
+    copy: 'We establish which URLs Google can reach, which it has indexed and which it should leave alone. That means reading robots.txt, XML sitemaps, canonicals, noindex tags and redirects against the Search Console index report, then tracing crawl traps and index bloat back to the template or setting that creates them.'
   },
   {
     title: 'Core Web Vitals and speed',
-    copy: 'We identify the templates, scripts, images, hosting issues and layout shifts that slow the site down or make key pages harder to use, then prioritise fixes by commercial impact.'
+    copy: 'We find the templates, scripts, images, hosting limits and layout shifts that slow the site or make key pages awkward to use on a phone. Each finding names the template responsible, so the fixes can be ordered by the commercial weight of the pages that use it.'
   },
   {
     title: 'Site architecture and internal links',
-    copy: 'We review whether the site structure pushes authority towards important service, category and location pages instead of burying money pages behind weak navigation or orphaned URLs.'
+    copy: 'We map how link equity and crawlers reach your service, category and location pages. Orphaned URLs, money pages buried several clicks deep and navigation that favours low-value pages are recorded with the links we would add, move or remove.'
   },
   {
     title: 'JavaScript and rendering',
-    copy: 'We test whether key content, links, metadata and structured data are available to crawlers, especially on JavaScript-heavy sites where visible content is not always crawlable content.'
+    copy: 'We compare the HTML the server returns with the page a browser renders. On JavaScript-heavy sites the content a visitor sees is not always the content a crawler receives, so we test whether copy, links, metadata and structured data survive without client-side scripts.'
   },
   {
     title: 'Schema and entity signals',
-    copy: 'We clean up structured data, remove unsupported claims, align schema with visible page content and make business, service, FAQ and local signals easier for search engines to interpret.'
+    copy: 'We parse the structured data on each template, remove claims the visible page does not support, and align business, service, FAQ and local markup with what the page says. Duplicate or conflicting definitions for one URL are reduced to a single accurate one.'
   },
   {
     title: 'Migration and release QA',
@@ -38,56 +38,58 @@ const technicalChecks = [
 
 const issueTypes = [
   'Important pages missing from the index',
+  'Traffic that fell after a redesign or platform change',
   'Duplicate URLs splitting ranking signals',
-  'Slow templates weakening rankings and conversions',
+  'Slow templates that fail Core Web Vitals',
   'Redirect chains adding unnecessary requests',
   'Missing or conflicting canonical signals',
   'Weak internal links to commercial pages',
   'Broken schema or unsupported review markup',
   'Mobile usability and layout problems',
   'JavaScript hiding important content or links',
-  'Migration risks before a redesign or CMS move'
+  'Shop filters generating near-identical URLs',
+  'Search Console errors nobody has had time to examine'
 ];
 
 const processSteps = [
   {
     label: '01',
-    title: 'Technical discovery',
-    copy: 'We review the site with crawls, Search Console, page templates, index coverage, speed data, analytics signals and manual checks. The aim is to find the technical issues that can actually affect rankings, traffic or leads.'
+    title: 'Crawl and gather the evidence',
+    copy: 'We crawl the site and read it against Search Console, index coverage, speed data, analytics and the page templates themselves, with manual checks where a tool cannot fetch a page. Discovery ends with a list of suspected faults, each tied to the URLs where we saw it.'
   },
   {
     label: '02',
-    title: 'Priority diagnosis',
-    copy: 'We separate real blockers from harmless noise. A crawl export can contain thousands of warnings, but only some deserve developer time. We prioritise by commercial impact, risk and implementation effort.'
+    title: 'Reproduce and prioritise',
+    copy: 'We reproduce each fault so the report names a cause, not a symptom. A crawl export can contain thousands of warnings and only some deserve developer time. We rank what remains by commercial impact, risk and implementation effort, and say plainly which warnings we are setting aside.'
   },
   {
     label: '03',
-    title: 'Fix briefs and implementation',
-    copy: 'We provide developer-ready instructions or handle the fixes where appropriate. Every recommendation should explain the problem, the fix, the affected URLs and how success will be checked.'
+    title: 'Write the brief or make the change',
+    copy: 'Your developer receives instructions they can act on, or we make the change ourselves where access and platform allow. Every brief states the problem, the affected URLs, the fix, what must be preserved and the check that will prove it worked.'
   },
   {
     label: '04',
-    title: 'QA and monitoring',
-    copy: 'We verify changes after release, compare crawls, watch Search Console and check whether the fix created any new problems. Technical SEO is not finished when a ticket moves to Done.'
+    title: 'Test the release and keep watching',
+    copy: 'After release we test the live URLs, compare a fresh crawl with the earlier one and watch Search Console for side effects. A ticket marked Done is where our check starts. On an ongoing programme the same checks repeat as the site changes.'
   }
 ];
 
 const fitBlocks = [
   {
     title: 'Sites with rankings stuck below page one',
-    copy: 'If content and links are improving but rankings are not moving, crawlability, indexation, architecture or page experience may be limiting the campaign.'
+    copy: 'Content and links are improving but positions are not moving. Crawlability, indexation, architecture or page experience may be capping the campaign, and it is cheaper to find out than to keep publishing.'
   },
   {
     title: 'Websites about to migrate or redesign',
-    copy: 'A redesign can wipe out years of organic progress if redirects, URL mapping, canonicals, metadata, content and crawl controls are handled badly.'
+    copy: 'A redesign can undo years of organic progress when redirects, URL mapping, canonicals, metadata, content and crawl controls are handled late. We review them before launch, while changes are still cheap to make.'
   },
   {
     title: 'Ecommerce and large catalogue sites',
-    copy: 'Filters, faceted navigation, category depth, duplicate URLs, internal search pages and product churn can create crawl waste and indexation mess quickly.'
+    copy: 'Filters, faceted navigation, category depth, duplicate URLs, internal search pages and product churn create crawl waste quickly. Large catalogues need rules set at template level, because nobody can fix them one page at a time.'
   },
   {
     title: 'Service businesses with weak lead flow',
-    copy: 'Slow pages and poor mobile layouts can make enquiries harder. Buried service pages may be difficult to discover, while broken tracking can hide enquiries that are already happening.'
+    copy: 'Slow pages and poor mobile layouts make enquiries harder to send. Buried service pages are hard to discover, and broken tracking can hide enquiries that are already arriving.'
   }
 ];
 
@@ -98,24 +100,26 @@ const proofItems = [
   },
   {
     title: 'Cleaner crawl signals',
-    copy: 'A cleaner technical foundation helps Google spend more time on the pages that matter and less time on duplicates, traps and dead ends.'
+    copy: 'With duplicates, traps and dead ends removed, Google spends its crawl on the pages you want found, and each important URL sends one consistent signal about which version to index.'
   },
   {
     title: 'Better conversion paths',
-    copy: 'Speed, mobile usability, tracking and template fixes support the CRO side of SEO, not just rankings.'
+    copy: 'Speed, mobile usability, tracking and template fixes help the visitor who has already arrived to enquire. That is the conversion side of SEO, and it shows in enquiries before it shows in rankings.'
   }
 ];
 
 const faqs = [
-  { question: 'What are technical SEO services?', answer: 'Technical SEO services improve the crawlability, indexation, speed, structure, rendering, schema and release safety of a website. The aim is to remove technical blockers that stop search engines finding, understanding and ranking important pages.' },
-  { question: 'Is technical SEO different from an SEO audit?', answer: 'A technical SEO audit diagnoses problems. Technical SEO services go further by prioritising the issues, writing implementation briefs, helping developers fix them, checking the release and monitoring results after Google recrawls the site.' },
-  { question: 'What technical SEO issues usually matter most?', answer: 'The highest-impact issues are usually indexation problems, blocked pages, duplicate URLs, broken canonicals, slow templates, redirect chains, weak internal links, mobile usability issues, JavaScript rendering problems and unsupported schema.' },
-  { question: 'Can you work with our developer?', answer: 'Yes. We can provide developer-ready tickets, explain the SEO risk, review staging changes, test the release and monitor Search Console after deployment. We can also implement fixes directly when the access and platform allow it.' },
-  { question: 'How quickly does technical SEO improve rankings?', answer: 'We can verify a deployed response, canonical or template change immediately. Google still needs to recrawl and process it, and a technically correct page is not guaranteed to rank. We report released fixes separately from subsequent indexation, clicks and enquiries.' },
-  { question: 'Do small websites need technical SEO?', answer: 'Yes, but the scope is usually lighter. A small business site may only need crawl checks, indexation cleanup, speed fixes, schema validation, mobile checks and stronger internal links to service pages.' },
-  { question: 'Do ecommerce websites need more technical SEO?', answer: 'Usually, yes. Ecommerce sites often have filters, variants, category duplication, product churn, pagination, internal search URLs, faceted navigation and performance issues that can waste crawl budget and weaken category rankings.' },
+  { question: 'What are technical SEO services?', answer: 'Technical SEO services deal with the faults that stop Google reading a website properly: pages missing from the index, duplicate URLs, slow templates, broken redirects, content hidden behind JavaScript and structured data that contradicts the page. We find the faults, explain each one to your developer and confirm the fix once it is live.' },
+  { question: 'Is technical SEO different from an SEO audit?', answer: 'Yes. An audit diagnoses, and it also covers content, keywords and links. Technical SEO services go deeper on the technical side and carry on past the diagnosis: we prioritise the issues, write implementation briefs, help developers fix them, check the release and monitor the result after Google recrawls the site.' },
+  { question: 'What technical SEO issues usually matter most?', answer: 'Usually the ones that keep a commercial page out of the index or split its signals: blocked pages, indexation problems, duplicate URLs and broken canonicals. After those come slow templates, redirect chains, weak internal links, mobile usability issues, JavaScript rendering problems and unsupported schema. The order depends on which pages are affected.' },
+  { question: 'Can you work with our developer?', answer: 'Yes, and many clients prefer it. We provide developer-ready tickets, explain the SEO risk, review staging changes, test the release and monitor Search Console after deployment. Where you give us access and the platform allows it, we can implement fixes directly instead.' },
+  { question: 'How quickly does technical SEO improve rankings?', answer: 'We can verify a deployed response, canonical or template change immediately. Google still needs to recrawl and process it, and a technically correct page is not guaranteed to rank. Technical work removes obstacles: a site with weak content will need content work as well. We report released fixes separately from subsequent indexation, clicks and enquiries.' },
+  { question: 'Do small websites need technical SEO?', answer: 'Yes, but the scope is usually lighter. A small business site may only need crawl checks, indexation cleanup, speed fixes, schema validation, mobile checks and stronger internal links to its service pages.' },
+  { question: 'Do ecommerce websites need more technical SEO?', answer: 'Usually, yes. Ecommerce sites have filters, variants, category duplication, product churn, pagination, internal search URLs and faceted navigation, any of which can waste crawl budget and weaken category rankings. Performance problems also tend to grow with the catalogue.' },
   { question: 'Can technical SEO help AI search visibility?', answer: 'Technical work can make content accessible to search crawlers and keep structured data consistent with the page. Access requirements differ between AI search systems; crawlability or schema alone does not secure a citation. We check the relevant access controls when AI search is part of the brief.' },
-  { question: 'Can you provide technical SEO for overseas businesses and agencies?', answer: 'Yes. We support direct businesses and white label agency partners in Australia, the UK and other English-language markets. The technical standards stay consistent, while implementation notes, reporting, time-zone handovers and market-specific page architecture are adapted to the client and country.' }
+  { question: 'Do you implement the fixes or only write the briefs?', answer: 'Either, and we agree which before work starts. Where you give us authorised access and the platform allows it, we make the change ourselves. We work on WordPress, Shopify and WooCommerce sites, and our web development team builds on Astro, WordPress and JavaScript frameworks. Where your developer or agency owns the codebase and the release, we write the brief, review the change on staging and test the live result. In both cases the release owner, and the person who can reverse a change, are named first.' },
+  { question: 'Is ongoing technical SEO needed after the first fixes?', answer: 'That depends on how often the site changes. The first round clears the faults that exist today. New ones arrive with releases, plugin updates, template edits and new content. On an ongoing programme we repeat the crawl comparison and the Search Console checks as the site changes, and we check each release before and after it goes live. A small site that rarely changes may only need a periodic review. The scope, one-off or ongoing, is set out in the written proposal.' },
+  { question: 'Can you provide technical SEO for overseas businesses and agencies?', answer: 'Yes. We support direct businesses and white label agency partners in Australia, the UK and other English-language markets. The technical standards stay the same. Implementation notes, reporting, time-zone handovers and market-specific page architecture are adapted to the client and country.' }
 ];
 ---
 
@@ -176,7 +180,7 @@ const faqs = [
     breadcrumbCurrent="Technical SEO Services Philippines"
   >
     <Fragment slot="story">
-      <p>We investigate crawl, indexing and performance faults, then give your developer affected URLs, evidence and testable fixes. Our Philippines-based team supports local and international websites.</p>
+      <p>Pages missing from Google, traffic down after a rebuild, a site that gets slower with every release. We find the crawl, indexing and performance fault behind the symptom, then hand your developer the affected URLs, the evidence and a fix they can test. Our Philippines-based team does this for local and international websites.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -186,9 +190,9 @@ const faqs = [
 
     <Fragment slot="stats">
       <div class="hero-stats">
-        <div class="stat"><strong>Indexation</strong><span>Find the pages Google should and should not index.</span></div>
-        <div class="stat"><strong>Performance</strong><span>Improve speed, Core Web Vitals and mobile experience.</span></div>
-        <div class="stat"><strong>Release safety</strong><span>Check redirects, crawl controls and templates during releases.</span></div>
+        <div class="stat"><strong>Indexation</strong><span>Which pages Google should index, which it should not, and why the two lists differ.</span></div>
+        <div class="stat"><strong>Performance</strong><span>Speed, Core Web Vitals and mobile faults traced to the template that causes them.</span></div>
+        <div class="stat"><strong>Release safety</strong><span>Redirects, crawl controls and templates checked before and after each release.</span></div>
       </div>
     </Fragment>
   </Hero>
@@ -197,16 +201,16 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="diagnosis-layout">
         <div class="diagnosis-copy">
-          <span class="eyebrow">Why technical SEO matters</span>
-          <h2>Technical problems usually hide behind <span>normal-looking pages</span></h2>
-          <p>A service page has disappeared from search after a release. Product filters keep generating new URLs. The mobile page loads, but its enquiry button shifts while someone is trying to tap it. We investigate the affected pages and turn a reproducible fault into a change your developer can test.</p>
-          <p>We provide technical SEO from the Philippines for local businesses and teams in Australia, the UK and the USA. You receive the affected URLs, supporting evidence, proposed fix and acceptance checks. If you need a wider diagnosis before choosing the work, start with <a href="/seo-audit-services/">SEO audits</a>.</p>
+          <span class="eyebrow">What you get</span>
+          <h2>Every technical SEO fault comes back as <span>a brief your developer can test</span></h2>
+          <p>You receive one short brief per fault: the affected URLs with the evidence, the change written for a developer, and the acceptance check we will run once it is live. Briefs arrive in priority order, so the first one your team opens is the one that matters most to search.</p>
+          <p>The faults themselves rarely announce themselves. A service page has disappeared from search after a release. Product filters keep generating new URLs. The mobile page loads, but its enquiry button shifts while someone is trying to tap it. In each case the page looks normal to the person who owns it, and the homepage looks fine. The problem surfaces later as stalled rankings, pages that refuse to index, or a site that slows a little more with each new plugin, script or template change.</p>
+          <p>We provide technical SEO from the Philippines for local businesses and for teams in Australia, the UK and the USA. If you need a wider diagnosis before choosing the work, start with <a href="/seo-audit-services/">SEO audits</a>. If the fault is a blocked page or a page Google treats as missing, our guides to <a href="/blog/robots-txt-mistakes-that-block-google/">robots.txt mistakes</a> and <a href="/blog/soft-404s-in-search-console/">soft 404s in Search Console</a> show the kind of evidence we collect.</p>
           <p>Before work starts, we agree whether we are advising your developer or implementing changes with authorised access. We also name the release owner, the staging environment and who can approve or reverse a change.</p>
-          <p>Most businesses do not discover technical SEO problems because the homepage looks broken. They discover them when rankings stall, important pages refuse to index, traffic drops after a redesign or a site becomes slower every time another plugin, script or template change is added.</p>
-          <p>Technical SEO connects the website build to commercial performance. If Google wastes time on duplicates, misses key pages, struggles to render content or finds inconsistent signals, content and links have to work harder than they should.</p>
+          <p>The commercial case is simple. When Google spends its crawl on duplicates, misses key pages, cannot render the content or receives conflicting signals, your content and links have to work harder for the same result. Fixing the build lets the rest of the campaign count.</p>
         </div>
         <aside class="diagnosis-panel" aria-label="Technical SEO audit priorities">
-          <h3>We look for the issues that can change outcomes</h3>
+          <h3>The problems we are usually called in for</h3>
           <ul>
             {issueTypes.map((issue) => <li>{issue}</li>)}
           </ul>
@@ -219,8 +223,8 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-heading">
         <span class="eyebrow">What we check</span>
-        <h2><span>Technical SEO</span> services that support rankings, leads and safer growth</h2>
-        <p>The work is not about collecting errors. It is about finding the technical issues that hold back search visibility, damage user experience or create release risk.</p>
+        <h2>The six areas a <span>technical SEO</span> review covers, and what we record in each</h2>
+        <p>A crawler will report thousands of warnings on almost any site. We read each area for the faults that hold back search visibility, damage the visitor's experience or make the next release risky, and we record them against real URLs.</p>
       </div>
       <div class="checks-list">
         {technicalChecks.map((check, index) => (
@@ -241,8 +245,8 @@ const faqs = [
       <div class="fit-layout">
         <div>
           <span class="eyebrow">Who it is for</span>
-          <h2>Useful when <span>SEO work is happening</span>, but the site still feels held back</h2>
-          <p>Technical SEO is often the layer that makes the rest of the campaign work properly. It is especially important before major releases, on larger sites and when rankings or indexation behave unpredictably.</p>
+          <h2>Four situations where technical SEO comes <span>before more content or links</span></h2>
+          <p>Technical work earns its place when something outside the copy is limiting results: before a major release, on a large site, or when rankings and indexation behave in ways the content cannot explain. We work on WordPress, Shopify and WooCommerce sites and on JavaScript framework builds. Our own site runs on Astro, and our <a href="/development/">web development team</a> builds with the same checks in mind.</p>
         </div>
         <div class="fit-list">
           {fitBlocks.map((block) => (
@@ -262,7 +266,7 @@ const faqs = [
         <div class="process-intro">
           <span class="eyebrow">How we work</span>
           <h2>Reproduce the fault, agree the change, <span>test the release</span></h2>
-          <p>For example, a category may load normally while its canonical points to a different category. We record the returned HTML and the affected template, confirm which URL should be indexed, then check the approved canonical on staging and live. We also check sibling categories so one fix does not break another.</p>
+          <p>Take one example. A category page loads normally while its canonical points to a different category. We record the returned HTML and the affected template, confirm which URL should be indexed, then check the approved canonical on staging and on the live site. We also check the sibling categories, so one fix does not break another.</p>
         </div>
         <div class="timeline">
           {processSteps.map((step) => (
@@ -282,8 +286,8 @@ const faqs = [
       <div class="proof-layout">
         <div class="proof-copy">
           <span class="eyebrow">Commercial impact</span>
-          <h2><span>Technical SEO</span> protects the parts of organic growth that are easy to break</h2>
-          <p>Organic growth depends on more than content quality. The site has to be accessible, fast, internally coherent and safe to change. Technical SEO reduces the risk of invisible problems becoming expensive traffic losses.</p>
+          <h2>What <span>technical SEO</span> protects: the organic traffic a release can quietly break</h2>
+          <p>Organic growth rests on a site that is accessible, fast, internally coherent and safe to change. Most losses in this area are silent: a template edit, a plugin update or a hurried launch removes pages from search and nobody notices until the monthly report. Technical SEO shortens the time between the fault and the fix.</p>
           <div class="proof-links">
             <a href="/seo-services-philippines/">SEO Services Philippines</a>
             <a href="/seo-audit-services/">SEO Audit Services</a>
@@ -306,12 +310,13 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="collab-panel">
         <span class="eyebrow">Developer friendly</span>
-        <h2>We can work with <span>your developer</span>, your CMS or your internal team</h2>
-        <p>A developer needs enough detail to reproduce the issue: request URL, device or rendering conditions, observed output and expected behaviour. We attach the approval dependency and a check your team can repeat. <a href="/samples/technical-review-handoff.csv">View our technical review handoff sample</a>, a pre-repair review of our own website showing findings and acceptance checks, not client results.</p>
+        <h2>The handoff <span>your developer</span> receives: one row per fault, ready to test</h2>
+        <p>Each row carries seven fields: review date, review scope, page URL, observed issue, recommended action, the reason for it, and the acceptance check. A developer can reproduce the issue from the row alone, because it states the request URL, the device or rendering conditions, the observed output and the expected behaviour. We attach the approval the change depends on and a check your team can repeat without us.</p>
+        <p>One row from the sample reads: two Service definitions described the same canonical URL; keep the country-specific definition and remove the generic duplicate; accept when the rendered JSON-LD parses with exactly one Service definition for that URL. <a href="/samples/technical-review-handoff.csv">View our technical review handoff sample</a>, a pre-repair review of our own website showing findings and acceptance checks, not client results.</p>
         <div class="collab-grid">
-          <div><strong>For founders</strong><span>Clear commercial priorities, not technical fog.</span></div>
-          <div><strong>For marketers</strong><span>Practical SEO fixes linked to rankings, traffic and conversions.</span></div>
-          <div><strong>For developers</strong><span>Specific tickets, expected behaviour and QA criteria.</span></div>
+          <div><strong>For founders</strong><span>A priority order with the commercial reason for each item, in plain language.</span></div>
+          <div><strong>For marketers</strong><span>Each fix linked to the pages, rankings and enquiries it is meant to help.</span></div>
+          <div><strong>For developers</strong><span>Specific tickets with the affected URLs, expected behaviour and QA criteria.</span></div>
         </div>
       </div>
     </div>
@@ -330,7 +335,7 @@ const faqs = [
           <span>Australia</span>
           <div>
             <h3>Same-day technical collaboration</h3>
-            <p>Philippine time aligns with Perth, while eastern Australian overlap varies with daylight saving. We agree the working session and release coverage rather than assuming every Australian team keeps the same hours.</p>
+            <p>Philippine time matches Perth, while overlap with eastern Australia varies with daylight saving. We agree the working session and release coverage with each team, because Australian teams do not all keep the same hours.</p>
             <a href="/seo-services-australia/">Technical SEO for Australian campaigns →</a>
           </div>
         </article>
@@ -338,7 +343,7 @@ const faqs = [
           <span>United Kingdom</span>
           <div>
             <h3>Written handovers for UK developers</h3>
-            <p>We agree a review window and record unresolved questions in the ticket. A UK developer can see the affected template, proposed change and test without needing to reconstruct the diagnosis on a call.</p>
+            <p>We agree a review window and record unresolved questions in the ticket. A UK developer can see the affected template, the proposed change and the test without reconstructing the diagnosis on a call.</p>
             <a href="/seo-services-uk/">Technical SEO for UK campaigns →</a>
           </div>
         </article>
@@ -346,7 +351,7 @@ const faqs = [
           <span>United States</span>
           <div>
             <h3>Release checks across US time zones</h3>
-            <p>We agree the US time zone, release window and escalation contact before booking QA. Overnight coverage and turnaround depend on the scope; a launch should not rely on an assumed next-day handover.</p>
+            <p>We agree the US time zone, release window and escalation contact before booking QA. Overnight coverage and turnaround depend on the scope; a launch should never rely on an assumed next-day handover.</p>
             <a href="/seo-services-usa/">Technical SEO for US campaigns →</a>
           </div>
         </article>
@@ -354,7 +359,7 @@ const faqs = [
           <span>Agency fulfilment</span>
           <div>
             <h3>Client-safe technical delivery under your brand</h3>
-            <p>Agency partners receive prioritised findings, affected URL examples, developer instructions and QA criteria that can be presented without rebuilding the audit.</p>
+            <p>Agency partners receive prioritised findings, affected URL examples, developer instructions and QA criteria they can present to their client without rebuilding the audit.</p>
             <a href="/white-label-seo-services-philippines/">White label technical SEO support →</a>
           </div>
         </article>
@@ -362,7 +367,7 @@ const faqs = [
           <span>Large catalogues</span>
           <div>
             <h3>Technical SEO for ecommerce scale</h3>
-            <p>Filters, variants, category architecture and product churn need a catalogue-level plan rather than a page-by-page checklist.</p>
+            <p>Filters, variants, category architecture and product churn need rules for the whole catalogue. A page-by-page checklist cannot keep up with a shop that changes every week.</p>
             <a href="/ecommerce-seo-services/">Ecommerce SEO delivery →</a>
           </div>
         </article>
@@ -374,8 +379,8 @@ const faqs = [
     <div class="max-w-4xl mx-auto px-6">
       <div class="section-heading">
         <span class="eyebrow">Technical SEO FAQs</span>
-        <h2><span>Questions businesses ask</span> before fixing the technical layer</h2>
-        <p>Technical SEO can get nerdy fast. The useful version stays tied to visibility, risk and lead flow.</p>
+        <h2><span>Technical SEO questions</span> we answer before the work is scoped</h2>
+        <p>Short answers on scope, developers, timing and what technical work can and cannot do for rankings.</p>
       </div>
       <div class="faq-list">
         {faqs.map((faq) => (
@@ -392,8 +397,8 @@ const faqs = [
     <div class="max-w-5xl mx-auto px-6">
       <div class="final-cta-panel">
         <span class="eyebrow">Start with the crawl</span>
-        <h2>Get <span>technical SEO</span> work before the next SEO push, redesign or migration</h2>
-        <p>We will review the technical layer, identify the highest-risk blockers and show what needs fixing first.</p>
+        <h2>Book <span>technical SEO</span> work before the next release, redesign or migration</h2>
+        <p>Send us the site and the symptom. We will review the technical layer, name the highest-risk faults and tell you what to fix first, scoped in a written proposal.</p>
         <div class="final-actions">
           <ButtonPrimary href="/contact/?service=technical-seo#contactForm" text="Request Technical SEO Work" />
           <ButtonSecondary href="/case-studies/" text="View SEO Case Studies" />

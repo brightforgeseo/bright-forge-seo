@@ -18,7 +18,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
   >
     <Fragment slot="story">
       <p class="hero-subtitle">Search results and AI referral reports, with the evidence in context.</p>
-      <p>Read the comparison periods, the page-level findings and the limits behind each headline. The collection includes Search Console comparisons, campaign accounts and AI referral report reviews. We label recommendations separately from completed work and distinguish recorded clicks or events from confirmed enquiries and sales.</p>
+      <p>Read the comparison periods, the page-level findings and the limits behind each headline. The 25 pages here are of three kinds: Search Console comparisons, campaign accounts and reviews of AI referral reports. We label recommendations separately from completed work, and we keep recorded clicks or events apart from confirmed enquiries and sales.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -33,12 +33,12 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         <div>
           <p class="eyebrow">Proof with context</p>
           <h2>How to read these <span>case studies</span></h2>
-          <p>A search comparison can show more clicks alongside lower CTR or worse average position. An AI referral report can identify useful pages to review without proving a sale. Read those trade-offs before deciding which questions apply to your own website.</p>
+          <p>A search comparison can show more clicks alongside a lower CTR or a worse average position, and several of ours do. We print the weaker figure next to the stronger one. An AI referral report can identify useful pages to review without proving a sale. Read those trade-offs before deciding which questions apply to your own website.</p>
         </div>
         <div class="proof-points">
           <article><strong>Diagnosis before activity</strong><span>Technical blockers, intent gaps and weak page structure get separated before work begins.</span></article>
           <article><strong>Commercial pages first</strong><span>Service, category and local pages usually carry more value than generic blog volume.</span></article>
-          <article><strong>Traffic needs a job</strong><span>Rankings matter, but the page still needs proof, clarity and a clear enquiry path.</span></article>
+          <article><strong>Traffic needs a job</strong><span>A ranking brings the visitor. The page still needs proof, clarity and a clear enquiry path to turn the visit into a lead.</span></article>
         </div>
       </div>
     </div>
@@ -50,11 +50,19 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       <!-- Section Header -->
       <div class="section-header">
         <h2 class="section-title">Explore Our SEO <span>Case Studies</span></h2>
-        <p class="section-subtitle">Filter by industry, then check the source, comparison window and metric definition. Search clicks, AI referrals and confirmed customer outcomes answer different questions.</p>
+        <p class="section-subtitle">Filter by industry, then check the source, comparison window and metric definition. Search clicks, AI referrals and confirmed customer outcomes answer different questions. The AI referral sessions each report records are stated on its review page.</p>
+      </div>
+
+      <!-- Type filter: every card stays visible when scripting is off -->
+      <div class="filter-container type-filter" role="group" aria-label="Filter case studies by type">
+        <button type="button" class="modern-filter-btn" data-type-filter="all">All types</button>
+        <button type="button" class="modern-filter-btn" data-type-filter="named">Named clients</button>
+        <button type="button" class="modern-filter-btn" data-type-filter="anonymised">Anonymised comparisons</button>
+        <button type="button" class="modern-filter-btn" data-type-filter="ai-review">AI referral reviews</button>
       </div>
 
       <!-- Modern Filter Buttons -->
-      <div class="filter-container">
+      <div class="filter-container" role="group" aria-label="Filter case studies by industry">
         <button class="modern-filter-btn" data-filter="all">All Industries</button>
         <button class="modern-filter-btn" data-filter="beauty">Beauty & Wellness</button>
         <button class="modern-filter-btn" data-filter="consulting">Business Consulting</button>
@@ -72,48 +80,48 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
       <!-- Modern Case Studies Grid -->
       <div id="case-studies-grid" class="case-studies-grid">
-        <article class="modern-case-card construction" data-category="construction">
+        <article class="modern-case-card construction" data-type="anonymised" data-category="construction">
           <div class="card-image-container"><img src="/images/case-studies/custom-home-builder-search-growth-gsc-evidence.png" alt="Redacted Search Console totals for a custom home builder" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Construction</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Custom Home Builder</h3><div class="growth-indicator positive">+33.8%</div></div><p class="card-description">Added 2,433 organic clicks. Impressions and CTR increased while blended average position worsened; the totals do not establish why.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">9,634</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+2,433</span><span class="metric-label">Extra clicks</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/custom-home-builder-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Custom Home Builder</h3><div class="growth-indicator positive">+33.8%</div></div><p class="card-description">Added 2,433 organic clicks. Impressions and CTR increased while blended average position worsened; the totals do not establish why.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">9,634</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+2,433</span><span class="metric-label">Extra clicks</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/custom-home-builder-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
-        <article class="modern-case-card industrial" data-category="industrial">
+        <article class="modern-case-card industrial" data-type="anonymised" data-category="industrial">
           <div class="card-image-container"><img src="/images/case-studies/pvc-building-products-search-growth-gsc-evidence.png" alt="Redacted Search Console totals for a building-products supplier" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Industrial</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Building-Products Supplier</h3><div class="growth-indicator positive">+671%</div></div><p class="card-description">Moved from 170 to 1,311 organic clicks as impressions and average position both improved from a small base.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">1,311</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">11.2</span><span class="metric-label">Avg. position</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/pvc-building-products-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Building-Products Supplier</h3><div class="growth-indicator positive">+671%</div></div><p class="card-description">Moved from 170 to 1,311 organic clicks as impressions and average position both improved from a small base.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">1,311</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">11.2</span><span class="metric-label">Avg. position</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/pvc-building-products-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
-        <article class="modern-case-card industrial" data-category="industrial">
+        <article class="modern-case-card industrial" data-type="anonymised" data-category="industrial">
           <div class="card-image-container"><img src="/images/case-studies/garden-products-search-growth-gsc-evidence.png" alt="Redacted Search Console totals for a garden-products supplier" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Industrial</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Garden Products Supplier</h3><div class="growth-indicator positive">+48.9%</div></div><p class="card-description">Added 921 clicks with little change in total impressions and a higher CTR. The totals do not establish whether the query or demand mix changed.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">2,804</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">4.83%</span><span class="metric-label">CTR</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/garden-products-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Garden Products Supplier</h3><div class="growth-indicator positive">+48.9%</div></div><p class="card-description">Added 921 clicks with little change in total impressions and a higher CTR. The totals do not establish whether the query or demand mix changed.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">2,804</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">4.83%</span><span class="metric-label">CTR</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/garden-products-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
-        <article class="modern-case-card industrial" data-category="industrial">
+        <article class="modern-case-card industrial" data-type="anonymised" data-category="industrial">
           <div class="card-image-container"><img src="/images/case-studies/pool-control-systems-search-growth-gsc-evidence.png" alt="Redacted Search Console totals for a pool-control systems company" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Industrial</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Pool-Control Systems</h3><div class="growth-indicator positive">+79.8%</div></div><p class="card-description">Clicks rose 80% as impressions more than doubled. Average position worsened and CTR fell; these are search totals, not quote or installation counts.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">302</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+152%</span><span class="metric-label">Impressions</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/pool-control-systems-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Pool-Control Systems</h3><div class="growth-indicator positive">+79.8%</div></div><p class="card-description">Clicks rose 80% as impressions more than doubled. Average position worsened and CTR fell; these are search totals, not quote or installation counts.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">302</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+152%</span><span class="metric-label">Impressions</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/pool-control-systems-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
         <!-- Anonymised GSC Case Study - Regional Scaffolding -->
-        <article class="modern-case-card construction" data-category="construction">
+        <article class="modern-case-card construction" data-type="anonymised" data-category="construction">
           <div class="card-image-container"><img src="/images/case-studies/regional-scaffolding-growth-gsc-evidence.png" alt="Redacted Google Search Console evidence for regional scaffolding growth" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Construction</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Regional Scaffolding Contractor</h3><div class="growth-indicator positive">+19.7%</div></div><p class="card-description">More organic clicks despite fewer impressions, with stronger average position and click-through rate.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">1,216</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">14.7</span><span class="metric-label">Avg. position</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/regional-scaffolding-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Regional Scaffolding Contractor</h3><div class="growth-indicator positive">+19.7%</div></div><p class="card-description">More organic clicks despite fewer impressions, with stronger average position and click-through rate.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">1,216</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">14.7</span><span class="metric-label">Avg. position</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/regional-scaffolding-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
 
         <!-- Anonymised GSC Case Study - Metal Recycling -->
-        <article class="modern-case-card industrial" data-category="industrial">
+        <article class="modern-case-card industrial" data-type="anonymised" data-category="industrial">
           <div class="card-image-container"><img src="/images/case-studies/metal-recycling-search-growth-gsc-evidence.png" alt="Redacted Google Search Console evidence for metal recycling search growth" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Industrial</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Metal Recycling Business</h3><div class="growth-indicator positive">+25.3%</div></div><p class="card-description">Added 4,621 organic clicks alongside more impressions, with the worse blended average position kept visible.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">22,873</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+519k</span><span class="metric-label">Impressions</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/metal-recycling-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Metal Recycling Business</h3><div class="growth-indicator positive">+25.3%</div></div><p class="card-description">Added 4,621 organic clicks alongside more impressions, with the worse blended average position kept visible.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">22,873</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+519k</span><span class="metric-label">Impressions</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/metal-recycling-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
 
         <!-- Anonymised GSC Case Study - Industrial Equipment -->
-        <article class="modern-case-card industrial" data-category="industrial">
+        <article class="modern-case-card industrial" data-type="anonymised" data-category="industrial">
           <div class="card-image-container"><img src="/images/case-studies/industrial-parts-washing-search-growth-gsc-evidence.png" alt="Redacted Google Search Console evidence for industrial equipment search growth" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Industrial</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Industrial Equipment Manufacturer</h3><div class="growth-indicator positive">+49.7%</div></div><p class="card-description">Organic clicks grew from 704 to 1,054 alongside more impressions. Average position worsened and CTR fell; query relevance is not established by these totals.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">1,054</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+68.9%</span><span class="metric-label">Impressions</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/industrial-parts-washing-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Industrial Equipment Manufacturer</h3><div class="growth-indicator positive">+49.7%</div></div><p class="card-description">Organic clicks grew from 704 to 1,054 alongside more impressions. Average position worsened and CTR fell; query relevance is not established by these totals.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">1,054</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">+68.9%</span><span class="metric-label">Impressions</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/industrial-parts-washing-search-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
 
         <!-- Anonymised GSC Case Study - Personal Injury Law -->
-        <article class="modern-case-card legal" data-category="legal">
+        <article class="modern-case-card legal" data-type="anonymised" data-category="legal">
           <div class="card-image-container"><img src="/images/case-studies/injury-law-organic-growth-gsc-evidence.png" alt="Redacted Google Search Console evidence for personal injury law organic growth" class="card-image" loading="lazy" decoding="async" /><div class="card-overlay"><span class="view-case-btn">View Case Study →</span></div><div class="industry-badge"><span>Legal</span></div></div>
-          <div class="card-content"><div class="card-header"><h3 class="card-title">Personal-Injury Law Firm</h3><div class="growth-indicator positive">+106.5%</div></div><p class="card-description">Doubled organic clicks from a modest rise in exposure, with stronger average position and click-through rate.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">2,065</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">0.60%</span><span class="metric-label">CTR</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">Timeframe</span></div></div><a href="/case-studies/injury-law-organic-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="card-content"><div class="card-header"><h3 class="card-title">Personal-Injury Law Firm</h3><div class="growth-indicator positive">+106.5%</div></div><p class="card-description">Doubled organic clicks from a modest rise in exposure, with stronger average position and click-through rate.</p><div class="metrics-grid"><div class="metric-item"><span class="metric-value">2,065</span><span class="metric-label">Clicks</span></div><div class="metric-item"><span class="metric-value">0.60%</span><span class="metric-label">CTR</span></div><div class="metric-item"><span class="metric-value">90 days</span><span class="metric-label">vs prior 90 days</span></div></div><a href="/case-studies/injury-law-organic-growth/" class="modern-cta-btn"><span>Read Case Study</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
         </article>
 
         <!-- AI Case Study - Sports Technology SaaS -->
-        <article class="modern-case-card ai-search" data-category="ai-search">
+        <article class="modern-case-card ai-search" data-type="ai-review" data-category="ai-search">
           <div class="card-image-container ai-card-visual">
             <div class="ai-visual-mark"><span>AI</span><strong>SaaS</strong><small>report review</small></div>
             <div class="card-overlay"><span class="view-case-btn">View Report Review →</span></div>
@@ -121,13 +129,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           </div>
           <div class="card-content">
             <div class="card-header">
-              <h3 class="card-title">TeamStats</h3>
+              <h3 class="card-title">TeamStats: AI referral review</h3>
               <div class="growth-indicator positive">Report review</div>
             </div>
             <p class="card-description">TeamStats report review: separate AI-answer samples from referral visits and examine the team-management page alongside football resources. <a href="https://www.teamstats.net/" rel="noopener">teamstats.net</a></p>
             <div class="metrics-grid">
-              <div class="metric-item"><span class="metric-value">App</span><span class="metric-label">Page review</span></div>
               <div class="metric-item"><span class="metric-value">Visits</span><span class="metric-label">Referral data</span></div>
+              <div class="metric-item"><span class="metric-value">6 mo.</span><span class="metric-label">Aug 2025 to Jan 2026</span></div>
               <div class="metric-item"><span class="metric-value">Answers</span><span class="metric-label">Separate sample</span></div>
             </div>
             <a href="/case-studies/ai-sports-saas-geo/" class="modern-cta-btn"><span>Read Report Review</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -135,7 +143,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- AI Case Study - FinTech SaaS -->
-        <article class="modern-case-card ai-search" data-category="ai-search">
+        <article class="modern-case-card ai-search" data-type="ai-review" data-category="ai-search">
           <div class="card-image-container ai-card-visual">
             <div class="ai-visual-mark"><span>AI</span><strong>B2B</strong><small>report review</small></div>
             <div class="card-overlay"><span class="view-case-btn">View Report Review →</span></div>
@@ -143,13 +151,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           </div>
           <div class="card-content">
             <div class="card-header">
-              <h3 class="card-title">FinTech SaaS</h3>
+              <h3 class="card-title">FinTech SaaS: AI referral review</h3>
               <div class="growth-indicator positive">Report review</div>
             </div>
             <p class="card-description">FinTech SaaS report review: distinguish educational research, existing-user support and product evaluation before assigning commercial value to traffic.</p>
             <div class="metrics-grid">
-              <div class="metric-item"><span class="metric-value">Help</span><span class="metric-label">Support pages</span></div>
               <div class="metric-item"><span class="metric-value">Learn</span><span class="metric-label">Research pages</span></div>
+              <div class="metric-item"><span class="metric-value">6 mo.</span><span class="metric-label">Aug 2025 to Jan 2026</span></div>
               <div class="metric-item"><span class="metric-value">Demo</span><span class="metric-label">Enquiry path</span></div>
             </div>
             <a href="/case-studies/ai-fintech-saas-geo/" class="modern-cta-btn"><span>Read Report Review</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -157,7 +165,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- AI Case Study - Leather Goods E-Commerce -->
-        <article class="modern-case-card ai-search" data-category="ai-search">
+        <article class="modern-case-card ai-search" data-type="ai-review" data-category="ai-search">
           <div class="card-image-container ai-card-visual">
             <div class="ai-visual-mark"><span>AI</span><strong>Shop</strong><small>report review</small></div>
             <div class="card-overlay"><span class="view-case-btn">View Report Review →</span></div>
@@ -165,13 +173,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           </div>
           <div class="card-content">
             <div class="card-header">
-              <h3 class="card-title">Lost Dutchman Leather</h3>
+              <h3 class="card-title">Lost Dutchman Leather: AI referral review</h3>
               <div class="growth-indicator positive">Report review</div>
             </div>
             <p class="card-description">Lost Dutchman Leather report review: compare product and collection entries, then check the specifications and purchase terms shoppers need. <a href="https://www.lostdutchmanleather.com/" rel="noopener">lostdutchmanleather.com</a></p>
             <div class="metrics-grid">
-              <div class="metric-item"><span class="metric-value">Fit</span><span class="metric-label">Product detail</span></div>
               <div class="metric-item"><span class="metric-value">Choice</span><span class="metric-label">Collections</span></div>
+              <div class="metric-item"><span class="metric-value">6 mo.</span><span class="metric-label">Aug 2025 to Jan 2026</span></div>
               <div class="metric-item"><span class="metric-value">Orders</span><span class="metric-label">Event checks</span></div>
             </div>
             <a href="/case-studies/ai-leather-goods-ecommerce-geo/" class="modern-cta-btn"><span>Read Report Review</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -179,7 +187,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- AI Case Study - Bridal E-Commerce -->
-        <article class="modern-case-card ai-search" data-category="ai-search">
+        <article class="modern-case-card ai-search" data-type="ai-review" data-category="ai-search">
           <div class="card-image-container ai-card-visual">
             <div class="ai-visual-mark"><span>AI</span><strong>Bridal</strong><small>report review</small></div>
             <div class="card-overlay"><span class="view-case-btn">View Report Review →</span></div>
@@ -187,13 +195,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           </div>
           <div class="card-content">
             <div class="card-header">
-              <h3 class="card-title">Emily Bridalwear</h3>
+              <h3 class="card-title">Emily Bridalwear: AI referral review</h3>
               <div class="growth-indicator positive">Report review</div>
             </div>
             <p class="card-description">Emily Bridalwear report review: use dress-style, designer and fabric entries to prioritise useful shopping and appointment information. <a href="https://www.emilybridalwear.co.uk/" rel="noopener">emilybridalwear.co.uk</a></p>
             <div class="metrics-grid">
               <div class="metric-item"><span class="metric-value">Style</span><span class="metric-label">Categories</span></div>
-              <div class="metric-item"><span class="metric-value">Dress</span><span class="metric-label">Product detail</span></div>
+              <div class="metric-item"><span class="metric-value">6 mo.</span><span class="metric-label">Aug 2025 to Jan 2026</span></div>
               <div class="metric-item"><span class="metric-value">Visit</span><span class="metric-label">Appointments</span></div>
             </div>
             <a href="/case-studies/ai-bridal-ecommerce-geo/" class="modern-cta-btn"><span>Read Report Review</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -201,7 +209,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- AI Case Study - Self-Storage Provider -->
-        <article class="modern-case-card ai-search" data-category="ai-search">
+        <article class="modern-case-card ai-search" data-type="ai-review" data-category="ai-search">
           <div class="card-image-container ai-card-visual">
             <div class="ai-visual-mark"><span>AI</span><strong>Local</strong><small>report review</small></div>
             <div class="card-overlay"><span class="view-case-btn">View Report Review →</span></div>
@@ -209,13 +217,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           </div>
           <div class="card-content">
             <div class="card-header">
-              <h3 class="card-title">Newbury Self Store</h3>
+              <h3 class="card-title">Newbury Self Store: AI referral review</h3>
               <div class="growth-indicator positive">Report review</div>
             </div>
             <p class="card-description">Newbury Self Store report review: connect storage advice to accurate facility information and a relevant quote route. <a href="https://newburyselfstore.co.uk/" rel="noopener">newburyselfstore.co.uk</a></p>
             <div class="metrics-grid">
               <div class="metric-item"><span class="metric-value">Guides</span><span class="metric-label">Advice pages</span></div>
-              <div class="metric-item"><span class="metric-value">Units</span><span class="metric-label">Service detail</span></div>
+              <div class="metric-item"><span class="metric-value">6 mo.</span><span class="metric-label">Aug 2025 to Jan 2026</span></div>
               <div class="metric-item"><span class="metric-value">Quote</span><span class="metric-label">Enquiry path</span></div>
             </div>
             <a href="/case-studies/ai-self-storage-geo/" class="modern-cta-btn"><span>Read Report Review</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -223,7 +231,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- Modern Card - Bridal Dress Designer -->
-        <article class="modern-case-card bridal" data-category="bridal">
+        <article class="modern-case-card bridal" data-type="named" data-category="bridal">
           <div class="card-image-container">
             <img src="/images/case-studies/bridal-dress-seo.webp" alt="Bridal Dress Designer SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -250,7 +258,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">3 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">Year on year</span>
               </div>
             </div>
             <a href="/case-studies/bridal-dress-designer-seo/" class="modern-cta-btn">
@@ -263,7 +271,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- Modern Card - Leather Wallet E-Commerce -->
-        <article class="modern-case-card ecommerce" data-category="ecommerce">
+        <article class="modern-case-card ecommerce" data-type="named" data-category="ecommerce">
           <div class="card-image-container">
             <img src="/images/case-studies/leather-wallet-ecommerce-seo.webp" alt="Leather Wallet E-Commerce SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -290,7 +298,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">3 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">Year on year</span>
               </div>
             </div>
             <a href="/case-studies/leather-wallet-ecommerce-seo/" class="modern-cta-btn">
@@ -303,7 +311,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- Modern Card - Football App -->
-        <article class="modern-case-card sports" data-category="sports">
+        <article class="modern-case-card sports" data-type="named" data-category="sports">
           <div class="card-image-container">
             <img src="/images/case-studies/football-app-seo-case-study.webp" alt="Football App SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -330,7 +338,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">3 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">Year on year</span>
               </div>
             </div>
             <a href="/case-studies/football-app-seo/" class="modern-cta-btn">
@@ -343,7 +351,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- Modern Card - Phoenix Spa and Beauty -->
-        <article class="modern-case-card beauty" data-category="beauty">
+        <article class="modern-case-card beauty" data-type="named" data-category="beauty">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Growing Organic Traffic for Phoenix Spa and Beauty – Beauty Salon and Spa .webp" alt="Phoenix Spa and Beauty SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -370,7 +378,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">6 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 6 mo.</span>
               </div>
             </div>
             <a href="/case-studies/phoenix-spa-beauty-seo/" class="modern-cta-btn">
@@ -383,7 +391,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
         
         <!-- Modern Card - Car Recycling -->
-        <article class="modern-case-card automotive" data-category="automotive">
+        <article class="modern-case-card automotive" data-type="anonymised" data-category="automotive">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Boosting Organic Traffic for a Car Recycling Client.webp" alt="Car Recycling SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -410,7 +418,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">3 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 3 mo.</span>
               </div>
             </div>
             <a href="/case-studies/car-recycling-seo/" class="modern-cta-btn">
@@ -423,7 +431,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
         
         <!-- Modern Card - Consulting Firm -->
-        <article class="modern-case-card consulting" data-category="consulting">
+        <article class="modern-case-card consulting" data-type="named" data-category="consulting">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for a Consulting Firm .webp" alt="Consulting Firm SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -450,7 +458,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">6 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 6 mo.</span>
               </div>
             </div>
             <a href="/case-studies/consulting-firm-seo/" class="modern-cta-btn">
@@ -463,7 +471,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
         
         <!-- Modern Card - Speediance AU -->
-        <article class="modern-case-card fitness" data-category="fitness">
+        <article class="modern-case-card fitness" data-type="named" data-category="fitness">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp" alt="Speediance AU Fitness SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -490,7 +498,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">6 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 6 mo.</span>
               </div>
             </div>
             <a href="/case-studies/speediance-au-fitness-seo/" class="modern-cta-btn">
@@ -503,7 +511,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
         
         <!-- Modern Card - Speediance UK -->
-        <article class="modern-case-card fitness" data-category="fitness">
+        <article class="modern-case-card fitness" data-type="named" data-category="fitness">
           <div class="card-image-container">
             <img src="/images/case-studies/speediance-uk-storefront-20261013.webp" alt="Speediance UK public storefront, not a results chart" class="card-image" width="970" height="525" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -543,7 +551,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- Modern Card - Speediance NZ -->
-        <article class="modern-case-card fitness" data-category="fitness">
+        <article class="modern-case-card fitness" data-type="named" data-category="fitness">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Boosting Organic Traffic for Speediance NZ – Gym Equipment Supplier .webp" alt="Speediance NZ Fitness SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -570,7 +578,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">6 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 6 mo.</span>
               </div>
             </div>
             <a href="/case-studies/speediance-nz-fitness-seo/" class="modern-cta-btn">
@@ -583,7 +591,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
         
         <!-- Modern Card - Car Auction Platform -->
-        <article class="modern-case-card automotive" data-category="automotive">
+        <article class="modern-case-card automotive" data-type="anonymised" data-category="automotive">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Expanding Organic Reach for a Car Auction Platform .webp" alt="Car Auction Platform SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -601,16 +609,16 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
             <p class="card-description">The car-auction comparison shows more impressions and clicks, but average position worsened from 31.7 to 39.7 and CTR fell.</p>
             <div class="metrics-grid">
               <div class="metric-item">
-                <span class="metric-value">+32%</span>
-                <span class="metric-label">Impressions</span>
-              </div>
-              <div class="metric-item">
                 <span class="metric-value">+5%</span>
                 <span class="metric-label">Clicks</span>
               </div>
               <div class="metric-item">
+                <span class="metric-value">+32%</span>
+                <span class="metric-label">Impressions</span>
+              </div>
+              <div class="metric-item">
                 <span class="metric-value">6 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 6 mo.</span>
               </div>
             </div>
             <a href="/case-studies/car-auction-seo/" class="modern-cta-btn">
@@ -623,7 +631,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- Modern Card - Boiler & Heating Spares -->
-        <article class="modern-case-card ecommerce" data-category="ecommerce">
+        <article class="modern-case-card ecommerce" data-type="anonymised" data-category="ecommerce">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Driving Sustained Growth for a Boiler & Heating Spares Supplier .webp" alt="Boiler & Heating Spares SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -650,7 +658,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">6 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 6 mo.</span>
               </div>
             </div>
             <a href="/case-studies/boiler-heating-spares-seo/" class="modern-cta-btn">
@@ -663,7 +671,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
         </article>
 
         <!-- Modern Card - Pest Control Firm -->
-        <article class="modern-case-card local" data-category="local">
+        <article class="modern-case-card local" data-type="named" data-category="local">
           <div class="card-image-container">
             <img src="/images/case-studies/SEO Case Study- Recovering and Growing Organic Traffic for a Pest Control Firm After Core Update .webp" alt="Pest Control SEO Case Study" class="card-image" loading="lazy" decoding="async" />
             <div class="card-overlay">
@@ -690,7 +698,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
               </div>
               <div class="metric-item">
                 <span class="metric-value">6 mo.</span>
-                <span class="metric-label">Timeline</span>
+                <span class="metric-label">vs previous 6 mo.</span>
               </div>
             </div>
             <a href="/case-studies/pest-control-core-update-seo/" class="modern-cta-btn">
@@ -702,6 +710,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           </div>
         </article>
       </div>
+      <p class="filter-empty" data-filter-empty role="status" hidden>No case studies match both filters. Choose All types or All Industries to see more.</p>
     </div>
   </section>
 
@@ -712,49 +721,40 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 </MainLayout>
 
 <script is:inline>
-  // Modern Case Study Filter Function with animation
+  // Case study filters: type and industry combine. Without scripting every card stays visible.
   document.addEventListener('DOMContentLoaded', function() {
-    // Set "All Industries" as active by default
-    const allButton = document.querySelector('.modern-filter-btn[data-filter="all"]');
-    if (allButton) allButton.classList.add('active');
-    
-    // Add click event listeners to all filter buttons
-    const filterButtons = document.querySelectorAll('.modern-filter-btn');
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const category = this.getAttribute('data-filter');
-        
-        // Update active button state
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Get all case study cards
-        const cards = document.querySelectorAll('.modern-case-card');
-        
-        // Apply filter with animation
-        cards.forEach(card => {
-          // First apply the fade-out class
-          card.classList.add('card-fade-out');
-          
-          // After the fade out animation completes
-          setTimeout(() => {
-            // Apply filter logic
-            if (category === 'all' || card.getAttribute('data-category') === category) {
-              card.style.display = 'block';
-              // Remove the fade-out and add fade-in
-              setTimeout(() => {
-                card.classList.remove('card-fade-out');
-                card.classList.add('card-fade-in');
-              }, 10);
-            } else {
-              card.style.display = 'none';
-            }
-          }, 300); // Match this to the CSS transition time
-          
-          // Remove the fade-in class after animation completes
-          setTimeout(() => {
-            card.classList.remove('card-fade-in');
-          }, 600); // Enough time for both transitions
+    var state = { type: 'all', category: 'all' };
+    var cards = document.querySelectorAll('.modern-case-card');
+    var groups = [
+      { key: 'type', attr: 'data-type-filter', cardAttr: 'data-type' },
+      { key: 'category', attr: 'data-filter', cardAttr: 'data-category' }
+    ];
+    var empty = document.querySelector('[data-filter-empty]');
+    function apply() {
+      var shown = 0;
+      cards.forEach(function(card) {
+        var show = groups.every(function(g) {
+          return state[g.key] === 'all' || card.getAttribute(g.cardAttr) === state[g.key];
+        });
+        card.style.display = show ? '' : 'none';
+        if (show) shown += 1;
+      });
+      if (empty) empty.hidden = shown > 0;
+    }
+    groups.forEach(function(g) {
+      var buttons = document.querySelectorAll('.modern-filter-btn[' + g.attr + ']');
+      buttons.forEach(function(button) {
+        var isAll = button.getAttribute(g.attr) === 'all';
+        button.classList.toggle('active', isAll);
+        button.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+        button.addEventListener('click', function() {
+          state[g.key] = button.getAttribute(g.attr);
+          buttons.forEach(function(btn) {
+            var on = btn === button;
+            btn.classList.toggle('active', on);
+            btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          apply();
         });
       });
     });
@@ -811,6 +811,13 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     margin-bottom: 2.5rem;
     justify-content: center;
     padding: 0;
+  }
+
+  .filter-empty { margin: 1.5rem auto 0; max-width: 40rem; text-align: center; color: #465365; font-size: 1rem; }
+  .filter-empty[hidden] { display: none; }
+
+  .filter-container.type-filter {
+    margin-bottom: 12px;
   }
 
   .modern-filter-btn {

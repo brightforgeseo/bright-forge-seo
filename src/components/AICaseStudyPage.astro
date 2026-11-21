@@ -97,7 +97,7 @@ const articleSchema = {
     </section>
 
     <section class="constraints-section">
-      <div class="case-container"><p class="eyebrow">Constraints</p><h2>How to interpret <span>this report</span></h2><div class="constraint-grid">{data.constraints.map((item) => (<article><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
+      <div class="case-container"><p class="eyebrow">Constraints</p><h2>How to read <span>this report</span></h2><div class="constraint-grid">{data.constraints.map((item) => (<article><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div>
     </section>
 
     <section class="work-section" id="work">
@@ -124,10 +124,10 @@ const articleSchema = {
     </section>
 
     <section class="faq-section">
-      <div class="case-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Questions this <span>AI case study</span> should answer</h2></div><div class="faq-list">{data.faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div>
+      <div class="case-container faq-layout"><div><p class="eyebrow">FAQ</p><h2>Questions this <span>AI referral report review</span> should answer</h2></div><div class="faq-list">{data.faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div>
     </section>
 
-    <section class="case-cta-section"><div class="case-container"><div class="case-cta-card"><h2>Want to see how visible your business is in <span>AI search</span>?</h2><p>We can review the pages buyers use to assess your offer, check technical access and agree how to measure AI referrals and enquiries.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an AI Search Review" /><ButtonSecondary href="/case-studies/" text="View More Case Studies" /></div></div></div></section>
+    <section class="case-cta-section"><div class="case-container"><div class="case-cta-card"><h2>Want to see how visible your business is in <span>AI search</span>?</h2><p>We review the pages buyers use to assess your offer, check that AI crawlers can reach them, and agree how AI referrals and real enquiries will be measured before any work starts.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an AI Search Review" /><ButtonSecondary href="/case-studies/" text="View More Case Studies" /></div></div></div></section>
   </main>
   <Footer slot="footer" />
 </MainLayout>
