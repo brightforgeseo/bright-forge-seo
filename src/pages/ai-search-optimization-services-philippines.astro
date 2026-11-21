@@ -502,9 +502,9 @@ const geoCases = [
           <p>Scope, measurement, cost and how we work with your existing team.</p>
         </div>
         <div class="faq-list">
-          {aiSearchFaqs.map((faq, index) => (
+          {aiSearchFaqs.map((faq) => (
             <details>
-              <summary><span>0{index + 1}</span>{faq.question}</summary>
+              <summary>{faq.question}</summary>
               <p>{faq.answer}</p>
             </details>
           ))}
