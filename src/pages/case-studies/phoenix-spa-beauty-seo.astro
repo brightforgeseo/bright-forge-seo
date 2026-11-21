@@ -14,8 +14,8 @@ const caseStudyData = {
   industry: "Beauty & Wellness",
   duration: "Last six months versus previous six months",
   heroImage: "/images/case-studies/SEO Case Study- Growing Organic Traffic for Phoenix Spa and Beauty – Beauty Salon and Spa .webp",
-  challenge: "A spa visitor needs to choose a treatment, a location and an available appointment. The current Phoenix site lists massages, facials and vegan treatments in Brighton and Hove. Those details inform the recommendations below, but the undated screenshot does not establish which locations or treatment pages contributed the historical clicks.",
-  solution: "The screenshot shows approximately 70% more clicks and 188% more impressions, alongside worse average position and lower CTR. It does not identify the changes behind the increase. The checks below are recommendations for this type of spa website, not a record of completed campaign work.",
+  challenge: "A spa visitor has three choices to make before booking: a treatment, a location and an available appointment. Search has done its job only when all three are easy. The current Phoenix site lists massages, facials and vegan treatments in Brighton and Hove. Those details inform the recommendations below, but the undated screenshot does not establish which locations or treatment pages contributed the historical clicks.",
+  solution: "The screenshot shows approximately 70% more clicks and 188% more impressions, alongside a worse average position (17.8 to 21.5) and a lower CTR (3.8% to 2.3%). It does not identify the changes behind the increase. The checks below are recommendations for this type of spa website, not a record of completed campaign work.",
   keyMetrics: [
     { label: "Total Clicks", value: "+70%", description: "5,570 → 9,480" },
     { label: "Total Impressions", value: "+188%", description: "145k → 418k" },
@@ -36,7 +36,7 @@ const caseStudyData = {
     { metric: "Click-Through Rate", before: "3.8%", after: "2.3%", improvement: "CTR decreased" }
   ],
   keyTakeaways: [
-    "More search clicks do not establish more appointments, treatment revenue or walk-in customers.",
+    "More search clicks do not establish more appointments, treatment revenue or walk-in customers. Completed bookings are the measure that would.",
     "Compare treatment and branch pages separately before interpreting a rise in total impressions.",
     "Keep the treatment, branch and available appointment connected through the booking journey."
   ]
@@ -95,6 +95,7 @@ const caseStudyData = {
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title">The <span>booking decision</span></h2>
       <p class="section-text">{caseStudyData.challenge}</p>
+      <p class="section-text mt-6">We publish this as an archived Search Console comparison. The page does not record what SEO work was carried out for the spa, who did it or when.</p>
     </div>
   </section>
 
@@ -103,6 +104,7 @@ const caseStudyData = {
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title">Reading the <span>comparison</span></h2>
       <p class="section-text">{caseStudyData.solution}</p>
+      <p class="section-text mt-6">What the data shows: on the rounded totals, about 3,900 more clicks and 273,000 more impressions across the two six-month windows. What it does not show: bookings, footfall or which treatments people were looking for. Impressions almost tripled while clicks rose by 70%, which is why the click rate fell. A site that starts appearing for many more searches, often at lower positions, produces exactly this pattern. So does a seasonal change in demand. The query report would separate them.</p>
     </div>
   </section>
 

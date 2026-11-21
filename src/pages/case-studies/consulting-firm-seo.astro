@@ -14,7 +14,7 @@ const caseStudyData = {
   industry: "Business Consulting",
   duration: "6-month comparison",
   heroImage: "/images/case-studies/SEO Case Study- Increasing Organic Traffic for a Consulting Firm .webp",
-  challenge: "Conscient is a B2B tech marketing and strategy agency offering services including brand and messaging, content creation and consultancy. The commercial question is whether the extra search appearances reached businesses looking for that support. The aggregate comparison does not identify those buyers.",
+  challenge: "Conscient is a UK B2B tech marketing and strategy agency serving telecoms, technology and data-centre buyers, with services including brand and messaging, content creation and consultancy. A consultancy like this is found by a small number of specialist buyers, so the commercial question is whether the extra search appearances reached businesses looking for that support. The aggregate comparison does not identify those buyers.",
   solution: "The published Google Search Console screenshot compares Last 6 months / Previous 6 months. Clicks increased from 13.2K to 15.7K and impressions from 398K to 742K, while CTR fell from 3.3% to 2.1%. It records search performance, not a sequence of implemented changes or a lead result.",
   keyMetrics: [
     {
@@ -31,12 +31,17 @@ const caseStudyData = {
       label: "Average Position",
       value: "Improved",
       description: "Average position from 23.3 to 21.7"
+    },
+    {
+      label: "CTR",
+      value: "3.3% → 2.1%",
+      description: "CTR decreased"
     }
   ],
   strategySteps: [
     {
       title: "Separate buyer queries",
-      description: "Review queries by service and buyer need. Brand searches, research questions and consultancy enquiries should not be treated as equally valuable.",
+      description: "Review queries by service and buyer need. A brand search, a research question and a consultancy enquiry are worth different amounts to the firm and should be counted separately.",
       icon: "fa-search"
     },
     {
@@ -91,7 +96,7 @@ const caseStudyData = {
     "CTR fell from 3.3% to 2.1%. More search appearances did not translate into a proportionate rise in clicks.",
     "Average position improved from 23.3 to 21.7, but the screenshot does not show individual service-query rankings.",
     "Two period totals do not establish whether impressions increased before clicks or whether visitors were suitable buyers.",
-    "The next useful check is which pages gained impressions and which generated enquiries, rather than assuming all additional visibility had equal value."
+    "The next useful check is which pages gained impressions and which generated enquiries. Additional visibility is not all of equal value."
   ]
 };
 ---
@@ -148,6 +153,7 @@ const caseStudyData = {
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title">The <span>business question</span></h2>
       <p class="section-text">{caseStudyData.challenge}</p>
+      <p class="section-text mt-6">The search challenge was making that consultancy work discoverable without reducing the website to a generic agency brochure. This page reports the search comparison. It does not yet list the changes made to the site or their dates, so it credits no single action with the result.</p>
     </div>
   </section>
 
@@ -156,6 +162,7 @@ const caseStudyData = {
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title">What the <span>comparison shows</span></h2>
       <p class="section-text">{caseStudyData.solution}</p>
+      <p class="section-text mt-6">What the data shows: on the rounded totals, about 2,500 more clicks and 344,000 more impressions, with average position 1.6 places better. What it does not show: which services or queries account for the extra appearances. Impressions nearly doubled while clicks rose by a fifth, so much of the new visibility came from searches that rarely produced a click. Some of that will be research queries far from a buying decision. The query report would show how much.</p>
     </div>
   </section>
 
@@ -163,7 +170,7 @@ const caseStudyData = {
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title"><span>Recommended follow-up checks</span></h2>
-      <p class="section-text">These are review priorities, not a verified log of work delivered for Conscient. Exact calendar dates and query filters are not displayed in the screenshot.</p>
+      <p class="section-text">This is what we would check next. These are review priorities, not a verified log of work delivered for Conscient. Exact calendar dates and query filters are not displayed in the screenshot.</p>
 
       <div class="strategy-list">
         {caseStudyData.strategySteps.map((step, index) => (
