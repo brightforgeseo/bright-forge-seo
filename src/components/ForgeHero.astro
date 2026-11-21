@@ -86,7 +86,8 @@ const longTitle = title.replace(/<[^>]*>/g,'').length > 65 || Astro.url.pathname
 .forge-evidence figcaption span { font-size:13px; line-height:1.55; color:#59616a; }
 .forge-evidence figcaption a { justify-self:start; margin-top:6px; font-size:13px; font-weight:600; color:#a63c15; text-decoration:underline; text-underline-offset:3px; }.forge-evidence figcaption a:hover { color:#18202b; }.forge-evidence figcaption a span { font-size:15px; color:inherit; }
 .forge-scene--type .forge-intro { width:74%; }.forge-scene--type h1 { max-width:820px; }.forge-scene--type .forge-note { max-width:640px; }
-.forge-scene--type { min-height:0; }.forge-scene--type .forge-intro { padding-bottom:56px; }
+.forge-scene--type { min-height:0; }
+@media(min-width:1201px) { .forge-scene--type { min-height:440px; } }.forge-scene--type .forge-intro { padding-bottom:56px; }
 .forge-scene--type .forge-atmosphere { background:radial-gradient(ellipse at 88% 40%,#ffe9db 0%,#fff7f1 26%,transparent 56%); }
 @media(min-width:769px) and (max-width:1200px) { .forge-evidence { left:57%; width:39%; }.forge-scene--evidence .forge-intro { width:55%; }.forge-scene--evidence h1 { font-size:clamp(2.4rem,4.6vw,3.6rem); }.forge-scene--type .forge-intro { width:88%; } }
 @media(min-width:1201px) and (max-width:1340px) { .forge-evidence { width:33%; } }
