@@ -82,7 +82,7 @@ That combination needs sequence. Technical blockers first, then page clarity, th
 
 Team delivery also matters when organic search is a main source of jobs. A missed migration, a bad batch of links, or a rewrite that strips proof can hurt the business. You want review, not a single unchecked change. That is closer to how we work: diagnosis first, then implementation with a named priority, then reporting that follows the enquiry, not the vanity metric.
 
-If you are still weighing a lone specialist against a team, the same decision shows up in [when a consultant or an agency makes sense](/blog/seo-consultant-vs-seo-agency-when-each-makes-sense/). Coverage, review, and who owns the result when something breaks matter more than the invoice label.
+If you are still weighing a lone specialist against a team, coverage, review, and who owns the result when something breaks matter more than the invoice label.
 
 ## Cost, Risk, And The Work You Cannot See
 
@@ -96,6 +96,23 @@ Ask how success will be judged. If the answer is traffic, you will get traffic-s
 
 Day rates and retainers are different products. A consultant day rate buys attention on a defined problem. A monthly agency fee should buy a workload you can inspect: pages changed, issues closed, next month named. If you cannot inspect the workload, you are buying reassurance.
 
+## The Access Either Hire Needs
+
+A consultant with read-only Search Console and a staging login they cannot deploy is an expensive auditor. An agency with five logins spread across a PM, a tech lead, and a freelancer who left in March is a security incident waiting for a password reset.
+
+We ask for the same stack every time:
+
+- Search Console
+- GA4 (or the current analytics property)
+- CMS with a role that can publish or at least open a pull request
+- Google Tag Manager
+- hosting or CDN where robots and redirects live
+- the repo if the site is headless
+
+Local work also needs Business Profile access, not a screenshot of the listing.
+
+If your security policy will not grant that to one named person, a consultant is a poor fit. You need an agency that can work through a named technical contact on your side, with a written access register, and a revoke process when the contract ends.
+
 ## How To Test Fit Before You Commit
 
 Do not start with a twelve-month contract if you cannot yet tell whether the other side understands the business. Ask for a short diagnosis against the live site. You want them to name the commercial pages, the likely blockers, and the work they would not do yet. Vague enthusiasm is a no.
@@ -107,6 +124,16 @@ Check communication. If they cannot write a clear instruction that a developer o
 Check conflict of interest. If the same shop wants to rebuild the entire website, run ads, and own SEO, make sure you still know which recommendation is for search and which is for a larger project sale. The hire should be able to improve the current site before proposing a rebuild.
 
 Check substitution. For a consultant, ask who covers illness and overload. For an agency, ask for names, not a department. A company logo is not a bench.
+
+## Contracts And Payment When You Hire An Individual
+
+The contract should define work, not positions. Discovery, the first diagnosis, production limits, reporting artefacts, and what is out of scope. Ranking guarantees do not belong in the document.
+
+Ownership should be boring. Domain, hosting, CMS, ads and listings stay with the business. Content they write should be yours to keep. Reports should be exportable.
+
+Payment should follow the unit of work. A one-off diagnosis is a project fee. A campaign is a retainer. A burst of senior time is days. Mixing those units in one vague monthly number is how you pay forever for a cleanup that never ends.
+
+The first 90 days are a fairness window for whether the work is real, not a deadline for winning the channel. You should see shipped changes, a written diagnosis, and reporting you can check without the vendor in the room.
 
 ## A Practical Way To Choose
 

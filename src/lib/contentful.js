@@ -3,6 +3,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { getLocalBlogPosts, getLocalBlogPostBySlug } from './localBlog.js';
 import { readFileSync } from 'node:fs';
+import { isRetiredArticle } from './retiredBlog.js';
 
 // Title and excerpt corrections for CMS articles (see src/data/cmsPostFixes.json).
 const cmsPostFixes = JSON.parse(readFileSync(join(process.cwd(), 'src/data/cmsPostFixes.json'), 'utf8'));
@@ -77,8 +78,10 @@ export async function getAllBlogPosts() {
       if (!entries.items.length || skip >= entries.total) break;
     }
 
+    // Retired articles (src/data/retiredBlogSlugs.json) are still published in
+    // Contentful but must not be built, listed or put in the sitemap.
     const remote = raw
-    .filter((item) => item.fields?.slug)
+    .filter((item) => item.fields?.slug && !isRetiredArticle(item.fields.slug))
     .map((item) => ({
       id: item.sys.id,
       title: fixedTitle(item.fields.slug, item.fields.title),
@@ -94,7 +97,7 @@ export async function getAllBlogPosts() {
       tags: item.fields.tags || [],
       showInfographic: item.fields.showInfographic === true
     }));
-    const local = getLocalBlogPosts();
+    const local = getLocalBlogPosts().filter((p) => !isRetiredArticle(p.slug));
     const remoteSlugs = new Set(remote.map((p) => p.slug));
     allPostsCache = [...local.filter((p) => !remoteSlugs.has(p.slug)), ...remote].sort(
       (a, b) => b.publishDate - a.publishDate
@@ -102,13 +105,14 @@ export async function getAllBlogPosts() {
     return allPostsCache;
   } catch (error) {
     console.error('Error fetching blog posts:', error);
-    allPostsCache = getLocalBlogPosts();
+    allPostsCache = getLocalBlogPosts().filter((p) => !isRetiredArticle(p.slug));
     return allPostsCache;
   }
 }
 
 // Fetch a single blog post by slug
 export async function getBlogPostBySlug(slug) {
+  if (isRetiredArticle(slug)) return null;
   const local = getLocalBlogPostBySlug(slug);
   if (local) {
     return {

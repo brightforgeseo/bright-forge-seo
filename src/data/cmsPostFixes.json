@@ -1511,8 +1511,8 @@
  "crawl-budget-optimisation-strategic-resource-allocation-for-large-sites": {
   "replace": [
    [
-    "belong in the separately planned WordPress crawl-budget article",
-    "are covered in our separate WordPress crawl-budget article"
+    " WordPress-specific theme bloat and its crawl effects belong in the separately planned WordPress crawl-budget article.",
+    ""
    ]
   ]
  },

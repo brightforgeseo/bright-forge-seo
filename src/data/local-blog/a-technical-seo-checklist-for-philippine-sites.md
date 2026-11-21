@@ -90,7 +90,7 @@ Connect the exact host. Submit the sitemap. Read Pages, not only Performance. Co
 
 Performance should be filtered to commercial URLs and queries, not celebrated as a sitewide click total. The HTTPS and structured data reports tell you when a template broke.
 
-If you have no Search Console, that is item zero. Public crawls cannot show what Google chose not to index. [What a proper SEO audit should include](/blog/what-a-proper-seo-audit-should-include/) starts here for a reason: without this property, technical claims are guesses.
+If you have no Search Console, that is item zero. Public crawls cannot show what Google chose not to index. [What a proper SEO audit should include](/blog/why-most-seo-audits-miss-the-real-problems/) starts here for a reason: without this property, technical claims are guesses.
 
 Log files, when you can get them from hosting, show whether Googlebot actually hits the money URLs. Shared hosting in the Philippines does not always make logs easy. When they exist, use them. When they do not, Search Console crawl stats are the fallback.
 

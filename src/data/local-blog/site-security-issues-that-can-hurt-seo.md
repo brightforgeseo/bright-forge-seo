@@ -12,7 +12,7 @@ metaDescription: "Learn which security issues threaten search visibility and buy
 
 A security warning between a search result and your enquiry form can stop a potential customer before they read a word of your offer. A security recommendation in an audit is different: it may identify something worth improving without showing that your search visibility has suffered.
 
-That distinction matters when deciding what to fix first. Hacked pages, deceptive downloads and unexpected redirects need investigation because visitors may be exposed to harmful content. HTTPS implementation and crawl problems need their own technical checks. An alert alone does not explain a [traffic drop](https://brightforge.com.ph/blog/how-to-check-whether-a-ranking-drop-is-sitewide-or-page-specific/), and treating every security finding as a ranking penalty can send your budget towards the wrong work.
+That distinction matters when deciding what to fix first. Hacked pages, deceptive downloads and unexpected redirects need investigation because visitors may be exposed to harmful content. HTTPS implementation and crawl problems need their own technical checks. An alert alone does not explain a [traffic drop](/blog/how-to-read-a-ranking-drop-in-search-console/), and treating every security finding as a ranking penalty can send your budget towards the wrong work.
 
 We approach these problems through the live website: what visitors encounter, what search engines can access and what the reported issue actually identifies. The aim is to separate an active incident from a configuration improvement, then give each the right priority.
 

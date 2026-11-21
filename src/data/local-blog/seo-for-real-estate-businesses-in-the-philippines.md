@@ -100,7 +100,7 @@ Start with the pages closest to the business you want to win. An inaccurate list
 
 For each proposed page, record its main audience, search intent, supporting information and next action. Add a maintenance owner. This makes gaps visible: a development page without verified details needs research, while a useful existing page may need clearer targeting rather than a replacement.
 
-Review performance by page role. For property collections and listings, examine [search visibility alongside relevant enquiries](https://brightforge.com.ph/blog/why-search-impressions-rise-before-clicks-and-leads/). For agent and seller pages, look at whether the contacts concern the services and areas you handle. For guides, consider whether visitors continue to an appropriate property or service description.
+Review performance by page role. For property collections and listings, examine [search visibility alongside relevant enquiries](/blog/measuring-seo-by-enquiries-not-traffic/). For agent and seller pages, look at whether the contacts concern the services and areas you handle. For guides, consider whether visitors continue to an appropriate property or service description.
 
 Enquiry quality can reveal a mismatch that traffic alone hides. Repeated rental enquiries on a sales-only page suggest the wording or targeting needs attention. Enquiries about properties that are no longer available point towards a maintenance problem. Those observations give the next revision a specific purpose.
 

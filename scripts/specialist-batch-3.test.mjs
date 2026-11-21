@@ -16,7 +16,14 @@ for(const r of routes) test(`${r}: preserve design, title/H1 ownership, media an
   assert.ok(now.includes('title="Link Building Services Philippines for <span>Relevant Backlinks</span>"'));
   assert.ok(!/Safe SEO Backlinks|Safer SEO Authority|Safe Link Building|safer authority growth/.test(now));
  }
- for(const href of matches(old,/href="[^"]+"/g)) assert.ok(now.includes(href),`${r}: removed ${href}`);
+ // A link to an article retired by content consolidation must now go to its destination.
+ const retired=JSON.parse(fs.readFileSync('src/data/retiredBlogSlugs.json','utf8')).articles;
+ for(const href of matches(old,/href="[^"]+"/g)) {
+  const slug=(href.match(/^href="\/blog\/([^\/"]+)\/?"$/)||[])[1];
+  const expected=slug&&retired[slug]?`href="${retired[slug]}"`:href;
+  assert.ok(now.includes(expected),`${r}: removed ${href}`);
+  if(expected!==href) assert.ok(!now.includes(href),`${r}: still links to retired ${href}`);
+ }
  assert.ok(!now.includes('—'));
 });
 test('shared proof is explicitly bounded on home and property routes',()=>{

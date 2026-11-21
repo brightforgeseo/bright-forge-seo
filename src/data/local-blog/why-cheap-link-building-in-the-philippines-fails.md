@@ -30,7 +30,7 @@ There is real demand. Philippine SMEs are told they need “off-page SEO”. Ven
 
 Those factories are easy to operate from anywhere. Geography does not make a link local. A mention on a real Manila publication about a real opening is local. A blog with a .ph domain, no byline, and ten outbound posts a day about casinos, loans, and roofing is not local. It is a skin.
 
-Buyers cannot easily verify quality, so they verify quantity. “We got 80 links” feels like delivery. “We got four mentions, here are the URLs, here is why they exist” feels small. The second is often the only work worth keeping. The first is how [cheap backlink packages fail](/blog/why-cheap-backlink-packages-fail/): they optimise for the spreadsheet, not for the neighbourhood your domain will live in.
+Buyers cannot easily verify quality, so they verify quantity. “We got 80 links” feels like delivery. “We got four mentions, here are the URLs, here is why they exist” feels small. The second is often the only work worth keeping. The first is how cheap backlink packages fail: they optimise for the spreadsheet, not for the neighbourhood your domain will live in.
 
 Agencies that refuse packages look expensive next to a 5,000 PHP “boost”. They are expensive in the way that not buying a problem is expensive. Disavows, brand SERPs full of spam, and months of recovery are the deferred invoice.
 
@@ -59,6 +59,28 @@ Refuse sitewide footer and sidebar links on unrelated domains, comment blasts, a
 Refuse to let the vendor own the relationships in a way you cannot see. You should receive the live URLs in an account you control. If the only proof is a PDF, you cannot audit, and you cannot keep the assets when you leave.
 
 Refuse to mix a new link campaign with an unknown old one. If a previous vendor already attached spam, adding more of the same is not a strategy. Crawl the backlink profile first. Clean, then earn.
+
+## How To Read A Link Package In One Sitting
+
+This can be done before anyone pays. Ask for a sample of live URLs, not a screenshot of third-party metrics. Open ten of them in a private window.
+
+Check publish date versus the last genuine article on that host. Check whether our type of business appears anywhere else on the site. Count outbound links on the proposed page. Search the vendor name plus “sponsored” and look at anchor diversity across their other recent placements. Look up who owns the domains: same privacy pattern, same nameservers, same empty ads.txt, same CDN fingerprint.
+
+If the vendor refuses samples, that is the answer. If the samples are listicles with fifty dofollow links, that is the answer. The question is simple: would this page exist if our URL were removed? If the answer is no, the link was the product, not the content.
+
+Open a backlink tool and sort referring domains by first seen. If the new hosts cluster on two or three calendar days, that is a footprint. Networks reuse the same drop windows because the operator is running a queue, not a relationship.
+
+### Footprints Google already documents
+
+Paid links that pass PageRank, scaled guest posting, and networks built to manipulate rankings are listed in the [Google spam policies](https://developers.google.com/search/docs/essentials/spam-policies) as behaviours that can trigger ranking actions. Footprints we actually see on cheap inventory:
+
+- Identical article bodies on dozens of hosts, with only the URL swapped
+- Exact-match commercial anchors at rates no organic citation graph produces
+- Sites with no real audience and outbound links as the main feature
+- Sudden referring-domain spikes with no PR, no launch, and no news
+- Guest “author” pages that never published anything except paid insertions
+
+Do not bulk-disavow a domain that also has a real citation from a different page. Precision matters more than speed here.
 
 ## How To Brief And Measure Without Counting The Wrong Thing
 

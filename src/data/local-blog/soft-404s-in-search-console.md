@@ -42,7 +42,7 @@ For each URL we record status code, cache headers, canonical, robots meta, word 
 
 Patterns matter more than single URLs. If every hit is `/search?q=`, the internal search template is the bug. If every hit is a deleted WooCommerce product, the product status mapping is the bug. If every hit is a JavaScript route, the app is serving an empty shell as 200. If the list is random old blog slugs, someone unpublished posts instead of deleting them or redirecting them.
 
-We also compare against [what a proper SEO audit should include](/blog/what-a-proper-seo-audit-should-include/): log-file evidence that Googlebot is still requesting the URLs, sitemap membership that should have been removed, and internal links that still advertise the empty address. Fixing the template without removing those advertisements just recreates the report.
+We also compare against [what a proper SEO audit should include](/blog/why-most-seo-audits-miss-the-real-problems/): log-file evidence that Googlebot is still requesting the URLs, sitemap membership that should have been removed, and internal links that still advertise the empty address. Fixing the template without removing those advertisements just recreates the report.
 
 ## Choose An Outcome, Then Pick A Status Code
 

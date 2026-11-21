@@ -60,7 +60,7 @@ Outsource when you are a US company that wants production during overlapping or 
 
 Our [Philippine SEO services](/seo-services-philippines/) are built as that kind of delivery: strategy that can be inspected, production that has editors, and reporting tied to Search Console and enquiry events rather than vanity traffic.
 
-For US firms specifically, the same choice shows up as a market-entry question. Delivery from the Philippines is not "offshore SEO" as a slogan. It is English-language production with a time zone that can cover a US workday if you design the overlap. We wrote about that operating model for [US businesses outsourcing SEO to the Philippines](/blog/outsourcing-seo-to-the-philippines-for-us-businesses/) because the access, language, and ownership problems are usually larger than the hourly rate.
+For US firms specifically, the same choice shows up as a market-entry question. Delivery from the Philippines is not "offshore SEO" as a slogan. It is English-language production with a time zone that can cover a US workday if you design the overlap. We wrote about that operating model for [US businesses outsourcing SEO to the Philippines](/seo-services-usa/) because the access, language, and ownership problems are usually larger than the hourly rate.
 
 ## The Hidden Costs Both Sides Skip
 
@@ -85,6 +85,28 @@ If the in-house hire sets strategy but has no production, you have a planner. Ra
 Write the RACI down. Who approves titles. Who can request development. Who is allowed to say a page should not be published. Who signs off on outreach. If those names are blank, you do not have a model yet. You have a vendor or a job description.
 
 We will not take a retainer where the client wants us to "own SEO" and also cannot give Search Console, cannot schedule developer time, and will not name an internal owner. That engagement becomes a monthly PDF.
+
+## What The Clock Looks Like And What Can Run Overnight
+
+We run delivery from Quezon City (Philippine Time, UTC+8) for companies in the UK and the United States. Philippine Time sits eight hours ahead of UK time in winter, and seven ahead when Britain is on British Summer Time. A 9:00 to 12:00 window in London is already late afternoon in Quezon City. That is a usable overlap for stand-ups, brief questions, and live walkthroughs of Search Console. It is not a full shared workday.
+
+Against US Eastern Time the gap is twelve or thirteen hours depending on daylight saving. 9:00 in New York is 21:00 or 22:00 in Quezon City. A short evening overlap can exist if the Philippine team stays late or the US team starts early. Against US Pacific Time the gap is wider.
+
+### What can safely run out of overlap
+
+Crawls, log sampling, rank pulls, and first-pass technical tickets can run while the client is offline. So can internal link mapping, metadata drafts, and content drafts against an approved brief.
+
+What cannot run unsupervised is anything that changes the live site without a rule. Canonicals, robots, redirects, noindex, and template-level title changes need a named approver. If that approver only exists in a UK office hours Slack channel, the Philippine team will either wait (and you lose the overnight benefit) or guess (and you inherit production risk).
+
+### Shared strategy, split execution
+
+The stable pattern is shared strategy, split execution.
+
+- The client owns: product truth, legal claims, publishing permission, developer queue, and the commercial priority for the quarter.
+- The SEO team owns: diagnosis, the recommended URL map, the technical punch list, the content briefs, the measurement design, and the quality bar.
+- Both sides own: the decision log. If a title was changed, the reason should still be readable in six months.
+
+A good brief lets a writer and a technical specialist work for six hours without guessing. It names the URL, the reader, the claim boundary, the sources, the internal links that are actually allowed, and the person who will review.
 
 ## Quality Control That Travels Across Time Zones
 

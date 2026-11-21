@@ -26,6 +26,12 @@ From 150,000 PHP upwards you are paying for complexity: larger sites, several ma
 
 If a quote sits far below the band that matches your site, the missing hours have to come from somewhere. They usually come from skipping diagnosis, using spun content, buying links in bulk, or reporting rankings for keywords nobody searches.
 
+## When A Low Fee Is Honest, And What Unwinding Costs Later
+
+A low fee is honest when everyone agrees what it will not do. Titles and headings on a 12 page site. A Google Business Profile rebuilt from accurate NAP. A keyword map for an in-house writer. A monthly hour to review Search Console with the owner. Those jobs can be cheap because they are bounded.
+
+The next specialist will not start at zero. They will spend the first month mapping what was done, what Google already crawled, and what must be stopped before anything new is published. That month is a tax on the previous fee. Content residue includes hundreds of near duplicate posts and location pages. Each decision is a URL-level judgement.
+
 ## What The Money Should Buy
 
 Four things should be visible in any retainer that claims to be SEO rather than blogging: audit, content, links, and reporting. They do not need equal hours every month. They do need to exist as real work, not as labels on an invoice.
@@ -40,6 +46,18 @@ Reporting should answer three questions a founder can ask without a glossary. Wh
 
 Those four ingredients are also how you read a quote. If audit is missing, the plan is guessed. If content is volume without page strategy, you are funding a blog no buyer will use. If links are a quota, risk is being outsourced to you. If reporting is a screenshot, nobody is accountable.
 
+## Retainer, Project Fee Or Day Rate
+
+A rate is a way of selling time and judgement. In 2026 the Philippine market still quotes that time as a monthly retainer, a project fee, or a day rate, and buyers still smash those three together as if they were the same unit. They are not. The useful question is which unit matches the work. Ongoing campaigns need a retainer because the site, the competitors and Search Console keep moving. A defined repair needs a project fee. Advice, training or a burst of implementation can sit on a day rate.
+
+### Project fees are not discounted retainers
+
+One-off work should be priced as a project because it has an end. Audits, migrations, recovery from a bad vendor, a local profile rebuild, or a rewrite of a defined set of service pages all belong here. Buyers try to turn projects into cheap retainers by asking for "the audit plus a bit of SEO each month" at the project number. That request is how diagnosis gets repeated forever and never implemented. If the site needs both, split the quotes. Pay for the diagnosis. Then pay for the campaign that the diagnosis supports.
+
+### Day rates
+
+Day rates show up when a business already has a team and needs a specialist burst. You are buying a person for a defined window, not a channel. Day rates fail when they are used as a substitute for ownership. If nobody can publish, the day was a seminar.
+
 ## Why Two Quotes For The Same Site Differ
 
 Site size changes the crawl, the templates, and the number of pages that can cannibalise each other. A 20-page brochure site and a 4,000-URL catalogue are not the same job even if both sell in Metro Manila.
@@ -52,7 +70,27 @@ Local coverage matters. One NAP, one profile, and one service-area page is a con
 
 The authority gap matters. A domain with years of relevant mentions needs less rescue work than a new domain, or a domain that already has a toxic link profile from a previous vendor.
 
-None of those variables appear on a public rate card, which is why we do not publish one. How [SEO scope is priced without a public rate card](/blog/how-seo-scope-is-priced-without-a-public-rate-card/) is the same logic applied to a single site: evidence first, then a private proposal, then work that matches the problem rather than a catalogue of tasks.
+None of those variables appear on a public rate card, which is why we do not publish one. Scope for a single site is priced with the same logic: evidence first, then a private proposal, then work that matches the problem rather than a catalogue of tasks.
+
+## What Has To Be Named Before A Number Is Honest
+
+Site size is the first of the real SEO pricing factors, and it is not “how many pages marketing thinks we have”. It is indexable URLs, parameter space, language versions, PDF weight, faceted navigation, and whether the CMS will let us ship templates without a two-week ticket.
+
+Migrations sit in the same bucket. A replatform mid-retainer is not a courtesy. It is a second scope. If the rebuild is already booked, the SEO number has to include redirect maps, pre-launch crawls, and a freeze window.
+
+A number we will stand behind names the property and the work. At minimum:
+
+- The CMS and whether templates are editable.
+- Indexable size, not the marketing page count.
+- Current access state for Console, Analytics and staging.
+- The competitive set for the terms that actually matter.
+- The authority gap against that set.
+- Any migration, design freeze, or legal review that will stall publishing.
+- Who writes, who approves, and in what language.
+- Whether local, national, or both.
+- Whether development hours are inside the SEO scope or billed by another team.
+
+If a proposal cannot name those, it is not a scope. It is a price looking for a site.
 
 ## Red Flags That Make The Price Irrelevant
 
@@ -63,6 +101,14 @@ Bulk link packages belong in the same bin. “500 links this month” is a fulfi
 Other warnings travel with cheap retainers and, occasionally, with expensive ones. No access to Search Console. Reports that only show tools the vendor controls. Content you are not allowed to edit. Contracts that keep the domain, the content, or the ads account in the vendor’s name. A strategy deck that never names a URL. A promise to “do AI SEO” with no plan for crawlability, entity clarity, or the pages that would need to be cited.
 
 Price is not the red flag by itself. A 15,000 PHP freelancer who says they will update titles and you will write the copy can be honest. A 15,000 PHP agency that promises national domination, 500 links, and first-page rankings in 30 days is not.
+
+## What A Usable Package Scope Names
+
+Ask for URLs. A usable scope names the homepage, the money service pages, the location or category templates, and any blog or resource URLs that already attract clicks. If the vendor cannot name them before month two, they have not looked.
+
+Ask for owners. Who crawls. Who writes. Who talks to the developer. Who can change the CMS. Who signs off legally sensitive copy. A package that says "our team" without roles is hiding a junior generalist.
+
+Ask for volume that can be inspected. Number of pages rewritten, number of new pages, number of templates touched, expected outreach attempts, and the reporting artefacts you will receive. Volume without quality rules is still a quota. Volume with a review step is a production plan.
 
 ## How To Brief And Compare Without Shopping On Price Alone
 
