@@ -76,34 +76,31 @@ for forbidden in [
 ]:
     expect(forbidden not in home_text, f"Homepage excludes unsupported or internal claim: {forbidden}")
 
-# Home page copy as rewritten in Release 2 (2026-11): agency page with checkable results.
 for required in [
-    "SEO Agency in the Philippines for Local and Overseas Businesses",
-    "Request an SEO review",
-    "Results you can check",
-    "How an engagement works",
-    "90-day roadmap",
-    "SEO management sheet",
-    "We do not publish a rate card",
+    "British-led SEO, based in the Philippines",
+    "Request an SEO Review",
+    "SEO Diagnostic & 90-Day Roadmap",
+    "Migration & Ranking Recovery Support",
+    "AI Search Visibility Assessment",
+    "Ongoing SEO Growth Programme",
+    "SEO Management Sheet",
 ]:
     expect(required in home_text, f"Homepage includes required implementation copy: {required}")
-
-for forbidden in ["[", "]", "lorem", "TODO"]:
-    expect(forbidden not in home_text, f"Homepage carries no placeholder text: {forbidden}")
 
 expect("paypal" not in packages_source.lower(), "Offer component contains no PayPal checkout")
 expect("hours/month" not in packages_source.lower(), "Offer component contains no hour-led package copy")
 expect("paypal" not in netlify_source.lower(), "CSP contains no obsolete PayPal dependency")
 
-# One named review, quoted with its public Google source (the review marquee was removed).
-review_links = [a for a in home.select("blockquote a") if "google.com/maps" in (a.get("href") or "")]
-expect(len(review_links) == 1, "Homepage quotes one named review with a Google source")
+review_section = home.select_one(".testimonials-section")
+review_links = review_section.select("a.tm-card") if review_section else []
+expect(len(review_links) == 4, "Homepage testimonial carousel contains four curated reviews")
+expect(all("google.com/maps" in (a.get("href") or "") for a in review_links), "Every carousel review links to a Google source")
 expect(all((a.get("href") or "") != "#" for a in review_links), "No testimonial uses a placeholder source")
 
 clutch_links = [a for a in home.select(".award-card") if "clutch.co/" in (a.get("href") or "")]
 expect(len(clutch_links) == 3, "All three Clutch cards link to evidence")
 
-request_ctas = [a for a in home.find_all("a") if "Request an SEO review" in a.get_text(" ", strip=True)]
+request_ctas = [a for a in home.find_all("a") if "Request an SEO Review" in a.get_text(" ", strip=True)]
 expect(any((a.get("href") or "").rstrip("/") == "/contact" for a in request_ctas), "SEO review CTA routes to the Contact page")
 
 for forbidden in ["Metro London University", "process transformation company", "Search Generative Experience (SGE)"]:

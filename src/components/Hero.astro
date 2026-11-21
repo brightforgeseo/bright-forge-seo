@@ -11,7 +11,7 @@ const features = (story.match(featurePattern) || []).join('');
 const mainStory = story.replace(featurePattern, '');
 const hasDetails = Astro.slots.has('stats') || Astro.slots.has('visual') || !!features;
 ---
-<ForgeHero title={title} eyebrow={badgeText || breadcrumbCurrent} breadcrumb={breadcrumbCurrent} art={false}>
+<ForgeHero title={title} eyebrow={badgeText || breadcrumbCurrent} breadcrumb={breadcrumbCurrent}>
  {hasIntro && <slot name="intro" />}
  <Fragment set:html={mainStory} />
  <Fragment slot="actions"><slot name="actions" /></Fragment>

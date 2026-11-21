@@ -1,59 +1,646 @@
 ---
-import EditorialPage from '../components/EditorialPage.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import BuyerDecisionSection from "../components/BuyerDecisionSection.astro";
+import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
+import serviceEvidence from '../data/serviceEvidence.json';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 
-const page = {
-  path: '/ecommerce-seo-services/',
-  title: 'Ecommerce SEO Services for Online Stores | Bright Forge',
-  description: 'Ecommerce SEO for Shopify and WooCommerce stores: category and product pages, technical fixes and content, with published results for five online shops.',
-  h1: 'Ecommerce SEO Services for Online Stores',
-  crumb: 'Ecommerce SEO',
-  parents: [{ name: 'Industries', url: '/industries/' }],
-  lead: [
-    "Most of an online shop's search traffic should arrive on category and product pages. We make those pages findable: the right categories, clear product detail, a site Google can crawl without getting lost in filters, and content that helps a shopper decide.",
-  ],
-  sections: [
-    {
-      h2: 'Stores we have worked on',
-      html: `<ul class="bf-results">
-<li><span class="bf-num">7,410 to 17,600</span><span class="bf-what"><strong>Emily Bridalwear:</strong> organic clicks over three months, year on year (rounded)</span><a class="bf-src" href="/case-studies/bridal-dress-designer-seo/">Case study</a></li>
-<li><span class="bf-num">15,200 to 22,700</span><span class="bf-what"><strong>Lost Dutchman Leather:</strong> organic clicks on the same comparison (rounded)</span><a class="bf-src" href="/case-studies/leather-wallet-ecommerce-seo/">Case study</a></li>
-<li><span class="bf-num">6,550 to 10,900</span><span class="bf-what"><strong>Speediance Australia:</strong> organic clicks over six months, compared with the previous six</span><a class="bf-src" href="/case-studies/speediance-au-fitness-seo/">Case study</a></li>
-<li><span class="bf-num">927 to 2,570</span><span class="bf-what"><strong>Speediance New Zealand:</strong> organic clicks over six months, compared with the previous six</span><a class="bf-src" href="/case-studies/speediance-nz-fitness-seo/">Case study</a></li>
-<li><span class="bf-num">14,100 to 16,600</span><span class="bf-what"><strong>A boiler and heating spares retailer:</strong> organic clicks across successive six-month periods (rounded)</span><a class="bf-src" href="/case-studies/boiler-heating-spares-seo/">Case study</a></li>
-</ul>
-<p>Each case study states the period and the limits. The figures are search clicks, not orders.</p>`,
-    },
-    {
-      h2: 'What we work on',
-      html: `<dl class="bf-deliverables">
-<dt>Categories</dt><dd>Which categories should exist, what they are called, and the copy and links each needs. See our article on <a href="/blog/ecommerce-category-pages-that-can-rank/">ecommerce category pages that can rank</a>.</dd>
-<dt>Product pages</dt><dd>Titles, descriptions, dimensions, materials, variants, delivery and returns, product structured data.</dd>
-<dt>Filters and duplicates</dt><dd>Stopping colour, size and sort options creating thousands of indexable URLs. This is <a href="/technical-seo-services-philippines/">technical SEO</a> work.</dd>
-<dt>Stock changes</dt><dd>Out-of-stock and discontinued products.</dd>
-<dt>Site speed</dt><dd>On the templates shoppers actually use.</dd>
-<dt>Buying guides</dt><dd>That link to the categories they discuss, written through our <a href="/content-seo-services-philippines/">SEO content</a> process.</dd>
-<dt>Tracking</dt><dd>Revenue from organic search, by landing page.</dd>
-</dl>`,
-    },
-    {
-      h2: 'How we do it',
-      html: `<ol class="bf-steps">
-<li>Crawl the store and review Search Console by page type.</li>
-<li>Keyword research mapped to categories and products.</li>
-<li>Fix technical faults in the theme or templates.</li>
-<li>Improve the highest-value categories first, then products.</li>
-<li>Report monthly on clicks, orders and revenue from search where tracking allows.</li>
-</ol>`,
-    },
-    {
-      h2: 'Platforms',
-      html: `<p>Shopify, WooCommerce and WordPress. For stores that sell in more than one country, see <a href="/international-seo-services/">international SEO</a>.</p>`,
-    },
-  ],
-  faqs: [
-    { question: 'Will you rewrite all our product descriptions?', answer: 'Only where it pays. We start with templates and the best-selling lines.' },
-    { question: 'Do the published results show sales?', answer: 'No. They are Search Console clicks. Where a client has shared sales figures, the case study says so; where they have not, we do not claim them.' },
-  ],
-};
+const faqs = [
+  {
+    question: 'How is ecommerce SEO different from normal SEO?',
+    answer: "A store needs page-level decisions and template-level checks. Category structure, filters, product variants, unavailable stock and structured data can affect many URLs at once. We connect those checks to the ranges you want to sell, then measure search traffic separately from recorded orders and revenue."
+  },
+  {
+    question: 'Which ecommerce platforms do you work with?',
+    answer: "We can review stores on Shopify, WooCommerce, Magento, BigCommerce and custom or headless builds. Implementation scope depends on the platform, theme, apps and developer access. We identify which changes can be made in the CMS and which need engineering work before agreeing delivery."
+  },
+  {
+    question: 'What results have you achieved for online stores?',
+    answer: 'Published examples include the Speediance Australian and New Zealand storefronts, a bridal dress designer and a leather wallet brand. Read each linked case for the source metric and the limits of its comparison. Search Console clicks are not orders or revenue, and one campaign does not set the outcome for another.'
+  },
+  {
+    question: 'How long does ecommerce SEO take to show results?',
+    answer: 'Template and indexation work can affect many catalogue URLs, but the timeline depends on competition, access and the starting site. We agree scope and reporting windows before work starts, then assess completed work and search evidence over comparable periods. We do not promise a particular growth figure or ranking deadline.'
+  },
+  {
+    question: 'Do you optimise product pages, category pages or both?',
+    answer: "Both. We first map searches to existing categories and products, then choose priorities using demand, stock and commercial importance. Category work covers selection and comparison; product work covers the item, variants, specifications and buying conditions."
+  },
+  {
+    question: 'Can you fix our store\'s technical SEO problems?',
+    answer: 'Yes: technical work is usually where ecommerce campaigns start. Common culprits we fix: index bloat from filtered and tagged URLs, duplicate content across variants, thin or empty categories, broken canonical logic, slow templates hurting Core Web Vitals, missing or invalid product schema, and internal links that bury commercial pages. Our technical SEO service covers the full diagnostic and the fixes.'
+  },
+  {
+    question: 'Does ecommerce SEO still matter with AI search and ChatGPT?',
+    answer: "Buyers still need accurate product specifications, stock, delivery and returns information. We review those details on the store and can monitor a defined sample of AI shopping questions. Identifiable AI referrals are reported separately from completed orders; a product mention alone is not a sale."
+  },
+  {
+    question: 'How much does ecommerce SEO cost?',
+    answer: "Catalogue size is only part of the scope. We also review template problems, content needs, target markets and developer capacity. The proposal separates diagnosis, implementation, content and reporting so you can see what the fee covers before deciding."
+  },
+  {
+    question: 'Do you write product and category descriptions?',
+    answer: "Yes. We scope category copy, product descriptions and buying guides against actual ranges and product information. Content is edited for the target audience in the Philippines, Australia, UK or USA, using the prices, units and buying conditions your team approves."
+  },
+  {
+    question: 'Can you help with international or multi-store ecommerce SEO?',
+    answer: "Yes. We review which products can be sold and delivered in each market, then check regional URLs, currencies, content and hreflang where appropriate. The linked Speediance projects cover different storefronts; they are not proof that every market will grow together or that the sites never compete for a query."
+  },
+  {
+    question: 'Will you work with our existing developers?',
+    answer: "Yes. We agree who implements each change and provide the affected URLs or templates, priority and acceptance checks. Direct implementation depends on the platform and access. Changes are approved before release and checked on the live store afterwards."
+  }
+];
 ---
-<EditorialPage page={page} />
+
+<MainLayout
+  title="Ecommerce SEO Services for Online Stores | Bright Forge"
+  description="Ecommerce SEO for categories, products and store templates. Review Shopify, WooCommerce and regional catalogue needs with our Philippines-based team."
+  canonical="https://brightforge.com.ph/ecommerce-seo-services/"
+  type="service"
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://brightforge.com.ph/' },
+        { '@type': 'ListItem', position: 2, name: 'Ecommerce SEO Services', item: 'https://brightforge.com.ph/ecommerce-seo-services/' }
+      ]
+    })} />
+  </Fragment>
+
+  <LegacyHeader slot="header" />
+
+  <Hero
+    badgeIcon="fas fa-shopping-cart"
+    badgeText="Ecommerce SEO Specialists"
+    title="Ecommerce SEO Services for <span>Categories, Products and Store Templates</span>"
+    breadcrumbCurrent="Ecommerce SEO Services"
+  >
+    <Fragment slot="story">
+      <p>We help stores organise categories, improve product pages and resolve technical problems across the catalogue. Start with the ranges you want to sell and the parts of the store that make them difficult to find or buy.</p>
+      <p>We review filters, variants, internal links and product information alongside search demand. Your proposal separates template changes from content work and identifies what needs your developer or merchandising team.</p>
+      <p>Review our <a href="/case-studies/speediance-uk-fitness-seo/">UK fitness ecommerce work</a>, <a href="/case-studies/bridal-dress-designer-seo/">bridal organic-click comparison</a> and <a href="/case-studies/speediance-nz-fitness-seo/">New Zealand storefront case</a>. Each project has its own scope and evidence.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Get an Ecommerce SEO Proposal" />
+      <ButtonSecondary href="#store-results" text="See Store Results" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="market-visual" aria-label="Ecommerce SEO growth snapshot">
+        <div class="market-node">
+          <span>Speediance UK</span>
+          <strong>UK fitness ecommerce campaign</strong>
+        </div>
+        <div class="market-line"></div>
+        <div class="market-node forge">
+          <span>Bridal ecommerce</span>
+          <strong>+137.5% clicks, three-month year-on-year comparison</strong>
+        </div>
+        <div class="market-line"></div>
+        <div class="market-node">
+          <span>Speediance NZ</span>
+          <strong>+177% site-wide clicks, six-month comparison</strong>
+        </div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <section class="proof-strip" aria-label="Ecommerce SEO proof points">
+    <div class="container">
+      <div class="proof-grid">
+        <div><strong>Store project examples</strong><span>Scope and Search Console comparisons</span></div>
+        <div><strong>Regional store scope</strong><span>Products, delivery and currency by market</span></div>
+        <div><strong>AI-search review</strong><span>Product facts and referral tracking</span></div>
+        <div><strong>Platform-specific review</strong><span>Shopify, Woo, Magento, headless</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="who-for">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Who this is for</p>
+        <h2>An ecommerce SEO agency for stores that <span>compete on more than ad spend</span></h2>
+        <p class="lead">A store may have products people search for but no useful category page for the range. Or its filters may create duplicate URLs while important products stay buried. We identify the page and template changes that address those problems.</p>
+        <p>We work with stores that want category terms, product long-tail and buying-intent content working together, whether you are competing with marketplaces, big-box retailers or well-funded DTC rivals.</p>
+      </div>
+      <div class="card-grid small">
+        <article class="card"><h3>DTC brands</h3><p>Category selection, product information and buying guides for shoppers comparing your range with marketplace alternatives.</p></article>
+        <article class="card"><h3>Multi-country stores</h3><p>Regional page targeting based on actual stock, delivery coverage, currency and search demand, with each market measured separately.</p></article>
+        <article class="card"><h3>Technical catalogues</h3><p>Spares, parts and specification-heavy stores where search intent is precise and margins reward accuracy.</p></article>
+        <article class="card"><h3>Replatforming stores</h3><p>Moving platforms? Our <a href="/website-migration-services/">migration service</a> plans redirects, checks templates and monitors the move.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section darker" id="store-results">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">Published store results</p>
+        <h2>Store projects <span>and catalogue review examples</span></h2>
+        <p>The cards distinguish Search Console comparisons, UK project scope and an example AI-search review focus. Click totals are not orders or revenue.</p>
+      </div>
+
+      <div class="results-grid">
+        <article class="result-card">
+          <p class="result-tag">Fitness Equipment · UK</p>
+          <h3>Speediance UK fitness ecommerce</h3>
+          <p>Technical, product-intent and content work for a UK home-gym storefront. Explore the project scope and campaign approach.</p>
+          <a href="/case-studies/speediance-uk-fitness-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Bridal Fashion</p>
+          <h3>+137.5% clicks, three-month year-on-year comparison</h3>
+          <p>The screenshot shows 17.6k clicks against 7.41k for Last 3 months versus Same period last year. It records search performance, not the cause of the change or the number of dresses sold.</p>
+          <a href="/case-studies/bridal-dress-designer-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Fitness Equipment · AU + NZ</p>
+          <h3>+66% and +177% clicks, six-month comparisons</h3>
+          <p>The AU and NZ screenshots show separate site-wide six-month click comparisons. They do not establish country-filtered results or prove that the storefronts never compete for the same search.</p>
+          <a href="/case-studies/speediance-au-fitness-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Leather Goods · DTC</p>
+          <h3>+49.3% clicks, CTR 3.1% → 4.5%</h3>
+          <p>The screenshot records 22.7k versus 15.2k clicks and CTR of 4.5% versus 3.1% for Last 3 months against Same period last year. These are period totals, not a monthly uplift.</p>
+          <a href="/case-studies/leather-wallet-ecommerce-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Technical Parts Ecommerce</p>
+          <h3>+18% clicks on a 1M+ impression store</h3>
+          <p>The published screenshot records 16.6k versus 14.1k clicks across its comparison periods. The case concerns a specification-heavy parts catalogue; the figures are not monthly totals.</p>
+          <a href="/case-studies/boiler-heating-spares-seo/">Read the case study →</a>
+        </article>
+        <article class="result-card">
+          <p class="result-tag">Review focus · AI search</p>
+          <h3>Bridal retail: support the appointment decision</h3>
+          <p>Design ranges, sizing, stockists and appointment information answer different questions. We check where those details belong and how a shopper moves from a dress to an enquiry.</p>
+          <a href="/case-studies/ai-bridal-ecommerce-geo/">Related AI-search review →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="services">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">What we deliver</p>
+        <h2>Technical and content <span>SEO for online stores</span></h2>
+        <p>Ecommerce campaigns pull together technical, content, authority and measurement work, sequenced by revenue impact rather than a fixed task list.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card"><i class="fas fa-sitemap"></i><h3>Catalogue architecture</h3><p>Category structure, faceted navigation control, internal linking and pagination that help commercial pages rank.</p></article>
+        <article class="service-card"><i class="fas fa-cogs"></i><h3>Technical SEO</h3><p>Index bloat, duplicate variants, canonical logic, Core Web Vitals and crawl efficiency across thousands of URLs. See our <a href="/technical-seo-services-philippines/">technical SEO service</a>.</p></article>
+        <article class="service-card"><i class="fas fa-tags"></i><h3>Product page SEO</h3><p>Descriptions, specifications, product schema and images checked against the item and its variants, with review markup where eligible.</p></article>
+        <article class="service-card"><i class="fas fa-pen-nib"></i><h3>Commerce content</h3><p>Category copy, buying guides and comparison content mapped to real search demand via our <a href="/content-seo-services-philippines/">content SEO service</a>.</p></article>
+        <article class="service-card"><i class="fas fa-key"></i><h3>Keyword &amp; demand mapping</h3><p>Commercial head terms, long-tail product demand and research-stage queries mapped to the right page types.</p></article>
+        <article class="service-card"><i class="fas fa-link"></i><h3>Authority building</h3><p>Relevance-led <a href="/backlink-seo-services-philippines/">link building</a>: digital PR angles and industry placements, never bulk packages.</p></article>
+        <article class="service-card"><i class="fas fa-robot"></i><h3>AI search optimisation</h3><p>Product specifications, availability, shipping and returns information that buyers can check. We separate observed AI citations from referral visits and orders. See <a href="/ai-search-optimization-services-philippines/">AI search optimisation</a>.</p></article>
+        <article class="service-card"><i class="fas fa-chart-line"></i><h3>Revenue reporting</h3><p>Monthly reports tied to GA4 ecommerce data: rankings, clicks, revenue movement, work completed, next priorities.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <BuyerDecisionSection id="store-page-roles" eyebrow="Give each page a commercial job" title="The homepage cannot target" emphasis="the whole catalogue.">
+    <p>Ecommerce homepage SEO should explain what the store sells, establish trust and guide shoppers towards the main ranges. Trying to make it rank for every product category weakens that route into the catalogue.</p>
+    <dl>
+      <dt>Homepage: brand and range</dt><dd>Show the core offer, buying conditions and useful paths into priority categories. Internal links should help shoppers choose a range rather than repeat every keyword the business wants to rank for.</dd>
+      <dt>Categories: selection and comparison</dt><dd>Give each commercially distinct range a clear owner. Review filters, product availability and supporting information so the page can answer a category search without creating an indexable URL for every possible combination.</dd>
+      <dt>Products: the purchase decision</dt><dd>Match the page to the actual item, variant and specification. Explain stock and discontinued-product handling, preserve useful URLs and avoid repeating category copy where a buyer needs product detail.</dd>
+    </dl>
+    <p>We map those roles before changing titles or expanding content. When the constraint is the store itself rather than search visibility, <a href="/development/#store-build-scope">review the ecommerce development scope</a> before committing to more SEO activity.</p>
+  </BuyerDecisionSection>
+
+  <section class="section darker" id="platforms">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Platforms</p>
+        <h2>Check the output <span>before changing the platform</span></h2>
+        <p class="lead">The first technical review checks what your platform actually outputs: links, canonicals, structured data and the HTML available to shoppers and crawlers.</p>
+        <p>Shopify SEO includes checking duplicate product paths through collections. WooCommerce SEO includes reviewing filters and plugins that can create competing archives. Magento layered navigation and headless rendering need different checks. We confirm the actual issue before asking a developer to change the template.</p>
+      </div>
+      <div class="timezone-card">
+        <h3>Platform coverage</h3>
+        <ul>
+          <li><strong>Shopify &amp; Shopify Plus</strong>: collection architecture, tag duplication, app bloat control</li>
+          <li><strong>WooCommerce</strong>: crawl budget, filtered URLs, performance on WordPress hosting</li>
+          <li><strong>Magento / Adobe Commerce</strong>: layered navigation, index management at scale</li>
+          <li><strong>BigCommerce &amp; headless</strong>: rendering, structured data and URL control on custom stacks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="process">
+    <div class="container">
+      <div class="section-head centered">
+        <p class="eyebrow">How a campaign runs</p>
+        <h2>A phased plan for <span>your ecommerce SEO campaign</span></h2>
+      </div>
+
+      <div class="timeline">
+        <article><span>Diagnose</span><h3>Store diagnosis</h3><p>Full crawl, indexation audit, GA4 and Search Console review, competitor gap analysis and a revenue-mapped priority list.</p></article>
+        <article><span>Implement</span><h3>Template-level fixes</h3><p>Prioritised changes to canonicals, structured data, internal links and category templates, tested before wider rollout.</p></article>
+        <article><span>Publish</span><h3>Content and authority</h3><p>Buying guides, category expansion and link acquisition targeting the terms your revenue depends on.</p></article>
+        <article><span>Review</span><h3>Review and prioritise</h3><p>Compare released changes with search data and recorded orders, then choose the next priorities with the merchandising team.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container narrow">
+      <div class="section-head centered">
+        <p class="eyebrow">Ecommerce SEO FAQs</p>
+        <h2><span>Questions store owners ask</span> before working with us</h2>
+      </div>
+
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container narrow cta-box">
+      <p class="eyebrow">Ready to talk?</p>
+      <h2>Get a straight answer about <span>SEO for your store</span></h2>
+      <p>Send your platform, priority ranges, target markets and developer availability. We can then discuss whether the first piece of work should be a catalogue review, template repair or content brief.</p>
+      <div class="cta-actions">
+        <a href="/contact/" class="cta-primary">Get an Ecommerce SEO Proposal</a>
+        <a href="/case-studies/" class="cta-secondary">View All Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <ServiceEvidencePanel panel={serviceEvidence['ecommerce-seo-services']} />
+
+  <ContactSection slot="contact" />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.narrow {
+  width: min(900px, calc(100% - 2rem));
+}
+
+.market-visual {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(25, 33, 46, 0.09), rgba(25, 33, 46, 0.09));
+  box-shadow: 0 25px 80px rgba(25, 33, 46, 0.09);
+}
+
+.market-node {
+  padding: 1.2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.market-node.forge {
+  border-color: rgba(255, 107, 53, 0.35);
+}
+
+.market-node span {
+  display: block;
+  color: #b83e12;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.market-node strong {
+  display: block;
+  color: #19212e;
+  font-size: 1.05rem;
+}
+
+.market-line {
+  height: 26px;
+  width: 2px;
+  background: linear-gradient(#ff6b35, transparent);
+  margin-left: 1.2rem;
+}
+
+.proof-strip {
+  background: #ffffff;
+  border-top: 1px solid rgba(25, 33, 46, 0.08);
+  border-bottom: 1px solid rgba(25, 33, 46, 0.08);
+  padding: 1.5rem 0;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.proof-grid div {
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(25, 33, 46, 0.08);
+}
+
+.proof-grid strong,
+.proof-grid span {
+  display: block;
+}
+
+.proof-grid strong {
+  color: #19212e;
+  margin-bottom: 0.25rem;
+}
+
+.proof-grid span {
+  color: #465365;
+  font-size: 0.92rem;
+}
+
+.section {
+  padding: 5.5rem 0;
+}
+
+.dark {
+  background: #f7f8fa;
+}
+
+.darker {
+  background: #ffffff;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.eyebrow {
+  color: #b83e12;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  margin-bottom: 0.85rem;
+}
+
+h2 {
+  color: #19212e;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  color: #19212e;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+p,
+li {
+  color: #465365;
+  line-height: 1.75;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: #465365;
+}
+
+.section-head {
+  max-width: 820px;
+  margin-bottom: 3rem;
+}
+
+.centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-grid,
+.service-grid,
+.results-grid,
+.timeline {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card-grid.small {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card,
+.service-card,
+.result-card,
+.timezone-card,
+.timeline article,
+.faq-item {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(25, 33, 46, 0.09);
+  border-radius: 22px;
+  padding: 1.5rem;
+}
+
+.card a,
+.service-card a {
+  color: #b83e12;
+}
+
+.service-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.service-card i {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+  color: #19212e;
+  background: linear-gradient(135deg, #ff6b35, #ff9f1c);
+}
+
+.results-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.result-tag {
+  color: #b83e12;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.result-card a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #b83e12;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.timeline {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.timeline span {
+  display: inline-block;
+  color: #b83e12;
+  font-weight: 800;
+  margin-bottom: 0.9rem;
+}
+
+.timezone-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+}
+
+.timezone-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+
+.timezone-card li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.timezone-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #b83e12;
+  font-weight: 800;
+}
+
+.faq-section {
+  background: #f7f8fa;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  color: #19212e;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.faq-item p {
+  margin-top: 1rem;
+}
+
+.cta-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.cta-box {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.18), rgba(255, 159, 28, 0.08));
+  border: 1px solid rgba(255, 107, 53, 0.28);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cta-primary {
+  color: #0d0f1a;
+  background: #fff;
+}
+
+.cta-secondary {
+  color: #19212e;
+  border: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+@media (max-width: 980px) {
+  .proof-grid,
+  .service-grid,
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .proof-grid,
+  .service-grid,
+  .timeline,
+  .card-grid.small {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    padding: 2rem 1.25rem;
+  }
+}
+</style>

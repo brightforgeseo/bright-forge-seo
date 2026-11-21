@@ -1,0 +1,128 @@
+---
+import '../../styles/development-editorial.css';
+import MainLayout from "../../layouts/MainLayout.astro";
+import LegacyHeader from "../../components/LegacyHeader.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/Hero.astro";
+import ButtonPrimary from "../../components/ButtonPrimary.astro";
+import ButtonSecondary from "../../components/ButtonSecondary.astro";
+import DevelopmentStackJobs from "../../components/DevelopmentStackJobs.astro";
+const canonical="https://brightforge.com.ph/development/nextjs/";
+const proof=[
+  {
+    "title": "Public and private routes",
+    "text": "Product pages should be found in search. Signed-in account data should not be retrievable by a signed-out visitor."
+  },
+  {
+    "title": "Publishing path agreed",
+    "text": "A CMS edit reaches the public page through a rebuild or revalidation, depending on the deployment."
+  },
+  {
+    "title": "Host matched to features",
+    "text": "Draft Mode, on-demand revalidation and Server Actions need a compatible server deployment."
+  }
+];
+const checks=[
+  {
+    "title": "Crawlable pages",
+    "text": "Search engines need clean URLs, internal links, server-rendered content where needed and sensible indexation controls."
+  },
+  {
+    "title": "Content structure",
+    "text": "Pages need headings, body copy, proof, FAQs and conversion points that support SEO rather than sit behind visual components."
+  },
+  {
+    "title": "Performance and Core Web Vitals",
+    "text": "We reduce bloat, unnecessary scripts, layout shifts and render delays that weaken user experience."
+  },
+  {
+    "title": "Redirect and migration safety",
+    "text": "When replacing an old site, URL mapping and launch QA matter more than a prettier homepage."
+  },
+  {
+    "title": "Schema and metadata",
+    "text": "Titles, descriptions, canonical tags, structured data and Open Graph basics should be built in, not bolted on later."
+  },
+  {
+    "title": "Analytics and forms",
+    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+  }
+];
+const process=[
+  {
+    "title": "Audit",
+    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+  },
+  {
+    "title": "Plan",
+    "text": "Map templates, URLs, content sections, redirects, schema and development priorities."
+  },
+  {
+    "title": "Build",
+    "text": "Develop the site around speed, accessibility, crawlability and editorial control."
+  },
+  {
+    "title": "QA",
+    "text": "Test pages, metadata, forms, mobile layouts, redirects, schema and indexation settings."
+  },
+  {
+    "title": "Launch",
+    "text": "Deploy with a launch checklist, Search Console monitoring and post-launch crawl checks."
+  },
+  {
+    "title": "Improve",
+    "text": "Use ranking, crawl and conversion data to refine pages after launch."
+  }
+];
+const faqs=[
+  {
+    "question": "Does a Next.js site need a server?",
+    "answer": "Not always. A static export can be served as HTML, CSS and JavaScript. Features such as runtime Draft Mode, on-demand revalidation and Server Actions need a compatible server deployment. We check the required features against the proposed host before choosing the deployment model."
+  },
+  {
+    "question": "How will a CMS edit reach the public page?",
+    "answer": "That depends on the rendering and cache configuration. A static export needs a new build; a server deployment may use revalidation after publication. We agree the expected publishing delay and check an edit on the deployed page, including its title and canonical. Cache behaviour must be checked against the installed Next.js version and configuration."
+  },
+  {
+    "question": "Should logged-in pages appear in Google?",
+    "answer": "Private account content should stay behind authenticated access. Public product and service pages need their own accessible content and links. A loading state inside an account is not the same problem as missing content on a public landing page; noindex is not a substitute for access control."
+  },
+  {
+    "question": "Can editors preview unpublished content?",
+    "answer": "Next.js Draft Mode can support a CMS preview, but it needs integration and a server deployment. The scope should define who can enter preview, how draft access is protected and how editors return to the published version. It is not included simply by installing Next.js."
+  },
+  {
+    "question": "What do you need before quoting a rebuild?",
+    "answer": "Share the repository or current website, Next.js version, hosting setup, CMS, public routes and any authentication or API dependencies. We agree who approves releases and who owns dependency updates, hosting accounts and rollback. Ongoing maintenance and backend changes need an explicit scope."
+  },
+  {
+    "question": "Can you work alongside our developer, and will rankings improve?",
+    "answer": "We can provide SEO direction, implementation guidance and launch QA alongside your developer. Redirects, content, metadata, links and indexation are checked during a rebuild, but no framework or launch checklist guarantees rankings."
+  }
+];
+---
+<MainLayout title="Next.js Development Philippines | Bright Forge" description="Next.js development for SEO-aware applications, dashboards and dynamic websites that need performance, structure and reliable rendering." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"Next.js",url:canonical}]} faqs={faqs}>
+<LegacyHeader slot="header" />
+<Hero title="Next.js <span>Development</span>" breadcrumbCurrent="Next.js">
+<Fragment slot="story"><p class="hero-subtitle">Next.js development for websites with public content, live data and account features to plan together.</p><p>We decide how each route is rendered, how editors publish and what the host must run. Product pages should be discoverable; private account details should not. Those decisions shape the build before interface work starts.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
+</Hero>
+<main class="dev-page">
+<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Next.js should solve a <span>product problem</span> without creating an SEO one</h2><p>A product site may have a public pricing page, CMS-managed guides and a signed-in dashboard. They do not need the same caching or access rules. We map those requirements alongside the existing URLs, metadata and internal links.</p><p>Illustrative acceptance check: publish an approved CMS edit, then inspect the public page outside preview. Check that the changed copy and metadata appear within the agreed publishing window, while a signed-out visitor cannot retrieve private account data. This describes a check to scope, not a completed client project.</p></div><aside class="panel"><h3>What we check first</h3><p>Which routes are public, how often their data changes, whether editors need preview and which server features the host supports. We also review forms, analytics and the old-to-new URL map.</p></aside></div></section>
+<DevelopmentStackJobs
+  title="What we actually lock down in <span>Next.js</span>"
+  intro="Rendering and publishing choices affect hosting costs, content freshness and what the team must maintain."
+  jobs={[
+    {title:'Public and private routes', text:'Choose build-time or request-time rendering around the content. Check public page HTML and links separately from authenticated screens.'},
+    {title:'Publishing and cache refresh', text:'Record what triggers revalidation or a rebuild. Test changed and deleted CMS content, not just the first successful page load.'},
+    {title:'Preview and production', text:'Keep draft access separate from public output. Verify titles, canonicals, Open Graph and schema on the deployed routes.'},
+    {title:'Release and rollback', text:'Confirm runtime support, environment settings and the release owner. Test redirects and retain a route back to the previous deployment.'}
+  ]}
+/>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>Next.js has a clear role</span></h2><p>This suits apps, SaaS sites, dashboards, portals and dynamic marketing sites that need React architecture without sacrificing crawlability or performance.</p></div><div class="panel"><h3>Before we recommend Next.js</h3><p>If editors mainly publish service pages and articles, Astro with a CMS or WordPress may meet the brief with fewer application dependencies. Next.js earns its place when the route, data and interface requirements justify maintaining that application layer.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare the <span>publishing and application needs</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
+<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Next.js development</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Need a Next.js build that <span>search engines</span> can actually understand?</h2><p>We can review your product, pages and rendering needs before recommending a Next.js architecture.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+</main><Footer slot="footer"/>
+</MainLayout>
+

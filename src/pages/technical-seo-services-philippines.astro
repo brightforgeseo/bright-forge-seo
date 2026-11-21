@@ -1,69 +1,865 @@
 ---
-import EditorialPage from '../components/EditorialPage.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
+import serviceEvidence from '../data/serviceEvidence.json';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 
-const page = {
-  path: '/technical-seo-services-philippines/',
-  title: 'Technical SEO Services Philippines | Bright Forge SEO',
-  description: 'Technical SEO from our Philippines team: we find indexing, speed, redirect and rendering faults and give your developer the URLs, the fix and the test.',
-  h1: 'Technical SEO Services in the Philippines',
-  crumb: 'Technical SEO',
-  enquiry: '/contact/?service=technical-seo#contactForm',
-  lead: [
-    'Technical SEO deals with the faults that stop Google reading a website properly: pages missing from the index, duplicate URLs, slow templates, broken redirects, content hidden behind JavaScript. We find them, explain each one to your developer and confirm the fix once it is live.',
-  ],
-  secondary: { href: '/samples/technical-review-handoff.csv', label: 'See a sample handoff (CSV)' },
-  sections: [
-    {
-      h2: 'Problems we are usually called in for',
-      html: `<ul class="bf-list">
-<li>Important pages are not indexed.</li>
-<li>Traffic fell after a redesign or a platform change.</li>
-<li>The site is slow and fails Core Web Vitals.</li>
-<li>Search Console shows errors nobody has had time to examine.</li>
-<li>An online shop's filters have created thousands of near-identical URLs.</li>
-<li>A relaunch is planned and should not go wrong. See <a href="/website-migration-services/">website migration services</a>.</li>
-</ul>`,
-    },
-    {
-      h2: 'What we check',
-      html: `<p>Crawling and indexing; redirects and canonicals; site structure and internal links; page speed and Core Web Vitals; mobile layout; JavaScript rendering; structured data; XML sitemaps and robots.txt; security and HTTPS.</p>
-<p>Two faults we see often are covered in our articles on <a href="/blog/robots-txt-mistakes-that-block-google/">robots.txt mistakes that block Google</a> and <a href="/blog/soft-404s-in-search-console/">soft 404s in Search Console</a>.</p>`,
-    },
-    {
-      h2: 'What you receive',
-      html: `<p>For each fault, one short brief:</p>
-<dl class="bf-deliverables">
-<dt>The page and the fault</dt><dd>Affected URLs, with a screenshot or crawl extract.</dd>
-<dt>The change</dt><dd>What should be different, written for a developer.</dd>
-<dt>The live check</dt><dd>How we will confirm it worked.</dd>
-</dl>
-<p>Briefs are ordered by effect on search, with the likely effort for each. See a real example: our <a href="/samples/technical-review-handoff.csv">technical review handoff</a>, a review of our own website before repairs, showing findings and acceptance checks.</p>`,
-    },
-    {
-      h2: 'How we do it, step by step',
-      html: `<ol class="bf-steps">
-<li>Crawl the site and gather Search Console, analytics and speed data.</li>
-<li>Reproduce each fault, so we report causes and not symptoms.</li>
-<li>Prioritise.</li>
-<li>Write the briefs, or make the changes ourselves where we have access.</li>
-<li>Test after release and record the result.</li>
-<li>Monitor monthly on an ongoing programme.</li>
-</ol>`,
-    },
-    {
-      h2: 'Platforms',
-      html: `<p>We work with WordPress, Shopify and WooCommerce sites and with sites built on JavaScript frameworks. Our own site is built on Astro. Where a fault needs a rebuild and not a patch, our <a href="/development/">web design and development</a> team can do it.</p>`,
-    },
-    {
-      h2: 'Pricing',
-      html: `<p>We do not publish a rate card. A one-off technical review, or technical work within a monthly programme, is scoped in a written proposal.</p>`,
-    },
-  ],
-  faqs: [
-    { question: 'Do you make the changes or only recommend them?', answer: 'Either. Many clients have a developer; some give us access.' },
-    { question: 'Will this improve rankings on its own?', answer: 'It removes obstacles. A site with good content and technical faults often improves quickly once they are fixed; a site with weak content will also need content work.' },
-    { question: 'How is this different from an SEO audit?', answer: 'An <a href="/seo-audit-services/">SEO audit</a> also covers content, keywords and links. This service goes deeper on the technical side and includes checking the fixes.' },
-  ],
-};
+const technicalChecks = [
+  {
+    title: 'Crawl access and indexation',
+    copy: 'We check whether Google can reach the right pages, ignore the wrong ones and understand which URLs should be indexed. That includes robots.txt, XML sitemaps, canonicals, noindex tags, redirects, crawl traps and index bloat.'
+  },
+  {
+    title: 'Core Web Vitals and speed',
+    copy: 'We identify the templates, scripts, images, hosting issues and layout shifts that slow the site down or make key pages harder to use, then prioritise fixes by commercial impact.'
+  },
+  {
+    title: 'Site architecture and internal links',
+    copy: 'We review whether the site structure pushes authority towards important service, category and location pages instead of burying money pages behind weak navigation or orphaned URLs.'
+  },
+  {
+    title: 'JavaScript and rendering',
+    copy: 'We test whether key content, links, metadata and structured data are available to crawlers, especially on JavaScript-heavy sites where visible content is not always crawlable content.'
+  },
+  {
+    title: 'Schema and entity signals',
+    copy: 'We clean up structured data, remove unsupported claims, align schema with visible page content and make business, service, FAQ and local signals easier for search engines to interpret.'
+  },
+  {
+    title: 'Migration and release QA',
+    copy: 'We compare affected templates before and after a release: responses, canonicals, crawl controls, rendered content and internal links. For a full domain or CMS move, we also scope URL mapping and post-launch checks.'
+  }
+];
+
+const issueTypes = [
+  'Important pages missing from the index',
+  'Duplicate URLs splitting ranking signals',
+  'Slow templates weakening rankings and conversions',
+  'Redirect chains adding unnecessary requests',
+  'Missing or conflicting canonical signals',
+  'Weak internal links to commercial pages',
+  'Broken schema or unsupported review markup',
+  'Mobile usability and layout problems',
+  'JavaScript hiding important content or links',
+  'Migration risks before a redesign or CMS move'
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Technical discovery',
+    copy: 'We review the site with crawls, Search Console, page templates, index coverage, speed data, analytics signals and manual checks. The aim is to find the technical issues that can actually affect rankings, traffic or leads.'
+  },
+  {
+    label: '02',
+    title: 'Priority diagnosis',
+    copy: 'We separate real blockers from harmless noise. A crawl export can contain thousands of warnings, but only some deserve developer time. We prioritise by commercial impact, risk and implementation effort.'
+  },
+  {
+    label: '03',
+    title: 'Fix briefs and implementation',
+    copy: 'We provide developer-ready instructions or handle the fixes where appropriate. Every recommendation should explain the problem, the fix, the affected URLs and how success will be checked.'
+  },
+  {
+    label: '04',
+    title: 'QA and monitoring',
+    copy: 'We verify changes after release, compare crawls, watch Search Console and check whether the fix created any new problems. Technical SEO is not finished when a ticket moves to Done.'
+  }
+];
+
+const fitBlocks = [
+  {
+    title: 'Sites with rankings stuck below page one',
+    copy: 'If content and links are improving but rankings are not moving, crawlability, indexation, architecture or page experience may be limiting the campaign.'
+  },
+  {
+    title: 'Websites about to migrate or redesign',
+    copy: 'A redesign can wipe out years of organic progress if redirects, URL mapping, canonicals, metadata, content and crawl controls are handled badly.'
+  },
+  {
+    title: 'Ecommerce and large catalogue sites',
+    copy: 'Filters, faceted navigation, category depth, duplicate URLs, internal search pages and product churn can create crawl waste and indexation mess quickly.'
+  },
+  {
+    title: 'Service businesses with weak lead flow',
+    copy: 'Slow pages and poor mobile layouts can make enquiries harder. Buried service pages may be difficult to discover, while broken tracking can hide enquiries that are already happening.'
+  }
+];
+
+const proofItems = [
+  {
+    title: 'Migration safety',
+    copy: 'We check old URLs, redirect destinations and crawl controls to reduce avoidable migration risk. These checks do not promise unchanged traffic.'
+  },
+  {
+    title: 'Cleaner crawl signals',
+    copy: 'A cleaner technical foundation helps Google spend more time on the pages that matter and less time on duplicates, traps and dead ends.'
+  },
+  {
+    title: 'Better conversion paths',
+    copy: 'Speed, mobile usability, tracking and template fixes support the CRO side of SEO, not just rankings.'
+  }
+];
+
+const faqs = [
+  { question: 'What are technical SEO services?', answer: 'Technical SEO services improve the crawlability, indexation, speed, structure, rendering, schema and release safety of a website. The aim is to remove technical blockers that stop search engines finding, understanding and ranking important pages.' },
+  { question: 'Is technical SEO different from an SEO audit?', answer: 'A technical SEO audit diagnoses problems. Technical SEO services go further by prioritising the issues, writing implementation briefs, helping developers fix them, checking the release and monitoring results after Google recrawls the site.' },
+  { question: 'What technical SEO issues usually matter most?', answer: 'The highest-impact issues are usually indexation problems, blocked pages, duplicate URLs, broken canonicals, slow templates, redirect chains, weak internal links, mobile usability issues, JavaScript rendering problems and unsupported schema.' },
+  { question: 'Can you work with our developer?', answer: 'Yes. We can provide developer-ready tickets, explain the SEO risk, review staging changes, test the release and monitor Search Console after deployment. We can also implement fixes directly when the access and platform allow it.' },
+  { question: 'How quickly does technical SEO improve rankings?', answer: 'We can verify a deployed response, canonical or template change immediately. Google still needs to recrawl and process it, and a technically correct page is not guaranteed to rank. We report released fixes separately from subsequent indexation, clicks and enquiries.' },
+  { question: 'Do small websites need technical SEO?', answer: 'Yes, but the scope is usually lighter. A small business site may only need crawl checks, indexation cleanup, speed fixes, schema validation, mobile checks and stronger internal links to service pages.' },
+  { question: 'Do ecommerce websites need more technical SEO?', answer: 'Usually, yes. Ecommerce sites often have filters, variants, category duplication, product churn, pagination, internal search URLs, faceted navigation and performance issues that can waste crawl budget and weaken category rankings.' },
+  { question: 'Can technical SEO help AI search visibility?', answer: 'Technical work can make content accessible to search crawlers and keep structured data consistent with the page. Access requirements differ between AI search systems; crawlability or schema alone does not secure a citation. We check the relevant access controls when AI search is part of the brief.' },
+  { question: 'Can you provide technical SEO for overseas businesses and agencies?', answer: 'Yes. We support direct businesses and white label agency partners in Australia, the UK and other English-language markets. The technical standards stay consistent, while implementation notes, reporting, time-zone handovers and market-specific page architecture are adapted to the client and country.' }
+];
 ---
-<EditorialPage page={page} />
+
+<MainLayout
+  title="Technical SEO Services Philippines | Bright Forge"
+  description="Pages missing from Google? Traffic down after a rebuild? We investigate indexing, speed and redirects, with fixes your developer can test."
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Technical SEO Services Philippines',
+          item: 'https://brightforge.com.ph/technical-seo-services-philippines/'
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Technical SEO Services Philippines',
+      url: 'https://brightforge.com.ph/technical-seo-services-philippines/',
+      inLanguage: 'en',
+      description: 'Technical SEO services for crawlability, indexation, Core Web Vitals, schema, migrations, architecture and site health fixes.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: technicalChecks.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          description: item.copy
+        }))
+      }
+    })} />
+  </Fragment>
+
+  <LegacyHeader slot="header" />
+
+  <Hero
+    badgeIcon="fas fa-cogs"
+    badgeText="Technical SEO Services"
+    title="Technical SEO Services Philippines for <span>Site Health, Indexation and Growth</span>"
+    breadcrumbCurrent="Technical SEO Services Philippines"
+  >
+    <Fragment slot="story">
+      <p>We investigate crawl, indexing and performance faults, then give your developer affected URLs, evidence and testable fixes. Our Philippines-based team supports local and international websites.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/?service=technical-seo#contactForm" text="Request Technical SEO Work" />
+      <ButtonSecondary href="#checks" text="See What We Check" />
+    </Fragment>
+
+    <Fragment slot="stats">
+      <div class="hero-stats">
+        <div class="stat"><strong>Indexation</strong><span>Find the pages Google should and should not index.</span></div>
+        <div class="stat"><strong>Performance</strong><span>Improve speed, Core Web Vitals and mobile experience.</span></div>
+        <div class="stat"><strong>Release safety</strong><span>Check redirects, crawl controls and templates during releases.</span></div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <section class="diagnosis-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="diagnosis-layout">
+        <div class="diagnosis-copy">
+          <span class="eyebrow">Why technical SEO matters</span>
+          <h2>Technical problems usually hide behind <span>normal-looking pages</span></h2>
+          <p>A service page has disappeared from search after a release. Product filters keep generating new URLs. The mobile page loads, but its enquiry button shifts while someone is trying to tap it. We investigate the affected pages and turn a reproducible fault into a change your developer can test.</p>
+          <p>We provide technical SEO from the Philippines for local businesses and teams in Australia, the UK and the USA. You receive the affected URLs, supporting evidence, proposed fix and acceptance checks. If you need a wider diagnosis before choosing the work, start with <a href="/seo-audit-services/">SEO audits</a>.</p>
+          <p>Before work starts, we agree whether we are advising your developer or implementing changes with authorised access. We also name the release owner, the staging environment and who can approve or reverse a change.</p>
+          <p>Most businesses do not discover technical SEO problems because the homepage looks broken. They discover them when rankings stall, important pages refuse to index, traffic drops after a redesign or a site becomes slower every time another plugin, script or template change is added.</p>
+          <p>Technical SEO connects the website build to commercial performance. If Google wastes time on duplicates, misses key pages, struggles to render content or finds inconsistent signals, content and links have to work harder than they should.</p>
+        </div>
+        <aside class="diagnosis-panel" aria-label="Technical SEO audit priorities">
+          <h3>We look for the issues that can change outcomes</h3>
+          <ul>
+            {issueTypes.map((issue) => <li>{issue}</li>)}
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="checks" class="checks-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading">
+        <span class="eyebrow">What we check</span>
+        <h2><span>Technical SEO</span> services that support rankings, leads and safer growth</h2>
+        <p>The work is not about collecting errors. It is about finding the technical issues that hold back search visibility, damage user experience or create release risk.</p>
+      </div>
+      <div class="checks-list">
+        {technicalChecks.map((check, index) => (
+          <article class="check-item">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{check.title}</h3>
+              <p>{check.copy}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="fit-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="fit-layout">
+        <div>
+          <span class="eyebrow">Who it is for</span>
+          <h2>Useful when <span>SEO work is happening</span>, but the site still feels held back</h2>
+          <p>Technical SEO is often the layer that makes the rest of the campaign work properly. It is especially important before major releases, on larger sites and when rankings or indexation behave unpredictably.</p>
+        </div>
+        <div class="fit-list">
+          {fitBlocks.map((block) => (
+            <article>
+              <h3>{block.title}</h3>
+              <p>{block.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="process-layout">
+        <div class="process-intro">
+          <span class="eyebrow">How we work</span>
+          <h2>Reproduce the fault, agree the change, <span>test the release</span></h2>
+          <p>For example, a category may load normally while its canonical points to a different category. We record the returned HTML and the affected template, confirm which URL should be indexed, then check the approved canonical on staging and live. We also check sibling categories so one fix does not break another.</p>
+        </div>
+        <div class="timeline">
+          {processSteps.map((step) => (
+            <article class="timeline-item">
+              <span>{step.label}</span>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="proof-layout">
+        <div class="proof-copy">
+          <span class="eyebrow">Commercial impact</span>
+          <h2><span>Technical SEO</span> protects the parts of organic growth that are easy to break</h2>
+          <p>Organic growth depends on more than content quality. The site has to be accessible, fast, internally coherent and safe to change. Technical SEO reduces the risk of invisible problems becoming expensive traffic losses.</p>
+          <div class="proof-links">
+            <a href="/seo-services-philippines/">SEO Services Philippines</a>
+            <a href="/seo-audit-services/">SEO Audit Services</a>
+            <a href="/website-migration-services/">Website Migration Services</a>
+          </div>
+        </div>
+        <div class="proof-cards">
+          {proofItems.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="collab-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="collab-panel">
+        <span class="eyebrow">Developer friendly</span>
+        <h2>We can work with <span>your developer</span>, your CMS or your internal team</h2>
+        <p>A developer needs enough detail to reproduce the issue: request URL, device or rendering conditions, observed output and expected behaviour. We attach the approval dependency and a check your team can repeat. <a href="/samples/technical-review-handoff.csv">View our technical review handoff sample</a>, a pre-repair review of our own website showing findings and acceptance checks, not client results.</p>
+        <div class="collab-grid">
+          <div><strong>For founders</strong><span>Clear commercial priorities, not technical fog.</span></div>
+          <div><strong>For marketers</strong><span>Practical SEO fixes linked to rankings, traffic and conversions.</span></div>
+          <div><strong>For developers</strong><span>Specific tickets, expected behaviour and QA criteria.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="international-section" id="international-delivery">
+    <div class="max-w-7xl mx-auto px-6 international-layout">
+      <div class="international-copy">
+        <span class="eyebrow">International delivery</span>
+        <h2>Philippines-based technical SEO for <span>overseas sites and agency teams</span></h2>
+        <p>A multi-country site may use separate domains, regional folders or one shared catalogue. We check the intended audience of each version alongside its canonicals, regional tags and internal links, then brief the team responsible for that platform.</p>
+        <p>We work directly with businesses and behind the scenes for agencies. Each engagement defines who owns implementation, how staging is reviewed, which market is affected and what evidence will prove the release worked.</p>
+      </div>
+      <div class="delivery-notes">
+        <article>
+          <span>Australia</span>
+          <div>
+            <h3>Same-day technical collaboration</h3>
+            <p>Philippine time aligns with Perth, while eastern Australian overlap varies with daylight saving. We agree the working session and release coverage rather than assuming every Australian team keeps the same hours.</p>
+            <a href="/seo-services-australia/">Technical SEO for Australian campaigns →</a>
+          </div>
+        </article>
+        <article>
+          <span>United Kingdom</span>
+          <div>
+            <h3>Written handovers for UK developers</h3>
+            <p>We agree a review window and record unresolved questions in the ticket. A UK developer can see the affected template, proposed change and test without needing to reconstruct the diagnosis on a call.</p>
+            <a href="/seo-services-uk/">Technical SEO for UK campaigns →</a>
+          </div>
+        </article>
+        <article>
+          <span>United States</span>
+          <div>
+            <h3>Release checks across US time zones</h3>
+            <p>We agree the US time zone, release window and escalation contact before booking QA. Overnight coverage and turnaround depend on the scope; a launch should not rely on an assumed next-day handover.</p>
+            <a href="/seo-services-usa/">Technical SEO for US campaigns →</a>
+          </div>
+        </article>
+        <article>
+          <span>Agency fulfilment</span>
+          <div>
+            <h3>Client-safe technical delivery under your brand</h3>
+            <p>Agency partners receive prioritised findings, affected URL examples, developer instructions and QA criteria that can be presented without rebuilding the audit.</p>
+            <a href="/white-label-seo-services-philippines/">White label technical SEO support →</a>
+          </div>
+        </article>
+        <article>
+          <span>Large catalogues</span>
+          <div>
+            <h3>Technical SEO for ecommerce scale</h3>
+            <p>Filters, variants, category architecture and product churn need a catalogue-level plan rather than a page-by-page checklist.</p>
+            <a href="/ecommerce-seo-services/">Ecommerce SEO delivery →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="section-heading">
+        <span class="eyebrow">Technical SEO FAQs</span>
+        <h2><span>Questions businesses ask</span> before fixing the technical layer</h2>
+        <p>Technical SEO can get nerdy fast. The useful version stays tied to visibility, risk and lead flow.</p>
+      </div>
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="final-cta-panel">
+        <span class="eyebrow">Start with the crawl</span>
+        <h2>Get <span>technical SEO</span> work before the next SEO push, redesign or migration</h2>
+        <p>We will review the technical layer, identify the highest-risk blockers and show what needs fixing first.</p>
+        <div class="final-actions">
+          <ButtonPrimary href="/contact/?service=technical-seo#contactForm" text="Request Technical SEO Work" />
+          <ButtonSecondary href="/case-studies/" text="View SEO Case Studies" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceEvidencePanel panel={serviceEvidence['technical-seo-services-philippines']} />
+
+  <ContactSection href="/contact/?service=technical-seo#contactForm" />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+:root {
+  --bf-bg: #ffffff;
+  --bf-panel: #f7f8fa;
+  --bf-panel-2: #f7f8fa;
+  --bf-text: #19212e;
+  --bf-muted: #465365;
+  --bf-soft: #596779;
+  --bf-orange: #f0622a;
+  --bf-orange-dark: #b73510;
+  --bf-border: rgba(25, 33, 46, 0.09);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  padding: 1.1rem;
+  border: 1px solid rgba(25, 33, 46, 0.09);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stat strong {
+  display: block;
+  color: #19212e;
+  font-size: 1.05rem;
+  margin-bottom: .45rem;
+}
+
+.stat span {
+  display: block;
+  color: #465365;
+  font-size: .86rem;
+  line-height: 1.45;
+}
+
+.diagnosis-section,
+.checks-section,
+.fit-section,
+.process-section,
+.proof-section,
+.collab-section,
+.faq-section,
+.final-cta-section,
+:global(.contact-cta-section) {
+  content-visibility: visible !important;
+}
+
+.diagnosis-section,
+.checks-section,
+.proof-section,
+.faq-section,
+.final-cta-section {
+  background: var(--bf-bg);
+  color: var(--bf-text);
+  padding: 6rem 0;
+}
+
+.fit-section,
+.process-section,
+.collab-section {
+  background: var(--bf-panel);
+  color: var(--bf-text);
+  padding: 6rem 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  color: var(--bf-link, #b83e12);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.diagnosis-layout,
+.fit-layout,
+.process-layout,
+.proof-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .9fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.diagnosis-copy h2,
+.section-heading h2,
+.fit-layout h2,
+.process-intro h2,
+.proof-copy h2,
+.collab-panel h2,
+.final-cta-panel h2 {
+  color: var(--bf-text);
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
+}
+
+.diagnosis-copy p,
+.section-heading p,
+.fit-layout p,
+.process-intro p,
+.proof-copy p,
+.collab-panel p,
+.final-cta-panel p {
+  color: var(--bf-muted);
+  font-size: 1.06rem;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+}
+
+.diagnosis-panel {
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.18), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(240, 98, 42, 0.22);
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.diagnosis-panel h3 {
+  color: #19212e;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+.diagnosis-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .75rem;
+}
+
+.diagnosis-panel li {
+  color: var(--bf-muted);
+  line-height: 1.5;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.diagnosis-panel li::before {
+  content: '';
+  width: .42rem;
+  height: .42rem;
+  border-radius: 50%;
+  background: var(--bf-orange);
+  position: absolute;
+  left: 0;
+  top: .55rem;
+}
+
+.section-heading {
+  max-width: 840px;
+  text-align: center;
+  margin: 0 auto 3.5rem;
+}
+
+.checks-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.4rem;
+  padding: 1.5rem;
+  border: 1px solid var(--bf-border);
+  border-radius: 1.3rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.check-item > span,
+.timeline-item > span {
+  color: var(--bf-link, #b83e12);
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.check-item h3,
+.fit-list h3,
+.timeline-item h3,
+.proof-cards h3,
+.faq-item h3 {
+  color: #19212e;
+  font-size: 1.22rem;
+  font-weight: 850;
+  margin: 0 0 .55rem;
+}
+
+.check-item p,
+.fit-list p,
+.timeline-item p,
+.proof-cards p,
+.faq-item p {
+  color: var(--bf-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.fit-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.fit-list article {
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  border-left: 2px solid rgba(240, 98, 42, 0.55);
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  padding: 1.5rem;
+  border: 1px solid var(--bf-border);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.timeline-item > span {
+  display: inline-block;
+  margin-bottom: .65rem;
+}
+
+.proof-layout {
+  grid-template-columns: .9fr 1.1fr;
+}
+
+.proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.proof-links a {
+  color: #19212e;
+  text-decoration: none;
+  font-weight: 800;
+  border: 1px solid rgba(240, 98, 42, 0.35);
+  border-radius: 999px;
+  padding: .7rem 1rem;
+  background: rgba(240, 98, 42, 0.08);
+}
+
+.proof-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.proof-cards article {
+  padding: 1.4rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(240, 98, 42, 0.22);
+  background: linear-gradient(180deg, rgba(240, 98, 42, 0.12), rgba(255, 255, 255, 0.035));
+}
+
+.collab-panel {
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(25, 33, 46, 0.09);
+  border-radius: 2rem;
+  background: var(--bf-bg);
+}
+
+.collab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.collab-grid div {
+  padding: 1.25rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--bf-border);
+}
+
+.collab-grid strong {
+  display: block;
+  color: #19212e;
+  margin-bottom: .45rem;
+}
+
+.collab-grid span {
+  color: var(--bf-muted);
+  line-height: 1.55;
+}
+
+.international-section {
+  background: var(--bf-bg);
+  color: var(--bf-text);
+  padding: 6rem 0;
+  border-top: 1px solid var(--bf-border);
+  border-bottom: 1px solid var(--bf-border);
+}
+
+.international-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 7vw, 6rem);
+  align-items: start;
+}
+
+.international-copy {
+  position: sticky;
+  top: 7rem;
+}
+
+.international-copy h2 {
+  color: var(--bf-text);
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
+}
+
+.international-copy p {
+  color: var(--bf-muted);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.delivery-notes {
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.delivery-notes article {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.delivery-notes article > span {
+  color: var(--bf-link, #b83e12);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.delivery-notes h3 {
+  color: #19212e;
+  font-size: 1.3rem;
+  margin: 0 0 .55rem;
+}
+
+.delivery-notes p {
+  color: var(--bf-muted);
+  line-height: 1.7;
+  margin: 0 0 .65rem;
+}
+
+.delivery-notes a {
+  color: var(--bf-link, #b83e12);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  padding: 1.5rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--bf-border);
+}
+
+.final-cta-panel {
+  text-align: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: 2rem;
+  background: linear-gradient(145deg, rgba(240, 98, 42, 0.18), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(240, 98, 42, 0.22);
+}
+
+.final-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .diagnosis-layout,
+  .fit-layout,
+  .process-layout,
+  .proof-layout,
+  .international-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .international-copy {
+    position: static;
+  }
+
+  .proof-cards,
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .diagnosis-section,
+  .checks-section,
+  .fit-section,
+  .process-section,
+  .proof-section,
+  .collab-section,
+  .faq-section,
+  .final-cta-section {
+    padding: 4rem 0;
+  }
+
+  .international-section {
+    padding: 4rem 0;
+  }
+
+  .hero-stats,
+  .proof-cards,
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .check-item {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .delivery-notes article {
+    grid-template-columns: 1fr;
+    gap: .65rem;
+  }
+}
+
+</style>

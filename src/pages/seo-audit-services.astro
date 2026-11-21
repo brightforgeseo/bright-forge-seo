@@ -1,74 +1,948 @@
 ---
-import EditorialPage from '../components/EditorialPage.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import ServiceEvidencePanel from '../components/ServiceEvidencePanel.astro';
+import serviceEvidence from '../data/serviceEvidence.json';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 
-const page = {
-  path: '/seo-audit-services/',
-  title: 'SEO Audit Services Philippines | Bright Forge Site Audits',
-  description: 'An SEO audit from our Philippines team: a full crawl, Search Console review and a prioritised list of findings with evidence, owners and tests for each fix.',
-  h1: 'SEO Audit Services in the Philippines',
-  crumb: 'SEO audit',
-  lead: [
-    'An audit tells you why a website is not performing in search and what to do about it, in order. We crawl the whole site, study your Search Console and analytics data, review your content and links, and deliver a list of findings your developer, writer and marketing team can act on.',
-  ],
-  sections: [
-    {
-      h2: 'When an audit is worth having',
-      html: `<ul class="bf-list">
-<li>Traffic has fallen and nobody knows why.</li>
-<li>Rankings are stuck despite ongoing work.</li>
-<li>You are about to redesign, change CMS or move domain. See <a href="/website-migration-services/">website migration services</a>.</li>
-<li>You are about to spend on content or links and want to know it will pay.</li>
-<li>A previous agency's work needs checking.</li>
-</ul>`,
-    },
-    {
-      h2: 'What we check',
-      html: `<dl class="bf-deliverables">
-<dt>Crawling and indexing</dt><dd>Can Google reach and index the right pages, and only those.</dd>
-<dt>Structure</dt><dd>Site structure and internal links.</dd>
-<dt>Technical health</dt><dd>Speed, mobile layout, redirects, canonicals, structured data, JavaScript.</dd>
-<dt>Content</dt><dd>Does each important page match what searchers want, and do pages compete with each other.</dd>
-<dt>Keywords</dt><dd>Where you are visible, and where competitors are and you are not.</dd>
-<dt>Links</dt><dd>Who links to you, and any risk.</dd>
-<dt>Local signals</dt><dd>Where relevant.</dd>
-<dt>The enquiry route</dt><dd>Forms, phone links and tracking.</dd>
-</dl>`,
-    },
-    {
-      h2: 'What you receive',
-      html: `<dl class="bf-deliverables">
-<dt>A summary for decision makers</dt><dd>A short account of what is wrong and what it is costing.</dd>
-<dt>A findings register</dt><dd>Each finding has the affected URLs, the evidence, the recommended change, who should make it, how to test that it worked, and a priority: fix first, fix next, plan, or ignore.</dd>
-<dt>A 90-day roadmap</dt><dd>The findings in the order we would tackle them.</dd>
-<dt>A handover call</dt><dd>With the people who will do the work.</dd>
-</dl>`,
-    },
-    {
-      h2: 'How we do it, step by step',
-      html: `<ol class="bf-steps">
-<li>You grant read-only access to Search Console and analytics, and tell us the decision the audit must inform.</li>
-<li>We agree which markets, templates and sections are in scope, and quote.</li>
-<li>Crawl and technical diagnosis.</li>
-<li>Content, keyword and competitor review.</li>
-<li>Link and risk review.</li>
-<li>Write-up, senior review and handover.</li>
-</ol>`,
-    },
-    {
-      h2: 'Why a software report is not an audit',
-      html: `<p>Audit tools list hundreds of warnings and give them equal weight. Most do not matter. The value of an audit is in the judgement: which few problems are holding the site back, and which can be left alone. We wrote about this in <a href="/blog/why-most-seo-audits-miss-the-real-problems/">why most SEO audits miss the real problems</a>.</p>`,
-    },
-    {
-      h2: 'Timeframe and pricing',
-      html: `<p>Most audits for small to mid-sized businesses take one to two weeks, depending on site size, data access and complexity. Larger ecommerce, marketplace or multi-location sites may need longer.</p>
-<p>We do not publish a rate card. Each audit is quoted in a written proposal, and the scope depends on the size of the site and the number of markets. An audit is also the usual first step of our <a href="/seo-services-philippines/">monthly SEO services</a>.</p>`,
-    },
-  ],
-  faqs: [
-    { question: 'Can you fix what you find?', answer: 'Yes, or your own team can. The register is written to be used either way.' },
-    { question: "Do you need access to our website's admin?", answer: 'Not for the audit. Read-only Search Console and analytics access is enough.' },
-    { question: 'Is this different from a technical SEO audit?', answer: 'A technical audit covers crawling and indexing, structure and technical health. A full audit adds content, keywords, links and the enquiry route. See <a href="/technical-seo-services-philippines/">technical SEO</a> and <a href="/keyword-research-services/">keyword research</a>.' },
-  ],
-};
+const proofItems = [
+  {
+    title: 'Evidence before recommendations',
+    copy: 'We review crawl data, Search Console signals, rankings, page performance, content quality, internal links and conversion paths before we tell you what to change.'
+  },
+  {
+    title: 'Prioritised by commercial impact',
+    copy: 'An audit should not bury your team in a huge issue list. We separate urgent blockers, growth opportunities, quick wins and low-value noise.'
+  },
+  {
+    title: 'Built for implementation',
+    copy: 'The output is written for owners, marketers, developers and content teams, with clear next steps rather than generic tool exports.'
+  }
+];
+
+const auditTriggers = [
+  'Organic traffic has dropped and the cause is not obvious',
+  'Important keywords are stuck despite ongoing SEO work',
+  'The site gets impressions but not enough clicks or leads',
+  'A redesign, migration, CMS change or domain move is planned',
+  'Google Search Console is showing crawl, indexing or page experience warnings',
+  'Content is being published but the right pages are not moving',
+  'A developer or agency has changed the site and rankings have shifted',
+  'You need a clear SEO roadmap before spending more on content, links or technical work'
+];
+
+const auditAreas = [
+  {
+    title: 'Crawlability and indexation',
+    copy: 'We check whether Google can discover, crawl, render and index the right URLs, including robots.txt, noindex tags, canonicals, sitemap quality, redirects and crawl waste.'
+  },
+  {
+    title: 'Site architecture and internal links',
+    copy: 'We review how authority and relevance move through the site, whether priority pages are buried and whether internal anchors support the right topics.'
+  },
+  {
+    title: 'Technical SEO and performance',
+    copy: 'We assess Core Web Vitals, mobile usability, status codes, duplicate URLs, JavaScript risks, schema fit, structured data errors and page template problems.'
+  },
+  {
+    title: 'Content quality and search intent',
+    copy: 'We check whether key pages match the SERP, answer the buyer properly, avoid cannibalisation and provide enough depth, proof and clarity to compete.'
+  },
+  {
+    title: 'Keyword and opportunity mapping',
+    copy: 'We compare current rankings, missing opportunities and competitor coverage so every recommendation is tied to actual search demand and business value.'
+  },
+  {
+    title: 'Authority and backlink profile',
+    copy: 'We review backlink quality, risky patterns, lost links, anchor text, competitor authority gaps and the pages most likely to benefit from safer link growth.'
+  },
+  {
+    title: 'Local and service-page signals',
+    copy: 'For Philippine and local service businesses, we review location relevance, service clarity, trust signals, NAP consistency and local conversion paths.'
+  },
+  {
+    title: 'Conversion and enquiry path',
+    copy: 'SEO traffic has to become leads. We check CTAs, proof, form paths, contact clarity, page flow and whether the visitor has enough reason to act.'
+  }
+];
+
+const toolLimits = [
+  {
+    title: 'Automated scans report symptoms',
+    copy: 'A tool can flag missing metadata, slow pages or duplicate titles. It cannot always tell whether the page matters commercially or whether the fix should be done now.'
+  },
+  {
+    title: 'Context changes priority',
+    copy: 'A technical warning on a blocked tag page may be irrelevant. A weaker issue on a core service page may be urgent because it affects rankings and enquiries.'
+  },
+  {
+    title: 'SEO judgement matters',
+    copy: 'We explain why a finding matters, which pages it affects and what evidence would justify acting on it. Where the cause remains uncertain, the roadmap names the next check instead of presenting a guess as a fix.'
+  }
+];
+
+const priorityFramework = [
+  {
+    label: 'Blockers',
+    title: 'Fix first',
+    copy: 'Indexation failures, broken templates, redirect errors, canonical conflicts, critical crawl issues and tracking problems that stop performance from being judged properly.'
+  },
+  {
+    label: 'Growth fixes',
+    title: 'Fix next',
+    copy: 'Pages with search demand, existing impressions, ranking potential or conversion value where technical, content or internal-link improvements can support growth.'
+  },
+  {
+    label: 'Campaign support',
+    title: 'Plan into the roadmap',
+    copy: 'Content gaps, authority gaps, architecture improvements and template changes that should be handled as part of a wider SEO campaign.'
+  },
+  {
+    label: 'Low-value noise',
+    title: 'Ignore or park',
+    copy: 'Warnings that look dramatic in tools but have little commercial upside, low risk or no meaningful connection to organic performance.'
+  }
+];
+
+const processSteps = [
+  {
+    label: '01',
+    title: 'Access and baseline',
+    copy: 'We confirm the business goals, priority pages, analytics setup, Search Console data, current rankings and the problem the audit needs to answer.'
+  },
+  {
+    label: '02',
+    title: 'Crawl and technical diagnosis',
+    copy: 'We crawl the site, review indexation signals, inspect templates, test performance, check structured data and look for technical blockers.'
+  },
+  {
+    label: '03',
+    title: 'Content, intent and competitor review',
+    copy: 'We assess priority pages against search intent, SERP competitors, keyword mapping, content depth, proof, internal links and conversion clarity.'
+  },
+  {
+    label: '04',
+    title: 'Authority and risk review',
+    copy: 'We examine backlink quality, authority gaps, anchor patterns, lost links and off-page risks that may affect rankings or future growth.'
+  },
+  {
+    label: '05',
+    title: 'Roadmap and handover',
+    copy: 'We deliver a prioritised roadmap with findings, evidence, recommended fixes, responsible teams and the order work should happen in.'
+  }
+];
+
+const deliverables = [
+  {
+    title: 'Audit summary for decision makers',
+    copy: 'A plain-English overview of what is holding the site back, which fixes matter most and what the business should do next.'
+  },
+  {
+    title: 'Technical and content findings',
+    copy: 'Evidence-backed findings across crawlability, indexation, site structure, performance, content quality, on-page SEO and conversion paths.'
+  },
+  {
+    title: 'Prioritised implementation roadmap',
+    copy: 'A practical task list grouped by impact, urgency, complexity and likely owner, so developers, content teams and stakeholders know what to do first.'
+  },
+  {
+    title: 'Strategic next-step recommendations',
+    copy: 'Clear guidance on whether the site needs technical SEO, content improvement, link building, local SEO, migration support or wider campaign work.'
+  }
+];
+
+const avoidItems = [
+  {
+    title: 'Evidence to collect',
+    copy: 'We would compare the release date with complete Search Console periods, inspect the affected URL and check its returned HTML. A site-wide average alone cannot explain what happened to this page.'
+  },
+  {
+    title: 'Decision and owner',
+    copy: 'If the live template emits an unintended noindex directive, we would ask the developer to remove it from the affected public pages. The marketing owner confirms which pages should be searchable before the change.'
+  },
+  {
+    title: 'Limits of the finding',
+    copy: 'An audit identifies supported findings and unresolved questions. Implementation and measurement are needed to assess the recommendations, and neither guarantees rankings, traffic or leads.'
+  },
+  {
+    title: 'Acceptance check',
+    copy: 'We would test the live response and rendered page after release, confirm the directive is gone and check that private pages remain excluded. Search Console recrawl and performance observations follow separately; a passed code check is not recovered traffic.'
+  }
+];
+
+const connectedServices = [
+  {
+    title: 'Technical SEO services',
+    href: '/technical-seo-services-philippines/',
+    copy: 'For crawl, indexation, rendering, performance, schema and architecture fixes found during the audit.'
+  },
+  {
+    title: 'On-page SEO services',
+    href: '/on-page-seo-services-philippines/',
+    copy: 'For improving page structure, metadata, content depth, internal links, FAQs and conversion flow.'
+  },
+  {
+    title: 'Keyword research services',
+    href: '/keyword-research-services/',
+    copy: 'For mapping search demand, intent and opportunity before content or page changes are planned.'
+  },
+  {
+    title: 'Link building services',
+    href: '/backlink-seo-services-philippines/',
+    copy: 'For authority growth once the site has the right technical and content foundations in place.'
+  },
+  {
+    title: 'Website migration services',
+    href: '/website-migration-services/',
+    copy: 'For pre-migration and post-migration audits when redesigns, CMS changes or URL moves are risky.'
+  },
+  {
+    title: 'SEO services Philippines',
+    href: '/seo-services-philippines/',
+    copy: 'For turning audit findings into an ongoing SEO campaign across technical, content, authority and reporting.'
+  }
+];
+
+const faqs = [
+  { question: 'What is included in an SEO audit?', answer: 'A proper SEO audit reviews technical SEO, crawlability, indexation, site structure, internal links, content quality, search intent, keyword opportunities, backlink profile, local signals where relevant and the conversion path from organic landing pages.' },
+  { question: 'Is this different from an automated website scan?', answer: 'Yes. Automated scans are useful for finding surface-level warnings, but they do not understand commercial priority. We use tools as evidence, then apply SEO judgement to decide which issues matter and which ones can wait.' },
+  { question: 'Do you need access to Google Search Console and GA4?', answer: 'Read-only access is strongly recommended because it lets us connect findings to impressions, clicks, traffic, engagement and conversion data. We can still perform a crawl-led audit without access, but the recommendations will be less complete.' },
+  { question: 'Can you audit a site before a redesign or migration?', answer: 'Yes. Pre-migration audits are often the best time to prevent ranking loss. We review URL structure, redirects, templates, content risk, tracking, internal links and launch QA before major site changes go live.' },
+  { question: 'Will you help implement the recommendations?', answer: 'You can give the findings to your own team or ask us to scope implementation. Coding, copy revisions, staging checks and post-release monitoring are separately agreed; the audit fee does not imply an unlimited fix programme.' },
+  { question: 'How long does an SEO audit take?', answer: 'Most small to mid-sized business audits take one to two weeks depending on site size, data access and complexity. Larger ecommerce, marketplace or multi-location sites may need a longer audit window.' },
+  { question: 'Do you audit content and backlinks as well as technical SEO?', answer: 'Yes. Technical issues are only part of SEO performance. We also review content quality, search intent, keyword mapping, internal links, authority signals, backlink quality and competitor gaps.' },
+  { question: 'What happens after the audit?', answer: 'You receive a prioritised roadmap. From there, the next step may be technical fixes, page rewrites, internal linking, content planning, link building, migration support or a wider SEO campaign.' },
+  { question: 'What belongs in an SEO audit checklist?', answer: 'A useful SEO audit checklist covers crawlability, indexation, templates, performance, structured data, metadata, search intent, content quality, internal links, backlinks, competitor gaps, analytics and conversion paths. We adapt the checks to the site rather than treating every warning as equally important.' }
+];
 ---
-<EditorialPage page={page} />
+
+<MainLayout
+  title="SEO Audit Philippines | Bright Forge"
+  description="SEO audits from the Philippines with page-level evidence, prioritised recommendations and an implementation handover for your marketing and development teams."
+  faqs={faqs}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brightforge.com.ph/'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'SEO Audit Services Philippines',
+          item: 'https://brightforge.com.ph/seo-audit-services/'
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'SEO Audit Services Philippines',
+      url: 'https://brightforge.com.ph/seo-audit-services/',
+      inLanguage: 'en',
+      description: 'SEO audit services for diagnosing ranking drops, technical SEO issues, content gaps, backlink risks and conversion problems.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Bright Forge SEO',
+        url: 'https://brightforge.com.ph/'
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: auditAreas.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          description: item.copy
+        }))
+      }
+    })} />
+  </Fragment>
+
+  <LegacyHeader slot="header" />
+
+  <Hero
+    badgeIcon="fas fa-search-plus"
+    badgeText="SEO Audit Specialists"
+    title="SEO <span>Audits</span> in the Philippines"
+    breadcrumbCurrent="SEO Audit Services Philippines"
+  >
+    <Fragment slot="story">
+      <p>Before you commission a rebuild or another content campaign, we check what the existing site is doing. We trace a traffic drop, an underperforming service page or a missed market back to the pages, search data and technical behaviour behind it.</p>
+      <p>We provide SEO audits from the Philippines for businesses here and in Australia, the UK and the USA. You receive a prioritised findings register, evidence for each recommendation and a handover explaining what your developer, writer or marketing team should do next.</p>
+      <p>Send us the domain, the decision you need to make and any relevant release dates. We agree which markets, templates and page groups the audit covers before quoting. Read-only Search Console and analytics access lets us distinguish a search visibility problem from a tracking change.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Request an SEO Audit Review" />
+      <ButtonSecondary href="#audit-coverage" text="See What We Check" />
+    </Fragment>
+
+    <Fragment slot="stats">
+      <div class="audit-hero-stats">
+        <div class="stat"><strong>Diagnose</strong><span>Crawl, indexation, content, links and conversion issues.</span></div>
+        <div class="stat"><strong>Prioritise</strong><span>Separate urgent blockers from low-value noise.</span></div>
+        <div class="stat"><strong>Roadmap</strong><span>Turn findings into implementation-ready next steps.</span></div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <section class="intro-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <span class="eyebrow">Why audit first</span>
+          <h2>More <span>SEO activity does</span> not help if the site has the wrong problem</h2>
+          <p>Many sites do not need more random blog posts, another backlink package or another round of cosmetic metadata edits. They need to understand why organic performance is stuck, dropping or failing to convert.</p>
+          <p>A proper SEO audit gives that clarity. It connects technical evidence, content quality, search demand, authority signals and buyer behaviour into a roadmap your team can actually use.</p>
+        </div>
+        <aside class="diagnosis-panel" aria-label="SEO audit diagnosis questions">
+          <h3>We start with diagnosis, not assumptions</h3>
+          <ul>
+            <li>Can Google crawl and index the right pages?</li>
+            <li>Do priority pages match real search intent?</li>
+            <li>Are rankings held back by technical, content or authority gaps?</li>
+            <li>Is organic traffic reaching pages that can convert?</li>
+            <li>Which fixes should happen first?</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="seo-consultancy" class="intro-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="intro-layout">
+        <div class="intro-copy">
+          <span class="eyebrow">SEO strategy and consulting</span>
+          <h2>What needs a <span>consultant</span>, and what needs a delivery team?</h2>
+          <p>If you already have developers, writers or an agency, adding another supplier may not solve the problem. You may need an SEO consultant to challenge the plan, identify the constraint and turn competing recommendations into a sequence your team can deliver.</p>
+          <p>We use the audit to establish what is happening. The consulting work determines what to do about it: which commercial pages deserve investment, where competitors have an advantage and which technical dependencies must be resolved before content or links can help.</p>
+          <p>If you need us to carry out the work as well, our <a href="/seo-services-philippines/">managed SEO service</a> covers ongoing delivery. The distinction is agreed in the scope, so a strategy engagement does not quietly become an open-ended retainer.</p>
+        </div>
+        <aside class="diagnosis-panel" aria-label="Decisions covered by SEO consultancy">
+          <h3>Bring us the decision you need to make</h3>
+          <ul>
+            <li><strong>Before a rebuild:</strong> which URLs, content and search signals must survive the launch?</li>
+            <li><strong>Before expanding:</strong> does the new service or market need its own page, or a better existing one?</li>
+            <li><strong>When growth stalls:</strong> is the constraint relevance, authority, indexation or the enquiry path?</li>
+            <li><strong>When teams disagree:</strong> what does the evidence support, who owns the work and how will it be checked?</li>
+          </ul>
+          <a href="/contact/">Discuss your SEO decision</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="proof-grid">
+        {proofItems.map((item) => (
+          <article class="proof-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="triggers-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="triggers-layout">
+        <div class="triggers-copy">
+          <span class="eyebrow">When to audit</span>
+          <h2>An audit is useful when the next <span>SEO move</span> is not obvious</h2>
+          <p>If a site has a clear technical blocker, fix it. If the business already has a strong roadmap, execute it. But when rankings, traffic, leads or stakeholder confidence are unclear, an audit prevents expensive guesswork.</p>
+        </div>
+        <ul class="trigger-list">
+          {auditTriggers.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="audit-coverage" class="coverage-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">What we audit</span>
+          <h2><span>Technical, content, authority and conversion</span> issues in one SEO diagnosis</h2>
+        </div>
+        <p>We review crawl access, content relevance, internal links and competing search results to investigate visibility problems. A page can also rank well but fail to generate enquiries. We examine its offer and contact path separately rather than assuming every commercial problem is a ranking problem.</p>
+      </div>
+      <div class="coverage-grid">
+        {auditAreas.map((item) => (
+          <article class="coverage-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-limits-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">What tools miss</span>
+        <h2>An <span>automated scan</span> is not an SEO strategy</h2>
+        <p>SEO tools are useful. We use them. But a tool export is evidence, not a decision. The valuable part is interpreting what matters for the site, the market and the business.</p>
+      </div>
+      <div class="tool-grid">
+        {toolLimits.map((item) => (
+          <article class="tool-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="priority-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">Prioritisation</span>
+          <h2>The audit should make the <span>next 90 days</span> clearer</h2>
+        </div>
+        <p>The same issue can be urgent on one site and irrelevant on another. We prioritise by risk, business value, search demand, implementation effort and likely SEO upside.</p>
+      </div>
+      <div class="priority-grid">
+        {priorityFramework.map((item) => (
+          <article class="priority-card">
+            <span>{item.label}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">Audit process</span>
+          <h2>From <span>raw SEO evidence</span> to a practical implementation roadmap</h2>
+        </div>
+        <p>We do not start by hunting for the biggest number of errors. We start by understanding what the site needs to achieve and what is preventing that from happening.</p>
+      </div>
+      <div class="process-rail">
+        {processSteps.map((step) => (
+          <article class="process-step">
+            <span>{step.label}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="deliverables" class="deliverables-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">What you receive</span>
+        <h2>Clear findings, <span>evidence</span> and next steps</h2>
+        <p>The output is designed to help the business make decisions and help the people doing the work implement the right fixes in the right order.</p>
+      </div>
+      <div class="deliverables-grid">
+        {deliverables.map((item) => (
+          <article class="deliverable-card">
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="avoid-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="avoid-layout">
+        <div class="avoid-copy">
+          <span class="eyebrow">Illustrative audit decision</span>
+          <h2>Should we rewrite this page or <span>repair its template</span>?</h2>
+          <p>Example, not a client result: a service page lost impressions after a template release. Rewriting the page immediately could spend the budget without addressing the fault. We would investigate the release and indexing evidence first.</p>
+        </div>
+        <div class="avoid-grid">
+          {avoidItems.map((item) => (
+            <article class="avoid-card">
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="internal-links-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-heading split-heading">
+        <div>
+          <span class="eyebrow">After the audit</span>
+          <h2>The roadmap decides which <span>SEO service</span> comes next</h2>
+        </div>
+        <p>Some audits lead to technical fixes. Others show the need for page rewrites, content planning, safer link building or migration support. The point is to stop guessing.</p>
+      </div>
+      <div class="connected-grid">
+        {connectedServices.map((service) => (
+          <a class="connected-card" href={service.href}>
+            <h3>{service.title}</h3>
+            <p>{service.copy}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="section-heading centered">
+        <span class="eyebrow">Questions buyers ask</span>
+        <h2><span>SEO audit services</span> FAQs</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="cta-panel">
+        <span class="eyebrow">Start with diagnosis</span>
+        <h2>Send us the site and we’ll show what is <span>actually holding it back</span></h2>
+        <p>We will review the site, confirm the likely audit scope and explain what type of SEO diagnosis would be most useful before any implementation work begins.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Request an SEO Audit Review" />
+          <ButtonSecondary href="/seo-services-philippines/" text="See Our SEO Services" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceEvidencePanel panel={serviceEvidence['seo-audit-services']} />
+
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+  #seo-consultancy p + p { margin-top: 1rem; }
+  #seo-consultancy a { color: #b83e12; text-decoration: underline; text-underline-offset: 0.2em; }
+  #seo-consultancy a:hover { color: #19212e; }
+  #seo-consultancy a:focus-visible { outline: 2px solid #f0622a; outline-offset: 4px; }
+  #seo-consultancy aside > a { display: inline-block; margin-top: 1rem; font-weight: 700; }
+:root {
+  --bf-bg: #ffffff;
+  --bf-panel: #f7f8fa;
+  --bf-panel-2: #f7f8fa;
+  --bf-text: #19212e;
+  --bf-muted: #465365;
+  --bf-orange: #f0622a;
+  --bf-border: rgba(25, 33, 46, 0.09);
+}
+
+.audit-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  background: rgba(25, 33, 46, 0.09);
+  border: 1px solid rgba(240, 98, 42, 0.24);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.stat strong {
+  display: block;
+  color: var(--bf-link, #b83e12);
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.stat span {
+  color: #465365;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.intro-section,
+.proof-section,
+.triggers-section,
+.coverage-section,
+.tool-limits-section,
+.priority-section,
+.process-section,
+.deliverables-section,
+.avoid-section,
+.internal-links-section,
+.faq-section,
+.cta-section,
+:global(.contact-cta-section) {
+  content-visibility: visible !important;
+  background: var(--bf-bg);
+  color: var(--bf-text);
+}
+
+.intro-section,
+.coverage-section,
+.priority-section,
+.deliverables-section,
+.faq-section {
+  padding: 5.5rem 0;
+  background: var(--bf-panel);
+}
+
+.proof-section,
+.triggers-section,
+.tool-limits-section,
+.process-section,
+.avoid-section,
+.internal-links-section,
+.cta-section {
+  padding: 5.5rem 0;
+  background: var(--bf-bg);
+}
+
+.intro-layout,
+.triggers-layout,
+.avoid-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.eyebrow {
+  display: inline-flex;
+  color: var(--bf-link, #b83e12);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #19212e;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  font-weight: 900;
+  margin: 0 0 1.25rem;
+}
+
+h3 {
+  color: #19212e;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+}
+
+p {
+  color: #465365;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.intro-copy p,
+.triggers-copy p,
+.avoid-copy p,
+.cta-panel p {
+  font-size: 1.08rem;
+}
+
+.diagnosis-panel,
+.cta-panel {
+  background: linear-gradient(135deg, rgba(240, 98, 42, 0.12), rgba(25, 33, 46, 0.09));
+  border: 1px solid rgba(240, 98, 42, 0.26);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 28px 70px rgba(25, 33, 46, 0.09);
+}
+
+.diagnosis-panel ul,
+.trigger-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.diagnosis-panel li,
+.trigger-list li {
+  position: relative;
+  padding: 0.85rem 0 0.85rem 1.8rem;
+  color: #465365;
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.08);
+}
+
+.diagnosis-panel li::before,
+.trigger-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bf-orange);
+  box-shadow: 0 0 0 5px rgba(240, 98, 42, 0.16);
+}
+
+.proof-grid,
+.tool-grid,
+.connected-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--bf-border);
+  border-bottom: 1px solid var(--bf-border);
+}
+
+.coverage-grid,
+.deliverables-grid,
+.avoid-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--bf-border);
+  border: 1px solid var(--bf-border);
+}
+
+.priority-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--bf-border);
+  border-bottom: 1px solid var(--bf-border);
+}
+
+.proof-card,
+.tool-card,
+.coverage-card,
+.priority-card,
+.deliverable-card,
+.avoid-card,
+.connected-card {
+  display: block;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--bf-border);
+  border-radius: 0;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: none;
+}
+
+.proof-card,
+.tool-card,
+.priority-card {
+  background: transparent;
+}
+
+.coverage-card,
+.deliverable-card,
+.avoid-card {
+  background: var(--bf-bg);
+  border-right: 0;
+}
+
+.connected-card:hover,
+.proof-card:hover,
+.tool-card:hover,
+.coverage-card:hover,
+.priority-card:hover,
+.deliverable-card:hover,
+.avoid-card:hover {
+  transform: none;
+  border-color: transparent;
+  background: transparent;
+}
+
+.priority-card span {
+  display: inline-flex;
+  color: var(--bf-link, #b83e12);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-heading {
+  margin-bottom: 2.25rem;
+}
+
+.split-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  gap: 2.5rem;
+  align-items: end;
+}
+
+.centered {
+  text-align: center;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process-rail {
+  display: grid;
+  gap: 1rem;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding: 0 0 1.5rem;
+  border: 0;
+  border-bottom: 1px solid var(--bf-border);
+  border-radius: 0;
+  background: transparent;
+}
+
+.process-step > span {
+  display: flex;
+  width: 58px;
+  height: 58px;
+  border-radius: 0;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--bf-link, #b83e12);
+  font-weight: 900;
+  font-size: 1.05rem;
+  border-right: 1px solid rgba(240, 98, 42, 0.34);
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  border: 1px solid var(--bf-border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  color: #19212e;
+  font-weight: 800;
+  padding: 1.25rem 1.5rem;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  float: right;
+  color: var(--bf-link, #b83e12);
+  font-size: 1.3rem;
+}
+
+.faq-item[open] summary::after {
+  content: '-';
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.cta-panel {
+  text-align: center;
+  padding: 3rem;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .coverage-grid,
+  .deliverables-grid,
+  .avoid-grid,
+  .priority-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .audit-hero-stats,
+  .proof-grid,
+  .tool-grid,
+  .connected-grid,
+  .coverage-grid,
+  .deliverables-grid,
+  .avoid-grid,
+  .priority-grid,
+  .intro-layout,
+  .triggers-layout,
+  .avoid-layout,
+  .split-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro-section,
+  .proof-section,
+  .triggers-section,
+  .coverage-section,
+  .tool-limits-section,
+  .priority-section,
+  .process-section,
+  .deliverables-section,
+  .avoid-section,
+  .internal-links-section,
+  .faq-section,
+  .cta-section {
+    padding: 4rem 0;
+  }
+
+  .cta-panel {
+    padding: 2rem;
+  }
+}
+</style>

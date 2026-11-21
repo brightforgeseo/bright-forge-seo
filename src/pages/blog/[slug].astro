@@ -6,7 +6,6 @@ import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
 import { getBlogMetadata } from '../../lib/blogMetadata';
 import { getAuthorSlug } from '../../lib/authors';
 import { pickRelatedPosts } from '../../lib/relatedPosts';
-import { rewriteRetiredPageLinks } from '../../lib/retiredPages.js';
 import { displayH1 } from '../../lib/blogDisplay';
 import { rewriteRetiredLinks } from '../../lib/retiredBlog.js';
 import cmsPostFixes from '../../data/cmsPostFixes.json';
@@ -848,8 +847,6 @@ if (post.content || post.contentHtml) {
 
 // Replace old domain URLs to avoid 301 redirects
 htmlContent = htmlContent.replace(/https?:\/\/(www\.)?brightforgeseo\.com/g, 'https://brightforge.com.ph');
-// Links to service pages folded into /industries/ and /development/ go straight to the destination
-htmlContent = rewriteRetiredPageLinks(htmlContent);
 
 // Format the publish date
 const formattedDate = post.publishDate ?

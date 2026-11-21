@@ -1,61 +1,1184 @@
 ---
-import EditorialPage from '../components/EditorialPage.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import LegacyHeader from '../components/LegacyHeader.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Hero from '../components/Hero.astro';
+import ButtonPrimary from '../components/ButtonPrimary.astro';
+import ButtonSecondary from '../components/ButtonSecondary.astro';
 
-const page = {
-  path: '/content-seo-services-philippines/',
-  title: 'SEO Content Writing Services Philippines | Bright Forge',
-  description: 'SEO content writing from the Philippines: service pages, guides and refreshes planned from keyword research, written by our team and edited before you see them.',
-  h1: 'SEO Content Writing Services in the Philippines',
-  crumb: 'SEO content writing',
-  lead: [
-    'We plan and write the pages your website needs in order to be found and chosen: service pages, landing pages, buying guides and updates to articles that have slipped. Each piece starts from keyword research and from what your own staff know, and an editor checks it before it reaches you.',
-  ],
-  sections: [
-    {
-      h2: 'What you receive',
-      html: `<dl class="bf-deliverables">
-<dt>Content plan</dt><dd>The pages to write or update, in order, each tied to a group of searches and a business aim. The plan is built on <a href="/keyword-research-services/">keyword research</a>.</dd>
-<dt>Page brief</dt><dd>The search the page serves, the questions it must answer, the facts we need from you and the pages it links to.</dd>
-<dt>Draft</dt><dd>With proposed title, meta description and internal links.</dd>
-<dt>Source list</dt><dd>Every factual claim marked with where it came from, and questions for your specialist where we could not confirm something.</dd>
-<dt>Revision</dt><dd>After your comments.</dd>
-<dt>Review</dt><dd>How the page performs after publication.</dd>
-</dl>`,
-    },
-    {
-      h2: 'How we do it, step by step',
-      html: `<ol class="bf-steps">
-<li>You send what you already have: brochures, proposals, answers your sales team give every week.</li>
-<li>We write the brief and you approve it.</li>
-<li>A writer drafts. An editor checks facts, clarity and that the page reads like your business.</li>
-<li>You review. Your subject expert signs off anything technical, legal or medical.</li>
-<li>We publish, or pass the final copy to your web team.</li>
-<li>We check rankings and enquiries after publication.</li>
-</ol>`,
-    },
-    {
-      h2: 'How much we write',
-      html: `<p>The amount depends on the length of each piece and how much research it needs, and it is agreed in your proposal. We would rather publish a few pages your customers use than many they ignore. Where a page already exists and only needs sharpening, that is <a href="/on-page-seo-services-philippines/">on-page SEO</a>, not new writing.</p>`,
-    },
-    {
-      h2: 'English for your market',
-      html: `<p>We write British, Australian and American English as the audience requires, and Philippine English for local audiences.</p>`,
-    },
-    {
-      h2: 'Our use of AI',
-      html: `<p>Drafts written with AI assistance are reviewed and edited by a person before a client uses them. Our <a href="/editorial-standards/">editorial standards</a> set out how we check work and what we will not claim.</p>`,
-    },
-    {
-      h2: 'Pricing',
-      html: `<p>We do not publish a rate card. Content is scoped in a written proposal, either as a set of pieces or as part of a monthly programme.</p>`,
-    },
-  ],
-  faqs: [
-    { question: 'Do you write for specialist industries?', answer: 'Yes, with your expert reviewing. We will not publish technical, legal or medical claims on our own authority.' },
-    { question: 'Who owns the content?', answer: 'You do, once it is paid for.' },
-    { question: 'Can you update our old articles?', answer: 'Yes. Refreshing a page that once ranked is often better value than writing a new one.' },
-    { question: 'Do you write for other agencies?', answer: 'Yes, under your brand. See <a href="/white-label-seo-services-philippines/">white label SEO</a>.' },
-  ],
-};
+const contentFaqs = [
+  {
+    question: "What is included in SEO content writing services?",
+    answer: "Our SEO content writing services include keyword research, search intent mapping, content outlines, page structure, copywriting, metadata, internal linking guidance, FAQ planning and optimisation recommendations for blogs, service pages, landing pages and existing content."
+  },
+  {
+    question: "Do you only write new content or can you improve existing pages?",
+    answer: "We do both. New content helps build topical authority, but existing pages often have faster gains. We use ranking and Google Search Console data to identify pages that need stronger headings, clearer search intent, better internal links, fresher information or sharper conversion copy."
+  },
+  {
+    question: "Can you work with our in-house writers or marketing team?",
+    answer: "Yes. We can create SEO content outlines, review drafts, improve page structure and guide your team on keyword targeting, internal links, EEAT signals and editorial standards while your writers keep control of brand voice."
+  },
+  {
+    question: "Do you use AI for SEO content?",
+    answer: "AI may assist research organisation or drafting, but it is not evidence for a claim. We check source material, review the copy against the brief and send unresolved product, technical or regulated claims to your nominated specialist. Approval is required before publishing."
+  },
+  {
+    question: "How long does content SEO take to work?",
+    answer: "It depends on the site, competition and authority behind the page. Content refreshes can sometimes move faster because Google already knows the URL. New content usually needs more time, internal links and supporting authority before it becomes a reliable source of traffic or enquiries."
+  },
+  {
+    question: "How do you measure content SEO performance?",
+    answer: "We track rankings, impressions, clicks, landing page performance, enquiries where tracking is available, internal link impact and whether the content is supporting the right commercial pages. The aim is not just more articles. It is more useful visibility that helps the business grow."
+  },
+  {
+    question: "Can you write SEO content for Australian, UK and US audiences?",
+    answer: "Yes. We plan around the target market, not just the language setting. Australian work uses Australian English and local buyer phrasing. UK work uses British English, UK examples and the intent shown in UK-localised search results. US work uses American English, US search results and the buyer context of the target state or national market. Agencies can also use the service as white label content fulfilment under an agreed brief and QA process."
+  }
+];
 ---
-<EditorialPage page={page} />
+
+<MainLayout
+  title="SEO Content Writing Services Philippines | Bright Forge SEO"
+  description="Philippines-based SEO content writing for local and overseas brands, built around search intent, human editing, internal links and enquiries."
+  canonical="https://brightforge.com.ph/content-seo-services-philippines/"
+  type="service"
+  faqs={contentFaqs}
+>
+  <LegacyHeader slot="header" />
+
+  <Hero
+    badgeIcon="fas fa-pen-nib"
+    badgeText="SEO Content Writing"
+    title="SEO Content Writing <span>Services Philippines</span>"
+    breadcrumbCurrent="SEO Content Writing Services"
+  >
+    <Fragment slot="story">
+      <p>Your sales team answers the same questions every week, but the website still leaves buyers guessing. We turn your service knowledge, approved evidence and customer questions into pages that explain the offer and answer the searches behind it.</p>
+
+      <p>We plan and write service pages, landing pages, guides and content refreshes. The deliverable includes a page brief, draft copy, proposed metadata and internal links, with questions for your subject specialist where facts still need confirmation.</p>
+      <p>Our Philippine team supports local businesses, Australian, UK and US brands, and in-house marketers. If you manage content for clients, our <a href="/white-label-seo-services-philippines/">white label SEO service</a> lets us agree your agency brief, branding and approval route before drafting.</p>
+    </Fragment>
+
+    <Fragment slot="actions">
+      <ButtonPrimary href="/contact/" text="Get a Content SEO Proposal" />
+      <ButtonSecondary href="#approach" text="See How We Work" />
+    </Fragment>
+
+    <Fragment slot="visual">
+      <div class="hero-image-container strategy-panel">
+        <p class="panel-kicker">Content that earns its place</p>
+        <div class="strategy-flow">
+          <div><span>01</span><strong>Search intent</strong><small>What the buyer actually needs</small></div>
+          <div><span>02</span><strong>Page mapping</strong><small>Where each topic should live</small></div>
+          <div><span>03</span><strong>Content outline</strong><small>Structure, links, proof and CTA</small></div>
+          <div><span>04</span><strong>Performance refresh</strong><small>Rankings, clicks and enquiries</small></div>
+        </div>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <section class="proof-strip-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="proof-strip">
+        <div>
+          <strong>Built for commercial search</strong>
+          <span>Service pages, blogs, location pages, guides and refreshes mapped to buyer intent.</span>
+        </div>
+        <div>
+          <strong>SEO plus CRO</strong>
+          <span>Content planned around rankings, internal links, trust signals and enquiry paths.</span>
+        </div>
+        <div>
+          <strong>Claims checked against sources</strong>
+          <span>We check public references and flag business claims that need your approval before publication.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-content-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="editorial-layout">
+        <div class="editorial-copy">
+          <p class="eyebrow">Why content SEO matters</p>
+          <h2>Give buyers the detail they need to <span>choose your service</span></h2>
+          <p>A facilities buyer may need to know whether installation includes commissioning, staff training and removal of old equipment. A paragraph about quality and experience will not answer that. We ask for the actual inclusions, then give them a clear place in the page.</p>
+          <p>We use keyword research, SERP review, competitor checks and page-level performance data to decide what should be written, what should be improved and what should be left alone. The resulting page list distinguishes new drafts, revisions and pages that need no change.</p>
+        </div>
+        <div class="editorial-panel">
+          <h3>What we look for first</h3>
+          <ul>
+            <li>Pages ranking but not earning clicks</li>
+            <li>Topics with commercial search intent</li>
+            <li>Thin service pages that need supporting content</li>
+            <li>Old articles losing impressions or relevance</li>
+            <li>Internal link gaps between blogs and money pages</li>
+            <li>FAQs and answer blocks that can support AI search readiness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services-section-new">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="services-layout">
+        <div class="services-content">
+          <p class="eyebrow">What is included</p>
+          <h2>SEO content services built around <span>search intent and revenue pages</span></h2>
+
+          <div class="service-list">
+            <div class="service-item">
+              <h3>SEO Content Strategy</h3>
+              <p>We map topics to real searches, buyer stages and priority pages, so content supports the pages that need to rank and convert. That includes topic clusters, content calendars, keyword grouping and search intent review.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>SEO Content Writing</h3>
+              <p>We write service pages, blog posts, landing pages, local pages, FAQs and supporting guides with clear structure, useful headings, natural keyword coverage and conversion-focused calls to action.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Content Optimisation</h3>
+              <p>We improve existing pages using ranking data, Google Search Console signals and on-page checks. That can include rewritten sections, metadata, H1 and H2 changes, answer blocks, internal links, freshness updates and stronger proof.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>Content Outlines and Editorial QA</h3>
+              <p>If your team writes in-house, we can handle the SEO layer. We create content outlines, review drafts, check search intent, tighten headings, add internal link direction and make sure the finished page has a real job to do.</p>
+            </div>
+
+            <div class="service-item">
+              <h3>AI Search Ready Content</h3>
+              <p>We structure content so services, locations, proof, FAQs and entity signals are easy for search engines and AI answer systems to understand. This is still SEO-first, with <a href="/ai-search-optimization-services-philippines/">AI search readiness</a> handled as an extra layer rather than a replacement for fundamentals.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-visual">
+          <div class="visual-card evidence-card">
+            <div class="visual-icon">
+              <i class="fas fa-route"></i>
+            </div>
+            <h3>From keyword to enquiry</h3>
+            <p class="visual-description">A useful content plan does not start with article titles. It starts with the pages that need more visibility, the questions buyers ask before they enquire and the internal links needed to move authority through the site.</p>
+            <a href="/keyword-research-services/">See our keyword research approach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="buyer-fit-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="buyer-fit-layout">
+        <div>
+          <p class="eyebrow">Who this suits</p>
+          <h2>For teams that need <span>writing, briefs or page revisions</span></h2>
+        </div>
+        <div class="buyer-fit-list">
+          <p><strong>Service businesses</strong> that need stronger pages, better local visibility and more enquiry-led content.</p>
+          <p><strong>Ecommerce and product-led brands</strong> that need category, guide and comparison content to support buying decisions.</p>
+          <p><strong>In-house marketing teams</strong> that already write content but need SEO outlines, structure and quality control.</p>
+          <p><strong>Agencies and partners</strong> that need reliable white-label SEO content without generic filler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="international-content-section" id="international-content">
+    <div class="max-w-7xl mx-auto px-4 international-content-layout">
+      <div class="international-content-intro">
+        <p class="eyebrow">Content across markets</p>
+        <h2>Written in the Philippines, <span>shaped around the buyer's market</span></h2>
+        <p>A buying guide may need different product specifications, delivery information or seasonal advice in each market. We check those differences against your offer and local search results before deciding what can be reused and what needs a separate brief.</p>
+        <p>Your brief records the target country, preferred English variant and the person who can confirm market-specific facts.</p>
+      </div>
+
+      <div class="editorial-markets">
+        <article>
+          <p class="market-kicker">Australia</p>
+          <h3>Australian English and local buying context</h3>
+          <p>We use Australian English, AU search results, local terminology and southern-hemisphere timing where it changes the answer. The content then supports the pages intended to rank in Australia.</p>
+          <a href="/seo-services-australia/">SEO delivery for Australian businesses →</a>
+        </article>
+        <article>
+          <p class="market-kicker">United Kingdom</p>
+          <h3>British English and a UK review brief</h3>
+          <p>We check UK search results and buyer questions, then use British English and the approved brand style. Your reviewer confirms UK-specific product availability, service terms and regulated claims; a spelling change cannot settle those facts.</p>
+          <a href="/seo-services-uk/">SEO delivery for UK businesses →</a>
+        </article>
+        <article>
+          <p class="market-kicker">United States</p>
+          <h3>American English matched to US search intent</h3>
+          <p>US content uses American English, US search results and the commercial context of the target state or national market. We check terminology, examples and claims rather than simply changing the spelling.</p>
+          <a href="/seo-services-usa/">SEO delivery for US businesses →</a>
+        </article>
+        <article>
+          <p class="market-kicker">Agency partners</p>
+          <h3>White label briefs, writing and editorial QA</h3>
+          <p>Agencies can use us for outlines, full drafts, page refreshes or a final SEO and editorial pass. The scope states whose brand guide, approval path and reporting format applies.</p>
+          <a href="/white-label-seo-services-philippines/">White label content fulfilment →</a>
+        </article>
+        <article>
+          <p class="market-kicker">Online stores</p>
+          <h3>Category, product and buying-guide content</h3>
+          <p>Ecommerce content is mapped to category architecture and buying stages so editorial work strengthens revenue pages instead of becoming a disconnected blog calendar.</p>
+          <a href="/ecommerce-seo-services/">Ecommerce SEO and content →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="process-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="section-header">
+        <p class="eyebrow">Our process</p>
+        <h2>From your source material to <span>approved copy</span></h2>
+        <p>We agree the page list, format, revision rounds, review owner and publishing responsibility in the scope. Your team does not need to write the page first, but we do need access to the facts that only your business can confirm.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>What we need from you</h3>
+          <p>Send your service inclusions and exclusions, product specifications, customer questions, brand guide and approved proof. Name the person who can answer factual queries and confirm which markets the offer serves.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-map-signs"></i>
+          </div>
+          <h3>Page brief</h3>
+          <p>We identify the reader, search intent, existing page and next action. The brief names the questions to answer, supporting sources and relevant internal links, including topics the page should not cover.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h3>Claim and source review</h3>
+          <p>We check that a source supports the exact statement, including its date and market. Your specialist confirms technical accuracy, eligibility, prices and regulated claims. Missing evidence becomes a question, not a confident sentence.</p>
+        </div>
+
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-pen-fancy"></i>
+          </div>
+          <h3>Draft and revisions</h3>
+          <p>You receive the draft with headings, metadata, link destinations and outstanding questions. We ask for consolidated feedback from the agreed reviewer, then revise within the approved brief. A changed offer or new page needs a scope decision.</p>
+        </div>
+
+        <div class="process-box orange-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-link"></i>
+          </div>
+          <h3>Publishing responsibility</h3>
+          <p>We can hand over approved copy to your publisher. CMS entry and live-page QA are included only when agreed. Where we handle publication, we check formatting, links, metadata and mobile reading after release.</p>
+        </div>
+
+        <div class="process-box white-bg">
+          <div class="process-box-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Review after release</h3>
+          <p>Where monitoring is included, we record the release date and review the page and its target queries. We separate tracked actions from qualified enquiries and ask your team when product or service facts change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="benefits-layout">
+        <div class="proof-panel">
+          <p class="eyebrow">Why Bright Forge</p>
+          <h2><span>Senior SEO thinking</span> before the first draft</h2>
+          <p>Content quality is not just grammar. It is whether the page deserves to rank, whether it answers the query better than the current SERP, whether it supports the right commercial page and whether the visitor knows what to do next.</p>
+          <p>That is why we treat content as part of the SEO system: <a href="/keyword-research-services/">keyword research</a>, <a href="/on-page-seo-services-philippines/">on-page SEO</a>, internal links, <a href="/technical-seo-services-philippines/">technical foundations</a>, proof, reporting and conversion paths all need to work together.</p>
+          <div class="proof-links">
+            <a href="/seo-services-philippines/">Explore SEO services</a>
+            <a href="/on-page-seo-services-philippines/">View on-page SEO</a>
+            <a href="/case-studies/">See case studies</a>
+            <a href="/case-studies/bridal-dress-designer-seo/">View content-led case study</a>
+          </div>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Topic clusters</h3>
+            <p>Content planned around connected themes, not random articles that never support the money pages.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <h3>Buyer-led copy</h3>
+            <p>Pages built around questions, objections, proof and decision points, not vague traffic promises.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>Content refreshes</h3>
+            <p>Existing pages improved when rankings stall, clicks drop, facts age or the SERP changes.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3>Useful reporting</h3>
+            <p>We report on the content signals that matter: rankings, impressions, clicks, links, enquiries and next actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-steps-section">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="next-steps-card">
+        <div>
+          <p class="eyebrow">What happens after you enquire</p>
+          <h2>Send a page and the <span>buyer question it leaves unanswered</span></h2>
+          <p>We will check whether the missing answer belongs on that page, in a supporting guide or in the enquiry process. Include any source documents and approval constraints so we can scope the writing and review work accurately.</p>
+        </div>
+        <ol>
+          <li>Review current rankings and page quality</li>
+          <li>Identify content gaps and underperforming pages</li>
+          <li>Map content to commercial priorities</li>
+          <li>Build a practical content SEO roadmap</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="section-header">
+        <h2>Frequently Asked <span>Questions</span></h2>
+      </div>
+
+      <div class="faq-container">
+        {contentFaqs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>{faq.question}</span>
+              <i class="fas fa-chevron-down"></i>
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="content-cta-section">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="content-cta-card">
+        <p class="eyebrow">Ready to improve your content?</p>
+        <h2>Get a scoped <span>content SEO proposal</span></h2>
+        <p>Tell us which market, pages and commercial goals matter. We will review the brief and recommend what should be created, improved or consolidated first.</p>
+        <div class="cta-actions">
+          <ButtonPrimary href="/contact/" text="Request a Content SEO Proposal" />
+          <ButtonSecondary href="/case-studies/" text="View SEO Case Studies" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+  <Footer slot="footer" />
+</MainLayout>
+
+<style>
+
+:global(body .hero-visual),
+:global(body .hero-image-container),
+:global(body .strategy-panel) {
+  display: flex !important;
+  visibility: visible !important;
+}
+
+:global(body .hero-visual *),
+:global(body .hero-image-container *),
+:global(body .strategy-panel *) {
+  display: revert !important;
+  visibility: visible !important;
+}
+
+:global(body .hero-image-container.strategy-panel) {
+  display: block !important;
+}
+
+:global(body .strategy-flow),
+:global(body .strategy-flow div) {
+  display: grid !important;
+}
+
+.proof-strip-section,
+.why-content-section,
+.services-section-new,
+.buyer-fit-section,
+.process-section,
+.benefits-section,
+.next-steps-section,
+.faq-section,
+.content-cta-section,
+:global(body .contact-cta-section) {
+  content-visibility: visible !important;
+  contain: none !important;
+}
+
+.service-item a,
+.proof-panel a,
+.content-cta-card a {
+  color: #b83e12;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.strategy-panel {
+  background: rgba(25, 33, 46, 0.09);
+  border: 1px solid rgba(25, 33, 46, 0.09);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 24px 80px rgba(25, 33, 46, 0.09);
+  backdrop-filter: blur(18px);
+}
+
+.panel-kicker,
+.eyebrow {
+  color: #b83e12;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.strategy-flow {
+  display: grid;
+  gap: 16px;
+}
+
+.strategy-flow div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(25, 33, 46, 0.09);
+  border-radius: 18px;
+}
+
+.strategy-flow span {
+  grid-row: 1 / span 2;
+  color: #b83e12;
+  font-weight: 900;
+}
+
+.strategy-flow strong {
+  color: #19212e;
+  font-size: 1rem;
+}
+
+.strategy-flow small {
+  color: #465365;
+  line-height: 1.5;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2,
+.editorial-copy h2,
+.services-content h2,
+.buyer-fit-layout h2,
+.proof-panel h2,
+.next-steps-card h2,
+.content-cta-card h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #19212e;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-header h2 span,
+.services-content h2 span {
+  background: linear-gradient(135deg, #f0622a, #d4510e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #465365;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.proof-strip-section {
+  padding: 34px 0;
+  background: #ffffff;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.proof-strip div {
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(25, 33, 46, 0.09);
+  border-radius: 0;
+  padding: 24px 28px;
+}
+
+.proof-strip div:first-child {
+  padding-left: 0;
+}
+
+.proof-strip div:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.proof-strip strong {
+  display: block;
+  color: #19212e;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.proof-strip span {
+  color: #465365;
+  line-height: 1.6;
+}
+
+.why-content-section,
+.benefits-section,
+.next-steps-section {
+  padding: 84px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f8fa 100%);
+}
+
+.editorial-layout,
+.buyer-fit-layout,
+.benefits-layout,
+.next-steps-card {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.editorial-copy p,
+.proof-panel p,
+.next-steps-card p,
+.content-cta-card p {
+  color: #465365;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.editorial-panel,
+.proof-panel,
+.next-steps-card,
+.content-cta-card {
+  background: #f7f8fa;
+  border: 1px solid rgba(240, 98, 42, 0.16);
+  border-radius: 24px;
+  padding: 38px;
+  box-shadow: 0 20px 60px rgba(25, 33, 46, 0.09);
+}
+
+.editorial-panel h3 {
+  color: #19212e;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.editorial-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.editorial-panel li {
+  color: #465365;
+  line-height: 1.7;
+  padding: 12px 0 12px 28px;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.07);
+  position: relative;
+}
+
+.editorial-panel li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #f0622a;
+}
+
+.services-section-new,
+.process-section,
+.faq-section,
+.content-cta-section {
+  padding: 84px 0;
+  background: #f7f8fa;
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-item {
+  padding-left: 30px;
+  border-left: 4px solid #f0622a;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  border-left-color: #d4510e;
+  transform: translateX(10px);
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #19212e;
+  margin-bottom: 12px;
+}
+
+.service-item p,
+.buyer-fit-list p,
+.benefit-card p {
+  color: #465365;
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+
+.services-visual {
+  position: sticky;
+  top: 120px;
+}
+
+.visual-card {
+  background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
+  padding: 40px;
+  border-radius: 24px;
+  color: #19212e;
+  box-shadow: 0 20px 60px rgba(240, 98, 42, 0.3);
+}
+
+.visual-icon {
+  width: 72px;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 2.1rem;
+}
+
+.visual-card h3 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.visual-description {
+  font-size: 1rem;
+  opacity: 0.95;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.visual-card a,
+.proof-links a {
+  color: #19212e;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.buyer-fit-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.buyer-fit-list {
+  display: grid;
+  gap: 18px;
+}
+
+.buyer-fit-list p {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+  border-radius: 0;
+  padding: 0 0 18px;
+  margin: 0;
+}
+
+.buyer-fit-list strong {
+  color: #19212e;
+}
+
+.international-content-section {
+  padding: 90px 0;
+  background: #f7f8fa;
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.international-content-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(48px, 7vw, 96px);
+  align-items: start;
+}
+
+.international-content-intro {
+  position: sticky;
+  top: 120px;
+}
+
+.international-content-intro h2 {
+  color: #19212e;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+
+.international-content-intro p {
+  color: #465365;
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+.editorial-markets {
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.editorial-markets article {
+  display: grid;
+  grid-template-columns: minmax(105px, 0.3fr) minmax(190px, 0.8fr) minmax(230px, 1.1fr);
+  column-gap: 22px;
+  align-items: start;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.editorial-markets .market-kicker {
+  color: #b83e12;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.editorial-markets h3 {
+  color: #19212e;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.editorial-markets p:not(.market-kicker) {
+  color: #465365;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.editorial-markets a {
+  grid-column: 2 / -1;
+  color: #b83e12;
+  font-weight: 800;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 20px;
+  background: transparent;
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.process-box {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  column-gap: 20px;
+  align-items: start;
+  padding: 24px 0;
+  border-radius: 0;
+  transition: none;
+  text-align: left;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.process-box.orange-bg {
+  background: transparent;
+  color: #19212e;
+}
+
+.process-box.white-bg {
+  background: transparent;
+  color: #19212e;
+  border: 0;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.process-box:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.process-box-icon {
+  width: 64px;
+  height: 40px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  border-radius: 0;
+  grid-row: 1 / span 2;
+  border-right: 1px solid rgba(240, 98, 42, 0.34);
+}
+
+.orange-bg .process-box-icon {
+  background: transparent;
+  backdrop-filter: none;
+  color: #b83e12;
+}
+
+.white-bg .process-box-icon {
+  background: transparent;
+  color: #b83e12;
+}
+
+.process-box h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.process-box p {
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.orange-bg p {
+  color: #19212e;
+}
+
+.white-bg p {
+  color: #465365;
+}
+
+.proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.benefit-card {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  column-gap: 18px;
+  background: transparent;
+  padding: 24px 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+  border: 0;
+  border-bottom: 1px solid rgba(25, 33, 46, 0.09);
+}
+
+.benefit-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.benefit-icon {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  color: #b83e12;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  grid-row: 1 / span 2;
+}
+
+.benefit-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #19212e;
+  margin-bottom: 12px;
+}
+
+.next-steps-card {
+  align-items: center;
+}
+
+.next-steps-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: steps;
+}
+
+.next-steps-card li {
+  counter-increment: steps;
+  color: #19212e;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 18px 18px 18px 58px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.next-steps-card li:before {
+  content: counter(steps);
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0622a;
+  color: #19212e;
+  font-weight: 900;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #f7f8fa;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(25, 33, 46, 0.07);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(25, 33, 46, 0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  background: transparent;
+  border: none;
+  list-style: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #19212e;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover {
+  background: #ffffff;
+}
+
+.faq-question i {
+  color: #465365;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  display: none;
+  border-top: 1px solid rgba(25, 33, 46, 0.07);
+}
+
+.faq-item[open] .faq-answer {
+  display: block;
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.faq-item[open] .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer p {
+  color: #465365;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.content-cta-section {
+  padding-top: 50px;
+}
+
+.content-cta-card {
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f8fa 100%);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+@media (max-width: 1024px) {
+  .proof-strip,
+  .services-layout,
+  .editorial-layout,
+  .buyer-fit-layout,
+  .benefits-layout,
+  .next-steps-card,
+  .international-content-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .international-content-intro {
+    position: static;
+  }
+
+  .editorial-markets article {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .editorial-markets a {
+    grid-column: 1;
+  }
+
+  .services-visual {
+    position: static;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .proof-strip,
+  .process-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .strategy-panel,
+  .editorial-panel,
+  .proof-panel,
+  .next-steps-card,
+  .content-cta-card {
+    padding: 28px;
+  }
+
+  .faq-question {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .faq-item[open] .faq-answer {
+    padding: 1rem 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2,
+  .editorial-copy h2,
+  .services-content h2,
+  .buyer-fit-layout h2,
+  .proof-panel h2,
+  .next-steps-card h2,
+  .content-cta-card h2 {
+    font-size: 2rem;
+  }
+
+  .process-box,
+  .benefit-card {
+    padding: 30px 20px;
+  }
+}
+</style>
+
