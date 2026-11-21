@@ -283,6 +283,22 @@ http://brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
 /blog/wordpress-seo-implementation-after-an-audit/  /blog/wordpress-seo-what-developers-break-without-realizing/  301
 /blog/wordpress-setup-decisions-that-actually-move-the-needle-lessons-from-sites-weve-worked-on  /blog/wordpress-seo-what-developers-break-without-realizing/  301
 /blog/wordpress-setup-decisions-that-actually-move-the-needle-lessons-from-sites-weve-worked-on/  /blog/wordpress-seo-what-developers-break-without-realizing/  301
+# 2026-11-21 Release 2: four sector pages with no published case folded into /industries/,
+# three framework pages folded into /development/
+/real-estate-seo-services  /industries/  301
+/real-estate-seo-services/  /industries/  301
+/finance-crypto-seo-services  /industries/  301
+/finance-crypto-seo-services/  /industries/  301
+/gaming-seo-services  /industries/  301
+/gaming-seo-services/  /industries/  301
+/pet-seo-services  /industries/  301
+/pet-seo-services/  /industries/  301
+/development/nextjs  /development/  301
+/development/nextjs/  /development/  301
+/development/react  /development/  301
+/development/react/  /development/  301
+/development/sveltekit  /development/  301
+/development/sveltekit/  /development/  301
 
 # Fallback to 404 page for unmatched routes
 /* /404.html 404
