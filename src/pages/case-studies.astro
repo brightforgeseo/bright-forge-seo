@@ -710,6 +710,7 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
           </div>
         </article>
       </div>
+      <p class="filter-empty" data-filter-empty role="status" hidden>No case studies match both filters. Choose All types or All Industries to see more.</p>
     </div>
   </section>
 
@@ -728,13 +729,17 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
       { key: 'type', attr: 'data-type-filter', cardAttr: 'data-type' },
       { key: 'category', attr: 'data-filter', cardAttr: 'data-category' }
     ];
+    var empty = document.querySelector('[data-filter-empty]');
     function apply() {
+      var shown = 0;
       cards.forEach(function(card) {
         var show = groups.every(function(g) {
           return state[g.key] === 'all' || card.getAttribute(g.cardAttr) === state[g.key];
         });
         card.style.display = show ? '' : 'none';
+        if (show) shown += 1;
       });
+      if (empty) empty.hidden = shown > 0;
     }
     groups.forEach(function(g) {
       var buttons = document.querySelectorAll('.modern-filter-btn[' + g.attr + ']');
@@ -807,6 +812,9 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
     justify-content: center;
     padding: 0;
   }
+
+  .filter-empty { margin: 1.5rem auto 0; max-width: 40rem; text-align: center; color: #465365; font-size: 1rem; }
+  .filter-empty[hidden] { display: none; }
 
   .filter-container.type-filter {
     margin-bottom: 12px;
