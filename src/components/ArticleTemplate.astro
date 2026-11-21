@@ -248,7 +248,7 @@ const formatDate = (dateString: string) => {
           
           <!-- Tags -->
           <div class="article-tags">
-            <h4>Tags:</h4>
+            <h3>Tags:</h3>
             <div class="tags-list">
               {tags.map((tag) => (
                 <span class="tag">{tag}</span>
@@ -1111,7 +1111,7 @@ const formatDate = (dateString: string) => {
   border-top: 2px solid rgba(25, 33, 46, 0.07);
 }
 
-.article-tags h4 {
+.article-tags h3 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #19212e;
@@ -1526,6 +1526,25 @@ const formatDate = (dateString: string) => {
   font-weight: 600;
   margin-top: 12px;
   font-size: 0.95rem;
+}
+
+/* Long URLs wrap inside the article column instead of being cut off */
+:global(.content-body p),
+:global(.content-body li) {
+  overflow-wrap: break-word;
+}
+
+/* Phones: wide tables scroll sideways inside the article; breadcrumb links get a 44px touch area */
+@media (max-width: 640px) {
+  :global(.content-body table) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .breadcrumbs a {
+    padding-block: 14px;
+  }
 }
 
 /* Responsive Design */
