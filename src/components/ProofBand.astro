@@ -4,9 +4,9 @@
 import { proofBand } from '../lib/proofBand';
 const band = proofBand(Astro.url.pathname);
 const awards = [
-  { img: '/images/awards/top-clutch-seo-company-philippines-2025.png', label: 'Top SEO Company, Clutch Philippines 2025', href: 'https://clutch.co/ph/seo-firms/international' },
-  { img: '/images/awards/top-clutch-seo-company-manila-2025.png', label: 'Top SEO Company Manila, Clutch 2025', href: 'https://clutch.co/ph/seo-firms/manila' },
-  { img: '/images/awards/top-clutch-seo-company-ecommerce-philippines.png', label: 'Top E-commerce SEO Company, Clutch Philippines', href: 'https://clutch.co/ph/seo-firms/ecommerce-industry/manila' },
+  { img: '/images/awards/top-clutch-seo-company-philippines-2025-288.webp', label: 'Top SEO Company, Clutch Philippines 2025', href: 'https://clutch.co/ph/seo-firms/international' },
+  { img: '/images/awards/top-clutch-seo-company-manila-2025-288.webp', label: 'Top SEO Company Manila, Clutch 2025', href: 'https://clutch.co/ph/seo-firms/manila' },
+  { img: '/images/awards/top-clutch-seo-company-ecommerce-philippines-288.webp', label: 'Top E-commerce SEO Company, Clutch Philippines', href: 'https://clutch.co/ph/seo-firms/ecommerce-industry/manila' },
 ];
 ---
 {band && (
@@ -17,7 +17,7 @@ const awards = [
         <p class="proof-band-kicker">Published evidence</p>
         <h2 id="proof-band-title">Results you can <span>check for yourself</span></h2>
       </div>
-      <p>These figures are organic search clicks reported in Google Search Console. Every case study states its comparison period and what the data does not show. <a href="/case-studies/">See all 25 case studies</a>.</p>
+      <p>Each figure is organic search clicks as reported in Google Search Console, and each case study states its comparison period and exactly what the data covers. <a href="/case-studies/">See all 25 case studies</a>.</p>
     </header>
     <ul class:list={['proof-band-cases', { 'proof-band-cases--2': band.cases.length === 2 }]}>
       {band.cases.map((c) => (

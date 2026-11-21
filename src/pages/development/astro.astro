@@ -81,7 +81,7 @@ const faqs=[
   },
   {
     "question": "Does a CMS edit appear live immediately?",
-    "answer": "Not necessarily. For a static build, the content must be fetched in a successful build and then deployed. Agree the preview, approval and build trigger, then verify the published URL. A CMS publish button alone does not prove the live page changed."
+    "answer": "Not necessarily. For a static build, the content must be fetched in a successful build and then deployed. We agree the preview, approval and build trigger, then verify the published URL. A CMS publish button alone does not prove the live page changed."
   },
   {
     "question": "What happens if the build fails?",
@@ -89,11 +89,11 @@ const faqs=[
   },
   {
     "question": "Can Astro handle forms and interactive features?",
-    "answer": "Yes, but those features need an implementation beyond static text. Agree the form endpoint, validation, success and error states, spam handling and any interactive components. Server-rendered features may need a hosting-specific adapter."
+    "answer": "Yes, but those features need an implementation beyond static text. We agree the form endpoint, validation, success and error states, spam handling and any interactive components. Server-rendered features may need a hosting-specific adapter."
   },
   {
     "question": "What maintenance does an Astro site need?",
-    "answer": "Assign responsibility for framework and package updates, CMS changes, hosting configuration and integration tests. A static site still has build dependencies and accounts to maintain, though it has no database or plugin layer exposed to visitors. Ongoing support and response times belong in the agreed scope."
+    "answer": "Someone has to own framework and package updates, CMS changes, hosting configuration and integration tests. A static site still has build dependencies and accounts to maintain, though it has no database or plugin layer exposed to visitors. Ongoing support and response times belong in the agreed scope."
   },
   {
     "question": "Does Astro guarantee better rankings?",
@@ -116,10 +116,10 @@ const faqs=[
     {title:"Static routes", text:"Service pages and blog posts render as HTML. We check that key content and links are present in the generated document."},
     {title:"CMS in, pages out", text:"This site uses Contentful for blog content. Published entries feed a build; editors and developers still need an agreed preview and release process."},
     {title:"Sitemap from the build", text:"Routes and published entries feed the sitemap generation. We check the generated sitemap against the intended public URLs after each release."},
-    {title:"Hydrate on purpose", text:"Load JavaScript for the controls that need it and nothing else. Check keyboard use, loading and error states alongside the static page."}
+    {title:"Hydrate on purpose", text:"We load JavaScript for the controls that need it and nothing else, and check keyboard use, loading and error states alongside the static page."}
   ]}
 />
-<section id="publishing-workflow"><div class="page-container two-column"><div><p class="eyebrow">From edit to release</p><h2>Test one real <span>content change</span> before handover</h2><p>Use an ordinary edit as the acceptance test: update a heading, replace an image and publish a new entry in a preview environment. Check the required fields, image alternative text, URL and metadata before approval.</p><p>For a static site, run the build with the approved content, inspect the generated page and deploy it. Then read the public URL, follow its links and confirm the sitemap contains the intended canonical address. Record the build and release owner, so a failed deployment never leaves editors guessing.</p></div><aside class="panel"><h3>Agree what your team can change</h3><p>List CMS-managed fields separately from code-managed templates. The handover should identify repository, CMS and hosting access; preview and deployment instructions; and responsibility for updates, integrations and rollback. Third-party subscriptions and ongoing maintenance need an explicit scope.</p></aside></div></section>
+<section id="publishing-workflow"><div class="page-container two-column"><div><p class="eyebrow">From edit to release</p><h2>Test one real <span>content change</span> before handover</h2><p>We use an ordinary edit as the acceptance test: update a heading, replace an image and publish a new entry in a preview environment, then check the required fields, image alternative text, URL and metadata before approval.</p><p>For a static site, we run the build with the approved content, inspect the generated page and deploy it. Then we read the public URL, follow its links and confirm the sitemap contains the intended canonical address. We record the build and release owner, so a failed deployment never leaves editors guessing.</p></div><aside class="panel"><h3>Agree what your team can change</h3><p>We list CMS-managed fields separately from code-managed templates. The handover should identify repository, CMS and hosting access; preview and deployment instructions; and responsibility for updates, integrations and rollback. Third-party subscriptions and ongoing maintenance need an explicit scope.</p></aside></div></section>
 <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>Where <span>Astro fits</span>, and when another stack is the better choice</h2><p>Astro suits service businesses, content sites, lean marketing sites and rebuilds where speed, maintainability and crawlable content come first. There is little to patch on the public side, and what the build generates is what the visitor receives.</p></div><div class="panel"><h3>When another approach may fit</h3><p>If editors need unrestricted page building or the product centres on authenticated application state, compare the alternatives before migrating. Existing integrations, preview needs and the maintenance team can outweigh a smaller front-end payload.</p></div></div></section>
 <section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare Astro with <span>editor-led and application stacks</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Content-led pages shipped as HTML. The stack on this page.</a><a href="/development/wordpress/"><span>WordPress development</span>Editors build and publish pages without a code release.</a><a href="/development/nextjs/"><span>Next.js development</span>An application framework for live data and signed-in features.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Astro development</span> questions on editing, builds and maintenance</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>

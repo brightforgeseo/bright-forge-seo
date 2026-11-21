@@ -2,7 +2,9 @@
 // case study in place of the shared illustration. Every figure is copied from the case study it links to
 // (and matches src/lib/heroProof.ts); change the case study first, then this file.
 export interface HeroArt { name: string; sector: string; image: string; alt: string; width: number; height: number; figure: string; period: string; href: string; }
-const img = (file: string) => encodeURI(`/images/case-studies/${file}`);
+// Hero and proof-band copies are 1200 px wide WebP versions of the case-study screenshots (the originals stay on the case pages).
+const SMALL = (file: string) => (/(bridal-dress-seo|speediance-uk-storefront)/.test(file) ? file : file.replace(/\.(webp|png)$/, '-1200.webp'));
+const img = (file: string) => encodeURI(`/images/case-studies/${SMALL(file)}`);
 const CASES: Record<string, HeroArt> = {
   bridal: { name: 'Emily Bridalwear', sector: 'UK bridal retailer', image: img('bridal-dress-seo.webp'), alt: 'Google Search Console comparison for Emily Bridalwear: 17.6K clicks against 7.41K in the same period a year earlier', width: 1031, height: 410, figure: '7,410 to 17,600 organic clicks', period: 'Three months against the same three months a year earlier', href: '/case-studies/bridal-dress-designer-seo/' },
   leather: { name: 'Lost Dutchman Leather', sector: 'Leather goods store', image: img('leather-wallet-ecommerce-seo.webp'), alt: 'Google Search Console comparison for Lost Dutchman Leather: 22.7K clicks against 15.2K', width: 2070, height: 862, figure: '15,200 to 22,700 organic clicks', period: 'Three months against the same three months a year earlier', href: '/case-studies/leather-wallet-ecommerce-seo/' },

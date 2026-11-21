@@ -9,7 +9,7 @@ const data = {
   breadcrumb: "Garden Products Growth",
   industry: "Garden products and mulch",
   period: "31 May to 28 August 2026, compared with 2 March to 30 May 2026",
-  lede: "Organic clicks rose from 1,883 to 2,804 across two 90-day periods while impressions barely moved. Click-through rate rose from 3.29% to 4.83% and average position held at 9.6 to 9.4. The site earned more clicks from almost the same number of appearances. Similar impression totals do not mean the same searches produced them, so the cause is still open.",
+  lede: "Organic clicks rose from 1,883 to 2,804 across two 90-day periods while impressions barely moved. Click-through rate rose from 3.29% to 4.83% and average position held at 9.6 to 9.4. The site earned more clicks from almost the same number of appearances. Similar impression totals can still hide a different mix of searches, so we treat the cause as an open question rather than claim it.",
   evidenceImage: "/images/case-studies/garden-products-search-growth-gsc-evidence.png",
   evidenceAlt: "Redacted Search Console totals chart showing 2,804 clicks for an anonymised garden-products supplier.",
   metrics: [
@@ -23,7 +23,7 @@ const data = {
   problemHeading: "Garden-product pages need to answer product and delivery questions",
   problem: [
     "A mulch or soil buyer usually has three things to settle before ordering: how much to buy, whether the product suits the job, and whether the supplier delivers to the address. Those details are where we would start a page review. They are review priorities, not explanations established by this comparison.",
-    "The public case does not name the supplier, the products or the URLs, and it does not record what work was done or when. It shows the aggregate Search Console movement only."
+    "We keep the supplier, its products and its URLs confidential, so this case works from the aggregate Search Console movement alone."
   ],
   readingHeading: "Average position held while aggregate CTR rose",
   reading: [
@@ -31,9 +31,9 @@ const data = {
     "A higher click rate at a steady position is the pattern a better title or description would produce, but these totals do not prove a snippet change caused it. A seasonal shift in what people searched for would look the same. We would test the explanation by comparing the same queries and pages across both periods, then check whether the additional clicks became orders."
   ],
   takeaways: [
-    "Similar impression totals can contain different searches. Use a fixed query and page comparison before attributing a CTR increase to the result itself.",
-    "For seasonal products, check the period, the query mix and delivery-area demand. March to May and June to August are different seasons for a garden, and the page does not say which market this is.",
-    "Search Console still cannot prove sales. Connect it to order and delivery data."
+    "Similar impression totals can contain different searches. Compare a fixed set of queries and pages before crediting the CTR increase to the search listing itself.",
+    "For seasonal products, check the period, the query mix and delivery-area demand. March to May and June to August are different seasons for a garden, and with the market withheld, a seasonal effect cannot be ruled out.",
+    "Search Console measures clicks, not sales, so connect it to order and delivery data."
   ],
   results: [
     { metric: "Organic clicks", before: "1,883", after: "2,804", note: "+48.9%, or 921 additional clicks" },
@@ -41,7 +41,7 @@ const data = {
     { metric: "Average position", before: "9.6", after: "9.4", note: "Held, with a slight improvement" },
     { metric: "Click-through rate", before: "3.29%", after: "4.83%", note: "Higher aggregate click rate" }
   ],
-  boundary: "This anonymised case study reports Google Search Console organic-search data for two equal 90-day periods. The client, property, pages and queries are withheld. It records visibility and clicks, not orders, delivery volume or revenue. Search Console cannot attribute the movement to a single action, and this result is not a guarantee. It is published as a Search Console comparison: the page does not record what work was done on the site, by whom or when."
+  boundary: "This anonymised case study reports Google Search Console organic-search data for two equal 90-day periods. The client, property, pages and queries are withheld. It measures visibility and clicks, not orders, delivery volume or revenue. We publish it as a measured comparison rather than a work log, so it credits no single action with the movement and promises no repeat result for another supplier."
 };
 ---
 <GscCaseStudyPage data={data} />
