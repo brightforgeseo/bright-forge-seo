@@ -203,7 +203,7 @@ const formatDate = (dateString: string) => {
 
   <article class="blog-article">
   <!-- Hero Section -->
-  <ForgeHero title={title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')} eyebrow={category} breadcrumb="Blog" context={category}>
+  <ForgeHero title={title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')} eyebrow={category} breadcrumb="Blog" context={category} art={false}>
     <p>{excerpt}</p>
     <div class="article-meta"><span class="category-badge">{category}</span><div class="meta-info"><span class="publish-date">{formatDate(publishDate)}</span><span class="read-time">{readTime}</span></div></div>
     <Fragment slot="actions"><a href="#article-reading" class="forge-read-link">Read the article <span aria-hidden="true">↗</span></a><a href="/blog/" class="forge-read-link">All articles</a></Fragment>
