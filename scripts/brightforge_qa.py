@@ -260,6 +260,19 @@ def check_light_cards() -> None:
         ok("no obvious light-card CSS patterns found in dark premium source files")
 
 
+def check_market_spelling() -> None:
+    """American English by default; British-style spelling on the UK, Australia and New Zealand pages."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from market_spelling import check_dist
+
+    problems = check_dist(DIST)
+    for line in problems[:40]:
+        print(f"  - {line}")
+    if problems:
+        fail(f"{len(problems)} spelling(s) break the market policy (see scripts/market_spelling.py)")
+    ok("spelling by market: American on general pages, British-style on UK, Australia and New Zealand pages")
+
+
 def check_required_routes() -> None:
     missing = []
     for route in REPRESENTATIVE_PATHS:
@@ -363,6 +376,7 @@ def main() -> None:
     check_h1_spans()
     check_h2_spans()
     check_light_cards()
+    check_market_spelling()
 
     if not args.static_only:
         run_rendered_checks(args.routes)

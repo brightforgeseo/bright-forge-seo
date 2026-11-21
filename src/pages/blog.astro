@@ -7,6 +7,7 @@ import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 import { getAllBlogPosts } from '../lib/contentful';
+import { displayAuthorName } from '../lib/authors.js';
 import { topicSections } from '../lib/blogDisplay.js';
 
 // Fetch blog posts from Contentful
@@ -28,7 +29,7 @@ const blogPosts = contentfulPosts.map(post => {
       month: 'long',
       day: 'numeric'
     }) : "Published recently",
-    author: post.author || "Bright Forge SEO Team",
+    author: displayAuthorName(post.author) || "Bright Forge SEO Team",
     readTime: readTime,
     // Convert tags to categories
     categories: post.tags?.map(tag => tag.toLowerCase()) || ["seo"],

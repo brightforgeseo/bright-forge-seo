@@ -43,7 +43,7 @@ with sync_playwright() as p:
             item.locator('summary').click()
             assert item.get_attribute('open') is not None
             assert item.locator('p').is_visible()
-            answers.append(item.evaluate('''x=>({question:x.querySelector('summary').textContent.replace(/^\\s*0\\d\\s*/, '').trim(),answer:x.querySelector('p').textContent.trim()})'''))
+            answers.append(item.evaluate('''x=>({question:x.querySelector('summary').textContent.trim(),answer:x.querySelector('p').textContent.trim()})'''))
         schema = page.locator('script[type="application/ld+json"]').evaluate_all('(xs)=>xs.map(x=>JSON.parse(x.textContent))')
         def walk(x):
             if isinstance(x, dict):

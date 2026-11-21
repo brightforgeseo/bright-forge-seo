@@ -14,9 +14,9 @@ def compact(text: str) -> str:
 def test_existing_page_owns_the_full_ai_search_service_intent():
     required_concepts = [
         "ai seo services",
-        "ai search optimisation",
-        "generative engine optimisation",
-        "answer engine optimisation",
+        "ai search optimization",
+        "generative engine optimization",
+        "answer engine optimization",
         "llm seo",
         "google ai overviews",
         "chatgpt",
@@ -167,7 +167,11 @@ def test_final_cta_keeps_current_surface_and_readable_type():
 
 
 def test_faq_uses_one_plus_control_instead_of_a_duplicate_icon():
-    assert "<summary><span>0{index + 1}</span>{faq.question}</summary>" in SOURCE
+    # The summary carries only the question, so the visible FAQ matches FAQPage markup word for word.
+    # A zero-padded counter used to sit here and showed visitors "010" and "011" on the tenth and
+    # eleventh questions; it must not come back.
+    assert "<summary>{faq.question}</summary>" in SOURCE
+    assert "<summary><span>0{index" not in SOURCE
     assert "<i aria-hidden=\"true\">+</i>" not in SOURCE
     assert re.search(r"\.faq-list summary i \{[^}]*display:\s*none\s*!important", SOURCE) or re.search(
         r"\.faq-list details summary i \{[^}]*display:\s*none\s*!important",
@@ -188,4 +192,4 @@ def test_metadata_targets_broad_buyer_intent_without_stuffing():
     assert "AEO" in title
     assert len(title) <= 60
     assert 130 <= len(description) <= 160
-    assert description.lower().count("optimisation") <= 1
+    assert description.lower().count("optimization") <= 1

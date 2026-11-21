@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { JSDOM } from 'jsdom';
 
 export const approved = [
-  ['/', 'SEO Agency Philippines | Bright Forge', 'SEO built around what you sell, not just keyword rankings. We improve how buyers find your website and enquire. Request an SEO review.'],
+  ['/', 'SEO Agency Philippines | Bright Forge', 'SEO built around what you sell, not just keyword rankings. We improve how buyers find your website and inquire. Request an SEO review.'],
   ['/seo-services-philippines/', 'SEO Services Philippines | Managed SEO | Bright Forge', 'Get an SEO plan built around your sales priorities, with the technical fixes and page improvements to put it into practice. See what’s included.'],
   ['/white-label-seo-services-philippines/', 'SEO Outsourcing Philippines for Agencies | White Label SEO', 'Take on more SEO work without hiring an in-house team. We deliver under your agency brand, with senior review. You keep the client relationship.'],
   ['/technical-seo-services-philippines/', 'Technical SEO Services Philippines | Bright Forge', 'Pages missing from Google? Traffic down after a rebuild? We investigate indexing, speed and redirects, with fixes your developer can test.'],

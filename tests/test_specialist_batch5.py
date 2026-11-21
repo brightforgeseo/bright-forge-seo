@@ -26,7 +26,7 @@ class SpecialistBatch5(unittest.TestCase):
 
     def test_wordpress(self):
         s = (ROOT / 'src/pages/development/wordpress.astro').read_text()
-        for term in ['database', 'files', 'staging', 'licence', 'restore', 'dependencies']:
+        for term in ['database', 'files', 'staging', 'license', 'restore', 'dependencies']:
             self.assertIn(term, s)
         self.assertNotIn('Plugin diet', s)
         self.assertNotIn('plugin pile', s)

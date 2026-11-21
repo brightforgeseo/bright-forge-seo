@@ -6,7 +6,7 @@ import Footer from '../../components/Footer.astro';
 import ContactSection from '../../components/ContactSection.astro';
 import ButtonPrimary from '../../components/ButtonPrimary.astro';
 import ButtonSecondary from '../../components/ButtonSecondary.astro';
-import { authors, getAuthorBySlug } from '../../lib/authors.js';
+import { authors, getAuthorBySlug, displayAuthorName } from '../../lib/authors.js';
 import { getAllBlogPosts } from '../../lib/contentful.js';
 
 export async function getStaticPaths() {
@@ -23,7 +23,7 @@ if (!author) {
 // Fetch all posts and filter to this author's articles (newest first)
 const allPosts = await getAllBlogPosts();
 const authorPosts = allPosts
-  .filter((p) => (p.author || '').trim().toLowerCase() === author.name.toLowerCase());
+  .filter((p) => displayAuthorName(p.author).toLowerCase() === author.name.toLowerCase());
 
 const formatDate = (d) =>
   d

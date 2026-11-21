@@ -184,7 +184,7 @@ Continue adding contextual links from remaining legacy/service-support pages to:
 
 - Preserve existing keyword targets before rewriting H1s, titles or URLs.
 - Avoid uniform card-grid layouts where a more editorial section would feel more human.
-- Use British spelling where natural: optimisation, prioritise, enquiries.
+- Spelling by market (owner decision, November 2026, replacing the earlier British default): American English site-wide (optimization, prioritize, inquiries); British-style spelling on the UK, Australia and New Zealand pages. Enforced on the build by `scripts/market_spelling.py` in `npm run qa:static`.
 - Keep AI readiness as an SEO layer, not a replacement.
 - Use "we" in client-facing copy.
 - No em dashes.

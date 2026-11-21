@@ -12,7 +12,7 @@ class IntentCoverage(unittest.TestCase):
   dev=(ROOT/'src/pages/development/index.astro').read_text()
   local=(ROOT/'src/pages/local-seo-for-google-maps-and-gbp.astro').read_text()
   self.assertIn('For Manila businesses',dev)
-  self.assertIn('test an enquiry path',dev)
+  self.assertIn('test an inquiry path',dev)
   self.assertIn('branch inventory',local)
   self.assertIn('profile eligibility',local)
 if __name__=='__main__':unittest.main()

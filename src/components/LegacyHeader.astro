@@ -3,6 +3,10 @@
 import { currentLogo, regularLogo, halloweenLogo, halloweenStarts, halloweenEnds } from '../utils/seasonalLogo';
 import "../styles/legacy.css";
 import "../styles/mega-menu.css";
+import { spell, spellingFor, type Spelling } from '../lib/marketSpelling';
+// Country pages in British-style spelling pass their market; everything else is American English.
+const { spelling = spellingFor(Astro.url.pathname) } = Astro.props as { spelling?: Spelling };
+const t = (text: string) => spell(text, spelling);
 ---
 
 <!-- Seasonal logos also expire in cached pages and tabs left open overnight. -->
@@ -90,14 +94,14 @@ import "../styles/mega-menu.css";
                     <i class="fas fa-file-alt"></i>
                     <div class="service-info">
                       <strong>On-Page SEO</strong>
-                      <span>Optimize content and page elements</span>
+                      <span>{t('Optimize content and page elements')}</span>
                     </div>
                   </a>
                   <a href="/content-seo-services-philippines/" class="service-link">
                     <i class="fas fa-pen"></i>
                     <div class="service-info">
                       <strong>Content SEO</strong>
-                      <span>Strategic content creation and optimization</span>
+                      <span>{t('Strategic content creation and optimization')}</span>
                     </div>
                   </a>
                   <a href="/local-seo-for-google-maps-and-gbp/" class="service-link">
@@ -260,7 +264,7 @@ import "../styles/mega-menu.css";
             </div>
             <div class="mega-highlight">
               <h4>Need a Custom Build?</h4>
-              <p>Let us build a fast, SEO-optimized website tailored to your business.</p>
+              <p>{t('Let us build a fast, SEO-optimized website tailored to your business.')}</p>
               <a href="/contact/" class="cta-button-mega">Free Consultation</a>
             </div>
           </div>
@@ -303,7 +307,7 @@ import "../styles/mega-menu.css";
                     <i class="fas fa-shopping-cart"></i>
                     <div class="service-info">
                       <strong>Ecommerce</strong>
-                      <span>Catalogues, categories, and product SEO</span>
+                      <span>{t('Catalogs, categories, and product SEO')}</span>
                     </div>
                   </a>
                 </div>

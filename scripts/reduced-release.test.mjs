@@ -7,11 +7,11 @@ const norm = value => new JSDOM(`<body>${value}</body>`).window.document.body.te
 const schemas = d => [...d.querySelectorAll('script[type="application/ld+json"]')].flatMap(s => { const v=JSON.parse(s.textContent); return v['@graph'] || [v]; });
 const faq = d => schemas(d).filter(s=>s['@type']==='FAQPage');
 const source = name => fs.readFileSync(`src/${name}.astro`,'utf8');
-test('homepage first screen includes all four buyers without unverified catalogue or billing claims',()=>{
+test('homepage first screen includes all four buyers without unverified catalog or billing claims',()=>{
  const s=source('pages/index').split('<!-- Commercial Proof')[0];
  assert.match(s,/Philippine, Australian, UK and US businesses/);
  assert.doesNotMatch(s,/17 published|trustBadgeCount="17"|We bill in GBP or USD/);
- assert.match(s,/title="SEO Agency Philippines for Enquiries, Not Vanity Traffic"/);
+ assert.match(s,/title="SEO Agency Philippines for Inquiries, Not Vanity Traffic"/);
 });
 test('low CTR prompts investigation rather than a trust diagnosis',()=>{
  const s=source('components/HomepageSearchLab');

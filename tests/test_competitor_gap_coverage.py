@@ -56,7 +56,7 @@ class CompetitorGapCoverageTest(unittest.TestCase):
             "outsource delivery",
             "Philippines-based white-label team",
             "agreed scope",
-            "reseller programmes",
+            "reseller programs",
         ):
             self.assertIn(phrase, page)
 
@@ -89,7 +89,7 @@ class CompetitorGapCoverageTest(unittest.TestCase):
             ),
             "seo-audit-services.astro": (
                 "SEO audits from the Philippines",
-                "prioritised findings register",
+                "prioritized findings register",
             ),
         }
 

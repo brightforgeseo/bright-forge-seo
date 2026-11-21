@@ -1,5 +1,7 @@
 ---
 // ContactPopup.astro  - Timed popup form for SEO lead capture
+import { spell, spellingFor, type Spelling } from '../lib/marketSpelling';
+const { spelling = spellingFor(Astro.url.pathname) } = Astro.props as { spelling?: Spelling };
 ---
 
 <div id="contact-popup-overlay" class="popup-overlay" aria-hidden="true">
@@ -63,7 +65,7 @@
           <path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <p class="popup-privacy">Read our <a href="/privacy-policy/">privacy policy</a> before sending your enquiry.</p>
+      <p class="popup-privacy">Read our <a href="/privacy-policy/">privacy policy</a> before sending your {spell('inquiry', spelling)}.</p>
     </form>
   </div>
 </div>

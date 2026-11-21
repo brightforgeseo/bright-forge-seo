@@ -59,7 +59,7 @@ class BroadCompetitorGapCoverageTest(unittest.TestCase):
         expected = {
             "ecommerce-seo-services.astro": ("shopify seo", "woocommerce seo"),
             "local-seo-for-google-maps-and-gbp.astro": ("multi-location brands", "location-page structure"),
-            "seo-audit-services.astro": ("seo audit checklist", "prioritised roadmap"),
+            "seo-audit-services.astro": ("seo audit checklist", "prioritized roadmap"),
             "on-page-seo-services-philippines.astro": ("title tags and meta descriptions",),
             "keyword-research-services.astro": ("competitor gap analysis",),
             "seo-command-centre.astro": ("seo dashboard", "reporting"),

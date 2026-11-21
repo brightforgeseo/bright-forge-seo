@@ -39,7 +39,7 @@ def test_pvc_no_first_page_distribution_inference():
 def test_pool_no_inferred_new_queries():
     s = source('pool-control-systems-search-growth')
     assert 'redacted presentation chart' in s
-    assert 'Recommended catalogue review' in s
+    assert 'Recommended catalog review' in s
     for claim in ['as search coverage expanded', 'new queries entered', 'once product language is indexed', 'A thin distributor site']:
         assert claim not in s
     assert '31 May to 28 August 2026' in s
