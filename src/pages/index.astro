@@ -1,48 +1,48 @@
 ---
+// Home page: answers "who is this agency". The services hub (/seo-services-philippines/) answers
+// "what do the services include and cost". Copy: brightforge-site-audit/REWRITES.md; layout: design/DESIGN.md.
 import MainLayout from '../layouts/MainLayout.astro';
 import homepageFaqs from '../data/homepageFaqs.json';
 import LegacyHeader from '../components/LegacyHeader.astro';
 import Footer from '../components/Footer.astro';
-import TestimonialsMarquee from '../components/TestimonialsMarquee.astro';
-import AwardsSection from '../components/AwardsSection.astro';
-import ProcessSection from '../components/ProcessSection.astro';
-import PackagesSection from '../components/PackagesSection.astro';
-import RevenueSection from '../components/RevenueSection.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
-import TrustedBySection from '../components/TrustedBySection.astro';
-import FeaturedTestimonial from '../components/FeaturedTestimonial.astro';
-import HomepageHero from '../components/HomepageHero.astro';
-import HomepageSearchLab from '../components/HomepageSearchLab.astro';
-import { getAllBlogPosts } from '../lib/contentful.js';
- 
 
-// Fetch latest blog posts from Contentful
-const allPosts = await getAllBlogPosts();
-const featuredSlugs = [
-  'how-much-does-seo-cost-in-the-philippines-in-2026',
-  'how-to-choose-an-seo-agency-in-the-philippines',
-  'seo-consultant-vs-agency-in-the-philippines',
-];
-const featured = featuredSlugs
-  .map((slug) => allPosts.find((post) => post.slug === slug))
-  .filter(Boolean);
-const latestPosts = featured.length === 3
-  ? featured
-  : allPosts.slice(0, 3);
-
-const title = "SEO Agency Philippines | Bright Forge";
-const description = "SEO built around what you sell, not just keyword rankings. We improve how buyers find your website and enquire. Request an SEO review.";
-const type = "company";
-const image = "/images/og-image.jpg";
-const breadcrumbs = [
-  { name: 'Home', url: '/' }
+const results = [
+  { num: '7,410 to 17,600', what: '<strong>Emily Bridalwear</strong> (UK bridal retailer): organic clicks over three months, compared with the same three months a year earlier', href: '/case-studies/bridal-dress-designer-seo/' },
+  { num: '15,200 to 22,700', what: '<strong>Lost Dutchman Leather</strong> (leather goods store): organic clicks on the same comparison, with a higher click-through rate', href: '/case-studies/leather-wallet-ecommerce-seo/' },
+  { num: '200,000 to 268,000', what: '<strong>TeamStats</strong> (football team management software): organic clicks on the same comparison', href: '/case-studies/football-app-seo/' },
+  { num: '6,550 to 10,900', what: '<strong>Speediance Australia</strong> (fitness equipment store): organic clicks across six months, compared with the previous six', href: '/case-studies/speediance-au-fitness-seo/' },
 ];
 
+const services = [
+  { name: 'SEO audits', href: '/seo-audit-services/', text: 'A crawl of the site set against Search Console and analytics data, written up as a prioritised list of findings with the evidence for each and who should fix it.' },
+  { name: 'Technical SEO', href: '/technical-seo-services-philippines/', text: 'Indexing, redirects, canonicals, page speed, structured data and JavaScript rendering. We give your developer the affected URLs, the change required and the test that shows it worked.' },
+  { name: 'Keyword research', href: '/keyword-research-services/', text: 'A keyword map that assigns each group of searches to one existing or proposed page, with the reason and the priority.' },
+  { name: 'On-page optimisation', href: '/on-page-seo-services-philippines/', text: 'Revised titles, headings, copy and internal links for your priority pages, shown beside the current version for approval.' },
+  { name: 'Content strategy and writing', href: '/content-seo-services-philippines/', text: 'Service pages, guides and refreshes of existing articles, briefed from your own knowledge and checked by an editor before you see them.' },
+  { name: 'Link building', href: '/backlink-seo-services-philippines/', text: 'Outreach to publications and sites your customers read, with every placement recorded.' },
+  { name: 'Local SEO', href: '/local-seo-for-google-maps-and-gbp/', text: 'Google Business Profile, citations and location pages for businesses that depend on nearby customers.' },
+  { name: 'Website migrations', href: '/website-migration-services/', text: 'Redirect maps, staging checks and post-launch monitoring when a site is redesigned or moved. Our <a href="/development/">web development</a> team handles builds and upkeep afterwards.' },
+  { name: 'AI search', href: '/ai-search-optimization-services-philippines/', text: "Checks on how your business appears in Google's AI answers and in ChatGPT, and the page changes that follow." },
+  { name: 'White label SEO', href: '/white-label-seo-services-philippines/', text: "The same work delivered under an agency's brand." },
+];
+
+const team = [
+  { name: 'Ben Lowe', role: 'Founder', href: '/authors/ben-lowe/', img: '/images/About us/ben-lowe-owner.webp', note: 'More than 15 years in SEO; marketing degree from London Metropolitan University. Leads strategy on client work.' },
+  { name: 'Sassin Lowe', role: 'Co-Founder', href: '/authors/sassin-lowe/', img: '/images/About us/sassin-lowe-owner.webp' },
+  { name: 'Jani A. Cañonero', role: 'Head of Team', href: '/authors/janin-a-canonero/', img: '/images/About us/Janin-seo-manager.webp' },
+  { name: 'Jewe O. Manalo', role: 'SEO Expert', href: '/authors/jewe-o-manalo/', img: '/images/About us/jewe-seo-expert.webp' },
+];
+
+const awards = [
+  { img: '/images/awards/top-clutch-seo-company-philippines-2025.png', label: 'Top SEO Company, Clutch Philippines 2025', href: 'https://clutch.co/ph/seo-firms/international' },
+  { img: '/images/awards/top-clutch-seo-company-manila-2025.png', label: 'Top SEO Company Manila, Clutch 2025', href: 'https://clutch.co/ph/seo-firms/manila' },
+  { img: '/images/awards/top-clutch-seo-company-ecommerce-philippines.png', label: 'Top E-commerce SEO Company, Clutch Philippines', href: 'https://clutch.co/ph/seo-firms/ecommerce-industry/manila' },
+];
 ---
 
 <MainLayout
-  title="SEO Agency Philippines | Bright Forge"
-  description="SEO built around what you sell, not just keyword rankings. We improve how buyers find your website and enquire. Request an SEO review."
+  title="SEO Agency Philippines for Local and Overseas Firms"
+  description="Bright Forge is an SEO agency in Quezon City led by Ben Lowe, with 15+ years in search. Technical SEO, content and reporting, with published client results."
   type="company"
   image="/images/og-image.jpg"
   breadcrumbs={[
@@ -51,976 +51,142 @@ const breadcrumbs = [
   faqs={homepageFaqs}
 >
   <LegacyHeader slot="header" />
-  
-  <!-- Hero Section -->
-  <HomepageHero
-    badge="British-led SEO, based in the Philippines"
-    title="SEO Agency Philippines for Enquiries, Not Vanity Traffic"
-    buttonText="Request an SEO Review"
-    buttonHref="/contact/"
-    secondaryButtonText="See case studies"
-    secondaryButtonHref="/case-studies/"
-    imageSrc="/images/Hero-SEO-Agency-In-The-Philippines.webp"
-    imageAlt="Sassin Lowe - Bright Forge SEO Expert Philippines"
-    trustBadgeText="Published Case Studies"
-  >
-    <Fragment slot="description">
-      <p>Bright Forge is an SEO agency in the Philippines for Philippine, Australian, UK and US businesses that need the phone to ring. Rankings are the means. Enquiries are the job.</p>
-    </Fragment>
-    <Fragment slot="support">
-      <p>British-led delivery from the Philippines, with named specialists and published case studies. We agree the scope, reporting and billing currency in your proposal.</p>
-      <p>We combine technical SEO, content, local search, authority, AI search readiness and conversion work so the people who already search for you actually enquire.</p>
-    </Fragment>
-  </HomepageHero>
 
-  <!-- Commercial Proof Section -->
-  <section class="commercial-intro bg-[#ffffff] px-4 py-16 md:py-20">
-    <div class="max-w-7xl mx-auto commercial-intro-grid">
-      <div class="commercial-copy">
-        <span class="section-label">COMMERCIAL SEO</span>
-        <h2>SEO for businesses that need the <span>phone to ring</span>, not just rankings in a report.</h2>
-        <p>Bright Forge is built around the work that turns search visibility into enquiries: technical fixes, stronger service pages, local visibility, proof, tracking and clearer next steps for buyers.</p>
-        <p>We prioritise the technical, content and conversion work most likely to improve qualified organic growth, then report what changed and what should happen next.</p>
-        <p>See our <a href="/seo-services-philippines/">Philippine SEO services</a>, <a href="/local-seo-for-google-maps-and-gbp/">local SEO for Maps and Google Business Profile</a>, our <a href="/ai-search-optimization-services-philippines/">AI search agency work</a>, or use our <a href="/white-label-seo-services-philippines/">white label SEO team</a> when the delivery needs to sit behind your agency.</p>
-        <div class="commercial-actions">
-          <a href="/contact/#contactForm" class="btn-view-all">Request an SEO Review</a>
-          <a href="/case-studies/" class="text-link">View case studies</a>
-        </div>
-      </div>
-      <div class="commercial-panel" aria-label="Bright Forge commercial SEO proof points">
-        <div class="panel-row">
-          <span>Competitive visibility</span>
-          <strong>UK, US, AU and Philippine search</strong>
-        </div>
-        <div class="panel-row">
-          <span>Reporting focus</span>
-          <strong>Rankings, GSC, calls, forms and leads</strong>
-        </div>
-        <div class="panel-row">
-          <span>Recognition</span>
-          <strong>Clutch-recognised SEO company</strong>
-        </div>
-        <div class="panel-row">
-          <span>Modern search</span>
-          <strong>SEO first, AI search agency for Overviews</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <HomepageSearchLab />
-
-  <!-- Trusted By Section -->
-  <TrustedBySection />
-
-  <!-- Awards Section -->
-  <AwardsSection />
-
-  <!-- Featured Testimonial -->
-  <FeaturedTestimonial />
-
-  <!-- Case Studies Section - Modern Design -->
-  <section class="case-studies-section">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Header -->
-      <div class="section-header">
-        <span class="section-badge">
-          <i class="fas fa-trophy"></i>
-          Success Stories
-        </span>
-        <h2 class="section-title">
-          Our <span class="title-highlight">Case Studies</span>
-        </h2>
-        <p class="section-description">
-          Proof that our SEO work can move more than rankings. These campaigns show visibility, clicks, traffic and conversion opportunities improving over time.
-        </p>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="case-studies-grid">
-        <!-- Card 1 - Bridal Dress Designer -->
-        <article class="case-study-card">
-          <div class="card-image">
-            <img src="/images/case-studies/bridal-dress-seo.webp" alt="Bridal Dress Designer SEO Case Study" width="400" height="300" loading="lazy" decoding="async">
-            <span class="card-badge">Bridal Fashion</span>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">137.5% Organic Click Growth for Bridal Dress Designer</h3>
-            <div class="card-stats">
-              <div class="stat">
-                <span class="stat-value">+137.5%</span>
-                <span class="stat-label">Organic Clicks</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">+118.1%</span>
-                <span class="stat-label">Impressions</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">3 mo.</span>
-                <span class="stat-label">Timeline</span>
-              </div>
-            </div>
-            <a href="/case-studies/bridal-dress-designer-seo/" class="card-link">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 2 - Leather Wallet E-Commerce -->
-        <article class="case-study-card">
-          <div class="card-image">
-            <img src="/images/case-studies/leather-wallet-ecommerce-seo.webp" alt="Leather Wallet E-Commerce SEO Case Study" width="400" height="300" loading="lazy" decoding="async">
-            <span class="card-badge">E-commerce</span>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">49% Organic Click Growth for Leather Wallet Brand</h3>
-            <div class="card-stats">
-              <div class="stat">
-                <span class="stat-value">+49.3%</span>
-                <span class="stat-label">Organic Clicks</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">+45.2%</span>
-                <span class="stat-label">CTR</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">3 mo.</span>
-                <span class="stat-label">Timeline</span>
-              </div>
-            </div>
-            <a href="/case-studies/leather-wallet-ecommerce-seo/" class="card-link">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 3 - Football App -->
-        <article class="case-study-card">
-          <div class="card-image">
-            <img src="/images/case-studies/football-app-seo-case-study.webp" alt="Football App SEO Case Study" width="400" height="300" loading="lazy" decoding="async">
-            <span class="card-badge">Sports</span>
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">34% Organic Click Growth for Football App</h3>
-            <div class="card-stats">
-              <div class="stat">
-                <span class="stat-value">+34%</span>
-                <span class="stat-label">Organic Clicks</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">+29.3%</span>
-                <span class="stat-label">Impressions</span>
-              </div>
-              <div class="stat">
-                <span class="stat-value">3 mo.</span>
-                <span class="stat-label">Timeline</span>
-              </div>
-            </div>
-            <a href="/case-studies/football-app-seo/" class="card-link">
-              View Case Study
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- View All Button -->
-      <div class="section-cta">
-        <a href="/case-studies/" class="btn-view-all">
-          View All Case Studies
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .case-studies-section {
-      padding: 6rem 0;
-      background: #ffffff;
-    }
-
-    .case-studies-section .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 4rem;
-    }
-
-    .case-studies-section .section-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-      border: 1px solid rgba(240, 98, 42, 0.15);
-      color: #b83e12;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 20px;
-    }
-
-    .case-studies-section .section-badge i {
-      font-size: 10px;
-    }
-
-    .case-studies-section .section-title {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 800;
-      color: #19212e;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .case-studies-section .title-highlight {
-      color: #b83e12;
-    }
-
-    .case-studies-section .section-description {
-      font-size: 1.125rem;
-      color: #19212e;
-      line-height: 1.7;
-    }
-
-    .case-studies-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .case-study-card {
-      background: #f7f8fa;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(25, 33, 46, 0.07);
-      box-shadow: 0 1px 3px rgba(25, 33, 46, 0.09);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .case-study-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(25, 33, 46, 0.09);
-    }
-
-    .card-image {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .case-study-card:hover .card-image img {
-      transform: scale(1.05);
-    }
-
-    .card-badge {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: linear-gradient(135deg, #f0622a 0%, #d4510e 100%);
-      color: #19212e;
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .card-content {
-      padding: 1.5rem;
-    }
-
-    .card-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: #19212e;
-      margin-bottom: 1rem;
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-    }
-
-    .card-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      padding: 1rem;
-      background: #f1f3f5;
-      border-radius: 12px;
-    }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat-value {
-      display: block;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #b83e12;
-      letter-spacing: -0.02em;
-    }
-
-    .stat-label {
-      display: block;
-      font-size: 0.6875rem;
-      color: #19212e;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 4px;
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: #b83e12;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .card-link:hover {
-      gap: 12px;
-    }
-
-    .card-link svg {
-      transition: transform 0.2s ease;
-    }
-
-    .card-link:hover svg {
-      transform: translateX(4px);
-    }
-
-    .case-studies-section .section-cta {
-      text-align: center;
-    }
-
-    .btn-view-all {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
-      background: linear-gradient(135deg, rgba(240, 98, 42, 0.1), rgba(240, 98, 42, 0.05));
-      border: 1px solid rgba(240, 98, 42, 0.15);
-      color: #b83e12;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .btn-view-all:hover {
-      transform: translateY(-2px);
-      border-color: rgba(240, 98, 42, 0.4);
-      background: linear-gradient(135deg, rgba(240, 98, 42, 0.15), rgba(240, 98, 42, 0.08));
-    }
-
-    .btn-view-all:hover svg {
-      transform: translateX(4px);
-    }
-
-    .btn-view-all svg {
-      transition: transform 0.2s ease;
-    }
-
-    @media (max-width: 1024px) {
-      .case-studies-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .case-studies-section {
-        padding: 4rem 0;
-      }
-
-      .case-studies-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .case-studies-section .section-header {
-        margin-bottom: 3rem;
-      }
-    }
-  </style>
-
-  <!-- Why Choose Us Section -->
-  <WhyChooseUs />
-
-  <!-- Our Process Steps Section (red) -->
-  <ProcessSection />
-
-
-  <!-- Services Section -->
-  <section class="seo-services-section bg-[#ffffff] py-16 px-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-        <!-- Left Side - Image/Card -->
-        <div class="relative">
-          <div class="bg-[#f7f8fa] rounded-3xl p-8 shadow-lg max-w-lg mx-auto">
-            <div class="rounded-2xl h-80 mb-6 overflow-hidden bg-[#ffffff]">
-              <svg viewBox="0 0 600 400" class="w-full h-full" role="img" aria-label="SEO Services" preserveAspectRatio="xMidYMid slice">
-                <rect width="600" height="400" fill="#f7f8fa"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M0 100h600M0 200h600M0 300h600M150 0v400M300 0v400M450 0v400" fill="none"/></g>
-                <rect x="60" y="48" width="480" height="304" rx="14" fill="#f1f3f5" stroke="#dce2e8"/>
-                <path d="M60 92h480v-30a14 14 0 0 0-14-14H74a14 14 0 0 0-14 14z" fill="#1f2440"/>
-                <circle cx="88" cy="70" r="5" fill="#f0622a"/>
-                <circle cx="106" cy="70" r="5" fill="#3c4569"/>
-                <circle cx="124" cy="70" r="5" fill="#3c4569"/>
-                <rect x="150" y="58" width="246" height="24" rx="12" fill="#f7f8fa" stroke="#dce2e8"/>
-                <circle cx="167" cy="70" r="6" fill="none" stroke="#f0622a" stroke-width="2"/>
-                <path d="M171.5 74.5l5 5" stroke="#f0622a" stroke-width="2" stroke-linecap="round"/>
-                <rect x="186" y="66" width="130" height="8" rx="4" fill="#323a5e"/>
-                <rect x="84" y="116" width="200" height="42" rx="9" fill="#f0622a" opacity="0.14"/>
-                <rect x="84" y="116" width="200" height="42" rx="9" fill="none" stroke="#f0622a" stroke-width="1.5"/>
-                <circle cx="107" cy="137" r="10" fill="#f0622a"/>
-                <rect x="127" y="127" width="118" height="7" rx="3.5" fill="#19212e" opacity="0.92"/>
-                <rect x="127" y="140" width="78" height="6" rx="3" fill="#3c4569"/>
-                <rect x="84" y="170" width="200" height="42" rx="9" fill="#1d2238"/>
-                <circle cx="107" cy="191" r="10" fill="#323a5e"/>
-                <rect x="127" y="181" width="106" height="7" rx="3.5" fill="#3c4569"/>
-                <rect x="127" y="194" width="66" height="6" rx="3" fill="#dce2e8"/>
-                <rect x="84" y="224" width="200" height="42" rx="9" fill="#1d2238"/>
-                <circle cx="107" cy="245" r="10" fill="#323a5e"/>
-                <rect x="127" y="235" width="112" height="7" rx="3.5" fill="#3c4569"/>
-                <rect x="127" y="248" width="58" height="6" rx="3" fill="#dce2e8"/>
-                <rect x="84" y="278" width="200" height="42" rx="9" fill="#1d2238"/>
-                <circle cx="107" cy="299" r="10" fill="#323a5e"/>
-                <rect x="127" y="289" width="98" height="7" rx="3.5" fill="#3c4569"/>
-                <rect x="127" y="302" width="72" height="6" rx="3" fill="#dce2e8"/>
-                <rect x="312" y="116" width="204" height="146" rx="10" fill="#1d2238"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M330 226h170M330 192h170M330 158h170" fill="none"/></g>
-                <path d="M330 238L368 218L406 224L444 190L478 198L500 154" fill="none" stroke="#f0622a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M330 238L368 218L406 224L444 190L478 198L500 154L500 246L330 246Z" fill="#f0622a" opacity="0.08"/>
-                <circle cx="500" cy="154" r="5" fill="#f0622a"/>
-                <circle cx="500" cy="154" r="9" fill="#f0622a" opacity="0.25"/>
-                <rect x="312" y="276" width="204" height="44" rx="10" fill="#1d2238"/>
-                <circle cx="336" cy="298" r="12" fill="#f0622a" opacity="0.16"/>
-                <path d="M331.5 293.2c-.7.7-.8 2.7.9 5s3.8 4 5.6 4.4c1 .2 2-.1 2.5-.7l1-1.2c.4-.5.3-1.3-.2-1.7l-2-1.5c-.5-.4-1.2-.3-1.6.2l-.5.6c-.6-.3-1.4-.9-2.1-1.8-.7-.9-1.1-1.8-1.3-2.4l.7-.4c.6-.3.8-1 .5-1.6l-1-2.2c-.3-.6-1-.9-1.6-.6l-1.4.7c-.2.1-.4.3-.5.5z" fill="#f0622a"/>
-                <rect x="358" y="288" width="96" height="8" rx="4" fill="#3c4569"/>
-                <rect x="358" y="302" width="64" height="6" rx="3" fill="#dce2e8"/>
-                <path d="M488 306v-16M482 296l6-6 6 6" fill="none" stroke="#f0622a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <div>
-                <h3 class="font-bold text-lg">SEO Services</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Side - Content -->
-        <div class="space-y-6">
-          <div>
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-[#b83e12] border border-[rgba(240,98,42,0.15)]" style="background:linear-gradient(135deg,rgba(240,98,42,0.1),rgba(240,98,42,0.05))">
-              OUR SERVICES
-            </span>
-          </div>
-
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#19212e] leading-tight">
-            SEO Services: <span class="text-[#b83e12]">Built Around Search-to-Lead Growth</span>
-          </h2>
-
-          <p class="text-lg text-[#465365] leading-relaxed">
-            From technical audits to content strategy, local SEO, link building and conversion improvements, we focus on the work that helps organic visibility become qualified enquiries.
+  <div class="bf-page">
+    <header class="bf-hero bf-hero--home">
+      <div class="bf-wrap bf-hero-grid">
+        <div>
+          <h1>SEO Agency in the Philippines for Local and Overseas Businesses</h1>
+          <p class="bf-lead">We are a search engine optimisation agency based in Quezon City, Metro Manila. Ben Lowe, our founder, has worked in SEO for more than 15 years and leads the strategy on client work. Our team audits websites, fixes technical faults, researches keywords, writes and edits pages, and reports each month on what changed.</p>
+          <p>We work with businesses in the Philippines, with companies in the UK, the US, Australia and New Zealand, and with agencies that need SEO delivered under their own name.</p>
+          <p class="bf-actions">
+            <a class="bf-btn bf-btn--primary" href="/contact/">Request an SEO review</a>
+            <a class="bf-btn bf-btn--quiet" href="/case-studies/">Read the case studies</a>
           </p>
-
-          <p class="text-lg text-[#465365] leading-relaxed">
-            Our SEO consulting starts with the commercial problem, not a fixed checklist. We turn market evidence, competitor gaps and site constraints into an SEO strategy and commercial roadmap your team can actually implement.
-          </p>
-
-          <div class="space-y-3 pt-4">
-            <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#e8eaf2] flex items-center justify-center">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-              <p class="text-[#19212e] font-medium">Data-driven strategies measured against rankings, clicks, calls, forms and lead quality.</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#e8eaf2] flex items-center justify-center">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-              <p class="text-[#19212e] font-medium">Transparent reporting that shows what changed, why it matters and what should happen next.</p>
-            </div>
-          </div>
-
-          <div class="pt-4">
-            <a
-              href="/seo-services-philippines/"
-              class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold uppercase text-xs tracking-widest text-[#b83e12] border border-[rgba(240,98,42,0.15)] hover:border-[rgba(240,98,42,0.4)] transition-colors"
-              style="background:linear-gradient(135deg,rgba(240,98,42,0.1),rgba(240,98,42,0.05))"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              Learn More
-            </a>
-          </div>
         </div>
-
-      </div>
-
-      <!-- Services Grid - 6 cards in 2 columns -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16">
-        <div class="bg-[#f7f8fa] rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-shadow">
-          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62]"></div>
-
-          <div class="p-8">
-            <div class="w-full aspect-video mb-6 rounded-lg overflow-hidden bg-[#ffffff]">
-              <svg viewBox="0 0 600 338" class="w-full h-full" role="img" aria-label="SEO Audits & Strategic Planning">
-                <rect width="600" height="338" fill="#f7f8fa"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M0 85h600M0 169h600M0 253h600M150 0v338M300 0v338M450 0v338" fill="none"/></g>
-                <rect x="76" y="58" width="232" height="222" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <rect x="100" y="84" width="110" height="9" rx="4.5" fill="#3c4569"/>
-                <g>
-                  <rect x="100" y="116" width="22" height="22" rx="6" fill="#f0622a" opacity="0.16"/>
-                  <path d="M105 127l4 4 8-8" fill="none" stroke="#f0622a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <rect x="134" y="122" width="120" height="8" rx="4" fill="#323a5e"/>
-                  <rect x="100" y="154" width="22" height="22" rx="6" fill="#f0622a" opacity="0.16"/>
-                  <path d="M105 165l4 4 8-8" fill="none" stroke="#f0622a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <rect x="134" y="160" width="142" height="8" rx="4" fill="#323a5e"/>
-                  <rect x="100" y="192" width="22" height="22" rx="6" fill="#f0622a" opacity="0.16"/>
-                  <path d="M105 203l4 4 8-8" fill="none" stroke="#f0622a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <rect x="134" y="198" width="98" height="8" rx="4" fill="#323a5e"/>
-                  <rect x="100" y="230" width="22" height="22" rx="6" fill="#1d2238" stroke="#323a5e"/>
-                  <rect x="134" y="236" width="128" height="8" rx="4" fill="#dce2e8"/>
-                </g>
-                <rect x="336" y="58" width="188" height="222" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <circle cx="430" cy="148" r="52" fill="none" stroke="#dce2e8" stroke-width="10"/>
-                <path d="M430 96a52 52 0 1 1-44.6 78.7" fill="none" stroke="#f0622a" stroke-width="10" stroke-linecap="round"/>
-                <circle cx="430" cy="148" r="30" fill="#1d2238"/>
-                <path d="M420 152l7 7 14-16" fill="none" stroke="#f0622a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="376" y="228" width="108" height="8" rx="4" fill="#3c4569"/>
-                <rect x="394" y="246" width="72" height="7" rx="3.5" fill="#dce2e8"/>
-              </svg>
-            </div>
-
-            <h3 class="text-xl font-bold text-[#19212e] mb-4">
-              SEO Audits & Strategic Planning
-            </h3>
-
-            <p class="text-[#465365] text-sm leading-relaxed mb-6">
-              We start by reviewing your site in detail. Technical setup, content quality, and backlinks all get checked. The aim is simple: show you what's working, what isn't, and where improvements will have the biggest impact.
-            </p>
-
-            <a
-              href="/seo-audit-services/"
-              class="inline-flex items-center font-medium transition-colors"
-              style="color: #b83e12;"
-            >
-              Learn More
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-[#f7f8fa] rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-shadow">
-          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62]"></div>
-
-          <div class="p-8">
-            <div class="w-full aspect-video mb-6 rounded-lg overflow-hidden bg-[#ffffff]">
-              <svg viewBox="0 0 600 338" class="w-full h-full" role="img" aria-label="Keyword Research">
-                <rect width="600" height="338" fill="#f7f8fa"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M0 85h600M0 169h600M0 253h600M150 0v338M300 0v338M450 0v338" fill="none"/></g>
-                <circle cx="200" cy="152" r="86" fill="#f1f3f5" stroke="#f0622a" stroke-width="5"/>
-                <path d="M263 215l52 52" stroke="#f0622a" stroke-width="14" stroke-linecap="round"/>
-                <rect x="148" y="112" width="104" height="18" rx="9" fill="#f0622a" opacity="0.18"/>
-                <rect x="148" y="112" width="104" height="18" rx="9" fill="none" stroke="#f0622a"/>
-                <rect x="148" y="144" width="78" height="16" rx="8" fill="#dce2e8"/>
-                <rect x="148" y="174" width="92" height="16" rx="8" fill="#dce2e8"/>
-                <rect x="350" y="64" width="186" height="210" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <g>
-                  <rect x="376" y="92" width="64" height="9" rx="4.5" fill="#3c4569"/>
-                  <rect x="376" y="108" width="134" height="12" rx="6" fill="#dce2e8"/>
-                  <rect x="376" y="108" width="112" height="12" rx="6" fill="#f0622a"/>
-                  <rect x="376" y="140" width="52" height="9" rx="4.5" fill="#3c4569"/>
-                  <rect x="376" y="156" width="134" height="12" rx="6" fill="#dce2e8"/>
-                  <rect x="376" y="156" width="84" height="12" rx="6" fill="#ff9a62"/>
-                  <rect x="376" y="188" width="70" height="9" rx="4.5" fill="#3c4569"/>
-                  <rect x="376" y="204" width="134" height="12" rx="6" fill="#dce2e8"/>
-                  <rect x="376" y="204" width="58" height="12" rx="6" fill="#323a5e"/>
-                  <rect x="376" y="236" width="46" height="9" rx="4.5" fill="#3c4569"/>
-                  <rect x="376" y="252" width="134" height="12" rx="6" fill="#dce2e8"/>
-                  <rect x="376" y="252" width="38" height="12" rx="6" fill="#323a5e"/>
-                </g>
-              </svg>
-            </div>
-
-            <h3 class="text-xl font-bold text-[#19212e] mb-4">
-              Keyword Research
-            </h3>
-
-            <p class="text-[#465365] text-sm leading-relaxed mb-6">
-              It's not just about ranking for keywords, it's about ranking for the right ones. We dig into how your audience searches, spot the gaps your competitors overlook, and build a keyword strategy designed to deliver customers, not just clicks.
-            </p>
-
-            <a
-              href="/keyword-research-services/"
-              class="inline-flex items-center font-medium transition-colors"
-              style="color: #b83e12;"
-            >
-              Learn More
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-[#f7f8fa] rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-shadow">
-          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62]"></div>
-
-          <div class="p-8">
-            <div class="w-full aspect-video mb-6 rounded-lg overflow-hidden bg-[#ffffff]">
-              <svg viewBox="0 0 600 338" class="w-full h-full" role="img" aria-label="On-Page SEO">
-                <rect width="600" height="338" fill="#f7f8fa"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M0 85h600M0 169h600M0 253h600M150 0v338M300 0v338M450 0v338" fill="none"/></g>
-                <rect x="170" y="46" width="260" height="246" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <rect x="196" y="74" width="150" height="14" rx="7" fill="#f0622a"/>
-                <rect x="196" y="100" width="92" height="8" rx="4" fill="#3c4569"/>
-                <rect x="196" y="126" width="208" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="196" y="141" width="186" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="196" y="156" width="198" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="196" y="182" width="96" height="12" rx="6" fill="#ff9a62" opacity="0.85"/>
-                <rect x="196" y="206" width="208" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="196" y="221" width="164" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="196" y="247" width="118" height="7" rx="3.5" fill="#f0622a" opacity="0.7"/>
-                <path d="M196 258h118" stroke="#f0622a" stroke-width="1.5" stroke-dasharray="4 3"/>
-                <rect x="100" y="86" width="64" height="26" rx="13" fill="#1d2238" stroke="#f0622a"/>
-                <text x="132" y="103" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#f0622a">H1</text>
-                <rect x="100" y="126" width="64" height="26" rx="13" fill="#1d2238" stroke="#323a5e"/>
-                <text x="132" y="143" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#8b93b8">H2</text>
-                <rect x="438" y="106" width="84" height="26" rx="13" fill="#1d2238" stroke="#323a5e"/>
-                <text x="480" y="123" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#8b93b8">meta</text>
-                <rect x="438" y="146" width="84" height="26" rx="13" fill="#1d2238" stroke="#f0622a"/>
-                <text x="480" y="163" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#f0622a">title</text>
-                <path d="M164 99h32M164 139h32M438 119h-30M438 159h-30" stroke="#3c4569" stroke-width="1.5" stroke-dasharray="3 3"/>
-              </svg>
-            </div>
-
-            <h3 class="text-xl font-bold text-[#19212e] mb-4">
-              On-Page SEO
-            </h3>
-
-            <p class="text-[#465365] text-sm leading-relaxed mb-6">
-              Small changes can make a big difference. Optimised titles, stronger internal links and improved content flow tell search engines exactly what your page is about, while keeping it natural for readers.
-            </p>
-
-            <a
-              href="/on-page-seo-services-philippines/"
-              class="inline-flex items-center font-medium transition-colors"
-              style="color: #b83e12;"
-            >
-              Learn More
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-[#f7f8fa] rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-shadow">
-          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62]"></div>
-
-          <div class="p-8">
-            <div class="w-full aspect-video mb-6 rounded-lg overflow-hidden bg-[#ffffff]">
-              <svg viewBox="0 0 600 338" class="w-full h-full" role="img" aria-label="Technical SEO">
-                <rect width="600" height="338" fill="#f7f8fa"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M0 85h600M0 169h600M0 253h600M150 0v338M300 0v338M450 0v338" fill="none"/></g>
-                <rect x="80" y="58" width="300" height="222" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <path d="M80 96h300v-26a12 12 0 0 0-12-12H92a12 12 0 0 0-12 12z" fill="#1f2440"/>
-                <circle cx="102" cy="77" r="4.5" fill="#f0622a"/>
-                <circle cx="118" cy="77" r="4.5" fill="#3c4569"/>
-                <circle cx="134" cy="77" r="4.5" fill="#3c4569"/>
-                <path d="M124 132l-20 20 20 20M156 132l20 20-20 20M148 124l-16 58" fill="none" stroke="#f0622a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="208" y="126" width="118" height="8" rx="4" fill="#323a5e"/>
-                <rect x="208" y="146" width="86" height="8" rx="4" fill="#dce2e8"/>
-                <rect x="208" y="166" width="104" height="8" rx="4" fill="#dce2e8"/>
-                <rect x="104" y="206" width="252" height="22" rx="6" fill="#1d2238"/>
-                <rect x="104" y="206" width="178" height="22" rx="6" fill="#f0622a" opacity="0.2"/>
-                <rect x="112" y="213" width="58" height="8" rx="4" fill="#f0622a"/>
-                <rect x="104" y="240" width="252" height="22" rx="6" fill="#1d2238"/>
-                <rect x="112" y="247" width="84" height="8" rx="4" fill="#3c4569"/>
-                <g transform="translate(448 132)">
-                  <g fill="#1f2440" stroke="#f0622a" stroke-width="3">
-                    <path d="M-9 -52h18l4 14a40 40 0 0 1 9 5l14-5 9 16-11 10a40 40 0 0 1 0 10l11 10-9 16-14-5a40 40 0 0 1-9 5l-4 14h-18l-4-14a40 40 0 0 1-9-5l-14 5-9-16 11-10a40 40 0 0 1 0-10l-11-10 9-16 14 5a40 40 0 0 1 9-5z"/>
-                  </g>
-                  <circle r="17" fill="#f7f8fa" stroke="#f0622a" stroke-width="3"/>
-                </g>
-                <circle cx="448" cy="244" r="22" fill="#1d2238" stroke="#dce2e8"/>
-                <path d="M440 244l6 6 11-13" fill="none" stroke="#f0622a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M448 190v32" stroke="#dce2e8" stroke-width="2" stroke-dasharray="4 4"/>
-              </svg>
-            </div>
-
-            <h3 class="text-xl font-bold text-[#19212e] mb-4">
-              Technical SEO
-            </h3>
-
-            <p class="text-[#465365] text-sm leading-relaxed mb-6">
-              Technical SEO isn't glamorous, but it matters. We'll sort out crawl errors, improve loading times, and keep your site running properly on phones and tablets as well as desktops.
-            </p>
-
-            <a
-              href="/technical-seo-services-philippines/"
-              class="inline-flex items-center font-medium transition-colors"
-              style="color: #b83e12;"
-            >
-              Learn More
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-[#f7f8fa] rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-shadow">
-          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62]"></div>
-
-          <div class="p-8">
-            <div class="w-full aspect-video mb-6 rounded-lg overflow-hidden bg-[#ffffff]">
-              <svg viewBox="0 0 600 338" class="w-full h-full" role="img" aria-label="Link Building">
-                <rect width="600" height="338" fill="#f7f8fa"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M0 85h600M0 169h600M0 253h600M150 0v338M300 0v338M450 0v338" fill="none"/></g>
-                <g stroke="#3c4569" stroke-width="2" fill="none">
-                  <path d="M300 169L150 92M300 169L132 218M300 169L452 86M300 169L468 232M150 92L132 218M452 86L468 232"/>
-                </g>
-                <path d="M300 169L452 86M300 169L150 92" stroke="#f0622a" stroke-width="2.5" opacity="0.7" fill="none"/>
-                <circle cx="300" cy="169" r="40" fill="#f0622a" opacity="0.14"/>
-                <circle cx="300" cy="169" r="28" fill="#f1f3f5" stroke="#f0622a" stroke-width="3"/>
-                <g transform="translate(300 169) rotate(-45)" fill="none" stroke="#f0622a" stroke-width="3" stroke-linecap="round">
-                  <path d="M-4 -6h-5a8 8 0 0 0 0 16h5M4 -6h5a8 8 0 0 1 0 16h-5M-5 2h10"/>
-                </g>
-                <circle cx="150" cy="92" r="22" fill="#f1f3f5" stroke="#f0622a" stroke-width="2.5"/>
-                <rect x="141" y="85" width="18" height="14" rx="3" fill="none" stroke="#f0622a" stroke-width="2"/>
-                <circle cx="452" cy="86" r="22" fill="#f1f3f5" stroke="#f0622a" stroke-width="2.5"/>
-                <path d="M444 92c2-8 14-8 16 0M452 80v6" stroke="#f0622a" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <circle cx="132" cy="218" r="18" fill="#f1f3f5" stroke="#323a5e" stroke-width="2.5"/>
-                <rect x="125" y="212" width="14" height="12" rx="2.5" fill="none" stroke="#8b93b8" stroke-width="2"/>
-                <circle cx="468" cy="232" r="18" fill="#f1f3f5" stroke="#323a5e" stroke-width="2.5"/>
-                <rect x="461" y="226" width="14" height="12" rx="2.5" fill="none" stroke="#8b93b8" stroke-width="2"/>
-                <circle cx="240" cy="280" r="5" fill="#323a5e"/>
-                <circle cx="372" cy="58" r="5" fill="#323a5e"/>
-                <circle cx="520" cy="160" r="5" fill="#323a5e"/>
-                <circle cx="84" cy="156" r="5" fill="#323a5e"/>
-              </svg>
-            </div>
-
-            <h3 class="text-xl font-bold text-[#19212e] mb-4">
-              Link Building
-            </h3>
-
-            <p class="text-[#465365] text-sm leading-relaxed mb-6">
-              Backlinks can help, but only if they're from the right sources. We'll target publications and websites that your audience actually pays attention to, rather than chasing numbers.
-            </p>
-
-            <a
-              href="/backlink-seo-services-philippines/"
-              class="inline-flex items-center font-medium transition-colors"
-              style="color: #b83e12;"
-            >
-              Learn More
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-[#f7f8fa] rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-shadow">
-          <div class="h-1 bg-gradient-to-r from-[#f0622a] to-[#ff9a62]"></div>
-
-          <div class="p-8">
-            <div class="w-full aspect-video mb-6 rounded-lg overflow-hidden bg-[#ffffff]">
-              <svg viewBox="0 0 600 338" class="w-full h-full" role="img" aria-label="Content That Works">
-                <rect width="600" height="338" fill="#f7f8fa"/>
-                <g stroke="#dce2e8" stroke-width="1"><path d="M0 85h600M0 169h600M0 253h600M150 0v338M300 0v338M450 0v338" fill="none"/></g>
-                <rect x="96" y="52" width="252" height="234" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <rect x="122" y="80" width="146" height="13" rx="6.5" fill="#19212e" opacity="0.85"/>
-                <rect x="122" y="103" width="92" height="9" rx="4.5" fill="#f0622a"/>
-                <rect x="122" y="132" width="200" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="122" y="147" width="182" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="122" y="162" width="194" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="122" y="177" width="142" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="122" y="204" width="200" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="122" y="219" width="168" height="7" rx="3.5" fill="#dce2e8"/>
-                <rect x="122" y="246" width="118" height="26" rx="13" fill="#f0622a"/>
-                <rect x="136" y="256" width="90" height="6" rx="3" fill="#f7f8fa" opacity="0.55"/>
-                <g transform="translate(322 196) rotate(40)">
-                  <rect x="-11" y="-78" width="22" height="92" rx="6" fill="#1f2440" stroke="#f0622a" stroke-width="2.5"/>
-                  <path d="M-11 14L0 40L11 14Z" fill="#1f2440" stroke="#f0622a" stroke-width="2.5" stroke-linejoin="round"/>
-                  <path d="M0 24v12" stroke="#f0622a" stroke-width="3" stroke-linecap="round"/>
-                </g>
-                <rect x="388" y="84" width="136" height="108" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <path d="M406 164L434 140L458 148L506 106" fill="none" stroke="#f0622a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M492 104l14 2-2 14" fill="none" stroke="#f0622a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="388" y="208" width="136" height="64" rx="12" fill="#f1f3f5" stroke="#dce2e8"/>
-                <circle cx="412" cy="240" r="11" fill="#f0622a" opacity="0.16"/>
-                <path d="M407 240l3.5 3.5 7-8" fill="none" stroke="#f0622a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="432" y="228" width="74" height="8" rx="4" fill="#3c4569"/>
-                <rect x="432" y="244" width="52" height="7" rx="3.5" fill="#dce2e8"/>
-              </svg>
-            </div>
-
-            <h3 class="text-xl font-bold text-[#19212e] mb-4">
-              Content That Works
-            </h3>
-
-            <p class="text-[#465365] text-sm leading-relaxed mb-6">
-              Getting people to your site is only half the job. We create content that explains what you do clearly, answers common questions, and encourages visitors to take the next step, whether that's making an enquiry, booking a call, or buying a product.
-            </p>
-
-            <a
-              href="/content-seo-services-philippines/"
-              class="inline-flex items-center font-medium transition-colors"
-              style="color: #b83e12;"
-            >
-              Learn More
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+        <div class="bf-hero-art" aria-hidden="true">
+          <img src="/assets/forge-conversions-corrected-640.webp" width="640" height="640" alt="" loading="lazy" decoding="async" />
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Revenue Boosting SEO Section -->
-  <RevenueSection
-    title="SEARCH-TO-LEAD SEO"
-    subtitle="Get Found, Earn Trust, Convert More Visitors"
-    description="More traffic is only useful when the right people take action. We build SEO campaigns around commercial intent, stronger landing pages, clearer proof, better CTAs and tracking that shows how organic search contributes to enquiries and revenue."
-  />
-
-  <!-- What Our Clients Say - Scrolling Marquee -->
-  <TestimonialsMarquee />
-
-  <!-- Packages Section -->
-  <PackagesSection />
-
-  <!-- FAQ Section -->
-  <section class="faq-section py-16 bg-[#ffffff]" style="background: #ffffff !important; background-color: #ffffff !important;">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="section-header text-center mb-10">
-        <span class="section-label">FREQUENTLY ASKED QUESTIONS</span>
-        <h2 class="section-title">Your SEO <span>Questions Answered</span></h2>
-        <p class="section-subtitle">Straight answers on rankings, leads, reporting, AI search, CRO and what happens after you enquire</p>
+    <section class="bf-sec" id="results">
+      <div class="bf-wrap">
+        <h2>Results you can check</h2>
+        <p>Each figure below comes from the client's Google Search Console and links to a case study that states the comparison period and its limits. The Search Console totals are rounded.</p>
+        <ul class="bf-results">
+          {results.map((r) => (
+            <li><span class="bf-num">{r.num}</span><span class="bf-what" set:html={r.what} /><a class="bf-src" href={r.href}>Case study</a></li>
+          ))}
+        </ul>
+        <p>These are search clicks. Where a client has shared sales or enquiry figures, the case study says so; where they have not, we do not claim them.</p>
+        <figure class="bf-figure">
+          <img src="/images/case-studies/bridal-dress-seo.webp" width="1031" height="410" loading="lazy" decoding="async" alt="Google Search Console comparison for Emily Bridalwear: 17.6K clicks in the last three months against 7.41K in the same period last year" />
+          <figcaption>Emily Bridalwear, Google Search Console: last three months against the same period a year earlier. Source: <a href="/case-studies/bridal-dress-designer-seo/">the case study</a>.</figcaption>
+        </figure>
       </div>
-      
-      <div class="faq-container max-w-4xl mx-auto">
+    </section>
+
+    <section class="bf-sec" id="what-we-do">
+      <div class="bf-wrap">
+        <h2>What we do</h2>
+        <dl class="bf-deliverables">
+          {services.map((s) => (
+            <>
+              <dt><a href={s.href}>{s.name}</a></dt>
+              <dd set:html={s.text} />
+            </>
+          ))}
+        </dl>
+        <p>For what a monthly programme includes and how it is priced, see <a href="/seo-services-philippines/">SEO services and packages</a>.</p>
+      </div>
+    </section>
+
+    <section class="bf-sec" id="how-it-works">
+      <div class="bf-wrap">
+        <h2>How an engagement works</h2>
+        <ol class="bf-steps">
+          <li><strong>You send the site and the problem.</strong> We usually reply within one business day (Monday to Friday, 9:00 to 18:00 Manila time).</li>
+          <li><strong>We look before we quote.</strong> A preliminary review of the obvious search, technical and conversion issues. If SEO is not the right next step, we say so.</li>
+          <li><strong>Diagnostic and 90-day roadmap.</strong> A fixed piece of work: technical, content and authority review, a baseline of current search and enquiry performance, and a priority list with owners.</li>
+          <li><strong>Monthly programme.</strong> Agreed work each month across technical fixes, page improvements, content and links. Every task is logged in a shared SEO management sheet with its status and evidence.</li>
+          <li><strong>Monthly report and review call.</strong></li>
+        </ol>
+        <p>Some clients stop after step 3 and implement the roadmap themselves. That is a normal outcome.</p>
+      </div>
+    </section>
+
+    <section class="bf-sec" id="each-month">
+      <div class="bf-wrap">
+        <h2>What you receive each month</h2>
+        <ul class="bf-list">
+          <li>A report covering organic traffic, rankings for agreed keywords, enquiries or sales where tracking allows, the work completed and the plan for next month.</li>
+          <li>The management sheet, updated, showing each action, who owns it and the proof it was done.</li>
+          <li>New or revised pages for approval before anything is published.</li>
+          <li>Technical fix briefs for your developer, or the fixes made by us where we have access.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bf-sec" id="pricing">
+      <div class="bf-wrap">
+        <h2>How pricing works</h2>
+        <p>We do not publish a rate card. Each proposal is written for one site and states the work included, the reporting, the billing currency and the terms.</p>
+        <p>The price depends on the size of the site, how competitive the searches are, how much content is needed, and whether we or your team implement changes.</p>
+      </div>
+    </section>
+
+    <section class="bf-sec" id="team">
+      <div class="bf-wrap">
+        <h2>Who does the work</h2>
+        <div class="bf-team">
+          {team.map((person) => (
+            <div>
+              <img src={person.img} alt={person.name} width="300" height="300" loading="lazy" decoding="async" />
+              <h3><a href={person.href}>{person.name}</a></h3>
+              <p>{person.role}</p>
+            </div>
+          ))}
+        </div>
+        <p>Ben Lowe has worked in SEO for more than 15 years and holds a marketing degree from London Metropolitan University. He leads the strategy and the quality standards behind client work. Read more <a href="/about-us/">about us</a>.</p>
+      </div>
+    </section>
+
+    <section class="bf-sec" id="recognition">
+      <div class="bf-wrap">
+        <h2>Recognition</h2>
+        <p>Clutch lists us as a Top SEO Company in the Philippines for 2025. Each badge links to the Clutch listing.</p>
+        <ul class="bf-badges">
+          {awards.map((a) => (
+            <li><a class="award-card" href={a.href} target="_blank" rel="noopener noreferrer" data-analytics-event="clutch_evidence_click"><img src={a.img} alt="" width="72" height="72" loading="lazy" decoding="async" /><span>{a.label}</span></a></li>
+          ))}
+        </ul>
+        <blockquote class="bf-quote">
+          <p>Working with Bright Forge SEO has been a huge benefit for TeamStats. They understand our needs and deliver consistently.</p>
+          <footer>Tom Stanbury. <a href="https://www.google.com/maps/contrib/116331598386131030776/place/ChIJE2gAZiKxlzMRs_CdsvEp-4I/@33.1283139,60.4938897,3z/data=!4m6!1m5!8m4!1e1!2s116331598386131030776!3m1!1e1?hl=en&entry=ttu" target="_blank" rel="noopener noreferrer" data-analytics-event="featured_review_source">View the public Google review</a></footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="bf-sec" id="questions">
+      <div class="bf-wrap">
+        <h2>Questions we are asked most</h2>
         {homepageFaqs.map((faq) => (
-          <details class="faq-item">
-            <summary>{faq.question}</summary>
+          <>
+            <h3>{faq.question}</h3>
             <p set:html={faq.answer} />
-          </details>
+          </>
         ))}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Latest Blog Section -->
-  <section class="latest-blog-section py-16 bg-[#ffffff]" style="background-color: #ffffff !important;">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="section-header" style="background-color: #ffffff !important;">
-        <span class="section-label">LATEST INSIGHTS</span>
-        <h2 class="section-title">Our Latest <span>Blog Posts</span></h2>
-        <p class="section-subtitle">Stay updated with our latest SEO insights and strategies</p>
-      </div>
-      
-      <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        {latestPosts.map((post) => (
-          <div class="blog-card rounded-lg shadow-md overflow-hidden flex flex-col" style="background-color: #f7f8fa !important;">
-            <div class="blog-image h-48" style="background-color: #f1f3f5 !important;">
-              <img 
-                src={post.featuredImage || '/images/blog/default-blog.png'} 
-                alt={post.title} 
-                class="w-full h-full object-cover" 
-                style="background-color: #f7f8fa !important;"
-                width="400" 
-                height="250" 
-                loading="lazy" 
-                decoding="async"
-              />
-            </div>
-            <div class="blog-content p-5 flex-grow" style="background-color: #f7f8fa !important;">
-              <div class="blog-meta flex items-center text-sm mb-2">
-                <span class="blog-category bg-brand-accent-light text-brand-accent px-3 py-1 rounded-full text-xs font-medium">
-                  {post.tags && post.tags.length > 0 ? post.tags[0] : 'SEO'}
-                </span>
-                <span class="blog-date text-[#465365] ml-3">
-                  {new Date(post.publishDate).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}
-                </span>
-              </div>
-              <h3 class="text-lg font-bold mb-2">
-                <a href={`/blog/${post.slug}/`} class="hover:text-brand-accent transition-colors">
-                  {post.title}
-                </a>
-              </h3>
-              <p class="text-[#465365] mb-3 text-sm line-clamp-2">
-                {post.excerpt}
-              </p>
-              <a href={`/blog/${post.slug}/`} class="text-brand-accent font-medium hover:underline inline-flex items-center text-sm">
-                Read Article 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      <div class="text-center mt-10">
-        <a href="/blog/" class="inline-block border border-brand-accent text-brand-accent font-medium rounded-md px-6 py-3 hover:bg-brand-accent hover:text-slate-900 transition-colors" style="background-color: transparent !important;">
-          View All Blog Posts
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section py-20 bg-[#ffffff]" style="background-color: #ffffff !important;">
-    <div class="container max-w-7xl mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="section-label">Contact Bright Forge SEO Agency</span>
-        <h2 class="section-title">Get in <span>touch today</span></h2>
-        <p class="section-subtitle">Tell us your website, market and growth goal. We start with a preliminary SEO review of the obvious search and conversion signals before recommending work.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <!-- Form Column (keeps original fields/content + Netlify) -->
-        <div class="p-8 rounded-lg shadow-md bg-[#f7f8fa]" style="background-color: #f7f8fa !important;">
-          <form name="homepage-contact" method="POST" data-netlify="true" data-lead-form="homepage-contact" netlify-honeypot="bot-field" action="/thanks/" class="space-y-6">
+    <section class="bf-sec" id="contact">
+      <div class="bf-wrap">
+        <h2>Request an SEO review</h2>
+        <p>Send your website, your target market and the problem you want solved. We usually reply within one business day.</p>
+        <div class="bf-contact">
+          <div>
+            <form class="bf-form" name="homepage-contact" method="POST" data-netlify="true" data-lead-form="homepage-contact" netlify-honeypot="bot-field" action="/thanks/">
             <input type="hidden" name="form-name" value="homepage-contact" />
             <input type="hidden" name="subject" value="New Contact Form Submission from Website" />
             <input type="hidden" name="notification-email" value="seo@brightforgeseo.com" />
@@ -1037,38 +203,38 @@ const breadcrumbs = [
             <input type="hidden" name="first_touch_utm_source" value="" />
             <input type="hidden" name="first_touch_utm_medium" value="" />
             <input type="hidden" name="first_touch_utm_campaign" value="" />
-            <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
+            <p class="bf-hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
 
-            <div class="grid sm:grid-cols-2 gap-6">
+            <div class="bf-row">
               <div>
-                <label for="firstName" class="block text-sm font-medium text-brand-soft mb-1">First Name *</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required class="w-full px-4 py-3 border border-[rgba(255,255,255,0.07)] rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required />
               </div>
               <div>
-                <label for="lastName" class="block text-sm font-medium text-brand-soft mb-1">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required class="w-full px-4 py-3 border border-[rgba(255,255,255,0.07)] rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required />
               </div>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-6">
+            <div class="bf-row">
               <div>
-                <label for="email" class="block text-sm font-medium text-brand-soft mb-1">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required class="w-full px-4 py-3 border border-[rgba(255,255,255,0.07)] rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-brand-soft mb-1">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(+63) 912 345 6789" class="w-full px-4 py-3 border border-[rgba(255,255,255,0.07)] rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(+63) 912 345 6789" />
               </div>
-            </div>
-
-            <div>
-              <label for="website" class="block text-sm font-medium text-brand-soft mb-1">Website URL</label>
-              <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" class="w-full px-4 py-3 border border-[rgba(255,255,255,0.07)] rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent" />
             </div>
 
             <div>
-              <label for="services" class="block text-sm font-medium text-brand-soft mb-1">Services Interested In</label>
-              <select id="services" name="services" required class="w-full px-4 py-3 border border-[rgba(255,255,255,0.07)] rounded-md bg-[#f1f3f5] focus:ring-2 focus:ring-brand-accent focus:border-brand-accent">
+              <label for="website">Website URL</label>
+              <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" />
+            </div>
+
+            <div>
+              <label for="services">Services Interested In</label>
+              <select id="services" name="services" required>
                 <option value="">Select a service...</option>
                 <option value="seo-review">Preliminary SEO review</option>
                 <option value="seo-services">SEO Services Philippines</option>
@@ -1082,778 +248,28 @@ const breadcrumbs = [
             </div>
 
             <div>
-              <label for="message" class="block text-sm font-medium text-brand-soft mb-1">Tell us about your project</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell us your website, target market, SEO goals and what a good enquiry or sale looks like..." class="w-full px-4 py-3 border border-[rgba(255,255,255,0.07)] rounded-md focus:ring-2 focus:ring-brand-accent focus:border-brand-accent"></textarea>
+              <label for="message">Tell us about your project</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us your website, target market, SEO goals and what a good enquiry or sale looks like..."></textarea>
             </div>
 
-            <button type="submit" class="w-full py-3 rounded-full font-bold transition-all text-[#b83e12] border border-[rgba(240,98,42,0.15)] hover:border-[rgba(240,98,42,0.4)]" style="background:linear-gradient(135deg,rgba(240,98,42,0.1),rgba(240,98,42,0.05))">
-              Request an SEO Review
+            <button type="submit" class="bf-btn bf-btn--primary">
+              Request an SEO review
             </button>
-            <p class="text-sm">Read our <a href="/privacy-policy/">privacy policy</a> before sending your enquiry.</p>
+            <p>Read our <a href="/privacy-policy/">privacy policy</a> before sending your enquiry.</p>
           </form>
-        </div>
-
-        <!-- Info/Trust Column (mirrors service pages) -->
-        <div class="space-y-8">
-          <div class="p-8 rounded-lg shadow-md bg-[#f7f8fa]" style="background-color: #f7f8fa !important;">
-            <h3 class="text-xl font-bold mb-5 text-[#19212e]">Get in Touch</h3>
-            <div class="flex items-start mb-5">
-              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
-                <i class="fas fa-envelope text-brand-accent"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-[#19212e]">Email Us</h4>
-                <a href="mailto:seo@brightforgeseo.com" class="text-brand-soft hover:text-brand-accent transition-colors">seo@brightforgeseo.com</a>
-              </div>
-            </div>
-            <div class="flex items-start mb-5">
-              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
-                <i class="fas fa-phone-alt text-brand-accent"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-[#19212e]">Call Us</h4>
-                <a href="tel:+639696206182" class="text-brand-soft hover:text-brand-accent transition-colors">(+63) 969 620 6182</a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center mr-4">
-                <i class="fas fa-map-marker-alt text-brand-accent"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-[#19212e]">Visit Our Office</h4>
-                <p class="text-brand-soft text-sm leading-relaxed">Kathleen Place 4, Block 16, Lot 37<br />Armani Street, 75 S Francisco<br />Novaliches, Quezon City<br />1116 Metro Manila, Philippines</p>
-              </div>
-            </div>
           </div>
-
-          <div class="p-8 rounded-lg shadow-md bg-[#f7f8fa]" style="background-color: #f7f8fa !important;">
-            <h3 class="text-xl font-bold mb-5 text-[#19212e]">Office Hours</h3>
-            <div class="space-y-3 text-brand-soft">
-              <div class="flex justify-between"><span>Monday - Friday:</span><span>9:00 AM - 6:00 PM</span></div>
-              <div class="flex justify-between"><span>Saturday - Sunday:</span><span>Closed</span></div>
-            </div>
+          <div>
+            <address>Kathleen Place 4, Block 16, Lot 37 Armani Street, 75 S Francisco, Novaliches, Quezon City 1116, Metro Manila, Philippines</address>
+            <dl class="bf-facts">
+              <dt>Hours</dt><dd>Monday to Friday, 9:00 to 18:00 Manila time</dd>
+              <dt>Phone</dt><dd><a href="tel:+639696206182">(+63) 969 620 6182</a></dd>
+              <dt>Email</dt><dd><a href="mailto:seo@brightforgeseo.com">seo@brightforgeseo.com</a></dd>
+            </dl>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+
   <Footer slot="footer" />
 </MainLayout>
-
-<style>
-/* Global Styles and CSS Variables */
-  :root {
-    --brand-primary: #f0622a;
-    --brand-secondary: #19212e;
-    --brand-accent: #f0622a;
-    --brand-bg: #ffffff;
-    --text-primary: #19212e;
-    --text-secondary: #465365;
-    --border-color: rgba(25, 33, 46, 0.07);
-    --shadow-sm: 0 2px 4px rgba(25, 33, 46, 0.09);
-    --shadow-md: 0 4px 6px rgba(25, 33, 46, 0.09);
-    --shadow-lg: 0 10px 15px rgba(25, 33, 46, 0.09);
-    --shadow-xl: 0 20px 25px rgba(25, 33, 46, 0.09);
-    --transition-base: all 0.3s ease;
-  }
-  
-  /* Prevent unwanted scrolling */
-  
-  /* Remove any height restrictions that might cause scrolling */
-  
-  /* Fix for any element that might cause overflow */
-  /* Removed overly aggressive global max-width that could cause rounding gaps */
-  
-  /* Specific fix for sections */
-  section {
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-  }
-
-  /* Remove all bottom gaps from last section */
-
-  /* Homepage Hero Image Styles */
-  
-  /* Floating stats animation */
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  /* Container styles */
-  .container {
-    overflow: visible !important;
-    width: 100%;
-  }
-  
-  .container.max-w-7xl {
-    max-width: 80rem !important; /* 1280px */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  
-  /* Audit Tool Styles */
-  
-  @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-  
-  /* Audit Results Styles */
-  
-  .recommendations {
-    background: #f7f8fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  /* SEO Pillars Section */
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-  
-  @media (max-width: 480px) {
-    .container {
-      padding: 0 15px;
-      max-width: 100%;
-    }
-    
-    section {
-      padding: 40px 0;
-      overflow-x: hidden;
-    }
-  }
-  
-  .section-header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-    border: 1px solid rgba(240, 98, 42, 0.15);
-    color: #b83e12;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  
-  .section-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--brand-text, #19212e);
-    margin-bottom: 15px;
-  }
-  
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: 32px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .section-title {
-      font-size: 28px;
-    }
-  }
-  
-  .section-title span {
-    color: var(--bf-link, #b83e12);
-  }
-  
-  .section-subtitle {
-    font-size: 18px;
-    color: #19212e;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  /* BF Tabs */
-  
-  /* Responsive */
-
-  /* Process Section */
-  
-  /* Partners Section */
-
-  /* Testimonials Section */
-  /* Removed */
-  
-  /* Audit Tool Styles */
-  
-  @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-  
-  /* Audit Results Styles */
-  
-  .recommendations {
-    background: #f7f8fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  /* SEO Pillars Section */
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-  
-  @media (max-width: 480px) {
-    .container {
-      padding: 0 15px;
-      max-width: 100%;
-    }
-    
-    section {
-      padding: 40px 0;
-      overflow-x: hidden;
-    }
-  }
-  
-  .section-header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: linear-gradient(135deg, rgba(240, 98, 42, 0.1) 0%, rgba(240, 98, 42, 0.05) 100%);
-    border: 1px solid rgba(240, 98, 42, 0.15);
-    color: #b83e12;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  
-  .section-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--brand-text, #19212e);
-    margin-bottom: 15px;
-  }
-  
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: 32px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .section-title {
-      font-size: 28px;
-    }
-  }
-  
-  .section-title span {
-    color: var(--bf-link, #b83e12);
-  }
-  
-  .section-subtitle {
-    font-size: 18px;
-    color: #19212e;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  /* BF Tabs */
-  
-  /* Responsive */
-
-  /* Process Section */
-  
-  /* Partners Section */
-
-  /* Testimonials Section */
-  /* Removed */
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      opacity: 0.6;
-    }
-    50% {
-      transform: scale(1.1);
-      opacity: 0.4;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 0.6;
-    }
-  }
-
-  /* Carousel Navigation */
-  
-  /* Carousel Dots */
-  
-  /* Review Summary */
-
-  /* Process Section */
-  
-  @media (max-width: 768px) {
-    
-    .section-header {
-      margin-bottom: 30px;
-    }
-  }
-
-  /* Awards Section */
-
-  /* Why Choose Us Section */
-  
-  /* Services Section */
-
-  /* Case Studies Section */
-  .case-studies-section {
-    padding: 80px 0;
-    background: #ffffff !important;
-  }
-  
-  @media (max-width: 768px) {
-    
-    .case-study-card {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-    
-    .case-studies-section {
-      padding: 40px 0;
-      overflow-x: hidden;
-    }
-
-    /* Force dark background on key homepage sections */
-    .latest-blog-section,
-    .contact-section,
-    .faq-section {
-      background: #ffffff !important;
-    }
-  }
-  
-  .case-study-card {
-    background: #f7f8fa !important;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(25, 33, 46, 0.09);
-    transition: transform 0.3s;
-  }
-  
-  .case-study-card:hover {
-    transform: translateY(-5px);
-  }
-
-  /* Aggressive footer fix - eliminate all gaps */
-
-  footer {
-    flex-shrink: 0;
-    margin-top: auto !important;
-  }
-
-  .latest-blog-section {
-    margin-bottom: 0 !important;
-    padding-bottom: 80px !important; /* Add padding instead of margin */
-    background: #ffffff !important;
-  }
-
-  /* Contact Section */
-  .contact-section {
-    padding: 80px 0;
-    background: #ffffff !important;
-  }
-
-  /* Mobile Styles */
-
-  /* Comprehensive Mobile Responsiveness Fixes */
-  @media (max-width: 768px) {
-    /* Global mobile container fixes */
-    .container {
-      padding: 0 15px !important;
-      max-width: 100% !important;
-      overflow-x: hidden !important;
-    }
-    
-    /* Hero section mobile fixes */
-    
-    .stat-label {
-      font-size: 14px !important;
-      color: #19212e !important;
-      display: block !important;
-      margin-top: 5px !important;
-    }
-    
-    /* Partners section mobile fixes */
-    
-    /* Testimonials section mobile fixes */
-    /* Removed */
-    
-    /* Review summary mobile fixes */
-    
-    /* Contact section mobile fixes */
-    .contact-section {
-      padding: 40px 0 !important;
-      overflow-x: hidden !important;
-    }
-    
-    /* Section headers mobile fixes */
-    .section-header {
-      text-align: center !important;
-      margin-bottom: 30px !important;
-    }
-    
-    .section-title {
-      font-size: 24px !important;
-      line-height: 1.3 !important;
-      margin-bottom: 10px !important;
-    }
-    
-    .section-subtitle {
-      font-size: 14px !important;
-      line-height: 1.5 !important;
-    }
-    
-    .section-label {
-      font-size: 12px !important;
-      margin-bottom: 8px !important;
-    }
-    
-    /* Tab container mobile fixes */
-    
-    /* Service box mobile fixes */
-    
-    /* Logo carousel mobile fixes */
-    
-    /* Why choose section mobile fixes */
-
-    /* Enhanced Process Steps Mobile Fixes */
-
-    /* Enhanced Testimonials Mobile Fixes */
-    /* Removed */
-
-    /* Mobile Carousel Navigation */
-    
-    /* Carousel indicators */
-  }
-  
-  /* FAQ Section Styling */
-  .faq-section {
-    background: #f7f8fa !important;
-    background-color: #f7f8fa !important;
-    padding: 5rem 0;
-  }
-
-  .faq-container {
-    margin-top: 2rem;
-  }
-
-  .faq-item {
-    transition: all 0.3s ease;
-    background: #f7f8fa;
-    border: 1px solid rgba(25, 33, 46, 0.07) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 2px 8px rgba(25, 33, 46, 0.05);
-  }
-
-  .faq-item:hover {
-    box-shadow: 0 4px 12px rgba(25, 33, 46, 0.09);
-  }
-  
-  /* Partner logos styling */
-
-  .commercial-intro-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.8fr);
-    gap: clamp(2rem, 5vw, 5rem);
-    align-items: stretch;
-    border-top: 1px solid rgba(25, 33, 46, 0.09);
-    padding-top: clamp(2rem, 5vw, 4rem);
-  }
-
-  .commercial-copy h2,
-  .fit-column h2,
-  .path-column h2,
-  .search-to-lead-copy h2 {
-    color: #19212e;
-    font-size: clamp(2rem, 4vw, 4.1rem);
-    line-height: 0.98;
-    letter-spacing: -0.045em;
-    margin: 0 0 1.25rem;
-  }
-
-  .commercial-copy p,
-  .search-to-lead-copy p {
-    color: #465365;
-    font-size: 1.08rem;
-    line-height: 1.75;
-    max-width: 720px;
-    margin-bottom: 1rem;
-  }
-
-  .commercial-actions {
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  .text-link {
-    color: #b83e12;
-    font-weight: 800;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(240,98,42,0.45);
-    padding-bottom: 0.15rem;
-  }
-
-  .commercial-panel {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
-      #ffffff;
-    color: #19212e;
-    border: 1px solid rgba(25, 33, 46, 0.09);
-    border-radius: 1.25rem;
-    padding: clamp(1.5rem, 3vw, 2.5rem);
-    display: grid;
-    align-content: center;
-    box-shadow: 0 28px 70px rgba(25, 33, 46, 0.09);
-    transform: none;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .commercial-panel::before {
-    content: '';
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 5px;
-    background: linear-gradient(180deg, #f0622a, rgba(240,98,42,0.08));
-  }
-
-  .panel-row {
-    padding: 1.25rem 0 1.25rem 1.35rem;
-    border-bottom: 1px solid rgba(25, 33, 46, 0.09);
-    position: relative;
-  }
-
-  .panel-row:nth-child(1) {
-    padding-top: 0.35rem;
-  }
-
-  .panel-row:nth-child(even) {
-    margin-left: clamp(0rem, 3vw, 2rem);
-  }
-
-  .panel-row:last-child {
-    border-bottom: 0;
-  }
-
-  .panel-row span {
-    display: block;
-    color: #b83e12;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    margin-bottom: 0.35rem;
-  }
-
-  .panel-row strong {
-    display: block;
-    color: #19212e;
-    font-size: clamp(1.05rem, 1.5vw, 1.45rem);
-    line-height: 1.25;
-    letter-spacing: -0.015em;
-  }
-
-  .fit-path-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    gap: clamp(2.5rem, 6vw, 6rem);
-  }
-
-  .fit-list {
-    margin-top: 2rem;
-    border-top: 1px solid rgba(25, 33, 46, 0.09);
-  }
-
-  .fit-list div {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 1.5rem;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(25, 33, 46, 0.09);
-  }
-
-  .fit-list strong {
-    color: #19212e;
-    font-size: 1.02rem;
-  }
-
-  .fit-list span,
-  .path-list p {
-    color: #465365;
-    line-height: 1.65;
-  }
-
-  .path-list {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0 0;
-    display: grid;
-    gap: 1rem;
-  }
-
-  .path-list li {
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 1.25rem;
-    align-items: start;
-    padding: 1rem 0 1rem 1rem;
-    border-left: 2px solid rgba(240,98,42,0.55);
-  }
-
-  .path-list li span {
-    color: #b83e12;
-    font-weight: 900;
-    font-size: 1.25rem;
-    line-height: 1;
-  }
-
-  .path-list strong {
-    color: #19212e;
-  }
-
-  .search-to-lead-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    background: #ffffff;
-    border: 1px solid rgba(25, 33, 46, 0.09);
-    border-radius: 2rem;
-    padding: clamp(2rem, 5vw, 4rem);
-    box-shadow: 0 24px 70px rgba(25, 33, 46, 0.09);
-  }
-
-  .lead-checks {
-    display: grid;
-    gap: 0;
-    align-self: center;
-  }
-
-  .lead-checks span {
-    color: #19212e;
-    line-height: 1.55;
-    padding: 1rem 0 1rem 2rem;
-    border-bottom: 1px solid rgba(25, 33, 46, 0.09);
-    position: relative;
-  }
-
-  .lead-checks span:last-child {
-    border-bottom: 0;
-  }
-
-  .lead-checks span::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 999px;
-    background: #f0622a;
-    position: absolute;
-    left: 0;
-    top: 1.55rem;
-  }
-
-  @media (max-width: 900px) {
-    .commercial-intro-grid,
-    .fit-path-layout,
-    .search-to-lead-panel {
-      grid-template-columns: 1fr;
-    }
-
-    .commercial-panel {
-      transform: none;
-    }
-
-    .fit-list div {
-      grid-template-columns: 1fr;
-      gap: 0.35rem;
-    }
-  }
-</style>
-
-<script is:inline>
-  // FAQ Accordion functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqDetails = document.querySelectorAll('.faq-item');
-    
-    // Add click event listeners to all FAQ items
-    faqDetails.forEach(detail => {
-      detail.addEventListener('click', (e) => {
-        // Close all other open FAQ items when opening a new one
-        if (e.target.closest('summary') && !detail.open) {
-          faqDetails.forEach(otherDetail => {
-            if (otherDetail !== detail && otherDetail.open) {
-              otherDetail.open = false;
-            }
-          });
-        }
-      });
-    });
-  });
-</script>
