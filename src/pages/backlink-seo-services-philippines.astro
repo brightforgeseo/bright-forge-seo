@@ -92,18 +92,18 @@ const processSteps = [
   },
   {
     label: '03',
-    title: 'Prospect list for your approval',
-    copy: 'Each prospect is recorded with its source, intended audience, your target URL and the reason for contact. You strike out anything you are not comfortable with. The outreach brief names who approves brand claims, content and any placement cost before contact begins.'
+    title: 'Prospecting and qualification',
+    copy: 'Each prospect is recorded with its source, intended audience, your target URL and the reason for contact. Prospects that fail the relevance and quality checks are left off the list. The outreach brief names who approves brand claims, content and any placement cost before contact begins.'
   },
   {
     label: '04',
     title: 'Outreach and placement review',
-    copy: 'We handle outreach and agreed content support. When a mention is published, we check the destination, link text, context and link attributes. Where a publisher asks for payment we tell you, and the link is qualified as sponsored. Editors can decline, change or remove a mention, so outreach is never a guaranteed placement.'
+    copy: 'We handle outreach and agreed content support. When a mention is published, we check the destination, link text, context and link attributes. Any payment or sponsorship is recorded, and a paid link must carry sponsored or nofollow qualification. Editors can decline, change or remove a mention, so outreach is never a guaranteed placement.'
   },
   {
     label: '05',
     title: 'Reporting and adjustment',
-    copy: 'Each report lists the links placed, recovered and declined, with rankings, Search Console visibility and referral signals for the target pages. We then adjust the link mix and the target pages as the site and the market change.'
+    copy: 'Each report lists the links acquired or recovered, with rankings, Search Console visibility and referral signals for the target pages. We then adjust the link mix and the target pages as the site and the market change.'
   }
 ];
 
@@ -138,13 +138,13 @@ const reportFields = [
 ];
 
 const faqs = [
-  { question: 'What are link building services?', answer: 'Link building services help a website earn relevant backlinks from other websites. Ours cover a backlink audit, a prospect list for your approval, outreach and a placement report, so that pages worth citing reach publishers whose readers would use them. Whether to link, and in what words, stays with the publisher.' },
+  { question: 'What are link building services?', answer: 'Link building services help a website earn relevant backlinks from other websites. Ours cover a backlink audit, prospect research, outreach and a placement report, so that pages worth citing reach publishers whose readers would use them. Whether to link, and in what words, stays with the publisher.' },
   { question: 'Are backlinks still important for SEO?', answer: 'Yes. Backlinks remain an important authority signal, especially in competitive markets. They do most when the site already has sound technical SEO, useful content, clear target pages and sensible internal linking, which is why we check those before outreach.' },
   { question: 'Do you use PBNs or link farms?', answer: 'No. We do not build campaigns around PBNs, expired-domain networks, link farms or bulk guest-post packages. Those shortcuts can produce short-term movement. They also leave a risk on the domain that a serious business has no need to carry.' },
   { question: 'How do you assess a backlink prospect?', answer: 'We examine the readership, topic, page context, outbound links and destination, and we record commercial terms and required link attributes. These checks inform a decision. They cannot certify a link as risk-free.' },
-  { question: 'How many backlinks do we need?', answer: 'It depends on the market, the competitors, the target pages and the current authority gap. Some campaigns need a small number of strong, relevant links. Others need sustained authority building over several months. We start with a backlink audit and competitor review instead of guessing a number, and we do not promise a monthly count, because we do not control other websites.' },
+  { question: 'How many backlinks do we need?', answer: 'It depends on the market, the competitors, the target pages and the current authority gap. Some campaigns need a small number of strong, relevant links. Others need sustained authority building over several months. We start with a backlink audit and competitor review instead of guessing a number, and we do not start by promising a fixed number of links, because editors can decline, change or remove a mention.' },
   { question: 'Can bad backlinks hurt rankings?', answer: 'Manipulative link schemes can lead to a manual action or algorithmic effects. Disavowing is an exceptional step: Google recommends it when a considerable number of artificial links have caused, or are likely to cause, a manual action. Investigate that evidence and the removal options first. A toxic score in a tool is not, by itself, a reason to disavow.' },
-  { question: 'Do you provide backlink reports?', answer: 'Yes. Each report shows the linking URL, target page, anchor text, placement type, relevance notes, quality checks and campaign impact where it can be measured. You can open every link and judge the placement yourself.' },
+  { question: 'Do you provide backlink reports?', answer: 'Yes. Each report shows the linking URL, target page, anchor text, placement type, relevance notes, quality checks and campaign impact where it can be measured. The linking URL is given for every placement, so each one can be opened and checked.' },
   { question: 'Should we build links before fixing content and technical SEO?', answer: 'Often not. If the target pages are thin, slow, poorly structured or misaligned with search intent, the links may be wasted. We check technical health, content quality and target-page readiness before scaling link acquisition, and we say so plainly when the pages need work first.' }
 ];
 ---
@@ -208,7 +208,7 @@ const faqs = [
   >
     <Fragment slot="story">
       <p>Your pages are sound, yet competitors with more referring sites sit above you. Or someone bought links for the domain years ago and nobody can say which of them still matter. Both problems start in the same place: a hard look at the links you have, before anyone pays for more.</p>
-      <p>Bright Forge provides link building services in the Philippines for businesses and agency partners. You get a backlink audit, prospect research, outreach handled by our team and a placement report that records each link and the terms it was placed on. You approve the prospect list before we contact anyone, and we check that the destination page deserves the reference before asking for it.</p>
+      <p>Bright Forge provides link building services in the Philippines for businesses and agency partners. You get a backlink audit, prospect research, outreach handled by our team and a placement report that records each link and the terms it was placed on. The outreach brief names who approves brand claims, content and any placement cost before contact begins, and we check that the destination page deserves the reference before asking for it.</p>
       <p>Philippine businesses and teams targeting Australia, the UK or the USA can use the service directly or through an agency. The prospect list follows the audience: a local trade association, an industry publication and an overseas distributor each reach different readers and call for a different approach.</p>
     </Fragment>
 
@@ -309,7 +309,7 @@ const faqs = [
         <div class="quality-panel">
           <span class="eyebrow">Link quality framework</span>
           <h2>Eight checks we run on every <span>backlink prospect</span></h2>
-          <p>DA, DR and traffic estimates help us sort a long list, and that is all we use them for. A link earns its place when it is relevant, crawlable, editorially defensible and useful to the wider SEO plan, and each prospect is read against the eight points here before it reaches your approval list.</p>
+          <p>DA, DR and traffic estimates help us sort a long list, and that is all we use them for. A link earns its place when it is relevant, crawlable, editorially defensible and useful to the wider SEO plan, and each prospect is read against the eight points here before it goes into the outreach brief.</p>
         </div>
         <ul class="quality-list">
           {qualityChecks.map((item) => <li>{item}</li>)}
@@ -343,7 +343,7 @@ const faqs = [
           <span class="eyebrow">Our process</span>
           <h2>Five steps from <span>backlink audit</span> to placement report</h2>
         </div>
-        <p>Before any number of links is discussed, we establish the authority gap, the risk profile and the pages that deserve support. Editors answer slowly and many say no, so judge the work over months, not over the first few weeks. We publish no rate card: the scope and reporting are set out in a written proposal.</p>
+        <p>Before any number of links is discussed, we establish the authority gap, the risk profile and the pages that deserve support. Editors can decline, change or remove a mention, and some campaigns need sustained authority building over several months. We publish no rate card: the scope and reporting are set out in a written proposal.</p>
       </div>
       <div class="process-rail">
         {processSteps.map((step) => (
