@@ -106,6 +106,7 @@ const signals = [
 ];
 
 const faqs = [
+  { question: 'How is local SEO different from general SEO?', answer: 'General SEO works on website pages that can rank for a search anywhere. Local SEO works on the map results and the short list of nearby businesses, where Google weighs relevance, distance and prominence, and where the Google Business Profile matters as much as the website. The two share the same site, so a strong service page helps both. The difference is the asset we work on first and the outcome we measure: calls, direction requests and visits from a defined area.' },
   { question: 'What does local SEO actually change?', answer: 'The Google Business Profile, the map pin, categories, hours, service area, photos, reviews, the page the listing opens, and whether a person can call or visit without hunting. Directory details that conflict are checked against the correct business information and corrected.' },
   { question: 'Is this only for shops with a front door?', answer: 'No. An eligible business can visit customers and still appear, as a service-area business with its address hidden when customers are not served there. Storefront, hybrid, organisation and individual-practitioner eligibility each need their own check; serving a city does not automatically justify another profile.' },
   { question: 'How long does local SEO take?', answer: 'An approved information change and a ranking change run on different timelines. Verification, review of edits, the starting profile, competition and proximity all affect progress. We scope the first corrections after reviewing access and eligibility, then compare visibility over agreed reporting periods. We do not promise a map-pack deadline.' },
@@ -176,7 +177,6 @@ const faqs = [
     <Fragment slot="story">
       <p>When someone searches for a service nearby or in a named place, Google shows a map and a short list of businesses. Local SEO is the work of being on that list, and of making sure the customer who taps your listing finds the right hours, the right phone number and a reason to choose you. We correct the Google Business Profile and the page it opens together, so a person can call the correct branch, book an appointment or check whether you cover their area.</p>
       <p>Our team is based in Quezon City and works with single-location businesses, multi-branch brands and businesses that travel to their customers. Philippine campaigns start with your actual premises and coverage. For businesses in Australia, the UK and the USA, the same review is scoped around the client location, profile access and a local owner who can confirm operating details.</p>
-      <p>Send the Maps link, website, branch list and the contact route customers should use. Before proposing any change, we identify conflicting information, eligibility questions and the gaps between the profile and the page.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -199,6 +199,7 @@ const faqs = [
         <div class="intro-copy">
           <span class="eyebrow">What you get</span>
           <h2>An accurate listing, a landing page that answers, and <span>a change list someone can approve</span></h2>
+          <p>Send the Maps link, website, branch list and the contact route customers should use. Before proposing any change, we identify conflicting information, eligibility questions and the gaps between the profile and the page.</p>
           <p>You receive three things: a Google Business Profile that matches how the business trades, a destination page that answers the question the customer arrived with, and a written list of every correction with the person who must confirm it. What goes on that list depends on the business. For a Philippine clinic, the branch page may need appointment instructions, practitioner information and current opening hours. A repair team needs service coverage and a phone route that works.</p>
           <p>A small example shows the method. A branch closing early for a holiday needs matching hours on its profile and its website. We identify the conflicting entries and the owner who must confirm the change. Customer-facing information like this is put right before we add a single new directory listing.</p>
           <p>On evidence, we are careful about what we claim. Our pest-control case study measures organic search clicks, not Google Maps actions or booked jobs: Search Console clicks rose from 10.3k to 23.5k between two six-month windows. The <a href="/case-studies/pest-control-core-update-seo/">published comparison</a> provides the context; it does not isolate the effect of GBP work.</p>
@@ -230,6 +231,25 @@ const faqs = [
     </div>
   </section>
 
+  <section class="pf-section" id="local-vs-general-seo">
+    <div class="pf-wrap">
+      <p class="eyebrow">Which one you need</p>
+      <h2>How <span>local SEO differs</span> from general SEO</h2>
+      <p class="pf-lede">Both work on the same website, and most businesses with premises or a service area need some of each. The table shows where the effort goes.</p>
+      <div class="pf-table-wrap"><table class="pf-table">
+        <thead><tr><th scope="col">Question</th><th scope="col">General SEO</th><th scope="col" class="pf-us">Local SEO</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Where the result appears</th><td>The standard list of website results, for searchers anywhere.</td><td class="pf-us">Google Maps and the short list of nearby businesses shown with the map.</td></tr>
+          <tr><th scope="row">What Google weighs</th><td>The page: its content, its links and how well the site can be crawled.</td><td class="pf-us">Relevance, distance from the searcher and prominence. Distance cannot be edited.</td></tr>
+          <tr><th scope="row">The asset we work on first</th><td>Service, category and article pages.</td><td class="pf-us">The Google Business Profile, then the branch or service page it opens.</td></tr>
+          <tr><th scope="row">Who has to be involved</th><td>Whoever approves content and site changes.</td><td class="pf-us">Someone at each location who can confirm hours, coverage and contact details.</td></tr>
+          <tr><th scope="row">What we report</th><td>Search clicks, rankings and enquiries from the site.</td><td class="pf-us">Call-button clicks, website clicks and direction requests, kept separate from answered calls and bookings.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="pf-note">If you sell nationally or online with no premises and no service area, start with our <a href="/seo-services-philippines/">SEO services</a> instead.</p>
+    </div>
+  </section>
+
   <section id="local-work" class="services-section">
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-heading narrow">
@@ -245,6 +265,37 @@ const faqs = [
           </article>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="local-audit-deliverables">
+    <div class="pf-wrap">
+      <p class="eyebrow">What the audit hands you</p>
+      <h2>Six documents from a <span>local SEO audit</span></h2>
+      <p class="pf-lede">Each is a list someone can act on, with the listing or URL it refers to and the person who approves the change.</p>
+      <ul class="pf-ticks">
+        <li><strong>Profile and eligibility review.</strong> Who owns each Google Business Profile, which location it represents, and whether its categories, hours and service area match how the business trades.</li>
+        <li><strong>Local competitor benchmark.</strong> The listings that appear for your services in your area, compared with yours on categories, reviews, photos and the pages they link to.</li>
+        <li><strong>Citation discrepancy list.</strong> Every listing where the name, address, phone number or website disagrees, with the wrong detail and the correct one.</li>
+        <li><strong>Local schema check.</strong> Whether the business markup on each branch or service page matches the visible name, address, hours and contact details, and the profile.</li>
+        <li><strong>Landing page review.</strong> What a visitor from the listing finds on arrival: the service, the area covered and a working way to call, book or enquire.</li>
+        <li><strong>Measurement plan.</strong> Which profile actions and which customer records are available, and who supplies the calls and bookings data.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="pf-section" id="philippine-local-search">
+    <div class="pf-wrap">
+      <p class="eyebrow">Local search in the Philippines</p>
+      <h2>How <span>Philippine customers search</span> for a nearby business</h2>
+      <p class="pf-lede">A diner looking for lunch in Makati and a parent looking for a clinic in Cebu do the same thing. They open Maps, or they type a job plus a place. Our articles on the subject set out what follows from that.</p>
+      <ul class="pf-ticks">
+        <li><strong>They check who is open.</strong> Hours must match the door, including public holidays. A listing that says Open when the shutters are down loses the customer and earns the review.</li>
+        <li><strong>They look for recent, real photos.</strong> The premises, the people and the work as they are today. A profile with only a logo looks unfinished.</li>
+        <li><strong>They read reviews that sound like people.</strong> Ask after a completed visit with a neutral invitation. Buying reviews can remove the listing.</li>
+        <li><strong>Verification comes before all of it.</strong> Google chooses the method. In the Philippines a postcard can stall at a building admin desk or a village gate, so we plan for that first.</li>
+      </ul>
+      <p class="pf-note">Further reading: <a href="/blog/local-seo-for-restaurants-and-clinics-in-the-philippines/">local SEO for restaurants and clinics in the Philippines</a>.</p>
     </div>
   </section>
 
