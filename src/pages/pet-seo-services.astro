@@ -34,7 +34,7 @@ const fit = [
   },
   {
     "title": "Groomers, trainers and boarding",
-    "text": "These pages should explain who the service suits, what is included, location or collection arrangements and booking requirements. For example, a groomer might need separate information about coat condition, size-based pricing and appointment preparation, supplied by the operator. Owners search by animal and breed as well as by service, so the page has to say which it takes."
+    "text": "These pages should explain who the service suits, what is included, location or collection arrangements and booking requirements. For example, a groomer might need separate information about coat condition, size-based pricing and appointment preparation, supplied by the operator. Owners search by animal and breed as well as by service, so the page has to say which animals and breeds the business takes."
   },
   {
     "title": "Pet stores and product brands",
@@ -78,7 +78,7 @@ const qa = [
   },
   {
     "title": "Truthful reviews",
-    "text": "Use genuine reviews with permission and accurate context. Review requests should go to every customer. They should not be restricted to happy ones or exchanged for incentives."
+    "text": "We publish genuine reviews only with permission and in accurate context. Review requests should go to every customer, not only the happy ones, and should never be exchanged for incentives."
   }
 ];
 const faqs = [
@@ -96,7 +96,7 @@ const faqs = [
   },
   {
     "question": "What about pet products with health claims?",
-    "answer": "Provide the product evidence and the approved wording. Manufacturer copy is an input, not permission to add treatment promises. Claims that need professional review stay with the appropriate reviewer before publication."
+    "answer": "We work from the product evidence and approved wording you provide. Manufacturer copy is an input, not permission to add treatment promises. Claims that need professional review stay with the appropriate reviewer before publication."
   },
   {
     "question": "How do you measure appointment enquiries?",
@@ -115,7 +115,7 @@ const faqs = [
     <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
   </Hero>
   <main class="service-page">
-    <section><div class="page-container intro-grid"><div><p class="eyebrow">SEO focus</p><h2><span>Pet SEO</span> starts with what an owner needs to book or buy</h2><p>An appointment page needs current services and a contact route that works on a phone. A product page needs enough detail to judge suitability. Publishing more care articles will not close either gap on its own.</p><p>We agree which pages matter first, identify the facts your team needs to supply and keep clinical approval separate from SEO editing. Technical checks support those pages. They are not a disconnected checklist.</p><p>We have no published case study in the pet sector yet. The nearest published work for an appointment-led local business is <a href="/case-studies/pest-control-core-update-seo/">ThermoPest</a>, a pest-control specialist whose organic clicks rose from 10.3k to 23.5k across two six-month windows. For a pet store, the closer match is the published store work on our <a href="/ecommerce-seo-services/">ecommerce SEO</a> page. Neither is a result for a clinic, groomer or pet brand.</p></div><aside class="panel"><h3>What we check first</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
+    <section><div class="page-container intro-grid"><div><p class="eyebrow">SEO focus</p><h2><span>Pet SEO</span> starts with what an owner needs to book or buy</h2><p>An appointment page needs current services and a contact route that works on a phone. A product page needs enough detail to judge suitability. Publishing more care articles will not close either gap on its own.</p><p>We agree which pages matter first, identify the facts your team needs to supply and keep clinical approval separate from SEO editing. Technical checks support those pages. They are not a disconnected checklist.</p><p>For an appointment-led local business, our closest published evidence is <a href="/case-studies/pest-control-core-update-seo/">ThermoPest</a>, a pest-control specialist whose organic clicks rose from 10.3k to 23.5k across two six-month windows. For a pet store, the closer match is the published store work on our <a href="/ecommerce-seo-services/">ecommerce SEO</a> page. Both come from neighbouring markets, and we present them as that rather than as results for a clinic, groomer or pet brand.</p></div><aside class="panel"><h3>What we check first</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
     <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What <span>pet SEO</span> should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
     <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For <span>pet businesses</span> reviewing bookings or catalogue discovery</h2><p>This suits veterinary clinics, groomers, trainers, pet stores, shelters, ecommerce brands and service businesses that want to be found locally or for the products they sell, and that have someone who can confirm the facts.</p></div><div class="panel"><h3>Bring the operational details</h3><p>Send your service list or priority products, current hours or delivery coverage, and the person who approves the facts. That lets us review what a customer can actually book or buy.</p></div></div></section>
     <section><div class="page-container"><p class="eyebrow">Process</p><h2>Improve the path to <span>an appointment or purchase</span></h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
