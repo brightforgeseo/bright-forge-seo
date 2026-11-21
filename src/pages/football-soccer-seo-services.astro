@@ -1,147 +1,48 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import LegacyHeader from "../components/LegacyHeader.astro";
-import Footer from "../components/Footer.astro";
-import Hero from "../components/Hero.astro";
-import ButtonPrimary from "../components/ButtonPrimary.astro";
-import ButtonSecondary from "../components/ButtonSecondary.astro";
-const canonical = "https://brightforge.com.ph/football-soccer-seo-services/";
-const proof = [
-  {
-    "title": "Programme or product?",
-    "text": "A parent choosing training needs different answers from a manager choosing team software."
-  },
-  {
-    "title": "Season-aware pages",
-    "text": "Keep dates, age groups and availability current without discarding useful recurring programme URLs."
-  },
-  {
-    "title": "Track the intended action",
-    "text": "Separate trial requests, confirmed bookings and app registrations from ordinary search clicks."
-  }
-];
-const inclusions = [
-  "Priority audience and target country",
-  "Current season, ages, venues and availability",
-  "Feature and pricing sources for football apps",
-  "Indexing of recurring and expired pages",
-  "Booking or registration tracking responsibilities"
-];
-const fit = [
-  {
-    "title": "Academies and coaching",
-    "text": "An academy page should explain age range, ability level, venue, session times, price and trial arrangements before asking a parent to book. The operator supplies those details and approves the safeguarding information."
-  },
-  {
-    "title": "Team-management software",
-    "text": "A manager comparing tools needs to see how availability, fixtures, communication and statistics work, which plan includes them and how to try the product. We map feature and comparison searches to the pages that can answer them."
-  },
-  {
-    "title": "Clubs and football shops",
-    "text": "Club information, ticket pages and kit categories have different jobs. We review the relevant part of the site rather than assuming a fixtures article will bring ticket sales or a product order."
-  }
-];
-const process = [
-  {
-    "title": "Choose the audience",
-    "text": "Identify whether the priority is parents, coaches, club administrators or shoppers. Check football and soccer wording against the target market instead of cloning pages for both terms."
-  },
-  {
-    "title": "Collect programme or product facts",
-    "text": "Ask for the season calendar, service locations and booking rules, or the current software features and pricing. Identify who updates each when the offer changes."
-  },
-  {
-    "title": "Assign the right page",
-    "text": "Review existing pages and search results. An academy programme, an age-group explanation and a software comparison may need distinct pages; overlapping searches may be served by one stronger page."
-  },
-  {
-    "title": "Prepare specific changes",
-    "text": "Deliver section, title and internal-link changes against the chosen page. For example, a coaching page may need to explain whether beginners can attend the Saturday group and how a trial is arranged."
-  },
-  {
-    "title": "Check the live journey",
-    "text": "Test that a programme link reaches the current booking route and a software CTA reaches the intended trial or demo. Review mobile content and indexability with the publishing team."
-  },
-  {
-    "title": "Review the season fairly",
-    "text": "Compare like-for-like periods where possible and annotate season starts or programme changes. Report form submissions separately from places booked and app registrations confirmed by the product team."
-  }
-];
-const qa = [
-  {
-    "title": "Dates and availability",
-    "text": "An expired camp should not accept bookings as though it is current. Decide whether to update a recurring page, retain a useful archive or redirect to a genuinely relevant replacement."
-  },
-  {
-    "title": "Programme approval",
-    "text": "The club or academy confirms coaches, venues, ages, costs and child-safety information. Search copy must not invent qualifications, partnerships or available places."
-  },
-  {
-    "title": "Evidence boundaries",
-    "text": "The published TeamStats case study reports an organic-click comparison for team-management software. It is not evidence of academy bookings, paid subscriptions or results for every football business."
-  }
-];
-const faqs = [
-  {
-    "question": "Should we target football or soccer searches?",
-    "answer": "Use the vocabulary your audience uses in the target country and review the actual results. We can scope work for the Philippines, Australia, the UK and the USA without creating near-identical pages for every wording variant."
-  },
-  {
-    "question": "Do you have football SEO evidence?",
-    "answer": "The published TeamStats case reports a 34% increase in organic clicks in its three-month comparison. That is a sports software example, not a measured increase in academy bookings or app subscriptions."
-  },
-  {
-    "question": "Should we delete last season’s pages?",
-    "answer": "Not automatically. A recurring programme may keep its URL and receive current details. An old event may remain a useful archive. Review links, search demand and whether a genuinely relevant replacement exists before choosing a redirect or removal."
-  },
-  {
-    "question": "Can you help an academy without writing football news?",
-    "answer": "Yes. Programme pages, locations, age groups and trial information can be more useful for a coaching business than a news calendar. The initial review establishes which questions the existing site is failing to answer."
-  },
-  {
-    "question": "What do we need to provide?",
-    "answer": "Send the site and priority programmes or products, current availability and terms, and the person who approves changes. Search Console and booking or registration definitions help us set a meaningful baseline."
-  },
-  {
-    "question": "Can you guarantee new players or subscribers?",
-    "answer": "No. We can improve search-facing pages and test the enquiry route. Availability, pricing, follow-up and the product itself affect whether a search visitor becomes a player or subscriber."
-  }
-];
+import EditorialPage from '../components/EditorialPage.astro';
+
+const page = {
+  path: '/football-soccer-seo-services/',
+  title: 'Football SEO Services for Clubs and Apps | Bright Forge',
+  description: 'SEO for football clubs, academies and software: programme pages, season content and sign-up tracking. See our published Search Console work with TeamStats.',
+  h1: 'Football SEO Services for Clubs, Academies and Apps',
+  crumb: 'Football SEO',
+  parents: [{ name: 'Industries', url: '/industries/' }],
+  lead: [
+    'We work with TeamStats, a team management app used by grassroots football managers and coaches. Football audiences search by age group, by season, by drill and by problem, and the pages have to match.',
+  ],
+  secondary: { href: '/case-studies/football-app-seo/', label: 'Read the TeamStats case study' },
+  sections: [
+    {
+      h2: 'Published result',
+      html: `<ul class="bf-results">
+<li><span class="bf-num">200,000 to 268,000</span><span class="bf-what"><strong>TeamStats</strong> (teamstats.net): organic clicks over three months, compared with the same months a year earlier (rounded)</span><a class="bf-src" href="/case-studies/football-app-seo/">Case study</a></li>
+<li><span class="bf-num">AI referral review</span><span class="bf-what"><strong>TeamStats:</strong> which pages AI tools sent visitors to</span><a class="bf-src" href="/case-studies/ai-sports-saas-geo/">Review</a></li>
+</ul>
+<p>A named review from the client appears on Google. The figures are search clicks, not sign-ups or bookings.</p>`,
+    },
+    {
+      h2: 'What we work on',
+      html: `<dl class="bf-deliverables">
+<dt>For clubs and academies</dt><dd>Programme and age-group pages, trial and registration information, location details, seasonal updates.</dd>
+<dt>For software and products</dt><dd>Feature pages, comparisons, coaching resources that lead to the product. See <a href="/saas-seo-services/">SaaS SEO</a>.</dd>
+<dt>Calendar planning</dt><dd>Content timed to pre-season, registration and tournaments, written through our <a href="/content-seo-services-philippines/">SEO content</a> process.</dd>
+<dt>Tracking</dt><dd>Of registrations and sign-ups.</dd>
+</dl>`,
+    },
+    {
+      h2: 'How we do it',
+      html: `<ol class="bf-steps">
+<li>Map the season and the decisions parents, players and coaches make in it.</li>
+<li>Keyword research by audience.</li>
+<li>Build or improve the pages.</li>
+<li>Report monthly on sign-ups from search.</li>
+</ol>`,
+    },
+  ],
+  faqs: [
+    { question: 'Is the TeamStats result evidence for clubs and academies?', answer: 'No. It is an organic-click comparison for team management software. It is not evidence of academy bookings or paid subscriptions.' },
+  ],
+};
 ---
-<MainLayout title="Football SEO Services Philippines | Bright Forge" description="SEO for football clubs, academies and apps: programme pages, season updates, software comparisons and booking or signup paths." canonical={canonical} type="service" breadcrumbs={[{ name: "Home", url: "https://brightforge.com.ph/" }, { name: "Football SEO", url: canonical }]} faqs={faqs}>
-  <LegacyHeader slot="header" />
-  <Hero title="Football <span>SEO Services</span>" breadcrumbCurrent="Football SEO">
-    <Fragment slot="story"><p class="hero-subtitle">SEO for football clubs, academies and apps that need the right people to find a programme, product or team tool.</p><p>A parent looking for a coaching session and a manager comparing team software are making different decisions. We review the pages, seasonal information and booking or signup routes that support your particular offer.</p><div class="hero-proof">{proof.map((item) => (<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
-    <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="#included" text="See What We Check" /></Fragment>
-  </Hero>
-  <main class="service-page">
-    <section><div class="page-container intro-grid"><div><p class="eyebrow">SEO focus</p><h2><span>Football SEO</span> starts with the decision your visitor needs to make</h2><p>A club may need its current programme found before the season starts. An app may need a clearer explanation of fixtures, player availability and plan limits. Those are different briefs, even when both appear in football searches.</p><p>We identify the missing information, map the appropriate page and specify the changes your team can review. Technical checks cover crawlable content, mobile use and links to the intended next step.</p></div><aside class="panel"><h3>What we check first</h3><ul>{inclusions.map((item) => <li>{item}</li>)}</ul></aside></div></section>
-    <section id="included"><div class="page-container"><p class="eyebrow">What we focus on</p><h2>What <span>football SEO</span> should cover</h2><div class="fit-grid">{fit.map((item) => (<article class="fit-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-    <section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For <span>football businesses</span> planning the next season or product campaign</h2><p>This suits football clubs, academies, coaching businesses, apps, fan platforms, ecommerce brands and sports services with real search demand around teams, training, fixtures or products.</p></div><div class="panel"><h3>Bring the current offer</h3><p>Programme dates, eligibility and available places matter as much as the keyword list. For an app, bring the feature list, pricing and trial requirements instead.</p></div></div></section>
-    <section><div class="page-container"><p class="eyebrow">Process</p><h2>Plan the pages around <span>your season or product</span></h2><div class="process-grid">{process.map((item, index) => (<article class="process-card"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-    <section><div class="page-container"><p class="eyebrow">Quality control</p><h2>How we keep <span>football SEO</span> grounded</h2><div class="qa-grid">{qa.map((item) => (<article class="qa-card"><h3>{item.title}</h3><p>{item.text}</p></article>))}</div></div></section>
-    <section><div class="page-container"><p class="eyebrow">Related work</p><h2><span>Useful next steps</span> from here</h2><div class="link-grid"><a href="/seo-services-philippines/"><span>SEO services</span>Plan programme or product pages within the wider search campaign.</a><a href="/technical-seo-services-philippines/"><span>Technical SEO</span>Check recurring season URLs, archives and mobile page delivery.</a><a href="/content-seo-services-philippines/"><span>SEO content</span>Brief programme information, feature pages and useful supporting guides.</a></div></div></section>
-    <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Football SEO</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq) => (<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
-    <section><div class="page-container"><div class="cta-card"><h2>Want to see where football search can actually <span>support growth</span>?</h2><p>We can audit your current pages, rankings, content opportunities and technical foundations alongside your season calendar or product priorities before recommending the next changes.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request an SEO Review" /><ButtonSecondary href="/case-studies/" text="View Case Studies" /></div></div></div></section>
-  </main><Footer slot="footer" />
-</MainLayout>
-
-<style>
-.service-page { background:#ffffff; color:#19212e; }
-.page-container { width:min(100% - 40px,1120px); margin:0 auto; }
-.hero-proof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:26px; }
-.hero-proof article, .panel, .fit-card, .process-card, .qa-card, .faq-item, .cta-card { border:1px solid rgba(25, 33, 46, 0.09); background:rgba(255, 255, 255, 0.045); border-radius:24px; box-shadow:0 18px 48px rgba(25, 33, 46, 0.09); }
-.hero-proof article { padding:18px; } .hero-proof strong { display:block; color:#19212e; font-size:1.05rem; margin-bottom:6px; } .hero-proof span { color:#465365; font-size:.92rem; line-height:1.5; }
-.service-page section { padding:78px 0; content-visibility:visible !important; } .service-page section:nth-child(even) { background:#ffffff; }
-.eyebrow { display:block; color:#b83e12; font-size:.78rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
-h2 { color:#19212e; font-size:clamp(2rem,4vw,3rem); line-height:1.05; margin:0 0 22px; } h3 { color:#19212e; font-size:1.16rem; margin:0 0 10px; } p, li { color:#465365; font-size:1.02rem; line-height:1.72; } a { color:#b83e12; }
-.intro-grid, .two-column, .faq-layout { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr); gap:clamp(30px,5vw,60px); align-items:start; } .panel { padding:28px; } .panel ul { margin:0; padding-left:20px; }
-.fit-grid, .process-grid, .qa-grid, .link-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } .fit-card, .process-card, .qa-card, .link-grid a { padding:24px; }
-.process-card span { display:inline-grid; place-items:center; width:42px; height:42px; border-radius:14px; color:#19212e; background:rgba(240,98,42,.25); font-weight:900; margin-bottom:18px; }
-.link-grid a { color:inherit; text-decoration:none; border:1px solid rgba(25, 33, 46, 0.09); background:rgba(255, 255, 255, 0.045); border-radius:24px; } .link-grid span { display:block; color:#19212e; font-weight:900; margin-bottom:8px; }
-.faq-list { display:grid; gap:14px; } .faq-item { overflow:hidden; } .faq-item summary { cursor:pointer; padding:22px 24px; color:#19212e; font-weight:900; list-style:none; } .faq-item summary::-webkit-details-marker { display:none; } .faq-item p { padding:0 24px 24px; margin:0; }
-.cta-card { text-align:center; padding:clamp(36px,6vw,68px); background:radial-gradient(circle at top left,rgba(240,98,42,.22),rgba(255, 255, 255, 0.045)); } .cta-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-top:28px; }
-:global(.service-page .btn-primary), :global(.service-page .btn-secondary) { min-height:48px; }
-@media (max-width:920px){ .hero-proof,.intro-grid,.two-column,.fit-grid,.process-grid,.qa-grid,.link-grid,.faq-layout{grid-template-columns:1fr;} }
-</style>
-
+<EditorialPage page={page} />
