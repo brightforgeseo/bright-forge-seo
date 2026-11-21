@@ -3,7 +3,6 @@
 // This does not set or change consent.
 import { getAllBlogPosts } from '../lib/contentful.js';
 import { authors } from '../lib/authors.js';
-import { groupPostsByTopic } from '../lib/blogDisplay.js';
 const staticPaths = Object.keys(import.meta.glob('../pages/**/*.astro')).filter(file => !file.includes('[')).map(file => {
   let path = file.replace('../pages/', '').replace(/\.astro$/, '');
   if (path === 'index') return '/';
@@ -15,7 +14,7 @@ const knownAnalyticsPaths = [...new Set([
   ...staticPaths,
   ...posts.filter(post => post.slug).map(post => `/blog/${post.slug}/`),
   ...Object.keys(authors).map(slug => `/authors/${slug}/`),
-  '/blog/topics/', ...groupPostsByTopic(posts, 3).map(topic => `/blog/topics/${topic.slug}/`)
+  '/blog/topics/'
 ])];
 ---
 <script is:inline data-analytics-scope define:vars={{ knownAnalyticsPaths }}>

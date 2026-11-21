@@ -7,7 +7,7 @@ import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
 import { getAllBlogPosts } from '../lib/contentful';
-import { groupPostsByTopic } from '../lib/blogDisplay.js';
+import { topicSections } from '../lib/blogDisplay.js';
 
 // Fetch blog posts from Contentful
 const contentfulPosts = await getAllBlogPosts();
@@ -48,21 +48,11 @@ if (blogPosts.length === 0) {
       readTime: "20 min read",
       categories: ["ai", "seo", "strategy"],
       slug: "answer-engine-revolution"
-    },
-    {
-      title: "The AI Reckoning: Search Engine Optimisation",
-      excerpt: "This report examines whether AI will make traditional SEO obsolete.",
-      image: "/images/blog/ai-seo-transformation.webp",
-      date: "April 23, 2025",
-      author: "Bright Forge SEO Team",
-      readTime: "25 min read",
-      categories: ["ai", "seo", "future"],
-      slug: "ai-seo-transformation"
     }
   );
 }
 
-const topics = groupPostsByTopic(contentfulPosts, 3);
+const topics = topicSections(contentfulPosts, 3);
 
 // Popular posts - use the first 3 or all if fewer
 const popularPosts = blogPosts.slice(0, Math.min(3, blogPosts.length));
@@ -140,7 +130,7 @@ const recentPosts = [...blogPosts]
             <nav class="filter-container" aria-label="Article topics">
               <a class="filter-btn active" href="/blog/" aria-current="page">All Articles</a>
               {topics.map((topic) => (
-                <a class="filter-btn" href={`/blog/topics/${topic.slug}/`}>{topic.label}</a>
+                <a class="filter-btn" href={`/blog/topics/#${topic.slug}`}>{topic.label}</a>
               ))}
               <a class="filter-btn" href="/blog/topics/">Topic index</a>
             </nav>
@@ -188,7 +178,7 @@ const recentPosts = [...blogPosts]
               </li>
               {topics.map((topic) => (
                 <li>
-                  <a href={`/blog/topics/${topic.slug}/`} class="category-link topic-item">
+                  <a href={`/blog/topics/#${topic.slug}`} class="category-link topic-item">
                     {topic.label}
                   </a>
                 </li>

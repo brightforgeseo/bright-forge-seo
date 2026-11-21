@@ -1,9 +1,9 @@
 import { getAllBlogPosts } from '../lib/contentful.js';
 import { authors } from '../lib/authors.js';
-import { groupPostsByTopic } from '../lib/blogDisplay.js';
 
 const SITE = 'https://brightforge.com.ph';
-const SKIP = new Set(['404', 'thanks', 'sitemap.xml', 'terms-of-service']);
+// Pages that are noindex or not real pages stay out of the sitemap.
+const SKIP = new Set(['404', 'thanks', 'sitemap.xml', 'terms-of-service', 'site-index']);
 const REQUIRED = [
   'https://brightforge.com.ph/construction-seo-services/',
   'https://brightforge.com.ph/legal-seo-services/',
@@ -54,10 +54,7 @@ export async function GET() {
   }
 
   const authorUrls = Object.keys(authors).map((slug) => `${SITE}/authors/${slug}/`);
-  const topicUrls = [
-    `${SITE}/blog/topics/`,
-    ...groupPostsByTopic(posts, 3).map((topic) => `${SITE}/blog/topics/${topic.slug}/`)
-  ];
+  const topicUrls = [`${SITE}/blog/topics/`];
   const urls = [...new Set([...staticUrls, ...blogUrls, ...authorUrls, ...topicUrls, `${SITE}/editorial-standards/`, ...REQUIRED])];
   urls.sort((a, b) => a.localeCompare(b));
 
