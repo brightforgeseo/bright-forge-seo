@@ -6,7 +6,7 @@ SOURCE = (ROOT / 'src/pages/ai-search-optimization-services-philippines.astro').
 
 def test_service_leads_with_buying_decisions_not_internal_ownership():
     hero = SOURCE.split('<Hero', 1)[1].split('</Hero>', 1)[0]
-    assert 'AI search optimisation' in hero
+    assert 'AI search optimization' in hero
     assert 'buyers research before choosing' in hero
     for phrase in ['one owner page', 'existing owner page', 'not the automated SEO team', 'GEO-only shop', 'Brochure GEO', 'rented GEO bench']:
         assert phrase.lower() not in SOURCE.lower()
@@ -49,12 +49,12 @@ def test_proof_and_measurement_do_not_turn_events_into_leads():
     assert 'original GEO reports' in SOURCE
     assert 'August 2025 to January 2026' in SOURCE
     assert 'not proof that a particular edit caused growth' in SOURCE
-    assert 'without treating tracked events as enquiries' in SOURCE
+    assert 'without treating tracked events as inquiries' in SOURCE
     assert 'A brand mention is not necessarily a linked citation' in SOURCE
     assert 'confirmed lead' in SOURCE.lower()
     assert 'automated SEO team' not in SOURCE
     assert 'Send your website' in SOURCE
-    assert 'prioritised page plan' in SOURCE
+    assert 'prioritized page plan' in SOURCE
     assert '7:11' not in SOURCE
 
 

@@ -42,7 +42,7 @@ class AIProofSources(unittest.TestCase):
     def test_leather(self):
         self.check_case('ai-leather-goods-ecommerce-geo',['5 to 10x','19.05%','5.04%','9:40','outperformed broad','meaningful conversion activity'])
     def test_storage(self):
-        self.check_case('ai-self-storage-geo',['8.2%','1:06:03','11:43','5:11','measurable enquiries','showed commercial intent'])
+        self.check_case('ai-self-storage-geo',['8.2%','1:06:03','11:43','5:11','measurable inquiries','showed commercial intent'])
     def test_sports_does_not_invent_exact_report_days(self):
         self.assertNotIn('1 August 2025', data('ai-sports-saas-geo')['measurementNote'])
 

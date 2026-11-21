@@ -45,13 +45,13 @@ const checks=[
   },
   {
     "title": "Analytics and forms",
-    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+    "text": "A site that cannot track inquiries properly makes SEO reporting weaker than it needs to be."
   }
 ];
 const process=[
   {
     "title": "Audit",
-    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+    "text": "Review the current site, rankings, crawl behavior, content, analytics and conversion risks."
   },
   {
     "title": "Plan",
@@ -81,7 +81,7 @@ const faqs=[
   },
   {
     "question": "How will a CMS edit reach the public page?",
-    "answer": "That depends on the rendering and cache configuration. A static export needs a new build; a server deployment may use revalidation after publication. We agree the expected publishing delay and check an edit on the deployed page, including its title and canonical. We also test a deleted entry, since a cache can keep serving a page the CMS no longer holds. Cache behaviour must be checked against the installed Next.js version and configuration."
+    "answer": "That depends on the rendering and cache configuration. A static export needs a new build; a server deployment may use revalidation after publication. We agree the expected publishing delay and check an edit on the deployed page, including its title and canonical. We also test a deleted entry, since a cache can keep serving a page the CMS no longer holds. Cache behavior must be checked against the installed Next.js version and configuration."
   },
   {
     "question": "Should logged-in pages appear in Google?",
@@ -119,7 +119,7 @@ const faqs=[
     {title:"Release, upgrades and rollback", text:"We confirm runtime support, environment settings and the release owner, test redirects, plan version upgrades as their own piece of work and keep a route back to the previous deployment."}
   ]}
 />
-<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>Where <span>Next.js earns its maintenance cost</span>, and where a simpler stack wins</h2><p>Next.js suits SaaS sites, portals, dashboards and marketing sites with live data: products where public pages, CMS content and signed-in features share one React codebase and must stay crawlable and fast. The price is an application to look after. There is a server runtime to host, a cache to reason about, and major versions that have changed routing and caching behaviour, so upgrades need a developer and a test plan.</p></div><div class="panel"><h3>Before we recommend Next.js</h3><p>If editors mainly publish service pages and articles, Astro with a CMS or WordPress may meet the brief with fewer application dependencies. Next.js earns its place when the route, data and interface requirements justify maintaining that application layer.</p></div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>Where <span>Next.js earns its maintenance cost</span>, and where a simpler stack wins</h2><p>Next.js suits SaaS sites, portals, dashboards and marketing sites with live data: products where public pages, CMS content and signed-in features share one React codebase and must stay crawlable and fast. The price is an application to look after. There is a server runtime to host, a cache to reason about, and major versions that have changed routing and caching behavior, so upgrades need a developer and a test plan.</p></div><div class="panel"><h3>Before we recommend Next.js</h3><p>If editors mainly publish service pages and articles, Astro with a CMS or WordPress may meet the brief with fewer application dependencies. Next.js earns its place when the route, data and interface requirements justify maintaining that application layer.</p></div></div></section>
 <section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare Next.js with <span>simpler ways to publish</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Content-led sites shipped as HTML. What this site runs on.</a><a href="/development/wordpress/"><span>WordPress development</span>Editors publish without a deploy, in return for regular updates.</a><a href="/development/nextjs/"><span>Next.js development</span>One React codebase for public pages, live data and accounts.</a></div></div></section>
 <section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>Next.js development</span> questions on hosting, publishing and preview</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
 <section><div class="page-container"><div class="cta-card"><h2>Planning a Next.js build? Settle <span>rendering and hosting</span> first.</h2><p>Send the repository or current site, the routes that must rank and the features that need a server. We will review them and say whether Next.js fits, and what the architecture should be, before anyone builds the interface.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>

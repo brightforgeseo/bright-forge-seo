@@ -75,7 +75,7 @@ export const authors = {
     name: 'Jani A. Cañonero',
     role: 'Head of Team',
     shortBio:
-      'Head of Team at Bright Forge SEO. Jani runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behaviour.',
+      'Head of Team at Bright Forge SEO. Jani runs campaign execution, checks implementation against the brief and keeps work aligned with current search engine behavior.',
     longBio: [
       'Jani manages SEO campaigns for Bright Forge from Quezon City, including tasking, quality checks and the weekly delivery loop.',
       'The work covers technical recommendations, on-page changes, content briefs and reporting that can be tied back to Search Console and ranking data.',
@@ -97,7 +97,7 @@ export const authors = {
     name: 'Jewe O. Manalo',
     role: 'SEO Expert',
     shortBio:
-      'SEO Expert at Bright Forge SEO Agency. Jewe works on keyword research, technical SEO and content optimisation that has to survive a crawl and a live-page check.',
+      'SEO Expert at Bright Forge SEO Agency. Jewe works on keyword research, technical SEO and content optimization that has to survive a crawl and a live-page check.',
     longBio: [
       'Jewe handles the specialist SEO work inside Bright Forge campaigns: keyword mapping, technical checks and on-page changes.',
       'Recommendations are written so a developer or editor can implement them, then checked on the live URL rather than left in a spreadsheet.',
@@ -107,7 +107,7 @@ export const authors = {
     location: 'Quezon City, Philippines',
     education: '',
     yearsExperience: '',
-    expertise: ['Keyword research', 'Technical SEO', 'Content optimisation'],
+    expertise: ['Keyword research', 'Technical SEO', 'Content optimization'],
     industries: ['E-commerce', 'Service businesses', 'SaaS'],
     faqs: [],
     linkedin: '',

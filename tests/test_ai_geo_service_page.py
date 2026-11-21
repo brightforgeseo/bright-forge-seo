@@ -14,9 +14,9 @@ def compact(text: str) -> str:
 def test_existing_page_owns_the_full_ai_search_service_intent():
     required_concepts = [
         "ai seo services",
-        "ai search optimisation",
-        "generative engine optimisation",
-        "answer engine optimisation",
+        "ai search optimization",
+        "generative engine optimization",
+        "answer engine optimization",
         "llm seo",
         "google ai overviews",
         "chatgpt",
@@ -192,4 +192,4 @@ def test_metadata_targets_broad_buyer_intent_without_stuffing():
     assert "AEO" in title
     assert len(title) <= 60
     assert 130 <= len(description) <= 160
-    assert description.lower().count("optimisation") <= 1
+    assert description.lower().count("optimization") <= 1

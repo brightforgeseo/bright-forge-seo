@@ -11,7 +11,7 @@ def test_boiler_comparison_and_recommendations_not_implementation():
     assert '<h3>Category access</h3>' in s
     assert '<h3>Search metrics and orders</h3>' in s
     assert 'Last 6 months versus Previous 6 months' in s
-    assert 'Recommended catalogue checks' in s
+    assert 'Recommended catalog checks' in s
     assert 'does not establish snippet causation' in s
     for claim in ['We separated boiler model searches', 'We supported the stronger page structure', 'More qualified entry points', 'A modest snippet improvement matters']:
         assert claim not in s
@@ -34,8 +34,8 @@ def test_industrial_published_values_not_misrepresented_as_visible_raw_evidence(
     s = source('industrial-parts-washing-search-growth')
     assert 'Previous-window totals and CTR are retained from the published comparison' in s
     assert 'efficiency work still to do' not in s
-    assert 'clear optimisation work remaining' not in s
-    assert 'a clear next optimisation focus' not in s
+    assert 'clear optimization work remaining' not in s
+    assert 'a clear next optimization focus' not in s
 
 
 def test_industrial_no_intent_inference_and_date_conflict_disclosed():

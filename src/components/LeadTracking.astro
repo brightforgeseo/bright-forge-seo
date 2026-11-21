@@ -184,7 +184,7 @@
           window.location.assign('/thanks/');
         } catch {
           safeStorage.remove('sessionStorage', PENDING_LEAD_KEY);
-          error.textContent = 'Your enquiry could not be sent. Your details are still here. Please try again, or use the contact details on this page.';
+          error.textContent = 'Your ' + (/^\/seo-services-(uk|australia|new-zealand)\/?$/.test(location.pathname) ? 'enquiry' : 'inquiry') + ' could not be sent. Your details are still here. Please try again, or use the contact details on this page.';
           error.hidden = false;
           error.focus();
         } finally {

@@ -11,7 +11,7 @@ def test_mobile_scope_does_not_prescribe_amp_or_guarantee_speed():
     paragraph = match.group(1)
     assert 'AMP' not in paragraph
     assert 'seamless' not in paragraph
-    assert all(term in paragraph for term in ('loading speed', 'layout', 'enquiry'))
+    assert all(term in paragraph for term in ('loading speed', 'layout', 'inquiry'))
 
 
 def test_local_service_uses_current_product_name_without_domination_promise():

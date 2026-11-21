@@ -82,7 +82,7 @@ for required in [
     "SEO Diagnostic & 90-Day Roadmap",
     "Migration & Ranking Recovery Support",
     "AI Search Visibility Assessment",
-    "Ongoing SEO Growth Programme",
+    "Ongoing SEO Growth Program",
     "SEO Management Sheet",
 ]:
     expect(required in home_text, f"Homepage includes required implementation copy: {required}")

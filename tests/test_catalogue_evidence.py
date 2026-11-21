@@ -1,4 +1,4 @@
-"""Catalogue must describe measurements, not unsupported causes or leads."""
+"""Catalog must describe measurements, not unsupported causes or leads."""
 from pathlib import Path
 import re
 
@@ -13,9 +13,9 @@ def test_conventional_catalogue_measurement_boundaries():
                         'by tying service pages to Brighton demand',
                         'with B2B consultancy content that matched',
                         'through targeted SEO strategies',
-                        'by tightening catalogue structure',
+                        'by tightening catalog structure',
                         'after a Google core update by tightening',
-                        'stronger stories show search visibility becoming enquiries']:
+                        'stronger stories show search visibility becoming inquiries']:
         assert unsupported not in source
     assert 'CTR fell from 4.1% to 3.0%' in source
     assert '31.7 to 39.7' in source

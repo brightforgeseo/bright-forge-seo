@@ -45,13 +45,13 @@ const checks=[
   },
   {
     "title": "Analytics and forms",
-    "text": "A site that cannot track enquiries properly makes SEO reporting weaker than it needs to be."
+    "text": "A site that cannot track inquiries properly makes SEO reporting weaker than it needs to be."
   }
 ];
 const process=[
   {
     "title": "Audit",
-    "text": "Review the current site, rankings, crawl behaviour, content, analytics and conversion risks."
+    "text": "Review the current site, rankings, crawl behavior, content, analytics and conversion risks."
   },
   {
     "title": "Plan",
@@ -85,7 +85,7 @@ const faqs=[
   },
   {
     "question": "What does progressive enhancement mean for our form?",
-    "answer": "SvelteKit form actions can work through a normal HTML submission without client-side JavaScript. Enhancement then adds in-page feedback and pending states. We agree checks for validation, failed requests and confirmation in both paths, including where the enquiry is actually received."
+    "answer": "SvelteKit form actions can work through a normal HTML submission without client-side JavaScript. Enhancement then adds in-page feedback and pending states. We agree checks for validation, failed requests and confirmation in both paths, including where the inquiry is actually received."
   },
   {
     "question": "How do the adapter and host affect the build?",
@@ -93,7 +93,7 @@ const faqs=[
   },
   {
     "question": "Will editors get a CMS with SvelteKit?",
-    "answer": "No. SvelteKit is not an editor interface. A CMS integration, preview access and the route from an approved edit to a published page must be scoped. Build-time content normally needs a rebuild; server-loaded content also depends on the chosen caching behaviour. WordPress may be simpler if familiar publishing tools are the main requirement."
+    "answer": "No. SvelteKit is not an editor interface. A CMS integration, preview access and the route from an approved edit to a published page must be scoped. Build-time content normally needs a rebuild; server-loaded content also depends on the chosen caching behavior. WordPress may be simpler if familiar publishing tools are the main requirement."
   },
   {
     "question": "What belongs in the handover?",
@@ -108,7 +108,7 @@ const faqs=[
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>SvelteKit for SEO: server-rendered by default, with <span>routes, forms and deployment</span> planned together</h2><p>A content page can be prerendered, while a request form may need a server action. That difference affects hosting, publishing and failure handling. We map the routes and their dependencies before choosing an adapter.</p><p>For search, SvelteKit starts in a good place: a route returns real HTML unless someone switches server rendering off. The faults we look for are the ones introduced during the build. Server rendering is disabled site-wide to silence one browser-only component. A prerendered page still expects a form action that only a server can run. The adapter does not match the host, so routes that worked locally fail in production.</p><p>Illustrative build decision: we prerender a service guide, then send its enquiry to a server-backed form route. We test a normal submission with JavaScript disabled and the enhanced interaction with it enabled, and in both cases confirm validation feedback and receipt by the agreed destination. That is the level of detail a SvelteKit scope records.</p><p>The builds of ours you can inspect are this site, which runs on Astro, and <a href="/development/#workbench">Shinobi</a>, our own brand site for creative businesses, a React build on TanStack Start whose launch sheet we publish line by line. A SvelteKit build is held to the same route, metadata and launch checks.</p></div><aside class="panel"><h3>What we check first</h3><p>Which routes need request-time data, where forms submit, how CMS edits become public and whether the proposed host runs the required adapter. Existing URLs, titles, canonicals and redirect rules remain part of launch planning.</p></aside></div></section>
+<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>SvelteKit for SEO: server-rendered by default, with <span>routes, forms and deployment</span> planned together</h2><p>A content page can be prerendered, while a request form may need a server action. That difference affects hosting, publishing and failure handling. We map the routes and their dependencies before choosing an adapter.</p><p>For search, SvelteKit starts in a good place: a route returns real HTML unless someone switches server rendering off. The faults we look for are the ones introduced during the build. Server rendering is disabled site-wide to silence one browser-only component. A prerendered page still expects a form action that only a server can run. The adapter does not match the host, so routes that worked locally fail in production.</p><p>Illustrative build decision: we prerender a service guide, then send its inquiry to a server-backed form route. We test a normal submission with JavaScript disabled and the enhanced interaction with it enabled, and in both cases confirm validation feedback and receipt by the agreed destination. That is the level of detail a SvelteKit scope records.</p><p>The builds of ours you can inspect are this site, which runs on Astro, and <a href="/development/#workbench">Shinobi</a>, our own brand site for creative businesses, a React build on TanStack Start whose launch sheet we publish line by line. A SvelteKit build is held to the same route, metadata and launch checks.</p></div><aside class="panel"><h3>What we check first</h3><p>Which routes need request-time data, where forms submit, how CMS edits become public and whether the proposed host runs the required adapter. Existing URLs, titles, canonicals and redirect rules remain part of launch planning.</p></aside></div></section>
 <DevelopmentStackJobs
   title="Four decisions a <span>SvelteKit</span> route map has to record"
   intro="The route map should explain what runs at build time, in the browser and on the server."
