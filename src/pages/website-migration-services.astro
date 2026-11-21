@@ -211,7 +211,8 @@ const faqs = [
   { question: 'Can you work with our developers?', answer: 'Yes. We work alongside internal teams, web developers, designers and ecommerce specialists. Everything we produce is written to be implemented: SEO requirements, QA notes, redirect guidance, staging feedback and post-launch checks, so the development team has clear actions.' },
   { question: 'Do you handle ecommerce migrations?', answer: 'Yes. Ecommerce migrations need extra care around product URLs, category pages, collections, filters, canonicals, discontinued products, faceted navigation, schema and internal links. We review each of those areas before and after launch.' },
   { question: 'What do you check after launch?', answer: 'Live redirects, priority pages, crawl errors, robots.txt, noindex tags, canonicals, XML sitemaps, analytics, conversion tracking, Search Console coverage, ranking movement and organic landing-page behaviour. The review cadence and the end date of monitoring are agreed in the scope.' },
-  { question: 'Can you fix a migration that has already gone wrong?', answer: 'Yes, depending on the issue. We compare the old and new site data, identify lost URLs, redirect mistakes, indexation problems, content changes, tracking gaps and technical blockers, then list the recovery actions in priority order.' }
+  { question: 'Can you fix a migration that has already gone wrong?', answer: 'Yes, depending on the issue. We compare the old and new site data, identify lost URLs, redirect mistakes, indexation problems, content changes, tracking gaps and technical blockers, then list the recovery actions in priority order.' },
+  { question: 'Who implements the redirects, you or our developer?', answer: 'Your developer applies the permanent server-side redirects. We prepare the redirect map with implementation notes for the CMS, server or development team, the service owner approves the relevance of each destination, and we test the live redirects against the agreed plan after release.' }
 ];
 ---
 
@@ -281,7 +282,6 @@ const faqs = [
     <Fragment slot="story">
       <p>A redesign, a change of CMS or a new domain can cost a site much of its search traffic when the old URLs, redirects and page content are not carried across properly. The damage usually comes from the things handled late: redirect rules, templates, tracking and indexation controls.</p>
       <p>We plan that part of the move, test it before launch and watch the results afterwards. We work with businesses in the Philippines, Australia, the UK and the USA to review the old site, map its URLs to the new structure and test the pages that must survive the move. Bring us in before navigation, templates and redirect rules are locked.</p>
-      <p>Send the current domain, staging access if available, the proposed launch date and the name of your development lead. We agree the release window, sign-off owner, rollback options and post-launch monitoring period before work starts.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -341,6 +341,7 @@ const faqs = [
         <h2>What our <span>website migration SEO</span> covers, and when to call us</h2>
       </div>
       <div class="rich-copy">
+        <p>Send the current domain, staging access if available, the proposed launch date and the name of your development lead. We agree the release window, sign-off owner, rollback options and post-launch monitoring period before work starts.</p>
         <p>If you are redesigning, changing CMS, restructuring URLs or moving domain, and organic search brings you enquiries or sales, this service is for you. You receive a risk review, a URL inventory and redirect map, a staging review, a launch-day checklist, post-launch monitoring and notes your developer can implement. One named person on your side approves the release.</p>
         <p>Search engines never see your project plan. They see changed URLs, new templates, different internal links, altered content, new status codes and different indexation signals. When a migration is run purely as a design or development project, the SEO risk surfaces after launch, when repairs cost more than prevention would have. We identify the pages and signals that already bring you visibility and protect them before the new site goes live.</p>
         <p>We have done this for ourselves. This website moved from brightforgeseo.com to brightforge.com.ph, and requests for the old domain are still redirected to the matching address here.</p>
@@ -439,6 +440,26 @@ const faqs = [
     </div>
   </section>
 
+  <section class="pf-section" id="who-does-what">
+    <div class="pf-wrap">
+      <p class="eyebrow">Responsibilities</p>
+      <h2>Who does what in a <span>website migration</span></h2>
+      <p class="pf-lede">A migration fails in the gaps between teams. This is how the work divides between your side and ours, including who implements the redirects.</p>
+      <div class="pf-table-wrap"><table class="pf-table">
+        <thead><tr><th scope="col">Task</th><th scope="col">Your team or developer</th><th scope="col" class="pf-us">Bright Forge</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">URL inventory and baseline</th><td>Provides the current domain, staging access if available and existing search data.</td><td class="pf-us">Crawls the current site, exports the priority URLs and identifies the pages with traffic and rankings.</td></tr>
+          <tr><th scope="row">Redirect map</th><td>The service owner approves the relevance of each destination.</td><td class="pf-us">Prepares the map, flags weak matches and writes implementation notes for the CMS, server or development team.</td></tr>
+          <tr><th scope="row">Implementing redirects</th><td>The developer applies permanent server-side redirects.</td><td class="pf-us">Tests that each old URL redirects directly to the approved destination, which returns 200 with no unintended noindex.</td></tr>
+          <tr><th scope="row">Staging review</th><td>Fixes the defects raised before launch.</td><td class="pf-us">Crawls staging and compares templates, metadata, canonicals, structured data, internal links, sitemaps and indexation controls.</td></tr>
+          <tr><th scope="row">Go-live decision</th><td>The named release owner decides against the agreed acceptance criteria.</td><td class="pf-us">Reports passed checks, unresolved defects and their impact.</td></tr>
+          <tr><th scope="row">Tracking</th><td>Verifies receipt of the agreed form, call and purchase events.</td><td class="pf-us">Agrees with you which events need testing and checks analytics, Search Console and Tag Manager are not missed.</td></tr>
+          <tr><th scope="row">After launch</th><td>Deploys the fixes; the release owner can pause or roll back.</td><td class="pf-us">Tests old URLs and new destinations on the live site, compares crawl and search data, and ranks fixes by risk and commercial impact.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
   <section class="honest-section" style="content-visibility: visible !important;">
     <div class="container-grid two-col align-start">
       <div>
@@ -454,6 +475,20 @@ const faqs = [
           </article>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="how-to-start">
+    <div class="pf-wrap">
+      <p class="eyebrow">How to start</p>
+      <h2>Four things to agree before <span>migration work</span> begins</h2>
+      <p class="pf-lede">The earlier we see the plan, the more of it can still be changed. This is what we ask for and what we settle with you first.</p>
+      <ol class="pf-steps">
+        <li><strong>Send the basics</strong><span>The current domain, staging access if available, the proposed launch date and the name of your development lead.</span></li>
+        <li><strong>Agree the release terms</strong><span>The release window, the sign-off owner, the rollback options and the post-launch monitoring period.</span></li>
+        <li><strong>Baseline the old site</strong><span>We crawl it, export the priority URLs and record the pages that hold traffic and rankings.</span></li>
+        <li><strong>Bring us in before the lock</strong><span>We review the old site and map its URLs to the new structure before navigation, templates and redirect rules are locked.</span></li>
+      </ol>
     </div>
   </section>
 

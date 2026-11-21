@@ -145,7 +145,9 @@ const faqs = [
   { question: 'How many backlinks do we need?', answer: 'It depends on the market, the competitors, the target pages and the current authority gap. Some campaigns need a small number of strong, relevant links. Others need sustained authority building over several months. We start with a backlink audit and competitor review instead of guessing a number, and we do not start by promising a fixed number of links, because editors can decline, change or remove a mention.' },
   { question: 'Can bad backlinks hurt rankings?', answer: 'Manipulative link schemes can lead to a manual action or algorithmic effects. Disavowing is an exceptional step: Google recommends it when a considerable number of artificial links have caused, or are likely to cause, a manual action. Investigate that evidence and the removal options first. A toxic score in a tool is not, by itself, a reason to disavow.' },
   { question: 'Do you provide backlink reports?', answer: 'Yes. Each report shows the linking URL, target page, anchor text, placement type, relevance notes, quality checks and campaign impact where it can be measured. The linking URL is given for every placement, so each one can be opened and checked.' },
-  { question: 'Should we build links before fixing content and technical SEO?', answer: 'Often not. If the target pages are thin, slow, poorly structured or misaligned with search intent, the links may be wasted. We check technical health, content quality and target-page readiness before scaling link acquisition, and we say so plainly when the pages need work first.' }
+  { question: 'Should we build links before fixing content and technical SEO?', answer: 'Often not. If the target pages are thin, slow, poorly structured or misaligned with search intent, the links may be wasted. We check technical health, content quality and target-page readiness before scaling link acquisition, and we say so plainly when the pages need work first.' },
+  { question: 'Who writes the content for a placement?', answer: 'Content support is agreed in the scope. Where outreach needs something worth referencing, we help shape the guide, data page, tool, case study or resource. The outreach brief names who approves brand claims and content before contact begins, and the publisher decides whether to cite the resource and how to describe it.' },
+  { question: 'Which link building tactics do you use?', answer: 'Editorial outreach, competitor link gap research, relevant resource and citation links, lost link and mention reclamation, and content-led link assets. We refuse private blog networks, link farms, bulk DA or DR packages, exact-match anchors as a condition of a mention, and placements on unrelated sites. Paid or sponsored links must carry rel="sponsored" or rel="nofollow".' }
 ];
 ---
 
@@ -209,7 +211,6 @@ const faqs = [
     <Fragment slot="story">
       <p>Your pages are sound, yet competitors with more referring sites sit above you. Or someone bought links for the domain years ago and nobody can say which of them still matter. Both problems start in the same place: a hard look at the links you have, before anyone pays for more.</p>
       <p>Bright Forge provides link building services in the Philippines for businesses and agency partners. You get a backlink audit, prospect research, outreach handled by our team and a placement report that records each link and the terms it was placed on. The outreach brief names who approves brand claims, content and any placement cost before contact begins, and we check that the destination page deserves the reference before asking for it.</p>
-      <p>Philippine businesses and teams targeting Australia, the UK or the USA can use the service directly or through an agency. The prospect list follows the audience: a local trade association, an industry publication and an overseas distributor each reach different readers and call for a different approach.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -232,6 +233,7 @@ const faqs = [
         <div class="intro-copy">
           <span class="eyebrow">What you get, and who it suits</span>
           <h2>What a <span>backlink campaign</span> with us delivers</h2>
+          <p>Philippine businesses and teams targeting Australia, the UK or the USA can use the service directly or through an agency. The prospect list follows the audience: a local trade association, an industry publication and an overseas distributor each reach different readers and call for a different approach.</p>
           <p>This service suits a business whose important pages are well built but sit behind competitors that more websites link to. It also suits a domain with a history of bought links, where someone needs to say which can be left alone. The audit tells you which of the two you are dealing with, and which of your pages lack the links their competitors have.</p>
           <p>Search engines treat links as a sign of trust, and they also recognise patterns. One editorial reference from a relevant publication to a useful service page carries weight. A batch of exact-match anchors on thin websites built to sell placements is a pattern, and it is the kind that gets a site noticed for the wrong reason. So we start with the site, the target pages and the market. If a page is too weak to rank, or the profile already carries risk, we tell you to deal with that first, because a link to a poor page is wasted.</p>
         </div>
@@ -300,6 +302,29 @@ const faqs = [
           ))}
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="tactics">
+    <div class="pf-wrap">
+      <p class="eyebrow">Tactics, by name</p>
+      <h2>The <span>link building tactics</span> we use and the ones we refuse</h2>
+      <p class="pf-lede">Ask any link building supplier which tactics they use and which they turn down. These are our answers, taken from the services and refusals set out on this page.</p>
+      <div class="pf-table-wrap"><table class="pf-table">
+        <thead><tr><th scope="col">Tactic</th><th scope="col" class="pf-us">Our position</th><th scope="col">Reason</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Editorial outreach</th><td class="pf-us">Used</td><td>The link is earned on the merit of your page, and the publisher decides the wording.</td></tr>
+          <tr><th scope="row">Competitor link gap research</th><td class="pf-us">Used</td><td>Competitor links show which publications and associations serve your buyers. Each one is a research lead to check.</td></tr>
+          <tr><th scope="row">Resource pages, citations and listings</th><td class="pf-us">Used when relevant and vetted</td><td>Association, supplier, partner and directory pages can support trust when their users could become customers.</td></tr>
+          <tr><th scope="row">Lost link and unlinked mention reclamation</th><td class="pf-us">Used, usually first</td><td>Recovering a broken or lost link can come before chasing a brand-new placement.</td></tr>
+          <tr><th scope="row">Content-led link assets</th><td class="pf-us">Used</td><td>A guide, data page, tool or case study gives an editor something worth referencing.</td></tr>
+          <tr><th scope="row">Paid or sponsored placements</th><td class="pf-us">Only with rel="sponsored" or rel="nofollow"</td><td>Advertising is different from an editorial reference, and it is reported as paid.</td></tr>
+          <tr><th scope="row">Private blog networks and link farms</th><td class="pf-us">Refused</td><td>Spun sites, expired-domain farms and paid-link footprints leave risk on your domain.</td></tr>
+          <tr><th scope="row">Bulk DA or DR packages</th><td class="pf-us">Refused</td><td>An authority metric is a first filter. It says nothing about relevance.</td></tr>
+          <tr><th scope="row">Exact-match anchors as a condition</th><td class="pf-us">Refused</td><td>Keyword-rich link text is never made a condition of an editorial mention.</td></tr>
+          <tr><th scope="row">Placements on unrelated sites</th><td class="pf-us">Refused</td><td>A publication has to reach readers who matter to your business.</td></tr>
+        </tbody>
+      </table></div>
     </div>
   </section>
 
@@ -372,6 +397,28 @@ const faqs = [
           {reportFields.map((item) => <li>{item}</li>)}
         </ul>
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="report-layout">
+    <div class="pf-wrap">
+      <p class="eyebrow">Sample report layout</p>
+      <h2>How one line of the <span>placement report</span> reads</h2>
+      <p class="pf-lede">This is the layout, filled in with the illustrative trade-association prospect described earlier on this page. It is an example of the format and does not record a client placement.</p>
+      <div class="pf-table-wrap"><table class="pf-table">
+        <thead><tr><th scope="col">Report field</th><th scope="col">What it records</th><th scope="col" class="pf-us">Illustrative entry</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Linking URL and domain</th><td>The exact page that carries the link.</td><td class="pf-us">The member listing page of a trade association</td></tr>
+          <tr><th scope="row">Target page</th><td>The page on your site the link points to.</td><td class="pf-us">The relevant product or specification page</td></tr>
+          <tr><th scope="row">Anchor text</th><td>The link text as the publisher wrote it.</td><td class="pf-us">The manufacturer's name</td></tr>
+          <tr><th scope="row">Placement type and context</th><td>The kind of placement and what surrounds the link.</td><td class="pf-us">Member directory listing</td></tr>
+          <tr><th scope="row">Relevance notes</th><td>Why this site, for this page.</td><td class="pf-us">The listing helps specifiers find the manufacturer</td></tr>
+          <tr><th scope="row">Quality and risk observations</th><td>Outbound link patterns, link attributes and any payment or sponsorship.</td><td class="pf-us">Genuine listing; membership requirements met</td></tr>
+          <tr><th scope="row">Date</th><td>When the link was acquired or recovered.</td><td class="pf-us">Recorded when the listing goes live</td></tr>
+          <tr><th scope="row">Movement</th><td>Ranking and visibility change on the target page, where relevant.</td><td class="pf-us">Reported separately from the link itself</td></tr>
+        </tbody>
+      </table></div>
+      <p class="pf-note">Illustrative only. No client, publication or result is implied.</p>
     </div>
   </section>
 
