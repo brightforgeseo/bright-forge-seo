@@ -49,6 +49,16 @@ Stock photography of a smiling crew does not count as experience. A testimonial 
 
 If you cannot show the work, say less. A short, specific paragraph about one job is worth more than a grid of invented wins.
 
+## Gathering First-Hand Material Without A Perfect Win
+
+You do not need a record-breaking graph. You need a job.
+
+- Take a page that failed a useful query. Record the title, H1, internal links and index state. Change one constraint. Record what happened. Write that.
+- Take a crawl of your own site. Fix the actual defects. Write the defects.
+- Take a Google Business Profile category fight, a duplicate listing, or a service-area mismatch. Write the steps.
+
+If you cannot screenshot the thing, describe the method in enough operational detail that another practitioner could repeat the check. “We looked at performance” is not a method. “We compared query groups in Search Console for the service URLs before and after the title and internal-link change, with the same 28-day window, country filter and search type” is a method.
+
 ## Named Authors And Named Operators
 
 Service sites hide people because they think the brand should be bigger than the staff. Search systems and buyers go the other way. They want a name they can search.
@@ -58,6 +68,44 @@ Put a real byline on advice. Give that person a profile with a photograph, a rol
 The about record should name the people who actually run the work. Ours lists Ben Lowe, Sassin Lowe, Jani A. Cañonero and Jewe O. Manalo because those are the people accountable for strategy, operations and delivery. If you want the same standard on your site, start from [who we are](/about-us/) and copy the structure, not the adjectives: names, roles, location, and a way to verify the company.
 
 Anonymous “our team of experts” copy fails two tests at once. A rater cannot tell who created the page. A buyer cannot tell who will answer the phone.
+
+## Person Schema That Matches The Visible Page
+
+Person markup is a structured copy of what the visitor can already read. If the HTML does not show a job title, an alma mater, a sameAs profile, an email or an image, the JSON-LD should not invent them.
+
+Safe properties when they are visible:
+
+- name
+- url (the author page itself)
+- image
+- jobTitle
+- worksFor (the organisation, with a matching Organization record)
+- description (the visible short bio, not a secret longer one)
+- sameAs (only profiles that are clearly the same person)
+
+Unsafe properties when they are not on the page or not true:
+
+- alumniOf for a school they did not attend
+- hasCredential for certificates you cannot produce
+- award for plaques that do not exist
+- memberOf for associations that never enrolled them
+- knowsAbout lists that dump every keyword you want to rank for
+
+The author page, the Article author block, and the Person node should use the same name and the same URL. If a property would surprise the person whose name is on it, delete the property.
+
+## A Working Outline For The About Page
+
+Cut until a stranger can repeat the firm back to you: name, people, city, services, how to reach you.
+
+- Opening: who you are and what you sell, in two sentences, with the city.
+- People: names, roles, photographs, links to profiles.
+- History: dated, limited to facts you can defend.
+- Work: services you deliver and the commercial job they support.
+- Limits: what you will not claim or sell.
+- Proof: reviews, methods, standards, not invented results.
+- Contact: how to reach a person, with the same details used elsewhere.
+
+That outline is enough for a one-person firm and a fifty-person firm. Scale the people section. Do not scale the adjectives.
 
 ## Contact That A Human Can Use
 
@@ -69,6 +117,18 @@ Do not put a tracking number on the only public contact line if you cannot keep 
 
 If someone wants to check a claim, they should be able to [get in touch](/contact/) without hunting through a chatbot that never hands off to a person.
 
+## Legal Pages That Describe This Site
+
+Privacy policies fail when they are pasted from a generator and still mention tools you do not use, countries you do not operate in, or a company name from the last client the designer had. Write what you collect, why, where it is stored, and how someone asks for deletion. Update the legal pages when the stack changes. Link privacy and terms from the footer and from the form.
+
+### Common failures we see on client sites
+
+- The only phone number is in an image.
+- The form posts to a 404.
+- Privacy still names a UK company after the site moved to a Philippine operator.
+- The editorial or claims policy does not exist, so sales and delivery contradict each other.
+- The contact URL is noindexed by accident.
+
 ## Case Studies Without Theatre
 
 Case studies are the service-business version of first-hand experience. They fail when they become a press release.
@@ -78,6 +138,16 @@ Write the problem, the diagnosis, the work, and the measurement. Name the market
 Never invent a client, a quote, a ranking, a traffic number, a lead count or a revenue figure. If you do not have permission or a source, leave the number out. A rater who suspects fabrication will treat the whole site as low trust. Buyers who later compare your case study with their own Search Console will not hire you twice.
 
 Guaranteed rankings and guaranteed AI Overview inclusion belong in the same bin. Those systems choose sources. You can improve eligibility. You cannot sell inclusion.
+
+## Checks Before A Quoted Name Goes Live
+
+- Search the exact name in quotes plus the organisation. If nothing credible appears and they are not on the client's staff list, stop.
+- Open the alleged source. Confirm the sentence, the date, and that the URL is not a marketing blog repeating the same unsourced line.
+- Confirm permission. Public talks and published papers can usually be quoted with attribution. Private emails and sales calls cannot, unless the person agreed.
+- Confirm the incentive. If the quoted person sells the product the article recommends, the reader should be able to see that.
+- Run the same checks after AI-assisted drafting. Models will happily emit a bibliography. The bibliography is a todo list, not a finished source list.
+
+If you do not have a quote, write the observation in house voice.
 
 ## What You Can Control On Your Own Site
 

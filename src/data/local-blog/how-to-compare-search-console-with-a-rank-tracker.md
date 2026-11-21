@@ -86,7 +86,7 @@ If repeated snapshots remain missing and Search Console performance also weakens
 
 Sometimes the apparent discrepancy concerns the URL rather than the position.
 
-Suppose you are monitoring a service description, but another page on your site appears for the phrase. A domain-level tracker may count that as visibility, while a URL-specific check may not. Search Console’s query-filtered Pages view helps you identify [which page received the recorded impressions and clicks](https://brightforge.com.ph/blog/how-to-check-whether-a-ranking-drop-is-sitewide-or-page-specific/).
+Suppose you are monitoring a service description, but another page on your site appears for the phrase. A domain-level tracker may count that as visibility, while a URL-specific check may not. Search Console’s query-filtered Pages view helps you identify [which page received the recorded impressions and clicks](/blog/how-to-read-a-ranking-drop-in-search-console/).
 
 This changes the next action. If the intended page has lost visibility while another relevant page has gained it, review which page best answers the searcher’s need. A query with research intent may lead to an article rather than a service description. That is not automatically a defect.
 

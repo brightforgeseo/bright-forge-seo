@@ -59,3 +59,10 @@ export function groupPostsByTopic(posts, min = 3) {
     .filter((group) => group.posts.length >= min)
     .sort((a, b) => b.posts.length - a.posts.length || a.slug.localeCompare(b.slug));
 }
+
+// Topics shown as sections of /blog/topics/. The separate archive page per
+// topic was retired (src/data/retiredBlogSlugs.json), and so was the catch-all
+// "seo" tag, which nearly every article carries and only repeated the blog index.
+export function topicSections(posts, min = 3) {
+  return groupPostsByTopic(posts, min).filter((topic) => topic.slug !== 'seo');
+}

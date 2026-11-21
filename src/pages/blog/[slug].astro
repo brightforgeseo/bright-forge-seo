@@ -7,6 +7,7 @@ import { getBlogMetadata } from '../../lib/blogMetadata';
 import { getAuthorSlug } from '../../lib/authors';
 import { pickRelatedPosts } from '../../lib/relatedPosts';
 import { displayH1 } from '../../lib/blogDisplay';
+import { rewriteRetiredLinks } from '../../lib/retiredBlog.js';
 import cmsPostFixes from '../../data/cmsPostFixes.json';
 
 export async function getStaticPaths() {
@@ -819,6 +820,8 @@ if (post.content || post.contentHtml) {
   
   // Generate table of contents from HTML headings
   const dom = new JSDOM(htmlContent);
+  // Links to retired articles and topic archives go straight to their destination.
+  rewriteRetiredLinks(dom.window.document, `/blog/${slug}/`);
   const headings = [...dom.window.document.querySelectorAll('h2, h3, h4')];
 
   tableOfContents = headings.map(heading => {

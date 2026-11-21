@@ -12,14 +12,16 @@ class InternationalImplementation(unittest.TestCase):
         self.assertNotIn('Same-Timezone Specialist Agency',au)
         for page in [uk,us,au]:
             self.assertIn('Philippines',page)
-            self.assertIn('hreflangs={seoServicesHreflangs}',page)
+            self.assertNotIn('hreflang',page.lower())
     def test_new_zealand_has_its_own_honest_market_page_and_discovery(self):
         page=ROOT/'src/pages/seo-services-new-zealand.astro'
         self.assertTrue(page.exists(),'Missing NZ market page')
         text=page.read_text()
-        for required in ['New Zealand','Philippines','NZD','en-NZ','speediance-nz-fitness-seo','hreflangs={seoServicesHreflangs}']:
+        for required in ['New Zealand','Philippines','NZD','en-NZ','speediance-nz-fitness-seo']:
             self.assertIn(required,text)
-        for file in ['src/components/LegacyHeader.astro','src/components/Footer.astro','src/data/internationalSeoPages.js']:
+        self.assertNotIn('hreflang',text.lower())
+        self.assertFalse((ROOT/'src/data/internationalSeoPages.js').exists())
+        for file in ['src/components/LegacyHeader.astro','src/components/Footer.astro']:
             self.assertIn('/seo-services-new-zealand/',(ROOT/file).read_text())
         self.assertNotIn('Auckland office',text)
     def test_existing_owners_receive_distinct_delivery_sections(self):

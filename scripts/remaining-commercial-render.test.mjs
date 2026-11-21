@@ -17,6 +17,6 @@ for(const route of ['seo-services-uk','seo-services-usa','ecommerce-seo-services
   const faqs=nodes.filter(n=>n['@type']==='FAQPage').flatMap(n=>n.mainEntity);
   assert.deepEqual(faqs.map(q=>[q.name,q.acceptedAnswer.text]),[...d.querySelectorAll('details.faq-item')].map(n=>[n.querySelector('summary').textContent.trim(),n.querySelector('p').textContent.trim()]));
   assert.doesNotMatch(d.querySelector('main').textContent,/4,549|1,322|1,660%|434\.7%|405%|8\.2%|7:11|239 AI|monthly clicks|268k a month/);
-  if(route.endsWith('-uk')||route.endsWith('-usa'))assert.ok(d.querySelectorAll('link[hreflang]').length>=4);
+  assert.equal(d.querySelectorAll('link[hreflang]').length,0);
  });
 }

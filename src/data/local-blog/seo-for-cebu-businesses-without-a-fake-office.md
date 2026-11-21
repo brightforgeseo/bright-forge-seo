@@ -74,6 +74,22 @@ Ask what they refuse. Fake reviews, virtual offices, and city doorways should be
 
 [SEO services in the Philippines](/seo-services-philippines/) cover the wider site work when Cebu visibility is blocked by templates, indexation, or thin commercial URLs rather than by the pin alone. Local listing work cannot rescue a site that noindexes the only Cebu URL or sends every click to a homepage that never mentions the city.
 
+## The Same Rule For Davao Businesses
+
+We do not operate a Davao office, and we will not pretend a coworking desk or a city URL is a branch. We will not create a Davao Google profile for Bright Forge. If you are a Davao business, the local assets are yours. Your profile, your NAP, your photos of the premises or the crew, your reviews from Davao customers, your service pages, and your service-area settings. We can diagnose and improve those from Quezon City. We cannot substitute our address for yours.
+
+If you are a Manila or Cebu company that occasionally takes Davao jobs, say that on the site in plain language. Do not spawn a Davao URL with stock photos of Roxas Avenue and a phone number that rings in Ortigas. Doorway city pages and extra Maps pins for cities with no staff are the same cheat in two surfaces.
+
+Write like the conversation you already have with a good Davao lead. What the job includes. What it excludes. Which cities you will travel to: Davao City, Tagum, Panabo, Samal, Digos, or a tighter radius. If you only take Viber or Facebook Messenger, say so and do not pretend a form is monitored when it is not.
+
+### A sensible sequence for Davao sites
+
+1. Make the public facts true. Name, address or service area, phone, hours, categories, and website URL should match across the profile, the site, and the directories you actually control.
+2. Give each paying service a URL that can rank and convert. If the homepage is the only commercial page, you are asking one URL to win every job type.
+3. Clear technical blockers. Accidental noindex, blocked assets, duplicate titles, a sitemap full of parameters, or a redesign that dropped 301s will cap any local effort.
+4. Earn reviews and photos at a pace the business can sustain. A steady habit after completed jobs is an asset.
+5. Measure. Search Console for queries and pages. Call tracking or a dedicated number if the phone is the real conversion. Form submissions that sales can label as qualified.
+
 ## Time, Distance, And Honesty
 
 Pack timing still cannot be sold as a date. Distance in Cebu is real: a searcher in Lapu-Lapu is not the same as a searcher in uptown Cebu City. Prominence takes reviews and consistent information. Relevance takes categories and pages that match the query. We can work those. We cannot teleport your shop.

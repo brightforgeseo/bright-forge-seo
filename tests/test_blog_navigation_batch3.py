@@ -22,7 +22,9 @@ def test_topic_navigation_matches_sidebar_and_links_to_topic_index():
     top = soup.select('nav.filter-container a[href^="/blog/topics/"]')
     sidebar = soup.select('.categories-list a[href^="/blog/topics/"]')
     assert [(a['href'], a.text.strip()) for a in top] == [(a['href'], a.text.strip()) for a in sidebar]
-    assert len(top) == len(list((ROOT / 'dist/blog/topics').glob('*/index.html'))) + 1
+    hub = BeautifulSoup((ROOT / 'dist/blog/topics/index.html').read_text(), 'html.parser')
+    sections = [section['id'] for section in hub.select('.topic-main section.topic-section')]
+    assert [a['href'] for a in top] == [f'/blog/topics/#{slug}' for slug in sections] + ['/blog/topics/']
     assert soup.select_one('nav.filter-container[aria-label="Article topics"]')
     assert soup.select_one('nav.filter-container a[href="/blog/"][aria-current="page"]')
     assert soup.select_one('nav.filter-container a[href="/blog/topics/"]')

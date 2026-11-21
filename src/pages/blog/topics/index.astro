@@ -4,9 +4,9 @@ import MainLayout from '../../../layouts/MainLayout.astro';
 import LegacyHeader from '../../../components/LegacyHeader.astro';
 import Footer from '../../../components/Footer.astro';
 import { getAllBlogPosts } from '../../../lib/contentful.js';
-import { groupPostsByTopic } from '../../../lib/blogDisplay.js';
+import { topicSections } from '../../../lib/blogDisplay.js';
 
-const topics = groupPostsByTopic(await getAllBlogPosts(), 3);
+const topics = topicSections(await getAllBlogPosts(), 3);
 ---
 
 <MainLayout
@@ -18,14 +18,29 @@ const topics = groupPostsByTopic(await getAllBlogPosts(), 3);
   <main class="topic-main">
     <div class="max-w-7xl mx-auto px-6">
 
-      <ul>
-        {topics.map((topic) => (
-          <li>
-            <a href={`/blog/topics/${topic.slug}/`}>{topic.label}</a>
-            <span> {topic.posts.length}</span>
-          </li>
-        ))}
-      </ul>
+      <nav class="topic-jump" aria-label="Topics on this page">
+        <ul>
+          {topics.map((topic) => (
+            <li>
+              <a href={`#${topic.slug}`}>{topic.label}</a>
+              <span> {topic.posts.length}</span>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {topics.map((topic) => (
+        <section class="topic-section" id={topic.slug}>
+          <h2>{topic.label}</h2>
+          <ul class="topic-articles">
+            {topic.posts.map((post) => (
+              <li><a href={`/blog/${post.slug}/`}>{post.title}</a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      <nav class="topic-next" aria-label="More articles">
+        <a href="/blog/">Browse all articles</a>
+      </nav>
     </div>
   </main>
   <Footer />
@@ -46,4 +61,12 @@ const topics = groupPostsByTopic(await getAllBlogPosts(), 3);
   }
   ul { list-style: none; padding: 0; }
   li { margin: 0 0 0.7rem; }
+  .topic-jump ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.75rem; margin-bottom: 2.5rem; }
+  .topic-jump a { display: inline-block; padding: 0.5rem 0; }
+  .topic-section { scroll-margin-top: 7rem; margin-bottom: 2.5rem; }
+  h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; }
+  .topic-articles { columns: 2; gap: 2rem; }
+  .topic-articles li { break-inside: avoid; margin: 0 0 0.6rem; }
+  .topic-next a { color: #b83e12; text-decoration: underline; display: inline-block; padding: 0.75rem 0; }
+  @media (max-width: 700px) { .topic-articles { columns: 1; } }
 </style>

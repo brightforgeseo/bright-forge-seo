@@ -6,7 +6,6 @@ import ContactSection from '../components/ContactSection.astro';
 import Hero from '../components/Hero.astro';
 import ButtonPrimary from '../components/ButtonPrimary.astro';
 import ButtonSecondary from '../components/ButtonSecondary.astro';
-import { seoServicesHreflangs } from '../data/internationalSeoPages.js';
 const canonical='https://brightforge.com.ph/seo-services-new-zealand/';
 const faqs=[
  {question:'Are you based in New Zealand?',answer:'We are based in the Philippines and deliver SEO remotely for New Zealand businesses. We agree access, meeting windows and review responsibilities before work starts. We do not represent a remote delivery team as a local office.'},
@@ -17,7 +16,7 @@ const faqs=[
 ];
 const service={ '@context':'https://schema.org','@type':'Service',name:'SEO Services for New Zealand Businesses',serviceType:'Search engine optimisation',url:canonical,areaServed:{'@type':'Country',name:'New Zealand'},provider:{'@type':'Organization',name:'Bright Forge SEO',url:'https://brightforge.com.ph/'},description:'Technical, ecommerce and content SEO for New Zealand businesses, delivered remotely from the Philippines.'};
 ---
-<MainLayout title="SEO Services for New Zealand Businesses | Bright Forge" description="SEO for New Zealand businesses from our Philippines team. Published NZ ecommerce work, technical reviews and clear reporting. Discuss your priorities." canonical={canonical} type="service" faqs={faqs} hreflangs={seoServicesHreflangs} geoRegion="NZ" geoPlacename="New Zealand" contentLanguage="en-NZ">
+<MainLayout title="SEO Services for New Zealand Businesses | Bright Forge" description="SEO for New Zealand businesses from our Philippines team. Published NZ ecommerce work, technical reviews and clear reporting. Discuss your priorities." canonical={canonical} type="service" faqs={faqs} geoRegion="NZ" geoPlacename="New Zealand" contentLanguage="en-NZ">
   <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(service)} /></Fragment>
   <LegacyHeader slot="header" />
   <Hero badgeIcon="fas fa-globe" badgeText="SEO for New Zealand Businesses" title="SEO for New Zealand Businesses, <span>Grounded in Your Market</span>" breadcrumbCurrent="SEO Services New Zealand">

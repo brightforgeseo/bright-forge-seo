@@ -48,6 +48,12 @@ Metro Manila premium shops can sit above provincial averages for the same labell
 
 Agency retainers for maintenance, hosting, and small edits often sit as a monthly line after launch. Budget for it. A site with no owner decays: plugins rot, forms break, SSL lapses, and the blog becomes a malware host. The project fee is not the lifetime cost.
 
+## Project Fee Or Dedicated Hire For Overseas Buyers
+
+A project fee buys a launch. A salary buys a person who still needs briefs, QA, and someone who owns the commercial outcome. Mixing them without a rule is how companies pay twice: once for a build that cannot be edited, then again for a hire who spends three months reverse-engineering it.
+
+Currency and tax matter for overseas buyers. A quote in PHP and a quote in USD are not comparable until you know what is included, who pays VAT, and whether revisions are capped. Time zone overlap is part of cost: cheap hours that only exist while you sleep will burn senior time on your side.
+
 ## What Usually Sits Outside The Headline Number
 
 Hosting, domain, email, premium theme or plugin licences, stock or custom photography, copywriting, multilingual, and payment gateway fees are commonly extra. So are content uploads if you promised to supply copy and then did not.

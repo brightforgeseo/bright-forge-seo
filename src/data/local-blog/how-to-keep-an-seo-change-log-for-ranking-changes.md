@@ -87,7 +87,7 @@ For a low-traffic page, a short period may offer little useful information. For 
 
 Small fluctuations in position can happen at any time. [Google’s search-traffic debugging guide](https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops) makes this distinction and advises against radical changes to a page that is already performing well because of a small shift.
 
-Start your review by describing the movement before explaining it. [Identify which URLs and queries changed](https://brightforge.com.ph/blog/how-to-check-whether-a-ranking-drop-is-sitewide-or-page-specific/), when the movement began, whether it persisted, and what happened to clicks and impressions. Then compare that pattern with the scope and timing of your logged changes.
+Start your review by describing the movement before explaining it. [Identify which URLs and queries changed](/blog/how-to-read-a-ranking-drop-in-search-console/), when the movement began, whether it persisted, and what happened to clicks and impressions. Then compare that pattern with the scope and timing of your logged changes.
 
 If the decline started before the deployment, the deployment does not explain its onset. If untouched sections also declined, the investigation needs to extend beyond the edited pages. Neither observation resolves the whole case, but both narrow the questions worth asking.
 
