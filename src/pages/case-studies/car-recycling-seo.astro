@@ -25,7 +25,7 @@ const caseStudyData = {
     { title: "Keyword Research", description: "Review the queries behind the extra impressions and separate service enquiries from general recycling research. Someone asking how car recycling works is not yet a customer.", icon: "fas fa-search" },
     { title: "On-Page Optimisation", description: "Check whether the landing pages explain the actual service and its geographic coverage. Confirm those details with the business before changing copy.", icon: "fas fa-file-alt" },
     { title: "Technical SEO", description: "Check crawlability and mobile enquiry paths before proposing technical changes. The chart does not identify a technical defect or fix.", icon: "fas fa-cogs" },
-    { title: "Compare landing pages", description: "Find which pages gained clicks and which lost CTR, then compare their query mix over the same two windows. That shows whether the lower click rate is one page or the whole site.", icon: "fas fa-link" },
+    { title: "Compare Landing Pages", description: "Find which pages gained clicks and which lost CTR, then compare their query mix over the same two windows. That shows whether the lower click rate is one page or the whole site.", icon: "fas fa-link" },
     { title: "Performance Monitoring", description: "Measure calls and enquiries separately from search clicks, with a consistent reporting period and clear event definitions.", icon: "fas fa-chart-line" }
   ],
   results: [
@@ -95,7 +95,7 @@ const caseStudyData = {
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title">The <span>business question</span></h2>
       <p class="section-text">{caseStudyData.challenge}</p>
-      <p class="section-text mt-6">We publish this as a Search Console comparison. The page does not record what SEO work was carried out, who did it or when, so the checks further down are recommendations and nothing more.</p>
+      <p class="section-text mt-6">We publish the comparison as measured, including the fall in click-through rate, and set out the checks further down as recommendations rather than credit any work with the result.</p>
     </div>
   </section>
 
@@ -112,7 +112,7 @@ const caseStudyData = {
   <section class="content-section">
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="section-title"><span>Recommended follow-up checks</span></h2>
-      <p class="section-text">This is where we would look next. These checks are recommendations, not a record of completed work: the screenshot does not show exact calendar dates, query filters or which changes were implemented.</p>
+      <p class="section-text">This is where we would look next. The screenshot does not show exact calendar dates or query filters, so each check begins with the data.</p>
 
       <div class="strategy-list">
         {caseStudyData.strategySteps.map((step, index) => (
