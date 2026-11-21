@@ -204,22 +204,17 @@ def check_sitemap() -> None:
 
 
 def check_h1_spans() -> None:
-    missing = []
+    # Editorial refresh (2026-11): headings are plain text and no longer need an orange span.
+    # The check is now structural: every page that has an H1 must have exactly one.
     multiple = []
     for path in html_files():
         parser = H1Parser()
         parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
-        r = rel(path)
         if parser.h1_count > 1:
-            multiple.append(f"{r} ({parser.h1_count})")
-        if r not in EXEMPT_H1_SPAN_PATHS and parser.h1_count and not any(parser.h1_has_span):
-            if not r.startswith("blog/") and not r.startswith("author/") and not r.startswith("authors/"):
-                missing.append(r)
+            multiple.append(f"{rel(path)} ({parser.h1_count})")
     if multiple:
-        warn("pages with multiple H1s: " + ", ".join(multiple[:10]))
-    if missing:
-        fail("non-exempt pages with H1 but no span: " + ", ".join(missing[:20]))
-    ok("H1 orange-span structure present on non-exempt page templates")
+        fail("pages with more than one H1: " + ", ".join(multiple[:20]))
+    ok("every built page has at most one H1")
 
 
 def check_h2_spans() -> None:
