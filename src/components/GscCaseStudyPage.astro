@@ -26,7 +26,7 @@ const schema = {
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <main>
-    <ForgeHero title={data.title} eyebrow="Anonymised organic-search case study" breadcrumb={data.breadcrumb}>
+    <ForgeHero title={data.title} eyebrow="Anonymised Search Console comparison" breadcrumb={data.breadcrumb}>
       <p class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/case-studies/">Case Studies</a><span>/</span>{data.breadcrumb}</p>
       <p class="lede">{data.lede}</p>
       <div class="hero-meta"><span>{data.industry}</span><span>Google organic search</span><span>{data.period}</span></div>
@@ -46,7 +46,7 @@ const schema = {
         <p>{data.evidenceIntro}</p>
         <figure>
           <img src={data.evidenceImage} alt={data.evidenceAlt} width="1600" height="900" loading="eager" decoding="async" />
-          <figcaption>Google Search Console performance evidence. The property, queries and client identity have been redacted.</figcaption>
+          <figcaption>Google Search Console performance evidence. The property, the queries and the client identity are redacted.</figcaption>
         </figure>
       </div>
     </section>
@@ -80,7 +80,7 @@ const schema = {
       <div class="container narrow"><p class="eyebrow">Evidence boundary</p><h2>What this case study does and does not prove</h2><p>{data.boundary}</p></div>
     </section>
 
-    <section class="cta"><div class="container"><div><p class="eyebrow">Your next move</p><h2>Find the search demand already within reach.</h2><p>We review the pages, query patterns and technical barriers that are holding useful search visibility back.</p></div><ButtonPrimary href="/contact/" text="Request an SEO review" /></div></section>
+    <section class="cta"><div class="container"><div><p class="eyebrow">Your next move</p><h2>Find the search demand already within reach.</h2><p>Send us your site and we will review the pages, query patterns and technical barriers holding useful search visibility back, then tell you which to fix first.</p></div><ButtonPrimary href="/contact/" text="Request an SEO review" /></div></section>
   </main>
   <ContactSection />
   <Footer slot="footer" />
