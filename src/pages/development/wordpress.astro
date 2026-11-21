@@ -11,15 +11,15 @@ const canonical="https://brightforge.com.ph/development/wordpress/";
 const proof=[
   {
     "title": "Editors publish themselves",
-    "text": "Your team can update a page without rebuilding a separate front end."
+    "text": "Your team can update a page and see it live without rebuilding a separate front end or waiting for a developer."
   },
   {
     "title": "Check the public HTML",
-    "text": "The theme, plugins and host determine what visitors receive, so we inspect the live output."
+    "text": "The theme, plugins and host determine what visitors receive, so we inspect the live output and not the editor screen."
   },
   {
     "title": "Recovery before changes",
-    "text": "We confirm the backup owner and restore procedure before production changes."
+    "text": "We confirm the backup owner and restore procedure before any production change is made."
   }
 ];
 const checks=[
@@ -77,7 +77,7 @@ const process=[
 const faqs=[
   {
     "question": "Can you improve WordPress SEO without rebuilding the site?",
-    "answer": "Often, yes. We inspect templates, internal links, metadata, schema, indexing and performance before recommending a rebuild. A repair may be enough if the existing theme and editing workflow still meet the business requirements."
+    "answer": "Often, yes. We inspect templates, internal links, metadata, schema, indexing and performance before recommending a rebuild. A repair is enough when the existing theme and editing workflow still meet the business requirements, and it leaves your editors with the tools they already know."
   },
   {
     "question": "Will you remove our plugins?",
@@ -85,11 +85,11 @@ const faqs=[
   },
   {
     "question": "What should be backed up before an update?",
-    "answer": "A complete recovery plan needs the database and site files, including uploads, themes and plugins. The scope should name who takes the backup, where it is retained and who can restore it. A backup job reporting success is not the same as a tested restore."
+    "answer": "A complete recovery plan needs the database and the site files, including uploads, themes and plugins. The scope should name who takes the backup, where it is retained and who can restore it. A backup job reporting success is not the same as a tested restore."
   },
   {
     "question": "How do staging and ongoing maintenance fit the project?",
-    "answer": "Agree which theme, plugin and core updates need staging checks, who approves production changes and how to recover if a form or template breaks. Hosting, update frequency, monitoring and response times need explicit agreement; a development project alone does not define an ongoing maintenance plan."
+    "answer": "Agree which theme, plugin and core updates need staging checks, who approves production changes and how to recover if a form or template breaks. Hosting, update frequency, monitoring and response times need explicit agreement. A development project alone does not define an ongoing maintenance plan."
   },
   {
     "question": "Who owns licences and what can editors change?",
@@ -97,7 +97,7 @@ const faqs=[
   },
   {
     "question": "Do you provide WordPress development in the Philippines for overseas businesses?",
-    "answer": "Yes. We work with Philippine businesses and teams in Australia, the UK and the US. The brief should identify the publishing owner, review availability and the actual regional content or store requirements. We agree release windows rather than assume every team works Philippine hours."
+    "answer": "Yes. We work with Philippine businesses and with teams in Australia, the UK and the US. The brief should identify the publishing owner, review availability and the actual regional content or store requirements. We agree release windows with each team, since not every client works Philippine hours."
   },
   {
     "question": "Can you work with our developer during a migration?",
@@ -105,28 +105,28 @@ const faqs=[
   }
 ];
 ---
-<MainLayout title="WordPress Development Philippines | Bright Forge" description="WordPress development for businesses that need CMS control, cleaner structure, faster templates and SEO-safe rebuilds." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"WordPress",url:canonical}]} faqs={faqs}>
+<MainLayout title="WordPress Development Philippines | Bright Forge" description="WordPress development in the Philippines for teams that publish their own content: cleaner templates, tested plugins, SEO fields and a documented handover." canonical={canonical} type="service" breadcrumbs={[{name:"Home",url:"https://brightforge.com.ph/"},{name:"Development",url:"https://brightforge.com.ph/development/"},{name:"WordPress",url:canonical}]} faqs={faqs}>
 <LegacyHeader slot="header" />
 <Hero title="WordPress <span>Development</span>" breadcrumbCurrent="WordPress">
-<Fragment slot="story"><p class="hero-subtitle">WordPress development in the Philippines for teams that need to publish and maintain their own content.</p><p>Our WordPress developers plan the templates, editing controls and WordPress SEO together. Your team should know how to update a service page, who can publish it and who handles changes to the theme or plugins.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
+<Fragment slot="story"><p class="hero-subtitle">WordPress development in the Philippines for teams that need to publish and maintain their own content.</p><p>WordPress gives editors more independence than any other stack we build on, and asks for steady upkeep in return: core, theme and plugin updates, backups and a host that is looked after. Our WordPress developers plan the templates, editing controls and WordPress SEO together. Your team should know how to update a service page, who can publish it and who handles changes to the theme or plugins.</p><div class="hero-proof">{proof.map((item)=>(<article><strong>{item.title}</strong><span>{item.text}</span></article>))}</div></Fragment>
 <Fragment slot="actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="#checks" text="See What We Check" /></Fragment>
 </Hero>
 <main class="dev-page">
-<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>Keep <span>editing useful and changes testable</span></h2><p>A conventional WordPress site lets editors publish without rebuilding a separate front end. The theme, plugins and host still determine what visitors receive. We inspect the live HTML and editing workflow before deciding whether a template repair or a rebuild is justified.</p><p>Illustrative editor check: update a service description and image in staging, preview on mobile and publish with the intended role. Confirm that the public page has the right title, H1, canonical and schema, and that its enquiry form still works. This is a proposed acceptance check, not a client case study.</p></div><aside class="panel"><h3>What we check first</h3><p>The theme and plugin dependencies, editable fields, public HTML, forms and hosting setup. We also ask who owns backups, restore access and paid licences before recommending changes.</p></aside></div></section>
+<section id="checks"><div class="page-container two-column"><div><p class="eyebrow">Build focus</p><h2>WordPress SEO lives in the theme, the plugins and the host. <span>We keep editing useful and changes testable</span></h2><p>A conventional WordPress site lets editors publish without rebuilding a separate front end. The theme, plugins and host still determine what visitors receive. Two plugins can each write a title or a schema block for the same page, and a page builder can wrap a short paragraph in layers of markup. We inspect the live HTML and the editing workflow before deciding whether a template repair or a rebuild is justified.</p><p>Illustrative editor check: update a service description and image in staging, preview on mobile and publish with the intended role. Confirm that the public page has the right title, H1, canonical and schema, and that its enquiry form still works. This is a proposed acceptance check, not a client case study.</p></div><aside class="panel"><h3>What we check first</h3><p>The theme and plugin dependencies, editable fields, public HTML, forms and hosting setup. We also ask who owns backups, restore access and paid licences before recommending changes.</p></aside></div></section>
 <DevelopmentStackJobs
-  title="What we actually change in <span>WordPress</span>"
+  title="Four areas we repair or rebuild in <span>WordPress</span>"
   intro="Keep the functions the business uses; change the parts that cause an observed publishing or technical problem."
   jobs={[
-    {title:'Templates and SEO fields', text:'Identify which theme or plugin controls titles, headings, canonicals and schema. Check the published output for omissions or conflicting values.'},
-    {title:'Plugin dependencies', text:'Review what each plugin supplies and measure problems before removal. Retest forms, editor controls and any shop functions affected by a change.'},
-    {title:'Staging and recovery', text:'Agree the update test, backup owner and restore procedure. Include both database and files rather than assuming a content export can restore the site.'},
-    {title:'Editor and account handover', text:'Set out editable sections, publishing roles and training needs. Confirm hosting access, licence renewals and responsibility for future updates.'}
+    {title:"Templates and SEO fields", text:"Identify which theme or plugin controls titles, headings, canonicals and schema. Check the published output for omissions or conflicting values."},
+    {title:"Plugin dependencies", text:"Review what each plugin supplies and measure the problem before removing anything. Retest forms, editor controls and any shop functions a change touches."},
+    {title:"Staging and recovery", text:"Agree the update test, backup owner and restore procedure. Include both database and files. A content export alone cannot restore the site."},
+    {title:"Editor and account handover", text:"Set out editable sections, publishing roles and training needs. Confirm hosting access, licence renewals and responsibility for future updates."}
   ]}
 />
-<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>For businesses where <span>WordPress has a clear role</span></h2><p>This suits businesses that need easy editing, blog or resource sections, CMS workflows, service pages and reliable SEO controls without losing speed.</p></div><div class="panel"><h3>Before changing the theme</h3><p>Record the templates, shortcodes, forms and plugin data that existing pages depend on. A replacement theme must preserve useful content and functions, with URL redirects where needed. Confirm a backup and recovery route before production changes.</p></div></div></section>
-<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare <span>editor-led and code-led builds</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Fast content-led sites with very little front-end bloat.</a><a href="/development/wordpress/"><span>WordPress development</span>CMS-led builds with SEO controls and cleaner architecture.</a><a href="/development/nextjs/"><span>Next.js development</span>Application-style sites where React and server rendering make sense.</a></div></div></section>
-<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>WordPress development</span> questions worth answering</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
-<section><div class="page-container"><div class="cta-card"><h2>Need a <span>WordPress repair or rebuild</span>?</h2><p>We can review your current theme, plugins and page structure before recommending a rebuild, cleanup or migration plan.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
+<section><div class="page-container two-column"><div><p class="eyebrow">Who this suits</p><h2>Where <span>WordPress is the right CMS</span>, and what keeps it healthy</h2><p>WordPress suits businesses that need easy editing, a blog or resource section, CMS workflows, service pages and dependable SEO controls, and that have someone to keep the installation updated. Speed is achievable with a lean theme and a short, justified plugin list. It is rarely achieved by adding one more optimisation plugin.</p></div><div class="panel"><h3>Before changing the theme</h3><p>Record the templates, shortcodes, forms and plugin data that existing pages depend on. A replacement theme must preserve useful content and functions, with URL redirects where needed. Confirm a backup and recovery route before production changes.</p></div></div></section>
+<section><div class="page-container"><p class="eyebrow">Related development services</p><h2>Compare <span>editor-led and code-led builds</span></h2><div class="link-grid"><a href="/development/astro/"><span>Astro development</span>Code-led pages shipped as HTML, with content from a headless CMS.</a><a href="/development/wordpress/"><span>WordPress development</span>Editors publish without a deploy. The stack on this page.</a><a href="/development/nextjs/"><span>Next.js development</span>An application framework for live data and signed-in features.</a></div></div></section>
+<section><div class="page-container faq-layout"><div><p class="eyebrow">FAQ</p><h2><span>WordPress development</span> questions on plugins, backups and handover</h2></div><div class="faq-list">{faqs.map((faq)=>(<details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
+<section><div class="page-container"><div class="cta-card"><h2>Need a <span>WordPress repair or rebuild</span>? Start with a review of the live site.</h2><p>We review your current theme, plugins and page structure, then recommend a cleanup, a rebuild or a migration plan, with the reasons for each written down.</p><div class="cta-actions"><ButtonPrimary href="/contact/" text="Request a Site Review" /><ButtonSecondary href="/technical-seo-services-philippines/" text="Technical SEO" /></div></div></div></section>
 </main><Footer slot="footer"/>
 </MainLayout>
 
