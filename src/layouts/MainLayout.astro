@@ -264,6 +264,23 @@ const isHome = Astro.url.pathname === '/';
     {!disableContactPopup && <ContactPopup />}
     <LeadTracking />
 
+    {!/^\/(contact|thanks)\/?$/.test(Astro.url.pathname) && (
+      <div class="pf-actionbar" data-pf-actionbar>
+        <a class="pf-actionbar-call" href="tel:+639696206182" data-analytics-event="mobile_bar_call" aria-label="Call Bright Forge on +63 969 620 6182"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.920v3a2 2 0 0 1-2.180 2 19.800 19.800 0 0 1-8.630-3.070 19.500 19.500 0 0 1-6-6 19.800 19.800 0 0 1-3.070-8.670A2 2 0 0 1 4.110 2h3a2 2 0 0 1 2 1.720c.130.960.360 1.900.700 2.810a2 2 0 0 1-.450 2.110L8.090 9.910a16 16 0 0 0 6 6l1.270-1.270a2 2 0 0 1 2.110-.450c.910.340 1.850.570 2.810.700A2 2 0 0 1 22 16.920Z"/></svg>Call</a>
+        <a class="pf-actionbar-review" href="/contact/" data-analytics-event="mobile_bar_review">Request an SEO Review</a>
+      </div>
+      <script is:inline>
+        (function () {
+          var bar = document.querySelector('[data-pf-actionbar]');
+          if (!bar) return;
+          var on = false;
+          function check() { var want = window.scrollY > 520; if (want !== on) { on = want; bar.classList.toggle('is-on', on); } }
+          window.addEventListener('scroll', check, { passive: true });
+          check();
+        })();
+      </script>
+    )}
+
   </body>
 <style is:global>
   /* Force dark background site-wide */
