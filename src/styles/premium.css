@@ -1,0 +1,64 @@
+/* Release 3 design layer: refinement of the approved Bright Forge design, loaded last.
+   Same brand (Outfit headings, one orange accent, white ground). It tightens the type scale,
+   adds section rhythm and depth, and polishes buttons, cards, FAQs, forms, header and footer.
+   The :not(#_) prefix only raises specificity so page-scoped rules do not need editing. */
+:root {
+  --pf-ink: #18202b; --pf-ink-2: #3f4a59; --pf-ink-3: #5c6675; --pf-rule: #e3e6ea;
+  --pf-accent: #f0622a; --pf-accent-ink: #a63c15; --pf-warm: #fbf8f5; --pf-warm-2: #fff3ea;
+  --pf-shadow-1: 0 1px 2px rgb(24 32 43 / 5%), 0 8px 20px -12px rgb(24 32 43 / 18%);
+  --pf-shadow-2: 0 2px 4px rgb(24 32 43 / 6%), 0 22px 44px -22px rgb(64 32 13 / 30%);
+  --pf-ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+/* ---------- type ---------- */
+html:not(#_) main :is(h1, h2, h3) { text-wrap: balance; }
+html:not(#_) main :is(p, li, dd, blockquote, figcaption) { text-wrap: pretty; }
+html:not(#_) main h2 { letter-spacing: -0.032em; line-height: 1.08; }
+html:not(#_) main h3 { letter-spacing: -0.02em; line-height: 1.2; }
+html:not(#_) main h2 span { letter-spacing: inherit; }
+html:not(#_) body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-feature-settings: 'kern', 'liga', 'calt'; }
+html:not(#_) main :is(p, li) a:not([class]) { text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color .18s var(--pf-ease), text-decoration-color .18s var(--pf-ease); }
+html:not(#_) main ::selection { background: #ffd9c7; color: var(--pf-ink); }
+
+/* ---------- section rhythm: white ground stays (owner's direction); a hairline marks each section ---------- */
+html:not(#_) main > section:not(.forge-hero-section) + section { border-top: 1px solid #eceef1; }
+
+/* ---------- hero feature strip: full-width equal columns under the proof cards ---------- */
+html:not(#_) .forge-details .forge-retained-details:has(> div:empty) { grid-template-columns: 1fr; }
+html:not(#_) .forge-details [class$="hero-stats"] { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; width: 100%; max-width: none; margin: 0; }
+html:not(#_) .forge-details [class$="hero-stats"] > * { width: auto; max-width: none; margin: 0; border-radius: 16px; }
+
+/* ---------- eyebrows: one quiet, consistent kicker with a short accent rule ---------- */
+html:not(#_) main :is(.eyebrow, .section-label, .evidence-eyebrow) { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .12em; }
+html:not(#_) main :is(.eyebrow, .section-label, .evidence-eyebrow)::before { content: ''; flex: none; width: 22px; height: 2px; border-radius: 2px; background: var(--pf-accent); }
+
+/* ---------- cards: depth, hierarchy and a considered hover ---------- */
+html:not(#_) main :is([class$="-card"], [class*="-card "], .evidence-row, .strategy-item):not([class*="forge-"]) { transition: transform .28s var(--pf-ease), box-shadow .28s var(--pf-ease), border-color .28s var(--pf-ease), background-color .28s var(--pf-ease); }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html:not(#_) main a:is([class$="-card"], [class*="-card "]):not([class*="forge-"]):hover,
+  html:not(#_) main :is(.service-card, .fit-card, .result-card, .case-study-card, .offer-card, .info-card, .award-card, .commercial-card, .case-summary-card):hover { transform: translateY(-3px); box-shadow: var(--pf-shadow-2); border-color: #f3c9b4; }
+}
+
+/* ---------- buttons ---------- */
+html:not(#_) :is(.btn-primary-modern, .btn-secondary-modern, .cta-btn-primary, .cta-btn-secondary, .forge-primary, .forge-secondary, .btn-view-all, .cta-primary, .cta-secondary, .cta-button-professional) { border-radius: 12px; font-weight: 600; letter-spacing: -0.005em; transition: transform .2s var(--pf-ease), box-shadow .2s var(--pf-ease), background-color .2s var(--pf-ease), border-color .2s var(--pf-ease), color .2s var(--pf-ease); }
+html:not(#_) :is(.btn-primary-modern, .cta-btn-primary, .forge-primary, .btn-view-all, .cta-primary, .cta-button-professional) { box-shadow: 0 1px 0 rgb(255 255 255 / 28%) inset, 0 1px 2px rgb(120 44 10 / 25%), 0 10px 22px -12px rgb(240 98 42 / 65%); }
+html:not(#_) :is(.btn-secondary-modern, .cta-btn-secondary, .forge-secondary, .cta-secondary) { box-shadow: 0 1px 2px rgb(24 32 43 / 5%); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  html:not(#_) :is(.btn-primary-modern, .cta-btn-primary, .forge-primary, .btn-view-all, .cta-primary, .cta-button-professional):hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgb(255 255 255 / 28%) inset, 0 2px 4px rgb(120 44 10 / 25%), 0 16px 28px -12px rgb(240 98 42 / 70%); }
+  html:not(#_) :is(.btn-secondary-modern, .cta-btn-secondary, .forge-secondary, .cta-secondary):hover { transform: translateY(-1px); border-color: var(--pf-accent); box-shadow: 0 8px 18px -12px rgb(24 32 43 / 35%); }
+}
+html:not(#_) :is(a, button, summary, input, select, textarea):focus-visible { outline: 3px solid #b83e12; outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- FAQs ---------- */
+html:not(#_) main details { transition: background-color .2s var(--pf-ease), border-color .2s var(--pf-ease); }
+html:not(#_) main details > summary { cursor: pointer; transition: color .18s var(--pf-ease); }
+html:not(#_) main details > summary:hover { color: var(--pf-accent-ink); }
+html:not(#_) main details[open] > summary { color: var(--pf-ink); }
+
+/* ---------- forms ---------- */
+html:not(#_) main form :is(input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), select, textarea) { border-radius: 10px; transition: border-color .18s var(--pf-ease), box-shadow .18s var(--pf-ease), background-color .18s var(--pf-ease); }
+html:not(#_) main form :is(input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), select, textarea):hover { border-color: #b9c0ca; }
+html:not(#_) main form :is(input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), select, textarea):focus { border-color: var(--pf-accent); box-shadow: 0 0 0 4px rgb(240 98 42 / 16%); outline: none; }
+
+/* ---------- images that show evidence: frame them ---------- */
+html:not(#_) main :is(.case-image-container, .evidence-image, .image-section, .visual-proof-section, .featured-image) img { border-radius: 14px; border: 1px solid var(--pf-rule); box-shadow: var(--pf-shadow-1); background: #fff; }
