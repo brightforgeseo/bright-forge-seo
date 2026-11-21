@@ -2,7 +2,9 @@
 // Figures are copied from the case study each card links to (see also src/lib/heroArt.ts and heroProof.ts);
 // change the case study first. Reviews are public Google reviews quoted verbatim with their source links.
 export interface BandCase { name: string; sector: string; pct: string; range: string; period: string; href: string; image: string; alt: string; }
-const img = (file: string) => encodeURI(`/images/case-studies/${file}`);
+// Hero and proof-band copies are 1200 px wide WebP versions of the case-study screenshots (the originals stay on the case pages).
+const SMALL = (file: string) => (/(bridal-dress-seo|speediance-uk-storefront)/.test(file) ? file : file.replace(/\.(webp|png)$/, '-1200.webp'));
+const img = (file: string) => encodeURI(`/images/case-studies/${SMALL(file)}`);
 const C: Record<string, BandCase> = {
   bridal: { name: 'Emily Bridalwear', sector: 'UK bridal retailer', pct: '+137.5%', range: '7,410 to 17,600', period: 'Three months against the same three months a year earlier', href: '/case-studies/bridal-dress-designer-seo/', image: img('bridal-dress-seo.webp'), alt: 'Search Console comparison for Emily Bridalwear' },
   leather: { name: 'Lost Dutchman Leather', sector: 'Leather goods store, Arizona', pct: '+49.3%', range: '15,200 to 22,700', period: 'Three months against the same three months a year earlier', href: '/case-studies/leather-wallet-ecommerce-seo/', image: img('leather-wallet-ecommerce-seo.webp'), alt: 'Search Console comparison for Lost Dutchman Leather' },
