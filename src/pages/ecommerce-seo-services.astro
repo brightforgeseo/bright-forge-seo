@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'Which ecommerce platforms do you work with?',
-    answer: "We can review stores on Shopify, WooCommerce, Magento, BigCommerce and custom or headless builds. What we can implement ourselves depends on the platform, the theme, the installed apps and the developer access you give us. Before agreeing delivery we tell you which changes can be made in the CMS and which need engineering work, so nothing in the proposal relies on access we do not have."
+    answer: "Our store work is on Shopify, WooCommerce and WordPress. A store on Magento, BigCommerce or a custom or headless build is one we would assess first: we read what the platform outputs and tell you honestly whether the work suits us before any scope is agreed. On every platform, what we can implement ourselves depends on the theme, the installed apps and the developer access you give us. Before agreeing delivery we tell you which changes can be made in the CMS and which need engineering work, so nothing in the proposal relies on access we do not have."
   },
   {
     question: 'What results have you achieved for online stores?',
@@ -50,6 +50,10 @@ const faqs = [
   {
     question: 'Can you help with international or multi-store ecommerce SEO?',
     answer: "Yes. We review which products can be sold and delivered in each market, then check regional URLs, currencies, content and hreflang where appropriate. Each storefront is measured on its own. The linked Speediance projects cover separate storefronts; they are not proof that every market will grow together or that the sites never compete for a query."
+  },
+  {
+    question: 'Do you build ecommerce stores, or only do SEO on them?',
+    answer: "Both, as separate pieces of work. Ecommerce SEO improves the store you already have and does not assume you need a rebuild. If the store itself is the constraint, our development team scopes ecommerce web design from the catalogue outwards: product variants, category navigation, stock rules, delivery information and checkout. Integrations, payment configuration and catalogue migration are written into that scope, and for an existing store we map the important URLs and redirects before the structure changes."
   },
   {
     question: 'Will you work with our existing developers?',
@@ -86,7 +90,6 @@ const faqs = [
   >
     <Fragment slot="story">
       <p>Most of an online shop's search traffic should land on category and product pages. On many stores it cannot: the range has no category page worth ranking, filters spin out near-identical URLs by the thousand, and the products that sell best are buried deep in the navigation.</p>
-      <p>We fix that where it pays, at the template. We review categories, filters, variants, internal links and product information against search demand, then write a proposal that separates template changes from content work and names what needs your developer or your merchandising team.</p>
       <p>The evidence is published. <a href="/case-studies/bridal-dress-designer-seo/">Emily Bridalwear</a> rose from 7.41k to 17.6k organic clicks over three months against the same period a year earlier, and the <a href="/case-studies/speediance-nz-fitness-seo/">Speediance New Zealand storefront</a> from 927 to 2,570 over six months. Those are Search Console clicks, not orders. We also set out the scope of our <a href="/case-studies/speediance-uk-fitness-seo/">UK fitness ecommerce work</a>, without figures.</p>
     </Fragment>
 
@@ -121,7 +124,7 @@ const faqs = [
         <div><strong>Five stores with published figures</strong><span>Search Console comparisons, periods stated</span></div>
         <div><strong>Regional storefronts</strong><span>Speediance Australia and New Zealand, measured separately</span></div>
         <div><strong>AI referral reviews</strong><span>Emily Bridalwear and Lost Dutchman Leather</span></div>
-        <div><strong>Platform-specific review</strong><span>Shopify, Woo, Magento, headless</span></div>
+        <div><strong>Platform-specific review</strong><span>Shopify, WooCommerce and WordPress</span></div>
       </div>
     </div>
   </section>
@@ -131,6 +134,7 @@ const faqs = [
       <div>
         <p class="eyebrow">Who this is for</p>
         <h2>An ecommerce SEO agency for stores that <span>compete on more than ad spend</span></h2>
+        <p>We fix that where it pays, at the template. We review categories, filters, variants, internal links and product information against search demand, then write a proposal that separates template changes from content work and names what needs your developer or your merchandising team.</p>
         <p class="lead">You stock products people search for, yet the range has no category page that could rank for it. Or your filters create duplicate URLs while the products you most want to sell stay hidden. Paid traffic covers the gap for as long as you keep paying. We find the page and template changes that close it.</p>
         <p>We work with stores that want category terms, product long-tail searches and buying-intent content pulling in the same direction, whether the competition is a marketplace, a big-box retailer or a well-funded DTC rival.</p>
       </div>
@@ -229,17 +233,35 @@ const faqs = [
         <p class="eyebrow">Platforms</p>
         <h2>Check what the platform outputs <span>before blaming the platform</span></h2>
         <p class="lead">Stores are often told the platform is the problem. Usually it is a setting, a theme or an app. Our first technical review reads what your platform actually outputs: the links, canonicals, structured data and HTML that shoppers and crawlers receive.</p>
-        <p>Shopify SEO includes checking the duplicate product paths created through collections. WooCommerce SEO includes reviewing the filters and plugins that can create competing archives. Magento layered navigation and headless rendering need different checks again. We confirm the real fault before asking a developer to change a template.</p>
+        <p>Shopify SEO includes checking the duplicate product paths created through collections. WooCommerce SEO includes reviewing the filters and plugins that can create competing archives. Those are the platforms our store work is on. Layered navigation on Magento and rendering on a headless build raise different questions, and we would assess such a store before agreeing to take it on. Either way, we confirm the real fault before asking a developer to change a template.</p>
       </div>
       <div class="timezone-card">
         <h3>Platform coverage</h3>
         <ul>
           <li><strong>Shopify &amp; Shopify Plus</strong>: collection architecture, tag duplication, app bloat control</li>
           <li><strong>WooCommerce</strong>: crawl budget, filtered URLs, performance on WordPress hosting</li>
-          <li><strong>Magento / Adobe Commerce</strong>: layered navigation, index management at scale</li>
-          <li><strong>BigCommerce &amp; headless</strong>: rendering, structured data and URL control on custom stacks</li>
+          <li><strong>WordPress content</strong>: editorial pages that support the catalogue, with headings, canonicals and structured data kept consistent after template changes</li>
+          <li><strong>Magento, BigCommerce &amp; headless</strong>: assessed first. We review the output and confirm the fit before agreeing any scope</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="seo-or-rebuild">
+    <div class="pf-wrap">
+      <p class="eyebrow">SEO or a new store</p>
+      <h2>Do you need <span>ecommerce SEO or a rebuild</span>?</h2>
+      <p class="pf-lede">We do both, and we keep them apart. Most stores that come to us need better pages on the platform they already have. A few are held back by the store itself.</p>
+      <div class="pf-table-wrap"><table class="pf-table">
+        <thead><tr><th scope="col">Question</th><th scope="col">Ecommerce SEO on your current store</th><th scope="col">A store build or rebuild</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">When it fits</th><td>The store works and takes orders, but categories and products are hard to find in search.</td><td>The catalogue, templates or checkout cannot do what the business needs, whatever the SEO.</td></tr>
+          <tr><th scope="row">What we work on</th><td>Category structure, filters and duplicates, product pages, internal links, content and reporting.</td><td>Product variants, category navigation, stock rules, delivery information and checkout, established before a design or platform is recommended.</td></tr>
+          <tr><th scope="row">What is written into the scope</th><td>Which changes we make in the CMS and which need your developer, with acceptance checks for each.</td><td>Integrations, payment configuration and catalogue migration. Nobody should have to assume they are included.</td></tr>
+          <tr><th scope="row">What protects your rankings</th><td>Changes are approved before release and checked on the live store afterwards.</td><td>Important URLs, redirects and category relationships are mapped before the structure changes.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="pf-note">The build column summarises our <a href="/development/#store-build-scope">ecommerce development scope</a>. A platform move is planned through our <a href="/website-migration-services/">migration service</a>.</p>
     </div>
   </section>
 
