@@ -284,7 +284,10 @@ http://brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
 /blog/wordpress-setup-decisions-that-actually-move-the-needle-lessons-from-sites-weve-worked-on  /blog/wordpress-seo-what-developers-break-without-realizing/  301
 /blog/wordpress-setup-decisions-that-actually-move-the-needle-lessons-from-sites-weve-worked-on/  /blog/wordpress-seo-what-developers-break-without-realizing/  301
 # 2026-11-21 Release 2: four sector pages with no published case folded into /industries/,
-# three framework pages folded into /development/
+# three framework pages folded into /development/. The real estate article waited for /industries/
+# (redirect map; retired through src/data/retiredBlogSlugs.json like the release 1 articles).
+/blog/seo-for-real-estate-businesses-in-the-philippines  /industries/  301
+/blog/seo-for-real-estate-businesses-in-the-philippines/  /industries/  301
 /real-estate-seo-services  /industries/  301
 /real-estate-seo-services/  /industries/  301
 /finance-crypto-seo-services  /industries/  301

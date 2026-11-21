@@ -178,3 +178,8 @@
 html body .navbar-professional .cta-button-professional { white-space: nowrap; padding-inline: 18px; }
 html body .navbar-professional .nav-link-professional { white-space: nowrap; }
 @media (min-width: 1201px) and (max-width: 1360px) { html body .navbar-professional .nav-link-professional { padding-inline: 8px; font-size: 14px; } }
+
+/* The layout declares the brand fonts for desktop only and the old hero declared them for every width.
+   Editorial pages have no old hero, so declare them here as well (swap, no preload) so phones get the same type. */
+@font-face { font-family: 'Outfit'; src: url('/fonts/outfit-latin.woff2') format('woff2'); font-style: normal; font-weight: 600 800; font-display: swap; }
+@font-face { font-family: 'Inter'; src: url('/fonts/inter-latin.woff2') format('woff2'); font-style: normal; font-weight: 300 700; font-display: swap; }
