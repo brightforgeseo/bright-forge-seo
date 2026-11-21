@@ -128,3 +128,6 @@ html:not(#_) .navbar-professional .nav-link-professional { white-space: nowrap; 
 .pf-team p { margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #3f4a59; }
 @media (max-width: 900px) { .pf-team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
 .pf-cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+/* ---------- home: the "at a glance" panel sits beside the copy at its own height and stays in view ---------- */
+@media (min-width: 1025px) { html:not(#_) .commercial-intro .commercial-panel { align-self: start; position: sticky; top: 112px; } }
