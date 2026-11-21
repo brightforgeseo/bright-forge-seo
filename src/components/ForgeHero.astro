@@ -89,6 +89,7 @@ const longTitle = title.replace(/<[^>]*>/g,'').length > 65 || Astro.url.pathname
 .forge-scene--type { min-height:0; }.forge-scene--type .forge-intro { padding-bottom:56px; }
 .forge-scene--type .forge-atmosphere { background:radial-gradient(ellipse at 88% 40%,#ffe9db 0%,#fff7f1 26%,transparent 56%); }
 @media(min-width:769px) and (max-width:1200px) { .forge-evidence { left:57%; width:39%; }.forge-scene--evidence .forge-intro { width:55%; }.forge-scene--evidence h1 { font-size:clamp(2.4rem,4.6vw,3.6rem); }.forge-scene--type .forge-intro { width:88%; } }
+@media(min-width:1201px) and (max-width:1340px) { .forge-evidence { width:33%; } }
 @media(max-width:768px) { .forge-scene--evidence h1,.forge-scene--type h1,.forge-scene--long h1 { font-size:clamp(2.25rem,8.4vw,3.4rem); line-height:1.05; }.forge-evidence { position:relative; left:auto; top:auto; width:100%; max-width:560px; transform:none; margin:30px 0 26px; align-self:center; }.forge-evidence-plate { inset:16px -8px -10px 16px; }.forge-scene--type .forge-intro { width:100%; padding-bottom:24px; }.forge-note-copy :global(p) { font-size:15.5px; } }
 @media(prefers-reduced-motion:reduce) { .forge-sculpture { transform:rotate(0deg); transition:none; } }
 </style>
