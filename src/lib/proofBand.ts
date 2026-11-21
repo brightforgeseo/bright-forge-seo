@@ -8,7 +8,7 @@ const img = (file: string) => encodeURI(`/images/case-studies/${SMALL(file)}`);
 const C: Record<string, BandCase> = {
   bridal: { name: 'Emily Bridalwear', sector: 'UK bridal retailer', pct: '+137.5%', range: '7,410 to 17,600', period: 'Three months against the same three months a year earlier', href: '/case-studies/bridal-dress-designer-seo/', image: img('bridal-dress-seo.webp'), alt: 'Search Console comparison for Emily Bridalwear' },
   leather: { name: 'Lost Dutchman Leather', sector: 'Leather goods store, Arizona', pct: '+49.3%', range: '15,200 to 22,700', period: 'Three months against the same three months a year earlier', href: '/case-studies/leather-wallet-ecommerce-seo/', image: img('leather-wallet-ecommerce-seo.webp'), alt: 'Search Console comparison for Lost Dutchman Leather' },
-  teamstats: { name: 'TeamStats', sector: 'Football team management app', pct: '+34%', range: '200,000 to 268,000', period: 'Three months against the same three months a year earlier', href: '/case-studies/football-app-seo/', image: img('football-app-seo-case-study.webp'), alt: 'Search Console comparison for TeamStats' },
+  teamstats: { name: 'TeamStats', sector: 'UK football team management app', pct: '+34%', range: '200,000 to 268,000', period: 'Three months against the same three months a year earlier', href: '/case-studies/football-app-seo/', image: img('football-app-seo-case-study.webp'), alt: 'Search Console comparison for TeamStats' },
   au: { name: 'Speediance Australia', sector: 'Fitness equipment store', pct: '+66%', range: '6,550 to 10,900', period: 'Six months against the previous six', href: '/case-studies/speediance-au-fitness-seo/', image: img('SEO Case Study- Increasing Organic Traffic for Speediance AU – Fitness Equipment Supplier .webp'), alt: 'Search Console comparison for Speediance Australia' },
   nz: { name: 'Speediance New Zealand', sector: 'Fitness equipment store', pct: '+177%', range: '927 to 2,570', period: 'Six months against the previous six', href: '/case-studies/speediance-nz-fitness-seo/', image: img('SEO Case Study- Boosting Organic Traffic for Speediance NZ – Gym Equipment Supplier .webp'), alt: 'Search Console comparison for Speediance New Zealand' },
   pest: { name: 'ThermoPest', sector: 'UK pest control company', pct: '+128%', range: '10,300 to 23,500', period: 'Six months against the previous six', href: '/case-studies/pest-control-core-update-seo/', image: img('SEO Case Study- Recovering and Growing Organic Traffic for a Pest Control Firm After Core Update .webp'), alt: 'Search Console comparison for ThermoPest' },
@@ -46,7 +46,7 @@ const PAGES: Record<string, [string[], string]> = {
   '/international-seo-services': [['au', 'nz', 'bridal'], 'auction'],
   '/seo-services-australia': [['au', 'nz'], 'louise'],
   '/seo-services-new-zealand': [['nz', 'au'], 'louise'],
-  '/seo-services-uk': [['bridal', 'pest', 'conscient'], 'auction'],
+  '/seo-services-uk': [['bridal', 'pest', 'teamstats'], 'auction'],
   '/seo-services-usa': [['leather', 'bridal', 'teamstats'], 'tom'],
   '/ecommerce-seo-services': [['leather', 'bridal', 'au'], 'louise'],
   '/saas-seo-services': [['teamstats', 'leather', 'bridal'], 'tom'],
