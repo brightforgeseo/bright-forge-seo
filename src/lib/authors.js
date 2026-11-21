@@ -70,8 +70,8 @@ export const authors = {
     twitter: '',
     email: 'seo@brightforgeseo.com'
   },
-  'janin-a-canonero': {
-    slug: 'janin-a-canonero',
+  'jani-a-canonero': {
+    slug: 'jani-a-canonero',
     name: 'Jani A. Cañonero',
     role: 'Head of Team',
     shortBio:
@@ -116,12 +116,25 @@ export const authors = {
   }
 };
 
+// Misspellings found on older CMS posts, mapped to the correct display name (the CMS is not edited).
+export const EARLIER_NAMES = {
+  'janin a. cañonero': 'Jani A. Cañonero',
+  'janin a. canonero': 'Jani A. Cañonero',
+  'jaine canonero': 'Jani A. Cañonero'
+};
+
+// The display name for a CMS author field, with earlier misspellings corrected.
+export function displayAuthorName(name) {
+  const raw = String(name || '').trim();
+  return EARLIER_NAMES[raw.toLowerCase()] || raw;
+}
+
 // Given an author display name, return the slug used in URLs (or null if unknown).
 export function getAuthorSlug(name) {
   if (!name) return null;
   const target = String(name).trim().toLowerCase();
   // Earlier spellings used on older CMS posts.
-  if (['janin a. cañonero', 'janin a. canonero', 'jaine canonero'].includes(target)) return 'janin-a-canonero';
+  if (EARLIER_NAMES[target]) return getAuthorSlug(EARLIER_NAMES[target]);
   for (const key of Object.keys(authors)) {
     if (authors[key].name.toLowerCase() === target) return key;
   }

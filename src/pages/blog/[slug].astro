@@ -4,7 +4,7 @@ import LegacyHeader from '../../components/LegacyHeader.astro';
 import Footer from '../../components/Footer.astro';
 import { getBlogPostBySlug, getAllBlogPosts } from '../../lib/contentful';
 import { getBlogMetadata } from '../../lib/blogMetadata';
-import { getAuthorSlug } from '../../lib/authors';
+import { getAuthorSlug, displayAuthorName } from '../../lib/authors';
 import { pickRelatedPosts } from '../../lib/relatedPosts';
 import { displayH1 } from '../../lib/blogDisplay';
 import { rewriteRetiredLinks } from '../../lib/retiredBlog.js';
@@ -890,9 +890,8 @@ const templateProps = {
         linkedin: ''
       }
     };
-    const authorAliases = { 'Janin A. Cañonero': 'Jani A. Cañonero', 'Janin A. Canonero': 'Jani A. Cañonero', 'Jaine Canonero': 'Jani A. Cañonero' };
-    const base = authors[authorAliases[authorName] || authorName] || {
-      name: authorName,
+    const base = authors[displayAuthorName(authorName)] || {
+      name: displayAuthorName(authorName),
       bio: 'Digital marketing experts at Bright Forge SEO Agency specializing in SEO and content strategy.',
       avatar: '',
       linkedin: ''

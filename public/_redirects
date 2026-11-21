@@ -34,6 +34,10 @@ http://brightforge.com.ph/*  https://brightforge.com.ph/:splat  301!
 /astro-seo-website-development  /development/astro/  301
 /astro-seo-website-development/  /development/astro/  301
 
+# Author page renamed to the correct spelling of Jani's name
+/authors/janin-a-canonero  /authors/jani-a-canonero/  301
+/authors/janin-a-canonero/  /authors/jani-a-canonero/  301
+
 # Contact page redirects
 /contact-us  /contact/  301
 /contact-us/  /contact/  301
