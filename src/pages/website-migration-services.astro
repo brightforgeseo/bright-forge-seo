@@ -11,70 +11,70 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 
 const proofItems = [
   {
-    title: 'Migration risk mapped before launch',
-    copy: 'We review existing URLs, traffic, rankings, backlinks, templates, metadata, canonicals, redirects, tracking and indexation rules before anything goes live.'
+    title: 'A baseline taken before anything moves',
+    copy: 'We record the existing URLs, traffic, rankings, backlinks, templates, metadata, canonicals, redirects, tracking and indexation rules before anything goes live, so the new site has something to be measured against.'
   },
   {
-    title: 'Redirects planned with evidence',
-    copy: 'Legacy URLs are matched to the most relevant new destinations, with priority given to pages that have rankings, backlinks, conversions or meaningful organic traffic.'
+    title: 'Redirects matched page by page',
+    copy: 'Each legacy URL is matched to the most relevant new destination. Pages with rankings, backlinks, conversions or meaningful organic traffic are mapped first and checked hardest.'
   },
   {
-    title: 'Launch support, not blind handoff',
-    copy: 'We check the live site after release, monitor Search Console and analytics, and help your developers triage issues while the migration is still fresh.'
+    title: 'Support through launch and after it',
+    copy: 'We check the live site after release, watch Search Console and analytics, and help your developers triage issues while the cause is still easy to find.'
   }
 ];
 
 const migrationRisks = [
   {
     title: 'Important URLs disappear',
-    copy: 'High-value pages can be removed, renamed, blocked or redirected to weak destinations. We build a URL inventory so priority pages are not lost in the rebuild.'
+    copy: 'Pages that bring in business get removed, renamed, blocked or redirected to weak destinations during a rebuild. A URL inventory, built first, makes sure the priority pages are accounted for.'
   },
   {
     title: 'Redirects leak relevance',
-    copy: 'Bulk redirects to the homepage, chains, loops and irrelevant destination mapping can damage organic performance. We map old URLs to the closest useful replacement.'
+    copy: 'Bulk redirects to the homepage, chains, loops and poorly matched destinations all damage organic performance. We map each old URL to its closest useful replacement and test the result.'
   },
   {
     title: 'Metadata and headings change by accident',
-    copy: 'New templates often overwrite titles, descriptions, H1s, copy blocks, schema and internal links. We compare old and new templates before launch.'
+    copy: 'New templates routinely overwrite titles, descriptions, H1s, copy blocks, schema and internal links. We compare the old templates with the new ones before launch, while changing them is still cheap.'
   },
   {
     title: 'Indexation controls are wrong',
-    copy: 'Robots.txt, noindex tags, canonicals, sitemap files and staging rules can block or confuse search engines. We check these before and after go-live.'
+    copy: 'A staging noindex left in place, a robots.txt rule, a stray canonical or an outdated sitemap can block or confuse search engines. We check all of them before go-live and again on the live site.'
   },
   {
     title: 'Tracking breaks during the move',
-    copy: 'Analytics, form tracking, conversion events, Google Search Console and Tag Manager can be missed during rebuilds. We verify measurement so impact can be judged properly.'
+    copy: 'Analytics, form tracking, conversion events, Google Search Console and Tag Manager are easy to miss in a rebuild. We verify measurement so the effect of the migration can be judged on evidence.'
   },
   {
     title: 'Internal links point to the past',
-    copy: 'Navigation, body links, breadcrumbs and XML sitemaps can keep pointing at old URLs. We check internal links so authority flows to the live pages.'
+    copy: 'Navigation, body links, breadcrumbs and XML sitemaps can go on pointing at old URLs. We check internal links so visitors and crawlers reach the live pages directly, without passing through a redirect.'
   }
 ];
 
 const migrationTypes = [
   {
     title: 'Website redesigns',
-    copy: 'For design refreshes where templates, page copy, headings, internal links or conversion paths may change even if the CMS stays the same.'
+    copy: 'The CMS stays and the design changes. Templates, page copy, headings, internal links and conversion paths can all shift without anyone deciding they should.'
   },
   {
     title: 'CMS changes',
-    copy: 'For moves between WordPress, Shopify, Webflow, Magento, Drupal, custom builds, static sites or headless CMS setups.'
+    copy: 'Moves between WordPress, Shopify, Webflow, Magento, Drupal, custom builds, static sites or headless CMS setups, where each platform handles URLs, templates and redirects in its own way.'
   },
   {
     title: 'Domain changes',
-    copy: 'For rebrands, domain moves, HTTP to HTTPS work, subdomain changes, international domain changes and consolidation projects.'
+    copy: 'Rebrands, domain moves, HTTP to HTTPS work, subdomain changes, international domain changes and consolidation projects. We moved this site from brightforgeseo.com to brightforge.com.ph ourselves.'
   },
   {
     title: 'Ecommerce replatforming',
-    copy: 'For product, category, filter and collection migrations where URL handling, faceted navigation and templates need careful SEO controls.'
+    copy: 'Product, category, filter and collection migrations, where URL handling, faceted navigation and templates need SEO controls agreed before the catalogue is imported.'
   },
   {
     title: 'URL structure changes',
-    copy: 'For sites changing slugs, folders, service pages, location pages, category structures, blog paths or information architecture.'
+    copy: 'New slugs, folders, service pages, location pages, category structures, blog paths or information architecture on a site that otherwise stays where it is.'
   },
   {
     title: 'Site consolidation',
-    copy: 'For merging websites, old microsites, subdomains or duplicate brands, with a plan for useful content, externally linked URLs and overlapping offers.'
+    copy: 'Merging websites, old microsites, subdomains or duplicate brands, with a plan for the useful content, the externally linked URLs and the offers that overlap.'
   }
 ];
 
@@ -95,22 +95,22 @@ const launchChecks = [
   {
     label: '01',
     title: 'Baseline and URL inventory',
-    copy: 'We crawl the current site, export priority URLs, identify traffic and ranking pages, and separate URLs that must be preserved, redirected, merged or removed.'
+    copy: 'We crawl the current site, export the priority URLs, identify the pages with traffic and rankings, and sort every URL into one of four groups: preserve, redirect, merge or remove.'
   },
   {
     label: '02',
     title: 'Redirect and destination mapping',
-    copy: 'We prepare the redirect map, check destination relevance, flag weak matches and provide implementation notes for the CMS, server or development team.'
+    copy: 'We prepare the redirect map, check each destination for relevance, flag the weak matches for discussion and write implementation notes for the CMS, server or development team.'
   },
   {
     label: '03',
     title: 'Staging SEO review',
-    copy: 'We crawl the staging site and compare templates, metadata, content, canonicals, structured data, internal links, sitemaps and indexation controls.'
+    copy: 'We crawl the staging site and compare it with the map and the current site: templates, metadata, content, canonicals, structured data, internal links, sitemaps and indexation controls.'
   },
   {
     label: '04',
     title: 'Launch checklist and sign-off',
-    copy: 'We report passed checks, unresolved defects and their impact to the release owner. Your team makes the go-live decision against agreed acceptance criteria; an SEO sign-off is not a promise that rankings will stay unchanged.'
+    copy: 'We report passed checks, unresolved defects and their impact to the release owner. Your team makes the go-live decision against agreed acceptance criteria. An SEO sign-off is not a promise that rankings will stay unchanged.'
   },
   {
     label: '05',
@@ -120,34 +120,34 @@ const launchChecks = [
   {
     label: '06',
     title: 'Triage and recovery actions',
-    copy: 'If issues appear, we help prioritise fixes by risk and commercial impact so your team handles the right problems first.'
+    copy: 'When issues appear, we rank the fixes by risk and commercial impact and hand each to the team responsible, so the problems that cost enquiries or orders are handled first.'
   }
 ];
 
 const deliverables = [
   {
     title: 'Migration risk review',
-    copy: 'A practical summary of the pages, templates, rankings, traffic sources and technical controls that need protection during the move.'
+    copy: 'What could go wrong on this particular move: the pages, templates, rankings, traffic sources and technical controls that need protecting, and what is at stake if each is missed.'
   },
   {
     title: 'URL and redirect map',
-    copy: 'A mapped list of old URLs, recommended new destinations, redirect notes and priority flags for pages with rankings, traffic or backlinks.'
+    copy: 'Every old URL listed against its recommended new destination, with redirect notes and a priority flag on pages that hold rankings, traffic or backlinks. A page with no equivalent is marked for a decision. It is never silently dropped.'
   },
   {
     title: 'Staging SEO QA notes',
-    copy: 'Findings from the staging crawl, including indexation settings, metadata, page templates, canonical handling, internal links, schema and tracking gaps.'
+    copy: 'Findings from a crawl of the staging site: indexation settings, metadata, page templates, canonical handling, internal links, schema and tracking gaps, written up so your developers can see what to change before launch.'
   },
   {
     title: 'Launch-day SEO checklist',
-    copy: 'A clear checklist for go-live covering redirects, robots rules, sitemap files, analytics, Search Console, tracking, priority pages and developer handoff.'
+    copy: 'The checks to run at go-live: redirects, robots rules, sitemap files, analytics, Search Console, tracking, priority pages and the developer handoff.'
   },
   {
     title: 'Post-launch monitoring summary',
-    copy: 'A follow-up review of crawl issues, redirect behaviour, Search Console coverage, rankings, organic landing pages and urgent fixes after launch.'
+    copy: 'A written review after launch covering crawl issues, redirect behaviour, Search Console coverage, rankings and organic landing pages, together with the urgent fixes that follow from them.'
   },
   {
     title: 'Developer-ready implementation notes',
-    copy: 'Clear instructions your development team can act on, including what matters most, where the evidence is and how to verify each fix.'
+    copy: 'Instructions written for the person making the change: what to do, why it matters, where the evidence is and how to verify the fix once it is live.'
   }
 ];
 
@@ -174,50 +174,50 @@ const connectedServices = [
   {
     title: 'Technical SEO services',
     href: '/technical-seo-services-philippines/',
-    copy: 'For crawl, indexation, performance, rendering, schema and architecture fixes before or after a migration.'
+    copy: 'Crawl, indexation, performance, rendering, schema and architecture fixes, before the move or after it.'
   },
   {
     title: 'SEO audit services',
     href: '/seo-audit-services/',
-    copy: 'For diagnosing wider SEO issues before deciding whether a migration, rebuild or technical cleanup is the right move.'
+    copy: 'A wider diagnosis first, when you are still deciding whether a migration, a rebuild or a technical cleanup is the right move.'
   },
   {
     title: 'On-page SEO services',
     href: '/on-page-seo-services-philippines/',
-    copy: 'For preserving and improving page-level titles, headings, copy, internal links, proof and conversion paths during a redesign.'
+    copy: 'Titles, headings, copy, internal links, proof and conversion paths carried across a redesign and improved where they were weak.'
   },
   {
     title: 'Keyword research services',
     href: '/keyword-research-services/',
-    copy: 'For mapping search demand to the new site structure before URLs and navigation are locked in.'
+    copy: 'Search demand mapped to the new site structure before URLs and navigation are locked in.'
   },
   {
     title: 'SEO services Philippines',
     href: '/seo-services-philippines/',
-    copy: 'For ongoing SEO work after the migration, including content, technical fixes, links, reporting and growth planning.'
+    copy: 'Ongoing SEO once the migration has settled: content, technical fixes, links, reporting and growth planning.'
   },
   {
     title: 'Content SEO services',
     href: '/content-seo-services-philippines/',
-    copy: 'For rewriting or improving pages that need stronger search intent, better proof and clearer conversion paths after the move.'
+    copy: 'Rewrites for pages that reach the new site still needing a closer match to search intent, better proof or a clearer route to enquiry.'
   }
 ];
 
 const faqs = [
-  { question: 'What is website migration SEO?', answer: 'Website migration SEO is the planning, QA and monitoring work used to reduce organic traffic risk during a redesign, CMS move, domain change, URL restructure or site consolidation. It covers redirects, indexation controls, metadata, internal links, tracking, sitemaps, templates and post-launch monitoring.' },
-  { question: 'Will a website migration affect rankings?', answer: 'It can. Some short-term movement is normal when URLs, templates, content or platform signals change. The goal is to reduce avoidable losses by mapping important URLs, preserving relevant content and signals, checking redirects and monitoring the site after launch.' },
-  { question: 'When should SEO be involved in a migration?', answer: 'SEO should be involved before the new structure and templates are finalised. The best time is during planning, before developers lock in URLs, navigation, content templates, redirect logic and tracking setup.' },
-  { question: 'Do you create redirect maps?', answer: 'Yes. We can create or review redirect maps using crawl data, ranking pages, traffic pages, backlink URLs and the planned new structure. The aim is to match old URLs to the most relevant live destination, not just redirect everything to the homepage.' },
-  { question: 'Can you work with our developers?', answer: 'Yes. We often work alongside internal teams, web developers, designers and ecommerce specialists. We provide SEO requirements, QA notes, redirect guidance, staging feedback and post-launch checks so the development team has clear actions.' },
-  { question: 'Do you handle ecommerce migrations?', answer: 'Yes. Ecommerce migrations need extra care around product URLs, category pages, collections, filters, canonicals, discontinued products, faceted navigation, schema and internal links. We review those areas before and after launch.' },
-  { question: 'What do you check after launch?', answer: 'We usually check live redirects, priority pages, crawl errors, robots.txt, noindex tags, canonicals, XML sitemaps, analytics, conversion tracking, Search Console coverage, ranking movement and organic landing-page behaviour.' },
-  { question: 'Can you fix a migration that has already gone wrong?', answer: 'Yes, depending on the issue. We can audit the old and new site data, identify lost URLs, redirect mistakes, indexation problems, content changes, tracking gaps and technical blockers, then prioritise recovery actions.' }
+  { question: 'What is website migration SEO?', answer: 'Website migration SEO is the planning, testing and monitoring that protects organic traffic during a redesign, CMS move, domain change, URL restructure or site consolidation. It covers redirects, indexation controls, metadata, internal links, tracking, sitemaps, templates and the checks that follow launch.' },
+  { question: 'Will a website migration affect rankings?', answer: 'It can. Some short-term movement is normal when URLs, templates, content or platform signals change, even when the work is done well, and we cannot promise there will be none. The aim is to reduce avoidable losses by mapping important URLs, carrying across relevant content and signals, checking redirects and monitoring the site after launch.' },
+  { question: 'When should SEO be involved in a migration?', answer: 'Before the new structure and templates are final. The best time is during planning, before developers lock in URLs, navigation, content templates, redirect logic and tracking setup. We can still help after launch, but repairs cost more than prevention.' },
+  { question: 'Do you create redirect maps?', answer: 'Yes. We create or review redirect maps using crawl data, ranking pages, traffic pages, backlinked URLs and the planned new structure. Each old URL is matched to the most relevant live destination. Redirecting everything to the homepage is the mistake the map exists to prevent.' },
+  { question: 'Can you work with our developers?', answer: 'Yes. We work alongside internal teams, web developers, designers and ecommerce specialists. Everything we produce is written to be implemented: SEO requirements, QA notes, redirect guidance, staging feedback and post-launch checks, so the development team has clear actions.' },
+  { question: 'Do you handle ecommerce migrations?', answer: 'Yes. Ecommerce migrations need extra care around product URLs, category pages, collections, filters, canonicals, discontinued products, faceted navigation, schema and internal links. We review each of those areas before and after launch.' },
+  { question: 'What do you check after launch?', answer: 'Live redirects, priority pages, crawl errors, robots.txt, noindex tags, canonicals, XML sitemaps, analytics, conversion tracking, Search Console coverage, ranking movement and organic landing-page behaviour. The review cadence and the end date of monitoring are agreed in the scope.' },
+  { question: 'Can you fix a migration that has already gone wrong?', answer: 'Yes, depending on the issue. We compare the old and new site data, identify lost URLs, redirect mistakes, indexation problems, content changes, tracking gaps and technical blockers, then list the recovery actions in priority order.' }
 ];
 ---
 
 <MainLayout
   title="Website Migration SEO Services Philippines | Bright Forge"
-  description="Website migration SEO services for safer redesigns, CMS moves, domain changes, redirect mapping, staging QA and post-launch search monitoring."
+  description="Changing domain, CMS or design? Our website migration SEO maps every URL, plans the redirects, tests the staging site and monitors search after launch."
   keywords="website migration SEO, SEO migration services, site migration SEO, website migration services Philippines, domain migration SEO, ecommerce migration SEO"
   faqs={faqs}
 >
@@ -279,8 +279,8 @@ const faqs = [
     breadcrumbCurrent="Website Migration Services"
   >
     <Fragment slot="story">
-      <p>A redesign, CMS move or domain change can improve the business, but it can also damage organic traffic if URLs, redirects, templates, tracking and indexation controls are handled late.</p>
-      <p>We work with businesses in the Philippines, Australia, the UK and the USA to review the old site, map its URLs to the new structure and test the pages that must survive the move. Bring us in before navigation, templates and redirect rules are locked.</p>
+      <p>A redesign, a change of CMS or a new domain can cost a site much of its search traffic when the old URLs, redirects and page content are not carried across properly. The damage usually comes from the things handled late: redirect rules, templates, tracking and indexation controls.</p>
+      <p>We plan that part of the move, test it before launch and watch the results afterwards. We work with businesses in the Philippines, Australia, the UK and the USA to review the old site, map its URLs to the new structure and test the pages that must survive the move. Bring us in before navigation, templates and redirect rules are locked.</p>
       <p>Send the current domain, staging access if available, the proposed launch date and the name of your development lead. We agree the release window, sign-off owner, rollback options and post-launch monitoring period before work starts.</p>
     </Fragment>
 
@@ -293,15 +293,15 @@ const faqs = [
       <div class="migration-hero-stats">
         <div>
           <strong>Before</strong>
-          <span>baseline, crawl and URL inventory</span>
+          <span>crawl, baseline and full URL inventory</span>
         </div>
         <div>
           <strong>During</strong>
-          <span>redirect, staging and launch checks</span>
+          <span>redirect map, staging review and launch checks</span>
         </div>
         <div>
           <strong>After</strong>
-          <span>crawl, GSC and traffic monitoring</span>
+          <span>live crawl, Search Console and traffic monitoring</span>
         </div>
       </div>
     </Fragment>
@@ -337,12 +337,13 @@ const faqs = [
   <section class="intro-section" style="content-visibility: visible !important;">
     <div class="container-grid two-col">
       <div>
-        <span class="section-kicker">Why migration SEO matters</span>
-        <h2>Reduce avoidable risk before <span>the site moves</span></h2>
+        <span class="section-kicker">What you get, and who needs it</span>
+        <h2>What our <span>website migration SEO</span> covers, and when to call us</h2>
       </div>
       <div class="rich-copy">
-        <p>Search engines do not understand your project plan. They see changed URLs, new templates, different internal links, altered content, new status codes and different indexation signals.</p>
-        <p>If the migration is planned only as a design or development project, SEO risk usually appears too late. The safer approach is to identify the pages and signals that already drive visibility, then protect them before the new site launches.</p>
+        <p>If you are redesigning, changing CMS, restructuring URLs or moving domain, and organic search brings you enquiries or sales, this service is for you. You receive a risk review, a URL inventory and redirect map, a staging review, a launch-day checklist, post-launch monitoring and notes your developer can implement. One named person on your side approves the release.</p>
+        <p>Search engines never see your project plan. They see changed URLs, new templates, different internal links, altered content, new status codes and different indexation signals. When a migration is run purely as a design or development project, the SEO risk surfaces after launch, when repairs cost more than prevention would have. We identify the pages and signals that already bring you visibility and protect them before the new site goes live.</p>
+        <p>We have done this for ourselves. This website moved from brightforgeseo.com to brightforge.com.ph, and requests for the old domain are still redirected to the matching address here.</p>
       </div>
     </div>
   </section>
@@ -351,8 +352,8 @@ const faqs = [
     <div class="container-wide">
       <div class="section-heading">
         <span class="section-kicker">What can go wrong</span>
-        <h2><span>Migration risks</span> we check before they become traffic problems</h2>
-        <p>These are the problems we look for when a business is redesigning, replatforming, restructuring URLs or moving domains.</p>
+        <h2>Six <span>migration risks</span> that cost a site its search traffic</h2>
+        <p>Each of these has its own check in our process. We look for all six whether the business is redesigning, replatforming, restructuring URLs or moving domain.</p>
       </div>
       <div class="card-grid three-col">
         {migrationRisks.map((risk) => (
@@ -369,8 +370,8 @@ const faqs = [
     <div class="container-wide">
       <div class="section-heading">
         <span class="section-kicker">Migration scenarios</span>
-        <h2>Support for the moves that affect <span>organic search</span></h2>
-        <p>Different migration types carry different SEO risks. We shape the checks around the actual move, not a generic launch checklist.</p>
+        <h2>Six kinds of <span>site migration</span> we plan and check</h2>
+        <p>A domain change and a redesign fail in different ways. We build the checks around the move you are making: its platform, its URL changes and the constraints on its launch.</p>
       </div>
       <div class="card-grid three-col">
         {migrationTypes.map((type) => (
@@ -387,8 +388,8 @@ const faqs = [
     <div class="container-grid two-col align-start">
       <div>
         <span class="section-kicker">Illustrative redirect-map entry</span>
-        <h2>Map the old page to <span>a relevant replacement</span></h2>
-        <p class="section-lede">Example, not a completed client migration: an old /services/office-fitout/ page becomes /commercial-fitouts/offices/. We would confirm that the new page still covers office fit-outs, then record the redirect, approval and test below. These illustrative paths are not links on this site.</p>
+        <h2>One <span>redirect-map entry</span>, from old URL to launch test</h2>
+        <p class="section-lede">Example, not a completed client migration: an old /services/office-fitout/ page becomes /commercial-fitouts/offices/. We would confirm that the new page still covers office fit-outs, then record the redirect, the approval and the test as shown here. A real map records the same points for each priority URL. These illustrative paths are not links on this site.</p>
       </div>
       <div class="checklist-panel">
         {preMigrationChecks.map((check) => (
@@ -405,8 +406,8 @@ const faqs = [
     <div class="container-wide">
       <div class="section-heading">
         <span class="section-kicker">Migration process</span>
-        <h2>A practical SEO process for <span>safer launches</span></h2>
-        <p>We work before, during and after launch so SEO requirements are clear to the people building the site.</p>
+        <h2>Six stages of <span>migration SEO</span>, from baseline to recovery</h2>
+        <p>We work before, during and after launch, so the SEO requirements are clear to the people building the site at every stage. Tell us the launch date as early as you can, because the stages before launch are where losses are prevented.</p>
       </div>
       <div class="process-grid">
         {launchChecks.map((step) => (
@@ -424,8 +425,8 @@ const faqs = [
     <div class="container-wide">
       <div class="section-heading">
         <span class="section-kicker">What you get</span>
-        <h2>Migration deliverables built for <span>implementation</span></h2>
-        <p>The output should help owners, marketers, developers and stakeholders make safer launch decisions.</p>
+        <h2>Six <span>migration deliverables</span> your developer can act on</h2>
+        <p>Each document answers a question someone on the project has to decide: what to protect, where each URL goes, whether staging is ready, what to check on the day and what to fix afterwards.</p>
       </div>
       <div class="card-grid three-col">
         {deliverables.map((item) => (
@@ -442,8 +443,8 @@ const faqs = [
     <div class="container-grid two-col align-start">
       <div>
         <span class="section-kicker">Launch decisions</span>
-        <h2>Agree the controls before <span>go-live</span></h2>
-        <p class="section-lede">Before launch, your development and marketing teams need agreed answers on URL exceptions, tracking tests and release authority. We record these decisions alongside the redirect map and QA notes.</p>
+        <h2>Four decisions to settle before <span>go-live</span></h2>
+        <p class="section-lede">Before launch, your development and marketing teams need agreed answers on search changes, URL exceptions, tracking tests and release authority. We record these decisions alongside the redirect map and QA notes, so nobody is settling them during an incident.</p>
       </div>
       <div class="honest-grid">
         {noPromiseItems.map((item) => (
@@ -460,8 +461,8 @@ const faqs = [
     <div class="container-wide">
       <div class="section-heading">
         <span class="section-kicker">Connected SEO work</span>
-        <h2><span>Migration SEO sits</span> between technical, content and growth work</h2>
-        <p>A safe launch often depends on more than redirects. These services connect with migration planning and post-launch improvement.</p>
+        <h2>Services that connect to <span>migration SEO</span>, before and after launch</h2>
+        <p>A safe launch depends on more than redirects. These six services feed the migration plan or take over once the new site has settled. For a self-serve starting point, read our <a href="/blog/website-migration-seo-checklist/">website migration SEO checklist</a>.</p>
       </div>
       <div class="connected-grid">
         {connectedServices.map((service) => (
@@ -480,7 +481,7 @@ const faqs = [
       <div class="section-heading">
         <span class="section-kicker">FAQ</span>
         <h2><span>Website migration SEO</span> questions</h2>
-        <p>Clear answers before a redesign, CMS move, domain change or replatforming project.</p>
+        <p>Plain answers to settle before a redesign, CMS move, domain change or replatforming project.</p>
       </div>
       <div class="faq-list">
         {faqs.map((faq) => (
@@ -497,7 +498,7 @@ const faqs = [
     <div class="container-narrow single-column">
       <span class="section-kicker">Planning a move?</span>
       <h2><span>Get SEO involved</span> before launch day</h2>
-      <p>If your site is being redesigned, replatformed, moved to a new domain or restructured, we can review the migration risk before developers lock in the launch plan.</p>
+      <p>If your site is being redesigned, replatformed, moved to a new domain or restructured, we can review the migration risk before developers lock in the launch plan. Send the domain, the launch date and staging access if you have it. Each migration is scoped and quoted in a written proposal.</p>
       <div class="cta-actions">
         <ButtonPrimary href="/contact/" text="Request a Migration SEO Review" />
         <ButtonSecondary href="/technical-seo-services-philippines/" text="Explore Technical SEO" />
