@@ -1,13 +1,13 @@
 // Public proof is deliberately bounded to published cases, not inferred outcomes.
 export interface HeroCard { label: string; value: string; detail: string; href: string; source?: string; }
 const caseCard = (slug: string, label: string, value: string, detail: string): HeroCard => ({ label, value, detail, href: `/case-studies/${slug}/`, source: `/case-studies/${slug}/` });
-const bridal = caseCard('bridal-dress-designer-seo', 'Emily Bridalwear', '+137.5%', 'Organic clicks · 3-month comparison');
-const leather = caseCard('leather-wallet-ecommerce-seo', 'Lost Dutchman Leather', '+49.3%', 'Organic clicks · published case study');
+const bridal = caseCard('bridal-dress-designer-seo', 'Emily Bridalwear', '+137.5%', 'Organic clicks · 3 months, year on year');
+const leather = caseCard('leather-wallet-ecommerce-seo', 'Lost Dutchman Leather', '+49.3%', 'Organic clicks · 3 months, year on year');
 const pest = caseCard('pest-control-core-update-seo', 'ThermoPest search comparison', '+128%', 'Organic clicks · 6-month comparison');
 const legal = caseCard('injury-law-organic-growth', 'Personal-injury law firm', '+106.5%', 'Organic clicks · two 90-day periods · anonymised');
 const builder = caseCard('custom-home-builder-search-growth', 'Custom home builder', '+33.8%', 'Organic clicks · two 90-day periods · anonymised');
 const industrial = caseCard('industrial-parts-washing-search-growth', 'Industrial manufacturer', '+49.7%', '704 to 1,054 organic clicks · 90-day comparison');
-const sports = caseCard('football-app-seo', 'TeamStats', '+34%', 'Organic clicks · published sports SaaS case');
+const sports = caseCard('football-app-seo', 'TeamStats', '+34%', 'Organic clicks · 3 months, year on year');
 const au = caseCard('speediance-au-fitness-seo', 'Speediance AU', '+66%', 'Site-wide organic clicks · 6-month comparison');
 const nz = caseCard('speediance-nz-fitness-seo', 'Speediance NZ', '+177%', 'Site-wide organic clicks · 6-month comparison');
 const uk = caseCard('speediance-uk-fitness-seo', 'Speediance UK', 'Campaign scope.', 'UK storefront · project work and measurement limits');
