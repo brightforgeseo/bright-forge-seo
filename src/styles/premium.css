@@ -136,3 +136,7 @@ html:not(#_) .navbar-professional .nav-link-professional { white-space: nowrap; 
 
 /* ---------- home: the "at a glance" panel sits beside the copy at its own height and stays in view ---------- */
 @media (min-width: 1025px) { html:not(#_) .commercial-intro .commercial-panel { align-self: start; position: sticky; top: 112px; } }
+
+/* ---------- contrast: dark ink on small orange pills needs the lighter end of the brand gradient (WCAG AA 4.5:1) ---------- */
+html:not(#_) :is(.card-badge, .modern-filter-btn.active, .growth-indicator) { background: linear-gradient(135deg, #f0622a, #ec5a20) !important; }
+html:not(#_) .offer-index { color: #565c72; }
