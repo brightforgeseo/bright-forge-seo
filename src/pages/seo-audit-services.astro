@@ -216,7 +216,9 @@ const faqs = [
   { question: 'How long does an SEO audit take?', answer: 'Most small to mid-sized business audits take one to two weeks depending on site size, data access and complexity. Larger ecommerce, marketplace or multi-location sites may need a longer audit window, which we state in the quote.' },
   { question: 'Do you audit content and backlinks as well as technical SEO?', answer: 'Yes. Technical issues explain only part of SEO performance. The audit also reviews content quality, search intent, keyword mapping, internal links, authority signals, backlink quality and competitor gaps, then checks the enquiry route from the pages that rank.' },
   { question: 'What happens after the audit?', answer: 'You receive a prioritised roadmap. From there, the next step may be technical fixes, page rewrites, internal linking, content planning, link building, migration support or a wider SEO campaign. Your own team can carry it out, or we can scope the work.' },
-  { question: 'What belongs in an SEO audit checklist?', answer: 'A useful SEO audit checklist covers crawlability, indexation, templates, performance, structured data, metadata, search intent, content quality, internal links, backlinks, competitor gaps, analytics and conversion paths. We adapt the checks to the site, because the same warning can be urgent on one site and irrelevant on another.' }
+  { question: 'What belongs in an SEO audit checklist?', answer: 'A useful SEO audit checklist covers crawlability, indexation, templates, performance, structured data, metadata, search intent, content quality, internal links, backlinks, competitor gaps, analytics and conversion paths. We adapt the checks to the site, because the same warning can be urgent on one site and irrelevant on another.' },
+  { question: 'Which tools do you use for an SEO audit?', answer: 'We work from Google Search Console for queries, pages, coverage and crawl issues, GA4 or your analytics for traffic and enquiry actions, a crawl of the site for indexation, canonicals, status codes and internal links, and ranking software for tracked terms with the engine and location stated. The tools supply evidence. The findings, priorities and recommendations are written by a person.' },
+  { question: 'How do we request an SEO audit and what happens next?', answer: 'Send the domain, the decision the audit has to inform and any relevant release dates through the contact form. We usually reply within one business day. We then agree which markets, templates and page groups are in scope, quote for that scope, and ask for read-only Search Console and analytics access before the audit begins.' }
 ];
 ---
 
@@ -279,7 +281,6 @@ const faqs = [
     <Fragment slot="story">
       <p>An SEO audit tells you why a website is underperforming in search and what to do about it, in order. We crawl the site, study your Search Console and analytics data, and review the content and links. A traffic drop, a weak service page or a missed market gets traced back to the pages, search data and technical behaviour behind it.</p>
       <p>We provide SEO audits from the Philippines for businesses here and in Australia, the UK and the USA. You receive a prioritised findings register, the evidence for each recommendation and a handover explaining what your developer, writer or marketing team should do next. It is the check to run before you commission a rebuild or another content campaign.</p>
-      <p>Send us the domain, the decision you need to make and any relevant release dates. We agree which markets, templates and page groups the audit covers before quoting. Read-only Search Console and analytics access lets us tell a search visibility problem from a tracking change.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -302,6 +303,7 @@ const faqs = [
         <div class="intro-copy">
           <span class="eyebrow">Why audit first</span>
           <h2>Find out <span>why organic performance is stuck</span> before you pay for more SEO</h2>
+          <p>Send us the domain, the decision you need to make and any relevant release dates. We agree which markets, templates and page groups the audit covers before quoting. Read-only Search Console and analytics access lets us tell a search visibility problem from a tracking change.</p>
           <p>Many sites do not need more blog posts, another backlink package or another round of metadata edits. They need to know why organic performance is flat, falling or failing to produce enquiries, because each cause calls for different work and a different budget.</p>
           <p>Our SEO audit answers that question for owners and marketing leads who have to approve the next spend. It connects technical evidence, content quality, search demand, authority signals and buyer behaviour, and turns them into a roadmap your team can follow task by task.</p>
         </div>
@@ -471,6 +473,23 @@ const faqs = [
     </div>
   </section>
 
+  <section class="pf-section" id="findings-extract">
+    <div class="pf-wrap">
+      <p class="eyebrow">A real extract</p>
+      <h2>Three rows from a <span>findings handoff</span> on our own site</h2>
+      <p class="pf-lede">These rows come from a review of brightforge.com.ph dated 13 October 2026. It is our own website, not a client campaign. An audit handoff reaches your developer in the same shape.</p>
+      <div class="pf-table-wrap"><table class="pf-table">
+        <thead><tr><th scope="col">Page</th><th scope="col">Observed issue</th><th scope="col">Recommended action</th><th scope="col">Acceptance check</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Home page</th><td>The hero enquiry button started below the 1440 x 900 first screen.</td><td>Move the existing button after the opening offer paragraph and keep the supporting proof.</td><td>Button fully visible at 1440 x 900 and 390 x 844, contact destination opens, one H1 preserved.</td></tr>
+          <tr><th scope="row">UK SEO services page</th><td>Two Service definitions described the same canonical URL.</td><td>Keep the country-specific definition and remove the duplicate generic one.</td><td>Rendered JSON-LD parses with exactly one Service definition, country scope United Kingdom, visible FAQ content preserved.</td></tr>
+          <tr><th scope="row">On-page SEO services page</th><td>No contextual route from the specialist offer to agency fulfilment.</td><td>Add a concise link to the existing white label SEO page.</td><td>Link present in the main content, destination returns HTTP 200, title and H1 unchanged.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="pf-note">Source: our published <a href="/samples/technical-review-handoff.csv">technical review handoff sample</a>, which also carries the reason for each action. It shows the format of a handoff. It is not a ranking result.</p>
+    </div>
+  </section>
+
   <section class="avoid-section">
     <div class="max-w-7xl mx-auto px-6">
       <div class="avoid-layout">
@@ -488,6 +507,21 @@ const faqs = [
           ))}
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="request-an-audit">
+    <div class="pf-wrap">
+      <p class="eyebrow">How to start</p>
+      <h2>What happens after you <span>request an SEO audit</span></h2>
+      <p class="pf-lede">Use the <a href="/contact/">contact form</a> to send the domain and the decision the audit has to inform. We usually reply within one business day.</p>
+      <ol class="pf-steps">
+        <li><strong>You send the brief</strong><span>The domain, the decision you need to make and any relevant release dates, such as a redesign or a template change.</span></li>
+        <li><strong>We agree the scope</strong><span>Which markets, templates and page groups the audit covers. The quote follows once those are settled.</span></li>
+        <li><strong>You grant read-only access</strong><span>Search Console and analytics, so findings can be tied to impressions, clicks and conversions.</span></li>
+        <li><strong>We run the audit</strong><span>Five stages, from baseline to roadmap. Most small to mid-sized business audits take one to two weeks.</span></li>
+        <li><strong>Handover</strong><span>The summary, findings register and roadmap go to the people who will act on them, with the first fixes identified.</span></li>
+      </ol>
     </div>
   </section>
 
