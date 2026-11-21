@@ -12,76 +12,76 @@ import ButtonSecondary from '../components/ButtonSecondary.astro';
 const proofItems = [
   {
     title: 'Evidence before recommendations',
-    copy: 'We review crawl data, Search Console signals, rankings, page performance, content quality, internal links and conversion paths before we tell you what to change.'
+    copy: 'We review crawl data, Search Console signals, rankings, page performance, content quality, internal links and conversion paths before we tell you what to change. Each finding records its source, its date and the exact page behind it.'
   },
   {
     title: 'Prioritised by commercial impact',
-    copy: 'An audit should not bury your team in a huge issue list. We separate urgent blockers, growth opportunities, quick wins and low-value noise.'
+    copy: 'A long issue list helps nobody decide. We sort every finding into one of four groups: urgent blockers, growth opportunities, work to plan into a campaign and low-value noise you can leave alone.'
   },
   {
     title: 'Built for implementation',
-    copy: 'The output is written for owners, marketers, developers and content teams, with clear next steps rather than generic tool exports.'
+    copy: 'The findings are written for the people who will act on them: owners, marketers, developers and content teams. Each one names the URL, the proposed change, the reason and the likely owner, so no one has to interpret a tool export.'
   }
 ];
 
 const auditTriggers = [
-  'Organic traffic has dropped and the cause is not obvious',
+  'Organic traffic has dropped and nobody can say why',
   'Important keywords are stuck despite ongoing SEO work',
-  'The site gets impressions but not enough clicks or leads',
+  'The site earns impressions but too few clicks or leads',
   'A redesign, migration, CMS change or domain move is planned',
   'Google Search Console is showing crawl, indexing or page experience warnings',
-  'Content is being published but the right pages are not moving',
-  'A developer or agency has changed the site and rankings have shifted',
-  'You need a clear SEO roadmap before spending more on content, links or technical work'
+  'Content keeps being published but the pages that matter are not moving',
+  'A developer or agency changed the site and rankings shifted afterwards',
+  'You want a clear SEO roadmap before spending more on content, links or technical work'
 ];
 
 const auditAreas = [
   {
     title: 'Crawlability and indexation',
-    copy: 'We check whether Google can discover, crawl, render and index the right URLs, including robots.txt, noindex tags, canonicals, sitemap quality, redirects and crawl waste.'
+    copy: 'Can Google discover, crawl, render and index the right URLs, and only those? We check robots.txt, noindex tags, canonicals, sitemap quality, redirects and crawl waste.'
   },
   {
     title: 'Site architecture and internal links',
-    copy: 'We review how authority and relevance move through the site, whether priority pages are buried and whether internal anchors support the right topics.'
+    copy: 'We trace how authority and relevance move through the site, find the priority pages buried too deep and check whether internal anchor text supports the right topics.'
   },
   {
     title: 'Technical SEO and performance',
-    copy: 'We assess Core Web Vitals, mobile usability, status codes, duplicate URLs, JavaScript risks, schema fit, structured data errors and page template problems.'
+    copy: 'We assess Core Web Vitals, mobile usability, status codes, duplicate URLs, JavaScript risks, schema fit, structured data errors and problems that repeat across a page template.'
   },
   {
     title: 'Content quality and search intent',
-    copy: 'We check whether key pages match the SERP, answer the buyer properly, avoid cannibalisation and provide enough depth, proof and clarity to compete.'
+    copy: 'We compare each key page with the search results it competes in. Does it answer the buyer, avoid competing with your other pages and offer enough depth, proof and clarity to deserve its place?'
   },
   {
     title: 'Keyword and opportunity mapping',
-    copy: 'We compare current rankings, missing opportunities and competitor coverage so every recommendation is tied to actual search demand and business value.'
+    copy: 'We compare current rankings, missed opportunities and competitor coverage, so every recommendation is tied to real search demand and to business value.'
   },
   {
     title: 'Authority and backlink profile',
-    copy: 'We review backlink quality, risky patterns, lost links, anchor text, competitor authority gaps and the pages most likely to benefit from safer link growth.'
+    copy: 'We review backlink quality, risky patterns, lost links, anchor text, the authority gap to competitors and the pages most likely to benefit from safer link growth.'
   },
   {
     title: 'Local and service-page signals',
-    copy: 'For Philippine and local service businesses, we review location relevance, service clarity, trust signals, NAP consistency and local conversion paths.'
+    copy: 'For Philippine and local service businesses, we review location relevance, service clarity, trust signals, NAP consistency and the local route to an enquiry.'
   },
   {
     title: 'Conversion and enquiry path',
-    copy: 'SEO traffic has to become leads. We check CTAs, proof, form paths, contact clarity, page flow and whether the visitor has enough reason to act.'
+    copy: 'Search traffic has to become leads. We check calls to action, proof, form paths, contact details and page flow, and ask whether the visitor has been given enough reason to act.'
   }
 ];
 
 const toolLimits = [
   {
     title: 'Automated scans report symptoms',
-    copy: 'A tool can flag missing metadata, slow pages or duplicate titles. It cannot always tell whether the page matters commercially or whether the fix should be done now.'
+    copy: 'A tool can flag missing metadata, slow pages or duplicate titles. It cannot tell you whether the page matters commercially or whether the fix belongs in this month or next year.'
   },
   {
     title: 'Context changes priority',
-    copy: 'A technical warning on a blocked tag page may be irrelevant. A weaker issue on a core service page may be urgent because it affects rankings and enquiries.'
+    copy: 'A technical warning on a blocked tag page may be irrelevant. A milder issue on a core service page may be urgent, because that page carries rankings and enquiries.'
   },
   {
     title: 'SEO judgement matters',
-    copy: 'We explain why a finding matters, which pages it affects and what evidence would justify acting on it. Where the cause remains uncertain, the roadmap names the next check instead of presenting a guess as a fix.'
+    copy: 'We explain why a finding matters, which pages it affects and what evidence would justify acting on it. Where the cause remains uncertain, the roadmap names the next check to run. We do not present a guess as a fix.'
   }
 ];
 
@@ -89,22 +89,22 @@ const priorityFramework = [
   {
     label: 'Blockers',
     title: 'Fix first',
-    copy: 'Indexation failures, broken templates, redirect errors, canonical conflicts, critical crawl issues and tracking problems that stop performance from being judged properly.'
+    copy: 'Indexation failures, broken templates, redirect errors, canonical conflicts, critical crawl issues and tracking problems that stop anyone judging performance properly.'
   },
   {
     label: 'Growth fixes',
     title: 'Fix next',
-    copy: 'Pages with search demand, existing impressions, ranking potential or conversion value where technical, content or internal-link improvements can support growth.'
+    copy: 'Pages with search demand, existing impressions, ranking potential or conversion value, where a technical, content or internal-link improvement can support growth.'
   },
   {
     label: 'Campaign support',
     title: 'Plan into the roadmap',
-    copy: 'Content gaps, authority gaps, architecture improvements and template changes that should be handled as part of a wider SEO campaign.'
+    copy: 'Content gaps, authority gaps, architecture improvements and template changes that belong in a wider SEO campaign and need a budget and an owner.'
   },
   {
     label: 'Low-value noise',
     title: 'Ignore or park',
-    copy: 'Warnings that look dramatic in tools but have little commercial upside, low risk or no meaningful connection to organic performance.'
+    copy: 'Warnings that look dramatic in a tool but carry little commercial upside, low risk or no meaningful connection to organic performance. We list them so nobody spends a sprint on them.'
   }
 ];
 
@@ -112,7 +112,7 @@ const processSteps = [
   {
     label: '01',
     title: 'Access and baseline',
-    copy: 'We confirm the business goals, priority pages, analytics setup, Search Console data, current rankings and the problem the audit needs to answer.'
+    copy: 'You grant read-only access to Search Console and analytics and tell us the decision the audit must inform. We confirm the business goals, priority pages, analytics setup and current rankings.'
   },
   {
     label: '02',
@@ -122,7 +122,7 @@ const processSteps = [
   {
     label: '03',
     title: 'Content, intent and competitor review',
-    copy: 'We assess priority pages against search intent, SERP competitors, keyword mapping, content depth, proof, internal links and conversion clarity.'
+    copy: 'We assess priority pages against search intent, the competitors in the search results, keyword mapping, content depth, proof, internal links and conversion clarity.'
   },
   {
     label: '04',
@@ -132,37 +132,37 @@ const processSteps = [
   {
     label: '05',
     title: 'Roadmap and handover',
-    copy: 'We deliver a prioritised roadmap with findings, evidence, recommended fixes, responsible teams and the order work should happen in.'
+    copy: 'We deliver the prioritised roadmap with findings, evidence, recommended fixes, responsible teams and the order the work should happen in, then walk the people doing the work through it.'
   }
 ];
 
 const deliverables = [
   {
     title: 'Audit summary for decision makers',
-    copy: 'A plain-English overview of what is holding the site back, which fixes matter most and what the business should do next.'
+    copy: 'A plain-English overview for the person who signs off the budget: what is holding the site back, which fixes matter most and what the business should do next.'
   },
   {
     title: 'Technical and content findings',
-    copy: 'Evidence-backed findings across crawlability, indexation, site structure, performance, content quality, on-page SEO and conversion paths.'
+    copy: 'The findings register. Each finding lists the affected URLs, the evidence with its source and date, the recommended change, the commercial reason and the check that will show the fix worked. It covers crawlability, indexation, site structure, performance, content quality, on-page SEO and conversion paths.'
   },
   {
     title: 'Prioritised implementation roadmap',
-    copy: 'A practical task list grouped by impact, urgency, complexity and likely owner, so developers, content teams and stakeholders know what to do first.'
+    copy: 'A task list grouped by impact, urgency, complexity and likely owner, with similar findings combined where one template repair addresses them. Developers, content teams and stakeholders can see what to do first, next and later.'
   },
   {
     title: 'Strategic next-step recommendations',
-    copy: 'Clear guidance on whether the site needs technical SEO, content improvement, link building, local SEO, migration support or wider campaign work.'
+    copy: 'A clear view on what the site needs after the audit: technical SEO, content improvement, link building, local SEO, migration support or wider campaign work. Where the evidence says a planned spend should wait, we say that too.'
   }
 ];
 
 const avoidItems = [
   {
     title: 'Evidence to collect',
-    copy: 'We would compare the release date with complete Search Console periods, inspect the affected URL and check its returned HTML. A site-wide average alone cannot explain what happened to this page.'
+    copy: 'We would compare the release date with complete Search Console periods, inspect the affected URL and check the HTML it returns. A site-wide average cannot explain what happened to this one page.'
   },
   {
     title: 'Decision and owner',
-    copy: 'If the live template emits an unintended noindex directive, we would ask the developer to remove it from the affected public pages. The marketing owner confirms which pages should be searchable before the change.'
+    copy: 'If the live template emits an unintended noindex directive, we would ask the developer to remove it from the affected public pages. The marketing owner confirms which pages should be searchable before the change is made.'
   },
   {
     title: 'Limits of the finding',
@@ -170,7 +170,7 @@ const avoidItems = [
   },
   {
     title: 'Acceptance check',
-    copy: 'We would test the live response and rendered page after release, confirm the directive is gone and check that private pages remain excluded. Search Console recrawl and performance observations follow separately; a passed code check is not recovered traffic.'
+    copy: 'We would test the live response and the rendered page after release, confirm the directive is gone and check that private pages remain excluded. Search Console recrawl and performance observations follow separately. A passed code check is not recovered traffic.'
   }
 ];
 
@@ -178,7 +178,7 @@ const connectedServices = [
   {
     title: 'Technical SEO services',
     href: '/technical-seo-services-philippines/',
-    copy: 'For crawl, indexation, rendering, performance, schema and architecture fixes found during the audit.'
+    copy: 'For the crawl, indexation, rendering, performance, schema and architecture fixes the audit finds.'
   },
   {
     title: 'On-page SEO services',
@@ -193,30 +193,30 @@ const connectedServices = [
   {
     title: 'Link building services',
     href: '/backlink-seo-services-philippines/',
-    copy: 'For authority growth once the site has the right technical and content foundations in place.'
+    copy: 'For authority growth once the technical and content foundations are in place.'
   },
   {
     title: 'Website migration services',
     href: '/website-migration-services/',
-    copy: 'For pre-migration and post-migration audits when redesigns, CMS changes or URL moves are risky.'
+    copy: 'For pre-migration and post-migration audits when a redesign, CMS change or URL move puts rankings at risk.'
   },
   {
     title: 'SEO services Philippines',
     href: '/seo-services-philippines/',
-    copy: 'For turning audit findings into an ongoing SEO campaign across technical, content, authority and reporting.'
+    copy: 'For turning audit findings into an ongoing SEO campaign across technical work, content, authority and reporting.'
   }
 ];
 
 const faqs = [
-  { question: 'What is included in an SEO audit?', answer: 'A proper SEO audit reviews technical SEO, crawlability, indexation, site structure, internal links, content quality, search intent, keyword opportunities, backlink profile, local signals where relevant and the conversion path from organic landing pages.' },
-  { question: 'Is this different from an automated website scan?', answer: 'Yes. Automated scans are useful for finding surface-level warnings, but they do not understand commercial priority. We use tools as evidence, then apply SEO judgement to decide which issues matter and which ones can wait.' },
-  { question: 'Do you need access to Google Search Console and GA4?', answer: 'Read-only access is strongly recommended because it lets us connect findings to impressions, clicks, traffic, engagement and conversion data. We can still perform a crawl-led audit without access, but the recommendations will be less complete.' },
-  { question: 'Can you audit a site before a redesign or migration?', answer: 'Yes. Pre-migration audits are often the best time to prevent ranking loss. We review URL structure, redirects, templates, content risk, tracking, internal links and launch QA before major site changes go live.' },
-  { question: 'Will you help implement the recommendations?', answer: 'You can give the findings to your own team or ask us to scope implementation. Coding, copy revisions, staging checks and post-release monitoring are separately agreed; the audit fee does not imply an unlimited fix programme.' },
-  { question: 'How long does an SEO audit take?', answer: 'Most small to mid-sized business audits take one to two weeks depending on site size, data access and complexity. Larger ecommerce, marketplace or multi-location sites may need a longer audit window.' },
-  { question: 'Do you audit content and backlinks as well as technical SEO?', answer: 'Yes. Technical issues are only part of SEO performance. We also review content quality, search intent, keyword mapping, internal links, authority signals, backlink quality and competitor gaps.' },
-  { question: 'What happens after the audit?', answer: 'You receive a prioritised roadmap. From there, the next step may be technical fixes, page rewrites, internal linking, content planning, link building, migration support or a wider SEO campaign.' },
-  { question: 'What belongs in an SEO audit checklist?', answer: 'A useful SEO audit checklist covers crawlability, indexation, templates, performance, structured data, metadata, search intent, content quality, internal links, backlinks, competitor gaps, analytics and conversion paths. We adapt the checks to the site rather than treating every warning as equally important.' }
+  { question: 'What is included in an SEO audit?', answer: 'Our SEO audit reviews technical SEO, crawlability, indexation, site structure, internal links, content quality, search intent, keyword opportunities, the backlink profile, local signals where relevant and the conversion path from organic landing pages. You receive a summary for decision makers, a findings register with evidence for each recommendation, a prioritised roadmap and a handover for the people doing the work.' },
+  { question: 'Is this different from an automated website scan?', answer: 'Yes. An automated scan lists surface-level warnings and gives them equal weight, with no sense of which pages earn the business money. We use the tools as evidence, then apply SEO judgement to decide which issues matter, which can wait and which can be ignored.' },
+  { question: 'Do you need access to Google Search Console and GA4?', answer: 'Read-only access is strongly recommended. It lets us connect each finding to impressions, clicks, traffic, engagement and conversion data, and to tell a search visibility problem from a tracking change. We can still perform a crawl-led audit without access, but the recommendations will be less complete.' },
+  { question: 'Can you audit a site before a redesign or migration?', answer: 'Yes, and it is often the best time, because ranking loss is easier to prevent than to recover. A pre-migration audit reviews URL structure, redirects, templates, content risk, tracking, internal links and launch QA before the changes go live.' },
+  { question: 'Will you help implement the recommendations?', answer: 'You can give the findings to your own team or ask us to scope implementation. The register is written to be used either way. Coding, copy revisions, staging checks and post-release monitoring are separately agreed, so the audit fee does not imply an unlimited fix programme.' },
+  { question: 'How long does an SEO audit take?', answer: 'Most small to mid-sized business audits take one to two weeks depending on site size, data access and complexity. Larger ecommerce, marketplace or multi-location sites may need a longer audit window, which we state in the quote.' },
+  { question: 'Do you audit content and backlinks as well as technical SEO?', answer: 'Yes. Technical issues explain only part of SEO performance. The audit also reviews content quality, search intent, keyword mapping, internal links, authority signals, backlink quality and competitor gaps, then checks the enquiry route from the pages that rank.' },
+  { question: 'What happens after the audit?', answer: 'You receive a prioritised roadmap. From there, the next step may be technical fixes, page rewrites, internal linking, content planning, link building, migration support or a wider SEO campaign. Your own team can carry it out, or we can scope the work.' },
+  { question: 'What belongs in an SEO audit checklist?', answer: 'A useful SEO audit checklist covers crawlability, indexation, templates, performance, structured data, metadata, search intent, content quality, internal links, backlinks, competitor gaps, analytics and conversion paths. We adapt the checks to the site, because the same warning can be urgent on one site and irrelevant on another.' }
 ];
 ---
 
@@ -277,9 +277,9 @@ const faqs = [
     breadcrumbCurrent="SEO Audit Services Philippines"
   >
     <Fragment slot="story">
-      <p>Before you commission a rebuild or another content campaign, we check what the existing site is doing. We trace a traffic drop, an underperforming service page or a missed market back to the pages, search data and technical behaviour behind it.</p>
-      <p>We provide SEO audits from the Philippines for businesses here and in Australia, the UK and the USA. You receive a prioritised findings register, evidence for each recommendation and a handover explaining what your developer, writer or marketing team should do next.</p>
-      <p>Send us the domain, the decision you need to make and any relevant release dates. We agree which markets, templates and page groups the audit covers before quoting. Read-only Search Console and analytics access lets us distinguish a search visibility problem from a tracking change.</p>
+      <p>An SEO audit tells you why a website is underperforming in search and what to do about it, in order. We crawl the site, study your Search Console and analytics data, and review the content and links. A traffic drop, a weak service page or a missed market gets traced back to the pages, search data and technical behaviour behind it.</p>
+      <p>We provide SEO audits from the Philippines for businesses here and in Australia, the UK and the USA. You receive a prioritised findings register, the evidence for each recommendation and a handover explaining what your developer, writer or marketing team should do next. It is the check to run before you commission a rebuild or another content campaign.</p>
+      <p>Send us the domain, the decision you need to make and any relevant release dates. We agree which markets, templates and page groups the audit covers before quoting. Read-only Search Console and analytics access lets us tell a search visibility problem from a tracking change.</p>
     </Fragment>
 
     <Fragment slot="actions">
@@ -289,9 +289,9 @@ const faqs = [
 
     <Fragment slot="stats">
       <div class="audit-hero-stats">
-        <div class="stat"><strong>Diagnose</strong><span>Crawl, indexation, content, links and conversion issues.</span></div>
-        <div class="stat"><strong>Prioritise</strong><span>Separate urgent blockers from low-value noise.</span></div>
-        <div class="stat"><strong>Roadmap</strong><span>Turn findings into implementation-ready next steps.</span></div>
+        <div class="stat"><strong>Diagnose</strong><span>Crawl, indexation, content, link and conversion issues, each with evidence.</span></div>
+        <div class="stat"><strong>Prioritise</strong><span>Fix first, fix next, plan or ignore.</span></div>
+        <div class="stat"><strong>Roadmap</strong><span>Findings turned into tasks with an owner and an order.</span></div>
       </div>
     </Fragment>
   </Hero>
@@ -301,12 +301,12 @@ const faqs = [
       <div class="intro-layout">
         <div class="intro-copy">
           <span class="eyebrow">Why audit first</span>
-          <h2>More <span>SEO activity does</span> not help if the site has the wrong problem</h2>
-          <p>Many sites do not need more random blog posts, another backlink package or another round of cosmetic metadata edits. They need to understand why organic performance is stuck, dropping or failing to convert.</p>
-          <p>A proper SEO audit gives that clarity. It connects technical evidence, content quality, search demand, authority signals and buyer behaviour into a roadmap your team can actually use.</p>
+          <h2>Find out <span>why organic performance is stuck</span> before you pay for more SEO</h2>
+          <p>Many sites do not need more blog posts, another backlink package or another round of metadata edits. They need to know why organic performance is flat, falling or failing to produce enquiries, because each cause calls for different work and a different budget.</p>
+          <p>Our SEO audit answers that question for owners and marketing leads who have to approve the next spend. It connects technical evidence, content quality, search demand, authority signals and buyer behaviour, and turns them into a roadmap your team can follow task by task.</p>
         </div>
         <aside class="diagnosis-panel" aria-label="SEO audit diagnosis questions">
-          <h3>We start with diagnosis, not assumptions</h3>
+          <h3>Five questions the audit answers</h3>
           <ul>
             <li>Can Google crawl and index the right pages?</li>
             <li>Do priority pages match real search intent?</li>
@@ -325,9 +325,9 @@ const faqs = [
         <div class="intro-copy">
           <span class="eyebrow">SEO strategy and consulting</span>
           <h2>What needs a <span>consultant</span>, and what needs a delivery team?</h2>
-          <p>If you already have developers, writers or an agency, adding another supplier may not solve the problem. You may need an SEO consultant to challenge the plan, identify the constraint and turn competing recommendations into a sequence your team can deliver.</p>
-          <p>We use the audit to establish what is happening. The consulting work determines what to do about it: which commercial pages deserve investment, where competitors have an advantage and which technical dependencies must be resolved before content or links can help.</p>
-          <p>If you need us to carry out the work as well, our <a href="/seo-services-philippines/">managed SEO service</a> covers ongoing delivery. The distinction is agreed in the scope, so a strategy engagement does not quietly become an open-ended retainer.</p>
+          <p>If you already have developers, writers or an agency, another supplier may not solve the problem. You may need an SEO consultant to challenge the plan, identify the constraint and turn competing recommendations into a sequence your team can deliver.</p>
+          <p>The audit establishes what is happening. The consulting work decides what to do about it: which commercial pages deserve investment, where competitors hold an advantage and which technical dependencies must be resolved before content or links can help.</p>
+          <p>If you want us to carry out the work as well, our <a href="/seo-services-philippines/">managed SEO service</a> covers ongoing delivery. The scope states which of the two you are buying, so a strategy engagement does not quietly become an open-ended retainer.</p>
         </div>
         <aside class="diagnosis-panel" aria-label="Decisions covered by SEO consultancy">
           <h3>Bring us the decision you need to make</h3>
@@ -361,8 +361,8 @@ const faqs = [
       <div class="triggers-layout">
         <div class="triggers-copy">
           <span class="eyebrow">When to audit</span>
-          <h2>An audit is useful when the next <span>SEO move</span> is not obvious</h2>
-          <p>If a site has a clear technical blocker, fix it. If the business already has a strong roadmap, execute it. But when rankings, traffic, leads or stakeholder confidence are unclear, an audit prevents expensive guesswork.</p>
+          <h2>Eight signs your site needs an <span>SEO audit</span> before the next spend</h2>
+          <p>If a site has one clear technical blocker, fix it. If the business already has a strong roadmap, execute it. An audit earns its fee when rankings, traffic, leads or stakeholder confidence have become unclear and the alternative is expensive guesswork.</p>
         </div>
         <ul class="trigger-list">
           {auditTriggers.map((item) => <li>{item}</li>)}
@@ -376,9 +376,9 @@ const faqs = [
       <div class="section-heading split-heading">
         <div>
           <span class="eyebrow">What we audit</span>
-          <h2><span>Technical, content, authority and conversion</span> issues in one SEO diagnosis</h2>
+          <h2><span>Technical, content, authority and conversion</span> checks in one SEO audit</h2>
         </div>
-        <p>We review crawl access, content relevance, internal links and competing search results to investigate visibility problems. A page can also rank well but fail to generate enquiries. We examine its offer and contact path separately rather than assuming every commercial problem is a ranking problem.</p>
+        <p>To investigate a visibility problem, we review crawl access, content relevance, internal links and the competing search results. A page can also rank well and still fail to generate enquiries, so we examine its offer and contact path as a separate question. Not every commercial problem is a ranking problem.</p>
       </div>
       <div class="coverage-grid">
         {auditAreas.map((item) => (
@@ -395,8 +395,8 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-heading centered">
         <span class="eyebrow">What tools miss</span>
-        <h2>An <span>automated scan</span> is not an SEO strategy</h2>
-        <p>SEO tools are useful. We use them. But a tool export is evidence, not a decision. The valuable part is interpreting what matters for the site, the market and the business.</p>
+        <h2>What an <span>automated scan</span> reports, and what we add to it</h2>
+        <p>SEO tools are useful and we use them. A tool export is evidence, though, and someone still has to make the decision. The value of an audit lies in working out which of the warnings matter for this site, this market and this business.</p>
       </div>
       <div class="tool-grid">
         {toolLimits.map((item) => (
@@ -414,9 +414,9 @@ const faqs = [
       <div class="section-heading split-heading">
         <div>
           <span class="eyebrow">Prioritisation</span>
-          <h2>The audit should make the <span>next 90 days</span> clearer</h2>
+          <h2>Every finding gets a priority, so <span>the next 90 days</span> have an order</h2>
         </div>
-        <p>The same issue can be urgent on one site and irrelevant on another. We prioritise by risk, business value, search demand, implementation effort and likely SEO upside.</p>
+        <p>The same issue can be urgent on one site and irrelevant on another. We rank each finding by risk, business value, search demand, implementation effort and likely SEO upside, then place it in one of four groups.</p>
       </div>
       <div class="priority-grid">
         {priorityFramework.map((item) => (
@@ -435,9 +435,9 @@ const faqs = [
       <div class="section-heading split-heading">
         <div>
           <span class="eyebrow">Audit process</span>
-          <h2>From <span>raw SEO evidence</span> to a practical implementation roadmap</h2>
+          <h2>Five stages from <span>raw SEO evidence</span> to an implementation roadmap</h2>
         </div>
-        <p>We do not start by hunting for the biggest number of errors. We start by understanding what the site needs to achieve and what is preventing that from happening.</p>
+        <p>The error count is not the goal. We begin with what the site has to achieve and what is stopping it, and each stage narrows that down. Most audits for small to mid-sized businesses take one to two weeks.</p>
       </div>
       <div class="process-rail">
         {processSteps.map((step) => (
@@ -457,8 +457,8 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="section-heading centered">
         <span class="eyebrow">What you receive</span>
-        <h2>Clear findings, <span>evidence</span> and next steps</h2>
-        <p>The output is designed to help the business make decisions and help the people doing the work implement the right fixes in the right order.</p>
+        <h2>A findings register, <span>evidence</span> for each finding and a roadmap</h2>
+        <p>Four documents. One helps the business decide, and three help the people doing the work make the right fixes in the right order. To see the row format we hand to developers, open this <a href="/samples/technical-review-handoff.csv">dated handoff excerpt</a> from a review of our own website: page URL, observed issue, recommended action, reason and acceptance check.</p>
       </div>
       <div class="deliverables-grid">
         {deliverables.map((item) => (
@@ -477,7 +477,7 @@ const faqs = [
         <div class="avoid-copy">
           <span class="eyebrow">Illustrative audit decision</span>
           <h2>Should we rewrite this page or <span>repair its template</span>?</h2>
-          <p>Example, not a client result: a service page lost impressions after a template release. Rewriting the page immediately could spend the budget without addressing the fault. We would investigate the release and indexing evidence first.</p>
+          <p>An example, not a client result. A service page lost impressions after a template release. Rewriting the page straight away could spend the budget and leave the fault in place, so we would investigate the release and the indexing evidence first. The four cards show how one finding moves from evidence to a tested fix.</p>
         </div>
         <div class="avoid-grid">
           {avoidItems.map((item) => (
@@ -498,7 +498,7 @@ const faqs = [
           <span class="eyebrow">After the audit</span>
           <h2>The roadmap decides which <span>SEO service</span> comes next</h2>
         </div>
-        <p>Some audits lead to technical fixes. Others show the need for page rewrites, content planning, safer link building or migration support. The point is to stop guessing.</p>
+        <p>Some audits lead to technical fixes. Others show the need for page rewrites, content planning, safer link building or migration support. Either way, the next piece of work is chosen from evidence, and your own team or ours can carry it out.</p>
       </div>
       <div class="connected-grid">
         {connectedServices.map((service) => (
@@ -532,8 +532,8 @@ const faqs = [
     <div class="max-w-5xl mx-auto px-6">
       <div class="cta-panel">
         <span class="eyebrow">Start with diagnosis</span>
-        <h2>Send us the site and we’ll show what is <span>actually holding it back</span></h2>
-        <p>We will review the site, confirm the likely audit scope and explain what type of SEO diagnosis would be most useful before any implementation work begins.</p>
+        <h2>Send us the site and <span>the decision you need to make</span></h2>
+        <p>We will look at the site, confirm the likely audit scope and tell you which kind of SEO diagnosis would be most useful, before any implementation work begins. The quote follows once the markets, templates and page groups are agreed.</p>
         <div class="cta-actions">
           <ButtonPrimary href="/contact/" text="Request an SEO Audit Review" />
           <ButtonSecondary href="/seo-services-philippines/" text="See Our SEO Services" />
