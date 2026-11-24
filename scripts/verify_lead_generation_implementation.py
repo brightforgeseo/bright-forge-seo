@@ -103,9 +103,9 @@ expect(len(clutch_links) == 3, "All three Clutch cards link to evidence")
 request_ctas = [a for a in home.find_all("a") if "Request an SEO Review" in a.get_text(" ", strip=True)]
 expect(any((a.get("href") or "").rstrip("/") == "/contact" for a in request_ctas), "SEO review CTA routes to the Contact page")
 
-for forbidden in ["Metro London University", "process transformation company", "Search Generative Experience (SGE)"]:
+for forbidden in ["Metro London University", "process transformation company", "Search Generative Experience (SGE)", "Founder & CEO", "Co-Founder"]:
     expect(forbidden not in about_text, f"About page excludes stale credibility copy: {forbidden}")
-for required in ["London Metropolitan University", "Founder & CEO", "Head of Team"]:
+for required in ["London Metropolitan University", "SEO Director", "Owner & Founder", "Head of Team"]:
     expect(required in about_text, f"About page includes corrected credibility copy: {required}")
 
 required_fields = {
