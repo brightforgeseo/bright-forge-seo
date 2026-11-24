@@ -44,7 +44,9 @@ test('country pages use canonical team roles and no conflicting university name'
     assert.doesNotMatch(document.body.textContent, /Metro London University|SEO [Mm]anager Janin/);
   }
   const names = page('seo-services-usa').querySelector('.team-names').textContent;
-  assert.match(names, /Sassin LoweCo-Founder/);
+  assert.match(names, /Sassin LoweOwner & Founder/);
+  assert.match(names, /Ben LoweSEO Director/);
+  assert.doesNotMatch(names, /Co-Founder|CEO/);
   assert.match(names, /Jani A. CañoneroHead of Team/);
 });
 

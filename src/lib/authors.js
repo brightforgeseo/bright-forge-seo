@@ -5,12 +5,12 @@ export const authors = {
   'ben-lowe': {
     slug: 'ben-lowe',
     name: 'Ben Lowe',
-    role: 'Founder & CEO',
+    role: 'SEO Director',
     shortBio:
-      'Founder and CEO of Bright Forge SEO. Ben has worked in SEO for more than 15 years with ecommerce, SaaS and local service businesses in the UK and United States, holds a marketing degree from London Metropolitan University, and leads the team from Quezon City.',
+      'SEO Director of Bright Forge SEO. Ben has worked in SEO for more than 15 years with ecommerce, SaaS and local service businesses in the UK and United States, holds a marketing degree from London Metropolitan University, and leads SEO strategy from Quezon City.',
     longBio: [
-      'Ben is the founder and CEO of Bright Forge SEO. He has worked in SEO for more than 15 years and holds a marketing degree from London Metropolitan University.',
-      'Before starting the agency he worked with ecommerce startups, SaaS companies, local businesses and larger corporations in the UK and the United States.',
+      'Ben is the SEO Director of Bright Forge SEO. He has worked in SEO for more than 15 years and holds a marketing degree from London Metropolitan University.',
+      'His experience includes work with ecommerce startups, SaaS companies, local businesses and larger corporations in the UK and the United States.',
       'He is based in Quezon City, Metro Manila, and leads the Bright Forge team from there.'
     ],
     avatar: '/images/About us/ben-lowe-owner.webp',
@@ -51,11 +51,11 @@ export const authors = {
   'sassin-lowe': {
     slug: 'sassin-lowe',
     name: 'Sassin Lowe',
-    role: 'Co-Founder',
+    role: 'Owner & Founder',
     shortBio:
-      'Co-Founder of Bright Forge SEO Agency. Sassin leads operations and keeps delivery, reporting and client communication aligned with the work that is actually being done.',
+      'Owner and Founder of Bright Forge SEO Agency. Sassin leads operations and keeps delivery, reporting and client communication aligned with the work that is actually being done.',
     longBio: [
-      'Sassin co-founded Bright Forge SEO Agency with Ben Lowe and runs the operational side of the company from Quezon City.',
+      'Sassin is the owner and founder of Bright Forge SEO Agency and runs the operational side of the company from Quezon City.',
       'The job is to keep campaigns moving: scope, delivery rhythm, reporting and the gap between what was recommended and what was implemented.',
       'That operational check is part of how we keep public claims and client reporting honest.'
     ],
